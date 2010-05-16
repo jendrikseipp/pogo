@@ -1,0 +1,1121 @@
+# Bulgarian translation for decibel-audio-player
+# Copyright (c) 2008 Rosetta Contributors and Canonical Ltd 2008
+# This file is distributed under the same license as the decibel-audio-player package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2008.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: decibel-audio-player\n"
+"Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
+"POT-Creation-Date: 2009-08-23 09:18+0200\n"
+"PO-Revision-Date: 2009-08-24 13:13+0000\n"
+"Last-Translator: ivan mikov <idm@dir.bg>\n"
+"Language-Team: Bulgarian <bg@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Launchpad-Export-Date: 2009-09-01 15:20+0000\n"
+"X-Generator: Launchpad (build Unknown)\n"
+
+#: ../src/media/track/__init__.py:46
+msgid "Track number"
+msgstr "Номер на запис"
+
+#: ../src/media/track/__init__.py:47 ../src/modules/Tracklist.py:102
+#: ../src/modules/Tracklist.py:418
+msgid "Title"
+msgstr "Заглавие"
+
+#: ../src/media/track/__init__.py:48 ../src/modules/Tracklist.py:103
+#: ../src/modules/Tracklist.py:419
+msgid "Artist"
+msgstr "Изпълнител"
+
+#: ../src/media/track/__init__.py:49 ../src/modules/Tracklist.py:104
+#: ../src/modules/Tracklist.py:420
+msgid "Album"
+msgstr "Албум"
+
+#: ../src/media/track/__init__.py:50 ../src/modules/Tracklist.py:106
+#: ../src/modules/Tracklist.py:422
+msgid "Genre"
+msgstr "Жанр"
+
+#: ../src/media/track/__init__.py:51 ../src/modules/Tracklist.py:107
+#: ../src/modules/Tracklist.py:423
+msgid "Date"
+msgstr "Дата"
+
+#: ../src/media/track/__init__.py:52
+msgid "Disc number"
+msgstr "Номер на диска"
+
+#: ../src/media/track/__init__.py:53
+msgid "Duration in seconds (e.g., 194)"
+msgstr "Продължителност в секунди (например, 194)"
+
+#: ../src/media/track/__init__.py:54
+msgid "Duration as a string (e.g., 3:14)"
+msgstr "Продължителност (например, 3:14)"
+
+#: ../src/media/track/__init__.py:55
+msgid "Position of the track in the playlist"
+msgstr "Място на записа в списъка за изпълнение"
+
+#: ../src/media/track/__init__.py:56
+msgid "Number of tracks in the playlist"
+msgstr "Брой записи в списъка за изпълнение"
+
+#: ../src/media/track/__init__.py:57
+msgid "Full path to the file"
+msgstr "Пълен път до файла"
+
+#: ../src/media/track/__init__.py:147
+#, python-format
+msgid "%(album)s  [Disc %(discnum)u]"
+msgstr "%(album)s [Диск %(discnum)u]"
+
+#: ../src/tools/consts.py:95
+msgid "Unknown Genre"
+msgstr "Неизвестен жанр"
+
+#: ../src/tools/consts.py:96
+msgid "Unknown Title"
+msgstr "Неизвестно заглавие"
+
+#: ../src/tools/consts.py:97
+msgid "Unknown Album"
+msgstr "Неизвестен албум"
+
+#: ../src/tools/consts.py:98
+msgid "Unknown Artist"
+msgstr "Неизвестен изпълнител"
+
+#: ../src/tools/consts.py:103
+msgid "Unknown Album Artist"
+msgstr "Неизвестен албум"
+
+#: ../src/gui/about.py:39
+msgid "translator-credits"
+msgstr ""
+"Launchpad Contributions:\n"
+"  ivan mikov https://launchpad.net/~ivandm"
+
+#: ../src/gui/about.py:43
+msgid "Developer:"
+msgstr "Разработчик:"
+
+#: ../src/gui/about.py:46
+msgid "Thanks to:"
+msgstr "Благодарение на:"
+
+#: ../src/gui/authentication.py:131
+#, python-format
+msgid ""
+"Enter your username and password for\n"
+"%(reason)s"
+msgstr ""
+"Въведете вашето име и парола за\n"
+"%(reason)s"
+
+#: ../src/gui/authentication.py:133 ../res/Authentication.glade.h:1
+msgid "Password required"
+msgstr "Изисква се парола"
+
+#: ../src/gui/authentication.py:170
+msgid "About password storage safety"
+msgstr "За сигурността на съхранение на паролата"
+
+#: ../src/gui/authentication.py:171
+msgid ""
+"If you use Gnome, it is safe to store your password since the Gnome keyring "
+"is used."
+msgstr ""
+"Ако използвате Gnome е безопасно да запазите вашата парола, щом се използва "
+"ключодържателя на Gnome."
+
+#: ../src/gui/authentication.py:172
+msgid ""
+"If you do not use Gnome, beware that, although not stored as clear text, an "
+"attacker <i>could</i> retrieve it."
+msgstr ""
+"Ако не използвате Gnome внимавайте, макар че паролите не се съхраняват като "
+"обикновен текст, то някой <i>може</i> да я извлече."
+
+#: ../src/gui/preferences.py:39
+msgid "Preferences"
+msgstr "Предпочитания"
+
+#: ../src/gui/preferences.py:102
+msgid "Unable to load this module."
+msgstr "Този модул не може да бъде зареден."
+
+#: ../src/gui/preferences.py:109
+msgid "Modules"
+msgstr "Модули"
+
+#: ../src/gui/preferences.py:110 ../src/modules/IMStatus.py:341
+#: ../src/modules/DesktopNotification.py:166
+#: ../src/modules/FileExplorer.py:562 ../src/modules/Library.py:706
+#: ../src/modules/AudioCD.py:374 ../src/modules/Covers.py:429
+#: ../src/modules/StatusFile.py:115 ../src/modules/Twitter.py:120
+msgid "Description"
+msgstr "Описание"
+
+#: ../src/gui/preferences.py:111
+msgid ""
+"This dialog box shows the list of available modules, which are small pieces "
+"of code that add some functionnalities to the application. You can "
+"enable/disable a module by checking/unchecking the check box in front of it. "
+"Note that some modules (e.g., the File Explorer) cannot be disabled."
+msgstr ""
+"Този прозорец показва списък с достъпните модули, които са малки части код, "
+"добавящи нови функционалности към приложението. Можете да "
+"включвате/изключвате модула, поставяйки/премахвайки отметката срещу него. "
+"Обърнете внимание, че някои модули (например, Файловият браузър) не могат да "
+"бъдат изключени."
+
+#: ../src/gui/preferences.py:114
+msgid "Configuring a Module"
+msgstr "Конфигуриране на модул"
+
+#: ../src/gui/preferences.py:115
+msgid ""
+"When a module may be configured, a specific icon is displayed on the right "
+"of the corresponding line. To configure a module, simply select it and then "
+"click on the \"Preferences\" button on the bottom of the dialog box. Note "
+"that configuring a module is only possible when it is enabled."
+msgstr ""
+"Когато модулът може да бъде настройван, в дясно се показва специфична икона. "
+"За да се настрои модула, просто го изберете и натиснете бутона "
+"\"Предпочитания\" долу в диалоговия прозорец. Обърнете внимание, че "
+"настройването на модула е възможно само когато той е включен."
+
+#: ../src/gui/selectPath.py:79
+msgid "Choose a folder"
+msgstr "Изберете папка"
+
+#: ../src/gui/selectPath.py:96
+msgid "This path does not exist"
+msgstr "Този път не съществува"
+
+#: ../src/gui/selectPath.py:96
+msgid "Please select an existing directory."
+msgstr "Моля изберете съществуваща директория"
+
+#: ../src/gui/selectPath.py:99 ../src/gui/selectPath.py:104
+msgid "The name is incorrect"
+msgstr "Името е неточно"
+
+#: ../src/gui/selectPath.py:99
+msgid ""
+"This name is not allowed.\n"
+"Please use another one."
+msgstr ""
+"Това име не е разрешено.\n"
+"Моля използвайте някое друго."
+
+#: ../src/gui/selectPath.py:104
+#, python-format
+msgid ""
+"The character %s is not allowed.\n"
+"Please use another name."
+msgstr ""
+"Използването на символа %s не е разрешено.\n"
+"Изберете друго име."
+
+#: ../src/modules/IMStatus.py:25
+msgid "Instant Messenger Status"
+msgstr "Статус на клиента за моментни съобщения"
+
+#: ../src/modules/IMStatus.py:25
+msgid "Update the status message of your IM client"
+msgstr "Обнови съобщението за състояние на вашия IM клиент"
+
+#: ../src/modules/IMStatus.py:39
+msgid "Decibel is stopped"
+msgstr "Decibel е спрян"
+
+#: ../src/modules/IMStatus.py:261 ../src/modules/IMStatus.py:334
+#, python-format
+msgid "%(status)s [paused]"
+msgstr "%(status)s [паузирано]"
+
+#: ../src/modules/IMStatus.py:342
+msgid ""
+"This module detects any running instant messenger and updates your status "
+"with regards to the track you are listening to. Supported messengers are:"
+msgstr ""
+"Този модул засича всеки работещ IM клиент и обновява вашия статус съобразно "
+"записа, който слушате. Поддържани IM клиенти са:"
+
+#: ../src/modules/IMStatus.py:345 ../src/modules/Twitter.py:123
+msgid "Customizing the Status"
+msgstr "Настройка на статуса"
+
+#: ../src/modules/IMStatus.py:346 ../src/modules/Twitter.py:124
+msgid ""
+"You can set the status to any text you want. Before setting it, the module "
+"replaces all fields of the form {field} by their corresponding value. "
+"Available fields are:"
+msgstr ""
+"Можете да изберете всякакъв текст за статуса. Преди да го поставите, модулът "
+"заменя всички полета от вида {поле} с техните съответни значения. Достъпни "
+"са следните полета:"
+
+#: ../src/modules/IMStatus.py:349 ../src/modules/DesktopNotification.py:172
+msgid "Markup"
+msgstr "Маркиране"
+
+#: ../src/modules/IMStatus.py:350 ../src/modules/DesktopNotification.py:173
+msgid ""
+"You can use the Pango markup language to format the text. More information "
+"on that language is available on the following web page:"
+msgstr ""
+
+#: ../src/modules/IMStatus.py:353
+msgid "Sanitization"
+msgstr "Прочистване"
+
+#: ../src/modules/IMStatus.py:354
+msgid ""
+"You can define some words that to sanitize before using them to set your "
+"status. In this case, the middle characters of matching words is "
+"automatically replaced with asterisks (e.g., \"Metallica - Live S**t Binge & "
+"Purge\"). Put one word per line."
+msgstr ""
+"Можете да определите някои думи, които да бъдат прочистени преди да ги "
+"използвате при поставянето на вашия статус. В този случай средните букви на "
+"съвпадащите думи автоматично се заменят със звездичка (напр. \"Metallica - "
+"Live S**t Binge & Purge\"). Поставете по една дума на ред."
+
+#: ../src/modules/AudioScrobbler.py:28
+msgid "Keep your Last.fm profile up to date"
+msgstr "Обновява вашият Last.fm профил"
+
+#: ../src/modules/AudioScrobbler.py:142 ../src/modules/AudioScrobbler.py:143
+msgid "your Last.fm account"
+msgstr "вашият Last.fm профил"
+
+#: ../src/modules/StatusbarTitlebar.py:52
+#, python-format
+msgid "One track in playlist  [%(length)s]"
+msgid_plural "%(count)u tracks in playlist  [%(length)s]"
+msgstr[0] ""
+msgstr[1] ""
+
+#: ../src/modules/StatusbarTitlebar.py:72
+msgid "[paused]"
+msgstr "[паузирано]"
+
+#: ../src/modules/__init__.py:75
+msgid "The following Python modules are not available:"
+msgstr "Следните модули на Python не са налични:"
+
+#: ../src/modules/__init__.py:79
+msgid "You must install them if you want to enable this module."
+msgstr "Трябва да ги инсталирате, ако искате да използвате този модул."
+
+#: ../src/modules/DesktopNotification.py:26
+msgid "Desktop Notification"
+msgstr "Известие на работния плот"
+
+#: ../src/modules/DesktopNotification.py:26
+msgid "Display a desktop notification on track change"
+msgstr "Покажи известие на работния плот при смяната на записа"
+
+#: ../src/modules/DesktopNotification.py:82
+#: ../src/modules/DesktopNotification.py:144
+msgid "Skip track"
+msgstr "Пропусни записа"
+
+#: ../src/modules/DesktopNotification.py:167
+msgid ""
+"This module displays a small popup window on your desktop when a new track "
+"starts."
+msgstr ""
+"Този модул показва малък изкачащ прозорец на работния плот когато започва "
+"нов запис."
+
+#: ../src/modules/DesktopNotification.py:168
+msgid "Customizing the Notification"
+msgstr "Параметри на известията"
+
+#: ../src/modules/DesktopNotification.py:169
+msgid ""
+"You can change the title and the body of the notification to any text you "
+"want. Before displaying the popup window, fields of the form {field} are "
+"replaced by their corresponding value. Available fields are:\n"
+"\n"
+msgstr ""
+
+#: ../src/modules/CtrlPanel.py:78 ../src/modules/CtrlPanel.py:136
+#: ../res/StatusIconMenu.glade.h:2
+msgid "Pause the current track"
+msgstr "Паузирай текущият запис"
+
+#: ../src/modules/CtrlPanel.py:95 ../res/MainWindow.glade.h:12
+msgid "Play the first track of the playlist"
+msgstr "Изпълни първият запис от списъка"
+
+#: ../src/modules/CtrlPanel.py:130
+msgid "Continue playing the current track"
+msgstr "Продължи изпълнението на текущия запис"
+
+#: ../src/modules/Explorer.py:68
+msgid ""
+"Please select an explorer\n"
+"in the combo box below."
+msgstr ""
+"Изберете файловия браузър\n"
+"от падащото меню."
+
+#: ../src/modules/Tracklist.py:105 ../src/modules/Tracklist.py:421
+msgid "Length"
+msgstr "Дължина"
+
+#: ../src/modules/Tracklist.py:108
+msgid "Path"
+msgstr "Път"
+
+#: ../src/modules/Tracklist.py:258
+msgid "Save playlist"
+msgstr "Запазване на списъка"
+
+#: ../src/modules/Tracklist.py:300
+msgid "Crop"
+msgstr "Изрязване"
+
+#: ../src/modules/Tracklist.py:315
+msgid "Shuffle Playlist"
+msgstr "Разбъркай списъка за изпълнение"
+
+#: ../src/modules/Tracklist.py:322
+msgid "Revert Playlist"
+msgstr ""
+
+#: ../src/modules/Tracklist.py:329
+msgid "Clear Playlist"
+msgstr "Изчисти списъка за изпълнение"
+
+#: ../src/modules/Tracklist.py:338 ../res/MainWindow.glade.h:18
+msgid "Repeat"
+msgstr "Повтори"
+
+#: ../src/modules/Tracklist.py:346
+msgid "Save Playlist As..."
+msgstr "Запази списъка като..."
+
+#: ../src/modules/FileExplorer.py:28
+msgid "File Explorer"
+msgstr "Файлов браузър"
+
+#: ../src/modules/FileExplorer.py:28
+msgid "Browse your file system"
+msgstr "Прегледайте вашата файлова система"
+
+#: ../src/modules/FileExplorer.py:32
+msgid "Home"
+msgstr "Начало"
+
+#: ../src/modules/FileExplorer.py:32
+msgid "Root"
+msgstr "Root"
+
+#: ../src/modules/FileExplorer.py:180
+msgid "loading..."
+msgstr "зареждане…"
+
+#: ../src/modules/FileExplorer.py:336 ../src/modules/Library.py:405
+msgid "Collapse all"
+msgstr "Сгъни всичко"
+
+#: ../src/modules/FileExplorer.py:349 ../res/FileExplorer.glade.h:7
+msgid "Show hidden files"
+msgstr "Покажи скритите файлове"
+
+#: ../src/modules/FileExplorer.py:503
+msgid ""
+"You will be able to add this root folder again later on if you wish so."
+msgstr "Вие ще можете да добавите тази root папка по-късно, ако пожелаете."
+
+#: ../src/modules/FileExplorer.py:504
+msgid "Remove the selected entry?"
+msgstr "Премахване на избраното?"
+
+#: ../src/modules/FileExplorer.py:506
+msgid ""
+"You will be able to add these root folders again later on if you wish so."
+msgstr "Вие ще можете да добавите тази root папки по-късно, ако пожелаете."
+
+#: ../src/modules/FileExplorer.py:507
+msgid "Remove all selected entries?"
+msgstr "Премахване на всичко избрано?"
+
+#: ../src/modules/FileExplorer.py:509
+msgid "Your media files will not be deleted."
+msgstr "Вашите файлове няма да бъдат изтрити."
+
+#: ../src/modules/FileExplorer.py:563
+msgid "This module allows you to browse the files on your drives."
+msgstr "Този модул позволява да преглеждате файловете на вашия компютър."
+
+#: ../src/modules/FileExplorer.py:564 ../src/modules/Library.py:709
+msgid "Usage"
+msgstr "Употреба"
+
+#: ../src/modules/FileExplorer.py:565
+msgid ""
+"At least one root folder must be added to browse your files. This folder "
+"then becomes the root of the file explorer tree in the main window."
+msgstr ""
+
+#: ../src/modules/Library.py:30
+msgid "Library"
+msgstr "Библиотека"
+
+#: ../src/modules/Library.py:30
+msgid "Organize your music by tags instead of files"
+msgstr "Организирайте вашата музиката по етикети вместо по файлове"
+
+#: ../src/modules/Library.py:167
+msgid "Creating library"
+msgstr "Създаване на библиотека"
+
+#: ../src/modules/Library.py:168
+msgid "Refreshing library"
+msgstr "Обновяване на библиотеката"
+
+#: ../src/modules/Library.py:170
+msgid ""
+"The directory is scanned for media files. This can take some time.\n"
+"Please wait."
+msgstr ""
+"Директорията се сканира за звукови файлове. Това може да отнеме известно "
+"време.\n"
+"Моля, изчакайте."
+
+#: ../src/modules/Library.py:221
+#, python-format
+msgid "Scanning directories (one track found)"
+msgid_plural "Scanning directories (%(nbtracks)u tracks found)"
+msgstr[0] ""
+msgstr[1] ""
+
+#: ../src/modules/Library.py:232
+msgid "Creating library..."
+msgstr "Създаване на библиотека..."
+
+#: ../src/modules/Library.py:233
+msgid "Refreshing library..."
+msgstr "Обновяване на библиотеката..."
+
+#: ../src/modules/Library.py:417
+msgid "Randomness"
+msgstr "Произволност"
+
+#: ../src/modules/Library.py:424
+#, python-format
+msgid "Pick an album of %(artist)s"
+msgstr ""
+
+#: ../src/modules/Library.py:429
+msgid "Pick an album in the library"
+msgstr "Изберете албум от библиотеката"
+
+#: ../src/modules/Library.py:446
+msgid "This library is deprecated, please refresh it."
+msgstr "Библиотеката е остаряла, обновете я."
+
+#: ../src/modules/Library.py:663
+msgid "tracks"
+msgstr "записи"
+
+#: ../src/modules/Library.py:671
+msgid "You will be able to recreate this library later on if you wish so."
+msgstr "По-късно ще може да създадете отново тази библиотека, ако пожелаете."
+
+#: ../src/modules/Library.py:672
+msgid "Remove the selected library?"
+msgstr "Премахване на избраната библиотека?"
+
+#: ../src/modules/Library.py:674
+msgid "You will be able to recreate these libraries later on if you wish so."
+msgstr "По-късно ще може да създадете отново тези библиотеки, ако пожелаете."
+
+#: ../src/modules/Library.py:675
+msgid "Remove all selected libraries?"
+msgstr "Премахване на всички избрани библиотеки?"
+
+#: ../src/modules/Library.py:677
+msgid "Your media files will not be removed."
+msgstr "Вашите звукови файлове няма да бъдат премахнати."
+
+#: ../src/modules/Library.py:707
+msgid ""
+"This module organizes your media files by tags instead of using the file "
+"structure of your drive. Loading tracks is also faster because their tags "
+"are already known and do not have to be read again."
+msgstr ""
+
+#: ../src/modules/Library.py:710
+msgid ""
+"When you add a new library, you have to give the full path to the root "
+"directory of that library. Then, all directories under this root path are "
+"recursively scanned for media files whose tags are read and stored in a "
+"database."
+msgstr ""
+
+#: ../src/modules/Library.py:712
+msgid ""
+"Upon refreshing a library, the file structure under the root directory and "
+"all media files are scanned for changes, to update the database accordingly."
+msgstr ""
+
+#: ../src/modules/StatusIcon.py:24
+msgid "Status Icon"
+msgstr "Икона за статуса"
+
+#: ../src/modules/StatusIcon.py:24
+msgid "Add an icon to the notification area"
+msgstr "Добави икона в областта за уведомяване"
+
+#: ../src/modules/StatusIcon.py:113
+#, python-format
+msgid "%(tooltip)s [paused]"
+msgstr "%(tooltip)s [паузирано]"
+
+#: ../src/modules/Equalizer.py:24
+msgid "Equalizer"
+msgstr "Еквалайзер"
+
+#: ../src/modules/Equalizer.py:24
+msgid "Tune the level of the frequency bands"
+msgstr ""
+
+#: ../src/modules/Equalizer.py:60 ../src/modules/Equalizer.py:62
+#: ../src/modules/ReplayGain.py:44
+msgid "Restart required"
+msgstr "Изисква се рестартиране"
+
+#: ../src/modules/Equalizer.py:60 ../src/modules/Equalizer.py:62
+#: ../src/modules/ReplayGain.py:44
+msgid ""
+"You must restart the application for this modification to take effect."
+msgstr "Трябва да рестартирате приложението за да се отрази промяната."
+
+#: ../src/modules/Equalizer.py:95
+msgid "Save levels"
+msgstr ""
+
+#: ../src/modules/Equalizer.py:106
+msgid "Load levels"
+msgstr ""
+
+#: ../src/modules/Equalizer.py:132
+msgid "Could not load the file"
+msgstr "Файлът не може да се зареди"
+
+#: ../src/modules/Equalizer.py:132
+msgid "The format of the file is incorrect."
+msgstr "Неточен формат на файла"
+
+#: ../src/modules/AudioCD.py:27
+msgid "Audio CD"
+msgstr "Аудио CD"
+
+#: ../src/modules/AudioCD.py:27
+msgid "Play audio discs"
+msgstr "Пусни аудио дискове"
+
+#: ../src/modules/AudioCD.py:149
+msgid "downloading data..."
+msgstr "изтегляне на данни..."
+
+#: ../src/modules/AudioCD.py:153
+#, python-format
+msgid "Track %02u"
+msgstr "Запис %02u"
+
+#: ../src/modules/AudioCD.py:238
+msgid "No disc found"
+msgstr "Не е намерен диск"
+
+#: ../src/modules/AudioCD.py:346
+msgid "This will remove all disc information stored on your hard drive."
+msgstr ""
+
+#: ../src/modules/AudioCD.py:347
+msgid "Clear CDDB cache?"
+msgstr "Изчистване на CDDB кеша?"
+
+#: ../src/modules/AudioCD.py:360 ../src/modules/StatusFile.py:93
+msgid "Invalid path"
+msgstr "Невалиден път"
+
+#: ../src/modules/AudioCD.py:361
+msgid ""
+"The path to the CD-ROM device is not valid. Please choose an existing path."
+msgstr ""
+"Пътя до CD-ROM устройството е невалиден. Моля изберете съществуващ път."
+
+#: ../src/modules/AudioCD.py:375
+msgid "This module lets you play audio discs from your CD-ROM device."
+msgstr ""
+"Този модул позволява пускането на аудио дискове от вашето CD-ROM устройство."
+
+#: ../src/modules/AudioCD.py:376
+msgid "Compact Disc Data Base (CDDB)"
+msgstr "База данни за компакт дискове (CDDB)"
+
+#: ../src/modules/AudioCD.py:377
+msgid ""
+"Disc information, such as artist and album title, may be automatically "
+"downloaded from an online database if you wish so. This information may also "
+"be saved on your hard drive to avoid downloading it again the next time you "
+"play the same disc."
+msgstr ""
+"Ако желаете, информацията за диска, като името на изпълнителя и албума, може "
+"да бъде автоматично изтеглена от онлайн база данни. Тази информация може, "
+"също така, да бъде запазена на вашия хард диск, за да се избегне повторното "
+"изтегляне следващият път когато прослушвате същия диск."
+
+#: ../src/modules/TrackPanel.py:120
+#, python-format
+msgid ""
+"by %(artist)s\n"
+"from %(album)s"
+msgstr ""
+"изпълнява %(artist)s\n"
+"от албума %(album)s"
+
+#: ../src/modules/Covers.py:27
+msgid "Covers"
+msgstr "Обложки"
+
+#: ../src/modules/Covers.py:27
+msgid "Show album covers"
+msgstr "Покажи обложките на албумите"
+
+#: ../src/modules/Covers.py:430
+msgid ""
+"This module displays the cover of the album the current track comes from. "
+"Covers may be loaded from local pictures, located in the same directory as "
+"the current track, or may be downloaded from the Internet."
+msgstr ""
+
+#: ../src/modules/Covers.py:433
+msgid "User Covers"
+msgstr "Потребителски обложки"
+
+#: ../src/modules/Covers.py:434
+#, python-format
+msgid ""
+"A user cover is a picture located in the same directory as the current "
+"track. When specifying filenames, you do not need to provide file "
+"extensions, supported file formats (%s) are automatically used."
+msgstr ""
+
+#: ../src/modules/Covers.py:437
+msgid "Internet Covers"
+msgstr "Обложки от интернет"
+
+#: ../src/modules/Covers.py:438
+msgid ""
+"Covers may be downloaded from the Internet, based on the tags of the current "
+"track. You can ask to always prefer user covers to Internet ones. In this "
+"case, if a user cover exists for the current track, it is used. If there is "
+"none, the cover is downloaded."
+msgstr ""
+
+#: ../src/modules/StatusFile.py:25
+msgid "Status File"
+msgstr ""
+
+#: ../src/modules/StatusFile.py:25
+msgid "Generate a text file with the current status"
+msgstr "Създай текстови файл с текущия статус"
+
+#: ../src/modules/StatusFile.py:93
+msgid ""
+"The path to the selected file is not valid. Please choose an existing path."
+msgstr "Пътя до избраният файл е невалиден. Моля изберете съществуващ път."
+
+#: ../src/modules/StatusFile.py:106
+msgid "Choose a file"
+msgstr "Изберете файл"
+
+#: ../src/modules/StatusFile.py:116
+msgid ""
+"This module generates a text file with regards to the track currently played."
+msgstr ""
+
+#: ../src/modules/StatusFile.py:117
+msgid "Customizing the File"
+msgstr "Параметри на файла"
+
+#: ../src/modules/StatusFile.py:118
+msgid ""
+"You can change the content of the file to any text you want. Before "
+"generating the file, fields of the form {field} are replaced by their "
+"corresponding value. Available fields are:\n"
+"\n"
+msgstr ""
+
+#: ../src/modules/Twitter.py:27
+msgid "Update the status of your Twitter account"
+msgstr "Обновяване статуса на вашия Twitter профил"
+
+#: ../src/modules/Twitter.py:51
+msgid "your Twitter account"
+msgstr "вашият Twitter профил"
+
+#: ../src/modules/Twitter.py:121
+msgid ""
+"This module posts a message to your Twitter account according to what you "
+"are listening to."
+msgstr ""
+"Този модул публикува съобщение във вашия Twitter профил, съгласно това, "
+"което слушате."
+
+#: ../src/modules/ReplayGain.py:25
+msgid "ReplayGain"
+msgstr ""
+
+#: ../src/modules/ReplayGain.py:25
+msgid "Normalize volume"
+msgstr ""
+
+#: ../res/AudioCD.glade.h:1
+msgid "<b>CDDB</b>"
+msgstr "<b>CDDB</b>"
+
+#: ../res/AudioCD.glade.h:2 ../res/DesktopNotification.glade.h:2
+#: ../res/FileExplorer.glade.h:1
+msgid "<b>Miscellaneous</b>"
+msgstr "<b>Разни</b>"
+
+#: ../res/AudioCD.glade.h:3
+msgid "CD-ROM device:"
+msgstr "CD-ROM устройство:"
+
+#: ../res/AudioCD.glade.h:4
+msgid "Clear cache"
+msgstr "Изчистване на кеша"
+
+#: ../res/AudioCD.glade.h:5
+msgid "Download disc information"
+msgstr "Свали информация за диска"
+
+#: ../res/AudioCD.glade.h:6
+msgid "Download disc information from an online database"
+msgstr "Изтегли информацията за диска от онлайн база данни"
+
+#: ../res/AudioCD.glade.h:7
+msgid "Location of your CD-ROM device"
+msgstr "Местоположение на CD-ROM устройството"
+
+#: ../res/AudioCD.glade.h:8
+msgid "Remove all disc information from your hard drive"
+msgstr "Премахване на цялата информация за диска от хард диска"
+
+#: ../res/AudioCD.glade.h:9
+msgid "Save disc information on your hard drive"
+msgstr "Запазване на информацията за диска на хард диска"
+
+#: ../res/AudioCD.glade.h:10
+msgid "Save information in a local cache"
+msgstr "Запазване на информацията в локалния кеш"
+
+#: ../res/AudioCDMenu.glade.h:1
+msgid "Add to Playlist"
+msgstr "Добавяне към списъка"
+
+#: ../res/AudioCDMenu.glade.h:2
+msgid "Append selection to the playlist"
+msgstr ""
+
+#: ../res/AudioCDMenu.glade.h:3
+msgid "Replace the playlist by the selection and start playback"
+msgstr ""
+
+#: ../res/AudioCDMenu.glade.h:4
+msgid "Rescan the audio disc"
+msgstr "Повторно сканиране на аудио диска"
+
+#: ../res/Authentication.glade.h:2
+msgid "Password:"
+msgstr "Парола:"
+
+#: ../res/Authentication.glade.h:3
+msgid "Remember this password"
+msgstr "Запомняне на паролата"
+
+#: ../res/Authentication.glade.h:4
+msgid "Username:"
+msgstr "Потребителско име:"
+
+#: ../res/Authentication.glade.h:5 ../res/Progress.glade.h:1
+msgid "label"
+msgstr "етикет"
+
+#: ../res/Covers.glade.h:1
+msgid "<b>Internet Covers</b>"
+msgstr "<b>Обложки от интернет</b>"
+
+#: ../res/Covers.glade.h:2
+msgid "<b>User Covers</b>"
+msgstr "<b>Потребителски обложки</b>"
+
+#: ../res/Covers.glade.h:3
+msgid "Always prefer user covers"
+msgstr "Винаги предпочитай потребителските обложки"
+
+#: ../res/Covers.glade.h:4
+msgid "Don't download covers when there is a user one"
+msgstr "Не сваляй обложки когато е налична потребителска"
+
+#: ../res/Covers.glade.h:5
+msgid "Download covers"
+msgstr "Свали обложки"
+
+#: ../res/Covers.glade.h:6
+msgid "Filenames to look for (e.g., folder, cover)"
+msgstr ""
+
+#: ../res/Covers.glade.h:7
+msgid "Filenames:"
+msgstr "Имена на файлове"
+
+#: ../res/Covers.glade.h:8
+msgid "Try to download covers from the Internet"
+msgstr "Опитай изтеглянето на обложките от интернет"
+
+#: ../res/DesktopNotification.glade.h:1
+msgid "<b>Body</b>"
+msgstr ""
+
+#: ../res/DesktopNotification.glade.h:3
+msgid "<b>Title</b>"
+msgstr "<b>Заглавие</b>"
+
+#: ../res/DesktopNotification.glade.h:4
+msgid "Notification timeout:"
+msgstr ""
+
+#: ../res/DesktopNotification.glade.h:5
+msgid "Show a \"skip track\" button"
+msgstr "Покажи бутон \"пропускане на запис\""
+
+#: ../res/DesktopNotification.glade.h:6
+msgid "Time during which the notification is displayed"
+msgstr ""
+
+#: ../res/DesktopNotification.glade.h:7
+msgid "seconds"
+msgstr "секунди"
+
+#: ../res/FileExplorer.glade.h:2
+msgid "<b>Root Folders</b>"
+msgstr ""
+
+#: ../res/FileExplorer.glade.h:3
+msgid "Add a new root folder to the file explorer"
+msgstr ""
+
+#: ../res/FileExplorer.glade.h:4
+msgid "Remove the selected root folders"
+msgstr ""
+
+#: ../res/FileExplorer.glade.h:5 ../res/Library.glade.h:4
+msgid "Rename"
+msgstr "Преименуване"
+
+#: ../res/FileExplorer.glade.h:6
+msgid "Rename the selected root folder"
+msgstr ""
+
+#: ../res/FileExplorer.glade.h:8
+msgid "Whether hidden files should be shown in the file explorer"
+msgstr "Дали скритите файлове да се показват във файловия браузър"
+
+#: ../res/IMStatus.glade.h:1
+msgid "<b>Sanitized Words</b>"
+msgstr "<b>Прочистени думи</b>"
+
+#: ../res/IMStatus.glade.h:2 ../res/Twitter.glade.h:1
+msgid "<b>Status</b>"
+msgstr "<b>Състояние</b>"
+
+#: ../res/IMStatus.glade.h:3
+msgid "<b>When Stopping or Quitting</b>"
+msgstr ""
+
+#: ../res/IMStatus.glade.h:4
+msgid "Do nothing"
+msgstr "Не прави нищо"
+
+#: ../res/IMStatus.glade.h:5 ../res/Twitter.glade.h:2
+msgid "Message:"
+msgstr "Съобщение:"
+
+#: ../res/IMStatus.glade.h:6
+msgid "Set status to:"
+msgstr "Задаване на състоянието:"
+
+#: ../res/IMStatus.glade.h:7
+msgid "Update even if not available"
+msgstr ""
+
+#: ../res/IMStatus.glade.h:8
+msgid "Update when paused"
+msgstr "Обнови при пауза"
+
+#: ../res/IMStatus.glade.h:9
+msgid "Update your status even if you are marked as unavailable"
+msgstr ""
+
+#: ../res/IMStatus.glade.h:10
+msgid "Update your status on pause/unpause events"
+msgstr ""
+
+#: ../res/Library.glade.h:1
+msgid "<b>Libraries</b>"
+msgstr "<b>Библиотеки</b>"
+
+#: ../res/Library.glade.h:2
+msgid "Add a new library"
+msgstr "Добави нова библиотека"
+
+#: ../res/Library.glade.h:3
+msgid "Remove the selected libraries"
+msgstr "Премахни избраните библиотеки"
+
+#: ../res/Library.glade.h:5
+msgid "Rename the selected library"
+msgstr "Преименувай избраните библиотеки"
+
+#: ../res/Library.glade.h:6
+msgid "Update the selected library by rescanning the disk"
+msgstr "Обнови избраната библиотека чрез повторно сканиране на диска"
+
+#: ../res/MainWindow.glade.h:1
+msgid "Clear"
+msgstr "Изчисти"
+
+#: ../res/MainWindow.glade.h:2
+msgid "Clear the playlist"
+msgstr "Изчисти списъка"
+
+#: ../res/MainWindow.glade.h:3
+msgid "Display about dialog box"
+msgstr ""
+
+#: ../res/MainWindow.glade.h:4 ../res/StatusIconMenu.glade.h:1
+msgid "Display preferences"
+msgstr "Покажи настройките"
+
+#: ../res/MainWindow.glade.h:5
+msgid "Elapsed time"
+msgstr "Изтекло време"
+
+#: ../res/MainWindow.glade.h:6
+msgid "Full"
+msgstr ""
+
+#: ../res/MainWindow.glade.h:7
+msgid "Mini"
+msgstr ""
+
+#: ../res/MainWindow.glade.h:8
+msgid "Nano"
+msgstr ""
+
+#: ../res/MainWindow.glade.h:9
+msgid "Online _Help"
+msgstr "Онлайн _помощ"
+
+#: ../res/MainWindow.glade.h:10
+msgid "Open the online help web page"
+msgstr "Отвори страницата в интернет за онлайн помощ"
+
+#: ../res/MainWindow.glade.h:11
+msgid "Play all tracks endlessly"
+msgstr ""
+
+#: ../res/MainWindow.glade.h:13 ../res/StatusIconMenu.glade.h:3
+msgid "Play the next track"
+msgstr "Изпълни следващият запис"
+
+#: ../res/MainWindow.glade.h:14 ../res/StatusIconMenu.glade.h:4
+msgid "Play the previous track"
+msgstr "Изпълни предходният запис"
+
+#: ../res/MainWindow.glade.h:15
+msgid "Playlist"
+msgstr "Списък за изпълнение"
+
+#: ../res/MainWindow.glade.h:16 ../res/StatusIconMenu.glade.h:6
+msgid "Quit the application"
+msgstr "Спиране на програмата"
+
+#: ../res/MainWindow.glade.h:17
+msgid "Remaining time"
+msgstr "Оставащо време"
+
+#: ../res/MainWindow.glade.h:19
+msgid "Seek a position in the current track"
+msgstr "Търси определено място в текущия запис"
+
+#: ../res/MainWindow.glade.h:20
+msgid "Select an explorer"
+msgstr "Избери файлов браузър"
+
+#: ../res/MainWindow.glade.h:21
+msgid "Shuffle"
+msgstr "Разбъркано"
+
+#: ../res/MainWindow.glade.h:22
+msgid "Shuffle the playlist"
+msgstr "Разбъркай списъка"
+
+#: ../res/MainWindow.glade.h:23 ../res/StatusIconMenu.glade.h:7
+msgid "Stop the current track"
+msgstr "Спри текушият запис"
+
+#: ../res/MainWindow.glade.h:24
+msgid "_Edit"
+msgstr "_Редактиране"
+
+#: ../res/MainWindow.glade.h:25
+msgid "_File"
+msgstr "_Файл"
+
+#: ../res/MainWindow.glade.h:26
+msgid "_Help"
+msgstr "_Помощ"
+
+#: ../res/MainWindow.glade.h:27
+msgid "_Mode"
+msgstr "_Режим"
+
+#: ../res/SelectPath.glade.h:1
+msgid "Name:"
+msgstr "Име:"
+
+#: ../res/SelectPath.glade.h:2
+msgid "Path:"
+msgstr "Път:"
+
+#: ../res/StatusFile.glade.h:1
+msgid "<b>File</b>"
+msgstr "<b>Файл</b>"
+
+#: ../res/StatusFile.glade.h:2
+msgid "<b>Playing Status</b>"
+msgstr ""
+
+#: ../res/StatusIconMenu.glade.h:5
+msgid "Play/Unpause"
+msgstr "Пусни/Премахни паузата"

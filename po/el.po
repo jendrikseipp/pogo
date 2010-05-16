@@ -1,0 +1,1181 @@
+# Greek translation for decibel-audio-player
+# Copyright (c) 2008 Rosetta Contributors and Canonical Ltd 2008
+# This file is distributed under the same license as the decibel-audio-player package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2008.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: decibel-audio-player\n"
+"Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
+"POT-Creation-Date: 2009-08-23 09:18+0200\n"
+"PO-Revision-Date: 2008-12-22 20:21+0000\n"
+"Last-Translator: koleoptero <Unknown>\n"
+"Language-Team: Greek <el@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Launchpad-Export-Date: 2009-09-01 15:20+0000\n"
+"X-Generator: Launchpad (build Unknown)\n"
+
+#: ../src/media/track/__init__.py:46
+msgid "Track number"
+msgstr "Αριθμός κομματιού"
+
+#: ../src/media/track/__init__.py:47 ../src/modules/Tracklist.py:102
+#: ../src/modules/Tracklist.py:418
+msgid "Title"
+msgstr "Τίτλος"
+
+#: ../src/media/track/__init__.py:48 ../src/modules/Tracklist.py:103
+#: ../src/modules/Tracklist.py:419
+msgid "Artist"
+msgstr "Καλλιτέχνης"
+
+#: ../src/media/track/__init__.py:49 ../src/modules/Tracklist.py:104
+#: ../src/modules/Tracklist.py:420
+msgid "Album"
+msgstr "Άλμπουμ"
+
+#: ../src/media/track/__init__.py:50 ../src/modules/Tracklist.py:106
+#: ../src/modules/Tracklist.py:422
+msgid "Genre"
+msgstr "Είδος"
+
+#: ../src/media/track/__init__.py:51 ../src/modules/Tracklist.py:107
+#: ../src/modules/Tracklist.py:423
+msgid "Date"
+msgstr "Ημερομηνία"
+
+#: ../src/media/track/__init__.py:52
+msgid "Disc number"
+msgstr "Αριθμος Δίσκου"
+
+#: ../src/media/track/__init__.py:53
+msgid "Duration in seconds (e.g., 194)"
+msgstr "Διάρκεια σε δευτερόλεπτα (π.χ. 194)"
+
+#: ../src/media/track/__init__.py:54
+msgid "Duration as a string (e.g., 3:14)"
+msgstr "Διάρκεια"
+
+#: ../src/media/track/__init__.py:55
+msgid "Position of the track in the playlist"
+msgstr "Θέση κομματιού στην λίστα"
+
+#: ../src/media/track/__init__.py:56
+msgid "Number of tracks in the playlist"
+msgstr "Αριθμός κομματιών στη λίστα"
+
+#: ../src/media/track/__init__.py:57
+msgid "Full path to the file"
+msgstr "Πλήρης διαδρομή προς το αρχείο"
+
+#: ../src/media/track/__init__.py:147
+#, python-format
+msgid "%(album)s  [Disc %(discnum)u]"
+msgstr "%(album)s [Δίσκος %(discnum)u]"
+
+#: ../src/tools/consts.py:95
+msgid "Unknown Genre"
+msgstr "Άγνωστο είδος"
+
+#: ../src/tools/consts.py:96
+msgid "Unknown Title"
+msgstr "Άγνωστος Τίτλος"
+
+#: ../src/tools/consts.py:97
+msgid "Unknown Album"
+msgstr "Άγνωστο άλμπουμ"
+
+#: ../src/tools/consts.py:98
+msgid "Unknown Artist"
+msgstr "Άγνωστος καλλιτέχνης"
+
+#: ../src/tools/consts.py:103
+msgid "Unknown Album Artist"
+msgstr "Άγνωστος Καλλιτέχνης Δίσκου"
+
+#: ../src/gui/about.py:39
+msgid "translator-credits"
+msgstr ""
+"Launchpad Contributions:\n"
+"  koleoptero https://launchpad.net/~vaggus"
+
+#: ../src/gui/about.py:43
+msgid "Developer:"
+msgstr "Δημιουργός:"
+
+#: ../src/gui/about.py:46
+msgid "Thanks to:"
+msgstr "Ευχαριστίες σε:"
+
+#: ../src/gui/authentication.py:131
+#, python-format
+msgid ""
+"Enter your username and password for\n"
+"%(reason)s"
+msgstr ""
+"Εισάγετε το όνομα χρήστη και κωδικό για το\n"
+"%(reason)s"
+
+#: ../src/gui/authentication.py:133 ../res/Authentication.glade.h:1
+msgid "Password required"
+msgstr "Απαιτείται κωδικός"
+
+#: ../src/gui/authentication.py:170
+msgid "About password storage safety"
+msgstr "Σχετικά με την ασφάλεια αποθήκευσης κωδικών"
+
+#: ../src/gui/authentication.py:171
+msgid ""
+"If you use Gnome, it is safe to store your password since the Gnome keyring "
+"is used."
+msgstr ""
+"Αν χρησιμοποιείτε το Gnome, είναι ασφαλές να αποθηκεύσετε τον κωδικό σας "
+"εφόσον χρησιμοποιείται το σύστημα διαχείρισης κωδικών του Gnome."
+
+#: ../src/gui/authentication.py:172
+msgid ""
+"If you do not use Gnome, beware that, although not stored as clear text, an "
+"attacker <i>could</i> retrieve it."
+msgstr ""
+"Αν δεν χρησιμοποιείτε το Gnome, έχετε υπ' όψιν σας ότι παρόλο που δεν "
+"αποθηκεύεται σαν απλό κείμενο, κάποιος <i>μπορεί</i> να τον ανακτήσει."
+
+#: ../src/gui/preferences.py:39
+msgid "Preferences"
+msgstr "Προτιμήσεις"
+
+#: ../src/gui/preferences.py:102
+msgid "Unable to load this module."
+msgstr "Το πρόσθετο δεν μπόρεσε να φορτωθεί."
+
+#: ../src/gui/preferences.py:109
+msgid "Modules"
+msgstr "Πρόσθετα"
+
+#: ../src/gui/preferences.py:110 ../src/modules/IMStatus.py:341
+#: ../src/modules/DesktopNotification.py:166
+#: ../src/modules/FileExplorer.py:562 ../src/modules/Library.py:706
+#: ../src/modules/AudioCD.py:374 ../src/modules/Covers.py:429
+#: ../src/modules/StatusFile.py:115 ../src/modules/Twitter.py:120
+msgid "Description"
+msgstr "Περιγραφή"
+
+#: ../src/gui/preferences.py:111
+msgid ""
+"This dialog box shows the list of available modules, which are small pieces "
+"of code that add some functionnalities to the application. You can "
+"enable/disable a module by checking/unchecking the check box in front of it. "
+"Note that some modules (e.g., the File Explorer) cannot be disabled."
+msgstr ""
+"Αυτό το παράθυρο διαλόγου δείχνει τη λίστα με τα διαθέσιμα πρόσθετα, τα "
+"οποία είναι μικρά κομμάτια κώδικα που προσφέρουν κάποιες πρόσθετες "
+"λειτουργίες στην εφαρμογή. Μπορείτε να ενεργοποιήσετε/απενεργοποιήσετε ένα "
+"πρόσθετο, χρησιμοποιώντας το κουτάκι που βρίσκεται μπροστά του. Έχετε υπόψιν "
+"σας ότι μερικά πρόσθετα (π.χ. το Εξερευνητής Αρχείων) δεν μπορούν να "
+"απενεργοποιηθούν."
+
+#: ../src/gui/preferences.py:114
+msgid "Configuring a Module"
+msgstr "Ρυθμίζοντας ένα πρόσθετο"
+
+#: ../src/gui/preferences.py:115
+msgid ""
+"When a module may be configured, a specific icon is displayed on the right "
+"of the corresponding line. To configure a module, simply select it and then "
+"click on the \"Preferences\" button on the bottom of the dialog box. Note "
+"that configuring a module is only possible when it is enabled."
+msgstr ""
+"Όταν ένα πρόσθετο μπορεί να ρυθμιστεί, υπάρχει ένα είκονίδιο στα δεξιά της "
+"αντίστοιχης γραμμής. Για να ρυθμίσετε το πρόσθετο, απλά επιλέξτε το και μετά "
+"κάντε κλικ στο κουμπί \"Προτιμήσεις\" που βρίσκεται στο κάτω μέρος του "
+"παραθύρου. Έχετε υπ' όψιν σας ότι ένα πρόσθετο μπορεί να ρυθμιστεί μόνο όταν "
+"είναι ενεργοποιημένο."
+
+#: ../src/gui/selectPath.py:79
+msgid "Choose a folder"
+msgstr "Επιλογή φακέλου"
+
+#: ../src/gui/selectPath.py:96
+msgid "This path does not exist"
+msgstr "Η διαδρομή αυτή δεν υπάρχει"
+
+#: ../src/gui/selectPath.py:96
+msgid "Please select an existing directory."
+msgstr "Παρακαλώ επιλέξτε ένα ήδη υπάρχον φάκελο"
+
+#: ../src/gui/selectPath.py:99 ../src/gui/selectPath.py:104
+msgid "The name is incorrect"
+msgstr "Το όνομα είναι λάθος"
+
+#: ../src/gui/selectPath.py:99
+msgid ""
+"This name is not allowed.\n"
+"Please use another one."
+msgstr ""
+"Το όνομα αυτό δεν επιτρέπεται.\n"
+"Παρακαλώ επιλέξτε κάποιο άλλο."
+
+#: ../src/gui/selectPath.py:104
+#, python-format
+msgid ""
+"The character %s is not allowed.\n"
+"Please use another name."
+msgstr ""
+"Ο χαρακτήρας %s δεν επιτρέπεται.\n"
+"Παρακαλώ χρησιμοποιήστε ένα άλλο όνομα."
+
+#: ../src/modules/IMStatus.py:25
+msgid "Instant Messenger Status"
+msgstr "Προσωπικό μήνυμα προγράμματος άμεσων μηνυμάτων."
+
+#: ../src/modules/IMStatus.py:25
+msgid "Update the status message of your IM client"
+msgstr ""
+"Ενημερώστε το προσωπικό μήνυμα του προγράμματος άμεσων μηνυμάτων σας."
+
+#: ../src/modules/IMStatus.py:39
+msgid "Decibel is stopped"
+msgstr "Το Decibel είναι σταματημένο"
+
+#: ../src/modules/IMStatus.py:261 ../src/modules/IMStatus.py:334
+#, python-format
+msgid "%(status)s [paused]"
+msgstr "%(status)s [παύση]"
+
+#: ../src/modules/IMStatus.py:342
+msgid ""
+"This module detects any running instant messenger and updates your status "
+"with regards to the track you are listening to. Supported messengers are:"
+msgstr ""
+"Το πρόσθετο αυτό εντοπίζει αν χρησιμοποιείτε κάποιο πρόγραμμα άμεσων "
+"μηνυμάτων και ενημερώνει το προσωπικό σας μήνυμα με βάση τα στοιχεία του "
+"κομματιού που ακούτε. Υποστηριζόμενα προγράμματα είναι τα:"
+
+#: ../src/modules/IMStatus.py:345 ../src/modules/Twitter.py:123
+msgid "Customizing the Status"
+msgstr "Προσαρμόζοντας την κατάσταση λειτουργίας"
+
+#: ../src/modules/IMStatus.py:346 ../src/modules/Twitter.py:124
+msgid ""
+"You can set the status to any text you want. Before setting it, the module "
+"replaces all fields of the form {field} by their corresponding value. "
+"Available fields are:"
+msgstr ""
+"Μπορείτε να ορίσετε την κατάσταση λειτουργίας με ότι κείμενο θέλετε. Πριν "
+"την καθορίσει, το πρόσθετο αντικαθιστά όλα τα πεδία της φόρμας {πεδίο} με "
+"την αντίστοιχη τιμή. Διαθέσιμα πεδία είναι τα:"
+
+#: ../src/modules/IMStatus.py:349 ../src/modules/DesktopNotification.py:172
+msgid "Markup"
+msgstr "Προσημείωση"
+
+#: ../src/modules/IMStatus.py:350 ../src/modules/DesktopNotification.py:173
+msgid ""
+"You can use the Pango markup language to format the text. More information "
+"on that language is available on the following web page:"
+msgstr ""
+"Μπορείτε να χρησιμοποιήσετε την γλώσσα προσημειώσεων Pango για να "
+"διαμορφώσετε το κείμενο. Περισσότερες πληροφορίες για την γλώσσα αυτή "
+"μπορείτε να βρείτε στην ιστοσελίδα:"
+
+#: ../src/modules/IMStatus.py:353
+msgid "Sanitization"
+msgstr "Λογοκρισία"
+
+#: ../src/modules/IMStatus.py:354
+msgid ""
+"You can define some words that to sanitize before using them to set your "
+"status. In this case, the middle characters of matching words is "
+"automatically replaced with asterisks (e.g., \"Metallica - Live S**t Binge & "
+"Purge\"). Put one word per line."
+msgstr ""
+"Μπορείτε να καθορίσετε κάποιοες λέξεις που θέλετε να μην εμφανίζονται στο "
+"προσωπικό μήνυμα όπως είναι. Σε αυτή την περίπτωση, οι ενδιάμεσοι χαρακτήρες "
+"των λέξεων αυτών θα αντικαθιστούνται με αστεράκια (π.χ. \"Metallica - Live "
+"S**t Binge & Purge\"). Τοποθετήστε μόνο μία λέξη ανά γραμμή."
+
+#: ../src/modules/AudioScrobbler.py:28
+msgid "Keep your Last.fm profile up to date"
+msgstr "Κρατήστε το προφίλ σας στο Last.fm ενημερωμένο"
+
+#: ../src/modules/AudioScrobbler.py:142 ../src/modules/AudioScrobbler.py:143
+msgid "your Last.fm account"
+msgstr "Ο λογαριασμός σας στο Last.fm"
+
+#: ../src/modules/StatusbarTitlebar.py:52
+#, python-format
+msgid "One track in playlist  [%(length)s]"
+msgid_plural "%(count)u tracks in playlist  [%(length)s]"
+msgstr[0] "Ένα κομμάτι στην λίστα [%(length)s]"
+msgstr[1] "%(count)u κομμάτια στην λίστα [%(length)s]"
+
+#: ../src/modules/StatusbarTitlebar.py:72
+msgid "[paused]"
+msgstr "[παύση]"
+
+#: ../src/modules/__init__.py:75
+msgid "The following Python modules are not available:"
+msgstr "Τα παρακάτω πρόσθετα της Python δεν είναι διαθέσιμα:"
+
+#: ../src/modules/__init__.py:79
+msgid "You must install them if you want to enable this module."
+msgstr ""
+"Πρέπει να τα εγκαταστήσετε αν θέλετε να ενεργοποιήσετε αυτό το πρόσθετο."
+
+#: ../src/modules/DesktopNotification.py:26
+msgid "Desktop Notification"
+msgstr "Ειδοποίηση επιφάνειας εργασίας"
+
+#: ../src/modules/DesktopNotification.py:26
+msgid "Display a desktop notification on track change"
+msgstr ""
+"Εμφανίζει μια είδοποίηση στην επιφάνεια εργασίας όταν αλλάζει το κομμάτι."
+
+#: ../src/modules/DesktopNotification.py:82
+#: ../src/modules/DesktopNotification.py:144
+msgid "Skip track"
+msgstr "Επόμενο κομμάτι"
+
+#: ../src/modules/DesktopNotification.py:167
+msgid ""
+"This module displays a small popup window on your desktop when a new track "
+"starts."
+msgstr ""
+"Αυτό το πρόσθετο εμφανίζει ένα μικρό αναδυόμενο παράθυρο στην επιφάνεια "
+"εργασίας όταν ξεκινάει ένα νέο κομμάτι."
+
+#: ../src/modules/DesktopNotification.py:168
+msgid "Customizing the Notification"
+msgstr "Προσαρμόζοντας τις ειδοποιήσεις"
+
+#: ../src/modules/DesktopNotification.py:169
+msgid ""
+"You can change the title and the body of the notification to any text you "
+"want. Before displaying the popup window, fields of the form {field} are "
+"replaced by their corresponding value. Available fields are:\n"
+"\n"
+msgstr ""
+"Μπορείτε να αλλάξετε τον τίτλο και το περιεχόμενο της είδοποίησης όπως σας "
+"βολεύει. Πρίν εμφανιστεί το αναδυόμενο παράθυρο πεδία της μορφής {πεδίο} "
+"αντικαθίστανται με την αντίστοιχη τιμή. Διαθέσιμα πεδία είναι τα:\n"
+"\n"
+
+#: ../src/modules/CtrlPanel.py:78 ../src/modules/CtrlPanel.py:136
+#: ../res/StatusIconMenu.glade.h:2
+msgid "Pause the current track"
+msgstr "Παύση"
+
+#: ../src/modules/CtrlPanel.py:95 ../res/MainWindow.glade.h:12
+msgid "Play the first track of the playlist"
+msgstr "Παίξε το πρώτο αρχείο στη λίστα"
+
+#: ../src/modules/CtrlPanel.py:130
+msgid "Continue playing the current track"
+msgstr "Συνέχεια"
+
+#: ../src/modules/Explorer.py:68
+msgid ""
+"Please select an explorer\n"
+"in the combo box below."
+msgstr ""
+"Παρακαλώ επιλέξτε έναν εξερευνητή\n"
+"στο κουτάκι από κάτω."
+
+#: ../src/modules/Tracklist.py:105 ../src/modules/Tracklist.py:421
+msgid "Length"
+msgstr "Διάρκεια"
+
+#: ../src/modules/Tracklist.py:108
+msgid "Path"
+msgstr ""
+
+#: ../src/modules/Tracklist.py:258
+msgid "Save playlist"
+msgstr "Αποθήκευση λίστας αναπαραγωγής"
+
+#: ../src/modules/Tracklist.py:300
+msgid "Crop"
+msgstr "Αποκοπή μή επιλεγμένων"
+
+#: ../src/modules/Tracklist.py:315
+msgid "Shuffle Playlist"
+msgstr ""
+
+#: ../src/modules/Tracklist.py:322
+msgid "Revert Playlist"
+msgstr ""
+
+#: ../src/modules/Tracklist.py:329
+msgid "Clear Playlist"
+msgstr ""
+
+#: ../src/modules/Tracklist.py:338 ../res/MainWindow.glade.h:18
+msgid "Repeat"
+msgstr "Επανάληψη"
+
+#: ../src/modules/Tracklist.py:346
+msgid "Save Playlist As..."
+msgstr "Αποθήκευση Λίστας Αναπαραγωγής Ώς..."
+
+#: ../src/modules/FileExplorer.py:28
+msgid "File Explorer"
+msgstr "Εξερευνητής αρχείων"
+
+#: ../src/modules/FileExplorer.py:28
+msgid "Browse your file system"
+msgstr "Πλοηγηθείτε στο σύστημα αρχείων σας"
+
+#: ../src/modules/FileExplorer.py:32
+msgid "Home"
+msgstr "Αρχικός κατάλογος"
+
+#: ../src/modules/FileExplorer.py:32
+msgid "Root"
+msgstr ""
+
+#: ../src/modules/FileExplorer.py:180
+msgid "loading..."
+msgstr "φόρτωση..."
+
+#: ../src/modules/FileExplorer.py:336 ../src/modules/Library.py:405
+msgid "Collapse all"
+msgstr ""
+
+#: ../src/modules/FileExplorer.py:349 ../res/FileExplorer.glade.h:7
+msgid "Show hidden files"
+msgstr "Εμφάνιση κρυφών αρχείων"
+
+#: ../src/modules/FileExplorer.py:503
+msgid ""
+"You will be able to add this root folder again later on if you wish so."
+msgstr ""
+"Θα έχετε τη δυνατότητα να προσθέσετε αυτόν τον αρχικό κατάλογο αργότερα αν "
+"επιθυμείτε."
+
+#: ../src/modules/FileExplorer.py:504
+msgid "Remove the selected entry?"
+msgstr "Να αφαιρεθεί το επιλεγμένο στοιχείο;"
+
+#: ../src/modules/FileExplorer.py:506
+msgid ""
+"You will be able to add these root folders again later on if you wish so."
+msgstr ""
+"Θα μπορέσετε να προσθεσετε αυτούς τους αρχικούς φακέλους ξανά αργότερα αν "
+"θελήσετε."
+
+#: ../src/modules/FileExplorer.py:507
+msgid "Remove all selected entries?"
+msgstr "Να αφαιρεθούν όλα τα επιλεγμένα στοιχεία;"
+
+#: ../src/modules/FileExplorer.py:509
+msgid "Your media files will not be deleted."
+msgstr "Τα μουσικά αρχεία σας δεν θα σβηστούν."
+
+#: ../src/modules/FileExplorer.py:563
+msgid "This module allows you to browse the files on your drives."
+msgstr ""
+"Αυτό το πρόσθετο σας επιτρέπει να πλοηγείστε στα αρχεία τών δίσκων σας."
+
+#: ../src/modules/FileExplorer.py:564 ../src/modules/Library.py:709
+msgid "Usage"
+msgstr "Χρήση"
+
+#: ../src/modules/FileExplorer.py:565
+msgid ""
+"At least one root folder must be added to browse your files. This folder "
+"then becomes the root of the file explorer tree in the main window."
+msgstr ""
+"Τουλάχιστον ένας αρχικός φάκελος πρέπει να καθοριστεί ώστε να πλοηγηθείτε "
+"στα αρχεία σας. Αυτός ο φάκελος τότε γίνεται ο αρχικός του δέντρου πλοήγησης "
+"φακέλων στο κυρίως παράθυρο."
+
+#: ../src/modules/Library.py:30
+msgid "Library"
+msgstr "Βιβλιοθήκη"
+
+#: ../src/modules/Library.py:30
+msgid "Organize your music by tags instead of files"
+msgstr ""
+"Οργανώστε τη μουσική σας με βάση τα στοιχεία των κομματιών αντί για τα αρχεία"
+
+#: ../src/modules/Library.py:167
+msgid "Creating library"
+msgstr "Δημιουργία βιβλιοθήκης"
+
+#: ../src/modules/Library.py:168
+msgid "Refreshing library"
+msgstr "Ανανέωση βιβλιοθήκης"
+
+#: ../src/modules/Library.py:170
+msgid ""
+"The directory is scanned for media files. This can take some time.\n"
+"Please wait."
+msgstr ""
+"Ανίχνευση καταλόγου για μουσικά αρχεία. Αυτό μπορεί να πάρει λίγη ώρα.\n"
+"Παρακαλώ περιμένετε."
+
+#: ../src/modules/Library.py:221
+#, python-format
+msgid "Scanning directories (one track found)"
+msgid_plural "Scanning directories (%(nbtracks)u tracks found)"
+msgstr[0] "Σάρωση φακέλων (βρέθηκε ένα κομμάτι)"
+msgstr[1] "Σάρωση φακέλων (βρέθηκαν %(nbtracks)u κομμάτια)"
+
+#: ../src/modules/Library.py:232
+msgid "Creating library..."
+msgstr "Δημιουργία βιβλιοθήκης..."
+
+#: ../src/modules/Library.py:233
+msgid "Refreshing library..."
+msgstr "Ανανέωση βιβλιοθήκης..."
+
+#: ../src/modules/Library.py:417
+msgid "Randomness"
+msgstr ""
+
+#: ../src/modules/Library.py:424
+#, python-format
+msgid "Pick an album of %(artist)s"
+msgstr ""
+
+#: ../src/modules/Library.py:429
+msgid "Pick an album in the library"
+msgstr ""
+
+#: ../src/modules/Library.py:446
+msgid "This library is deprecated, please refresh it."
+msgstr "Η βιβλιοθήκη είναι"
+
+#: ../src/modules/Library.py:663
+msgid "tracks"
+msgstr "κομμάτια"
+
+#: ../src/modules/Library.py:671
+msgid "You will be able to recreate this library later on if you wish so."
+msgstr ""
+"Θα μπορέσετε να επαναδημιουργήσετε την βιβλιοθήκη αυτή αργότερα αν το "
+"επιθυμήσετε."
+
+#: ../src/modules/Library.py:672
+msgid "Remove the selected library?"
+msgstr "Να αφαιρεθεί η επιλεγμένη βιβλιοθήκη;"
+
+#: ../src/modules/Library.py:674
+msgid "You will be able to recreate these libraries later on if you wish so."
+msgstr ""
+"θα μπορέσετε να επαναδημιουργήσετε τις βιβλιοθήκες αυτές αργότερα αν το "
+"επιθυμήσετε."
+
+#: ../src/modules/Library.py:675
+msgid "Remove all selected libraries?"
+msgstr "Να αφαιρεθούν όλες οι επιλεγμένες βιβλιοθήκες;"
+
+#: ../src/modules/Library.py:677
+msgid "Your media files will not be removed."
+msgstr "Τα μουσικά σας αρχεία δεν θα σβηστούν."
+
+#: ../src/modules/Library.py:707
+msgid ""
+"This module organizes your media files by tags instead of using the file "
+"structure of your drive. Loading tracks is also faster because their tags "
+"are already known and do not have to be read again."
+msgstr ""
+"Το πρόσθετο αυτό οργανώνει τα μουσικά αρχεία σας με βάση τα στοιχεία τους "
+"αντί για τη δομή των αρχείων στον δίσκο σας. Η φόρτωση των αρχείων είναι "
+"επίσης γρηγορότερη γιατι τα στοιχεία τους είναι ήδη γνωστά και δεν "
+"χρειάζεται να ανιχνευτούν ξανά."
+
+#: ../src/modules/Library.py:710
+msgid ""
+"When you add a new library, you have to give the full path to the root "
+"directory of that library. Then, all directories under this root path are "
+"recursively scanned for media files whose tags are read and stored in a "
+"database."
+msgstr ""
+"Όταν προσθέτετε μια νέα βιβλιοθήκη, πρέπει να δώσετε την πλήρη διαδρομή προς "
+"τον κεντρικό φάκελο αυτής της βιβλιοθήκης. Τότε, όλοι οι φάκελοι που "
+"βρίσκονται μέσα σε αυτόν ανιχνεύονται για μουσικά αρχεία των οποίων τα "
+"στοιχεία διαβάζονται και αποθηκεύονται σε μια βάση δεδομένων."
+
+#: ../src/modules/Library.py:712
+msgid ""
+"Upon refreshing a library, the file structure under the root directory and "
+"all media files are scanned for changes, to update the database accordingly."
+msgstr ""
+"Όταν ανανεώνετε μια βιβλιοθήκη, οι υποφάκελοι και τα αρχεία που βρίσκονται "
+"μέσα στον κεντρικό φάκελο της βιβλιοθήκης ανιχνεύονται για αλλαγές, και η "
+"βάση δεδομένων ενημερώνεται ανάλογα."
+
+#: ../src/modules/StatusIcon.py:24
+msgid "Status Icon"
+msgstr "Εικονίδιο κατάστασης"
+
+#: ../src/modules/StatusIcon.py:24
+msgid "Add an icon to the notification area"
+msgstr "Προσθέστε ένα εικονίδιο στην περιοχή ειδοποιήσεων"
+
+#: ../src/modules/StatusIcon.py:113
+#, python-format
+msgid "%(tooltip)s [paused]"
+msgstr "%(tooltip)s [Παύση]"
+
+#: ../src/modules/Equalizer.py:24
+msgid "Equalizer"
+msgstr ""
+
+#: ../src/modules/Equalizer.py:24
+msgid "Tune the level of the frequency bands"
+msgstr ""
+
+#: ../src/modules/Equalizer.py:60 ../src/modules/Equalizer.py:62
+#: ../src/modules/ReplayGain.py:44
+msgid "Restart required"
+msgstr ""
+
+#: ../src/modules/Equalizer.py:60 ../src/modules/Equalizer.py:62
+#: ../src/modules/ReplayGain.py:44
+msgid ""
+"You must restart the application for this modification to take effect."
+msgstr ""
+
+#: ../src/modules/Equalizer.py:95
+msgid "Save levels"
+msgstr ""
+
+#: ../src/modules/Equalizer.py:106
+msgid "Load levels"
+msgstr ""
+
+#: ../src/modules/Equalizer.py:132
+msgid "Could not load the file"
+msgstr ""
+
+#: ../src/modules/Equalizer.py:132
+msgid "The format of the file is incorrect."
+msgstr ""
+
+#: ../src/modules/AudioCD.py:27
+msgid "Audio CD"
+msgstr "CD Ήχου"
+
+#: ../src/modules/AudioCD.py:27
+msgid "Play audio discs"
+msgstr "Αναπαραγωγή δίσκων ήχου"
+
+#: ../src/modules/AudioCD.py:149
+msgid "downloading data..."
+msgstr "κατέβασμα δεδομένων..."
+
+#: ../src/modules/AudioCD.py:153
+#, python-format
+msgid "Track %02u"
+msgstr "Κομμάτι %02u"
+
+#: ../src/modules/AudioCD.py:238
+msgid "No disc found"
+msgstr "Δεν βρέθηκε δίσκος"
+
+#: ../src/modules/AudioCD.py:346
+msgid "This will remove all disc information stored on your hard drive."
+msgstr ""
+"Αυτό θα σβήσει όλες τις πληροφορίες για δίσκους που είναι αποθηκευμένες στον "
+"σκληρό δίσκο."
+
+#: ../src/modules/AudioCD.py:347
+msgid "Clear CDDB cache?"
+msgstr "Καθαρισμός βάσης CDDB;"
+
+#: ../src/modules/AudioCD.py:360 ../src/modules/StatusFile.py:93
+msgid "Invalid path"
+msgstr "Μη έγκυρη διαδρομή"
+
+#: ../src/modules/AudioCD.py:361
+msgid ""
+"The path to the CD-ROM device is not valid. Please choose an existing path."
+msgstr ""
+"Η διαδρομή προς τη συσκευή CD-ROM δεν έιναι έγκυρη. Παρακαλώ επιλέξτε μια "
+"ήδη υπάρχουσα."
+
+#: ../src/modules/AudioCD.py:375
+msgid "This module lets you play audio discs from your CD-ROM device."
+msgstr ""
+"Αυτό το πρόσθετο σας επιτρέπει να αναπαράγετε δίσκους ήχου από τον οδηγό CD."
+
+#: ../src/modules/AudioCD.py:376
+msgid "Compact Disc Data Base (CDDB)"
+msgstr "Βάση δεδομένων στοιχείων δίσκων (CDDB)"
+
+#: ../src/modules/AudioCD.py:377
+msgid ""
+"Disc information, such as artist and album title, may be automatically "
+"downloaded from an online database if you wish so. This information may also "
+"be saved on your hard drive to avoid downloading it again the next time you "
+"play the same disc."
+msgstr ""
+"Πληροφορίες για τους δίσκους, όπως καλλιτέχνης και τίτλος δίσκου, μπορούν να "
+"κατεβαίνουν αυτόματα απο μία βάση δεδομένων στο διαδίκτυο αν θέλετε. Οι "
+"πληροφορίες αυτές μπορούν επίσης να αποθηκεύονται στον σκληρό δίσκο για να "
+"αποφευχθεί η ανάγκη να κατέβουν ξανά την επόμενη φορά που θα παίξετε τον "
+"ίδιο δίσκο."
+
+#: ../src/modules/TrackPanel.py:120
+#, python-format
+msgid ""
+"by %(artist)s\n"
+"from %(album)s"
+msgstr ""
+"των/του/της %(artist)s\n"
+"από το %(album)s"
+
+#: ../src/modules/Covers.py:27
+msgid "Covers"
+msgstr "Εξώφυλλα"
+
+#: ../src/modules/Covers.py:27
+msgid "Show album covers"
+msgstr "Εμφάνιση Εξώφυλλων Δίσκων"
+
+#: ../src/modules/Covers.py:430
+msgid ""
+"This module displays the cover of the album the current track comes from. "
+"Covers may be loaded from local pictures, located in the same directory as "
+"the current track, or may be downloaded from the Internet."
+msgstr ""
+"Αυτό το πρόσθετο εμφανίζει το εξώφυλλο του άλμπουμ στο οποίο περιέχετε το "
+"τρέχον κομμάτι. Τα εξώφυλλα μπορούν να εμφανίζονται από τοπικά αρχεία που "
+"βρίσκονται στον ίδιο φάκελο με το τρέχον κομμάτι, ή να φορτώνονται από το "
+"διαδίκτυο."
+
+#: ../src/modules/Covers.py:433
+msgid "User Covers"
+msgstr "Εξώφυλλα χρηστών"
+
+#: ../src/modules/Covers.py:434
+#, python-format
+msgid ""
+"A user cover is a picture located in the same directory as the current "
+"track. When specifying filenames, you do not need to provide file "
+"extensions, supported file formats (%s) are automatically used."
+msgstr ""
+"Ένα εξώφυλλο χρήστη είναι μιά εικόνα που περιέχεται στον ίδιο φάκελο με το "
+"τρέχον κομμάτι. Όταν καθορίζετε τα ονόματα τών αρχείων δεν χρειάζετε να "
+"παρέχετε και τις επεκτάσεις τους. Οι τύποι αρχείων που υποστηρίζονται (%s) "
+"θα χρησιμοποιούνται αυτόματα."
+
+#: ../src/modules/Covers.py:437
+msgid "Internet Covers"
+msgstr "Εξώφυλλα από το διαδίκτυο"
+
+#: ../src/modules/Covers.py:438
+msgid ""
+"Covers may be downloaded from the Internet, based on the tags of the current "
+"track. You can ask to always prefer user covers to Internet ones. In this "
+"case, if a user cover exists for the current track, it is used. If there is "
+"none, the cover is downloaded."
+msgstr ""
+"Τα εξώφυλλα μπορούν να κατέβουν από το διαδίκτυο, με βάση τα στοιχέια του "
+"τρέχοντος κομματιού. Μπορείτε να δηλώσετε προτίμηση για εξώφυλλα χρήση "
+"έναντι εξώφυλλων διαδικτύου. Σε αυτή την περίπτωση, αν υπάρχει εξώφυλλο "
+"χρήστη για το τρέχον κομμάτι, θα χρησιμοποιηθεί. Άν όχι, θα χρησιμοποιηθεί "
+"εξώφυλλο από το διαδίκτυο."
+
+#: ../src/modules/StatusFile.py:25
+msgid "Status File"
+msgstr "Αρχείο κατάστασης"
+
+#: ../src/modules/StatusFile.py:25
+msgid "Generate a text file with the current status"
+msgstr "Δημιουργεί ένα αρχείο με την τρέχουσα κατάσταση"
+
+#: ../src/modules/StatusFile.py:93
+msgid ""
+"The path to the selected file is not valid. Please choose an existing path."
+msgstr ""
+"Η διαδρομή προς το συγκεκριμένο αρχείο δεν είναι έγκυρη. Παρακαλώ επιλέξτε "
+"μία υπάρχουσα διαδρομη."
+
+#: ../src/modules/StatusFile.py:106
+msgid "Choose a file"
+msgstr "Επιλέξτε ένα αρχείο"
+
+#: ../src/modules/StatusFile.py:116
+msgid ""
+"This module generates a text file with regards to the track currently played."
+msgstr ""
+"Αυτό το πρόσθετο δημιουργεί ένα αρχείο με βάση το αρχείο που αναπαράγεται "
+"αυτή τη στιγμή."
+
+#: ../src/modules/StatusFile.py:117
+msgid "Customizing the File"
+msgstr "Προσαρμόζοντας το Αρχείο"
+
+#: ../src/modules/StatusFile.py:118
+msgid ""
+"You can change the content of the file to any text you want. Before "
+"generating the file, fields of the form {field} are replaced by their "
+"corresponding value. Available fields are:\n"
+"\n"
+msgstr ""
+"Μπορείτε να αλλάξετε το περιεχόμενο του αρχείου όπως θέλετε. Πρίν "
+"δημιουργηθέι το αρχείο, πεδία της μορφής {πεδίο} αντικαθίστανται με την "
+"αντίστοιχη τιμή. Διαθέσιμα πεδία είναι τα:\n"
+"\n"
+
+#: ../src/modules/Twitter.py:27
+msgid "Update the status of your Twitter account"
+msgstr ""
+
+#: ../src/modules/Twitter.py:51
+msgid "your Twitter account"
+msgstr ""
+
+#: ../src/modules/Twitter.py:121
+msgid ""
+"This module posts a message to your Twitter account according to what you "
+"are listening to."
+msgstr ""
+
+#: ../src/modules/ReplayGain.py:25
+msgid "ReplayGain"
+msgstr ""
+
+#: ../src/modules/ReplayGain.py:25
+msgid "Normalize volume"
+msgstr ""
+
+#: ../res/AudioCD.glade.h:1
+msgid "<b>CDDB</b>"
+msgstr "<b>CDDB</b>"
+
+#: ../res/AudioCD.glade.h:2 ../res/DesktopNotification.glade.h:2
+#: ../res/FileExplorer.glade.h:1
+msgid "<b>Miscellaneous</b>"
+msgstr "<b>Διάφορα</b>"
+
+#: ../res/AudioCD.glade.h:3
+msgid "CD-ROM device:"
+msgstr "Συσκευή CD-ROM"
+
+#: ../res/AudioCD.glade.h:4
+msgid "Clear cache"
+msgstr "Καθαρισμός προσωρινής μνήμης"
+
+#: ../res/AudioCD.glade.h:5
+msgid "Download disc information"
+msgstr "Κατέβασμα πληροφοριών δίσκου"
+
+#: ../res/AudioCD.glade.h:6
+msgid "Download disc information from an online database"
+msgstr ""
+"Κατεβάστε τα στοιχεία του δίσκου από μιά βάση δεδομένων στο διαδίκτυο"
+
+#: ../res/AudioCD.glade.h:7
+msgid "Location of your CD-ROM device"
+msgstr "Θέση της συσκευής ανάγνωσης CD"
+
+#: ../res/AudioCD.glade.h:8
+msgid "Remove all disc information from your hard drive"
+msgstr "Διαγράψτε όλες τα στοιχεία δίσκων από τον σκληρό σας δίσκο"
+
+#: ../res/AudioCD.glade.h:9
+msgid "Save disc information on your hard drive"
+msgstr "Αποθηκεύστε τα στοιχεία του δίσκου στον σκληρό σας δίσκο"
+
+#: ../res/AudioCD.glade.h:10
+msgid "Save information in a local cache"
+msgstr "Αποθηκεύστε τις πληροφορίες σε μια τοπική προσωρινή μνήμη"
+
+#: ../res/AudioCDMenu.glade.h:1
+msgid "Add to Playlist"
+msgstr "Προσθήκη στη λίστα"
+
+#: ../res/AudioCDMenu.glade.h:2
+msgid "Append selection to the playlist"
+msgstr "Προσθήκη στο τέλος της λίστας"
+
+#: ../res/AudioCDMenu.glade.h:3
+msgid "Replace the playlist by the selection and start playback"
+msgstr "Αντικατάσταση της λίστας με την επιλογή και εκκίνηση αναπαραγωγής"
+
+#: ../res/AudioCDMenu.glade.h:4
+msgid "Rescan the audio disc"
+msgstr "Επανεξέταση του δίσκου"
+
+#: ../res/Authentication.glade.h:2
+msgid "Password:"
+msgstr "Κωδικός:"
+
+#: ../res/Authentication.glade.h:3
+msgid "Remember this password"
+msgstr "Απομνημόνευση κωδικού"
+
+#: ../res/Authentication.glade.h:4
+msgid "Username:"
+msgstr "Όνομα χρήστη:"
+
+#: ../res/Authentication.glade.h:5 ../res/Progress.glade.h:1
+msgid "label"
+msgstr "ετικέτα"
+
+#: ../res/Covers.glade.h:1
+msgid "<b>Internet Covers</b>"
+msgstr "<b>Εξώφυλλα διαδικτύου</b>"
+
+#: ../res/Covers.glade.h:2
+msgid "<b>User Covers</b>"
+msgstr "<b>Εξώφυλλα Χρήστη</b>"
+
+#: ../res/Covers.glade.h:3
+msgid "Always prefer user covers"
+msgstr "Πάντα προτίμηση εξώφυλλων χρήστη"
+
+#: ../res/Covers.glade.h:4
+msgid "Don't download covers when there is a user one"
+msgstr "Μην κατεβάζεις εξώφυλλα αν υπάρχει εξώφυλλο χρήστη."
+
+#: ../res/Covers.glade.h:5
+msgid "Download covers"
+msgstr "Κατέβασμα εξωφυλλων"
+
+#: ../res/Covers.glade.h:6
+msgid "Filenames to look for (e.g., folder, cover)"
+msgstr "Ονόματα αρχείων για εξώφυλλα (π.χ., folder, cover, κλπ)"
+
+#: ../res/Covers.glade.h:7
+msgid "Filenames:"
+msgstr "Ονόματα αρχείων:"
+
+#: ../res/Covers.glade.h:8
+msgid "Try to download covers from the Internet"
+msgstr "Προσπάθησε να κατεβάσεις εξώφυλλα από το διαδίκτυο"
+
+#: ../res/DesktopNotification.glade.h:1
+msgid "<b>Body</b>"
+msgstr "<b>Κορμός</b>"
+
+#: ../res/DesktopNotification.glade.h:3
+msgid "<b>Title</b>"
+msgstr "<b>Τίτλος</b>"
+
+#: ../res/DesktopNotification.glade.h:4
+msgid "Notification timeout:"
+msgstr "Χρόνος εμφάνισης ειδοποίησης"
+
+#: ../res/DesktopNotification.glade.h:5
+msgid "Show a \"skip track\" button"
+msgstr "Έμφάνισε ένα κουμπί \"Επόμενου\""
+
+#: ../res/DesktopNotification.glade.h:6
+msgid "Time during which the notification is displayed"
+msgstr "Χρόνος κατά τον οποίο η ειδοποίηση εμφανίζεται"
+
+#: ../res/DesktopNotification.glade.h:7
+msgid "seconds"
+msgstr "δευτερόλεπτα"
+
+#: ../res/FileExplorer.glade.h:2
+msgid "<b>Root Folders</b>"
+msgstr "<b>Αρχικοί φάκελοι</b>"
+
+#: ../res/FileExplorer.glade.h:3
+msgid "Add a new root folder to the file explorer"
+msgstr "Πρόσθήκη νέου αρχικού φακέλου στον εξερευνητή αρχείων"
+
+#: ../res/FileExplorer.glade.h:4
+msgid "Remove the selected root folders"
+msgstr "Αφαίρεση επιλεγμένων φακέλων"
+
+#: ../res/FileExplorer.glade.h:5 ../res/Library.glade.h:4
+msgid "Rename"
+msgstr "Μετονομασία"
+
+#: ../res/FileExplorer.glade.h:6
+msgid "Rename the selected root folder"
+msgstr "Μετονομασία του επιλεγμένου αρχικού φακέλου"
+
+#: ../res/FileExplorer.glade.h:8
+msgid "Whether hidden files should be shown in the file explorer"
+msgstr "Αν τα κρυμμένα αρχεία θα εμφανίζονται στον εξερευνητή αρχείων"
+
+#: ../res/IMStatus.glade.h:1
+msgid "<b>Sanitized Words</b>"
+msgstr "<b>Απαγορευμένες λέξεις</b>"
+
+#: ../res/IMStatus.glade.h:2 ../res/Twitter.glade.h:1
+msgid "<b>Status</b>"
+msgstr "<b>Κατάσταση</b>"
+
+#: ../res/IMStatus.glade.h:3
+msgid "<b>When Stopping or Quitting</b>"
+msgstr "<b>Κατά το σταμάτημα ή την έξοδο</b>"
+
+#: ../res/IMStatus.glade.h:4
+msgid "Do nothing"
+msgstr "Καμία ενέργεια"
+
+#: ../res/IMStatus.glade.h:5 ../res/Twitter.glade.h:2
+msgid "Message:"
+msgstr "Μήνυμα:"
+
+#: ../res/IMStatus.glade.h:6
+msgid "Set status to:"
+msgstr "Αλλαγή προσωπικού μηνύματος σε:"
+
+#: ../res/IMStatus.glade.h:7
+msgid "Update even if not available"
+msgstr "Ανανέωση ακόμα και όταν είσαι μή διαθέσιμος"
+
+#: ../res/IMStatus.glade.h:8
+msgid "Update when paused"
+msgstr "Ανανέωση όταν γίνεται παύση"
+
+#: ../res/IMStatus.glade.h:9
+msgid "Update your status even if you are marked as unavailable"
+msgstr "Ανανέωση ακόμα και όταν η κατάστασή σας είναι μή διαθέσιμος"
+
+#: ../res/IMStatus.glade.h:10
+msgid "Update your status on pause/unpause events"
+msgstr "Ανανέωση του προσωπικού μηνύματος κατά την παύση της αναπαραγωγής"
+
+#: ../res/Library.glade.h:1
+msgid "<b>Libraries</b>"
+msgstr "<b>Βιβλιοθήκες</b>"
+
+#: ../res/Library.glade.h:2
+msgid "Add a new library"
+msgstr "Προσθήκη νέας βιβλιοθήκης"
+
+#: ../res/Library.glade.h:3
+msgid "Remove the selected libraries"
+msgstr "Αφαίρεση επιλεγμένων βιβλιοθηκών"
+
+#: ../res/Library.glade.h:5
+msgid "Rename the selected library"
+msgstr "Μετονομασία επιλεγμένης βιβλιοθήκης"
+
+#: ../res/Library.glade.h:6
+msgid "Update the selected library by rescanning the disk"
+msgstr "Ανανέωση της επιλεγμένης βιβλιοθήκης με επανανίχνευση του δίσκου"
+
+#: ../res/MainWindow.glade.h:1
+msgid "Clear"
+msgstr "Καθαρισμός"
+
+#: ../res/MainWindow.glade.h:2
+msgid "Clear the playlist"
+msgstr "Καθαρισμός λίστας αναπαραγωγής"
+
+#: ../res/MainWindow.glade.h:3
+msgid "Display about dialog box"
+msgstr "Εμφάνιση διαλόγου πληροφοριών προγράμματος"
+
+#: ../res/MainWindow.glade.h:4 ../res/StatusIconMenu.glade.h:1
+msgid "Display preferences"
+msgstr "Εμφάνιση επιλογών"
+
+#: ../res/MainWindow.glade.h:5
+msgid "Elapsed time"
+msgstr "Χρόνος που πέρασε"
+
+#: ../res/MainWindow.glade.h:6
+msgid "Full"
+msgstr ""
+
+#: ../res/MainWindow.glade.h:7
+msgid "Mini"
+msgstr ""
+
+#: ../res/MainWindow.glade.h:8
+msgid "Nano"
+msgstr ""
+
+#: ../res/MainWindow.glade.h:9
+msgid "Online _Help"
+msgstr "Βοήθεια στο διαδίκτυο"
+
+#: ../res/MainWindow.glade.h:10
+msgid "Open the online help web page"
+msgstr "Άνοιγμα της ιστοσελίδας περιεχομένων βοήθειας"
+
+#: ../res/MainWindow.glade.h:11
+msgid "Play all tracks endlessly"
+msgstr "Αναπαραγωγή όλων των κομματιών χωρίς τέλος"
+
+#: ../res/MainWindow.glade.h:13 ../res/StatusIconMenu.glade.h:3
+msgid "Play the next track"
+msgstr "Αναπαραγωγή επόμενου κομματιού"
+
+#: ../res/MainWindow.glade.h:14 ../res/StatusIconMenu.glade.h:4
+msgid "Play the previous track"
+msgstr "Αναπαραγωγή προηγούμενου κομματιού"
+
+#: ../res/MainWindow.glade.h:15
+msgid "Playlist"
+msgstr ""
+
+#: ../res/MainWindow.glade.h:16 ../res/StatusIconMenu.glade.h:6
+msgid "Quit the application"
+msgstr "Έξοδος από την εφαρμογή"
+
+#: ../res/MainWindow.glade.h:17
+msgid "Remaining time"
+msgstr "Υπόλοιπος χρόνος"
+
+#: ../res/MainWindow.glade.h:19
+msgid "Seek a position in the current track"
+msgstr "Αναζήτηση θέσης στο τρέχον κομμάτι"
+
+#: ../res/MainWindow.glade.h:20
+msgid "Select an explorer"
+msgstr "Επιλογή εξερευνητή"
+
+#: ../res/MainWindow.glade.h:21
+msgid "Shuffle"
+msgstr "Ανακάτεμα"
+
+#: ../res/MainWindow.glade.h:22
+msgid "Shuffle the playlist"
+msgstr "Ανακάτεμα της λίστας αναπαραγωγής"
+
+#: ../res/MainWindow.glade.h:23 ../res/StatusIconMenu.glade.h:7
+msgid "Stop the current track"
+msgstr "Διακοπή αναπαραγωγής"
+
+#: ../res/MainWindow.glade.h:24
+msgid "_Edit"
+msgstr "_Επεξεργασία"
+
+#: ../res/MainWindow.glade.h:25
+msgid "_File"
+msgstr "_Αρχείο"
+
+#: ../res/MainWindow.glade.h:26
+msgid "_Help"
+msgstr "_Βοήθεια"
+
+#: ../res/MainWindow.glade.h:27
+msgid "_Mode"
+msgstr ""
+
+#: ../res/SelectPath.glade.h:1
+msgid "Name:"
+msgstr "Όνομα:"
+
+#: ../res/SelectPath.glade.h:2
+msgid "Path:"
+msgstr "Διαδρομή:"
+
+#: ../res/StatusFile.glade.h:1
+msgid "<b>File</b>"
+msgstr "<b>Αρχείο</b>"
+
+#: ../res/StatusFile.glade.h:2
+msgid "<b>Playing Status</b>"
+msgstr "<b>Κατάσταση Αναπαραγωγής</b>"
+
+#: ../res/StatusIconMenu.glade.h:5
+msgid "Play/Unpause"
+msgstr "Έναρξη/Συνέχεια"

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE glade-interface SYSTEM "glade-2.0.dtd">
+<glade-interface>
+<widget class="GtkMenu" id="menu-popup">
+<child>
+<widget class="GtkImageMenuItem" id="item-play">
+<property name="tooltip" translatable="yes">Play/Unpause</property>
+<property name="label" translatable="yes">gtk-media-play</property>
+<property name="use_stock">True</property>
+</widget>
+</child>
+<child>
+<widget class="GtkImageMenuItem" id="item-pause">
+<property name="tooltip" translatable="yes">Pause the current track</property>
+<property name="label" translatable="yes">gtk-media-pause</property>
+<property name="use_stock">True</property>
+</widget>
+</child>
+<child>
+<widget class="GtkImageMenuItem" id="item-stop">
+<property name="tooltip" translatable="yes">Stop the current track</property>
+<property name="label" translatable="yes">gtk-media-stop</property>
+<property name="use_stock">True</property>
+</widget>
+</child>
+<child>
+<widget class="GtkImageMenuItem" id="item-previous">
+<property name="tooltip" translatable="yes">Play the previous track</property>
+<property name="label" translatable="yes">gtk-media-previous</property>
+<property name="use_stock">True</property>
+</widget>
+</child>
+<child>
+<widget class="GtkImageMenuItem" id="item-next">
+<property name="tooltip" translatable="yes">Play the next track</property>
+<property name="label" translatable="yes">gtk-media-next</property>
+<property name="use_stock">True</property>
+</widget>
+</child>
+<child>
+<widget class="GtkSeparatorMenuItem" id="item-separator">
+</widget>
+</child>
+<child>
+<widget class="GtkImageMenuItem" id="item-preferences">
+<property name="tooltip" translatable="yes">Display preferences</property>
+<property name="label" translatable="yes">gtk-preferences</property>
+<property name="use_stock">True</property>
+</widget>
+</child>
+<child>
+<widget class="GtkSeparatorMenuItem" id="item-separator2">
+</widget>
+</child>
+<child>
+<widget class="GtkImageMenuItem" id="item-quit">
+<property name="tooltip" translatable="yes">Quit the application</property>
+<property name="label" translatable="yes">gtk-quit</property>
+<property name="use_stock">True</property>
+</widget>
+</child>
+</widget>
+</glade-interface>

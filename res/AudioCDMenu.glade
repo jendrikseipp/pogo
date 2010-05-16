@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE glade-interface SYSTEM "glade-2.0.dtd">
+<glade-interface>
+<widget class="GtkMenu" id="menu-popup">
+<child>
+<widget class="GtkImageMenuItem" id="item-play">
+<property name="tooltip" translatable="yes">Replace the playlist by the selection and start playback</property>
+<property name="label" translatable="yes">gtk-media-play</property>
+<property name="use_stock">True</property>
+</widget>
+</child>
+<child>
+<widget class="GtkImageMenuItem" id="item-add">
+<property name="tooltip" translatable="yes">Append selection to the playlist</property>
+<property name="label" translatable="yes">Add to Playlist</property>
+<child internal-child="image">
+<widget class="GtkImage" id="menu-item-image2">
+<property name="stock">gtk-add</property>
+<property name="icon_size">1</property>
+</widget>
+</child>
+</widget>
+</child>
+<child>
+<widget class="GtkSeparatorMenuItem" id="menuitem1">
+</widget>
+</child>
+<child>
+<widget class="GtkImageMenuItem" id="item-refresh">
+<property name="tooltip" translatable="yes">Rescan the audio disc</property>
+<property name="label" translatable="yes">gtk-refresh</property>
+<property name="use_stock">True</property>
+</widget>
+</child>
+</widget>
+</glade-interface>

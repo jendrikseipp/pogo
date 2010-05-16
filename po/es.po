@@ -1,0 +1,1175 @@
+# Spanish translation for decibel-audio-player
+# Copyright (c) 2007 Rosetta Contributors and Canonical Ltd 2007
+# This file is distributed under the same license as the decibel-audio-player package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2007.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: decibel-audio-player\n"
+"Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
+"POT-Creation-Date: 2009-08-23 09:18+0200\n"
+"PO-Revision-Date: 2009-05-14 19:37+0000\n"
+"Last-Translator: Carlos Andrés Albornoz Concha <caralbornozc@gmail.com>\n"
+"Language-Team: Spanish <es@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Launchpad-Export-Date: 2009-09-01 15:20+0000\n"
+"X-Generator: Launchpad (build Unknown)\n"
+
+#: ../src/media/track/__init__.py:46
+msgid "Track number"
+msgstr "Número de pista"
+
+#: ../src/media/track/__init__.py:47 ../src/modules/Tracklist.py:102
+#: ../src/modules/Tracklist.py:418
+msgid "Title"
+msgstr "Título"
+
+#: ../src/media/track/__init__.py:48 ../src/modules/Tracklist.py:103
+#: ../src/modules/Tracklist.py:419
+msgid "Artist"
+msgstr "Artista"
+
+#: ../src/media/track/__init__.py:49 ../src/modules/Tracklist.py:104
+#: ../src/modules/Tracklist.py:420
+msgid "Album"
+msgstr "Álbum"
+
+#: ../src/media/track/__init__.py:50 ../src/modules/Tracklist.py:106
+#: ../src/modules/Tracklist.py:422
+msgid "Genre"
+msgstr "Género"
+
+#: ../src/media/track/__init__.py:51 ../src/modules/Tracklist.py:107
+#: ../src/modules/Tracklist.py:423
+msgid "Date"
+msgstr "Fecha"
+
+#: ../src/media/track/__init__.py:52
+msgid "Disc number"
+msgstr "Número del disco"
+
+#: ../src/media/track/__init__.py:53
+msgid "Duration in seconds (e.g., 194)"
+msgstr "Duración en segundos"
+
+#: ../src/media/track/__init__.py:54
+msgid "Duration as a string (e.g., 3:14)"
+msgstr "Duración como cadena (p. ej. 3:14)"
+
+#: ../src/media/track/__init__.py:55
+msgid "Position of the track in the playlist"
+msgstr "Posición de la pista en la lista de reproducción"
+
+#: ../src/media/track/__init__.py:56
+msgid "Number of tracks in the playlist"
+msgstr "Número de pistas en la lista de reproducción"
+
+#: ../src/media/track/__init__.py:57
+msgid "Full path to the file"
+msgstr "Ruta completa al archivo"
+
+#: ../src/media/track/__init__.py:147
+#, python-format
+msgid "%(album)s  [Disc %(discnum)u]"
+msgstr "%(album)s  [Disco %(discnum)u]"
+
+#: ../src/tools/consts.py:95
+msgid "Unknown Genre"
+msgstr "Género desconocido"
+
+#: ../src/tools/consts.py:96
+msgid "Unknown Title"
+msgstr "Título desconocido"
+
+#: ../src/tools/consts.py:97
+msgid "Unknown Album"
+msgstr "Álbum desconocido"
+
+#: ../src/tools/consts.py:98
+msgid "Unknown Artist"
+msgstr "Artista desconocido"
+
+#: ../src/tools/consts.py:103
+msgid "Unknown Album Artist"
+msgstr "Artista del álbum desconocido"
+
+#: ../src/gui/about.py:39
+msgid "translator-credits"
+msgstr ""
+"Launchpad Contributions:\n"
+"  Carlos Andrés Albornoz Concha https://launchpad.net/~caralbornozc\n"
+"  Darío Sadler https://launchpad.net/~zeroz-dario\n"
+"  Emilio Pozuelo Monfort https://launchpad.net/~pochu\n"
+"  Mark Baas https://launchpad.net/~mark-baas123\n"
+"  Paco Molinero https://launchpad.net/~franciscomol\n"
+"  Servilio Afre Puentes https://launchpad.net/~servilio\n"
+"  Teleporter https://launchpad.net/~teleporter7000\n"
+"  syvic https://launchpad.net/~syvic"
+
+#: ../src/gui/about.py:43
+msgid "Developer:"
+msgstr "Desarrollador:"
+
+#: ../src/gui/about.py:46
+msgid "Thanks to:"
+msgstr "Gracias a:"
+
+#: ../src/gui/authentication.py:131
+#, python-format
+msgid ""
+"Enter your username and password for\n"
+"%(reason)s"
+msgstr ""
+"Entre su nombre de usuario y contraseña para\n"
+"%(reason)s"
+
+#: ../src/gui/authentication.py:133 ../res/Authentication.glade.h:1
+msgid "Password required"
+msgstr "Contraseña requerida"
+
+#: ../src/gui/authentication.py:170
+msgid "About password storage safety"
+msgstr "Acerca del almacenaje seguro de claves"
+
+#: ../src/gui/authentication.py:171
+msgid ""
+"If you use Gnome, it is safe to store your password since the Gnome keyring "
+"is used."
+msgstr ""
+"Si usa GNOME, es seguro almacenar su clave ya que se usa el gestor de claves "
+"de GNOME."
+
+#: ../src/gui/authentication.py:172
+msgid ""
+"If you do not use Gnome, beware that, although not stored as clear text, an "
+"attacker <i>could</i> retrieve it."
+msgstr ""
+"Si no usa GNOME tenga en cuenta que, aunque no guarde la clave en texto "
+"plano, un atacante <i>podría</i> conseguirla."
+
+#: ../src/gui/preferences.py:39
+msgid "Preferences"
+msgstr "Preferencias"
+
+#: ../src/gui/preferences.py:102
+msgid "Unable to load this module."
+msgstr "Imposible cargar este módulo"
+
+#: ../src/gui/preferences.py:109
+msgid "Modules"
+msgstr "Módulos"
+
+#: ../src/gui/preferences.py:110 ../src/modules/IMStatus.py:341
+#: ../src/modules/DesktopNotification.py:166
+#: ../src/modules/FileExplorer.py:562 ../src/modules/Library.py:706
+#: ../src/modules/AudioCD.py:374 ../src/modules/Covers.py:429
+#: ../src/modules/StatusFile.py:115 ../src/modules/Twitter.py:120
+msgid "Description"
+msgstr "Descripción"
+
+#: ../src/gui/preferences.py:111
+msgid ""
+"This dialog box shows the list of available modules, which are small pieces "
+"of code that add some functionnalities to the application. You can "
+"enable/disable a module by checking/unchecking the check box in front of it. "
+"Note that some modules (e.g., the File Explorer) cannot be disabled."
+msgstr ""
+"Este cuadro de diálogo muestra la lista de módulos disponibles, los cuales "
+"son pequeñas piezas de código que agregan algunas funcionalidades a la "
+"aplicación. Puede activar/desactivar un módulo marcando/desmarcando el "
+"cuadro de verificación en el frente de éste. Tenga en cuenta que algunos "
+"módulos (ej. el Explorador de archivos) no pueden ser desactivados."
+
+#: ../src/gui/preferences.py:114
+msgid "Configuring a Module"
+msgstr "Configurando un módulo"
+
+#: ../src/gui/preferences.py:115
+msgid ""
+"When a module may be configured, a specific icon is displayed on the right "
+"of the corresponding line. To configure a module, simply select it and then "
+"click on the \"Preferences\" button on the bottom of the dialog box. Note "
+"that configuring a module is only possible when it is enabled."
+msgstr ""
+"Cuando un modulo puede ser configurado, un icono se muestra a la derecha en "
+"la linea correspondiente. Para configurar un modulo simplemente selecciónelo "
+"y luego haga clic en el botón \"Preferencias\" en la parte inferior de la "
+"ventana de diálogo. Note que configurar un módulo es sólo posible cuando "
+"está activado"
+
+#: ../src/gui/selectPath.py:79
+msgid "Choose a folder"
+msgstr "Elija una carpeta"
+
+#: ../src/gui/selectPath.py:96
+msgid "This path does not exist"
+msgstr "Esta ruta no existe"
+
+#: ../src/gui/selectPath.py:96
+msgid "Please select an existing directory."
+msgstr "Por favor seleccione un directorio existente"
+
+#: ../src/gui/selectPath.py:99 ../src/gui/selectPath.py:104
+msgid "The name is incorrect"
+msgstr "El nombre es incorrecto"
+
+#: ../src/gui/selectPath.py:99
+msgid ""
+"This name is not allowed.\n"
+"Please use another one."
+msgstr ""
+"Este nombre no es permitido.\n"
+"Por favor use otro."
+
+#: ../src/gui/selectPath.py:104
+#, python-format
+msgid ""
+"The character %s is not allowed.\n"
+"Please use another name."
+msgstr ""
+"EL caractér %s no está permitido.\n"
+"Por favor use otro nombre."
+
+#: ../src/modules/IMStatus.py:25
+msgid "Instant Messenger Status"
+msgstr "Estado del mensajero instantáneo"
+
+#: ../src/modules/IMStatus.py:25
+msgid "Update the status message of your IM client"
+msgstr ""
+"Actualizar el mensaje de estado de tu cliente de mensajería instantánea"
+
+#: ../src/modules/IMStatus.py:39
+msgid "Decibel is stopped"
+msgstr "Decibel está detenido"
+
+#: ../src/modules/IMStatus.py:261 ../src/modules/IMStatus.py:334
+#, python-format
+msgid "%(status)s [paused]"
+msgstr "%(status)s [pausado]"
+
+#: ../src/modules/IMStatus.py:342
+msgid ""
+"This module detects any running instant messenger and updates your status "
+"with regards to the track you are listening to. Supported messengers are:"
+msgstr ""
+"Este modulo detecta cualquier cliente de mensajería instantánea corriendo y "
+"actualiza su estado relativo a la pista que usted esté escuchando. \r\n"
+"Los clientes de mensajería soportados son:"
+
+#: ../src/modules/IMStatus.py:345 ../src/modules/Twitter.py:123
+msgid "Customizing the Status"
+msgstr "Personalizar el Estado"
+
+#: ../src/modules/IMStatus.py:346 ../src/modules/Twitter.py:124
+msgid ""
+"You can set the status to any text you want. Before setting it, the module "
+"replaces all fields of the form {field} by their corresponding value. "
+"Available fields are:"
+msgstr ""
+"Puede configurar el estado a cualquier texto que desee. Antes de "
+"configurarlo, el módulo reemplaza todos los campos de la forma {campo} a sus "
+"valores correspondientes. Campos disponibles:"
+
+#: ../src/modules/IMStatus.py:349 ../src/modules/DesktopNotification.py:172
+msgid "Markup"
+msgstr "Marcado"
+
+#: ../src/modules/IMStatus.py:350 ../src/modules/DesktopNotification.py:173
+msgid ""
+"You can use the Pango markup language to format the text. More information "
+"on that language is available on the following web page:"
+msgstr ""
+"Puede usar la idioma de Pango <em>markup</em> para formatear el texto. Mas "
+"información sobre este lenguaje está disponible en la  siguiente página web:"
+
+#: ../src/modules/IMStatus.py:353
+msgid "Sanitization"
+msgstr "Higienización"
+
+#: ../src/modules/IMStatus.py:354
+msgid ""
+"You can define some words that to sanitize before using them to set your "
+"status. In this case, the middle characters of matching words is "
+"automatically replaced with asterisks (e.g., \"Metallica - Live S**t Binge & "
+"Purge\"). Put one word per line."
+msgstr ""
+"Puedes definir algunas palabras para higienizar antes de usarlas para poner "
+"tu estado. En este caso, los caracteres en el medio de las palabras "
+"coincidentes son reemplazadas automáticamente por asteriscos (ej. "
+"\"Metallica - Live S**t Bing & Purge\"). Pon una palabra por línea."
+
+#: ../src/modules/AudioScrobbler.py:28
+msgid "Keep your Last.fm profile up to date"
+msgstr "Mantenga actualizado su perfil de Last.fm"
+
+#: ../src/modules/AudioScrobbler.py:142 ../src/modules/AudioScrobbler.py:143
+msgid "your Last.fm account"
+msgstr "su cuenta de Last.fm"
+
+#: ../src/modules/StatusbarTitlebar.py:52
+#, python-format
+msgid "One track in playlist  [%(length)s]"
+msgid_plural "%(count)u tracks in playlist  [%(length)s]"
+msgstr[0] "Una pista en la lista de reproducción  [%(length)s]"
+msgstr[1] "%(count)u pistas en la lista de reproducción  [%(length)s]"
+
+#: ../src/modules/StatusbarTitlebar.py:72
+msgid "[paused]"
+msgstr "[pausado]"
+
+#: ../src/modules/__init__.py:75
+msgid "The following Python modules are not available:"
+msgstr "Los siguientes módulos de Python no están disponibles:"
+
+#: ../src/modules/__init__.py:79
+msgid "You must install them if you want to enable this module."
+msgstr "Debe instalarlos si quiere activar este módulo."
+
+#: ../src/modules/DesktopNotification.py:26
+msgid "Desktop Notification"
+msgstr "Notificación de escritorio"
+
+#: ../src/modules/DesktopNotification.py:26
+msgid "Display a desktop notification on track change"
+msgstr "Mostrar una notificación de escritorio al cambiar la pista"
+
+#: ../src/modules/DesktopNotification.py:82
+#: ../src/modules/DesktopNotification.py:144
+msgid "Skip track"
+msgstr "Saltar pista"
+
+#: ../src/modules/DesktopNotification.py:167
+msgid ""
+"This module displays a small popup window on your desktop when a new track "
+"starts."
+msgstr ""
+"Este módulo muestra una ventanita en su escritorio cuando comienza una pista "
+"nueva."
+
+#: ../src/modules/DesktopNotification.py:168
+msgid "Customizing the Notification"
+msgstr "Personalizando la notificación"
+
+#: ../src/modules/DesktopNotification.py:169
+msgid ""
+"You can change the title and the body of the notification to any text you "
+"want. Before displaying the popup window, fields of the form {field} are "
+"replaced by their corresponding value. Available fields are:\n"
+"\n"
+msgstr ""
+"Puede cambiar el título y el cuerpo de la notificación a cualquier texto que "
+"quiera. Antes de mostrar la ventanita, los campos de la forma {campo} se "
+"reemplazarán por el valor correspondiente. Campos disponibles:\n"
+"\n"
+
+#: ../src/modules/CtrlPanel.py:78 ../src/modules/CtrlPanel.py:136
+#: ../res/StatusIconMenu.glade.h:2
+msgid "Pause the current track"
+msgstr "Pausar la pista actual"
+
+#: ../src/modules/CtrlPanel.py:95 ../res/MainWindow.glade.h:12
+msgid "Play the first track of the playlist"
+msgstr "Reproducir la pista primera de la lista de reproducción"
+
+#: ../src/modules/CtrlPanel.py:130
+msgid "Continue playing the current track"
+msgstr "Continuar reproduciendo la pista actual"
+
+#: ../src/modules/Explorer.py:68
+msgid ""
+"Please select an explorer\n"
+"in the combo box below."
+msgstr ""
+"Por favor, elija un explorador\n"
+"en el cuadro combinado de abajo."
+
+#: ../src/modules/Tracklist.py:105 ../src/modules/Tracklist.py:421
+msgid "Length"
+msgstr "Duración"
+
+#: ../src/modules/Tracklist.py:108
+msgid "Path"
+msgstr ""
+
+#: ../src/modules/Tracklist.py:258
+msgid "Save playlist"
+msgstr "Guardar lista de reproducción"
+
+#: ../src/modules/Tracklist.py:300
+msgid "Crop"
+msgstr "Achicar"
+
+#: ../src/modules/Tracklist.py:315
+msgid "Shuffle Playlist"
+msgstr ""
+
+#: ../src/modules/Tracklist.py:322
+msgid "Revert Playlist"
+msgstr ""
+
+#: ../src/modules/Tracklist.py:329
+msgid "Clear Playlist"
+msgstr ""
+
+#: ../src/modules/Tracklist.py:338 ../res/MainWindow.glade.h:18
+msgid "Repeat"
+msgstr "Repetir"
+
+#: ../src/modules/Tracklist.py:346
+msgid "Save Playlist As..."
+msgstr "Guardar lista de reproducción como..."
+
+#: ../src/modules/FileExplorer.py:28
+msgid "File Explorer"
+msgstr "Explorador de archivos"
+
+#: ../src/modules/FileExplorer.py:28
+msgid "Browse your file system"
+msgstr "Explorar tu sistema de archivos"
+
+#: ../src/modules/FileExplorer.py:32
+msgid "Home"
+msgstr "Carpeta personal"
+
+#: ../src/modules/FileExplorer.py:32
+msgid "Root"
+msgstr ""
+
+#: ../src/modules/FileExplorer.py:180
+msgid "loading..."
+msgstr "cargando…"
+
+#: ../src/modules/FileExplorer.py:336 ../src/modules/Library.py:405
+msgid "Collapse all"
+msgstr ""
+
+#: ../src/modules/FileExplorer.py:349 ../res/FileExplorer.glade.h:7
+msgid "Show hidden files"
+msgstr "Mostrar archivos ocultos"
+
+#: ../src/modules/FileExplorer.py:503
+msgid ""
+"You will be able to add this root folder again later on if you wish so."
+msgstr ""
+"Usted podrá añadir esta carpeta raíz nuevamente más adelante si así lo desea."
+
+#: ../src/modules/FileExplorer.py:504
+msgid "Remove the selected entry?"
+msgstr "¿Eliminar la entrada seleccionada?"
+
+#: ../src/modules/FileExplorer.py:506
+msgid ""
+"You will be able to add these root folders again later on if you wish so."
+msgstr ""
+"Usted podrá añadir estas carpetas raíz nuevamente más adelante si así lo "
+"desea."
+
+#: ../src/modules/FileExplorer.py:507
+msgid "Remove all selected entries?"
+msgstr "¿Eliminar todas entradas seleccionadas?"
+
+#: ../src/modules/FileExplorer.py:509
+msgid "Your media files will not be deleted."
+msgstr "Tus archivos multimedios no serán eliminados"
+
+#: ../src/modules/FileExplorer.py:563
+msgid "This module allows you to browse the files on your drives."
+msgstr "Este módulo le permite explorar los archivos en tus discos."
+
+#: ../src/modules/FileExplorer.py:564 ../src/modules/Library.py:709
+msgid "Usage"
+msgstr "Uso"
+
+#: ../src/modules/FileExplorer.py:565
+msgid ""
+"At least one root folder must be added to browse your files. This folder "
+"then becomes the root of the file explorer tree in the main window."
+msgstr ""
+"Para explorar sus archivos debe adicionar al menos una carpeta raíz. Esta "
+"carpeta será la raíz del árbol de exploración en la ventana principal."
+
+#: ../src/modules/Library.py:30
+msgid "Library"
+msgstr "Biblioteca"
+
+#: ../src/modules/Library.py:30
+msgid "Organize your music by tags instead of files"
+msgstr "Organizar tu música por etiquetas en vez de archivos"
+
+#: ../src/modules/Library.py:167
+msgid "Creating library"
+msgstr "Creando biblioteca"
+
+#: ../src/modules/Library.py:168
+msgid "Refreshing library"
+msgstr "Actualizando biblioteca"
+
+#: ../src/modules/Library.py:170
+msgid ""
+"The directory is scanned for media files. This can take some time.\n"
+"Please wait."
+msgstr ""
+"Se examina el directorio buscando buscando archivos multimedios. Esto puede "
+"tomar un tiempo.\n"
+"Por favor, espere."
+
+#: ../src/modules/Library.py:221
+#, python-format
+msgid "Scanning directories (one track found)"
+msgid_plural "Scanning directories (%(nbtracks)u tracks found)"
+msgstr[0] "Examinando directorios (una pista encontrada)"
+msgstr[1] "Examinando directorios (%(nbtracks)u pistas encontradas)"
+
+#: ../src/modules/Library.py:232
+msgid "Creating library..."
+msgstr "Creando biblioteca..."
+
+#: ../src/modules/Library.py:233
+msgid "Refreshing library..."
+msgstr "Actualizando biblioteca..."
+
+#: ../src/modules/Library.py:417
+msgid "Randomness"
+msgstr ""
+
+#: ../src/modules/Library.py:424
+#, python-format
+msgid "Pick an album of %(artist)s"
+msgstr ""
+
+#: ../src/modules/Library.py:429
+msgid "Pick an album in the library"
+msgstr ""
+
+#: ../src/modules/Library.py:446
+msgid "This library is deprecated, please refresh it."
+msgstr "Esta biblioteca está deprecada, por favor refrésquela."
+
+#: ../src/modules/Library.py:663
+msgid "tracks"
+msgstr "pistas"
+
+#: ../src/modules/Library.py:671
+msgid "You will be able to recreate this library later on if you wish so."
+msgstr "Podrá recrear esta biblioteca más adelante si así lo desea."
+
+#: ../src/modules/Library.py:672
+msgid "Remove the selected library?"
+msgstr "¿Eliminar la biblioteca seleccionada?"
+
+#: ../src/modules/Library.py:674
+msgid "You will be able to recreate these libraries later on if you wish so."
+msgstr "Podrá recrear estas bibliotecas más adelante si así lo desea."
+
+#: ../src/modules/Library.py:675
+msgid "Remove all selected libraries?"
+msgstr "¿Eliminar todas bibliotecas seleccionadas?"
+
+#: ../src/modules/Library.py:677
+msgid "Your media files will not be removed."
+msgstr "Tus archivos multimedios no serán eliminados."
+
+#: ../src/modules/Library.py:707
+msgid ""
+"This module organizes your media files by tags instead of using the file "
+"structure of your drive. Loading tracks is also faster because their tags "
+"are already known and do not have to be read again."
+msgstr ""
+"Este módulo organiza tus archivos multimedios por etiquetas en vez de usar "
+"la estructura de carpetas de tu disco. La carga de pistas es también más "
+"rápida porque sus etiquetas ya se conocen y es necesario leerlas otra vez."
+
+#: ../src/modules/Library.py:710
+msgid ""
+"When you add a new library, you have to give the full path to the root "
+"directory of that library. Then, all directories under this root path are "
+"recursively scanned for media files whose tags are read and stored in a "
+"database."
+msgstr ""
+"Cuando añade una biblioteca nueva, debe dar la ruta completa al directorio "
+"raíz de esta biblioteca. Entonces, todos los directorios en esta ruta raíz "
+"se examinarán recursivamente para archivos multimedios cuyas etiquetas se "
+"han leído y almacenado en una base de datos."
+
+#: ../src/modules/Library.py:712
+msgid ""
+"Upon refreshing a library, the file structure under the root directory and "
+"all media files are scanned for changes, to update the database accordingly."
+msgstr ""
+"Al actualizar una biblioteca, la estructura de archivos bajo el directorio "
+"raíz y todos los archivos multimedios son examinados en busca de cambios "
+"para actualizar la base de datos en consecuencia."
+
+#: ../src/modules/StatusIcon.py:24
+msgid "Status Icon"
+msgstr "Ícono de estado"
+
+#: ../src/modules/StatusIcon.py:24
+msgid "Add an icon to the notification area"
+msgstr "Añadir un icono al área de notificación"
+
+#: ../src/modules/StatusIcon.py:113
+#, python-format
+msgid "%(tooltip)s [paused]"
+msgstr "%(tooltip)s [pausado]"
+
+#: ../src/modules/Equalizer.py:24
+msgid "Equalizer"
+msgstr ""
+
+#: ../src/modules/Equalizer.py:24
+msgid "Tune the level of the frequency bands"
+msgstr ""
+
+#: ../src/modules/Equalizer.py:60 ../src/modules/Equalizer.py:62
+#: ../src/modules/ReplayGain.py:44
+msgid "Restart required"
+msgstr ""
+
+#: ../src/modules/Equalizer.py:60 ../src/modules/Equalizer.py:62
+#: ../src/modules/ReplayGain.py:44
+msgid ""
+"You must restart the application for this modification to take effect."
+msgstr ""
+
+#: ../src/modules/Equalizer.py:95
+msgid "Save levels"
+msgstr ""
+
+#: ../src/modules/Equalizer.py:106
+msgid "Load levels"
+msgstr ""
+
+#: ../src/modules/Equalizer.py:132
+msgid "Could not load the file"
+msgstr ""
+
+#: ../src/modules/Equalizer.py:132
+msgid "The format of the file is incorrect."
+msgstr ""
+
+#: ../src/modules/AudioCD.py:27
+msgid "Audio CD"
+msgstr "CD de audio"
+
+#: ../src/modules/AudioCD.py:27
+msgid "Play audio discs"
+msgstr "Reproducir discos de audio"
+
+#: ../src/modules/AudioCD.py:149
+msgid "downloading data..."
+msgstr "descargando datos..."
+
+#: ../src/modules/AudioCD.py:153
+#, python-format
+msgid "Track %02u"
+msgstr "Pista %02u"
+
+#: ../src/modules/AudioCD.py:238
+msgid "No disc found"
+msgstr "No se encuentra ningún disco"
+
+#: ../src/modules/AudioCD.py:346
+msgid "This will remove all disc information stored on your hard drive."
+msgstr ""
+"Esto eliminará toda información del disco almacenado en tu disco duro."
+
+#: ../src/modules/AudioCD.py:347
+msgid "Clear CDDB cache?"
+msgstr "¿Limpiar caché de CDDB?"
+
+#: ../src/modules/AudioCD.py:360 ../src/modules/StatusFile.py:93
+msgid "Invalid path"
+msgstr "Ruta inválida"
+
+#: ../src/modules/AudioCD.py:361
+msgid ""
+"The path to the CD-ROM device is not valid. Please choose an existing path."
+msgstr ""
+"La ruta al dispositivo de CD-ROM no es válida. Por favor elija una ruta "
+"válida."
+
+#: ../src/modules/AudioCD.py:375
+msgid "This module lets you play audio discs from your CD-ROM device."
+msgstr ""
+"Éste módulo te permite reproducir discos de audio desde tu dispositivo de CD-"
+"ROM."
+
+#: ../src/modules/AudioCD.py:376
+msgid "Compact Disc Data Base (CDDB)"
+msgstr "Base de Datos de Discos Compactos"
+
+#: ../src/modules/AudioCD.py:377
+msgid ""
+"Disc information, such as artist and album title, may be automatically "
+"downloaded from an online database if you wish so. This information may also "
+"be saved on your hard drive to avoid downloading it again the next time you "
+"play the same disc."
+msgstr ""
+"La información del disco, tal como el artista y título del álbum, puede ser "
+"descargada automáticamente desde una base de datos en línea si así lo desea. "
+"Esta información puede ser guardada en su disco duro para evitar descargarla "
+"nuevamente la próxima vez que reproduzca el mismo disco."
+
+#: ../src/modules/TrackPanel.py:120
+#, python-format
+msgid ""
+"by %(artist)s\n"
+"from %(album)s"
+msgstr ""
+"por %(artist)s\n"
+"de %(album)s"
+
+#: ../src/modules/Covers.py:27
+msgid "Covers"
+msgstr "Caratulas"
+
+#: ../src/modules/Covers.py:27
+msgid "Show album covers"
+msgstr "Mostrar caratulas de álbumes"
+
+#: ../src/modules/Covers.py:430
+msgid ""
+"This module displays the cover of the album the current track comes from. "
+"Covers may be loaded from local pictures, located in the same directory as "
+"the current track, or may be downloaded from the Internet."
+msgstr ""
+"Éste módulo muestra la caratula del álbum del cual procede la pista actual. "
+"Las caratulas pueden cargarse de imágenes locales, localizadas en el mismo "
+"directorio que la pista actual, o pueden ser descargadas desde Internet."
+
+#: ../src/modules/Covers.py:433
+msgid "User Covers"
+msgstr "Caratulas del usuario"
+
+#: ../src/modules/Covers.py:434
+#, python-format
+msgid ""
+"A user cover is a picture located in the same directory as the current "
+"track. When specifying filenames, you do not need to provide file "
+"extensions, supported file formats (%s) are automatically used."
+msgstr ""
+"Una caratula del usuario es una imagen localizada en el mismo directorio que "
+"la pista actual. Cuando se especifican nombres de archivos, usted no "
+"necesita proveer extensiones de archivos, los formatos de archivos "
+"soportados (%s) se usan automáticamente."
+
+#: ../src/modules/Covers.py:437
+msgid "Internet Covers"
+msgstr "Caratulas de Internet"
+
+#: ../src/modules/Covers.py:438
+msgid ""
+"Covers may be downloaded from the Internet, based on the tags of the current "
+"track. You can ask to always prefer user covers to Internet ones. In this "
+"case, if a user cover exists for the current track, it is used. If there is "
+"none, the cover is downloaded."
+msgstr ""
+"Las caratulas pueden descargarse de Internet, basándose en las etiquetas de "
+"la pista actual. Usted puede pedir que siempre se prefieran las caratulas "
+"del usuario a las de Internet. En este caso, si una caratula del usuario "
+"existe para la pista actual, ésta se usa. Si no hay ninguna, la caratula "
+"será descargada."
+
+#: ../src/modules/StatusFile.py:25
+msgid "Status File"
+msgstr "Archivo de estado"
+
+#: ../src/modules/StatusFile.py:25
+msgid "Generate a text file with the current status"
+msgstr "Generar un archivo texto con el estado actual"
+
+#: ../src/modules/StatusFile.py:93
+msgid ""
+"The path to the selected file is not valid. Please choose an existing path."
+msgstr ""
+"La ruta al archivo seleccionado no es válida. Por favor elija una ruta "
+"existente."
+
+#: ../src/modules/StatusFile.py:106
+msgid "Choose a file"
+msgstr "Elija un archivo"
+
+#: ../src/modules/StatusFile.py:116
+msgid ""
+"This module generates a text file with regards to the track currently played."
+msgstr ""
+"Este módulo genera un archivo de texto con información acerca de la pista en "
+"reproducción."
+
+#: ../src/modules/StatusFile.py:117
+msgid "Customizing the File"
+msgstr "Personalizar el archivo"
+
+#: ../src/modules/StatusFile.py:118
+msgid ""
+"You can change the content of the file to any text you want. Before "
+"generating the file, fields of the form {field} are replaced by their "
+"corresponding value. Available fields are:\n"
+"\n"
+msgstr ""
+"Puedes cambiar el contenido del archivo a cualquier texto si así lo deseas. "
+"Antes generar el archivo, los campos con la forma {campo} se reemplazan por "
+"sus valores correspondientes. Los campos disponibles son:\n"
+"\n"
+
+#: ../src/modules/Twitter.py:27
+msgid "Update the status of your Twitter account"
+msgstr ""
+
+#: ../src/modules/Twitter.py:51
+msgid "your Twitter account"
+msgstr ""
+
+#: ../src/modules/Twitter.py:121
+msgid ""
+"This module posts a message to your Twitter account according to what you "
+"are listening to."
+msgstr ""
+
+#: ../src/modules/ReplayGain.py:25
+msgid "ReplayGain"
+msgstr ""
+
+#: ../src/modules/ReplayGain.py:25
+msgid "Normalize volume"
+msgstr ""
+
+#: ../res/AudioCD.glade.h:1
+msgid "<b>CDDB</b>"
+msgstr "<b>CDDB</b>"
+
+#: ../res/AudioCD.glade.h:2 ../res/DesktopNotification.glade.h:2
+#: ../res/FileExplorer.glade.h:1
+msgid "<b>Miscellaneous</b>"
+msgstr "<b>Varios</b>"
+
+#: ../res/AudioCD.glade.h:3
+msgid "CD-ROM device:"
+msgstr "Dispositivo de CD-ROM"
+
+#: ../res/AudioCD.glade.h:4
+msgid "Clear cache"
+msgstr "Limpiar la caché"
+
+#: ../res/AudioCD.glade.h:5
+msgid "Download disc information"
+msgstr "Descargar información del disco"
+
+#: ../res/AudioCD.glade.h:6
+msgid "Download disc information from an online database"
+msgstr "Descargar información del disco de una base de datos en linea"
+
+#: ../res/AudioCD.glade.h:7
+msgid "Location of your CD-ROM device"
+msgstr "Localización de tu dispositivo de CD-ROM"
+
+#: ../res/AudioCD.glade.h:8
+msgid "Remove all disc information from your hard drive"
+msgstr "Eliminar toda información del disco de tu disco duro"
+
+#: ../res/AudioCD.glade.h:9
+msgid "Save disc information on your hard drive"
+msgstr "Guardar información del disco en tu disco duro"
+
+#: ../res/AudioCD.glade.h:10
+msgid "Save information in a local cache"
+msgstr "Guardar información en la caché local"
+
+#: ../res/AudioCDMenu.glade.h:1
+msgid "Add to Playlist"
+msgstr "Añadir a la lista de reproducción"
+
+#: ../res/AudioCDMenu.glade.h:2
+msgid "Append selection to the playlist"
+msgstr "Añadir selección a lista de reproducción"
+
+#: ../res/AudioCDMenu.glade.h:3
+msgid "Replace the playlist by the selection and start playback"
+msgstr ""
+"Reemplezar la lista de reproducción por la selección y comenzar a reproducir"
+
+#: ../res/AudioCDMenu.glade.h:4
+msgid "Rescan the audio disc"
+msgstr "Examinar el disco de audio otra vez"
+
+#: ../res/Authentication.glade.h:2
+msgid "Password:"
+msgstr "Contraseña:"
+
+#: ../res/Authentication.glade.h:3
+msgid "Remember this password"
+msgstr "Recordar esta contraseña"
+
+#: ../res/Authentication.glade.h:4
+msgid "Username:"
+msgstr "Nombre de usuario:"
+
+#: ../res/Authentication.glade.h:5 ../res/Progress.glade.h:1
+msgid "label"
+msgstr "etiqueta"
+
+#: ../res/Covers.glade.h:1
+msgid "<b>Internet Covers</b>"
+msgstr "<b>Caratulas de Internet</b>"
+
+#: ../res/Covers.glade.h:2
+msgid "<b>User Covers</b>"
+msgstr "<b>Caratulas del Usuario</b>"
+
+#: ../res/Covers.glade.h:3
+msgid "Always prefer user covers"
+msgstr "Siempre preferir las caratulas del usuario"
+
+#: ../res/Covers.glade.h:4
+msgid "Don't download covers when there is a user one"
+msgstr "No descargar caratulas cuando hay una del usuario"
+
+#: ../res/Covers.glade.h:5
+msgid "Download covers"
+msgstr "Descargar caratulas"
+
+#: ../res/Covers.glade.h:6
+msgid "Filenames to look for (e.g., folder, cover)"
+msgstr "Nombres de archivos a buscar (ej.: carpeta, caratula)"
+
+#: ../res/Covers.glade.h:7
+msgid "Filenames:"
+msgstr "Nombres de archivos:"
+
+#: ../res/Covers.glade.h:8
+msgid "Try to download covers from the Internet"
+msgstr "Intentar descargar caratulas desde Internet"
+
+#: ../res/DesktopNotification.glade.h:1
+msgid "<b>Body</b>"
+msgstr "<b>Cuerpo</b>"
+
+#: ../res/DesktopNotification.glade.h:3
+msgid "<b>Title</b>"
+msgstr "<b>Título</b>"
+
+#: ../res/DesktopNotification.glade.h:4
+msgid "Notification timeout:"
+msgstr "Tiempo límite de la notificación:"
+
+#: ../res/DesktopNotification.glade.h:5
+msgid "Show a \"skip track\" button"
+msgstr "Mostrar un boton \"saltar pista\""
+
+#: ../res/DesktopNotification.glade.h:6
+msgid "Time during which the notification is displayed"
+msgstr "Tiempo para mostrar notificación"
+
+#: ../res/DesktopNotification.glade.h:7
+msgid "seconds"
+msgstr "segundos"
+
+#: ../res/FileExplorer.glade.h:2
+msgid "<b>Root Folders</b>"
+msgstr "<b>Carpeta raíz</b>"
+
+#: ../res/FileExplorer.glade.h:3
+msgid "Add a new root folder to the file explorer"
+msgstr "Añadir una carpeta raíz nueva al explorador de los archivos"
+
+#: ../res/FileExplorer.glade.h:4
+msgid "Remove the selected root folders"
+msgstr "Eliminar la carpetas raíces seleccionadas"
+
+#: ../res/FileExplorer.glade.h:5 ../res/Library.glade.h:4
+msgid "Rename"
+msgstr "Renombrar"
+
+#: ../res/FileExplorer.glade.h:6
+msgid "Rename the selected root folder"
+msgstr "Renombrar la carpeta raíz seleccionada"
+
+#: ../res/FileExplorer.glade.h:8
+msgid "Whether hidden files should be shown in the file explorer"
+msgstr ""
+"Si los archivos ocultos deberían mostrarse en el explorador de archivos"
+
+#: ../res/IMStatus.glade.h:1
+msgid "<b>Sanitized Words</b>"
+msgstr "<b>Palabras Higienizadas</b>"
+
+#: ../res/IMStatus.glade.h:2 ../res/Twitter.glade.h:1
+msgid "<b>Status</b>"
+msgstr "<b>Estado</b>"
+
+#: ../res/IMStatus.glade.h:3
+msgid "<b>When Stopping or Quitting</b>"
+msgstr "<b>Al detener o salir</b>"
+
+#: ../res/IMStatus.glade.h:4
+msgid "Do nothing"
+msgstr "No hacer nada"
+
+#: ../res/IMStatus.glade.h:5 ../res/Twitter.glade.h:2
+msgid "Message:"
+msgstr "Mensaje:"
+
+#: ../res/IMStatus.glade.h:6
+msgid "Set status to:"
+msgstr "Configurar estatus a:"
+
+#: ../res/IMStatus.glade.h:7
+msgid "Update even if not available"
+msgstr "Actualizar estado incluso si no está disponible"
+
+#: ../res/IMStatus.glade.h:8
+msgid "Update when paused"
+msgstr "Actualizar al pausar"
+
+#: ../res/IMStatus.glade.h:9
+msgid "Update your status even if you are marked as unavailable"
+msgstr "Actualizar su estado incluso si está marcado como no disponible"
+
+#: ../res/IMStatus.glade.h:10
+msgid "Update your status on pause/unpause events"
+msgstr "Actualizar tu estado en eventos de pausar/continuar"
+
+#: ../res/Library.glade.h:1
+msgid "<b>Libraries</b>"
+msgstr "<b>Bibliotecas</b>"
+
+#: ../res/Library.glade.h:2
+msgid "Add a new library"
+msgstr "Añadir una biblioteca nueva"
+
+#: ../res/Library.glade.h:3
+msgid "Remove the selected libraries"
+msgstr "Eliminar las bibliotecas seleccionadas"
+
+#: ../res/Library.glade.h:5
+msgid "Rename the selected library"
+msgstr "Renombrar la biblioteca seleccionada"
+
+#: ../res/Library.glade.h:6
+msgid "Update the selected library by rescanning the disk"
+msgstr "Actualizar la biblioteca seleccionada con un examen del disco"
+
+#: ../res/MainWindow.glade.h:1
+msgid "Clear"
+msgstr "Limpiar"
+
+#: ../res/MainWindow.glade.h:2
+msgid "Clear the playlist"
+msgstr "Limpiar la lista de reproducción"
+
+#: ../res/MainWindow.glade.h:3
+msgid "Display about dialog box"
+msgstr "Mostrar el diálogo \"Acerca de...\""
+
+#: ../res/MainWindow.glade.h:4 ../res/StatusIconMenu.glade.h:1
+msgid "Display preferences"
+msgstr "Preferencias de visualización"
+
+#: ../res/MainWindow.glade.h:5
+msgid "Elapsed time"
+msgstr "Tiempo transcurrido"
+
+#: ../res/MainWindow.glade.h:6
+msgid "Full"
+msgstr ""
+
+#: ../res/MainWindow.glade.h:7
+msgid "Mini"
+msgstr ""
+
+#: ../res/MainWindow.glade.h:8
+msgid "Nano"
+msgstr ""
+
+#: ../res/MainWindow.glade.h:9
+msgid "Online _Help"
+msgstr "A_yuda en linea"
+
+#: ../res/MainWindow.glade.h:10
+msgid "Open the online help web page"
+msgstr "Abrir el pagina web de ayuda en linea"
+
+#: ../res/MainWindow.glade.h:11
+msgid "Play all tracks endlessly"
+msgstr "Reproducir todas pistas sin detener"
+
+#: ../res/MainWindow.glade.h:13 ../res/StatusIconMenu.glade.h:3
+msgid "Play the next track"
+msgstr "Reproducir la pista siguiente"
+
+#: ../res/MainWindow.glade.h:14 ../res/StatusIconMenu.glade.h:4
+msgid "Play the previous track"
+msgstr "Reproducir la última pista"
+
+#: ../res/MainWindow.glade.h:15
+msgid "Playlist"
+msgstr ""
+
+#: ../res/MainWindow.glade.h:16 ../res/StatusIconMenu.glade.h:6
+msgid "Quit the application"
+msgstr "Termina la aplicación"
+
+#: ../res/MainWindow.glade.h:17
+msgid "Remaining time"
+msgstr "Tiempo restante"
+
+#: ../res/MainWindow.glade.h:19
+msgid "Seek a position in the current track"
+msgstr "Buscar una posición en la pista actual"
+
+#: ../res/MainWindow.glade.h:20
+msgid "Select an explorer"
+msgstr "Elija un explorador"
+
+#: ../res/MainWindow.glade.h:21
+msgid "Shuffle"
+msgstr "Desordenar"
+
+#: ../res/MainWindow.glade.h:22
+msgid "Shuffle the playlist"
+msgstr "Desordenar la lista de reproducción"
+
+#: ../res/MainWindow.glade.h:23 ../res/StatusIconMenu.glade.h:7
+msgid "Stop the current track"
+msgstr "Detener la pista actual"
+
+#: ../res/MainWindow.glade.h:24
+msgid "_Edit"
+msgstr "_Edición"
+
+#: ../res/MainWindow.glade.h:25
+msgid "_File"
+msgstr "_Archivo"
+
+#: ../res/MainWindow.glade.h:26
+msgid "_Help"
+msgstr "A_yuda"
+
+#: ../res/MainWindow.glade.h:27
+msgid "_Mode"
+msgstr ""
+
+#: ../res/SelectPath.glade.h:1
+msgid "Name:"
+msgstr "Nombre:"
+
+#: ../res/SelectPath.glade.h:2
+msgid "Path:"
+msgstr "Ruta:"
+
+#: ../res/StatusFile.glade.h:1
+msgid "<b>File</b>"
+msgstr "<b>Archivo</b>"
+
+#: ../res/StatusFile.glade.h:2
+msgid "<b>Playing Status</b>"
+msgstr "<b>Estado de reproducción</b>"
+
+#: ../res/StatusIconMenu.glade.h:5
+msgid "Play/Unpause"
+msgstr "Reproducir/Unpausar"

@@ -1,0 +1,47 @@
+.TH DECIBEL-AUDIO-PLAYER-REMOTE "1" "January 10th 2008" "User Commands"
+.SH NAME
+decibel-audio-player-remote \- Control Decibel Audio Player remotely
+.SH SYNOPSIS
+.B Usage: decibel-audio-player-remote command [arg1 arg2...]
+.SH DESCRIPTION
+\fBdecibel-audio-player-remote\fP allows you to control Decibel Audio Player using DBus.
+
+.SH OPTIONS
+.TP
+\fBnext\fR
+Jump to the next track.
+.TP
+\fBpause\fR
+Pause or continue playing the current track.
+.TP
+\fBpl\-add file1 file2...\fR
+Append the given files to the playlist.
+.TP
+\fBpl\-clr\fR
+Clear the playlist.
+.TP
+\fBpl\-set file1 file2...\fR
+Set the playlist to the given files.
+.TP
+\fBplay\fR
+Start playing the current track.
+.TP
+\fBprev\fR
+Jump to the previous track.
+.TP
+\fBshuffle\fR
+Shuffle the playlist.
+.TP
+\fBstop\fR
+Stop playback.
+.TP
+\fBvolume value\fR
+Change volume to value (0 -- 100).
+
+.SH "SEE ALSO"
+.B decibel-audio-player(1)
+
+.SH AUTHOR
+Decibel Audio Player was written by François Ingelrest <athropos@gmail.com>
+
+This manual page was written by Emilio Pozuelo Monfort <pochu@ubuntu.com>.

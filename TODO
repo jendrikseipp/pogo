@@ -1,0 +1,37 @@
+ - Add a maximum number of Last.fm submission failures, and remove tracks that can't be submitted
+
+ - Improve the scroll() method of extTreeView? Sometimes, scroll_to_cell() does strange things...
+
+ - Load an audio CD (the explorer name changes), restart DAP: the audio is not selected because the explorer name is no longer the same
+
+ - Library view with album covers, not a tree
+
+ - Somehow include the genre (e.g., in the library view)
+
+
+---------------------------------------------------------------------------------------------------------------------------------------
+
+
+Bugs
+----
+
+ 1 Quand plusieurs lignes sont sélectionées dans le File Explorer, on ne peut plus cliquer sur la petite flèche
+
+ 2 Après un refresh dans les prefs de la Library, les lignes ne sont plus sélectionnées
+
+ 3 When disabling the AudioCD module, the corresponding explorer is not removed from the list
+
+
+---------------------------------------------------------------------------------------------------------------------------------------
+
+
+Long-term
+---------
+
+ - Module OSD ?
+
+ - Module Streaming radio (voir StreamTuner ?)
+
+ - Ajouter un indicateur de progression dans la status icon ?
+
+ - Mettre le login last.fm dans une boite de dialogue de prefs, pour pouvoir le changer facilement ?
