@@ -84,6 +84,7 @@ class Tracklist(modules.Module):
         """ This is the real initialization function, called when the module has been loaded """
         wTree                  = tools.prefs.getWidgetsTree()
         self.playtime          = 0
+        self.bufferedTrack     = None
         self.previousTracklist = None
         # Retrieve widgets
         self.window     = wTree.get_widget('win-main')
@@ -171,14 +172,17 @@ class Tracklist(modules.Module):
             self.jumpTo(where)
 
 
-    def jumpTo(self, trackIdx):
+    def jumpTo(self, trackIdx, sendPlayMsg = True):
         """ Jump to the track located at the given index """
         if self.list.hasMark() and self.list.getItem(self.list.getMark(), ROW_ICO) != consts.icoError:
             self.list.setItem(self.list.getMark(), ROW_ICO, consts.icoNull)
         self.list.setMark(trackIdx)
         self.list.scroll_to_cell(trackIdx)
         self.list.setItem(trackIdx, ROW_ICO, consts.icoPlay)
-        modules.postMsg(consts.MSG_CMD_PLAY,        {'uri': self.list.getItem(trackIdx, ROW_TRK).getURI()})
+
+        if sendPlayMsg:
+            modules.postMsg(consts.MSG_CMD_PLAY, {'uri': self.list.getItem(trackIdx, ROW_TRK).getURI()})
+
         modules.postMsg(consts.MSG_EVT_NEW_TRACK,   {'track': self.list.getRow(trackIdx)[ROW_TRK]})
         modules.postMsg(consts.MSG_EVT_TRACK_MOVED, {'hasPrevious': self.__getPreviousTrackIdx() != -1, 'hasNext': self.__getNextTrackIdx() != -1})
 
@@ -199,9 +203,12 @@ class Tracklist(modules.Module):
             currIdx = (currIdx + 1) % len(self.list)
 
             if self.list.getItem(currIdx, ROW_ICO) != consts.icoError:
-                self.jumpTo(currIdx)
+                track = self.list.getItem(currIdx, ROW_TRK).getURI()
+                self.jumpTo(currIdx, track != self.bufferedTrack)
+                self.bufferedTrack = None
                 return
 
+        self.bufferedTrack = None
         modules.postMsg(consts.MSG_CMD_STOP)
 
 
@@ -209,7 +216,8 @@ class Tracklist(modules.Module):
         """ The current track is close to its end, so we try to buffer the next one to avoid gaps """
         where = self.__getNextTrackIdx()
         if where != -1:
-            modules.postMsg(consts.MSG_CMD_BUFFER, {'uri': self.list.getItem(where, ROW_TRK).getURI()})
+            self.bufferedTrack = self.list.getItem(where, ROW_TRK).getURI()
+            modules.postMsg(consts.MSG_CMD_BUFFER, {'uri': self.bufferedTrack})
 
 
     def insert(self, tracks, position=None):
