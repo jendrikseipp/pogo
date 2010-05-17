@@ -5,6 +5,7 @@
 v1.05 ()
     [-] Skips two songs when one is not found (#581654)
     [-] Fixed crash in some rare occasions when trying to set the cover for the current track
+    [ ] The playbin2 GStreamer component is now used by default (use the --playbin flag to use the old playbin component)
 
 
 v1.04 (13/05/10)

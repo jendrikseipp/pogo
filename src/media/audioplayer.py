@@ -23,7 +23,7 @@ import gst
 
 class AudioPlayer:
 
-    def __init__(self, callbackEnded, usePlaybin2=False):
+    def __init__(self, callbackEnded, usePlaybin2=True):
         """ Constructor """
         self.nextURI       = None
         self.equalizer     = None

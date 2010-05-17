@@ -33,7 +33,7 @@ class GSTPlayer(modules.Module):
     def __init__(self):
         """ Constructor """
         # The player must be created during the application startup, not when the application is ready (MSG_EVT_APP_STARTED)
-        self.player = audioplayer.AudioPlayer(self.__onTrackEnded, prefs.getCmdLine()[0].playbin2)
+        self.player = audioplayer.AudioPlayer(self.__onTrackEnded, not prefs.getCmdLine()[0].playbin)
 
         modules.Module.__init__(self, (consts.MSG_CMD_PLAY,   consts.MSG_CMD_SET_VOLUME,   consts.MSG_CMD_ENABLE_RG,
                                        consts.MSG_CMD_SEEK,   consts.MSG_EVT_APP_STARTED,  consts.MSG_CMD_DISABLE_RG,
@@ -58,7 +58,7 @@ class GSTPlayer(modules.Module):
 
             modules.postMsg(consts.MSG_EVT_TRACK_POSITION, {'seconds': int(position / 1000000000)})
 
-            if remaining < 4000000000 and self.nextURI is None and prefs.getCmdLine()[0].playbin2:
+            if remaining < 4000000000 and self.nextURI is None and not prefs.getCmdLine()[0].playbin:
                 modules.postMsg(consts.MSG_EVT_NEED_BUFFER)
 
         return True
@@ -79,7 +79,7 @@ class GSTPlayer(modules.Module):
 
     def bufferNextTrack(self, uri):
         """ Buffer the next track """
-        if self.nextURI is None and prefs.getCmdLine()[0].playbin2:
+        if self.nextURI is None and not prefs.getCmdLine()[0].playbin:
             self.nextURI = uri
             self.player.setNextURI(uri)
 
