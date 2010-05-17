@@ -3,6 +3,7 @@
 
 
 v1.05 ()
+    [-] Fixed crash in some rare occasions when trying to set the cover for the current track
 
 
 v1.04 (13/05/10)
