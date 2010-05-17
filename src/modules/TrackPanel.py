@@ -164,7 +164,8 @@ class TrackPanel(modules.Module):
     def handleMsg(self, msg, params):
         """ Handle messages sent to this module """
         if msg == consts.MSG_CMD_SET_COVER:
-            if params['track'] == self.currTrack:
+            # Must check if currTrack is not None, because '==' calls the cmp() method and this fails on None
+            if self.currTrack is not None and params['track'] == self.currTrack:
                 self.currCoverPath = params['pathFullSize']
                 self.__setImage(params['pathThumbnail'])
         elif msg == consts.MSG_EVT_NEW_TRACK:
