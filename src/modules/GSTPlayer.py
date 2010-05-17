@@ -86,8 +86,6 @@ class GSTPlayer(modules.Module):
 
     def __onTrackEnded(self, error):
         """ Called to signal eos and errors """
-        self.__stopUpdateTimer()
-
         if error: modules.postMsg(consts.MSG_EVT_TRACK_ENDED_ERROR)
         else:     modules.postMsg(consts.MSG_EVT_TRACK_ENDED_OK)
 
