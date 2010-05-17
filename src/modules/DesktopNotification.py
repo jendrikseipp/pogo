@@ -134,7 +134,8 @@ class DesktopNotification(modules.ThreadedModule):
             self.notif.close()
         elif msg == consts.MSG_EVT_TRACK_MOVED:
             self.hasNext = params['hasNext']
-        elif msg == consts.MSG_CMD_SET_COVER and params['track'] == self.currTrack:
+        # Must check if currTrack is not None, because '==' calls the cmp() method and this fails on None
+        elif msg == consts.MSG_CMD_SET_COVER and self.currTrack is not None and params['track'] == self.currTrack:
             self.currCover = params['pathThumbnail']
 
 
