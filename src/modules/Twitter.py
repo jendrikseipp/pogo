@@ -16,7 +16,7 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301 USA
 
-import base64, gui, media, modules, traceback, urllib, urllib2
+import base64, gui, modules, traceback, urllib, urllib2
 
 from gui       import authentication
 from tools     import consts, prefs
@@ -116,6 +116,9 @@ class Twitter(modules.ThreadedModule):
 
     def onBtnHelp(self, btn):
         """ Display a small help message box """
+        # Do this import only when we really need it
+        import media
+
         helpDlg = gui.help.HelpDlg(_(MOD_NAME))
         helpDlg.addSection(_('Description'),
                            _('This module posts a message to your Twitter account according to what '

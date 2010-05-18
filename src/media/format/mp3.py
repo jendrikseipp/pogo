@@ -16,13 +16,13 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301 USA
 
-from mutagen.mp3           import MP3
-from mutagen.id3           import ID3
-from media.track.fileTrack import FileTrack
-
 
 def getTrack(file):
     """ Return a Track created from an mp3 file """
+    from mutagen.mp3           import MP3
+    from mutagen.id3           import ID3
+    from media.track.fileTrack import FileTrack
+
     track   = FileTrack(file)
     mp3File = MP3(file)
 

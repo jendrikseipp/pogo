@@ -16,12 +16,12 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301 USA
 
-from mutagen.asf           import ASF
-from media.track.fileTrack import FileTrack
-
 
 def getTrack(file):
     """ Return a Track created from an asf file """
+    from mutagen.asf           import ASF
+    from media.track.fileTrack import FileTrack
+
     track   = FileTrack(file)
     asfFile = ASF(file)
 

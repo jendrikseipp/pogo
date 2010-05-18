@@ -16,7 +16,7 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301 USA
 
-import os, playlist, tools, traceback
+import os, playlist, traceback
 
 from format          import monkeysaudio, asf, flac, mp3, mp4, mpc, ogg, wavpack
 from os.path         import splitext

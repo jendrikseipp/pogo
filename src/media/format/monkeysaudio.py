@@ -16,12 +16,12 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301 USA
 
-from mutagen.monkeysaudio  import MonkeysAudio
-from media.track.fileTrack import FileTrack
-
 
 def getTrack(file):
     """ Return a Track created from an APE file """
+    from mutagen.monkeysaudio  import MonkeysAudio
+    from media.track.fileTrack import FileTrack
+
     track = FileTrack(file)
     mFile = MonkeysAudio(file)
 
