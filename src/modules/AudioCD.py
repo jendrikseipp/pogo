@@ -19,7 +19,7 @@
 import cgi, gobject, gtk, gui, modules, os, socket, tools, traceback, urllib
 
 from gui                 import extTreeview
-from tools               import consts, prefs, sec2str
+from tools               import consts, icons, prefs, sec2str
 from gettext             import gettext as _
 from tools.log           import logger
 from media.track.cdTrack import CDTrack
@@ -105,7 +105,7 @@ class AudioCD(modules.ThreadedModule):
         self.tree.connect('drag-data-get',              self.onDragDataGet)
         self.tree.connect('key-press-event',            self.onKeyPressed)
         self.tree.connect('exttreeview-button-pressed', self.onButtonPressed)
-        modules.postMsg(consts.MSG_CMD_EXPLORER_ADD, {'modName': MOD_L10N, 'expName': self.expName, 'icon': consts.icoCdrom, 'widget': self.scrolled})
+        modules.postMsg(consts.MSG_CMD_EXPLORER_ADD, {'modName': MOD_L10N, 'expName': self.expName, 'icon': icons.cdromMenuIcon(), 'widget': self.scrolled})
         # Hide the album length when not drawing the root node
         self.tree.get_column(0).set_cell_data_func(txtRdrLen, self.__drawAlbumLenCell)
         # CD-ROM drive read speed
@@ -186,10 +186,10 @@ class AudioCD(modules.ThreadedModule):
     def createTree(self, nbTracks):
         """ Create a temporary explorer tree without disc information """
         name = '%s  <span size="smaller" foreground="#909090">%s</span>' % (MOD_L10N, _('downloading data...'))
-        self.tree.replaceContent(((consts.icoCdrom, None, name, None),))
+        self.tree.replaceContent(((icons.cdromMenuIcon(), None, name, None),))
 
         # Append a child for each track
-        self.tree.appendRows([(consts.icoMediaFile, None, _('Track %02u') % (i+1), None) for i in xrange(nbTracks)], (0,))
+        self.tree.appendRows([(icons.mediaFileMenuIcon(), None, _('Track %02u') % (i+1), None) for i in xrange(nbTracks)], (0,))
         self.tree.expand_all()
 
 
@@ -279,7 +279,7 @@ class AudioCD(modules.ThreadedModule):
             discInfo = DiscID.disc_id(DiscID.open(prefs.get(__name__, 'device', PREFS_DFT_DEVICE)))
         except Exception, err:
             if err[0] == 123:
-                self.tree.replaceContent([(consts.icoCdrom, None, _('No disc found'), None)])
+                self.tree.replaceContent([(icons.cdromMenuIcon(), None, _('No disc found'), None)])
                 modules.postMsg(consts.MSG_CMD_EXPLORER_RENAME, {'modName': MOD_L10N, 'expName': self.expName, 'newExpName': MOD_L10N})
                 self.expName = MOD_L10N
             else:

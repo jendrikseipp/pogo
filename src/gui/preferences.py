@@ -18,6 +18,7 @@
 
 import cgi, gobject, gtk, gui, modules, tools
 
+from tools   import icons
 from gettext import gettext as _
 
 
@@ -77,7 +78,7 @@ class Preferences:
             configurable = data[modules.MOD_INFO][modules.MODINFO_CONFIGURABLE]
 
             if configurable or not mandatory:
-                if configurable and instance is not None: icon = tools.consts.icoBtnPrefs
+                if configurable and instance is not None: icon = icons.prefsBtnIcon()
                 else:                                     icon = None
 
                 text = '<b>%s</b>\n<small>%s</small>' % (cgi.escape(_(name)), cgi.escape(data[modules.MOD_INFO][modules.MODINFO_DESC]))

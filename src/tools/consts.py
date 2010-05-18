@@ -106,26 +106,6 @@ UNKNOWN_TRACK_NUMBER = 0
 UNKNOWN_ALBUM_ARTIST = _('Unknown Album Artist')
 
 
-# --- Stock icons
-tmpLbl       = gtk.Label()
-icoDir       = tmpLbl.render_icon(gtk.STOCK_DIRECTORY,   gtk.ICON_SIZE_MENU)
-icoPlay      = tmpLbl.render_icon(gtk.STOCK_MEDIA_PLAY,  gtk.ICON_SIZE_MENU)
-icoPause     = tmpLbl.render_icon(gtk.STOCK_MEDIA_PAUSE, gtk.ICON_SIZE_MENU)
-icoCdrom     = tmpLbl.render_icon(gtk.STOCK_CDROM,       gtk.ICON_SIZE_MENU)
-icoError     = tmpLbl.render_icon(gtk.STOCK_CANCEL,      gtk.ICON_SIZE_MENU)
-icoMediaDir  = tmpLbl.render_icon(gtk.STOCK_DIRECTORY,   gtk.ICON_SIZE_MENU).copy()  # We need a copy to modify it
-icoMediaFile = tmpLbl.render_icon(gtk.STOCK_FILE,        gtk.ICON_SIZE_MENU).copy()  # We need a copy to modify it
-
-icoCdrom.composite(icoMediaFile, 5, 5, 11, 11, 5, 5, 0.6875, 0.6875, gtk.gdk.INTERP_HYPER, 255)
-icoCdrom.composite(icoMediaDir,  5, 5, 11, 11, 5, 5, 0.6875, 0.6875, gtk.gdk.INTERP_HYPER, 255)
-
-icoBtnDir   = tmpLbl.render_icon(gtk.STOCK_DIRECTORY,   gtk.ICON_SIZE_BUTTON)
-icoBtnPrefs = tmpLbl.render_icon(gtk.STOCK_PREFERENCES, gtk.ICON_SIZE_BUTTON)
-
-icoNull = gtk.gdk.Pixbuf(gtk.gdk.COLORSPACE_RGB, True, 8, 16, 16)
-icoNull.fill(0x00000000)
-
-
 # --- Drag'n'Drop
 (
     DND_URI,          # From another application (e.g., from Nautilus)

@@ -18,7 +18,7 @@
 
 import gtk, gui, media, modules, os.path, tools, urllib
 
-from tools           import consts
+from tools           import consts, icons
 from gettext         import gettext as _
 from gobject         import TYPE_STRING, TYPE_INT, TYPE_PYOBJECT
 from media.track     import Track
@@ -174,11 +174,11 @@ class Tracklist(modules.Module):
 
     def jumpTo(self, trackIdx, sendPlayMsg = True):
         """ Jump to the track located at the given index """
-        if self.list.hasMark() and self.list.getItem(self.list.getMark(), ROW_ICO) != consts.icoError:
-            self.list.setItem(self.list.getMark(), ROW_ICO, consts.icoNull)
+        if self.list.hasMark() and self.list.getItem(self.list.getMark(), ROW_ICO) != icons.errorMenuIcon():
+            self.list.setItem(self.list.getMark(), ROW_ICO, icons.nullMenuIcon())
         self.list.setMark(trackIdx)
         self.list.scroll_to_cell(trackIdx)
-        self.list.setItem(trackIdx, ROW_ICO, consts.icoPlay)
+        self.list.setItem(trackIdx, ROW_ICO, icons.playMenuIcon())
 
         if sendPlayMsg:
             modules.postMsg(consts.MSG_CMD_PLAY, {'uri': self.list.getItem(trackIdx, ROW_TRK).getURI()})
@@ -193,7 +193,7 @@ class Tracklist(modules.Module):
 
         # If an error occurred with the current track, flag it as such
         if withError:
-            self.list.setItem(currIdx, ROW_ICO, consts.icoError)
+            self.list.setItem(currIdx, ROW_ICO, icons.errorMenuIcon())
 
         # Find the next 'playable' track (not already flagged)
         if self.btnRepeat.get_active(): nbTracks = len(self.list)
@@ -202,7 +202,7 @@ class Tracklist(modules.Module):
         for i in xrange(nbTracks):
             currIdx = (currIdx + 1) % len(self.list)
 
-            if self.list.getItem(currIdx, ROW_ICO) != consts.icoError:
+            if self.list.getItem(currIdx, ROW_ICO) != icons.errorMenuIcon():
                 track = self.list.getItem(currIdx, ROW_TRK).getURI()
                 self.jumpTo(currIdx, track != self.bufferedTrack)
                 self.bufferedTrack = None
@@ -223,7 +223,7 @@ class Tracklist(modules.Module):
     def insert(self, tracks, position=None):
         """ Insert some tracks in the tracklist, append them if position is None """
         self.previousTracklist = [row[ROW_TRK] for row in self.list.getAllRows()]
-        rows = [[consts.icoNull, track.getNumber(), track.getTitle(), track.getArtist(), track.getExtendedAlbum(),
+        rows = [[icons.nullMenuIcon(), track.getNumber(), track.getTitle(), track.getArtist(), track.getExtendedAlbum(),
                     track.getLength(), track.getBitrate(), track.getGenre(), track.getDate(), track.getURI(), track] for track in tracks]
 
         for row in rows:
@@ -256,8 +256,8 @@ class Tracklist(modules.Module):
         """ Playback has been stopped """
         if self.list.hasMark():
             currTrack = self.list.getMark()
-            if self.list.getItem(currTrack, ROW_ICO) != consts.icoError:
-                self.list.setItem(currTrack, ROW_ICO, consts.icoNull)
+            if self.list.getItem(currTrack, ROW_ICO) != icons.errorMenuIcon():
+                self.list.setItem(currTrack, ROW_ICO, icons.nullMenuIcon())
             self.list.clearMark()
 
 
@@ -372,9 +372,9 @@ class Tracklist(modules.Module):
 
     def handleMsg(self, msg, params):
         """ A message has been received """
-        if   msg == consts.MSG_EVT_PAUSED:                                   self.onPausedToggled(consts.icoPause)
+        if   msg == consts.MSG_EVT_PAUSED:                                   self.onPausedToggled(icons.pauseMenuIcon())
         elif msg == consts.MSG_EVT_STOPPED:                                  self.onStopped()
-        elif msg == consts.MSG_EVT_UNPAUSED:                                 self.onPausedToggled(consts.icoPlay)
+        elif msg == consts.MSG_EVT_UNPAUSED:                                 self.onPausedToggled(icons.playMenuIcon())
         elif msg == consts.MSG_EVT_APP_STARTED:                              self.onAppStarted()
         elif msg == consts.MSG_EVT_TRACK_ENDED_OK:                           self.onTrackEnded(False)
         elif msg == consts.MSG_EVT_TRACK_ENDED_ERROR:                        self.onTrackEnded(True)

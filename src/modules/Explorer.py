@@ -18,7 +18,7 @@
 
 import gobject, gtk, modules
 
-from tools   import consts, prefs
+from tools   import consts, icons, prefs
 from gettext import gettext as _
 
 MOD_INFO = ('Explorer', 'Explorer', '', [], True, False)
@@ -125,7 +125,7 @@ class Explorer(modules.Module):
     def addExplorer(self, modName, expName, pixbuf, widget):
         """ Add a new explorer to the combo box """
         if pixbuf is None:
-            pixbuf = consts.icoDir
+            pixbuf = icons.dirMenuIcon()
 
         if modName not in self.explorers: self.explorers[modName]          = {expName: (pixbuf, widget)}
         else:                             self.explorers[modName][expName] = (pixbuf, widget)

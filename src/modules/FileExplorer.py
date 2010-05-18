@@ -19,7 +19,7 @@
 import cgi, gtk, gui.window, media, modules, os, tools, urllib
 
 from gui     import fileChooser, help, extTreeview, extListview, selectPath
-from tools   import consts, prefs
+from tools   import consts, prefs, icons
 from media   import playlist
 from gettext import gettext as _
 from os.path import isdir, isfile
@@ -117,12 +117,12 @@ class FileExplorer(modules.Module):
             (name, type, path) = item[0]
 
             if type == TYPE_FILE:
-                self.tree.appendRow((consts.icoMediaFile, name, TYPE_FILE, path), parent)
+                self.tree.appendRow((icons.mediaFileMenuIcon(), name, TYPE_FILE, path), parent)
             else:
-                newNode = self.tree.appendRow((consts.icoDir, name, TYPE_DIR, path), parent)
+                newNode = self.tree.appendRow((icons.dirMenuIcon(), name, TYPE_DIR, path), parent)
 
                 if item[1] is not None:
-                    fakeChild = self.tree.appendRow((consts.icoDir, '', TYPE_NONE, ''), newNode)
+                    fakeChild = self.tree.appendRow((icons.dirMenuIcon(), '', TYPE_NONE, ''), newNode)
 
                     if len(item[1]) != 0:
                         # We must expand the row before adding the real children, but this works only if there is already at least one child
@@ -199,12 +199,12 @@ class FileExplorer(modules.Module):
 
         for (file, path) in tools.listDir(directory, self.showHiddenFiles):
             if isdir(path):
-                directories.append((consts.icoDir, cgi.escape(unicode(file, errors='replace')), TYPE_DIR, path))
+                directories.append((icons.dirMenuIcon(), cgi.escape(unicode(file, errors='replace')), TYPE_DIR, path))
             elif isfile(path):
                 if media.isSupported(file):
-                    mediaFiles.append((consts.icoMediaFile, cgi.escape(unicode(file, errors='replace')), TYPE_FILE, path))
+                    mediaFiles.append((icons.mediaFileMenuIcon(), cgi.escape(unicode(file, errors='replace')), TYPE_FILE, path))
                 elif playlist.isSupported(file):
-                    playlists.append((consts.icoMediaFile, cgi.escape(unicode(file, errors='replace')), TYPE_FILE, path))
+                    playlists.append((icons.mediaFileMenuIcon(), cgi.escape(unicode(file, errors='replace')), TYPE_FILE, path))
 
         playlists.sort(key=self.sortKey)
         mediaFiles.sort(key=self.sortKey)
@@ -247,7 +247,7 @@ class FileExplorer(modules.Module):
                         break
 
             # Append/remove children if needed
-            if hasContent and self.tree.getNbChildren(child) == 0:      self.tree.appendRow((consts.icoDir, '', TYPE_NONE, ''), child)
+            if hasContent and self.tree.getNbChildren(child) == 0:      self.tree.appendRow((icons.dirMenuIcon(), '', TYPE_NONE, ''), child)
             elif not hasContent and self.tree.getNbChildren(child) > 0: self.tree.removeAllChildren(child)
 
             yield True
@@ -328,9 +328,9 @@ class FileExplorer(modules.Module):
             if event.button == 2:
                 self.play(False, path)
             elif event.button == 1 and event.type == gtk.gdk._2BUTTON_PRESS:
-                if   tree.getItem(path, ROW_PIXBUF) != consts.icoDir: self.play(True)
-                elif tree.row_expanded(path):                         tree.collapse_row(path)
-                else:                                                 tree.expand_row(path, False)
+                if   tree.getItem(path, ROW_PIXBUF) != icons.dirMenuIcon(): self.play(True)
+                elif tree.row_expanded(path):                               tree.collapse_row(path)
+                else:                                                       tree.expand_row(path, False)
 
 
     def onShowPopupMenu(self, tree, button, time, path):
@@ -396,7 +396,7 @@ class FileExplorer(modules.Module):
     def onRowCollapsed(self, tree, path):
         """ Replace all children by a fake child """
         tree.removeAllChildren(path)
-        tree.appendRow((consts.icoDir, '', TYPE_NONE, ''), path)
+        tree.appendRow((icons.dirMenuIcon(), '', TYPE_NONE, ''), path)
 
 
     def onDragDataGet(self, tree, context, selection, info, time):
@@ -502,7 +502,7 @@ class FileExplorer(modules.Module):
 
     def populateFolderList(self):
         """ Populate the list of known folders """
-        self.cfgList.replaceContent([(name, consts.icoBtnDir, '<b>%s</b>\n<small>%s</small>' % (cgi.escape(name), cgi.escape(path)))
+        self.cfgList.replaceContent([(name, icons.dirBtnIcon(), '<b>%s</b>\n<small>%s</small>' % (cgi.escape(name), cgi.escape(path)))
                                      for name, path in sorted(self.folders.iteritems())])
 
 

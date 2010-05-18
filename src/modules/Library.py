@@ -19,7 +19,7 @@
 import cgi, collections, gtk, gui, media, modules, os, random, shutil, sys, tools
 
 from gui                   import fileChooser, help, questionMsgBox, extTreeview, extListview, progressDlg, selectPath
-from tools                 import consts, prefs, pickleLoad, pickleSave
+from tools                 import consts, icons, prefs, pickleLoad, pickleSave
 from gettext               import ngettext, gettext as _
 from os.path               import isdir, isfile
 from gobject               import idle_add, TYPE_STRING, TYPE_INT, TYPE_PYOBJECT
@@ -467,7 +467,7 @@ class Library(modules.Module):
         if not os.path.exists(os.path.join(path, 'VERSION_%u' % VERSION)):
             logger.error('[%s] Version number does not match, loading of library "%s" aborted' % (MOD_NAME, name))
             error = _('This library is deprecated, please refresh it.')
-            tree.replaceContent([(consts.icoError, None, error, TYPE_NONE, None, None)])
+            tree.replaceContent([(icons.errorMenuIcon(), None, error, TYPE_NONE, None, None)])
             return
 
         # Create the rows, with alphabetical header if needed
@@ -481,7 +481,7 @@ class Library(modules.Module):
                 if currChar.isdigit(): rows.append((None, None, '<b>0 - 9</b>',                 TYPE_HEADER, None, None))
                 else:                  rows.append((None, None, '<b>%s</b>' % currChar.upper(), TYPE_HEADER, None, None))
 
-            rows.append((consts.icoDir, None, cgi.escape(artist[ART_NAME]), TYPE_ARTIST, os.path.join(path, artist[ART_INDEX]), None))
+            rows.append((icons.dirMenuIcon(), None, cgi.escape(artist[ART_NAME]), TYPE_ARTIST, os.path.join(path, artist[ART_INDEX]), None))
 
         # Insert all rows, and then add a fake child to each artist
         tree.replaceContent(rows)
@@ -494,7 +494,7 @@ class Library(modules.Module):
         """ Initial load of all albums of the given node, assuming it is of type TYPE_ARTIST """
         allAlbums = pickleLoad(os.path.join(tree.getItem(node, ROW_FULLPATH), 'albums'))
         path      = tree.getItem(node, ROW_FULLPATH)
-        rows      = [(consts.icoMediaDir, '[%s]' % tools.sec2str(album[ALB_LENGTH], True), '%s' % cgi.escape(album[ALB_NAME]), TYPE_ALBUM, os.path.join(path, album[ALB_INDEX]), None) for album in allAlbums]
+        rows      = [(icons.mediaDirMenuIcon(), '[%s]' % tools.sec2str(album[ALB_LENGTH], True), '%s' % cgi.escape(album[ALB_NAME]), TYPE_ALBUM, os.path.join(path, album[ALB_INDEX]), None) for album in allAlbums]
 
         # Add all the rows, and then add a fake child to each of them
         tree.freeze_child_notify()
@@ -508,7 +508,7 @@ class Library(modules.Module):
     def loadTracks(self, tree, node, fakeChild):
         """ Initial load of all tracks of the given node, assuming it is of type TYPE_ALBUM """
         allTracks = pickleLoad(tree.getItem(node, ROW_FULLPATH))
-        rows      = [(consts.icoMediaFile, None, '%02u. %s' % (track.getNumber(), cgi.escape(track.getTitle())), TYPE_TRACK, track.getFilePath(), track) for track in allTracks]
+        rows      = [(icons.mediaFileMenuIcon(), None, '%02u. %s' % (track.getNumber(), cgi.escape(track.getTitle())), TYPE_TRACK, track.getFilePath(), track) for track in allTracks]
 
         tree.appendRows(rows, node)
         tree.removeRow(fakeChild)
@@ -533,9 +533,9 @@ class Library(modules.Module):
             if event.button == 2:
                 self.playPaths(tree, [path], False)
             elif event.button == 1 and event.type == gtk.gdk._2BUTTON_PRESS:
-                if   tree.getItem(path, ROW_PIXBUF) != consts.icoDir: self.playPaths(tree, None, True)
-                elif tree.row_expanded(path):                         tree.collapse_row(path)
-                else:                                                 tree.expand_row(path, False)
+                if   tree.getItem(path, ROW_PIXBUF) != icons.dirMenuIcon(): self.playPaths(tree, None, True)
+                elif tree.row_expanded(path):                               tree.collapse_row(path)
+                else:                                                       tree.expand_row(path, False)
 
 
     def onKeyPressed(self, tree, event):
@@ -682,7 +682,7 @@ class Library(modules.Module):
     def fillLibraryList(self):
         """ Fill the list of libraries """
         if self.cfgWindow is not None:
-            rows = [(name, consts.icoBtnDir, '<b>%s</b>\n<small>%s - %u %s</small>' % (cgi.escape(name), cgi.escape(path), nbTracks, cgi.escape(_('tracks'))))
+            rows = [(name, icons.dirBtnIcon(), '<b>%s</b>\n<small>%s - %u %s</small>' % (cgi.escape(name), cgi.escape(path), nbTracks, cgi.escape(_('tracks'))))
                     for name, (path, nbArtists, nbAlbums, nbTracks) in sorted(self.libraries.iteritems())]
             self.cfgList.replaceContent(rows)
 
