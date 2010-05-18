@@ -78,13 +78,15 @@ def realStartup():
         Perform all the initialization stuff which is not mandatory to display the window
         This function should be called within the GTK main loop, once the window has been displayed
     """
-    import atexit, dbus.mainloop.glib, gui.about, modules, webbrowser
+    import atexit, dbus.mainloop.glib, modules
+
 
     def onDelete(win, event):
         """ Use our own quit sequence, that will itself destroy the window """
         window.hide()
         modules.postQuitMsg()
         return True
+
 
     def onResize(win, rect):
         """ Save the new size of the window """
@@ -95,14 +97,29 @@ def realStartup():
             if prefs.get(__name__, 'view-mode', DEFAULT_VIEW_MODE)in (consts.VIEW_MODE_FULL, consts.VIEW_MODE_PLAYLIST):
                 prefs.set(__name__, 'full-win-height', rect.height)
 
+
+    def onAbout(item):
+        """ Show the about dialog box """
+        import gui.about
+        gui.about.show(window)
+
+
+    def onHelp(item):
+        """ Show help page in the web browser """
+        import webbrowser
+        webbrowser.open(consts.urlHelp)
+
+
     def onState(win, evt):
         """ Save the new state of the window """
         prefs.set(__name__, 'win-is-maximized', bool(evt.new_window_state & gtk.gdk.WINDOW_STATE_MAXIMIZED))
+
 
     def atExit():
         """ Final function, called just before exiting the Python interpreter """
         prefs.save()
         log.logger.info('Stopped')
+
 
     # D-Bus
     dbus.mainloop.glib.DBusGMainLoop(set_as_default=True)
@@ -120,8 +137,8 @@ def realStartup():
     wTree.get_widget('menu-mode-full').connect('activate', onViewMode, consts.VIEW_MODE_FULL)
     wTree.get_widget('menu-mode-playlist').connect('activate', onViewMode, consts.VIEW_MODE_PLAYLIST)
     wTree.get_widget('menu-quit').connect('activate', lambda item: onDelete(window, None))
-    wTree.get_widget('menu-about').connect('activate', lambda item: gui.about.show(window))
-    wTree.get_widget('menu-help').connect('activate', lambda item: webbrowser.open(consts.urlHelp))
+    wTree.get_widget('menu-about').connect('activate', onAbout)
+    wTree.get_widget('menu-help').connect('activate', onHelp)
     wTree.get_widget('menu-preferences').connect('activate', lambda item: modules.showPreferences())
 
     # Let's go
