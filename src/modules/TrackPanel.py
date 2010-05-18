@@ -21,8 +21,7 @@ import gobject, gtk, modules, os.path, tools
 from tools   import consts
 from gettext import gettext as _
 
-MOD_INFO     = ('Track Panel', 'Track Panel', '', [], True, False)
-NO_COVER_IMG = os.path.join(tools.consts.dirPix, 'cover-none.png')
+MOD_INFO = ('Track Panel', 'Track Panel', '', [], True, False)
 
 
 class TrackPanel(modules.Module):
@@ -51,7 +50,7 @@ class TrackPanel(modules.Module):
             Change the current image to imgPath.
             Use the application's icon if imgPath is None.
         """
-        if imgPath is None: self.img.set_from_file(NO_COVER_IMG)
+        if imgPath is None: self.img.set_from_file(os.path.join(tools.consts.dirPix, 'cover-none.png'))
         else:               self.img.set_from_file(imgPath)
 
 

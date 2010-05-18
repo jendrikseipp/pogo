@@ -25,7 +25,6 @@ from tools.log import logger
 from threading import Timer
 
 MOD_INFO = ('Desktop Notification', _('Desktop Notification'), _('Display a desktop notification on track change'), ['pynotify'], False, True)
-MOD_L10N = MOD_INFO[modules.MODINFO_L10N]
 
 # Default preferences
 PREFS_DEFAULT_BODY       = 'by {artist} on {album} ({playlist_pos} / {playlist_len})'
@@ -147,7 +146,7 @@ class DesktopNotification(modules.ThreadedModule):
         if self.cfgWin is None:
             import pynotify
 
-            self.cfgWin = gui.window.Window('DesktopNotification.glade', 'vbox1', __name__, MOD_L10N, 355, 345)
+            self.cfgWin = gui.window.Window('DesktopNotification.glade', 'vbox1', __name__, MOD_INFO[modules.MODINFO_L10N], 355, 345)
             self.cfgWin.getWidget('btn-ok').connect('clicked', self.onBtnOk)
             self.cfgWin.getWidget('btn-help').connect('clicked', self.onBtnHelp)
             self.cfgWin.getWidget('btn-cancel').connect('clicked', lambda btn: self.cfgWin.hide())
@@ -195,7 +194,7 @@ class DesktopNotification(modules.ThreadedModule):
 
     def onBtnHelp(self, btn):
         """ Display a small help message box """
-        helpDlg = gui.help.HelpDlg(MOD_L10N)
+        helpDlg = gui.help.HelpDlg(MOD_INFO[modules.MODINFO_L10N])
         helpDlg.addSection(_('Description'),
                            _('This module displays a small popup window on your desktop when a new track starts.'))
         helpDlg.addSection(_('Customizing the Notification'),

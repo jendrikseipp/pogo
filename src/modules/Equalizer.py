@@ -21,10 +21,7 @@ import gobject, gui, modules
 from tools   import consts, prefs
 from gettext import gettext as _
 
-MOD_INFO    = ('Equalizer', _('Equalizer'), _('Tune the level of the frequency bands'), [], False, True)
-MOD_L10N    = MOD_INFO[modules.MODINFO_L10N]
-MOD_NAME    = MOD_INFO[modules.MODINFO_NAME]
-ZERO_LEVELS = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+MOD_INFO = ('Equalizer', _('Equalizer'), _('Tune the level of the frequency bands'), [], False, True)
 
 
 class Equalizer(modules.Module):
@@ -37,7 +34,7 @@ class Equalizer(modules.Module):
 
     def onModLoaded(self):
         """ The module has been loaded """
-        self.lvls      = prefs.get(__name__, 'levels', ZERO_LEVELS)
+        self.lvls      = prefs.get(__name__, 'levels', [0, 0, 0, 0, 0, 0, 0, 0, 0, 0])
         self.cfgWindow = None
 
 
@@ -71,7 +68,7 @@ class Equalizer(modules.Module):
             self.timer      = None
             self.scales     = []
             self.handlers   = []
-            self.cfgWindow  = gui.window.Window('Equalizer.glade', 'vbox1', __name__, MOD_L10N, 675, 415)
+            self.cfgWindow  = gui.window.Window('Equalizer.glade', 'vbox1', __name__, MOD_INFO[modules.MODINFO_L10N], 675, 415)
             self.targetLvls = []
 
             for i in xrange(10):
@@ -82,7 +79,7 @@ class Equalizer(modules.Module):
             self.cfgWindow.getWidget('btn-save').connect('clicked',   self.onBtnSave)
             self.cfgWindow.getWidget('btn-open').connect('clicked',   self.onBtnOpen)
             self.cfgWindow.getWidget('btn-close').connect('clicked',  lambda btn: self.cfgWindow.hide())
-            self.cfgWindow.getWidget('btn-center').connect('clicked', lambda btn: self.jumpToTargetLvls(ZERO_LEVELS))
+            self.cfgWindow.getWidget('btn-center').connect('clicked', lambda btn: self.jumpToTargetLvls([0, 0, 0, 0, 0, 0, 0, 0, 0, 0]))
 
         if not self.cfgWindow.isVisible():
             self.cfgWindow.getWidget('btn-close').grab_focus()

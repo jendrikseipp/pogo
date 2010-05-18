@@ -16,7 +16,7 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301 USA
 
-import gui, Image, modules, os, tempfile, tools, traceback
+import gui, modules, os, tempfile, tools, traceback
 
 from tools     import consts, prefs
 from gettext   import gettext as _
@@ -26,7 +26,6 @@ from tools.log import logger
 # Module information
 MOD_INFO = ('Covers', _('Covers'), _('Show album covers'), [], False, True)
 MOD_NAME = MOD_INFO[modules.MODINFO_NAME]
-MOD_L10N = MOD_INFO[modules.MODINFO_L10N]
 
 AS_API_KEY   = 'fd8dd98d26bb3f288f3e626502f9add6'   # Ingelrest François' Audioscrobbler API key
 AS_TAG_START = '<image size="large">'               # The text that is right before the URL to the cover
@@ -103,6 +102,8 @@ class Covers(modules.ThreadedModule):
 
     def generateFullSizeCover(self, inFile, outFile, format):
         """ Resize inFile if needed, and write it to outFile (outFile and inFile may be equal) """
+        import Image
+
         try:
             # Open the image
             cover = Image.open(inFile)
@@ -124,6 +125,8 @@ class Covers(modules.ThreadedModule):
 
     def generateThumbnail(self, inFile, outFile, format):
         """ Generate a thumbnail from inFile (e.g., resize it) and write it to outFile (outFile and inFile may be equal) """
+        import Image
+
         try:
             # Open the image
             cover = Image.open(inFile).convert('RGBA')
@@ -371,7 +374,7 @@ class Covers(modules.ThreadedModule):
     def configure(self, parent):
         """ Show the configuration window """
         if self.cfgWin is None:
-            self.cfgWin = gui.window.Window('Covers.glade', 'vbox1', __name__, MOD_L10N, 320, 265)
+            self.cfgWin = gui.window.Window('Covers.glade', 'vbox1', __name__, MOD_INFO[modules.MODINFO_L10N], 320, 265)
             self.cfgWin.getWidget('btn-ok').connect('clicked', self.onBtnOk)
             self.cfgWin.getWidget('img-lastfm').set_from_file(os.path.join(consts.dirPix, 'audioscrobbler.png'))
             self.cfgWin.getWidget('btn-help').connect('clicked', self.onBtnHelp)
@@ -412,7 +415,7 @@ class Covers(modules.ThreadedModule):
 
     def onBtnHelp(self, btn):
         """ Display a small help message box """
-        helpDlg = gui.help.HelpDlg(MOD_L10N)
+        helpDlg = gui.help.HelpDlg(MOD_INFO[modules.MODINFO_L10N])
         helpDlg.addSection(_('Description'),
                            _('This module displays the cover of the album the current track comes from. Covers '
                               'may be loaded from local pictures, located in the same directory as the current '

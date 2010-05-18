@@ -21,7 +21,6 @@ import media, modules, os.path, tools, traceback
 from tools import consts, log, prefs
 
 MOD_INFO = ('Command Line Support', 'Command Line Support', '', [], True, False)
-MOD_NAME = MOD_INFO[modules.MODINFO_NAME]
 
 
 class CommandLine(modules.ThreadedModule):
@@ -37,15 +36,15 @@ class CommandLine(modules.ThreadedModule):
         self.savedPlaylist = os.path.join(consts.dirCfg, 'saved-playlist.txt')
 
         if len(args) != 0:
-            log.logger.info('[%s] Filling playlist with files given on command line' % MOD_NAME)
+            log.logger.info('[%s] Filling playlist with files given on command line' % MOD_INFO[modules.MODINFO_NAME])
             modules.postMsg(consts.MSG_CMD_TRACKLIST_SET, {'tracks': media.getTracks(args), 'playNow': True})
         else:
             try:
                 tracks = [media.track.unserialize(serialTrack) for serialTrack in tools.pickleLoad(self.savedPlaylist)]
                 modules.postMsg(consts.MSG_CMD_TRACKLIST_SET, {'tracks': tracks, 'playNow': False})
-                log.logger.info('[%s] Restored playlist' % MOD_NAME)
+                log.logger.info('[%s] Restored playlist' % MOD_INFO[modules.MODINFO_NAME])
             except:
-                log.logger.error('[%s] Unable to restore playlist from %s\n\n%s' % (MOD_NAME, self.savedPlaylist, traceback.format_exc()))
+                log.logger.error('[%s] Unable to restore playlist from %s\n\n%s' % (MOD_INFO[modules.MODINFO_NAME], self.savedPlaylist, traceback.format_exc()))
 
 
     # --== Message handler ==--

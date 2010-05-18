@@ -24,7 +24,6 @@ from tools.log import logger
 
 
 MOD_INFO = ('Twitter', 'Twitter', _('Update the status of your Twitter account'), [], False, True)
-MOD_NAME = MOD_INFO[modules.MODINFO_NAME]
 
 DEFAULT_STATUS_MSG = '♫ Listening to {album} by {artist} ♫'
 
@@ -78,7 +77,7 @@ class Twitter(modules.ThreadedModule):
         try:
             urllib2.urlopen(request)
         except:
-            logger.error('[%s] Unable to set Twitter status\n\n%s' % (MOD_NAME, traceback.format_exc()))
+            logger.error('[%s] Unable to set Twitter status\n\n%s' % (MOD_INFO[modules.MODINFO_NAME], traceback.format_exc()))
 
 
     # --== Message handler ==--
@@ -98,7 +97,7 @@ class Twitter(modules.ThreadedModule):
     def configure(self, parent):
         """ Show the configuration window """
         if self.cfgWindow is None:
-            self.cfgWindow = gui.window.Window('Twitter.glade', 'vbox1', __name__, _(MOD_NAME), 440, 141)
+            self.cfgWindow = gui.window.Window('Twitter.glade', 'vbox1', __name__, _(MOD_INFO[modules.MODINFO_NAME]), 440, 141)
             # GTK handlers
             self.cfgWindow.getWidget('btn-ok').connect('clicked', self.onBtnOk)
             self.cfgWindow.getWidget('btn-cancel').connect('clicked', lambda btn: self.cfgWindow.hide())
@@ -122,7 +121,7 @@ class Twitter(modules.ThreadedModule):
         # Do this import only when we really need it
         import media
 
-        helpDlg = gui.help.HelpDlg(_(MOD_NAME))
+        helpDlg = gui.help.HelpDlg(_(MOD_INFO[modules.MODINFO_NAME]))
         helpDlg.addSection(_('Description'),
                            _('This module posts a message to your Twitter account according to what '
                              'you are listening to.'))

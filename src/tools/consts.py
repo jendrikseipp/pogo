@@ -16,7 +16,7 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301 USA
 
-import gtk, os.path, random, shutil, time
+import gtk, os.path, random, time
 
 from gettext import gettext as _
 
@@ -59,11 +59,7 @@ if not os.path.exists(dirBaseCfg):
     os.mkdir(dirBaseCfg)
 
 if not os.path.exists(dirCfg):
-    # Move old config directory if needed (#163614)
-    oldDirCfg = os.path.join(dirBaseUsr, '.' + appNameShort)
-
-    if os.path.exists(oldDirCfg): shutil.move(oldDirCfg, dirCfg)
-    else:                         os.mkdir(dirCfg)
+    os.mkdir(dirCfg)
 
 # Make sure the log directory exists
 if not os.path.exists(dirLog): os.mkdir(dirLog)

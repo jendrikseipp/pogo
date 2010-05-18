@@ -16,7 +16,7 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301 USA
 
-import collections, gtk, gui, media, modules, os, random, shutil, sys, tools
+import gtk, gui, media, modules, os, random, shutil, sys, tools
 
 from gui                   import fileChooser, help, questionMsgBox, extTreeview, extListview, progressDlg, selectPath
 from tools                 import consts, icons, prefs, pickleLoad, pickleSave
@@ -29,7 +29,6 @@ from media.track.fileTrack import FileTrack
 
 MOD_INFO = ('Library', _('Library'), _('Organize your music by tags instead of files'), [], False, True)
 MOD_L10N = MOD_INFO[modules.MODINFO_L10N]
-MOD_NAME = MOD_INFO[modules.MODINFO_NAME]
 
 
 # Constants
@@ -186,6 +185,8 @@ class Library(modules.Module):
 
     def refreshLibrary(self, parent, libName, path, creation=False):
         """ Refresh the given library, must be called through idle_add() """
+        import collections
+
         # First show a progress dialog
         if creation: header = _('Creating library')
         else:        header = _('Refreshing library')
@@ -467,7 +468,7 @@ class Library(modules.Module):
 
         # Make sure the version number is the good one
         if not os.path.exists(os.path.join(path, 'VERSION_%u' % VERSION)):
-            logger.error('[%s] Version number does not match, loading of library "%s" aborted' % (MOD_NAME, name))
+            logger.error('[%s] Version number does not match, loading of library "%s" aborted' % (MOD_INFO[modules.MODINFO_NAME], name))
             error = _('This library is deprecated, please refresh it.')
             tree.replaceContent([(icons.errorMenuIcon(), None, error, TYPE_NONE, None, None)])
             return

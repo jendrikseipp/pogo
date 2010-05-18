@@ -16,7 +16,7 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301 USA
 
-import collections, gtk
+import gtk
 
 from gtk     import gdk
 from tools   import consts
@@ -311,6 +311,8 @@ class ExtTreeView(gtk.TreeView):
             Return a structure representing the current state of the tree
             The nameIndex parameter is the index of the value that stores rows' name
         """
+        import collections
+
         queue         = collections.deque((None,))
         expandedNodes = []
 
