@@ -25,7 +25,6 @@ class AudioPlayer:
 
     def __init__(self, callbackEnded, usePlaybin2=True):
         """ Constructor """
-        self.nextURI       = None
         self.equalizer     = None
         self.replaygain    = None
         self.usePlaybin2   = usePlaybin2
@@ -88,11 +87,8 @@ class AudioPlayer:
 
 
     def __onAboutToFinish(self, isLast):
-        """ Feed the next URI if we have one """
-        if self.nextURI is not None:
-            self.player.set_property('uri', self.nextURI)
-            self.nextURI = None
-            self.callbackEnded(False)
+        """ End of the track """
+        self.callbackEnded(False)
 
 
     def __onGstMessage(self, bus, msg):
@@ -116,12 +112,7 @@ class AudioPlayer:
 
     def setNextURI(self, uri):
         """ Set the next URI """
-        self.nextURI = uri.replace('%', '%25').replace('#', '%23')
-
-
-    def clearNextURI(self):
-        """ Clear the next URI """
-        self.nextURI = None
+        self.player.set_property('uri', uri.replace('%', '%25').replace('#', '%23'))
 
 
     def setVolume(self, level):

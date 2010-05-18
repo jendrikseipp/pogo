@@ -58,7 +58,7 @@ class GSTPlayer(modules.Module):
 
             modules.postMsg(consts.MSG_EVT_TRACK_POSITION, {'seconds': int(position / 1000000000)})
 
-            if remaining < 4000000000 and self.nextURI is None and not prefs.getCmdLine()[0].playbin:
+            if remaining < 5000000000 and self.nextURI is None and not prefs.getCmdLine()[0].playbin:
                 modules.postMsg(consts.MSG_EVT_NEED_BUFFER)
 
         return True
@@ -79,7 +79,7 @@ class GSTPlayer(modules.Module):
 
     def bufferNextTrack(self, uri):
         """ Buffer the next track """
-        if self.nextURI is None and not prefs.getCmdLine()[0].playbin:
+        if not prefs.getCmdLine()[0].playbin:
             self.nextURI = uri
             self.player.setNextURI(uri)
 
@@ -131,7 +131,6 @@ class GSTPlayer(modules.Module):
         self.__stopUpdateTimer()
         self.player.stop()
         self.nextURI = None
-        self.player.clearNextURI()
 
         if self.playbackTimer is not None:
             gobject.source_remove(self.playbackTimer)
