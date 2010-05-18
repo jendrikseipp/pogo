@@ -16,12 +16,10 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301 USA
 
-import hashlib, modules, os.path, socket, tools, traceback
+import hashlib, modules, os.path, tools, traceback
 
-from gui       import authentication
 from time      import time, sleep
 from tools     import consts
-from urllib2   import urlopen
 from gettext   import gettext as _
 from tools.log import logger
 
@@ -65,6 +63,8 @@ class AudioScrobbler(modules.ThreadedModule):
 
     def init(self):
         """ Initialize this module """
+        import socket
+
         socket.setdefaulttimeout(consts.socketTimeout)
         # Attributes
         self.login          = None
@@ -139,6 +139,8 @@ class AudioScrobbler(modules.ThreadedModule):
 
     def getAuthInfo(self):
         """ Retrieve the login/password of the user """
+        from gui import authentication
+
         if self.login is None: auth = authentication.getAuthInfo('last.fm', _('your Last.fm account'))
         else:                  auth = authentication.getAuthInfo('last.fm', _('your Last.fm account'), self.login, True)
 
@@ -148,6 +150,8 @@ class AudioScrobbler(modules.ThreadedModule):
 
     def handshake(self):
         """ Authenticate the user to the submission servers, return True if OK """
+        import urllib2
+
         now             = int(time())
         self.session[:] = [None, None, None]
 
@@ -175,7 +179,7 @@ class AudioScrobbler(modules.ThreadedModule):
 
         try:
             hardFailure = False
-            reply       = urlopen(request).read().strip().split('\n')
+            reply       = urllib2.urlopen(request).read().strip().split('\n')
 
             if reply[0] == 'OK':
                 self.session[:]     = reply[1:]
@@ -215,6 +219,8 @@ class AudioScrobbler(modules.ThreadedModule):
 
     def nowPlayingNotification(self, track, firstTry = True):
         """ The Now-Playing notification is a lightweight mechanism for notifying the Audioscrobbler server that a track has started playing """
+        import urllib2
+
         if (self.session[SESSION_ID] is None and not self.handshake()) or not track.hasArtist() or not track.hasTitle():
             return
 
@@ -230,7 +236,7 @@ class AudioScrobbler(modules.ThreadedModule):
 
         try:
             data  = '&'.join(['%s=%s' % (key, val) for (key, val) in params])
-            reply = urlopen(self.session[NOW_PLAYING_URL], data).read().strip().split('\n')
+            reply = urllib2.urlopen(self.session[NOW_PLAYING_URL], data).read().strip().split('\n')
 
             if reply[0] == 'BADSESSION' and firstTry:
                 self.session[:] = [None, None, None]
@@ -242,6 +248,8 @@ class AudioScrobbler(modules.ThreadedModule):
 
     def submit(self, firstTry=True):
         """ Submit cached tracks, return True if OK """
+        import urllib2
+
         if (self.session[SESSION_ID] is None and not self.handshake()) or len(self.cache) == 0:
             return False
 
@@ -249,7 +257,7 @@ class AudioScrobbler(modules.ThreadedModule):
             hardFailure  = False
             cachedTracks = self.getFromCache(MAX_SUBMISSION)
             data         = 's=%s&%s' % (self.session[SESSION_ID], '&'.join(cachedTracks))
-            reply        = urlopen(self.session[SUBMISSION_URL], data).read().strip().split('\n')
+            reply        = urllib2.urlopen(self.session[SUBMISSION_URL], data).read().strip().split('\n')
 
             if reply[0] == 'OK':
                 self.removeFromCache(len(cachedTracks))

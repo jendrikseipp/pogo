@@ -16,7 +16,7 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301 USA
 
-import cgi, gtk, gui.window, media, modules, os, tools, urllib
+import gtk, gui.window, media, modules, os, tools
 
 from gui     import fileChooser, help, extTreeview, extListview, selectPath
 from tools   import consts, prefs, icons
@@ -193,6 +193,8 @@ class FileExplorer(modules.Module):
 
     def getDirContents(self, directory):
         """ Return a tuple of sorted rows (directories, playlists, mediaFiles) for the given directory """
+        import cgi
+
         playlists   = []
         mediaFiles  = []
         directories = []
@@ -401,6 +403,7 @@ class FileExplorer(modules.Module):
 
     def onDragDataGet(self, tree, context, selection, info, time):
         """ Provide information about the data being dragged """
+        import urllib
         selection.set('text/uri-list', 8, ' '.join([urllib.pathname2url(file) for file in [row[ROW_FULLPATH] for row in tree.getSelectedRows()]]))
 
 
@@ -502,6 +505,8 @@ class FileExplorer(modules.Module):
 
     def populateFolderList(self):
         """ Populate the list of known folders """
+        import cgi
+
         self.cfgList.replaceContent([(name, icons.dirBtnIcon(), '<b>%s</b>\n<small>%s</small>' % (cgi.escape(name), cgi.escape(path)))
                                      for name, path in sorted(self.folders.iteritems())])
 

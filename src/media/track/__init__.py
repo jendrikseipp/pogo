@@ -16,8 +16,6 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301 USA
 
-import cgi, urllib
-
 from tools   import consts, sec2str
 from gettext import gettext as _
 
@@ -237,6 +235,8 @@ class Track:
             Replace the special fields in the given string by their corresponding value
             Also ensure that the fields don't contain HTML special characters (&, <, >)
         """
+        import cgi
+
         result = fmtString
 
         result = result.replace( '{path}',         cgi.escape(self.getFilePath()) )
@@ -269,6 +269,8 @@ class Track:
 
     def serialize(self):
         """ Serialize this Track object, return the corresponding string """
+        import urllib
+
         tags = []
         for tag, value in self.tags.iteritems():
             tags.append(str(tag))
@@ -278,6 +280,8 @@ class Track:
 
     def unserialize(self, serialTrack):
         """ Unserialize the given track"""
+        import urllib
+
         tags = serialTrack.split(' ')
         for i in xrange(0, len(tags), 2):
             tag = int(tags[i])

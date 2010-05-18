@@ -16,7 +16,7 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301 USA
 
-import cgi, gobject, gtk, modules, os.path, tools
+import gobject, gtk, modules, os.path, tools
 
 from tools   import consts
 from gettext import gettext as _
@@ -38,6 +38,8 @@ class TrackPanel(modules.Module):
 
     def __setTitle(self, title, length=None):
         """ Change the title of the current track """
+        import cgi
+
         title = cgi.escape(title)
 
         if length is None: self.txtTitle.set_markup('<span size="larger"><b>%s</b></span>' % title)

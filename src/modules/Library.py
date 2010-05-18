@@ -16,7 +16,7 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301 USA
 
-import cgi, collections, gtk, gui, media, modules, os, random, shutil, sys, tools
+import collections, gtk, gui, media, modules, os, random, shutil, sys, tools
 
 from gui                   import fileChooser, help, questionMsgBox, extTreeview, extListview, progressDlg, selectPath
 from tools                 import consts, icons, prefs, pickleLoad, pickleSave
@@ -459,6 +459,8 @@ class Library(modules.Module):
 
     def loadLibrary(self, tree, name):
         """ Load the given library """
+        import cgi
+
         rows     = []
         path     = os.path.join(ROOT_PATH, name)
         prevChar = ''
@@ -492,6 +494,8 @@ class Library(modules.Module):
 
     def loadAlbums(self, tree, node, fakeChild):
         """ Initial load of all albums of the given node, assuming it is of type TYPE_ARTIST """
+        import cgi
+
         allAlbums = pickleLoad(os.path.join(tree.getItem(node, ROW_FULLPATH), 'albums'))
         path      = tree.getItem(node, ROW_FULLPATH)
         rows      = [(icons.mediaDirMenuIcon(), '[%s]' % tools.sec2str(album[ALB_LENGTH], True), '%s' % cgi.escape(album[ALB_NAME]), TYPE_ALBUM, os.path.join(path, album[ALB_INDEX]), None) for album in allAlbums]
@@ -507,6 +511,8 @@ class Library(modules.Module):
 
     def loadTracks(self, tree, node, fakeChild):
         """ Initial load of all tracks of the given node, assuming it is of type TYPE_ALBUM """
+        import cgi
+
         allTracks = pickleLoad(tree.getItem(node, ROW_FULLPATH))
         rows      = [(icons.mediaFileMenuIcon(), None, '%02u. %s' % (track.getNumber(), cgi.escape(track.getTitle())), TYPE_TRACK, track.getFilePath(), track) for track in allTracks]
 
@@ -681,6 +687,8 @@ class Library(modules.Module):
 
     def fillLibraryList(self):
         """ Fill the list of libraries """
+        import cgi
+
         if self.cfgWindow is not None:
             rows = [(name, icons.dirBtnIcon(), '<b>%s</b>\n<small>%s - %u %s</small>' % (cgi.escape(name), cgi.escape(path), nbTracks, cgi.escape(_('tracks'))))
                     for name, (path, nbArtists, nbAlbums, nbTracks) in sorted(self.libraries.iteritems())]

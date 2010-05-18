@@ -16,7 +16,7 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301 USA
 
-import cgi, gobject, gtk, gui, modules, os, socket, tools, traceback, urllib
+import gobject, gtk, gui, modules, os, tools, traceback
 
 from gui                 import extTreeview
 from tools               import consts, icons, prefs, sec2str
@@ -195,6 +195,8 @@ class AudioCD(modules.ThreadedModule):
 
     def updateTree(self, discInfo):
         """ Update the tree using disc information from the cache, if any """
+        import cgi
+
         cddb = self.getDiscFromCache(discInfo)
 
         # Create fake CDDB information if needed
@@ -249,7 +251,7 @@ class AudioCD(modules.ThreadedModule):
 
     def cddbRequest(self, discInfo):
         """ Return disc information from online CDDB, None if request fails """
-        import CDDB
+        import CDDB, socket
 
         # Make sure to not be blocked by the request
         socket.setdefaulttimeout(consts.socketTimeout)

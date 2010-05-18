@@ -16,7 +16,7 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301 USA
 
-import gtk, gui, media, modules, os.path, tools, urllib
+import gtk, gui, media, modules, os.path, tools
 
 from tools           import consts, icons
 from gettext         import gettext as _
@@ -456,6 +456,8 @@ class Tracklist(modules.Module):
 
     def onDND(self, list, context, x, y, dragData, dndId, time):
         """ External Drag'n'Drop """
+        import urllib
+
         if dragData.data == '':
             context.finish(False, False, time)
             return

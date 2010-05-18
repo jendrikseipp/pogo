@@ -456,6 +456,7 @@ class ExtListView(gtk.TreeView):
 
         # Insert rows
         self.freeze_child_notify()
+        self.set_model(None)
         if position is None:
             for row in rows:
                 self.store.append(row)
@@ -463,6 +464,7 @@ class ExtListView(gtk.TreeView):
             for row in rows:
                 self.store.insert(position, row)
                 position += 1
+        self.set_model(self.store)
         self.thaw_child_notify()
         self.__resetSorting()
         self.emit('extlistview-modified')

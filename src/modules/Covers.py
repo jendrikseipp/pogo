@@ -16,7 +16,7 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301 USA
 
-import gui, Image, modules, os, socket, tempfile, tools, traceback, urllib2
+import gui, Image, modules, os, tempfile, tools, traceback
 
 from tools     import consts, prefs
 from gettext   import gettext as _
@@ -203,6 +203,8 @@ class Covers(modules.ThreadedModule):
             If successful, add it to the cache and return the path to it
             Otherwise, return None
         """
+        import socket, urllib2
+
         # Make sure to not be blocked by the request
         socket.setdefaulttimeout(consts.socketTimeout)
 

@@ -16,7 +16,7 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301 USA
 
-import cgi, gobject, gtk, gui, modules, tools
+import gobject, gtk, gui, modules, tools
 
 from tools   import icons
 from gettext import gettext as _
@@ -71,6 +71,8 @@ class Preferences:
 
     def fillList(self):
         """ Fill the list of modules """
+        import cgi
+
         rows = []
         for (name, data) in modules.getModules():
             instance     = data[modules.MOD_INSTANCE]

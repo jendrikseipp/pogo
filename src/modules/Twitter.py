@@ -16,9 +16,8 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301 USA
 
-import base64, gui, modules, traceback, urllib, urllib2
+import gui, modules, traceback
 
-from gui       import authentication
 from tools     import consts, prefs
 from gettext   import gettext as _
 from tools.log import logger
@@ -48,6 +47,8 @@ class Twitter(modules.ThreadedModule):
 
     def getAuthInfo(self):
         """ Retrieve the login/password of the user """
+        from gui import authentication
+
         auth = authentication.getAuthInfo('Twitter', _('your Twitter account'))
 
         if auth is None: self.login, self.passwd = None, None
@@ -56,6 +57,8 @@ class Twitter(modules.ThreadedModule):
 
     def onNewTrack(self, track):
         """ A new track has started """
+        import base64, urllib, urllib2
+
         status = track.format(prefs.get(__name__, 'status-msg', DEFAULT_STATUS_MSG))
         if status == self.lastStatus:
             return
