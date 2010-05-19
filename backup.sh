@@ -43,9 +43,10 @@ cp -R ./doc/ $DEST/
 # Misc
 cp TODO control-install Makefile $DEST/
 
-# Remove .svn directories
+# Remove .svn and .bzr directories
 cd $DEST
 find -type d -name ".svn" -exec rm -rf {} \; > /dev/null 2>&1
+find -type d -name ".bzr" -exec rm -rf {} \; > /dev/null 2>&1
 cd ..
 
 tar cjf $ARCHIVE $DEST
