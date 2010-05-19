@@ -16,7 +16,7 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301 USA
 
-import gobject, media, modules, traceback
+import dbus, dbus.service, gobject, media, modules, traceback
 
 from tools import consts, log
 
@@ -36,8 +36,6 @@ class DBus(modules.Module):
 
     def handleMsg(self, msg, params):
         """ Handle messages sent to this module """
-        import dbus, dbus.service
-
         if msg == consts.MSG_EVT_APP_STARTED:
             # Register this object to DBus
             try:
@@ -53,7 +51,6 @@ class DBusInterface(dbus.service.Object):
 
     def __init__(self, busName, module):
         """ Constructor """
-        import dbus
         dbus.service.Object.__init__(self, busName, consts.dbusObject)
 
     @dbus.service.method(consts.dbusInterface, in_signature='uas', out_signature='b')
