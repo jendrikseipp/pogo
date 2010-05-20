@@ -242,9 +242,7 @@ class Tracklist(modules.Module):
 
         self.list.clear()
 
-        if tracks is None or len(tracks) == 0:
-            modules.postMsg(consts.MSG_EVT_NEW_TRACKLIST, {'tracks': [], 'playtime': 0})
-        else:
+        if tracks is not None and len(tracks) != 0:
             self.insert(tracks)
             if playNow and len(self.list) != 0:
                 self.jumpTo(0)
