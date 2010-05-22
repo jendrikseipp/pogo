@@ -156,7 +156,7 @@ class FileExplorer(modules.Module):
         else:            tracks = media.getTracks([self.tree.getRow(path)[ROW_FULLPATH]], self.addByFilename)
 
         if replace: modules.postMsg(consts.MSG_CMD_TRACKLIST_SET, {'tracks': tracks, 'playNow': True})
-        else:       modules.postMsg(consts.MSG_CMD_TRACKLIST_ADD, {'tracks': tracks})
+        else:       modules.postMsg(consts.MSG_CMD_TRACKLIST_ADD, {'tracks': tracks, 'playNow': False})
 
 
     def renameFolder(self, oldName, newName):

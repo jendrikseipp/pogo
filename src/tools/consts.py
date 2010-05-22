@@ -81,9 +81,8 @@ fileLicense = os.path.join(dirDoc, 'LICENCE')
 
 
 # --- DBus constants
-dbusObject    = '/org/silentblade/decibel/remoteobject'
-dbusService   = 'org.silentblade.decibel'
-dbusInterface = 'org.silentblade.decibel.remoteinterface'
+dbusService   = 'org.mpris.dap'
+dbusInterface = 'org.freedesktop.MediaPlayer'
 
 
 # --- Tracks
@@ -130,37 +129,39 @@ DND_TARGETS = {
     # --== COMMANDS ==--
 
     # GStreamer player
-    MSG_CMD_PLAY,             # Play a resource                            Parameters: 'uri'
-    MSG_CMD_STOP,             # Stop playing                               Parameters:
-    MSG_CMD_SEEK,             # Jump to a position                         Parameters: 'seconds'
-    MSG_CMD_STEP,             # Step back or forth                         Parameters: 'seconds'
-    MSG_CMD_SET_VOLUME,       # Change the volume                          Parameters: 'value'
-    MSG_CMD_BUFFER,           # Buffer a file                              Parameters: 'filename'
-    MSG_CMD_TOGGLE_PAUSE,     # Toggle play/pause                          Parameters:
-    MSG_CMD_ENABLE_EQZ,       # Enable the equalizer                       Parameters:
-    MSG_CMD_SET_EQZ_LVLS,     # Set the levels of the 10-bands equalizer   Parameters: 'lvls'
-    MSG_CMD_ENABLE_RG,        # Enable ReplayGain                          Parameters:
-    MSG_CMD_DISABLE_RG,       # Disable ReplayGain                         Parameters:
-    MSG_CMD_SET_CD_SPEED,     # Change drive speed when reading a CD       Parameters: 'speed'
+    MSG_CMD_PLAY,                # Play a resource                            Parameters: 'uri'
+    MSG_CMD_STOP,                # Stop playing                               Parameters:
+    MSG_CMD_SEEK,                # Jump to a position                         Parameters: 'seconds'
+    MSG_CMD_STEP,                # Step back or forth                         Parameters: 'seconds'
+    MSG_CMD_SET_VOLUME,          # Change the volume                          Parameters: 'value'
+    MSG_CMD_BUFFER,              # Buffer a file                              Parameters: 'filename'
+    MSG_CMD_TOGGLE_PAUSE,        # Toggle play/pause                          Parameters:
+    MSG_CMD_ENABLE_EQZ,          # Enable the equalizer                       Parameters:
+    MSG_CMD_SET_EQZ_LVLS,        # Set the levels of the 10-bands equalizer   Parameters: 'lvls'
+    MSG_CMD_ENABLE_RG,           # Enable ReplayGain                          Parameters:
+    MSG_CMD_DISABLE_RG,          # Disable ReplayGain                         Parameters:
+    MSG_CMD_SET_CD_SPEED,        # Change drive speed when reading a CD       Parameters: 'speed'
 
     # Tracklist
-    MSG_CMD_NEXT,              # Play the next track       Parameters:
-    MSG_CMD_PREVIOUS,          # Play the previous track   Parameters:
-    MSG_CMD_TRACKLIST_SET,     # Replace tracklist         Parameters: 'tracks', 'playNow'
-    MSG_CMD_TRACKLIST_ADD,     # Extend tracklist          Parameters: 'tracks'
-    MSG_CMD_TRACKLIST_CLR,     # Clear tracklist           Parameters:
-    MSG_CMD_TRACKLIST_SHUFFLE, # Shuffle the tracklist     Parameters:
+    MSG_CMD_NEXT,                # Play the next track             Parameters:
+    MSG_CMD_PREVIOUS,            # Play the previous track         Parameters:
+    MSG_CMD_TRACKLIST_SET,       # Replace tracklist               Parameters: 'tracks', 'playNow'
+    MSG_CMD_TRACKLIST_ADD,       # Extend tracklist                Parameters: 'tracks', 'playNow'
+    MSG_CMD_TRACKLIST_DEL,       # Remove a track                  Parameters: 'idx'
+    MSG_CMD_TRACKLIST_CLR,       # Clear tracklist                 Parameters:
+    MSG_CMD_TRACKLIST_SHUFFLE,   # Shuffle the tracklist           Parameters:
+    MSG_CMD_TRACKLIST_REPEAT,    # Set/Unset the repeat function   Parameters: 'repeat'
 
     # Explorers
-    MSG_CMD_EXPLORER_ADD,      # Add a new explorer    Parameters: 'modName', 'expName', 'icon', 'widget'
-    MSG_CMD_EXPLORER_REMOVE,   # Remove an explorer    Parameters: 'modName', 'expName'
-    MSG_CMD_EXPLORER_RENAME,   # Rename an explorer    Parameters: 'modName', 'expName', 'newExpName'
+    MSG_CMD_EXPLORER_ADD,        # Add a new explorer    Parameters: 'modName', 'expName', 'icon', 'widget'
+    MSG_CMD_EXPLORER_REMOVE,     # Remove an explorer    Parameters: 'modName', 'expName'
+    MSG_CMD_EXPLORER_RENAME,     # Rename an explorer    Parameters: 'modName', 'expName', 'newExpName'
 
     # Covers
-    MSG_CMD_SET_COVER,         # Cover file for the given track     Parameters: 'track', 'pathThumbnail', 'pathFullSize'
+    MSG_CMD_SET_COVER,           # Cover file for the given track     Parameters: 'track', 'pathThumbnail', 'pathFullSize'
 
     # Misc
-    MSG_CMD_BRING_TO_FRONT,    # Bring the window to the front      Parameters:
+    MSG_CMD_BRING_TO_FRONT,      # Bring the window to the front      Parameters:
 
 
     # --== EVENTS ==--
@@ -176,23 +177,24 @@ DND_TARGETS = {
     MSG_EVT_TRACK_ENDED_ERROR,   # The current track has ended because of an error    Parameters:
 
     # GStreamer player
-    MSG_EVT_VOLUME_CHANGED,   # The volume has changed   Parameters: 'value'
+    MSG_EVT_VOLUME_CHANGED,      # The volume has changed   Parameters: 'value'
 
     # Tracklist
-    MSG_EVT_TRACK_MOVED,      # The position of the current track has changed    Parameters: 'hasPrevious', 'hasNext'
-    MSG_EVT_NEW_TRACKLIST,    # A new tracklist has been set                     Parameters: 'tracks', 'playtime'
+    MSG_EVT_TRACK_MOVED,         # The position of the current track has changed    Parameters: 'hasPrevious', 'hasNext'
+    MSG_EVT_NEW_TRACKLIST,       # A new tracklist has been set                     Parameters: 'tracks', 'playtime'
+    MSG_EVT_REPEAT_CHANGED,      # The repeat function has been enabled/disabled    Parameters: 'repeat'
 
     # Application
-    MSG_EVT_APP_QUIT,         # The application is quitting         Parameters:
-    MSG_EVT_APP_STARTED,      # The application has just started    Parameters:
+    MSG_EVT_APP_QUIT,            # The application is quitting         Parameters:
+    MSG_EVT_APP_STARTED,         # The application has just started    Parameters:
 
     # Modules
-    MSG_EVT_MOD_LOADED,       # The module has been loaded by request of the user      Parameters:
-    MSG_EVT_MOD_UNLOADED,     # The module has been unloaded by request of the user    Parameters:
+    MSG_EVT_MOD_LOADED,          # The module has been loaded by request of the user      Parameters:
+    MSG_EVT_MOD_UNLOADED,        # The module has been unloaded by request of the user    Parameters:
 
     # Explorer manager
-    MSG_EVT_EXPLORER_CHANGED, # A new explorer has been selected    Parameters: 'modName', 'expName'
+    MSG_EVT_EXPLORER_CHANGED,    # A new explorer has been selected    Parameters: 'modName', 'expName'
 
     # End value
     MSG_END_VALUE
-) = range(40)
+) = range(43)

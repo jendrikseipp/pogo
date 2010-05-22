@@ -16,13 +16,12 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301 USA
 #
-# ExtListView v1.8
-#
-# v1.8:
-#   * The 'extlistview-modified' signal was not generated when calling clear() and replaceContent()
+# ExtListView v1.7
 #
 # v1.7:
-#   * (Hopefully) fixed the intermittent improper columns resizing
+#   * The 'extlistview-modified' signal was not generated when calling clear() and replaceContent()
+#   * Added selectRows(), removeRow(), and removeRows() method
+#   * Fixed the intermittent improper columns resizing
 #
 # v1.6:
 #   * Added a context menu to column headers allowing users to show/hide columns
@@ -329,6 +328,13 @@ class ExtListView(gtk.TreeView):
         self.selection.select_all()
 
 
+    def selectRows(self, paths):
+        """ Select the given rows """
+        self.unselectAll()
+        for path in paths:
+            self.selection.select_path(path)
+
+
     def getSelectedRowsCount(self):
         """ Return how many rows are currently selected """
         return self.selection.count_selected_rows()
@@ -409,24 +415,35 @@ class ExtListView(gtk.TreeView):
         self.store.set_value(self.store.get_iter(rowIndex), colIndex, value)
 
 
-    def removeSelectedRows(self):
-        """ Remove the selected row(s) """
+    def removeRows(self, paths):
+        """ Remove the given rows """
         self.freeze_child_notify()
-        for iter in self.__getIterOnSelectedRows():
+        # We must work with iters because paths become meaningless once we start removing rows
+        for iter in [self.store.get_iter(path) for path in paths]:
+            path = self.store.get_path(iter)[0]
             # Move the mark if needed
             if self.markedRow is not None:
-                currentPath = self.store.get_path(iter)[0]
-                if   currentPath < self.markedRow:  self.markedRow -= 1
-                elif currentPath == self.markedRow: self.markedRow  = None
+                if   path < self.markedRow:  self.markedRow -= 1
+                elif path == self.markedRow: self.markedRow  = None
             # Remove the current row
-            if   self.store.remove(iter): self.set_cursor(self.store.get_path(iter))
-            elif len(self.store) != 0:    self.set_cursor(len(self.store)-1)
+            if   self.store.remove(self.store.get_iter(path)): self.set_cursor(path)
+            elif len(self.store) != 0:                         self.set_cursor(len(self.store)-1)
         self.thaw_child_notify()
         if len(self.store) == 0:
             self.set_cursor(0)
             self.__resetSorting()
         self.__resizeColumns()
         self.emit('extlistview-modified')
+
+
+    def removeRow(self, path):
+        """ Remove the given row """
+        self.removeRows((path, ))
+
+
+    def removeSelectedRows(self):
+        """ Remove the selected row(s) """
+        self.removeRows(self.selection.get_selected_rows()[1])
 
 
     def cropSelectedRows(self):

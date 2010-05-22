@@ -40,6 +40,7 @@ if not optOptions.multiple_instances:
         dbusSession    = dbus.SessionBus()
         activeServices = dbusSession.get_object('org.freedesktop.DBus', '/org/freedesktop/DBus').ListNames()
 
+        # FIXME Change that according to the MPRIS or to our own DBUS object
         if consts.dbusService in activeServices:
             shouldStop      = True
             remoteObject    = dbusSession.get_object(consts.dbusService, consts.dbusObject)

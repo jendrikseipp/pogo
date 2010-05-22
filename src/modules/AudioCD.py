@@ -148,7 +148,7 @@ class AudioCD(modules.ThreadedModule):
             tracks = self.getTracksFromPaths(tree, paths)
 
             if replace: modules.postMsg(consts.MSG_CMD_TRACKLIST_SET, {'tracks': tracks, 'playNow': True})
-            else:       modules.postMsg(consts.MSG_CMD_TRACKLIST_ADD, {'tracks': tracks})
+            else:       modules.postMsg(consts.MSG_CMD_TRACKLIST_ADD, {'tracks': tracks, 'playNow': False})
 
 
     # --== Cache management ==--

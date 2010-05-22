@@ -257,6 +257,35 @@ class Track:
         return result
 
 
+    def __addIfKnown(self, dic, key, tag, unknownValue):
+        """ This is an helper function used by the getMPRISMetadata() function  """
+        value = self.__get(tag, unknownValue)
+        if value != unknownValue:
+            dic[key] = value
+
+
+    def getMPRISMetadata(self):
+        """ Return a dictionary with all available data in an MPRIS-compatible format """
+        data = {'location': self.getURI()}
+
+        self.__addIfKnown(data, 'tracknumber',      TAG_NUM, consts.UNKNOWN_TRACK_NUMBER)
+        self.__addIfKnown(data, 'title',            TAG_TIT, consts.UNKNOWN_TITLE)
+        self.__addIfKnown(data, 'time',             TAG_LEN, consts.UNKNOWN_LENGTH)
+        self.__addIfKnown(data, 'artist',           TAG_ART, consts.UNKNOWN_ARTIST)
+        self.__addIfKnown(data, 'album',            TAG_ALB, consts.UNKNOWN_ALBUM)
+        self.__addIfKnown(data, 'mb track id',      TAG_MBT, consts.UNKNOWN_MB_TRACKID)
+        self.__addIfKnown(data, 'genre',            TAG_GEN, consts.UNKNOWN_GENRE)
+        self.__addIfKnown(data, 'date',             TAG_DAT, consts.UNKNOWN_DATE)
+        self.__addIfKnown(data, 'audio-bitrate',    TAG_BTR, -1)
+        self.__addIfKnown(data, 'audio-samplerate', TAG_SMP, consts.UNKNOWN_SAMPLE_RATE)
+
+        # 'mtime' must be in milliseconds
+        if 'time' in data:
+            data['mtime'] = data['time'] * 1000
+
+        return data
+
+
     def getTags(self):
         """ Return the disctionary of tags """
         return self.tags

@@ -77,7 +77,8 @@ class Tracklist(modules.Module):
                                        consts.MSG_CMD_TOGGLE_PAUSE,      consts.MSG_CMD_NEXT,              consts.MSG_CMD_PREVIOUS,
                                        consts.MSG_EVT_NEED_BUFFER,       consts.MSG_EVT_STOPPED,           consts.MSG_EVT_PAUSED,
                                        consts.MSG_EVT_UNPAUSED,          consts.MSG_EVT_TRACK_ENDED_OK,    consts.MSG_EVT_TRACK_ENDED_ERROR,
-                                       consts.MSG_CMD_TRACKLIST_SHUFFLE, consts.MSG_EVT_APP_STARTED,       consts.MSG_CMD_BRING_TO_FRONT))
+                                       consts.MSG_CMD_TRACKLIST_SHUFFLE, consts.MSG_EVT_APP_STARTED,       consts.MSG_CMD_BRING_TO_FRONT,
+                                       consts.MSG_CMD_TRACKLIST_DEL,     consts.MSG_CMD_TRACKLIST_REPEAT))
 
 
     def onAppStarted(self):
@@ -220,21 +221,30 @@ class Tracklist(modules.Module):
             modules.postMsg(consts.MSG_CMD_BUFFER, {'uri': self.bufferedTrack})
 
 
-    def insert(self, tracks, position=None):
+    def insert(self, tracks, playNow, position=None):
         """ Insert some tracks in the tracklist, append them if position is None """
-        self.previousTracklist = [row[ROW_TRK] for row in self.list.getAllRows()]
         rows = [[icons.nullMenuIcon(), track.getNumber(), track.getTitle(), track.getArtist(), track.getExtendedAlbum(),
                     track.getLength(), track.getBitrate(), track.getGenre(), track.getDate(), track.getURI(), track] for track in tracks]
 
-        for row in rows:
-            self.playtime += row[ROW_LEN]
+        if len(rows) != 0:
+            self.previousTracklist = [row[ROW_TRK] for row in self.list.getAllRows()]
 
-        self.list.insertRows(rows, position)
+            for row in rows:
+                self.playtime += row[ROW_LEN]
+
+            self.list.insertRows(rows, position)
+
+            if playNow:
+                if position is not None: self.jumpTo(position)
+                else:                    self.jumpTo(len(self.previousTracklist))
 
 
     def set(self, tracks, playNow):
         """ Replace the tracklist, clear it if tracks is None """
-        self.playtime     = 0
+        self.playtime = 0
+
+        # Save playlist only locally to this function
+        # The insert() function would overwrite it otherwise
         previousTracklist = [row[ROW_TRK] for row in self.list.getAllRows()]
 
         if self.list.hasMark() and ((not playNow) or (tracks is None) or (len(tracks) == 0)):
@@ -243,9 +253,7 @@ class Tracklist(modules.Module):
         self.list.clear()
 
         if tracks is not None and len(tracks) != 0:
-            self.insert(tracks)
-            if playNow and len(self.list) != 0:
-                self.jumpTo(0)
+            self.insert(tracks, playNow)
 
         self.previousTracklist = previousTracklist
 
@@ -273,18 +281,34 @@ class Tracklist(modules.Module):
             media.playlist.save(self.getAllFiles(), outFile)
 
 
-    def removeSelection(self, invert=False):
-        """ Remove the selected tracks if invert is False / the unselected tracks if invert is True """
+    def remove(self, idx=None):
+        """ Remove the given track, or the selection if idx is None """
+        if idx is not None and (idx < 0 or idx >= len(self.list)):
+            return
+
         hadMark                = self.list.hasMark()
-        selectionPlaytime      = sum([row[ROW_LEN] for row in self.list.iterSelectedRows()])
         self.previousTracklist = [row[ROW_TRK] for row in self.list.getAllRows()]
 
-        if invert:
-            self.playtime = selectionPlaytime
-            self.list.cropSelectedRows()
+        if idx is not None:
+            self.playtime -= self.list.getRow(idx)[ROW_LEN]
+            self.list.removeRow((idx, ))
         else:
-            self.playtime -= selectionPlaytime
+            self.playtime -= sum([row[ROW_LEN] for row in self.list.iterSelectedRows()])
             self.list.removeSelectedRows()
+
+        self.list.unselectAll()
+
+        if hadMark and not self.list.hasMark():
+            modules.postMsg(consts.MSG_CMD_STOP)
+
+
+    def crop(self):
+        """ Remove the unselected tracks """
+        hadMark                = self.list.hasMark()
+        self.previousTracklist = [row[ROW_TRK] for row in self.list.getAllRows()]
+
+        self.playtime = sum([row[ROW_LEN] for row in self.list.iterSelectedRows()])
+        self.list.cropSelectedRows()
 
         if hadMark and not self.list.hasMark():
             modules.postMsg(consts.MSG_CMD_STOP)
@@ -304,6 +328,12 @@ class Tracklist(modules.Module):
             self.list.scroll_to_cell(self.list.getMark())
 
 
+    def setRepeat(self, repeat):
+        """ Set/Unset the repeat function """
+        if self.btnRepeat.get_active() != repeat:
+            self.btnRepeat.clicked()
+
+
     def showPopupMenu(self, list, path, button, time):
         """ The index parameter may be None """
         popup = gtk.Menu()
@@ -312,13 +342,13 @@ class Tracklist(modules.Module):
         crop = gtk.ImageMenuItem(_('Crop'))
         crop.set_image(gtk.image_new_from_stock(gtk.STOCK_CUT, gtk.ICON_SIZE_MENU))
         crop.set_sensitive(path is not None)
-        crop.connect('activate', lambda item: self.removeSelection(True))
+        crop.connect('activate', lambda item: self.crop())
         popup.append(crop)
 
         # Remove
         remove = gtk.ImageMenuItem(gtk.STOCK_REMOVE)
         remove.set_sensitive(path is not None)
-        remove.connect('activate', lambda item: self.removeSelection())
+        remove.connect('activate', lambda item: self.remove())
         popup.append(remove)
 
         popup.append(gtk.SeparatorMenuItem())
@@ -379,11 +409,13 @@ class Tracklist(modules.Module):
         elif msg == consts.MSG_EVT_NEED_BUFFER:                              self.onBufferingNeeded()
         elif msg == consts.MSG_CMD_TRACKLIST_CLR:                            self.set(None, False)
         elif msg == consts.MSG_CMD_TRACKLIST_SET:                            self.set(params['tracks'], params['playNow'])
-        elif msg == consts.MSG_CMD_TRACKLIST_ADD:                            self.insert(params['tracks'])
+        elif msg == consts.MSG_CMD_TRACKLIST_ADD:                            self.insert(params['tracks'], params['playNow'])
         elif msg == consts.MSG_CMD_TRACKLIST_SHUFFLE:                        self.shuffleTracklist()
         elif msg == consts.MSG_CMD_PREVIOUS:                                 self.jumpToPrevious()
         elif msg == consts.MSG_CMD_NEXT:                                     self.jumpToNext()
+        elif msg == consts.MSG_CMD_TRACKLIST_DEL:                            self.remove(params['idx'])
         elif msg == consts.MSG_CMD_BRING_TO_FRONT:                           self.window.present()
+        elif msg == consts.MSG_CMD_TRACKLIST_REPEAT:                         self.setRepeat(params['repeat'])
         elif msg == consts.MSG_CMD_TOGGLE_PAUSE and not self.list.hasMark():
             if self.list.getSelectedRowsCount() != 0:
                 self.jumpTo(self.list.getFirstSelectedRowIndex())
@@ -397,6 +429,7 @@ class Tracklist(modules.Module):
     def onButtonRepeat(self, btn):
         """ The 'repeat' button has been pressed """
         tools.prefs.set(__name__, 'repeat-status', self.btnRepeat.get_active())
+        modules.postMsg(consts.MSG_EVT_REPEAT_CHANGED, {'repeat': self.btnRepeat.get_active()})
         if self.list.hasMark():
             modules.postMsg(consts.MSG_EVT_TRACK_MOVED, {'hasPrevious': self.__getPreviousTrackIdx() != -1, 'hasNext': self.__getNextTrackIdx() != -1})
 
@@ -413,7 +446,7 @@ class Tracklist(modules.Module):
         """ Keyboard shortcuts """
         keyname = gtk.gdk.keyval_name(event.keyval)
 
-        if keyname == 'Delete':   self.removeSelection()
+        if keyname == 'Delete':   self.remove()
         elif keyname == 'Return': self.jumpTo(self.list.getFirstSelectedRowIndex())
         elif keyname == 'space':  modules.postMsg(consts.MSG_CMD_TOGGLE_PAUSE)
         elif keyname == 'Escape': modules.postMsg(consts.MSG_CMD_STOP)
@@ -432,7 +465,9 @@ class Tracklist(modules.Module):
             row[ROW_TRK].setPlaylistLen(len(self.list))
 
         modules.postMsg(consts.MSG_EVT_NEW_TRACKLIST, {'tracks': self.getAllTracks(), 'playtime': self.playtime})
-        modules.postMsg(consts.MSG_EVT_TRACK_MOVED,   {'hasPrevious': self.__getPreviousTrackIdx() != -1, 'hasNext':  self.__getNextTrackIdx() != -1})
+
+        if self.list.hasMark():
+            modules.postMsg(consts.MSG_EVT_TRACK_MOVED, {'hasPrevious': self.__getPreviousTrackIdx() != -1, 'hasNext':  self.__getNextTrackIdx() != -1})
 
 
     def onColumnVisibilityChanged(self, list, colTitle, visible):
@@ -473,8 +508,8 @@ class Tracklist(modules.Module):
         dropInfo = list.get_dest_row_at_pos(x, y)
 
         # Insert the tracks, but beware of the AFTER/BEFORE mechanism used by GTK
-        if dropInfo is None:                          self.insert(tracks)
-        elif dropInfo[1] == gtk.TREE_VIEW_DROP_AFTER: self.insert(tracks, dropInfo[0][0] + 1)
-        else:                                         self.insert(tracks, dropInfo[0][0])
+        if dropInfo is None:                          self.insert(tracks, False)
+        elif dropInfo[1] == gtk.TREE_VIEW_DROP_AFTER: self.insert(tracks, False, dropInfo[0][0] + 1)
+        else:                                         self.insert(tracks, False, dropInfo[0][0])
 
         context.finish(True, False, time)
