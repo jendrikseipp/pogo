@@ -41,8 +41,9 @@ mkdir $DEST/po
 cp ./po/*.po $DEST/po/
 cp ./po/Makefile $DEST/po/
 
-# Remove .svn directories
+# Remove .svn and .bzr directories
 find $DEST -type d -name ".svn" -exec rm -rf {} \; > /dev/null 2>&1
+find $DEST -type d -name ".bzr" -exec rm -rf {} \; > /dev/null 2>&1
 
 # Sources: Make sure to remove non-Python files
 find $DEST/src -type f ! -name "*.py" -exec rm -f {} \;
