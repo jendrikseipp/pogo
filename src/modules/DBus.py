@@ -262,6 +262,21 @@ class DBusObjectTracklist(dbus.service.Object):
         pass
 
 
+    # These functions are not part of the MPRIS, but are useful
+
+
+    @dbus.service.method(consts.dbusInterface, in_signature='', out_signature='')
+    def Clear(self):
+        """ Clear the tracklist """
+        gobject.idle_add(modules.postMsg, consts.MSG_CMD_TRACKLIST_CLR)
+
+
+    @dbus.service.method(consts.dbusInterface, in_signature='asb', out_signature='')
+    def AddTracks(self, uris, playNow):
+        """ Appends multiple URIs to the TrackList """
+        gobject.idle_add(modules.postMsg, consts.MSG_CMD_TRACKLIST_ADD, {'tracks': media.getTracks([file for file in uris]), 'playNow': playNow})
+
+
 
 class DBusObjectPlayer(dbus.service.Object):
 

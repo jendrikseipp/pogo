@@ -40,18 +40,15 @@ if not optOptions.multiple_instances:
         dbusSession    = dbus.SessionBus()
         activeServices = dbusSession.get_object('org.freedesktop.DBus', '/org/freedesktop/DBus').ListNames()
 
-        # FIXME Change that according to the MPRIS or to our own DBUS object
         if consts.dbusService in activeServices:
             shouldStop      = True
-            remoteObject    = dbusSession.get_object(consts.dbusService, consts.dbusObject)
+            remoteObject    = dbusSession.get_object(consts.dbusService, '/TrackList')
             remoteInterface = dbus.Interface(remoteObject, consts.dbusInterface)
 
             # Fill the current instance with the given tracks, if any
             if len(optArgs) != 0:
-                remoteInterface.sendMsg(consts.MSG_CMD_TRACKLIST_SET, optArgs)
-
-            # Bring the current instance to the front
-            remoteInterface.sendMsg(consts.MSG_CMD_BRING_TO_FRONT, '')
+                remoteInterface.Clear()
+                remoteInterface.AddTracks(optArgs, True)
     except:
         pass
 
