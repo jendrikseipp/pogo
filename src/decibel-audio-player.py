@@ -57,7 +57,7 @@ if not optOptions.multiple_instances:
 
 
 # Start a new instance
-import gettext, gobject, gtk, locale, signal
+import gettext, gobject, gtk, locale
 
 from tools import loadGladeFile, log, prefs
 
@@ -73,7 +73,7 @@ def realStartup():
         Perform all the initialization stuff which is not mandatory to display the window
         This function should be called within the GTK main loop, once the window has been displayed
     """
-    import atexit, dbus.mainloop.glib, modules
+    import atexit, dbus.mainloop.glib, modules, signal
 
 
     def onDelete(win, event):
@@ -119,8 +119,9 @@ def realStartup():
     # D-Bus
     dbus.mainloop.glib.DBusGMainLoop(set_as_default=True)
 
-    # Make sure to perform a few actions before exiting the Python interpreter
+    # Register some handlers
     atexit.register(atExit)
+    signal.signal(signal.SIGINT,  lambda sig, frame: onDelete(window, None))
     signal.signal(signal.SIGTERM, lambda sig, frame: onDelete(window, None))
 
     # GTK handlers
