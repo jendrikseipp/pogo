@@ -17,7 +17,7 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301 USA
 
-import dbus, optparse, sys
+import dbus, optparse
 
 from tools import consts
 
@@ -53,6 +53,7 @@ if not optOptions.multiple_instances:
         dbusSession.close()
 
     if shouldStop:
+        import sys
         sys.exit(1)
 
 
