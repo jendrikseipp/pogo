@@ -41,14 +41,11 @@ if not optOptions.multiple_instances:
         activeServices = dbusSession.get_object('org.freedesktop.DBus', '/org/freedesktop/DBus').ListNames()
 
         if consts.dbusService in activeServices:
-            shouldStop      = True
-            remoteObject    = dbusSession.get_object(consts.dbusService, '/TrackList')
-            remoteInterface = dbus.Interface(remoteObject, consts.dbusInterface)
+            shouldStop = True
 
             # Fill the current instance with the given tracks, if any
             if len(optArgs) != 0:
-                remoteInterface.Clear()
-                remoteInterface.AddTracks(optArgs, True)
+                dbus.Interface(dbusSession.get_object(consts.dbusService, '/TrackList'), consts.dbusInterface).SetTracks(optArgs, True)
     except:
         pass
 

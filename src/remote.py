@@ -18,19 +18,32 @@
 
 import dbus, os.path, sys, tools.consts
 
-(CMD_ARGS, CMD_HELP, CMD_MSG) = range(3)
+(
+    PLAY,
+    PAUSE,
+    NEXT,
+    PREVIOUS,
+    STOP,
+    SET,
+    ADD,
+    CLEAR,
+    SHUFFLE,
+    VOLUME,
+) = range(10)
+
+(CMD_ARGS, CMD_HELP, CMD_NAME) = range(3)
 
 commands = {
-                'play':    ( '',                 'Start playing the current track',             tools.consts.MSG_CMD_TOGGLE_PAUSE      ),
-                'pause':   ( '',                 'Pause or continue playing the current track', tools.consts.MSG_CMD_TOGGLE_PAUSE      ),
-                'next':    ( '',                 'Jump to the next track',                      tools.consts.MSG_CMD_NEXT              ),
-                'prev':    ( '',                 'Jump to the previous track',                  tools.consts.MSG_CMD_PREVIOUS          ),
-                'stop':    ( '',                 'Stop playback',                               tools.consts.MSG_CMD_STOP              ),
-                'pl-set':  ( 'file1 file2...',   'Set the playlist to the given files',         tools.consts.MSG_CMD_TRACKLIST_SET     ),
-                'pl-add':  ( 'file1 file2...',   'Append the given files to the playlist',      tools.consts.MSG_CMD_TRACKLIST_ADD     ),
-                'pl-clr':  ( '',                 'Clear the playlist',                          tools.consts.MSG_CMD_TRACKLIST_CLR     ),
-                'shuffle': ( '',                 'Shuffle the playlist',                        tools.consts.MSG_CMD_TRACKLIST_SHUFFLE ),
-                'volume':  ( 'value (0 -- 100)', 'Set the volume',                              tools.consts.MSG_CMD_SET_VOLUME        ),
+                'play':    ( '',                 'Start playing the current track',             PLAY    ),
+                'pause':   ( '',                 'Pause or continue playing the current track', PAUSE   ),
+                'next':    ( '',                 'Jump to the next track',                      NEXT    ),
+                'prev':    ( '',                 'Jump to the previous track',                  PREVIOUS),
+                'stop':    ( '',                 'Stop playback',                               STOP    ),
+                'pl-set':  ( 'file1 file2...',   'Set the playlist to the given files',         SET     ),
+                'pl-add':  ( 'file1 file2...',   'Append the given files to the playlist',      ADD     ),
+                'pl-clr':  ( '',                 'Clear the playlist',                          CLEAR   ),
+                'shuffle': ( '',                 'Shuffle the playlist',                        SHUFFLE ),
+                'volume':  ( 'value (0 -- 100)', 'Set the volume',                              VOLUME  ),
            }
 
 # Check the command line
@@ -46,24 +59,31 @@ if len(sys.argv) > 1:
 
 if not cmdLineOk:
     print 'Usage: %s command [arg1 arg2...]\n' % os.path.basename(sys.argv[0])
-    print 'Command  | Arguments      | Description'
+    print 'Command  | Arguments        | Description'
     print '-----------------------------------------------------------------------'
     for cmd, data in sorted(commands.iteritems()):
         print '%s| %s| %s' % (cmd.ljust(9), data[CMD_ARGS].ljust(17), data[CMD_HELP])
     sys.exit(1)
 
-# Get a valid D-Bus interface
+# Connect to D-BUS
 session        = dbus.SessionBus()
 activeServices = session.get_object('org.freedesktop.DBus', '/org/freedesktop/DBus').ListNames()
 
-if not tools.consts.dbusService in activeServices:
-    print '%s is not running, or D-Bus support is not available' % tools.consts.appName
+if 'org.mpris.dap' not in activeServices:
+    print 'Decibel Audio Player is not running, or D-Bus support is not available'
     sys.exit(2)
 
-remoteObject    = session.get_object(tools.consts.dbusService, tools.consts.dbusObject)
-remoteInterface = dbus.Interface(remoteObject, tools.consts.dbusInterface)
+cmd       = commands[cmdName][CMD_NAME]
+player    = dbus.Interface(session.get_object('org.mpris.dap', '/Player'),    'org.freedesktop.MediaPlayer')
+tracklist = dbus.Interface(session.get_object('org.mpris.dap', '/TrackList'), 'org.freedesktop.MediaPlayer')
 
-# Send the command
-if not remoteInterface.sendMsg(commands[cmdName][CMD_MSG], sys.argv[2:]):
-    print '%s returned an error' % tools.consts.appName
-sys.exit(0)
+if   cmd == SET:      tracklist.SetTracks(sys.argv[2:], True)
+elif cmd == ADD:      tracklist.AddTracks(sys.argv[2:], False)
+elif cmd == PLAY:     player.Play()
+elif cmd == NEXT:     player.Next()
+elif cmd == STOP:     player.Stop()
+elif cmd == PAUSE:    player.Pause()
+elif cmd == CLEAR:    tracklist.Clear()
+elif cmd == VOLUME:   player.VolumeSet(int(sys.argv[2]))
+elif cmd == SHUFFLE:  tracklist.SetRandom(True)
+elif cmd == PREVIOUS: player.Previous()
