@@ -1,5 +1,7 @@
 <?xml version="1.0"?>
 <glade-interface>
+<!-- interface-requires gtk+ 2.14 -->
+<!-- interface-naming-policy toplevel-contextual -->
 <widget class="GtkWindow" id="win-main">
 <property name="window_position">center</property>
 <child>
@@ -212,7 +214,6 @@
 <child>
 <widget class="GtkVBox" id="vbox4">
 <property name="visible">True</property>
-<property name="orientation">vertical</property>
 <child>
 <widget class="GtkHBox" id="hbox5">
 <property name="visible">True</property>
@@ -546,11 +547,94 @@ audio-volume-medium</property>
 </packing>
 </child>
 <child>
-<widget class="GtkStatusbar" id="statusbar">
-<property name="spacing">2</property>
+<widget class="GtkVBox" id="box-statusbar">
+<property name="visible">True</property>
+<child>
+<widget class="GtkHSeparator" id="hseparator1">
+<property name="visible">True</property>
 </widget>
 <packing>
 <property name="expand">False</property>
+<property name="padding">2</property>
+<property name="position">0</property>
+</packing>
+</child>
+<child>
+<widget class="GtkHBox" id="hbox2">
+<property name="visible">True</property>
+<property name="homogeneous">True</property>
+<child>
+<widget class="GtkHBox" id="hbox3">
+<property name="visible">True</property>
+<child>
+<widget class="GtkLabel" id="lbl-status1">
+<property name="visible">True</property>
+<property name="label" translatable="yes">label</property>
+</widget>
+<packing>
+<property name="expand">False</property>
+<property name="padding">6</property>
+<property name="position">0</property>
+</packing>
+</child>
+</widget>
+<packing>
+<property name="position">0</property>
+</packing>
+</child>
+<child>
+<widget class="GtkHBox" id="hbox10">
+<property name="visible">True</property>
+<child>
+<widget class="GtkVSeparator" id="vseparator1">
+<property name="visible">True</property>
+</widget>
+<packing>
+<property name="expand">False</property>
+<property name="position">0</property>
+</packing>
+</child>
+<child>
+<widget class="GtkHBox" id="hbox11">
+<property name="visible">True</property>
+<child>
+<widget class="GtkLabel" id="lbl-status2">
+<property name="visible">True</property>
+<property name="label" translatable="yes">label</property>
+</widget>
+<packing>
+<property name="expand">False</property>
+<property name="padding">6</property>
+<property name="position">0</property>
+</packing>
+</child>
+</widget>
+<packing>
+<property name="position">1</property>
+</packing>
+</child>
+</widget>
+<packing>
+<property name="position">1</property>
+</packing>
+</child>
+<child>
+<widget class="GtkLabel" id="label2">
+<property name="visible">True</property>
+</widget>
+<packing>
+<property name="position">2</property>
+</packing>
+</child>
+</widget>
+<packing>
+<property name="position">1</property>
+</packing>
+</child>
+</widget>
+<packing>
+<property name="expand">False</property>
+<property name="fill">False</property>
 <property name="position">2</property>
 </packing>
 </child>

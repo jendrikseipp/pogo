@@ -16,6 +16,8 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301 USA
 
+import os.path
+
 from tools   import consts, sec2str
 from gettext import gettext as _
 
@@ -141,7 +143,7 @@ class Track:
 
         if bitrate == -1:            return _('N/A')
         elif self.getEncMode() == 1: return '~ %u kbps' % (bitrate / 1000)
-        else:                        return '= %u kbps' % (bitrate / 1000)
+        else:                        return '%u kbps'   % (bitrate / 1000)
 
     def getSampleRate(self):
         """ Transform the sample rate into a string"""
@@ -168,6 +170,12 @@ class Track:
             return _('%(album)s  [Disc %(discnum)u]') % {'album': self.getAlbum(), 'discnum': self.getDiscNumber()}
         else:
             return self.getAlbum()
+
+
+    def getType(self):
+        """ Return the format of the track """
+        if self.tags[TAG_SCH] == 'cdda': return _('CDDA Track')
+        else:                            return os.path.splitext(self.tags[TAG_RES])[1][1:].lower()
 
 
     def __str__(self):

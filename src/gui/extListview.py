@@ -22,6 +22,7 @@
 #   * The 'extlistview-modified' signal was not generated when calling clear() and replaceContent()
 #   * Added selectRows(), removeRow(), and removeRows() method
 #   * Fixed the intermittent improper columns resizing
+#   * Added the 'extlistview-selection-changed' signal
 #
 # v1.6:
 #   * Added a context menu to column headers allowing users to show/hide columns
@@ -69,6 +70,7 @@ signal_new('extlistview-modified', gtk.TreeView, SIGNAL_RUN_LAST, TYPE_NONE, ())
 signal_new('extlistview-button-pressed', gtk.TreeView, SIGNAL_RUN_LAST, TYPE_NONE, (gdk.Event, TYPE_PYOBJECT))
 signal_new('extlistview-column-visibility-changed', gtk.TreeView, SIGNAL_RUN_LAST, TYPE_NONE, (TYPE_STRING, TYPE_BOOLEAN))
 signal_new('button-press-event', gtk.TreeViewColumn, SIGNAL_RUN_LAST, TYPE_NONE, (gdk.Event, ))
+signal_new('extlistview-selection-changed', gtk.TreeView, SIGNAL_RUN_LAST, TYPE_NONE, (TYPE_PYOBJECT, ))
 
 
 class ExtListViewColumn(gtk.TreeViewColumn):
@@ -176,11 +178,15 @@ class ExtListView(gtk.TreeView):
         if len(dndTargets) != 0:
             self.enable_model_drag_dest(dndTargets, gdk.ACTION_DEFAULT)
 
+        # TreeView events
         self.connect('drag-begin',           self.onDragBegin)
         self.connect('drag-motion',          self.onDragMotion)
         self.connect('button-press-event',   self.onButtonPressed)
         self.connect('drag-data-received',   self.onDragDataReceived)
         self.connect('button-release-event', self.onButtonReleased)
+
+        # Selection events
+        self.selection.connect('changed', self.onSelectionChanged)
 
         # Show the list
         self.show()
@@ -594,8 +600,12 @@ class ExtListView(gtk.TreeView):
                 stateClear = not (event.state & (gdk.SHIFT_MASK | gdk.CONTROL_MASK))
 
                 if stateClear and not self.selection.path_is_selected(path):
+                    # We block the 'changed' signal here because it's emitted by the default GTK handler
+                    # And we don't need to emit it multiple times because of what we're doing here
+                    self.selection.handler_block_by_func(self.onSelectionChanged)
                     self.selection.unselect_all()
                     self.selection.select_path(path)
+                    self.selection.handler_unblock_by_func(self.onSelectionChanged)
                 else:
                     retVal = (stateClear and self.getSelectedRowsCount() > 1 and self.selection.path_is_selected(path))
 
@@ -682,3 +692,8 @@ class ExtListView(gtk.TreeView):
         column.set_visible(not column.get_visible())
         self.__resizeColumns()
         self.emit('extlistview-column-visibility-changed', column.get_title(), column.get_visible())
+
+
+    def onSelectionChanged(self, selection):
+        """ The selection has changed """
+        self.emit('extlistview-selection-changed', self.getSelectedRows())

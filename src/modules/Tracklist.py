@@ -126,6 +126,7 @@ class Tracklist(modules.Module):
         self.list.connect('key-press-event',                       self.onKeyboard)
         self.list.connect('extlistview-modified',                  self.onListModified)
         self.list.connect('extlistview-button-pressed',            self.onButtonPressed)
+        self.list.connect('extlistview-selection-changed',         self.onSelectionChanged)
         self.list.connect('extlistview-column-visibility-changed', self.onColumnVisibilityChanged)
 
         self.btnClear.connect('clicked',   lambda widget: modules.postMsg(consts.MSG_CMD_TRACKLIST_CLR))
@@ -468,6 +469,11 @@ class Tracklist(modules.Module):
 
         if self.list.hasMark():
             modules.postMsg(consts.MSG_EVT_TRACK_MOVED, {'hasPrevious': self.__getPreviousTrackIdx() != -1, 'hasNext':  self.__getNextTrackIdx() != -1})
+
+
+    def onSelectionChanged(self, list, selectedRows):
+        """ The selection has changed """
+        modules.postMsg(consts.MSG_EVT_TRACKLIST_NEW_SEL, {'tracks': [row[ROW_TRK] for row in selectedRows]})
 
 
     def onColumnVisibilityChanged(self, list, colTitle, visible):

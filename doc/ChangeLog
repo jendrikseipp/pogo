@@ -4,6 +4,7 @@
 
 v1.05 ()
     [+] Stick to the Media Player Remote Interface Specifications (#534021)
+    [+] Show some information on the selected tracks in the status bar
     [-] Skips two songs when one is not found (#581654)
     [-] Fixed crash in some rare occasions when trying to set the cover for the current track
     [ ] The playbin2 GStreamer component is now used by default (use the --playbin flag to use the old playbin component)

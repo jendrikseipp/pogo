@@ -183,6 +183,7 @@ DND_TARGETS = {
     MSG_EVT_TRACK_MOVED,         # The position of the current track has changed    Parameters: 'hasPrevious', 'hasNext'
     MSG_EVT_NEW_TRACKLIST,       # A new tracklist has been set                     Parameters: 'tracks', 'playtime'
     MSG_EVT_REPEAT_CHANGED,      # The repeat function has been enabled/disabled    Parameters: 'repeat'
+    MSG_EVT_TRACKLIST_NEW_SEL,   # The tracklist has a new set of selected tracks   Parameters: 'tracks'
 
     # Application
     MSG_EVT_APP_QUIT,            # The application is quitting         Parameters:
@@ -197,4 +198,4 @@ DND_TARGETS = {
 
     # End value
     MSG_END_VALUE
-) = range(43)
+) = range(44)
