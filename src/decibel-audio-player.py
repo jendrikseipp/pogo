@@ -139,7 +139,7 @@ def realStartup():
     wTree.get_widget('menu-preferences').connect('activate', lambda item: modules.showPreferences())
 
     # Let's go
-    modules.postMsg(consts.MSG_EVT_APP_STARTED)
+    gobject.idle_add(modules.postMsg, consts.MSG_EVT_APP_STARTED)
 
 
 def onViewMode(item, mode):

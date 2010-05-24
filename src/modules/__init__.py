@@ -227,7 +227,6 @@ mEnabledModules = prefs.get(__name__, 'enabled_modules', [])                   #
 
 
 # Find modules, instantiate those that are mandatory or that have been previously enabled by the user
-# This code should not be executed automatically, to prevent the remote from doing it when importing this module
 sys.path.append(mModDir)
 for file in [os.path.splitext(file)[0] for file in os.listdir(mModDir) if file.endswith('.py') and file != '__init__.py']:
     try:
