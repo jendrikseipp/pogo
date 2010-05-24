@@ -28,6 +28,9 @@ MOD_INFO = ('Gnome Media Keys', 'Gnome Media Keys', '', [], True, False)
     MK_GNOME_222,  # From Gnome 2.22
 ) = range(2)
 
+# Generate a 'unique' application name so that multiple instances of DAP won't interfere
+APP_UID = consts.appName + str(time.time())
+
 
 class GnomeMediaKeys(modules.Module):
     """ Support for Gnome multimedia keys """
@@ -61,19 +64,18 @@ class GnomeMediaKeys(modules.Module):
                     service = dbus.SessionBus().get_object('org.gnome.SettingsDaemon', '/org/gnome/SettingsDaemon/MediaKeys')
                     self.dbusInterface = dbus.Interface(service, 'org.gnome.SettingsDaemon.MediaKeys')
 
-                self.dbusInterface.GrabMediaPlayerKeys(consts.appName, time.time())
+                self.dbusInterface.GrabMediaPlayerKeys(APP_UID, time.time())
                 self.dbusInterface.connect_to_signal('MediaPlayerKeyPressed', self.onMediaKey)
             except:
                 log.logger.error('[%s] Error while initializing\n\n%s' % (MOD_INFO[modules.MODINFO_NAME], traceback.format_exc()))
                 self.dbusInterface = None
         elif msg == consts.MSG_EVT_APP_QUIT and self.dbusInterface is not None:
-            self.dbusInterface.ReleaseMediaPlayerKeys(consts.appName)
+            self.dbusInterface.ReleaseMediaPlayerKeys(APP_UID)
 
 
     def onMediaKey(self, appName, action):
         """ A media key has been pressed """
-        if appName == consts.appName:
-            if action == 'Stop':              modules.postMsg(consts.MSG_CMD_STOP)
-            elif action == 'Next':            modules.postMsg(consts.MSG_CMD_NEXT)
-            elif action == 'Previous':        modules.postMsg(consts.MSG_CMD_PREVIOUS)
-            elif action in ['Play', 'Pause']: modules.postMsg(consts.MSG_CMD_TOGGLE_PAUSE)
+        if   action == 'Stop':            modules.postMsg(consts.MSG_CMD_STOP)
+        elif action == 'Next':            modules.postMsg(consts.MSG_CMD_NEXT)
+        elif action == 'Previous':        modules.postMsg(consts.MSG_CMD_PREVIOUS)
+        elif action in ['Play', 'Pause']: modules.postMsg(consts.MSG_CMD_TOGGLE_PAUSE)
