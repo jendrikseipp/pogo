@@ -163,28 +163,22 @@ def postQuitMsg():
     gobject.idle_add(__postQuitMsg)
 
 
-mMenuItems   = {}
-mAccelGroup  = None
-mModMenuItem = None
+mMenuItems  = {}
+mSeparator  = None
+mAccelGroup = None
 
 
 def __addMenuItem(label, callback, accelerator):
     """ This is the 'real' addMenuItem function, which must be executed in the GTK main loop """
-    global mModMenuItem, mAccelGroup
+    global mAccelGroup, mSeparator
 
-    # Create the main menu item if needed
-    if mModMenuItem is None:
-        menu         = gtk.Menu()
-        mModMenuItem = gtk.MenuItem(_('Modules'))
-        mModMenuItem.set_submenu(menu)
-        prefs.getWidgetsTree().get_widget('menubar').insert(mModMenuItem, 3)
-        mModMenuItem.show()
-    else:
-        menu = mModMenuItem.get_submenu()
+    menu = prefs.getWidgetsTree().get_widget('menu-edit')
 
-    # Remove all current menu items
-    for menuitem in mMenuItems.itervalues():
-        menu.remove(menuitem)
+    # Remove all menu items
+    if len(mMenuItems) != 0:
+        menu.remove(mSeparator)
+        for menuitem in mMenuItems.itervalues():
+            menu.remove(menuitem)
 
     # Create a new menu item for the module
     menuitem = gtk.MenuItem(label)
@@ -201,9 +195,15 @@ def __addMenuItem(label, callback, accelerator):
         key, mod = gtk.accelerator_parse(accelerator)
         menuitem.add_accelerator('activate', mAccelGroup, key, mod, gtk.ACCEL_VISIBLE)
 
-    # Re-add all items alphabetically, including the new one
-    for item in sorted(mMenuItems.items(), key = lambda item: item[0]):
-        menu.append(item[1])
+    # Create the separator?
+    if mSeparator is None:
+        mSeparator = gtk.SeparatorMenuItem()
+        mSeparator.show()
+
+    # Re-add items alphabetically, including the new one
+    menu.insert(mSeparator, 0)
+    for item in sorted(mMenuItems.items(), key = lambda item: item[0], reverse = True):
+        menu.insert(item[1], 0)
 
 
 def addMenuItem(label, callback, accelerator=None):
@@ -213,28 +213,25 @@ def addMenuItem(label, callback, accelerator=None):
 
 def __delMenuItem(label):
     """ This is the 'real' delMenuItem function, which must be executed in the GTK main loop """
-    global mModMenuItem
-
     # Make sure the menu item is there
     if label not in mMenuItems:
         return
 
-    menu = mModMenuItem.get_submenu()
+    menu = prefs.getWidgetsTree().get_widget('menu-edit')
 
     # Remove all current menu items
+    menu.remove(mSeparator)
     for menuitem in mMenuItems.itervalues():
         menu.remove(menuitem)
 
     # Delete the given menu item
     del mMenuItems[label]
 
-    # Should we keep or remove the menu?
+    # Re-add items if needed
     if len(mMenuItems) != 0:
-        for item in sorted(mMenuItems.items(), key = lambda item: item[0]):
-            menu.append(item[1])
-    else:
-        prefs.getWidgetsTree().get_widget('menubar').remove(mModMenuItem)
-        mModMenuItem = None
+        menu.insert(mSeparator, 0)
+        for item in sorted(mMenuItems.items(), key = lambda item: item[0], reverse = True):
+            menu.insert(item[1], 0)
 
 
 def delMenuItem(label):
