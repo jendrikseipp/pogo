@@ -37,7 +37,7 @@ class Equalizer(modules.Module):
         self.lvls      = prefs.get(__name__, 'levels', [0, 0, 0, 0, 0, 0, 0, 0, 0, 0])
         self.cfgWindow = None
 
-        modules.addMenuItem(_('Equalizer'), self.configure)
+        modules.addMenuItem(_('Equalizer'), self.configure, '<Control>E')
 
 
     def onModUnloaded(self):

@@ -164,11 +164,13 @@ def postQuitMsg():
 
 
 mMenuItems   = {}
+mAccelGroup  = None
 mModMenuItem = None
 
-def __addMenuItem(label, callback):
+
+def __addMenuItem(label, callback, accelerator):
     """ This is the 'real' addMenuItem function, which must be executed in the GTK main loop """
-    global mModMenuItem
+    global mModMenuItem, mAccelGroup
 
     # Create the main menu item if needed
     if mModMenuItem is None:
@@ -190,14 +192,23 @@ def __addMenuItem(label, callback):
     menuitem.show()
     mMenuItems[label] = menuitem
 
+    # Add an accelerator if needed
+    if accelerator is not None:
+        if mAccelGroup is None:
+            mAccelGroup = gtk.AccelGroup()
+            prefs.getWidgetsTree().get_widget('win-main').add_accel_group(mAccelGroup)
+
+        key, mod = gtk.accelerator_parse(accelerator)
+        menuitem.add_accelerator('activate', mAccelGroup, key, mod, gtk.ACCEL_VISIBLE)
+
     # Re-add all items alphabetically, including the new one
     for item in sorted(mMenuItems.items(), key = lambda item: item[0]):
         menu.append(item[1])
 
 
-def addMenuItem(label, callback):
+def addMenuItem(label, callback, accelerator=None):
     """ Add a menu item to the 'modules' menu """
-    gobject.idle_add(__addMenuItem, label, callback)
+    gobject.idle_add(__addMenuItem, label, callback, accelerator)
 
 
 def __delMenuItem(label):
