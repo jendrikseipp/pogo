@@ -163,6 +163,70 @@ def postQuitMsg():
     gobject.idle_add(__postQuitMsg)
 
 
+mMenuItems   = {}
+mModMenuItem = None
+
+def __addMenuItem(label, callback):
+    """ This is the 'real' addMenuItem function, which must be executed in the GTK main loop """
+    global mModMenuItem
+
+    # Create the main menu item if needed
+    if mModMenuItem is None:
+        menu         = gtk.Menu()
+        mModMenuItem = gtk.MenuItem(_('Modules'))
+        mModMenuItem.set_submenu(menu)
+        prefs.getWidgetsTree().get_widget('menubar').insert(mModMenuItem, 3)
+        mModMenuItem.show()
+    else:
+        menu = mModMenuItem.get_submenu()
+
+    # Remove all current menu items
+    for menuitem in mMenuItems.itervalues():
+        menu.remove(menuitem)
+
+    # Create a new menu item for the module
+    menuitem = gtk.MenuItem(label)
+    menuitem.connect('activate', callback)
+    menuitem.show()
+    mMenuItems[label] = menuitem
+
+    # Re-add all items alphabetically, including the new one
+    for item in sorted(mMenuItems.items(), key = lambda item: item[0]):
+        menu.append(item[1])
+
+
+def addMenuItem(label, callback):
+    """ Add a menu item to the 'modules' menu """
+    gobject.idle_add(__addMenuItem, label, callback)
+
+
+def __delMenuItem(label):
+    """ This is the 'real' delMenuItem function, which must be executed in the GTK main loop """
+    global mModMenuItem
+
+    menu = mModMenuItem.get_submenu()
+
+    # Remove all current menu items
+    for menuitem in mMenuItems.itervalues():
+        menu.remove(menuitem)
+
+    # Delete the given menu item
+    del mMenuItems[label]
+
+    # Should we keep or remove the menu?
+    if len(mMenuItems) != 0:
+        for item in sorted(mMenuItems.items(), key = lambda item: item[0]):
+            menu.append(item[1])
+    else:
+        prefs.getWidgetsTree().get_widget('menubar').remove(mModMenuItem)
+        mModMenuItem = None
+
+
+def delMenuItem(label):
+    """ Delete a menu item from the 'modules' menu """
+    gobject.idle_add(__delMenuItem, label)
+
+
 # --== Base classes for modules ==--
 
 

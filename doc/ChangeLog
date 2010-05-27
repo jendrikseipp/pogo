@@ -5,6 +5,7 @@
 v1.05 ()
     [+] Stick to the Media Player Remote Interface Specifications (#534021)
     [+] Show some information on the selected tracks in the status bar
+    [+] Added an equalizer menu item (#495761)
     [-] Skips two songs when one is not found (#581654)
     [-] Fixed crash in some rare occasions when trying to set the cover for the current track
     [-] Gnome media keys no longer working when starting/closing multiple instances

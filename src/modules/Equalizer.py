@@ -37,6 +37,14 @@ class Equalizer(modules.Module):
         self.lvls      = prefs.get(__name__, 'levels', [0, 0, 0, 0, 0, 0, 0, 0, 0, 0])
         self.cfgWindow = None
 
+        modules.addMenuItem(_('Equalizer'), self.configure)
+
+
+    def onModUnloaded(self):
+        """ The module has been unloaded """
+        modules.delMenuItem(_('Equalizer'))
+        gui.infoMsgBox(None, _('Restart required'), _('You must restart the application for this modification to take effect.'))
+
 
     def onAppStarted(self):
         """ The module has been loaded """
@@ -50,13 +58,13 @@ class Equalizer(modules.Module):
 
     def handleMsg(self, msg, params):
         """ Handle messages sent to this module """
-        if msg == consts.MSG_EVT_APP_STARTED:
-            self.onAppStarted()
-        elif msg == consts.MSG_EVT_MOD_LOADED:
+        if msg == consts.MSG_EVT_MOD_LOADED:
             self.onModLoaded()
             gui.infoMsgBox(None, _('Restart required'), _('You must restart the application for this modification to take effect.'))
+        elif msg == consts.MSG_EVT_APP_STARTED:
+            self.onAppStarted()
         elif msg == consts.MSG_EVT_MOD_UNLOADED:
-            gui.infoMsgBox(None, _('Restart required'), _('You must restart the application for this modification to take effect.'))
+            self.onModUnloaded()
 
 
     # --== Configuration ==--
