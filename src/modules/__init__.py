@@ -215,6 +215,10 @@ def __delMenuItem(label):
     """ This is the 'real' delMenuItem function, which must be executed in the GTK main loop """
     global mModMenuItem
 
+    # Make sure the menu item is there
+    if label not in mMenuItems:
+        return
+
     menu = mModMenuItem.get_submenu()
 
     # Remove all current menu items

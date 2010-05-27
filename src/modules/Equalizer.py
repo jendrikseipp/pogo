@@ -37,18 +37,11 @@ class Equalizer(modules.Module):
         self.lvls      = prefs.get(__name__, 'levels', [0, 0, 0, 0, 0, 0, 0, 0, 0, 0])
         self.cfgWindow = None
 
-        modules.addMenuItem(_('Equalizer'), self.configure, '<Control>E')
-
-
-    def onModUnloaded(self):
-        """ The module has been unloaded """
-        modules.delMenuItem(_('Equalizer'))
-        gui.infoMsgBox(None, _('Restart required'), _('You must restart the application for this modification to take effect.'))
-
 
     def onAppStarted(self):
         """ The module has been loaded """
         self.onModLoaded()
+        modules.addMenuItem(_('Equalizer'), self.configure, '<Control>E')
         modules.postMsg(consts.MSG_CMD_ENABLE_EQZ)
         modules.postMsg(consts.MSG_CMD_SET_EQZ_LVLS, {'lvls': self.lvls})
 
@@ -64,7 +57,7 @@ class Equalizer(modules.Module):
         elif msg == consts.MSG_EVT_APP_STARTED:
             self.onAppStarted()
         elif msg == consts.MSG_EVT_MOD_UNLOADED:
-            self.onModUnloaded()
+            gui.infoMsgBox(None, _('Restart required'), _('You must restart the application for this modification to take effect.'))
 
 
     # --== Configuration ==--
