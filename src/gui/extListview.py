@@ -21,7 +21,7 @@
 # v1.7:
 #   * The 'extlistview-modified' signal was not generated when calling clear() and replaceContent()
 #   * Added selectRows(), removeRow(), and removeRows() method
-#   * Fixed the intermittent improper columns resizing
+#   * Really fixed the intermittent improper columns resizing
 #   * Added the 'extlistview-selection-changed' signal
 #
 # v1.6:
