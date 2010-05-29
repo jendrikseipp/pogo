@@ -7,7 +7,7 @@
 <child>
 <widget class="GtkVBox" id="vbox1">
 <property name="border_width">12</property>
-<property name="spacing">12</property>
+<property name="spacing">18</property>
 <child>
 <widget class="GtkVBox" id="vbox2">
 <property name="visible">True</property>
@@ -469,11 +469,26 @@
 <property name="position">0</property>
 </packing>
 </child>
+</widget>
+<packing>
+<property name="position">0</property>
+</packing>
+</child>
 <child>
-<widget class="GtkHButtonBox" id="hbuttonbox3">
+<widget class="GtkHSeparator" id="hseparator1"/>
+<packing>
+<property name="expand">False</property>
+<property name="position">1</property>
+</packing>
+</child>
+<child>
+<widget class="GtkHBox" id="hbox1">
+<property name="spacing">6</property>
+<child>
+<widget class="GtkHButtonBox" id="hbuttonbox1">
 <property name="visible">True</property>
 <property name="spacing">18</property>
-<property name="layout_style">center</property>
+<property name="layout_style">start</property>
 <child>
 <widget class="GtkButton" id="btn-save">
 <property name="label">gtk-save</property>
@@ -502,9 +517,45 @@
 <property name="position">1</property>
 </packing>
 </child>
+</widget>
+<packing>
+<property name="position">0</property>
+</packing>
+</child>
 <child>
-<widget class="GtkButton" id="btn-center">
-<property name="label">gtk-justify-center</property>
+<widget class="GtkHBox" id="hbox7">
+<property name="visible">True</property>
+<property name="spacing">6</property>
+<child>
+<widget class="GtkLabel" id="label19">
+<property name="visible">True</property>
+<property name="label" translatable="yes">Preset:</property>
+</widget>
+<packing>
+<property name="expand">False</property>
+<property name="position">0</property>
+</packing>
+</child>
+<child>
+<widget class="GtkComboBox" id="combo-presets">
+<property name="visible">True</property>
+</widget>
+<packing>
+<property name="position">1</property>
+</packing>
+</child>
+</widget>
+<packing>
+<property name="position">1</property>
+</packing>
+</child>
+<child>
+<widget class="GtkHButtonBox" id="hbuttonbox2">
+<property name="visible">True</property>
+<property name="layout_style">end</property>
+<child>
+<widget class="GtkButton" id="btn-close">
+<property name="label">gtk-close</property>
 <property name="visible">True</property>
 <property name="can_focus">True</property>
 <property name="receives_default">True</property>
@@ -513,61 +564,12 @@
 <packing>
 <property name="expand">False</property>
 <property name="fill">False</property>
+<property name="position">0</property>
+</packing>
+</child>
+</widget>
+<packing>
 <property name="position">2</property>
-</packing>
-</child>
-</widget>
-<packing>
-<property name="expand">False</property>
-<property name="position">1</property>
-</packing>
-</child>
-</widget>
-<packing>
-<property name="position">0</property>
-</packing>
-</child>
-<child>
-<widget class="GtkHSeparator" id="hseparator1"/>
-<packing>
-<property name="expand">False</property>
-<property name="position">1</property>
-</packing>
-</child>
-<child>
-<widget class="GtkHBox" id="hbox1">
-<property name="spacing">6</property>
-<child>
-<widget class="GtkHButtonBox" id="hbuttonbox1">
-<child>
-<placeholder/>
-</child>
-</widget>
-<packing>
-<property name="expand">False</property>
-<property name="position">0</property>
-</packing>
-</child>
-<child>
-<widget class="GtkHButtonBox" id="hbuttonbox2">
-<property name="spacing">12</property>
-<property name="layout_style">end</property>
-<child>
-<widget class="GtkButton" id="btn-close">
-<property name="label">gtk-close</property>
-<property name="can_focus">True</property>
-<property name="receives_default">True</property>
-<property name="use_stock">True</property>
-</widget>
-<packing>
-<property name="expand">False</property>
-<property name="fill">False</property>
-<property name="position">0</property>
-</packing>
-</child>
-</widget>
-<packing>
-<property name="position">1</property>
 </packing>
 </child>
 </widget>

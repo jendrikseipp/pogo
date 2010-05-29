@@ -16,12 +16,19 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301 USA
 
-import gobject, gui, modules
+import gobject, gtk, gui, modules
 
 from tools   import consts, prefs
 from gettext import gettext as _
 
 MOD_INFO = ('Equalizer', _('Equalizer'), _('Tune the level of the frequency bands'), [], False, True)
+
+# Entries of the combo box with the presets
+(
+    ROW_PRESET_IS_SEPARATOR,
+    ROW_PRESET_NAME,
+    ROW_PRESET_VALUES,
+) = range(3)
 
 
 class Equalizer(modules.Module):
@@ -35,6 +42,7 @@ class Equalizer(modules.Module):
     def onModLoaded(self):
         """ The module has been loaded """
         self.lvls      = prefs.get(__name__, 'levels', [0, 0, 0, 0, 0, 0, 0, 0, 0, 0])
+        self.preset    = prefs.get(__name__, 'preset', _('Flat'))
         self.cfgWindow = None
 
 
@@ -66,26 +74,72 @@ class Equalizer(modules.Module):
     def configure(self, parent):
         """ Show the configuration dialog """
         if self.cfgWindow is None:
+            self.cfgWindow = gui.window.Window('Equalizer.glade', 'vbox1', __name__, MOD_INFO[modules.MODINFO_L10N], 580, 300)
+
             self.timer      = None
+            self.combo      = self.cfgWindow.getWidget('combo-presets')
             self.scales     = []
-            self.handlers   = []
-            self.cfgWindow  = gui.window.Window('Equalizer.glade', 'vbox1', __name__, MOD_INFO[modules.MODINFO_L10N], 580, 300)
+            self.comboStore = gtk.ListStore(gobject.TYPE_BOOLEAN, gobject.TYPE_STRING, gobject.TYPE_PYOBJECT)
             self.targetLvls = []
 
+            # Setup the scales
             for i in xrange(10):
                 self.scales.append(self.cfgWindow.getWidget('vscale' + str(i)))
                 self.scales[i].set_value(self.lvls[i])
-                self.handlers.append(self.scales[i].connect('value-changed', self.onScaleValueChanged, i))
+                self.scales[i].connect('value-changed', self.onScaleValueChanged, i)
 
-            self.cfgWindow.getWidget('btn-save').connect('clicked',   self.onBtnSave)
-            self.cfgWindow.getWidget('btn-open').connect('clicked',   self.onBtnOpen)
-            self.cfgWindow.getWidget('btn-close').connect('clicked',  lambda btn: self.cfgWindow.hide())
-            self.cfgWindow.getWidget('btn-center').connect('clicked', lambda btn: self.jumpToTargetLvls([0, 0, 0, 0, 0, 0, 0, 0, 0, 0]))
+            # Setup the combo box
+            txtRenderer = gtk.CellRendererText()
+            self.combo.pack_start(txtRenderer, True)
+            self.combo.add_attribute(txtRenderer, 'text', ROW_PRESET_NAME)
+            self.combo.set_model(self.comboStore)
+            self.combo.set_row_separator_func(lambda model, iter: model.get_value(iter, ROW_PRESET_IS_SEPARATOR))
+
+            # Add some presets to the combo box
+            self.comboStore.append((False, _('Classic V'), (7,  5,  0,  -5,  -8,  -7,  -4,  -1,   3,   5)))
+            self.comboStore.append((False, _('Flat')     , (0,  0,  0,   0,   0,   0,   0,   0,   0,   0)))
+            self.comboStore.append((False, _('Metal')    , (3,  4,  5,   0,  -2,   0,   1,   1,  -1,  -1)))
+            self.comboStore.append((False, _('Pop')      , (3,  6,  3,  -2,  -4,  -3,   0,   2,   2,   5)))
+
+            # Select the right entry
+            if self.preset is None:
+                self.comboStore.insert(0, (False, _('Custom'), None))
+                self.comboStore.insert(1, (True,  '',          None))
+                self.combo.set_active(0)
+            else:
+                for i, preset in enumerate(self.comboStore):
+                    if preset[ROW_PRESET_NAME] == self.preset:
+                        self.combo.set_active(i)
+                        break
+
+            # Events
+            self.cfgWindow.getWidget('btn-save').connect('clicked',  self.onBtnSave)
+            self.cfgWindow.getWidget('btn-open').connect('clicked',  self.onBtnOpen)
+            self.cfgWindow.getWidget('btn-close').connect('clicked', lambda btn: self.cfgWindow.hide())
+            self.combo.connect('changed', self.onPresetChanged)
 
         if not self.cfgWindow.isVisible():
             self.cfgWindow.getWidget('btn-close').grab_focus()
 
         self.cfgWindow.show()
+
+
+    def onPresetChanged(self, combo):
+        """ A preset has been selected """
+        idx = combo.get_active()
+        if idx != -1:
+            iter = self.comboStore.get_iter(idx)
+            preset = self.comboStore.get_value(iter, ROW_PRESET_NAME)
+            self.jumpToTargetLvls(self.comboStore.get_value(iter, ROW_PRESET_VALUES))
+
+            # Remove the 'Custom' entry if needed
+            if self.preset is None:
+                self.comboStore.remove(self.comboStore.get_iter((0, )))
+                self.comboStore.remove(self.comboStore.get_iter((0, )))
+
+            self.preset = preset
+            prefs.set(__name__, 'preset', self.preset)
+
 
 
     def onBtnSave(self, btn):
@@ -127,12 +181,34 @@ class Equalizer(modules.Module):
                     isInvalid = True
                     break
 
-            if isInvalid: gui.errorMsgBox(self.cfgWindow, _('Could not load the file'), _('The format of the file is incorrect.'))
-            else:         self.jumpToTargetLvls(lvls)
+            if isInvalid:
+                gui.errorMsgBox(self.cfgWindow, _('Could not load the file'), _('The format of the file is incorrect.'))
+            else:
+                self.jumpToTargetLvls(lvls)
+
+                # Add a 'custom' entry to the presets if needed
+                if self.preset is not None:
+                    self.preset = None
+                    prefs.set(__name__, 'preset', self.preset)
+                    self.combo.handler_block_by_func(self.onPresetChanged)
+                    self.comboStore.insert(0, (False, _('Custom'), None))
+                    self.comboStore.insert(1, (True,  '',          None))
+                    self.combo.set_active(0)
+                    self.combo.handler_unblock_by_func(self.onPresetChanged)
 
 
     def onScaleValueChanged(self, scale, idx):
-        """ The user has adjusted one of the scales """
+        """ The user has moved one of the scales """
+        # Add a 'custom' entry to the presets if needed
+        if self.preset is not None:
+            self.preset = None
+            prefs.set(__name__, 'preset', self.preset)
+            self.combo.handler_block_by_func(self.onPresetChanged)
+            self.comboStore.insert(0, (False, _('Custom'), None))
+            self.comboStore.insert(1, (True,  '',          None))
+            self.combo.set_active(0)
+            self.combo.handler_unblock_by_func(self.onPresetChanged)
+
         self.lvls[idx] = scale.get_value()
         prefs.set(__name__, 'levels', self.lvls)
         modules.postMsg(consts.MSG_CMD_SET_EQZ_LVLS, {'lvls': self.lvls})
@@ -146,14 +222,13 @@ class Equalizer(modules.Module):
         self.timer      = gobject.timeout_add(20, self.timerFunc)
         self.targetLvls = targetLvls
 
+        for i in xrange(10):
+            self.scales[i].handler_block_by_func(self.onScaleValueChanged)
+
 
     def timerFunc(self):
         """ Move a bit the scales to their target value """
         isFinished = True
-
-        # Disconnect handlers before moving the scales
-        for i in xrange(10):
-            self.scales[i].disconnect(self.handlers[i])
 
         # Move the scales a bit
         for i in xrange(10):
@@ -170,12 +245,19 @@ class Equalizer(modules.Module):
             self.lvls[i] = newLvl
             self.scales[i].set_value(newLvl)
 
-        # Reconnect the handlers
-        for i in xrange(10):
-            self.handlers[i] = self.scales[i].connect('value-changed', self.onScaleValueChanged, i)
-
         # Set the equalizer to the new levels
-        prefs.set(__name__, 'levels', self.lvls)
         modules.postMsg(consts.MSG_CMD_SET_EQZ_LVLS, {'lvls': self.lvls})
 
-        return not isFinished
+        if isFinished:
+            self.timer = None
+            prefs.set(__name__, 'levels', self.lvls)
+
+            # Make sure labels are up to date (sometimes they aren't when we're done with the animation
+            # Also unblock the handlers
+            for i in xrange(10):
+                self.scales[i].queue_draw()
+                self.scales[i].handler_unblock_by_func(self.onScaleValueChanged)
+
+            return False
+
+        return True
