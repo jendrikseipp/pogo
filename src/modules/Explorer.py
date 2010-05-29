@@ -202,7 +202,7 @@ class Explorer(modules.Module):
 
     def onChanged(self, combo):
         """ A new explorer has been selected with the combo box """
-        currExplorer = self.combo.get_active()
+        currExplorer = combo.get_active()
 
         if currExplorer == -1:
             self.notebook.set_current_page(0)
@@ -211,7 +211,7 @@ class Explorer(modules.Module):
 
             if isHeader:
                 if self.currExplorer is not None:
-                    self.combo.set_active(self.currExplorer)
+                    combo.set_active(self.currExplorer)
             else:
                 if self.currExplorer != currExplorer:
                     self.currExplorer = currExplorer
