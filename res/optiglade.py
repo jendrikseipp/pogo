@@ -1,6 +1,4 @@
 #!/usr/bin/env python
-#
-# Remove white spaces at the beginning of all lines
 
 import os
 
