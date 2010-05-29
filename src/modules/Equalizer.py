@@ -69,7 +69,7 @@ class Equalizer(modules.Module):
             self.timer      = None
             self.scales     = []
             self.handlers   = []
-            self.cfgWindow  = gui.window.Window('Equalizer.glade', 'vbox1', __name__, MOD_INFO[modules.MODINFO_L10N], 675, 415)
+            self.cfgWindow  = gui.window.Window('Equalizer.glade', 'vbox1', __name__, MOD_INFO[modules.MODINFO_L10N], 580, 300)
             self.targetLvls = []
 
             for i in xrange(10):
