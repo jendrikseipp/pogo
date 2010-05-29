@@ -1,5 +1,7 @@
 <?xml version="1.0"?>
 <glade-interface>
+<!-- interface-requires gtk+ 2.14 -->
+<!-- interface-naming-policy toplevel-contextual -->
 <widget class="GtkWindow" id="win-main">
 <property name="window_position">center</property>
 <child>

@@ -1,5 +1,7 @@
 <?xml version="1.0"?>
 <glade-interface>
+<!-- interface-requires gtk+ 2.6 -->
+<!-- interface-naming-policy toplevel-contextual -->
 <widget class="GtkWindow" id="win-main">
 <property name="window_position">center</property>
 <child>
@@ -93,7 +95,7 @@
 <widget class="GtkHButtonBox" id="hbuttonbox1">
 <child>
 <widget class="GtkButton" id="btn-help">
-<property name="label" translatable="yes">gtk-help</property>
+<property name="label">gtk-help</property>
 <property name="can_focus">True</property>
 <property name="receives_default">True</property>
 <property name="use_stock">True</property>
@@ -116,7 +118,7 @@
 <property name="layout_style">end</property>
 <child>
 <widget class="GtkButton" id="btn-cancel">
-<property name="label" translatable="yes">gtk-cancel</property>
+<property name="label">gtk-cancel</property>
 <property name="can_focus">True</property>
 <property name="receives_default">True</property>
 <property name="use_stock">True</property>
@@ -129,7 +131,7 @@
 </child>
 <child>
 <widget class="GtkButton" id="btn-ok">
-<property name="label" translatable="yes">gtk-ok</property>
+<property name="label">gtk-ok</property>
 <property name="can_focus">True</property>
 <property name="receives_default">True</property>
 <property name="use_stock">True</property>

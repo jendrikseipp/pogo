@@ -1,5 +1,7 @@
 <?xml version="1.0"?>
 <glade-interface>
+<!-- interface-requires gtk+ 2.6 -->
+<!-- interface-naming-policy toplevel-contextual -->
 <widget class="GtkWindow" id="win-main">
 <property name="window_position">center</property>
 <child>
@@ -132,7 +134,6 @@
 <child>
 <widget class="GtkVBox" id="vbox4">
 <property name="visible">True</property>
-<property name="orientation">vertical</property>
 <child>
 <widget class="GtkCheckButton" id="chk-hidden">
 <property name="label" translatable="yes">Show hidden files</property>

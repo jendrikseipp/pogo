@@ -1,10 +1,11 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!DOCTYPE glade-interface SYSTEM "glade-2.0.dtd">
+<?xml version="1.0"?>
 <glade-interface>
+<!-- interface-requires gtk+ 2.6 -->
+<!-- interface-naming-policy toplevel-contextual -->
 <widget class="GtkDialog" id="dlg-main">
 <property name="border_width">5</property>
-<property name="window_position">GTK_WIN_POS_CENTER_ON_PARENT</property>
-<property name="type_hint">GDK_WINDOW_TYPE_HINT_DIALOG</property>
+<property name="window_position">center-on-parent</property>
+<property name="type_hint">dialog</property>
 <property name="has_separator">False</property>
 <child internal-child="vbox">
 <widget class="GtkVBox" id="dialog-vbox1">
@@ -19,15 +20,17 @@
 <property name="xpad">18</property>
 <property name="ypad">18</property>
 <property name="stock">gtk-dialog-authentication</property>
-<property name="icon_size">6</property>
+<property name="icon-size">6</property>
 </widget>
 <packing>
 <property name="expand">False</property>
+<property name="position">0</property>
 </packing>
 </child>
 </widget>
 <packing>
 <property name="expand">False</property>
+<property name="position">0</property>
 </packing>
 </child>
 <child>
@@ -47,12 +50,14 @@
 </widget>
 <packing>
 <property name="expand">False</property>
+<property name="position">0</property>
 </packing>
 </child>
 </widget>
 <packing>
 <property name="expand">False</property>
 <property name="fill">False</property>
+<property name="position">0</property>
 </packing>
 </child>
 <child>
@@ -64,6 +69,7 @@
 </widget>
 <packing>
 <property name="expand">False</property>
+<property name="position">0</property>
 </packing>
 </child>
 </widget>
@@ -107,6 +113,7 @@
 </widget>
 <packing>
 <property name="expand">False</property>
+<property name="position">0</property>
 </packing>
 </child>
 </widget>
@@ -124,6 +131,7 @@
 </widget>
 <packing>
 <property name="expand">False</property>
+<property name="position">0</property>
 </packing>
 </child>
 </widget>
@@ -141,11 +149,14 @@
 <widget class="GtkHBox" id="hbox6">
 <child>
 <widget class="GtkCheckButton" id="chk-store">
-<property name="can_focus">True</property>
 <property name="label" translatable="yes">Remember this password</property>
-<property name="response_id">0</property>
+<property name="can_focus">True</property>
+<property name="receives_default">False</property>
 <property name="draw_indicator">True</property>
 </widget>
+<packing>
+<property name="position">0</property>
+</packing>
 </child>
 </widget>
 <packing>
@@ -166,44 +177,54 @@
 </child>
 <child internal-child="action_area">
 <widget class="GtkHButtonBox" id="dlg-action_area">
-<property name="layout_style">GTK_BUTTONBOX_END</property>
+<property name="layout_style">end</property>
 <child>
 <widget class="GtkButton" id="btn-help">
+<property name="label">gtk-help</property>
+<property name="response_id">-11</property>
 <property name="can_focus">True</property>
 <property name="receives_default">True</property>
-<property name="label" translatable="yes">gtk-help</property>
 <property name="use_stock">True</property>
-<property name="response_id">-11</property>
 </widget>
+<packing>
+<property name="expand">False</property>
+<property name="fill">False</property>
+<property name="position">0</property>
+</packing>
 </child>
 <child>
 <widget class="GtkButton" id="button2">
+<property name="label">gtk-cancel</property>
+<property name="response_id">-6</property>
 <property name="can_focus">True</property>
 <property name="receives_default">True</property>
-<property name="label" translatable="yes">gtk-cancel</property>
 <property name="use_stock">True</property>
-<property name="response_id">-6</property>
 </widget>
 <packing>
+<property name="expand">False</property>
+<property name="fill">False</property>
 <property name="position">1</property>
 </packing>
 </child>
 <child>
 <widget class="GtkButton" id="btn-ok">
+<property name="label">gtk-ok</property>
+<property name="response_id">-5</property>
 <property name="can_focus">True</property>
 <property name="receives_default">True</property>
-<property name="label" translatable="yes">gtk-ok</property>
 <property name="use_stock">True</property>
-<property name="response_id">-5</property>
 </widget>
 <packing>
+<property name="expand">False</property>
+<property name="fill">False</property>
 <property name="position">2</property>
 </packing>
 </child>
 </widget>
 <packing>
 <property name="expand">False</property>
-<property name="pack_type">GTK_PACK_END</property>
+<property name="pack_type">end</property>
+<property name="position">0</property>
 </packing>
 </child>
 </widget>
