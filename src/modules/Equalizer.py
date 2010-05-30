@@ -23,7 +23,8 @@ from gettext import gettext as _
 
 MOD_INFO = ('Equalizer', _('Equalizer'), _('Tune the level of the frequency bands'), [], False, True)
 
-# Entries of the combo box with the presets
+
+# Entries of the presets combo box
 (
     ROW_PRESET_IS_SEPARATOR,
     ROW_PRESET_NAME,
@@ -45,11 +46,12 @@ class Equalizer(modules.Module):
         self.preset    = prefs.get(__name__, 'preset', _('Flat'))
         self.cfgWindow = None
 
+        modules.addMenuItem(_('Equalizer'), self.configure, '<Control>E')
+
 
     def onAppStarted(self):
-        """ The module has been loaded """
+        """ The application has started """
         self.onModLoaded()
-        modules.addMenuItem(_('Equalizer'), self.configure, '<Control>E')
         modules.postMsg(consts.MSG_CMD_ENABLE_EQZ)
         modules.postMsg(consts.MSG_CMD_SET_EQZ_LVLS, {'lvls': self.lvls})
 
@@ -61,11 +63,12 @@ class Equalizer(modules.Module):
         """ Handle messages sent to this module """
         if msg == consts.MSG_EVT_MOD_LOADED:
             self.onModLoaded()
-            gui.infoMsgBox(None, _('Restart required'), _('You must restart the application for this modification to take effect.'))
+            self.restartRequired()
         elif msg == consts.MSG_EVT_APP_STARTED:
             self.onAppStarted()
         elif msg == consts.MSG_EVT_MOD_UNLOADED:
-            gui.infoMsgBox(None, _('Restart required'), _('You must restart the application for this modification to take effect.'))
+            modules.delMenuItem(_('Equalizer'))
+            self.restartRequired()
 
 
     # --== Configuration ==--

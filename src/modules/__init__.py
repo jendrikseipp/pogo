@@ -16,7 +16,7 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301 USA
 
-import gobject, gtk, gui.preferences, os, sys, threading, tools, traceback
+import gobject, gtk, gui, gui.preferences, os, sys, threading, tools, traceback
 
 from tools   import consts, log, prefs
 from gettext import gettext as _
@@ -244,16 +244,33 @@ def delMenuItem(label):
 
 class ModuleBase:
     """ This class makes sure that all modules have some mandatory functions """
-    def join(self):                   pass
-    def start(self):                  pass
-    def configure(self, parent):      pass
-    def handleMsg(self, msg, params): pass
+
+    def join(self):
+        pass
+
+    def start(self):
+        pass
+
+    def configure(self, parent):
+        pass
+
+    def handleMsg(self, msg, params):
+        pass
+
+    def restartRequired(self):
+        gobject.idle_add(gui.infoMsgBox, None, _('Restart required'), _('You must restart the application for this modification to take effect.'))
+
 
 
 class Module(ModuleBase):
     """ This is the base class for non-threaded modules """
-    def __init__(self, messages):      register(self, messages)
-    def postMsg(self, msg, params={}): gobject.idle_add(self.handleMsg, msg, params)
+
+    def __init__(self, messages):
+        register(self, messages)
+
+    def postMsg(self, msg, params={}):
+        gobject.idle_add(self.handleMsg, msg, params)
+
 
 
 class ThreadedModule(threading.Thread, ModuleBase):
@@ -263,12 +280,14 @@ class ThreadedModule(threading.Thread, ModuleBase):
         """ Constructor """
         import Queue
 
-        threading.Thread.__init__(self)
-        register(self, messages + (consts.MSG_EVT_APP_QUIT, consts.MSG_EVT_MOD_UNLOADED))
         # Attributes
         self.queue        = Queue.Queue(0)            # List of queued messages
         self.gtkResult    = None                      # Value returned by the function executed in the GTK loop
         self.gtkSemaphore = threading.Semaphore(0)    # Used to execute some code in the GTK loop
+
+        # Initialization
+        threading.Thread.__init__(self)
+        register(self, messages + (consts.MSG_EVT_APP_QUIT, consts.MSG_EVT_MOD_UNLOADED))
 
     def __gtkExecute(self, func):
         """ Private function, must be executed in the GTK main loop """
