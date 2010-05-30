@@ -77,6 +77,8 @@ class Equalizer(modules.Module):
     def configure(self, parent):
         """ Show the configuration dialog """
         if self.cfgWindow is None:
+            import gui.window
+
             self.cfgWindow = gui.window.Window('Equalizer.glade', 'vbox1', __name__, MOD_INFO[modules.MODINFO_L10N], 580, 300)
 
             self.timer      = None
