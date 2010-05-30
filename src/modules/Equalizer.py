@@ -96,10 +96,16 @@ class Equalizer(modules.Module):
             self.combo.set_row_separator_func(lambda model, iter: model.get_value(iter, ROW_PRESET_IS_SEPARATOR))
 
             # Add some presets to the combo box
-            self.comboStore.append((False, _('Classic V'), (7,  5,  0,  -5,  -8,  -7,  -4,  -1,   3,   5)))
-            self.comboStore.append((False, _('Flat')     , (0,  0,  0,   0,   0,   0,   0,   0,   0,   0)))
-            self.comboStore.append((False, _('Metal')    , (3,  4,  5,   0,  -2,   0,   1,   1,  -1,  -1)))
-            self.comboStore.append((False, _('Pop')      , (3,  6,  3,  -2,  -4,  -3,   0,   2,   2,   5)))
+            self.comboStore.append((False, 'Classic V', ( 7,  5,  0,  -5,  -8,  -7,  -4,  -1,   3,   5)))
+            self.comboStore.append((False, 'Classical', ( 0,  0,  0,   0,   0,   0,   0,  -2,  -5,  -6)))
+            self.comboStore.append((False, 'Dance'    , ( 6,  5,  4,   3,   1,   0,  -3,  -5,  -5,   0)))
+            self.comboStore.append((False, 'Flat'     , ( 0,  0,  0,   0,   0,   0,   0,   0,   0,   0)))
+            self.comboStore.append((False, 'Live'     , (-4, -2,  0,   2,   3,   3,   3,   3,   2,   0)))
+            self.comboStore.append((False, 'Metal'    , ( 3,  4,  5,   1,  -2,   0,   1,   1,  -1,  -1)))
+            self.comboStore.append((False, 'Pop'      , ( 3,  6,  3,  -2,  -4,  -3,   0,   2,   3,   5)))
+            self.comboStore.append((False, 'Reggae'   , ( 1,  1,  1,   0,  -3,   0,   3,   4,   2,   1)))
+            self.comboStore.append((False, 'Rock'     , ( 5,  4,  2,  -2,  -3,  -3,   2,   4,   5,   5)))
+            self.comboStore.append((False, 'Techno'   , ( 5,  5,  3,   2,   0,  -4,  -2,   0,   3,   5)))
 
             # Select the right entry
             if self.preset is None:
