@@ -1,7 +1,5 @@
 <?xml version="1.0"?>
 <glade-interface>
-<!-- interface-requires gtk+ 2.6 -->
-<!-- interface-naming-policy toplevel-contextual -->
 <widget class="GtkMenu" id="menu-popup">
 <child>
 <widget class="GtkImageMenuItem" id="item-play">
