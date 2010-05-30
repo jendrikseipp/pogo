@@ -16,7 +16,7 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301 USA
 
-import dbus, gui, media.track, modules, traceback
+import modules, traceback
 
 from tools     import consts, prefs
 from gettext   import gettext as _
@@ -200,6 +200,8 @@ class IMStatus(modules.Module):
 
         # Detect active clients
         try:
+            import dbus
+
             session        = dbus.SessionBus()
             activeServices = session.get_object('org.freedesktop.DBus', '/org/freedesktop/DBus').ListNames()
             for activeClient in [client for client in CLIENTS if client[IM_DBUS_SERVICE_NAME] in activeServices]:
@@ -288,7 +290,9 @@ class IMStatus(modules.Module):
     def configure(self, parent):
         """ Show the configuration window """
         if self.cfgWindow is None:
-            self.cfgWindow = gui.window.Window('IMStatus.glade', 'vbox1', __name__, _(MOD_NAME), 440, 290)
+            from gui.window import Window
+
+            self.cfgWindow = Window('IMStatus.glade', 'vbox1', __name__, _(MOD_NAME), 440, 290)
             # GTK handlers
             self.cfgWindow.getWidget('rad-stopDoNothing').connect('toggled', self.onRadToggled)
             self.cfgWindow.getWidget('rad-stopSetStatus').connect('toggled', self.onRadToggled)
@@ -337,6 +341,8 @@ class IMStatus(modules.Module):
 
     def onBtnHelp(self, btn):
         """ Display a small help message box """
+        import gui.help, media.track
+
         helpDlg = gui.help.HelpDlg(_(MOD_NAME))
         helpDlg.addSection(_('Description'),
                            _('This module detects any running instant messenger and updates your status with regards to the track '

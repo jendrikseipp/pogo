@@ -16,9 +16,8 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301 USA
 
-import gobject, gtk, gui, modules, tools
+import gtk, gui, modules
 
-from tools   import icons
 from gettext import gettext as _
 
 
@@ -37,7 +36,11 @@ class Preferences:
 
     def __init__(self):
         """ Constructor """
-        self.window = gui.window.Window('Preferences.glade', 'vbox1', __name__, _('Preferences'), 390, 350)
+        import gobject
+
+        from gui import extListview, window
+
+        self.window = window.Window('Preferences.glade', 'vbox1', __name__, _('Preferences'), 390, 350)
         # List of modules
         toggleRdr = gtk.CellRendererToggle()
         columns   = (('',   [(toggleRdr, gobject.TYPE_BOOLEAN)],             ROW_ENABLED,    False, True),
@@ -47,7 +50,7 @@ class Preferences:
                      (None, [(None, gobject.TYPE_PYOBJECT)],                 ROW_INSTANCE,   False, False),
                      (None, [(None, gobject.TYPE_PYOBJECT)],                 ROW_MODINFO,    False, False))
 
-        self.list = gui.extListview.ExtListView(columns, sortable=False, useMarkup=True, canShowHideColumns=False)
+        self.list = extListview.ExtListView(columns, sortable=False, useMarkup=True, canShowHideColumns=False)
         self.list.set_headers_visible(False)
         self.list.addColumnAttribute(0, toggleRdr, 'activatable', ROW_UNLOADABLE)
         toggleRdr.connect('toggled', self.onModuleToggled)
@@ -72,7 +75,7 @@ class Preferences:
 
     def fillList(self):
         """ Fill the list of modules """
-        import cgi
+        import cgi, tools.icons
 
         rows = []
         for (name, data) in modules.getModules():
@@ -81,7 +84,7 @@ class Preferences:
             configurable = data[modules.MOD_INFO][modules.MODINFO_CONFIGURABLE]
 
             if configurable or not mandatory:
-                if configurable and instance is not None: icon = icons.prefsBtnIcon()
+                if configurable and instance is not None: icon = tools.icons.prefsBtnIcon()
                 else:                                     icon = None
 
                 text = '<b>%s</b>\n<small>%s</small>' % (cgi.escape(_(name)), cgi.escape(data[modules.MOD_INFO][modules.MODINFO_DESC]))
@@ -119,7 +122,9 @@ class Preferences:
 
     def onHelp(self, btn):
         """ Show a small help message box """
-        helpDlg = gui.help.HelpDlg(_('Modules'))
+        from gui import help
+
+        helpDlg = help.HelpDlg(_('Modules'))
         helpDlg.addSection(_('Description'),
                            _('This dialog box shows the list of available modules, which are small pieces of code that add '
                              'some functionnalities to the application. You can enable/disable a module by checking/unchecking '

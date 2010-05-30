@@ -16,15 +16,13 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301 USA
 
-import gtk, gui, media, modules, os, random, shutil, sys, tools
+import gtk, media, modules, os, shutil, tools
 
-from gui                   import fileChooser, help, questionMsgBox, extTreeview, extListview, progressDlg, selectPath
 from tools                 import consts, icons, prefs, pickleLoad, pickleSave
 from gettext               import ngettext, gettext as _
 from os.path               import isdir, isfile
 from gobject               import idle_add, TYPE_STRING, TYPE_INT, TYPE_PYOBJECT
 from tools.log             import logger
-from gui.progressDlg       import ProgressDlg
 from media.track.fileTrack import FileTrack
 
 MOD_INFO = ('Library', _('Library'), _('Organize your music by tags instead of files'), [], False, True)
@@ -119,6 +117,8 @@ class Library(modules.Module):
 
     def __createTree(self):
         """ Create the main tree, add it to the scrolled window """
+        from gui.extTreeview import ExtTreeView
+
         txtRdr         = gtk.CellRendererText()
         pixbufRdr      = gtk.CellRendererPixbuf()
         txtRdrAlbumLen = gtk.CellRendererText()
@@ -128,7 +128,7 @@ class Library(modules.Module):
                    (None, [(None, TYPE_STRING)],                                                               False),
                    (None, [(None, TYPE_PYOBJECT)],                                                             False))
 
-        self.tree = extTreeview.ExtTreeView(columns, True)
+        self.tree = ExtTreeView(columns, True)
 
         # The first text column (ROW_ALBUM_LEN) is not the one to search for
         # set_search_column(ROW_NAME) should work, but it doesn't...
@@ -186,6 +186,8 @@ class Library(modules.Module):
     def refreshLibrary(self, parent, libName, path, creation=False):
         """ Refresh the given library, must be called through idle_add() """
         import collections
+
+        from gui.progressDlg import ProgressDlg
 
         # First show a progress dialog
         if creation: header = _('Creating library')
@@ -342,6 +344,8 @@ class Library(modules.Module):
                 * The list 'paths' if it is not None
                 * The currently selected rows if 'paths' is None
         """
+        from sys import maxint
+
         tracks = []
 
         if paths is None:
@@ -357,7 +361,7 @@ class Library(modules.Module):
                 for album in pickleLoad(os.path.join(row[ROW_FULLPATH], 'albums')):
                     tracks.extend(pickleLoad(os.path.join(row[ROW_FULLPATH], album[ALB_INDEX])))
             elif row[ROW_TYPE] == TYPE_HEADER:
-                for path in xrange(currPath[0]+1, sys.maxint):
+                for path in xrange(currPath[0]+1, maxint):
                     if not tree.isValidPath(path):
                         break
 
@@ -384,6 +388,8 @@ class Library(modules.Module):
 
     def pickAlbumArtist(self, tree, artistPath):
         """ Pick an album at random of the given artist and play it """
+        import random
+
         # Expanding the artist row populates it, so that we can then pick an album at random
         tree.expandRow(artistPath)
         albumPath = artistPath + (random.randint(0, tree.getNbChildren(artistPath)-1), )
@@ -397,6 +403,8 @@ class Library(modules.Module):
 
     def pickAlbumLibrary(self, tree):
         """ Pick an album at random in the library and play it """
+        import random
+
         # Pick an artist at random (make sure not to select an alphabetical header)
         while True:
             path = (random.randint(0, tree.getCount()-1), )
@@ -617,6 +625,8 @@ class Library(modules.Module):
     def configure(self, parent):
         """ Show the configuration dialog """
         if self.cfgWindow is None:
+            from gui import extListview
+
             self.cfgWindow = gui.window.Window('Library.glade', 'vbox1', __name__, MOD_L10N, 370, 400)
             # Create the list of libraries
             txtRdr  = gtk.CellRendererText()
@@ -653,7 +663,9 @@ class Library(modules.Module):
 
     def onAddLibrary(self, btn):
         """ Let the user create a new library """
-        result = selectPath.SelectPath(MOD_L10N, self.cfgWindow, self.libraries.keys(), ['/']).run()
+        from gui.selectPath import SelectPath
+
+        result = SelectPath(MOD_L10N, self.cfgWindow, self.libraries.keys(), ['/']).run()
 
         if result is not None:
             name, path = result
@@ -674,9 +686,11 @@ class Library(modules.Module):
 
     def onRenameLibrary(self, btn):
         """ Let the user rename a library """
+        from gui.selectPath import SelectPath
+
         name         = self.cfgList.getSelectedRows()[0][0]
         forbidden    = [libName for libName in self.libraries if libName != name]
-        pathSelector = selectPath.SelectPath(MOD_L10N, self.cfgWindow, forbidden, ['/'])
+        pathSelector = SelectPath(MOD_L10N, self.cfgWindow, forbidden, ['/'])
 
         pathSelector.setPathSelectionEnabled(False)
         result = pathSelector.run(name, self.libraries[name][LIB_PATH])
@@ -698,6 +712,8 @@ class Library(modules.Module):
 
     def removeSelectedLibraries(self, list):
         """ Remove all selected libraries """
+        from gui import questionMsgBox
+
         if list.getSelectedRowsCount() == 1:
             remark   = _('You will be able to recreate this library later on if you wish so.')
             question = _('Remove the selected library?')
@@ -733,6 +749,8 @@ class Library(modules.Module):
 
     def onHelp(self, btn):
         """ Display a small help message box """
+        from gui import help
+
         helpDlg = help.HelpDlg(MOD_L10N)
         helpDlg.addSection(_('Description'),
                            _('This module organizes your media files by tags instead of using the file structure of your drive. '

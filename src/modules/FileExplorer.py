@@ -16,9 +16,8 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301 USA
 
-import gtk, gui.window, media, modules, os, tools
+import gtk, media, modules, os, tools
 
-from gui     import fileChooser, help, extTreeview, extListview, selectPath
 from tools   import consts, prefs, icons
 from media   import playlist
 from gettext import gettext as _
@@ -417,6 +416,8 @@ class FileExplorer(modules.Module):
 
             # Create the tree if needed (this is done only the very first time)
             if self.tree is None:
+                from gui import extTreeview
+
                 columns = (('',   [(gtk.CellRendererPixbuf(), gtk.gdk.Pixbuf), (gtk.CellRendererText(), TYPE_STRING)], True),
                            (None, [(None, TYPE_INT)],                                                                  False),
                            (None, [(None, TYPE_STRING)],                                                               False))
@@ -474,7 +475,9 @@ class FileExplorer(modules.Module):
     def configure(self, parent):
         """ Show the configuration dialog """
         if self.cfgWin is None:
-            self.cfgWin = gui.window.Window('FileExplorer.glade', 'vbox1', __name__, MOD_L10N, 370, 400)
+            from gui import extListview, window
+
+            self.cfgWin = window.Window('FileExplorer.glade', 'vbox1', __name__, MOD_L10N, 370, 400)
             # Create the list of folders
             txtRdr  = gtk.CellRendererText()
             pixRdr  = gtk.CellRendererPixbuf()
@@ -513,6 +516,8 @@ class FileExplorer(modules.Module):
 
     def onAddFolder(self, btn):
         """ Let the user add a new folder to the list """
+        from gui import selectPath
+
         result = selectPath.SelectPath(MOD_L10N, self.cfgWin, self.folders.keys()).run()
 
         if result is not None:
@@ -552,6 +557,8 @@ class FileExplorer(modules.Module):
 
     def onRenameFolder(self, btn):
         """ Let the user rename a folder """
+        from gui import selectPath
+
         name         = self.cfgList.getSelectedRows()[0][0]
         forbidden    = [rootName for rootName in self.folders if rootName != name]
         pathSelector = selectPath.SelectPath(MOD_L10N, self.cfgWin, forbidden)
@@ -585,7 +592,9 @@ class FileExplorer(modules.Module):
 
     def onHelp(self, btn):
         """ Display a small help message box """
-        helpDlg = help.HelpDlg(MOD_L10N)
+        import gui
+
+        helpDlg = gui.help.HelpDlg(MOD_L10N)
         helpDlg.addSection(_('Description'),
                            _('This module allows you to browse the files on your drives.'))
         helpDlg.addSection(_('Usage'),

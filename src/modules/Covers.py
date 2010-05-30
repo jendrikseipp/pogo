@@ -16,7 +16,7 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301 USA
 
-import gui, modules, os, tempfile, tools, traceback
+import modules, os, tools, traceback
 
 from tools     import consts, prefs
 from gettext   import gettext as _
@@ -344,6 +344,8 @@ class Covers(modules.ThreadedModule):
         # If we still don't have a cover, too bad
         # Otherwise, generate a thumbnail and a full size cover, and add it to our cover map
         if rawCover is not None:
+            import tempfile
+
             thumbnail     = tempfile.mktemp() + '.png'
             fullSizeCover = tempfile.mktemp() + '.png'
             self.generateThumbnail(rawCover, thumbnail, 'PNG')
@@ -374,7 +376,9 @@ class Covers(modules.ThreadedModule):
     def configure(self, parent):
         """ Show the configuration window """
         if self.cfgWin is None:
-            self.cfgWin = gui.window.Window('Covers.glade', 'vbox1', __name__, MOD_INFO[modules.MODINFO_L10N], 320, 265)
+            from gui.window import Window
+
+            self.cfgWin = Window('Covers.glade', 'vbox1', __name__, MOD_INFO[modules.MODINFO_L10N], 320, 265)
             self.cfgWin.getWidget('btn-ok').connect('clicked', self.onBtnOk)
             self.cfgWin.getWidget('img-lastfm').set_from_file(os.path.join(consts.dirPix, 'audioscrobbler.png'))
             self.cfgWin.getWidget('btn-help').connect('clicked', self.onBtnHelp)
@@ -415,7 +419,9 @@ class Covers(modules.ThreadedModule):
 
     def onBtnHelp(self, btn):
         """ Display a small help message box """
-        helpDlg = gui.help.HelpDlg(MOD_INFO[modules.MODINFO_L10N])
+        from gui import help
+
+        helpDlg = help.HelpDlg(MOD_INFO[modules.MODINFO_L10N])
         helpDlg.addSection(_('Description'),
                            _('This module displays the cover of the album the current track comes from. Covers '
                               'may be loaded from local pictures, located in the same directory as the current '
