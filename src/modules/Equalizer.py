@@ -95,7 +95,7 @@ class Equalizer(modules.Module):
             self.combo.set_model(self.comboStore)
             self.combo.set_row_separator_func(lambda model, iter: model.get_value(iter, ROW_PRESET_IS_SEPARATOR))
 
-            # Add some presets to the combo box
+            # Add presets to the combo box
             self.comboStore.append((False, 'Classic V', ( 7,  5,  0,  -5,  -8,  -7,  -4,  -1,   3,   5)))
             self.comboStore.append((False, 'Classical', ( 0,  0,  0,   0,   0,   0,   0,  -2,  -5,  -6)))
             self.comboStore.append((False, 'Dance'    , ( 6,  5,  4,   3,   1,   0,  -3,  -5,  -5,   0)))
