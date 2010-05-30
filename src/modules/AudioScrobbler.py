@@ -16,9 +16,9 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301 USA
 
-import hashlib, modules, os.path, tools, traceback
+import modules, os.path, tools, traceback
 
-from time      import time, sleep
+from time      import time
 from tools     import consts
 from gettext   import gettext as _
 from tools.log import logger
@@ -26,7 +26,7 @@ from tools.log import logger
 MOD_INFO = ('AudioScrobbler', 'AudioScrobbler', _('Keep your Last.fm profile up to date'), [], False, False)
 
 CLI_ID         = 'dbl'
-CLI_VER        = '0.3'
+CLI_VER        = '0.4'
 MOD_NAME       = MOD_INFO[modules.MODINFO_NAME]
 PROTO_VER      = '1.2'
 AS_SERVER      = 'post.audioscrobbler.com'
@@ -63,9 +63,6 @@ class AudioScrobbler(modules.ThreadedModule):
 
     def init(self):
         """ Initialize this module """
-        import socket
-
-        socket.setdefaulttimeout(consts.socketTimeout)
         # Attributes
         self.login          = None
         self.passwd         = None
@@ -76,6 +73,7 @@ class AudioScrobbler(modules.ThreadedModule):
         self.lastHandshake  = 0
         self.nbHardFailures = 0
         self.handshakeDelay = 0
+
         # Load cache from the disk
         try:
             input      = open(os.path.join(consts.dirCfg, CACHE_FILE))
@@ -150,7 +148,9 @@ class AudioScrobbler(modules.ThreadedModule):
 
     def handshake(self):
         """ Authenticate the user to the submission servers, return True if OK """
-        import urllib2
+        import hashlib, socket, urllib2
+
+        socket.setdefaulttimeout(consts.socketTimeout)
 
         now             = int(time())
         self.session[:] = [None, None, None]
