@@ -35,7 +35,7 @@ class HelpDlg:
             mTxtBuffer = wTree.get_widget('txt-help').get_buffer()
 
             mDlg.set_title(tools.consts.appName)
-            mTxtBuffer.create_tag('title',   weight=pango.WEIGHT_BOLD, scale=pango.SCALE_X_LARGE, justification=pango.ALIGN_RIGHT)
+            mTxtBuffer.create_tag('title',   weight=pango.WEIGHT_BOLD, scale=pango.SCALE_X_LARGE)
             mTxtBuffer.create_tag('section', weight=pango.WEIGHT_BOLD, scale=pango.SCALE_LARGE)
 
         self.nbSections = 0
