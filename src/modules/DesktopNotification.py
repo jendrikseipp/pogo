@@ -16,15 +16,14 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301 USA
 
-import gtk, gui, modules, os.path
+import gobject, gtk, modules, os.path
 
-from media     import track
 from tools     import consts, prefs
 from gettext   import gettext as _
 from tools.log import logger
-from threading import Timer
 
 MOD_INFO = ('Desktop Notification', _('Desktop Notification'), _('Display a desktop notification on track change'), ['pynotify'], False, True)
+
 
 # Default preferences
 PREFS_DEFAULT_BODY       = 'by {artist} on {album} ({playlist_pos} / {playlist_len})'
@@ -33,66 +32,98 @@ PREFS_DEFAULT_TIMEOUT    = 10
 PREFS_DEFAULT_SKIP_TRACK = False
 
 
-class DesktopNotification(modules.ThreadedModule):
+class DesktopNotification(modules.Module):
 
     def __init__(self):
         """ Constructor """
-        modules.ThreadedModule.__init__(self, (consts.MSG_EVT_APP_STARTED, consts.MSG_EVT_MOD_LOADED,   consts.MSG_EVT_NEW_TRACK,
-                                               consts.MSG_EVT_APP_QUIT,    consts.MSG_EVT_MOD_UNLOADED, consts.MSG_EVT_STOPPED,
-                                               consts.MSG_EVT_TRACK_MOVED, consts.MSG_CMD_SET_COVER))
-
-
-    def initPynotify(self):
-        """ Return whether pynotify could be initialized, must be called by the GTK loop """
-        import pynotify
-
-        return pynotify.init(consts.appNameShort)
+        modules.Module.__init__(self, (consts.MSG_EVT_APP_STARTED, consts.MSG_EVT_MOD_LOADED,   consts.MSG_EVT_NEW_TRACK,
+                                       consts.MSG_EVT_APP_QUIT,    consts.MSG_EVT_MOD_UNLOADED, consts.MSG_EVT_STOPPED,
+                                       consts.MSG_EVT_TRACK_MOVED, consts.MSG_CMD_SET_COVER))
 
 
     def onModLoaded(self):
         """ The module has been loaded """
-        self.timer       = None
-        self.notif       = None
-        self.cfgWin      = None
-        self.hasNext     = False
-        self.currTrack   = None
-        self.currCover   = None
-        self.initialized = False
+        self.notif     = None
+        self.cfgWin    = None
+        self.hasNext   = False
+        self.timeout   = None
+        self.currTrack = None
+        self.currCover = None
 
-        if self.gtkExecute(self.initPynotify): self.initialized = True
-        else:                                  logger.error('[%s] Initialization failed' % MOD_INFO[modules.MODINFO_NAME])
+
+    def onNewTrack(self, track):
+        """ A new track is being played """
+        self.currCover = None
+        self.currTrack = track
+
+        if self.timeout is not None:
+            gobject.source_remove(self.timeout)
+
+        # Wait a bit for the cover to be set (if any)
+        self.timeout = gobject.timeout_add(500, self.showNotification)
+
+
+    def onSetCover(self, track, cover):
+        """ The cover for the given track """
+        # We must check first whether currTrack is not None, because '==' calls the cmp() method and this fails on None
+        if self.currTrack is not None and track == self.currTrack:
+            self.currCover = cover
+
+
+    def hideNotification(self):
+        """ Hide the notification """
+        self.currTrack = None
+        self.currCover = None
+
+        if self.timeout is not None:
+            gobject.source_remove(self.timeout)
+            self.timeout = None
+
+        if self.notif is not None:
+            self.notif.close()
+
+
+    def __createNotification(self, title, body, icon):
+        """ Create the Notification object """
+        import pynotify
+
+        if not pynotify.init(consts.appNameShort):
+            logger.error('[%s] Initialization of pynotify failed' % MOD_INFO[modules.MODINFO_NAME])
+
+        self.notif = pynotify.Notification(title, body, icon)
+        self.notif.set_urgency(pynotify.URGENCY_LOW)
+        self.notif.set_timeout(prefs.get(__name__, 'timeout', PREFS_DEFAULT_TIMEOUT) * 1000)
+
+        if prefs.get(__name__, 'skip-track', PREFS_DEFAULT_SKIP_TRACK):
+            self.notif.add_action('stop', _('Skip track'), self.onSkipTrack)
 
 
     def showNotification(self):
         """ Show the notification based on the current track """
-        self.timer = None
+        self.timeout = None
 
+        # Can this happen?
         if self.currTrack is None:
-            return
+            return False
 
+        # Contents
         body  = self.currTrack.formatHTMLSafe(prefs.get(__name__, 'body',  PREFS_DEFAULT_BODY))
         title = self.currTrack.format(prefs.get(__name__, 'title', PREFS_DEFAULT_TITLE))
 
-        # Make sure the notification exists
-        if self.notif is None:
-            import pynotify
-
-            self.notif = pynotify.Notification(title, body, gtk.STOCK_DIALOG_INFO)
-            self.notif.set_urgency(pynotify.URGENCY_LOW)
-            self.notif.set_timeout(prefs.get(__name__, 'timeout', PREFS_DEFAULT_TIMEOUT) * 1000)
-
-            if prefs.get(__name__, 'skip-track', PREFS_DEFAULT_SKIP_TRACK):
-                self.notif.add_action('stop', _('Skip track'), self.onSkipTrack)
-
-        # Which image to display?
+        # Icon
         if self.currCover is None: img = os.path.join(consts.dirPix, 'decibel-audio-player-64.png')
         else:                      img = self.currCover
 
         if os.path.isfile(img): icon = 'file://' + img
         else:                   icon = gtk.STOCK_DIALOG_INFO
 
-        self.notif.update(title, body, icon)
+        # Create / Update the notification and show it
+        if self.notif is None: self.__createNotification(title, body, icon)
+        else:                  self.notif.update(title, body, icon)
+
         self.notif.show()
+
+        return False
 
 
     def onSkipTrack(self, notification, action):
@@ -101,41 +132,19 @@ class DesktopNotification(modules.ThreadedModule):
         else:            modules.postMsg(consts.MSG_CMD_STOP)
 
 
-    def __stopTimer(self):
-        """ Stop the timer if any """
-        if self.timer is not None:
-            self.timer.cancel()
-            self.timer = None
-
-
-    def __startTimer(self):
-        """ Start the timer, cancel the previous one if any """
-        self.__stopTimer()
-        self.timer = Timer(0.5, self.showNotification)
-        self.timer.start()
-
-
     # --== Message handler ==--
 
 
     def handleMsg(self, msg, params):
         """ Handle messages sent to this module """
-        if msg == consts.MSG_EVT_NEW_TRACK and self.initialized:
-            self.currCover = None
-            self.currTrack = params['track']
-            self.__startTimer()
-        elif msg in (consts.MSG_EVT_APP_STARTED, consts.MSG_EVT_MOD_LOADED):
-            self.onModLoaded()
-        elif msg in (consts.MSG_EVT_APP_QUIT, consts.MSG_EVT_MOD_UNLOADED, consts.MSG_EVT_STOPPED) and self.notif is not None:
-            self.currTrack = None
-            self.currCover = None
-            self.__stopTimer()
-            self.notif.close()
-        elif msg == consts.MSG_EVT_TRACK_MOVED:
-            self.hasNext = params['hasNext']
-        # Must check if currTrack is not None, because '==' calls the cmp() method and this fails on None
-        elif msg == consts.MSG_CMD_SET_COVER and self.currTrack is not None and params['track'] == self.currTrack:
-            self.currCover = params['pathThumbnail']
+        if   msg == consts.MSG_EVT_STOPPED:      self.hideNotification()
+        elif msg == consts.MSG_EVT_APP_QUIT:     self.hideNotification()
+        elif msg == consts.MSG_CMD_SET_COVER:    self.onSetCover(params['track'], params['pathThumbnail'])
+        elif msg == consts.MSG_EVT_NEW_TRACK:    self.onNewTrack(params['track'])
+        elif msg == consts.MSG_EVT_MOD_LOADED:   self.onModLoaded()
+        elif msg == consts.MSG_EVT_APP_STARTED:  self.onModLoaded()
+        elif msg == consts.MSG_EVT_TRACK_MOVED:  self.hasNext = params['hasNext']
+        elif msg == consts.MSG_EVT_MOD_UNLOADED: self.hideNotification()
 
 
     # --== Configuration ==--
@@ -144,13 +153,15 @@ class DesktopNotification(modules.ThreadedModule):
     def configure(self, parent):
         """ Show the configuration window """
         if self.cfgWin is None:
-            import pynotify
+            import gui, pynotify
 
+            # Create the window
             self.cfgWin = gui.window.Window('DesktopNotification.glade', 'vbox1', __name__, MOD_INFO[modules.MODINFO_L10N], 355, 345)
             self.cfgWin.getWidget('btn-ok').connect('clicked', self.onBtnOk)
             self.cfgWin.getWidget('btn-help').connect('clicked', self.onBtnHelp)
             self.cfgWin.getWidget('btn-cancel').connect('clicked', lambda btn: self.cfgWin.hide())
 
+            # Disable the 'Skip track' button if the server doesn't support buttons in notifications
             if 'actions' not in pynotify.get_server_caps():
                 self.cfgWin.getWidget('chk-skipTrack').set_sensitive(False)
 
@@ -169,7 +180,6 @@ class DesktopNotification(modules.ThreadedModule):
         # Skipping tracks
         newSkipTrack = self.cfgWin.getWidget('chk-skipTrack').get_active()
         oldSkipTrack = prefs.get(__name__, 'skip-track', PREFS_DEFAULT_SKIP_TRACK)
-
         prefs.set(__name__, 'skip-track', newSkipTrack)
 
         if oldSkipTrack != newSkipTrack and self.notif is not None:
@@ -194,13 +204,15 @@ class DesktopNotification(modules.ThreadedModule):
 
     def onBtnHelp(self, btn):
         """ Display a small help message box """
+        import gui, media
+
         helpDlg = gui.help.HelpDlg(MOD_INFO[modules.MODINFO_L10N])
         helpDlg.addSection(_('Description'),
                            _('This module displays a small popup window on your desktop when a new track starts.'))
         helpDlg.addSection(_('Customizing the Notification'),
                            _('You can change the title and the body of the notification to any text you want. Before displaying '
                              'the popup window, fields of the form {field} are replaced by their corresponding value. '
-                             'Available fields are:\n\n') + track.getFormatSpecialFields(False))
+                             'Available fields are:\n\n') + media.track.getFormatSpecialFields(False))
         helpDlg.addSection(_('Markup'),
                            _('You can use the Pango markup language to format the text. More information on that language is '
                              'available on the following web page:') + '\n\nhttp://www.pygtk.org/pygtk2reference/pango-markup-language.html')
