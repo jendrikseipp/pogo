@@ -46,10 +46,6 @@ class StatusbarTitlebar(modules.Module):
         self.selTracks = []
         self.currTrack = None
 
-        # Initial status
-        self.__updateTitlebar()
-        self.__updateStatusbar()
-
 
     def __updateTitlebar(self):
         """ Update the title bar """

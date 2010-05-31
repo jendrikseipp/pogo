@@ -102,9 +102,6 @@ class TrackPanel(modules.Module):
         self.coverTimerId      = None
         self.currCoverPath     = None
         self.lastMousePosition = (0, 0)
-        # Initial state
-        self.__setTitle(consts.appName)
-        self.txtMisc.set_text('...And Music For All\n')
         # GTK handlers
         evtBox.connect('leave-notify-event', self.onImgMouseLeave)
         evtBox.connect('enter-notify-event', self.onImgMouseEnter)

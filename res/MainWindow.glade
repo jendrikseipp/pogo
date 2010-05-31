@@ -1,6 +1,7 @@
 <?xml version="1.0"?>
 <glade-interface>
 <widget class="GtkWindow" id="win-main">
+<property name="title">Decibel Audio Player</property>
 <property name="window_position">center</property>
 <child>
 <widget class="GtkVBox" id="vbox1">
@@ -218,6 +219,7 @@
 <child>
 <widget class="GtkLabel" id="lbl-trkTitle">
 <property name="visible">True</property>
+<property name="label">&lt;span size="larger"&gt;&lt;b&gt;Decibel Audio Player&lt;/b&gt;&lt;/span&gt;</property>
 <property name="use_markup">True</property>
 </widget>
 <packing>
@@ -239,6 +241,8 @@
 <child>
 <widget class="GtkLabel" id="lbl-trkMisc">
 <property name="visible">True</property>
+<property name="label">...And Music For All
+</property>
 </widget>
 <packing>
 <property name="expand">False</property>
@@ -260,6 +264,7 @@
 <property name="spacing">6</property>
 <child>
 <widget class="GtkButton" id="btn-previous">
+<property name="sensitive">False</property>
 <property name="can_focus">True</property>
 <property name="receives_default">True</property>
 <property name="has_tooltip">True</property>
@@ -276,6 +281,7 @@
 </child>
 <child>
 <widget class="GtkButton" id="btn-stop">
+<property name="sensitive">False</property>
 <property name="can_focus">True</property>
 <property name="receives_default">True</property>
 <property name="has_tooltip">True</property>
@@ -308,6 +314,7 @@
 </child>
 <child>
 <widget class="GtkButton" id="btn-next">
+<property name="sensitive">False</property>
 <property name="can_focus">True</property>
 <property name="receives_default">True</property>
 <property name="has_tooltip">True</property>
