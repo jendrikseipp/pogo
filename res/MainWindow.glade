@@ -195,7 +195,7 @@
 <property name="width_request">114</property>
 <property name="height_request">107</property>
 <property name="visible">True</property>
-<property name="stock">gtk-missing-image</property>
+<property name="pixbuf">../pix/cover-none.png</property>
 </widget>
 </child>
 </widget>
@@ -567,7 +567,6 @@ audio-volume-medium</property>
 <child>
 <widget class="GtkLabel" id="lbl-status1">
 <property name="visible">True</property>
-<property name="label" translatable="yes">label</property>
 </widget>
 <packing>
 <property name="expand">False</property>
@@ -598,7 +597,6 @@ audio-volume-medium</property>
 <child>
 <widget class="GtkLabel" id="lbl-status2">
 <property name="visible">True</property>
-<property name="label" translatable="yes">label</property>
 </widget>
 <packing>
 <property name="expand">False</property>
