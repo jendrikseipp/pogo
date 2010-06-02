@@ -471,6 +471,7 @@ audio-volume-medium</property>
 </child>
 <child>
 <widget class="GtkToggleButton" id="btn-tracklistRepeat">
+<property name="sensitive">False</property>
 <property name="can_focus">True</property>
 <property name="receives_default">True</property>
 <property name="has_tooltip">True</property>
