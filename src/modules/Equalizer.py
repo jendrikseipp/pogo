@@ -110,7 +110,7 @@ class Equalizer(modules.Module):
             self.comboStore.append((False, 'Pop'      , ( 3,  6,  3,  -2,  -4,  -3,   0,   2,   3,   5)))
             self.comboStore.append((False, 'Reggae'   , ( 1,  1,  1,   0,  -3,   0,   3,   4,   2,   1)))
             self.comboStore.append((False, 'Rock'     , ( 5,  4,  2,  -2,  -3,  -3,   2,   4,   5,   5)))
-            self.comboStore.append((False, 'Techno'   , ( 5,  5,  3,   2,   0,  -4,  -2,   0,   3,   5)))
+            self.comboStore.append((False, 'Techno'   , ( 4,  4,  3,   2,   0,  -4,  -2,   0,   3,   4)))
 
             # Select the right entry
             if self.preset is None:
