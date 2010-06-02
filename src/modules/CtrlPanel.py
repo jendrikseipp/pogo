@@ -92,7 +92,7 @@ class CtrlPanel(modules.Module):
         self.btnNext.set_sensitive(False)
         self.btnPrev.set_sensitive(False)
         self.btnPlay.set_image(gtk.image_new_from_stock(gtk.STOCK_MEDIA_PLAY, gtk.ICON_SIZE_BUTTON))
-        self.btnPlay.set_tooltip_text(_('Play the first track of the playlist'))
+        self.btnPlay.set_tooltip_text(_('Play the first selected track of the playlist'))
         self.sclSeek.hide()
         self.lblElapsed.hide()
         self.lblRemaining.hide()
@@ -127,13 +127,13 @@ class CtrlPanel(modules.Module):
     def onPaused(self):
         """ The playback has been paused """
         self.btnPlay.set_image(gtk.image_new_from_stock(gtk.STOCK_MEDIA_PLAY, gtk.ICON_SIZE_BUTTON))
-        gtk.tooltips_data_get(self.btnPlay)[0].set_tip(self.btnPlay, _('Continue playing the current track'))
+        self.btnPlay.set_tooltip_text(_('Continue playing the current track'))
 
 
     def onUnpaused(self):
         """ The playback has been unpaused """
         self.btnPlay.set_image(gtk.image_new_from_stock(gtk.STOCK_MEDIA_PAUSE, gtk.ICON_SIZE_BUTTON))
-        gtk.tooltips_data_get(self.btnPlay)[0].set_tip(self.btnPlay, _('Pause the current track'))
+        self.btnPlay.set_tooltip_text(_('Pause the current track'))
 
 
     # --== GTK handlers ==--
