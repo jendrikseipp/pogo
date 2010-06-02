@@ -122,15 +122,14 @@ class Tracklist(modules.Module):
         self.list.enableDNDReordering()
         wTree.get_widget('scrolled-tracklist').add(self.list)
         # GTK handlers
-        self.list.connect('extlistview-dnd',                       self.onDND)
-        self.list.connect('key-press-event',                       self.onKeyboard)
-        self.list.connect('extlistview-modified',                  self.onListModified)
-        self.list.connect('extlistview-button-pressed',            self.onButtonPressed)
-        self.list.connect('extlistview-selection-changed',         self.onSelectionChanged)
+        self.list.connect('extlistview-dnd', self.onDND)
+        self.list.connect('key-press-event', self.onKeyboard)
+        self.list.connect('extlistview-modified', self.onListModified)
+        self.list.connect('extlistview-button-pressed', self.onButtonPressed)
+        self.list.connect('extlistview-selection-changed', self.onSelectionChanged)
         self.list.connect('extlistview-column-visibility-changed', self.onColumnVisibilityChanged)
-
-        self.btnClear.connect('clicked',   lambda widget: modules.postMsg(consts.MSG_CMD_TRACKLIST_CLR))
-        self.btnRepeat.connect('toggled',  self.onButtonRepeat)
+        self.btnClear.connect('clicked', lambda widget: modules.postMsg(consts.MSG_CMD_TRACKLIST_CLR))
+        self.btnRepeat.connect('toggled', self.onButtonRepeat)
         self.btnShuffle.connect('clicked', lambda widget: modules.postMsg(consts.MSG_CMD_TRACKLIST_SHUFFLE))
         # Restore preferences
         self.btnRepeat.set_active(tools.prefs.get(__name__, 'repeat-status', PREFS_DEFAULT_REPEAT_STATUS))
