@@ -16,20 +16,15 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301 USA
 
-import dbus, modules, time, traceback
+import dbus, modules, traceback
 
+from time  import time
 from tools import consts, log
 
 MOD_INFO = ('Gnome Media Keys', 'Gnome Media Keys', '', [], True, False)
 
-
-(
-    MK_OLD,        # Prior Gnome 2.22
-    MK_GNOME_222,  # From Gnome 2.22
-) = range(2)
-
 # Generate a 'unique' application name so that multiple instances of DAP won't interfere
-APP_UID = consts.appName + str(time.time())
+APP_UID = consts.appName + str(time())
 
 
 class GnomeMediaKeys(modules.Module):
@@ -43,32 +38,22 @@ class GnomeMediaKeys(modules.Module):
     def handleMsg(self, msg, params):
         """ Handle messages sent to this modules """
         if msg == consts.MSG_EVT_APP_STARTED:
-            # Gnome >= 2.22 uses different DBus session/interface for media keys (#208354)
+            # Try first with the new interface (Gnome >= 2.2)
             try:
-                from gnome import gnome_python_version
-
-                if gnome_python_version < (2, 22):
-                    mkMode = MK_OLD
-                else:
-                    mkMode = MK_GNOME_222
-            except:
-                log.logger.info('[%s] Gnome does not seem to be running' % (MOD_INFO[modules.MODINFO_NAME]))
-                return
-
-            # Connect our own handler
-            try:
-                if mkMode == MK_OLD:
-                    service = dbus.SessionBus().get_object('org.gnome.SettingsDaemon', '/org/gnome/SettingsDaemon')
-                    self.dbusInterface = dbus.Interface(service, 'org.gnome.SettingsDaemon')
-                else:
-                    service = dbus.SessionBus().get_object('org.gnome.SettingsDaemon', '/org/gnome/SettingsDaemon/MediaKeys')
-                    self.dbusInterface = dbus.Interface(service, 'org.gnome.SettingsDaemon.MediaKeys')
-
-                self.dbusInterface.GrabMediaPlayerKeys(APP_UID, time.time())
+                service = dbus.SessionBus().get_object('org.gnome.SettingsDaemon', '/org/gnome/SettingsDaemon/MediaKeys')
+                self.dbusInterface = dbus.Interface(service, 'org.gnome.SettingsDaemon.MediaKeys')
+                self.dbusInterface.GrabMediaPlayerKeys(APP_UID, time())
                 self.dbusInterface.connect_to_signal('MediaPlayerKeyPressed', self.onMediaKey)
             except:
-                log.logger.error('[%s] Error while initializing\n\n%s' % (MOD_INFO[modules.MODINFO_NAME], traceback.format_exc()))
-                self.dbusInterface = None
+                # If it didn't work, try the old way
+                try:
+                    service = dbus.SessionBus().get_object('org.gnome.SettingsDaemon', '/org/gnome/SettingsDaemon')
+                    self.dbusInterface = dbus.Interface(service, 'org.gnome.SettingsDaemon')
+                    self.dbusInterface.GrabMediaPlayerKeys(APP_UID, time())
+                    self.dbusInterface.connect_to_signal('MediaPlayerKeyPressed', self.onMediaKey)
+                except:
+                    log.logger.error('[%s] Error while initializing\n\n%s' % (MOD_INFO[modules.MODINFO_NAME], traceback.format_exc()))
+                    self.dbusInterface = None
         elif msg == consts.MSG_EVT_APP_QUIT and self.dbusInterface is not None:
             self.dbusInterface.ReleaseMediaPlayerKeys(APP_UID)
 
