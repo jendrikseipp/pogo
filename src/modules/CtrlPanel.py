@@ -41,6 +41,7 @@ class CtrlPanel(modules.Module):
         """ Real initialization function, called when this module has been loaded """
         self.currTrackLength = 0
         self.sclBeingDragged = False
+
         # Widgets
         wTree             = prefs.getWidgetsTree()
         self.btnStop      = wTree.get_widget('btn-stop')
@@ -52,21 +53,19 @@ class CtrlPanel(modules.Module):
         self.lblElapsed   = wTree.get_widget('lbl-elapsedTime')
         self.lblRemaining = wTree.get_widget('lbl-remainingTime')
 
-        # Initial state
-        self.onStopped()
-        self.btnPlay.set_sensitive(False)
+        # Restore the volume
+        volume = prefs.get(__name__, 'volume', PREFS_DEFAULT_VOLUME)
+        self.btnVolume.set_value(volume)
+        modules.postMsg(consts.MSG_CMD_SET_VOLUME, {'value': volume})
+
         # GTK handlers
-        self.btnStop.connect('clicked',         lambda widget: modules.postMsg(consts.MSG_CMD_STOP))
-        self.btnNext.connect('clicked',         lambda widget: modules.postMsg(consts.MSG_CMD_NEXT))
-        self.btnPrev.connect('clicked',         lambda widget: modules.postMsg(consts.MSG_CMD_PREVIOUS))
-        self.btnPlay.connect('clicked',         lambda widget: modules.postMsg(consts.MSG_CMD_TOGGLE_PAUSE))
-        self.sclSeek.connect('change-value',    self.onSeekChangeValue)
-        self.sclSeek.connect('value-changed',   self.onSeekValueChanged)
+        self.btnStop.connect('clicked', lambda widget: modules.postMsg(consts.MSG_CMD_STOP))
+        self.btnNext.connect('clicked', lambda widget: modules.postMsg(consts.MSG_CMD_NEXT))
+        self.btnPrev.connect('clicked', lambda widget: modules.postMsg(consts.MSG_CMD_PREVIOUS))
+        self.btnPlay.connect('clicked', lambda widget: modules.postMsg(consts.MSG_CMD_TOGGLE_PAUSE))
+        self.sclSeek.connect('change-value', self.onSeekChangeValue)
+        self.sclSeek.connect('value-changed', self.onSeekValueChanged)
         self.btnVolume.connect('value-changed', self.onVolumeValueChanged)
-        # We must make sure that the handler will be called: this is not the case if the new value is the same as the old one
-        volumeValue = prefs.get(__name__, 'volume', PREFS_DEFAULT_VOLUME)
-        if self.btnVolume.get_value() != volumeValue: self.btnVolume.set_value(volumeValue)
-        else:                                         self.onVolumeValueChanged(self.btnVolume, volumeValue)
 
 
     def onNewTrack(self, track):
@@ -75,12 +74,14 @@ class CtrlPanel(modules.Module):
         self.btnPlay.set_sensitive(True)
         self.btnPlay.set_image(gtk.image_new_from_stock(gtk.STOCK_MEDIA_PAUSE, gtk.ICON_SIZE_BUTTON))
         self.btnPlay.set_tooltip_text(_('Pause the current track'))
+
         self.currTrackLength = track.getLength()
         self.sclSeek.show()
         self.lblElapsed.show()
         self.lblRemaining.show()
         self.onNewTrackPosition(0)
 
+        # Must be done last
         if self.currTrackLength != 0:
             self.sclSeek.set_range(0, self.currTrackLength)
 
