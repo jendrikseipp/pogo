@@ -32,8 +32,9 @@ class CommandLine(modules.ThreadedModule):
 
     def onAppStarted(self):
         """ Try to fill the playlist by using the files given on the command line or by restoring the last playlist """
+        # The file 'saved-playlist.txt' uses an old format, we now use 'saved-playlist-2.txt'
         (options, args)    = prefs.getCmdLine()
-        self.savedPlaylist = os.path.join(consts.dirCfg, 'saved-playlist.txt')
+        self.savedPlaylist = os.path.join(consts.dirCfg, 'saved-playlist-2.txt')
 
         if len(args) != 0:
             log.logger.info('[%s] Filling playlist with files given on command line' % MOD_INFO[modules.MODINFO_NAME])

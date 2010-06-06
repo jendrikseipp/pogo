@@ -304,25 +304,21 @@ class Track:
 
     def serialize(self):
         """ Serialize this Track object, return the corresponding string """
-        import urllib
-
         tags = []
         for tag, value in self.tags.iteritems():
             tags.append(str(tag))
-            tags.append(urllib.quote(str(value)))
+            tags.append((str(value)).replace(' ', '\x00'))
         return ' '.join(tags)
 
 
     def unserialize(self, serialTrack):
         """ Unserialize the given track"""
-        import urllib
-
         tags = serialTrack.split(' ')
         for i in xrange(0, len(tags), 2):
             tag = int(tags[i])
 
             if tag in (TAG_NUM, TAG_LEN, TAG_DNB, TAG_DAT, TAG_PLP, TAG_PLL, TAG_BTR, TAG_SMP, TAG_MOD): self.tags[tag] = int(tags[i+1])
-            else:                                                                                        self.tags[tag] = urllib.unquote(tags[i+1])
+            else:                                                                                        self.tags[tag] = tags[i+1].replace('\x00', ' ')
 
 
 def unserialize(serialTrack):
