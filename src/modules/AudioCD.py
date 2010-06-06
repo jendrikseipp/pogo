@@ -195,8 +195,6 @@ class AudioCD(modules.ThreadedModule):
 
     def updateTree(self, discInfo):
         """ Update the tree using disc information from the cache, if any """
-        import cgi
-
         cddb = self.getDiscFromCache(discInfo)
 
         # Create fake CDDB information if needed
@@ -213,7 +211,7 @@ class AudioCD(modules.ThreadedModule):
         disc          = cddb['DTITLE'].strip().decode('iso-8859-15', 'replace')
         artist, album = disc.split(' / ')
 
-        self.tree.setItem((0,), ROW_NAME, '%s' % cgi.escape(disc))
+        self.tree.setItem((0,), ROW_NAME, '%s' % tools.htmlEscape(disc))
         self.tree.setItem((0,), ROW_LENGTH, '[%s]' % sec2str(sum(trackLen)))
 
         # Update the explorer name
@@ -242,7 +240,7 @@ class AudioCD(modules.ThreadedModule):
             if date is not None:  track.setDate(date)
             if genre is not None: track.setGenre(genre)
             # Fill the tree
-            self.tree.setItem(child, ROW_NAME, '%02u. %s' % (i + 1, cgi.escape(title)))
+            self.tree.setItem(child, ROW_NAME, '%02u. %s' % (i + 1, tools.htmlEscape(title)))
             self.tree.setItem(child, ROW_TRACK, track)
 
 

@@ -37,9 +37,7 @@ class TrackPanel(modules.Module):
 
     def __setTitle(self, title, length=None):
         """ Change the title of the current track """
-        import cgi
-
-        title = cgi.escape(title)
+        title = tools.htmlEscape(title)
 
         if length is None: self.txtTitle.set_markup('<span size="larger"><b>%s</b></span>' % title)
         else:              self.txtTitle.set_markup('<span size="larger"><b>%s</b></span>  [%s]' % (title, tools.sec2str(length)))

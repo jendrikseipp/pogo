@@ -16,7 +16,7 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301 USA
 
-import os.path
+import os.path, tools
 
 from tools   import consts, sec2str
 from gettext import gettext as _
@@ -243,24 +243,22 @@ class Track:
             Replace the special fields in the given string by their corresponding value
             Also ensure that the fields don't contain HTML special characters (&, <, >)
         """
-        import cgi
-
         result = fmtString
 
-        result = result.replace( '{path}',         cgi.escape(self.getFilePath()) )
-        result = result.replace( '{album}',        cgi.escape(self.getAlbum())    )
-        result = result.replace( '{track}',        str(self.getNumber())          )
-        result = result.replace( '{title}',        cgi.escape(self.getTitle())    )
-        result = result.replace( '{artist}',       cgi.escape(self.getArtist())   )
-        result = result.replace( '{genre}',        cgi.escape(self.getGenre())    )
-        result = result.replace( '{date}',         str(self.getDate())            )
-        result = result.replace( '{disc}',         str(self.getDiscNumber())      )
-        result = result.replace( '{bitrate}',      self.getBitrate()              )
-        result = result.replace( '{sample_rate}',  self.getSampleRate()           )
-        result = result.replace( '{duration_sec}', str(self.getLength())          )
-        result = result.replace( '{duration_str}', sec2str(self.getLength())      )
-        result = result.replace( '{playlist_pos}', str(self.getPlaylistPos())     )
-        result = result.replace( '{playlist_len}', str(self.getPlaylistLen())     )
+        result = result.replace( '{path}',         tools.htmlEscape(self.getFilePath()) )
+        result = result.replace( '{album}',        tools.htmlEscape(self.getAlbum())    )
+        result = result.replace( '{track}',        str(self.getNumber())                )
+        result = result.replace( '{title}',        tools.htmlEscape(self.getTitle())    )
+        result = result.replace( '{artist}',       tools.htmlEscape(self.getArtist())   )
+        result = result.replace( '{genre}',        tools.htmlEscape(self.getGenre())    )
+        result = result.replace( '{date}',         str(self.getDate())                  )
+        result = result.replace( '{disc}',         str(self.getDiscNumber())            )
+        result = result.replace( '{bitrate}',      self.getBitrate()                    )
+        result = result.replace( '{sample_rate}',  self.getSampleRate()                 )
+        result = result.replace( '{duration_sec}', str(self.getLength())                )
+        result = result.replace( '{duration_str}', sec2str(self.getLength())            )
+        result = result.replace( '{playlist_pos}', str(self.getPlaylistPos())           )
+        result = result.replace( '{playlist_len}', str(self.getPlaylistLen())           )
 
         return result
 

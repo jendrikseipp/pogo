@@ -192,20 +192,18 @@ class FileExplorer(modules.Module):
 
     def getDirContents(self, directory):
         """ Return a tuple of sorted rows (directories, playlists, mediaFiles) for the given directory """
-        import cgi
-
         playlists   = []
         mediaFiles  = []
         directories = []
 
         for (file, path) in tools.listDir(directory, self.showHiddenFiles):
             if isdir(path):
-                directories.append((icons.dirMenuIcon(), cgi.escape(unicode(file, errors='replace')), TYPE_DIR, path))
+                directories.append((icons.dirMenuIcon(), tools.htmlEscape(unicode(file, errors='replace')), TYPE_DIR, path))
             elif isfile(path):
                 if media.isSupported(file):
-                    mediaFiles.append((icons.mediaFileMenuIcon(), cgi.escape(unicode(file, errors='replace')), TYPE_FILE, path))
+                    mediaFiles.append((icons.mediaFileMenuIcon(), tools.htmlEscape(unicode(file, errors='replace')), TYPE_FILE, path))
                 elif playlist.isSupported(file):
-                    playlists.append((icons.mediaFileMenuIcon(), cgi.escape(unicode(file, errors='replace')), TYPE_FILE, path))
+                    playlists.append((icons.mediaFileMenuIcon(), tools.htmlEscape(unicode(file, errors='replace')), TYPE_FILE, path))
 
         playlists.sort(key=self.sortKey)
         mediaFiles.sort(key=self.sortKey)
@@ -508,9 +506,7 @@ class FileExplorer(modules.Module):
 
     def populateFolderList(self):
         """ Populate the list of known folders """
-        import cgi
-
-        self.cfgList.replaceContent([(name, icons.dirBtnIcon(), '<b>%s</b>\n<small>%s</small>' % (cgi.escape(name), cgi.escape(path)))
+        self.cfgList.replaceContent([(name, icons.dirBtnIcon(), '<b>%s</b>\n<small>%s</small>' % (tools.htmlEscape(name), tools.htmlEscape(path)))
                                      for name, path in sorted(self.folders.iteritems())])
 
 

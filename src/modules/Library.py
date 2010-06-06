@@ -470,8 +470,6 @@ class Library(modules.Module):
 
     def loadLibrary(self, tree, name):
         """ Load the given library """
-        import cgi
-
         rows     = []
         path     = os.path.join(ROOT_PATH, name)
         prevChar = ''
@@ -494,7 +492,7 @@ class Library(modules.Module):
                 if currChar.isdigit(): rows.append((None, None, '<b>0 - 9</b>',                 TYPE_HEADER, None, None))
                 else:                  rows.append((None, None, '<b>%s</b>' % currChar.upper(), TYPE_HEADER, None, None))
 
-            rows.append((icons.dirMenuIcon(), None, cgi.escape(artist[ART_NAME]), TYPE_ARTIST, os.path.join(path, artist[ART_INDEX]), None))
+            rows.append((icons.dirMenuIcon(), None, tools.htmlEscape(artist[ART_NAME]), TYPE_ARTIST, os.path.join(path, artist[ART_INDEX]), None))
 
         # Insert all rows, and then add a fake child to each artist
         tree.replaceContent(rows)
@@ -505,11 +503,9 @@ class Library(modules.Module):
 
     def loadAlbums(self, tree, node, fakeChild):
         """ Initial load of all albums of the given node, assuming it is of type TYPE_ARTIST """
-        import cgi
-
         allAlbums = pickleLoad(os.path.join(tree.getItem(node, ROW_FULLPATH), 'albums'))
         path      = tree.getItem(node, ROW_FULLPATH)
-        rows      = [(icons.mediaDirMenuIcon(), '[%s]' % tools.sec2str(album[ALB_LENGTH], True), '%s' % cgi.escape(album[ALB_NAME]), TYPE_ALBUM, os.path.join(path, album[ALB_INDEX]), None) for album in allAlbums]
+        rows      = [(icons.mediaDirMenuIcon(), '[%s]' % tools.sec2str(album[ALB_LENGTH], True), '%s' % tools.htmlEscape(album[ALB_NAME]), TYPE_ALBUM, os.path.join(path, album[ALB_INDEX]), None) for album in allAlbums]
 
         # Add all the rows, and then add a fake child to each of them
         tree.freeze_child_notify()
@@ -522,10 +518,8 @@ class Library(modules.Module):
 
     def loadTracks(self, tree, node, fakeChild):
         """ Initial load of all tracks of the given node, assuming it is of type TYPE_ALBUM """
-        import cgi
-
         allTracks = pickleLoad(tree.getItem(node, ROW_FULLPATH))
-        rows      = [(icons.mediaFileMenuIcon(), None, '%02u. %s' % (track.getNumber(), cgi.escape(track.getTitle())), TYPE_TRACK, track.getFilePath(), track) for track in allTracks]
+        rows      = [(icons.mediaFileMenuIcon(), None, '%02u. %s' % (track.getNumber(), tools.htmlEscape(track.getTitle())), TYPE_TRACK, track.getFilePath(), track) for track in allTracks]
 
         tree.appendRows(rows, node)
         tree.removeRow(fakeChild)
@@ -706,10 +700,8 @@ class Library(modules.Module):
 
     def fillLibraryList(self):
         """ Fill the list of libraries """
-        import cgi
-
         if self.cfgWindow is not None:
-            rows = [(name, icons.dirBtnIcon(), '<b>%s</b>\n<small>%s - %u %s</small>' % (cgi.escape(name), cgi.escape(path), nbTracks, cgi.escape(_('tracks'))))
+            rows = [(name, icons.dirBtnIcon(), '<b>%s</b>\n<small>%s - %u %s</small>' % (tools.htmlEscape(name), tools.htmlEscape(path), nbTracks, tools.htmlEscape(_('tracks'))))
                     for name, (path, nbArtists, nbAlbums, nbTracks) in sorted(self.libraries.iteritems())]
             self.cfgList.replaceContent(rows)
 

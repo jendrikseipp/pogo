@@ -92,3 +92,16 @@ def getCursorPosition():
     """ Return a tuple (x, y) """
     cursorNfo = gtk.gdk.display_get_default().get_pointer()
     return (cursorNfo[1], cursorNfo[2])
+
+
+def htmlEscape(string):
+    """ Replace characters &, <, and > by their equivalent HTML code """
+    output = ''
+
+    for c in string:
+        if c == '&':   output += '&amp;'
+        elif c == '<': output += '&lt;'
+        elif c == '>': output += '&gt;'
+        else:          output += c
+
+    return output

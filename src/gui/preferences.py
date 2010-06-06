@@ -16,7 +16,7 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301 USA
 
-import gtk, gui, modules
+import gtk, gui, modules, tools, tools.icons
 
 from gettext import gettext as _
 
@@ -75,8 +75,6 @@ class Preferences:
 
     def fillList(self):
         """ Fill the list of modules """
-        import cgi, tools.icons
-
         rows = []
         for (name, data) in modules.getModules():
             instance     = data[modules.MOD_INSTANCE]
@@ -87,7 +85,7 @@ class Preferences:
                 if configurable and instance is not None: icon = tools.icons.prefsBtnIcon()
                 else:                                     icon = None
 
-                text = '<b>%s</b>\n<small>%s</small>' % (cgi.escape(_(name)), cgi.escape(data[modules.MOD_INFO][modules.MODINFO_DESC]))
+                text = '<b>%s</b>\n<small>%s</small>' % (tools.htmlEscape(_(name)), tools.htmlEscape(data[modules.MOD_INFO][modules.MODINFO_DESC]))
                 rows.append((instance is not None, text, icon, not mandatory, instance, data[modules.MOD_INFO]))
 
         rows.sort(key=lambda row: row[ROW_TEXT])
