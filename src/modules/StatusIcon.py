@@ -16,7 +16,7 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301 USA
 
-import gtk, modules, os.path
+import gtk, modules
 
 from tools   import consts, loadGladeFile, prefs
 from gettext import gettext as _
@@ -46,7 +46,6 @@ class StatusIcon(modules.Module):
         self.emptyTracklist   = True
         self.isMainWinVisible = True
         # The status icon does not support RGBA, so make sure to use the RGB color map when creating it
-        colormap = self.mainWindow.get_screen().get_rgb_colormap()
         gtk.widget_push_colormap(self.mainWindow.get_screen().get_rgb_colormap())
         self.statusIcon = gtk.StatusIcon()
         gtk.widget_pop_colormap()

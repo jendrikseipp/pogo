@@ -529,6 +529,8 @@ class FileExplorer(modules.Module):
 
     def onRemoveSelectedFolder(self, list):
         """ Remove the selected media folder """
+        import gui
+
         if list.getSelectedRowsCount() == 1:
             remark   = _('You will be able to add this root folder again later on if you wish so.')
             question = _('Remove the selected entry?')

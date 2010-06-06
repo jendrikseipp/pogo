@@ -187,13 +187,13 @@ class Library(modules.Module):
         """ Refresh the given library, must be called through idle_add() """
         import collections
 
-        from gui.progressDlg import ProgressDlg
+        from gui import progressDlg
 
         # First show a progress dialog
         if creation: header = _('Creating library')
         else:        header = _('Refreshing library')
 
-        progress = ProgressDlg(parent, header, _('The directory is scanned for media files. This can take some time.\nPlease wait.'))
+        progress = progressDlg.ProgressDlg(parent, header, _('The directory is scanned for media files. This can take some time.\nPlease wait.'))
         yield True
 
         libPath = os.path.join(ROOT_PATH, libName)   # Location of the library
@@ -625,9 +625,9 @@ class Library(modules.Module):
     def configure(self, parent):
         """ Show the configuration dialog """
         if self.cfgWindow is None:
-            from gui import extListview
+            from gui import extListview, window
 
-            self.cfgWindow = gui.window.Window('Library.glade', 'vbox1', __name__, MOD_L10N, 370, 400)
+            self.cfgWindow = window.Window('Library.glade', 'vbox1', __name__, MOD_L10N, 370, 400)
             # Create the list of libraries
             txtRdr  = gtk.CellRendererText()
             pixRdr  = gtk.CellRendererPixbuf()

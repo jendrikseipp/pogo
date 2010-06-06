@@ -19,7 +19,6 @@
 import gtk
 
 from gtk     import gdk
-from tools   import consts
 from gobject import signal_new, TYPE_NONE, TYPE_PYOBJECT, SIGNAL_RUN_LAST
 
 

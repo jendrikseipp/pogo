@@ -16,7 +16,7 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301 USA
 
-import gtk, modules, tools
+import gtk, modules
 
 from tools   import consts, prefs, sec2str
 from gettext import gettext as _

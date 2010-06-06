@@ -16,7 +16,7 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301 USA
 
-import gobject, gtk, gui, gui.preferences, os, sys, threading, tools, traceback
+import gobject, gtk, gui, gui.preferences, os, sys, threading, traceback
 
 from tools   import consts, log, prefs
 from gettext import gettext as _

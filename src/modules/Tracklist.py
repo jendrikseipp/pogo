@@ -16,12 +16,11 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301 USA
 
-import gtk, gui, media, modules, os.path, tools
+import gtk, gui, media, modules, tools
 
 from tools           import consts, icons
 from gettext         import gettext as _
 from gobject         import TYPE_STRING, TYPE_INT, TYPE_PYOBJECT
-from media.track     import Track
 from gui.extListview import ExtListView
 
 MOD_INFO = ('Tracklist', 'Tracklist', '', [], True, False)
