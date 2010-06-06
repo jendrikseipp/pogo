@@ -16,7 +16,7 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301 USA
 
-import gui, modules
+import modules
 
 from tools   import consts
 from gettext import gettext as _
@@ -41,4 +41,4 @@ class ReplayGain(modules.Module):
         if msg == consts.MSG_EVT_APP_STARTED:
             modules.postMsg(consts.MSG_CMD_ENABLE_RG)
         elif msg in (consts.MSG_EVT_MOD_LOADED, consts.MSG_EVT_MOD_UNLOADED):
-            gui.infoMsgBox(None, _('Restart required'), _('You must restart the application for this modification to take effect.'))
+            self.restartRequired()
