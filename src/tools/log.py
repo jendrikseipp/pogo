@@ -16,14 +16,29 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301 USA
 
-import consts, logging
+import consts
 
-from logging.handlers import RotatingFileHandler
+class Logger:
 
-__logHandler = RotatingFileHandler(consts.fileLog, maxBytes=0, backupCount=2)
-__logHandler.doRollover()
-__logHandler.setFormatter(logging.Formatter('[%(asctime)s] %(levelname)-7s %(message)s', datefmt='%y%m%d%H%M%S'))
+    def __init__(self, filename):
+        """ Constructor """
+        self.handler = open(filename, 'wt')
 
-logger = logging.getLogger(consts.appNameShort)
-logger.setLevel(logging.INFO)
-logger.addHandler(__logHandler)
+
+    def __log(self, msgType, msg):
+        """ Private logging function  """
+        self.handler.write('%-6s %s\n' % (msgType, msg))
+        self.handler.flush()
+
+
+    def info(self, msg):
+        """ Information message """
+        self.__log('INFO', msg)
+
+
+    def error(self, msg):
+        """ Error message """
+        self.__log('ERROR', msg)
+
+
+logger = Logger(consts.fileLog)
