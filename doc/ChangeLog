@@ -10,6 +10,7 @@ v1.05 ()
     [-] Fixed crash in some rare occasions when trying to set the cover for the current track
     [-] Gnome media keys no longer working when starting/closing multiple instances
     [-] Fixed labels not always properly updated in the equalizer
+    [ ] Improved startup time
     [ ] The playbin2 GStreamer component is now used by default (use the --playbin flag to use the old playbin component)
     [ ] Equalizer module has a menu item (CTRL-E) when enabled (#495761)
     [ ] Close properly on CTRL-C
