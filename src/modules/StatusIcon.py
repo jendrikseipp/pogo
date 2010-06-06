@@ -30,11 +30,13 @@ class StatusIcon(modules.Module):
         """ Constructor """
         modules.Module.__init__(self, (consts.MSG_EVT_MOD_LOADED, consts.MSG_EVT_MOD_UNLOADED,  consts.MSG_EVT_APP_STARTED,
                                        consts.MSG_EVT_NEW_TRACK,  consts.MSG_EVT_PAUSED,        consts.MSG_EVT_UNPAUSED,
-                                       consts.MSG_EVT_STOPPED,    consts.MSG_EVT_NEW_TRACKLIST, consts.MSG_EVT_TRACK_MOVED))
+                                       consts.MSG_EVT_STOPPED,    consts.MSG_EVT_NEW_TRACKLIST, consts.MSG_EVT_TRACK_MOVED,
+                                       consts.MSG_EVT_VOLUME_CHANGED))
 
 
     def install(self):
         """ Install the Status icon """
+        self.volume           = 0
         self.tooltip          = consts.appName
         self.isPaused         = False
         self.popupMenu        = None
@@ -50,9 +52,11 @@ class StatusIcon(modules.Module):
         self.statusIcon = gtk.StatusIcon()
         gtk.widget_pop_colormap()
         # GTK+ handlers
-        self.statusIcon.connect('activate',     self.toggleWinVisibility)
-        self.statusIcon.connect('popup-menu',   self.onPopupMenu)
-        self.statusIcon.connect('size-changed', self.renderIcons)
+        self.statusIcon.connect('activate',           self.toggleWinVisibility)
+        self.statusIcon.connect('popup-menu',         self.onPopupMenu)
+        self.statusIcon.connect('size-changed',       self.renderIcons)
+        self.statusIcon.connect('scroll-event',       self.onScroll)
+        self.statusIcon.connect('button-press-event', self.onButtonPressed)
         # Install everything
         self.statusIcon.set_tooltip(consts.appName)
         self.onNewTrack(None)
@@ -137,15 +141,16 @@ class StatusIcon(modules.Module):
 
     def handleMsg(self, msg, params):
         """ Handle messages sent to this module """
-        if   msg == consts.MSG_EVT_PAUSED:        self.onPause()
-        elif msg == consts.MSG_EVT_STOPPED:       self.onNewTrack(None)
-        elif msg == consts.MSG_EVT_UNPAUSED:      self.onUnpause()
-        elif msg == consts.MSG_EVT_NEW_TRACK:     self.onNewTrack(params['track'])
-        elif msg == consts.MSG_EVT_MOD_LOADED:    self.install()
-        elif msg == consts.MSG_EVT_TRACK_MOVED:   self.trackHasNext, self.trackHasPrev = params['hasNext'], params['hasPrevious']
-        elif msg == consts.MSG_EVT_APP_STARTED:   self.install()
-        elif msg == consts.MSG_EVT_MOD_UNLOADED:  self.uninstall()
-        elif msg == consts.MSG_EVT_NEW_TRACKLIST: self.emptyTracklist = (len(params['tracks']) == 0)
+        if   msg == consts.MSG_EVT_PAUSED:         self.onPause()
+        elif msg == consts.MSG_EVT_STOPPED:        self.onNewTrack(None)
+        elif msg == consts.MSG_EVT_UNPAUSED:       self.onUnpause()
+        elif msg == consts.MSG_EVT_NEW_TRACK:      self.onNewTrack(params['track'])
+        elif msg == consts.MSG_EVT_MOD_LOADED:     self.install()
+        elif msg == consts.MSG_EVT_TRACK_MOVED:    self.trackHasNext, self.trackHasPrev = params['hasNext'], params['hasPrevious']
+        elif msg == consts.MSG_EVT_APP_STARTED:    self.install()
+        elif msg == consts.MSG_EVT_MOD_UNLOADED:   self.uninstall()
+        elif msg == consts.MSG_EVT_NEW_TRACKLIST:  self.emptyTracklist = (len(params['tracks']) == 0)
+        elif msg == consts.MSG_EVT_VOLUME_CHANGED: self.volume = params['value']
 
 
     # --== GTK handlers ==--
@@ -180,3 +185,19 @@ class StatusIcon(modules.Module):
         self.menuPlay.set_sensitive((not (self.isPlaying or self.emptyTracklist)) or self.isPaused)
 
         self.popupMenu.popup(None, None, gtk.status_icon_position_menu, button, time, statusIcon)
+
+
+    def onScroll(self, statusIcon, scrollEvent):
+        """ The mouse is scrolled on the status icon """
+        if scrollEvent.direction == gtk.gdk.SCROLL_UP or scrollEvent.direction == gtk.gdk.SCROLL_RIGHT:
+            self.volume = min(1.0, self.volume + 0.05)
+        else:
+            self.volume = max(0.0, self.volume - 0.05)
+
+        modules.postMsg(consts.MSG_CMD_SET_VOLUME, {'value': self.volume})
+
+
+    def onButtonPressed(self, statusIcon, buttonEvent):
+        """ A button is pressed on the status icon """
+        if buttonEvent.button == 2:
+            modules.postMsg(consts.MSG_CMD_TOGGLE_PAUSE)
