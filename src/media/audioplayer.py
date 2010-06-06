@@ -16,8 +16,6 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301 USA
 
-import pygst
-pygst.require('0.10')
 import gst
 
 
@@ -25,18 +23,33 @@ class AudioPlayer:
 
     def __init__(self, callbackEnded, usePlaybin2=True):
         """ Constructor """
+        self.player        = None
+        self.volume        = 1
+        self.rgEnabled     = False
+        self.eqzLevels     = None
         self.equalizer     = None
-        self.replaygain    = None
+        self.eqzEnabled    = False
         self.usePlaybin2   = usePlaybin2
         self.cdReadSpeed   = 1
-        self.equalizerLvls = None
         self.callbackEnded = callbackEnded
 
+
+    def __getPlayer(self):
+        """ Construct and return the GStreamer player """
         self.__constructPlayer()
+        self.__getPlayer = self.__getPlayer_post       # I love Python
+
+        return self.player
+
+
+    def __getPlayer_post(self):
+        """ Return the GStreamer player """
+        return self.player
 
 
     def __constructPlayer(self):
         """ Create the GStreamer pipeline """
+        print 'Constructing player'
         if self.usePlaybin2:
             self.player = gst.element_factory_make('playbin2', 'player')
             self.player.connect('about-to-finish', self.__onAboutToFinish)
@@ -45,6 +58,9 @@ class AudioPlayer:
 
         # No video
         self.player.set_property('video-sink', gst.element_factory_make('fakesink', 'fakesink'))
+
+        # Restore volume
+        self.player.set_property('volume', self.volume)
 
         # Change the audio sink to our own bin, so that an equalizer/replay gain element can be added later on if needed
         self.audiobin  = gst.Bin('audiobin')
@@ -63,19 +79,57 @@ class AudioPlayer:
         bus.connect('message', self.__onGstMessage)
 
         # Add equalizer?
-        if self.equalizer is not None:
-            self.enableEqualizer()
-            if self.equalizerLvls is not None:
-                self.setEqualizerLvls(self.equalizerLvls)
+        if self.eqzEnabled:
+            self.equalizer = gst.element_factory_make('equalizer-10bands', 'equalizer')
+            self.audiobin.add(self.equalizer)
+            self.audiobin.get_pad('sink').set_target(self.equalizer.get_pad('sink'))
+            self.equalizer.link(self.audiosink)
+
+            if self.eqzLevels is not None:
+                self.setEqualizerLvls(self.eqzLevels)
 
         # Add replay gain?
-        if self.replaygain is not None:
-            self.enableReplayGain()
+        if self.rgEnabled:
+            replaygain = gst.element_factory_make('rgvolume', 'replaygain')
+
+            self.audiobin.add(replaygain)
+            self.audiobin.get_pad('sink').set_target(replaygain.get_pad('sink'))
+
+            if self.equalizer is None: replaygain.link(self.audiosink)
+            else:                      replaygain.link(self.equalizer)
+
+
+    def enableEqualizer(self):
+        """ Add an equalizer to the audio chain """
+        self.eqzEnabled = True
+
+
+    def enableReplayGain(self):
+        """ Add/Enable a replay gain element """
+        self.rgEnabled = True
+
+
+    def setEqualizerLvls(self, lvls):
+        """ Set the level of the 10-bands of the equalizer (levels must be a list/tuple with 10 values lying between -24 and +12) """
+        if len(lvls) == 10:
+            self.eqzLevels = lvls
+
+            if self.equalizer is not None:
+                self.equalizer.set_property('band0', lvls[0])
+                self.equalizer.set_property('band1', lvls[1])
+                self.equalizer.set_property('band2', lvls[2])
+                self.equalizer.set_property('band3', lvls[3])
+                self.equalizer.set_property('band4', lvls[4])
+                self.equalizer.set_property('band5', lvls[5])
+                self.equalizer.set_property('band6', lvls[6])
+                self.equalizer.set_property('band7', lvls[7])
+                self.equalizer.set_property('band8', lvls[8])
+                self.equalizer.set_property('band9', lvls[9])
 
 
     def __onNewPlaybinSource(self, playbin, params):
         """ Change the CR-ROM drive speed to 1 when applicable """
-        source = self.player.get_by_name('source')
+        source = self.__getPlayer().get_by_name('source')
 
         # Didn't find a way to determine the real class of source
         # So we use the 'paranoia-mode' property to determine whether it's indeed a CD we're playing
@@ -112,134 +166,61 @@ class AudioPlayer:
 
     def setNextURI(self, uri):
         """ Set the next URI """
-        self.player.set_property('uri', uri.replace('%', '%25').replace('#', '%23'))
+        self.__getPlayer().set_property('uri', uri.replace('%', '%25').replace('#', '%23'))
 
 
     def setVolume(self, level):
         """ Set the volume to the given level (0 <= level <= 1) """
-        if level < 0:   level = 0
-        elif level > 1: level = 1
+        if level < 0:   self.volume = 0
+        elif level > 1: self.volume = 1
+        else:           self.volume = level
 
-        self.player.set_property('volume', level)
-
-
-    def __saveRestoreState(self, func):
-        """  """
-        savedState = self.player.get_state()[1]
-        self.player.set_state(gst.STATE_NULL)
-        func()
-        self.player.set_state(savedState)
-
-
-    def __enableEqualizer(self):
-        """ Add an equalizer to the audio chain """
-        self.equalizer = gst.element_factory_make('equalizer-10bands', 'equalizer')
-        self.audiobin.add(self.equalizer)
-
-        if self.replaygain is None:
-            self.audiobin.get_pad('sink').set_target(self.equalizer.get_pad('sink'))
-        else:
-            self.replaygain.unlink(self.audiosink)
-            self.replaygain.link(self.equalizer)
-
-        self.equalizer.link(self.audiosink)
-
-
-    def __enableReplayGain(self):
-        """ Add/Enable a replay gain element """
-        if self.replaygain is None:
-            self.replaygain = gst.element_factory_make('rgvolume', 'replaygain')
-
-        self.audiobin.add(self.replaygain)
-        self.audiobin.get_pad('sink').set_target(self.replaygain.get_pad('sink'))
-
-        if self.equalizer is None: self.replaygain.link(self.audiosink)
-        else:                      self.replaygain.link(self.equalizer)
-
-
-    def __disableReplayGain(self):
-        """ Disable the replay gain element, if any """
-        if self.replaygain is not None:
-            if self.equalizer is None: self.audiobin.get_pad('sink').set_target(self.audiosink.get_pad('sink'))
-            else:                      self.audiobin.get_pad('sink').set_target(self.equalizer.get_pad('sink'))
-
-            self.audiobin.remove(self.replaygain)
-
-
-    def enableEqualizer(self):
-        """ Add an equalizer to the audio chain """
-        self.__saveRestoreState(self.__enableEqualizer)
-
-
-    def enableReplayGain(self):
-        """ Add/Enable a replay gain element """
-        self.__saveRestoreState(self.__enableReplayGain)
-
-
-    def disableReplayGain(self):
-        """ Disable the replay gain element, if any """
-        self.__saveRestoreState(self.__disableReplayGain)
-
-
-    def setEqualizerLvls(self, lvls):
-        """ Set the level of the 10-bands of the equalizer (levels must be a list/tuple with 10 values lying between -24 and +12) """
-        if len(lvls) == 10 and self.equalizer is not None:
-            self.equalizerLvls = lvls
-
-            self.equalizer.set_property('band0', lvls[0])
-            self.equalizer.set_property('band1', lvls[1])
-            self.equalizer.set_property('band2', lvls[2])
-            self.equalizer.set_property('band3', lvls[3])
-            self.equalizer.set_property('band4', lvls[4])
-            self.equalizer.set_property('band5', lvls[5])
-            self.equalizer.set_property('band6', lvls[6])
-            self.equalizer.set_property('band7', lvls[7])
-            self.equalizer.set_property('band8', lvls[8])
-            self.equalizer.set_property('band9', lvls[9])
+        if self.player is not None:
+            self.player.set_property('volume', self.volume)
 
 
     def isPaused(self):
         """ Return whether the player is paused """
-        return self.player.get_state()[1] == gst.STATE_PAUSED
+        return self.__getPlayer().get_state()[1] == gst.STATE_PAUSED
 
 
     def isPlaying(self):
         """ Return whether the player is paused """
-        return self.player.get_state()[1] == gst.STATE_PLAYING
+        return self.__getPlayer().get_state()[1] == gst.STATE_PLAYING
 
 
     def setURI(self, uri):
         """ Play the given URI """
-        self.player.set_property('uri', uri.replace('%', '%25').replace('#', '%23'))
+        self.__getPlayer().set_property('uri', uri.replace('%', '%25').replace('#', '%23'))
 
 
     def play(self):
         """ Play """
-        self.player.set_state(gst.STATE_PLAYING)
+        self.__getPlayer().set_state(gst.STATE_PLAYING)
 
 
     def pause(self):
         """ Pause """
-        self.player.set_state(gst.STATE_PAUSED)
+        self.__getPlayer().set_state(gst.STATE_PAUSED)
 
 
     def stop(self):
         """ Stop playing """
-        self.player.set_state(gst.STATE_NULL)
+        self.__getPlayer().set_state(gst.STATE_NULL)
 
 
     def seek(self, where):
         """ Jump to the given location """
-        self.player.seek_simple(gst.FORMAT_TIME, gst.SEEK_FLAG_FLUSH, where)
+        self.__getPlayer().seek_simple(gst.FORMAT_TIME, gst.SEEK_FLAG_FLUSH, where)
 
 
     def getPosition(self):
         """ Return the current position """
-        try:    return self.player.query_position(gst.FORMAT_TIME)[0]
+        try:    return self.__getPlayer().query_position(gst.FORMAT_TIME)[0]
         except: return 0
 
 
     def getDuration(self):
         """ Return the duration of the current stream """
-        try:    return self.player.query_duration(gst.FORMAT_TIME)[0]
+        try:    return self.__getPlayer().query_duration(gst.FORMAT_TIME)[0]
         except: return 0

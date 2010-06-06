@@ -36,10 +36,9 @@ class GSTPlayer(modules.Module):
         self.player = audioplayer.AudioPlayer(self.__onTrackEnded, not prefs.getCmdLine()[0].playbin)
 
         modules.Module.__init__(self, (consts.MSG_CMD_PLAY,   consts.MSG_CMD_SET_VOLUME,   consts.MSG_CMD_ENABLE_RG,
-                                       consts.MSG_CMD_SEEK,   consts.MSG_EVT_APP_STARTED,  consts.MSG_CMD_DISABLE_RG,
+                                       consts.MSG_CMD_SEEK,   consts.MSG_EVT_APP_STARTED,  consts.MSG_CMD_SET_CD_SPEED,
                                        consts.MSG_CMD_STOP,   consts.MSG_CMD_TOGGLE_PAUSE, consts.MSG_CMD_ENABLE_EQZ,
-                                       consts.MSG_CMD_BUFFER, consts.MSG_CMD_SET_EQZ_LVLS, consts.MSG_CMD_STEP,
-                                       consts.MSG_CMD_SET_CD_SPEED))
+                                       consts.MSG_CMD_BUFFER, consts.MSG_CMD_SET_EQZ_LVLS, consts.MSG_CMD_STEP))
 
     def onAppStarted(self):
         """ This is the real initialization function, called when this module has been loaded """
@@ -191,7 +190,6 @@ class GSTPlayer(modules.Module):
         elif msg == consts.MSG_CMD_STEP:         self.step(params['seconds'])
         elif msg == consts.MSG_CMD_BUFFER:       self.bufferNextTrack(params['uri'])
         elif msg == consts.MSG_CMD_ENABLE_RG:    self.player.enableReplayGain()
-        elif msg == consts.MSG_CMD_DISABLE_RG:   self.player.disableReplayGain()
         elif msg == consts.MSG_CMD_SET_VOLUME:   self.setVolume(params['value'])
         elif msg == consts.MSG_EVT_APP_STARTED:  self.onAppStarted()
         elif msg == consts.MSG_CMD_ENABLE_EQZ:   self.player.enableEqualizer()
