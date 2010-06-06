@@ -16,7 +16,7 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301 USA
 
-import gtk, media, modules, os, shutil, tools
+import gtk, media, modules, os, tools
 
 from tools                 import consts, icons, prefs, pickleLoad, pickleSave
 from gettext               import ngettext, gettext as _
@@ -172,6 +172,8 @@ class Library(modules.Module):
 
     def __createEmptyLibrary(self, name):
         """ Create bootstrap files for a new library """
+        import shutil
+
         # Make sure that the root directory of all libraries exists
         if not isdir(ROOT_PATH):
             os.mkdir(ROOT_PATH)
@@ -185,7 +187,7 @@ class Library(modules.Module):
 
     def refreshLibrary(self, parent, libName, path, creation=False):
         """ Refresh the given library, must be called through idle_add() """
-        import collections
+        import collections, shutil
 
         from gui import progressDlg
 
@@ -674,6 +676,8 @@ class Library(modules.Module):
 
     def renameLibrary(self, oldName, newName):
         """ Rename a library """
+        import shutil
+
         self.libraries[newName] = self.libraries[oldName]
         del self.libraries[oldName]
 
@@ -712,6 +716,8 @@ class Library(modules.Module):
 
     def removeSelectedLibraries(self, list):
         """ Remove all selected libraries """
+        import shutil
+
         from gui import questionMsgBox
 
         if list.getSelectedRowsCount() == 1:
