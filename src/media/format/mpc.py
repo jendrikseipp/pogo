@@ -16,44 +16,45 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301 USA
 
+from media.format import createFileTrack
 
-def getTrack(file):
+
+def getTrack(filename):
     """ Return a Track created from an mpc file """
-    from mutagen.musepack      import Musepack
-    from media.track.fileTrack import FileTrack
+    from mutagen.musepack import Musepack
 
-    track   = FileTrack(file)
-    mpcFile = Musepack(file)
+    mpcFile = Musepack(filename)
 
-    track.setBitrate(int(mpcFile.info.bitrate * 1000))
-    track.setLength(int(round(mpcFile.info.length)))
-    track.setSampleRate(int(mpcFile.info.sample_rate))
+    length     = int(round(mpcFile.info.length))
+    bitrate    = int(mpcFile.info.bitrate * 1000)
+    samplerate = int(mpcFile.info.sample_rate)
 
-    try:    track.setNumber(int(str(mpcFile['Track'])))
-    except: pass
+    try:    trackNumber = str(mpcFile['Track'])
+    except: trackNumber = None
 
-    try:    track.setDiscNumber(int(str(mpcFile['Discnumber'])))
-    except: pass
+    try:    discNumber = str(mpcFile['Discnumber'])
+    except: discNumber = None
 
-    try:    track.setDate(int(str(mpcFile['Year'])))
-    except: pass
+    try:    date = str(mpcFile['Year'])
+    except: date = None
 
-    try:    track.setTitle(str(mpcFile['Title']))
-    except: pass
+    try:    title = str(mpcFile['Title'])
+    except: title = None
 
-    try:    track.setGenre(str(mpcFile['Genre']))
-    except: pass
+    try:    genre = str(mpcFile['Genre'])
+    except: genre = None
 
-    try:    track.setMBTrackId(str(mpcFile['MUSICBRAINZ_TRACKID']))
-    except: pass
+    try:    musicbrainzId = str(mpcFile['MUSICBRAINZ_TRACKID'])
+    except: musicbrainzId = None
 
-    try:    track.setAlbum(str(mpcFile['Album']))
-    except: pass
+    try:    album = str(mpcFile['Album'])
+    except: album = None
 
-    try:    track.setArtist(str(mpcFile['Artist']))
-    except: pass
+    try:    artist = str(mpcFile['Artist'])
+    except: artist = None
 
-    try:    track.setAlbumArtist(str(mpcFile['Album Artist']))
-    except: pass
+    try:    albumArtist = str(mpcFile['Album Artist'])
+    except: albumArtist = None
 
-    return track
+    return createFileTrack(filename, bitrate, length, samplerate, False, title, album, artist, albumArtist,
+                musicbrainzId, genre, trackNumber, date, discNumber)

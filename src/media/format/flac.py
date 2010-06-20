@@ -16,44 +16,44 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301 USA
 
+from media.format import createFileTrack
 
-def getTrack(file):
+
+def getTrack(filename):
     """ Return a Track created from a FLAC file """
-    from mutagen.flac          import FLAC
-    from media.track.fileTrack import FileTrack
+    from mutagen.flac import FLAC
 
-    track    = FileTrack(file)
-    flacFile = FLAC(file)
+    flacFile = FLAC(filename)
 
-    track.setBitrate(-1)
-    track.setLength(int(round(flacFile.info.length)))
-    track.setSampleRate(int(flacFile.info.sample_rate))
+    length     = int(round(flacFile.info.length))
+    samplerate = int(flacFile.info.sample_rate)
 
-    try:    track.setTitle(str(flacFile['title'][0]))
-    except: pass
+    try:    title = str(flacFile['title'][0])
+    except: title = None
 
-    try:    track.setAlbum(str(flacFile['album'][0]))
-    except: pass
+    try:    album = str(flacFile['album'][0])
+    except: album = None
 
-    try:    track.setArtist(str(flacFile['artist'][0]))
-    except: pass
+    try:    artist = str(flacFile['artist'][0])
+    except: artist = None
 
-    try:    track.setAlbumArtist(str(flacFile['albumartist'][0]))
-    except: pass
+    try:    albumArtist = str(flacFile['albumartist'][0])
+    except: albumArtist = None
 
-    try:    track.setGenre(str(flacFile['genre'][0]))
-    except: pass
+    try:    genre = str(flacFile['genre'][0])
+    except: genre = None
 
-    try:    track.setMBTrackId(str(flacFile['musicbrainz_trackid'][0]))
-    except: pass
+    try:    musicbrainzId = str(flacFile['musicbrainz_trackid'][0])
+    except: musicbrainzId = None
 
-    try:    track.setNumber(int(str(flacFile['tracknumber'][0]).split('/')[0]))     # Track format may be 01/08, 02/08...
-    except: pass
+    try:    trackNumber = str(flacFile['tracknumber'][0])
+    except: trackNumber = None
 
-    try:    track.setDiscNumber(int(str(flacFile['discnumber'][0]).split('/')[0]))  # Disc number format may be 01/02, 02/02...
-    except: pass
+    try:    discNumber = str(flacFile['discnumber'][0])
+    except: discNumber = None
 
-    try:    track.setDate(int(flacFile['date'][0]))
-    except: pass
+    try:    date = str(flacFile['date'][0])
+    except: date = None
 
-    return track
+    return createFileTrack(filename, -1, length, samplerate, False, title, album, artist, albumArtist,
+                musicbrainzId, genre, trackNumber, date, discNumber)

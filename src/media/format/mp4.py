@@ -16,43 +16,42 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301 USA
 
+from media.format import createFileTrack
 
-def getTrack(file):
+
+def getTrack(filename):
     """ Return a Track created from an mp4 file """
-    from mutagen.mp4           import MP4
-    from media.track.fileTrack import FileTrack
+    from mutagen.mp4 import MP4
 
-    track   = FileTrack(file)
-    mp4File = MP4(file)
+    mp4File = MP4(filename)
 
-    track.setBitrate(int(mp4File.info.bitrate))
-    track.setLength(int(round(mp4File.info.length)))
-    track.setSampleRate(int(mp4File.info.sample_rate))
+    length     = int(round(mp4File.info.length))
+    bitrate    = int(mp4File.info.bitrate)
+    samplerate = int(mp4File.info.sample_rate)
 
-    try:    track.setNumber(int(mp4File['trkn'][0][0]))
-    except: pass
+    try:    trackNumber = str(mp4File['trkn'][0][0])
+    except: trackNumber = None
 
-    try:    track.setDiscNumber(int(mp4File['disk'][0][0]))
-    except: pass
+    try:    discNumber = str(mp4File['disk'][0][0])
+    except: discNumber = None
 
-    try:    track.setDate(int(mp4File['\xa9day'][0][0]))
-    except: pass
+    try:    date = str(mp4File['\xa9day'][0][0])
+    except: date = None
 
-    try:    track.setTitle(str(mp4File['\xa9nam'][0]))
-    except: pass
+    try:    title = str(mp4File['\xa9nam'][0])
+    except: title = None
 
-    try:    track.setAlbum(str(mp4File['\xa9alb'][0]))
-    except: pass
+    try:    album = str(mp4File['\xa9alb'][0])
+    except: album = None
 
-    try:    track.setArtist(str(mp4File['\xa9ART'][0]))
-    except: pass
+    try:    artist = str(mp4File['\xa9ART'][0])
+    except: artist = None
 
-    try:    track.setGenre(str(mp4File['\xa9gen'][0]))
-    except: pass
+    try:    genre = str(mp4File['\xa9gen'][0])
+    except: genre = None
 
-    try:    track.setAlbumArtist(str(mp4File['aART'][0]))
-    except: pass
+    try:    albumArtist = str(mp4File['aART'][0])
+    except: albumArtist = None
 
-    # TODO How to retrieve the MusicBrainz track id? I don't have a sample file at hand.
-
-    return track
+    return createFileTrack(filename, bitrate, length, samplerate, False, title, album, artist, albumArtist,
+                None, genre, trackNumber, date, discNumber)

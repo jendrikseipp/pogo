@@ -16,53 +16,52 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301 USA
 
+from media.format import createFileTrack
 
-def getTrack(file):
+
+def getTrack(filename):
     """ Return a Track created from an mp3 file """
-    from mutagen.mp3           import MP3
-    from mutagen.id3           import ID3
-    from media.track.fileTrack import FileTrack
+    from mutagen.mp3 import MP3
+    from mutagen.id3 import ID3
 
-    track   = FileTrack(file)
-    mp3File = MP3(file)
+    mp3File = MP3(filename)
 
-    track.setBitrate(int(mp3File.info.bitrate))
-    track.setLength(int(round(mp3File.info.length)))
-    track.setSampleRate(int(mp3File.info.sample_rate))
+    length     = int(round(mp3File.info.length))
+    bitrate    = int(mp3File.info.bitrate)
+    samplerate = int(mp3File.info.sample_rate)
 
-    if mp3File.info.mode == 1:
-        track.setVariableBitrate()
+    if mp3File.info.mode == 1: isVBR = True
+    else:                      isVBR = False
 
-    try:
-        id3 = ID3(file)
-    except:
-        return track
+    try:    id3 = ID3(filename)
+    except: return createFileTrack(filename, bitrate, length, samplerate, isVBR)
 
-    try:    track.setTitle(str(id3['TIT2']))
-    except: pass
+    try:    title = str(id3['TIT2'])
+    except: title = None
 
-    try:    track.setAlbum(str(id3['TALB']))
-    except: pass
+    try:    album = str(id3['TALB'])
+    except: album = None
 
-    try:    track.setArtist(str(id3['TPE1']))
-    except: pass
+    try:    artist = str(id3['TPE1'])
+    except: artist = None
 
-    try:    track.setAlbumArtist(str(id3['TPE2']))
-    except: pass
+    try:    albumArtist = str(id3['TPE2'])
+    except: albumArtist = None
 
-    try:    track.setMBTrackId(id3['UFID:http://musicbrainz.org'].data)
-    except: pass
+    try:    musicbrainzId = id3['UFID:http://musicbrainz.org'].data
+    except: musicbrainzId = None
 
-    try:    track.setGenre(str(id3['TCON']))
-    except: pass
+    try:    genre = str(id3['TCON'])
+    except: genre = None
 
-    try:    track.setNumber(int(str(id3['TRCK']).split('/')[0]))      # Track format may be 01/08, 02/08...
-    except: pass
+    try:    trackNumber = str(id3['TRCK'])
+    except: trackNumber = None
 
-    try:    track.setDiscNumber(int(str(id3['TPOS']).split('/')[0]))  # Disc number format may be 01/08, 02/08...
-    except: pass
+    try:    date = str(id3['TDRC'][0].year)
+    except: date = None
 
-    try:    track.setDate(int(id3['TDRC'][0].year))
-    except: pass
+    try:    discNumber = str(id3['TPOS'])
+    except: discNumber = None
 
-    return track
+    return createFileTrack(filename, bitrate, length, samplerate, isVBR, title, album, artist, albumArtist,
+                musicbrainzId, genre, trackNumber, date, discNumber)

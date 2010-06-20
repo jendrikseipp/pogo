@@ -16,44 +16,45 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301 USA
 
+from media.format import createFileTrack
 
-def getTrack(file):
+
+def getTrack(filename):
     """ Return a Track created from an asf file """
-    from mutagen.asf           import ASF
-    from media.track.fileTrack import FileTrack
+    from mutagen.asf import ASF
 
-    track   = FileTrack(file)
-    asfFile = ASF(file)
+    asfFile = ASF(filename)
 
-    track.setBitrate(int(asfFile.info.bitrate))
-    track.setLength(int(round(asfFile.info.length)))
-    track.setSampleRate(int(asfFile.info.sample_rate))
+    length     = int(round(asfFile.info.length))
+    bitrate    = int(asfFile.info.bitrate)
+    samplerate = int(asfFile.info.sample_rate)
 
-    try:    track.setNumber(int(asfFile['WM/TrackNumber'][0]))
-    except: pass
+    try:    trackNumber = str(asfFile['WM/TrackNumber'][0])
+    except: trackNumber = None
 
-    try:    track.setDiscNumber(int(asfFile['WM/PartOfSet'][0]))
-    except: pass
+    try:    discNumber = str(asfFile['WM/PartOfSet'][0])
+    except: discNumber = None
 
-    try:    track.setDate(int(asfFile['WM/Year'][0]))
-    except: pass
+    try:    date = str(asfFile['WM/Year'][0])
+    except: date = None
 
-    try:    track.setTitle(str(asfFile['Title'][0]))
-    except: pass
+    try:    title = str(asfFile['Title'][0])
+    except: title = None
 
-    try:    track.setAlbum(str(asfFile['WM/AlbumTitle'][0]))
-    except: pass
+    try:    album = str(asfFile['WM/AlbumTitle'][0])
+    except: album = None
 
-    try:    track.setArtist(str(asfFile['Author'][0]))
-    except: pass
+    try:    artist = str(asfFile['Author'][0])
+    except: artist = None
 
-    try:    track.setAlbumArtist(str(asfFile['WM/AlbumArtist'][0]))
-    except: pass
+    try:    albumArtist = str(asfFile['WM/AlbumArtist'][0])
+    except: albumArtist = None
 
-    try:    track.setGenre(str(asfFile['WM/Genre'][0]))
-    except: pass
+    try:    genre = str(asfFile['WM/Genre'][0])
+    except: genre = None
 
-    try:    track.setMBTrackId(str(asfFile['MusicBrainz/Track Id'][0]))
-    except: pass
+    try:    musicbrainzId = str(asfFile['MusicBrainz/Track Id'][0])
+    except: musicbrainzId = None
 
-    return track
+    return createFileTrack(filename, bitrate, length, samplerate, False, title, album, artist, albumArtist,
+                musicbrainzId, genre, trackNumber, date, discNumber)

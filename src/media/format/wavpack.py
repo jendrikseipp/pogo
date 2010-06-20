@@ -16,41 +16,41 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301 USA
 
+from media.format import createFileTrack
 
-def getTrack(file):
+
+def getTrack(filename):
     """ Return a Track created from a WavPack file """
-    from mutagen.wavpack       import WavPack
-    from media.track.fileTrack import FileTrack
+    from mutagen.wavpack import WavPack
 
-    track  = FileTrack(file)
-    wvFile = WavPack(file)
+    wvFile = WavPack(filename)
 
-    track.setBitrate(-1)
-    track.setLength(int(round(wvFile.info.length)))
-    track.setSampleRate(int(wvFile.info.sample_rate))
+    length     = int(round(wvFile.info.length))
+    samplerate = int(wvFile.info.sample_rate)
 
-    try:    track.setTitle(str(wvFile['Title'][0]))
-    except: pass
+    try:    title = str(wvFile['Title'][0])
+    except: title = None
 
-    try:    track.setAlbum(str(wvFile['Album'][0]))
-    except: pass
+    try:    album = str(wvFile['Album'][0])
+    except: album = None
 
-    try:    track.setArtist(str(wvFile['Artist'][0]))
-    except: pass
+    try:    artist = str(wvFile['Artist'][0])
+    except: artist = None
 
-    try:    track.setAlbumArtist(str(wvFile['Album Artist'][0]))
-    except: pass
+    try:    albumArtist = str(wvFile['Album Artist'][0])
+    except: albumArtist = None
 
-    try:    track.setGenre(str(wvFile['genre'][0]))
-    except: pass
+    try:    genre = str(wvFile['genre'][0])
+    except: genre = None
 
-    try:    track.setNumber(int(str(wvFile['Track'][0]).split('/')[0]))     # Track format may be 01/08, 02/08...
-    except: pass
+    try:    trackNumber = str(wvFile['Track'][0])
+    except: trackNumber = None
 
-    try:    track.setDiscNumber(int(str(wvFile['Disc'][0]).split('/')[0]))  # Disc number format may be 01/02, 02/02...
-    except: pass
+    try:    discNumber = str(wvFile['Disc'][0])
+    except: discNumber = None
 
-    try:    track.setDate(int(wvFile['Year'][0]))
-    except: pass
+    try:    date = str(wvFile['Year'][0])
+    except: date = None
 
-    return track
+    return createFileTrack(filename, -1, length, samplerate, False, title, album, artist, albumArtist,
+                None, genre, trackNumber, date, discNumber)

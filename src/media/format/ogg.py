@@ -16,45 +16,45 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301 USA
 
+from media.format import createFileTrack
 
-def getTrack(file):
+
+def getTrack(filename):
     """ Return a Track created from an Ogg Vorbis file """
-    from mutagen.oggvorbis     import OggVorbis
-    from media.track.fileTrack import FileTrack
+    from mutagen.oggvorbis import OggVorbis
 
-    track   = FileTrack(file)
-    oggFile = OggVorbis(file)
+    oggFile = OggVorbis(filename)
 
-    track.setBitrate(int(oggFile.info.bitrate))
-    track.setLength(int(round(oggFile.info.length)))
-    track.setSampleRate(int(oggFile.info.sample_rate))
-    track.setVariableBitrate()
+    length     = int(round(oggFile.info.length))
+    bitrate    = int(oggFile.info.bitrate)
+    samplerate = int(oggFile.info.sample_rate)
 
-    try:    track.setTitle(str(oggFile['title'][0]))
-    except: pass
+    try:    title = str(oggFile['title'][0])
+    except: title = None
 
-    try:    track.setAlbum(str(oggFile['album'][0]))
-    except: pass
+    try:    album = str(oggFile['album'][0])
+    except: album = None
 
-    try:    track.setArtist(str(oggFile['artist'][0]))
-    except: pass
+    try:    artist = str(oggFile['artist'][0])
+    except: artist = None
 
-    try:    track.setAlbumArtist(str(oggFile['albumartist'][0]))
-    except: pass
+    try:    albumArtist = str(oggFile['albumartist'][0])
+    except: albumArtist = None
 
-    try:    track.setGenre(str(oggFile['genre'][0]))
-    except: pass
+    try:    genre = str(oggFile['genre'][0])
+    except: genre = None
 
-    try:    track.setMBTrackId(str(oggFile['musicbrainz_trackid'][0]))
-    except: pass
+    try:    musicbrainzId = str(oggFile['musicbrainz_trackid'][0])
+    except: musicbrainzId = None
 
-    try:    track.setNumber(int(str(oggFile['tracknumber'][0]).split('/')[0]))     # Track format may be 01/08, 02/08...
-    except: pass
+    try:    trackNumber = str(oggFile['tracknumber'][0])
+    except: trackNumber = None
 
-    try:    track.setDiscNumber(int(str(oggFile['discnumber'][0]).split('/')[0]))  # Disc number format may be 01/08, 02/08...
-    except: pass
+    try:    discNumber = str(oggFile['discnumber'][0])
+    except: discNumber = None
 
-    try:    track.setDate(int(oggFile['date'][0]))
-    except: pass
+    try:    date = str(oggFile['date'][0])
+    except: date = None
 
-    return track
+    return createFileTrack(filename, bitrate, length, samplerate, True, title, album, artist, albumArtist,
+                musicbrainzId, genre, trackNumber, date, discNumber)

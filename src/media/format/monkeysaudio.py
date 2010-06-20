@@ -16,35 +16,35 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301 USA
 
+from media.format import createFileTrack
 
-def getTrack(file):
+
+def getTrack(filename):
     """ Return a Track created from an APE file """
-    from mutagen.monkeysaudio  import MonkeysAudio
-    from media.track.fileTrack import FileTrack
+    from mutagen.monkeysaudio import MonkeysAudio
 
-    track = FileTrack(file)
-    mFile = MonkeysAudio(file)
+    mFile = MonkeysAudio(filename)
 
-    track.setBitrate(-1)
-    track.setLength(int(round(mFile.info.length)))
-    track.setSampleRate(int(mFile.info.sample_rate))
+    length     = int(round(mFile.info.length))
+    samplerate = int(mFile.info.sample_rate)
 
-    try:    track.setNumber(int(mFile['Track'][0]))
-    except: pass
+    try:    trackNumber = str(mFile['Track'][0])
+    except: trackNumber = None
 
-    try:    track.setDate(int(mFile['Year'][0]))
-    except: pass
+    try:    date = str(mFile['Year'][0])
+    except: date = None
 
-    try:    track.setTitle(str(mFile['Title'][0]))
-    except: pass
+    try:    title = str(mFile['Title'][0])
+    except: title = None
 
-    try:    track.setAlbum(str(mFile['Album'][0]))
-    except: pass
+    try:    album = str(mFile['Album'][0])
+    except: album = None
 
-    try:    track.setArtist(str(mFile['Artist'][0]))
-    except: pass
+    try:    artist = str(mFile['Artist'][0])
+    except: artist = None
 
-    try:    track.setGenre(str(mFile['Genre'][0]))
-    except: pass
+    try:    genre = str(mFile['Genre'][0])
+    except: genre = None
 
-    return track
+    return createFileTrack(filename, -1, length, samplerate, False, title, album, artist, None,
+                None, genre, trackNumber, date, None)
