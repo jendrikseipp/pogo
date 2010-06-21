@@ -73,8 +73,6 @@ class Zeitgeist(modules.ThreadedModule):
             interpretation = eventType,
         )
 
-        print 'Sending', event
-
         self.client.insert_event(event)
 
 
