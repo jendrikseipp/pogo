@@ -49,7 +49,6 @@ class AudioPlayer:
 
     def __constructPlayer(self):
         """ Create the GStreamer pipeline """
-        print 'Constructing player'
         if self.usePlaybin2:
             self.player = gst.element_factory_make('playbin2', 'player')
             self.player.connect('about-to-finish', self.__onAboutToFinish)
