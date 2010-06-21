@@ -7,6 +7,7 @@ v1.05 ()
     [+] Show some information on the selected tracks in the status bar
     [+] Added presets to the equalizer
     [+] [StatusIcon] Middle-click toggles pause, scroll changes volume (Laszlo Pandy)
+    [+] Added Zeitgeist support (#579972)
     [-] Skips two songs when one is not found (#581654)
     [-] Fixed crash in some rare occasions when trying to set the cover for the current track
     [-] Gnome media keys no longer working when starting/closing multiple instances
