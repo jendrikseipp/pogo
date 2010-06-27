@@ -59,7 +59,7 @@ class Zeitgeist(modules.ThreadedModule):
             text           = track.getTitle() + ' - ' + track.getArtist() + ' - ' + track.getExtendedAlbum(),
             mimetype       = mime,
             manifestation  = unicode(Manifestation.FILE),
-            interpretation = unicode(Interpretation.MUSIC),
+            interpretation = unicode(Interpretation.AUDIO),
         )
 
         if hasattr(Interpretation, 'ACCESS_EVENT'):
