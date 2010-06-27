@@ -29,7 +29,7 @@ socketTimeout = 10
 
 # --- Strings
 appName      = 'Decibel Audio Player'
-appVersion   = '1.05'
+appVersion   = '1.06'
 appNameShort = 'decibel-audio-player'
 
 

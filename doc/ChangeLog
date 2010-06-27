@@ -2,7 +2,10 @@
 [-] Bug fixed
 
 
-v1.05 ()
+v1.06 ()
+
+
+v1.05 (27/06/10)
     [+] Stick to the Media Player Remote Interface Specifications (#534021)
     [+] Show some information on the selected tracks in the status bar
     [+] Added presets to the equalizer
