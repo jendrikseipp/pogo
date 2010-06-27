@@ -10,7 +10,7 @@ v1.05 ()
     [+] Added Zeitgeist support (#579972)
     [-] Skips two songs when one is not found (#581654)
     [-] Fixed crash in some rare occasions when trying to set the cover for the current track
-    [-] Gnome media keys no longer working when starting/closing multiple instances
+    [-] Fixed Gnome media keys no longer working when starting/closing multiple instances
     [-] Fixed labels not always properly updated in the equalizer
     [ ] Ignore disc number when it looks like '1/1' (#596350)
     [ ] Improved startup time
