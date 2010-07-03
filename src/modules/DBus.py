@@ -232,9 +232,16 @@ class DBusObjectTracklist(dbus.service.Object):
 
     @dbus.service.method(consts.dbusInterface, in_signature='sb', out_signature='i')
     def AddTrack(self, uri, playNow):
-        """ Appends an URI in the TrackList """
-        gobject.idle_add(modules.postMsg, consts.MSG_CMD_TRACKLIST_ADD, {'tracks': [media.getTrackFromFile(uri)], 'playNow': playNow})
-        return 0
+        """ Appends an URI to the TrackList """
+        import urllib
+
+        decodedURI = urllib.unquote(uri)
+
+        if decodedURI.startswith('file://'):
+            gobject.idle_add(modules.postMsg, consts.MSG_CMD_TRACKLIST_ADD, {'tracks': [media.getTrackFromFile(decodedURI[7:])], 'playNow': playNow})
+            return 0
+
+        return 1
 
 
     @dbus.service.method(consts.dbusInterface, in_signature='i', out_signature='')

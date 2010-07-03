@@ -78,7 +78,9 @@ player    = dbus.Interface(session.get_object('org.mpris.dap', '/Player'),    'o
 tracklist = dbus.Interface(session.get_object('org.mpris.dap', '/TrackList'), 'org.freedesktop.MediaPlayer')
 
 if   cmd == SET:      tracklist.SetTracks(sys.argv[2:], True)
-elif cmd == ADD:      tracklist.AddTracks(sys.argv[2:], False)
+elif cmd == ADD:
+    print 'Hello'
+    tracklist.AddTracks(sys.argv[2:], False)
 elif cmd == PLAY:     player.Play()
 elif cmd == NEXT:     player.Next()
 elif cmd == STOP:     player.Stop()
