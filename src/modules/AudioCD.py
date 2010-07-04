@@ -297,8 +297,8 @@ class AudioCD(modules.ThreadedModule):
 
     def reloadDisc(self):
         """ Reload the disc """
-        # Sort of hack, to be sure that the reloading is done in the thread's code and not in the GTK main loop
-        self.postMsg(consts.MSG_EVT_EXPLORER_CHANGED, {'modName': MOD_L10N, 'expName': self.expName})
+        # Make sure the reload is done in the thread's code and not in the GTK main loop
+        self.threadExecute(self.loadDisc)
 
 
     # --== Message handler ==--

@@ -300,16 +300,28 @@ class ThreadedModule(threading.Thread, ModuleBase):
         self.gtkSemaphore.acquire()
         return self.gtkResult
 
+    def threadExecute(self, func, *args):
+        """
+            Schedule func(*args) to be called by the thread
+            This is used to avoid func to be executed in the GTK main loop
+        """
+        self.postMsg(consts.MSG_CMD_THREAD_EXECUTE, (func, args))
+
     def postMsg(self, msg, params={}):
         """ Enqueue a message in this threads's message queue """
         self.queue.put((msg, params))
 
     def run(self):
-        """ Wait for messages and pass them to handleMsg() """
+        """ Wait for messages and handle them """
         msg = None
         while msg != consts.MSG_EVT_APP_QUIT and msg != consts.MSG_EVT_MOD_UNLOADED:
             (msg, params) = self.queue.get(True)
-            self.handleMsg(msg, params)
+
+            if msg == consts.MSG_CMD_THREAD_EXECUTE:
+                (func, args) = params
+                func(*args)
+            else:
+                self.handleMsg(msg, params)
 
 
 # --== Entry point ==--

@@ -160,7 +160,8 @@ DND_TARGETS = {
     MSG_CMD_SET_COVER,           # Cover file for the given track     Parameters: 'track', 'pathThumbnail', 'pathFullSize'
 
     # Misc
-    MSG_CMD_BRING_TO_FRONT,      # Bring the window to the front      Parameters:
+    MSG_CMD_BRING_TO_FRONT,      # Bring the window to the front                  Parameters:
+    MSG_CMD_THREAD_EXECUTE,      # An *internal* command for threaded modules     Parameters: N/A
 
 
     # --== EVENTS ==--
@@ -197,4 +198,4 @@ DND_TARGETS = {
 
     # End value
     MSG_END_VALUE
-) = range(43)
+) = range(44)
