@@ -11,7 +11,7 @@
 </child>
 <child>
 <widget class="GtkImageMenuItem" id="item-add">
-<property name="label">Add to Playlist</property>
+<property name="label">gtk-add</property>
 <property name="tooltip" translatable="yes">Append selection to the playlist</property>
 <property name="use_underline">True</property>
 <property name="use_stock">True</property>
