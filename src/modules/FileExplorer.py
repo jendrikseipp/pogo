@@ -342,12 +342,6 @@ class FileExplorer(modules.Module):
         play.connect('activate', lambda widget: self.play(True))
         popup.append(play)
 
-        # Add selection
-        add = gtk.ImageMenuItem(gtk.STOCK_ADD)
-        add.set_sensitive(path is not None)
-        add.connect('activate', lambda widget: self.play(False))
-        popup.append(add)
-
         popup.append(gtk.SeparatorMenuItem())
 
         # Collapse all nodes
@@ -356,7 +350,7 @@ class FileExplorer(modules.Module):
         collapse.connect('activate', lambda widget: tree.collapse_all())
         popup.append(collapse)
 
-        # Refresh the library
+        # Refresh the view
         refresh = gtk.ImageMenuItem(gtk.STOCK_REFRESH)
         refresh.connect('activate', lambda widget: self.refresh())
         popup.append(refresh)

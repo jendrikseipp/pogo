@@ -427,12 +427,6 @@ class Library(modules.Module):
         play.connect('activate', lambda widget: self.playPaths(tree, None, True))
         popup.append(play)
 
-        # Add selection
-        add = gtk.ImageMenuItem(gtk.STOCK_ADD)
-        add.set_sensitive(playable)
-        add.connect('activate', lambda widget: self.playPaths(tree, None, False))
-        popup.append(add)
-
         popup.append(gtk.SeparatorMenuItem())
 
         # Collapse all nodes

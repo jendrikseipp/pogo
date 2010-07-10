@@ -325,22 +325,21 @@ class AudioCD(modules.ThreadedModule):
 
     def onShowPopupMenu(self, tree, button, time, path):
         """ Show a popup menu """
-        if self.popup is None:
-            self.popup = tools.loadGladeFile('AudioCDMenu.glade')
-            self.popup.get_widget('menu-popup').show_all()
-            self.popup.get_widget('item-add').connect('activate',     lambda widget: self.playPaths(tree, None, False))
-            self.popup.get_widget('item-play').connect('activate',    lambda widget: self.playPaths(tree, None, True))
-            self.popup.get_widget('item-refresh').connect('activate', lambda widget: self.reloadDisc())
+        popup = gtk.Menu()
 
-        # Enable/disable menu entries depending on whether there is something to play
-        if self.tree.getNbChildren((0,)) == 0:
-            self.popup.get_widget('item-add').set_sensitive(False)
-            self.popup.get_widget('item-play').set_sensitive(False)
-        else:
-            self.popup.get_widget('item-add').set_sensitive(True)
-            self.popup.get_widget('item-play').set_sensitive(True)
+        # Play selection
+        play = gtk.ImageMenuItem(gtk.STOCK_MEDIA_PLAY)
+        play.set_sensitive(tree.getNbChildren((0,)) != 0)
+        play.connect('activate', lambda widget: self.playPaths(tree, None, True))
+        popup.append(play)
 
-        self.popup.get_widget('menu-popup').popup(None, None, None, button, time)
+        # Refresh the view
+        refresh = gtk.ImageMenuItem(gtk.STOCK_REFRESH)
+        refresh.connect('activate', lambda widget: self.reloadDisc())
+        popup.append(refresh)
+
+        popup.show_all()
+        popup.popup(None, None, None, button, time)
 
 
     def onButtonPressed(self, tree, event, path):
