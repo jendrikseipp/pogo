@@ -73,6 +73,8 @@ fileImgIcon48  = os.path.join(dirPix, 'decibel-audio-player-48.png')
 fileImgIcon64  = os.path.join(dirPix, 'decibel-audio-player-64.png')
 fileImgIcon128 = os.path.join(dirPix, 'decibel-audio-player-128.png')
 
+fileImgStar16 = os.path.join(dirPix, 'star-16.png')
+
 
 # --- Files
 fileLog     = os.path.join(dirLog, 'log')

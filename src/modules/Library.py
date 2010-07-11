@@ -18,14 +18,14 @@
 
 import gtk, media, modules, os, tools
 
-from tools                 import consts, icons, prefs, pickleLoad, pickleSave
+from tools                 import consts, htmlEscape, icons, prefs, pickleLoad, pickleSave
 from gettext               import ngettext, gettext as _
 from os.path               import isdir, isfile
 from gobject               import idle_add, TYPE_STRING, TYPE_INT, TYPE_PYOBJECT
 from tools.log             import logger
 from media.track.fileTrack import FileTrack
 
-MOD_INFO = ('Library', _('Library'), _('Organize your music by tags instead of files'), [], False, True)
+MOD_INFO = ('Library', _('Library'), _('Organize your music by tags'), [], False, True)
 MOD_L10N = MOD_INFO[modules.MODINFO_L10N]
 
 
@@ -57,12 +57,13 @@ MOD_L10N = MOD_INFO[modules.MODINFO_L10N]
 
 # Possible types for a node of the tree
 (
-    TYPE_ARTIST,    # Artist
-    TYPE_ALBUM,     # Album
-    TYPE_TRACK,     # Single track
-    TYPE_HEADER,    # Alphabetical header
-    TYPE_NONE       # Used for fake children
-) = range(5)
+    TYPE_ARTIST,            # Artist
+    TYPE_ALBUM,             # Album
+    TYPE_TRACK,             # Single track
+    TYPE_HEADER,            # Alphabetical header
+    TYPE_FAVORITES_BANNER,  # Favorites banner (when showing only favorites)
+    TYPE_NONE               # Used for fake children
+) = range(6)
 
 
 # The format of a row in the treeview
@@ -72,17 +73,18 @@ MOD_L10N = MOD_INFO[modules.MODINFO_L10N]
     ROW_NAME,      # Item name
     ROW_TYPE,      # The type of the item (e.g., directory, file)
     ROW_FULLPATH,  # The full path to the item
-    ROW_TAGS       # The tags of the track, valid only for rows of type TYPE_TRACK
+    ROW_DATA       # Arbitrary data that depend on the type of the row
 ) = range(6)
 
 
 # Constants
-VERSION                  = 3                                      # Used to enforce compatibility
-ROOT_PATH                = os.path.join(consts.dirCfg, 'Library') # Path where libraries are stored
-FAKE_CHILD               = (None, None, '', TYPE_NONE, '', None)  # We use a lazy tree
-PREFS_DEFAULT_PREFIXES   = {'the ': None}                         # Prefixes are put at the end of artists' names
-PREFS_DEFAULT_LIBRARIES  = {}                                     # No libraries at first
-PREFS_DEFAULT_TREE_STATE = {}                                     # No state at first
+VERSION                           = 3                                      # Used to check compatibility
+ROOT_PATH                         = os.path.join(consts.dirCfg, 'Library') # Path where libraries are stored
+FAKE_CHILD                        = (None, None, '', TYPE_NONE, '', None)  # We use a lazy tree
+PREFS_DEFAULT_PREFIXES            = {'the ': None}                         # Prefixes are put at the end of artists' names
+PREFS_DEFAULT_LIBRARIES           = {}                                     # No libraries at first
+PREFS_DEFAULT_TREE_STATE          = {}                                     # No state at first
+PREFS_DEFAULT_SHOW_ONLY_FAVORITES = False
 
 
 class Library(modules.Module):
@@ -96,11 +98,13 @@ class Library(modules.Module):
 
     def onAppStarted(self):
         """ This is the real initialization function, called when the module has been loaded """
-        self.tree      = None
-        self.currLib   = None
-        self.cfgWindow = None
-        self.libraries = prefs.get(__name__, 'libraries',  PREFS_DEFAULT_LIBRARIES)
-        self.treeState = prefs.get(__name__, 'tree-state', PREFS_DEFAULT_TREE_STATE)
+        self.tree              = None
+        self.currLib           = None
+        self.cfgWindow         = None
+        self.libraries         = prefs.get(__name__, 'libraries',  PREFS_DEFAULT_LIBRARIES)
+        self.treeState         = prefs.get(__name__, 'tree-state', PREFS_DEFAULT_TREE_STATE)
+        self.favorites         = None
+        self.showOnlyFavorites = prefs.get(__name__, 'show-only-favorites', PREFS_DEFAULT_SHOW_ONLY_FAVORITES)
         # Scroll window
         self.scrolled = gtk.ScrolledWindow()
         self.scrolled.set_shadow_type(gtk.SHADOW_IN)
@@ -283,6 +287,9 @@ class Library(modules.Module):
         progress.pulse()
         yield True
 
+        # Load favorites before removing the files from the disk
+        favorites = self.loadFavorites(libName)
+
         # Re-create the library structure on the disk
         if isdir(libPath):
             shutil.rmtree(libPath)
@@ -324,11 +331,23 @@ class Library(modules.Module):
             modules.postMsg(consts.MSG_CMD_EXPLORER_ADD, {'modName': MOD_L10N, 'expName': libName, 'icon': None, 'widget': self.scrolled})
         progress.destroy()
 
+        # Trim favorites and save them
+        newFavorites = {}
+        for (artist, albums) in favorites.iteritems():
+            if artist in db:
+                newFavorites[artist] = {}
+                for album in albums:
+                    if album in db[artist]:
+                        newFavorites[artist][album] = None
+
+        self.saveFavorites(libName, newFavorites)
+
         # If the refreshed library is currently displayed, refresh the treeview as well
         if self.currLib == libName:
-            treeState = self.tree.saveState(ROW_NAME)
-            self.loadLibrary(self.tree, self.currLib)
-            self.tree.restoreState(treeState, ROW_NAME)
+            self.saveTreeState()
+            self.favorites = newFavorites
+            self.loadArtists(self.tree, self.currLib)
+            self.restoreTreeState()
 
         yield False
 
@@ -349,7 +368,7 @@ class Library(modules.Module):
         for currPath in paths:
             row = tree.getRow(currPath)
             if row[ROW_TYPE] == TYPE_TRACK:
-                tracks.append(row[ROW_TAGS])
+                tracks.append(row[ROW_DATA])
             elif row[ROW_TYPE] == TYPE_ALBUM:
                 tracks.extend(pickleLoad(row[ROW_FULLPATH]))
             elif row[ROW_TYPE] == TYPE_ARTIST:
@@ -408,23 +427,100 @@ class Library(modules.Module):
         self.pickAlbumArtist(tree, path)
 
 
+    def switchFavoriteStateOfSelectedItems(self, tree):
+        """ Add to/remove from favorites the selected items """
+        # Go through selected items and switch their state
+        removed = False
+        for path in tree.getSelectedPaths():
+            if tree.getItem(path, ROW_TYPE) == TYPE_ALBUM:
+                album  = tree.getItem(path, ROW_DATA)
+                artist = tree.getItem(path[:-1], ROW_DATA)
+
+                if self.isAlbumInFavorites(artist, album):
+                    removed = True
+                    tree.setItem(path, ROW_PIXBUF, icons.mediaDirMenuIcon())
+                    self.removeFromFavorites(artist, album)
+                else:
+                    tree.setItem(path, ROW_PIXBUF, icons.starDirMenuIcon())
+                    self.addToFavorites(artist, album)
+
+        # If some favorites were removed, we may have to reload the tree
+        if self.showOnlyFavorites and removed:
+            self.saveTreeState()
+            self.loadArtists(self.tree, self.currLib)
+            self.restoreTreeState()
+
+
+    def switchFavoritesView(self, tree):
+        """ Show all/favorites """
+        self.saveTreeState()
+        self.showOnlyFavorites = not self.showOnlyFavorites
+        prefs.set(__name__, 'show-only-favorites', self.showOnlyFavorites)
+        self.loadArtists(self.tree, self.currLib)
+        self.restoreTreeState()
+
+
     def showPopupMenu(self, tree, button, time, path):
         """ Show a popup menu """
         popup = gtk.Menu()
 
-        # Play selection
+        # Play
         play = gtk.ImageMenuItem(gtk.STOCK_MEDIA_PLAY)
-        play.set_sensitive(path is not None)
-        play.connect('activate', lambda widget: self.playPaths(tree, None, True))
         popup.append(play)
 
+        if path is None: play.set_sensitive(False)
+        else:            play.connect('activate', lambda widget: self.playPaths(tree, None, True))
+
+        # Separator
+        popup.append(gtk.SeparatorMenuItem())
+
+        # Add to/remove from favorites
+        favCpt    = 0
+        nonFavCpt = 0
+        for node in tree.getSelectedPaths():
+            if tree.getItem(node, ROW_TYPE) != TYPE_ALBUM:
+                favCpt    = 1
+                nonFavCpt = 1
+                break
+            elif tree.getItem(node, ROW_PIXBUF) == icons.mediaDirMenuIcon():
+                nonFavCpt += 1
+            else:
+                favCpt += 1
+
+        if favCpt == 0:      favorite = gtk.ImageMenuItem(_('Add to Favorites'))
+        elif nonFavCpt == 0: favorite = gtk.ImageMenuItem(_('Remove from Favorites'))
+        else:                favorite = gtk.ImageMenuItem(_('Favorites'))
+
+        favorite.get_image().set_from_pixbuf(icons.starMenuIcon())
+        popup.append(favorite)
+
+        if TYPE_ALBUM in [tree.getItem(path, ROW_TYPE) for path in tree.getSelectedPaths()]:
+            favorite.connect('activate', lambda widget: self.switchFavoriteStateOfSelectedItems(tree))
+        else:
+            favorite.set_sensitive(False)
+
+        # Show only favorites
+        showFavorites = gtk.CheckMenuItem(_('Show only favorites'))
+        showFavorites.set_active(self.showOnlyFavorites)
+        showFavorites.connect('toggled', lambda widget: self.switchFavoritesView(tree))
+        popup.append(showFavorites)
+
+        # Separator
         popup.append(gtk.SeparatorMenuItem())
 
         # Collapse all nodes
         collapse = gtk.ImageMenuItem(_('Collapse all'))
         collapse.set_image(gtk.image_new_from_stock(gtk.STOCK_CLEAR, gtk.ICON_SIZE_MENU))
-        collapse.connect('activate', lambda widget: self.tree.collapse_all())
         popup.append(collapse)
+
+        enabled = False
+        for child in self.tree.iterChildren(None):
+            if self.tree.row_expanded(child):
+                enabled = True
+                break
+
+        if enabled: collapse.connect('activate', lambda widget: self.tree.collapse_all())
+        else:       collapse.set_sensitive(False)
 
         # Refresh the library
         refresh = gtk.ImageMenuItem(gtk.STOCK_REFRESH)
@@ -453,22 +549,32 @@ class Library(modules.Module):
         popup.popup(None, None, None, button, time)
 
 
-    def loadLibrary(self, tree, name):
+    # --== Populating the tree ==--
+
+
+    def loadArtists(self, tree, name):
         """ Load the given library """
-        rows     = []
-        path     = os.path.join(ROOT_PATH, name)
-        prevChar = ''
+        libPath = os.path.join(ROOT_PATH, name)
 
         # Make sure the version number is the good one
-        if not os.path.exists(os.path.join(path, 'VERSION_%u' % VERSION)):
+        if not os.path.exists(os.path.join(libPath, 'VERSION_%u' % VERSION)):
             logger.error('[%s] Version number does not match, loading of library "%s" aborted' % (MOD_INFO[modules.MODINFO_NAME], name))
             error = _('This library is deprecated, please refresh it.')
             tree.replaceContent([(icons.errorMenuIcon(), None, error, TYPE_NONE, None, None)])
             return
 
-        # Create the rows, with alphabetical header if needed
-        for artist in pickleLoad(os.path.join(path, 'artists')):
+        rows       = []
+        icon       = icons.dirMenuIcon()
+        prevChar   = ''
+        allArtists = pickleLoad(os.path.join(libPath, 'artists'))
 
+        # Filter artists if needed
+        if self.showOnlyFavorites:
+            allArtists = [artist for artist in allArtists if self.isArtistInFavorites(artist[ART_NAME])]
+            rows.append((icons.starMenuIcon(), None, '<b>%s</b>' % _('My Favorites'), TYPE_FAVORITES_BANNER, None, None))
+
+        # Create the rows
+        for artist in allArtists:
             if len(artist[ART_NAME]) != 0: currChar = unicode(artist[ART_NAME], errors='replace')[0].lower()
             else:                          currChar = prevChar
 
@@ -477,7 +583,7 @@ class Library(modules.Module):
                 if currChar.isdigit(): rows.append((None, None, '<b>0 - 9</b>',                 TYPE_HEADER, None, None))
                 else:                  rows.append((None, None, '<b>%s</b>' % currChar.upper(), TYPE_HEADER, None, None))
 
-            rows.append((icons.dirMenuIcon(), None, tools.htmlEscape(artist[ART_NAME]), TYPE_ARTIST, os.path.join(path, artist[ART_INDEX]), None))
+            rows.append((icon, None, htmlEscape(artist[ART_NAME]), TYPE_ARTIST, os.path.join(libPath, artist[ART_INDEX]), artist[ART_NAME]))
 
         # Insert all rows, and then add a fake child to each artist
         tree.replaceContent(rows)
@@ -487,36 +593,102 @@ class Library(modules.Module):
 
 
     def loadAlbums(self, tree, node, fakeChild):
-        """ Initial load of all albums of the given node, assuming it is of type TYPE_ARTIST """
-        allAlbums = pickleLoad(os.path.join(tree.getItem(node, ROW_FULLPATH), 'albums'))
+        """ Initial load of the albums of the given node, assuming it is of type TYPE_ARTIST """
+        rows      = []
         path      = tree.getItem(node, ROW_FULLPATH)
-        rows      = [(icons.mediaDirMenuIcon(), '[%s]' % tools.sec2str(album[ALB_LENGTH], True), '%s' % tools.htmlEscape(album[ALB_NAME]),
-                            TYPE_ALBUM, os.path.join(path, album[ALB_INDEX]), None) for album in allAlbums]
+        artist    = tree.getItem(node, ROW_DATA)
+        allAlbums = pickleLoad(os.path.join(tree.getItem(node, ROW_FULLPATH), 'albums'))
+
+        # Filter albums if only favorites should be shown
+        if self.showOnlyFavorites:
+            allAlbums = [album for album in allAlbums if self.isAlbumInFavorites(artist, album[ALB_NAME])]
+
+        # The icon depends on whether the album is in the favorites
+        for album in allAlbums:
+            if self.isAlbumInFavorites(artist, album[ALB_NAME]): icon = icons.starDirMenuIcon()
+            else:                                                icon = icons.mediaDirMenuIcon()
+
+            rows.append((icon, '[%s]' % tools.sec2str(album[ALB_LENGTH], True), '%s' % htmlEscape(album[ALB_NAME]),
+                            TYPE_ALBUM, os.path.join(path, album[ALB_INDEX]), album[ALB_NAME]))
 
         # Add all the rows, and then add a fake child to each of them
-        tree.freeze_child_notify()
         tree.appendRows(rows, node)
         tree.removeRow(fakeChild)
         for child in tree.iterChildren(node):
             tree.appendRow(FAKE_CHILD, child)
-        tree.thaw_child_notify()
 
 
     def loadTracks(self, tree, node, fakeChild):
         """ Initial load of all tracks of the given node, assuming it is of type TYPE_ALBUM """
         allTracks = pickleLoad(tree.getItem(node, ROW_FULLPATH))
-        rows      = [(icons.mediaFileMenuIcon(), None, '%02u. %s' % (track.getNumber(), tools.htmlEscape(track.getTitle())),
-                            TYPE_TRACK, track.getFilePath(), track) for track in allTracks]
+        icon      = icons.mediaFileMenuIcon()
+        rows      = [(icon, None, '%02u. %s' % (track.getNumber(), htmlEscape(track.getTitle())), TYPE_TRACK, track.getFilePath(), track) for track in allTracks]
 
         tree.appendRows(rows, node)
         tree.removeRow(fakeChild)
+
+
+    # --== Manage tree state ==--
+
+
+    def saveTreeState(self):
+        """ Save the current tree state """
+        if self.showOnlyFavorites: self.treeState[self.currLib + ' favorites'] = self.tree.saveState(ROW_NAME)
+        else:                      self.treeState[self.currLib]                = self.tree.saveState(ROW_NAME)
+
+
+    def restoreTreeState(self):
+        """ Restore the tree state """
+        if self.showOnlyFavorites: name = self.currLib + ' favorites'
+        else:                      name = self.currLib
+
+        if name in self.treeState:
+            self.tree.restoreState(self.treeState[name], ROW_NAME)
+
+
+    # --== Favorites ==--
+
+
+    def loadFavorites(self, libName):
+        """ Load favorites from the disk """
+        try:    return pickleLoad(os.path.join(ROOT_PATH, libName, 'favorites'))
+        except: return {}
+
+
+    def saveFavorites(self, libName, favorites):
+        """ Save favorites to the disk """
+        pickleSave(os.path.join(ROOT_PATH, libName, 'favorites'), favorites)
+
+
+    def isArtistInFavorites(self, artist):
+        """ Return whether the given artist is in the favorites (at least one album) """
+        return artist in self.favorites
+
+
+    def isAlbumInFavorites(self, artist, album):
+        """ Return whether the given album is in the favorites """
+        return artist in self.favorites and album in self.favorites[artist]
+
+
+    def addToFavorites(self, artist, album):
+        """ Add the given album to the favorites """
+        if artist in self.favorites: self.favorites[artist][album] = None
+        else:                        self.favorites[artist] = {album: None}
+
+
+    def removeFromFavorites(self, artist, album):
+        """ Remove the given album from the favorites """
+        del self.favorites[artist][album]
+
+        if len(self.favorites[artist]) == 0:
+            del self.favorites[artist]
 
 
     # --== GTK handlers ==--
 
 
     def onRowExpanded(self, tree, node):
-        """ Populate the expanded row if needed (e.g., it still has only a fake child) """
+        """ Populate the expanded row """
         if tree.getItem(node, ROW_TYPE) == TYPE_ARTIST: self.loadAlbums(tree, node, tree.getChild(node, 0))
         else:                                           self.loadTracks(tree, node, tree.getChild(node, 0))
 
@@ -544,7 +716,7 @@ class Library(modules.Module):
         """ A key has been pressed """
         keyname = gtk.gdk.keyval_name(event.keyval)
 
-        if keyname == 'F5':       idle_add(self.refreshLibrary(None, self.currLib, self.libraries[self.currLib][LIB_PATH]).next)
+        if   keyname == 'F5':     idle_add(self.refreshLibrary(None, self.currLib, self.libraries[self.currLib][LIB_PATH]).next)
         elif keyname == 'plus':   tree.expandRows()
         elif keyname == 'Left':   tree.collapseRows()
         elif keyname == 'Right':  tree.expandRows()
@@ -587,19 +759,19 @@ class Library(modules.Module):
 
             # Save the state of the current library
             if self.currLib is not None:
-                self.treeState[self.currLib] = self.tree.saveState(ROW_NAME)
+                self.saveTreeState()
+                self.saveFavorites(self.currLib, self.favorites)
 
-            # Switch to the new one
-            self.currLib = params['expName']
-            self.loadLibrary(self.tree, self.currLib)
-
-            # Restore the state of the new library
-            if len(self.tree) != 0 and self.currLib in self.treeState:
-                self.tree.restoreState(self.treeState[self.currLib], ROW_NAME)
+            # Switch to the new library
+            self.currLib   = params['expName']
+            self.favorites = self.loadFavorites(self.currLib)
+            self.loadArtists(self.tree, self.currLib)
+            self.restoreTreeState()
 
         elif msg == consts.MSG_EVT_APP_QUIT or msg == consts.MSG_EVT_MOD_UNLOADED:
             if self.currLib is not None:
-                self.treeState[self.currLib] = self.tree.saveState(ROW_NAME)
+                self.saveTreeState()
+                self.saveFavorites(self.currLib, self.favorites)
                 prefs.set(__name__, 'tree-state', self.treeState)
 
             prefs.set(__name__, 'libraries',  self.libraries)
@@ -692,7 +864,7 @@ class Library(modules.Module):
     def fillLibraryList(self):
         """ Fill the list of libraries """
         if self.cfgWindow is not None:
-            rows = [(name, icons.dirBtnIcon(), '<b>%s</b>\n<small>%s - %u %s</small>' % (tools.htmlEscape(name), tools.htmlEscape(path), nbTracks, tools.htmlEscape(_('tracks'))))
+            rows = [(name, icons.dirBtnIcon(), '<b>%s</b>\n<small>%s - %u %s</small>' % (htmlEscape(name), htmlEscape(path), nbTracks, htmlEscape(_('tracks'))))
                     for name, (path, nbArtists, nbAlbums, nbTracks) in sorted(self.libraries.iteritems())]
             self.cfgList.replaceContent(rows)
 
