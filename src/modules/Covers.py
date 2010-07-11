@@ -285,10 +285,8 @@ class Covers(modules.ThreadedModule):
 
     def getFromInternet(self, artist, album):
         """ Wrapper for __getFromInternet(), manage blacklist """
-        coverKey = artist + album
-
         # If we already tried without success, don't try again
-        if coverKey in self.coverBlacklist:
+        if (artist, album) in self.coverBlacklist:
             return None
 
         # Otherwise, try to download the cover
@@ -296,7 +294,7 @@ class Covers(modules.ThreadedModule):
 
         # If the download failed, blacklist the album
         if cover is None:
-            self.coverBlacklist[coverKey] = None
+            self.coverBlacklist[(artist, album)] = None
 
         return cover
 
@@ -310,13 +308,12 @@ class Covers(modules.ThreadedModule):
 
         album          = track.getAlbum().lower()
         artist         = track.getArtist().lower()
-        coverKey       = artist + album
         rawCover       = None
         self.currTrack = track
 
         # Let's see whether we already have the cover
-        if coverKey in self.coverMap:
-            covers        = self.coverMap[coverKey]
+        if (artist, album) in self.coverMap:
+            covers        = self.coverMap[(artist, album)]
             pathFullSize  = covers[CVR_FULL]
             pathThumbnail = covers[CVR_THUMB]
 
@@ -351,7 +348,7 @@ class Covers(modules.ThreadedModule):
             self.generateThumbnail(rawCover, thumbnail, 'PNG')
             self.generateFullSizeCover(rawCover, fullSizeCover, 'PNG')
             if os.path.exists(thumbnail) and os.path.exists(fullSizeCover):
-                self.coverMap[coverKey] = (thumbnail, fullSizeCover)
+                self.coverMap[(artist, album)] = (thumbnail, fullSizeCover)
                 modules.postMsg(consts.MSG_CMD_SET_COVER, {'track': track, 'pathThumbnail': thumbnail, 'pathFullSize': fullSizeCover})
             else:
                 modules.postMsg(consts.MSG_CMD_SET_COVER, {'track': track, 'pathThumbnail': None, 'pathFullSize': None})
