@@ -29,14 +29,6 @@ MOD_INFO = ('Library', _('Library'), _('Organize your music by tags instead of f
 MOD_L10N = MOD_INFO[modules.MODINFO_L10N]
 
 
-# Constants
-VERSION                  = 3                                      # Used to enforce compatibility
-ROOT_PATH                = os.path.join(consts.dirCfg, 'Library') # Path where libraries are stored
-PREFS_DEFAULT_PREFIXES   = {'the ': None}                         # Prefixes are put at the end of artists' names
-PREFS_DEFAULT_LIBRARIES  = {}                                     # No libraries at first
-PREFS_DEFAULT_TREE_STATE = {}                                     # No state at first
-
-
 # Information associated with libraries
 (
     LIB_PATH,        # Physical location of media files
@@ -84,6 +76,15 @@ PREFS_DEFAULT_TREE_STATE = {}                                     # No state at 
 ) = range(6)
 
 
+# Constants
+VERSION                  = 3                                      # Used to enforce compatibility
+ROOT_PATH                = os.path.join(consts.dirCfg, 'Library') # Path where libraries are stored
+FAKE_CHILD               = (None, None, '', TYPE_NONE, '', None)  # We use a lazy tree
+PREFS_DEFAULT_PREFIXES   = {'the ': None}                         # Prefixes are put at the end of artists' names
+PREFS_DEFAULT_LIBRARIES  = {}                                     # No libraries at first
+PREFS_DEFAULT_TREE_STATE = {}                                     # No state at first
+
+
 class Library(modules.Module):
 
 
@@ -105,14 +106,6 @@ class Library(modules.Module):
         self.scrolled.set_shadow_type(gtk.SHADOW_IN)
         self.scrolled.set_policy(gtk.POLICY_AUTOMATIC, gtk.POLICY_AUTOMATIC)
         self.scrolled.show()
-
-
-    def isDraggable(self):
-        """ Only playable rows can be dragged """
-        for row in self.tree.iterSelectedRows():
-            if row[ROW_TYPE] != TYPE_NONE:
-                return True
-        return False
 
 
     def __createTree(self):
@@ -142,12 +135,12 @@ class Library(modules.Module):
         txtRdrAlbumLen.set_property('scale', 0.85)
         txtRdrAlbumLen.set_property('foreground', '#909090')
 
-        self.tree.setIsDraggableFunc(self.isDraggable)
         self.tree.setDNDSources([consts.DND_TARGETS[consts.DND_DAP_TRACKS]])
         # GTK handlers
         self.tree.connect('drag-data-get',              self.onDragDataGet)
         self.tree.connect('key-press-event',            self.onKeyPressed)
         self.tree.connect('exttreeview-row-expanded',   self.onRowExpanded)
+        self.tree.connect('exttreeview-row-collapsed',  self.onRowCollapsed)
         self.tree.connect('exttreeview-button-pressed', self.onButtonPressed)
         # Add the tree to the scrolled window
         self.scrolled.add(self.tree)
@@ -408,22 +401,20 @@ class Library(modules.Module):
         import random
 
         # Pick an artist at random (make sure not to select an alphabetical header)
-        while True:
+        path = (random.randint(0, tree.getCount()-1), )
+        while tree.getItem(path, ROW_TYPE) != TYPE_ARTIST:
             path = (random.randint(0, tree.getCount()-1), )
-            if tree.getItem(path, ROW_TYPE) == TYPE_ARTIST:
-                break
 
         self.pickAlbumArtist(tree, path)
 
 
     def showPopupMenu(self, tree, button, time, path):
         """ Show a popup menu """
-        popup    = gtk.Menu()
-        playable = path is not None and tree.getItem(path, ROW_TYPE) != TYPE_NONE
+        popup = gtk.Menu()
 
         # Play selection
         play = gtk.ImageMenuItem(gtk.STOCK_MEDIA_PLAY)
-        play.set_sensitive(playable)
+        play.set_sensitive(path is not None)
         play.connect('activate', lambda widget: self.playPaths(tree, None, True))
         popup.append(play)
 
@@ -492,28 +483,30 @@ class Library(modules.Module):
         tree.replaceContent(rows)
         for node in tree.iterChildren(None):
             if tree.getItem(node, ROW_TYPE) == TYPE_ARTIST:
-                tree.appendRow((None, None, '', TYPE_NONE, '', None), node)
+                tree.appendRow(FAKE_CHILD, node)
 
 
     def loadAlbums(self, tree, node, fakeChild):
         """ Initial load of all albums of the given node, assuming it is of type TYPE_ARTIST """
         allAlbums = pickleLoad(os.path.join(tree.getItem(node, ROW_FULLPATH), 'albums'))
         path      = tree.getItem(node, ROW_FULLPATH)
-        rows      = [(icons.mediaDirMenuIcon(), '[%s]' % tools.sec2str(album[ALB_LENGTH], True), '%s' % tools.htmlEscape(album[ALB_NAME]), TYPE_ALBUM, os.path.join(path, album[ALB_INDEX]), None) for album in allAlbums]
+        rows      = [(icons.mediaDirMenuIcon(), '[%s]' % tools.sec2str(album[ALB_LENGTH], True), '%s' % tools.htmlEscape(album[ALB_NAME]),
+                            TYPE_ALBUM, os.path.join(path, album[ALB_INDEX]), None) for album in allAlbums]
 
         # Add all the rows, and then add a fake child to each of them
         tree.freeze_child_notify()
         tree.appendRows(rows, node)
         tree.removeRow(fakeChild)
         for child in tree.iterChildren(node):
-            tree.appendRow((None, None, '', TYPE_NONE, '', None), child)
+            tree.appendRow(FAKE_CHILD, child)
         tree.thaw_child_notify()
 
 
     def loadTracks(self, tree, node, fakeChild):
         """ Initial load of all tracks of the given node, assuming it is of type TYPE_ALBUM """
         allTracks = pickleLoad(tree.getItem(node, ROW_FULLPATH))
-        rows      = [(icons.mediaFileMenuIcon(), None, '%02u. %s' % (track.getNumber(), tools.htmlEscape(track.getTitle())), TYPE_TRACK, track.getFilePath(), track) for track in allTracks]
+        rows      = [(icons.mediaFileMenuIcon(), None, '%02u. %s' % (track.getNumber(), tools.htmlEscape(track.getTitle())),
+                            TYPE_TRACK, track.getFilePath(), track) for track in allTracks]
 
         tree.appendRows(rows, node)
         tree.removeRow(fakeChild)
@@ -524,10 +517,14 @@ class Library(modules.Module):
 
     def onRowExpanded(self, tree, node):
         """ Populate the expanded row if needed (e.g., it still has only a fake child) """
-        child = tree.getChild(node, 0)
-        if tree.getItem(child, ROW_TYPE) == TYPE_NONE:
-            if tree.getItem(node, ROW_TYPE) == TYPE_ARTIST: self.loadAlbums(tree, node, child)
-            else:                                           self.loadTracks(tree, node, child)
+        if tree.getItem(node, ROW_TYPE) == TYPE_ARTIST: self.loadAlbums(tree, node, tree.getChild(node, 0))
+        else:                                           self.loadTracks(tree, node, tree.getChild(node, 0))
+
+
+    def onRowCollapsed(self, tree, node):
+        """ Replace all children of the node by a fake child """
+        tree.removeAllChildren(node)
+        tree.appendRow(FAKE_CHILD, node)
 
 
     def onButtonPressed(self, tree, event, path):
