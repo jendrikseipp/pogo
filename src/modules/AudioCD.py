@@ -120,7 +120,7 @@ class AudioCD(modules.ThreadedModule):
 
     def onModUnloaded(self):
         """ The module is going to be unloaded """
-        modules.postMsg(consts.MSG_CMD_EXPLORER_REMOVE, {'modName': MOD_L10N, 'expName': MOD_L10N})
+        modules.postMsg(consts.MSG_CMD_EXPLORER_REMOVE, {'modName': MOD_L10N, 'expName': self.expName})
         if not prefs.get(__name__, 'use-cache', PREFS_DFT_USE_CACHE):
             self.clearCache()
 

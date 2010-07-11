@@ -3,6 +3,7 @@
 
 
 v1.06 ()
+    [-] CD explorer not always removed when unloading the CD module (#603902)
 
 
 v1.05 (27/06/10)
