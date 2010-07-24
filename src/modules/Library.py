@@ -288,7 +288,8 @@ class Library(modules.Module):
         yield True
 
         # Load favorites before removing the files from the disk
-        favorites = self.loadFavorites(libName)
+        if self.currLib == libName: favorites = self.favorites
+        else:                       favorites = self.loadFavorites(libName)
 
         # Re-create the library structure on the disk
         if isdir(libPath):
