@@ -122,7 +122,9 @@ class AudioScrobbler(modules.ThreadedModule):
         if howMany > len(self.cache):
             howMany = len(self.cache)
 
-        return [self.cache[i].replace('[*]', '[%d]' % i) for i in xrange(howMany)]
+        # Remove '\0' bytes in the data, if any
+        # AudioScrobbler servers reject data when it contains such a byte
+        return [self.cache[i].replace('%0', '').replace('[*]', '[%d]' % i) for i in xrange(howMany)]
 
 
     def removeFromCache(self, howMany):
