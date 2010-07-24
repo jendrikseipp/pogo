@@ -336,9 +336,10 @@ class FileExplorer(modules.Module):
 
         # Play selection
         play = gtk.ImageMenuItem(gtk.STOCK_MEDIA_PLAY)
-        play.set_sensitive(path is not None)
-        play.connect('activate', lambda widget: self.play(True))
         popup.append(play)
+
+        if path is None: play.set_sensitive(False)
+        else:            play.connect('activate', lambda widget: self.play(True))
 
         popup.append(gtk.SeparatorMenuItem())
 
