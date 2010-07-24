@@ -185,12 +185,47 @@ class IMStatus(modules.Module):
 
     def __init__(self):
         """ Constructor """
-        modules.Module.__init__(self, (consts.MSG_EVT_NEW_TRACK,  consts.MSG_EVT_PAUSED,      consts.MSG_EVT_UNPAUSED,
-                                       consts.MSG_EVT_STOPPED,    consts.MSG_EVT_APP_STARTED, consts.MSG_EVT_APP_QUIT,
-                                       consts.MSG_EVT_MOD_LOADED, consts.MSG_EVT_MOD_UNLOADED))
+        handlers = {
+                        consts.MSG_EVT_PAUSED:       self.onPaused,
+                        consts.MSG_EVT_STOPPED:      self.onStopped,
+                        consts.MSG_EVT_UNPAUSED:     self.onUnpaused,
+                        consts.MSG_EVT_APP_QUIT:     self.onStopped,
+                        consts.MSG_EVT_NEW_TRACK:    self.onNewTrack,
+                        consts.MSG_EVT_MOD_LOADED:   self.onModLoaded,
+                        consts.MSG_EVT_APP_STARTED:  self.onModLoaded,
+                        consts.MSG_EVT_MOD_UNLOADED: self.onStopped,
+                   }
+
+        modules.Module.__init__(self, handlers)
 
 
-    def init(self):
+    def __format(self, string, track):
+        """ Replace the special fields in the given string by their corresponding value and sanitize the result """
+        result = track.format(string)
+
+        if len(prefs.get(__name__, 'sanitized-words', DEFAULT_SANITIZED_WORDS)) != 0:
+            lowerResult = result.lower()
+            for word in [w.lower() for w in prefs.get(__name__, 'sanitized-words', DEFAULT_SANITIZED_WORDS).split('\n') if len(w) > 2]:
+                pos = lowerResult.find(word)
+                while pos != -1:
+                    result      = result[:pos+1] + ('*' * (len(word)-2)) + result[pos+len(word)-1:]
+                    lowerResult = lowerResult[:pos+1] + ('*' * (len(word)-2)) + lowerResult[pos+len(word)-1:]
+                    pos         = lowerResult.find(word)
+
+        return result
+
+
+    def setStatusMsg(self, status):
+        """ Update the status of all accounts of all active IM clients """
+        for client in self.clients:
+            for account in client[IM_ACCOUNTS]:
+                client[IM_INSTANCE].setStatusMsg(account, status)
+
+
+   # --== Message handlers ==--
+
+
+    def onModLoaded(self):
         """ Initialize the module """
         self.track     = None   # Current track
         self.status    = ''     # The currently used status
@@ -215,29 +250,6 @@ class IMStatus(modules.Module):
                 self.clients.append(activeClient)
         except:
             logger.error('[%s] Error while initializing\n\n%s' % (MOD_NAME, traceback.format_exc()))
-
-
-    def __format(self, string, track):
-        """ Replace the special fields in the given string by their corresponding value and sanitize the result """
-        result = track.format(string)
-
-        if len(prefs.get(__name__, 'sanitized-words', DEFAULT_SANITIZED_WORDS)) != 0:
-            lowerResult = result.lower()
-            for word in [w.lower() for w in prefs.get(__name__, 'sanitized-words', DEFAULT_SANITIZED_WORDS).split('\n') if len(w) > 2]:
-                pos = lowerResult.find(word)
-                while pos != -1:
-                    result      = result[:pos+1] + ('*' * (len(word)-2)) + result[pos+len(word)-1:]
-                    lowerResult = lowerResult[:pos+1] + ('*' * (len(word)-2)) + lowerResult[pos+len(word)-1:]
-                    pos         = lowerResult.find(word)
-
-        return result
-
-
-    def setStatusMsg(self, status):
-        """ Try to update the status of all accounts of all active IM clients """
-        for client in self.clients:
-            for account in client[IM_ACCOUNTS]:
-                client[IM_INSTANCE].setStatusMsg(account, status)
 
 
     def onNewTrack(self, track):
@@ -267,21 +279,6 @@ class IMStatus(modules.Module):
         """ The current track has been unpaused """
         self.paused = False
         self.setStatusMsg(self.status)
-
-
-    # --== Message handler ==--
-
-
-    def handleMsg(self, msg, params):
-        """ Handle messages sent to this module """
-        if   msg == consts.MSG_EVT_PAUSED:       self.onPaused()
-        elif msg == consts.MSG_EVT_STOPPED:      self.onStopped()
-        elif msg == consts.MSG_EVT_APP_QUIT:     self.onStopped()
-        elif msg == consts.MSG_EVT_UNPAUSED:     self.onUnpaused()
-        elif msg == consts.MSG_EVT_NEW_TRACK:    self.onNewTrack(params['track'])
-        elif msg == consts.MSG_EVT_MOD_LOADED:   self.init()
-        elif msg == consts.MSG_EVT_APP_STARTED:  self.init()
-        elif msg == consts.MSG_EVT_MOD_UNLOADED: self.onStopped()
 
 
     # --== Configuration ==--

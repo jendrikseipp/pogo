@@ -35,18 +35,22 @@ class GSTPlayer(modules.Module):
         # The player must be created during the application startup, not when the application is ready (MSG_EVT_APP_STARTED)
         self.player = audioplayer.AudioPlayer(self.__onTrackEnded, not prefs.getCmdLine()[0].playbin)
 
-        modules.Module.__init__(self, (consts.MSG_CMD_PLAY,   consts.MSG_CMD_SET_VOLUME,   consts.MSG_CMD_ENABLE_RG,
-                                       consts.MSG_CMD_SEEK,   consts.MSG_EVT_APP_STARTED,  consts.MSG_CMD_SET_CD_SPEED,
-                                       consts.MSG_CMD_STOP,   consts.MSG_CMD_TOGGLE_PAUSE, consts.MSG_CMD_ENABLE_EQZ,
-                                       consts.MSG_CMD_BUFFER, consts.MSG_CMD_SET_EQZ_LVLS, consts.MSG_CMD_STEP))
+        handlers = {
+                        consts.MSG_CMD_STEP:         self.onStep,
+                        consts.MSG_CMD_STOP:         self.onStop,
+                        consts.MSG_CMD_PLAY:         self.onPlay,
+                        consts.MSG_CMD_SEEK:         self.onSeek,
+                        consts.MSG_CMD_BUFFER:       self.onBuffer,
+                        consts.MSG_CMD_ENABLE_RG:    self.onEnableReplayGain,
+                        consts.MSG_CMD_ENABLE_EQZ:   self.onEnableEqualizer,
+                        consts.MSG_CMD_SET_VOLUME:   self.onSetVolume,
+                        consts.MSG_EVT_APP_STARTED:  self.onAppStarted,
+                        consts.MSG_CMD_SET_CD_SPEED: self.onSetCDSpeed,
+                        consts.MSG_CMD_TOGGLE_PAUSE: self.onTogglePause,
+                        consts.MSG_CMD_SET_EQZ_LVLS: self.onSetEqualizerLevels,
+                   }
 
-    def onAppStarted(self):
-        """ This is the real initialization function, called when this module has been loaded """
-        self.nextURI       = None
-        self.queuedSeek    = None
-        self.updateTimer   = None
-        self.lastPlayback  = 0
-        self.playbackTimer = None
+        modules.Module.__init__(self, handlers)
 
 
     def updateTimerHandler(self):
@@ -76,7 +80,7 @@ class GSTPlayer(modules.Module):
             self.updateTimer = None
 
 
-    def bufferNextTrack(self, uri):
+    def onBuffer(self, uri):
         """ Buffer the next track """
         if not prefs.getCmdLine()[0].playbin:
             self.nextURI = uri
@@ -105,7 +109,19 @@ class GSTPlayer(modules.Module):
         return False
 
 
-    def play(self, uri):
+    # --== Message handlers ==--
+
+
+    def onAppStarted(self):
+        """ This is the real initialization function, called when this module has been loaded """
+        self.nextURI       = None
+        self.queuedSeek    = None
+        self.updateTimer   = None
+        self.lastPlayback  = 0
+        self.playbackTimer = None
+
+
+    def onPlay(self, uri):
         """ Play the given URI """
         if uri != self.nextURI:
             self.player.stop()
@@ -125,7 +141,7 @@ class GSTPlayer(modules.Module):
             self.playbackTimer = gobject.timeout_add(int((MIN_PLAYBACK_DELAY - elapsed) * 1000), self.__playbackTimerHandler)
 
 
-    def stop(self):
+    def onStop(self):
         """ Stop playing """
         self.__stopUpdateTimer()
         self.player.stop()
@@ -137,7 +153,7 @@ class GSTPlayer(modules.Module):
         modules.postMsg(consts.MSG_EVT_STOPPED)
 
 
-    def togglePause(self):
+    def onTogglePause(self):
         """ Switch between play/pause """
         if self.player.isPaused():
             if self.queuedSeek is not None:
@@ -154,13 +170,13 @@ class GSTPlayer(modules.Module):
             modules.postMsg(consts.MSG_EVT_PAUSED)
 
 
-    def seek(self, seconds):
+    def onSeek(self, seconds):
         """ Jump to the given position if playing, or buffer it if paused """
         if   self.player.isPaused():  self.queuedSeek = seconds
         elif self.player.isPlaying(): self.player.seek(seconds*1000000000)
 
 
-    def step(self, seconds):
+    def onStep(self, seconds):
         """ Step back or forth """
         if self.player.isPlaying():
             newPos = self.player.getPosition() + (seconds * 1000000000)
@@ -173,26 +189,27 @@ class GSTPlayer(modules.Module):
                 self.updateTimerHandler()
 
 
-    def setVolume(self, value):
+    def onSetVolume(self, value):
         """ Change the volume """
         self.player.setVolume(value)
         modules.postMsg(consts.MSG_EVT_VOLUME_CHANGED, {'value': value})
 
 
-    # --== Message handler ==--
+    def onEnableReplayGain(self):
+        """ Enable replay gain """
+        self.player.enableReplayGain()
 
 
-    def handleMsg(self, msg, params):
-        """ Handle messages sent to this module """
-        if   msg == consts.MSG_CMD_STOP:         self.stop()
-        elif msg == consts.MSG_CMD_PLAY:         self.play(params['uri'])
-        elif msg == consts.MSG_CMD_SEEK:         self.seek(params['seconds'])
-        elif msg == consts.MSG_CMD_STEP:         self.step(params['seconds'])
-        elif msg == consts.MSG_CMD_BUFFER:       self.bufferNextTrack(params['uri'])
-        elif msg == consts.MSG_CMD_ENABLE_RG:    self.player.enableReplayGain()
-        elif msg == consts.MSG_CMD_SET_VOLUME:   self.setVolume(params['value'])
-        elif msg == consts.MSG_EVT_APP_STARTED:  self.onAppStarted()
-        elif msg == consts.MSG_CMD_ENABLE_EQZ:   self.player.enableEqualizer()
-        elif msg == consts.MSG_CMD_SET_EQZ_LVLS: self.player.setEqualizerLvls(params['lvls'])
-        elif msg == consts.MSG_CMD_TOGGLE_PAUSE: self.togglePause()
-        elif msg == consts.MSG_CMD_SET_CD_SPEED: self.player.setCDReadSpeed(params['speed'])
+    def onEnableEqualizer(self):
+        """ Enable the equalizer """
+        self.player.enableEqualizer()
+
+
+    def onSetEqualizerLevels(self, lvls):
+        """ Set the equalizer levels """
+        self.player.setEqualizerLvls(lvls)
+
+
+    def onSetCDSpeed(self, speed):
+        """ Set the CD read speed """
+        self.player.setCDReadSpeed(speed)

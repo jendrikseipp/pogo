@@ -72,12 +72,26 @@ class Tracklist(modules.Module):
 
     def __init__(self):
         """ Constructor """
-        modules.Module.__init__(self, (consts.MSG_CMD_TRACKLIST_SET,     consts.MSG_CMD_TRACKLIST_CLR,     consts.MSG_CMD_TRACKLIST_ADD,
-                                       consts.MSG_CMD_TOGGLE_PAUSE,      consts.MSG_CMD_NEXT,              consts.MSG_CMD_PREVIOUS,
-                                       consts.MSG_EVT_NEED_BUFFER,       consts.MSG_EVT_STOPPED,           consts.MSG_EVT_PAUSED,
-                                       consts.MSG_EVT_UNPAUSED,          consts.MSG_EVT_TRACK_ENDED_OK,    consts.MSG_EVT_TRACK_ENDED_ERROR,
-                                       consts.MSG_CMD_TRACKLIST_SHUFFLE, consts.MSG_EVT_APP_STARTED,       consts.MSG_CMD_BRING_TO_FRONT,
-                                       consts.MSG_CMD_TRACKLIST_DEL,     consts.MSG_CMD_TRACKLIST_REPEAT))
+        handlers = {
+                        consts.MSG_CMD_NEXT:              self.jumpToNext,
+                        consts.MSG_EVT_PAUSED:            lambda: self.onPausedToggled(icons.pauseMenuIcon()),
+                        consts.MSG_EVT_STOPPED:           self.onStopped,
+                        consts.MSG_EVT_UNPAUSED:          lambda: self.onPausedToggled(icons.playMenuIcon()),
+                        consts.MSG_CMD_PREVIOUS:          self.jumpToPrevious,
+                        consts.MSG_EVT_NEED_BUFFER:       self.onBufferingNeeded,
+                        consts.MSG_EVT_APP_STARTED:       self.onAppStarted,
+                        consts.MSG_CMD_TOGGLE_PAUSE:      self.togglePause,
+                        consts.MSG_CMD_TRACKLIST_DEL:     self.remove,
+                        consts.MSG_CMD_TRACKLIST_ADD:     self.insert,
+                        consts.MSG_CMD_TRACKLIST_SET:     self.set,
+                        consts.MSG_CMD_TRACKLIST_CLR:     lambda: self.set(None, None),
+                        consts.MSG_EVT_TRACK_ENDED_OK:    lambda: self.onTrackEnded(False),
+                        consts.MSG_CMD_TRACKLIST_REPEAT:  self.setRepeat,
+                        consts.MSG_EVT_TRACK_ENDED_ERROR: lambda: self.onTrackEnded(True),
+                        consts.MSG_CMD_TRACKLIST_SHUFFLE: self.shuffleTracklist,
+                   }
+
+        modules.Module.__init__(self, handlers)
 
 
     def onAppStarted(self):
@@ -394,28 +408,9 @@ class Tracklist(modules.Module):
         popup.popup(None, None, None, button, time)
 
 
-    # --== Message handler ==--
-
-
-    def handleMsg(self, msg, params):
-        """ A message has been received """
-        if   msg == consts.MSG_EVT_PAUSED:                                   self.onPausedToggled(icons.pauseMenuIcon())
-        elif msg == consts.MSG_EVT_STOPPED:                                  self.onStopped()
-        elif msg == consts.MSG_EVT_UNPAUSED:                                 self.onPausedToggled(icons.playMenuIcon())
-        elif msg == consts.MSG_EVT_APP_STARTED:                              self.onAppStarted()
-        elif msg == consts.MSG_EVT_TRACK_ENDED_OK:                           self.onTrackEnded(False)
-        elif msg == consts.MSG_EVT_TRACK_ENDED_ERROR:                        self.onTrackEnded(True)
-        elif msg == consts.MSG_EVT_NEED_BUFFER:                              self.onBufferingNeeded()
-        elif msg == consts.MSG_CMD_TRACKLIST_CLR:                            self.set(None, False)
-        elif msg == consts.MSG_CMD_TRACKLIST_SET:                            self.set(params['tracks'], params['playNow'])
-        elif msg == consts.MSG_CMD_TRACKLIST_ADD:                            self.insert(params['tracks'], params['playNow'])
-        elif msg == consts.MSG_CMD_TRACKLIST_SHUFFLE:                        self.shuffleTracklist()
-        elif msg == consts.MSG_CMD_PREVIOUS:                                 self.jumpToPrevious()
-        elif msg == consts.MSG_CMD_NEXT:                                     self.jumpToNext()
-        elif msg == consts.MSG_CMD_TRACKLIST_DEL:                            self.remove(params['idx'])
-        elif msg == consts.MSG_CMD_BRING_TO_FRONT:                           self.window.present()
-        elif msg == consts.MSG_CMD_TRACKLIST_REPEAT:                         self.setRepeat(params['repeat'])
-        elif msg == consts.MSG_CMD_TOGGLE_PAUSE and not self.list.hasMark():
+    def togglePause(self):
+        """ Start playing if not already playing """
+        if not self.list.hasMark():
             if self.list.getSelectedRowsCount() != 0:
                 self.jumpTo(self.list.getFirstSelectedRowIndex())
             else:

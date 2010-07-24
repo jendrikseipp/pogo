@@ -33,15 +33,13 @@ class Twitter(modules.ThreadedModule):
 
     def __init__(self):
         """ Constructor """
-        modules.ThreadedModule.__init__(self, (consts.MSG_EVT_APP_STARTED, consts.MSG_EVT_MOD_LOADED, consts.MSG_EVT_NEW_TRACK))
+        handlers = {
+                        consts.MSG_EVT_NEW_TRACK:   self.onNewTrack,
+                        consts.MSG_EVT_MOD_LOADED:  self.onModLoaded,
+                        consts.MSG_EVT_APP_STARTED: self.onModLoaded,
+                   }
 
-
-    def onModLoaded(self):
-        """ The module has been loaded """
-        self.login      = None
-        self.passwd     = None
-        self.cfgWindow  = None
-        self.lastStatus = ''
+        modules.ThreadedModule.__init__(self, handlers)
 
 
     def getAuthInfo(self):
@@ -52,6 +50,17 @@ class Twitter(modules.ThreadedModule):
 
         if auth is None: self.login, self.passwd = None, None
         else:            self.login, self.passwd = auth
+
+
+    # --== Message handlers ==--
+
+
+    def onModLoaded(self):
+        """ The module has been loaded """
+        self.login      = None
+        self.passwd     = None
+        self.cfgWindow  = None
+        self.lastStatus = ''
 
 
     def onNewTrack(self, track):
@@ -78,17 +87,6 @@ class Twitter(modules.ThreadedModule):
             urllib2.urlopen(request)
         except:
             logger.error('[%s] Unable to set Twitter status\n\n%s' % (MOD_INFO[modules.MODINFO_NAME], traceback.format_exc()))
-
-
-    # --== Message handler ==--
-
-
-    def handleMsg(self, msg, params):
-        """ Handle messages sent to this module """
-        if msg == consts.MSG_EVT_NEW_TRACK:
-            self.onNewTrack(params['track'])
-        elif msg == consts.MSG_EVT_APP_STARTED or msg == consts.MSG_EVT_MOD_LOADED:
-            self.onModLoaded()
 
 
     # --== Configuration ==--

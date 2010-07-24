@@ -74,55 +74,21 @@ class AudioCD(modules.ThreadedModule):
 
     def __init__(self):
         """ Constructor """
-        modules.ThreadedModule.__init__(self, (consts.MSG_EVT_APP_QUIT,    consts.MSG_EVT_MOD_LOADED, consts.MSG_EVT_EXPLORER_CHANGED,
-                                               consts.MSG_EVT_APP_STARTED, consts.MSG_EVT_MOD_UNLOADED))
+        handlers = {
+                        consts.MSG_EVT_APP_QUIT:         self.onModUnloaded,
+                        consts.MSG_EVT_MOD_LOADED:       self.onModLoaded,
+                        consts.MSG_EVT_APP_STARTED:      self.onModLoaded,
+                        consts.MSG_EVT_MOD_UNLOADED:     self.onModUnloaded,
+                        consts.MSG_EVT_EXPLORER_CHANGED: self.onExplorerChanged,
+                   }
 
-
-    def onModLoaded(self):
-        """ The module has been loaded """
-        txtRdrLen = gtk.CellRendererText()
-
-        columns = (('',   [(gtk.CellRendererPixbuf(), gtk.gdk.Pixbuf), (txtRdrLen, gobject.TYPE_STRING), (gtk.CellRendererText(), gobject.TYPE_STRING)], True),
-                   (None, [(None, gobject.TYPE_PYOBJECT)],                                                                                               False))
-
-        # The album length is written in a smaller font, with a lighter color
-        txtRdrLen.set_property('scale', 0.85)
-        txtRdrLen.set_property('foreground', '#909090')
-
-        self.tree     = extTreeview.ExtTreeView(columns, True)
-        self.popup    = None
-        self.cfgWin   = None
-        self.expName  = MOD_L10N
-        self.scrolled = gtk.ScrolledWindow()
-        self.cacheDir = os.path.join(consts.dirCfg, MOD_INFO[modules.MODINFO_NAME])
-        # Explorer
-        self.tree.setDNDSources([consts.DND_TARGETS[consts.DND_DAP_TRACKS]])
-        self.scrolled.add(self.tree)
-        self.scrolled.set_shadow_type(gtk.SHADOW_IN)
-        self.scrolled.set_policy(gtk.POLICY_AUTOMATIC, gtk.POLICY_AUTOMATIC)
-        self.scrolled.show()
-        # GTK handlers
-        self.tree.connect('drag-data-get',              self.onDragDataGet)
-        self.tree.connect('key-press-event',            self.onKeyPressed)
-        self.tree.connect('exttreeview-button-pressed', self.onButtonPressed)
-        modules.postMsg(consts.MSG_CMD_EXPLORER_ADD, {'modName': MOD_L10N, 'expName': self.expName, 'icon': icons.cdromMenuIcon(), 'widget': self.scrolled})
-        # Hide the album length when not drawing the root node
-        self.tree.get_column(0).set_cell_data_func(txtRdrLen, self.__drawAlbumLenCell)
-        # CD-ROM drive read speed
-        modules.postMsg(consts.MSG_CMD_SET_CD_SPEED, {'speed': prefs.get(__name__, 'read-speed', PREFS_DFT_READ_SPEED)})
+        modules.ThreadedModule.__init__(self, handlers)
 
 
     def __drawAlbumLenCell(self, column, cell, model, iter):
         """ Use a different background color for alphabetical headers """
         if model.get_value(iter, ROW_LENGTH) is None: cell.set_property('visible', False)
         else:                                         cell.set_property('visible', True)
-
-
-    def onModUnloaded(self):
-        """ The module is going to be unloaded """
-        modules.postMsg(consts.MSG_CMD_EXPLORER_REMOVE, {'modName': MOD_L10N, 'expName': self.expName})
-        if not prefs.get(__name__, 'use-cache', PREFS_DFT_USE_CACHE):
-            self.clearCache()
 
 
     def getTracksFromPaths(self, tree, paths):
@@ -301,16 +267,53 @@ class AudioCD(modules.ThreadedModule):
         self.threadExecute(self.loadDisc)
 
 
-    # --== Message handler ==--
+    # --== Message handlers ==--
 
 
-    def handleMsg(self, msg, params):
-        """ Handle messages sent to this module """
-        if msg == consts.MSG_EVT_MOD_LOADED or msg == consts.MSG_EVT_APP_STARTED:
-            self.onModLoaded()
-        elif msg == consts.MSG_EVT_MOD_UNLOADED or msg == consts.MSG_EVT_APP_QUIT:
-            self.onModUnloaded()
-        elif msg == consts.MSG_EVT_EXPLORER_CHANGED and params['modName'] == MOD_L10N:
+    def onModLoaded(self):
+        """ The module has been loaded """
+        txtRdrLen = gtk.CellRendererText()
+
+        columns = (('',   [(gtk.CellRendererPixbuf(), gtk.gdk.Pixbuf), (txtRdrLen, gobject.TYPE_STRING), (gtk.CellRendererText(), gobject.TYPE_STRING)], True),
+                   (None, [(None, gobject.TYPE_PYOBJECT)],                                                                                               False))
+
+        # The album length is written in a smaller font, with a lighter color
+        txtRdrLen.set_property('scale', 0.85)
+        txtRdrLen.set_property('foreground', '#909090')
+
+        self.tree     = extTreeview.ExtTreeView(columns, True)
+        self.popup    = None
+        self.cfgWin   = None
+        self.expName  = MOD_L10N
+        self.scrolled = gtk.ScrolledWindow()
+        self.cacheDir = os.path.join(consts.dirCfg, MOD_INFO[modules.MODINFO_NAME])
+        # Explorer
+        self.tree.setDNDSources([consts.DND_TARGETS[consts.DND_DAP_TRACKS]])
+        self.scrolled.add(self.tree)
+        self.scrolled.set_shadow_type(gtk.SHADOW_IN)
+        self.scrolled.set_policy(gtk.POLICY_AUTOMATIC, gtk.POLICY_AUTOMATIC)
+        self.scrolled.show()
+        # GTK handlers
+        self.tree.connect('drag-data-get',              self.onDragDataGet)
+        self.tree.connect('key-press-event',            self.onKeyPressed)
+        self.tree.connect('exttreeview-button-pressed', self.onButtonPressed)
+        modules.postMsg(consts.MSG_CMD_EXPLORER_ADD, {'modName': MOD_L10N, 'expName': self.expName, 'icon': icons.cdromMenuIcon(), 'widget': self.scrolled})
+        # Hide the album length when not drawing the root node
+        self.tree.get_column(0).set_cell_data_func(txtRdrLen, self.__drawAlbumLenCell)
+        # CD-ROM drive read speed
+        modules.postMsg(consts.MSG_CMD_SET_CD_SPEED, {'speed': prefs.get(__name__, 'read-speed', PREFS_DFT_READ_SPEED)})
+
+
+    def onModUnloaded(self):
+        """ The module is going to be unloaded """
+        modules.postMsg(consts.MSG_CMD_EXPLORER_REMOVE, {'modName': MOD_L10N, 'expName': self.expName})
+        if not prefs.get(__name__, 'use-cache', PREFS_DFT_USE_CACHE):
+            self.clearCache()
+
+
+    def onExplorerChanged(self, modName, expName):
+        """ A new explorer has been selected """
+        if modName == MOD_L10N:
             self.loadDisc()
 
 

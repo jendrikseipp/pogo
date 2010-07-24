@@ -42,7 +42,14 @@ class Explorer(modules.Module):
 
     def __init__(self):
         """ Constructor """
-        modules.Module.__init__(self, (consts.MSG_CMD_EXPLORER_ADD, consts.MSG_CMD_EXPLORER_REMOVE, consts.MSG_CMD_EXPLORER_RENAME))
+        handlers = {
+                       consts.MSG_CMD_EXPLORER_ADD:    self.onAddExplorer,
+                       consts.MSG_CMD_EXPLORER_REMOVE: self.onRemoveExplorer,
+                       consts.MSG_CMD_EXPLORER_RENAME: self.onRenameExplorer,
+                   }
+
+        modules.Module.__init__(self, handlers)
+
         # Attributes
         self.combo        = prefs.getWidgetsTree().get_widget('combo-explorer')
         self.widgets      = {}
@@ -122,13 +129,16 @@ class Explorer(modules.Module):
         self.combo.thaw_child_notify()
 
 
-    def addExplorer(self, modName, expName, pixbuf, widget):
-        """ Add a new explorer to the combo box """
-        if pixbuf is None:
-            pixbuf = icons.dirMenuIcon()
+    # --== Message handlers ==--
 
-        if modName not in self.explorers: self.explorers[modName]          = {expName: (pixbuf, widget)}
-        else:                             self.explorers[modName][expName] = (pixbuf, widget)
+
+    def onAddExplorer(self, modName, expName, icon, widget):
+        """ Add a new explorer to the combo box """
+        if icon is None:
+            icon = icons.dirMenuIcon()
+
+        if modName not in self.explorers: self.explorers[modName]          = {expName: (icon, widget)}
+        else:                             self.explorers[modName][expName] = (icon, widget)
 
         if widget not in self.widgets:
             self.widgets[widget] = self.notebook.get_n_pages()
@@ -137,7 +147,7 @@ class Explorer(modules.Module):
         self.__fillComboBox()
 
 
-    def delExplorer(self, modName, expName):
+    def onRemoveExplorer(self, modName, expName):
         """ Remove an existing explorer from the combo box """
         (pixbuf, widget) = self.explorers[modName][expName]
         del self.explorers[modName][expName]
@@ -159,7 +169,7 @@ class Explorer(modules.Module):
         self.__fillComboBox()
 
 
-    def renameExplorer(self, modName, expName, newExpName):
+    def onRenameExplorer(self, modName, expName, newExpName):
         """ Rename the given explorer """
         # Beware of this special case: This screws the dictionnary
         if newExpName == expName:
@@ -182,19 +192,6 @@ class Explorer(modules.Module):
                 prefs.set(__name__, 'last-explorer', (modName, newExpName))
         except:
             pass
-
-
-   # --== Message handler ==--
-
-
-    def handleMsg(self, msg, params):
-        """ Handle messages sent to this modules """
-        if msg == consts.MSG_CMD_EXPLORER_ADD:
-            self.addExplorer(params['modName'], params['expName'], params['icon'], params['widget'])
-        elif msg == consts.MSG_CMD_EXPLORER_REMOVE:
-            self.delExplorer(params['modName'], params['expName'])
-        elif msg == consts.MSG_CMD_EXPLORER_RENAME:
-            self.renameExplorer(params['modName'], params['expName'], params['newExpName'])
 
 
     # --== GTK handlers ==--

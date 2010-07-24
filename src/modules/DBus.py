@@ -38,9 +38,21 @@ class DBus(modules.Module):
 
     def __init__(self):
         """ Constructor """
-        modules.Module.__init__(self, (consts.MSG_EVT_APP_STARTED, consts.MSG_EVT_NEW_TRACK, consts.MSG_EVT_STOPPED, consts.MSG_EVT_VOLUME_CHANGED,
-                                       consts.MSG_EVT_TRACK_POSITION, consts.MSG_EVT_PAUSED, consts.MSG_EVT_UNPAUSED, consts.MSG_EVT_NEW_TRACKLIST,
-                                       consts.MSG_EVT_TRACK_MOVED, consts.MSG_EVT_REPEAT_CHANGED))
+        handlers = {
+                        consts.MSG_EVT_PAUSED:           self.onPaused,
+                        consts.MSG_EVT_STOPPED:          self.onStopped,
+                        consts.MSG_EVT_UNPAUSED:         self.onUnpaused,
+                        consts.MSG_EVT_NEW_TRACK:        self.onNewTrack,
+                        consts.MSG_EVT_TRACK_MOVED:      self.onCurrentTrackMoved,
+                        consts.MSG_EVT_APP_STARTED:      self.onAppStarted,
+                        consts.MSG_EVT_NEW_TRACKLIST:    self.onNewTracklist,
+                        consts.MSG_EVT_VOLUME_CHANGED:   self.onVolumeChanged,
+                        consts.MSG_EVT_TRACK_POSITION:   self.onNewTrackPosition,
+                        consts.MSG_EVT_REPEAT_CHANGED:   self.onRepeatChanged,
+                   }
+
+        modules.Module.__init__(self, handlers)
+
 
     def getMPRISCaps(self):
         """ Return an integer sticking to the MPRIS caps definition """
@@ -70,6 +82,9 @@ class DBus(modules.Module):
         else:           repeatStatus = 0
 
         return (playStatus, 0, 0, repeatStatus)
+
+
+    # --== Message handlers ==--
 
 
     def onAppStarted(self):
@@ -114,14 +129,14 @@ class DBus(modules.Module):
         self.busObjectPlayer.StatusChange(self.getMPRISStatus())
 
 
-    def onVolumeChanged(self, volume):
+    def onVolumeChanged(self, value):
         """ The volume has been changed """
-        self.currVolume = volume
+        self.currVolume = value
 
 
-    def onNewTrackPosition(self, position):
+    def onNewTrackPosition(self, seconds):
         """ New position in the current track """
-        self.currPosition = position
+        self.currPosition = seconds
 
 
     def onPaused(self):
@@ -136,17 +151,17 @@ class DBus(modules.Module):
         self.busObjectPlayer.StatusChange(self.getMPRISStatus())
 
 
-    def onNewTracklist(self, tracks):
+    def onNewTracklist(self, tracks, playtime):
         """ A new tracklist has been set """
         self.tracklist = tracks
         self.busObjectPlayer.CapsChange(self.getMPRISCaps())
         self.busObjectTracklist.TrackListChange(len(tracks))
 
 
-    def onCurrentTrackMoved(self, canGoNext, canGoPrev):
+    def onCurrentTrackMoved(self, hasNext, hasPrevious):
         """ The position of the current track has moved in the playlist """
-        self.canGoNext = canGoNext
-        self.canGoPrev = canGoPrev
+        self.canGoNext = hasNext
+        self.canGoPrev = hasPrevious
         self.busObjectPlayer.CapsChange(self.getMPRISCaps())
 
 
@@ -154,26 +169,6 @@ class DBus(modules.Module):
         """ Repeat has been enabled/disabled """
         self.repeat = repeat
         self.busObjectPlayer.StatusChange(self.getMPRISStatus())
-
-
-    # --== Message handler ==--
-
-
-    def handleMsg(self, msg, params):
-        """ Handle messages sent to this module """
-        if msg == consts.MSG_EVT_APP_STARTED:
-            self.onAppStarted()
-        elif self.sessionBus is not None:
-            if   msg == consts.MSG_EVT_PAUSED:         self.onPaused()
-            elif msg == consts.MSG_EVT_STOPPED:        self.onStopped()
-            elif msg == consts.MSG_EVT_UNPAUSED:       self.onUnpaused()
-            elif msg == consts.MSG_EVT_NEW_TRACK:      self.onNewTrack(params['track'])
-            elif msg == consts.MSG_EVT_TRACK_MOVED:    self.onCurrentTrackMoved(params['hasNext'], params['hasPrevious'])
-            elif msg == consts.MSG_EVT_NEW_TRACKLIST:  self.onNewTracklist(params['tracks'])
-            elif msg == consts.MSG_EVT_VOLUME_CHANGED: self.onVolumeChanged(params['value'])
-            elif msg == consts.MSG_EVT_TRACK_POSITION: self.onNewTrackPosition(params['seconds'])
-            elif msg == consts.MSG_EVT_REPEAT_CHANGED: self.onRepeatChanged(params['repeat'])
-
 
 
 class DBusObjectRoot(dbus.service.Object):

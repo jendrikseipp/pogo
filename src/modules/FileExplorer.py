@@ -55,46 +55,35 @@ class FileExplorer(modules.Module):
 
     def __init__(self):
         """ Constructor """
-        modules.Module.__init__(self, (consts.MSG_EVT_APP_STARTED, consts.MSG_EVT_EXPLORER_CHANGED, consts.MSG_EVT_APP_QUIT))
+        handlers = {
+                        consts.MSG_EVT_APP_QUIT:         self.onAppQuit,
+                        consts.MSG_EVT_APP_STARTED:      self.onAppStarted,
+                        consts.MSG_EVT_EXPLORER_CHANGED: self.onExplorerChanged,
+                   }
+
+        modules.Module.__init__(self, handlers)
 
 
-    def onModLoaded(self):
-        """ The module has been loaded """
-        self.tree            = None
-        self.cfgWin          = None
-        self.folders         = prefs.get(__name__, 'media-folders', PREFS_DEFAULT_MEDIA_FOLDERS)
-        self.scrolled        = gtk.ScrolledWindow()
-        self.currRoot        = None
-        self.addByFilename   = prefs.get(__name__, 'add-by-filename',  PREFS_DEFAULT_ADD_BY_FILENAME)
-        self.showHiddenFiles = prefs.get(__name__, 'show-hidden-files', PREFS_DEFAULT_SHOW_HIDDEN_FILES)
+    def createTree(self):
+        """ Create the tree used to display the file system """
+        from gui import extTreeview
 
-        self.scrolled.set_shadow_type(gtk.SHADOW_IN)
-        self.scrolled.set_policy(gtk.POLICY_AUTOMATIC, gtk.POLICY_AUTOMATIC)
-        self.scrolled.show()
+        columns = (('',   [(gtk.CellRendererPixbuf(), gtk.gdk.Pixbuf), (gtk.CellRendererText(), TYPE_STRING)], True),
+                   (None, [(None, TYPE_INT)],                                                                  False),
+                   (None, [(None, TYPE_STRING)],                                                               False))
 
-        for name in self.folders:
-            modules.postMsg(consts.MSG_CMD_EXPLORER_ADD, {'modName': MOD_L10N, 'expName': name, 'icon': None, 'widget': self.scrolled})
+        self.tree = extTreeview.ExtTreeView(columns, True)
 
-
-    def onModUnloaded(self):
-        """ The module is going to be unloaded """
-        prefs.set(__name__, 'media-folders',     self.folders)
-        prefs.set(__name__, 'add-by-filename',   self.addByFilename)
-        prefs.set(__name__, 'show-hidden-files', self.showHiddenFiles)
-
-        # Save the state of the current tree if needed
-        if self.currRoot is not None:
-            savedStates = prefs.get(__name__, 'saved-states', {})
-            savedStates[self.currRoot] = {
-                                            'tree-state':     self.dumpTree(),
-                                            'selected-paths': self.tree.getSelectedPaths(),
-                                            'vscrollbar-pos': self.scrolled.get_vscrollbar().get_value(),
-                                            'hscrollbar-pos': self.scrolled.get_hscrollbar().get_value(),
-                                         }
-            prefs.set(__name__, 'saved-states', savedStates)
+        self.scrolled.add(self.tree)
+        self.tree.setDNDSources([consts.DND_TARGETS[consts.DND_DAP_URI]])
+        self.tree.connect('drag-data-get', self.onDragDataGet)
+        self.tree.connect('key-press-event', self.onKeyPressed)
+        self.tree.connect('exttreeview-button-pressed', self.onMouseButton)
+        self.tree.connect('exttreeview-row-collapsed', self.onRowCollapsed)
+        self.tree.connect('exttreeview-row-expanded', self.onRowExpanded)
 
 
-    def dumpTree(self, path=None):
+    def getTreeDump(self, path=None):
         """ Recursively dump the given tree starting at path (None for the root of the tree) """
         list = []
 
@@ -102,7 +91,7 @@ class FileExplorer(modules.Module):
             row = self.tree.getRow(child)
 
             if self.tree.getNbChildren(child) == 0: grandChildren = None
-            elif self.tree.row_expanded(child):     grandChildren = self.dumpTree(child)
+            elif self.tree.row_expanded(child):     grandChildren = self.getTreeDump(child)
             else:                                   grandChildren = []
 
             list.append([(row[ROW_NAME], row[ROW_TYPE], row[ROW_FULLPATH]), grandChildren])
@@ -110,7 +99,7 @@ class FileExplorer(modules.Module):
         return list
 
 
-    def restoreTree(self, dump, parent=None):
+    def restoreTreeDump(self, dump, parent=None):
         """ Recursively restore the dump under the given parent (None for the root of the tree) """
         for item in dump:
             (name, type, path) = item[0]
@@ -126,8 +115,19 @@ class FileExplorer(modules.Module):
                     if len(item[1]) != 0:
                         # We must expand the row before adding the real children, but this works only if there is already at least one child
                         self.tree.expandRow(newNode)
-                        self.restoreTree(item[1], newNode)
+                        self.restoreTreeDump(item[1], newNode)
                         self.tree.removeRow(fakeChild)
+
+
+    def saveTreeState(self):
+        """ Return a dictionary representing the current state of the tree """
+        if self.currRoot is not None:
+            self.treeState[self.currRoot] = {
+                        'tree-state':     self.getTreeDump(),
+                        'selected-paths': self.tree.getSelectedPaths(),
+                        'vscrollbar-pos': self.scrolled.get_vscrollbar().get_value(),
+                        'hscrollbar-pos': self.scrolled.get_hscrollbar().get_value(),
+                   }
 
 
     def sortKey(self, row):
@@ -163,13 +163,11 @@ class FileExplorer(modules.Module):
         self.folders[newName] = self.folders[oldName]
         del self.folders[oldName]
 
-        savedStates = prefs.get(__name__, 'saved-states', {})
-        if oldName in savedStates:
-            savedStates[newName] = savedStates[oldName]
-            del savedStates[oldName]
-            prefs.set(__name__, 'saved-states', savedStates)
+        if oldName in self.treeState:
+            self.treeState[newName] = self.treeState[oldName]
+            del self.treeState[oldName]
 
-        modules.postMsg(consts.MSG_CMD_EXPLORER_RENAME,   {'modName': MOD_L10N, 'expName': oldName, 'newExpName': newName})
+        modules.postMsg(consts.MSG_CMD_EXPLORER_RENAME, {'modName': MOD_L10N, 'expName': oldName, 'newExpName': newName})
 
 
     # --== Tree management ==--
@@ -398,67 +396,65 @@ class FileExplorer(modules.Module):
         selection.set('text/uri-list', 8, ' '.join([urllib.pathname2url(file) for file in [row[ROW_FULLPATH] for row in tree.getSelectedRows()]]))
 
 
-   # --== Message handler ==--
+   # --== Message handlers ==--
 
 
-    def handleMsg(self, msg, params):
-        """ Handle messages sent to this module """
-        if msg == consts.MSG_EVT_EXPLORER_CHANGED and params['modName'] == MOD_L10N and self.currRoot != params['expName']:
-            newRoot = params['expName']
+    def onAppStarted(self):
+        """ The module has been loaded """
+        self.tree            = None
+        self.cfgWin          = None
+        self.folders         = prefs.get(__name__, 'media-folders', PREFS_DEFAULT_MEDIA_FOLDERS)
+        self.scrolled        = gtk.ScrolledWindow()
+        self.currRoot        = None
+        self.treeState       = prefs.get(__name__, 'saved-states', {})
+        self.addByFilename   = prefs.get(__name__, 'add-by-filename',  PREFS_DEFAULT_ADD_BY_FILENAME)
+        self.showHiddenFiles = prefs.get(__name__, 'show-hidden-files', PREFS_DEFAULT_SHOW_HIDDEN_FILES)
 
-            # Create the tree if needed (this is done only the very first time)
+        self.scrolled.set_shadow_type(gtk.SHADOW_IN)
+        self.scrolled.set_policy(gtk.POLICY_AUTOMATIC, gtk.POLICY_AUTOMATIC)
+        self.scrolled.show()
+
+        for name in self.folders:
+            modules.postMsg(consts.MSG_CMD_EXPLORER_ADD, {'modName': MOD_L10N, 'expName': name, 'icon': None, 'widget': self.scrolled})
+
+
+    def onAppQuit(self):
+        """ The module is going to be unloaded """
+        self.saveTreeState()
+        prefs.set(__name__, 'saved-states',      self.treeState)
+        prefs.set(__name__, 'media-folders',     self.folders)
+        prefs.set(__name__, 'add-by-filename',   self.addByFilename)
+        prefs.set(__name__, 'show-hidden-files', self.showHiddenFiles)
+
+
+    def onExplorerChanged(self, modName, expName):
+        """ A new explorer has been selected """
+        if modName == MOD_L10N and self.currRoot != expName:
+            # Create the tree if needed
             if self.tree is None:
-                from gui import extTreeview
+                self.createTree()
 
-                columns = (('',   [(gtk.CellRendererPixbuf(), gtk.gdk.Pixbuf), (gtk.CellRendererText(), TYPE_STRING)], True),
-                           (None, [(None, TYPE_INT)],                                                                  False),
-                           (None, [(None, TYPE_STRING)],                                                               False))
-
-                self.tree = extTreeview.ExtTreeView(columns, True)
-
-                self.scrolled.add(self.tree)
-                self.tree.setDNDSources([consts.DND_TARGETS[consts.DND_DAP_URI]])
-                self.tree.connect('drag-data-get', self.onDragDataGet)
-                self.tree.connect('key-press-event', self.onKeyPressed)
-                self.tree.connect('exttreeview-button-pressed', self.onMouseButton)
-                self.tree.connect('exttreeview-row-collapsed', self.onRowCollapsed)
-                self.tree.connect('exttreeview-row-expanded', self.onRowExpanded)
-
-            savedStates = prefs.get(__name__, 'saved-states', {})
-
-            # Save the current state if needed
+            # Save the state of the current root
             if self.currRoot is not None:
-                savedStates[self.currRoot] = {
-                                                'tree-state':     self.dumpTree(),
-                                                'selected-paths': self.tree.getSelectedPaths(),
-                                                'vscrollbar-pos': self.scrolled.get_vscrollbar().get_value(),
-                                                'hscrollbar-pos': self.scrolled.get_hscrollbar().get_value(),
-                                             }
-                prefs.set(__name__, 'saved-states', savedStates)
+                self.saveTreeState()
                 self.tree.clear()
 
-            self.currRoot = newRoot
+            self.currRoot = expName
 
-            if newRoot not in savedStates:
+            # Restore the state of the new root
+            if expName in self.treeState:
+                self.tree.handler_block_by_func(self.onRowExpanded)
+                self.restoreTreeDump(self.treeState[expName]['tree-state'])
+                self.tree.handler_unblock_by_func(self.onRowExpanded)
+
+                idle_add(self.scrolled.get_vscrollbar().set_value, self.treeState[expName]['vscrollbar-pos'])
+                idle_add(self.scrolled.get_hscrollbar().set_value, self.treeState[expName]['hscrollbar-pos'])
+                idle_add(self.tree.selectPaths, self.treeState[expName]['selected-paths'])
+                idle_add(self.refresh)
+            else:
                 self.exploreDir(None, self.folders[self.currRoot])
                 if len(self.tree) != 0:
                     self.tree.scroll_to_cell(0)
-            else:
-                savedState = savedStates[newRoot]
-
-                self.tree.handler_block_by_func(self.onRowExpanded)
-                self.restoreTree(savedState['tree-state'])
-                self.tree.handler_unblock_by_func(self.onRowExpanded)
-
-                idle_add(self.scrolled.get_vscrollbar().set_value, savedState['vscrollbar-pos'])
-                idle_add(self.scrolled.get_hscrollbar().set_value, savedState['hscrollbar-pos'])
-                idle_add(self.tree.selectPaths, savedState['selected-paths'])
-                idle_add(self.refresh)
-
-        elif msg == consts.MSG_EVT_APP_STARTED:
-            self.onModLoaded()
-        elif msg == consts.MSG_EVT_APP_QUIT:
-            self.onModUnloaded()
 
 
     # --== Configuration ==--
@@ -539,10 +535,8 @@ class FileExplorer(modules.Module):
                     self.currRoot = None
 
                 # Remove the saved state of the tree, if any
-                savedStates = prefs.get(__name__, 'saved-states', {})
-                if name in savedStates:
-                    del savedStates[name]
-                    prefs.set(__name__, 'saved-states', savedStates)
+                if name in self.treeState:
+                    del self.treeState[name]
 
             self.cfgList.removeSelectedRows()
 

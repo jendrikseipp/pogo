@@ -16,9 +16,9 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301 USA
 
-import media, modules, os.path, tools, traceback
+import media, modules, os.path, traceback
 
-from tools import consts, log, prefs
+from tools import consts, log, pickleSave, pickleLoad, prefs
 
 MOD_INFO = ('Command Line Support', 'Command Line Support', '', [], True, False)
 
@@ -27,7 +27,15 @@ class CommandLine(modules.ThreadedModule):
 
     def __init__(self):
         """ Constructor """
-        modules.ThreadedModule.__init__(self, (consts.MSG_EVT_NEW_TRACKLIST, consts.MSG_EVT_APP_STARTED))
+        handlers = {
+                        consts.MSG_EVT_APP_STARTED:   self.onAppStarted,
+                        consts.MSG_EVT_NEW_TRACKLIST: self.onNewTracklist,
+                   }
+
+        modules.ThreadedModule.__init__(self, handlers)
+
+
+    # --== Message handlers ==--
 
 
     def onAppStarted(self):
@@ -41,19 +49,13 @@ class CommandLine(modules.ThreadedModule):
             modules.postMsg(consts.MSG_CMD_TRACKLIST_SET, {'tracks': media.getTracks(args), 'playNow': True})
         else:
             try:
-                tracks = [media.track.unserialize(serialTrack) for serialTrack in tools.pickleLoad(self.savedPlaylist)]
+                tracks = [media.track.unserialize(serialTrack) for serialTrack in pickleLoad(self.savedPlaylist)]
                 modules.postMsg(consts.MSG_CMD_TRACKLIST_SET, {'tracks': tracks, 'playNow': False})
                 log.logger.info('[%s] Restored playlist' % MOD_INFO[modules.MODINFO_NAME])
             except:
                 log.logger.error('[%s] Unable to restore playlist from %s\n\n%s' % (MOD_INFO[modules.MODINFO_NAME], self.savedPlaylist, traceback.format_exc()))
 
 
-    # --== Message handler ==--
-
-
-    def handleMsg(self, msg, params):
-        """ Handle messages sent to this modules """
-        if msg == consts.MSG_EVT_NEW_TRACKLIST:
-            tools.pickleSave(self.savedPlaylist, [track.serialize() for track in params['tracks']])
-        elif msg == consts.MSG_EVT_APP_STARTED:
-            self.onAppStarted()
+    def onNewTracklist(self, tracks, playtime):
+        """ A new tracklist has been set """
+        pickleSave(self.savedPlaylist, [track.serialize() for track in tracks])

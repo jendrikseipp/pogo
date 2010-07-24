@@ -83,7 +83,12 @@ def load(name):
     try:
         module[MOD_INSTANCE] = getattr(module[MOD_PMODULE], module[MOD_CLASSNAME])()
         module[MOD_INSTANCE].start()
-        module[MOD_INSTANCE].postMsg(consts.MSG_EVT_MOD_LOADED)
+
+        mHandlersLock.acquire()
+        if module[MOD_INSTANCE] in mHandlers[consts.MSG_EVT_MOD_LOADED]:
+            module[MOD_INSTANCE].postMsg(consts.MSG_EVT_MOD_LOADED)
+        mHandlersLock.release()
+
         log.logger.info('Module loaded: %s' % module[MOD_CLASSNAME])
         mEnabledModules.append(name)
         prefs.set(__name__, 'enabled_modules', mEnabledModules)
@@ -265,18 +270,22 @@ class ModuleBase:
 class Module(ModuleBase):
     """ This is the base class for non-threaded modules """
 
-    def __init__(self, messages):
-        register(self, messages)
+    def __init__(self, handlers):
+        self.handlers = handlers
+        register(self, handlers.keys())
 
     def postMsg(self, msg, params={}):
-        gobject.idle_add(self.handleMsg, msg, params)
+        gobject.idle_add(self.__dispatch, msg, params)
+
+    def __dispatch(self, msg, params):
+        self.handlers[msg](**params)
 
 
 
 class ThreadedModule(threading.Thread, ModuleBase):
     """ This is the base class for threaded modules """
 
-    def __init__(self, messages):
+    def __init__(self, handlers):
         """ Constructor """
         import Queue
 
@@ -287,7 +296,14 @@ class ThreadedModule(threading.Thread, ModuleBase):
 
         # Initialization
         threading.Thread.__init__(self)
-        register(self, messages + (consts.MSG_EVT_APP_QUIT, consts.MSG_EVT_MOD_UNLOADED))
+
+        # Add QUIT and UNLOADED messages if needed
+        # These messages are required to exit the thread's loop
+        if consts.MSG_EVT_APP_QUIT not in handlers:     handlers[consts.MSG_EVT_APP_QUIT]     = lambda: None
+        if consts.MSG_EVT_MOD_UNLOADED not in handlers: handlers[consts.MSG_EVT_MOD_UNLOADED] = lambda: None
+
+        self.handlers = handlers
+        register(self, handlers.keys())
 
     def __gtkExecute(self, func):
         """ Private function, must be executed in the GTK main loop """
@@ -295,7 +311,7 @@ class ThreadedModule(threading.Thread, ModuleBase):
         self.gtkSemaphore.release()
 
     def gtkExecute(self, func):
-        """ Execute func in the GTK main loop, and block the execution until done """
+        """ Execute func in the GTK main loop, and block the execution of the thread until done """
         gobject.idle_add(self.__gtkExecute, func)
         self.gtkSemaphore.acquire()
         return self.gtkResult
@@ -321,7 +337,7 @@ class ThreadedModule(threading.Thread, ModuleBase):
                 (func, args) = params
                 func(*args)
             else:
-                self.handleMsg(msg, params)
+                self.handlers[msg](**params)
 
 
 # --== Entry point ==--

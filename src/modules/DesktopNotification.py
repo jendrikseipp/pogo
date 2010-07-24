@@ -36,38 +36,18 @@ class DesktopNotification(modules.Module):
 
     def __init__(self):
         """ Constructor """
-        modules.Module.__init__(self, (consts.MSG_EVT_APP_STARTED, consts.MSG_EVT_MOD_LOADED,   consts.MSG_EVT_NEW_TRACK,
-                                       consts.MSG_EVT_APP_QUIT,    consts.MSG_EVT_MOD_UNLOADED, consts.MSG_EVT_STOPPED,
-                                       consts.MSG_EVT_TRACK_MOVED, consts.MSG_CMD_SET_COVER))
+        handlers = {
+                        consts.MSG_EVT_STOPPED:      self.hideNotification,
+                        consts.MSG_EVT_APP_QUIT:     self.hideNotification,
+                        consts.MSG_EVT_NEW_TRACK:    self.onNewTrack,
+                        consts.MSG_CMD_SET_COVER:    self.onSetCover,
+                        consts.MSG_EVT_MOD_LOADED:   self.onModLoaded,
+                        consts.MSG_EVT_TRACK_MOVED:  self.onCurrentTrackMoved,
+                        consts.MSG_EVT_APP_STARTED:  self.onModLoaded,
+                        consts.MSG_EVT_MOD_UNLOADED: self.hideNotification,
+                   }
 
-
-    def onModLoaded(self):
-        """ The module has been loaded """
-        self.notif     = None
-        self.cfgWin    = None
-        self.hasNext   = False
-        self.timeout   = None
-        self.currTrack = None
-        self.currCover = None
-
-
-    def onNewTrack(self, track):
-        """ A new track is being played """
-        self.currCover = None
-        self.currTrack = track
-
-        if self.timeout is not None:
-            gobject.source_remove(self.timeout)
-
-        # Wait a bit for the cover to be set (if any)
-        self.timeout = gobject.timeout_add(500, self.showNotification)
-
-
-    def onSetCover(self, track, cover):
-        """ The cover for the given track """
-        # We must check first whether currTrack is not None, because '==' calls the cmp() method and this fails on None
-        if self.currTrack is not None and track == self.currTrack:
-            self.currCover = cover
+        modules.Module.__init__(self, handlers)
 
 
     def hideNotification(self):
@@ -132,19 +112,41 @@ class DesktopNotification(modules.Module):
         else:            modules.postMsg(consts.MSG_CMD_STOP)
 
 
-    # --== Message handler ==--
+    # --== Message handlers ==--
 
 
-    def handleMsg(self, msg, params):
-        """ Handle messages sent to this module """
-        if   msg == consts.MSG_EVT_STOPPED:      self.hideNotification()
-        elif msg == consts.MSG_EVT_APP_QUIT:     self.hideNotification()
-        elif msg == consts.MSG_CMD_SET_COVER:    self.onSetCover(params['track'], params['pathThumbnail'])
-        elif msg == consts.MSG_EVT_NEW_TRACK:    self.onNewTrack(params['track'])
-        elif msg == consts.MSG_EVT_MOD_LOADED:   self.onModLoaded()
-        elif msg == consts.MSG_EVT_APP_STARTED:  self.onModLoaded()
-        elif msg == consts.MSG_EVT_TRACK_MOVED:  self.hasNext = params['hasNext']
-        elif msg == consts.MSG_EVT_MOD_UNLOADED: self.hideNotification()
+    def onModLoaded(self):
+        """ The module has been loaded """
+        self.notif     = None
+        self.cfgWin    = None
+        self.hasNext   = False
+        self.timeout   = None
+        self.currTrack = None
+        self.currCover = None
+
+
+    def onNewTrack(self, track):
+        """ A new track is being played """
+        self.currCover = None
+        self.currTrack = track
+
+        if self.timeout is not None:
+            gobject.source_remove(self.timeout)
+
+        # Wait a bit for the cover to be set (if any)
+        self.timeout = gobject.timeout_add(500, self.showNotification)
+
+
+    def onSetCover(self, track, pathThumbnail, pathFullSize):
+        """ The cover for the given track """
+        # We must check first whether currTrack is not None, because '==' calls the cmp() method and this fails on None
+        if self.currTrack is not None and track == self.currTrack:
+            self.currCover = pathThumbnail
+
+
+    def onCurrentTrackMoved(self, hasNext, hasPrevious):
+        """ The position of the current track has changed """
+        self.hasNext = hasNext
 
 
     # --== Configuration ==--

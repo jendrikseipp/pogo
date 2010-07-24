@@ -37,11 +37,17 @@ class Equalizer(modules.Module):
 
     def __init__(self):
         """ Constructor """
-        modules.Module.__init__(self, (consts.MSG_EVT_APP_STARTED, consts.MSG_EVT_MOD_LOADED, consts.MSG_EVT_MOD_UNLOADED))
+        handlers = {
+                        consts.MSG_EVT_MOD_LOADED:   self.onModLoaded,
+                        consts.MSG_EVT_APP_STARTED:  self.onAppStarted,
+                        consts.MSG_EVT_MOD_UNLOADED: self.onModUnloaded,
+                   }
+
+        modules.Module.__init__(self, handlers)
 
 
-    def onModLoaded(self):
-        """ The module has been loaded """
+    def modInit(self):
+        """ Initialize the module """
         self.lvls      = prefs.get(__name__, 'levels', [0, 0, 0, 0, 0, 0, 0, 0, 0, 0])
         self.preset    = prefs.get(__name__, 'preset', _('Flat'))
         self.cfgWindow = None
@@ -49,26 +55,26 @@ class Equalizer(modules.Module):
         modules.addMenuItem(_('Equalizer'), self.configure, '<Control>E')
 
 
+    # --== Message handlers ==--
+
+
+    def onModLoaded(self):
+        """ The module has been loaded """
+        self.modInit()
+        self.restartRequired()
+
+
+    def onModUnloaded(self):
+        """ The module has been unloaded """
+        modules.delMenuItem(_('Equalizer'))
+        self.restartRequired()
+
+
     def onAppStarted(self):
         """ The application has started """
-        self.onModLoaded()
+        self.modInit()
         modules.postMsg(consts.MSG_CMD_ENABLE_EQZ)
         modules.postMsg(consts.MSG_CMD_SET_EQZ_LVLS, {'lvls': self.lvls})
-
-
-    # --== Message handler ==--
-
-
-    def handleMsg(self, msg, params):
-        """ Handle messages sent to this module """
-        if msg == consts.MSG_EVT_MOD_LOADED:
-            self.onModLoaded()
-            self.restartRequired()
-        elif msg == consts.MSG_EVT_APP_STARTED:
-            self.onAppStarted()
-        elif msg == consts.MSG_EVT_MOD_UNLOADED:
-            modules.delMenuItem(_('Equalizer'))
-            self.restartRequired()
 
 
     # --== Configuration ==--
@@ -263,7 +269,7 @@ class Equalizer(modules.Module):
             self.timer = None
             prefs.set(__name__, 'levels', self.lvls)
 
-            # Make sure labels are up to date (sometimes they aren't when we're done with the animation
+            # Make sure labels are up to date (sometimes they aren't when we're done with the animation)
             # Also unblock the handlers
             for i in xrange(10):
                 self.scales[i].queue_draw()

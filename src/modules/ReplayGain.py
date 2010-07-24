@@ -30,15 +30,23 @@ class ReplayGain(modules.Module):
 
     def __init__(self):
         """ Constructor """
-        modules.Module.__init__(self, (consts.MSG_EVT_APP_STARTED, consts.MSG_EVT_MOD_LOADED, consts.MSG_EVT_MOD_UNLOADED))
+        handlers = {
+                        consts.MSG_EVT_MOD_LOADED:   self.onRestartRequired,
+                        consts.MSG_EVT_APP_STARTED:  self.onAppStarted,
+                        consts.MSG_EVT_MOD_UNLOADED: self.onRestartRequired,
+                   }
+
+        modules.Module.__init__(self, handlers)
 
 
-    # --== Message handler ==--
+    # --== Message handlers ==--
 
 
-    def handleMsg(self, msg, params):
-        """ Handle messages sent to this module """
-        if msg == consts.MSG_EVT_APP_STARTED:
-            modules.postMsg(consts.MSG_CMD_ENABLE_RG)
-        elif msg in (consts.MSG_EVT_MOD_LOADED, consts.MSG_EVT_MOD_UNLOADED):
-            self.restartRequired()
+    def onAppStarted(self):
+        """ The application has just been started """
+        modules.postMsg(consts.MSG_CMD_ENABLE_RG)
+
+
+    def onRestartRequired(self):
+        """ A restart of the application is required """
+        self.restartRequired()

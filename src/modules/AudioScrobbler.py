@@ -56,85 +56,18 @@ class AudioScrobbler(modules.ThreadedModule):
 
     def __init__(self):
         """ Constructor """
-        modules.ThreadedModule.__init__(self, (consts.MSG_EVT_NEW_TRACK,  consts.MSG_EVT_APP_QUIT, consts.MSG_EVT_MOD_UNLOADED,
-                                               consts.MSG_EVT_MOD_LOADED, consts.MSG_EVT_PAUSED,   consts.MSG_EVT_UNPAUSED,
-                                               consts.MSG_EVT_STOPPED,    consts.MSG_EVT_APP_STARTED))
+        handlers = {
+                        consts.MSG_EVT_PAUSED:       self.onPaused,
+                        consts.MSG_EVT_STOPPED:      self.onStopped,
+                        consts.MSG_EVT_UNPAUSED:     self.onUnpaused,
+                        consts.MSG_EVT_APP_QUIT:     self.onModUnloaded,
+                        consts.MSG_EVT_NEW_TRACK:    self.onNewTrack,
+                        consts.MSG_EVT_MOD_LOADED:   self.onModLoaded,
+                        consts.MSG_EVT_APP_STARTED:  self.onModLoaded,
+                        consts.MSG_EVT_MOD_UNLOADED: self.onModUnloaded,
+                   }
 
-
-    def init(self):
-        """ Initialize this module """
-        # Attributes
-        self.login          = None
-        self.passwd         = None
-        self.paused         = False
-        self.session        = [None, None, None]
-        self.isBanned       = False
-        self.currTrack      = None
-        self.lastHandshake  = 0
-        self.nbHardFailures = 0
-        self.handshakeDelay = 0
-
-        # Load cache from the disk
-        try:
-            input      = open(os.path.join(consts.dirCfg, CACHE_FILE))
-            self.cache = [strippedTrack for strippedTrack in [track.strip() for track in input.readlines()] if len(strippedTrack) != 0]
-            input.close()
-        except:
-            self.cache = []
-
-
-    def saveCache(self):
-        """ Save the cache to the disk """
-        file   = os.path.join(consts.dirCfg, CACHE_FILE)
-        output = open(file, 'w')
-        output.writelines('\n'.join(self.cache))
-        output.close()
-
-
-    def addToCache(self):
-        """ Add the current track to the cache, if any, and that all conditions are OK """
-        if self.currTrack is None: return
-        else:                      track = self.currTrack[TRK_INFO]
-
-        if not (track.hasArtist() and track.hasTitle() and track.hasLength()):
-            return
-
-        if not (track.getLength() >= 30 and (self.currTrack[TRK_PLAY_TIME] >= 240 or self.currTrack[TRK_PLAY_TIME] >= track.getLength()/2)):
-            return
-
-        params = (
-                    ( 'a[*]', tools.percentEncode(track.getSafeArtist()) ),
-                    ( 't[*]', tools.percentEncode(track.getSafeTitle())  ),
-                    ( 'i[*]', str(self.currTrack[TRK_STARTED_TIMESTAMP]) ),
-                    ( 'o[*]', 'P'                                        ),
-                    ( 'r[*]', ''                                         ),
-                    ( 'l[*]', track.getSafeLength()                      ),
-                    ( 'b[*]', tools.percentEncode(track.getSafeAlbum())  ),
-                    ( 'n[*]', track.getSafeNumber()                      ),
-                    ( 'm[*]', track.getSafeMBTrackId()                   )
-                 )
-
-        self.cache.append('&'.join(['%s=%s' % (key, val) for (key, val) in params]))
-
-
-    def getFromCache(self, howMany):
-        """ Return the oldest howMany tracks from the cache, replace the star with the correct index """
-        if howMany > len(self.cache):
-            howMany = len(self.cache)
-
-        # Remove '\0' bytes in the data, if any
-        # AudioScrobbler servers reject data when it contains such a byte
-        return [self.cache[i].replace('%0', '').replace('[*]', '[%d]' % i) for i in xrange(howMany)]
-
-
-    def removeFromCache(self, howMany):
-        """ Remove the oldest howMany tracks from the cache """
-        self.cache[:] = self.cache[howMany:]
-
-
-    def getCacheSize(self):
-        """ Return the number cached tracks """
-        return len(self.cache)
+        modules.ThreadedModule.__init__(self, handlers)
 
 
     def getAuthInfo(self):
@@ -300,6 +233,88 @@ class AudioScrobbler(modules.ThreadedModule):
                     submitOk = self.submit()
 
 
+    # --== Cache management ==--
+
+
+    def saveCache(self):
+        """ Save the cache to the disk """
+        file   = os.path.join(consts.dirCfg, CACHE_FILE)
+        output = open(file, 'w')
+        output.writelines('\n'.join(self.cache))
+        output.close()
+
+
+    def addToCache(self):
+        """ Add the current track to the cache, if any, and that all conditions are OK """
+        if self.currTrack is None: return
+        else:                      track = self.currTrack[TRK_INFO]
+
+        if not (track.hasArtist() and track.hasTitle() and track.hasLength()):
+            return
+
+        if not (track.getLength() >= 30 and (self.currTrack[TRK_PLAY_TIME] >= 240 or self.currTrack[TRK_PLAY_TIME] >= track.getLength()/2)):
+            return
+
+        params = (
+                    ( 'a[*]', tools.percentEncode(track.getSafeArtist()) ),
+                    ( 't[*]', tools.percentEncode(track.getSafeTitle())  ),
+                    ( 'i[*]', str(self.currTrack[TRK_STARTED_TIMESTAMP]) ),
+                    ( 'o[*]', 'P'                                        ),
+                    ( 'r[*]', ''                                         ),
+                    ( 'l[*]', track.getSafeLength()                      ),
+                    ( 'b[*]', tools.percentEncode(track.getSafeAlbum())  ),
+                    ( 'n[*]', track.getSafeNumber()                      ),
+                    ( 'm[*]', track.getSafeMBTrackId()                   )
+                 )
+
+        self.cache.append('&'.join(['%s=%s' % (key, val) for (key, val) in params]))
+
+
+    def getFromCache(self, howMany):
+        """ Return the oldest howMany tracks from the cache, replace the star with the correct index """
+        if howMany > len(self.cache):
+            howMany = len(self.cache)
+
+        # Remove '\0' bytes in the data, if any
+        # AudioScrobbler servers reject data when it contains such a byte
+        return [self.cache[i].replace('%0', '').replace('[*]', '[%d]' % i) for i in xrange(howMany)]
+
+
+    def removeFromCache(self, howMany):
+        """ Remove the oldest howMany tracks from the cache """
+        self.cache[:] = self.cache[howMany:]
+
+
+    def getCacheSize(self):
+        """ Return the number cached tracks """
+        return len(self.cache)
+
+
+    # --== Message handlers ==--
+
+
+    def onModLoaded(self):
+        """ Initialize this module """
+        # Attributes
+        self.login          = None
+        self.passwd         = None
+        self.paused         = False
+        self.session        = [None, None, None]
+        self.isBanned       = False
+        self.currTrack      = None
+        self.lastHandshake  = 0
+        self.nbHardFailures = 0
+        self.handshakeDelay = 0
+
+        # Load cache from the disk
+        try:
+            input      = open(os.path.join(consts.dirCfg, CACHE_FILE))
+            self.cache = [strippedTrack for strippedTrack in [track.strip() for track in input.readlines()] if len(strippedTrack) != 0]
+            input.close()
+        except:
+            self.cache = []
+
+
     def onNewTrack(self, track):
         """ A new track has started """
         timestamp = int(time())
@@ -308,36 +323,32 @@ class AudioScrobbler(modules.ThreadedModule):
         self.currTrack = [timestamp, timestamp, 0, track]
 
 
-    # --== Message handler ==--
-
-
-    def handleMsg(self, msg, params):
-        """ Handle messages sent to this module """
-        if msg == consts.MSG_EVT_NEW_TRACK:
-            self.onNewTrack(params['track'])
-
-        elif msg == consts.MSG_EVT_STOPPED:
-            if self.paused:
-                self.currTrack[TRK_UNPAUSED_TIMESTAMP] = int(time())
-            self.paused = False
-            self.onTrackEnded(True)
-
-        elif msg == consts.MSG_EVT_PAUSED:
-            self.currTrack[TRK_PLAY_TIME] += (int(time()) - self.currTrack[TRK_UNPAUSED_TIMESTAMP])
-            self.paused = True
-
-        elif msg == consts.MSG_EVT_UNPAUSED:
+    def onStopped(self):
+        """ Playback has been stopped """
+        if self.paused:
             self.currTrack[TRK_UNPAUSED_TIMESTAMP] = int(time())
-            self.paused = False
+        self.paused = False
+        self.onTrackEnded(True)
 
-        elif msg == consts.MSG_EVT_APP_QUIT or msg == consts.MSG_EVT_MOD_UNLOADED:
-            if self.paused:
-                self.currTrack[TRK_UNPAUSED_TIMESTAMP] = int(time())
-            self.paused = False
-            self.onTrackEnded(False)
-            self.saveCache()
-            if self.getCacheSize() != 0:
-                logger.info('[%s] %u track(s) left in cache' % (MOD_NAME, self.getCacheSize()))
 
-        elif msg == consts.MSG_EVT_APP_STARTED or msg == consts.MSG_EVT_MOD_LOADED:
-            self.init()
+    def onPaused(self):
+        """ Playback has been paused """
+        self.currTrack[TRK_PLAY_TIME] += (int(time()) - self.currTrack[TRK_UNPAUSED_TIMESTAMP])
+        self.paused = True
+
+
+    def onUnpaused(self):
+        """ Playback has been unpaused """
+        self.currTrack[TRK_UNPAUSED_TIMESTAMP] = int(time())
+        self.paused = False
+
+
+    def onModUnloaded(self):
+        """ The module has been unloaded """
+        if self.paused:
+            self.currTrack[TRK_UNPAUSED_TIMESTAMP] = int(time())
+        self.paused = False
+        self.onTrackEnded(False)
+        self.saveCache()
+        if self.getCacheSize() != 0:
+            logger.info('[%s] %u track(s) left in cache' % (MOD_NAME, self.getCacheSize()))

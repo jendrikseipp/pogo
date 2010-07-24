@@ -31,10 +31,23 @@ class CtrlPanel(modules.Module):
 
     def __init__(self):
         """ Constructor """
-        modules.Module.__init__(self, (consts.MSG_EVT_STOPPED,        consts.MSG_EVT_PAUSED,      consts.MSG_EVT_UNPAUSED,
-                                       consts.MSG_EVT_TRACK_MOVED,    consts.MSG_EVT_NEW_TRACK,   consts.MSG_EVT_NEW_TRACKLIST,
-                                       consts.MSG_EVT_TRACK_POSITION, consts.MSG_EVT_APP_STARTED, consts.MSG_EVT_APP_QUIT,
-                                       consts.MSG_EVT_VOLUME_CHANGED))
+        handlers = {
+                        consts.MSG_EVT_PAUSED:           self.onPaused,
+                        consts.MSG_EVT_STOPPED:          self.onStopped,
+                        consts.MSG_EVT_UNPAUSED:         self.onUnpaused,
+                        consts.MSG_EVT_APP_QUIT:         self.onAppQuit,
+                        consts.MSG_EVT_NEW_TRACK:        self.onNewTrack,
+                        consts.MSG_EVT_TRACK_MOVED:      self.onCurrentTrackMoved,
+                        consts.MSG_EVT_APP_STARTED:      self.onAppStarted,
+                        consts.MSG_EVT_NEW_TRACKLIST:    self.onNewTracklist,
+                        consts.MSG_EVT_VOLUME_CHANGED:   self.onVolumeChanged,
+                        consts.MSG_EVT_TRACK_POSITION:   self.onNewTrackPosition,
+                   }
+
+        modules.Module.__init__(self, handlers)
+
+
+   # --== Message handler ==--
 
 
     def onAppStarted(self):
@@ -63,9 +76,14 @@ class CtrlPanel(modules.Module):
         self.btnNext.connect('clicked', lambda widget: modules.postMsg(consts.MSG_CMD_NEXT))
         self.btnPrev.connect('clicked', lambda widget: modules.postMsg(consts.MSG_CMD_PREVIOUS))
         self.btnPlay.connect('clicked', lambda widget: modules.postMsg(consts.MSG_CMD_TOGGLE_PAUSE))
-        self.sclSeek.connect('change-value', self.onSeekChangeValue)
+        self.sclSeek.connect('change-value', self.onSeekChangingValue)
         self.sclSeek.connect('value-changed', self.onSeekValueChanged)
         self.btnVolume.connect('value-changed', self.onVolumeValueChanged)
+
+
+    def onAppQuit(self):
+        """ The application is about to terminate """
+        prefs.set(__name__, 'volume', self.btnVolume.get_value())
 
 
     def onNewTrack(self, track):
@@ -98,16 +116,16 @@ class CtrlPanel(modules.Module):
         self.lblRemaining.hide()
 
 
-    def onNewTrackPosition(self, elapsedTime):
+    def onNewTrackPosition(self, seconds):
         """ The track position has changed """
         if not self.sclBeingDragged:
-            self.lblElapsed.set_label(sec2str(elapsedTime))
-            if elapsedTime >= self.currTrackLength:
-                elapsedTime = self.currTrackLength
-            self.lblRemaining.set_label(sec2str(self.currTrackLength - elapsedTime))
+            self.lblElapsed.set_label(sec2str(seconds))
+            if seconds >= self.currTrackLength:
+                seconds = self.currTrackLength
+            self.lblRemaining.set_label(sec2str(self.currTrackLength - seconds))
             # Make sure the handler will not be called
             self.sclSeek.handler_block_by_func(self.onSeekValueChanged)
-            self.sclSeek.set_value(elapsedTime)
+            self.sclSeek.set_value(seconds)
             self.sclSeek.handler_unblock_by_func(self.onSeekValueChanged)
 
 
@@ -118,7 +136,7 @@ class CtrlPanel(modules.Module):
         self.btnVolume.handler_unblock_by_func(self.onVolumeValueChanged)
 
 
-    def onTrackMoved(self, hasPrevious, hasNext):
+    def onCurrentTrackMoved(self, hasPrevious, hasNext):
         """ Update previous and next buttons """
         self.btnNext.set_sensitive(hasNext)
         self.btnPrev.set_sensitive(hasPrevious)
@@ -136,6 +154,11 @@ class CtrlPanel(modules.Module):
         self.btnPlay.set_tooltip_text(_('Pause the current track'))
 
 
+    def onNewTracklist(self, tracks, playtime):
+        """ A new tracklist has been set """
+        self.btnPlay.set_sensitive(playtime != 0)
+
+
     # --== GTK handlers ==--
 
 
@@ -145,7 +168,7 @@ class CtrlPanel(modules.Module):
         self.sclBeingDragged = False
 
 
-    def onSeekChangeValue(self, range, scroll, value):
+    def onSeekChangingValue(self, range, scroll, value):
         """ The user is moving the seek slider """
         self.sclBeingDragged = True
 
@@ -159,20 +182,3 @@ class CtrlPanel(modules.Module):
     def onVolumeValueChanged(self, button, value):
         """ The user has moved the volume slider """
         modules.postMsg(consts.MSG_CMD_SET_VOLUME, {'value': value})
-
-
-   # --== Message handler ==--
-
-
-    def handleMsg(self, msg, params):
-        """ Handle message sent to this module """
-        if   msg == consts.MSG_EVT_TRACK_POSITION: self.onNewTrackPosition(params['seconds'])
-        elif msg == consts.MSG_EVT_PAUSED:         self.onPaused()
-        elif msg == consts.MSG_EVT_STOPPED:        self.onStopped()
-        elif msg == consts.MSG_EVT_UNPAUSED:       self.onUnpaused()
-        elif msg == consts.MSG_EVT_APP_QUIT:       prefs.set(__name__, 'volume', self.btnVolume.get_value())
-        elif msg == consts.MSG_EVT_NEW_TRACK:      self.onNewTrack(params['track'])
-        elif msg == consts.MSG_EVT_APP_STARTED:    self.onAppStarted()
-        elif msg == consts.MSG_EVT_TRACK_MOVED:    self.onTrackMoved(params['hasPrevious'], params['hasNext'])
-        elif msg == consts.MSG_EVT_NEW_TRACKLIST:  self.btnPlay.set_sensitive(len(params['tracks']) != 0)
-        elif msg == consts.MSG_EVT_VOLUME_CHANGED: self.onVolumeChanged(params['value'])

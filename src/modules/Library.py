@@ -92,24 +92,15 @@ class Library(modules.Module):
 
     def __init__(self):
         """ Constructor """
-        modules.Module.__init__(self, (consts.MSG_EVT_APP_STARTED, consts.MSG_EVT_EXPLORER_CHANGED, consts.MSG_EVT_MOD_LOADED,
-                                       consts.MSG_EVT_APP_QUIT,    consts.MSG_EVT_MOD_UNLOADED))
+        handlers = {
+                        consts.MSG_EVT_APP_QUIT:         self.onModUnloaded,
+                        consts.MSG_EVT_MOD_LOADED:       self.onModLoaded,
+                        consts.MSG_EVT_APP_STARTED:      self.onModLoaded,
+                        consts.MSG_EVT_MOD_UNLOADED:     self.onModUnloaded,
+                        consts.MSG_EVT_EXPLORER_CHANGED: self.onExplorerChanged,
+                   }
 
-
-    def onAppStarted(self):
-        """ This is the real initialization function, called when the module has been loaded """
-        self.tree              = None
-        self.currLib           = None
-        self.cfgWindow         = None
-        self.libraries         = prefs.get(__name__, 'libraries',  PREFS_DEFAULT_LIBRARIES)
-        self.treeState         = prefs.get(__name__, 'tree-state', PREFS_DEFAULT_TREE_STATE)
-        self.favorites         = None
-        self.showOnlyFavorites = prefs.get(__name__, 'show-only-favorites', PREFS_DEFAULT_SHOW_ONLY_FAVORITES)
-        # Scroll window
-        self.scrolled = gtk.ScrolledWindow()
-        self.scrolled.set_shadow_type(gtk.SHADOW_IN)
-        self.scrolled.set_policy(gtk.POLICY_AUTOMATIC, gtk.POLICY_AUTOMATIC)
-        self.scrolled.show()
+        modules.Module.__init__(self, handlers)
 
 
     def __createTree(self):
@@ -501,7 +492,7 @@ class Library(modules.Module):
             favorite.set_sensitive(False)
 
         # Show only favorites
-        showFavorites = gtk.CheckMenuItem(_('Show only favorites'))
+        showFavorites = gtk.CheckMenuItem(_('Show Only Favorites'))
         showFavorites.set_active(self.showOnlyFavorites)
         showFavorites.connect('toggled', lambda widget: self.switchFavoritesView(tree))
         popup.append(showFavorites)
@@ -744,16 +735,41 @@ class Library(modules.Module):
             modules.postMsg(consts.MSG_CMD_EXPLORER_REMOVE, {'modName': MOD_L10N, 'expName': name})
 
 
-   # --== Message handler ==--
+   # --== Message handlers ==--
 
 
-    def handleMsg(self, msg, params):
-        """ Handle messages sent to this module """
-        if msg == consts.MSG_EVT_APP_STARTED or msg == consts.MSG_EVT_MOD_LOADED:
-            self.onAppStarted()
-            idle_add(self.addAllExplorers)
+    def onModLoaded(self):
+        """ This is the real initialization function, called when the module has been loaded """
+        self.tree              = None
+        self.currLib           = None
+        self.cfgWindow         = None
+        self.libraries         = prefs.get(__name__, 'libraries',  PREFS_DEFAULT_LIBRARIES)
+        self.treeState         = prefs.get(__name__, 'tree-state', PREFS_DEFAULT_TREE_STATE)
+        self.favorites         = None
+        self.showOnlyFavorites = prefs.get(__name__, 'show-only-favorites', PREFS_DEFAULT_SHOW_ONLY_FAVORITES)
+        # Scroll window
+        self.scrolled = gtk.ScrolledWindow()
+        self.scrolled.set_shadow_type(gtk.SHADOW_IN)
+        self.scrolled.set_policy(gtk.POLICY_AUTOMATIC, gtk.POLICY_AUTOMATIC)
+        self.scrolled.show()
 
-        elif msg == consts.MSG_EVT_EXPLORER_CHANGED and params['modName'] == MOD_L10N and params['expName'] != self.currLib:
+        idle_add(self.addAllExplorers)
+
+
+    def onModUnloaded(self):
+        """ The module has been unloaded """
+        if self.currLib is not None:
+            self.saveTreeState()
+            self.saveFavorites(self.currLib, self.favorites)
+            prefs.set(__name__, 'tree-state', self.treeState)
+
+        prefs.set(__name__, 'libraries',  self.libraries)
+        self.removeAllExplorers()
+
+
+    def onExplorerChanged(self, modName, expName):
+        """ A new explorer has been selected """
+        if modName == MOD_L10N and expName != self.currLib:
             # Create the tree if needed
             if self.tree is None:
                 self.__createTree()
@@ -764,19 +780,10 @@ class Library(modules.Module):
                 self.saveFavorites(self.currLib, self.favorites)
 
             # Switch to the new library
-            self.currLib   = params['expName']
+            self.currLib   = expName
             self.favorites = self.loadFavorites(self.currLib)
             self.loadArtists(self.tree, self.currLib)
             self.restoreTreeState()
-
-        elif msg == consts.MSG_EVT_APP_QUIT or msg == consts.MSG_EVT_MOD_UNLOADED:
-            if self.currLib is not None:
-                self.saveTreeState()
-                self.saveFavorites(self.currLib, self.favorites)
-                prefs.set(__name__, 'tree-state', self.treeState)
-
-            prefs.set(__name__, 'libraries',  self.libraries)
-            self.removeAllExplorers()
 
 
     # --== Configuration ==--

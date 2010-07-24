@@ -29,22 +29,17 @@ class StatusbarTitlebar(modules.Module):
 
     def __init__(self):
         """ Constructor """
-        modules.Module.__init__(self, (consts.MSG_EVT_NEW_TRACKLIST, consts.MSG_EVT_NEW_TRACK, consts.MSG_EVT_STOPPED, consts.MSG_EVT_APP_STARTED,
-                                       consts.MSG_EVT_PAUSED, consts.MSG_EVT_UNPAUSED, consts.MSG_EVT_TRACKLIST_NEW_SEL))
+        handlers = {
+                        consts.MSG_EVT_PAUSED:            self.onPaused,
+                        consts.MSG_EVT_STOPPED:           self.onStopped,
+                        consts.MSG_EVT_UNPAUSED:          self.onUnpaused,
+                        consts.MSG_EVT_NEW_TRACK:         self.onNewTrack,
+                        consts.MSG_EVT_APP_STARTED:       self.onAppStarted,
+                        consts.MSG_EVT_NEW_TRACKLIST:     self.onNewTracklist,
+                        consts.MSG_EVT_TRACKLIST_NEW_SEL: self.onNewSelection,
+                   }
 
-
-    def onAppStarted(self):
-        """ Real initialization function, called when this module has been loaded """
-        self.window  = prefs.getWidgetsTree().get_widget('win-main')
-        self.status1 = prefs.getWidgetsTree().get_widget('lbl-status1')
-        self.status2 = prefs.getWidgetsTree().get_widget('lbl-status2')
-
-        # Current player status
-        self.paused    = False
-        self.playtime  = 0
-        self.tracklist = []
-        self.selTracks = []
-        self.currTrack = None
+        modules.Module.__init__(self, handlers)
 
 
     def __updateTitlebar(self):
@@ -86,6 +81,23 @@ class StatusbarTitlebar(modules.Module):
             self.status2.set_label(_('%(selection)s (Type: %(type)s, Bitrate: %(bitrate)s)') % {'selection': selection, 'type': audioType, 'bitrate': bitrate})
 
 
+    # --== Message handlers ==--
+
+
+    def onAppStarted(self):
+        """ Real initialization function, called when this module has been loaded """
+        self.window  = prefs.getWidgetsTree().get_widget('win-main')
+        self.status1 = prefs.getWidgetsTree().get_widget('lbl-status1')
+        self.status2 = prefs.getWidgetsTree().get_widget('lbl-status2')
+
+        # Current player status
+        self.paused    = False
+        self.playtime  = 0
+        self.tracklist = []
+        self.selTracks = []
+        self.currTrack = None
+
+
     def onNewTrack(self, track):
         """ A new track is being played """
         self.paused    = False
@@ -112,10 +124,10 @@ class StatusbarTitlebar(modules.Module):
         self.__updateTitlebar()
 
 
-    def onNewTracklist(self, tracklist, playtime):
+    def onNewTracklist(self, tracks, playtime):
         """ A new tracklist has been set """
         self.playtime  = playtime
-        self.tracklist = tracklist
+        self.tracklist = tracks
         self.__updateStatusbar()
 
 
@@ -123,17 +135,3 @@ class StatusbarTitlebar(modules.Module):
         """ A new set of track has been selected """
         self.selTracks = tracks
         self.__updateStatusbar()
-
-
-    # --== Message handler ==--
-
-
-    def handleMsg(self, msg, params):
-        """ Handle messages sent to this module """
-        if   msg == consts.MSG_EVT_PAUSED:            self.onPaused()
-        elif msg == consts.MSG_EVT_STOPPED:           self.onStopped()
-        elif msg == consts.MSG_EVT_UNPAUSED:          self.onUnpaused()
-        elif msg == consts.MSG_EVT_NEW_TRACK:         self.onNewTrack(params['track'])
-        elif msg == consts.MSG_EVT_APP_STARTED:       self.onAppStarted()
-        elif msg == consts.MSG_EVT_NEW_TRACKLIST:     self.onNewTracklist(params['tracks'], params['playtime'])
-        elif msg == consts.MSG_EVT_TRACKLIST_NEW_SEL: self.onNewSelection(params['tracks'])

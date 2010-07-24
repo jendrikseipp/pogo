@@ -32,7 +32,14 @@ class TrackPanel(modules.Module):
 
     def __init__(self):
         """ Constructor """
-        modules.Module.__init__(self, (consts.MSG_EVT_APP_STARTED, consts.MSG_EVT_NEW_TRACK, consts.MSG_EVT_STOPPED, consts.MSG_CMD_SET_COVER))
+        handlers = {
+                        consts.MSG_EVT_STOPPED:     self.onStopped,
+                        consts.MSG_CMD_SET_COVER:   self.onSetCover,
+                        consts.MSG_EVT_NEW_TRACK:   self.onNewTrack,
+                        consts.MSG_EVT_APP_STARTED: self.onAppStarted,
+                   }
+
+        modules.Module.__init__(self, handlers)
 
 
     def __setTitle(self, title, length=None):
@@ -86,6 +93,9 @@ class TrackPanel(modules.Module):
         self.coverWindow.show_all()
 
 
+    # --== Message handlers ==--
+
+
     def onAppStarted(self):
         """ Real initialization function, called when this module has been loaded """
         # Widgets
@@ -123,6 +133,14 @@ class TrackPanel(modules.Module):
         self.txtMisc.set_text('...And Music For All\n')
 
 
+    def onSetCover(self, track, pathThumbnail, pathFullSize):
+        """ Set the cover that is currently displayed """
+        # Must check if currTrack is not None, because '==' calls the cmp() method and this fails on None
+        if self.currTrack is not None and track == self.currTrack:
+            self.currCoverPath = pathFullSize
+            self.__setImage(pathThumbnail)
+
+
     # --== GTK handlers ==--
 
 
@@ -153,21 +171,3 @@ class TrackPanel(modules.Module):
             self.coverWindow.destroy()
             self.coverWindow = None
             self.lastMousePosition = tools.getCursorPosition()
-
-
-   # --== Message handler ==--
-
-
-    def handleMsg(self, msg, params):
-        """ Handle messages sent to this module """
-        if msg == consts.MSG_CMD_SET_COVER:
-            # Must check if currTrack is not None, because '==' calls the cmp() method and this fails on None
-            if self.currTrack is not None and params['track'] == self.currTrack:
-                self.currCoverPath = params['pathFullSize']
-                self.__setImage(params['pathThumbnail'])
-        elif msg == consts.MSG_EVT_NEW_TRACK:
-            self.onNewTrack(params['track'])
-        elif msg == consts.MSG_EVT_STOPPED:
-            self.onStopped()
-        elif msg == consts.MSG_EVT_APP_STARTED:
-            self.onAppStarted()

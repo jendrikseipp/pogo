@@ -35,8 +35,15 @@ class StatusFile(modules.ThreadedModule):
 
     def __init__(self):
         """ Constructor """
-        modules.ThreadedModule.__init__(self, (consts.MSG_EVT_NEW_TRACK,    consts.MSG_EVT_STOPPED,
-                                               consts.MSG_EVT_MOD_UNLOADED, consts.MSG_EVT_APP_QUIT))
+        handlers = {
+                        consts.MSG_EVT_STOPPED:      self.onClearFile,
+                        consts.MSG_EVT_APP_QUIT:     self.onClearFile,
+                        consts.MSG_EVT_NEW_TRACK:    self.onNewTrack,
+                        consts.MSG_EVT_MOD_UNLOADED: self.onClearFile,
+                   }
+
+        modules.ThreadedModule.__init__(self, handlers)
+
         self.cfgWindow = None
 
 
@@ -72,15 +79,17 @@ class StatusFile(modules.ThreadedModule):
         output.close()
 
 
-    # --== Message handler ==--
+    # --== Message handlers ==--
 
 
-    def handleMsg(self, msg, params):
-        """ Handle messages sent to this module """
-        if msg == consts.MSG_EVT_NEW_TRACK:
-            self.updateFile(params['track'])
-        elif msg == consts.MSG_EVT_STOPPED or msg == consts.MSG_EVT_APP_QUIT or msg == consts.MSG_EVT_MOD_UNLOADED:
-            self.updateFile(None)
+    def onNewTrack(self, track):
+        """ A new track is being played """
+        self.updateFile(track)
+
+
+    def onClearFile(self):
+        """ Erase the contents of the file """
+        self.updateFile(None)
 
 
     # --== GTK handlers ==--

@@ -31,8 +31,19 @@ class Zeitgeist(modules.ThreadedModule):
 
     def __init__(self):
         """ Constructor """
-        modules.ThreadedModule.__init__(self, (consts.MSG_EVT_APP_STARTED, consts.MSG_EVT_MOD_LOADED, consts.MSG_EVT_NEW_TRACK,
-                                               consts.MSG_EVT_APP_QUIT, consts.MSG_EVT_MOD_UNLOADED))
+        handlers = {
+                        consts.MSG_EVT_APP_QUIT:     self.onModUnloaded,
+                        consts.MSG_EVT_NEW_TRACK:    self.onNewTrack,
+                        consts.MSG_EVT_MOD_LOADED:   self.onModLoaded,
+                        consts.MSG_EVT_APP_STARTED:  self.onModLoaded,
+                        consts.MSG_EVT_MOD_UNLOADED: self.onModUnloaded,
+                   }
+
+        modules.ThreadedModule.__init__(self, handlers)
+
+
+    # --== Message handlers ==--
+
 
     def onModLoaded(self):
         """ The module has been loaded """
@@ -46,7 +57,12 @@ class Zeitgeist(modules.ThreadedModule):
             logger.info('[%s] Could not create Zeitgeist client\n\n%s' % (MOD_INFO[modules.MODINFO_NAME], traceback.format_exc()))
 
 
-    def sendToZeitgeist(self, track):
+    def onModUnloaded(self):
+        """ The module has been unloaded """
+        self.client = None
+
+
+    def onNewTrack(self, track):
         """ Send track information to Zeitgeist """
         import mimetypes, os.path
 
@@ -74,16 +90,3 @@ class Zeitgeist(modules.ThreadedModule):
         )
 
         self.client.insert_event(event)
-
-
-    # --== Message handler ==--
-
-
-    def handleMsg(self, msg, params):
-        """ Handle messages sent to this module """
-        if msg in (consts.MSG_EVT_APP_STARTED, consts.MSG_EVT_MOD_LOADED):
-            self.onModLoaded()
-        elif msg in (consts.MSG_EVT_APP_QUIT, consts.MSG_EVT_MOD_UNLOADED, consts.MSG_EVT_STOPPED):
-            self.client = None
-        elif msg == consts.MSG_EVT_NEW_TRACK and self.client is not None:
-            self.sendToZeitgeist(params['track'])
