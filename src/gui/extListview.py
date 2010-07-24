@@ -16,7 +16,10 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301 USA
 #
-# ExtListView v1.7
+# ExtListView v1.8
+#
+# v1.8:
+#   * Added an __iter__ method
 #
 # v1.7:
 #   * The 'extlistview-modified' signal was not generated when calling clear() and replaceContent()
@@ -380,6 +383,18 @@ class ExtListView(gtk.TreeView):
         return len(self.store)
 
 
+    def __iter__(self):
+        """ Iterate on all rows """
+        for row in self.store:
+            yield tuple(row)[:-1]
+
+
+    def iterAllRows(self):
+        """ Iterate on all rows """
+        for row in self.store:
+            yield tuple(row)[:-1]
+
+
     def getRow(self, rowIndex):
         """ Return the given row """
         return tuple(self.store[rowIndex])[:-1]
@@ -388,12 +403,6 @@ class ExtListView(gtk.TreeView):
     def getAllRows(self):
         """ Return all rows """
         return [tuple(row)[:-1] for row in self.store]
-
-
-    def iterAllRows(self):
-        """ Iterate on all rows """
-        for row in self.store:
-            yield tuple(row)[:-1]
 
 
     def getItem(self, rowIndex, colIndex):
