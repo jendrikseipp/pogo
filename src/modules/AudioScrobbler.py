@@ -270,6 +270,7 @@ class AudioScrobbler(modules.ThreadedModule):
                 return self.submit(False)
 
             else:
+                logger.error('[%s] Unable to perform submission\n\n%s' % (MOD_NAME, reply[0]))
                 hardFailure = True
 
         except:
