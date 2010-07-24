@@ -18,6 +18,7 @@
 
 import gtk, gui, media, modules, tools
 
+from gui             import fileChooser
 from tools           import consts, icons
 from gettext         import gettext as _
 from gobject         import TYPE_STRING, TYPE_INT, TYPE_PYOBJECT
@@ -40,7 +41,7 @@ MOD_INFO = ('Tracklist', 'Tracklist', '', [], True, False)
     ROW_TRK    # The Track object
 ) = range(11)
 
-# Create a unique ID for each column that the user can actually see
+# Create a unique ID for each column that the user can see
 (
     COL_TRCK_NUM,
     COL_TITLE,
@@ -53,17 +54,17 @@ MOD_INFO = ('Tracklist', 'Tracklist', '', [], True, False)
     COL_BITRATE,
 ) = range(9)
 
-
-PREFS_DEFAULT_REPEAT_STATUS = False
-PREFS_DEFAULT_COLUMNS_VISIBILITY = { COL_TRCK_NUM : True,
-                                     COL_TITLE    : True,
-                                     COL_ARTIST   : True,
-                                     COL_ALBUM    : True,
-                                     COL_DATE     : False,
-                                     COL_GENRE    : False,
-                                     COL_LENGTH   : True,
-                                     COL_BITRATE  : False,
-                                     COL_PATH     : False,
+PREFS_DEFAULT_REPEAT_STATUS      = False
+PREFS_DEFAULT_COLUMNS_VISIBILITY = {
+                                        COL_TRCK_NUM : True,
+                                        COL_TITLE    : True,
+                                        COL_ARTIST   : True,
+                                        COL_ALBUM    : True,
+                                        COL_DATE     : False,
+                                        COL_GENRE    : False,
+                                        COL_LENGTH   : True,
+                                        COL_BITRATE  : False,
+                                        COL_PATH     : False,
                                    }
 
 
@@ -92,6 +93,244 @@ class Tracklist(modules.Module):
                    }
 
         modules.Module.__init__(self, handlers)
+
+
+    def __fmtLengthColumn(self, col, cll, mdl, it):
+        """ Format the column showing the length of the track (e.g., show 1:23 instead of 83) """
+        cll.set_property('text', tools.sec2str(mdl.get_value(it, ROW_LEN)))
+
+
+    def __getNextTrackIdx(self):
+        """ Return the index of the next track, or -1 if there is none """
+        if self.list.hasMark():
+            if self.list.getMark() < (len(self.list) - 1): return self.list.getMark() + 1
+            elif self.btnRepeat.get_active():              return 0
+        return -1
+
+
+    def __hasNextTrack(self):
+        """ Return whether there is a next track """
+        return __getNextTrackIdx() != -1
+
+
+    def __getPreviousTrackIdx(self):
+        """ Return the index of the previous track, or -1 if there is none """
+        if self.list.hasMark():
+            if self.list.getMark() > 0:       return self.list.getMark() - 1
+            elif self.btnRepeat.get_active(): return len(self.list) - 1
+        return -1
+
+
+    def __hasPreviousTrack(self):
+        """ Return whether there is a previous track """
+        return __getPreviousTrackIdx() != -1
+
+
+    def jumpToNext(self):
+        """ Jump to the next track, if any """
+        where = self.__getNextTrackIdx()
+        if where != -1:
+            self.jumpTo(where)
+
+
+    def jumpToPrevious(self):
+        """ Jump to the previous track, if any """
+        where = self.__getPreviousTrackIdx()
+        if where != -1:
+            self.jumpTo(where)
+
+
+    def jumpTo(self, trackIdx, sendPlayMsg = True):
+        """ Jump to the track located at the given index """
+        if self.list.hasMark() and self.list.getItem(self.list.getMark(), ROW_ICO) != icons.errorMenuIcon():
+            self.list.setItem(self.list.getMark(), ROW_ICO, icons.nullMenuIcon())
+        self.list.setMark(trackIdx)
+        self.list.scroll_to_cell(trackIdx)
+        self.list.setItem(trackIdx, ROW_ICO, icons.playMenuIcon())
+
+        if sendPlayMsg:
+            modules.postMsg(consts.MSG_CMD_PLAY, {'uri': self.list.getItem(trackIdx, ROW_TRK).getURI()})
+
+        modules.postMsg(consts.MSG_EVT_NEW_TRACK,   {'track': self.list.getRow(trackIdx)[ROW_TRK]})
+        modules.postMsg(consts.MSG_EVT_TRACK_MOVED, {'hasPrevious': self.__hasPreviousTrack(), 'hasNext': self.__hasNextTrack()})
+
+
+    def insert(self, tracks, playNow, position=None):
+        """ Insert some tracks in the tracklist, append them if position is None """
+        rows = [[icons.nullMenuIcon(), track.getNumber(), track.getTitle(), track.getArtist(), track.getExtendedAlbum(),
+                    track.getLength(), track.getBitrate(), track.getGenre(), track.getDate(), track.getURI(), track] for track in tracks]
+
+        if len(rows) != 0:
+            self.previousTracklist = [row[ROW_TRK] for row in self.list]
+
+            for row in rows:
+                self.playtime += row[ROW_LEN]
+
+            self.list.insertRows(rows, position)
+
+            if playNow:
+                if position is not None: self.jumpTo(position)
+                else:                    self.jumpTo(len(self.previousTracklist))
+
+
+    def set(self, tracks, playNow):
+        """ Replace the tracklist, clear it if tracks is None """
+        self.playtime = 0
+
+        # Save playlist only locally to this function
+        # The insert() function would overwrite it otherwise
+        previousTracklist = [row[ROW_TRK] for row in self.list]
+
+        if self.list.hasMark() and ((not playNow) or (tracks is None) or (len(tracks) == 0)):
+            modules.postMsg(consts.MSG_CMD_STOP)
+
+        self.list.clear()
+
+        if tracks is not None and len(tracks) != 0:
+            self.insert(tracks, playNow)
+
+        self.previousTracklist = previousTracklist
+
+
+    def savePlaylist(self):
+        """ Save the current tracklist to a playlist """
+        outFile = fileChooser.save(self.window, _('Save playlist'), 'playlist.m3u')
+
+        if outFile is not None:
+            allFiles = [row[ROW_TRK].getFilePath() for row in self.list.iterAllRows()]
+            media.playlist.save(allFiles, outFile)
+
+
+    def remove(self, idx=None):
+        """ Remove the given track, or the selection if idx is None """
+        if idx is not None and (idx < 0 or idx >= len(self.list)):
+            return
+
+        hadMark                = self.list.hasMark()
+        self.previousTracklist = [row[ROW_TRK] for row in self.list]
+
+        if idx is not None:
+            self.playtime -= self.list.getRow(idx)[ROW_LEN]
+            self.list.removeRow((idx, ))
+        else:
+            self.playtime -= sum([row[ROW_LEN] for row in self.list.iterSelectedRows()])
+            self.list.removeSelectedRows()
+
+        self.list.unselectAll()
+
+        if hadMark and not self.list.hasMark():
+            modules.postMsg(consts.MSG_CMD_STOP)
+
+
+    def crop(self):
+        """ Remove the unselected tracks """
+        hadMark                = self.list.hasMark()
+        self.previousTracklist = [row[ROW_TRK] for row in self.list]
+
+        self.playtime = sum([row[ROW_LEN] for row in self.list.iterSelectedRows()])
+        self.list.cropSelectedRows()
+
+        if hadMark and not self.list.hasMark():
+            modules.postMsg(consts.MSG_CMD_STOP)
+
+
+    def revertTracklist(self):
+        """ Back to the previous tracklist """
+        self.set(self.previousTracklist, False)
+        self.previousTracklist = None
+
+
+    def shuffleTracklist(self):
+        """ Shuffle the tracks and ensure that the current track stays visible """
+        self.previousTracklist = [row[ROW_TRK] for row in self.list]
+        self.list.shuffle()
+        if self.list.hasMark():
+            self.list.scroll_to_cell(self.list.getMark())
+
+
+    def setRepeat(self, repeat):
+        """ Set/Unset the repeat function """
+        if self.btnRepeat.get_active() != repeat:
+            self.btnRepeat.clicked()
+
+
+    def showPopupMenu(self, list, path, button, time):
+        """ The index parameter may be None """
+        popup = gtk.Menu()
+
+        # Crop
+        crop = gtk.ImageMenuItem(_('Crop'))
+        crop.set_image(gtk.image_new_from_stock(gtk.STOCK_CUT, gtk.ICON_SIZE_MENU))
+        popup.append(crop)
+
+        if path is None: crop.set_sensitive(False)
+        else:            crop.connect('activate', lambda item: self.crop())
+
+        # Remove
+        remove = gtk.ImageMenuItem(gtk.STOCK_REMOVE)
+        popup.append(remove)
+
+        if path is None: remove.set_sensitive(False)
+        else:            remove.connect('activate', lambda item: self.remove())
+
+        popup.append(gtk.SeparatorMenuItem())
+
+        # Shuffle
+        shuffle = gtk.ImageMenuItem(_('Shuffle Playlist'))
+        shuffle.set_image(gtk.image_new_from_icon_name('stock_shuffle', gtk.ICON_SIZE_MENU))
+        popup.append(shuffle)
+
+        if len(list) == 0: shuffle.set_sensitive(False)
+        else:              shuffle.connect('activate', lambda item: modules.postMsg(consts.MSG_CMD_TRACKLIST_SHUFFLE))
+
+        # Revert
+        revert = gtk.ImageMenuItem(_('Revert Playlist'))
+        revert.set_image(gtk.image_new_from_stock(gtk.STOCK_REVERT_TO_SAVED, gtk.ICON_SIZE_MENU))
+        popup.append(revert)
+
+        if self.previousTracklist is None: revert.set_sensitive(False)
+        else:                              revert.connect('activate', lambda item: self.revertTracklist())
+
+        # Clear
+        clear = gtk.ImageMenuItem(_('Clear Playlist'))
+        clear.set_image(gtk.image_new_from_stock(gtk.STOCK_CLEAR, gtk.ICON_SIZE_MENU))
+        popup.append(clear)
+
+        if len(list) == 0: clear.set_sensitive(False)
+        else:              clear.connect('activate', lambda item: modules.postMsg(consts.MSG_CMD_TRACKLIST_CLR))
+
+        popup.append(gtk.SeparatorMenuItem())
+
+        # Repeat
+        repeat = gtk.CheckMenuItem(_('Repeat'))
+        repeat.set_active(tools.prefs.get(__name__, 'repeat-status', PREFS_DEFAULT_REPEAT_STATUS))
+        repeat.connect('toggled', lambda item: self.btnRepeat.clicked())
+        popup.append(repeat)
+
+        popup.append(gtk.SeparatorMenuItem())
+
+        # Save
+        save = gtk.ImageMenuItem(_('Save Playlist As...'))
+        save.set_image(gtk.image_new_from_stock(gtk.STOCK_SAVE_AS, gtk.ICON_SIZE_MENU))
+        popup.append(save)
+
+        if len(list) == 0: save.set_sensitive(False)
+        else:              save.connect('activate', lambda item: self.savePlaylist())
+
+        popup.show_all()
+        popup.popup(None, None, None, button, time)
+
+
+    def togglePause(self):
+        """ Start playing if not already playing """
+        if not self.list.hasMark():
+            if self.list.getSelectedRowsCount() != 0:
+                self.jumpTo(self.list.getFirstSelectedRowIndex())
+            else:
+                self.jumpTo(0)
+
+
+    # --== Message handlers ==--
 
 
     def onAppStarted(self):
@@ -131,7 +370,7 @@ class Tracklist(modules.Module):
                    (None,          [(None, TYPE_PYOBJECT)],                            (None,),                                       False, False))
 
         self.list = ExtListView(columns, sortable=True, dndTargets=consts.DND_TARGETS.values(), useMarkup=False, canShowHideColumns=True)
-        self.list.get_column(4).set_cell_data_func(txtRRdr, self.fmtLength)
+        self.list.get_column(4).set_cell_data_func(txtRRdr, self.__fmtLengthColumn)
         self.list.enableDNDReordering()
         wTree.get_widget('scrolled-tracklist').add(self.list)
         # GTK handlers
@@ -149,56 +388,6 @@ class Tracklist(modules.Module):
         # Set icons
         wTree.get_widget('img-repeat').set_from_icon_name('stock_repeat', gtk.ICON_SIZE_BUTTON)
         wTree.get_widget('img-shuffle').set_from_icon_name('stock_shuffle', gtk.ICON_SIZE_BUTTON)
-
-
-    def getAllFiles(self):                  return [row[ROW_TRK].getFilePath() for row in self.list.iterAllRows()]
-    def getAllTracks(self):                 return [row[ROW_TRK] for row in self.list.iterAllRows()]
-    def fmtLength(self, col, cll, mdl, it): cll.set_property('text', tools.sec2str(mdl.get_value(it, ROW_LEN)))
-
-
-    def __getNextTrackIdx(self):
-        """ Return the index of the next track, or -1 if there is none """
-        if self.list.hasMark():
-            if self.list.getMark() < (len(self.list) - 1): return self.list.getMark() + 1
-            elif self.btnRepeat.get_active():              return 0
-        return -1
-
-
-    def __getPreviousTrackIdx(self):
-        """ Return the index of the previous track, or -1 if there is none """
-        if self.list.hasMark():
-            if self.list.getMark() > 0:       return self.list.getMark() - 1
-            elif self.btnRepeat.get_active(): return len(self.list) - 1
-        return -1
-
-
-    def jumpToNext(self):
-        """ Jump to the next track, if any """
-        where = self.__getNextTrackIdx()
-        if where != -1:
-            self.jumpTo(where)
-
-
-    def jumpToPrevious(self):
-        """ Jump to the previous track, if any """
-        where = self.__getPreviousTrackIdx()
-        if where != -1:
-            self.jumpTo(where)
-
-
-    def jumpTo(self, trackIdx, sendPlayMsg = True):
-        """ Jump to the track located at the given index """
-        if self.list.hasMark() and self.list.getItem(self.list.getMark(), ROW_ICO) != icons.errorMenuIcon():
-            self.list.setItem(self.list.getMark(), ROW_ICO, icons.nullMenuIcon())
-        self.list.setMark(trackIdx)
-        self.list.scroll_to_cell(trackIdx)
-        self.list.setItem(trackIdx, ROW_ICO, icons.playMenuIcon())
-
-        if sendPlayMsg:
-            modules.postMsg(consts.MSG_CMD_PLAY, {'uri': self.list.getItem(trackIdx, ROW_TRK).getURI()})
-
-        modules.postMsg(consts.MSG_EVT_NEW_TRACK,   {'track': self.list.getRow(trackIdx)[ROW_TRK]})
-        modules.postMsg(consts.MSG_EVT_TRACK_MOVED, {'hasPrevious': self.__getPreviousTrackIdx() != -1, 'hasNext': self.__getNextTrackIdx() != -1})
 
 
     def onTrackEnded(self, withError):
@@ -234,43 +423,6 @@ class Tracklist(modules.Module):
             modules.postMsg(consts.MSG_CMD_BUFFER, {'uri': self.bufferedTrack})
 
 
-    def insert(self, tracks, playNow, position=None):
-        """ Insert some tracks in the tracklist, append them if position is None """
-        rows = [[icons.nullMenuIcon(), track.getNumber(), track.getTitle(), track.getArtist(), track.getExtendedAlbum(),
-                    track.getLength(), track.getBitrate(), track.getGenre(), track.getDate(), track.getURI(), track] for track in tracks]
-
-        if len(rows) != 0:
-            self.previousTracklist = [row[ROW_TRK] for row in self.list.getAllRows()]
-
-            for row in rows:
-                self.playtime += row[ROW_LEN]
-
-            self.list.insertRows(rows, position)
-
-            if playNow:
-                if position is not None: self.jumpTo(position)
-                else:                    self.jumpTo(len(self.previousTracklist))
-
-
-    def set(self, tracks, playNow):
-        """ Replace the tracklist, clear it if tracks is None """
-        self.playtime = 0
-
-        # Save playlist only locally to this function
-        # The insert() function would overwrite it otherwise
-        previousTracklist = [row[ROW_TRK] for row in self.list.getAllRows()]
-
-        if self.list.hasMark() and ((not playNow) or (tracks is None) or (len(tracks) == 0)):
-            modules.postMsg(consts.MSG_CMD_STOP)
-
-        self.list.clear()
-
-        if tracks is not None and len(tracks) != 0:
-            self.insert(tracks, playNow)
-
-        self.previousTracklist = previousTracklist
-
-
     def onStopped(self):
         """ Playback has been stopped """
         if self.list.hasMark():
@@ -286,137 +438,6 @@ class Tracklist(modules.Module):
             self.list.setItem(self.list.getMark(), ROW_ICO, icon)
 
 
-    def savePlaylist(self):
-        """ Save the current tracklist to a playlist """
-        outFile = gui.fileChooser.save(self.window, _('Save playlist'), 'playlist.m3u')
-
-        if outFile is not None:
-            media.playlist.save(self.getAllFiles(), outFile)
-
-
-    def remove(self, idx=None):
-        """ Remove the given track, or the selection if idx is None """
-        if idx is not None and (idx < 0 or idx >= len(self.list)):
-            return
-
-        hadMark                = self.list.hasMark()
-        self.previousTracklist = [row[ROW_TRK] for row in self.list.getAllRows()]
-
-        if idx is not None:
-            self.playtime -= self.list.getRow(idx)[ROW_LEN]
-            self.list.removeRow((idx, ))
-        else:
-            self.playtime -= sum([row[ROW_LEN] for row in self.list.iterSelectedRows()])
-            self.list.removeSelectedRows()
-
-        self.list.unselectAll()
-
-        if hadMark and not self.list.hasMark():
-            modules.postMsg(consts.MSG_CMD_STOP)
-
-
-    def crop(self):
-        """ Remove the unselected tracks """
-        hadMark                = self.list.hasMark()
-        self.previousTracklist = [row[ROW_TRK] for row in self.list.getAllRows()]
-
-        self.playtime = sum([row[ROW_LEN] for row in self.list.iterSelectedRows()])
-        self.list.cropSelectedRows()
-
-        if hadMark and not self.list.hasMark():
-            modules.postMsg(consts.MSG_CMD_STOP)
-
-
-    def revertTracklist(self):
-        """ Back to the previous tracklist """
-        self.set(self.previousTracklist, False)
-        self.previousTracklist = None
-
-
-    def shuffleTracklist(self):
-        """ Shuffle the tracks and ensure that the current track stays visible """
-        self.previousTracklist = [row[ROW_TRK] for row in self.list.getAllRows()]
-        self.list.shuffle()
-        if self.list.hasMark():
-            self.list.scroll_to_cell(self.list.getMark())
-
-
-    def setRepeat(self, repeat):
-        """ Set/Unset the repeat function """
-        if self.btnRepeat.get_active() != repeat:
-            self.btnRepeat.clicked()
-
-
-    def showPopupMenu(self, list, path, button, time):
-        """ The index parameter may be None """
-        popup = gtk.Menu()
-
-        # Crop
-        crop = gtk.ImageMenuItem(_('Crop'))
-        crop.set_image(gtk.image_new_from_stock(gtk.STOCK_CUT, gtk.ICON_SIZE_MENU))
-        crop.set_sensitive(path is not None)
-        crop.connect('activate', lambda item: self.crop())
-        popup.append(crop)
-
-        # Remove
-        remove = gtk.ImageMenuItem(gtk.STOCK_REMOVE)
-        remove.set_sensitive(path is not None)
-        remove.connect('activate', lambda item: self.remove())
-        popup.append(remove)
-
-        popup.append(gtk.SeparatorMenuItem())
-
-        # Shuffle
-        shuffle = gtk.ImageMenuItem(_('Shuffle Playlist'))
-        shuffle.set_sensitive(len(list) != 0)
-        shuffle.set_image(gtk.image_new_from_icon_name('stock_shuffle', gtk.ICON_SIZE_MENU))
-        shuffle.connect('activate', lambda item: modules.postMsg(consts.MSG_CMD_TRACKLIST_SHUFFLE))
-        popup.append(shuffle)
-
-        # Revert
-        revert = gtk.ImageMenuItem(_('Revert Playlist'))
-        revert.set_image(gtk.image_new_from_stock(gtk.STOCK_REVERT_TO_SAVED, gtk.ICON_SIZE_MENU))
-        revert.set_sensitive(self.previousTracklist is not None)
-        revert.connect('activate', lambda item: self.revertTracklist())
-        popup.append(revert)
-
-        # Clear
-        clear = gtk.ImageMenuItem(_('Clear Playlist'))
-        clear.set_sensitive(len(list) != 0)
-        clear.set_image(gtk.image_new_from_stock(gtk.STOCK_CLEAR, gtk.ICON_SIZE_MENU))
-        clear.connect('activate', lambda item: modules.postMsg(consts.MSG_CMD_TRACKLIST_CLR))
-        popup.append(clear)
-
-        popup.append(gtk.SeparatorMenuItem())
-
-        # Repeat
-        repeat = gtk.CheckMenuItem(_('Repeat'))
-        repeat.set_active(tools.prefs.get(__name__, 'repeat-status', PREFS_DEFAULT_REPEAT_STATUS))
-        repeat.connect('toggled', lambda item: self.btnRepeat.clicked())
-        popup.append(repeat)
-
-        popup.append(gtk.SeparatorMenuItem())
-
-        # Save
-        save = gtk.ImageMenuItem(_('Save Playlist As...'))
-        save.set_sensitive(len(list) != 0)
-        save.set_image(gtk.image_new_from_stock(gtk.STOCK_SAVE_AS, gtk.ICON_SIZE_MENU))
-        save.connect('activate', lambda item: self.savePlaylist())
-        popup.append(save)
-
-        popup.show_all()
-        popup.popup(None, None, None, button, time)
-
-
-    def togglePause(self):
-        """ Start playing if not already playing """
-        if not self.list.hasMark():
-            if self.list.getSelectedRowsCount() != 0:
-                self.jumpTo(self.list.getFirstSelectedRowIndex())
-            else:
-                self.jumpTo(0)
-
-
     # --== GTK handlers ==--
 
 
@@ -425,7 +446,7 @@ class Tracklist(modules.Module):
         tools.prefs.set(__name__, 'repeat-status', self.btnRepeat.get_active())
         modules.postMsg(consts.MSG_EVT_REPEAT_CHANGED, {'repeat': self.btnRepeat.get_active()})
         if self.list.hasMark():
-            modules.postMsg(consts.MSG_EVT_TRACK_MOVED, {'hasPrevious': self.__getPreviousTrackIdx() != -1, 'hasNext': self.__getNextTrackIdx() != -1})
+            modules.postMsg(consts.MSG_EVT_TRACK_MOVED, {'hasPrevious': self.__hasPreviousTrack(), 'hasNext': self.__hasNextTrack()})
 
 
     def onButtonPressed(self, list, event, path):
@@ -454,14 +475,15 @@ class Tracklist(modules.Module):
         self.btnShuffle.set_sensitive(len(list) != 0)
 
         # Update playlist length and playlist position for all tracks
-        for position, row in enumerate(self.list.getAllRows()):
+        for position, row in enumerate(self.list):
             row[ROW_TRK].setPlaylistPos(position + 1)
             row[ROW_TRK].setPlaylistLen(len(self.list))
 
-        modules.postMsg(consts.MSG_EVT_NEW_TRACKLIST, {'tracks': self.getAllTracks(), 'playtime': self.playtime})
+        allTracks = [row[ROW_TRK] for row in self.list]
+        modules.postMsg(consts.MSG_EVT_NEW_TRACKLIST, {'tracks': allTracks, 'playtime': self.playtime})
 
         if self.list.hasMark():
-            modules.postMsg(consts.MSG_EVT_TRACK_MOVED, {'hasPrevious': self.__getPreviousTrackIdx() != -1, 'hasNext':  self.__getNextTrackIdx() != -1})
+            modules.postMsg(consts.MSG_EVT_TRACK_MOVED, {'hasPrevious': self.__hasPreviousTrack(), 'hasNext':  self.__hasNextTrack()})
 
 
     def onSelectionChanged(self, list, selectedRows):
