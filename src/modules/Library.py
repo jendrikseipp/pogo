@@ -870,6 +870,10 @@ class Library(modules.Module):
         # Rename tree states as well
         self.renameTreeStates(oldName, newName)
 
+        # Is it the current library?
+        if self.currLib == oldName:
+            self.currLib = newName
+
         modules.postMsg(consts.MSG_CMD_EXPLORER_RENAME, {'modName': MOD_L10N, 'expName': oldName, 'newExpName': newName})
 
 
