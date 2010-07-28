@@ -644,6 +644,17 @@ class Library(modules.Module):
         if libName + ' favorites' in self.treeState: del self.treeState[libName + ' favorites']
 
 
+    def renameTreeStates(self, oldLibName, newLibName):
+        """ Rename the tree states associated with oldLibName """
+        if oldLibName in self.treeState:
+            self.treeState[newLibName] = self.treeState[oldLibName]
+            del self.treeState[oldLibName]
+
+        if oldLibName + ' favorites' in self.treeState:
+            self.treeState[newLibName + ' favorites'] = self.treeState[oldLibName + ' favorites']
+            del self.treeState[oldLibName + ' favorites']
+
+
     # --== Favorites ==--
 
 
@@ -855,6 +866,9 @@ class Library(modules.Module):
         oldPath = os.path.join(ROOT_PATH, oldName)
         newPath = os.path.join(ROOT_PATH, newName)
         shutil.move(oldPath, newPath)
+
+        # Rename tree states as well
+        self.renameTreeStates(oldName, newName)
 
         modules.postMsg(consts.MSG_CMD_EXPLORER_RENAME, {'modName': MOD_L10N, 'expName': oldName, 'newExpName': newName})
 
