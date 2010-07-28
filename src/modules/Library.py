@@ -638,6 +638,12 @@ class Library(modules.Module):
             self.tree.restoreState(self.treeState[name], ROW_NAME)
 
 
+    def removeTreeStates(self, libName):
+        """ Remove the tree states associated to the given library """
+        if libName in self.treeState:                del self.treeState[libName]
+        if libName + ' favorites' in self.treeState: del self.treeState[libName + ' favorites']
+
+
     # --== Favorites ==--
 
 
@@ -899,6 +905,8 @@ class Library(modules.Module):
                 # Remove the corresponding explorer
                 modules.postMsg(consts.MSG_CMD_EXPLORER_REMOVE, {'modName': MOD_L10N, 'expName': row[0]})
                 del self.libraries[row[0]]
+                # Remove tree states
+                self.removeTreeStates(row[0])
             # Clean up the listview
             list.removeSelectedRows()
 
