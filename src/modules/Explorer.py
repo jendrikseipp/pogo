@@ -34,7 +34,7 @@ MOD_INFO = ('Explorer', 'Explorer', '', [], True, False)
 
 
 # Default preferences
-DEFAULT_LAST_EXPLORER = ('', '')   # Module name and explorer name
+DEFAULT_LAST_EXPLORER = ('', '')     # Module name and explorer name
 
 
 class Explorer(modules.Module):
@@ -42,13 +42,11 @@ class Explorer(modules.Module):
 
     def __init__(self):
         """ Constructor """
-        handlers = {
-                       consts.MSG_CMD_EXPLORER_ADD:    self.onAddExplorer,
-                       consts.MSG_CMD_EXPLORER_REMOVE: self.onRemoveExplorer,
-                       consts.MSG_CMD_EXPLORER_RENAME: self.onRenameExplorer,
-                   }
-
-        modules.Module.__init__(self, handlers)
+        modules.Module.__init__(self, {
+                                           consts.MSG_CMD_EXPLORER_ADD:    self.onAddExplorer,
+                                           consts.MSG_CMD_EXPLORER_REMOVE: self.onRemoveExplorer,
+                                           consts.MSG_CMD_EXPLORER_RENAME: self.onRenameExplorer,
+                                      })
 
         # Attributes
         self.combo        = prefs.getWidgetsTree().get_widget('combo-explorer')
@@ -86,44 +84,29 @@ class Explorer(modules.Module):
 
 
     def __fillComboBox(self):
-        """ Fill the combo box based on the internal structures """
-        rows = []
-        for modName in self.explorers.iterkeys():
-            for (expName, (pixbuf, widget)) in self.explorers[modName].iteritems():
-                rows.append((pixbuf, expName, modName, False, False))
-        rows.sort(key=lambda row: (row[ROW_MODULE] + row[ROW_NAME]).lower())
+        """ Fill the combo box """
+        idx = self.combo.get_active()
 
-        # Try to keep the same entry selected, or restore the saved one
-        oldIndex = self.combo.get_active()
-        if oldIndex != -1:
-            (selModName, selExpName) = self.store.get(self.store.get_iter(oldIndex), ROW_MODULE, ROW_NAME)
-        else:
-            savedSelection = prefs.get(__name__, 'last-explorer', DEFAULT_LAST_EXPLORER)
-            # Backward compatibility...
-            if type(savedSelection) is tuple: (selModName, selExpName) = savedSelection
-            else:                             (selModName, selExpName) = DEFAULT_LAST_EXPLORER
+        if idx == -1: (selectedModule, selectedExplorer) = prefs.get(__name__, 'last-explorer', DEFAULT_LAST_EXPLORER)
+        else:         (selectedModule, selectedExplorer) = self.store.get(self.store.get_iter(idx), ROW_MODULE, ROW_NAME)
 
+        restoredIdx = None
         self.combo.freeze_child_notify()
         self.store.clear()
 
-        newIndex, lastModName = -1, None
-        for row in rows:
-            if lastModName != row[ROW_MODULE]:
-                lastModName = row[ROW_MODULE]
-                # Insert a separator between each different module
-                if len(self.store) != 0: self.store.append((None, '', '', True, False))
-                # Insert an header before each different module
-                self.store.append((None, '<b>%s</b>' % lastModName, '', False, True))
-            if row[ROW_MODULE] == selModName and row[ROW_NAME] == selExpName:
-                newIndex = len(self.store)
-            self.store.append(row)
+        for module in sorted(self.explorers):
+            self.store.append((None, '<b>%s</b>' % module, '', False, True))
+            for (explorer, (pixbuf, widget)) in sorted(self.explorers[module].iteritems()):
+                self.store.append((pixbuf, explorer, module, False, False))
 
-        # Restore the previously selected index, if any
-        if newIndex == -1:
+                if module == selectedModule and explorer == selectedExplorer:
+                    restoredIdx = len(self.store) - 1
+
+        if restoredIdx is None:
             self.notebook.set_current_page(0)
             self.currExplorer = -1
         else:
-            self.combo.set_active(newIndex)
+            self.combo.set_active(restoredIdx)
 
         self.combo.set_sensitive(len(self.store) != 0)
         self.combo.thaw_child_notify()
