@@ -175,23 +175,25 @@ class Explorer(modules.Module):
         if newExpName == expName:
             return
 
-        try:
-            # Modify the dictionnary
-            self.explorers[modName][newExpName] = self.explorers[modName][expName]
-            del self.explorers[modName][expName]
+        # Modify the dictionnary
+        self.explorers[modName][newExpName] = self.explorers[modName][expName]
+        del self.explorers[modName][expName]
 
-            # Rename the combo box entry
-            for row in self.store:
-                if row[ROW_NAME] == expName:
-                    row[ROW_NAME] = newExpName
-                    break
+        # If the explorer we're renaming is currently selected, we need to rename the row
+        # Otherwise, __fillComboBox() won't be able to keep it selected
+        idx = self.combo.get_active()
+        if idx != -1:
+            (selModName, selExpName) = self.store.get(self.store.get_iter(idx), ROW_MODULE, ROW_NAME)
+            if selModName == modName and selExpName == expName:
+                self.store.set(self.store.get_iter(idx), ROW_NAME, newExpName)
 
-            # Changed the saved name if needed
-            (savedModName, savedExpName) = prefs.get(__name__, 'last-explorer', (modName, expName))
-            if savedModName == modName and savedExpName == expName:
-                prefs.set(__name__, 'last-explorer', (modName, newExpName))
-        except:
-            pass
+        # This is needed to sort the explorers according to the new name
+        self.__fillComboBox()
+
+        # Changed the saved name if needed
+        (savedModName, savedExpName) = prefs.get(__name__, 'last-explorer', (modName, expName))
+        if savedModName == modName and savedExpName == expName:
+            prefs.set(__name__, 'last-explorer', (modName, newExpName))
 
 
     # --== GTK handlers ==--

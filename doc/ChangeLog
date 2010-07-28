@@ -7,6 +7,7 @@ v1.06 ()
     [-] CD explorer not always removed when unloading the CD module (#603902)
     [-] AudioScrobbler submission blocked by '\0' bytes (#604016)
     [-] Tracklist scrolls up upon insertion (#607261)
+    [-] List of explorers not kept sorted when renaming a library (#610202)
 
 
 v1.05 (27/06/10)
