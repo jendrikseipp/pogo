@@ -916,15 +916,20 @@ class Library(modules.Module):
 
         if questionMsgBox(self.cfgWindow, question, '%s %s' % (_('Your media files will not be removed.'), remark)) == gtk.RESPONSE_YES:
             for row in list.getSelectedRows():
+                libName = row[0]
+
+                if self.currLib == libName:
+                    self.currLib = None
+
                 # Remove the library from the disk
-                libPath = os.path.join(ROOT_PATH, row[0])
+                libPath = os.path.join(ROOT_PATH, libName)
                 if isdir(libPath):
                     shutil.rmtree(libPath)
                 # Remove the corresponding explorer
-                modules.postMsg(consts.MSG_CMD_EXPLORER_REMOVE, {'modName': MOD_L10N, 'expName': row[0]})
-                del self.libraries[row[0]]
+                modules.postMsg(consts.MSG_CMD_EXPLORER_REMOVE, {'modName': MOD_L10N, 'expName': libName})
+                del self.libraries[libName]
                 # Remove tree states
-                self.removeTreeStates(row[0])
+                self.removeTreeStates(libName)
             # Clean up the listview
             list.removeSelectedRows()
 
