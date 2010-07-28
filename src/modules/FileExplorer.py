@@ -416,7 +416,7 @@ class FileExplorer(modules.Module):
         self.scrolled.show()
 
         for name in self.folders:
-            modules.postMsg(consts.MSG_CMD_EXPLORER_ADD, {'modName': MOD_L10N, 'expName': name, 'icon': None, 'widget': self.scrolled})
+            modules.postMsg(consts.MSG_CMD_EXPLORER_ADD, {'modName': MOD_L10N, 'expName': name, 'icon': icons.dirMenuIcon(), 'widget': self.scrolled})
 
 
     def onAppQuit(self):
@@ -511,7 +511,7 @@ class FileExplorer(modules.Module):
             name, path = result
             self.folders[name] = path
             self.populateFolderList()
-            modules.postMsg(consts.MSG_CMD_EXPLORER_ADD, {'modName': MOD_L10N, 'expName': name, 'icon': None, 'widget': self.scrolled})
+            modules.postMsg(consts.MSG_CMD_EXPLORER_ADD, {'modName': MOD_L10N, 'expName': name, 'icon': icons.dirMenuIcon(), 'widget': self.scrolled})
 
 
     def onRemoveSelectedFolder(self, list):

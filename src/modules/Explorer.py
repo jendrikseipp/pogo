@@ -72,27 +72,26 @@ class Explorer(modules.Module):
         self.combo.connect('changed', self.onChanged)
 
 
-    def __cellDataFunction(self, comboBox, cellRenderer, model, iter):
+    def __cellDataFunction(self, combo, renderer, model, iter):
         """ Use a different format for headers """
-        if model.get_value(iter, ROW_IS_HEADER): cellRenderer.set_property('xalign', 0.5)
-        else:                                    cellRenderer.set_property('xalign', 0.0)
+        if model.get_value(iter, ROW_IS_HEADER): renderer.set_property('xalign', 0.5)
+        else:                                    renderer.set_property('xalign', 0.0)
 
 
     def __fillComboBox(self):
         """ Fill the combo box """
-        idx          = self.combo.get_active()
-        self.timeout = None
+        idx            = self.combo.get_active()
+        restoredIdx    = None
+        self.timeout   = None
+        previousModule = None
 
-        if idx == -1: (selectedModule, selectedExplorer) = prefs.get(__name__, 'last-explorer', DEFAULT_LAST_EXPLORER)
-        else:         (selectedModule, selectedExplorer) = self.store.get(self.store.get_iter(idx), ROW_MODULE, ROW_NAME)
+        if idx == -1: selectedModule, selectedExplorer = prefs.get(__name__, 'last-explorer', DEFAULT_LAST_EXPLORER)
+        else:         selectedModule, selectedExplorer = self.store[idx][ROW_MODULE], self.store[idx][ROW_NAME]
 
         self.combo.freeze_child_notify()
         self.store.clear()
 
-        restoredIdx    = None
-        previousModule = None
-
-        for ((module, explorer), (pixbuf, widget)) in sorted(self.allExplorers.iteritems()):
+        for (module, explorer), (pixbuf, widget) in sorted(self.allExplorers.iteritems()):
 
             if module != previousModule:
                 self.store.append((None, '<b>%s</b>' % module, '', -1, True))
@@ -131,13 +130,10 @@ class Explorer(modules.Module):
 
     def onAddExplorer(self, modName, expName, icon, widget):
         """ Add a new explorer to the combo box """
-        if icon is None: self.allExplorers[(modName, expName)] = (icons.dirMenuIcon(), widget)
-        else:            self.allExplorers[(modName, expName)] = (icon, widget)
-
         if widget not in self.notebookPages:
-            self.notebookPages[widget] = self.notebook.get_n_pages()
-            self.notebook.append_page(widget)
+            self.notebookPages[widget] = self.notebook.append_page(widget)
 
+        self.allExplorers[(modName, expName)] = (icon, widget)
         self.fillComboBox()
 
 
@@ -156,11 +152,9 @@ class Explorer(modules.Module):
             # If the explorer we're renaming is currently selected, we need to rename the row
             # Otherwise, fillComboBox() won't be able to keep it selected
             idx = self.combo.get_active()
-            if idx != -1:
-                (selModName, selExpName) = self.store.get(self.store.get_iter(idx), ROW_MODULE, ROW_NAME)
-                if selModName == modName and selExpName == expName:
-                    self.store.set(self.store.get_iter(idx), ROW_NAME, newExpName)
-                    prefs.set(__name__, 'last-explorer', (modName, newExpName))
+            if idx != -1 and self.store[idx][ROW_MODULE] == modName and self.store[idx][ROW_NAME] == expName:
+                self.store[idx][ROW_NAME] = newExpName
+                prefs.set(__name__, 'last-explorer', (modName, newExpName))
 
             self.fillComboBox()
 
@@ -174,14 +168,10 @@ class Explorer(modules.Module):
 
         if idx == -1:
             self.notebook.set_current_page(0)
-            return
-
-        pixbuf, explorer, module, page, isHeader = self.store[idx]
-
-        if isHeader:
+        elif self.store[idx][ROW_IS_HEADER]:
             combo.set_active(self.currExplorerIdx)
         else:
             self.currExplorerIdx = idx
-            prefs.set(__name__, 'last-explorer', (module, explorer))
-            modules.postMsg(consts.MSG_EVT_EXPLORER_CHANGED, {'modName': module, 'expName': explorer})
-            self.notebook.set_current_page(page)
+            prefs.set(__name__, 'last-explorer', (self.store[idx][ROW_MODULE], self.store[idx][ROW_NAME]))
+            modules.postMsg(consts.MSG_EVT_EXPLORER_CHANGED, {'modName': self.store[idx][ROW_MODULE], 'expName': self.store[idx][ROW_NAME]})
+            self.notebook.set_current_page(self.store[idx][ROW_PAGE_NUM])

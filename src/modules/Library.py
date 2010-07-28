@@ -320,7 +320,7 @@ class Library(modules.Module):
         self.libraries[libName] = (path, overallNbArtists, overallNbAlbums, overallNbTracks)
         self.fillLibraryList()
         if creation:
-            modules.postMsg(consts.MSG_CMD_EXPLORER_ADD, {'modName': MOD_L10N, 'expName': libName, 'icon': None, 'widget': self.scrolled})
+            modules.postMsg(consts.MSG_CMD_EXPLORER_ADD, {'modName': MOD_L10N, 'expName': libName, 'icon': icons.dirMenuIcon(), 'widget': self.scrolled})
         progress.destroy()
 
         # Trim favorites and save them
@@ -743,7 +743,7 @@ class Library(modules.Module):
     def addAllExplorers(self):
         """ Add all libraries to the Explorer module """
         for (name, (path, nbArtists, nbAlbums, nbTracks)) in self.libraries.iteritems():
-            modules.postMsg(consts.MSG_CMD_EXPLORER_ADD, {'modName': MOD_L10N, 'expName': name, 'icon': None, 'widget': self.scrolled})
+            modules.postMsg(consts.MSG_CMD_EXPLORER_ADD, {'modName': MOD_L10N, 'expName': name, 'icon': icons.dirMenuIcon(), 'widget': self.scrolled})
 
 
     def removeAllExplorers(self):
