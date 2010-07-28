@@ -50,6 +50,7 @@ class Explorer(modules.Module):
         self.combo           = prefs.getWidgetsTree().get_widget('combo-explorer')
         txtRenderer          = gtk.CellRendererText()
         pixRenderer          = gtk.CellRendererPixbuf()
+        self.timeout         = None
         self.notebook        = prefs.getWidgetsTree().get_widget('notebook-explorer')
         self.allExplorers    = {}
         self.notebookPages   = {}
@@ -77,9 +78,10 @@ class Explorer(modules.Module):
         else:                                    cellRenderer.set_property('xalign', 0.0)
 
 
-    def fillComboBox(self):
+    def __fillComboBox(self):
         """ Fill the combo box """
-        idx = self.combo.get_active()
+        idx          = self.combo.get_active()
+        self.timeout = None
 
         if idx == -1: (selectedModule, selectedExplorer) = prefs.get(__name__, 'last-explorer', DEFAULT_LAST_EXPLORER)
         else:         (selectedModule, selectedExplorer) = self.store.get(self.store.get_iter(idx), ROW_MODULE, ROW_NAME)
@@ -109,6 +111,19 @@ class Explorer(modules.Module):
 
         self.combo.set_sensitive(len(self.store) != 0)
         self.combo.thaw_child_notify()
+
+        return False
+
+
+    def fillComboBox(self):
+        """
+            Wrapper function for __fillComboBox()
+            Call fillComboBox() after a small timeout, to avoid many (useless) consecutive calls to __fillComboBox()
+        """
+        if self.timeout is not None:
+            gobject.source_remove(self.timeout)
+
+        self.timeout = gobject.timeout_add(100, self.__fillComboBox)
 
 
     # --== Message handlers ==--
