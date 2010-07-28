@@ -110,7 +110,7 @@ class Tracklist(modules.Module):
 
     def __hasNextTrack(self):
         """ Return whether there is a next track """
-        return __getNextTrackIdx() != -1
+        return self.__getNextTrackIdx() != -1
 
 
     def __getPreviousTrackIdx(self):
@@ -123,7 +123,7 @@ class Tracklist(modules.Module):
 
     def __hasPreviousTrack(self):
         """ Return whether there is a previous track """
-        return __getPreviousTrackIdx() != -1
+        return self.__getPreviousTrackIdx() != -1
 
 
     def jumpToNext(self):
