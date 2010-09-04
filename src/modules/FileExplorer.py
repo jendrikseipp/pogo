@@ -151,6 +151,9 @@ class FileExplorer(modules.Module):
             Replace/extend the tracklist
             If 'path' is None, use the current selection
         """
+        ## never replace
+        replace = False
+        
         if path is None: tracks = media.getTracks([row[ROW_FULLPATH] for row in self.tree.getSelectedRows()], self.addByFilename)
         else:            tracks = media.getTracks([self.tree.getRow(path)[ROW_FULLPATH]], self.addByFilename)
 
