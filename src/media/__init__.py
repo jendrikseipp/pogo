@@ -16,7 +16,14 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301 USA
 
-import os, playlist, traceback
+import os
+import sys
+
+if __name__ == '__main__':
+    base_dir = os.path.abspath(os.path.join(os.path.abspath(__file__), '../../'))
+    sys.path.insert(0, base_dir)
+
+import playlist, traceback
 
 from format          import monkeysaudio, asf, flac, mp3, mp4, mpc, ogg, wavpack
 from os.path         import splitext
@@ -56,7 +63,7 @@ def getTracksFromFiles(files):
     return [getTrackFromFile(file) for file in files]
 
 
-def getTracks(filenames, sortByFilename=False):
+def getTracksFlat(filenames, sortByFilename=False):
     """ Same as getTracksFromFiles(), but works for any kind of filenames (files, playlists, directories) """
     allTracks = []
 
@@ -85,3 +92,88 @@ def getTracks(filenames, sortByFilename=False):
         allTracks.extend(getTracksFromFiles(playlist.load(pl)))
 
     return allTracks
+   
+    
+def dirname(dir):
+    '''
+    returns the last dirname in path
+    '''
+    dir = os.path.abspath(dir)
+    # Remove double slashes and last slash
+    dir = os.path.normpath(dir)
+    
+    dirname, basename = os.path.split(dir)
+    # Return "/" if journal is located at /
+    return basename or dirname
+    
+
+class TrackDir(object):
+    def __init__(self, dir, flat=False):
+        self.dir = dir
+        if dir:
+            self.dirname = dirname(dir)
+        else:
+            self.dirname = ''
+        
+        # If flat is True, add files without directories
+        self.flat = flat
+        
+        self.tracks = []
+        self.subdirs = []
+        
+        if not flat:
+            self.scan()
+        
+    def scan(self):
+        import tools
+        for filename, path in sorted(tools.listDir(self.dir)):
+            if os.path.isdir(path):
+                trackdir = TrackDir(path)
+                self.subdirs.append(trackdir)
+            elif isSupported(filename):
+                track = getTrackFromFile(path)
+                self.tracks.append(track)
+                
+    def empty(self):
+        return not self.tracks and not self.subdirs
+                
+    def __str__(self, indent=0):
+        res = ''
+        res += '- %s\n' % self.dirname
+        for track in self.tracks:
+            res += (' '*indent) + '%s\n' % track
+        if self.subdirs:
+            for dir in self.subdirs:
+                res += (' '*indent) + '%s' % dir.__str__(indent=indent+4)
+            
+        return res
+        
+    
+def getTracks(filenames, sortByFilename=False):
+    """ Same as getTracksFromFiles(), but works for any kind of filenames (files, playlists, directories) """
+    assert type(filenames) == list, 'filenames has to be a list'
+    
+    tracks = TrackDir(None, flat=True)
+    
+    for path in sorted(filenames):
+        if os.path.isdir(path):
+            trackdir = TrackDir(path)
+            tracks.subdirs.append(trackdir)
+        elif isSupported(path):
+            track = getTrackFromFile(path)
+            tracks.tracks.append(track)
+            
+    return tracks
+    
+    
+if __name__ == '__main__':
+    base_dir = os.path.abspath(os.path.join(os.path.abspath(__file__), '../../'))
+    sys.path.insert(0, base_dir)
+    
+    print dirname('/home/')
+    print dirname('/home/dir')
+    print dirname('/home/dir/..')
+    print dirname('/')
+    
+    dir = getTracks(['/home/jendrik/tmp/Elbow - The Seldom Seen Kid (2008)/'])
+    print dir
