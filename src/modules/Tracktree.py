@@ -347,19 +347,6 @@ class Tracktree(modules.Module):
         self.btnClear   = wTree.get_widget('btn-tracklistClear')
         self.btnRepeat  = wTree.get_widget('btn-tracklistRepeat')
         self.btnShuffle = wTree.get_widget('btn-tracklistShuffle')
-        self.btnClear.set_sensitive(False)
-        self.btnShuffle.set_sensitive(False)
-        # Create the list and its columns
-        ##txtLRdr   = gtk.CellRendererText()
-        ##txtRRdr   = gtk.CellRendererText()
-        ##pixbufRdr = gtk.CellRendererPixbuf()
-        ##txtRRdr.set_property('xalign', 1.0)
-
-        # 'columns-visibility' may be broken, we should not use it (#311293)
-        ##visible = tools.prefs.get(__name__, 'columns-visibility-2', PREFS_DEFAULT_COLUMNS_VISIBILITY)
-        ##for (key, value) in PREFS_DEFAULT_COLUMNS_VISIBILITY.iteritems():
-        ##    if key not in visible:
-        ##        visible[key] = value
 
         columns = (('',   [(gtk.CellRendererPixbuf(), gtk.gdk.Pixbuf), (gtk.CellRendererText(), TYPE_STRING)], True),
                    (None, [(None, TYPE_INT)],                                                                 False),
@@ -386,14 +373,14 @@ class Tracktree(modules.Module):
         self.tree.connect('extlistview-modified', self.onListModified)
         #self.tree.connect('button-pressed', self.onButtonPressed)
         
-        self.btnClear.connect('clicked', lambda widget: modules.postMsg(consts.MSG_CMD_TRACKLIST_CLR))
+        #self.btnClear.connect('clicked', lambda widget: modules.postMsg(consts.MSG_CMD_TRACKLIST_CLR))
         #self.btnRepeat.connect('toggled', self.onButtonRepeat)
-        self.btnShuffle.connect('clicked', lambda widget: modules.postMsg(consts.MSG_CMD_TRACKLIST_SHUFFLE))
+        #self.btnShuffle.connect('clicked', lambda widget: modules.postMsg(consts.MSG_CMD_TRACKLIST_SHUFFLE))
         # Restore preferences
-        self.btnRepeat.set_active(tools.prefs.get(__name__, 'repeat-status', PREFS_DEFAULT_REPEAT_STATUS))
+        #self.btnRepeat.set_active(tools.prefs.get(__name__, 'repeat-status', PREFS_DEFAULT_REPEAT_STATUS))
         # Set icons
-        wTree.get_widget('img-repeat').set_from_icon_name('stock_repeat', gtk.ICON_SIZE_BUTTON)
-        wTree.get_widget('img-shuffle').set_from_icon_name('stock_shuffle', gtk.ICON_SIZE_BUTTON)
+        #wTree.get_widget('img-repeat').set_from_icon_name('stock_repeat', gtk.ICON_SIZE_BUTTON)
+        #wTree.get_widget('img-shuffle').set_from_icon_name('stock_shuffle', gtk.ICON_SIZE_BUTTON)
 
 
     def onTrackEnded(self, withError):
