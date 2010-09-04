@@ -17,6 +17,7 @@
 # Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301 USA
 
 import consts
+import logging
 
 class Logger:
 
@@ -34,11 +35,13 @@ class Logger:
     def info(self, msg):
         """ Information message """
         self.__log('INFO', msg)
+        logging.info(msg)
 
 
     def error(self, msg):
         """ Error message """
         self.__log('ERROR', msg)
+        logging.error(msg)
 
 
 logger = Logger(consts.fileLog)
