@@ -51,6 +51,10 @@ class StatusbarTitlebar(modules.Module):
 
     def __updateStatusbar(self):
         """ Update the status bar """
+        # Statusbar may be disabled
+        if not self.status1:
+            return
+            
         # Tracklist
         count = len(self.tracklist)
         if count == 0:
