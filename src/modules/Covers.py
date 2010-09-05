@@ -41,10 +41,10 @@ USER_AGENT = 'Mozilla/5.0 (X11; U; Linux i686; en-US; rv:1.9.0.1) Gecko/20080728
 ) = range(2)
 
 # Constants for thumbnails
-THUMBNAIL_WIDTH   = 100  # Width allocated to thumbnails in the model
-THUMBNAIL_HEIGHT  = 100  # Height allocated to thumbnails in the model
-THUMBNAIL_OFFSETX =  11  # X-offset to render the thumbnail in the model
-THUMBNAIL_OFFSETY =   3  # Y-offset to render the thumbnail in the model
+THUMBNAIL_WIDTH   = 40  # Width allocated to thumbnails in the model
+THUMBNAIL_HEIGHT  = 40  # Height allocated to thumbnails in the model
+THUMBNAIL_OFFSETX =  41  # X-offset to render the thumbnail in the model
+THUMBNAIL_OFFSETY =   33  # Y-offset to render the thumbnail in the model
 
 # Constants for full size covers
 FULL_SIZE_COVER_WIDTH  = 300
@@ -56,7 +56,7 @@ ACCEPTED_FILE_FORMATS = {'.jpg': None, '.jpeg': None, '.png': None, '.gif': None
 # Default preferences
 PREFS_DFT_DOWNLOAD_COVERS      = False
 PREFS_DFT_PREFER_USER_COVERS   = True
-PREFS_DFT_USER_COVER_FILENAMES = ['cover', 'art', 'front', '*']
+PREFS_DFT_USER_COVER_FILENAMES = ['folder', 'cover', 'art', 'front', '*']
 
 # Images for thumbnails
 THUMBNAIL_GLOSS = os.path.join(consts.dirPix, 'cover-gloss.png')
