@@ -45,6 +45,9 @@ class TrackPanel(modules.Module):
     def __setTitle(self, title, length=None):
         """ Change the title of the current track """
         title = tools.htmlEscape(title)
+        
+        ## Do not add length
+        length = None
 
         if length is None: self.txtTitle.set_markup('<span size="larger"><b>%s</b></span>' % title)
         else:              self.txtTitle.set_markup('<span size="larger"><b>%s</b></span>  [%s]' % (title, tools.sec2str(length)))
@@ -120,7 +123,7 @@ class TrackPanel(modules.Module):
         self.currTrack = track
 
         self.__setTitle(track.getTitle(), track.getLength())
-        self.txtMisc.set_text(_('by %(artist)s\nfrom %(album)s' % {'artist': track.getArtist(), 'album': track.getExtendedAlbum()}))
+        self.txtMisc.set_markup(_('by <i>%(artist)s</i>\nfrom <i>%(album)s</i>' % {'artist': track.getArtist(), 'album': track.getExtendedAlbum()}))
 
 
     def onStopped(self):
