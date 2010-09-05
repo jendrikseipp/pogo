@@ -381,6 +381,10 @@ class Tracktree(modules.Module):
         # Set icons
         #wTree.get_widget('img-repeat').set_from_icon_name('stock_repeat', gtk.ICON_SIZE_BUTTON)
         #wTree.get_widget('img-shuffle').set_from_icon_name('stock_shuffle', gtk.ICON_SIZE_BUTTON)
+        
+        # Hide stop button
+        self.stop_button = wTree.get_widget('btn-stop')
+        self.stop_button.hide()
 
 
     def onTrackEnded(self, withError):
