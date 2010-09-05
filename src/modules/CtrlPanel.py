@@ -95,7 +95,7 @@ class CtrlPanel(modules.Module):
 
         self.currTrackLength = track.getLength()
         self.sclSeek.show()
-        self.lblElapsed.show()
+        ##self.lblElapsed.show()
         self.lblRemaining.show()
         self.onNewTrackPosition(0)
 
@@ -119,10 +119,15 @@ class CtrlPanel(modules.Module):
     def onNewTrackPosition(self, seconds):
         """ The track position has changed """
         if not self.sclBeingDragged:
-            self.lblElapsed.set_label(sec2str(seconds))
+            ## Use "1:40 / 2:34" format
             if seconds >= self.currTrackLength:
                 seconds = self.currTrackLength
-            self.lblRemaining.set_label(sec2str(self.currTrackLength - seconds))
+            elapsed = sec2str(seconds)
+            #remaining = sec2str(self.currTrackLength - seconds)
+            total = sec2str(self.currTrackLength)
+            self.lblRemaining.set_label('%s / %s' % (elapsed, total))
+            
+            #self.lblRemaining.set_label(sec2str(self.currTrackLength - seconds))
             # Make sure the handler will not be called
             self.sclSeek.handler_block_by_func(self.onSeekValueChanged)
             self.sclSeek.set_value(seconds)
