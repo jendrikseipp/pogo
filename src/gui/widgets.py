@@ -30,6 +30,7 @@ class TrackTreeView(ExtTreeView):
         self.isDraggableFunc = lambda: True
         
         if len(self.dndTargets) != 0:
+            self.enable_model_drag_source(gtk.gdk.BUTTON1_MASK, self.dndTargets+[DND_INTERNAL_TARGET], gtk.gdk.ACTION_MOVE)
             self.enable_model_drag_dest(self.dndTargets, gtk.gdk.ACTION_DEFAULT)
         
         self.connect('drag-begin', self.onDragBegin)
