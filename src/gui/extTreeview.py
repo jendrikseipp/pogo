@@ -354,6 +354,7 @@ class ExtTreeView(gtk.TreeView):
 
     def onButtonPressed(self, tree, event):
         """ A mouse button has been pressed """
+        print 'BUTTON PRESSED', event.button
         retVal   = False
         pathInfo = self.get_path_at_pos(int(event.x), int(event.y))
 
@@ -365,6 +366,7 @@ class ExtTreeView(gtk.TreeView):
                 self.selection.unselect_all()
             else:
                 if event.button == 1 and self.motionEvtId is None:
+                    print 'SETUP DND'
                     self.dndStartPos = (int(event.x), int(event.y))
                     self.motionEvtId = gtk.TreeView.connect(self, 'motion-notify-event', self.onMouseMotion)
 
@@ -399,8 +401,11 @@ class ExtTreeView(gtk.TreeView):
 
     def onMouseMotion(self, tree, event):
         """ The mouse has been moved """
+        print 'MOUSE MOTION', self.dndContext, self.isDraggableFunc(), self.dndSources
         if self.dndContext is None and self.isDraggableFunc() and self.dndSources is not None:
+            print 5
             if self.drag_check_threshold(self.dndStartPos[0], self.dndStartPos[1], int(event.x), int(event.y)):
+                print 'CHECKED THRESHOLD'
                 self.dndContext = self.drag_begin(self.dndSources, gdk.ACTION_COPY, 1, event)
 
 

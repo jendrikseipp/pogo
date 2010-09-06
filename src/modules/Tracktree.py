@@ -31,14 +31,17 @@ MOD_INFO = ('Tracktree', 'Tracktree', '', [], True, False)
 (
     ROW_ICO, # Item icon
     ROW_NAME,     # Item name
-    ROW_TYPE,     # The type of the item (e.g., directory, file)
-    ROW_FULLPATH,  # The full path to the item
     ROW_TRK,   # The track object
-) = range(5)
+) = range(3)
 
 
 PREFS_DEFAULT_REPEAT_STATUS      = False
 
+# Internal d'n'd (reordering)
+DND_REORDERING_ID   = 1024
+DND_INTERNAL_TARGET = ('extListview-internal', gtk.TARGET_SAME_WIDGET, DND_REORDERING_ID)
+
+print 'AHA', DND_INTERNAL_TARGET
 
 
 class Tracktree(modules.Module):
@@ -67,11 +70,14 @@ class Tracktree(modules.Module):
 
         modules.Module.__init__(self, handlers)
         
+    def getTrack(self, iter):
+        return self.tree.getItem(iter, ROW_TRK)
+        
         
     def getTracks(self, rows):
         tracks = []
         for row in rows:
-            track = self.tree.getItem(row, ROW_TRK)
+            track = self.getTrack(row)
             if track:
                 tracks.append(track)
         return tracks
@@ -179,13 +185,13 @@ class Tracktree(modules.Module):
         modules.postMsg(consts.MSG_EVT_NEW_TRACK,   {'track': track})
         modules.postMsg(consts.MSG_EVT_TRACK_MOVED, {'hasPrevious': self.__hasPreviousTrack(), 'hasNext': self.__hasNextTrack()})
         
-    def insert(self, tracks, playNow, parent=None):
+    def insert(self, tracks, target=None, drop_mode=None):
         if type(tracks) == list:
             trackdir = media.TrackDir(None, flat=True)
             trackdir.tracks = tracks
             tracks = trackdir
             
-        self.insertDir(tracks, parent)
+        self.insertDir(tracks, target, drop_mode)
         return
             
         # TODO: playNow wanted? Buggy in current state
@@ -196,26 +202,39 @@ class Tracktree(modules.Module):
                 dest = self.tree.get_last_child_iter(parent)
             self.jumpTo(dest)
             
-    def insertDir(self, trackdir, parent=None):
+    def insertDir(self, trackdir, target=None, drop_mode=None):
         '''
         Insert a directory recursively, return the iter of the first
         added element
         '''
+        model = self.tree.store
         if trackdir.flat:
-            dir_iter = parent
+            new = target
         else:
-            dir_iter = self.tree.appendRow((icons.mediaDirMenuIcon(), trackdir.dirname, 1, 'something', None), parent)
+            source_row = (icons.mediaDirMenuIcon(), trackdir.dirname, None)
+            
+            print 'DROP MODE', drop_mode, target
+            
+            if drop_mode == gtk.TREE_VIEW_DROP_INTO_OR_BEFORE:
+                new = model.prepend(target, source_row)
+            elif drop_mode == gtk.TREE_VIEW_DROP_INTO_OR_AFTER or drop_mode is None:
+                new = model.append(target, source_row)
+            elif drop_mode == gtk.TREE_VIEW_DROP_BEFORE:
+                new = model.insert_before(None, target, source_row)
+            elif drop_mode == gtk.TREE_VIEW_DROP_AFTER:
+                new = model.insert_after(None, target, source_row)
+                #dir_iter = self.tree.appendRow(, target)
         
         for subdir in trackdir.subdirs:
-            self.insertDir(subdir, dir_iter)
+            self.insertDir(subdir, new, drop_mode)
         for track in trackdir.tracks:
-            self.insertTrack(track, dir_iter)
+            self.insertTrack(track, new, drop_mode)
             
         if not trackdir.flat:
-            if parent is None: 
-                self.tree.expand(dir_iter)
+            if target is None:
+                self.tree.expand(new)
         
-    def insertTrack(self, track, parentPath=None):
+    def insertTrack(self, track, parentPath=None, drop_mode=None):
         '''
         Insert a new track into the tracktree under parentPath
         '''
@@ -224,7 +243,7 @@ class Tracktree(modules.Module):
         self.playtime += track.getLength()
         trackURI = track.getURI()
         trackString = os.path.basename(trackURI)
-        self.tree.appendRow((icons.nullMenuIcon(), trackString, 1, 'something', track), parentPath)
+        self.tree.appendRow((icons.nullMenuIcon(), trackString, track), parentPath)
 
 
     def set(self, tracks, playNow):
@@ -245,7 +264,7 @@ class Tracktree(modules.Module):
         self.tree.clear()
         
         if tracks is not None and not tracks.empty():
-            self.insert(tracks, playNow)
+            self.insert(tracks)
 
 
     def savePlaylist(self):
@@ -349,14 +368,15 @@ class Tracktree(modules.Module):
         self.btnShuffle = wTree.get_widget('btn-tracklistShuffle')
 
         columns = (('',   [(gtk.CellRendererPixbuf(), gtk.gdk.Pixbuf), (gtk.CellRendererText(), TYPE_STRING)], True),
-                   (None, [(None, TYPE_INT)],                                                                 False),
-                   (None, [(None, TYPE_STRING)],                                                               False),
                    (None, [(None, TYPE_PYOBJECT)], False),
                   )
         
         self.tree = TrackTreeView(columns, use_markup=True)
         ##self.tree.get_column(4).set_cell_data_func(txtRRdr, self.__fmtLengthColumn)
-        ##self.tree.enableDNDReordering()
+        self.tree.enableDNDReordering()
+        #self.tree.setDNDSources([consts.DND_TARGETS[consts.DND_DAP_TRACKS]])
+        self.tree.setDNDSources([DND_INTERNAL_TARGET])
+        
         wTree.get_widget('scrolled-tracklist').add(self.tree)
         # GTK handlers
         self.tree.connect('row-activated', self.on_row_activated)
@@ -382,7 +402,7 @@ class Tracktree(modules.Module):
         #wTree.get_widget('img-repeat').set_from_icon_name('stock_repeat', gtk.ICON_SIZE_BUTTON)
         #wTree.get_widget('img-shuffle').set_from_icon_name('stock_shuffle', gtk.ICON_SIZE_BUTTON)
         
-        # Hide stop button
+        # Hide stop button (like in banshee, rhythmbox and itunes)
         self.stop_button = wTree.get_widget('btn-stop')
         self.stop_button.hide()
 
@@ -504,19 +524,13 @@ class Tracktree(modules.Module):
 
         # dropInfo is tuple (path, drop_pos)
         dropInfo = list.get_dest_row_at_pos(x, y)
-        
-        # Always append the tracks
-        dropInfo = None
 
         # Insert the tracks, but beware of the AFTER/BEFORE mechanism used by GTK
         if dropInfo is None:
-            self.insert(tracks, False)
+            self.insert(tracks)
         else:
-            path, drop_pos = dropInfo
+            path, drop_mode = dropInfo
             iter = self.tree.store.get_iter(path)
-            if drop_pos == gtk.TREE_VIEW_DROP_AFTER:
-                self.insert(tracks, False, iter)#dropInfo[0][0] + 1)
-            else:
-                self.insert(tracks, False, iter)
+            self.insert(tracks, iter, drop_mode)
 
         context.finish(True, False, time)

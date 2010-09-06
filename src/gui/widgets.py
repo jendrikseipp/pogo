@@ -20,7 +20,7 @@ class TrackTreeView(ExtTreeView):
         
         # Drag'n'drop management
         self.dndContext    = None
-        self.dndSources      = None
+        self.dndSources    = None
         self.dndTargets    = consts.DND_TARGETS.values()
         self.motionEvtId   = None
         self.dndStartPos   = None
@@ -35,6 +35,10 @@ class TrackTreeView(ExtTreeView):
         self.connect('drag-begin', self.onDragBegin)
         self.connect('drag-motion', self.onDragMotion)
         self.connect('drag-data-received', self.onDragDataReceived)
+        
+        self.connect('button-press-event', self.onButtonPressed)
+        
+        #self.set_reorderable(True)
         
         self.mark = None
         
@@ -278,24 +282,58 @@ class TrackTreeView(ExtTreeView):
     
     # DRAG AND DROP
     
+    def move_selected_rows(self, x, y):
+        print 'MOVE ROWS'
+        
+        
+    def enableDNDReordering(self):
+        """ Enable the use of Drag'n'Drop to reorder the list """
+        self.dndReordering = True
+        self.dndTargets.append(DND_INTERNAL_TARGET)
+        self.enable_model_drag_dest(self.dndTargets, gtk.gdk.ACTION_DEFAULT)
+        
+    
     def onDragBegin(self, tree, context):
         """ A drag'n'drop operation has begun """
+        print 'DRAG BEGIN'
         if self.getSelectedRowsCount() == 1: context.set_icon_stock(gtk.STOCK_DND,          0, 0)
         else:                                context.set_icon_stock(gtk.STOCK_DND_MULTIPLE, 0, 0)
 
 
     def onDragDataReceived(self, tree, context, x, y, selection, dndId, time):
         """ Some data has been dropped into the list """
-        if dndId == DND_REORDERING_ID: self.__moveSelectedRows(x, y)
-        else:                          self.emit('extlistview-dnd', context, int(x), int(y), selection, dndId, time)
+        print 'DRAG DATA RECEIVED', selection.data
+        if dndId == DND_REORDERING_ID:
+            self.move_selected_rows(x, y)
+        else:
+            print 'EMIT extlistview-dnd'
+            self.emit('extlistview-dnd', context, int(x), int(y), selection, dndId, time)
 
 
     def onDragMotion(self, tree, context, x, y, time):
-        """ Prevent rows from being dragged *into* other rows (this is a list, not a tree) """
+        """
+        Allow the following drops:
+        - tracks onto and into dir
+        - tracks between dirs
+        - dir between dirs
+        
+        -> Prevent the drops:
+        - dir into dir
+        """
+        ROW_TRK = 2
+        
         drop = self.get_dest_row_at_pos(int(x), int(y))
+        
+        print 'DROPPING', drop
 
-        if drop is not None and (drop[1] == gtk.TREE_VIEW_DROP_INTO_OR_AFTER or drop[1] == gtk.TREE_VIEW_DROP_INTO_OR_BEFORE):
-            self.enable_model_drag_dest([('invalid-position', 0, -1)], gtk.gdk.ACTION_DEFAULT)
+        if drop is not None:
+            iter = self.store.get_iter(drop[0])
+            self.setItem(self.get_first_iter(), 1, str(drop[1])[1:-1])
+            track = self.getItem(iter, ROW_TRK)
+            if track and (drop[1] == gtk.TREE_VIEW_DROP_INTO_OR_AFTER or drop[1] == gtk.TREE_VIEW_DROP_INTO_OR_BEFORE):
+                self.enable_model_drag_dest([('invalid-position', 0, -1)], gtk.gdk.ACTION_DEFAULT)
+            else:
+                self.enable_model_drag_dest(self.dndTargets, gtk.gdk.ACTION_DEFAULT)
         else:
             self.enable_model_drag_dest(self.dndTargets, gtk.gdk.ACTION_DEFAULT)
         
