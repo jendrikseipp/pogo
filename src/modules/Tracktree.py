@@ -17,7 +17,11 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301 USA
 
-import gtk, gui, media, modules, tools, os
+import os
+
+import gtk, gobject
+
+import gui, media, modules, tools, os
 
 from gui             import fileChooser
 from tools           import consts, icons
@@ -211,9 +215,10 @@ class Tracktree(modules.Module):
         if trackdir.flat:
             new = target
         else:
-            source_row = (icons.mediaDirMenuIcon(), trackdir.dirname, None)
+            string = gobject.markup_escape_text(trackdir.dirname)
+            source_row = (icons.mediaDirMenuIcon(), string, None)
             
-            print 'DROP MODE', drop_mode, target
+            #print 'DROP MODE', drop_mode, target
             
             if drop_mode == gtk.TREE_VIEW_DROP_INTO_OR_BEFORE:
                 new = model.prepend(target, source_row)
@@ -223,7 +228,6 @@ class Tracktree(modules.Module):
                 new = model.insert_before(None, target, source_row)
             elif drop_mode == gtk.TREE_VIEW_DROP_AFTER:
                 new = model.insert_after(None, target, source_row)
-                #dir_iter = self.tree.appendRow(, target)
         
         for subdir in trackdir.subdirs:
             self.insertDir(subdir, new, drop_mode)
@@ -243,7 +247,8 @@ class Tracktree(modules.Module):
         self.playtime += track.getLength()
         trackURI = track.getURI()
         trackString = os.path.basename(trackURI)
-        self.tree.appendRow((icons.nullMenuIcon(), trackString, track), parentPath)
+        string = gobject.markup_escape_text(trackString)
+        self.tree.appendRow((icons.nullMenuIcon(), string, track), parentPath)
 
 
     def set(self, tracks, playNow):
@@ -453,7 +458,7 @@ class Tracktree(modules.Module):
     # --== GTK handlers ==--
     
     def on_row_activated(self, treeview, path, view_column):
-        self.jumpTo(self.tree.model.get_iter(path))
+        self.jumpTo(self.tree.store.get_iter(path))
         
     def on_row_inserted(self, store, path, iter):
         self.onListModified()

@@ -10,6 +10,13 @@ from extTreeview import ExtTreeView
 
 from tools import consts
 
+# The format of a row in the treeview
+(
+    ROW_ICO, # Item icon
+    ROW_NAME,     # Item name
+    ROW_TRK,   # The track object
+) = range(3)
+
 # Internal d'n'd (reordering)
 DND_REORDERING_ID   = 1024
 DND_INTERNAL_TARGET = ('extListview-internal', gtk.TARGET_SAME_WIDGET, DND_REORDERING_ID)
@@ -30,7 +37,9 @@ class TrackTreeView(ExtTreeView):
         self.isDraggableFunc = lambda: True
         
         if len(self.dndTargets) != 0:
-            self.enable_model_drag_source(gtk.gdk.BUTTON1_MASK, self.dndTargets+[DND_INTERNAL_TARGET], gtk.gdk.ACTION_MOVE)
+            # Move one name around while dragging
+            # self.enable_model_drag_source(gtk.gdk.BUTTON1_MASK, \
+            #        self.dndTargets+[DND_INTERNAL_TARGET], gtk.gdk.ACTION_MOVE)
             self.enable_model_drag_dest(self.dndTargets, gtk.gdk.ACTION_DEFAULT)
         
         self.connect('drag-begin', self.onDragBegin)
@@ -39,9 +48,19 @@ class TrackTreeView(ExtTreeView):
         
         self.connect('button-press-event', self.onButtonPressed)
         
-        #self.set_reorderable(True)
-        
         self.mark = None
+        
+    def insert(self, target, source_row, drop_mode=None):
+        model = self.store
+        if drop_mode == gtk.TREE_VIEW_DROP_INTO_OR_BEFORE:
+            new = model.prepend(target, source_row)
+        elif drop_mode == gtk.TREE_VIEW_DROP_INTO_OR_AFTER or drop_mode is None:
+            new = model.append(target, source_row)
+        elif drop_mode == gtk.TREE_VIEW_DROP_BEFORE:
+            new = model.insert_before(None, target, source_row)
+        elif drop_mode == gtk.TREE_VIEW_DROP_AFTER:
+            new = model.insert_after(None, target, source_row)
+        return new
         
     def appendRow(self, row, parent_iter=None):
         """ Append a row to the tree """
@@ -83,6 +102,9 @@ class TrackTreeView(ExtTreeView):
         """ Return the value of the given item """
         return self.store.get_value(iter, colIndex)
         
+    def getTrack(self, iter):
+        return self.getItem(iter, ROW_TRK)
+        
     def scroll(self, iter):
         self.scroll_to_cell(self.store.get_path(iter))
         
@@ -104,18 +126,16 @@ class TrackTreeView(ExtTreeView):
         root_nodes = len(self.store)
         if root_nodes == 0:
             return None
-        return self.store.iter_nth_child(None, root_nodes-1)
-        
-        
+        return self.store.iter_nth_child(None, root_nodes-1)        
         
     def iter_prev(self, iter):
-        path = self.model.get_path(iter)
+        path = self.store.get_path(iter)
         position = path[-1]
         if position == 0:
             return None
         prev_path = list(path)[:-1]
         prev_path.append(position - 1)
-        prev = self.model.get_iter(tuple(prev_path))
+        prev = self.store.get_iter(tuple(prev_path))
         return prev
         
     def get_prev_iter(self, iter=None):
@@ -132,7 +152,7 @@ class TrackTreeView(ExtTreeView):
             return self.get_lowest_descendant(prev_iter)
             
         # Check for the parent
-        parent_iter = self.model.iter_parent(iter)
+        parent_iter = self.store.iter_parent(iter)
         if parent_iter:
             return parent_iter
         return None
@@ -146,12 +166,12 @@ class TrackTreeView(ExtTreeView):
             iter = self.getMark()
             
         # Check for a child
-        if self.model.iter_has_child(iter):
-            first_child = self.model.iter_nth_child(iter, 0)
+        if self.store.iter_has_child(iter):
+            first_child = self.store.iter_nth_child(iter, 0)
             return first_child
             
         # Check for a sibling
-        next_iter = self.model.iter_next(iter)
+        next_iter = self.store.iter_next(iter)
         if next_iter:
             return next_iter
             
@@ -178,39 +198,10 @@ class TrackTreeView(ExtTreeView):
         - d    -> d
         '''
         descendant = None
-        if self.model.iter_has_child(iter):
+        if self.store.iter_has_child(iter):
             last_child = self.get_last_child_iter(iter)
             descendant = self.get_lowest_descendant(last_child)
-            
         return descendant or iter
-            
-    #def get_nephew(self, iter):
-    #    '''
-    #    Find lowest rightmost descendant of previous sibling
-    #    - a    -> None
-    #      - b  -> None
-    #      - c  -> None
-    #    - d    -> c
-    #    
-    #    Used for moving up in the "list"
-    #    '''
-    #    sibling = self.iter_prev(iter)
-    #    #print 'SIBLING', self.get_nodename(sibling)
-    #    if sibling is None:
-     #       return None
-     #   while True:
-     #       if not self.store.iter_has_child(sibling):
-     #           return None
-     ##       last_nephew = self.get_last_child_iter(sibling)
-     #       #print 'NEPHEW', self.get_nodename(last_nephew)
-     #       if last_nephew is None:
-     #           return sibling
-     #       sibling = last_nephew
-            
-        
-    @property
-    def model(self):
-        return self.get_model()
         
     def get_last_child_iter(self, iter):
         ''''''
@@ -239,18 +230,6 @@ class TrackTreeView(ExtTreeView):
         return self.mark is not None
 
 
-    def hasMarkAbove(self, index):
-        """ True if a mark is set and is above the given index """
-        assert False, 'Implement'
-        return self.mark is not None and self.mark > index
-
-
-    def hasMarkUnder(self, index):
-        """ True if a mark is set and is undex the given index """
-        assert False, 'Implement'
-        return self.mark is not None and self.mark < index
-
-
     def clearMark(self):
         """ Remove the mark """
         if self.mark is not None:
@@ -270,22 +249,73 @@ class TrackTreeView(ExtTreeView):
         self.clearMark()
         self.mark = gtk.TreeRowReference(self.store, self.store.get_path(iter))
         
-    def getPathAfterMark(self):
-        mark_iter = self.model.get_iter(self.mark.get_path())
-        next_iter = self.model.iter_next(mark_iter)
-        return next_iter
-        
-    def getPathBeforeMark(self):
-        mark_iter = self.model.get_iter(self.mark.get_path())
-        prev_iter = self.iter_prev(mark_iter)
-        return prev_iter
-        
     
     # DRAG AND DROP
     
     def move_selected_rows(self, x, y):
-        print 'MOVE ROWS'
+        '''
+        Method called when dnd happens inside the treeview
+        '''
+        drop = self.get_dest_row_at_pos(int(x), int(y))
+        selection = self.getSelectedRows()
         
+        model = self.store
+        
+        if drop:
+            dest, drop_mode = drop
+            dest = model.get_iter(dest)
+        else:
+            # Dropped on free space -> append
+            dest, drop_mode = self.get_last_iter(), gtk.TREE_VIEW_DROP_AFTER
+            
+        self.freeze_child_notify()
+        
+        # filter selected tracks whose directories have been selected too
+        iters = []
+        for iter in selection:
+            add = True
+            for checked_iter in iters:
+                if model.is_ancestor(checked_iter, iter):
+                    add = False
+            if add:
+                iters.append(iter)
+        
+        # Move the iters
+        for index, iter in enumerate(iters):
+            #TODO: Handle Mark
+            if index > 0:
+                drop_mode = gtk.TREE_VIEW_DROP_AFTER
+            
+            track = self.getTrack(iter)
+            if track:
+                row = model[iter]
+                dest = self.insert(dest, row, drop_mode)
+            else:
+                dest = self.move_dir(iter, dest, drop_mode)
+            
+        for iter in iters:
+            model.remove(iter)
+        
+        self.thaw_child_notify()
+        
+        
+    def move_dir(self, dir_iter, target, drop_mode):
+        '''
+        Recursive Method that moves a dir to target
+        '''
+        children = self.store[dir_iter].iterchildren()
+        dir_row = self.store[dir_iter]
+        new_target = self.insert(target, dir_row, drop_mode)
+        for child in children:
+            child = child.iter
+            track = self.getTrack(child)
+            row = self.store[child]
+            if track:
+                self.insert(new_target, row, gtk.TREE_VIEW_DROP_INTO_OR_AFTER)
+            else:
+                self.move_dir(child, new_target, gtk.TREE_VIEW_DROP_INTO_OR_AFTER)
+        return new_target
+            
         
     def enableDNDReordering(self):
         """ Enable the use of Drag'n'Drop to reorder the list """
@@ -296,18 +326,15 @@ class TrackTreeView(ExtTreeView):
     
     def onDragBegin(self, tree, context):
         """ A drag'n'drop operation has begun """
-        print 'DRAG BEGIN'
         if self.getSelectedRowsCount() == 1: context.set_icon_stock(gtk.STOCK_DND,          0, 0)
         else:                                context.set_icon_stock(gtk.STOCK_DND_MULTIPLE, 0, 0)
 
 
     def onDragDataReceived(self, tree, context, x, y, selection, dndId, time):
         """ Some data has been dropped into the list """
-        print 'DRAG DATA RECEIVED', selection.data
         if dndId == DND_REORDERING_ID:
             self.move_selected_rows(x, y)
         else:
-            print 'EMIT extlistview-dnd'
             self.emit('extlistview-dnd', context, int(x), int(y), selection, dndId, time)
 
 
@@ -320,23 +347,20 @@ class TrackTreeView(ExtTreeView):
         
         -> Prevent the drops:
         - dir into dir
+        - anything into track
         """
-        ROW_TRK = 2
-        
         drop = self.get_dest_row_at_pos(int(x), int(y))
-        
-        print 'DROPPING', drop
 
         if drop is not None:
             iter = self.store.get_iter(drop[0])
             self.setItem(self.get_first_iter(), 1, str(drop[1])[1:-1])
-            track = self.getItem(iter, ROW_TRK)
+            track = self.getTrack(iter)
             if track and (drop[1] == gtk.TREE_VIEW_DROP_INTO_OR_AFTER or drop[1] == gtk.TREE_VIEW_DROP_INTO_OR_BEFORE):
+                # do not let the user drop anything here
                 self.enable_model_drag_dest([('invalid-position', 0, -1)], gtk.gdk.ACTION_DEFAULT)
-            else:
-                self.enable_model_drag_dest(self.dndTargets, gtk.gdk.ACTION_DEFAULT)
-        else:
-            self.enable_model_drag_dest(self.dndTargets, gtk.gdk.ACTION_DEFAULT)
+                return
+        # Everything ok, enable dnd
+        self.enable_model_drag_dest(self.dndTargets, gtk.gdk.ACTION_DEFAULT)
         
         
 if __name__ == '__main__':    
