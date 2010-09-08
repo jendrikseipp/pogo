@@ -41,7 +41,7 @@ if not optOptions.multiple_instances:
         activeServices = dbusSession.get_object('org.freedesktop.DBus', '/org/freedesktop/DBus').ListNames()
 
         if consts.dbusService in activeServices:
-            shouldStop = True
+            ##shouldStop = True
 
             # Fill the current instance with the given tracks, if any
             if len(optArgs) != 0:
