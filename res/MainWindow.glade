@@ -282,7 +282,6 @@
                             <property name="spacing">5</property>
                             <child>
                               <widget class="GtkHBox" id="hbox1">
-                                <property name="spacing">6</property>
                                 <child>
                                   <widget class="GtkButton" id="btn-previous">
                                     <property name="sensitive">False</property>
@@ -290,6 +289,7 @@
                                     <property name="receives_default">True</property>
                                     <property name="has_tooltip">True</property>
                                     <property name="tooltip" translatable="yes">Play the previous track</property>
+                                    <property name="relief">none</property>
                                     <child>
                                       <widget class="GtkImage" id="image6">
                                         <property name="stock">gtk-media-previous</property>
@@ -307,6 +307,7 @@
                                     <property name="receives_default">True</property>
                                     <property name="has_tooltip">True</property>
                                     <property name="tooltip" translatable="yes">Stop the current track</property>
+                                    <property name="relief">none</property>
                                     <child>
                                       <widget class="GtkImage" id="image7">
                                         <property name="stock">gtk-media-stop</property>
@@ -324,6 +325,7 @@
                                     <property name="receives_default">True</property>
                                     <property name="has_tooltip">True</property>
                                     <property name="tooltip" translatable="yes">Play the first track of the playlist</property>
+                                    <property name="relief">none</property>
                                     <child>
                                       <widget class="GtkImage" id="image8">
                                         <property name="stock">gtk-media-play</property>
@@ -341,6 +343,7 @@
                                     <property name="receives_default">True</property>
                                     <property name="has_tooltip">True</property>
                                     <property name="tooltip" translatable="yes">Play the next track</property>
+                                    <property name="relief">none</property>
                                     <child>
                                       <widget class="GtkImage" id="image9">
                                         <property name="stock">gtk-media-next</property>
