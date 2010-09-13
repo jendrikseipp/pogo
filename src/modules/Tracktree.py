@@ -74,14 +74,11 @@ class Tracktree(modules.Module):
 
         modules.Module.__init__(self, handlers)
         
-    def getTrack(self, iter):
-        return self.tree.getItem(iter, ROW_TRK)
-        
         
     def getTracks(self, rows):
         tracks = []
         for row in rows:
-            track = self.getTrack(row)
+            track = self.tree.getTrack(row)
             if track:
                 tracks.append(track)
         return tracks
@@ -98,6 +95,24 @@ class Tracktree(modules.Module):
         tracks = []
         next = self.__getNextTrackIter()
         #while next:
+        
+    
+    def getTrackDir(self, root=None):
+        flat = False if root else True
+        name = self.tree.getLabel(root) if root else 'playtree'
+        trackdir = media.TrackDir(name=name, flat=flat)
+        
+        for iter in self.tree.iter_children(root):
+            print 'NAME', self.tree.getLabel(iter), iter
+            track = self.tree.getTrack(iter)
+            if track:
+                trackdir.tracks.append(track)
+            else:
+                subdir = self.getTrackDir(iter)
+                trackdir.subdirs.append(subdir)
+        
+        return trackdir
+        
 
 
     def __getNextTrackIter(self):
@@ -217,6 +232,7 @@ class Tracktree(modules.Module):
         else:
             string = gobject.markup_escape_text(trackdir.dirname)
             source_row = (icons.mediaDirMenuIcon(), string, None)
+            assert string is not None
             
             #print 'DROP MODE', drop_mode, target
             
@@ -244,11 +260,19 @@ class Tracktree(modules.Module):
         '''
         ##rows = [[icons.nullMenuIcon(), track.getNumber(), track.getTitle(), track.getArtist(), track.getExtendedAlbum(),
         ##            track.getLength(), track.getBitrate(), track.getGenre(), track.getDate(), track.getURI(), track] for track in tracks]
-        self.playtime += track.getLength()
-        trackURI = track.getURI()
-        trackString = os.path.basename(trackURI)
-        string = gobject.markup_escape_text(trackString)
-        self.tree.appendRow((icons.nullMenuIcon(), string, track), parentPath)
+        title = track.getTitle()
+        artist = track.getArtist()
+        album = track.getExtendedAlbum()
+        number = track.getNumber()
+        length = track.getLength()
+        name = ' - '.join([artist, album, str(number).zfill(2), title])
+        name += ' [%s]'%tools.sec2str(length)
+        self.playtime += length
+        #trackURI = track.getURI()
+        #trackString = os.path.basename(trackURI)
+        name = gobject.markup_escape_text(name)
+        assert name is not None
+        self.tree.appendRow((icons.nullMenuIcon(), name, track), parentPath)
 
 
     def set(self, tracks, playNow):
@@ -285,16 +309,14 @@ class Tracktree(modules.Module):
         """ Remove the given track, or the selection if iter is None """
         hadMark = self.tree.hasMark()
         #self.previousTracklist = [row[ROW_TRK] for row in self.tree]
+        
+        iters = [iter] if iter else self.tree.iterSelectedRows()
 
-        if iter is not None:
-            track = self.tree.getItem(iter, ROW_TRK)
+        for iter in iters:
+            track = self.tree.getTrack(iter)
             if track:
                 self.playtime -= track.getLength()
             self.tree.removeRow(iter)
-        else:
-            tracks = [self.tree.getItem(iter, ROW_TRK) for iter in self.tree.iterSelectedRows()]
-            self.playtime -= sum([track.getLength() for track in tracks if track])
-            self.tree.removeSelectedRows()
 
         self.tree.selection.unselect_all()
 
@@ -417,14 +439,17 @@ class Tracktree(modules.Module):
         current_iter = self.tree.getMark()
 
         # If an error occurred with the current track, flag it as such
-        if withError:
+        if withError and current_iter:
             self.tree.setItem(current_iter, ROW_ICO, icons.errorMenuIcon())
 
         # Find the next 'playable' track (not already flagged)
         next = self.__getNextTrackIter()
         if next:
-            track = self.tree.getItem(current_iter, ROW_TRK).getURI()
-            self.jumpTo(next, sendPlayMsg=(track != self.bufferedTrack))
+            send_play_msg = True
+            if current_iter:
+                track_name = self.tree.getTrack(current_iter).getURI()
+                send_play_msg = (track_name != self.bufferedTrack)
+            self.jumpTo(next, sendPlayMsg=send_play_msg)
             self.bufferedTrack = None
             return
 
@@ -442,6 +467,10 @@ class Tracktree(modules.Module):
 
     def onStopped(self):
         """ Playback has been stopped """
+        tracks = self.getTrackDir()
+        print 'MODIFIED:'
+        print tracks
+        
         if self.tree.hasMark():
             currTrack = self.tree.getMark()
             if self.tree.getItem(currTrack, ROW_ICO) != icons.errorMenuIcon():
@@ -495,8 +524,11 @@ class Tracktree(modules.Module):
         #    row[ROW_TRK].setPlaylistPos(position + 1)
         #    row[ROW_TRK].setPlaylistLen(len(self.tree))
 
-        allTracks = self.getAllTracks()
-        modules.postMsg(consts.MSG_EVT_NEW_TRACKLIST, {'tracks': allTracks, 'playtime': self.playtime})
+        #allTracks = self.getAllTracks()
+        tracks = self.getTrackDir()
+        #print 'MODIFIED:'
+        #print tracks
+        modules.postMsg(consts.MSG_EVT_NEW_TRACKLIST, {'tracks': tracks, 'playtime': self.playtime})
 
         if self.tree.hasMark():
             modules.postMsg(consts.MSG_EVT_TRACK_MOVED, {'hasPrevious': self.__hasPreviousTrack(), 'hasNext':  self.__hasNextTrack()})

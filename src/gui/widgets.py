@@ -105,6 +105,9 @@ class TrackTreeView(ExtTreeView):
     def getTrack(self, iter):
         return self.getItem(iter, ROW_TRK)
         
+    def getLabel(self, iter):
+        return self.getItem(iter, ROW_NAME)
+        
     def scroll(self, iter):
         self.scroll_to_cell(self.store.get_path(iter))
         
@@ -145,6 +148,8 @@ class TrackTreeView(ExtTreeView):
         #assert self.mark
         if iter is None:
             iter = self.getMark()
+            if iter is None:
+                return None
             
         # Check for a sibling or its children
         prev_iter = self.iter_prev(iter)
@@ -164,6 +169,8 @@ class TrackTreeView(ExtTreeView):
         #assert self.mark
         if iter is None:
             iter = self.getMark()
+            if iter is None:
+                return self.get_first_iter()
             
         # Check for a child
         if self.store.iter_has_child(iter):
@@ -220,6 +227,15 @@ class TrackTreeView(ExtTreeView):
             if not sibling:
                 return iter
             iter = sibling
+            
+    def iter_children(self, parent=None):
+        """ Iterate on the children of the given iter """
+        iter = self.store.iter_children(parent)
+
+        while iter is not None:
+            print 'RETURNING', self.getLabel(iter), 'PARENT', parent, self.getLabel(self.store.get_iter_first())
+            yield iter
+            iter = self.store.iter_next(iter)
     
         
     # --== Mark management ==--
@@ -227,26 +243,28 @@ class TrackTreeView(ExtTreeView):
 
     def hasMark(self):
         """ True if a mark has been set """
-        return self.mark is not None
+        return self.mark is not None and self.mark.valid()
 
 
     def clearMark(self):
         """ Remove the mark """
-        if self.mark is not None:
+        #if self.mark is not None:
             ##self.setItem(self.mark, self.markColumn, False)
-            self.mark = None
+        self.mark = None
 
 
     def getMark(self):
         """ Return the iter of the marked row """
-        if not self.mark:
-            return self.setMark(self.store.get_iter_root())
+        #if not self.hasMark():
+        #    self.setMark(self.store.get_iter_root())
+        if self.mark is None or not self.mark.valid():
+            return None
         return self.store.get_iter(self.mark.get_path())
 
 
     def setMark(self, iter):
         """ Put the mark on the given row, it will move with the row itself (e.g., D'n'D) """
-        self.clearMark()
+        #self.clearMark()
         self.mark = gtk.TreeRowReference(self.store, self.store.get_path(iter))
         
     
@@ -411,6 +429,12 @@ if __name__ == '__main__':
         
     res = tree.get_last_iter()
     print 'Last node: %s' % tree.get_nodename(res)
+    
+    res = list(tree.iter_children())
+    print 'Children of root:', [tree.getLabel(iter) for iter in res]
+    
+    res = list(tree.iter_children(a))
+    print 'Children of a:', [tree.getLabel(iter) for iter in res]
     
     win = gtk.Window()
     win.set_size_request(400,300)

@@ -29,6 +29,7 @@ class CommandLine(modules.ThreadedModule):
         """ Constructor """
         handlers = {
                         consts.MSG_EVT_APP_STARTED:   self.onAppStarted,
+                        consts.MSG_EVT_APP_QUIT:      self.onAppQuit,
                         consts.MSG_EVT_NEW_TRACKLIST: self.onNewTracklist,
                    }
 
@@ -42,20 +43,32 @@ class CommandLine(modules.ThreadedModule):
         """ Try to fill the playlist by using the files given on the command line or by restoring the last playlist """
         # The file 'saved-playlist.txt' uses an old format, we now use 'saved-playlist-2.txt'
         (options, args)    = prefs.getCmdLine()
-        self.savedPlaylist = os.path.join(consts.dirCfg, 'saved-playlist-2.txt')
+        self.savedPlaylist = os.path.join(consts.dirCfg, 'saved-playlist')
+        self.tracks = None
 
         if len(args) != 0:
             log.logger.info('[%s] Filling playlist with files given on command line' % MOD_INFO[modules.MODINFO_NAME])
             modules.postMsg(consts.MSG_CMD_TRACKLIST_SET, {'tracks': media.getTracks(args), 'playNow': True})
-        else:
+        elif os.path.exists(self.savedPlaylist):
             try:
-                tracks = [media.track.unserialize(serialTrack) for serialTrack in pickleLoad(self.savedPlaylist)]
+                ##tracks = [media.track.unserialize(serialTrack) for serialTrack in pickleLoad(self.savedPlaylist)]
+                
+                tracks = pickleLoad(self.savedPlaylist)
+                print 'LOAD', tracks
                 modules.postMsg(consts.MSG_CMD_TRACKLIST_SET, {'tracks': tracks, 'playNow': False})
                 log.logger.info('[%s] Restored playlist' % MOD_INFO[modules.MODINFO_NAME])
             except:
                 log.logger.error('[%s] Unable to restore playlist from %s\n\n%s' % (MOD_INFO[modules.MODINFO_NAME], self.savedPlaylist, traceback.format_exc()))
+                
+    
+    def onAppQuit(self):
+        print 'SAVE', self.tracks
+        pickleSave(self.savedPlaylist, self.tracks)
 
 
     def onNewTracklist(self, tracks, playtime):
         """ A new tracklist has been set """
-        pickleSave(self.savedPlaylist, [track.serialize() for track in tracks])
+        ##pickleSave(self.savedPlaylist, [track.serialize() for track in tracks])
+        #print 'SAVE', tracks
+        self.tracks = tracks
+        #pickleSave(self.savedPlaylist, tracks)

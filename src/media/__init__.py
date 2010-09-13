@@ -108,9 +108,11 @@ def dirname(dir):
     
 
 class TrackDir(object):
-    def __init__(self, dir, flat=False):
+    def __init__(self, name='', dir=None, flat=False):
         self.dir = dir
-        if dir:
+        if name:
+            self.dirname = name
+        elif dir:
             self.dirname = dirname(dir)
         else:
             self.dirname = ''
@@ -121,12 +123,13 @@ class TrackDir(object):
         self.tracks = []
         self.subdirs = []
         
-        if not flat:
+        if dir and not flat:
             self.scan()
         
     def scan(self):
         import tools
         for filename, path in sorted(tools.listDir(self.dir)):
+            #print 'PATH', path
             if os.path.isdir(path):
                 trackdir = TrackDir(path)
                 self.subdirs.append(trackdir)
@@ -136,6 +139,15 @@ class TrackDir(object):
                 
     def empty(self):
         return not self.tracks and not self.subdirs
+        
+    def iter_all_tracks(self):
+        for track in self.tracks:
+            yield track
+        for subdir in self.subdirs:
+            subdir.iter_all_tracks()
+        
+    def __len__(self):
+        return len(list(self.iter_all_tracks()))        
                 
     def __str__(self, indent=0):
         res = ''
@@ -153,15 +165,17 @@ def getTracks(filenames, sortByFilename=False):
     """ Same as getTracksFromFiles(), but works for any kind of filenames (files, playlists, directories) """
     assert type(filenames) == list, 'filenames has to be a list'
     
-    tracks = TrackDir(None, flat=True)
+    tracks = TrackDir(flat=True)
     
     for path in sorted(filenames):
         if os.path.isdir(path):
-            trackdir = TrackDir(path)
+            trackdir = TrackDir(dir=path)
             tracks.subdirs.append(trackdir)
         elif isSupported(path):
             track = getTrackFromFile(path)
             tracks.tracks.append(track)
+            
+    print 'SCANNED TRACKS', tracks
             
     return tracks
     

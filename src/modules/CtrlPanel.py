@@ -45,7 +45,13 @@ class CtrlPanel(modules.Module):
                    }
 
         modules.Module.__init__(self, handlers)
-
+        
+        
+    def set_time(self, seconds):
+        elapsed = sec2str(seconds)
+        #remaining = sec2str(self.currTrackLength - seconds)
+        total = sec2str(self.currTrackLength)
+        self.lblRemaining.set_label('%s / %s' % (elapsed, total))
 
    # --== Message handler ==--
 
@@ -63,7 +69,7 @@ class CtrlPanel(modules.Module):
         self.btnPrev      = wTree.get_widget('btn-previous')
         self.sclSeek      = wTree.get_widget('scl-position')
         self.btnVolume    = wTree.get_widget('btn-volume')
-        self.lblElapsed   = wTree.get_widget('lbl-elapsedTime')
+        ##self.lblElapsed   = wTree.get_widget('lbl-elapsedTime')
         self.lblRemaining = wTree.get_widget('lbl-remainingTime')
 
         # Restore the volume
@@ -112,7 +118,7 @@ class CtrlPanel(modules.Module):
         self.btnPlay.set_image(gtk.image_new_from_stock(gtk.STOCK_MEDIA_PLAY, gtk.ICON_SIZE_BUTTON))
         self.btnPlay.set_tooltip_text(_('Play the first selected track of the playlist'))
         self.sclSeek.hide()
-        self.lblElapsed.hide()
+        ##self.lblElapsed.hide()
         self.lblRemaining.hide()
 
 
@@ -122,12 +128,8 @@ class CtrlPanel(modules.Module):
             ## Use "1:40 / 2:34" format
             if seconds >= self.currTrackLength:
                 seconds = self.currTrackLength
-            elapsed = sec2str(seconds)
-            #remaining = sec2str(self.currTrackLength - seconds)
-            total = sec2str(self.currTrackLength)
-            self.lblRemaining.set_label('%s / %s' % (elapsed, total))
+            self.set_time(seconds)
             
-            #self.lblRemaining.set_label(sec2str(self.currTrackLength - seconds))
             # Make sure the handler will not be called
             self.sclSeek.handler_block_by_func(self.onSeekValueChanged)
             self.sclSeek.set_value(seconds)
@@ -180,8 +182,9 @@ class CtrlPanel(modules.Module):
         if value >= self.currTrackLength: value = self.currTrackLength
         else:                             value = int(value)
 
-        self.lblElapsed.set_label(sec2str(value))
-        self.lblRemaining.set_label(sec2str(self.currTrackLength - value))
+        ##self.lblElapsed.set_label(sec2str(value))
+        ##self.lblRemaining.set_label(sec2str(self.currTrackLength - value))
+        self.set_time(value)
 
 
     def onVolumeValueChanged(self, button, value):
