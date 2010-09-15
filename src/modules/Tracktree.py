@@ -45,8 +45,6 @@ PREFS_DEFAULT_REPEAT_STATUS      = False
 DND_REORDERING_ID   = 1024
 DND_INTERNAL_TARGET = ('extListview-internal', gtk.TARGET_SAME_WIDGET, DND_REORDERING_ID)
 
-print 'AHA', DND_INTERNAL_TARGET
-
 
 class Tracktree(modules.Module):
     """ This module manages the tracklist """
@@ -103,7 +101,7 @@ class Tracktree(modules.Module):
         trackdir = media.TrackDir(name=name, flat=flat)
         
         for iter in self.tree.iter_children(root):
-            print 'NAME', self.tree.getLabel(iter), iter
+            #print 'NAME', self.tree.getLabel(iter), iter
             track = self.tree.getTrack(iter)
             if track:
                 trackdir.tracks.append(track)
@@ -204,13 +202,14 @@ class Tracktree(modules.Module):
         modules.postMsg(consts.MSG_EVT_NEW_TRACK,   {'track': track})
         modules.postMsg(consts.MSG_EVT_TRACK_MOVED, {'hasPrevious': self.__hasPreviousTrack(), 'hasNext': self.__hasNextTrack()})
         
-    def insert(self, tracks, target=None, drop_mode=None):
+    def insert(self, tracks, target=None, drop_mode=None, playNow=True):
         if type(tracks) == list:
             trackdir = media.TrackDir(None, flat=True)
             trackdir.tracks = tracks
             tracks = trackdir
             
         self.insertDir(tracks, target, drop_mode)
+        self.onListModified()
         return
             
         # TODO: playNow wanted? Buggy in current state
@@ -232,18 +231,8 @@ class Tracktree(modules.Module):
         else:
             string = gobject.markup_escape_text(trackdir.dirname)
             source_row = (icons.mediaDirMenuIcon(), string, None)
-            assert string is not None
             
-            #print 'DROP MODE', drop_mode, target
-            
-            if drop_mode == gtk.TREE_VIEW_DROP_INTO_OR_BEFORE:
-                new = model.prepend(target, source_row)
-            elif drop_mode == gtk.TREE_VIEW_DROP_INTO_OR_AFTER or drop_mode is None:
-                new = model.append(target, source_row)
-            elif drop_mode == gtk.TREE_VIEW_DROP_BEFORE:
-                new = model.insert_before(None, target, source_row)
-            elif drop_mode == gtk.TREE_VIEW_DROP_AFTER:
-                new = model.insert_after(None, target, source_row)
+            new = self.tree.insert(target, source_row, drop_mode)
         
         for subdir in trackdir.subdirs:
             self.insertDir(subdir, new, drop_mode)
@@ -294,6 +283,8 @@ class Tracktree(modules.Module):
         
         if tracks is not None and not tracks.empty():
             self.insert(tracks)
+            
+        self.onListModified()
 
 
     def savePlaylist(self):
@@ -322,6 +313,8 @@ class Tracktree(modules.Module):
 
         if hadMark and not self.tree.hasMark():
             modules.postMsg(consts.MSG_CMD_STOP)
+            
+        self.onListModified()
 
 
     def onShowPopupMenu(self, tree, button, time, path):
@@ -407,8 +400,8 @@ class Tracktree(modules.Module):
         wTree.get_widget('scrolled-tracklist').add(self.tree)
         # GTK handlers
         self.tree.connect('row-activated', self.on_row_activated)
-        self.tree.store.connect('row-inserted', self.on_row_inserted)
-        self.tree.store.connect('row-deleted', self.on_row_deleted)
+        #self.tree.store.connect('row-inserted', self.on_row_inserted)
+        #self.tree.store.connect('row-deleted', self.on_row_deleted)
         
         self.tree.selection.connect('changed', self.onSelectionChanged)
         
@@ -417,7 +410,7 @@ class Tracktree(modules.Module):
         self.tree.connect('exttreeview-button-pressed', self.onMouseButton)
         self.tree.connect('extlistview-dnd', self.onDND)
         self.tree.connect('key-press-event', self.onKeyboard)
-        self.tree.connect('extlistview-modified', self.onListModified)
+        #self.tree.connect('extlistview-modified', self.onListModified)
         #self.tree.connect('button-pressed', self.onButtonPressed)
         
         #self.btnClear.connect('clicked', lambda widget: modules.postMsg(consts.MSG_CMD_TRACKLIST_CLR))
@@ -526,8 +519,8 @@ class Tracktree(modules.Module):
 
         #allTracks = self.getAllTracks()
         tracks = self.getTrackDir()
-        #print 'MODIFIED:'
-        #print tracks
+        print 'MODIFIED:'
+        print tracks
         modules.postMsg(consts.MSG_EVT_NEW_TRACKLIST, {'tracks': tracks, 'playtime': self.playtime})
 
         if self.tree.hasMark():
