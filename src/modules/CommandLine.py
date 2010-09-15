@@ -52,9 +52,7 @@ class CommandLine(modules.ThreadedModule):
         elif os.path.exists(self.savedPlaylist):
             try:
                 ##tracks = [media.track.unserialize(serialTrack) for serialTrack in pickleLoad(self.savedPlaylist)]
-                
                 tracks = pickleLoad(self.savedPlaylist)
-                print 'LOAD', tracks
                 modules.postMsg(consts.MSG_CMD_TRACKLIST_SET, {'tracks': tracks, 'playNow': False})
                 log.logger.info('[%s] Restored playlist' % MOD_INFO[modules.MODINFO_NAME])
             except:
@@ -62,13 +60,10 @@ class CommandLine(modules.ThreadedModule):
                 
     
     def onAppQuit(self):
-        print 'SAVE', self.tracks
         pickleSave(self.savedPlaylist, self.tracks)
 
 
     def onNewTracklist(self, tracks, playtime):
         """ A new tracklist has been set """
         ##pickleSave(self.savedPlaylist, [track.serialize() for track in tracks])
-        #print 'SAVE', tracks
         self.tracks = tracks
-        #pickleSave(self.savedPlaylist, tracks)
