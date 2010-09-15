@@ -26,6 +26,8 @@ class TrackTreeView(ExtTreeView):
     def __init__(self, colums, use_markup=True):
         ExtTreeView.__init__(self, colums, use_markup)
         
+        #self.set_level_indentation(30)
+        
         # Drag'n'drop management
         self.dndContext    = None
         self.dndSources    = None
@@ -107,7 +109,13 @@ class TrackTreeView(ExtTreeView):
         return self.getItem(iter, ROW_TRK)
         
     def getLabel(self, iter):
-        return self.getItem(iter, ROW_NAME)
+        label = self.getItem(iter, ROW_NAME)
+        from xml.sax.saxutils import unescape
+        label = unescape(label)
+        return label
+        
+    def setLabel(self, iter, label):
+        return self.setItem(iter, ROW_NAME, label)
         
     def scroll(self, iter):
         self.scroll_to_cell(self.store.get_path(iter))
@@ -276,7 +284,7 @@ class TrackTreeView(ExtTreeView):
         '''
         if not self.hasMark():
             return False
-        print 'EQUALS', self.store.get_path(self.getMark()), self.store.get_path(iter), self.store.get_path(self.getMark()) == self.store.get_path(iter)
+        #print 'EQUALS', self.store.get_path(self.getMark()), self.store.get_path(iter), self.store.get_path(self.getMark()) == self.store.get_path(iter)
         return self.store.get_path(self.getMark()) == self.store.get_path(iter)
     
         
@@ -323,6 +331,12 @@ class TrackTreeView(ExtTreeView):
             if track:
                 row = model[iter]
                 dest = self.insert(dest, row, drop_mode)
+                
+                # adjust track label to __new__ parent
+                parent = self.store.iter_parent(dest)
+                parent_label = self.getLabel(parent) if parent else None
+                self.setLabel(dest, track.get_label(parent_label))
+                
                 # Handle Mark
                 if self.isAtMark(iter):
                     self.setMark(dest)
