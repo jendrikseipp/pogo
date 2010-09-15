@@ -34,7 +34,7 @@ class TrackPanel(modules.Module):
         """ Constructor """
         handlers = {
                         consts.MSG_EVT_STOPPED:     self.onStopped,
-                        consts.MSG_CMD_SET_COVER:   self.onSetCover,
+                        #consts.MSG_CMD_SET_COVER:   self.onSetCover,
                         consts.MSG_EVT_NEW_TRACK:   self.onNewTrack,
                         consts.MSG_EVT_APP_STARTED: self.onAppStarted,
                    }
@@ -123,7 +123,7 @@ class TrackPanel(modules.Module):
         self.currTrack = track
 
         self.__setTitle(track.getTitle(), track.getLength())
-        self.txtMisc.set_markup(_('by <i>%(artist)s</i>\nfrom <i>%(album)s</i>' % {'artist': track.getArtist(), 'album': track.getExtendedAlbum()}))
+        self.txtMisc.set_markup(_('by <i>%(artist)s</i> from <i>%(album)s</i>' % {'artist': track.getArtist(), 'album': track.getExtendedAlbum()}))
 
 
     def onStopped(self):
@@ -133,7 +133,7 @@ class TrackPanel(modules.Module):
 
         self.__setImage(None)
         self.__setTitle(consts.appName)
-        self.txtMisc.set_text('...And Music For All\n')
+        self.txtMisc.set_text('...Simples!')
 
 
     def onSetCover(self, track, pathThumbnail, pathFullSize):
