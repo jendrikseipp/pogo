@@ -34,7 +34,7 @@ class TrackPanel(modules.Module):
         """ Constructor """
         handlers = {
                         consts.MSG_EVT_STOPPED:     self.onStopped,
-                        #consts.MSG_CMD_SET_COVER:   self.onSetCover,
+                        consts.MSG_CMD_SET_COVER:   self.onSetCover,
                         consts.MSG_EVT_NEW_TRACK:   self.onNewTrack,
                         consts.MSG_EVT_APP_STARTED: self.onAppStarted,
                    }
@@ -123,7 +123,9 @@ class TrackPanel(modules.Module):
         self.currTrack = track
 
         self.__setTitle(track.getTitle(), track.getLength())
-        self.txtMisc.set_markup(_('by <i>%(artist)s</i> from <i>%(album)s</i>' % {'artist': track.getArtist(), 'album': track.getExtendedAlbum()}))
+        artist = tools.htmlEscape(track.getArtist())
+        album = tools.htmlEscape(track.getExtendedAlbum())
+        self.txtMisc.set_markup(_('by <i>%(artist)s</i> from <i>%(album)s</i>' % {'artist': artist, 'album': album}))
 
 
     def onStopped(self):

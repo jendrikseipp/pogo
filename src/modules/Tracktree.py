@@ -167,34 +167,54 @@ class Tracktree(modules.Module):
         where = self.__getPreviousTrackIter()
         if where:
             self.jumpTo(where)
+            
+            
+    def set_track_playing(self, iter, playing):
+        if not iter:
+            return
+        track = self.tree.getTrack(iter)
+        if not track:
+            return
+            
+        parent = self.tree.store.iter_parent(iter)
+        parent_label = self.tree.getLabel(parent) if parent else None
+        label = track.get_label(parent_label)
+        if playing:
+            label = '<b>%s</b>' % label
+            #label = gobject.markup_escape_text(label)
+            self.tree.setLabel(iter, label)
+            self.tree.setItem(iter, ROW_ICO, icons.playMenuIcon())
+            self.tree.expand(iter)
+        else:
+            self.tree.setLabel(iter, label)
+            icon = self.tree.getItem(iter, ROW_ICO)
+            has_error = (icon == icons.errorMenuIcon())
+            is_dir = (icon == icons.mediaDirMenuIcon())
+            if not is_dir and not has_error:
+                self.tree.setItem(iter, ROW_ICO, icons.nullMenuIcon())
+        
 
 
     def jumpTo(self, iter, sendPlayMsg=True):
         """ Jump to the track located at the given iter """
-        print 'JUMPING TO', self.tree.get_nodename(iter)
         if not iter:
             return
             
         mark = self.tree.getMark()
         if mark:
-            icon = self.tree.getItem(mark, ROW_ICO)
-            has_error = (icon == icons.errorMenuIcon())
-            is_dir = (icon == icons.mediaDirMenuIcon())
-            if not is_dir and not has_error:
-                self.tree.setItem(mark, ROW_ICO, icons.nullMenuIcon())
+            self.set_track_playing(mark, False)
             
         self.tree.setMark(iter)
         self.tree.scroll(iter)
             
         # Check track
-        track = self.tree.getItem(iter, ROW_TRK)
+        track = self.tree.getTrack(iter)
         if not track:
             # Row may be a directory
             self.jumpTo(self.__getNextTrackIter())
             return
             
-        self.tree.setItem(iter, ROW_ICO, icons.playMenuIcon())
-        self.tree.expand(iter)
+        self.set_track_playing(iter, True)
 
         if sendPlayMsg:
             modules.postMsg(consts.MSG_CMD_PLAY, {'uri': track.getURI()})
@@ -253,25 +273,27 @@ class Tracktree(modules.Module):
         return new
         
         
+    
+        
+        
     def insertTrack(self, track, target=None, drop_mode=None):
         '''
         Insert a new track into the tracktree under parentPath
         '''
-        ##rows = [[icons.nullMenuIcon(), track.getNumber(), track.getTitle(), track.getArtist(), track.getExtendedAlbum(),
-        ##            track.getLength(), track.getBitrate(), track.getGenre(), track.getDate(), track.getURI(), track] for track in tracks]
-        title = track.getTitle()
-        artist = track.getArtist()
-        album = track.getExtendedAlbum()
-        number = track.getNumber()
         length = track.getLength()
-        name = ' - '.join([artist, album, str(number).zfill(2), title])
-        name += ' [%s]'%tools.sec2str(length)
         self.playtime += length
-        #trackURI = track.getURI()
-        #trackString = os.path.basename(trackURI)
-        name = gobject.markup_escape_text(name)
+        
+        name = track.get_label()
+        
         row = (icons.nullMenuIcon(), name, track)
-        return self.tree.insert(target, row, drop_mode)
+        new_iter = self.tree.insert(target, row, drop_mode)
+        parent = self.tree.store.iter_parent(new_iter)
+        if parent:
+            # adjust track label to parent
+            parent_label = self.tree.getLabel(parent)
+            new_label = track.get_label(parent_label)
+            self.tree.setLabel(new_iter, new_label)
+        return new_iter
 
 
     def set(self, tracks, playNow):
@@ -402,7 +424,6 @@ class Tracktree(modules.Module):
                   )
         
         self.tree = TrackTreeView(columns, use_markup=True)
-        ##self.tree.get_column(4).set_cell_data_func(txtRRdr, self.__fmtLengthColumn)
         self.tree.enableDNDReordering()
         #self.tree.setDNDSources([consts.DND_TARGETS[consts.DND_DAP_TRACKS]])
         self.tree.setDNDSources([DND_INTERNAL_TARGET])
@@ -470,14 +491,11 @@ class Tracktree(modules.Module):
 
     def onStopped(self):
         """ Playback has been stopped """
-        tracks = self.getTrackDir()
-        print 'MODIFIED:'
-        print tracks
-        
         if self.tree.hasMark():
             currTrack = self.tree.getMark()
-            if self.tree.getItem(currTrack, ROW_ICO) != icons.errorMenuIcon():
-                self.tree.setItem(currTrack, ROW_ICO, icons.nullMenuIcon())
+            self.set_track_playing(currTrack, False)
+            #if self.tree.getItem(currTrack, ROW_ICO) != icons.errorMenuIcon():
+            #    self.tree.setItem(currTrack, ROW_ICO, icons.nullMenuIcon())
             self.tree.clearMark()
 
 
