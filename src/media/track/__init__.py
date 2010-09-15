@@ -16,10 +16,14 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301 USA
 
-import os.path, tools
-
-from tools   import consts, sec2str
+import os.path
 from gettext import gettext as _
+
+import gobject
+
+import tools
+from tools import consts, sec2str
+
 
 # Tags asscociated to a track
 # The order should not be changed for compatibility reasons
@@ -319,6 +323,43 @@ class Track:
 
             if tag in (TAG_NUM, TAG_LEN, TAG_DNB, TAG_DAT, TAG_PLP, TAG_PLL, TAG_BTR, TAG_SMP, TAG_MOD): self.tags[tag] = int(tags[i+1])
             else:                                                                                        self.tags[tag] = tags[i+1].replace('\x00', ' ')
+            
+    
+    def get_label(self, parent_label=None):
+        '''
+        ## Return a treeview representation
+        '''
+        track = self
+        
+        title = track.getTitle()
+        artist = track.getArtist()
+        album = track.getExtendedAlbum()
+        number = track.getNumber()
+        length = track.getLength()
+        
+        number = str(number).zfill(2)
+        
+        if parent_label:
+            parent_label = parent_label.lower()
+            if album.strip().lower() in parent_label:
+                album = ''
+            #print artist.strip().lower(), 'IN', parent_label, artist.strip().lower() in parent_label
+            if artist.strip().lower() in parent_label:
+                artist = ''
+                
+        # Handle useless tags
+        if 'unknown' in title.lower():
+            basename = os.path.basename(track.getURI())
+            filename, ext = os.path.splitext(basename)
+            label = filename
+        else:
+            parts = [part for part in [artist, album, number, title] if part]
+            label = ' - '.join(parts)
+        
+        label += ' [%s]' % tools.sec2str(length)
+        label = gobject.markup_escape_text(label)
+            
+        return label
 
 
 def unserialize(serialTrack):
