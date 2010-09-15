@@ -115,7 +115,7 @@ class TrackDir(object):
         elif dir:
             self.dirname = dirname(dir)
         else:
-            self.dirname = ''
+            self.dirname = 'noname'
         
         # If flat is True, add files without directories
         self.flat = flat
@@ -129,10 +129,11 @@ class TrackDir(object):
     def scan(self):
         import tools
         for filename, path in sorted(tools.listDir(self.dir)):
-            #print 'PATH', path
             if os.path.isdir(path):
-                trackdir = TrackDir(path)
-                self.subdirs.append(trackdir)
+                trackdir = TrackDir(dir=path)
+                # Only add subdirs that contain songs
+                if trackdir.tracks or trackdir.subdirs:
+                    self.subdirs.append(trackdir)
             elif isSupported(filename):
                 track = getTrackFromFile(path)
                 self.tracks.append(track)
