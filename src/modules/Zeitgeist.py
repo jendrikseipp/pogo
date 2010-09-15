@@ -84,7 +84,7 @@ class Zeitgeist(modules.ThreadedModule):
             eventType = Interpretation.OPEN_EVENT
 
         event = Event.new_for_values(
-            actor          = "application://decibel-audio-player.desktop",
+            actor          = "application://pogo.desktop",
             subjects       = [subject,],
             interpretation = eventType,
         )

@@ -34,8 +34,8 @@ appNameShort = 'pogo'
 
 
 # --- URLs
-urlMain = 'http://decibel.silent-blade.org'
-urlHelp = 'http://decibel.silent-blade.org/index.php?n=Main.Help'
+urlMain = 'http://launchpad.net/pogo'
+urlHelp = 'http://answers.launchpad.net/pogo'
 
 
 
