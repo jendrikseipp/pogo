@@ -28,9 +28,9 @@ socketTimeout = 10
 
 
 # --- Strings
-appName      = 'Decibel Audio Player'
-appVersion   = '1.06'
-appNameShort = 'decibel-audio-player'
+appName      = 'Pogo'
+appVersion   = '0.1'
+appNameShort = 'pogo'
 
 
 # --- URLs
