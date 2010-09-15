@@ -25,6 +25,8 @@ MOD_INFO = ('Control Panel', 'Control Panel', '', [], True, False)
 
 PREFS_DEFAULT_VOLUME = 0.65
 
+PLAY_PAUSE_ICON_SIZE = gtk.ICON_SIZE_DND
+
 
 class CtrlPanel(modules.Module):
     """ This module manages the control panel with the buttons and the slider """
@@ -96,7 +98,7 @@ class CtrlPanel(modules.Module):
         """ A new track is being played """
         self.btnStop.set_sensitive(True)
         self.btnPlay.set_sensitive(True)
-        self.btnPlay.set_image(gtk.image_new_from_stock(gtk.STOCK_MEDIA_PAUSE, gtk.ICON_SIZE_BUTTON))
+        self.btnPlay.set_image(gtk.image_new_from_stock(gtk.STOCK_MEDIA_PAUSE, PLAY_PAUSE_ICON_SIZE))
         self.btnPlay.set_tooltip_text(_('Pause the current track'))
 
         self.currTrackLength = track.getLength()
@@ -115,7 +117,7 @@ class CtrlPanel(modules.Module):
         self.btnStop.set_sensitive(False)
         self.btnNext.set_sensitive(False)
         self.btnPrev.set_sensitive(False)
-        self.btnPlay.set_image(gtk.image_new_from_stock(gtk.STOCK_MEDIA_PLAY, gtk.ICON_SIZE_BUTTON))
+        self.btnPlay.set_image(gtk.image_new_from_stock(gtk.STOCK_MEDIA_PLAY, PLAY_PAUSE_ICON_SIZE))
         self.btnPlay.set_tooltip_text(_('Play the first selected track of the playlist'))
         self.sclSeek.hide()
         ##self.lblElapsed.hide()
@@ -151,13 +153,13 @@ class CtrlPanel(modules.Module):
 
     def onPaused(self):
         """ The playback has been paused """
-        self.btnPlay.set_image(gtk.image_new_from_stock(gtk.STOCK_MEDIA_PLAY, gtk.ICON_SIZE_BUTTON))
+        self.btnPlay.set_image(gtk.image_new_from_stock(gtk.STOCK_MEDIA_PLAY, PLAY_PAUSE_ICON_SIZE))
         self.btnPlay.set_tooltip_text(_('Continue playing the current track'))
 
 
     def onUnpaused(self):
         """ The playback has been unpaused """
-        self.btnPlay.set_image(gtk.image_new_from_stock(gtk.STOCK_MEDIA_PAUSE, gtk.ICON_SIZE_BUTTON))
+        self.btnPlay.set_image(gtk.image_new_from_stock(gtk.STOCK_MEDIA_PAUSE, PLAY_PAUSE_ICON_SIZE))
         self.btnPlay.set_tooltip_text(_('Pause the current track'))
 
 
