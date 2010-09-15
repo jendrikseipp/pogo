@@ -233,17 +233,27 @@ class Tracktree(modules.Module):
             source_row = (icons.mediaDirMenuIcon(), string, None)
             
             new = self.tree.insert(target, source_row, drop_mode)
+            drop_mode = gtk.TREE_VIEW_DROP_INTO_OR_AFTER
         
-        for subdir in trackdir.subdirs:
-            self.insertDir(subdir, new, drop_mode)
-        for track in trackdir.tracks:
-            self.insertTrack(track, new, drop_mode)
+        dest = new
+        for index, subdir in enumerate(trackdir.subdirs):
+            drop = drop_mode if index == 0 else gtk.TREE_VIEW_DROP_AFTER
+            dest = self.insertDir(subdir, dest, drop)
+            
+        dest = new
+        for index, track in enumerate(trackdir.tracks):
+            drop = drop_mode if index == 0 else gtk.TREE_VIEW_DROP_AFTER
+            dest = self.insertTrack(track, dest, drop)
             
         if not trackdir.flat:
-            if target is None:
+            # Open albums on the first layer
+            if target is None or model.iter_depth(target) == 0:
                 self.tree.expand(new)
         
-    def insertTrack(self, track, parentPath=None, drop_mode=None):
+        return new
+        
+        
+    def insertTrack(self, track, target=None, drop_mode=None):
         '''
         Insert a new track into the tracktree under parentPath
         '''
@@ -260,8 +270,8 @@ class Tracktree(modules.Module):
         #trackURI = track.getURI()
         #trackString = os.path.basename(trackURI)
         name = gobject.markup_escape_text(name)
-        assert name is not None
-        self.tree.appendRow((icons.nullMenuIcon(), name, track), parentPath)
+        row = (icons.nullMenuIcon(), name, track)
+        return self.tree.insert(target, row, drop_mode)
 
 
     def set(self, tracks, playNow):
@@ -554,6 +564,8 @@ class Tracktree(modules.Module):
 
         # dropInfo is tuple (path, drop_pos)
         dropInfo = list.get_dest_row_at_pos(x, y)
+        
+        print 'DROPINFO', dropInfo
 
         # Insert the tracks, but beware of the AFTER/BEFORE mechanism used by GTK
         if dropInfo is None:
