@@ -21,6 +21,7 @@ from tools import consts
 DND_REORDERING_ID   = 1024
 DND_INTERNAL_TARGET = ('extListview-internal', gtk.TARGET_SAME_WIDGET, DND_REORDERING_ID)
 
+
 class TrackTreeView(ExtTreeView):
     def __init__(self, colums, use_markup=True):
         ExtTreeView.__init__(self, colums, use_markup)
@@ -116,7 +117,7 @@ class TrackTreeView(ExtTreeView):
         
     def get_nodename(self, iter):
         if not iter:
-            return 'None'
+            return 'NoneValue'
         return self.store.get_value(iter, 1)
         
     def get_first_iter(self):
@@ -233,7 +234,7 @@ class TrackTreeView(ExtTreeView):
         iter = self.store.iter_children(parent)
 
         while iter is not None:
-            print 'RETURNING', self.getLabel(iter), 'PARENT', parent, self.getLabel(self.store.get_iter_first())
+            #print 'RETURNING', self.getLabel(iter), 'PARENT', parent, self.getLabel(self.store.get_iter_first())
             yield iter
             iter = self.store.iter_next(iter)
     
@@ -268,6 +269,18 @@ class TrackTreeView(ExtTreeView):
         self.mark = gtk.TreeRowReference(self.store, self.store.get_path(iter))
         
     
+    def isAtMark(self, iter):
+        '''
+        Compare the marker path and the path of iter, because the iters alone
+        will not predict equality
+        '''
+        if not self.hasMark():
+            return False
+        print 'EQUALS', self.store.get_path(self.getMark()), self.store.get_path(iter), self.store.get_path(self.getMark()) == self.store.get_path(iter)
+        return self.store.get_path(self.getMark()) == self.store.get_path(iter)
+    
+        
+    
     # DRAG AND DROP
     
     def move_selected_rows(self, x, y):
@@ -295,12 +308,14 @@ class TrackTreeView(ExtTreeView):
             for checked_iter in iters:
                 if model.is_ancestor(checked_iter, iter):
                     add = False
+            if model.is_ancestor(iter, dest):
+                # Do not drop ancestors into children
+                add = False
             if add:
                 iters.append(iter)
         
         # Move the iters
         for index, iter in enumerate(iters):
-            #TODO: Handle Mark
             if index > 0:
                 drop_mode = gtk.TREE_VIEW_DROP_AFTER
             
@@ -308,6 +323,9 @@ class TrackTreeView(ExtTreeView):
             if track:
                 row = model[iter]
                 dest = self.insert(dest, row, drop_mode)
+                # Handle Mark
+                if self.isAtMark(iter):
+                    self.setMark(dest)
             else:
                 dest = self.move_dir(iter, dest, drop_mode)
             
@@ -329,7 +347,10 @@ class TrackTreeView(ExtTreeView):
             track = self.getTrack(child)
             row = self.store[child]
             if track:
-                self.insert(new_target, row, gtk.TREE_VIEW_DROP_INTO_OR_AFTER)
+                dest = self.insert(new_target, row, gtk.TREE_VIEW_DROP_INTO_OR_AFTER)
+                # Handle Mark
+                if self.isAtMark(child):
+                    self.setMark(dest)
             else:
                 self.move_dir(child, new_target, gtk.TREE_VIEW_DROP_INTO_OR_AFTER)
         return new_target
@@ -371,7 +392,7 @@ class TrackTreeView(ExtTreeView):
 
         if drop is not None:
             iter = self.store.get_iter(drop[0])
-            self.setItem(self.get_first_iter(), 1, str(drop[1])[1:-1])
+            #self.setItem(self.get_first_iter(), 1, str(drop[1])[1:-1])
             track = self.getTrack(iter)
             if track and (drop[1] == gtk.TREE_VIEW_DROP_INTO_OR_AFTER or drop[1] == gtk.TREE_VIEW_DROP_INTO_OR_BEFORE):
                 # do not let the user drop anything here
