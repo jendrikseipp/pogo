@@ -33,9 +33,9 @@ MOD_INFO = ('Tracktree', 'Tracktree', '', [], True, False)
 
 # The format of a row in the treeview
 (
-    ROW_ICO, # Item icon
-    ROW_NAME,     # Item name
-    ROW_TRK,   # The track object
+    ROW_ICO,    # Item icon
+    ROW_NAME,   # Item name
+    ROW_TRK,    # The track object
 ) = range(3)
 
 
@@ -368,7 +368,7 @@ class Tracktree(modules.Module):
         else:
             remove.connect('activate', lambda item: self.remove())
 
-        popup.append(gtk.SeparatorMenuItem())
+        #popup.append(gtk.SeparatorMenuItem())
 
         # Clear
         clear = gtk.ImageMenuItem(_('Clear Playlist'))
@@ -380,7 +380,7 @@ class Tracktree(modules.Module):
         else:
             clear.connect('activate', lambda item: modules.postMsg(consts.MSG_CMD_TRACKLIST_CLR))
 
-        popup.append(gtk.SeparatorMenuItem())
+        #popup.append(gtk.SeparatorMenuItem())
 
         # Save
         #save = gtk.ImageMenuItem(_('Save Playlist As...'))
@@ -430,14 +430,13 @@ class Tracktree(modules.Module):
         self.tree.setDNDSources([DND_INTERNAL_TARGET])
         
         wTree.get_widget('scrolled-tracklist').add(self.tree)
+        
         # GTK handlers
-        self.tree.connect('row-activated', self.on_row_activated)
+        #self.tree.connect('row-activated', self.on_row_activated)
         #self.tree.store.connect('row-inserted', self.on_row_inserted)
         #self.tree.store.connect('row-deleted', self.on_row_deleted)
         
         self.tree.selection.connect('changed', self.onSelectionChanged)
-        
-        
          
         self.tree.connect('exttreeview-button-pressed', self.onMouseButton)
         self.tree.connect('tracktreeview-dnd', self.onDND)
@@ -508,19 +507,22 @@ class Tracktree(modules.Module):
 
     # --== GTK handlers ==--
     
-    def on_row_activated(self, treeview, path, view_column):
-        self.jumpTo(self.tree.store.get_iter(path))
+    #def on_row_activated(self, treeview, path, view_column):
+    #    self.jumpTo(self.tree.store.get_iter(path))
         
-    def on_row_inserted(self, store, path, iter):
-        self.onListModified()
+    #def on_row_inserted(self, store, path, iter):
+    #    self.onListModified()
         
-    def on_row_deleted(self, store, path):
-        self.onListModified()
+    #def on_row_deleted(self, store, path):
+    #    self.onListModified()
         
         
     def onMouseButton(self, tree, event, path):
         """ A mouse button has been pressed """
-        if event.button == 3:
+        print 'BUTTON PRESSED', path
+        if event.button == 1 and event.type == gtk.gdk._2BUTTON_PRESS and path is not None:
+            self.jumpTo(self.tree.store.get_iter(path))
+        elif event.button == 3:
             self.onShowPopupMenu(tree, event.button, event.time, path)
 
 
@@ -538,18 +540,13 @@ class Tracktree(modules.Module):
 
     def onListModified(self):
         """ Some rows have been added/removed/moved """
-        #self.btnClear.set_sensitive(len(list) != 0)
-        #self.btnShuffle.set_sensitive(len(list) != 0)
-
+        
         # Update playlist length and playlist position for all tracks
         #for position, row in enumerate(self.tree):
         #    row[ROW_TRK].setPlaylistPos(position + 1)
         #    row[ROW_TRK].setPlaylistLen(len(self.tree))
-
-        #allTracks = self.getAllTracks()
         tracks = self.getTrackDir()
-        print 'MODIFIED:'
-        print tracks
+        
         modules.postMsg(consts.MSG_EVT_NEW_TRACKLIST, {'tracks': tracks, 'playtime': self.playtime})
 
         if self.tree.hasMark():
@@ -583,8 +580,6 @@ class Tracktree(modules.Module):
 
         # dropInfo is tuple (path, drop_pos)
         dropInfo = list.get_dest_row_at_pos(x, y)
-        
-        print 'DROPINFO', dropInfo
 
         # Insert the tracks, but beware of the AFTER/BEFORE mechanism used by GTK
         if dropInfo is None:
