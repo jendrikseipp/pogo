@@ -1,6 +1,7 @@
 import sys, os
 
 import gtk
+from gobject import signal_new, TYPE_INT, TYPE_STRING, TYPE_BOOLEAN, TYPE_PYOBJECT, TYPE_NONE, SIGNAL_RUN_LAST
 
 if __name__ == '__main__':
     base_dir = os.path.abspath(os.path.join(os.path.abspath(__file__), '../../'))
@@ -20,6 +21,8 @@ from tools import consts
 # Internal d'n'd (reordering)
 DND_REORDERING_ID   = 1024
 DND_INTERNAL_TARGET = ('extListview-internal', gtk.TARGET_SAME_WIDGET, DND_REORDERING_ID)
+
+signal_new('tracktreeview-dnd', gtk.TreeView, SIGNAL_RUN_LAST, TYPE_NONE, (gtk.gdk.DragContext, TYPE_INT, TYPE_INT, gtk.SelectionData, TYPE_INT, TYPE_PYOBJECT))
 
 
 class TrackTreeView(ExtTreeView):
@@ -115,6 +118,7 @@ class TrackTreeView(ExtTreeView):
         return label
         
     def setLabel(self, iter, label):
+        label = label.replace('_', ' ')
         return self.setItem(iter, ROW_NAME, label)
         
     def scroll(self, iter):
@@ -388,7 +392,7 @@ class TrackTreeView(ExtTreeView):
         if dndId == DND_REORDERING_ID:
             self.move_selected_rows(x, y)
         else:
-            self.emit('extlistview-dnd', context, int(x), int(y), selection, dndId, time)
+            self.emit('tracktreeview-dnd', context, int(x), int(y), selection, dndId, time)
 
 
     def onDragMotion(self, tree, context, x, y, time):

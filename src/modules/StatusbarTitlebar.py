@@ -45,8 +45,8 @@ class StatusbarTitlebar(modules.Module):
     def __updateTitlebar(self):
         """ Update the title bar """
         if self.currTrack is None: self.window.set_title(consts.appName)
-        elif self.paused:          self.window.set_title('%s - %s %s' % (self.currTrack.getArtist(), self.currTrack.getTitle(), _('[paused]')))
-        else:                      self.window.set_title('%s - %s' % (self.currTrack.getArtist(), self.currTrack.getTitle()))
+        elif self.paused:          self.window.set_title('%s %s' % (self.currTrack.get_window_title(), _('[paused]')))
+        else:                      self.window.set_title('%s' % self.currTrack.get_window_title())
 
 
     def __updateStatusbar(self):
