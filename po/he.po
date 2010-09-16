@@ -6,8 +6,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: decibel-audio-player\n"
-"Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
-"POT-Creation-Date: 2009-08-23 09:18+0200\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2010-09-16 22:21+0200\n"
 "PO-Revision-Date: 2008-11-08 12:03+0000\n"
 "Last-Translator: Yaron <sh.yaron@gmail.com>\n"
 "Language-Team: Hebrew <he@li.org>\n"
@@ -18,169 +18,109 @@ msgstr ""
 "X-Launchpad-Export-Date: 2009-09-01 15:20+0000\n"
 "X-Generator: Launchpad (build Unknown)\n"
 
-#: ../src/media/track/__init__.py:46
+#: ../src/media/track/__init__.py:53
 msgid "Track number"
 msgstr "מספר הרצועה"
 
-#: ../src/media/track/__init__.py:47 ../src/modules/Tracklist.py:102
-#: ../src/modules/Tracklist.py:418
+#: ../src/media/track/__init__.py:54
 msgid "Title"
 msgstr "כותרת"
 
-#: ../src/media/track/__init__.py:48 ../src/modules/Tracklist.py:103
-#: ../src/modules/Tracklist.py:419
+#: ../src/media/track/__init__.py:55
 msgid "Artist"
 msgstr "אמן"
 
-#: ../src/media/track/__init__.py:49 ../src/modules/Tracklist.py:104
-#: ../src/modules/Tracklist.py:420
+#: ../src/media/track/__init__.py:56
 msgid "Album"
 msgstr "אלבום"
 
-#: ../src/media/track/__init__.py:50 ../src/modules/Tracklist.py:106
-#: ../src/modules/Tracklist.py:422
+#: ../src/media/track/__init__.py:57
 msgid "Genre"
 msgstr "סגנון"
 
-#: ../src/media/track/__init__.py:51 ../src/modules/Tracklist.py:107
-#: ../src/modules/Tracklist.py:423
+#: ../src/media/track/__init__.py:58
 msgid "Date"
 msgstr "תאריך"
 
-#: ../src/media/track/__init__.py:52
+#: ../src/media/track/__init__.py:59
 msgid "Disc number"
 msgstr "מספר התקליטור"
 
-#: ../src/media/track/__init__.py:53
+#: ../src/media/track/__init__.py:60
+msgid "Bit rate"
+msgstr ""
+
+#: ../src/media/track/__init__.py:61
+msgid "Sample rate"
+msgstr ""
+
+#: ../src/media/track/__init__.py:62
 msgid "Duration in seconds (e.g., 194)"
 msgstr "משך בשניות (למשל 194)"
 
-#: ../src/media/track/__init__.py:54
+#: ../src/media/track/__init__.py:63
 msgid "Duration as a string (e.g., 3:14)"
 msgstr "משך כמחרוזת (למשל 3:14)"
 
-#: ../src/media/track/__init__.py:55
+#: ../src/media/track/__init__.py:64
 msgid "Position of the track in the playlist"
 msgstr "מיקום הרצועה ברשימת‏־ההשמעה"
 
-#: ../src/media/track/__init__.py:56
+#: ../src/media/track/__init__.py:65
 msgid "Number of tracks in the playlist"
 msgstr "מספר הרצועות ברשימת-השמעה"
 
-#: ../src/media/track/__init__.py:57
+#: ../src/media/track/__init__.py:66
 msgid "Full path to the file"
 msgstr "הנתיב המלא אל הקובץ"
 
-#: ../src/media/track/__init__.py:147
+#: ../src/media/track/__init__.py:148
+msgid "N/A"
+msgstr ""
+
+#: ../src/media/track/__init__.py:174
 #, python-format
 msgid "%(album)s  [Disc %(discnum)u]"
 msgstr "%(album)s [תקליטור %(discnum)u]"
 
-#: ../src/tools/consts.py:95
-msgid "Unknown Genre"
-msgstr "סגנון לא ידוע"
-
-#: ../src/tools/consts.py:96
-msgid "Unknown Title"
-msgstr "כותרת לא ידועה"
-
-#: ../src/tools/consts.py:97
-msgid "Unknown Album"
-msgstr "אלבום לא ידוע"
-
-#: ../src/tools/consts.py:98
-msgid "Unknown Artist"
-msgstr "אמן לא ידוע"
-
-#: ../src/tools/consts.py:103
-msgid "Unknown Album Artist"
-msgstr "אמן התקליטור אינו ידוע"
-
-#: ../src/gui/about.py:39
-msgid "translator-credits"
+#: ../src/media/track/__init__.py:181
+msgid "CDDA Track"
 msgstr ""
-"Launchpad Contributions:\n"
-"  Alex Let https://launchpad.net/~lolikas\n"
-"  Yaron https://launchpad.net/~sh-yaron"
 
-#: ../src/gui/about.py:43
-msgid "Developer:"
-msgstr "מפתח:"
-
-#: ../src/gui/about.py:46
-msgid "Thanks to:"
-msgstr "תודות ל:"
-
-#: ../src/gui/authentication.py:131
-#, python-format
-msgid ""
-"Enter your username and password for\n"
-"%(reason)s"
-msgstr ""
-"הזן את שם המשתמש והסיסמה שלך עבור\n"
-"%(reason)s"
-
-#: ../src/gui/authentication.py:133 ../res/Authentication.glade.h:1
-msgid "Password required"
-msgstr "נדרשת סיסמה"
-
-#: ../src/gui/authentication.py:170
-msgid "About password storage safety"
-msgstr "אודות אבטחה בשמירת סיסמאות"
-
-#: ../src/gui/authentication.py:171
-msgid ""
-"If you use Gnome, it is safe to store your password since the Gnome keyring "
-"is used."
-msgstr ""
-"במידה והנך משתמש ב־GNOME, תוכל לשמור סיסמאות בבטחה כיוון שהפעולה מתבצעת דרך "
-"מחזיק המפתחות של GNOME."
-
-#: ../src/gui/authentication.py:172
-msgid ""
-"If you do not use Gnome, beware that, although not stored as clear text, an "
-"attacker <i>could</i> retrieve it."
-msgstr ""
-"במידה ואינך משתמש ב־GNOME, היה ער לעובדה כי למרות שהסיסמה אינה נשמרת כטקסט "
-"מובהק, מפצח סיסמאות <i>יוכל</i> לאחזר אותה."
-
-#: ../src/gui/preferences.py:39
+#: ../src/gui/preferences.py:43
 msgid "Preferences"
 msgstr "העדפות"
 
-#: ../src/gui/preferences.py:102
+#: ../src/gui/preferences.py:116
 msgid "Unable to load this module."
 msgstr "לא ניתן לטעון מודול זה."
 
-#: ../src/gui/preferences.py:109
+#: ../src/gui/preferences.py:125
 msgid "Modules"
 msgstr "מודולים"
 
-#: ../src/gui/preferences.py:110 ../src/modules/IMStatus.py:341
-#: ../src/modules/DesktopNotification.py:166
-#: ../src/modules/FileExplorer.py:562 ../src/modules/Library.py:706
-#: ../src/modules/AudioCD.py:374 ../src/modules/Covers.py:429
-#: ../src/modules/StatusFile.py:115 ../src/modules/Twitter.py:120
+#: ../src/gui/preferences.py:126 ../src/modules/FileExplorer.py:588
+#: ../src/modules/DesktopNotification.py:212 ../src/modules/Covers.py:419
 msgid "Description"
 msgstr "תיאור"
 
-#: ../src/gui/preferences.py:111
+#: ../src/gui/preferences.py:127
 msgid ""
 "This dialog box shows the list of available modules, which are small pieces "
-"of code that add some functionnalities to the application. You can "
-"enable/disable a module by checking/unchecking the check box in front of it. "
-"Note that some modules (e.g., the File Explorer) cannot be disabled."
+"of code that add some functionnalities to the application. You can enable/"
+"disable a module by checking/unchecking the check box in front of it. Note "
+"that some modules (e.g., the File Explorer) cannot be disabled."
 msgstr ""
 "בתיבת דו שיח זו מוצגים המודולים הזמינים, אשר הינם חלקים קטנים של קוד "
 "המוסיפים תכונות נוספות ליישום. ניתן לבטל/להפעיל מודול על ידי סימון/ביטול "
 "הסימון בתיבת הסימון שלפניו. שימו לב שלא ניתן לבטל כמה מהמודולים (לדוגמה: "
 "סייר הקבצים)."
 
-#: ../src/gui/preferences.py:114
+#: ../src/gui/preferences.py:130
 msgid "Configuring a Module"
 msgstr "הגדרת מודול"
 
-#: ../src/gui/preferences.py:115
+#: ../src/gui/preferences.py:131
 msgid ""
 "When a module may be configured, a specific icon is displayed on the right "
 "of the corresponding line. To configure a module, simply select it and then "
@@ -224,89 +164,122 @@ msgstr ""
 "אין להשתמש בתו %s.\n"
 "נא בחרו בשם אחר."
 
-#: ../src/modules/IMStatus.py:25
-msgid "Instant Messenger Status"
-msgstr "מצב תוכנת המסרים המידיים"
-
-#: ../src/modules/IMStatus.py:25
-msgid "Update the status message of your IM client"
-msgstr "עדכן את הודעת המצב בתוכנת המסרים שלך"
-
-#: ../src/modules/IMStatus.py:39
-msgid "Decibel is stopped"
-msgstr "הנגן דציבל נעצר"
-
-#: ../src/modules/IMStatus.py:261 ../src/modules/IMStatus.py:334
+#: ../src/gui/authentication.py:131
 #, python-format
-msgid "%(status)s [paused]"
-msgstr "%(status)s [מושהה]"
-
-#: ../src/modules/IMStatus.py:342
 msgid ""
-"This module detects any running instant messenger and updates your status "
-"with regards to the track you are listening to. Supported messengers are:"
+"Enter your username and password for\n"
+"%(reason)s"
 msgstr ""
-"מודול זה מאתר תוכנות מסרים מידיים ומעדכנת את הודעת המצב בהתאם לרצועה אליה "
-"אתם מאזינים. תוכנות המסרים הנתמכות הן:"
+"הזן את שם המשתמש והסיסמה שלך עבור\n"
+"%(reason)s"
 
-#: ../src/modules/IMStatus.py:345 ../src/modules/Twitter.py:123
-msgid "Customizing the Status"
-msgstr "התאמת הודעת המצב"
+#: ../src/gui/authentication.py:133 ../res/Authentication.glade.h:1
+msgid "Password required"
+msgstr "נדרשת סיסמה"
 
-#: ../src/modules/IMStatus.py:346 ../src/modules/Twitter.py:124
+#: ../src/gui/authentication.py:170
+msgid "About password storage safety"
+msgstr "אודות אבטחה בשמירת סיסמאות"
+
+#: ../src/gui/authentication.py:171
 msgid ""
-"You can set the status to any text you want. Before setting it, the module "
-"replaces all fields of the form {field} by their corresponding value. "
-"Available fields are:"
+"If you use Gnome, it is safe to store your password since the Gnome keyring "
+"is used."
 msgstr ""
-"תוכלו להגדיר את הודעת המצב לכל טקסט בו תחפצו. לפני הגדרת הטקסט, המודול מחליף "
-"את כל השדות שצורתם {שדה} בערכם התואם. השדות הזמינים הינם:"
+"במידה והנך משתמש ב־GNOME, תוכל לשמור סיסמאות בבטחה כיוון שהפעולה מתבצעת דרך "
+"מחזיק המפתחות של GNOME."
 
-#: ../src/modules/IMStatus.py:349 ../src/modules/DesktopNotification.py:172
-msgid "Markup"
-msgstr "סימון"
-
-#: ../src/modules/IMStatus.py:350 ../src/modules/DesktopNotification.py:173
+#: ../src/gui/authentication.py:172
 msgid ""
-"You can use the Pango markup language to format the text. More information "
-"on that language is available on the following web page:"
+"If you do not use Gnome, beware that, although not stored as clear text, an "
+"attacker <i>could</i> retrieve it."
 msgstr ""
-"תוכלו להשתמש בשפת הסימון Pango כדי לעצב את הטקסט. מידע נוסף אודות שפה זו "
-"זמין בכתובת:"
+"במידה ואינך משתמש ב־GNOME, היה ער לעובדה כי למרות שהסיסמה אינה נשמרת כטקסט "
+"מובהק, מפצח סיסמאות <i>יוכל</i> לאחזר אותה."
 
-#: ../src/modules/IMStatus.py:353
-msgid "Sanitization"
-msgstr "חיטוי"
+#: ../src/gui/about.py:39
+msgid "translator-credits"
+msgstr ""
+"Launchpad Contributions:\n"
+"  Alex Let https://launchpad.net/~lolikas\n"
+"  Yaron https://launchpad.net/~sh-yaron"
 
-#: ../src/modules/IMStatus.py:354
+#: ../src/gui/about.py:43
+msgid "Developer:"
+msgstr "מפתח:"
+
+#: ../src/gui/about.py:46
+msgid "Thanks to:"
+msgstr "תודות ל:"
+
+#: ../src/modules/Zeitgeist.py:26
+msgid "Send track information to the Zeitgeist service"
+msgstr ""
+
+#: ../src/modules/FileExplorer.py:27
+msgid "File Explorer"
+msgstr "סייר הקבצים"
+
+#: ../src/modules/FileExplorer.py:27
+msgid "Browse your file system"
+msgstr "סייר במערכת הקבצים שלך"
+
+#: ../src/modules/FileExplorer.py:31
+msgid "Home"
+msgstr "דף הבית"
+
+#: ../src/modules/FileExplorer.py:31
+msgid "Root"
+msgstr ""
+
+#: ../src/modules/FileExplorer.py:182
+msgid "loading..."
+msgstr "טוען..."
+
+#: ../src/modules/FileExplorer.py:350
+msgid "Collapse all"
+msgstr ""
+
+#: ../src/modules/FileExplorer.py:363 ../res/FileExplorer.glade.h:8
+msgid "Show hidden files"
+msgstr "הצג קבצים מוסתרים"
+
+#: ../src/modules/FileExplorer.py:525
+msgid "You will be able to add this root folder again later on if you wish so."
+msgstr "תוכל להוסיף את תיקיית משתמש העל הזו שוב אם ברצונך לעשות כך."
+
+#: ../src/modules/FileExplorer.py:526
+msgid "Remove the selected entry?"
+msgstr "האם להסיר את הרשומה הנבחרת?"
+
+#: ../src/modules/FileExplorer.py:528
 msgid ""
-"You can define some words that to sanitize before using them to set your "
-"status. In this case, the middle characters of matching words is "
-"automatically replaced with asterisks (e.g., \"Metallica - Live S**t Binge & "
-"Purge\"). Put one word per line."
+"You will be able to add these root folders again later on if you wish so."
+msgstr "תוכל להשתמש בתיקיות משתמש על אלו מאוחר יותר אם תחפוץ בכך."
+
+#: ../src/modules/FileExplorer.py:529
+msgid "Remove all selected entries?"
+msgstr "האם להסיר את הרשומות הנבחרות?"
+
+#: ../src/modules/FileExplorer.py:531
+msgid "Your media files will not be deleted."
+msgstr "קבצי המדיה שלך לא ימחקו."
+
+#: ../src/modules/FileExplorer.py:589
+msgid "This module allows you to browse the files on your drives."
+msgstr "מודול זה מאפשר לך לסייר בין הקבצים שבכונן שלך."
+
+#: ../src/modules/FileExplorer.py:590
+msgid "Usage"
+msgstr "שימוש"
+
+#: ../src/modules/FileExplorer.py:591
+msgid ""
+"At least one root folder must be added to browse your files. This folder "
+"then becomes the root of the file explorer tree in the main window."
 msgstr ""
-"תוכלו לבחור מספר מילים שיעברו \"חיטוי\" לפני שישמשו כחלק מהודעת המצב שלך. "
-"במקרה זה, האותיות המרכזיות של המילים התואמות יוחלפו בכוכביות (לדוגמה: \"הדג "
-"נחש - היא מקבלת ז*ן\"). הזינו מילה אחת לשורה."
-
-#: ../src/modules/AudioScrobbler.py:28
-msgid "Keep your Last.fm profile up to date"
-msgstr "שמור על פרופיל ה־Last.fm שלך עדכני"
-
-#: ../src/modules/AudioScrobbler.py:142 ../src/modules/AudioScrobbler.py:143
-msgid "your Last.fm account"
-msgstr "חשבונך ב־Last.fm"
-
-#: ../src/modules/StatusbarTitlebar.py:52
-#, python-format
-msgid "One track in playlist  [%(length)s]"
-msgid_plural "%(count)u tracks in playlist  [%(length)s]"
-msgstr[0] "רצועה אחת ברשימת ההשמעה  [%(length)s]"
-msgstr[1] "%(count)u רצועות ברשימת ההשמעה  [%(length)s]"
-
-#: ../src/modules/StatusbarTitlebar.py:72
-msgid "[paused]"
-msgstr "[מושהה]"
+"יש להוסיף לפחות תיקיית על אחת כדי לסייר בין הקבצים שלך. תיקייה זו תהפוך "
+"לתיקיית השורש של סייר הקבצים בחלון הראשי."
 
 #: ../src/modules/__init__.py:75
 msgid "The following Python modules are not available:"
@@ -316,31 +289,58 @@ msgstr "המודולים הבאים של Python אינם זמינים:"
 msgid "You must install them if you want to enable this module."
 msgstr "עליכם להתקין אותם אם ברצונכם להפעיל מודול זה."
 
-#: ../src/modules/DesktopNotification.py:26
+#: ../src/modules/__init__.py:266
+msgid "Restart required"
+msgstr ""
+
+#: ../src/modules/__init__.py:266
+msgid "You must restart the application for this modification to take effect."
+msgstr ""
+
+#: ../src/modules/TrackPanel.py:128
+#, fuzzy, python-format
+msgid "by <i>%(artist)s</i> from <i>%(album)s</i>"
+msgstr ""
+"על ידי %(artist)s\n"
+"מהאלבום %(album)s"
+
+#: ../src/modules/CtrlPanel.py:102 ../src/modules/CtrlPanel.py:163
+msgid "Pause the current track"
+msgstr "השהה את הרצועה הנוכחית"
+
+#: ../src/modules/CtrlPanel.py:121
+#, fuzzy
+msgid "Play the first selected track of the playlist"
+msgstr "נגן את הרצועה הראשונה ברשימת ההשמעה"
+
+#: ../src/modules/CtrlPanel.py:157
+msgid "Continue playing the current track"
+msgstr "המשך לנגן את הרצועה הנוכחית"
+
+#: ../src/modules/DesktopNotification.py:25
 msgid "Desktop Notification"
 msgstr "התראות שולחן העבודה"
 
-#: ../src/modules/DesktopNotification.py:26
+#: ../src/modules/DesktopNotification.py:25
 msgid "Display a desktop notification on track change"
 msgstr "הצג התראה בשולחן העבודה עם שינוי רצועת השמע"
 
-#: ../src/modules/DesktopNotification.py:82
-#: ../src/modules/DesktopNotification.py:144
+#: ../src/modules/DesktopNotification.py:78
+#: ../src/modules/DesktopNotification.py:188
 msgid "Skip track"
 msgstr "דלג על רצועה"
 
-#: ../src/modules/DesktopNotification.py:167
+#: ../src/modules/DesktopNotification.py:213
 msgid ""
 "This module displays a small popup window on your desktop when a new track "
 "starts."
-msgstr ""
-"מודול זה מציג חלונית קטנה על גבי שולחן העבודה כאשר מתנגנת רצועה חדשה."
+msgstr "מודול זה מציג חלונית קטנה על גבי שולחן העבודה כאשר מתנגנת רצועה חדשה."
 
-#: ../src/modules/DesktopNotification.py:168
+#: ../src/modules/DesktopNotification.py:214
 msgid "Customizing the Notification"
 msgstr "התאמת ההתראה"
 
-#: ../src/modules/DesktopNotification.py:169
+#: ../src/modules/DesktopNotification.py:215
 msgid ""
 "You can change the title and the body of the notification to any text you "
 "want. Before displaying the popup window, fields of the form {field} are "
@@ -351,350 +351,45 @@ msgstr ""
 "שדות שצורתם {שדה} יוחלפו בערכם התואם. שדות אפשריים הינם:\n"
 "\n"
 
-#: ../src/modules/CtrlPanel.py:78 ../src/modules/CtrlPanel.py:136
-#: ../res/StatusIconMenu.glade.h:2
-msgid "Pause the current track"
-msgstr "השהה את הרצועה הנוכחית"
+#: ../src/modules/DesktopNotification.py:218
+msgid "Markup"
+msgstr "סימון"
 
-#: ../src/modules/CtrlPanel.py:95 ../res/MainWindow.glade.h:12
-msgid "Play the first track of the playlist"
-msgstr "נגן את הרצועה הראשונה ברשימת ההשמעה"
-
-#: ../src/modules/CtrlPanel.py:130
-msgid "Continue playing the current track"
-msgstr "המשך לנגן את הרצועה הנוכחית"
-
-#: ../src/modules/Explorer.py:68
+#: ../src/modules/DesktopNotification.py:219
 msgid ""
-"Please select an explorer\n"
-"in the combo box below."
+"You can use the Pango markup language to format the text. More information "
+"on that language is available on the following web page:"
 msgstr ""
-"נא בחרו סייר\n"
-"בתיבת הבחירה שלהלן."
+"תוכלו להשתמש בשפת הסימון Pango כדי לעצב את הטקסט. מידע נוסף אודות שפה זו "
+"זמין בכתובת:"
 
-#: ../src/modules/Tracklist.py:105 ../src/modules/Tracklist.py:421
-msgid "Length"
-msgstr "משך"
+#: ../src/modules/StatusbarTitlebar.py:48
+msgid "[paused]"
+msgstr "[מושהה]"
 
-#: ../src/modules/Tracklist.py:108
-msgid "Path"
-msgstr ""
-
-#: ../src/modules/Tracklist.py:258
-msgid "Save playlist"
-msgstr "שמור את רשימת־ההשמעה"
-
-#: ../src/modules/Tracklist.py:300
-msgid "Crop"
-msgstr "חיתוך"
-
-#: ../src/modules/Tracklist.py:315
-msgid "Shuffle Playlist"
-msgstr ""
-
-#: ../src/modules/Tracklist.py:322
-msgid "Revert Playlist"
-msgstr ""
-
-#: ../src/modules/Tracklist.py:329
-msgid "Clear Playlist"
-msgstr ""
-
-#: ../src/modules/Tracklist.py:338 ../res/MainWindow.glade.h:18
-msgid "Repeat"
-msgstr "חזור"
-
-#: ../src/modules/Tracklist.py:346
-msgid "Save Playlist As..."
-msgstr "שמור את רשימת ההשמעה בשם..."
-
-#: ../src/modules/FileExplorer.py:28
-msgid "File Explorer"
-msgstr "סייר הקבצים"
-
-#: ../src/modules/FileExplorer.py:28
-msgid "Browse your file system"
-msgstr "סייר במערכת הקבצים שלך"
-
-#: ../src/modules/FileExplorer.py:32
-msgid "Home"
-msgstr "דף הבית"
-
-#: ../src/modules/FileExplorer.py:32
-msgid "Root"
-msgstr ""
-
-#: ../src/modules/FileExplorer.py:180
-msgid "loading..."
-msgstr "טוען..."
-
-#: ../src/modules/FileExplorer.py:336 ../src/modules/Library.py:405
-msgid "Collapse all"
-msgstr ""
-
-#: ../src/modules/FileExplorer.py:349 ../res/FileExplorer.glade.h:7
-msgid "Show hidden files"
-msgstr "הצג קבצים מוסתרים"
-
-#: ../src/modules/FileExplorer.py:503
-msgid ""
-"You will be able to add this root folder again later on if you wish so."
-msgstr "תוכל להוסיף את תיקיית משתמש העל הזו שוב אם ברצונך לעשות כך."
-
-#: ../src/modules/FileExplorer.py:504
-msgid "Remove the selected entry?"
-msgstr "האם להסיר את הרשומה הנבחרת?"
-
-#: ../src/modules/FileExplorer.py:506
-msgid ""
-"You will be able to add these root folders again later on if you wish so."
-msgstr "תוכל להשתמש בתיקיות משתמש על אלו מאוחר יותר אם תחפוץ בכך."
-
-#: ../src/modules/FileExplorer.py:507
-msgid "Remove all selected entries?"
-msgstr "האם להסיר את הרשומות הנבחרות?"
-
-#: ../src/modules/FileExplorer.py:509
-msgid "Your media files will not be deleted."
-msgstr "קבצי המדיה שלך לא ימחקו."
-
-#: ../src/modules/FileExplorer.py:563
-msgid "This module allows you to browse the files on your drives."
-msgstr "מודול זה מאפשר לך לסייר בין הקבצים שבכונן שלך."
-
-#: ../src/modules/FileExplorer.py:564 ../src/modules/Library.py:709
-msgid "Usage"
-msgstr "שימוש"
-
-#: ../src/modules/FileExplorer.py:565
-msgid ""
-"At least one root folder must be added to browse your files. This folder "
-"then becomes the root of the file explorer tree in the main window."
-msgstr ""
-"יש להוסיף לפחות תיקיית על אחת כדי לסייר בין הקבצים שלך. תיקייה זו תהפוך "
-"לתיקיית השורש של סייר הקבצים בחלון הראשי."
-
-#: ../src/modules/Library.py:30
-msgid "Library"
-msgstr "ספרייה"
-
-#: ../src/modules/Library.py:30
-msgid "Organize your music by tags instead of files"
-msgstr "סדר את המוסיקה שלך לפי תגיות במקום קבצים"
-
-#: ../src/modules/Library.py:167
-msgid "Creating library"
-msgstr "יוצר ספרייה"
-
-#: ../src/modules/Library.py:168
-msgid "Refreshing library"
-msgstr "מרענן ספרייה"
-
-#: ../src/modules/Library.py:170
-msgid ""
-"The directory is scanned for media files. This can take some time.\n"
-"Please wait."
-msgstr ""
-"התיקייה נסרקת אחר קבצי מדיה. פעולה זו עלולה לארוך זמן מה.\n"
-"אנא המתן."
-
-#: ../src/modules/Library.py:221
+#: ../src/modules/StatusbarTitlebar.py:63
 #, python-format
-msgid "Scanning directories (one track found)"
-msgid_plural "Scanning directories (%(nbtracks)u tracks found)"
-msgstr[0] "סורק תיקיות (נמצאה רצועה אחת)"
-msgstr[1] "סורק תיקיות (%(nbtracks)u רצועות נמצאו)"
+msgid "One track in playlist  [%(length)s]"
+msgid_plural "%(count)u tracks in playlist  [%(length)s]"
+msgstr[0] "רצועה אחת ברשימת ההשמעה  [%(length)s]"
+msgstr[1] "%(count)u רצועות ברשימת ההשמעה  [%(length)s]"
 
-#: ../src/modules/Library.py:232
-msgid "Creating library..."
-msgstr "יוצר ספרייה..."
-
-#: ../src/modules/Library.py:233
-msgid "Refreshing library..."
-msgstr "מרענן את הספרייה..."
-
-#: ../src/modules/Library.py:417
-msgid "Randomness"
-msgstr ""
-
-#: ../src/modules/Library.py:424
+#: ../src/modules/StatusbarTitlebar.py:71
 #, python-format
-msgid "Pick an album of %(artist)s"
+msgid "One track selected"
+msgid_plural "%(count)u tracks selected"
+msgstr[0] ""
+msgstr[1] ""
+
+#: ../src/modules/StatusbarTitlebar.py:76
+#: ../src/modules/StatusbarTitlebar.py:82
+msgid "various"
 msgstr ""
 
-#: ../src/modules/Library.py:429
-msgid "Pick an album in the library"
-msgstr ""
-
-#: ../src/modules/Library.py:446
-msgid "This library is deprecated, please refresh it."
-msgstr "ספריה זו אינה עדכנית, אנא רענן אותה."
-
-#: ../src/modules/Library.py:663
-msgid "tracks"
-msgstr "רצועות"
-
-#: ../src/modules/Library.py:671
-msgid "You will be able to recreate this library later on if you wish so."
-msgstr "תוכל ליצור ספרייה זו שוב מאוחר יותר אם תחפוץ בכך."
-
-#: ../src/modules/Library.py:672
-msgid "Remove the selected library?"
-msgstr "האם להסיר את הספרייה הנבחרת?"
-
-#: ../src/modules/Library.py:674
-msgid "You will be able to recreate these libraries later on if you wish so."
-msgstr "תוכל ליצור תיקיות אלו מחדש מאוחר יותר אם תחפוץ בכך."
-
-#: ../src/modules/Library.py:675
-msgid "Remove all selected libraries?"
-msgstr "האם להסיר את כל התיקיות הנבחרות?"
-
-#: ../src/modules/Library.py:677
-msgid "Your media files will not be removed."
-msgstr "קבצי המדיה שלכם לא יוסרו."
-
-#: ../src/modules/Library.py:707
-msgid ""
-"This module organizes your media files by tags instead of using the file "
-"structure of your drive. Loading tracks is also faster because their tags "
-"are already known and do not have to be read again."
-msgstr ""
-"מודול זה מארגן את קבצי המדיה שלך במקום להשתמש במבנה הקבצים של הכונן. טעינת "
-"הרצועות מהירה יותר כיוון שתגיותיהן כבר ידועות ואין צורך לקרוא אותן שוב."
-
-#: ../src/modules/Library.py:710
-msgid ""
-"When you add a new library, you have to give the full path to the root "
-"directory of that library. Then, all directories under this root path are "
-"recursively scanned for media files whose tags are read and stored in a "
-"database."
-msgstr ""
-"בעת הוספת ספרייה חדשה, יהיה עליך לציין את הנתיב המלא מתיקיית העל של ספרייה "
-"זו. ואז, כל התיקיות תחת נתיב תיקיית על זו יסרקו באופן נסוג עבור קבצי מדיה "
-"אשר תגיותיהם נקראים ונשמרים במסד נתונים."
-
-#: ../src/modules/Library.py:712
-msgid ""
-"Upon refreshing a library, the file structure under the root directory and "
-"all media files are scanned for changes, to update the database accordingly."
-msgstr ""
-"בעת רענון ספרייה, מבנה הקבצים תחת תיקיית העל וכל קבצי המדיה נסרקים אחר "
-"שינויים, על מנת לעדכן את מסד התונים בהתאם."
-
-#: ../src/modules/StatusIcon.py:24
-msgid "Status Icon"
-msgstr "סמל המצב"
-
-#: ../src/modules/StatusIcon.py:24
-msgid "Add an icon to the notification area"
-msgstr "הוסף סמל לאזור ההתרעות"
-
-#: ../src/modules/StatusIcon.py:113
+#: ../src/modules/StatusbarTitlebar.py:85
 #, python-format
-msgid "%(tooltip)s [paused]"
-msgstr "%(tooltip)s [מושהה]"
-
-#: ../src/modules/Equalizer.py:24
-msgid "Equalizer"
+msgid "%(selection)s (Type: %(type)s, Bitrate: %(bitrate)s)"
 msgstr ""
-
-#: ../src/modules/Equalizer.py:24
-msgid "Tune the level of the frequency bands"
-msgstr ""
-
-#: ../src/modules/Equalizer.py:60 ../src/modules/Equalizer.py:62
-#: ../src/modules/ReplayGain.py:44
-msgid "Restart required"
-msgstr ""
-
-#: ../src/modules/Equalizer.py:60 ../src/modules/Equalizer.py:62
-#: ../src/modules/ReplayGain.py:44
-msgid ""
-"You must restart the application for this modification to take effect."
-msgstr ""
-
-#: ../src/modules/Equalizer.py:95
-msgid "Save levels"
-msgstr ""
-
-#: ../src/modules/Equalizer.py:106
-msgid "Load levels"
-msgstr ""
-
-#: ../src/modules/Equalizer.py:132
-msgid "Could not load the file"
-msgstr ""
-
-#: ../src/modules/Equalizer.py:132
-msgid "The format of the file is incorrect."
-msgstr ""
-
-#: ../src/modules/AudioCD.py:27
-msgid "Audio CD"
-msgstr "תקליטור שמע"
-
-#: ../src/modules/AudioCD.py:27
-msgid "Play audio discs"
-msgstr "נגן תקליטורי שמע"
-
-#: ../src/modules/AudioCD.py:149
-msgid "downloading data..."
-msgstr "מוריד נתונים..."
-
-#: ../src/modules/AudioCD.py:153
-#, python-format
-msgid "Track %02u"
-msgstr "רצועה %02u"
-
-#: ../src/modules/AudioCD.py:238
-msgid "No disc found"
-msgstr "לא נמצא תקליטור"
-
-#: ../src/modules/AudioCD.py:346
-msgid "This will remove all disc information stored on your hard drive."
-msgstr "פעולה זו תסיר את כל נתוני התקליטור המאוחסנים בכונן הקשיח שלך."
-
-#: ../src/modules/AudioCD.py:347
-msgid "Clear CDDB cache?"
-msgstr "לנקות את מטמון ה־CDDB?"
-
-#: ../src/modules/AudioCD.py:360 ../src/modules/StatusFile.py:93
-msgid "Invalid path"
-msgstr "נתיב שגוי"
-
-#: ../src/modules/AudioCD.py:361
-msgid ""
-"The path to the CD-ROM device is not valid. Please choose an existing path."
-msgstr "הנתיב את התקן כונן התקליטורים הינו שגוי. אנא בחר בנתיב קיים."
-
-#: ../src/modules/AudioCD.py:375
-msgid "This module lets you play audio discs from your CD-ROM device."
-msgstr "מודול זה מאפשר לך להשמיע תקליטורי שמע מכונן התקליטורים שלך."
-
-#: ../src/modules/AudioCD.py:376
-msgid "Compact Disc Data Base (CDDB)"
-msgstr "מסד נתוני תקליטורי השמע (CDDB)"
-
-#: ../src/modules/AudioCD.py:377
-msgid ""
-"Disc information, such as artist and album title, may be automatically "
-"downloaded from an online database if you wish so. This information may also "
-"be saved on your hard drive to avoid downloading it again the next time you "
-"play the same disc."
-msgstr ""
-"נתוני התקליטור, כגון אמן וכותרת האלבום, ניתנים להורדה אוטומטית ממסד נתונים "
-"מקוון במידת הרצון. נתונים אלו עלולים להשמר על הכונן הקשיח שלך כדי להמנע "
-"מהורדה חוזרת בהשמעה הבאה של אותו התקליטור."
-
-#: ../src/modules/TrackPanel.py:120
-#, python-format
-msgid ""
-"by %(artist)s\n"
-"from %(album)s"
-msgstr ""
-"על ידי %(artist)s\n"
-"מהאלבום %(album)s"
 
 #: ../src/modules/Covers.py:27
 msgid "Covers"
@@ -704,7 +399,7 @@ msgstr "עטיפות"
 msgid "Show album covers"
 msgstr "הצג עטיפות אלבומים"
 
-#: ../src/modules/Covers.py:430
+#: ../src/modules/Covers.py:420
 msgid ""
 "This module displays the cover of the album the current track comes from. "
 "Covers may be loaded from local pictures, located in the same directory as "
@@ -714,11 +409,11 @@ msgstr ""
 "מתמונות מקומיות, הממוקמות באותה התיקייה כמו הרצועה הנוכחית, או ניתנות להורדה "
 "מהאינטרנט."
 
-#: ../src/modules/Covers.py:433
+#: ../src/modules/Covers.py:423
 msgid "User Covers"
 msgstr "עטיפות המשתמש"
 
-#: ../src/modules/Covers.py:434
+#: ../src/modules/Covers.py:424
 #, python-format
 msgid ""
 "A user cover is a picture located in the same directory as the current "
@@ -729,11 +424,11 @@ msgstr ""
 "שמות הקבצים, לא תצטרך לספק סיומות קבצים, נעשה שימוש בסוגי קבצים נתמכים (%s) "
 "אוטומטית."
 
-#: ../src/modules/Covers.py:437
+#: ../src/modules/Covers.py:427
 msgid "Internet Covers"
 msgstr "עטיפות מהאינטרנט"
 
-#: ../src/modules/Covers.py:438
+#: ../src/modules/Covers.py:428
 msgid ""
 "Covers may be downloaded from the Internet, based on the tags of the current "
 "track. You can ask to always prefer user covers to Internet ones. In this "
@@ -745,121 +440,75 @@ msgstr ""
 "וקיימת עטיפת משתמש עבור הרצועה הנוכחית, בה יעשה שמוש. במידה ואין, העטיפה "
 "תורד מהאינטרנט."
 
-#: ../src/modules/StatusFile.py:25
-msgid "Status File"
-msgstr "קובץ מצב"
+#: ../src/modules/Tracktree.py:313
+msgid "Save playlist"
+msgstr "שמור את רשימת־ההשמעה"
 
-#: ../src/modules/StatusFile.py:25
-msgid "Generate a text file with the current status"
-msgstr "יצר קובץ טקסט עם המצב הנוכחי"
+#: ../src/modules/Tracktree.py:363
+msgid "Clear Playlist"
+msgstr ""
 
-#: ../src/modules/StatusFile.py:93
+#: ../src/modules/Explorer.py:68
 msgid ""
-"The path to the selected file is not valid. Please choose an existing path."
-msgstr "הנתיב אל הקובץ הנבחר אינו תקני. אנא בחר נתיב קיים."
-
-#: ../src/modules/StatusFile.py:106
-msgid "Choose a file"
-msgstr "בחר קובץ"
-
-#: ../src/modules/StatusFile.py:116
-msgid ""
-"This module generates a text file with regards to the track currently played."
-msgstr "מודול זה מייצר קובץ טקסט תוך התחשבות ברצועה המתנגנת כעת."
-
-#: ../src/modules/StatusFile.py:117
-msgid "Customizing the File"
-msgstr "התאמת הקובץ אישית"
-
-#: ../src/modules/StatusFile.py:118
-msgid ""
-"You can change the content of the file to any text you want. Before "
-"generating the file, fields of the form {field} are replaced by their "
-"corresponding value. Available fields are:\n"
-"\n"
+"Please select an explorer\n"
+"in the combo box below."
 msgstr ""
-"תוכל לשנות את תוכן הקובץ לכל טקסט שתרצה. לפני ייצור הקובץ, השדות מהצורה "
-"{שדה} מוחלפים בערך התואם להם. השדות הזמינים הינם:\n"
-"\n"
+"נא בחרו סייר\n"
+"בתיבת הבחירה שלהלן."
 
-#: ../src/modules/Twitter.py:27
-msgid "Update the status of your Twitter account"
+#: ../src/modules/Equalizer.py:24 ../src/modules/Equalizer.py:55
+#: ../src/modules/Equalizer.py:69
+msgid "Equalizer"
 msgstr ""
 
-#: ../src/modules/Twitter.py:51
-msgid "your Twitter account"
+#: ../src/modules/Equalizer.py:24
+msgid "Tune the level of the frequency bands"
 msgstr ""
 
-#: ../src/modules/Twitter.py:121
-msgid ""
-"This module posts a message to your Twitter account according to what you "
-"are listening to."
+#: ../src/modules/Equalizer.py:52
+msgid "Flat"
 msgstr ""
 
-#: ../src/modules/ReplayGain.py:25
-msgid "ReplayGain"
+#: ../src/modules/Equalizer.py:123 ../src/modules/Equalizer.py:211
+#: ../src/modules/Equalizer.py:224
+msgid "Custom"
 msgstr ""
 
-#: ../src/modules/ReplayGain.py:25
-msgid "Normalize volume"
+#: ../src/modules/Equalizer.py:164
+msgid "Save levels"
 msgstr ""
 
-#: ../res/AudioCD.glade.h:1
-msgid "<b>CDDB</b>"
-msgstr "<b>CDDB</b>"
+#: ../src/modules/Equalizer.py:175
+msgid "Load levels"
+msgstr ""
 
-#: ../res/AudioCD.glade.h:2 ../res/DesktopNotification.glade.h:2
-#: ../res/FileExplorer.glade.h:1
-msgid "<b>Miscellaneous</b>"
-msgstr "<b>שונות</b>"
+#: ../src/modules/Equalizer.py:202
+msgid "Could not load the file"
+msgstr ""
 
-#: ../res/AudioCD.glade.h:3
-msgid "CD-ROM device:"
-msgstr "התקן כונן התקליטורים:"
+#: ../src/modules/Equalizer.py:202
+msgid "The format of the file is incorrect."
+msgstr ""
 
-#: ../res/AudioCD.glade.h:4
-msgid "Clear cache"
-msgstr "נקה מטמון"
+#: ../src/tools/consts.py:93
+msgid "Unknown Genre"
+msgstr "סגנון לא ידוע"
 
-#: ../res/AudioCD.glade.h:5
-msgid "Download disc information"
-msgstr "הורד את נתוני התקליטור"
+#: ../src/tools/consts.py:94
+msgid "Unknown Title"
+msgstr "כותרת לא ידועה"
 
-#: ../res/AudioCD.glade.h:6
-msgid "Download disc information from an online database"
-msgstr "הורדת נתוני התקליטור ממסד נתונים מקוון"
+#: ../src/tools/consts.py:95
+msgid "Unknown Album"
+msgstr "אלבום לא ידוע"
 
-#: ../res/AudioCD.glade.h:7
-msgid "Location of your CD-ROM device"
-msgstr "מיקום התקן כונן התקליטורים שלך"
+#: ../src/tools/consts.py:96
+msgid "Unknown Artist"
+msgstr "אמן לא ידוע"
 
-#: ../res/AudioCD.glade.h:8
-msgid "Remove all disc information from your hard drive"
-msgstr "הסר את כל נתוני התקליטור מהכונן הקשיח שלך"
-
-#: ../res/AudioCD.glade.h:9
-msgid "Save disc information on your hard drive"
-msgstr "שמור את נתוני התקליטור לכונן הקשיח שלך"
-
-#: ../res/AudioCD.glade.h:10
-msgid "Save information in a local cache"
-msgstr "שמור נתונים במטמון מקומי"
-
-#: ../res/AudioCDMenu.glade.h:1
-msgid "Add to Playlist"
-msgstr "הוסף לרשימת ההשמעה"
-
-#: ../res/AudioCDMenu.glade.h:2
-msgid "Append selection to the playlist"
-msgstr "הוסף את הבחירה לרשימת ההשמעה"
-
-#: ../res/AudioCDMenu.glade.h:3
-msgid "Replace the playlist by the selection and start playback"
-msgstr "החלף את רשימת ההשמעה בבחירה והתחל לנגן"
-
-#: ../res/AudioCDMenu.glade.h:4
-msgid "Rescan the audio disc"
-msgstr "סרוק מחדש את תקליטור השמע"
+#: ../src/tools/consts.py:104
+msgid "Unknown Album Artist"
+msgstr "אמן התקליטור אינו ידוע"
 
 #: ../res/Authentication.glade.h:2
 msgid "Password:"
@@ -913,6 +562,10 @@ msgstr "נסה להוריד עטיפות מהאינטרנט"
 msgid "<b>Body</b>"
 msgstr "<b>גוף</b>"
 
+#: ../res/DesktopNotification.glade.h:2 ../res/FileExplorer.glade.h:1
+msgid "<b>Miscellaneous</b>"
+msgstr "<b>שונות</b>"
+
 #: ../res/DesktopNotification.glade.h:3
 msgid "<b>Title</b>"
 msgstr "<b>כותרת</b>"
@@ -933,6 +586,10 @@ msgstr "משך הזמן להצגת ההתראה"
 msgid "seconds"
 msgstr "שניות"
 
+#: ../res/Equalizer.glade.h:1
+msgid "Preset:"
+msgstr ""
+
 #: ../res/FileExplorer.glade.h:2
 msgid "<b>Root Folders</b>"
 msgstr "<b>תיקיות על</b>"
@@ -942,180 +599,107 @@ msgid "Add a new root folder to the file explorer"
 msgstr "הוסף תיקיית על חדש לסייר הקבצים"
 
 #: ../res/FileExplorer.glade.h:4
+msgid "Add files to playlist by filename"
+msgstr ""
+
+#: ../res/FileExplorer.glade.h:5
 msgid "Remove the selected root folders"
 msgstr "הסר את תיקיות העל הנבחרות"
 
-#: ../res/FileExplorer.glade.h:5 ../res/Library.glade.h:4
+#: ../res/FileExplorer.glade.h:6
 msgid "Rename"
 msgstr "שנה שם"
 
-#: ../res/FileExplorer.glade.h:6
+#: ../res/FileExplorer.glade.h:7
 msgid "Rename the selected root folder"
 msgstr "שנה את שם תיקיות העל הנבחרות"
 
-#: ../res/FileExplorer.glade.h:8
+#: ../res/FileExplorer.glade.h:9
+msgid ""
+"Whether files should be added to the playlist by their name rather than by "
+"their tags"
+msgstr ""
+
+#: ../res/FileExplorer.glade.h:10
 msgid "Whether hidden files should be shown in the file explorer"
 msgstr "האם יש להציג קבצים מוסתרים בסייר הקבצים"
 
-#: ../res/IMStatus.glade.h:1
-msgid "<b>Sanitized Words</b>"
-msgstr "<b>מילים לחיטוי</b>"
-
-#: ../res/IMStatus.glade.h:2 ../res/Twitter.glade.h:1
-msgid "<b>Status</b>"
-msgstr "<b>מצב</b>"
-
-#: ../res/IMStatus.glade.h:3
-msgid "<b>When Stopping or Quitting</b>"
-msgstr "<b>בעת העצירה או היציאה</b>"
-
-#: ../res/IMStatus.glade.h:4
-msgid "Do nothing"
-msgstr "אל תעשה כלום"
-
-#: ../res/IMStatus.glade.h:5 ../res/Twitter.glade.h:2
-msgid "Message:"
-msgstr "הודעה:"
-
-#: ../res/IMStatus.glade.h:6
-msgid "Set status to:"
-msgstr "הגדר את המצב ל־:"
-
-#: ../res/IMStatus.glade.h:7
-msgid "Update even if not available"
-msgstr "עדכו אפילו באי זמינות"
-
-#: ../res/IMStatus.glade.h:8
-msgid "Update when paused"
-msgstr "עדכן בעת ההשהייה"
-
-#: ../res/IMStatus.glade.h:9
-msgid "Update your status even if you are marked as unavailable"
-msgstr "עדכן את המצב שלך גם אם הינך מסומן כלא זמין"
-
-#: ../res/IMStatus.glade.h:10
-msgid "Update your status on pause/unpause events"
-msgstr "עדכן את המצב שלך בעת אירועי השהייה/המשך"
-
-#: ../res/Library.glade.h:1
-msgid "<b>Libraries</b>"
-msgstr "<b>ספריות</b>"
-
-#: ../res/Library.glade.h:2
-msgid "Add a new library"
-msgstr "הוספת ספרייה חדשה"
-
-#: ../res/Library.glade.h:3
-msgid "Remove the selected libraries"
-msgstr "הסר את הספריות הנבחרות"
-
-#: ../res/Library.glade.h:5
-msgid "Rename the selected library"
-msgstr "שנה את שם הספריות הנבחרות"
-
-#: ../res/Library.glade.h:6
-msgid "Update the selected library by rescanning the disk"
-msgstr "עדכן את התיקייה הנוכחית על ידי סריקת הכונן מחדש"
-
 #: ../res/MainWindow.glade.h:1
-msgid "Clear"
-msgstr "נקה"
-
-#: ../res/MainWindow.glade.h:2
-msgid "Clear the playlist"
-msgstr "נקה את רשימת ההשמעה"
-
-#: ../res/MainWindow.glade.h:3
 msgid "Display about dialog box"
 msgstr "הצג את תיבת האודות"
 
-#: ../res/MainWindow.glade.h:4 ../res/StatusIconMenu.glade.h:1
+#: ../res/MainWindow.glade.h:2
 msgid "Display preferences"
 msgstr "הצג את ההעדפות"
 
-#: ../res/MainWindow.glade.h:5
-msgid "Elapsed time"
-msgstr "הזמן שחלף"
-
-#: ../res/MainWindow.glade.h:6
+#: ../res/MainWindow.glade.h:3
 msgid "Full"
 msgstr ""
 
-#: ../res/MainWindow.glade.h:7
+#: ../res/MainWindow.glade.h:4
 msgid "Mini"
 msgstr ""
 
-#: ../res/MainWindow.glade.h:8
-msgid "Nano"
-msgstr ""
-
-#: ../res/MainWindow.glade.h:9
+#: ../res/MainWindow.glade.h:5
 msgid "Online _Help"
 msgstr "עזרה _מקוונת"
 
-#: ../res/MainWindow.glade.h:10
+#: ../res/MainWindow.glade.h:6
 msgid "Open the online help web page"
 msgstr "פתח את דפי העזרה המקוונים"
 
-#: ../res/MainWindow.glade.h:11
-msgid "Play all tracks endlessly"
-msgstr "נגן את כל הרצועות ללא הרף"
+#: ../res/MainWindow.glade.h:7
+msgid "Play the first track of the playlist"
+msgstr "נגן את הרצועה הראשונה ברשימת ההשמעה"
 
-#: ../res/MainWindow.glade.h:13 ../res/StatusIconMenu.glade.h:3
+#: ../res/MainWindow.glade.h:8
 msgid "Play the next track"
 msgstr "נגן את הרצועה הבאה"
 
-#: ../res/MainWindow.glade.h:14 ../res/StatusIconMenu.glade.h:4
+#: ../res/MainWindow.glade.h:9
 msgid "Play the previous track"
 msgstr "נגן את הרצועה הקודמת"
 
-#: ../res/MainWindow.glade.h:15
+#: ../res/MainWindow.glade.h:10
 msgid "Playlist"
 msgstr ""
 
-#: ../res/MainWindow.glade.h:16 ../res/StatusIconMenu.glade.h:6
+#: ../res/MainWindow.glade.h:11
 msgid "Quit the application"
 msgstr "צא מהיישום"
 
-#: ../res/MainWindow.glade.h:17
+#: ../res/MainWindow.glade.h:12
 msgid "Remaining time"
 msgstr "הזמן שנותר"
 
-#: ../res/MainWindow.glade.h:19
+#: ../res/MainWindow.glade.h:13
 msgid "Seek a position in the current track"
 msgstr "חפש מיקום ברצועה הנוכחית"
 
-#: ../res/MainWindow.glade.h:20
+#: ../res/MainWindow.glade.h:14
 msgid "Select an explorer"
 msgstr "בחר סייר"
 
-#: ../res/MainWindow.glade.h:21
-msgid "Shuffle"
-msgstr "מעורב"
-
-#: ../res/MainWindow.glade.h:22
-msgid "Shuffle the playlist"
-msgstr "ערבב את רשימת ההשמעה"
-
-#: ../res/MainWindow.glade.h:23 ../res/StatusIconMenu.glade.h:7
+#: ../res/MainWindow.glade.h:15
 msgid "Stop the current track"
 msgstr "עצור את הרצועה הנוכחית"
 
-#: ../res/MainWindow.glade.h:24
+#: ../res/MainWindow.glade.h:16
 msgid "_Edit"
 msgstr "_ערוך"
 
-#: ../res/MainWindow.glade.h:25
+#: ../res/MainWindow.glade.h:17
 msgid "_File"
 msgstr "_קובץ"
 
-#: ../res/MainWindow.glade.h:26
+#: ../res/MainWindow.glade.h:18
 msgid "_Help"
 msgstr "ע_זרה"
 
-#: ../res/MainWindow.glade.h:27
-msgid "_Mode"
-msgstr ""
+#: ../res/MainWindow.glade.h:19
+#, fuzzy
+msgid "_View"
+msgstr "_קובץ"
 
 #: ../res/SelectPath.glade.h:1
 msgid "Name:"
@@ -1125,14 +709,339 @@ msgstr "שם:"
 msgid "Path:"
 msgstr "נתיב:"
 
-#: ../res/StatusFile.glade.h:1
-msgid "<b>File</b>"
-msgstr "<b>קובץ</b>"
+#~ msgid "Instant Messenger Status"
+#~ msgstr "מצב תוכנת המסרים המידיים"
 
-#: ../res/StatusFile.glade.h:2
-msgid "<b>Playing Status</b>"
-msgstr "<b>מצב הניגון</b>"
+#~ msgid "Update the status message of your IM client"
+#~ msgstr "עדכן את הודעת המצב בתוכנת המסרים שלך"
 
-#: ../res/StatusIconMenu.glade.h:5
-msgid "Play/Unpause"
-msgstr "נגן/בטל השהייה"
+#~ msgid "Decibel is stopped"
+#~ msgstr "הנגן דציבל נעצר"
+
+#~ msgid "%(status)s [paused]"
+#~ msgstr "%(status)s [מושהה]"
+
+#~ msgid ""
+#~ "This module detects any running instant messenger and updates your status "
+#~ "with regards to the track you are listening to. Supported messengers are:"
+#~ msgstr ""
+#~ "מודול זה מאתר תוכנות מסרים מידיים ומעדכנת את הודעת המצב בהתאם לרצועה אליה "
+#~ "אתם מאזינים. תוכנות המסרים הנתמכות הן:"
+
+#~ msgid "Customizing the Status"
+#~ msgstr "התאמת הודעת המצב"
+
+#~ msgid ""
+#~ "You can set the status to any text you want. Before setting it, the "
+#~ "module replaces all fields of the form {field} by their corresponding "
+#~ "value. Available fields are:"
+#~ msgstr ""
+#~ "תוכלו להגדיר את הודעת המצב לכל טקסט בו תחפצו. לפני הגדרת הטקסט, המודול "
+#~ "מחליף את כל השדות שצורתם {שדה} בערכם התואם. השדות הזמינים הינם:"
+
+#~ msgid "Sanitization"
+#~ msgstr "חיטוי"
+
+#~ msgid ""
+#~ "You can define some words that to sanitize before using them to set your "
+#~ "status. In this case, the middle characters of matching words is "
+#~ "automatically replaced with asterisks (e.g., \"Metallica - Live S**t "
+#~ "Binge & Purge\"). Put one word per line."
+#~ msgstr ""
+#~ "תוכלו לבחור מספר מילים שיעברו \"חיטוי\" לפני שישמשו כחלק מהודעת המצב שלך. "
+#~ "במקרה זה, האותיות המרכזיות של המילים התואמות יוחלפו בכוכביות (לדוגמה: "
+#~ "\"הדג נחש - היא מקבלת ז*ן\"). הזינו מילה אחת לשורה."
+
+#~ msgid "Keep your Last.fm profile up to date"
+#~ msgstr "שמור על פרופיל ה־Last.fm שלך עדכני"
+
+#~ msgid "your Last.fm account"
+#~ msgstr "חשבונך ב־Last.fm"
+
+#~ msgid "Length"
+#~ msgstr "משך"
+
+#~ msgid "Crop"
+#~ msgstr "חיתוך"
+
+#~ msgid "Repeat"
+#~ msgstr "חזור"
+
+#~ msgid "Save Playlist As..."
+#~ msgstr "שמור את רשימת ההשמעה בשם..."
+
+#~ msgid "Library"
+#~ msgstr "ספרייה"
+
+#~ msgid "Organize your music by tags instead of files"
+#~ msgstr "סדר את המוסיקה שלך לפי תגיות במקום קבצים"
+
+#~ msgid "Creating library"
+#~ msgstr "יוצר ספרייה"
+
+#~ msgid "Refreshing library"
+#~ msgstr "מרענן ספרייה"
+
+#~ msgid ""
+#~ "The directory is scanned for media files. This can take some time.\n"
+#~ "Please wait."
+#~ msgstr ""
+#~ "התיקייה נסרקת אחר קבצי מדיה. פעולה זו עלולה לארוך זמן מה.\n"
+#~ "אנא המתן."
+
+#~ msgid "Scanning directories (one track found)"
+#~ msgid_plural "Scanning directories (%(nbtracks)u tracks found)"
+#~ msgstr[0] "סורק תיקיות (נמצאה רצועה אחת)"
+#~ msgstr[1] "סורק תיקיות (%(nbtracks)u רצועות נמצאו)"
+
+#~ msgid "Creating library..."
+#~ msgstr "יוצר ספרייה..."
+
+#~ msgid "Refreshing library..."
+#~ msgstr "מרענן את הספרייה..."
+
+#~ msgid "This library is deprecated, please refresh it."
+#~ msgstr "ספריה זו אינה עדכנית, אנא רענן אותה."
+
+#~ msgid "tracks"
+#~ msgstr "רצועות"
+
+#~ msgid "You will be able to recreate this library later on if you wish so."
+#~ msgstr "תוכל ליצור ספרייה זו שוב מאוחר יותר אם תחפוץ בכך."
+
+#~ msgid "Remove the selected library?"
+#~ msgstr "האם להסיר את הספרייה הנבחרת?"
+
+#~ msgid ""
+#~ "You will be able to recreate these libraries later on if you wish so."
+#~ msgstr "תוכל ליצור תיקיות אלו מחדש מאוחר יותר אם תחפוץ בכך."
+
+#~ msgid "Remove all selected libraries?"
+#~ msgstr "האם להסיר את כל התיקיות הנבחרות?"
+
+#~ msgid "Your media files will not be removed."
+#~ msgstr "קבצי המדיה שלכם לא יוסרו."
+
+#~ msgid ""
+#~ "This module organizes your media files by tags instead of using the file "
+#~ "structure of your drive. Loading tracks is also faster because their tags "
+#~ "are already known and do not have to be read again."
+#~ msgstr ""
+#~ "מודול זה מארגן את קבצי המדיה שלך במקום להשתמש במבנה הקבצים של הכונן. "
+#~ "טעינת הרצועות מהירה יותר כיוון שתגיותיהן כבר ידועות ואין צורך לקרוא אותן "
+#~ "שוב."
+
+#~ msgid ""
+#~ "When you add a new library, you have to give the full path to the root "
+#~ "directory of that library. Then, all directories under this root path are "
+#~ "recursively scanned for media files whose tags are read and stored in a "
+#~ "database."
+#~ msgstr ""
+#~ "בעת הוספת ספרייה חדשה, יהיה עליך לציין את הנתיב המלא מתיקיית העל של "
+#~ "ספרייה זו. ואז, כל התיקיות תחת נתיב תיקיית על זו יסרקו באופן נסוג עבור "
+#~ "קבצי מדיה אשר תגיותיהם נקראים ונשמרים במסד נתונים."
+
+#~ msgid ""
+#~ "Upon refreshing a library, the file structure under the root directory "
+#~ "and all media files are scanned for changes, to update the database "
+#~ "accordingly."
+#~ msgstr ""
+#~ "בעת רענון ספרייה, מבנה הקבצים תחת תיקיית העל וכל קבצי המדיה נסרקים אחר "
+#~ "שינויים, על מנת לעדכן את מסד התונים בהתאם."
+
+#~ msgid "Status Icon"
+#~ msgstr "סמל המצב"
+
+#~ msgid "Add an icon to the notification area"
+#~ msgstr "הוסף סמל לאזור ההתרעות"
+
+#~ msgid "%(tooltip)s [paused]"
+#~ msgstr "%(tooltip)s [מושהה]"
+
+#~ msgid "Audio CD"
+#~ msgstr "תקליטור שמע"
+
+#~ msgid "Play audio discs"
+#~ msgstr "נגן תקליטורי שמע"
+
+#~ msgid "downloading data..."
+#~ msgstr "מוריד נתונים..."
+
+#~ msgid "Track %02u"
+#~ msgstr "רצועה %02u"
+
+#~ msgid "No disc found"
+#~ msgstr "לא נמצא תקליטור"
+
+#~ msgid "This will remove all disc information stored on your hard drive."
+#~ msgstr "פעולה זו תסיר את כל נתוני התקליטור המאוחסנים בכונן הקשיח שלך."
+
+#~ msgid "Clear CDDB cache?"
+#~ msgstr "לנקות את מטמון ה־CDDB?"
+
+#~ msgid "Invalid path"
+#~ msgstr "נתיב שגוי"
+
+#~ msgid ""
+#~ "The path to the CD-ROM device is not valid. Please choose an existing "
+#~ "path."
+#~ msgstr "הנתיב את התקן כונן התקליטורים הינו שגוי. אנא בחר בנתיב קיים."
+
+#~ msgid "This module lets you play audio discs from your CD-ROM device."
+#~ msgstr "מודול זה מאפשר לך להשמיע תקליטורי שמע מכונן התקליטורים שלך."
+
+#~ msgid "Compact Disc Data Base (CDDB)"
+#~ msgstr "מסד נתוני תקליטורי השמע (CDDB)"
+
+#~ msgid ""
+#~ "Disc information, such as artist and album title, may be automatically "
+#~ "downloaded from an online database if you wish so. This information may "
+#~ "also be saved on your hard drive to avoid downloading it again the next "
+#~ "time you play the same disc."
+#~ msgstr ""
+#~ "נתוני התקליטור, כגון אמן וכותרת האלבום, ניתנים להורדה אוטומטית ממסד "
+#~ "נתונים מקוון במידת הרצון. נתונים אלו עלולים להשמר על הכונן הקשיח שלך כדי "
+#~ "להמנע מהורדה חוזרת בהשמעה הבאה של אותו התקליטור."
+
+#~ msgid "Status File"
+#~ msgstr "קובץ מצב"
+
+#~ msgid "Generate a text file with the current status"
+#~ msgstr "יצר קובץ טקסט עם המצב הנוכחי"
+
+#~ msgid ""
+#~ "The path to the selected file is not valid. Please choose an existing "
+#~ "path."
+#~ msgstr "הנתיב אל הקובץ הנבחר אינו תקני. אנא בחר נתיב קיים."
+
+#~ msgid "Choose a file"
+#~ msgstr "בחר קובץ"
+
+#~ msgid ""
+#~ "This module generates a text file with regards to the track currently "
+#~ "played."
+#~ msgstr "מודול זה מייצר קובץ טקסט תוך התחשבות ברצועה המתנגנת כעת."
+
+#~ msgid "Customizing the File"
+#~ msgstr "התאמת הקובץ אישית"
+
+#~ msgid ""
+#~ "You can change the content of the file to any text you want. Before "
+#~ "generating the file, fields of the form {field} are replaced by their "
+#~ "corresponding value. Available fields are:\n"
+#~ "\n"
+#~ msgstr ""
+#~ "תוכל לשנות את תוכן הקובץ לכל טקסט שתרצה. לפני ייצור הקובץ, השדות מהצורה "
+#~ "{שדה} מוחלפים בערך התואם להם. השדות הזמינים הינם:\n"
+#~ "\n"
+
+#~ msgid "<b>CDDB</b>"
+#~ msgstr "<b>CDDB</b>"
+
+#~ msgid "CD-ROM device:"
+#~ msgstr "התקן כונן התקליטורים:"
+
+#~ msgid "Clear cache"
+#~ msgstr "נקה מטמון"
+
+#~ msgid "Download disc information"
+#~ msgstr "הורד את נתוני התקליטור"
+
+#~ msgid "Download disc information from an online database"
+#~ msgstr "הורדת נתוני התקליטור ממסד נתונים מקוון"
+
+#~ msgid "Location of your CD-ROM device"
+#~ msgstr "מיקום התקן כונן התקליטורים שלך"
+
+#~ msgid "Remove all disc information from your hard drive"
+#~ msgstr "הסר את כל נתוני התקליטור מהכונן הקשיח שלך"
+
+#~ msgid "Save disc information on your hard drive"
+#~ msgstr "שמור את נתוני התקליטור לכונן הקשיח שלך"
+
+#~ msgid "Save information in a local cache"
+#~ msgstr "שמור נתונים במטמון מקומי"
+
+#~ msgid "Add to Playlist"
+#~ msgstr "הוסף לרשימת ההשמעה"
+
+#~ msgid "Append selection to the playlist"
+#~ msgstr "הוסף את הבחירה לרשימת ההשמעה"
+
+#~ msgid "Replace the playlist by the selection and start playback"
+#~ msgstr "החלף את רשימת ההשמעה בבחירה והתחל לנגן"
+
+#~ msgid "Rescan the audio disc"
+#~ msgstr "סרוק מחדש את תקליטור השמע"
+
+#~ msgid "<b>Sanitized Words</b>"
+#~ msgstr "<b>מילים לחיטוי</b>"
+
+#~ msgid "<b>Status</b>"
+#~ msgstr "<b>מצב</b>"
+
+#~ msgid "<b>When Stopping or Quitting</b>"
+#~ msgstr "<b>בעת העצירה או היציאה</b>"
+
+#~ msgid "Do nothing"
+#~ msgstr "אל תעשה כלום"
+
+#~ msgid "Message:"
+#~ msgstr "הודעה:"
+
+#~ msgid "Set status to:"
+#~ msgstr "הגדר את המצב ל־:"
+
+#~ msgid "Update even if not available"
+#~ msgstr "עדכו אפילו באי זמינות"
+
+#~ msgid "Update when paused"
+#~ msgstr "עדכן בעת ההשהייה"
+
+#~ msgid "Update your status even if you are marked as unavailable"
+#~ msgstr "עדכן את המצב שלך גם אם הינך מסומן כלא זמין"
+
+#~ msgid "Update your status on pause/unpause events"
+#~ msgstr "עדכן את המצב שלך בעת אירועי השהייה/המשך"
+
+#~ msgid "<b>Libraries</b>"
+#~ msgstr "<b>ספריות</b>"
+
+#~ msgid "Add a new library"
+#~ msgstr "הוספת ספרייה חדשה"
+
+#~ msgid "Remove the selected libraries"
+#~ msgstr "הסר את הספריות הנבחרות"
+
+#~ msgid "Rename the selected library"
+#~ msgstr "שנה את שם הספריות הנבחרות"
+
+#~ msgid "Update the selected library by rescanning the disk"
+#~ msgstr "עדכן את התיקייה הנוכחית על ידי סריקת הכונן מחדש"
+
+#~ msgid "Clear"
+#~ msgstr "נקה"
+
+#~ msgid "Clear the playlist"
+#~ msgstr "נקה את רשימת ההשמעה"
+
+#~ msgid "Elapsed time"
+#~ msgstr "הזמן שחלף"
+
+#~ msgid "Play all tracks endlessly"
+#~ msgstr "נגן את כל הרצועות ללא הרף"
+
+#~ msgid "Shuffle"
+#~ msgstr "מעורב"
+
+#~ msgid "Shuffle the playlist"
+#~ msgstr "ערבב את רשימת ההשמעה"
+
+#~ msgid "<b>File</b>"
+#~ msgstr "<b>קובץ</b>"
+
+#~ msgid "<b>Playing Status</b>"
+#~ msgstr "<b>מצב הניגון</b>"
+
+#~ msgid "Play/Unpause"
+#~ msgstr "נגן/בטל השהייה"

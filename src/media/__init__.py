@@ -183,8 +183,6 @@ def getTracks(filenames, sortByFilename=False):
             track = getTrackFromFile(path)
             tracks.tracks.append(track)
             
-    print 'SCANNED TRACKS', tracks
-            
     return tracks
     
     

@@ -41,10 +41,10 @@ USER_AGENT = 'Mozilla/5.0 (X11; U; Linux i686; en-US; rv:1.9.0.1) Gecko/20080728
 ) = range(2)
 
 # Constants for thumbnails
-THUMBNAIL_WIDTH   = 20  # Width allocated to thumbnails in the model
-THUMBNAIL_HEIGHT  = 20  # Height allocated to thumbnails in the model
-THUMBNAIL_OFFSETX =  21  # X-offset to render the thumbnail in the model
-THUMBNAIL_OFFSETY =   13  # Y-offset to render the thumbnail in the model
+THUMBNAIL_WIDTH   = 60  # Width allocated to thumbnails in the model
+THUMBNAIL_HEIGHT  = 60  # Height allocated to thumbnails in the model
+THUMBNAIL_OFFSETX =  40  # X-offset to render the thumbnail in the model
+THUMBNAIL_OFFSETY =   30  # Y-offset to render the thumbnail in the model
 
 # Constants for full size covers
 FULL_SIZE_COVER_WIDTH  = 300

@@ -32,28 +32,27 @@ def show(parent):
 
     # Set credit information
     dlg.set_name(consts.appName)
-    dlg.set_comments('...And Music For All')
+    dlg.set_comments('...Simples!')
     dlg.set_version(consts.appVersion)
     dlg.set_website(consts.urlMain)
     dlg.set_website_label(consts.urlMain)
     dlg.set_translator_credits(_('translator-credits'))
-    dlg.set_artists(['Sébastien Durel <sebastien.durel@gmail.com>'])
+    #dlg.set_artists([])
 
     dlg.set_authors([
         _('Developer:'),
-        'François Ingelrest <Francois.Ingelrest@gmail.com>',
+        'Jendrik Seipp <jendrikseipp@web.de>',
+        
         '',
         _('Thanks to:'),
-        ' * Emilio Pozuelo Monfort <pochu@ubuntu.com>',
-        ' * Matti Mårds <mamaar@gmail.com>',
-        ' * The CrystalXP forum crew',
+        'François Ingelrest <Francois.Ingelrest@gmail.com>',
     ])
 
     # Set logo
     dlg.set_logo(gtk.gdk.pixbuf_new_from_file(consts.fileImgIcon128))
 
     # Load the licence from the disk if possible
-    if os.path.isfile(consts.fileLicense) :
+    if os.path.isfile(consts.fileLicense):
         dlg.set_license(open(consts.fileLicense).read())
         dlg.set_wrap_license(True)
 

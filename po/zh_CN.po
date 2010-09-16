@@ -6,8 +6,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: decibel-audio-player\n"
-"Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
-"POT-Creation-Date: 2009-08-23 09:18+0200\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2010-09-16 22:21+0200\n"
 "PO-Revision-Date: 2008-09-13 16:03+0000\n"
 "Last-Translator: Aron Xu <happyaron.xu@gmail.com>\n"
 "Language-Team: Simplified Chinese <zh_CN@li.org>\n"
@@ -18,169 +18,116 @@ msgstr ""
 "X-Launchpad-Export-Date: 2009-09-01 15:20+0000\n"
 "X-Generator: Launchpad (build Unknown)\n"
 
-#: ../src/media/track/__init__.py:46
+#: ../src/media/track/__init__.py:53
 msgid "Track number"
 msgstr "音轨编号"
 
-#: ../src/media/track/__init__.py:47 ../src/modules/Tracklist.py:102
-#: ../src/modules/Tracklist.py:418
+#: ../src/media/track/__init__.py:54
 msgid "Title"
 msgstr "歌曲名称"
 
-#: ../src/media/track/__init__.py:48 ../src/modules/Tracklist.py:103
-#: ../src/modules/Tracklist.py:419
+#: ../src/media/track/__init__.py:55
 msgid "Artist"
 msgstr "艺术家"
 
-#: ../src/media/track/__init__.py:49 ../src/modules/Tracklist.py:104
-#: ../src/modules/Tracklist.py:420
+#: ../src/media/track/__init__.py:56
 msgid "Album"
 msgstr "专辑"
 
-#: ../src/media/track/__init__.py:50 ../src/modules/Tracklist.py:106
-#: ../src/modules/Tracklist.py:422
+#: ../src/media/track/__init__.py:57
 msgid "Genre"
 msgstr ""
 
-#: ../src/media/track/__init__.py:51 ../src/modules/Tracklist.py:107
-#: ../src/modules/Tracklist.py:423
+#: ../src/media/track/__init__.py:58
 msgid "Date"
 msgstr ""
 
-#: ../src/media/track/__init__.py:52
+#: ../src/media/track/__init__.py:59
 msgid "Disc number"
 msgstr ""
 
-#: ../src/media/track/__init__.py:53
+#: ../src/media/track/__init__.py:60
+msgid "Bit rate"
+msgstr ""
+
+#: ../src/media/track/__init__.py:61
+msgid "Sample rate"
+msgstr ""
+
+#: ../src/media/track/__init__.py:62
 msgid "Duration in seconds (e.g., 194)"
 msgstr "以秒为单位的持续时间（如：194）"
 
-#: ../src/media/track/__init__.py:54
+#: ../src/media/track/__init__.py:63
 msgid "Duration as a string (e.g., 3:14)"
 msgstr "字符串形式的持续时间（如：3:14）"
 
-#: ../src/media/track/__init__.py:55
+#: ../src/media/track/__init__.py:64
 msgid "Position of the track in the playlist"
 msgstr "播放列表中的音轨位置"
 
-#: ../src/media/track/__init__.py:56
+#: ../src/media/track/__init__.py:65
 msgid "Number of tracks in the playlist"
 msgstr "播放列表的音轨数"
 
-#: ../src/media/track/__init__.py:57
+#: ../src/media/track/__init__.py:66
 msgid "Full path to the file"
 msgstr "文件路径"
 
-#: ../src/media/track/__init__.py:147
+#: ../src/media/track/__init__.py:148
+msgid "N/A"
+msgstr ""
+
+#: ../src/media/track/__init__.py:174
 #, python-format
 msgid "%(album)s  [Disc %(discnum)u]"
 msgstr ""
 
-#: ../src/tools/consts.py:95
-msgid "Unknown Genre"
+#: ../src/media/track/__init__.py:181
+msgid "CDDA Track"
 msgstr ""
 
-#: ../src/tools/consts.py:96
-msgid "Unknown Title"
-msgstr ""
-
-#: ../src/tools/consts.py:97
-msgid "Unknown Album"
-msgstr "未知专辑"
-
-#: ../src/tools/consts.py:98
-msgid "Unknown Artist"
-msgstr "未知艺术家"
-
-#: ../src/tools/consts.py:103
-msgid "Unknown Album Artist"
-msgstr ""
-
-#: ../src/gui/about.py:39
-msgid "translator-credits"
-msgstr ""
-"Launchpad Contributions:\n"
-"  Aron Xu https://launchpad.net/~happyaron\n"
-"  Peng Deng https://launchpad.net/~d6g\n"
-"  zhuqin https://launchpad.net/~zhuqin"
-
-#: ../src/gui/about.py:43
-msgid "Developer:"
-msgstr "开发者："
-
-#: ../src/gui/about.py:46
-msgid "Thanks to:"
-msgstr "鸣谢："
-
-#: ../src/gui/authentication.py:131
-#, python-format
-msgid ""
-"Enter your username and password for\n"
-"%(reason)s"
-msgstr ""
-
-#: ../src/gui/authentication.py:133 ../res/Authentication.glade.h:1
-msgid "Password required"
-msgstr "需要密码"
-
-#: ../src/gui/authentication.py:170
-msgid "About password storage safety"
-msgstr "关于密码存储的安全性"
-
-#: ../src/gui/authentication.py:171
-msgid ""
-"If you use Gnome, it is safe to store your password since the Gnome keyring "
-"is used."
-msgstr "如果你使用Gnome，由于使用了Gnome kerying，存储密码是安全的。"
-
-#: ../src/gui/authentication.py:172
-msgid ""
-"If you do not use Gnome, beware that, although not stored as clear text, an "
-"attacker <i>could</i> retrieve it."
-msgstr "如果你不使用Gnome，请注意，尽管非明文存储，密码<i>可能</i>会被黑客获取。"
-
-#: ../src/gui/preferences.py:39
+#: ../src/gui/preferences.py:43
 msgid "Preferences"
 msgstr "首选项"
 
-#: ../src/gui/preferences.py:102
+#: ../src/gui/preferences.py:116
 msgid "Unable to load this module."
 msgstr "无法载入此模块"
 
-#: ../src/gui/preferences.py:109
+#: ../src/gui/preferences.py:125
 msgid "Modules"
 msgstr "模块"
 
-#: ../src/gui/preferences.py:110 ../src/modules/IMStatus.py:341
-#: ../src/modules/DesktopNotification.py:166
-#: ../src/modules/FileExplorer.py:562 ../src/modules/Library.py:706
-#: ../src/modules/AudioCD.py:374 ../src/modules/Covers.py:429
-#: ../src/modules/StatusFile.py:115 ../src/modules/Twitter.py:120
+#: ../src/gui/preferences.py:126 ../src/modules/FileExplorer.py:588
+#: ../src/modules/DesktopNotification.py:212 ../src/modules/Covers.py:419
 msgid "Description"
 msgstr "描述"
 
-#: ../src/gui/preferences.py:111
+#: ../src/gui/preferences.py:127
 msgid ""
 "This dialog box shows the list of available modules, which are small pieces "
-"of code that add some functionnalities to the application. You can "
-"enable/disable a module by checking/unchecking the check box in front of it. "
-"Note that some modules (e.g., the File Explorer) cannot be disabled."
+"of code that add some functionnalities to the application. You can enable/"
+"disable a module by checking/unchecking the check box in front of it. Note "
+"that some modules (e.g., the File Explorer) cannot be disabled."
 msgstr ""
-"该对话窗口显示可用模块列表，模块是指为程序增添某些功能的少量代码。你可以通过选择/清除某个模块前面的复选框来激活/禁用它。注意，有一些模块（如文件浏览器）"
+"该对话窗口显示可用模块列表，模块是指为程序增添某些功能的少量代码。你可以通过"
+"选择/清除某个模块前面的复选框来激活/禁用它。注意，有一些模块（如文件浏览器）"
 "无法被禁用。"
 
-#: ../src/gui/preferences.py:114
+#: ../src/gui/preferences.py:130
 msgid "Configuring a Module"
 msgstr "配置一个模块"
 
-#: ../src/gui/preferences.py:115
+#: ../src/gui/preferences.py:131
 msgid ""
 "When a module may be configured, a specific icon is displayed on the right "
 "of the corresponding line. To configure a module, simply select it and then "
 "click on the \"Preferences\" button on the bottom of the dialog box. Note "
 "that configuring a module is only possible when it is enabled."
 msgstr ""
-"当一个模块可以被配置，在其所在行的右端会显示一个图标。要配置一个模块，先选中它然后单击对话窗口下端的“首选项”按钮。注意，一个模块只有在被激活时才可以被配"
+"当一个模块可以被配置，在其所在行的右端会显示一个图标。要配置一个模块，先选中"
+"它然后单击对话窗口下端的“首选项”按钮。注意，一个模块只有在被激活时才可以被配"
 "置。"
 
 #: ../src/gui/selectPath.py:79
@@ -216,82 +163,118 @@ msgstr ""
 "该符号%s禁止使用。\n"
 "请另选择一个名字。"
 
-#: ../src/modules/IMStatus.py:25
-msgid "Instant Messenger Status"
-msgstr "聊天软件状态"
-
-#: ../src/modules/IMStatus.py:25
-msgid "Update the status message of your IM client"
-msgstr "更新你的IM客户端的状态信息"
-
-#: ../src/modules/IMStatus.py:39
-msgid "Decibel is stopped"
-msgstr "Decibel已停止"
-
-#: ../src/modules/IMStatus.py:261 ../src/modules/IMStatus.py:334
+#: ../src/gui/authentication.py:131
 #, python-format
-msgid "%(status)s [paused]"
+msgid ""
+"Enter your username and password for\n"
+"%(reason)s"
 msgstr ""
 
-#: ../src/modules/IMStatus.py:342
+#: ../src/gui/authentication.py:133 ../res/Authentication.glade.h:1
+msgid "Password required"
+msgstr "需要密码"
+
+#: ../src/gui/authentication.py:170
+msgid "About password storage safety"
+msgstr "关于密码存储的安全性"
+
+#: ../src/gui/authentication.py:171
 msgid ""
-"This module detects any running instant messenger and updates your status "
-"with regards to the track you are listening to. Supported messengers are:"
-msgstr "此模块会检测任何正在运行的即时消息软件并根据你正在听的曲目更新你的状态信息。支持的即时消息软件有："
+"If you use Gnome, it is safe to store your password since the Gnome keyring "
+"is used."
+msgstr "如果你使用Gnome，由于使用了Gnome kerying，存储密码是安全的。"
 
-#: ../src/modules/IMStatus.py:345 ../src/modules/Twitter.py:123
-msgid "Customizing the Status"
-msgstr "自定义状态"
-
-#: ../src/modules/IMStatus.py:346 ../src/modules/Twitter.py:124
+#: ../src/gui/authentication.py:172
 msgid ""
-"You can set the status to any text you want. Before setting it, the module "
-"replaces all fields of the form {field} by their corresponding value. "
-"Available fields are:"
-msgstr "你可将状态信息设置成为任何你想要的文本。在设置前，该模块会将所有形式为 {field} 的字段替换为对应的值。有效的值为："
-
-#: ../src/modules/IMStatus.py:349 ../src/modules/DesktopNotification.py:172
-msgid "Markup"
-msgstr "标记"
-
-#: ../src/modules/IMStatus.py:350 ../src/modules/DesktopNotification.py:173
-msgid ""
-"You can use the Pango markup language to format the text. More information "
-"on that language is available on the following web page:"
-msgstr "你可以使用 Pango 标记语言来格式化文本。更多关于该语言的信息可以从以下网页获取："
-
-#: ../src/modules/IMStatus.py:353
-msgid "Sanitization"
-msgstr "和谐"
-
-#: ../src/modules/IMStatus.py:354
-msgid ""
-"You can define some words that to sanitize before using them to set your "
-"status. In this case, the middle characters of matching words is "
-"automatically replaced with asterisks (e.g., \"Metallica - Live S**t Binge & "
-"Purge\"). Put one word per line."
+"If you do not use Gnome, beware that, although not stored as clear text, an "
+"attacker <i>could</i> retrieve it."
 msgstr ""
-"你可在设置状态信息前定义需和谐的单词。匹配的单词的中间部分字符会被自动替换为星号。 (如：\"Metallica - Live S**t Binge & "
-"Purge\")"
+"如果你不使用Gnome，请注意，尽管非明文存储，密码<i>可能</i>会被黑客获取。"
 
-#: ../src/modules/AudioScrobbler.py:28
-msgid "Keep your Last.fm profile up to date"
-msgstr "将你的Last.fm的资料保持最新"
+#: ../src/gui/about.py:39
+msgid "translator-credits"
+msgstr ""
+"Launchpad Contributions:\n"
+"  Aron Xu https://launchpad.net/~happyaron\n"
+"  Peng Deng https://launchpad.net/~d6g\n"
+"  zhuqin https://launchpad.net/~zhuqin"
 
-#: ../src/modules/AudioScrobbler.py:142 ../src/modules/AudioScrobbler.py:143
-msgid "your Last.fm account"
-msgstr "你的Last.fm帐号"
+#: ../src/gui/about.py:43
+msgid "Developer:"
+msgstr "开发者："
 
-#: ../src/modules/StatusbarTitlebar.py:52
-#, python-format
-msgid "One track in playlist  [%(length)s]"
-msgid_plural "%(count)u tracks in playlist  [%(length)s]"
-msgstr[0] ""
-msgstr[1] ""
+#: ../src/gui/about.py:46
+msgid "Thanks to:"
+msgstr "鸣谢："
 
-#: ../src/modules/StatusbarTitlebar.py:72
-msgid "[paused]"
-msgstr "[暂停]"
+#: ../src/modules/Zeitgeist.py:26
+msgid "Send track information to the Zeitgeist service"
+msgstr ""
+
+#: ../src/modules/FileExplorer.py:27
+msgid "File Explorer"
+msgstr "文件浏览器"
+
+#: ../src/modules/FileExplorer.py:27
+msgid "Browse your file system"
+msgstr "浏览你的文件系统"
+
+#: ../src/modules/FileExplorer.py:31
+msgid "Home"
+msgstr "主页"
+
+#: ../src/modules/FileExplorer.py:31
+msgid "Root"
+msgstr ""
+
+#: ../src/modules/FileExplorer.py:182
+msgid "loading..."
+msgstr ""
+
+#: ../src/modules/FileExplorer.py:350
+msgid "Collapse all"
+msgstr ""
+
+#: ../src/modules/FileExplorer.py:363 ../res/FileExplorer.glade.h:8
+msgid "Show hidden files"
+msgstr "显示隐藏文件"
+
+#: ../src/modules/FileExplorer.py:525
+msgid "You will be able to add this root folder again later on if you wish so."
+msgstr "如果你愿意，你可以稍后再添加根文件夹。"
+
+#: ../src/modules/FileExplorer.py:526
+msgid "Remove the selected entry?"
+msgstr "移除选定的项？"
+
+#: ../src/modules/FileExplorer.py:528
+msgid ""
+"You will be able to add these root folders again later on if you wish so."
+msgstr "如果你愿意，你可以稍后再添加这些根文件夹。"
+
+#: ../src/modules/FileExplorer.py:529
+msgid "Remove all selected entries?"
+msgstr "移除所有选定的项？"
+
+#: ../src/modules/FileExplorer.py:531
+msgid "Your media files will not be deleted."
+msgstr "你的媒体文件不会被删除。"
+
+#: ../src/modules/FileExplorer.py:589
+msgid "This module allows you to browse the files on your drives."
+msgstr "该模块可以让你浏览驱动器上的文件。"
+
+#: ../src/modules/FileExplorer.py:590
+msgid "Usage"
+msgstr "用法"
+
+#: ../src/modules/FileExplorer.py:591
+msgid ""
+"At least one root folder must be added to browse your files. This folder "
+"then becomes the root of the file explorer tree in the main window."
+msgstr ""
+"至少需要添加一个根文件夹来浏览你的文件。该文件夹则成为主窗口内文件浏览器树形"
+"目录的根目录。"
 
 #: ../src/modules/__init__.py:75
 msgid "The following Python modules are not available:"
@@ -301,367 +284,103 @@ msgstr "下列 Python 模块不可用："
 msgid "You must install them if you want to enable this module."
 msgstr "这些模块需要安装后才能被激活。"
 
-#: ../src/modules/DesktopNotification.py:26
+#: ../src/modules/__init__.py:266
+msgid "Restart required"
+msgstr ""
+
+#: ../src/modules/__init__.py:266
+msgid "You must restart the application for this modification to take effect."
+msgstr ""
+
+#: ../src/modules/TrackPanel.py:128
+#, python-format
+msgid "by <i>%(artist)s</i> from <i>%(album)s</i>"
+msgstr ""
+
+#: ../src/modules/CtrlPanel.py:102 ../src/modules/CtrlPanel.py:163
+msgid "Pause the current track"
+msgstr "暂停当前音轨"
+
+#: ../src/modules/CtrlPanel.py:121
+#, fuzzy
+msgid "Play the first selected track of the playlist"
+msgstr "播放列表中的第一音轨"
+
+#: ../src/modules/CtrlPanel.py:157
+msgid "Continue playing the current track"
+msgstr "继续播放当前音轨"
+
+#: ../src/modules/DesktopNotification.py:25
 msgid "Desktop Notification"
 msgstr "桌面提示信息"
 
-#: ../src/modules/DesktopNotification.py:26
+#: ../src/modules/DesktopNotification.py:25
 msgid "Display a desktop notification on track change"
 msgstr "在切换音轨时显示桌面提示信息"
 
-#: ../src/modules/DesktopNotification.py:82
-#: ../src/modules/DesktopNotification.py:144
+#: ../src/modules/DesktopNotification.py:78
+#: ../src/modules/DesktopNotification.py:188
 msgid "Skip track"
 msgstr "跳过音轨"
 
-#: ../src/modules/DesktopNotification.py:167
+#: ../src/modules/DesktopNotification.py:213
 msgid ""
 "This module displays a small popup window on your desktop when a new track "
 "starts."
 msgstr "当新的曲目开始播放时，该模块会在桌面上显示一个小的弹出窗口。"
 
-#: ../src/modules/DesktopNotification.py:168
+#: ../src/modules/DesktopNotification.py:214
 msgid "Customizing the Notification"
 msgstr "自定义提示信息"
 
-#: ../src/modules/DesktopNotification.py:169
+#: ../src/modules/DesktopNotification.py:215
 msgid ""
 "You can change the title and the body of the notification to any text you "
 "want. Before displaying the popup window, fields of the form {field} are "
 "replaced by their corresponding value. Available fields are:\n"
 "\n"
 msgstr ""
-"你可将提示信息的标题和内容修改为任何想要的文字。在显示弹出窗口前，{field}形式的字段将全被替换为对应的值。可用的字段有：\n"
+"你可将提示信息的标题和内容修改为任何想要的文字。在显示弹出窗口前，{field}形式"
+"的字段将全被替换为对应的值。可用的字段有：\n"
 "\n"
 
-#: ../src/modules/CtrlPanel.py:78 ../src/modules/CtrlPanel.py:136
-#: ../res/StatusIconMenu.glade.h:2
-msgid "Pause the current track"
-msgstr "暂停当前音轨"
+#: ../src/modules/DesktopNotification.py:218
+msgid "Markup"
+msgstr "标记"
 
-#: ../src/modules/CtrlPanel.py:95 ../res/MainWindow.glade.h:12
-msgid "Play the first track of the playlist"
-msgstr "播放列表中的第一音轨"
-
-#: ../src/modules/CtrlPanel.py:130
-msgid "Continue playing the current track"
-msgstr "继续播放当前音轨"
-
-#: ../src/modules/Explorer.py:68
+#: ../src/modules/DesktopNotification.py:219
 msgid ""
-"Please select an explorer\n"
-"in the combo box below."
-msgstr "请在下面的组合框中选择一个浏览器。"
-
-#: ../src/modules/Tracklist.py:105 ../src/modules/Tracklist.py:421
-msgid "Length"
-msgstr "歌曲长度"
-
-#: ../src/modules/Tracklist.py:108
-msgid "Path"
+"You can use the Pango markup language to format the text. More information "
+"on that language is available on the following web page:"
 msgstr ""
+"你可以使用 Pango 标记语言来格式化文本。更多关于该语言的信息可以从以下网页获"
+"取："
 
-#: ../src/modules/Tracklist.py:258
-msgid "Save playlist"
-msgstr "保存播放列表"
+#: ../src/modules/StatusbarTitlebar.py:48
+msgid "[paused]"
+msgstr "[暂停]"
 
-#: ../src/modules/Tracklist.py:300
-msgid "Crop"
-msgstr ""
-
-#: ../src/modules/Tracklist.py:315
-msgid "Shuffle Playlist"
-msgstr ""
-
-#: ../src/modules/Tracklist.py:322
-msgid "Revert Playlist"
-msgstr ""
-
-#: ../src/modules/Tracklist.py:329
-msgid "Clear Playlist"
-msgstr ""
-
-#: ../src/modules/Tracklist.py:338 ../res/MainWindow.glade.h:18
-msgid "Repeat"
-msgstr "重复播放"
-
-#: ../src/modules/Tracklist.py:346
-msgid "Save Playlist As..."
-msgstr "播放列表另存为..."
-
-#: ../src/modules/FileExplorer.py:28
-msgid "File Explorer"
-msgstr "文件浏览器"
-
-#: ../src/modules/FileExplorer.py:28
-msgid "Browse your file system"
-msgstr "浏览你的文件系统"
-
-#: ../src/modules/FileExplorer.py:32
-msgid "Home"
-msgstr "主页"
-
-#: ../src/modules/FileExplorer.py:32
-msgid "Root"
-msgstr ""
-
-#: ../src/modules/FileExplorer.py:180
-msgid "loading..."
-msgstr ""
-
-#: ../src/modules/FileExplorer.py:336 ../src/modules/Library.py:405
-msgid "Collapse all"
-msgstr ""
-
-#: ../src/modules/FileExplorer.py:349 ../res/FileExplorer.glade.h:7
-msgid "Show hidden files"
-msgstr "显示隐藏文件"
-
-#: ../src/modules/FileExplorer.py:503
-msgid ""
-"You will be able to add this root folder again later on if you wish so."
-msgstr "如果你愿意，你可以稍后再添加根文件夹。"
-
-#: ../src/modules/FileExplorer.py:504
-msgid "Remove the selected entry?"
-msgstr "移除选定的项？"
-
-#: ../src/modules/FileExplorer.py:506
-msgid ""
-"You will be able to add these root folders again later on if you wish so."
-msgstr "如果你愿意，你可以稍后再添加这些根文件夹。"
-
-#: ../src/modules/FileExplorer.py:507
-msgid "Remove all selected entries?"
-msgstr "移除所有选定的项？"
-
-#: ../src/modules/FileExplorer.py:509
-msgid "Your media files will not be deleted."
-msgstr "你的媒体文件不会被删除。"
-
-#: ../src/modules/FileExplorer.py:563
-msgid "This module allows you to browse the files on your drives."
-msgstr "该模块可以让你浏览驱动器上的文件。"
-
-#: ../src/modules/FileExplorer.py:564 ../src/modules/Library.py:709
-msgid "Usage"
-msgstr "用法"
-
-#: ../src/modules/FileExplorer.py:565
-msgid ""
-"At least one root folder must be added to browse your files. This folder "
-"then becomes the root of the file explorer tree in the main window."
-msgstr "至少需要添加一个根文件夹来浏览你的文件。该文件夹则成为主窗口内文件浏览器树形目录的根目录。"
-
-#: ../src/modules/Library.py:30
-msgid "Library"
-msgstr "媒体库"
-
-#: ../src/modules/Library.py:30
-msgid "Organize your music by tags instead of files"
-msgstr "通过标签而不是文件来管理你的音乐"
-
-#: ../src/modules/Library.py:167
-msgid "Creating library"
-msgstr "创建媒体库"
-
-#: ../src/modules/Library.py:168
-msgid "Refreshing library"
-msgstr "刷新媒体库"
-
-#: ../src/modules/Library.py:170
-msgid ""
-"The directory is scanned for media files. This can take some time.\n"
-"Please wait."
-msgstr ""
-"从目录中扫描媒体文件。此过程需要一段时间。\n"
-"请稍候。"
-
-#: ../src/modules/Library.py:221
+#: ../src/modules/StatusbarTitlebar.py:63
 #, python-format
-msgid "Scanning directories (one track found)"
-msgid_plural "Scanning directories (%(nbtracks)u tracks found)"
+msgid "One track in playlist  [%(length)s]"
+msgid_plural "%(count)u tracks in playlist  [%(length)s]"
 msgstr[0] ""
 msgstr[1] ""
 
-#: ../src/modules/Library.py:232
-msgid "Creating library..."
-msgstr "正在创建媒体库..."
-
-#: ../src/modules/Library.py:233
-msgid "Refreshing library..."
-msgstr "正在刷新媒体库..."
-
-#: ../src/modules/Library.py:417
-msgid "Randomness"
-msgstr ""
-
-#: ../src/modules/Library.py:424
+#: ../src/modules/StatusbarTitlebar.py:71
 #, python-format
-msgid "Pick an album of %(artist)s"
+msgid "One track selected"
+msgid_plural "%(count)u tracks selected"
+msgstr[0] ""
+
+#: ../src/modules/StatusbarTitlebar.py:76
+#: ../src/modules/StatusbarTitlebar.py:82
+msgid "various"
 msgstr ""
 
-#: ../src/modules/Library.py:429
-msgid "Pick an album in the library"
-msgstr ""
-
-#: ../src/modules/Library.py:446
-msgid "This library is deprecated, please refresh it."
-msgstr ""
-
-#: ../src/modules/Library.py:663
-msgid "tracks"
-msgstr "音轨"
-
-#: ../src/modules/Library.py:671
-msgid "You will be able to recreate this library later on if you wish so."
-msgstr "如果你愿意，该媒体库可在稍后被重建。"
-
-#: ../src/modules/Library.py:672
-msgid "Remove the selected library?"
-msgstr "移除选定的媒体库？"
-
-#: ../src/modules/Library.py:674
-msgid "You will be able to recreate these libraries later on if you wish so."
-msgstr "如果你愿意，这些媒体库可在稍后被重建。"
-
-#: ../src/modules/Library.py:675
-msgid "Remove all selected libraries?"
-msgstr "移除所有选定的媒体库？"
-
-#: ../src/modules/Library.py:677
-msgid "Your media files will not be removed."
-msgstr "你的媒体文件不会被移除。"
-
-#: ../src/modules/Library.py:707
-msgid ""
-"This module organizes your media files by tags instead of using the file "
-"structure of your drive. Loading tracks is also faster because their tags "
-"are already known and do not have to be read again."
-msgstr "该模块通过使用标签而非使用磁盘上文件结构的方式来管理你的媒体文件。由于标签信息已知而不必再次读取，音轨的加载也会更迅速。"
-
-#: ../src/modules/Library.py:710
-msgid ""
-"When you add a new library, you have to give the full path to the root "
-"directory of that library. Then, all directories under this root path are "
-"recursively scanned for media files whose tags are read and stored in a "
-"database."
-msgstr ""
-"当添加一个新的媒体库时，你需要提供媒体库根目录的完整路径。此后，会以递归方式从该路径下的所有目录中扫描媒体文件。媒体文件的标签将被读取和储存在数据库中。"
-
-#: ../src/modules/Library.py:712
-msgid ""
-"Upon refreshing a library, the file structure under the root directory and "
-"all media files are scanned for changes, to update the database accordingly."
-msgstr "刷新媒体库时，根目录下的文件结构以及所有的媒体文件都将被扫描改动，使数据库随之更新。"
-
-#: ../src/modules/StatusIcon.py:24
-msgid "Status Icon"
-msgstr "状态图标"
-
-#: ../src/modules/StatusIcon.py:24
-msgid "Add an icon to the notification area"
-msgstr "在系统通知区域添加图标"
-
-#: ../src/modules/StatusIcon.py:113
+#: ../src/modules/StatusbarTitlebar.py:85
 #, python-format
-msgid "%(tooltip)s [paused]"
-msgstr ""
-
-#: ../src/modules/Equalizer.py:24
-msgid "Equalizer"
-msgstr ""
-
-#: ../src/modules/Equalizer.py:24
-msgid "Tune the level of the frequency bands"
-msgstr ""
-
-#: ../src/modules/Equalizer.py:60 ../src/modules/Equalizer.py:62
-#: ../src/modules/ReplayGain.py:44
-msgid "Restart required"
-msgstr ""
-
-#: ../src/modules/Equalizer.py:60 ../src/modules/Equalizer.py:62
-#: ../src/modules/ReplayGain.py:44
-msgid ""
-"You must restart the application for this modification to take effect."
-msgstr ""
-
-#: ../src/modules/Equalizer.py:95
-msgid "Save levels"
-msgstr ""
-
-#: ../src/modules/Equalizer.py:106
-msgid "Load levels"
-msgstr ""
-
-#: ../src/modules/Equalizer.py:132
-msgid "Could not load the file"
-msgstr ""
-
-#: ../src/modules/Equalizer.py:132
-msgid "The format of the file is incorrect."
-msgstr ""
-
-#: ../src/modules/AudioCD.py:27
-msgid "Audio CD"
-msgstr "音频 CD"
-
-#: ../src/modules/AudioCD.py:27
-msgid "Play audio discs"
-msgstr "播放音频光碟"
-
-#: ../src/modules/AudioCD.py:149
-msgid "downloading data..."
-msgstr "下载数据中..."
-
-#: ../src/modules/AudioCD.py:153
-#, python-format
-msgid "Track %02u"
-msgstr ""
-
-#: ../src/modules/AudioCD.py:238
-msgid "No disc found"
-msgstr "未找到光碟"
-
-#: ../src/modules/AudioCD.py:346
-msgid "This will remove all disc information stored on your hard drive."
-msgstr "这将会删除你硬盘上存储的所有光碟信息"
-
-#: ../src/modules/AudioCD.py:347
-msgid "Clear CDDB cache?"
-msgstr "清除CDDB缓存？"
-
-#: ../src/modules/AudioCD.py:360 ../src/modules/StatusFile.py:93
-msgid "Invalid path"
-msgstr "无效路径"
-
-#: ../src/modules/AudioCD.py:361
-msgid ""
-"The path to the CD-ROM device is not valid. Please choose an existing path."
-msgstr "CD-ROM设备的路径无效。请选择一个存在的路径。"
-
-#: ../src/modules/AudioCD.py:375
-msgid "This module lets you play audio discs from your CD-ROM device."
-msgstr "该模块可以使你从你的CD-ROM设备播放音频光碟"
-
-#: ../src/modules/AudioCD.py:376
-msgid "Compact Disc Data Base (CDDB)"
-msgstr "CD数据库(CDDB)"
-
-#: ../src/modules/AudioCD.py:377
-msgid ""
-"Disc information, such as artist and album title, may be automatically "
-"downloaded from an online database if you wish so. This information may also "
-"be saved on your hard drive to avoid downloading it again the next time you "
-"play the same disc."
-msgstr "光碟信息，如艺术家和专辑标题，如果你愿意，它可以自动从在线数据库下载。该信息可能被保存于你的硬盘，以避免在你下次播放该光碟时重复下载。"
-
-#: ../src/modules/TrackPanel.py:120
-#, python-format
-msgid ""
-"by %(artist)s\n"
-"from %(album)s"
+msgid "%(selection)s (Type: %(type)s, Bitrate: %(bitrate)s)"
 msgstr ""
 
 #: ../src/modules/Covers.py:27
@@ -672,18 +391,18 @@ msgstr ""
 msgid "Show album covers"
 msgstr ""
 
-#: ../src/modules/Covers.py:430
+#: ../src/modules/Covers.py:420
 msgid ""
 "This module displays the cover of the album the current track comes from. "
 "Covers may be loaded from local pictures, located in the same directory as "
 "the current track, or may be downloaded from the Internet."
 msgstr ""
 
-#: ../src/modules/Covers.py:433
+#: ../src/modules/Covers.py:423
 msgid "User Covers"
 msgstr ""
 
-#: ../src/modules/Covers.py:434
+#: ../src/modules/Covers.py:424
 #, python-format
 msgid ""
 "A user cover is a picture located in the same directory as the current "
@@ -691,11 +410,11 @@ msgid ""
 "extensions, supported file formats (%s) are automatically used."
 msgstr ""
 
-#: ../src/modules/Covers.py:437
+#: ../src/modules/Covers.py:427
 msgid "Internet Covers"
 msgstr ""
 
-#: ../src/modules/Covers.py:438
+#: ../src/modules/Covers.py:428
 msgid ""
 "Covers may be downloaded from the Internet, based on the tags of the current "
 "track. You can ask to always prefer user covers to Internet ones. In this "
@@ -703,120 +422,73 @@ msgid ""
 "none, the cover is downloaded."
 msgstr ""
 
-#: ../src/modules/StatusFile.py:25
-msgid "Status File"
-msgstr "状态文件"
+#: ../src/modules/Tracktree.py:313
+msgid "Save playlist"
+msgstr "保存播放列表"
 
-#: ../src/modules/StatusFile.py:25
-msgid "Generate a text file with the current status"
-msgstr "生成当前状态的文本文件"
+#: ../src/modules/Tracktree.py:363
+msgid "Clear Playlist"
+msgstr ""
 
-#: ../src/modules/StatusFile.py:93
+#: ../src/modules/Explorer.py:68
 msgid ""
-"The path to the selected file is not valid. Please choose an existing path."
-msgstr "选定文件的路径无效。请选择一个已存的路径。"
+"Please select an explorer\n"
+"in the combo box below."
+msgstr "请在下面的组合框中选择一个浏览器。"
 
-#: ../src/modules/StatusFile.py:106
-msgid "Choose a file"
-msgstr "选择文件"
-
-#: ../src/modules/StatusFile.py:116
-msgid ""
-"This module generates a text file with regards to the track currently played."
-msgstr "该模块根据当前正在播放的音轨生成一个文本文件。"
-
-#: ../src/modules/StatusFile.py:117
-msgid "Customizing the File"
-msgstr "自定义文件"
-
-#: ../src/modules/StatusFile.py:118
-msgid ""
-"You can change the content of the file to any text you want. Before "
-"generating the file, fields of the form {field} are replaced by their "
-"corresponding value. Available fields are:\n"
-"\n"
-msgstr ""
-"你可将文件内容修改为任何想要的文本。在文件生成前，形式为{field}的字段将被替换为对应的值。可用的字段有：\n"
-"\n"
-
-#: ../src/modules/Twitter.py:27
-msgid "Update the status of your Twitter account"
+#: ../src/modules/Equalizer.py:24 ../src/modules/Equalizer.py:55
+#: ../src/modules/Equalizer.py:69
+msgid "Equalizer"
 msgstr ""
 
-#: ../src/modules/Twitter.py:51
-msgid "your Twitter account"
+#: ../src/modules/Equalizer.py:24
+msgid "Tune the level of the frequency bands"
 msgstr ""
 
-#: ../src/modules/Twitter.py:121
-msgid ""
-"This module posts a message to your Twitter account according to what you "
-"are listening to."
+#: ../src/modules/Equalizer.py:52
+msgid "Flat"
 msgstr ""
 
-#: ../src/modules/ReplayGain.py:25
-msgid "ReplayGain"
+#: ../src/modules/Equalizer.py:123 ../src/modules/Equalizer.py:211
+#: ../src/modules/Equalizer.py:224
+msgid "Custom"
 msgstr ""
 
-#: ../src/modules/ReplayGain.py:25
-msgid "Normalize volume"
+#: ../src/modules/Equalizer.py:164
+msgid "Save levels"
 msgstr ""
 
-#: ../res/AudioCD.glade.h:1
-msgid "<b>CDDB</b>"
-msgstr "<b>CDDB</b>"
+#: ../src/modules/Equalizer.py:175
+msgid "Load levels"
+msgstr ""
 
-#: ../res/AudioCD.glade.h:2 ../res/DesktopNotification.glade.h:2
-#: ../res/FileExplorer.glade.h:1
-msgid "<b>Miscellaneous</b>"
-msgstr "<b>杂项</b>"
+#: ../src/modules/Equalizer.py:202
+msgid "Could not load the file"
+msgstr ""
 
-#: ../res/AudioCD.glade.h:3
-msgid "CD-ROM device:"
-msgstr "CD-ROM设备："
+#: ../src/modules/Equalizer.py:202
+msgid "The format of the file is incorrect."
+msgstr ""
 
-#: ../res/AudioCD.glade.h:4
-msgid "Clear cache"
-msgstr "清除缓存"
+#: ../src/tools/consts.py:93
+msgid "Unknown Genre"
+msgstr ""
 
-#: ../res/AudioCD.glade.h:5
-msgid "Download disc information"
-msgstr "下载光碟信息"
+#: ../src/tools/consts.py:94
+msgid "Unknown Title"
+msgstr ""
 
-#: ../res/AudioCD.glade.h:6
-msgid "Download disc information from an online database"
-msgstr "从在线数据库下载光碟信息"
+#: ../src/tools/consts.py:95
+msgid "Unknown Album"
+msgstr "未知专辑"
 
-#: ../res/AudioCD.glade.h:7
-msgid "Location of your CD-ROM device"
-msgstr "CD-ROM设备的位置"
+#: ../src/tools/consts.py:96
+msgid "Unknown Artist"
+msgstr "未知艺术家"
 
-#: ../res/AudioCD.glade.h:8
-msgid "Remove all disc information from your hard drive"
-msgstr "从你的硬盘删除所有光碟信息"
-
-#: ../res/AudioCD.glade.h:9
-msgid "Save disc information on your hard drive"
-msgstr "将光碟信息保存到你的硬盘"
-
-#: ../res/AudioCD.glade.h:10
-msgid "Save information in a local cache"
-msgstr "保存信息到本地缓存"
-
-#: ../res/AudioCDMenu.glade.h:1
-msgid "Add to Playlist"
-msgstr "添加到播放列表"
-
-#: ../res/AudioCDMenu.glade.h:2
-msgid "Append selection to the playlist"
-msgstr "添加所选到播放列表"
-
-#: ../res/AudioCDMenu.glade.h:3
-msgid "Replace the playlist by the selection and start playback"
-msgstr "用所选替代播放列表并开始回放"
-
-#: ../res/AudioCDMenu.glade.h:4
-msgid "Rescan the audio disc"
-msgstr "重新扫描音频光碟"
+#: ../src/tools/consts.py:104
+msgid "Unknown Album Artist"
+msgstr ""
 
 #: ../res/Authentication.glade.h:2
 msgid "Password:"
@@ -870,6 +542,10 @@ msgstr ""
 msgid "<b>Body</b>"
 msgstr ""
 
+#: ../res/DesktopNotification.glade.h:2 ../res/FileExplorer.glade.h:1
+msgid "<b>Miscellaneous</b>"
+msgstr "<b>杂项</b>"
+
 #: ../res/DesktopNotification.glade.h:3
 msgid "<b>Title</b>"
 msgstr "<b>标题</b>"
@@ -890,6 +566,10 @@ msgstr "提示显示时间"
 msgid "seconds"
 msgstr "秒"
 
+#: ../res/Equalizer.glade.h:1
+msgid "Preset:"
+msgstr ""
+
 #: ../res/FileExplorer.glade.h:2
 msgid "<b>Root Folders</b>"
 msgstr "<b>根文件夹</b>"
@@ -899,180 +579,107 @@ msgid "Add a new root folder to the file explorer"
 msgstr "在文件浏览器中添加一个新的根文件夹"
 
 #: ../res/FileExplorer.glade.h:4
+msgid "Add files to playlist by filename"
+msgstr ""
+
+#: ../res/FileExplorer.glade.h:5
 msgid "Remove the selected root folders"
 msgstr "移除选定的根文件夹"
 
-#: ../res/FileExplorer.glade.h:5 ../res/Library.glade.h:4
+#: ../res/FileExplorer.glade.h:6
 msgid "Rename"
 msgstr "重命名"
 
-#: ../res/FileExplorer.glade.h:6
+#: ../res/FileExplorer.glade.h:7
 msgid "Rename the selected root folder"
 msgstr "重命名所选的根目录"
 
-#: ../res/FileExplorer.glade.h:8
+#: ../res/FileExplorer.glade.h:9
+msgid ""
+"Whether files should be added to the playlist by their name rather than by "
+"their tags"
+msgstr ""
+
+#: ../res/FileExplorer.glade.h:10
 msgid "Whether hidden files should be shown in the file explorer"
 msgstr "隐藏文件是否显示在文件浏览器中"
 
-#: ../res/IMStatus.glade.h:1
-msgid "<b>Sanitized Words</b>"
-msgstr ""
-
-#: ../res/IMStatus.glade.h:2 ../res/Twitter.glade.h:1
-msgid "<b>Status</b>"
-msgstr "<b>状态</b>"
-
-#: ../res/IMStatus.glade.h:3
-msgid "<b>When Stopping or Quitting</b>"
-msgstr "<b>何时停止或退出</b>"
-
-#: ../res/IMStatus.glade.h:4
-msgid "Do nothing"
-msgstr "什么也不做"
-
-#: ../res/IMStatus.glade.h:5 ../res/Twitter.glade.h:2
-msgid "Message:"
-msgstr "消息："
-
-#: ../res/IMStatus.glade.h:6
-msgid "Set status to:"
-msgstr "设置状态为："
-
-#: ../res/IMStatus.glade.h:7
-msgid "Update even if not available"
-msgstr "即使不可用仍进行更新"
-
-#: ../res/IMStatus.glade.h:8
-msgid "Update when paused"
-msgstr "当暂停时更新"
-
-#: ../res/IMStatus.glade.h:9
-msgid "Update your status even if you are marked as unavailable"
-msgstr ""
-
-#: ../res/IMStatus.glade.h:10
-msgid "Update your status on pause/unpause events"
-msgstr "在暂停/恢复时更新你的状态"
-
-#: ../res/Library.glade.h:1
-msgid "<b>Libraries</b>"
-msgstr "<b>媒体库</b>"
-
-#: ../res/Library.glade.h:2
-msgid "Add a new library"
-msgstr "添加新的媒体库"
-
-#: ../res/Library.glade.h:3
-msgid "Remove the selected libraries"
-msgstr "移除选定的媒体库"
-
-#: ../res/Library.glade.h:5
-msgid "Rename the selected library"
-msgstr "重命名所选的媒体库"
-
-#: ../res/Library.glade.h:6
-msgid "Update the selected library by rescanning the disk"
-msgstr "通过重新扫描磁盘更新选定的媒体库"
-
 #: ../res/MainWindow.glade.h:1
-msgid "Clear"
-msgstr "清除"
-
-#: ../res/MainWindow.glade.h:2
-msgid "Clear the playlist"
-msgstr "清除播放列表"
-
-#: ../res/MainWindow.glade.h:3
 msgid "Display about dialog box"
 msgstr "显示关于对话窗口"
 
-#: ../res/MainWindow.glade.h:4 ../res/StatusIconMenu.glade.h:1
+#: ../res/MainWindow.glade.h:2
 msgid "Display preferences"
 msgstr "显示首选项"
 
-#: ../res/MainWindow.glade.h:5
-msgid "Elapsed time"
-msgstr "逝去时间"
-
-#: ../res/MainWindow.glade.h:6
+#: ../res/MainWindow.glade.h:3
 msgid "Full"
 msgstr ""
 
-#: ../res/MainWindow.glade.h:7
+#: ../res/MainWindow.glade.h:4
 msgid "Mini"
 msgstr ""
 
-#: ../res/MainWindow.glade.h:8
-msgid "Nano"
-msgstr ""
-
-#: ../res/MainWindow.glade.h:9
+#: ../res/MainWindow.glade.h:5
 msgid "Online _Help"
 msgstr "在线帮助(_H)"
 
-#: ../res/MainWindow.glade.h:10
+#: ../res/MainWindow.glade.h:6
 msgid "Open the online help web page"
 msgstr "打开在线帮助页面"
 
-#: ../res/MainWindow.glade.h:11
-msgid "Play all tracks endlessly"
-msgstr "一直播放所有音轨"
+#: ../res/MainWindow.glade.h:7
+msgid "Play the first track of the playlist"
+msgstr "播放列表中的第一音轨"
 
-#: ../res/MainWindow.glade.h:13 ../res/StatusIconMenu.glade.h:3
+#: ../res/MainWindow.glade.h:8
 msgid "Play the next track"
 msgstr "播放下一音轨"
 
-#: ../res/MainWindow.glade.h:14 ../res/StatusIconMenu.glade.h:4
+#: ../res/MainWindow.glade.h:9
 msgid "Play the previous track"
 msgstr "播放上一音轨"
 
-#: ../res/MainWindow.glade.h:15
+#: ../res/MainWindow.glade.h:10
 msgid "Playlist"
 msgstr ""
 
-#: ../res/MainWindow.glade.h:16 ../res/StatusIconMenu.glade.h:6
+#: ../res/MainWindow.glade.h:11
 msgid "Quit the application"
 msgstr "退出程序"
 
-#: ../res/MainWindow.glade.h:17
+#: ../res/MainWindow.glade.h:12
 msgid "Remaining time"
 msgstr "剩余时间"
 
-#: ../res/MainWindow.glade.h:19
+#: ../res/MainWindow.glade.h:13
 msgid "Seek a position in the current track"
 msgstr "跳至当前音轨中的某个位置"
 
-#: ../res/MainWindow.glade.h:20
+#: ../res/MainWindow.glade.h:14
 msgid "Select an explorer"
 msgstr "选择一个浏览器"
 
-#: ../res/MainWindow.glade.h:21
-msgid "Shuffle"
-msgstr "随机播放"
-
-#: ../res/MainWindow.glade.h:22
-msgid "Shuffle the playlist"
-msgstr "在播放列表中随机播放"
-
-#: ../res/MainWindow.glade.h:23 ../res/StatusIconMenu.glade.h:7
+#: ../res/MainWindow.glade.h:15
 msgid "Stop the current track"
 msgstr "停止当前音轨"
 
-#: ../res/MainWindow.glade.h:24
+#: ../res/MainWindow.glade.h:16
 msgid "_Edit"
 msgstr "编辑(_E)"
 
-#: ../res/MainWindow.glade.h:25
+#: ../res/MainWindow.glade.h:17
 msgid "_File"
 msgstr "文件(_F)"
 
-#: ../res/MainWindow.glade.h:26
+#: ../res/MainWindow.glade.h:18
 msgid "_Help"
 msgstr "帮助(_H)"
 
-#: ../res/MainWindow.glade.h:27
-msgid "_Mode"
-msgstr ""
+#: ../res/MainWindow.glade.h:19
+#, fuzzy
+msgid "_View"
+msgstr "文件(_F)"
 
 #: ../res/SelectPath.glade.h:1
 msgid "Name:"
@@ -1082,14 +689,310 @@ msgstr "名称："
 msgid "Path:"
 msgstr "路径："
 
-#: ../res/StatusFile.glade.h:1
-msgid "<b>File</b>"
-msgstr "<b>文件</b>"
+#~ msgid "Instant Messenger Status"
+#~ msgstr "聊天软件状态"
 
-#: ../res/StatusFile.glade.h:2
-msgid "<b>Playing Status</b>"
-msgstr "<b>播放状态</b>"
+#~ msgid "Update the status message of your IM client"
+#~ msgstr "更新你的IM客户端的状态信息"
 
-#: ../res/StatusIconMenu.glade.h:5
-msgid "Play/Unpause"
-msgstr "播放/取消暂停"
+#~ msgid "Decibel is stopped"
+#~ msgstr "Decibel已停止"
+
+#~ msgid ""
+#~ "This module detects any running instant messenger and updates your status "
+#~ "with regards to the track you are listening to. Supported messengers are:"
+#~ msgstr ""
+#~ "此模块会检测任何正在运行的即时消息软件并根据你正在听的曲目更新你的状态信"
+#~ "息。支持的即时消息软件有："
+
+#~ msgid "Customizing the Status"
+#~ msgstr "自定义状态"
+
+#~ msgid ""
+#~ "You can set the status to any text you want. Before setting it, the "
+#~ "module replaces all fields of the form {field} by their corresponding "
+#~ "value. Available fields are:"
+#~ msgstr ""
+#~ "你可将状态信息设置成为任何你想要的文本。在设置前，该模块会将所有形式为 "
+#~ "{field} 的字段替换为对应的值。有效的值为："
+
+#~ msgid "Sanitization"
+#~ msgstr "和谐"
+
+#~ msgid ""
+#~ "You can define some words that to sanitize before using them to set your "
+#~ "status. In this case, the middle characters of matching words is "
+#~ "automatically replaced with asterisks (e.g., \"Metallica - Live S**t "
+#~ "Binge & Purge\"). Put one word per line."
+#~ msgstr ""
+#~ "你可在设置状态信息前定义需和谐的单词。匹配的单词的中间部分字符会被自动替换"
+#~ "为星号。 (如：\"Metallica - Live S**t Binge & Purge\")"
+
+#~ msgid "Keep your Last.fm profile up to date"
+#~ msgstr "将你的Last.fm的资料保持最新"
+
+#~ msgid "your Last.fm account"
+#~ msgstr "你的Last.fm帐号"
+
+#~ msgid "Length"
+#~ msgstr "歌曲长度"
+
+#~ msgid "Repeat"
+#~ msgstr "重复播放"
+
+#~ msgid "Save Playlist As..."
+#~ msgstr "播放列表另存为..."
+
+#~ msgid "Library"
+#~ msgstr "媒体库"
+
+#~ msgid "Organize your music by tags instead of files"
+#~ msgstr "通过标签而不是文件来管理你的音乐"
+
+#~ msgid "Creating library"
+#~ msgstr "创建媒体库"
+
+#~ msgid "Refreshing library"
+#~ msgstr "刷新媒体库"
+
+#~ msgid ""
+#~ "The directory is scanned for media files. This can take some time.\n"
+#~ "Please wait."
+#~ msgstr ""
+#~ "从目录中扫描媒体文件。此过程需要一段时间。\n"
+#~ "请稍候。"
+
+#~ msgid "Creating library..."
+#~ msgstr "正在创建媒体库..."
+
+#~ msgid "Refreshing library..."
+#~ msgstr "正在刷新媒体库..."
+
+#~ msgid "tracks"
+#~ msgstr "音轨"
+
+#~ msgid "You will be able to recreate this library later on if you wish so."
+#~ msgstr "如果你愿意，该媒体库可在稍后被重建。"
+
+#~ msgid "Remove the selected library?"
+#~ msgstr "移除选定的媒体库？"
+
+#~ msgid ""
+#~ "You will be able to recreate these libraries later on if you wish so."
+#~ msgstr "如果你愿意，这些媒体库可在稍后被重建。"
+
+#~ msgid "Remove all selected libraries?"
+#~ msgstr "移除所有选定的媒体库？"
+
+#~ msgid "Your media files will not be removed."
+#~ msgstr "你的媒体文件不会被移除。"
+
+#~ msgid ""
+#~ "This module organizes your media files by tags instead of using the file "
+#~ "structure of your drive. Loading tracks is also faster because their tags "
+#~ "are already known and do not have to be read again."
+#~ msgstr ""
+#~ "该模块通过使用标签而非使用磁盘上文件结构的方式来管理你的媒体文件。由于标签"
+#~ "信息已知而不必再次读取，音轨的加载也会更迅速。"
+
+#~ msgid ""
+#~ "When you add a new library, you have to give the full path to the root "
+#~ "directory of that library. Then, all directories under this root path are "
+#~ "recursively scanned for media files whose tags are read and stored in a "
+#~ "database."
+#~ msgstr ""
+#~ "当添加一个新的媒体库时，你需要提供媒体库根目录的完整路径。此后，会以递归方"
+#~ "式从该路径下的所有目录中扫描媒体文件。媒体文件的标签将被读取和储存在数据库"
+#~ "中。"
+
+#~ msgid ""
+#~ "Upon refreshing a library, the file structure under the root directory "
+#~ "and all media files are scanned for changes, to update the database "
+#~ "accordingly."
+#~ msgstr ""
+#~ "刷新媒体库时，根目录下的文件结构以及所有的媒体文件都将被扫描改动，使数据库"
+#~ "随之更新。"
+
+#~ msgid "Status Icon"
+#~ msgstr "状态图标"
+
+#~ msgid "Add an icon to the notification area"
+#~ msgstr "在系统通知区域添加图标"
+
+#~ msgid "Audio CD"
+#~ msgstr "音频 CD"
+
+#~ msgid "Play audio discs"
+#~ msgstr "播放音频光碟"
+
+#~ msgid "downloading data..."
+#~ msgstr "下载数据中..."
+
+#~ msgid "No disc found"
+#~ msgstr "未找到光碟"
+
+#~ msgid "This will remove all disc information stored on your hard drive."
+#~ msgstr "这将会删除你硬盘上存储的所有光碟信息"
+
+#~ msgid "Clear CDDB cache?"
+#~ msgstr "清除CDDB缓存？"
+
+#~ msgid "Invalid path"
+#~ msgstr "无效路径"
+
+#~ msgid ""
+#~ "The path to the CD-ROM device is not valid. Please choose an existing "
+#~ "path."
+#~ msgstr "CD-ROM设备的路径无效。请选择一个存在的路径。"
+
+#~ msgid "This module lets you play audio discs from your CD-ROM device."
+#~ msgstr "该模块可以使你从你的CD-ROM设备播放音频光碟"
+
+#~ msgid "Compact Disc Data Base (CDDB)"
+#~ msgstr "CD数据库(CDDB)"
+
+#~ msgid ""
+#~ "Disc information, such as artist and album title, may be automatically "
+#~ "downloaded from an online database if you wish so. This information may "
+#~ "also be saved on your hard drive to avoid downloading it again the next "
+#~ "time you play the same disc."
+#~ msgstr ""
+#~ "光碟信息，如艺术家和专辑标题，如果你愿意，它可以自动从在线数据库下载。该信"
+#~ "息可能被保存于你的硬盘，以避免在你下次播放该光碟时重复下载。"
+
+#~ msgid "Status File"
+#~ msgstr "状态文件"
+
+#~ msgid "Generate a text file with the current status"
+#~ msgstr "生成当前状态的文本文件"
+
+#~ msgid ""
+#~ "The path to the selected file is not valid. Please choose an existing "
+#~ "path."
+#~ msgstr "选定文件的路径无效。请选择一个已存的路径。"
+
+#~ msgid "Choose a file"
+#~ msgstr "选择文件"
+
+#~ msgid ""
+#~ "This module generates a text file with regards to the track currently "
+#~ "played."
+#~ msgstr "该模块根据当前正在播放的音轨生成一个文本文件。"
+
+#~ msgid "Customizing the File"
+#~ msgstr "自定义文件"
+
+#~ msgid ""
+#~ "You can change the content of the file to any text you want. Before "
+#~ "generating the file, fields of the form {field} are replaced by their "
+#~ "corresponding value. Available fields are:\n"
+#~ "\n"
+#~ msgstr ""
+#~ "你可将文件内容修改为任何想要的文本。在文件生成前，形式为{field}的字段将被"
+#~ "替换为对应的值。可用的字段有：\n"
+#~ "\n"
+
+#~ msgid "<b>CDDB</b>"
+#~ msgstr "<b>CDDB</b>"
+
+#~ msgid "CD-ROM device:"
+#~ msgstr "CD-ROM设备："
+
+#~ msgid "Clear cache"
+#~ msgstr "清除缓存"
+
+#~ msgid "Download disc information"
+#~ msgstr "下载光碟信息"
+
+#~ msgid "Download disc information from an online database"
+#~ msgstr "从在线数据库下载光碟信息"
+
+#~ msgid "Location of your CD-ROM device"
+#~ msgstr "CD-ROM设备的位置"
+
+#~ msgid "Remove all disc information from your hard drive"
+#~ msgstr "从你的硬盘删除所有光碟信息"
+
+#~ msgid "Save disc information on your hard drive"
+#~ msgstr "将光碟信息保存到你的硬盘"
+
+#~ msgid "Save information in a local cache"
+#~ msgstr "保存信息到本地缓存"
+
+#~ msgid "Add to Playlist"
+#~ msgstr "添加到播放列表"
+
+#~ msgid "Append selection to the playlist"
+#~ msgstr "添加所选到播放列表"
+
+#~ msgid "Replace the playlist by the selection and start playback"
+#~ msgstr "用所选替代播放列表并开始回放"
+
+#~ msgid "Rescan the audio disc"
+#~ msgstr "重新扫描音频光碟"
+
+#~ msgid "<b>Status</b>"
+#~ msgstr "<b>状态</b>"
+
+#~ msgid "<b>When Stopping or Quitting</b>"
+#~ msgstr "<b>何时停止或退出</b>"
+
+#~ msgid "Do nothing"
+#~ msgstr "什么也不做"
+
+#~ msgid "Message:"
+#~ msgstr "消息："
+
+#~ msgid "Set status to:"
+#~ msgstr "设置状态为："
+
+#~ msgid "Update even if not available"
+#~ msgstr "即使不可用仍进行更新"
+
+#~ msgid "Update when paused"
+#~ msgstr "当暂停时更新"
+
+#~ msgid "Update your status on pause/unpause events"
+#~ msgstr "在暂停/恢复时更新你的状态"
+
+#~ msgid "<b>Libraries</b>"
+#~ msgstr "<b>媒体库</b>"
+
+#~ msgid "Add a new library"
+#~ msgstr "添加新的媒体库"
+
+#~ msgid "Remove the selected libraries"
+#~ msgstr "移除选定的媒体库"
+
+#~ msgid "Rename the selected library"
+#~ msgstr "重命名所选的媒体库"
+
+#~ msgid "Update the selected library by rescanning the disk"
+#~ msgstr "通过重新扫描磁盘更新选定的媒体库"
+
+#~ msgid "Clear"
+#~ msgstr "清除"
+
+#~ msgid "Clear the playlist"
+#~ msgstr "清除播放列表"
+
+#~ msgid "Elapsed time"
+#~ msgstr "逝去时间"
+
+#~ msgid "Play all tracks endlessly"
+#~ msgstr "一直播放所有音轨"
+
+#~ msgid "Shuffle"
+#~ msgstr "随机播放"
+
+#~ msgid "Shuffle the playlist"
+#~ msgstr "在播放列表中随机播放"
+
+#~ msgid "<b>File</b>"
+#~ msgstr "<b>文件</b>"
+
+#~ msgid "<b>Playing Status</b>"
+#~ msgstr "<b>播放状态</b>"
+
+#~ msgid "Play/Unpause"
+#~ msgstr "播放/取消暂停"

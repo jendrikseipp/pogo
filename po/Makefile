@@ -7,7 +7,7 @@ POFILES = $(wildcard *.po)
 GLADEHFILES := $(GLADEFILES:.glade=.glade.h)
 
 help:
-	@echo "USAGE:"
+	@echo USAGE:
 	@echo "make update - updates messages.pot and .po files"
 	@echo "make dist   - creates .mo files in ../locale dir"
 	@echo "make pl.po  - updates pl.po file OR creates new one"
@@ -30,19 +30,19 @@ messages.pot: $(GLADEHFILES) $(PYFILES)
 	fi
 
 %.mo:
-	for pofile in $(patsubst ../locale/%/LC_MESSAGES/decibel-audio-player.mo,%.po,$@); do \
-		${INSTALL} -m 755 -d $(subst decibel-audio-player.mo,,$@);\
+	for pofile in $(patsubst ../locale/%/LC_MESSAGES/pogo.mo,%.po,$@); do \
+		${INSTALL} -m 755 -d $(subst pogo.mo,,$@);\
 		msgconv -t UTF-8 $${pofile} -o $${pofile}_utf8;\
 		msgfmt $${pofile}_utf8 -o $@;\
 		rm $${pofile}_utf8;\
 	done
 
 update: $(POFILES)
-dist: $(POFILES:%.po=../locale/%/LC_MESSAGES/decibel-audio-player.mo)
+dist: $(POFILES:%.po=../locale/%/LC_MESSAGES/pogo.mo)
 
 clean:
 	$(RM) $(GLADEHFILES)
-	$(RM) $(POFILES:%.po=../locale/%/LC_MESSAGES/decibel-audio-player.mo)
+	$(RM) $(POFILES:%.po=../locale/%/LC_MESSAGES/pogo.mo)
 	#$(RM) messages.pot
 
 .PHONY:  update

@@ -6,8 +6,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: decibel-audio-player\n"
-"Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
-"POT-Creation-Date: 2009-08-23 09:18+0200\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2010-09-16 22:21+0200\n"
 "PO-Revision-Date: 2007-12-14 15:54+0000\n"
 "Last-Translator: onlyeriko <onlyeriko@gmail.com>\n"
 "Language-Team: Korean <ko@li.org>\n"
@@ -18,158 +18,105 @@ msgstr ""
 "X-Launchpad-Export-Date: 2009-09-01 15:20+0000\n"
 "X-Generator: Launchpad (build Unknown)\n"
 
-#: ../src/media/track/__init__.py:46
+#: ../src/media/track/__init__.py:53
 msgid "Track number"
 msgstr "트랙 번호"
 
-#: ../src/media/track/__init__.py:47 ../src/modules/Tracklist.py:102
-#: ../src/modules/Tracklist.py:418
+#: ../src/media/track/__init__.py:54
 msgid "Title"
 msgstr "제목"
 
-#: ../src/media/track/__init__.py:48 ../src/modules/Tracklist.py:103
-#: ../src/modules/Tracklist.py:419
+#: ../src/media/track/__init__.py:55
 msgid "Artist"
 msgstr "가수"
 
-#: ../src/media/track/__init__.py:49 ../src/modules/Tracklist.py:104
-#: ../src/modules/Tracklist.py:420
+#: ../src/media/track/__init__.py:56
 msgid "Album"
 msgstr "앨범"
 
-#: ../src/media/track/__init__.py:50 ../src/modules/Tracklist.py:106
-#: ../src/modules/Tracklist.py:422
+#: ../src/media/track/__init__.py:57
 msgid "Genre"
 msgstr ""
 
-#: ../src/media/track/__init__.py:51 ../src/modules/Tracklist.py:107
-#: ../src/modules/Tracklist.py:423
+#: ../src/media/track/__init__.py:58
 msgid "Date"
 msgstr ""
 
-#: ../src/media/track/__init__.py:52
+#: ../src/media/track/__init__.py:59
 msgid "Disc number"
 msgstr ""
 
-#: ../src/media/track/__init__.py:53
+#: ../src/media/track/__init__.py:60
+msgid "Bit rate"
+msgstr ""
+
+#: ../src/media/track/__init__.py:61
+msgid "Sample rate"
+msgstr ""
+
+#: ../src/media/track/__init__.py:62
 msgid "Duration in seconds (e.g., 194)"
 msgstr "지속 시간"
 
-#: ../src/media/track/__init__.py:54
+#: ../src/media/track/__init__.py:63
 msgid "Duration as a string (e.g., 3:14)"
 msgstr "일련의 지속"
 
-#: ../src/media/track/__init__.py:55
+#: ../src/media/track/__init__.py:64
 msgid "Position of the track in the playlist"
 msgstr "트랙 실행 위치"
 
-#: ../src/media/track/__init__.py:56
+#: ../src/media/track/__init__.py:65
 msgid "Number of tracks in the playlist"
 msgstr "트랙 실행 번호"
 
-#: ../src/media/track/__init__.py:57
+#: ../src/media/track/__init__.py:66
 msgid "Full path to the file"
 msgstr "파일 경로"
 
-#: ../src/media/track/__init__.py:147
+#: ../src/media/track/__init__.py:148
+msgid "N/A"
+msgstr ""
+
+#: ../src/media/track/__init__.py:174
 #, python-format
 msgid "%(album)s  [Disc %(discnum)u]"
 msgstr ""
 
-#: ../src/tools/consts.py:95
-msgid "Unknown Genre"
+#: ../src/media/track/__init__.py:181
+msgid "CDDA Track"
 msgstr ""
 
-#: ../src/tools/consts.py:96
-msgid "Unknown Title"
-msgstr ""
-
-#: ../src/tools/consts.py:97
-msgid "Unknown Album"
-msgstr "알 수 없는 앨범"
-
-#: ../src/tools/consts.py:98
-msgid "Unknown Artist"
-msgstr "알 수 없는 아티스트"
-
-#: ../src/tools/consts.py:103
-msgid "Unknown Album Artist"
-msgstr ""
-
-#: ../src/gui/about.py:39
-msgid "translator-credits"
-msgstr ""
-"Launchpad Contributions:\n"
-"  onlyeriko https://launchpad.net/~onlyeriko"
-
-#: ../src/gui/about.py:43
-msgid "Developer:"
-msgstr ""
-
-#: ../src/gui/about.py:46
-msgid "Thanks to:"
-msgstr "고마운 사람:"
-
-#: ../src/gui/authentication.py:131
-#, python-format
-msgid ""
-"Enter your username and password for\n"
-"%(reason)s"
-msgstr ""
-
-#: ../src/gui/authentication.py:133 ../res/Authentication.glade.h:1
-msgid "Password required"
-msgstr "암호 필요"
-
-#: ../src/gui/authentication.py:170
-msgid "About password storage safety"
-msgstr "패스워드 안전하게 저장"
-
-#: ../src/gui/authentication.py:171
-msgid ""
-"If you use Gnome, it is safe to store your password since the Gnome keyring "
-"is used."
-msgstr "Gnome을 사용한다면 당신의 패스워드는 안전하다"
-
-#: ../src/gui/authentication.py:172
-msgid ""
-"If you do not use Gnome, beware that, although not stored as clear text, an "
-"attacker <i>could</i> retrieve it."
-msgstr "Gnome을 사용하지 않을지라도 저장하지 않은 지워진 텍스트라도 회복 가능하다"
-
-#: ../src/gui/preferences.py:39
+#: ../src/gui/preferences.py:43
 msgid "Preferences"
 msgstr "환경설정"
 
-#: ../src/gui/preferences.py:102
+#: ../src/gui/preferences.py:116
 msgid "Unable to load this module."
 msgstr "열수없는 모듈"
 
-#: ../src/gui/preferences.py:109
+#: ../src/gui/preferences.py:125
 msgid "Modules"
 msgstr "모듈"
 
-#: ../src/gui/preferences.py:110 ../src/modules/IMStatus.py:341
-#: ../src/modules/DesktopNotification.py:166
-#: ../src/modules/FileExplorer.py:562 ../src/modules/Library.py:706
-#: ../src/modules/AudioCD.py:374 ../src/modules/Covers.py:429
-#: ../src/modules/StatusFile.py:115 ../src/modules/Twitter.py:120
+#: ../src/gui/preferences.py:126 ../src/modules/FileExplorer.py:588
+#: ../src/modules/DesktopNotification.py:212 ../src/modules/Covers.py:419
 msgid "Description"
 msgstr "설명"
 
-#: ../src/gui/preferences.py:111
+#: ../src/gui/preferences.py:127
 msgid ""
 "This dialog box shows the list of available modules, which are small pieces "
-"of code that add some functionnalities to the application. You can "
-"enable/disable a module by checking/unchecking the check box in front of it. "
-"Note that some modules (e.g., the File Explorer) cannot be disabled."
+"of code that add some functionnalities to the application. You can enable/"
+"disable a module by checking/unchecking the check box in front of it. Note "
+"that some modules (e.g., the File Explorer) cannot be disabled."
 msgstr ""
 
-#: ../src/gui/preferences.py:114
+#: ../src/gui/preferences.py:130
 msgid "Configuring a Module"
 msgstr ""
 
-#: ../src/gui/preferences.py:115
+#: ../src/gui/preferences.py:131
 msgid ""
 "When a module may be configured, a specific icon is displayed on the right "
 "of the corresponding line. To configure a module, simply select it and then "
@@ -206,80 +153,114 @@ msgid ""
 "Please use another name."
 msgstr "문자 %s 사용될 수 없음, 다시 입력하세요"
 
-#: ../src/modules/IMStatus.py:25
-msgid "Instant Messenger Status"
-msgstr "긴박한 메신저 상태"
-
-#: ../src/modules/IMStatus.py:25
-msgid "Update the status message of your IM client"
-msgstr "IM 클라이언트 업데이트"
-
-#: ../src/modules/IMStatus.py:39
-msgid "Decibel is stopped"
-msgstr "Decibel 정지"
-
-#: ../src/modules/IMStatus.py:261 ../src/modules/IMStatus.py:334
+#: ../src/gui/authentication.py:131
 #, python-format
-msgid "%(status)s [paused]"
-msgstr ""
-
-#: ../src/modules/IMStatus.py:342
 msgid ""
-"This module detects any running instant messenger and updates your status "
-"with regards to the track you are listening to. Supported messengers are:"
+"Enter your username and password for\n"
+"%(reason)s"
 msgstr ""
 
-#: ../src/modules/IMStatus.py:345 ../src/modules/Twitter.py:123
-msgid "Customizing the Status"
-msgstr "설정 바꿈"
+#: ../src/gui/authentication.py:133 ../res/Authentication.glade.h:1
+msgid "Password required"
+msgstr "암호 필요"
 
-#: ../src/modules/IMStatus.py:346 ../src/modules/Twitter.py:124
+#: ../src/gui/authentication.py:170
+msgid "About password storage safety"
+msgstr "패스워드 안전하게 저장"
+
+#: ../src/gui/authentication.py:171
 msgid ""
-"You can set the status to any text you want. Before setting it, the module "
-"replaces all fields of the form {field} by their corresponding value. "
-"Available fields are:"
-msgstr ""
+"If you use Gnome, it is safe to store your password since the Gnome keyring "
+"is used."
+msgstr "Gnome을 사용한다면 당신의 패스워드는 안전하다"
 
-#: ../src/modules/IMStatus.py:349 ../src/modules/DesktopNotification.py:172
-msgid "Markup"
-msgstr "마크업"
-
-#: ../src/modules/IMStatus.py:350 ../src/modules/DesktopNotification.py:173
+#: ../src/gui/authentication.py:172
 msgid ""
-"You can use the Pango markup language to format the text. More information "
-"on that language is available on the following web page:"
-msgstr "Pango 마크업 언어 형식의 텍스트로 사용. 웹페이지에서 불러온 언어 정보를 이용"
+"If you do not use Gnome, beware that, although not stored as clear text, an "
+"attacker <i>could</i> retrieve it."
+msgstr ""
+"Gnome을 사용하지 않을지라도 저장하지 않은 지워진 텍스트라도 회복 가능하다"
 
-#: ../src/modules/IMStatus.py:353
-msgid "Sanitization"
-msgstr "부분 삭제"
+#: ../src/gui/about.py:39
+msgid "translator-credits"
+msgstr ""
+"Launchpad Contributions:\n"
+"  onlyeriko https://launchpad.net/~onlyeriko"
 
-#: ../src/modules/IMStatus.py:354
+#: ../src/gui/about.py:43
+msgid "Developer:"
+msgstr ""
+
+#: ../src/gui/about.py:46
+msgid "Thanks to:"
+msgstr "고마운 사람:"
+
+#: ../src/modules/Zeitgeist.py:26
+msgid "Send track information to the Zeitgeist service"
+msgstr ""
+
+#: ../src/modules/FileExplorer.py:27
+msgid "File Explorer"
+msgstr "파일 찾기"
+
+#: ../src/modules/FileExplorer.py:27
+msgid "Browse your file system"
+msgstr ""
+
+#: ../src/modules/FileExplorer.py:31
+msgid "Home"
+msgstr "홈"
+
+#: ../src/modules/FileExplorer.py:31
+msgid "Root"
+msgstr ""
+
+#: ../src/modules/FileExplorer.py:182
+msgid "loading..."
+msgstr ""
+
+#: ../src/modules/FileExplorer.py:350
+msgid "Collapse all"
+msgstr ""
+
+#: ../src/modules/FileExplorer.py:363 ../res/FileExplorer.glade.h:8
+msgid "Show hidden files"
+msgstr "숨은 파일 보기"
+
+#: ../src/modules/FileExplorer.py:525
+msgid "You will be able to add this root folder again later on if you wish so."
+msgstr ""
+
+#: ../src/modules/FileExplorer.py:526
+msgid "Remove the selected entry?"
+msgstr "선택된 입력 제거"
+
+#: ../src/modules/FileExplorer.py:528
 msgid ""
-"You can define some words that to sanitize before using them to set your "
-"status. In this case, the middle characters of matching words is "
-"automatically replaced with asterisks (e.g., \"Metallica - Live S**t Binge & "
-"Purge\"). Put one word per line."
+"You will be able to add these root folders again later on if you wish so."
 msgstr ""
 
-#: ../src/modules/AudioScrobbler.py:28
-msgid "Keep your Last.fm profile up to date"
+#: ../src/modules/FileExplorer.py:529
+msgid "Remove all selected entries?"
+msgstr "선택된 입력 모두 제거"
+
+#: ../src/modules/FileExplorer.py:531
+msgid "Your media files will not be deleted."
+msgstr "선택된 파일 지우지 못함"
+
+#: ../src/modules/FileExplorer.py:589
+msgid "This module allows you to browse the files on your drives."
 msgstr ""
 
-#: ../src/modules/AudioScrobbler.py:142 ../src/modules/AudioScrobbler.py:143
-msgid "your Last.fm account"
+#: ../src/modules/FileExplorer.py:590
+msgid "Usage"
+msgstr "사용량"
+
+#: ../src/modules/FileExplorer.py:591
+msgid ""
+"At least one root folder must be added to browse your files. This folder "
+"then becomes the root of the file explorer tree in the main window."
 msgstr ""
-
-#: ../src/modules/StatusbarTitlebar.py:52
-#, python-format
-msgid "One track in playlist  [%(length)s]"
-msgid_plural "%(count)u tracks in playlist  [%(length)s]"
-msgstr[0] ""
-msgstr[1] ""
-
-#: ../src/modules/StatusbarTitlebar.py:72
-msgid "[paused]"
-msgstr "일시정지"
 
 #: ../src/modules/__init__.py:75
 msgid "The following Python modules are not available:"
@@ -289,30 +270,56 @@ msgstr "Python 모듈에 이용 할수 없는"
 msgid "You must install them if you want to enable this module."
 msgstr "모듈 사용위해 인스톨해야 함"
 
-#: ../src/modules/DesktopNotification.py:26
+#: ../src/modules/__init__.py:266
+msgid "Restart required"
+msgstr ""
+
+#: ../src/modules/__init__.py:266
+msgid "You must restart the application for this modification to take effect."
+msgstr ""
+
+#: ../src/modules/TrackPanel.py:128
+#, python-format
+msgid "by <i>%(artist)s</i> from <i>%(album)s</i>"
+msgstr ""
+
+#: ../src/modules/CtrlPanel.py:102 ../src/modules/CtrlPanel.py:163
+msgid "Pause the current track"
+msgstr "현재 트랙 정지"
+
+#: ../src/modules/CtrlPanel.py:121
+#, fuzzy
+msgid "Play the first selected track of the playlist"
+msgstr "플레이 리스트 첫번째"
+
+#: ../src/modules/CtrlPanel.py:157
+msgid "Continue playing the current track"
+msgstr "현재 트랙 계속"
+
+#: ../src/modules/DesktopNotification.py:25
 msgid "Desktop Notification"
 msgstr "데스크탑 신고서"
 
-#: ../src/modules/DesktopNotification.py:26
+#: ../src/modules/DesktopNotification.py:25
 msgid "Display a desktop notification on track change"
 msgstr "트랙 바꿀 때 출력"
 
-#: ../src/modules/DesktopNotification.py:82
-#: ../src/modules/DesktopNotification.py:144
+#: ../src/modules/DesktopNotification.py:78
+#: ../src/modules/DesktopNotification.py:188
 msgid "Skip track"
 msgstr ""
 
-#: ../src/modules/DesktopNotification.py:167
+#: ../src/modules/DesktopNotification.py:213
 msgid ""
 "This module displays a small popup window on your desktop when a new track "
 "starts."
 msgstr "새 트랙 시작 시 윈도우에 작은 팝업으로 디스플레이"
 
-#: ../src/modules/DesktopNotification.py:168
+#: ../src/modules/DesktopNotification.py:214
 msgid "Customizing the Notification"
 msgstr "환경 설정 확인"
 
-#: ../src/modules/DesktopNotification.py:169
+#: ../src/modules/DesktopNotification.py:215
 msgid ""
 "You can change the title and the body of the notification to any text you "
 "want. Before displaying the popup window, fields of the form {field} are "
@@ -320,331 +327,42 @@ msgid ""
 "\n"
 msgstr ""
 
-#: ../src/modules/CtrlPanel.py:78 ../src/modules/CtrlPanel.py:136
-#: ../res/StatusIconMenu.glade.h:2
-msgid "Pause the current track"
-msgstr "현재 트랙 정지"
+#: ../src/modules/DesktopNotification.py:218
+msgid "Markup"
+msgstr "마크업"
 
-#: ../src/modules/CtrlPanel.py:95 ../res/MainWindow.glade.h:12
-msgid "Play the first track of the playlist"
-msgstr "플레이 리스트 첫번째"
-
-#: ../src/modules/CtrlPanel.py:130
-msgid "Continue playing the current track"
-msgstr "현재 트랙 계속"
-
-#: ../src/modules/Explorer.py:68
+#: ../src/modules/DesktopNotification.py:219
 msgid ""
-"Please select an explorer\n"
-"in the combo box below."
+"You can use the Pango markup language to format the text. More information "
+"on that language is available on the following web page:"
 msgstr ""
+"Pango 마크업 언어 형식의 텍스트로 사용. 웹페이지에서 불러온 언어 정보를 이용"
 
-#: ../src/modules/Tracklist.py:105 ../src/modules/Tracklist.py:421
-msgid "Length"
-msgstr "길이"
+#: ../src/modules/StatusbarTitlebar.py:48
+msgid "[paused]"
+msgstr "일시정지"
 
-#: ../src/modules/Tracklist.py:108
-msgid "Path"
-msgstr ""
-
-#: ../src/modules/Tracklist.py:258
-msgid "Save playlist"
-msgstr "재생목록 저장"
-
-#: ../src/modules/Tracklist.py:300
-msgid "Crop"
-msgstr "다듬기"
-
-#: ../src/modules/Tracklist.py:315
-msgid "Shuffle Playlist"
-msgstr ""
-
-#: ../src/modules/Tracklist.py:322
-msgid "Revert Playlist"
-msgstr ""
-
-#: ../src/modules/Tracklist.py:329
-msgid "Clear Playlist"
-msgstr ""
-
-#: ../src/modules/Tracklist.py:338 ../res/MainWindow.glade.h:18
-msgid "Repeat"
-msgstr "반복"
-
-#: ../src/modules/Tracklist.py:346
-msgid "Save Playlist As..."
-msgstr "연주 목록 다른 이름으로 저장..."
-
-#: ../src/modules/FileExplorer.py:28
-msgid "File Explorer"
-msgstr "파일 찾기"
-
-#: ../src/modules/FileExplorer.py:28
-msgid "Browse your file system"
-msgstr ""
-
-#: ../src/modules/FileExplorer.py:32
-msgid "Home"
-msgstr "홈"
-
-#: ../src/modules/FileExplorer.py:32
-msgid "Root"
-msgstr ""
-
-#: ../src/modules/FileExplorer.py:180
-msgid "loading..."
-msgstr ""
-
-#: ../src/modules/FileExplorer.py:336 ../src/modules/Library.py:405
-msgid "Collapse all"
-msgstr ""
-
-#: ../src/modules/FileExplorer.py:349 ../res/FileExplorer.glade.h:7
-msgid "Show hidden files"
-msgstr "숨은 파일 보기"
-
-#: ../src/modules/FileExplorer.py:503
-msgid ""
-"You will be able to add this root folder again later on if you wish so."
-msgstr ""
-
-#: ../src/modules/FileExplorer.py:504
-msgid "Remove the selected entry?"
-msgstr "선택된 입력 제거"
-
-#: ../src/modules/FileExplorer.py:506
-msgid ""
-"You will be able to add these root folders again later on if you wish so."
-msgstr ""
-
-#: ../src/modules/FileExplorer.py:507
-msgid "Remove all selected entries?"
-msgstr "선택된 입력 모두 제거"
-
-#: ../src/modules/FileExplorer.py:509
-msgid "Your media files will not be deleted."
-msgstr "선택된 파일 지우지 못함"
-
-#: ../src/modules/FileExplorer.py:563
-msgid "This module allows you to browse the files on your drives."
-msgstr ""
-
-#: ../src/modules/FileExplorer.py:564 ../src/modules/Library.py:709
-msgid "Usage"
-msgstr "사용량"
-
-#: ../src/modules/FileExplorer.py:565
-msgid ""
-"At least one root folder must be added to browse your files. This folder "
-"then becomes the root of the file explorer tree in the main window."
-msgstr ""
-
-#: ../src/modules/Library.py:30
-msgid "Library"
-msgstr "라이브러리"
-
-#: ../src/modules/Library.py:30
-msgid "Organize your music by tags instead of files"
-msgstr ""
-
-#: ../src/modules/Library.py:167
-msgid "Creating library"
-msgstr "라이브러리 만듦"
-
-#: ../src/modules/Library.py:168
-msgid "Refreshing library"
-msgstr "라이브러리 리프레쉬"
-
-#: ../src/modules/Library.py:170
-msgid ""
-"The directory is scanned for media files. This can take some time.\n"
-"Please wait."
-msgstr "디렉토리 내 파일 찾지 못함."
-
-#: ../src/modules/Library.py:221
+#: ../src/modules/StatusbarTitlebar.py:63
 #, python-format
-msgid "Scanning directories (one track found)"
-msgid_plural "Scanning directories (%(nbtracks)u tracks found)"
+msgid "One track in playlist  [%(length)s]"
+msgid_plural "%(count)u tracks in playlist  [%(length)s]"
 msgstr[0] ""
 msgstr[1] ""
 
-#: ../src/modules/Library.py:232
-msgid "Creating library..."
-msgstr "라이브러리 만들기"
-
-#: ../src/modules/Library.py:233
-msgid "Refreshing library..."
-msgstr "리프레쉬 라이브러리"
-
-#: ../src/modules/Library.py:417
-msgid "Randomness"
-msgstr ""
-
-#: ../src/modules/Library.py:424
+#: ../src/modules/StatusbarTitlebar.py:71
 #, python-format
-msgid "Pick an album of %(artist)s"
+msgid "One track selected"
+msgid_plural "%(count)u tracks selected"
+msgstr[0] ""
+
+#: ../src/modules/StatusbarTitlebar.py:76
+#: ../src/modules/StatusbarTitlebar.py:82
+msgid "various"
 msgstr ""
 
-#: ../src/modules/Library.py:429
-msgid "Pick an album in the library"
-msgstr ""
-
-#: ../src/modules/Library.py:446
-msgid "This library is deprecated, please refresh it."
-msgstr ""
-
-#: ../src/modules/Library.py:663
-msgid "tracks"
-msgstr "트랙"
-
-#: ../src/modules/Library.py:671
-msgid "You will be able to recreate this library later on if you wish so."
-msgstr "나중에 라이브러리 다시 만듦"
-
-#: ../src/modules/Library.py:672
-msgid "Remove the selected library?"
-msgstr "선택된 라이브러리 제거"
-
-#: ../src/modules/Library.py:674
-msgid "You will be able to recreate these libraries later on if you wish so."
-msgstr "나중에 라이브러리 다시 만듦"
-
-#: ../src/modules/Library.py:675
-msgid "Remove all selected libraries?"
-msgstr "선택된 라이브러리 모두 제거"
-
-#: ../src/modules/Library.py:677
-msgid "Your media files will not be removed."
-msgstr "파일 제거되지 않음"
-
-#: ../src/modules/Library.py:707
-msgid ""
-"This module organizes your media files by tags instead of using the file "
-"structure of your drive. Loading tracks is also faster because their tags "
-"are already known and do not have to be read again."
-msgstr ""
-
-#: ../src/modules/Library.py:710
-msgid ""
-"When you add a new library, you have to give the full path to the root "
-"directory of that library. Then, all directories under this root path are "
-"recursively scanned for media files whose tags are read and stored in a "
-"database."
-msgstr ""
-
-#: ../src/modules/Library.py:712
-msgid ""
-"Upon refreshing a library, the file structure under the root directory and "
-"all media files are scanned for changes, to update the database accordingly."
-msgstr ""
-
-#: ../src/modules/StatusIcon.py:24
-msgid "Status Icon"
-msgstr "아이콘 상태"
-
-#: ../src/modules/StatusIcon.py:24
-msgid "Add an icon to the notification area"
-msgstr "아이콘 추가 확인"
-
-#: ../src/modules/StatusIcon.py:113
+#: ../src/modules/StatusbarTitlebar.py:85
 #, python-format
-msgid "%(tooltip)s [paused]"
-msgstr ""
-
-#: ../src/modules/Equalizer.py:24
-msgid "Equalizer"
-msgstr ""
-
-#: ../src/modules/Equalizer.py:24
-msgid "Tune the level of the frequency bands"
-msgstr ""
-
-#: ../src/modules/Equalizer.py:60 ../src/modules/Equalizer.py:62
-#: ../src/modules/ReplayGain.py:44
-msgid "Restart required"
-msgstr ""
-
-#: ../src/modules/Equalizer.py:60 ../src/modules/Equalizer.py:62
-#: ../src/modules/ReplayGain.py:44
-msgid ""
-"You must restart the application for this modification to take effect."
-msgstr ""
-
-#: ../src/modules/Equalizer.py:95
-msgid "Save levels"
-msgstr ""
-
-#: ../src/modules/Equalizer.py:106
-msgid "Load levels"
-msgstr ""
-
-#: ../src/modules/Equalizer.py:132
-msgid "Could not load the file"
-msgstr ""
-
-#: ../src/modules/Equalizer.py:132
-msgid "The format of the file is incorrect."
-msgstr ""
-
-#: ../src/modules/AudioCD.py:27
-msgid "Audio CD"
-msgstr ""
-
-#: ../src/modules/AudioCD.py:27
-msgid "Play audio discs"
-msgstr ""
-
-#: ../src/modules/AudioCD.py:149
-msgid "downloading data..."
-msgstr ""
-
-#: ../src/modules/AudioCD.py:153
-#, python-format
-msgid "Track %02u"
-msgstr ""
-
-#: ../src/modules/AudioCD.py:238
-msgid "No disc found"
-msgstr ""
-
-#: ../src/modules/AudioCD.py:346
-msgid "This will remove all disc information stored on your hard drive."
-msgstr ""
-
-#: ../src/modules/AudioCD.py:347
-msgid "Clear CDDB cache?"
-msgstr ""
-
-#: ../src/modules/AudioCD.py:360 ../src/modules/StatusFile.py:93
-msgid "Invalid path"
-msgstr "잘못된 경로"
-
-#: ../src/modules/AudioCD.py:361
-msgid ""
-"The path to the CD-ROM device is not valid. Please choose an existing path."
-msgstr ""
-
-#: ../src/modules/AudioCD.py:375
-msgid "This module lets you play audio discs from your CD-ROM device."
-msgstr ""
-
-#: ../src/modules/AudioCD.py:376
-msgid "Compact Disc Data Base (CDDB)"
-msgstr ""
-
-#: ../src/modules/AudioCD.py:377
-msgid ""
-"Disc information, such as artist and album title, may be automatically "
-"downloaded from an online database if you wish so. This information may also "
-"be saved on your hard drive to avoid downloading it again the next time you "
-"play the same disc."
-msgstr ""
-
-#: ../src/modules/TrackPanel.py:120
-#, python-format
-msgid ""
-"by %(artist)s\n"
-"from %(album)s"
+msgid "%(selection)s (Type: %(type)s, Bitrate: %(bitrate)s)"
 msgstr ""
 
 #: ../src/modules/Covers.py:27
@@ -655,18 +373,18 @@ msgstr ""
 msgid "Show album covers"
 msgstr ""
 
-#: ../src/modules/Covers.py:430
+#: ../src/modules/Covers.py:420
 msgid ""
 "This module displays the cover of the album the current track comes from. "
 "Covers may be loaded from local pictures, located in the same directory as "
 "the current track, or may be downloaded from the Internet."
 msgstr ""
 
-#: ../src/modules/Covers.py:433
+#: ../src/modules/Covers.py:423
 msgid "User Covers"
 msgstr ""
 
-#: ../src/modules/Covers.py:434
+#: ../src/modules/Covers.py:424
 #, python-format
 msgid ""
 "A user cover is a picture located in the same directory as the current "
@@ -674,11 +392,11 @@ msgid ""
 "extensions, supported file formats (%s) are automatically used."
 msgstr ""
 
-#: ../src/modules/Covers.py:437
+#: ../src/modules/Covers.py:427
 msgid "Internet Covers"
 msgstr ""
 
-#: ../src/modules/Covers.py:438
+#: ../src/modules/Covers.py:428
 msgid ""
 "Covers may be downloaded from the Internet, based on the tags of the current "
 "track. You can ask to always prefer user covers to Internet ones. In this "
@@ -686,117 +404,72 @@ msgid ""
 "none, the cover is downloaded."
 msgstr ""
 
-#: ../src/modules/StatusFile.py:25
-msgid "Status File"
-msgstr "파일 상태"
+#: ../src/modules/Tracktree.py:313
+msgid "Save playlist"
+msgstr "재생목록 저장"
 
-#: ../src/modules/StatusFile.py:25
-msgid "Generate a text file with the current status"
+#: ../src/modules/Tracktree.py:363
+msgid "Clear Playlist"
 msgstr ""
 
-#: ../src/modules/StatusFile.py:93
+#: ../src/modules/Explorer.py:68
 msgid ""
-"The path to the selected file is not valid. Please choose an existing path."
-msgstr "파일 경로가 확실하지 않음. 다시 경로 선택"
-
-#: ../src/modules/StatusFile.py:106
-msgid "Choose a file"
-msgstr "파일 선택"
-
-#: ../src/modules/StatusFile.py:116
-msgid ""
-"This module generates a text file with regards to the track currently played."
+"Please select an explorer\n"
+"in the combo box below."
 msgstr ""
 
-#: ../src/modules/StatusFile.py:117
-msgid "Customizing the File"
-msgstr "파일 설정 바꿈"
-
-#: ../src/modules/StatusFile.py:118
-msgid ""
-"You can change the content of the file to any text you want. Before "
-"generating the file, fields of the form {field} are replaced by their "
-"corresponding value. Available fields are:\n"
-"\n"
+#: ../src/modules/Equalizer.py:24 ../src/modules/Equalizer.py:55
+#: ../src/modules/Equalizer.py:69
+msgid "Equalizer"
 msgstr ""
 
-#: ../src/modules/Twitter.py:27
-msgid "Update the status of your Twitter account"
+#: ../src/modules/Equalizer.py:24
+msgid "Tune the level of the frequency bands"
 msgstr ""
 
-#: ../src/modules/Twitter.py:51
-msgid "your Twitter account"
+#: ../src/modules/Equalizer.py:52
+msgid "Flat"
 msgstr ""
 
-#: ../src/modules/Twitter.py:121
-msgid ""
-"This module posts a message to your Twitter account according to what you "
-"are listening to."
+#: ../src/modules/Equalizer.py:123 ../src/modules/Equalizer.py:211
+#: ../src/modules/Equalizer.py:224
+msgid "Custom"
 msgstr ""
 
-#: ../src/modules/ReplayGain.py:25
-msgid "ReplayGain"
+#: ../src/modules/Equalizer.py:164
+msgid "Save levels"
 msgstr ""
 
-#: ../src/modules/ReplayGain.py:25
-msgid "Normalize volume"
+#: ../src/modules/Equalizer.py:175
+msgid "Load levels"
 msgstr ""
 
-#: ../res/AudioCD.glade.h:1
-msgid "<b>CDDB</b>"
+#: ../src/modules/Equalizer.py:202
+msgid "Could not load the file"
 msgstr ""
 
-#: ../res/AudioCD.glade.h:2 ../res/DesktopNotification.glade.h:2
-#: ../res/FileExplorer.glade.h:1
-msgid "<b>Miscellaneous</b>"
-msgstr "<b>기타</b>"
-
-#: ../res/AudioCD.glade.h:3
-msgid "CD-ROM device:"
+#: ../src/modules/Equalizer.py:202
+msgid "The format of the file is incorrect."
 msgstr ""
 
-#: ../res/AudioCD.glade.h:4
-msgid "Clear cache"
+#: ../src/tools/consts.py:93
+msgid "Unknown Genre"
 msgstr ""
 
-#: ../res/AudioCD.glade.h:5
-msgid "Download disc information"
+#: ../src/tools/consts.py:94
+msgid "Unknown Title"
 msgstr ""
 
-#: ../res/AudioCD.glade.h:6
-msgid "Download disc information from an online database"
-msgstr ""
+#: ../src/tools/consts.py:95
+msgid "Unknown Album"
+msgstr "알 수 없는 앨범"
 
-#: ../res/AudioCD.glade.h:7
-msgid "Location of your CD-ROM device"
-msgstr ""
+#: ../src/tools/consts.py:96
+msgid "Unknown Artist"
+msgstr "알 수 없는 아티스트"
 
-#: ../res/AudioCD.glade.h:8
-msgid "Remove all disc information from your hard drive"
-msgstr ""
-
-#: ../res/AudioCD.glade.h:9
-msgid "Save disc information on your hard drive"
-msgstr ""
-
-#: ../res/AudioCD.glade.h:10
-msgid "Save information in a local cache"
-msgstr ""
-
-#: ../res/AudioCDMenu.glade.h:1
-msgid "Add to Playlist"
-msgstr "재생목록에 더하기"
-
-#: ../res/AudioCDMenu.glade.h:2
-msgid "Append selection to the playlist"
-msgstr ""
-
-#: ../res/AudioCDMenu.glade.h:3
-msgid "Replace the playlist by the selection and start playback"
-msgstr ""
-
-#: ../res/AudioCDMenu.glade.h:4
-msgid "Rescan the audio disc"
+#: ../src/tools/consts.py:104
+msgid "Unknown Album Artist"
 msgstr ""
 
 #: ../res/Authentication.glade.h:2
@@ -851,6 +524,10 @@ msgstr ""
 msgid "<b>Body</b>"
 msgstr "<b>Body</b>"
 
+#: ../res/DesktopNotification.glade.h:2 ../res/FileExplorer.glade.h:1
+msgid "<b>Miscellaneous</b>"
+msgstr "<b>기타</b>"
+
 #: ../res/DesktopNotification.glade.h:3
 msgid "<b>Title</b>"
 msgstr "<b>타이틀</b>"
@@ -871,6 +548,10 @@ msgstr ""
 msgid "seconds"
 msgstr "초"
 
+#: ../res/Equalizer.glade.h:1
+msgid "Preset:"
+msgstr ""
+
 #: ../res/FileExplorer.glade.h:2
 msgid "<b>Root Folders</b>"
 msgstr "<b>루트 폴더</b>"
@@ -880,180 +561,107 @@ msgid "Add a new root folder to the file explorer"
 msgstr "새로운 루트 폴더 추가"
 
 #: ../res/FileExplorer.glade.h:4
+msgid "Add files to playlist by filename"
+msgstr ""
+
+#: ../res/FileExplorer.glade.h:5
 msgid "Remove the selected root folders"
 msgstr "선택된 루트 폴더 제거"
 
-#: ../res/FileExplorer.glade.h:5 ../res/Library.glade.h:4
+#: ../res/FileExplorer.glade.h:6
 msgid "Rename"
 msgstr ""
 
-#: ../res/FileExplorer.glade.h:6
+#: ../res/FileExplorer.glade.h:7
 msgid "Rename the selected root folder"
 msgstr ""
 
-#: ../res/FileExplorer.glade.h:8
+#: ../res/FileExplorer.glade.h:9
+msgid ""
+"Whether files should be added to the playlist by their name rather than by "
+"their tags"
+msgstr ""
+
+#: ../res/FileExplorer.glade.h:10
 msgid "Whether hidden files should be shown in the file explorer"
 msgstr ""
 
-#: ../res/IMStatus.glade.h:1
-msgid "<b>Sanitized Words</b>"
-msgstr "<b>삭제단어</b>"
-
-#: ../res/IMStatus.glade.h:2 ../res/Twitter.glade.h:1
-msgid "<b>Status</b>"
-msgstr "<b>상태</b>"
-
-#: ../res/IMStatus.glade.h:3
-msgid "<b>When Stopping or Quitting</b>"
-msgstr ""
-
-#: ../res/IMStatus.glade.h:4
-msgid "Do nothing"
-msgstr "아무 것도 하지 않음."
-
-#: ../res/IMStatus.glade.h:5 ../res/Twitter.glade.h:2
-msgid "Message:"
-msgstr "메시지:"
-
-#: ../res/IMStatus.glade.h:6
-msgid "Set status to:"
-msgstr "상태 설정"
-
-#: ../res/IMStatus.glade.h:7
-msgid "Update even if not available"
-msgstr "이용하지 않더라도 업데이트"
-
-#: ../res/IMStatus.glade.h:8
-msgid "Update when paused"
-msgstr "정지 때 업데이트"
-
-#: ../res/IMStatus.glade.h:9
-msgid "Update your status even if you are marked as unavailable"
-msgstr ""
-
-#: ../res/IMStatus.glade.h:10
-msgid "Update your status on pause/unpause events"
-msgstr ""
-
-#: ../res/Library.glade.h:1
-msgid "<b>Libraries</b>"
-msgstr "<b>라이브러리</b>"
-
-#: ../res/Library.glade.h:2
-msgid "Add a new library"
-msgstr "새로운 라이브러리 추가"
-
-#: ../res/Library.glade.h:3
-msgid "Remove the selected libraries"
-msgstr "선택된 라이브러리 제거"
-
-#: ../res/Library.glade.h:5
-msgid "Rename the selected library"
-msgstr ""
-
-#: ../res/Library.glade.h:6
-msgid "Update the selected library by rescanning the disk"
-msgstr "다시 읽은 라이브러리 업데이트"
-
 #: ../res/MainWindow.glade.h:1
-msgid "Clear"
-msgstr ""
-
-#: ../res/MainWindow.glade.h:2
-msgid "Clear the playlist"
-msgstr "플레이리스트 제거"
-
-#: ../res/MainWindow.glade.h:3
 msgid "Display about dialog box"
 msgstr "다이얼로그 박스 디스플레이"
 
-#: ../res/MainWindow.glade.h:4 ../res/StatusIconMenu.glade.h:1
+#: ../res/MainWindow.glade.h:2
 msgid "Display preferences"
 msgstr "디스플레이 설정"
 
-#: ../res/MainWindow.glade.h:5
-msgid "Elapsed time"
-msgstr ""
-
-#: ../res/MainWindow.glade.h:6
+#: ../res/MainWindow.glade.h:3
 msgid "Full"
 msgstr ""
 
-#: ../res/MainWindow.glade.h:7
+#: ../res/MainWindow.glade.h:4
 msgid "Mini"
 msgstr ""
 
-#: ../res/MainWindow.glade.h:8
-msgid "Nano"
-msgstr ""
-
-#: ../res/MainWindow.glade.h:9
+#: ../res/MainWindow.glade.h:5
 msgid "Online _Help"
 msgstr "온라인 도움"
 
-#: ../res/MainWindow.glade.h:10
+#: ../res/MainWindow.glade.h:6
 msgid "Open the online help web page"
 msgstr "Help 웹 페이지 열기"
 
-#: ../res/MainWindow.glade.h:11
-msgid "Play all tracks endlessly"
-msgstr ""
+#: ../res/MainWindow.glade.h:7
+msgid "Play the first track of the playlist"
+msgstr "플레이 리스트 첫번째"
 
-#: ../res/MainWindow.glade.h:13 ../res/StatusIconMenu.glade.h:3
+#: ../res/MainWindow.glade.h:8
 msgid "Play the next track"
 msgstr "다음 트랙 재생"
 
-#: ../res/MainWindow.glade.h:14 ../res/StatusIconMenu.glade.h:4
+#: ../res/MainWindow.glade.h:9
 msgid "Play the previous track"
 msgstr "이전 트랙 재생"
 
-#: ../res/MainWindow.glade.h:15
+#: ../res/MainWindow.glade.h:10
 msgid "Playlist"
 msgstr ""
 
-#: ../res/MainWindow.glade.h:16 ../res/StatusIconMenu.glade.h:6
+#: ../res/MainWindow.glade.h:11
 msgid "Quit the application"
 msgstr "프로그램 끝내기"
 
-#: ../res/MainWindow.glade.h:17
+#: ../res/MainWindow.glade.h:12
 msgid "Remaining time"
 msgstr ""
 
-#: ../res/MainWindow.glade.h:19
+#: ../res/MainWindow.glade.h:13
 msgid "Seek a position in the current track"
 msgstr ""
 
-#: ../res/MainWindow.glade.h:20
+#: ../res/MainWindow.glade.h:14
 msgid "Select an explorer"
 msgstr ""
 
-#: ../res/MainWindow.glade.h:21
-msgid "Shuffle"
-msgstr "무작위"
-
-#: ../res/MainWindow.glade.h:22
-msgid "Shuffle the playlist"
-msgstr ""
-
-#: ../res/MainWindow.glade.h:23 ../res/StatusIconMenu.glade.h:7
+#: ../res/MainWindow.glade.h:15
 msgid "Stop the current track"
 msgstr "현재 트랙 정지"
 
-#: ../res/MainWindow.glade.h:24
+#: ../res/MainWindow.glade.h:16
 msgid "_Edit"
 msgstr "편집"
 
-#: ../res/MainWindow.glade.h:25
+#: ../res/MainWindow.glade.h:17
 msgid "_File"
 msgstr "파일"
 
-#: ../res/MainWindow.glade.h:26
+#: ../res/MainWindow.glade.h:18
 msgid "_Help"
 msgstr "도움말"
 
-#: ../res/MainWindow.glade.h:27
-msgid "_Mode"
-msgstr ""
+#: ../res/MainWindow.glade.h:19
+#, fuzzy
+msgid "_View"
+msgstr "파일"
 
 #: ../res/SelectPath.glade.h:1
 msgid "Name:"
@@ -1063,14 +671,142 @@ msgstr "이름:"
 msgid "Path:"
 msgstr "경로:"
 
-#: ../res/StatusFile.glade.h:1
-msgid "<b>File</b>"
-msgstr "<b>파일</b>"
+#~ msgid "Instant Messenger Status"
+#~ msgstr "긴박한 메신저 상태"
 
-#: ../res/StatusFile.glade.h:2
-msgid "<b>Playing Status</b>"
-msgstr "<b>재생 상태</b>"
+#~ msgid "Update the status message of your IM client"
+#~ msgstr "IM 클라이언트 업데이트"
 
-#: ../res/StatusIconMenu.glade.h:5
-msgid "Play/Unpause"
-msgstr "다시 재생"
+#~ msgid "Decibel is stopped"
+#~ msgstr "Decibel 정지"
+
+#~ msgid "Customizing the Status"
+#~ msgstr "설정 바꿈"
+
+#~ msgid "Sanitization"
+#~ msgstr "부분 삭제"
+
+#~ msgid "Length"
+#~ msgstr "길이"
+
+#~ msgid "Crop"
+#~ msgstr "다듬기"
+
+#~ msgid "Repeat"
+#~ msgstr "반복"
+
+#~ msgid "Save Playlist As..."
+#~ msgstr "연주 목록 다른 이름으로 저장..."
+
+#~ msgid "Library"
+#~ msgstr "라이브러리"
+
+#~ msgid "Creating library"
+#~ msgstr "라이브러리 만듦"
+
+#~ msgid "Refreshing library"
+#~ msgstr "라이브러리 리프레쉬"
+
+#~ msgid ""
+#~ "The directory is scanned for media files. This can take some time.\n"
+#~ "Please wait."
+#~ msgstr "디렉토리 내 파일 찾지 못함."
+
+#~ msgid "Creating library..."
+#~ msgstr "라이브러리 만들기"
+
+#~ msgid "Refreshing library..."
+#~ msgstr "리프레쉬 라이브러리"
+
+#~ msgid "tracks"
+#~ msgstr "트랙"
+
+#~ msgid "You will be able to recreate this library later on if you wish so."
+#~ msgstr "나중에 라이브러리 다시 만듦"
+
+#~ msgid "Remove the selected library?"
+#~ msgstr "선택된 라이브러리 제거"
+
+#~ msgid ""
+#~ "You will be able to recreate these libraries later on if you wish so."
+#~ msgstr "나중에 라이브러리 다시 만듦"
+
+#~ msgid "Remove all selected libraries?"
+#~ msgstr "선택된 라이브러리 모두 제거"
+
+#~ msgid "Your media files will not be removed."
+#~ msgstr "파일 제거되지 않음"
+
+#~ msgid "Status Icon"
+#~ msgstr "아이콘 상태"
+
+#~ msgid "Add an icon to the notification area"
+#~ msgstr "아이콘 추가 확인"
+
+#~ msgid "Invalid path"
+#~ msgstr "잘못된 경로"
+
+#~ msgid "Status File"
+#~ msgstr "파일 상태"
+
+#~ msgid ""
+#~ "The path to the selected file is not valid. Please choose an existing "
+#~ "path."
+#~ msgstr "파일 경로가 확실하지 않음. 다시 경로 선택"
+
+#~ msgid "Choose a file"
+#~ msgstr "파일 선택"
+
+#~ msgid "Customizing the File"
+#~ msgstr "파일 설정 바꿈"
+
+#~ msgid "Add to Playlist"
+#~ msgstr "재생목록에 더하기"
+
+#~ msgid "<b>Sanitized Words</b>"
+#~ msgstr "<b>삭제단어</b>"
+
+#~ msgid "<b>Status</b>"
+#~ msgstr "<b>상태</b>"
+
+#~ msgid "Do nothing"
+#~ msgstr "아무 것도 하지 않음."
+
+#~ msgid "Message:"
+#~ msgstr "메시지:"
+
+#~ msgid "Set status to:"
+#~ msgstr "상태 설정"
+
+#~ msgid "Update even if not available"
+#~ msgstr "이용하지 않더라도 업데이트"
+
+#~ msgid "Update when paused"
+#~ msgstr "정지 때 업데이트"
+
+#~ msgid "<b>Libraries</b>"
+#~ msgstr "<b>라이브러리</b>"
+
+#~ msgid "Add a new library"
+#~ msgstr "새로운 라이브러리 추가"
+
+#~ msgid "Remove the selected libraries"
+#~ msgstr "선택된 라이브러리 제거"
+
+#~ msgid "Update the selected library by rescanning the disk"
+#~ msgstr "다시 읽은 라이브러리 업데이트"
+
+#~ msgid "Clear the playlist"
+#~ msgstr "플레이리스트 제거"
+
+#~ msgid "Shuffle"
+#~ msgstr "무작위"
+
+#~ msgid "<b>File</b>"
+#~ msgstr "<b>파일</b>"
+
+#~ msgid "<b>Playing Status</b>"
+#~ msgstr "<b>재생 상태</b>"
+
+#~ msgid "Play/Unpause"
+#~ msgstr "다시 재생"
