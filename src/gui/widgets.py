@@ -161,7 +161,14 @@ class TrackTreeView(ExtTreeView):
         root_nodes = len(self.store)
         if root_nodes == 0:
             return None
-        return self.store.iter_nth_child(None, root_nodes-1)        
+        return self.store.iter_nth_child(None, root_nodes-1)
+        
+    def get_all_parents(self, iter):
+        ''' Returns a list of parent, grandparent, greatgrandparent, etc. '''
+        parent = self.store.iter_parent(iter)
+        while parent:
+            yield parent
+            parent = self.store.iter_parent(parent)
         
     def iter_prev(self, iter):
         path = self.store.get_path(iter)

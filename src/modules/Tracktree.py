@@ -98,7 +98,6 @@ class Tracktree(modules.Module):
         return trackdir
         
 
-
     def __getNextTrackIter(self):
         """ Return the index of the next track, or -1 if there is none """
         next = None
@@ -162,12 +161,18 @@ class Tracktree(modules.Module):
         if not track:
             return
             
+        for parent in self.tree.get_all_parents(iter):
+            parent_label = self.tree.getLabel(parent)
+            is_bold = parent_label.startswith('<b>') and parent_label.endswith('</b>')
+            if playing and not is_bold:
+                    self.tree.setLabel(parent, '<b>%s</b>' % parent_label)
+            elif not playing and is_bold:
+                self.tree.setLabel(parent, parent_label[3:-4])
+            
         parent = self.tree.store.iter_parent(iter)
         parent_label = self.tree.getLabel(parent) if parent else None
-        label = track.get_label(parent_label)
+        label = track.get_label(parent_label=parent_label, playing=playing)
         if playing:
-            label = '<b>%s</b>' % label
-            #label = gobject.markup_escape_text(label)
             self.tree.setLabel(iter, label)
             self.tree.setItem(iter, ROW_ICO, icons.playMenuIcon())
             self.tree.expand(iter)
@@ -317,9 +322,10 @@ class Tracktree(modules.Module):
         hadMark = self.tree.hasMark()
         #self.previousTracklist = [row[ROW_TRK] for row in self.tree]
         
-        iters = [iter] if iter else self.tree.iterSelectedRows()
-
-        for iter in iters:
+        iters = [iter] if iter else list(self.tree.iterSelectedRows())
+        
+        # reverse list, so that we remove children before their fathers
+        for iter in reversed(iters):
             track = self.tree.getTrack(iter)
             if track:
                 self.playtime -= track.getLength()

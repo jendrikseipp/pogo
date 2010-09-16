@@ -330,11 +330,11 @@ class Track:
         filename, ext = os.path.splitext(basename)
         return filename
     
-    def get_label(self, parent_label=None):
+    def get_label(self, parent_label=None, playing=False):
         '''
         ## Return a treeview representation
         '''
-        track = self
+        escape = tools.htmlEscape
         
         title = self.getTitle()
         artist = self.getArtist()
@@ -358,9 +358,12 @@ class Track:
         else:
             parts = [part for part in [artist, album, number, title] if part]
             label = ' - '.join(parts)
-        
+            
+        label = escape(label)
+        if playing:
+            label = '<b>%s</b>' % label
+        #label += ' <span foreground="gray">[%s]</span>' % tools.sec2str(length)
         label += ' [%s]' % tools.sec2str(length)
-        label = gobject.markup_escape_text(label)
             
         return label
         
