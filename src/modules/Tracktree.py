@@ -249,7 +249,8 @@ class Tracktree(modules.Module):
         if trackdir.flat:
             new = target
         else:
-            string = gobject.markup_escape_text(trackdir.dirname)
+            string = trackdir.dirname.replace('_', ' ')
+            string = gobject.markup_escape_text(string)
             source_row = (icons.mediaDirMenuIcon(), string, None)
             
             new = self.tree.insert(target, source_row, drop_mode)
@@ -267,7 +268,7 @@ class Tracktree(modules.Module):
             
         if not trackdir.flat:
             # Open albums on the first layer
-            if target is None or model.iter_depth(target) == 0:
+            if target is None or model.iter_depth(new) == 0:
                 self.tree.expand(new)
         
         return new
@@ -439,7 +440,7 @@ class Tracktree(modules.Module):
         
          
         self.tree.connect('exttreeview-button-pressed', self.onMouseButton)
-        self.tree.connect('extlistview-dnd', self.onDND)
+        self.tree.connect('tracktreeview-dnd', self.onDND)
         self.tree.connect('key-press-event', self.onKeyboard)
         #self.tree.connect('extlistview-modified', self.onListModified)
         #self.tree.connect('button-pressed', self.onButtonPressed)
