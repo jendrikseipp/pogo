@@ -69,12 +69,28 @@ class Zeitgeist(modules.ThreadedModule):
         from zeitgeist.datamodel import Event, Subject, Interpretation, Manifestation
 
         mime, encoding = mimetypes.guess_type(track.getFilePath(), strict=False)
+        
+        print 'MIME', mime
+        
+        # Handle "unknown" tags
+        title = track.getTitle()
+        album = track.getAlbum()
+        artist = track.getArtist()
+        if 'unknown' in title.lower():
+            title = track.get_basename()
+        if 'unknown' in album.lower():
+            album = ''
+        if 'unknown' in artist.lower():
+            album = ''
+        parts = [artist, album]
+        text = ' - '.join([part for part in parts if part])
 
         subject = Subject.new_for_values(
             uri            = os.path.dirname(track.getURI()),
-            text           = track.getTitle() + ' - ' + track.getArtist() + ' - ' + track.getExtendedAlbum(),
+            #text           = track.getTitle() + ' - ' + track.getArtist() + ' - ' + track.getExtendedAlbum(),
+            text           = text,
             mimetype       = mime,
-            manifestation  = unicode(Manifestation.FILE),
+            manifestation  = unicode(Manifestation.FILE_DATA_OBJECT),
             interpretation = unicode(Interpretation.AUDIO),
         )
 
