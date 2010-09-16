@@ -67,11 +67,11 @@ class TrackTreeView(ExtTreeView):
             #        self.dndTargets+[DND_INTERNAL_TARGET], gtk.gdk.ACTION_MOVE)
             self.enable_model_drag_dest(self.dndTargets, gtk.gdk.ACTION_DEFAULT)
         
-        self.connect('drag-begin', self.onDragBegin)
+        #self.connect('drag-begin', self.onDragBegin)
         self.connect('drag-motion', self.onDragMotion)
         self.connect('drag-data-received', self.onDragDataReceived)
         
-        self.connect('button-press-event', self.onButtonPressed)
+        #self.connect('button-press-event', self.onButtonPressed)
         
         self.mark = None
         
@@ -398,12 +398,6 @@ class TrackTreeView(ExtTreeView):
         self.dndReordering = True
         self.dndTargets.append(DND_INTERNAL_TARGET)
         self.enable_model_drag_dest(self.dndTargets, gtk.gdk.ACTION_DEFAULT)
-        
-    
-    def onDragBegin(self, tree, context):
-        """ A drag'n'drop operation has begun """
-        if self.getSelectedRowsCount() == 1: context.set_icon_stock(gtk.STOCK_DND,          0, 0)
-        else:                                context.set_icon_stock(gtk.STOCK_DND_MULTIPLE, 0, 0)
 
 
     def onDragDataReceived(self, tree, context, x, y, selection, dndId, time):

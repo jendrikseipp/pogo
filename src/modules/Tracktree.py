@@ -81,19 +81,6 @@ class Tracktree(modules.Module):
                 tracks.append(track)
         return tracks
         
-        
-    def getAllTracks(self):
-        self.tree.selection.select_all()
-        rows = self.tree.getSelectedRows()
-        self.tree.selection.unselect_all()
-        return self.getTracks(rows)
-        
-        mark = self.tree.getMark()
-        self.tree.setMark(None)
-        tracks = []
-        next = self.__getNextTrackIter()
-        #while next:
-        
     
     def getTrackDir(self, root=None):
         flat = False if root else True
@@ -101,7 +88,6 @@ class Tracktree(modules.Module):
         trackdir = media.TrackDir(name=name, flat=flat)
         
         for iter in self.tree.iter_children(root):
-            #print 'NAME', self.tree.getLabel(iter), iter
             track = self.tree.getTrack(iter)
             if track:
                 trackdir.tracks.append(track)
@@ -305,9 +291,6 @@ class Tracktree(modules.Module):
             trackdir = media.TrackDir(None, flat=True)
             trackdir.tracks = tracks
             tracks = trackdir
-        
-        print 'SET TRACKS'
-        print tracks
 
         if self.tree.hasMark() and ((not playNow) or (tracks is None) or tracks.empty()):
             modules.postMsg(consts.MSG_CMD_STOP)
@@ -519,7 +502,6 @@ class Tracktree(modules.Module):
         
     def onMouseButton(self, tree, event, path):
         """ A mouse button has been pressed """
-        print 'BUTTON PRESSED', path
         if event.button == 1 and event.type == gtk.gdk._2BUTTON_PRESS and path is not None:
             self.jumpTo(self.tree.store.get_iter(path))
         elif event.button == 3:

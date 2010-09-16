@@ -70,18 +70,18 @@ class Zeitgeist(modules.ThreadedModule):
 
         mime, encoding = mimetypes.guess_type(track.getFilePath(), strict=False)
         
-        print 'MIME', mime
-        
-        # Handle "unknown" tags
         title = track.getTitle()
         album = track.getAlbum()
         artist = track.getArtist()
+        
+        # Handle "unknown" tags
         if 'unknown' in title.lower():
             title = track.get_basename()
         if 'unknown' in album.lower():
             album = ''
         if 'unknown' in artist.lower():
             album = ''
+            
         parts = [artist, album]
         text = ' - '.join([part for part in parts if part])
 
