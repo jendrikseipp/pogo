@@ -62,7 +62,8 @@ if not os.path.exists(dirCfg):
     os.mkdir(dirCfg)
 
 # Make sure the log directory exists
-if not os.path.exists(dirLog): os.mkdir(dirLog)
+if not os.path.exists(dirLog):
+    os.mkdir(dirLog)
 
 
 # --- Icons

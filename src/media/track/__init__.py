@@ -325,22 +325,27 @@ class Track:
             else:                                                                                        self.tags[tag] = tags[i+1].replace('\x00', ' ')
             
     
+    def get_basename(self):
+        basename = os.path.basename(self.getURI())
+        filename, ext = os.path.splitext(basename)
+        return filename
+    
     def get_label(self, parent_label=None):
         '''
         ## Return a treeview representation
         '''
         track = self
         
-        title = track.getTitle()
-        artist = track.getArtist()
-        album = track.getExtendedAlbum()
-        number = track.getNumber()
-        length = track.getLength()
+        title = self.getTitle()
+        artist = self.getArtist()
+        album = self.getExtendedAlbum()
+        number = self.getNumber()
+        length = self.getLength()
         
         number = str(number).zfill(2)
         
         if parent_label:
-            parent_label = parent_label.lower()
+            parent_label = 'the ' + parent_label.strip().lower()
             if album.strip().lower() in parent_label:
                 album = ''
             #print artist.strip().lower(), 'IN', parent_label, artist.strip().lower() in parent_label
@@ -349,9 +354,7 @@ class Track:
                 
         # Handle useless tags
         if 'unknown' in title.lower():
-            basename = os.path.basename(track.getURI())
-            filename, ext = os.path.splitext(basename)
-            label = filename
+            label = self.get_basename()
         else:
             parts = [part for part in [artist, album, number, title] if part]
             label = ' - '.join(parts)
@@ -359,6 +362,17 @@ class Track:
         label += ' [%s]' % tools.sec2str(length)
         label = gobject.markup_escape_text(label)
             
+        return label
+        
+    def get_window_title(self):
+        title = self.getTitle()
+        artist = self.getArtist()
+        
+        # Handle useless tags
+        if 'unknown' in title.lower():
+            label = self.get_basename()
+        else:
+            label = '%s - %s' % (artist, title)
         return label
 
 

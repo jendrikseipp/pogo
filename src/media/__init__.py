@@ -138,6 +138,13 @@ class TrackDir(object):
                 track = getTrackFromFile(path)
                 self.tracks.append(track)
                 
+            # If a directory contains no tracks and only one subdir, 
+            # collapse them into one dir
+            if not self.tracks and len(self.subdirs) == 1:
+                subdir = self.subdirs.pop(0)
+                self.tracks = subdir.tracks
+                self.dirname += ' / ' + subdir.dirname
+                
     def empty(self):
         return not self.tracks and not self.subdirs
         
