@@ -15,7 +15,7 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301 USA
 
-INSTALL_DIR="/usr/share/decibel-audio-player"
+INSTALL_DIR="/usr/share/pogo"
 
 cd $INSTALL_DIR"/src"
-python ./decibel-audio-player.py "$@" &
+python ./pogo.py "$@" &

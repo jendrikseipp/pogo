@@ -1,7 +1,7 @@
 #!/bin/sh
 
-ARCHIVE=`date +%Y%m%d`"-decibel-audio-player.tar.bz2"
-DEST='./Decibel-Audio-Player'
+ARCHIVE=`date +%Y%m%d`"-pogo.tar.bz2"
+DEST='./Pogo'
 
 if [ -d $DEST ]; then
   rm -rf $DEST

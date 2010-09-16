@@ -415,7 +415,7 @@ class Tracktree(modules.Module):
         
         self.tree = TrackTreeView(columns, use_markup=True)
         self.tree.enableDNDReordering()
-        #self.tree.setDNDSources([consts.DND_TARGETS[consts.DND_DAP_TRACKS]])
+        #self.tree.setDNDSources([consts.DND_TARGETS[consts.DND_POGO_TRACKS]])
         self.tree.setDNDSources([DND_INTERNAL_TARGET])
         
         wTree.get_widget('scrolled-tracklist').add(self.tree)
@@ -557,13 +557,13 @@ class Tracktree(modules.Module):
             return
 
         # A list of filenames, without 'file://' at the beginning
-        if dndId == consts.DND_DAP_URI:
+        if dndId == consts.DND_POGO_URI:
             tracks = media.getTracks([urllib.url2pathname(uri) for uri in dragData.data.split()])
         # A list of filenames starting with 'file://'
         elif dndId == consts.DND_URI:
             tracks = media.getTracks([urllib.url2pathname(uri)[7:] for uri in dragData.data.split()])
         # A list of tracks
-        elif dndId == consts.DND_DAP_TRACKS:
+        elif dndId == consts.DND_POGO_TRACKS:
             tracks = [media.track.unserialize(serialTrack) for serialTrack in dragData.data.split('\n')]
 
         # dropInfo is tuple (path, drop_pos)

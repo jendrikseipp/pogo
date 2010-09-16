@@ -67,12 +67,12 @@ if not os.path.exists(dirLog):
 
 
 # --- Icons
-fileImgIcon16  = os.path.join(dirPix, 'decibel-audio-player-16.png')
-fileImgIcon24  = os.path.join(dirPix, 'decibel-audio-player-24.png')
-fileImgIcon32  = os.path.join(dirPix, 'decibel-audio-player-32.png')
-fileImgIcon48  = os.path.join(dirPix, 'decibel-audio-player-48.png')
-fileImgIcon64  = os.path.join(dirPix, 'decibel-audio-player-64.png')
-fileImgIcon128 = os.path.join(dirPix, 'decibel-audio-player-128.png')
+fileImgIcon16  = os.path.join(dirPix, 'pogo-16.png')
+fileImgIcon24  = os.path.join(dirPix, 'pogo-24.png')
+fileImgIcon32  = os.path.join(dirPix, 'pogo-32.png')
+fileImgIcon48  = os.path.join(dirPix, 'pogo-48.png')
+fileImgIcon64  = os.path.join(dirPix, 'pogo-64.png')
+fileImgIcon128 = os.path.join(dirPix, 'pogo-128.png')
 
 fileImgStar16 = os.path.join(dirPix, 'star-16.png')
 
@@ -84,7 +84,7 @@ fileLicense = os.path.join(dirDoc, 'LICENCE')
 
 
 # --- DBus constants
-dbusService   = 'org.mpris.dap'
+dbusService   = 'org.mpris.pogo'
 dbusInterface = 'org.freedesktop.MediaPlayer'
 
 
@@ -107,14 +107,14 @@ UNKNOWN_ALBUM_ARTIST = _('Unknown Album Artist')
 # --- Drag'n'Drop
 (
     DND_URI,          # From another application (e.g., from Nautilus)
-    DND_DAP_URI,      # Inside DAP when tags are not known (e.g., from the FileExplorer)
-    DND_DAP_TRACKS    # Inside DAP when tags are already known (e.g., from the Library)
+    DND_POGO_URI,      # Inside Pogo when tags are not known (e.g., from the FileExplorer)
+    DND_POGO_TRACKS    # Inside Pogo when tags are already known (e.g., from the Library)
 ) = range(3)
 
 DND_TARGETS = {
-                DND_URI:        ('text/uri-list',   0,                   DND_URI),
-                DND_DAP_URI:    ('dap/uri-list',    gtk.TARGET_SAME_APP, DND_DAP_URI),
-                DND_DAP_TRACKS: ('dap/tracks-list', gtk.TARGET_SAME_APP, DND_DAP_TRACKS)
+                DND_URI:         ('text/uri-list',   0,                   DND_URI),
+                DND_POGO_URI:    ('pogo/uri-list',    gtk.TARGET_SAME_APP, DND_POGO_URI),
+                DND_POGO_TRACKS: ('pogo/tracks-list', gtk.TARGET_SAME_APP, DND_POGO_TRACKS)
               }
 
 

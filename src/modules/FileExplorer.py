@@ -75,7 +75,7 @@ class FileExplorer(modules.Module):
         self.tree = extTreeview.ExtTreeView(columns, True)
 
         self.scrolled.add(self.tree)
-        self.tree.setDNDSources([consts.DND_TARGETS[consts.DND_DAP_URI]])
+        self.tree.setDNDSources([consts.DND_TARGETS[consts.DND_POGO_URI]])
         self.tree.connect('drag-data-get', self.onDragDataGet)
         self.tree.connect('key-press-event', self.onKeyPressed)
         self.tree.connect('exttreeview-button-pressed', self.onMouseButton)

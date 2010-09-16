@@ -1,9 +1,9 @@
 [Desktop Entry]
-Name=Decibel Audio Player
-Exec=decibel-audio-player
+Name=Pogo
+Exec=pogo
 Terminal=false
 Type=Application
-Icon=decibel-audio-player
+Icon=pogo
 StartupNotify=true
 
 GenericName=Audio Player

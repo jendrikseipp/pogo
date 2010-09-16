@@ -15,4 +15,4 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301 USA
 
-python prefix/share/decibel-audio-player/src/decibel-audio-player.py "$@" &
+python prefix/share/pogo/src/pogo.py "$@" &

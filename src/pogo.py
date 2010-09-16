@@ -31,7 +31,7 @@ optparser.add_option('--multiple-instances', action='store_true', default=False,
 (optOptions, optArgs) = optparser.parse_args()
 
 
-# Check whether DAP is already running?
+# Check whether Pogo is already running?
 if not optOptions.multiple_instances:
     shouldStop  = False
     dbusSession = None

@@ -69,13 +69,13 @@ if not cmdLineOk:
 session        = dbus.SessionBus()
 activeServices = session.get_object('org.freedesktop.DBus', '/org/freedesktop/DBus').ListNames()
 
-if 'org.mpris.dap' not in activeServices:
-    print 'Decibel Audio Player is not running, or D-Bus support is not available'
+if 'org.mpris.pogo' not in activeServices:
+    print 'Pogo is not running, or D-Bus support is not available'
     sys.exit(2)
 
 cmd       = commands[cmdName][CMD_NAME]
-player    = dbus.Interface(session.get_object('org.mpris.dap', '/Player'),    'org.freedesktop.MediaPlayer')
-tracklist = dbus.Interface(session.get_object('org.mpris.dap', '/TrackList'), 'org.freedesktop.MediaPlayer')
+player    = dbus.Interface(session.get_object('org.mpris.pogo', '/Player'),    'org.freedesktop.MediaPlayer')
+tracklist = dbus.Interface(session.get_object('org.mpris.pogo', '/TrackList'), 'org.freedesktop.MediaPlayer')
 
 if   cmd == SET:      tracklist.SetTracks(sys.argv[2:], True)
 elif cmd == ADD:

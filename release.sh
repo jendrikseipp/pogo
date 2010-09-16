@@ -1,8 +1,8 @@
 #!/bin/sh
 
 VERSION=`cat control-install | grep "Version" | cut -d\  -f2`
-ARCHIVE="decibel-audio-player-"$VERSION".tar.gz"
-DEST='./decibel-audio-player-'$VERSION
+ARCHIVE="pogo-"$VERSION".tar.gz"
+DEST='./pogo-'$VERSION
 
 if [ -d $DEST ]; then
   rm -rf $DEST
@@ -22,9 +22,9 @@ cp -R ./pix/ $DEST/
 
 # Resources
 mkdir $DEST/res/
-cd res
-./optiglade.py
-cd ..
+#cd res
+#./optiglade.py
+#cd ..
 cp ./res/*.glade $DEST/res/
 cp ./res/*.desktop $DEST/res/
 

@@ -91,7 +91,7 @@ class DesktopNotification(modules.Module):
         title = self.currTrack.format(prefs.get(__name__, 'title', PREFS_DEFAULT_TITLE))
 
         # Icon
-        if self.currCover is None: img = os.path.join(consts.dirPix, 'decibel-audio-player-64.png')
+        if self.currCover is None: img = consts.fileImgIcon64
         else:                      img = self.currCover
 
         if os.path.isfile(img): icon = 'file://' + img
