@@ -2,7 +2,7 @@
 
 VERSION=`cat control-install | grep "Version" | cut -d\  -f2`
 ARCHIVE="pogo-"$VERSION".tar.gz"
-DEST='./pogo-'$VERSION
+DEST='pogo-'$VERSION
 
 if [ -d $DEST ]; then
   rm -rf $DEST
@@ -49,4 +49,4 @@ find $DEST -type d -name ".bzr" -exec rm -rf {} \; > /dev/null 2>&1
 find $DEST/src -type f ! -name "*.py" -exec rm -f {} \;
 
 tar czf $ARCHIVE $DEST
-rm -rf $DEST
+#rm -rf $DEST
