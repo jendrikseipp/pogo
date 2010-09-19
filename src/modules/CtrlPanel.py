@@ -185,11 +185,7 @@ class CtrlPanel(modules.Module):
 
 
     def onSeekChangingValue(self, range, scroll, value):
-        """ The user is moving the seek slider """
-        print 'onSeekChangingValue', scroll
-        if scroll in [gtk.SCROLL_PAGE_FORWARD, gtk.SCROLL_PAGE_BACKWARD]:
-            return True
-        
+        """ The user is moving the seek slider """        
         self.sclBeingDragged = True
 
         if value >= self.currTrackLength: value = self.currTrackLength
@@ -204,25 +200,26 @@ class CtrlPanel(modules.Module):
         '''
         Let left-clicks behave as middle-clicks -> Jump to correct position
         '''
-        print 'BUTTON PRESSED', event.button
         # Leftclick
         if event.button == 1:
             self.sclBeingDragged = True
-            self.sclJumping = True
-            #event.button = 2
-            #widget.emit('button-press-event', event)
+            event.button = 2
+            # Middleclick
+            widget.emit('button-press-event', event)
             return True
+            
             
     def onSeekButtonReleased(self, widget, event):
         '''
         Let left-clicks behave as middle-clicks -> Jump to correct position
         '''
-        print 'BUTTON RELEASED', event.button
         # Leftclick
         if event.button == 1:
             self.sclBeingDragged = True
             event.button = 2
-            widget.emit('button-press-event', event)
+            # Middleclick
+            widget.emit('button-release-event', event)
+            return True
 
 
     def onVolumeValueChanged(self, button, value):
