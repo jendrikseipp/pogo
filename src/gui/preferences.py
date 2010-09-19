@@ -58,10 +58,13 @@ class Preferences:
         self.fillList()
         # GTK handlers
         self.window.getWidget('btn-help').connect('clicked', self.onHelp)
-        self.list.connect('extlistview-button-pressed', self.onButtonPressed)
+        #self.list.connect('extlistview-button-pressed', self.onButtonPressed)
         self.list.get_selection().connect('changed', self.onSelectionChanged)
         self.window.getWidget('btn-prefs').connect('clicked', self.onPreferences)
         self.window.getWidget('btn-close').connect('clicked', lambda btn: self.window.hide())
+        
+        ##
+        self.list.connect('row_activated', self.onRowActivated)
 
 
     def show(self):
@@ -84,7 +87,6 @@ class Preferences:
             if configurable or not mandatory:
                 if configurable and instance is not None: icon = tools.icons.prefsBtnIcon()
                 else:                                     icon = None
-
                 text = '<b>%s</b>\n<small>%s</small>' % (tools.htmlEscape(_(name)), tools.htmlEscape(data[modules.MOD_INFO][modules.MODINFO_DESC]))
                 rows.append((instance is not None, text, icon, not mandatory, instance, data[modules.MOD_INFO]))
 
@@ -93,6 +95,13 @@ class Preferences:
 
 
     # --== GTK handlers ==--
+    
+    
+    def onRowActivated(self, list, path, column):
+        # Double-clicking an enabled and configurable module opens the configuration dialog
+        row = self.list.getRow(path)
+        if row[ROW_ENABLED] and row[ROW_ICON] is not None:
+            row[ROW_INSTANCE].configure(self.window)
 
 
     def onButtonPressed(self, list, event, path):
