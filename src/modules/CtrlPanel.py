@@ -62,6 +62,7 @@ class CtrlPanel(modules.Module):
         """ Real initialization function, called when this module has been loaded """
         self.currTrackLength = 0
         self.sclBeingDragged = False
+        self.sclJumping = False
 
         # Widgets
         wTree             = prefs.getWidgetsTree()
@@ -86,6 +87,11 @@ class CtrlPanel(modules.Module):
         self.btnPlay.connect('clicked', lambda widget: modules.postMsg(consts.MSG_CMD_TOGGLE_PAUSE))
         self.sclSeek.connect('change-value', self.onSeekChangingValue)
         self.sclSeek.connect('value-changed', self.onSeekValueChanged)
+        
+        ## Left mouse click jumps to current position
+        self.sclSeek.connect('button-press-event', self.onSeekButtonPressed)
+        self.sclSeek.connect('button-release-event', self.onSeekButtonReleased)
+        
         self.btnVolume.connect('value-changed', self.onVolumeValueChanged)
 
 
@@ -173,12 +179,17 @@ class CtrlPanel(modules.Module):
 
     def onSeekValueChanged(self, range):
         """ The user has moved the seek slider """
+        print 'onSeekValueChanged'
         modules.postMsg(consts.MSG_CMD_SEEK, {'seconds': int(range.get_value())})
         self.sclBeingDragged = False
 
 
     def onSeekChangingValue(self, range, scroll, value):
         """ The user is moving the seek slider """
+        print 'onSeekChangingValue', scroll
+        if scroll in [gtk.SCROLL_PAGE_FORWARD, gtk.SCROLL_PAGE_BACKWARD]:
+            return True
+        
         self.sclBeingDragged = True
 
         if value >= self.currTrackLength: value = self.currTrackLength
@@ -187,6 +198,31 @@ class CtrlPanel(modules.Module):
         ##self.lblElapsed.set_label(sec2str(value))
         ##self.lblRemaining.set_label(sec2str(self.currTrackLength - value))
         self.set_time(value)
+        
+        
+    def onSeekButtonPressed(self, widget, event):
+        '''
+        Let left-clicks behave as middle-clicks -> Jump to correct position
+        '''
+        print 'BUTTON PRESSED', event.button
+        # Leftclick
+        if event.button == 1:
+            self.sclBeingDragged = True
+            self.sclJumping = True
+            #event.button = 2
+            #widget.emit('button-press-event', event)
+            return True
+            
+    def onSeekButtonReleased(self, widget, event):
+        '''
+        Let left-clicks behave as middle-clicks -> Jump to correct position
+        '''
+        print 'BUTTON RELEASED', event.button
+        # Leftclick
+        if event.button == 1:
+            self.sclBeingDragged = True
+            event.button = 2
+            widget.emit('button-press-event', event)
 
 
     def onVolumeValueChanged(self, button, value):
