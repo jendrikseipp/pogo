@@ -54,6 +54,8 @@ class CtrlPanel(modules.Module):
         #remaining = sec2str(self.currTrackLength - seconds)
         total = sec2str(self.currTrackLength)
         self.lblRemaining.set_label('%s / %s' % (elapsed, total))
+        self.sclSeek.set_tooltip_text(elapsed)
+        
 
    # --== Message handler ==--
 
@@ -93,6 +95,9 @@ class CtrlPanel(modules.Module):
         self.sclSeek.connect('button-release-event', self.onSeekButtonReleased)
         
         self.btnVolume.connect('value-changed', self.onVolumeValueChanged)
+        
+        ## Do not show time in panel
+        self.lblRemaining.hide()
 
 
     def onAppQuit(self):
