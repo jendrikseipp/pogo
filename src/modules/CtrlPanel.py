@@ -115,7 +115,7 @@ class CtrlPanel(modules.Module):
         self.currTrackLength = track.getLength()
         self.sclSeek.show()
         ##self.lblElapsed.show()
-        self.lblRemaining.show()
+        ##self.lblRemaining.show()
         self.onNewTrackPosition(0)
 
         # Must be done last
