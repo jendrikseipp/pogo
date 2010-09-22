@@ -24,7 +24,7 @@ from gettext import gettext as _
 from os.path import isdir, isfile
 from gobject import idle_add, TYPE_STRING, TYPE_INT
 
-MOD_INFO = ('File Explorer', _('File Explorer'), _('Browse your file system'), [], True, True)
+MOD_INFO = ('File Explorer', _('File Explorer'), _('Browse your file system'), [], True, False)
 MOD_L10N = MOD_INFO[modules.MODINFO_L10N]
 
 # Default preferences
