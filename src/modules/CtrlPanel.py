@@ -25,7 +25,7 @@ MOD_INFO = ('Control Panel', 'Control Panel', '', [], True, False)
 
 PREFS_DEFAULT_VOLUME = 0.65
 
-PLAY_PAUSE_ICON_SIZE = gtk.ICON_SIZE_DND
+PLAY_PAUSE_ICON_SIZE = gtk.ICON_SIZE_LARGE_TOOLBAR
 
 
 class CtrlPanel(modules.Module):
@@ -64,7 +64,6 @@ class CtrlPanel(modules.Module):
         """ Real initialization function, called when this module has been loaded """
         self.currTrackLength = 0
         self.sclBeingDragged = False
-        self.sclJumping = False
 
         # Widgets
         wTree             = prefs.getWidgetsTree()
@@ -98,6 +97,45 @@ class CtrlPanel(modules.Module):
         
         ## Do not show time in panel
         self.lblRemaining.hide()
+        
+        ## Add pref button
+        print 'ADD BUTTON'
+        
+        menu_button = gtk.MenuToolButton(None, None)
+        hbox = menu_button.get_child()
+        button, toggle_button = hbox.get_children()
+        hbox.remove(button)
+
+        img = gtk.image_new_from_stock(gtk.STOCK_PREFERENCES,
+                                       gtk.ICON_SIZE_SMALL_TOOLBAR)
+
+        arrow = toggle_button.get_child()
+        toggle_button.remove(arrow)
+        hbox = gtk.HBox()
+        hbox.add(img)
+        #hbox.add(gtk.Label('hello'))
+        #hbox.add(arrow)
+        toggle_button.add(hbox)
+        menu_button.show()
+        
+        
+        toolbar_hbox = wTree.get_widget('hbox3')
+        from gui.widgets import PopupMenuButton
+        self.ctrl_button = PopupMenuButton(label='oho')
+        image = gtk.Image()
+        image.set_from_stock(gtk.STOCK_MEDIA_RECORD, gtk.ICON_SIZE_BUTTON)
+        #self.ctrl_button.set_image(image)
+        self.ctrl_button.set_property("image", image)
+        menubar = wTree.get_widget('menubar')
+        menubar.hide()
+        menu = wTree.get_widget('menu-edit')
+        #self.ctrl_button.set_menu(menu)
+        #toolbar_hbox.pack_end(self.ctrl_button, False)
+        toolbar_hbox.pack_end(menu_button, False)
+        menu_button.set_menu(menu)
+        self.ctrl_button.show()
+        print 'ADDED BUTTON'
+        
 
 
     def onAppQuit(self):
