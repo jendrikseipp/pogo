@@ -60,11 +60,13 @@ class Preferences:
         self.window.getWidget('btn-help').connect('clicked', self.onHelp)
         #self.list.connect('extlistview-button-pressed', self.onButtonPressed)
         self.list.get_selection().connect('changed', self.onSelectionChanged)
-        self.window.getWidget('btn-prefs').connect('clicked', self.onPreferences)
+        ##self.window.getWidget('btn-prefs').connect('clicked', self.onPreferences)
         self.window.getWidget('btn-close').connect('clicked', lambda btn: self.window.hide())
         
         ##
         self.list.connect('row_activated', self.onRowActivated)
+        self.prefs_button = self.window.getWidget('btn-prefs')
+        self.prefs_button.connect('clicked', self.onPreferences)
 
 
     def show(self):
@@ -72,7 +74,8 @@ class Preferences:
         if not self.window.isVisible():
             self.list.unselectAll()
             self.window.getWidget('btn-close').grab_focus()
-            self.window.getWidget('btn-prefs').set_sensitive(False)
+            ##self.window.getWidget('btn-prefs').set_sensitive(False)
+            self.prefs_button.set_sensitive(False)
         self.window.show()
 
 
@@ -104,13 +107,13 @@ class Preferences:
             row[ROW_INSTANCE].configure(self.window)
 
 
-    def onButtonPressed(self, list, event, path):
-        """ A mouse button has been pressed """
-        if event.button == 1 and event.type == gtk.gdk._2BUTTON_PRESS and path is not None:
-            # Double-clicking an enabled and configurable module opens the configuration dialog
-            row = self.list.getRow(path)
-            if row[ROW_ENABLED] and row[ROW_ICON] is not None:
-                row[ROW_INSTANCE].configure(self.window)
+    #def onButtonPressed(self, list, event, path):
+    #    """ A mouse button has been pressed """
+    #    if event.button == 1 and event.type == gtk.gdk._2BUTTON_PRESS and path is not None:
+    #        # Double-clicking an enabled and configurable module opens the configuration dialog
+    #        row = self.list.getRow(path)
+    #        if row[ROW_ENABLED] and row[ROW_ICON] is not None:
+    #            row[ROW_INSTANCE].configure(self.window)
 
 
     def onModuleToggled(self, renderer, path):
@@ -146,7 +149,12 @@ class Preferences:
     def onSelectionChanged(self, selection):
         """ Decide whether the new selection may be configured """
         sensitive = self.list.getSelectedRowsCount() == 1 and self.list.getFirstSelectedRow()[ROW_ICON] is not None
-        self.window.getWidget('btn-prefs').set_sensitive(sensitive)
+        self.prefs_button.set_sensitive(sensitive)
+        ## Maybe causes segfault
+        #import gobject
+        #gobject.idle_add(self.prefs_button.grab_focus)
+        ## Does not work by itself
+        #self.prefs_button.grab_focus()
 
 
     def onPreferences(self, btn):
