@@ -116,6 +116,10 @@ class TrackPanel(modules.Module):
         # GTK handlers
         evtBox.connect('leave-notify-event', self.onImgMouseLeave)
         evtBox.connect('enter-notify-event', self.onImgMouseEnter)
+        
+        ##
+        self.txtTitle.hide()
+        self.txtMisc.hide()
 
 
     def onNewTrack(self, track):
@@ -123,9 +127,11 @@ class TrackPanel(modules.Module):
         self.currTrack = track
 
         self.__setTitle(track.getTitle(), track.getLength())
+        title = tools.htmlEscape(track.getTitle())
         artist = tools.htmlEscape(track.getArtist())
         album = tools.htmlEscape(track.getExtendedAlbum())
-        self.txtMisc.set_markup(_('by <i>%(artist)s</i> from <i>%(album)s</i>' % {'artist': artist, 'album': album}))
+        #self.txtMisc.set_markup(_('by <i>%(artist)s</i> from <i>%(album)s</i>' % {'artist': artist, 'album': album}))
+        self.txtMisc.set_markup('<b>%(artist)s - %(title)s</b>' % locals())
 
 
     def onStopped(self):
@@ -135,7 +141,7 @@ class TrackPanel(modules.Module):
 
         self.__setImage(None)
         self.__setTitle(consts.appName)
-        self.txtMisc.set_text('...Simples!')
+        self.txtMisc.set_text('... simply music')
 
 
     def onSetCover(self, track, pathThumbnail, pathFullSize):
