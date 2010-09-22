@@ -345,11 +345,13 @@ class Track:
         number = str(number).zfill(2)
         
         if parent_label:
-            parent_label = 'the ' + parent_label.strip().lower()
-            if album.strip().lower() in parent_label:
+            parent_label = parent_label.strip().lower()
+            short_album = album[3:] if album.lower().startswith('the') else album
+            if short_album.strip().lower() in parent_label:
                 album = ''
             #print artist.strip().lower(), 'IN', parent_label, artist.strip().lower() in parent_label
-            if artist.strip().lower() in parent_label:
+            short_artist = artist[3:] if artist.lower().startswith('the') else artist
+            if short_artist.strip().lower() in parent_label:
                 artist = ''
                 
         # Handle useless tags
