@@ -30,6 +30,8 @@ from os.path         import splitext
 from tools.log       import logger
 from track.fileTrack import FileTrack
 
+import tools
+
 
 # Supported formats with associated modules
 mFormats = {'.ac3': monkeysaudio, '.ape': monkeysaudio, '.flac': flac, '.m4a': mp4, '.mp2': mp3, '.mp3': mp3, '.mp4': mp4, '.mpc': mpc,'.oga': ogg, '.ogg': ogg, '.wma': asf, '.wv': wavpack}
@@ -94,18 +96,6 @@ def getTracksFlat(filenames, sortByFilename=False):
     return allTracks
    
     
-def dirname(dir):
-    '''
-    returns the last dirname in path
-    '''
-    dir = os.path.abspath(dir)
-    # Remove double slashes and last slash
-    dir = os.path.normpath(dir)
-    
-    dirname, basename = os.path.split(dir)
-    # Return "/" if journal is located at /
-    return basename or dirname
-    
 
 class TrackDir(object):
     def __init__(self, name='', dir=None, flat=False):
@@ -113,7 +103,7 @@ class TrackDir(object):
         if name:
             self.dirname = name
         elif dir:
-            self.dirname = dirname(dir)
+            self.dirname = tools.dirname(dir)
         else:
             self.dirname = 'noname'
         

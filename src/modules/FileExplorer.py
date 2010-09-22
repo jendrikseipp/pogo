@@ -58,7 +58,7 @@ class FileExplorer(modules.Module):
         handlers = {
                         consts.MSG_EVT_APP_QUIT:         self.onAppQuit,
                         consts.MSG_EVT_APP_STARTED:      self.onAppStarted,
-                        consts.MSG_EVT_EXPLORER_CHANGED: self.onExplorerChanged,
+                        #consts.MSG_EVT_EXPLORER_CHANGED: self.onExplorerChanged,
                    }
 
         modules.Module.__init__(self, handlers)
@@ -398,6 +398,53 @@ class FileExplorer(modules.Module):
         """ Provide information about the data being dragged """
         import urllib
         selection.set('text/uri-list', 8, ' '.join([urllib.pathname2url(file) for file in [row[ROW_FULLPATH] for row in tree.getSelectedRows()]]))
+        
+        
+    def add_dir(self, path):
+        name = tools.dirname(path)
+        name = tools.htmlEscape(unicode(name, errors='replace'))
+        parent = self.tree.appendRow((icons.dirMenuIcon(), name, TYPE_DIR, path), None)
+        self.exploreDir(parent, path)
+        
+        
+    def populate_tree(self):
+        '''
+        Bookmarks code from Quod Libet
+        '''
+        if self.tree is None:
+            self.createTree()
+            
+        folders = [consts.dirBaseUsr, '/']
+        
+        import urlparse, urllib2
+        
+        # Read in the GTK bookmarks list; gjc says this is the right way
+        try:
+            with open(os.path.join(consts.dirBaseUsr, ".gtk-bookmarks")) as f:
+                folders.append(None)
+                for line in f.readlines():
+                    folder_url = line.split()[0]
+                    path = urlparse.urlsplit(folder_url)[2]
+                    # "My%20folder" -> "My folder"
+                    path = urllib2.unquote(path)
+                    folders.append(path)
+        except EnvironmentError:
+            pass
+
+        def is_folder(filename):
+            return filename is None or os.path.isdir(filename)
+        folders = filter(is_folder, folders)
+        if folders[-1] is None:
+            folders.pop()
+        
+        self.tree.set_row_separator_func(lambda model, iter: model[iter][ROW_NAME] is None)
+        
+        for path in folders:
+            if path is None:
+                # Separator
+                self.tree.appendRow((icons.nullMenuIcon(), None, TYPE_NONE, None), None)
+            else:
+                self.add_dir(path)
 
 
    # --== Message handlers ==--
@@ -420,6 +467,9 @@ class FileExplorer(modules.Module):
 
         for name in self.folders:
             modules.postMsg(consts.MSG_CMD_EXPLORER_ADD, {'modName': MOD_L10N, 'expName': name, 'icon': icons.dirMenuIcon(), 'widget': self.scrolled})
+        
+        ##
+        self.populate_tree()
 
 
     def onAppQuit(self):

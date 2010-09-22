@@ -175,3 +175,16 @@ def htmlEscape(string):
         else:          output += c
 
     return output
+    
+    
+def dirname(dir):
+    '''
+    returns the last dirname in path
+    '''
+    dir = os.path.abspath(dir)
+    # Remove double slashes and last slash
+    dir = os.path.normpath(dir)
+    
+    dirname, basename = os.path.split(dir)
+    # Return "/" if journal is located at /
+    return basename or dirname
