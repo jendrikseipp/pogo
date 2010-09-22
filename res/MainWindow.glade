@@ -183,7 +183,7 @@
                         <child>
                           <widget class="GtkImage" id="image1">
                             <property name="stock">gtk-media-play</property>
-                            <property name="icon-size">5</property>
+                            <property name="icon-size">3</property>
                           </widget>
                         </child>
                       </widget>
@@ -360,9 +360,6 @@
               </packing>
             </child>
             <child>
-              <placeholder/>
-            </child>
-            <child>
               <widget class="GtkVolumeButton" id="btn-volume">
                 <property name="can_focus">True</property>
                 <property name="receives_default">True</property>
@@ -395,7 +392,6 @@ audio-volume-medium</property>
             <child>
               <widget class="GtkVBox" id="vbox3">
                 <property name="border_width">5</property>
-                <property name="spacing">5</property>
                 <child>
                   <widget class="GtkNotebook" id="notebook-explorer">
                     <property name="can_focus">True</property>
@@ -436,7 +432,6 @@ audio-volume-medium</property>
             <child>
               <widget class="GtkVBox" id="vbox2">
                 <property name="border_width">5</property>
-                <property name="spacing">5</property>
                 <child>
                   <placeholder/>
                 </child>
