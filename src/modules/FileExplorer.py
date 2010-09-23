@@ -426,24 +426,29 @@ class FileExplorer(modules.Module):
                 
         
         import urlparse, urllib2
-        import re
-        folder_regex = re.compile(r'XDG_MUSIC_DIR\=\"\$HOME/(.+)\"')
         
         # Read XDG music directory
         xdg_file = os.path.join(consts.dirBaseUsr, '.config', 'user-dirs.dirs')
         if os.path.exists(xdg_file):
-            print 'EXISTS'
             with open(xdg_file) as f:
+                import re
+                folder_regex = re.compile(r'XDG_MUSIC_DIR\=\"\$HOME/(.+)\"')
+                
                 content = f.read()
-                print content
                 match = folder_regex.search(content)
-                if match:
+                if False and match:
                     dirname = match.group(1)
                     path = os.path.join(consts.dirBaseUsr, dirname)
                     folders.append(None)
                     add_path(path, prepend=False)
                 else:
-                    print 'FOUND nothing'
+                    # Try other music folders
+                    names = ['Music', 'Albums', _('Music'), _('Albums')]
+                    for name in names:
+                        for case in [name, name.lower()]:
+                            music_folder = os.path.join(consts.dirBaseUsr, name)
+                            if os.path.isdir(music_folder):
+                                add_path(music_folder)
                 
         
         # Read in the GTK bookmarks list; gjc says this is the right way
