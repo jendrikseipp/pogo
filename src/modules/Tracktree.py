@@ -163,11 +163,14 @@ class Tracktree(modules.Module):
             
         for parent in self.tree.get_all_parents(iter):
             parent_label = self.tree.getLabel(parent)
+            parent_label = tools.htmlUnescape(parent_label)
             is_bold = parent_label.startswith('<b>') and parent_label.endswith('</b>')
             if playing and not is_bold:
-                    self.tree.setLabel(parent, '<b>%s</b>' % parent_label)
+                parent_label = tools.htmlEscape(parent_label)
+                self.tree.setLabel(parent, '<b>%s</b>' % parent_label)
             elif not playing and is_bold:
-                self.tree.setLabel(parent, parent_label[3:-4])
+                parent_label = tools.htmlEscape(parent_label[3:-4])
+                self.tree.setLabel(parent, parent_label)
             
         parent = self.tree.store.iter_parent(iter)
         parent_label = self.tree.getLabel(parent) if parent else None

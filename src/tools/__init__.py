@@ -177,6 +177,14 @@ def htmlEscape(string):
     return output
     
     
+def htmlUnescape(s):
+    s = s.replace("&lt;", "<")
+    s = s.replace("&gt;", ">")
+    # this has to be last:
+    s = s.replace("&amp;", "&")
+    return s
+    
+    
 def dirname(dir):
     '''
     returns the last dirname in path
