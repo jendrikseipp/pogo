@@ -419,17 +419,19 @@ class FileExplorer(modules.Module):
         import urlparse, urllib2
         
         # Read in the GTK bookmarks list; gjc says this is the right way
-        try:
-            with open(os.path.join(consts.dirBaseUsr, ".gtk-bookmarks")) as f:
-                folders.append(None)
-                for line in f.readlines():
-                    folder_url = line.split()[0]
-                    path = urlparse.urlsplit(folder_url)[2]
-                    # "My%20folder" -> "My folder"
-                    path = urllib2.unquote(path)
-                    folders.append(path)
-        except EnvironmentError:
-            pass
+        bookmarks_file = os.path.join(consts.dirBaseUsr, ".gtk-bookmarks")
+        if os.path.exists(bookmarks_file):
+            try:
+                with open(bookmarks_file) as f:
+                    folders.append(None)
+                    for line in f.readlines():
+                        folder_url = line.split()[0]
+                        path = urlparse.urlsplit(folder_url)[2]
+                        # "My%20folder" -> "My folder"
+                        path = urllib2.unquote(path)
+                        folders.append(path)
+            except EnvironmentError:
+                pass
 
         def is_folder(filename):
             return filename is None or os.path.isdir(filename)
@@ -465,10 +467,15 @@ class FileExplorer(modules.Module):
         self.scrolled.set_policy(gtk.POLICY_AUTOMATIC, gtk.POLICY_AUTOMATIC)
         self.scrolled.show()
 
-        for name in self.folders:
-            modules.postMsg(consts.MSG_CMD_EXPLORER_ADD, {'modName': MOD_L10N, 'expName': name, 'icon': icons.dirMenuIcon(), 'widget': self.scrolled})
+        #for name in self.folders:
+        #    modules.postMsg(consts.MSG_CMD_EXPLORER_ADD, {'modName': MOD_L10N, 'expName': name, 'icon': icons.dirMenuIcon(), 'widget': self.scrolled})
         
         ##
+        combo = prefs.getWidgetsTree().get_widget('combo-explorer')
+        combo.hide()
+        self.notebook = prefs.getWidgetsTree().get_widget('notebook-explorer')
+        self.notebook.append_page(self.scrolled)
+        self.notebook.set_current_page(1)
         self.populate_tree()
 
 

@@ -40,10 +40,11 @@ class Explorer(modules.Module):
     def __init__(self):
         """ Constructor """
         modules.Module.__init__(self, {
-                                           consts.MSG_CMD_EXPLORER_ADD:    self.onAddExplorer,
-                                           consts.MSG_CMD_EXPLORER_REMOVE: self.onRemoveExplorer,
-                                           consts.MSG_CMD_EXPLORER_RENAME: self.onRenameExplorer,
+                                           ##consts.MSG_CMD_EXPLORER_ADD:    self.onAddExplorer,
+                                           ##consts.MSG_CMD_EXPLORER_REMOVE: self.onRemoveExplorer,
+                                           ##consts.MSG_CMD_EXPLORER_RENAME: self.onRenameExplorer,
                                       })
+        return
 
         # Attributes
         self.store           = gtk.ListStore(gtk.gdk.Pixbuf, gobject.TYPE_STRING, gobject.TYPE_STRING, gobject.TYPE_INT, gobject.TYPE_BOOLEAN)
