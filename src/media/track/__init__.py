@@ -344,14 +344,20 @@ class Track:
         
         number = str(number).zfill(2)
         
+        connectors = ['the', 'and', '&']
+        
         if parent_label:
-            parent_label = parent_label.strip().lower()
-            short_album = album[3:] if album.lower().startswith('the') else album
-            if short_album.strip().lower() in parent_label:
+            parent_label = parent_label.lower()
+            short_album = album.lower()
+            short_artist = artist.lower()
+            for connector in connectors:
+                parent_label = parent_label.replace(connector, '')
+                short_album = short_album.replace(connector, '')
+                short_artist = short_artist.replace(connector, '')
+            parent_label = parent_label.strip()
+            if short_album.strip() in parent_label:
                 album = ''
-            #print artist.strip().lower(), 'IN', parent_label, artist.strip().lower() in parent_label
-            short_artist = artist[3:] if artist.lower().startswith('the') else artist
-            if short_artist.strip().lower() in parent_label:
+            if short_artist.strip() in parent_label:
                 artist = ''
                 
         # Handle useless tags

@@ -244,7 +244,7 @@ class Tracktree(modules.Module):
             new = target
         else:
             string = trackdir.dirname.replace('_', ' ')
-            string = gobject.markup_escape_text(string)
+            string = tools.htmlEscape(string)
             source_row = (icons.mediaDirMenuIcon(), string, None)
             
             new = self.tree.insert(target, source_row, drop_mode)
