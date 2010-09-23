@@ -28,7 +28,7 @@ MOD_INFO = ('File Explorer', _('File Explorer'), _('Browse your file system'), [
 MOD_L10N = MOD_INFO[modules.MODINFO_L10N]
 
 # Default preferences
-PREFS_DEFAULT_MEDIA_FOLDERS     = {_('Home'): consts.dirBaseUsr, _('Root'): '/'}    # List of media folders that are used as roots for the file explorer
+##PREFS_DEFAULT_MEDIA_FOLDERS     = {_('Home'): consts.dirBaseUsr, _('Root'): '/'}    # List of media folders that are used as roots for the file explorer
 PREFS_DEFAULT_ADD_BY_FILENAME   = False                                             # True if files should be added to the playlist by their filename
 PREFS_DEFAULT_SHOW_HIDDEN_FILES = False                                             # True if hidden files should be shown
 
@@ -121,29 +121,17 @@ class FileExplorer(modules.Module):
 
     def saveTreeState(self):
         """ Return a dictionary representing the current state of the tree """
-        if self.currRoot is not None:
-            self.treeState[self.currRoot] = {
-                        'tree-state':     self.getTreeDump(),
-                        'selected-paths': self.tree.getSelectedPaths(),
-                        'vscrollbar-pos': self.scrolled.get_vscrollbar().get_value(),
-                        'hscrollbar-pos': self.scrolled.get_hscrollbar().get_value(),
-                   }
+        self.treeState = {
+                    'tree-state':     self.getTreeDump(),
+                    'selected-paths': self.tree.getSelectedPaths(),
+                    'vscrollbar-pos': self.scrolled.get_vscrollbar().get_value(),
+                    'hscrollbar-pos': self.scrolled.get_hscrollbar().get_value(),
+                    }
 
 
     def sortKey(self, row):
         """ Key function used to compare two rows of the tree """
         return row[ROW_NAME].lower()
-
-
-    def setShowHiddenFiles(self, showHiddenFiles):
-        """ Show/hide hidden files """
-        if showHiddenFiles != self.showHiddenFiles:
-            # Update the configuration window if needed
-            if self.cfgWin is not None and self.cfgWin.isVisible():
-                self.cfgWin.getWidget('chk-hidden').set_active(showHiddenFiles)
-
-            self.showHiddenFiles = showHiddenFiles
-            self.refresh()
 
 
     def play(self, replace, path=None):
@@ -159,18 +147,6 @@ class FileExplorer(modules.Module):
 
         if replace: modules.postMsg(consts.MSG_CMD_TRACKLIST_SET, {'tracks': tracks, 'playNow': True})
         else:       modules.postMsg(consts.MSG_CMD_TRACKLIST_ADD, {'tracks': tracks, 'playNow': False})
-
-
-    def renameFolder(self, oldName, newName):
-        """ Rename a folder """
-        self.folders[newName] = self.folders[oldName]
-        del self.folders[oldName]
-
-        if oldName in self.treeState:
-            self.treeState[newName] = self.treeState[oldName]
-            del self.treeState[oldName]
-
-        modules.postMsg(consts.MSG_CMD_EXPLORER_RENAME, {'modName': MOD_L10N, 'expName': oldName, 'newExpName': newName})
 
 
     # --== Tree management ==--
@@ -197,7 +173,7 @@ class FileExplorer(modules.Module):
         mediaFiles  = []
         directories = []
 
-        for (file, path) in tools.listDir(directory, self.showHiddenFiles):
+        for (file, path) in tools.listDir(directory):
             if isdir(path):
                 directories.append((icons.dirMenuIcon(), tools.htmlEscape(unicode(file, errors='replace')), TYPE_DIR, path))
             elif isfile(path):
@@ -241,14 +217,16 @@ class FileExplorer(modules.Module):
             directory  = self.tree.getItem(child, ROW_FULLPATH)
             hasContent = False
             if os.access(directory, os.R_OK | os.X_OK):
-                for (file, path) in tools.listDir(directory, self.showHiddenFiles):
+                for (file, path) in tools.listDir(directory):
                     if isdir(path) or (isfile(path) and (media.isSupported(file) or playlist.isSupported(file))):
                         hasContent = True
                         break
 
             # Append/remove children if needed
-            if hasContent and self.tree.getNbChildren(child) == 0:      self.tree.appendRow((icons.dirMenuIcon(), '', TYPE_NONE, ''), child)
-            elif not hasContent and self.tree.getNbChildren(child) > 0: self.tree.removeAllChildren(child)
+            if hasContent and self.tree.getNbChildren(child) == 0:
+                self.tree.appendRow((icons.dirMenuIcon(), '', TYPE_NONE, ''), child)
+            elif not hasContent and self.tree.getNbChildren(child) > 0:
+                self.tree.removeAllChildren(child)
 
             yield True
 
@@ -260,8 +238,13 @@ class FileExplorer(modules.Module):
 
     def refresh(self, treePath=None):
         """ Refresh the tree, starting from treePath """
-        if treePath is None: directory = self.folders[self.currRoot]
-        else:                directory = self.tree.getItem(treePath, ROW_FULLPATH)
+        if treePath is None:
+            # Update all paths
+            for child in self.tree.iterChildren(None):
+                idle_add(self.refresh, child)
+                return
+        
+        directory = self.tree.getItem(treePath, ROW_FULLPATH)
 
         directories, playlists, mediaFiles = self.getDirContents(directory)
 
@@ -404,18 +387,33 @@ class FileExplorer(modules.Module):
         
         
     def add_dir(self, path):
+        '''
+        Add a directory with one fake child to the tree
+        '''
         name = tools.dirname(path)
         name = tools.htmlEscape(unicode(name, errors='replace'))
         parent = self.tree.appendRow((icons.dirMenuIcon(), name, TYPE_DIR, path), None)
-        self.exploreDir(parent, path)
+        fakeChild = self.tree.appendRow((icons.dirMenuIcon(), '', TYPE_NONE, ''), parent)
         
         
     def populate_tree(self):
         '''
         Bookmarks code from Quod Libet
         '''
-        if self.tree is None:
-            self.createTree()
+        assert self.tree is None
+        self.createTree()
+        self.tree.set_row_separator_func(lambda model, iter: model[iter][ROW_NAME] is None)
+            
+        # Restore the tree if we have any to restore, else build new one
+        if self.treeState:
+            self.tree.handler_block_by_func(self.onRowExpanded)
+            self.restoreTreeDump(self.treeState['tree-state'])
+            self.tree.handler_unblock_by_func(self.onRowExpanded)
+            idle_add(self.scrolled.get_vscrollbar().set_value, self.treeState['vscrollbar-pos'])
+            idle_add(self.scrolled.get_hscrollbar().set_value, self.treeState['hscrollbar-pos'])
+            idle_add(self.tree.selectPaths, self.treeState['selected-paths'])
+            idle_add(self.refresh)
+            return
             
         folders = ['/', consts.dirBaseUsr]
         
@@ -426,9 +424,6 @@ class FileExplorer(modules.Module):
                 folders.insert(0, path)
             else:
                 folders.append(path)
-                
-        
-        import urlparse, urllib2
         
         # Read XDG music directory
         xdg_file = os.path.join(consts.dirBaseUsr, '.config', 'user-dirs.dirs')
@@ -439,7 +434,7 @@ class FileExplorer(modules.Module):
                 
                 content = f.read()
                 match = folder_regex.search(content)
-                if False and match:
+                if match:
                     dirname = match.group(1)
                     path = os.path.join(consts.dirBaseUsr, dirname)
                     folders.append(None)
@@ -455,6 +450,7 @@ class FileExplorer(modules.Module):
                 
         
         # Read in the GTK bookmarks list; gjc says this is the right way
+        # import urlparse, urllib2
         #bookmarks_file = os.path.join(consts.dirBaseUsr, ".gtk-bookmarks")
         #if os.path.exists(bookmarks_file):
         #    try:
@@ -475,8 +471,6 @@ class FileExplorer(modules.Module):
         #if folders[-1] is None:
         #    folders.pop()
         
-        self.tree.set_row_separator_func(lambda model, iter: model[iter][ROW_NAME] is None)
-        
         for path in folders:
             if path is None:
                 # Separator
@@ -492,12 +486,12 @@ class FileExplorer(modules.Module):
         """ The module has been loaded """
         self.tree            = None
         self.cfgWin          = None
-        self.folders         = prefs.get(__name__, 'media-folders', PREFS_DEFAULT_MEDIA_FOLDERS)
+        ##self.folders         = prefs.get(__name__, 'media-folders', PREFS_DEFAULT_MEDIA_FOLDERS)
         self.scrolled        = gtk.ScrolledWindow()
-        self.currRoot        = None
-        self.treeState       = prefs.get(__name__, 'saved-states', {})
+        ##self.currRoot        = None
+        self.treeState       = prefs.get(__name__, 'saved-states', None)
         self.addByFilename   = prefs.get(__name__, 'add-by-filename',  PREFS_DEFAULT_ADD_BY_FILENAME)
-        self.showHiddenFiles = prefs.get(__name__, 'show-hidden-files', PREFS_DEFAULT_SHOW_HIDDEN_FILES)
+        ##self.showHiddenFiles = prefs.get(__name__, 'show-hidden-files', PREFS_DEFAULT_SHOW_HIDDEN_FILES)
 
         self.scrolled.set_shadow_type(gtk.SHADOW_IN)
         self.scrolled.set_policy(gtk.POLICY_AUTOMATIC, gtk.POLICY_AUTOMATIC)
@@ -507,51 +501,20 @@ class FileExplorer(modules.Module):
         #    modules.postMsg(consts.MSG_CMD_EXPLORER_ADD, {'modName': MOD_L10N, 'expName': name, 'icon': icons.dirMenuIcon(), 'widget': self.scrolled})
         
         ##
-        combo = prefs.getWidgetsTree().get_widget('combo-explorer')
-        combo.hide()
-        self.notebook = prefs.getWidgetsTree().get_widget('notebook-explorer')
-        self.notebook.append_page(self.scrolled)
-        self.notebook.set_current_page(1)
+        left_vbox = prefs.getWidgetsTree().get_widget('vbox3')
+        left_vbox.pack_start(self.scrolled)
+        
         self.populate_tree()
 
 
     def onAppQuit(self):
         """ The module is going to be unloaded """
         self.saveTreeState()
-        prefs.set(__name__, 'saved-states',      self.treeState)
-        prefs.set(__name__, 'media-folders',     self.folders)
-        prefs.set(__name__, 'add-by-filename',   self.addByFilename)
-        prefs.set(__name__, 'show-hidden-files', self.showHiddenFiles)
-
-
-    def onExplorerChanged(self, modName, expName):
-        """ A new explorer has been selected """
-        if modName == MOD_L10N and self.currRoot != expName:
-            # Create the tree if needed
-            if self.tree is None:
-                self.createTree()
-
-            # Save the state of the current root
-            if self.currRoot is not None:
-                self.saveTreeState()
-                self.tree.clear()
-
-            self.currRoot = expName
-
-            # Restore the state of the new root
-            if expName in self.treeState:
-                self.tree.handler_block_by_func(self.onRowExpanded)
-                self.restoreTreeDump(self.treeState[expName]['tree-state'])
-                self.tree.handler_unblock_by_func(self.onRowExpanded)
-
-                idle_add(self.scrolled.get_vscrollbar().set_value, self.treeState[expName]['vscrollbar-pos'])
-                idle_add(self.scrolled.get_hscrollbar().set_value, self.treeState[expName]['hscrollbar-pos'])
-                idle_add(self.tree.selectPaths, self.treeState[expName]['selected-paths'])
-                idle_add(self.refresh)
-            else:
-                self.exploreDir(None, self.folders[self.currRoot])
-                if len(self.tree) != 0:
-                    self.tree.scroll_to_cell(0)
+        prefs.set(__name__, 'saved-states', self.treeState)
+        ##prefs.set(__name__, 'media-folders',     self.folders)
+        ##prefs.set(__name__, 'add-by-filename',   self.addByFilename)
+        ##prefs.set(__name__, 'show-hidden-files', self.showHiddenFiles)
+        
 
 
     # --== Configuration ==--
@@ -608,50 +571,6 @@ class FileExplorer(modules.Module):
             self.folders[name] = path
             self.populateFolderList()
             modules.postMsg(consts.MSG_CMD_EXPLORER_ADD, {'modName': MOD_L10N, 'expName': name, 'icon': icons.dirMenuIcon(), 'widget': self.scrolled})
-
-
-    def onRemoveSelectedFolder(self, list):
-        """ Remove the selected media folder """
-        import gui
-
-        if list.getSelectedRowsCount() == 1:
-            remark   = _('You will be able to add this root folder again later on if you wish so.')
-            question = _('Remove the selected entry?')
-        else:
-            remark   = _('You will be able to add these root folders again later on if you wish so.')
-            question = _('Remove all selected entries?')
-
-        if gui.questionMsgBox(self.cfgWin, question, '%s %s' % (_('Your media files will not be deleted.'), remark)) == gtk.RESPONSE_YES:
-            for row in self.cfgList.getSelectedRows():
-                name = row[0]
-                modules.postMsg(consts.MSG_CMD_EXPLORER_REMOVE, {'modName': MOD_L10N, 'expName': name})
-                del self.folders[name]
-
-                # Remove the tree, if any, from the scrolled window
-                if self.currRoot == name:
-                    self.currRoot = None
-
-                # Remove the saved state of the tree, if any
-                if name in self.treeState:
-                    del self.treeState[name]
-
-            self.cfgList.removeSelectedRows()
-
-
-    def onRenameFolder(self, btn):
-        """ Let the user rename a folder """
-        from gui import selectPath
-
-        name         = self.cfgList.getSelectedRows()[0][0]
-        forbidden    = [rootName for rootName in self.folders if rootName != name]
-        pathSelector = selectPath.SelectPath(MOD_L10N, self.cfgWin, forbidden)
-
-        pathSelector.setPathSelectionEnabled(False)
-        result = pathSelector.run(name, self.folders[name])
-
-        if result is not None and result[0] != name:
-            self.renameFolder(name, result[0])
-            self.populateFolderList()
 
 
     def onCfgKeyPressed(self, list, event):

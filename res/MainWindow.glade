@@ -323,35 +323,7 @@ audio-volume-medium</property>
                     <child>
                       <widget class="GtkVBox" id="vbox3">
                         <child>
-                          <widget class="GtkNotebook" id="notebook-explorer">
-                            <property name="show_tabs">False</property>
-                            <property name="show_border">False</property>
-                            <property name="tab_border">0</property>
-                            <property name="tab_hborder">0</property>
-                            <property name="tab_vborder">0</property>
-                          </widget>
-                          <packing>
-                            <property name="position">0</property>
-                          </packing>
-                        </child>
-                        <child>
-                          <widget class="GtkHButtonBox" id="hbuttonbox2">
-                            <child>
-                              <widget class="GtkComboBox" id="combo-explorer">
-                                <property name="has_tooltip">True</property>
-                                <property name="tooltip" translatable="yes">Select an explorer</property>
-                              </widget>
-                              <packing>
-                                <property name="expand">False</property>
-                                <property name="fill">False</property>
-                                <property name="position">0</property>
-                              </packing>
-                            </child>
-                          </widget>
-                          <packing>
-                            <property name="expand">False</property>
-                            <property name="position">1</property>
-                          </packing>
+                          <placeholder/>
                         </child>
                       </widget>
                       <packing>
@@ -361,9 +333,6 @@ audio-volume-medium</property>
                     </child>
                     <child>
                       <widget class="GtkVBox" id="vbox2">
-                        <child>
-                          <placeholder/>
-                        </child>
                         <child>
                           <widget class="GtkScrolledWindow" id="scrolled-tracklist">
                             <property name="can_focus">True</property>
@@ -375,7 +344,7 @@ audio-volume-medium</property>
                             </child>
                           </widget>
                           <packing>
-                            <property name="position">1</property>
+                            <property name="position">0</property>
                           </packing>
                         </child>
                       </widget>
