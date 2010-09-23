@@ -339,31 +339,34 @@ class FileExplorer(modules.Module):
 
         # Play selection
         play = gtk.ImageMenuItem(gtk.STOCK_MEDIA_PLAY)
+        play.set_label(_('Append'))
         popup.append(play)
 
-        if path is None: play.set_sensitive(False)
-        else:            play.connect('activate', lambda widget: self.play(True))
+        if path is None:
+            play.set_sensitive(False)
+        else:
+            play.connect('activate', lambda widget: self.play(True))
 
         popup.append(gtk.SeparatorMenuItem())
 
         # Collapse all nodes
-        collapse = gtk.ImageMenuItem(_('Collapse all'))
-        collapse.set_image(gtk.image_new_from_stock(gtk.STOCK_CLEAR, gtk.ICON_SIZE_MENU))
-        collapse.connect('activate', lambda widget: tree.collapse_all())
-        popup.append(collapse)
+        ##collapse = gtk.ImageMenuItem(_('Collapse all'))
+        ##collapse.set_image(gtk.image_new_from_stock(gtk.STOCK_CLEAR, gtk.ICON_SIZE_MENU))
+        ##collapse.connect('activate', lambda widget: tree.collapse_all())
+        ##popup.append(collapse)
 
         # Refresh the view
         refresh = gtk.ImageMenuItem(gtk.STOCK_REFRESH)
         refresh.connect('activate', lambda widget: self.refresh())
         popup.append(refresh)
 
-        popup.append(gtk.SeparatorMenuItem())
+        ##popup.append(gtk.SeparatorMenuItem())
 
         # Show hidden files
-        hidden = gtk.CheckMenuItem(_('Show hidden files'))
-        hidden.set_active(self.showHiddenFiles)
-        hidden.connect('toggled', lambda item: self.setShowHiddenFiles(item.get_active()))
-        popup.append(hidden)
+        ##hidden = gtk.CheckMenuItem(_('Show hidden files'))
+        ##hidden.set_active(self.showHiddenFiles)
+        ##hidden.connect('toggled', lambda item: self.setShowHiddenFiles(item.get_active()))
+        ##popup.append(hidden)
 
         popup.show_all()
         popup.popup(None, None, None, button, time)

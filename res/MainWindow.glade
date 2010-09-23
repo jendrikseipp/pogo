@@ -264,7 +264,7 @@
                                     <property name="width_request">20</property>
                                     <property name="height_request">20</property>
                                     <property name="visible">True</property>
-                                    <property name="icon_name">image-missing</property>
+                                    <property name="stock">gtk-missing-image</property>
                                   </widget>
                                 </child>
                               </widget>
