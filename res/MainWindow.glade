@@ -130,6 +130,7 @@
         <child>
           <widget class="GtkHBox" id="hbox3">
             <property name="visible">True</property>
+            <property name="border_width">4</property>
             <child>
               <widget class="GtkHBox" id="box-ctrl-buttons">
                 <property name="spacing">5</property>
@@ -388,10 +389,10 @@ audio-volume-medium</property>
         <child>
           <widget class="GtkHPaned" id="pan-main">
             <property name="can_focus">True</property>
+            <property name="border_width">4</property>
             <property name="position">1</property>
             <child>
               <widget class="GtkVBox" id="vbox3">
-                <property name="border_width">5</property>
                 <child>
                   <widget class="GtkNotebook" id="notebook-explorer">
                     <property name="can_focus">True</property>
@@ -431,7 +432,6 @@ audio-volume-medium</property>
             </child>
             <child>
               <widget class="GtkVBox" id="vbox2">
-                <property name="border_width">5</property>
                 <child>
                   <placeholder/>
                 </child>
