@@ -414,30 +414,58 @@ class FileExplorer(modules.Module):
         if self.tree is None:
             self.createTree()
             
-        folders = [consts.dirBaseUsr, '/']
+        folders = ['/', consts.dirBaseUsr]
+        
+        def add_path(path, prepend=False):
+            if not os.path.isdir(path) or path in folders:
+                return
+            if prepend:
+                folders.insert(0, path)
+            else:
+                folders.append(path)
+                
         
         import urlparse, urllib2
+        import re
+        folder_regex = re.compile(r'XDG_MUSIC_DIR\=\"\$HOME/(.+)\"')
+        
+        # Read XDG music directory
+        xdg_file = os.path.join(consts.dirBaseUsr, '.config', 'user-dirs.dirs')
+        if os.path.exists(xdg_file):
+            print 'EXISTS'
+            with open(xdg_file) as f:
+                content = f.read()
+                print content
+                match = folder_regex.search(content)
+                if match:
+                    dirname = match.group(1)
+                    path = os.path.join(consts.dirBaseUsr, dirname)
+                    folders.append(None)
+                    add_path(path, prepend=False)
+                else:
+                    print 'FOUND nothing'
+                
         
         # Read in the GTK bookmarks list; gjc says this is the right way
-        bookmarks_file = os.path.join(consts.dirBaseUsr, ".gtk-bookmarks")
-        if os.path.exists(bookmarks_file):
-            try:
-                with open(bookmarks_file) as f:
-                    folders.append(None)
-                    for line in f.readlines():
-                        folder_url = line.split()[0]
-                        path = urlparse.urlsplit(folder_url)[2]
-                        # "My%20folder" -> "My folder"
-                        path = urllib2.unquote(path)
-                        folders.append(path)
-            except EnvironmentError:
-                pass
+        #bookmarks_file = os.path.join(consts.dirBaseUsr, ".gtk-bookmarks")
+        #if os.path.exists(bookmarks_file):
+        #    try:
+        #        with open(bookmarks_file) as f:
+        #            folders.append(None)
+        #            for line in f.readlines():
+        #                folder_url = line.split()[0]
+        #                path = urlparse.urlsplit(folder_url)[2]
+        #                # "My%20folder" -> "My folder"
+        #                path = urllib2.unquote(path)
+        #                add_path(path)
+        #    except EnvironmentError:
+        #        pass
 
-        def is_folder(filename):
-            return filename is None or os.path.isdir(filename)
-        folders = filter(is_folder, folders)
-        if folders[-1] is None:
-            folders.pop()
+        #def is_folder(filename):
+        #    return filename is None or os.path.isdir(filename)
+        #folders = filter(is_folder, folders)
+        #if folders[-1] is None:
+        #    folders.pop()
         
         self.tree.set_row_separator_func(lambda model, iter: model[iter][ROW_NAME] is None)
         

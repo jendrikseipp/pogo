@@ -53,7 +53,7 @@ class CtrlPanel(modules.Module):
         elapsed = sec2str(seconds)
         #remaining = sec2str(self.currTrackLength - seconds)
         total = sec2str(self.currTrackLength)
-        self.lblRemaining.set_label('%s / %s' % (elapsed, total))
+        ##self.lblRemaining.set_label('%s / %s' % (elapsed, total))
         self.sclSeek.set_tooltip_text(elapsed)
         
 
@@ -74,7 +74,7 @@ class CtrlPanel(modules.Module):
         self.sclSeek      = wTree.get_widget('scl-position')
         self.btnVolume    = wTree.get_widget('btn-volume')
         ##self.lblElapsed   = wTree.get_widget('lbl-elapsedTime')
-        self.lblRemaining = wTree.get_widget('lbl-remainingTime')
+        ##self.lblRemaining = wTree.get_widget('lbl-remainingTime')
 
         # Restore the volume
         volume = prefs.get(__name__, 'volume', PREFS_DEFAULT_VOLUME)
@@ -95,11 +95,8 @@ class CtrlPanel(modules.Module):
         
         self.btnVolume.connect('value-changed', self.onVolumeValueChanged)
         
-        ## Do not show time in panel
-        self.lblRemaining.hide()
-        
         ## Add pref button
-        print 'ADD BUTTON'
+        #print 'ADD BUTTON'
         
         menu_button = gtk.MenuToolButton(None, None)
         hbox = menu_button.get_child()
@@ -132,9 +129,11 @@ class CtrlPanel(modules.Module):
         #self.ctrl_button.set_menu(menu)
         #toolbar_hbox.pack_end(self.ctrl_button, False)
         toolbar_hbox.pack_end(menu_button, False)
+        # Move it to the right
+        toolbar_hbox.reorder_child(menu_button, 1)
         menu_button.set_menu(menu)
         self.ctrl_button.show()
-        print 'ADDED BUTTON'
+        #print 'ADDED BUTTON'
         
 
 
@@ -170,7 +169,7 @@ class CtrlPanel(modules.Module):
         self.btnPlay.set_tooltip_text(_('Play the first selected track of the playlist'))
         self.sclSeek.hide()
         ##self.lblElapsed.hide()
-        self.lblRemaining.hide()
+        ##self.lblRemaining.hide()
 
 
     def onNewTrackPosition(self, seconds):

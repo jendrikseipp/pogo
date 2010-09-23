@@ -119,6 +119,7 @@ class TrackPanel(modules.Module):
         
         ##
         self.txtTitle.hide()
+        self.imgFrame.hide()
 
 
     def onNewTrack(self, track):
