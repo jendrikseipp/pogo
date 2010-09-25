@@ -79,7 +79,8 @@ def realStartup():
 
     def onDelete(win, event):
         """ Use our own quit sequence, that will itself destroy the window """
-        window.hide()
+        ##window.hide()
+        win.hide()
         modules.postQuitMsg()
         return True
 

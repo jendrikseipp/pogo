@@ -56,6 +56,26 @@ class CtrlPanel(modules.Module):
         ##self.lblRemaining.set_label('%s / %s' % (elapsed, total))
         self.sclSeek.set_tooltip_text(elapsed)
         
+    
+    def set_tooltips(self, uimanager):
+        '''
+        Little work-around:
+        Tooltips are not shown for menuitems that have been created with uimanager.
+        We have to do it manually.
+        
+        Icons will not show up in recent GNOME versions, this is not a bug.
+        '''
+        groups = uimanager.get_action_groups()
+        for group in groups:
+            actions = group.list_actions()
+            for action in actions:
+                print action.get_accel_path()
+                widgets = action.get_proxies()
+                tooltip = action.get_property('tooltip')
+                if tooltip:
+                    for widget in widgets:
+                        widget.set_tooltip_markup(tooltip)
+        
 
    # --== Message handler ==--
 
@@ -67,7 +87,7 @@ class CtrlPanel(modules.Module):
 
         # Widgets
         wTree             = prefs.getWidgetsTree()
-        self.btnStop      = wTree.get_widget('btn-stop')
+        ##self.btnStop      = wTree.get_widget('btn-stop')
         self.btnPlay      = wTree.get_widget('btn-play')
         self.btnNext      = wTree.get_widget('btn-next')
         self.btnPrev      = wTree.get_widget('btn-previous')
@@ -82,7 +102,7 @@ class CtrlPanel(modules.Module):
         modules.postMsg(consts.MSG_CMD_SET_VOLUME, {'value': volume})
 
         # GTK handlers
-        self.btnStop.connect('clicked', lambda widget: modules.postMsg(consts.MSG_CMD_STOP))
+        ##self.btnStop.connect('clicked', lambda widget: modules.postMsg(consts.MSG_CMD_STOP))
         self.btnNext.connect('clicked', lambda widget: modules.postMsg(consts.MSG_CMD_NEXT))
         self.btnPrev.connect('clicked', lambda widget: modules.postMsg(consts.MSG_CMD_PREVIOUS))
         self.btnPlay.connect('clicked', lambda widget: modules.postMsg(consts.MSG_CMD_TOGGLE_PAUSE))
@@ -95,8 +115,45 @@ class CtrlPanel(modules.Module):
         
         self.btnVolume.connect('value-changed', self.onVolumeValueChanged)
         
-        ## Add pref button
-        #print 'ADD BUTTON'
+        # Add pref button
+        
+        self.uimanager = gtk.UIManager()
+        self.main_window = wTree.get_widget('win-main')
+        
+        menu_xml = '''
+        <ui>
+        <popup name="ButtonMenu">
+            <menuitem action="Options"/>
+            <menuitem action="About"/>
+            <separator/>
+            <menuitem action="Quit"/>
+        </popup>
+        </ui>'''
+
+        # Create an ActionGroup
+        actiongroup = gtk.ActionGroup('MainActionGroup')
+
+        # Create actions
+        actiongroup.add_actions([
+            ('ButtonMenu', None, None),
+            ('Quit', gtk.STOCK_QUIT, None, None, None,
+                lambda widget: self.onDelete(self.main_window, None)),
+            ('Options', gtk.STOCK_PREFERENCES, None,
+                '<Ctrl>p', None, lambda item: modules.showPreferences()),
+            #('Help', gtk.STOCK_HELP, None,
+            #    '<Ctrl>h', None, self.on_help_menu_item_activate),
+            ('About', gtk.STOCK_ABOUT, None,
+                None, None, self.onAbout),
+            ])
+
+        # Add the actiongroup to the uimanager
+        self.uimanager.insert_action_group(actiongroup, 0)
+
+        # Add a UI description
+        self.uimanager.add_ui_from_string(menu_xml)
+
+        # Create a Menu
+        button_menu = self.uimanager.get_widget('/ButtonMenu')
         
         menu_button = gtk.MenuToolButton(None, None)
         hbox = menu_button.get_child()
@@ -131,9 +188,12 @@ class CtrlPanel(modules.Module):
         toolbar_hbox.pack_end(menu_button, False)
         # Move it to the right
         toolbar_hbox.reorder_child(menu_button, 1)
-        menu_button.set_menu(menu)
+        menu_button.set_menu(button_menu)
         self.ctrl_button.show()
-        #print 'ADDED BUTTON'
+        
+        self.set_tooltips(self.uimanager)
+        accelgroup = self.uimanager.get_accel_group()
+        self.main_window.add_accel_group(accelgroup)
         
 
 
@@ -144,7 +204,7 @@ class CtrlPanel(modules.Module):
 
     def onNewTrack(self, track):
         """ A new track is being played """
-        self.btnStop.set_sensitive(True)
+        ##self.btnStop.set_sensitive(True)
         self.btnPlay.set_sensitive(True)
         self.btnPlay.set_image(gtk.image_new_from_stock(gtk.STOCK_MEDIA_PAUSE, PLAY_PAUSE_ICON_SIZE))
         self.btnPlay.set_tooltip_text(_('Pause the current track'))
@@ -162,7 +222,7 @@ class CtrlPanel(modules.Module):
 
     def onStopped(self):
         """ The playback has been stopped """
-        self.btnStop.set_sensitive(False)
+        ##self.btnStop.set_sensitive(False)
         self.btnNext.set_sensitive(False)
         self.btnPrev.set_sensitive(False)
         self.btnPlay.set_image(gtk.image_new_from_stock(gtk.STOCK_MEDIA_PLAY, PLAY_PAUSE_ICON_SIZE))
@@ -267,3 +327,23 @@ class CtrlPanel(modules.Module):
     def onVolumeValueChanged(self, button, value):
         """ The user has moved the volume slider """
         modules.postMsg(consts.MSG_CMD_SET_VOLUME, {'value': value})
+        
+        
+    def onAbout(self, item):
+        """ Show the about dialog box """
+        import gui.about
+        gui.about.show(self.main_window)
+
+
+    def onHelp(self, item):
+        """ Show help page in the web browser """
+        import webbrowser
+        webbrowser.open(consts.urlHelp)
+        
+        
+    def onDelete(self, win, event):
+        """ Use our own quit sequence, that will itself destroy the window """
+        ##window.hide()
+        win.hide()
+        modules.postQuitMsg()
+        return True

@@ -446,8 +446,8 @@ class Tracktree(modules.Module):
         #wTree.get_widget('img-shuffle').set_from_icon_name('stock_shuffle', gtk.ICON_SIZE_BUTTON)
         
         # Hide stop button (like in banshee, rhythmbox and itunes)
-        self.stop_button = wTree.get_widget('btn-stop')
-        self.stop_button.hide()
+        ##self.stop_button = wTree.get_widget('btn-stop')
+        ##self.stop_button.hide()
 
 
     def onTrackEnded(self, withError):
