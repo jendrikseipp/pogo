@@ -63,9 +63,9 @@ import gettext, gobject, gtk, locale
 from tools import loadGladeFile, log, prefs
 
 DEFAULT_VIEW_MODE       = consts.VIEW_MODE_FULL
-DEFAULT_PANED_POS       = 300
-DEFAULT_WIN_WIDTH       = 750
-DEFAULT_WIN_HEIGHT      = 470
+DEFAULT_PANED_POS       = 370#300
+DEFAULT_WIN_WIDTH       = 900#750
+DEFAULT_WIN_HEIGHT      = 500#470
 DEFAULT_MAXIMIZED_STATE = False
 
 
@@ -167,8 +167,7 @@ except:
 if prefs.get(__name__, 'win-is-maximized', DEFAULT_MAXIMIZED_STATE):
     window.maximize()
 
-#window.resize(prefs.get(__name__, 'win-width', DEFAULT_WIN_WIDTH), prefs.get(__name__, 'win-height', DEFAULT_WIN_HEIGHT))
-window.resize(DEFAULT_WIN_WIDTH, DEFAULT_WIN_HEIGHT)
+window.resize(prefs.get(__name__, 'win-width', DEFAULT_WIN_WIDTH), prefs.get(__name__, 'win-height', DEFAULT_WIN_HEIGHT))
 window.show_all()
 
 # Restore sizes once more
