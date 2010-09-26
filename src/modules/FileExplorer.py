@@ -179,8 +179,8 @@ class FileExplorer(modules.Module):
             elif isfile(path):
                 if media.isSupported(file):
                     mediaFiles.append((icons.mediaFileMenuIcon(), tools.htmlEscape(unicode(file, errors='replace')), TYPE_FILE, path))
-                elif playlist.isSupported(file):
-                    playlists.append((icons.mediaFileMenuIcon(), tools.htmlEscape(unicode(file, errors='replace')), TYPE_FILE, path))
+                ##elif playlist.isSupported(file):
+                ##    playlists.append((icons.mediaFileMenuIcon(), tools.htmlEscape(unicode(file, errors='replace')), TYPE_FILE, path))
 
         playlists.sort(key=self.sortKey)
         mediaFiles.sort(key=self.sortKey)
