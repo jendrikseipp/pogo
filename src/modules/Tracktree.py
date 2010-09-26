@@ -191,7 +191,6 @@ class Tracktree(modules.Module):
                 self.tree.setItem(iter, ROW_ICO, icons.nullMenuIcon())
         
 
-
     def jumpTo(self, iter, sendPlayMsg=True):
         """ Jump to the track located at the given iter """
         if not iter:
@@ -219,12 +218,14 @@ class Tracktree(modules.Module):
         modules.postMsg(consts.MSG_EVT_NEW_TRACK,   {'track': track})
         modules.postMsg(consts.MSG_EVT_TRACK_MOVED, {'hasPrevious': self.__hasPreviousTrack(), 'hasNext': self.__hasNextTrack()})
         
+        
     def insert(self, tracks, target=None, drop_mode=None, playNow=True, highlight=False):
         if type(tracks) == list:
             trackdir = media.TrackDir(None, flat=True)
             trackdir.tracks = tracks
             tracks = trackdir
             
+        self.tree.get_selection().unselect_all()
         self.insertDir(tracks, target, drop_mode, highlight)
         self.onListModified()
         
@@ -238,6 +239,7 @@ class Tracktree(modules.Module):
             else:
                 dest = self.tree.get_last_child_iter(parent)
             self.jumpTo(dest)
+            
             
     def insertDir(self, trackdir, target=None, drop_mode=None, highlight=False):
         '''
@@ -260,12 +262,13 @@ class Tracktree(modules.Module):
         dest = new
         for index, subdir in enumerate(trackdir.subdirs):
             drop = drop_mode if index == 0 else gtk.TREE_VIEW_DROP_AFTER
-            dest = self.insertDir(subdir, dest, drop)
+            dest = self.insertDir(subdir, dest, drop, highlight)
             
         dest = new
         for index, track in enumerate(trackdir.tracks):
             drop = drop_mode if index == 0 else gtk.TREE_VIEW_DROP_AFTER
-            dest = self.insertTrack(track, dest, drop)
+            highlight &= trackdir.flat
+            dest = self.insertTrack(track, dest, drop, highlight)
             
         if not trackdir.flat:
             # Open albums on the first layer
@@ -407,9 +410,7 @@ class Tracktree(modules.Module):
                 
                 
     def restore_expanded_rows(self):
-        print 'PATHS', self.tree.expanded_rows
         for path in self.tree.expanded_rows:
-            print 'EXPANDING', path
             self.tree.expand(path)
         self.tree.expanded_rows = None
 
@@ -520,13 +521,11 @@ class Tracktree(modules.Module):
         if dir_selected:
             # Save expanded rows
             def expanded(treeview, path):
-                print 'APPEND', path
                 row = self.tree.store.get_iter(path)
                 self.tree.expanded_rows.append(row)
             
             self.tree.expanded_rows = []
             self.tree.map_expanded_rows(expanded)
-            print 'PATHS =', self.tree.expanded_rows
         
             self.tree.collapse_all()
 

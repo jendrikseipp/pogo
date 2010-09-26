@@ -167,7 +167,8 @@ except:
 if prefs.get(__name__, 'win-is-maximized', DEFAULT_MAXIMIZED_STATE):
     window.maximize()
 
-window.resize(prefs.get(__name__, 'win-width', DEFAULT_WIN_WIDTH), prefs.get(__name__, 'win-height', DEFAULT_WIN_HEIGHT))
+#window.resize(prefs.get(__name__, 'win-width', DEFAULT_WIN_WIDTH), prefs.get(__name__, 'win-height', DEFAULT_WIN_HEIGHT))
+window.resize(DEFAULT_WIN_WIDTH, DEFAULT_WIN_HEIGHT)
 window.show_all()
 
 # Restore sizes once more

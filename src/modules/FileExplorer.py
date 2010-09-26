@@ -395,6 +395,9 @@ class FileExplorer(modules.Module):
         parent = self.tree.appendRow((icons.dirMenuIcon(), name, TYPE_DIR, path), None)
         fakeChild = self.tree.appendRow((icons.dirMenuIcon(), '', TYPE_NONE, ''), parent)
         
+    
+    def _is_separator(self, model, iter):
+        return model[iter][ROW_NAME] is None
         
     def populate_tree(self):
         '''
@@ -402,7 +405,8 @@ class FileExplorer(modules.Module):
         '''
         assert self.tree is None
         self.createTree()
-        self.tree.set_row_separator_func(lambda model, iter: model[iter][ROW_NAME] is None)
+        #self.tree.set_row_separator_func(lambda model, iter: model[iter][ROW_NAME] is None)
+        self.tree.set_row_separator_func(self._is_separator)
             
         # Restore the tree if we have any to restore, else build new one
         if self.treeState:
