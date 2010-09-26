@@ -313,6 +313,8 @@ class Tracktree(modules.Module):
         if tracks is not None and not tracks.empty():
             self.insert(tracks)
             
+        self.tree.collapse_all()
+            
         self.onListModified()
 
 
