@@ -171,7 +171,7 @@ window.resize(prefs.get(__name__, 'win-width', DEFAULT_WIN_WIDTH), prefs.get(__n
 window.show_all()
 
 # Restore sizes once more
-window.resize(prefs.get(__name__, 'win-width', DEFAULT_WIN_WIDTH), prefs.get(__name__, 'win-height', DEFAULT_WIN_HEIGHT))
+#window.resize(prefs.get(__name__, 'win-width', DEFAULT_WIN_WIDTH), prefs.get(__name__, 'win-height', DEFAULT_WIN_HEIGHT))
 paned.set_position(prefs.get(__name__, 'paned-pos', DEFAULT_PANED_POS))
 
 # Initialization done, let's continue the show
