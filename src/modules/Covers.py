@@ -27,7 +27,7 @@ from tools.log import logger
 MOD_INFO = ('Covers', _('Covers'), _('Show album covers'), [], False, True)
 MOD_NAME = MOD_INFO[modules.MODINFO_NAME]
 
-AS_API_KEY   = 'fd8dd98d26bb3f288f3e626502f9add6'   # Ingelrest François' Audioscrobbler API key
+AS_API_KEY   = '4d7befd13245afcc73f9ed7518b6619a'   # Jendrik Seipp's Audioscrobbler API key
 AS_TAG_START = '<image size="large">'               # The text that is right before the URL to the cover
 AS_TAG_END   = '</image>'                           # The text that is right after the URL to the cover
 
