@@ -75,6 +75,7 @@ class Tracktree(modules.Module):
         
         
     def getTracks(self, rows):
+        ## Unused
         tracks = []
         for row in rows:
             track = self.tree.getTrack(row)
@@ -86,6 +87,7 @@ class Tracktree(modules.Module):
     def getTrackDir(self, root=None):
         flat = False if root else True
         name = self.tree.getLabel(root) if root else 'playtree'
+        name = name.replace('<b>', '').replace('</b>', '')
         trackdir = media.TrackDir(name=name, flat=flat)
         
         for iter in self.tree.iter_children(root):
