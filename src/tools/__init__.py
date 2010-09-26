@@ -16,7 +16,12 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301 USA
 
-import consts, cPickle, gtk, gtk.glade, os
+import cPickle, os
+from xml.sax.saxutils import escape, unescape
+
+import gtk, gtk.glade
+
+import consts
 
 
 __dirCache = {}
@@ -166,6 +171,7 @@ def getCursorPosition():
 
 def htmlEscape(string):
     """ Replace characters &, <, and > by their equivalent HTML code """
+    return escape(string)
     output = ''
 
     for c in string:
@@ -178,6 +184,10 @@ def htmlEscape(string):
     
     
 def htmlUnescape(s):
+    '''
+    Unescape '&amp;', '&lt;', and '&gt;' in a string of data.
+    '''
+    return unescape(s)
     s = s.replace("&lt;", "<")
     s = s.replace("&gt;", ">")
     # this has to be last:
