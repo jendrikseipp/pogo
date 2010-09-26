@@ -95,18 +95,6 @@ def realStartup():
                 prefs.set(__name__, 'full-win-height', rect.height)
 
 
-    def onAbout(item):
-        """ Show the about dialog box """
-        import gui.about
-        gui.about.show(window)
-
-
-    def onHelp(item):
-        """ Show help page in the web browser """
-        import webbrowser
-        webbrowser.open(consts.urlHelp)
-
-
     def onState(win, evt):
         """ Save the new state of the window """
         prefs.set(__name__, 'win-is-maximized', bool(evt.new_window_state & gtk.gdk.WINDOW_STATE_MAXIMIZED))
@@ -131,66 +119,9 @@ def realStartup():
     window.connect('size-allocate', onResize)
     window.connect('window-state-event', onState)
     paned.connect('size-allocate', lambda win, rect: prefs.set(__name__, 'paned-pos', paned.get_position()))
-    wTree.get_widget('menu-mode-mini').connect('activate', onViewMode, consts.VIEW_MODE_MINI)
-    wTree.get_widget('menu-mode-full').connect('activate', onViewMode, consts.VIEW_MODE_FULL)
-    wTree.get_widget('menu-mode-playlist').connect('activate', onViewMode, consts.VIEW_MODE_PLAYLIST)
-    wTree.get_widget('menu-quit').connect('activate', lambda item: onDelete(window, None))
-    wTree.get_widget('menu-about').connect('activate', onAbout)
-    wTree.get_widget('menu-help').connect('activate', onHelp)
-    wTree.get_widget('menu-preferences').connect('activate', lambda item: modules.showPreferences())
 
     # Let's go
     gobject.idle_add(modules.postMsg, consts.MSG_EVT_APP_STARTED)
-
-
-def onViewMode(item, mode):
-    """ Wrapper for setViewMode(): Don't do anything if the mode the same as the current one """
-    if item.get_active() and mode != prefs.get(__name__, 'view-mode', DEFAULT_VIEW_MODE):
-        setViewMode(mode, True)
-
-
-def setViewMode(mode, resize):
-    """ Change the view mode to the given one """
-    lastMode = prefs.get(__name__, 'view-mode', DEFAULT_VIEW_MODE)
-    prefs.set(__name__, 'view-mode', mode)
-
-    (winWidth, winHeight) = window.get_size()
-
-    if mode == consts.VIEW_MODE_FULL:
-        paned.get_child1().show()
-        wTree.get_widget('statusbar').show()
-        wTree.get_widget('box-btn-tracklist').show()
-        wTree.get_widget('scrolled-tracklist').show()
-        wTree.get_widget('box-trkinfo').show()
-        if resize:
-            if lastMode != consts.VIEW_MODE_FULL: winWidth  = winWidth + paned.get_position()
-            if lastMode == consts.VIEW_MODE_MINI: winHeight = prefs.get(__name__, 'full-win-height', DEFAULT_WIN_HEIGHT)
-
-            window.resize(winWidth, winHeight)
-        return
-
-    paned.get_child1().hide()
-    if resize and lastMode == consts.VIEW_MODE_FULL:
-        winWidth = winWidth - paned.get_position()
-        window.resize(winWidth, winHeight)
-
-    if mode == consts.VIEW_MODE_PLAYLIST:
-        wTree.get_widget('statusbar').show()
-        wTree.get_widget('box-btn-tracklist').hide()
-        wTree.get_widget('scrolled-tracklist').show()
-        wTree.get_widget('box-trkinfo').show()
-        if resize and lastMode == consts.VIEW_MODE_MINI:
-            window.resize(winWidth, prefs.get(__name__, 'full-win-height', DEFAULT_WIN_HEIGHT))
-        return
-
-    wTree.get_widget('statusbar').hide()
-    wTree.get_widget('box-btn-tracklist').hide()
-    wTree.get_widget('scrolled-tracklist').hide()
-
-    if mode == consts.VIEW_MODE_MINI: wTree.get_widget('box-trkinfo').show()
-    else:                             wTree.get_widget('box-trkinfo').hide()
-
-    if resize: window.resize(winWidth, 1)
 
 
 # --== Entry point ==--
@@ -238,17 +169,6 @@ if prefs.get(__name__, 'win-is-maximized', DEFAULT_MAXIMIZED_STATE):
 
 window.resize(prefs.get(__name__, 'win-width', DEFAULT_WIN_WIDTH), prefs.get(__name__, 'win-height', DEFAULT_WIN_HEIGHT))
 window.show_all()
-
-# Restore last view mode
-viewMode = prefs.get(__name__, 'view-mode', DEFAULT_VIEW_MODE)
-
-if viewMode == consts.VIEW_MODE_FULL:
-    wTree.get_widget('menu-mode-full').set_active(True)
-else:
-    if viewMode == consts.VIEW_MODE_MINI: wTree.get_widget('menu-mode-mini').set_active(True)
-    else:                                 wTree.get_widget('menu-mode-playlist').set_active(True)
-
-    setViewMode(viewMode, False)
 
 # Restore sizes once more
 window.resize(prefs.get(__name__, 'win-width', DEFAULT_WIN_WIDTH), prefs.get(__name__, 'win-height', DEFAULT_WIN_HEIGHT))

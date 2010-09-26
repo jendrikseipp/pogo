@@ -8,126 +8,6 @@
     <child>
       <widget class="GtkVBox" id="vbox1">
         <child>
-          <widget class="GtkMenuBar" id="menubar">
-            <child>
-              <widget class="GtkMenuItem" id="menuitem1">
-                <property name="label" translatable="yes">_File</property>
-                <property name="use_underline">True</property>
-                <child>
-                  <widget class="GtkMenu" id="menu-file">
-                    <child>
-                      <widget class="GtkImageMenuItem" id="menu-quit">
-                        <property name="label">gtk-quit</property>
-                        <property name="tooltip" translatable="yes">Quit the application</property>
-                        <property name="use_underline">True</property>
-                        <property name="use_stock">True</property>
-                      </widget>
-                    </child>
-                  </widget>
-                </child>
-              </widget>
-            </child>
-            <child>
-              <widget class="GtkMenuItem" id="menuitem2">
-                <property name="label" translatable="yes">_Edit</property>
-                <property name="use_underline">True</property>
-                <child>
-                  <widget class="GtkMenu" id="menu-edit">
-                    <child>
-                      <widget class="GtkImageMenuItem" id="menu-preferences">
-                        <property name="label">gtk-preferences</property>
-                        <property name="tooltip" translatable="yes">Display preferences</property>
-                        <property name="use_underline">True</property>
-                        <property name="use_stock">True</property>
-                        <accelerator key="p" signal="activate" modifiers="GDK_CONTROL_MASK"/>
-                      </widget>
-                    </child>
-                  </widget>
-                </child>
-              </widget>
-            </child>
-            <child>
-              <widget class="GtkMenuItem" id="menuitem3">
-                <property name="visible">True</property>
-                <property name="label" translatable="yes">_View</property>
-                <property name="use_underline">True</property>
-                <child>
-                  <widget class="GtkMenu" id="menu-view">
-                    <property name="visible">True</property>
-                    <child>
-                      <widget class="GtkRadioMenuItem" id="menu-mode-full">
-                        <property name="visible">True</property>
-                        <property name="label" translatable="yes">Full</property>
-                        <property name="use_underline">True</property>
-                        <property name="draw_as_radio">True</property>
-                        <accelerator key="f" signal="activate" modifiers="GDK_SHIFT_MASK | GDK_CONTROL_MASK"/>
-                      </widget>
-                    </child>
-                    <child>
-                      <widget class="GtkRadioMenuItem" id="menu-mode-playlist">
-                        <property name="visible">True</property>
-                        <property name="label" translatable="yes">Playlist</property>
-                        <property name="use_underline">True</property>
-                        <property name="draw_as_radio">True</property>
-                        <property name="group">menu-mode-full</property>
-                        <accelerator key="p" signal="activate" modifiers="GDK_SHIFT_MASK | GDK_CONTROL_MASK"/>
-                      </widget>
-                    </child>
-                    <child>
-                      <widget class="GtkRadioMenuItem" id="menu-mode-mini">
-                        <property name="visible">True</property>
-                        <property name="label" translatable="yes">Mini</property>
-                        <property name="use_underline">True</property>
-                        <property name="draw_as_radio">True</property>
-                        <property name="group">menu-mode-full</property>
-                        <accelerator key="m" signal="activate" modifiers="GDK_SHIFT_MASK | GDK_CONTROL_MASK"/>
-                      </widget>
-                    </child>
-                  </widget>
-                </child>
-              </widget>
-            </child>
-            <child>
-              <widget class="GtkMenuItem" id="menuitem4">
-                <property name="label" translatable="yes">_Help</property>
-                <property name="use_underline">True</property>
-                <child>
-                  <widget class="GtkMenu" id="menu-hel">
-                    <child>
-                      <widget class="GtkImageMenuItem" id="menu-help">
-                        <property name="label" translatable="yes">Online _Help</property>
-                        <property name="tooltip" translatable="yes">Open the online help web page</property>
-                        <property name="use_underline">True</property>
-                        <property name="use_stock">False</property>
-                        <accelerator key="F1" signal="activate"/>
-                        <child internal-child="image">
-                          <widget class="GtkImage" id="image5">
-                            <property name="visible">True</property>
-                            <property name="stock">gtk-help</property>
-                          </widget>
-                        </child>
-                      </widget>
-                    </child>
-                    <child>
-                      <widget class="GtkImageMenuItem" id="menu-about">
-                        <property name="label">gtk-about</property>
-                        <property name="tooltip" translatable="yes">Display about dialog box</property>
-                        <property name="use_underline">True</property>
-                        <property name="use_stock">True</property>
-                      </widget>
-                    </child>
-                  </widget>
-                </child>
-              </widget>
-            </child>
-          </widget>
-          <packing>
-            <property name="expand">False</property>
-            <property name="fill">False</property>
-            <property name="position">0</property>
-          </packing>
-        </child>
-        <child>
           <widget class="GtkAlignment" id="alignment1">
             <property name="visible">True</property>
             <property name="bottom_padding">5</property>
@@ -343,7 +223,7 @@ audio-volume-medium</property>
             </child>
           </widget>
           <packing>
-            <property name="position">1</property>
+            <property name="position">0</property>
           </packing>
         </child>
       </widget>
