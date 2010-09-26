@@ -130,10 +130,24 @@ class TrackDir(object):
                 
         # If a directory contains no tracks and only one subdir, 
         # collapse them into one dir
-        if not self.tracks and len(self.subdirs) == 1:
-            subdir = self.subdirs.pop(0)
-            self.tracks = subdir.tracks
-            self.dirname += ' / ' + subdir.dirname
+        #if not self.tracks and len(self.subdirs) == 1:
+        #    subdir = self.subdirs.pop(0)
+        #    self.tracks = subdir.tracks
+        #    self.dirname += ' / ' + subdir.dirname
+        
+        for subdir in self.subdirs:
+            subdir.dirname = self.dirname + ' / ' + subdir.dirname
+        
+        if self.subdirs:
+            # TODO: Handle multiple layers (Music -> Albums -> The Band)
+            self.flat = True
+            
+            if self.tracks:
+                trackdir = TrackDir(name=self.dirname)
+                trackdir.tracks = self.tracks
+                self.tracks = []
+                self.subdirs.insert(0, trackdir)
+            
                 
     def empty(self):
         return not self.tracks and not self.subdirs

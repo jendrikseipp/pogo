@@ -344,7 +344,7 @@ class Track:
         
         number = str(number).zfill(2)
         
-        connectors = ['the', 'and', '&']
+        connectors = ['the', 'and', '&', ',', '.', '?', '!', "'", ':', '-']
         
         if parent_label:
             parent_label = parent_label.lower()

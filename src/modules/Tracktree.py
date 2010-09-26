@@ -507,7 +507,6 @@ class Tracktree(modules.Module):
             
             
     def onDragBegin(self, paths):
-        print 'OHO DRAG BEGIN', paths
         dir_selected = any(map(os.path.isdir, paths))
         self.tree.dir_selected = dir_selected
 
