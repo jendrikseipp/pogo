@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Generator: Adobe Illustrator 10.0, SVG Export Plug-In . SVG Version: 3.0.0 Build 76)  -->
+
+<!-- Created by Cary Bass http://commons.wikimedia.com/wiki/User:Bastique 20 January 2006 -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="77.348068"
+   height="77.348068"
+   id="svg2903"
+   version="1.1"
+   inkscape:version="0.47 r22583"
+   sodipodi:docname="pogo.svg"
+   inkscape:export-filename="/home/jendrik/projects/Pogo/logo/cover-none.png"
+   inkscape:export-xdpi="116.35714"
+   inkscape:export-ydpi="116.35714">
+  <metadata
+     id="metadata2928">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs
+     id="defs2926">
+    <inkscape:perspective
+       sodipodi:type="inkscape:persp3d"
+       inkscape:vp_x="0 : 54.099998 : 1"
+       inkscape:vp_y="0 : 1000 : 0"
+       inkscape:vp_z="300 : 54.099998 : 1"
+       inkscape:persp3d-origin="150 : 36.066666 : 1"
+       id="perspective2930" />
+  </defs>
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1920"
+     inkscape:window-height="1122"
+     id="namedview2924"
+     showgrid="false"
+     inkscape:zoom="248.74417"
+     inkscape:cx="19.575604"
+     inkscape:cy="5.0496747"
+     inkscape:window-x="0"
+     inkscape:window-y="24"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg2903" />
+  <g
+     id="g2959"
+     transform="translate(-2.8081923,-2.4630357)" />
+  <g
+     id="half_notes_and_rest"
+     style="fill:#ffffff"
+     transform="translate(-119.33701,-10.409941)">
+    <g
+       id="d_half_note"
+       style="fill:#ffffff">
+      <g
+         id="g2963">
+        <path
+           sodipodi:type="arc"
+           style="fill:#000000;fill-opacity:1"
+           id="path2953"
+           sodipodi:cx="143.64641"
+           sodipodi:cy="46.874031"
+           sodipodi:rx="40.331493"
+           sodipodi:ry="40.331493"
+           d="m 183.9779,46.874031 c 0,22.274469 -18.05702,40.331493 -40.33149,40.331493 -22.27447,0 -40.3315,-18.057024 -40.3315,-40.331493 0,-22.274469 18.05703,-40.3314933 40.3315,-40.3314933 22.27447,0 40.33149,18.0570243 40.33149,40.3314933 z"
+           transform="matrix(0.9589041,0,0,0.9589041,20.267917,4.136275)" />
+        <path
+           style="fill:#ffffff"
+           id="path2909"
+           d="m 138.82661,82.680998 -0.26813,-0.148747 c -0.10457,-0.05095 -0.3342,-0.186829 -0.42674,-0.242248 -0.10349,-0.06198 -0.30999,-0.191233 -0.40123,-0.247876 l -0.27273,-0.181249 -0.18601,-0.124303 -0.0713,-0.05361 0,-39.482963 2,0 0,40.677493 -0.026,-0.0079 -0.34787,-0.188605 z"
+           sodipodi:nodetypes="ccsccccccccc" />
+        <path
+           style="fill:#ffffff"
+           id="path2911"
+           d="m 163.4174,30.590523 c 3.02055,5.177993 -0.21569,12.621358 -7.11975,16.720607 -6.90397,4.099245 -14.99456,3.236237 -18.01499,-1.941754 -3.02063,-5.177989 0.21561,-12.621357 7.11967,-16.720603 6.90394,-3.99137 14.99456,-3.12837 18.01507,1.94175 z m -24.05613,14.023732 c 1.18662,2.157493 7.22768,0.970875 13.48434,-2.696871 0.108,0 0.108,-0.107876 0.2158,-0.107876 0.10783,0 0.2158,-0.107877 0.2158,-0.107877 6.14886,-3.667742 10.14019,-8.306362 8.84569,-10.355985 -1.18661,-2.157499 -7.22767,-0.970875 -13.48433,2.696872 -0.10782,0 -0.10782,0.107877 -0.2158,0.107877 0,0 -0.10781,0.107871 -0.10781,0.107871 -6.14886,3.559872 -10.1403,8.198491 -8.95369,10.355989 z" />
+      </g>
+    </g>
+  </g>
+</svg>
