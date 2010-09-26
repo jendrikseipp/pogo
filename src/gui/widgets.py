@@ -169,7 +169,7 @@ class TrackTreeView(ExtTreeView):
         #self.connect('button-press-event', self.onButtonPressed)
         
         self.mark = None
-        self.expanded_rows = None
+        self.expanded_rows = []
         self.dir_selected = True
         
         
@@ -526,19 +526,6 @@ class TrackTreeView(ExtTreeView):
         """
         drop = self.get_dest_row_at_pos(int(x), int(y))
         
-        # Save expanded rows
-        #if self.expanded_rows is None:
-        #    def expanded(treeview, path):
-        #        print 'APPEND', path
-        #        row = self.store.get_iter(path)
-        #        self.expanded_rows.append(row)
-        #    
-        #    self.expanded_rows = []
-        #    self.map_expanded_rows(expanded)
-        #    print 'PATHS =', self.expanded_rows
-        #
-            #self.collapse_all()
-            
         pos_ok = True
 
         if drop is not None:
@@ -546,8 +533,8 @@ class TrackTreeView(ExtTreeView):
             depth = self.store.iter_depth(iter)
             track = self.getTrack(iter)
             
-            import tools
-            self.setLabel(self.get_first_iter(), tools.htmlEscape(str(drop[1])))
+            #import tools
+            #self.setLabel(self.get_first_iter(), tools.htmlEscape(str(drop[1])))
             
             drop_into = drop[1] in [gtk.TREE_VIEW_DROP_INTO_OR_AFTER, gtk.TREE_VIEW_DROP_INTO_OR_BEFORE]
             drop_around = not drop_into
@@ -562,7 +549,7 @@ class TrackTreeView(ExtTreeView):
                     pos_ok = False
             else:
                 # Tracks can also be dropped into dirs (but not into tracks)
-                if track or (drop_into and depth > 0):
+                if (track and drop_into):# or (drop_into and depth > 0):
                     pos_ok = False
             
         if pos_ok:

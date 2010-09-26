@@ -36,7 +36,7 @@ class StatusbarTitlebar(modules.Module):
                         consts.MSG_EVT_NEW_TRACK:         self.onNewTrack,
                         consts.MSG_EVT_APP_STARTED:       self.onAppStarted,
                         consts.MSG_EVT_NEW_TRACKLIST:     self.onNewTracklist,
-                        consts.MSG_EVT_TRACKLIST_NEW_SEL: self.onNewSelection,
+                        ##consts.MSG_EVT_TRACKLIST_NEW_SEL: self.onNewSelection,
                    }
 
         modules.Module.__init__(self, handlers)

@@ -441,7 +441,7 @@ class Tracktree(modules.Module):
         #self.tree.store.connect('row-inserted', self.on_row_inserted)
         #self.tree.store.connect('row-deleted', self.on_row_deleted)
         
-        self.tree.selection.connect('changed', self.onSelectionChanged)
+        #self.tree.selection.connect('changed', self.onSelectionChanged)
          
         self.tree.connect('exttreeview-button-pressed', self.onMouseButton)
         self.tree.connect('tracktreeview-dnd', self.onDND)
@@ -513,6 +513,18 @@ class Tracktree(modules.Module):
     def onDragBegin(self, paths):
         dir_selected = any(map(os.path.isdir, paths))
         self.tree.dir_selected = dir_selected
+        if dir_selected:
+            # Save expanded rows
+            def expanded(treeview, path):
+                print 'APPEND', path
+                row = self.tree.store.get_iter(path)
+                self.tree.expanded_rows.append(row)
+            
+            self.tree.expanded_rows = []
+            self.tree.map_expanded_rows(expanded)
+            print 'PATHS =', self.tree.expanded_rows
+        
+            self.tree.collapse_all()
 
 
     # --== GTK handlers ==--
@@ -553,11 +565,11 @@ class Tracktree(modules.Module):
             modules.postMsg(consts.MSG_EVT_TRACK_MOVED, {'hasPrevious': self.__hasPreviousTrack(), 'hasNext':  self.__hasNextTrack()})
 
 
-    def onSelectionChanged(self, selection):
-        """ The selection has changed """
-        rows = self.tree.getSelectedRows()
-        tracks = self.getTracks(rows)
-        modules.postMsg(consts.MSG_EVT_TRACKLIST_NEW_SEL, {'tracks': tracks})
+    #def onSelectionChanged(self, selection):
+    #    """ The selection has changed """
+    #    rows = self.tree.getSelectedRows()
+    #    tracks = self.getTracks(rows)
+    #    modules.postMsg(consts.MSG_EVT_TRACKLIST_NEW_SEL, {'tracks': tracks})
 
 
     def onDND(self, list, context, x, y, dragData, dndId, time):
