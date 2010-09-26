@@ -87,7 +87,6 @@ class CtrlPanel(modules.Module):
 
         # Widgets
         wTree             = prefs.getWidgetsTree()
-        ##self.btnStop      = wTree.get_widget('btn-stop')
         self.btnPlay      = wTree.get_widget('btn-play')
         self.btnNext      = wTree.get_widget('btn-next')
         self.btnPrev      = wTree.get_widget('btn-previous')

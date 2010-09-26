@@ -217,14 +217,16 @@ class Tracktree(modules.Module):
         modules.postMsg(consts.MSG_EVT_NEW_TRACK,   {'track': track})
         modules.postMsg(consts.MSG_EVT_TRACK_MOVED, {'hasPrevious': self.__hasPreviousTrack(), 'hasNext': self.__hasNextTrack()})
         
-    def insert(self, tracks, target=None, drop_mode=None, playNow=True):
+    def insert(self, tracks, target=None, drop_mode=None, playNow=True, highlight=False):
         if type(tracks) == list:
             trackdir = media.TrackDir(None, flat=True)
             trackdir.tracks = tracks
             tracks = trackdir
             
-        self.insertDir(tracks, target, drop_mode)
+        self.insertDir(tracks, target, drop_mode, highlight)
         self.onListModified()
+        
+        # TODO: Find out which node to highlight
         return
             
         # TODO: playNow wanted? Buggy in current state
@@ -235,7 +237,7 @@ class Tracktree(modules.Module):
                 dest = self.tree.get_last_child_iter(parent)
             self.jumpTo(dest)
             
-    def insertDir(self, trackdir, target=None, drop_mode=None):
+    def insertDir(self, trackdir, target=None, drop_mode=None, highlight=False):
         '''
         Insert a directory recursively, return the iter of the first
         added element
@@ -250,6 +252,8 @@ class Tracktree(modules.Module):
             
             new = self.tree.insert(target, source_row, drop_mode)
             drop_mode = gtk.TREE_VIEW_DROP_INTO_OR_AFTER
+            if highlight:
+                gobject.idle_add(self.tree.get_selection().select_iter, new)
         
         dest = new
         for index, subdir in enumerate(trackdir.subdirs):
@@ -269,10 +273,7 @@ class Tracktree(modules.Module):
         return new
         
         
-    
-        
-        
-    def insertTrack(self, track, target=None, drop_mode=None):
+    def insertTrack(self, track, target=None, drop_mode=None, highlight=False):
         '''
         Insert a new track into the tracktree under parentPath
         '''
@@ -289,6 +290,9 @@ class Tracktree(modules.Module):
             parent_label = self.tree.getLabel(parent)
             new_label = track.get_label(parent_label)
             self.tree.setLabel(new_iter, new_label)
+        if highlight:
+            #path = self.tree.store.get_path(new_iter)
+            gobject.idle_add(self.tree.get_selection().select_iter, new_iter)
         return new_iter
 
 
@@ -579,11 +583,11 @@ class Tracktree(modules.Module):
 
         # Insert the tracks, but beware of the AFTER/BEFORE mechanism used by GTK
         if dropInfo is None:
-            self.insert(tracks)
+            self.insert(tracks, highlight=True)
         else:
             path, drop_mode = dropInfo
             iter = self.tree.store.get_iter(path)
-            self.insert(tracks, iter, drop_mode)
+            self.insert(tracks, iter, drop_mode, highlight=True)
             
         #self.restore_expanded_rows()
 
