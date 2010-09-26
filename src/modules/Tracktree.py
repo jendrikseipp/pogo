@@ -68,6 +68,7 @@ class Tracktree(modules.Module):
                         #consts.MSG_CMD_TRACKLIST_REPEAT:  self.setRepeat,
                         consts.MSG_EVT_TRACK_ENDED_ERROR: lambda: self.onTrackEnded(True),
                         #consts.MSG_CMD_TRACKLIST_SHUFFLE: self.shuffleTracklist,
+                        consts.MSG_CMD_FILE_EXPLORER_DRAG_BEGIN: self.onDragBegin,
                    }
 
         modules.Module.__init__(self, handlers)
@@ -395,6 +396,14 @@ class Tracktree(modules.Module):
                 self.jumpTo(first_sel_iter)
             else:
                 self.jumpTo(self.tree.get_first_iter())
+                
+                
+    def restore_expanded_rows(self):
+        print 'PATHS', self.tree.expanded_rows
+        for path in self.tree.expanded_rows:
+            print 'EXPANDING', path
+            self.tree.expand(path)
+        self.tree.expanded_rows = None
 
 
     # --== Message handlers ==--
@@ -495,19 +504,16 @@ class Tracktree(modules.Module):
         """ Switch between paused and unpaused """
         if self.tree.hasMark():
             self.tree.setItem(self.tree.getMark(), ROW_ICO, icon)
+            
+            
+    def onDragBegin(self, paths):
+        print 'OHO DRAG BEGIN', paths
+        dir_selected = any(map(os.path.isdir, paths))
+        self.tree.dir_selected = dir_selected
 
 
     # --== GTK handlers ==--
-    
-    #def on_row_activated(self, treeview, path, view_column):
-    #    self.jumpTo(self.tree.store.get_iter(path))
-        
-    #def on_row_inserted(self, store, path, iter):
-    #    self.onListModified()
-        
-    #def on_row_deleted(self, store, path):
-    #    self.onListModified()
-        
+            
         
     def onMouseButton(self, tree, event, path):
         """ A mouse button has been pressed """
@@ -579,5 +585,7 @@ class Tracktree(modules.Module):
             path, drop_mode = dropInfo
             iter = self.tree.store.get_iter(path)
             self.insert(tracks, iter, drop_mode)
+            
+        #self.restore_expanded_rows()
 
         context.finish(True, False, time)

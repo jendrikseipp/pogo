@@ -486,36 +486,40 @@ class FileExplorer(modules.Module):
         """ The module has been loaded """
         self.tree            = None
         self.cfgWin          = None
-        ##self.folders         = prefs.get(__name__, 'media-folders', PREFS_DEFAULT_MEDIA_FOLDERS)
         self.scrolled        = gtk.ScrolledWindow()
-        ##self.currRoot        = None
         self.treeState       = prefs.get(__name__, 'saved-states', None)
-        self.addByFilename   = prefs.get(__name__, 'add-by-filename',  PREFS_DEFAULT_ADD_BY_FILENAME)
-        ##self.showHiddenFiles = prefs.get(__name__, 'show-hidden-files', PREFS_DEFAULT_SHOW_HIDDEN_FILES)
+        self.addByFilename   = PREFS_DEFAULT_ADD_BY_FILENAME
 
         self.scrolled.set_shadow_type(gtk.SHADOW_IN)
         self.scrolled.set_policy(gtk.POLICY_AUTOMATIC, gtk.POLICY_AUTOMATIC)
         self.scrolled.show()
 
-        #for name in self.folders:
-        #    modules.postMsg(consts.MSG_CMD_EXPLORER_ADD, {'modName': MOD_L10N, 'expName': name, 'icon': icons.dirMenuIcon(), 'widget': self.scrolled})
-        
         ##
         left_vbox = prefs.getWidgetsTree().get_widget('vbox3')
         left_vbox.pack_start(self.scrolled)
         
         self.populate_tree()
+        
+        self.tree.connect('drag-begin', self.onDragBegin)
 
 
     def onAppQuit(self):
         """ The module is going to be unloaded """
         self.saveTreeState()
         prefs.set(__name__, 'saved-states', self.treeState)
-        ##prefs.set(__name__, 'media-folders',     self.folders)
-        ##prefs.set(__name__, 'add-by-filename',   self.addByFilename)
-        ##prefs.set(__name__, 'show-hidden-files', self.showHiddenFiles)
         
-
+    
+    # --== GTK Handlers ==--
+    
+    def onDragBegin(self, tree, context):
+        """
+        A drag'n'drop operation has begun
+        Copy the selected paths to the tracktree to decide on correct drop positions
+        """
+        paths = [row[ROW_FULLPATH] for row in tree.getSelectedRows()]
+        modules.postMsg(consts.MSG_CMD_FILE_EXPLORER_DRAG_BEGIN, {'paths': paths})
+        
+        
 
     # --== Configuration ==--
 

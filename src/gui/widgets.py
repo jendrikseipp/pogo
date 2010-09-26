@@ -169,6 +169,9 @@ class TrackTreeView(ExtTreeView):
         #self.connect('button-press-event', self.onButtonPressed)
         
         self.mark = None
+        self.expanded_rows = None
+        self.dir_selected = True
+        
         
     def insert(self, target, source_row, drop_mode=None):
         model = self.store
@@ -522,17 +525,52 @@ class TrackTreeView(ExtTreeView):
         - anything into track
         """
         drop = self.get_dest_row_at_pos(int(x), int(y))
+        
+        # Save expanded rows
+        #if self.expanded_rows is None:
+        #    def expanded(treeview, path):
+        #        print 'APPEND', path
+        #        row = self.store.get_iter(path)
+        #        self.expanded_rows.append(row)
+        #    
+        #    self.expanded_rows = []
+        #    self.map_expanded_rows(expanded)
+        #    print 'PATHS =', self.expanded_rows
+        #
+            #self.collapse_all()
+            
+        pos_ok = True
 
         if drop is not None:
             iter = self.store.get_iter(drop[0])
-            #self.setItem(self.get_first_iter(), 1, str(drop[1])[1:-1])
+            depth = self.store.iter_depth(iter)
             track = self.getTrack(iter)
-            if track and (drop[1] == gtk.TREE_VIEW_DROP_INTO_OR_AFTER or drop[1] == gtk.TREE_VIEW_DROP_INTO_OR_BEFORE):
-                # do not let the user drop anything here
-                self.enable_model_drag_dest([('invalid-position', 0, -1)], gtk.gdk.ACTION_DEFAULT)
-                return
-        # Everything ok, enable dnd
-        self.enable_model_drag_dest(self.dndTargets, gtk.gdk.ACTION_DEFAULT)
+            
+            import tools
+            self.setLabel(self.get_first_iter(), tools.htmlEscape(str(drop[1])))
+            
+            drop_into = drop[1] in [gtk.TREE_VIEW_DROP_INTO_OR_AFTER, gtk.TREE_VIEW_DROP_INTO_OR_BEFORE]
+            drop_around = not drop_into
+            #drop_before = (drop[1] == gtk.TREE_VIEW_DROP_BEFORE)
+            #drop_after = (drop[1] == gtk.TREE_VIEW_DROP_AFTER)
+            
+            # At least one dir is being dropped
+            if self.dir_selected:
+                # Dirs can only be dropped at the top level
+                if drop_into or ((drop_around) and depth > 0):
+                    # do not let the user drop anything here
+                    pos_ok = False
+            else:
+                # Tracks can also be dropped into dirs (but not into tracks)
+                if track or (drop_into and depth > 0):
+                    pos_ok = False
+            
+        if pos_ok:
+            # Everything ok, enable dnd
+            self.enable_model_drag_dest(self.dndTargets, gtk.gdk.ACTION_DEFAULT)
+        else:
+            # do not let the user drop anything here
+            self.enable_model_drag_dest([('invalid-position', 0, -1)], gtk.gdk.ACTION_DEFAULT)
         
         
 if __name__ == '__main__':    

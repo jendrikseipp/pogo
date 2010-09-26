@@ -197,7 +197,9 @@ DND_TARGETS = {
 
     # Explorer manager
     MSG_EVT_EXPLORER_CHANGED,    # A new explorer has been selected    Parameters: 'modName', 'expName'
+    
+    MSG_CMD_FILE_EXPLORER_DRAG_BEGIN,
 
     # End value
     MSG_END_VALUE
-) = range(43)
+) = range(44)
