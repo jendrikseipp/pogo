@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: decibel-audio-player\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-09-16 22:21+0200\n"
+"POT-Creation-Date: 2010-09-27 21:03+0200\n"
 "PO-Revision-Date: 2008-11-08 12:03+0000\n"
 "Last-Translator: Yaron <sh.yaron@gmail.com>\n"
 "Language-Team: Hebrew <he@li.org>\n"
@@ -91,20 +91,20 @@ msgstr ""
 msgid "Preferences"
 msgstr "העדפות"
 
-#: ../src/gui/preferences.py:116
+#: ../src/gui/preferences.py:128
 msgid "Unable to load this module."
 msgstr "לא ניתן לטעון מודול זה."
 
-#: ../src/gui/preferences.py:125
+#: ../src/gui/preferences.py:137
 msgid "Modules"
 msgstr "מודולים"
 
-#: ../src/gui/preferences.py:126 ../src/modules/FileExplorer.py:588
-#: ../src/modules/DesktopNotification.py:212 ../src/modules/Covers.py:419
+#: ../src/gui/preferences.py:138 ../src/modules/DesktopNotification.py:212
+#: ../src/modules/Covers.py:419
 msgid "Description"
 msgstr "תיאור"
 
-#: ../src/gui/preferences.py:127
+#: ../src/gui/preferences.py:139
 msgid ""
 "This dialog box shows the list of available modules, which are small pieces "
 "of code that add some functionnalities to the application. You can enable/"
@@ -116,11 +116,11 @@ msgstr ""
 "הסימון בתיבת הסימון שלפניו. שימו לב שלא ניתן לבטל כמה מהמודולים (לדוגמה: "
 "סייר הקבצים)."
 
-#: ../src/gui/preferences.py:130
+#: ../src/gui/preferences.py:142
 msgid "Configuring a Module"
 msgstr "הגדרת מודול"
 
-#: ../src/gui/preferences.py:131
+#: ../src/gui/preferences.py:143
 msgid ""
 "When a module may be configured, a specific icon is displayed on the right "
 "of the corresponding line. To configure a module, simply select it and then "
@@ -164,39 +164,6 @@ msgstr ""
 "אין להשתמש בתו %s.\n"
 "נא בחרו בשם אחר."
 
-#: ../src/gui/authentication.py:131
-#, python-format
-msgid ""
-"Enter your username and password for\n"
-"%(reason)s"
-msgstr ""
-"הזן את שם המשתמש והסיסמה שלך עבור\n"
-"%(reason)s"
-
-#: ../src/gui/authentication.py:133 ../res/Authentication.glade.h:1
-msgid "Password required"
-msgstr "נדרשת סיסמה"
-
-#: ../src/gui/authentication.py:170
-msgid "About password storage safety"
-msgstr "אודות אבטחה בשמירת סיסמאות"
-
-#: ../src/gui/authentication.py:171
-msgid ""
-"If you use Gnome, it is safe to store your password since the Gnome keyring "
-"is used."
-msgstr ""
-"במידה והנך משתמש ב־GNOME, תוכל לשמור סיסמאות בבטחה כיוון שהפעולה מתבצעת דרך "
-"מחזיק המפתחות של GNOME."
-
-#: ../src/gui/authentication.py:172
-msgid ""
-"If you do not use Gnome, beware that, although not stored as clear text, an "
-"attacker <i>could</i> retrieve it."
-msgstr ""
-"במידה ואינך משתמש ב־GNOME, היה ער לעובדה כי למרות שהסיסמה אינה נשמרת כטקסט "
-"מובהק, מפצח סיסמאות <i>יוכל</i> לאחזר אותה."
-
 #: ../src/gui/about.py:39
 msgid "translator-credits"
 msgstr ""
@@ -208,9 +175,13 @@ msgstr ""
 msgid "Developer:"
 msgstr "מפתח:"
 
-#: ../src/gui/about.py:46
+#: ../src/gui/about.py:47
 msgid "Thanks to:"
 msgstr "תודות ל:"
+
+#: ../src/gui/about.py:49
+msgid "(Developer of Decibel Audio Player)"
+msgstr ""
 
 #: ../src/modules/Zeitgeist.py:26
 msgid "Send track information to the Zeitgeist service"
@@ -224,62 +195,22 @@ msgstr "סייר הקבצים"
 msgid "Browse your file system"
 msgstr "סייר במערכת הקבצים שלך"
 
-#: ../src/modules/FileExplorer.py:31
-msgid "Home"
-msgstr "דף הבית"
-
-#: ../src/modules/FileExplorer.py:31
-msgid "Root"
-msgstr ""
-
-#: ../src/modules/FileExplorer.py:182
+#: ../src/modules/FileExplorer.py:158
 msgid "loading..."
 msgstr "טוען..."
 
-#: ../src/modules/FileExplorer.py:350
-msgid "Collapse all"
+#: ../src/modules/FileExplorer.py:325
+msgid "Append"
 msgstr ""
 
-#: ../src/modules/FileExplorer.py:363 ../res/FileExplorer.glade.h:8
-msgid "Show hidden files"
-msgstr "הצג קבצים מוסתרים"
-
-#: ../src/modules/FileExplorer.py:525
-msgid "You will be able to add this root folder again later on if you wish so."
-msgstr "תוכל להוסיף את תיקיית משתמש העל הזו שוב אם ברצונך לעשות כך."
-
-#: ../src/modules/FileExplorer.py:526
-msgid "Remove the selected entry?"
-msgstr "האם להסיר את הרשומה הנבחרת?"
-
-#: ../src/modules/FileExplorer.py:528
-msgid ""
-"You will be able to add these root folders again later on if you wish so."
-msgstr "תוכל להשתמש בתיקיות משתמש על אלו מאוחר יותר אם תחפוץ בכך."
-
-#: ../src/modules/FileExplorer.py:529
-msgid "Remove all selected entries?"
-msgstr "האם להסיר את הרשומות הנבחרות?"
-
-#: ../src/modules/FileExplorer.py:531
-msgid "Your media files will not be deleted."
-msgstr "קבצי המדיה שלך לא ימחקו."
-
-#: ../src/modules/FileExplorer.py:589
-msgid "This module allows you to browse the files on your drives."
-msgstr "מודול זה מאפשר לך לסייר בין הקבצים שבכונן שלך."
-
-#: ../src/modules/FileExplorer.py:590
-msgid "Usage"
-msgstr "שימוש"
-
-#: ../src/modules/FileExplorer.py:591
-msgid ""
-"At least one root folder must be added to browse your files. This folder "
-"then becomes the root of the file explorer tree in the main window."
+#: ../src/modules/FileExplorer.py:448
+msgid "Music"
 msgstr ""
-"יש להוסיף לפחות תיקיית על אחת כדי לסייר בין הקבצים שלך. תיקייה זו תהפוך "
-"לתיקיית השורש של סייר הקבצים בחלון הראשי."
+
+#: ../src/modules/FileExplorer.py:448
+#, fuzzy
+msgid "Albums"
+msgstr "אלבום"
 
 #: ../src/modules/__init__.py:75
 msgid "The following Python modules are not available:"
@@ -297,23 +228,16 @@ msgstr ""
 msgid "You must restart the application for this modification to take effect."
 msgstr ""
 
-#: ../src/modules/TrackPanel.py:128
-#, fuzzy, python-format
-msgid "by <i>%(artist)s</i> from <i>%(album)s</i>"
-msgstr ""
-"על ידי %(artist)s\n"
-"מהאלבום %(album)s"
-
-#: ../src/modules/CtrlPanel.py:102 ../src/modules/CtrlPanel.py:163
+#: ../src/modules/CtrlPanel.py:206 ../src/modules/CtrlPanel.py:267
 msgid "Pause the current track"
 msgstr "השהה את הרצועה הנוכחית"
 
-#: ../src/modules/CtrlPanel.py:121
+#: ../src/modules/CtrlPanel.py:225
 #, fuzzy
 msgid "Play the first selected track of the playlist"
 msgstr "נגן את הרצועה הראשונה ברשימת ההשמעה"
 
-#: ../src/modules/CtrlPanel.py:157
+#: ../src/modules/CtrlPanel.py:261
 msgid "Continue playing the current track"
 msgstr "המשך לנגן את הרצועה הנוכחית"
 
@@ -440,21 +364,13 @@ msgstr ""
 "וקיימת עטיפת משתמש עבור הרצועה הנוכחית, בה יעשה שמוש. במידה ואין, העטיפה "
 "תורד מהאינטרנט."
 
-#: ../src/modules/Tracktree.py:313
+#: ../src/modules/Tracktree.py:328
 msgid "Save playlist"
 msgstr "שמור את רשימת־ההשמעה"
 
-#: ../src/modules/Tracktree.py:363
+#: ../src/modules/Tracktree.py:378
 msgid "Clear Playlist"
 msgstr ""
-
-#: ../src/modules/Explorer.py:68
-msgid ""
-"Please select an explorer\n"
-"in the combo box below."
-msgstr ""
-"נא בחרו סייר\n"
-"בתיבת הבחירה שלהלן."
 
 #: ../src/modules/Equalizer.py:24 ../src/modules/Equalizer.py:55
 #: ../src/modules/Equalizer.py:69
@@ -510,22 +426,6 @@ msgstr "אמן לא ידוע"
 msgid "Unknown Album Artist"
 msgstr "אמן התקליטור אינו ידוע"
 
-#: ../res/Authentication.glade.h:2
-msgid "Password:"
-msgstr "סיסמה:"
-
-#: ../res/Authentication.glade.h:3
-msgid "Remember this password"
-msgstr "זכור סיסמה זאת"
-
-#: ../res/Authentication.glade.h:4
-msgid "Username:"
-msgstr "שם המשתמש:"
-
-#: ../res/Authentication.glade.h:5 ../res/Progress.glade.h:1
-msgid "label"
-msgstr "תוית"
-
 #: ../res/Covers.glade.h:1
 msgid "<b>Internet Covers</b>"
 msgstr "<b>עטיפות מהאינטרנט</b>"
@@ -562,7 +462,7 @@ msgstr "נסה להוריד עטיפות מהאינטרנט"
 msgid "<b>Body</b>"
 msgstr "<b>גוף</b>"
 
-#: ../res/DesktopNotification.glade.h:2 ../res/FileExplorer.glade.h:1
+#: ../res/DesktopNotification.glade.h:2
 msgid "<b>Miscellaneous</b>"
 msgstr "<b>שונות</b>"
 
@@ -590,124 +490,170 @@ msgstr "שניות"
 msgid "Preset:"
 msgstr ""
 
-#: ../res/FileExplorer.glade.h:2
-msgid "<b>Root Folders</b>"
-msgstr "<b>תיקיות על</b>"
-
-#: ../res/FileExplorer.glade.h:3
-msgid "Add a new root folder to the file explorer"
-msgstr "הוסף תיקיית על חדש לסייר הקבצים"
-
-#: ../res/FileExplorer.glade.h:4
-msgid "Add files to playlist by filename"
-msgstr ""
-
-#: ../res/FileExplorer.glade.h:5
-msgid "Remove the selected root folders"
-msgstr "הסר את תיקיות העל הנבחרות"
-
-#: ../res/FileExplorer.glade.h:6
-msgid "Rename"
-msgstr "שנה שם"
-
-#: ../res/FileExplorer.glade.h:7
-msgid "Rename the selected root folder"
-msgstr "שנה את שם תיקיות העל הנבחרות"
-
-#: ../res/FileExplorer.glade.h:9
-msgid ""
-"Whether files should be added to the playlist by their name rather than by "
-"their tags"
-msgstr ""
-
-#: ../res/FileExplorer.glade.h:10
-msgid "Whether hidden files should be shown in the file explorer"
-msgstr "האם יש להציג קבצים מוסתרים בסייר הקבצים"
-
 #: ../res/MainWindow.glade.h:1
-msgid "Display about dialog box"
-msgstr "הצג את תיבת האודות"
-
-#: ../res/MainWindow.glade.h:2
-msgid "Display preferences"
-msgstr "הצג את ההעדפות"
-
-#: ../res/MainWindow.glade.h:3
-msgid "Full"
-msgstr ""
-
-#: ../res/MainWindow.glade.h:4
-msgid "Mini"
-msgstr ""
-
-#: ../res/MainWindow.glade.h:5
-msgid "Online _Help"
-msgstr "עזרה _מקוונת"
-
-#: ../res/MainWindow.glade.h:6
-msgid "Open the online help web page"
-msgstr "פתח את דפי העזרה המקוונים"
-
-#: ../res/MainWindow.glade.h:7
 msgid "Play the first track of the playlist"
 msgstr "נגן את הרצועה הראשונה ברשימת ההשמעה"
 
-#: ../res/MainWindow.glade.h:8
+#: ../res/MainWindow.glade.h:2
 msgid "Play the next track"
 msgstr "נגן את הרצועה הבאה"
 
-#: ../res/MainWindow.glade.h:9
+#: ../res/MainWindow.glade.h:3
 msgid "Play the previous track"
 msgstr "נגן את הרצועה הקודמת"
 
-#: ../res/MainWindow.glade.h:10
-msgid "Playlist"
-msgstr ""
-
-#: ../res/MainWindow.glade.h:11
-msgid "Quit the application"
-msgstr "צא מהיישום"
-
-#: ../res/MainWindow.glade.h:12
-msgid "Remaining time"
-msgstr "הזמן שנותר"
-
-#: ../res/MainWindow.glade.h:13
+#: ../res/MainWindow.glade.h:4
 msgid "Seek a position in the current track"
 msgstr "חפש מיקום ברצועה הנוכחית"
 
-#: ../res/MainWindow.glade.h:14
-msgid "Select an explorer"
-msgstr "בחר סייר"
+#~ msgid ""
+#~ "Enter your username and password for\n"
+#~ "%(reason)s"
+#~ msgstr ""
+#~ "הזן את שם המשתמש והסיסמה שלך עבור\n"
+#~ "%(reason)s"
 
-#: ../res/MainWindow.glade.h:15
-msgid "Stop the current track"
-msgstr "עצור את הרצועה הנוכחית"
+#~ msgid "Password required"
+#~ msgstr "נדרשת סיסמה"
 
-#: ../res/MainWindow.glade.h:16
-msgid "_Edit"
-msgstr "_ערוך"
+#~ msgid "About password storage safety"
+#~ msgstr "אודות אבטחה בשמירת סיסמאות"
 
-#: ../res/MainWindow.glade.h:17
-msgid "_File"
-msgstr "_קובץ"
+#~ msgid ""
+#~ "If you use Gnome, it is safe to store your password since the Gnome "
+#~ "keyring is used."
+#~ msgstr ""
+#~ "במידה והנך משתמש ב־GNOME, תוכל לשמור סיסמאות בבטחה כיוון שהפעולה מתבצעת "
+#~ "דרך מחזיק המפתחות של GNOME."
 
-#: ../res/MainWindow.glade.h:18
-msgid "_Help"
-msgstr "ע_זרה"
+#~ msgid ""
+#~ "If you do not use Gnome, beware that, although not stored as clear text, "
+#~ "an attacker <i>could</i> retrieve it."
+#~ msgstr ""
+#~ "במידה ואינך משתמש ב־GNOME, היה ער לעובדה כי למרות שהסיסמה אינה נשמרת "
+#~ "כטקסט מובהק, מפצח סיסמאות <i>יוכל</i> לאחזר אותה."
 
-#: ../res/MainWindow.glade.h:19
+#~ msgid "Home"
+#~ msgstr "דף הבית"
+
+#~ msgid "Show hidden files"
+#~ msgstr "הצג קבצים מוסתרים"
+
+#~ msgid ""
+#~ "You will be able to add this root folder again later on if you wish so."
+#~ msgstr "תוכל להוסיף את תיקיית משתמש העל הזו שוב אם ברצונך לעשות כך."
+
+#~ msgid "Remove the selected entry?"
+#~ msgstr "האם להסיר את הרשומה הנבחרת?"
+
+#~ msgid ""
+#~ "You will be able to add these root folders again later on if you wish so."
+#~ msgstr "תוכל להשתמש בתיקיות משתמש על אלו מאוחר יותר אם תחפוץ בכך."
+
+#~ msgid "Remove all selected entries?"
+#~ msgstr "האם להסיר את הרשומות הנבחרות?"
+
+#~ msgid "Your media files will not be deleted."
+#~ msgstr "קבצי המדיה שלך לא ימחקו."
+
+#~ msgid "This module allows you to browse the files on your drives."
+#~ msgstr "מודול זה מאפשר לך לסייר בין הקבצים שבכונן שלך."
+
+#~ msgid "Usage"
+#~ msgstr "שימוש"
+
+#~ msgid ""
+#~ "At least one root folder must be added to browse your files. This folder "
+#~ "then becomes the root of the file explorer tree in the main window."
+#~ msgstr ""
+#~ "יש להוסיף לפחות תיקיית על אחת כדי לסייר בין הקבצים שלך. תיקייה זו תהפוך "
+#~ "לתיקיית השורש של סייר הקבצים בחלון הראשי."
+
 #, fuzzy
-msgid "_View"
-msgstr "_קובץ"
+#~ msgid "by <i>%(artist)s</i> from <i>%(album)s</i>"
+#~ msgstr ""
+#~ "על ידי %(artist)s\n"
+#~ "מהאלבום %(album)s"
 
-#: ../res/SelectPath.glade.h:1
-msgid "Name:"
-msgstr "שם:"
+#~ msgid ""
+#~ "Please select an explorer\n"
+#~ "in the combo box below."
+#~ msgstr ""
+#~ "נא בחרו סייר\n"
+#~ "בתיבת הבחירה שלהלן."
 
-#: ../res/SelectPath.glade.h:2
-msgid "Path:"
-msgstr "נתיב:"
+#~ msgid "Password:"
+#~ msgstr "סיסמה:"
+
+#~ msgid "Remember this password"
+#~ msgstr "זכור סיסמה זאת"
+
+#~ msgid "Username:"
+#~ msgstr "שם המשתמש:"
+
+#~ msgid "label"
+#~ msgstr "תוית"
+
+#~ msgid "<b>Root Folders</b>"
+#~ msgstr "<b>תיקיות על</b>"
+
+#~ msgid "Add a new root folder to the file explorer"
+#~ msgstr "הוסף תיקיית על חדש לסייר הקבצים"
+
+#~ msgid "Remove the selected root folders"
+#~ msgstr "הסר את תיקיות העל הנבחרות"
+
+#~ msgid "Rename"
+#~ msgstr "שנה שם"
+
+#~ msgid "Rename the selected root folder"
+#~ msgstr "שנה את שם תיקיות העל הנבחרות"
+
+#~ msgid "Whether hidden files should be shown in the file explorer"
+#~ msgstr "האם יש להציג קבצים מוסתרים בסייר הקבצים"
+
+#~ msgid "Display about dialog box"
+#~ msgstr "הצג את תיבת האודות"
+
+#~ msgid "Display preferences"
+#~ msgstr "הצג את ההעדפות"
+
+#~ msgid "Online _Help"
+#~ msgstr "עזרה _מקוונת"
+
+#~ msgid "Open the online help web page"
+#~ msgstr "פתח את דפי העזרה המקוונים"
+
+#~ msgid "Quit the application"
+#~ msgstr "צא מהיישום"
+
+#~ msgid "Remaining time"
+#~ msgstr "הזמן שנותר"
+
+#~ msgid "Select an explorer"
+#~ msgstr "בחר סייר"
+
+#~ msgid "Stop the current track"
+#~ msgstr "עצור את הרצועה הנוכחית"
+
+#~ msgid "_Edit"
+#~ msgstr "_ערוך"
+
+#~ msgid "_File"
+#~ msgstr "_קובץ"
+
+#~ msgid "_Help"
+#~ msgstr "ע_זרה"
+
+#, fuzzy
+#~ msgid "_View"
+#~ msgstr "_קובץ"
+
+#~ msgid "Name:"
+#~ msgstr "שם:"
+
+#~ msgid "Path:"
+#~ msgstr "נתיב:"
 
 #~ msgid "Instant Messenger Status"
 #~ msgstr "מצב תוכנת המסרים המידיים"

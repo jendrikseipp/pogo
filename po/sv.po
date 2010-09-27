@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: decibel-audio-player\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-09-16 22:21+0200\n"
+"POT-Creation-Date: 2010-09-27 21:03+0200\n"
 "PO-Revision-Date: 2009-03-12 11:04+0000\n"
 "Last-Translator: gibbis <Unknown>\n"
 "Language-Team: Swedish <sv@li.org>\n"
@@ -91,20 +91,20 @@ msgstr ""
 msgid "Preferences"
 msgstr "Inställningar"
 
-#: ../src/gui/preferences.py:116
+#: ../src/gui/preferences.py:128
 msgid "Unable to load this module."
 msgstr "Kunde inte läsa in denna modul."
 
-#: ../src/gui/preferences.py:125
+#: ../src/gui/preferences.py:137
 msgid "Modules"
 msgstr "Moduler"
 
-#: ../src/gui/preferences.py:126 ../src/modules/FileExplorer.py:588
-#: ../src/modules/DesktopNotification.py:212 ../src/modules/Covers.py:419
+#: ../src/gui/preferences.py:138 ../src/modules/DesktopNotification.py:212
+#: ../src/modules/Covers.py:419
 msgid "Description"
 msgstr "Beskrivning"
 
-#: ../src/gui/preferences.py:127
+#: ../src/gui/preferences.py:139
 msgid ""
 "This dialog box shows the list of available modules, which are small pieces "
 "of code that add some functionnalities to the application. You can enable/"
@@ -116,11 +116,11 @@ msgstr ""
 "inaktivera en modul genom att kryssa i/av i kryssrutan framför den. "
 "Observera att vissa moduler (t,ex, Filutforskaren) inte kan inaktiveras."
 
-#: ../src/gui/preferences.py:130
+#: ../src/gui/preferences.py:142
 msgid "Configuring a Module"
 msgstr "Konfiguration av en modul"
 
-#: ../src/gui/preferences.py:131
+#: ../src/gui/preferences.py:143
 msgid ""
 "When a module may be configured, a specific icon is displayed on the right "
 "of the corresponding line. To configure a module, simply select it and then "
@@ -166,39 +166,6 @@ msgstr ""
 "Tecknet %s är inte tillåtet.\n"
 "Använd ett annat namn."
 
-#: ../src/gui/authentication.py:131
-#, python-format
-msgid ""
-"Enter your username and password for\n"
-"%(reason)s"
-msgstr ""
-"Ange ditt användarnamn och lösenord för\n"
-"%(reason)s"
-
-#: ../src/gui/authentication.py:133 ../res/Authentication.glade.h:1
-msgid "Password required"
-msgstr "Lösenord krävs"
-
-#: ../src/gui/authentication.py:170
-msgid "About password storage safety"
-msgstr "Om säkerhet för lösenordslagring"
-
-#: ../src/gui/authentication.py:171
-msgid ""
-"If you use Gnome, it is safe to store your password since the Gnome keyring "
-"is used."
-msgstr ""
-"Om du använder Gnome är det säkert att lagra ditt lösenord eftersom Gnome-"
-"nyckelring används."
-
-#: ../src/gui/authentication.py:172
-msgid ""
-"If you do not use Gnome, beware that, although not stored as clear text, an "
-"attacker <i>could</i> retrieve it."
-msgstr ""
-"Om du inte använder Gnome så bör du känna till en attackare skulle <i>kunna</"
-"i> komma över det, även om det inte lagrats i klartext."
-
 #: ../src/gui/about.py:39
 msgid "translator-credits"
 msgstr ""
@@ -212,9 +179,13 @@ msgstr ""
 msgid "Developer:"
 msgstr "Utvecklare:"
 
-#: ../src/gui/about.py:46
+#: ../src/gui/about.py:47
 msgid "Thanks to:"
 msgstr "Tack till:"
+
+#: ../src/gui/about.py:49
+msgid "(Developer of Decibel Audio Player)"
+msgstr ""
 
 #: ../src/modules/Zeitgeist.py:26
 msgid "Send track information to the Zeitgeist service"
@@ -228,65 +199,22 @@ msgstr "Filutforskare"
 msgid "Browse your file system"
 msgstr "Bläddra i ditt filsystem"
 
-#: ../src/modules/FileExplorer.py:31
-msgid "Home"
-msgstr "Hem"
-
-#: ../src/modules/FileExplorer.py:31
-msgid "Root"
-msgstr ""
-
-#: ../src/modules/FileExplorer.py:182
+#: ../src/modules/FileExplorer.py:158
 msgid "loading..."
 msgstr "läser in..."
 
-#: ../src/modules/FileExplorer.py:350
-msgid "Collapse all"
+#: ../src/modules/FileExplorer.py:325
+msgid "Append"
 msgstr ""
 
-#: ../src/modules/FileExplorer.py:363 ../res/FileExplorer.glade.h:8
-msgid "Show hidden files"
-msgstr "Visa dolda filer"
-
-#: ../src/modules/FileExplorer.py:525
-msgid "You will be able to add this root folder again later on if you wish so."
+#: ../src/modules/FileExplorer.py:448
+msgid "Music"
 msgstr ""
-"Du kommer senare att kunna lägga till denna rotmapp igen om du så önskar."
 
-#: ../src/modules/FileExplorer.py:526
-msgid "Remove the selected entry?"
-msgstr "Ta bort det markerade objektet?"
-
-#: ../src/modules/FileExplorer.py:528
-msgid ""
-"You will be able to add these root folders again later on if you wish so."
-msgstr ""
-"Du kommer senare att kunna att lägga till dessa rotmappar igen om du så "
-"önskar."
-
-#: ../src/modules/FileExplorer.py:529
-msgid "Remove all selected entries?"
-msgstr "Ta bort alla markerade objekt?"
-
-#: ../src/modules/FileExplorer.py:531
-msgid "Your media files will not be deleted."
-msgstr "Dina mediafiler kommer inte att tas bort."
-
-#: ../src/modules/FileExplorer.py:589
-msgid "This module allows you to browse the files on your drives."
-msgstr "Denna modul låter dig bläddra i filerna på dina enheter."
-
-#: ../src/modules/FileExplorer.py:590
-msgid "Usage"
-msgstr "Användning"
-
-#: ../src/modules/FileExplorer.py:591
-msgid ""
-"At least one root folder must be added to browse your files. This folder "
-"then becomes the root of the file explorer tree in the main window."
-msgstr ""
-"Åtminstone en rotmapp måste läggas till för att bläddra i dina filer. Denna "
-"mapp kommer sedan att bli roten för filutforskarens träd i huvudfönstret."
+#: ../src/modules/FileExplorer.py:448
+#, fuzzy
+msgid "Albums"
+msgstr "Album"
 
 #: ../src/modules/__init__.py:75
 msgid "The following Python modules are not available:"
@@ -304,23 +232,16 @@ msgstr ""
 msgid "You must restart the application for this modification to take effect."
 msgstr ""
 
-#: ../src/modules/TrackPanel.py:128
-#, fuzzy, python-format
-msgid "by <i>%(artist)s</i> from <i>%(album)s</i>"
-msgstr ""
-"av %(artist)s\n"
-"från %(album)s"
-
-#: ../src/modules/CtrlPanel.py:102 ../src/modules/CtrlPanel.py:163
+#: ../src/modules/CtrlPanel.py:206 ../src/modules/CtrlPanel.py:267
 msgid "Pause the current track"
 msgstr "Pausa det aktuella spåret"
 
-#: ../src/modules/CtrlPanel.py:121
+#: ../src/modules/CtrlPanel.py:225
 #, fuzzy
 msgid "Play the first selected track of the playlist"
 msgstr "Spela det första spåret i spellistan"
 
-#: ../src/modules/CtrlPanel.py:157
+#: ../src/modules/CtrlPanel.py:261
 msgid "Continue playing the current track"
 msgstr "Fortsätt spela det aktuella spåret"
 
@@ -451,21 +372,13 @@ msgstr ""
 "aktuella spåret så kommer det att användas. Om det inte redan finns så "
 "kommer det att hämtas."
 
-#: ../src/modules/Tracktree.py:313
+#: ../src/modules/Tracktree.py:328
 msgid "Save playlist"
 msgstr "Spara spellista"
 
-#: ../src/modules/Tracktree.py:363
+#: ../src/modules/Tracktree.py:378
 msgid "Clear Playlist"
 msgstr ""
-
-#: ../src/modules/Explorer.py:68
-msgid ""
-"Please select an explorer\n"
-"in the combo box below."
-msgstr ""
-"Välj en utforskare i\n"
-"nedanstående ruta."
 
 #: ../src/modules/Equalizer.py:24 ../src/modules/Equalizer.py:55
 #: ../src/modules/Equalizer.py:69
@@ -521,22 +434,6 @@ msgstr "Okänd artist"
 msgid "Unknown Album Artist"
 msgstr "Okänd albumartist"
 
-#: ../res/Authentication.glade.h:2
-msgid "Password:"
-msgstr "Lösenord:"
-
-#: ../res/Authentication.glade.h:3
-msgid "Remember this password"
-msgstr "Kom ihåg detta lösenord"
-
-#: ../res/Authentication.glade.h:4
-msgid "Username:"
-msgstr "Användarnamn:"
-
-#: ../res/Authentication.glade.h:5 ../res/Progress.glade.h:1
-msgid "label"
-msgstr "etikett"
-
 #: ../res/Covers.glade.h:1
 msgid "<b>Internet Covers</b>"
 msgstr "<b>Omslagsbilder från internet</b>"
@@ -574,7 +471,7 @@ msgstr "Försök hämta omslagsbilder från internet"
 msgid "<b>Body</b>"
 msgstr "<b>Text</b>"
 
-#: ../res/DesktopNotification.glade.h:2 ../res/FileExplorer.glade.h:1
+#: ../res/DesktopNotification.glade.h:2
 msgid "<b>Miscellaneous</b>"
 msgstr "<b>Diverse</b>"
 
@@ -602,124 +499,174 @@ msgstr "sekunder"
 msgid "Preset:"
 msgstr ""
 
-#: ../res/FileExplorer.glade.h:2
-msgid "<b>Root Folders</b>"
-msgstr "<b>Rotmappar</b>"
-
-#: ../res/FileExplorer.glade.h:3
-msgid "Add a new root folder to the file explorer"
-msgstr "Lägg till en ny rotmapp till filutforskaren"
-
-#: ../res/FileExplorer.glade.h:4
-msgid "Add files to playlist by filename"
-msgstr ""
-
-#: ../res/FileExplorer.glade.h:5
-msgid "Remove the selected root folders"
-msgstr "Ta bort de markerade rotmapparna"
-
-#: ../res/FileExplorer.glade.h:6
-msgid "Rename"
-msgstr "Byt namn"
-
-#: ../res/FileExplorer.glade.h:7
-msgid "Rename the selected root folder"
-msgstr "Byt namn på markerad rotmapp"
-
-#: ../res/FileExplorer.glade.h:9
-msgid ""
-"Whether files should be added to the playlist by their name rather than by "
-"their tags"
-msgstr ""
-
-#: ../res/FileExplorer.glade.h:10
-msgid "Whether hidden files should be shown in the file explorer"
-msgstr "Huruvida dolda filer ska visas i filutforskaren"
-
 #: ../res/MainWindow.glade.h:1
-msgid "Display about dialog box"
-msgstr "Visa dialogrutan Om"
-
-#: ../res/MainWindow.glade.h:2
-msgid "Display preferences"
-msgstr "Visningsinställningar"
-
-#: ../res/MainWindow.glade.h:3
-msgid "Full"
-msgstr ""
-
-#: ../res/MainWindow.glade.h:4
-msgid "Mini"
-msgstr ""
-
-#: ../res/MainWindow.glade.h:5
-msgid "Online _Help"
-msgstr "_Hjälp på nätet"
-
-#: ../res/MainWindow.glade.h:6
-msgid "Open the online help web page"
-msgstr "Öppna webbsidan för hjälp"
-
-#: ../res/MainWindow.glade.h:7
 msgid "Play the first track of the playlist"
 msgstr "Spela det första spåret i spellistan"
 
-#: ../res/MainWindow.glade.h:8
+#: ../res/MainWindow.glade.h:2
 msgid "Play the next track"
 msgstr "Spela upp nästa spår"
 
-#: ../res/MainWindow.glade.h:9
+#: ../res/MainWindow.glade.h:3
 msgid "Play the previous track"
 msgstr "Spela upp föregående spår"
 
-#: ../res/MainWindow.glade.h:10
-msgid "Playlist"
-msgstr ""
-
-#: ../res/MainWindow.glade.h:11
-msgid "Quit the application"
-msgstr "Avsluta programmet"
-
-#: ../res/MainWindow.glade.h:12
-msgid "Remaining time"
-msgstr "Återstående tid"
-
-#: ../res/MainWindow.glade.h:13
+#: ../res/MainWindow.glade.h:4
 msgid "Seek a position in the current track"
 msgstr "Spola till en position i aktuellt spår"
 
-#: ../res/MainWindow.glade.h:14
-msgid "Select an explorer"
-msgstr "Välj en utforskare"
+#~ msgid ""
+#~ "Enter your username and password for\n"
+#~ "%(reason)s"
+#~ msgstr ""
+#~ "Ange ditt användarnamn och lösenord för\n"
+#~ "%(reason)s"
 
-#: ../res/MainWindow.glade.h:15
-msgid "Stop the current track"
-msgstr "Stoppa aktuellt spår"
+#~ msgid "Password required"
+#~ msgstr "Lösenord krävs"
 
-#: ../res/MainWindow.glade.h:16
-msgid "_Edit"
-msgstr "_Redigera"
+#~ msgid "About password storage safety"
+#~ msgstr "Om säkerhet för lösenordslagring"
 
-#: ../res/MainWindow.glade.h:17
-msgid "_File"
-msgstr "_Fil"
+#~ msgid ""
+#~ "If you use Gnome, it is safe to store your password since the Gnome "
+#~ "keyring is used."
+#~ msgstr ""
+#~ "Om du använder Gnome är det säkert att lagra ditt lösenord eftersom Gnome-"
+#~ "nyckelring används."
 
-#: ../res/MainWindow.glade.h:18
-msgid "_Help"
-msgstr "_Hjälp"
+#~ msgid ""
+#~ "If you do not use Gnome, beware that, although not stored as clear text, "
+#~ "an attacker <i>could</i> retrieve it."
+#~ msgstr ""
+#~ "Om du inte använder Gnome så bör du känna till en attackare skulle "
+#~ "<i>kunna</i> komma över det, även om det inte lagrats i klartext."
 
-#: ../res/MainWindow.glade.h:19
+#~ msgid "Home"
+#~ msgstr "Hem"
+
+#~ msgid "Show hidden files"
+#~ msgstr "Visa dolda filer"
+
+#~ msgid ""
+#~ "You will be able to add this root folder again later on if you wish so."
+#~ msgstr ""
+#~ "Du kommer senare att kunna lägga till denna rotmapp igen om du så önskar."
+
+#~ msgid "Remove the selected entry?"
+#~ msgstr "Ta bort det markerade objektet?"
+
+#~ msgid ""
+#~ "You will be able to add these root folders again later on if you wish so."
+#~ msgstr ""
+#~ "Du kommer senare att kunna att lägga till dessa rotmappar igen om du så "
+#~ "önskar."
+
+#~ msgid "Remove all selected entries?"
+#~ msgstr "Ta bort alla markerade objekt?"
+
+#~ msgid "Your media files will not be deleted."
+#~ msgstr "Dina mediafiler kommer inte att tas bort."
+
+#~ msgid "This module allows you to browse the files on your drives."
+#~ msgstr "Denna modul låter dig bläddra i filerna på dina enheter."
+
+#~ msgid "Usage"
+#~ msgstr "Användning"
+
+#~ msgid ""
+#~ "At least one root folder must be added to browse your files. This folder "
+#~ "then becomes the root of the file explorer tree in the main window."
+#~ msgstr ""
+#~ "Åtminstone en rotmapp måste läggas till för att bläddra i dina filer. "
+#~ "Denna mapp kommer sedan att bli roten för filutforskarens träd i "
+#~ "huvudfönstret."
+
 #, fuzzy
-msgid "_View"
-msgstr "_Fil"
+#~ msgid "by <i>%(artist)s</i> from <i>%(album)s</i>"
+#~ msgstr ""
+#~ "av %(artist)s\n"
+#~ "från %(album)s"
 
-#: ../res/SelectPath.glade.h:1
-msgid "Name:"
-msgstr "Namn:"
+#~ msgid ""
+#~ "Please select an explorer\n"
+#~ "in the combo box below."
+#~ msgstr ""
+#~ "Välj en utforskare i\n"
+#~ "nedanstående ruta."
 
-#: ../res/SelectPath.glade.h:2
-msgid "Path:"
-msgstr "Sökväg:"
+#~ msgid "Password:"
+#~ msgstr "Lösenord:"
+
+#~ msgid "Remember this password"
+#~ msgstr "Kom ihåg detta lösenord"
+
+#~ msgid "Username:"
+#~ msgstr "Användarnamn:"
+
+#~ msgid "label"
+#~ msgstr "etikett"
+
+#~ msgid "<b>Root Folders</b>"
+#~ msgstr "<b>Rotmappar</b>"
+
+#~ msgid "Add a new root folder to the file explorer"
+#~ msgstr "Lägg till en ny rotmapp till filutforskaren"
+
+#~ msgid "Remove the selected root folders"
+#~ msgstr "Ta bort de markerade rotmapparna"
+
+#~ msgid "Rename"
+#~ msgstr "Byt namn"
+
+#~ msgid "Rename the selected root folder"
+#~ msgstr "Byt namn på markerad rotmapp"
+
+#~ msgid "Whether hidden files should be shown in the file explorer"
+#~ msgstr "Huruvida dolda filer ska visas i filutforskaren"
+
+#~ msgid "Display about dialog box"
+#~ msgstr "Visa dialogrutan Om"
+
+#~ msgid "Display preferences"
+#~ msgstr "Visningsinställningar"
+
+#~ msgid "Online _Help"
+#~ msgstr "_Hjälp på nätet"
+
+#~ msgid "Open the online help web page"
+#~ msgstr "Öppna webbsidan för hjälp"
+
+#~ msgid "Quit the application"
+#~ msgstr "Avsluta programmet"
+
+#~ msgid "Remaining time"
+#~ msgstr "Återstående tid"
+
+#~ msgid "Select an explorer"
+#~ msgstr "Välj en utforskare"
+
+#~ msgid "Stop the current track"
+#~ msgstr "Stoppa aktuellt spår"
+
+#~ msgid "_Edit"
+#~ msgstr "_Redigera"
+
+#~ msgid "_File"
+#~ msgstr "_Fil"
+
+#~ msgid "_Help"
+#~ msgstr "_Hjälp"
+
+#, fuzzy
+#~ msgid "_View"
+#~ msgstr "_Fil"
+
+#~ msgid "Name:"
+#~ msgstr "Namn:"
+
+#~ msgid "Path:"
+#~ msgstr "Sökväg:"
 
 #~ msgid "Instant Messenger Status"
 #~ msgstr "Status för chatklient"

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: decibel-audio-player\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-09-16 22:21+0200\n"
+"POT-Creation-Date: 2010-09-27 21:03+0200\n"
 "PO-Revision-Date: 2009-03-12 11:15+0000\n"
 "Last-Translator: gibbis <Unknown>\n"
 "Language-Team: Hungarian <hu@li.org>\n"
@@ -91,20 +91,20 @@ msgstr ""
 msgid "Preferences"
 msgstr "Beállítások"
 
-#: ../src/gui/preferences.py:116
+#: ../src/gui/preferences.py:128
 msgid "Unable to load this module."
 msgstr "Nem tudom betölteni ezt a modult"
 
-#: ../src/gui/preferences.py:125
+#: ../src/gui/preferences.py:137
 msgid "Modules"
 msgstr "Modulok"
 
-#: ../src/gui/preferences.py:126 ../src/modules/FileExplorer.py:588
-#: ../src/modules/DesktopNotification.py:212 ../src/modules/Covers.py:419
+#: ../src/gui/preferences.py:138 ../src/modules/DesktopNotification.py:212
+#: ../src/modules/Covers.py:419
 msgid "Description"
 msgstr "Leírás"
 
-#: ../src/gui/preferences.py:127
+#: ../src/gui/preferences.py:139
 msgid ""
 "This dialog box shows the list of available modules, which are small pieces "
 "of code that add some functionnalities to the application. You can enable/"
@@ -117,11 +117,11 @@ msgstr ""
 "segítségével. Megjegyzés: Bizonyos modulokat - pl. a File Böngészőt - nem "
 "lehet letiltani."
 
-#: ../src/gui/preferences.py:130
+#: ../src/gui/preferences.py:142
 msgid "Configuring a Module"
 msgstr "Modul beállítása"
 
-#: ../src/gui/preferences.py:131
+#: ../src/gui/preferences.py:143
 msgid ""
 "When a module may be configured, a specific icon is displayed on the right "
 "of the corresponding line. To configure a module, simply select it and then "
@@ -167,39 +167,6 @@ msgstr ""
 "A %s karakter nem engedélyezett.\n"
 "Kérem, használjon másik nevet!"
 
-#: ../src/gui/authentication.py:131
-#, python-format
-msgid ""
-"Enter your username and password for\n"
-"%(reason)s"
-msgstr ""
-"Adja meg felhasználói nevét és jelszavát, hogy\n"
-"%(reason)s"
-
-#: ../src/gui/authentication.py:133 ../res/Authentication.glade.h:1
-msgid "Password required"
-msgstr "Jelszó megadása szükséges"
-
-#: ../src/gui/authentication.py:170
-msgid "About password storage safety"
-msgstr "A biztonságos jelszótárolásról"
-
-#: ../src/gui/authentication.py:171
-msgid ""
-"If you use Gnome, it is safe to store your password since the Gnome keyring "
-"is used."
-msgstr ""
-"Ha a Gnome-ot használja, biztonságosan tárolhatja jelszavát a Gnome keyring "
-"használatával."
-
-#: ../src/gui/authentication.py:172
-msgid ""
-"If you do not use Gnome, beware that, although not stored as clear text, an "
-"attacker <i>could</i> retrieve it."
-msgstr ""
-"Ha nem a Gnome-ot használja, vigyázat, habár nem sima szövegként van "
-"tárolva, egy támadó <i>akár</i> meg is szerezheti."
-
 #: ../src/gui/about.py:39
 msgid "translator-credits"
 msgstr ""
@@ -213,9 +180,13 @@ msgstr ""
 msgid "Developer:"
 msgstr "Fejlesztő:"
 
-#: ../src/gui/about.py:46
+#: ../src/gui/about.py:47
 msgid "Thanks to:"
 msgstr "Köszönetnyilvánítás:"
+
+#: ../src/gui/about.py:49
+msgid "(Developer of Decibel Audio Player)"
+msgstr ""
 
 #: ../src/modules/Zeitgeist.py:26
 msgid "Send track information to the Zeitgeist service"
@@ -229,63 +200,22 @@ msgstr "File böngésző"
 msgid "Browse your file system"
 msgstr "Fájlrendszer böngészése"
 
-#: ../src/modules/FileExplorer.py:31
-msgid "Home"
-msgstr "Kezdőlap"
-
-#: ../src/modules/FileExplorer.py:31
-msgid "Root"
-msgstr ""
-
-#: ../src/modules/FileExplorer.py:182
+#: ../src/modules/FileExplorer.py:158
 msgid "loading..."
 msgstr "töltés folyamatban..."
 
-#: ../src/modules/FileExplorer.py:350
-msgid "Collapse all"
+#: ../src/modules/FileExplorer.py:325
+msgid "Append"
 msgstr ""
 
-#: ../src/modules/FileExplorer.py:363 ../res/FileExplorer.glade.h:8
-msgid "Show hidden files"
-msgstr "Rejtett fájlok megjelenítése"
-
-#: ../src/modules/FileExplorer.py:525
-msgid "You will be able to add this root folder again later on if you wish so."
-msgstr "Ezt a gyökérkönyvtárat később is hozzáadhatja."
-
-#: ../src/modules/FileExplorer.py:526
-msgid "Remove the selected entry?"
-msgstr "A kiválasztott elem eltávolítása?"
-
-#: ../src/modules/FileExplorer.py:528
-msgid ""
-"You will be able to add these root folders again later on if you wish so."
-msgstr "Ezeket a gyökérkönyvtárakat később is hozzáadhatja."
-
-#: ../src/modules/FileExplorer.py:529
-msgid "Remove all selected entries?"
-msgstr "A kiválasztott elemek eltávolítása?"
-
-#: ../src/modules/FileExplorer.py:531
-msgid "Your media files will not be deleted."
-msgstr "A médiafájljai nem kerülnek törlésre."
-
-#: ../src/modules/FileExplorer.py:589
-msgid "This module allows you to browse the files on your drives."
+#: ../src/modules/FileExplorer.py:448
+msgid "Music"
 msgstr ""
-"Ez a modul lehetővé teszi az Ön meghajtójain található fájlok böngészését."
 
-#: ../src/modules/FileExplorer.py:590
-msgid "Usage"
-msgstr "Használat"
-
-#: ../src/modules/FileExplorer.py:591
-msgid ""
-"At least one root folder must be added to browse your files. This folder "
-"then becomes the root of the file explorer tree in the main window."
-msgstr ""
-"Legalább egy gyökérkönyvtárat meg kell adnia ahhoz, hogy tudjon böngészni a "
-"fájljai közt. Ez a mappa a főablakban található fájlböngésző gyökerévé válik."
+#: ../src/modules/FileExplorer.py:448
+#, fuzzy
+msgid "Albums"
+msgstr "Album"
 
 #: ../src/modules/__init__.py:75
 msgid "The following Python modules are not available:"
@@ -303,23 +233,16 @@ msgstr ""
 msgid "You must restart the application for this modification to take effect."
 msgstr ""
 
-#: ../src/modules/TrackPanel.py:128
-#, fuzzy, python-format
-msgid "by <i>%(artist)s</i> from <i>%(album)s</i>"
-msgstr ""
-"%(album)s albumról\n"
-"%(artist)s előadó"
-
-#: ../src/modules/CtrlPanel.py:102 ../src/modules/CtrlPanel.py:163
+#: ../src/modules/CtrlPanel.py:206 ../src/modules/CtrlPanel.py:267
 msgid "Pause the current track"
 msgstr "Az aktuális zeneszám szüneteltetése"
 
-#: ../src/modules/CtrlPanel.py:121
+#: ../src/modules/CtrlPanel.py:225
 #, fuzzy
 msgid "Play the first selected track of the playlist"
 msgstr "A lejátszási listán az első szám lejátszása"
 
-#: ../src/modules/CtrlPanel.py:157
+#: ../src/modules/CtrlPanel.py:261
 msgid "Continue playing the current track"
 msgstr "Az aktuális zeneszám továbbjátszása"
 
@@ -450,21 +373,13 @@ msgstr ""
 "letölthetöekkel szemben. Ebben az esetben ha a zeneszám mellett létezik "
 "borító, az lesz használva. Ha nincsen akkor az internetöl letöltött."
 
-#: ../src/modules/Tracktree.py:313
+#: ../src/modules/Tracktree.py:328
 msgid "Save playlist"
 msgstr "Lejátszólista mentése"
 
-#: ../src/modules/Tracktree.py:363
+#: ../src/modules/Tracktree.py:378
 msgid "Clear Playlist"
 msgstr ""
-
-#: ../src/modules/Explorer.py:68
-msgid ""
-"Please select an explorer\n"
-"in the combo box below."
-msgstr ""
-"Kérem, válasszon böngészőt\n"
-"az alábbi listából."
 
 #: ../src/modules/Equalizer.py:24 ../src/modules/Equalizer.py:55
 #: ../src/modules/Equalizer.py:69
@@ -520,22 +435,6 @@ msgstr "Ismeretlen előadó"
 msgid "Unknown Album Artist"
 msgstr "Ismeretlen album-előadó"
 
-#: ../res/Authentication.glade.h:2
-msgid "Password:"
-msgstr "Jelszó:"
-
-#: ../res/Authentication.glade.h:3
-msgid "Remember this password"
-msgstr "Jelszó megjegyzése"
-
-#: ../res/Authentication.glade.h:4
-msgid "Username:"
-msgstr "Felhasználónév:"
-
-#: ../res/Authentication.glade.h:5 ../res/Progress.glade.h:1
-msgid "label"
-msgstr "címke"
-
 #: ../res/Covers.glade.h:1
 msgid "<b>Internet Covers</b>"
 msgstr "<b>Internet lemezborítók</b>"
@@ -572,7 +471,7 @@ msgstr "Próbálja a lemezborítok internetről való letöltését"
 msgid "<b>Body</b>"
 msgstr "<b>Törzs</b>"
 
-#: ../res/DesktopNotification.glade.h:2 ../res/FileExplorer.glade.h:1
+#: ../res/DesktopNotification.glade.h:2
 msgid "<b>Miscellaneous</b>"
 msgstr "<b>Egyéb</b>"
 
@@ -600,124 +499,172 @@ msgstr "másodperc"
 msgid "Preset:"
 msgstr ""
 
-#: ../res/FileExplorer.glade.h:2
-msgid "<b>Root Folders</b>"
-msgstr "<b>Gyökér könyvtárak</b>"
-
-#: ../res/FileExplorer.glade.h:3
-msgid "Add a new root folder to the file explorer"
-msgstr "Új gyökérkönyvtár hozzáadása a böngészőhöz"
-
-#: ../res/FileExplorer.glade.h:4
-msgid "Add files to playlist by filename"
-msgstr ""
-
-#: ../res/FileExplorer.glade.h:5
-msgid "Remove the selected root folders"
-msgstr "A kiválasztott gyökérkönyvtár eltávolítása."
-
-#: ../res/FileExplorer.glade.h:6
-msgid "Rename"
-msgstr "Átnevezés"
-
-#: ../res/FileExplorer.glade.h:7
-msgid "Rename the selected root folder"
-msgstr "A kiválasztott gyökérkönyvtár átnevezése"
-
-#: ../res/FileExplorer.glade.h:9
-msgid ""
-"Whether files should be added to the playlist by their name rather than by "
-"their tags"
-msgstr ""
-
-#: ../res/FileExplorer.glade.h:10
-msgid "Whether hidden files should be shown in the file explorer"
-msgstr "Az eldugott fileoknak látszodniuk kellene a bongészőben"
-
 #: ../res/MainWindow.glade.h:1
-msgid "Display about dialog box"
-msgstr "About dailógus mutatása."
-
-#: ../res/MainWindow.glade.h:2
-msgid "Display preferences"
-msgstr "Beállítások mutatása"
-
-#: ../res/MainWindow.glade.h:3
-msgid "Full"
-msgstr ""
-
-#: ../res/MainWindow.glade.h:4
-msgid "Mini"
-msgstr ""
-
-#: ../res/MainWindow.glade.h:5
-msgid "Online _Help"
-msgstr "Online _Help"
-
-#: ../res/MainWindow.glade.h:6
-msgid "Open the online help web page"
-msgstr "Online segítség weboldal megnyitása"
-
-#: ../res/MainWindow.glade.h:7
 msgid "Play the first track of the playlist"
 msgstr "A lejátszási listán az első szám lejátszása"
 
-#: ../res/MainWindow.glade.h:8
+#: ../res/MainWindow.glade.h:2
 msgid "Play the next track"
 msgstr "Következő szám lejátszása"
 
-#: ../res/MainWindow.glade.h:9
+#: ../res/MainWindow.glade.h:3
 msgid "Play the previous track"
 msgstr "Előző szám lejátszása"
 
-#: ../res/MainWindow.glade.h:10
-msgid "Playlist"
-msgstr ""
-
-#: ../res/MainWindow.glade.h:11
-msgid "Quit the application"
-msgstr "Kilépés az alkalmazásból"
-
-#: ../res/MainWindow.glade.h:12
-msgid "Remaining time"
-msgstr "Maradék idő"
-
-#: ../res/MainWindow.glade.h:13
+#: ../res/MainWindow.glade.h:4
 msgid "Seek a position in the current track"
 msgstr "Aktuáis számban való keresés"
 
-#: ../res/MainWindow.glade.h:14
-msgid "Select an explorer"
-msgstr "Válasszon ki egy böngészőt"
+#~ msgid ""
+#~ "Enter your username and password for\n"
+#~ "%(reason)s"
+#~ msgstr ""
+#~ "Adja meg felhasználói nevét és jelszavát, hogy\n"
+#~ "%(reason)s"
 
-#: ../res/MainWindow.glade.h:15
-msgid "Stop the current track"
-msgstr "Aktuális szám megállítása"
+#~ msgid "Password required"
+#~ msgstr "Jelszó megadása szükséges"
 
-#: ../res/MainWindow.glade.h:16
-msgid "_Edit"
-msgstr "_Szerkesztés"
+#~ msgid "About password storage safety"
+#~ msgstr "A biztonságos jelszótárolásról"
 
-#: ../res/MainWindow.glade.h:17
-msgid "_File"
-msgstr "_Fájl"
+#~ msgid ""
+#~ "If you use Gnome, it is safe to store your password since the Gnome "
+#~ "keyring is used."
+#~ msgstr ""
+#~ "Ha a Gnome-ot használja, biztonságosan tárolhatja jelszavát a Gnome "
+#~ "keyring használatával."
 
-#: ../res/MainWindow.glade.h:18
-msgid "_Help"
-msgstr "_Segítség"
+#~ msgid ""
+#~ "If you do not use Gnome, beware that, although not stored as clear text, "
+#~ "an attacker <i>could</i> retrieve it."
+#~ msgstr ""
+#~ "Ha nem a Gnome-ot használja, vigyázat, habár nem sima szövegként van "
+#~ "tárolva, egy támadó <i>akár</i> meg is szerezheti."
 
-#: ../res/MainWindow.glade.h:19
+#~ msgid "Home"
+#~ msgstr "Kezdőlap"
+
+#~ msgid "Show hidden files"
+#~ msgstr "Rejtett fájlok megjelenítése"
+
+#~ msgid ""
+#~ "You will be able to add this root folder again later on if you wish so."
+#~ msgstr "Ezt a gyökérkönyvtárat később is hozzáadhatja."
+
+#~ msgid "Remove the selected entry?"
+#~ msgstr "A kiválasztott elem eltávolítása?"
+
+#~ msgid ""
+#~ "You will be able to add these root folders again later on if you wish so."
+#~ msgstr "Ezeket a gyökérkönyvtárakat később is hozzáadhatja."
+
+#~ msgid "Remove all selected entries?"
+#~ msgstr "A kiválasztott elemek eltávolítása?"
+
+#~ msgid "Your media files will not be deleted."
+#~ msgstr "A médiafájljai nem kerülnek törlésre."
+
+#~ msgid "This module allows you to browse the files on your drives."
+#~ msgstr ""
+#~ "Ez a modul lehetővé teszi az Ön meghajtójain található fájlok böngészését."
+
+#~ msgid "Usage"
+#~ msgstr "Használat"
+
+#~ msgid ""
+#~ "At least one root folder must be added to browse your files. This folder "
+#~ "then becomes the root of the file explorer tree in the main window."
+#~ msgstr ""
+#~ "Legalább egy gyökérkönyvtárat meg kell adnia ahhoz, hogy tudjon böngészni "
+#~ "a fájljai közt. Ez a mappa a főablakban található fájlböngésző gyökerévé "
+#~ "válik."
+
 #, fuzzy
-msgid "_View"
-msgstr "_Fájl"
+#~ msgid "by <i>%(artist)s</i> from <i>%(album)s</i>"
+#~ msgstr ""
+#~ "%(album)s albumról\n"
+#~ "%(artist)s előadó"
 
-#: ../res/SelectPath.glade.h:1
-msgid "Name:"
-msgstr "Név:"
+#~ msgid ""
+#~ "Please select an explorer\n"
+#~ "in the combo box below."
+#~ msgstr ""
+#~ "Kérem, válasszon böngészőt\n"
+#~ "az alábbi listából."
 
-#: ../res/SelectPath.glade.h:2
-msgid "Path:"
-msgstr "Útvonal:"
+#~ msgid "Password:"
+#~ msgstr "Jelszó:"
+
+#~ msgid "Remember this password"
+#~ msgstr "Jelszó megjegyzése"
+
+#~ msgid "Username:"
+#~ msgstr "Felhasználónév:"
+
+#~ msgid "label"
+#~ msgstr "címke"
+
+#~ msgid "<b>Root Folders</b>"
+#~ msgstr "<b>Gyökér könyvtárak</b>"
+
+#~ msgid "Add a new root folder to the file explorer"
+#~ msgstr "Új gyökérkönyvtár hozzáadása a böngészőhöz"
+
+#~ msgid "Remove the selected root folders"
+#~ msgstr "A kiválasztott gyökérkönyvtár eltávolítása."
+
+#~ msgid "Rename"
+#~ msgstr "Átnevezés"
+
+#~ msgid "Rename the selected root folder"
+#~ msgstr "A kiválasztott gyökérkönyvtár átnevezése"
+
+#~ msgid "Whether hidden files should be shown in the file explorer"
+#~ msgstr "Az eldugott fileoknak látszodniuk kellene a bongészőben"
+
+#~ msgid "Display about dialog box"
+#~ msgstr "About dailógus mutatása."
+
+#~ msgid "Display preferences"
+#~ msgstr "Beállítások mutatása"
+
+#~ msgid "Online _Help"
+#~ msgstr "Online _Help"
+
+#~ msgid "Open the online help web page"
+#~ msgstr "Online segítség weboldal megnyitása"
+
+#~ msgid "Quit the application"
+#~ msgstr "Kilépés az alkalmazásból"
+
+#~ msgid "Remaining time"
+#~ msgstr "Maradék idő"
+
+#~ msgid "Select an explorer"
+#~ msgstr "Válasszon ki egy böngészőt"
+
+#~ msgid "Stop the current track"
+#~ msgstr "Aktuális szám megállítása"
+
+#~ msgid "_Edit"
+#~ msgstr "_Szerkesztés"
+
+#~ msgid "_File"
+#~ msgstr "_Fájl"
+
+#~ msgid "_Help"
+#~ msgstr "_Segítség"
+
+#, fuzzy
+#~ msgid "_View"
+#~ msgstr "_Fájl"
+
+#~ msgid "Name:"
+#~ msgstr "Név:"
+
+#~ msgid "Path:"
+#~ msgstr "Útvonal:"
 
 #~ msgid "Instant Messenger Status"
 #~ msgstr "Instant Messenger Státusza"

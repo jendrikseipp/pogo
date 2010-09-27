@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: decibel-audio-player\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-09-16 22:21+0200\n"
+"POT-Creation-Date: 2010-09-27 21:03+0200\n"
 "PO-Revision-Date: 2008-12-22 20:21+0000\n"
 "Last-Translator: koleoptero <Unknown>\n"
 "Language-Team: Greek <el@li.org>\n"
@@ -91,20 +91,20 @@ msgstr ""
 msgid "Preferences"
 msgstr "Προτιμήσεις"
 
-#: ../src/gui/preferences.py:116
+#: ../src/gui/preferences.py:128
 msgid "Unable to load this module."
 msgstr "Το πρόσθετο δεν μπόρεσε να φορτωθεί."
 
-#: ../src/gui/preferences.py:125
+#: ../src/gui/preferences.py:137
 msgid "Modules"
 msgstr "Πρόσθετα"
 
-#: ../src/gui/preferences.py:126 ../src/modules/FileExplorer.py:588
-#: ../src/modules/DesktopNotification.py:212 ../src/modules/Covers.py:419
+#: ../src/gui/preferences.py:138 ../src/modules/DesktopNotification.py:212
+#: ../src/modules/Covers.py:419
 msgid "Description"
 msgstr "Περιγραφή"
 
-#: ../src/gui/preferences.py:127
+#: ../src/gui/preferences.py:139
 msgid ""
 "This dialog box shows the list of available modules, which are small pieces "
 "of code that add some functionnalities to the application. You can enable/"
@@ -118,11 +118,11 @@ msgstr ""
 "σας ότι μερικά πρόσθετα (π.χ. το Εξερευνητής Αρχείων) δεν μπορούν να "
 "απενεργοποιηθούν."
 
-#: ../src/gui/preferences.py:130
+#: ../src/gui/preferences.py:142
 msgid "Configuring a Module"
 msgstr "Ρυθμίζοντας ένα πρόσθετο"
 
-#: ../src/gui/preferences.py:131
+#: ../src/gui/preferences.py:143
 msgid ""
 "When a module may be configured, a specific icon is displayed on the right "
 "of the corresponding line. To configure a module, simply select it and then "
@@ -168,39 +168,6 @@ msgstr ""
 "Ο χαρακτήρας %s δεν επιτρέπεται.\n"
 "Παρακαλώ χρησιμοποιήστε ένα άλλο όνομα."
 
-#: ../src/gui/authentication.py:131
-#, python-format
-msgid ""
-"Enter your username and password for\n"
-"%(reason)s"
-msgstr ""
-"Εισάγετε το όνομα χρήστη και κωδικό για το\n"
-"%(reason)s"
-
-#: ../src/gui/authentication.py:133 ../res/Authentication.glade.h:1
-msgid "Password required"
-msgstr "Απαιτείται κωδικός"
-
-#: ../src/gui/authentication.py:170
-msgid "About password storage safety"
-msgstr "Σχετικά με την ασφάλεια αποθήκευσης κωδικών"
-
-#: ../src/gui/authentication.py:171
-msgid ""
-"If you use Gnome, it is safe to store your password since the Gnome keyring "
-"is used."
-msgstr ""
-"Αν χρησιμοποιείτε το Gnome, είναι ασφαλές να αποθηκεύσετε τον κωδικό σας "
-"εφόσον χρησιμοποιείται το σύστημα διαχείρισης κωδικών του Gnome."
-
-#: ../src/gui/authentication.py:172
-msgid ""
-"If you do not use Gnome, beware that, although not stored as clear text, an "
-"attacker <i>could</i> retrieve it."
-msgstr ""
-"Αν δεν χρησιμοποιείτε το Gnome, έχετε υπ' όψιν σας ότι παρόλο που δεν "
-"αποθηκεύεται σαν απλό κείμενο, κάποιος <i>μπορεί</i> να τον ανακτήσει."
-
 #: ../src/gui/about.py:39
 msgid "translator-credits"
 msgstr ""
@@ -211,9 +178,13 @@ msgstr ""
 msgid "Developer:"
 msgstr "Δημιουργός:"
 
-#: ../src/gui/about.py:46
+#: ../src/gui/about.py:47
 msgid "Thanks to:"
 msgstr "Ευχαριστίες σε:"
+
+#: ../src/gui/about.py:49
+msgid "(Developer of Decibel Audio Player)"
+msgstr ""
 
 #: ../src/modules/Zeitgeist.py:26
 msgid "Send track information to the Zeitgeist service"
@@ -227,68 +198,22 @@ msgstr "Εξερευνητής αρχείων"
 msgid "Browse your file system"
 msgstr "Πλοηγηθείτε στο σύστημα αρχείων σας"
 
-#: ../src/modules/FileExplorer.py:31
-msgid "Home"
-msgstr "Αρχικός κατάλογος"
-
-#: ../src/modules/FileExplorer.py:31
-msgid "Root"
-msgstr ""
-
-#: ../src/modules/FileExplorer.py:182
+#: ../src/modules/FileExplorer.py:158
 msgid "loading..."
 msgstr "φόρτωση..."
 
-#: ../src/modules/FileExplorer.py:350
-msgid "Collapse all"
+#: ../src/modules/FileExplorer.py:325
+msgid "Append"
 msgstr ""
 
-#: ../src/modules/FileExplorer.py:363 ../res/FileExplorer.glade.h:8
-msgid "Show hidden files"
-msgstr "Εμφάνιση κρυφών αρχείων"
-
-#: ../src/modules/FileExplorer.py:525
-msgid "You will be able to add this root folder again later on if you wish so."
+#: ../src/modules/FileExplorer.py:448
+msgid "Music"
 msgstr ""
-"Θα έχετε τη δυνατότητα να προσθέσετε αυτόν τον αρχικό κατάλογο αργότερα αν "
-"επιθυμείτε."
 
-#: ../src/modules/FileExplorer.py:526
-msgid "Remove the selected entry?"
-msgstr "Να αφαιρεθεί το επιλεγμένο στοιχείο;"
-
-#: ../src/modules/FileExplorer.py:528
-msgid ""
-"You will be able to add these root folders again later on if you wish so."
-msgstr ""
-"Θα μπορέσετε να προσθεσετε αυτούς τους αρχικούς φακέλους ξανά αργότερα αν "
-"θελήσετε."
-
-#: ../src/modules/FileExplorer.py:529
-msgid "Remove all selected entries?"
-msgstr "Να αφαιρεθούν όλα τα επιλεγμένα στοιχεία;"
-
-#: ../src/modules/FileExplorer.py:531
-msgid "Your media files will not be deleted."
-msgstr "Τα μουσικά αρχεία σας δεν θα σβηστούν."
-
-#: ../src/modules/FileExplorer.py:589
-msgid "This module allows you to browse the files on your drives."
-msgstr ""
-"Αυτό το πρόσθετο σας επιτρέπει να πλοηγείστε στα αρχεία τών δίσκων σας."
-
-#: ../src/modules/FileExplorer.py:590
-msgid "Usage"
-msgstr "Χρήση"
-
-#: ../src/modules/FileExplorer.py:591
-msgid ""
-"At least one root folder must be added to browse your files. This folder "
-"then becomes the root of the file explorer tree in the main window."
-msgstr ""
-"Τουλάχιστον ένας αρχικός φάκελος πρέπει να καθοριστεί ώστε να πλοηγηθείτε "
-"στα αρχεία σας. Αυτός ο φάκελος τότε γίνεται ο αρχικός του δέντρου πλοήγησης "
-"φακέλων στο κυρίως παράθυρο."
+#: ../src/modules/FileExplorer.py:448
+#, fuzzy
+msgid "Albums"
+msgstr "Άλμπουμ"
 
 #: ../src/modules/__init__.py:75
 msgid "The following Python modules are not available:"
@@ -307,23 +232,16 @@ msgstr ""
 msgid "You must restart the application for this modification to take effect."
 msgstr ""
 
-#: ../src/modules/TrackPanel.py:128
-#, fuzzy, python-format
-msgid "by <i>%(artist)s</i> from <i>%(album)s</i>"
-msgstr ""
-"των/του/της %(artist)s\n"
-"από το %(album)s"
-
-#: ../src/modules/CtrlPanel.py:102 ../src/modules/CtrlPanel.py:163
+#: ../src/modules/CtrlPanel.py:206 ../src/modules/CtrlPanel.py:267
 msgid "Pause the current track"
 msgstr "Παύση"
 
-#: ../src/modules/CtrlPanel.py:121
+#: ../src/modules/CtrlPanel.py:225
 #, fuzzy
 msgid "Play the first selected track of the playlist"
 msgstr "Παίξε το πρώτο αρχείο στη λίστα"
 
-#: ../src/modules/CtrlPanel.py:157
+#: ../src/modules/CtrlPanel.py:261
 msgid "Continue playing the current track"
 msgstr "Συνέχεια"
 
@@ -458,21 +376,13 @@ msgstr ""
 "χρήστη για το τρέχον κομμάτι, θα χρησιμοποιηθεί. Άν όχι, θα χρησιμοποιηθεί "
 "εξώφυλλο από το διαδίκτυο."
 
-#: ../src/modules/Tracktree.py:313
+#: ../src/modules/Tracktree.py:328
 msgid "Save playlist"
 msgstr "Αποθήκευση λίστας αναπαραγωγής"
 
-#: ../src/modules/Tracktree.py:363
+#: ../src/modules/Tracktree.py:378
 msgid "Clear Playlist"
 msgstr ""
-
-#: ../src/modules/Explorer.py:68
-msgid ""
-"Please select an explorer\n"
-"in the combo box below."
-msgstr ""
-"Παρακαλώ επιλέξτε έναν εξερευνητή\n"
-"στο κουτάκι από κάτω."
 
 #: ../src/modules/Equalizer.py:24 ../src/modules/Equalizer.py:55
 #: ../src/modules/Equalizer.py:69
@@ -528,22 +438,6 @@ msgstr "Άγνωστος καλλιτέχνης"
 msgid "Unknown Album Artist"
 msgstr "Άγνωστος Καλλιτέχνης Δίσκου"
 
-#: ../res/Authentication.glade.h:2
-msgid "Password:"
-msgstr "Κωδικός:"
-
-#: ../res/Authentication.glade.h:3
-msgid "Remember this password"
-msgstr "Απομνημόνευση κωδικού"
-
-#: ../res/Authentication.glade.h:4
-msgid "Username:"
-msgstr "Όνομα χρήστη:"
-
-#: ../res/Authentication.glade.h:5 ../res/Progress.glade.h:1
-msgid "label"
-msgstr "ετικέτα"
-
 #: ../res/Covers.glade.h:1
 msgid "<b>Internet Covers</b>"
 msgstr "<b>Εξώφυλλα διαδικτύου</b>"
@@ -580,7 +474,7 @@ msgstr "Προσπάθησε να κατεβάσεις εξώφυλλα από �
 msgid "<b>Body</b>"
 msgstr "<b>Κορμός</b>"
 
-#: ../res/DesktopNotification.glade.h:2 ../res/FileExplorer.glade.h:1
+#: ../res/DesktopNotification.glade.h:2
 msgid "<b>Miscellaneous</b>"
 msgstr "<b>Διάφορα</b>"
 
@@ -608,124 +502,176 @@ msgstr "δευτερόλεπτα"
 msgid "Preset:"
 msgstr ""
 
-#: ../res/FileExplorer.glade.h:2
-msgid "<b>Root Folders</b>"
-msgstr "<b>Αρχικοί φάκελοι</b>"
-
-#: ../res/FileExplorer.glade.h:3
-msgid "Add a new root folder to the file explorer"
-msgstr "Πρόσθήκη νέου αρχικού φακέλου στον εξερευνητή αρχείων"
-
-#: ../res/FileExplorer.glade.h:4
-msgid "Add files to playlist by filename"
-msgstr ""
-
-#: ../res/FileExplorer.glade.h:5
-msgid "Remove the selected root folders"
-msgstr "Αφαίρεση επιλεγμένων φακέλων"
-
-#: ../res/FileExplorer.glade.h:6
-msgid "Rename"
-msgstr "Μετονομασία"
-
-#: ../res/FileExplorer.glade.h:7
-msgid "Rename the selected root folder"
-msgstr "Μετονομασία του επιλεγμένου αρχικού φακέλου"
-
-#: ../res/FileExplorer.glade.h:9
-msgid ""
-"Whether files should be added to the playlist by their name rather than by "
-"their tags"
-msgstr ""
-
-#: ../res/FileExplorer.glade.h:10
-msgid "Whether hidden files should be shown in the file explorer"
-msgstr "Αν τα κρυμμένα αρχεία θα εμφανίζονται στον εξερευνητή αρχείων"
-
 #: ../res/MainWindow.glade.h:1
-msgid "Display about dialog box"
-msgstr "Εμφάνιση διαλόγου πληροφοριών προγράμματος"
-
-#: ../res/MainWindow.glade.h:2
-msgid "Display preferences"
-msgstr "Εμφάνιση επιλογών"
-
-#: ../res/MainWindow.glade.h:3
-msgid "Full"
-msgstr ""
-
-#: ../res/MainWindow.glade.h:4
-msgid "Mini"
-msgstr ""
-
-#: ../res/MainWindow.glade.h:5
-msgid "Online _Help"
-msgstr "Βοήθεια στο διαδίκτυο"
-
-#: ../res/MainWindow.glade.h:6
-msgid "Open the online help web page"
-msgstr "Άνοιγμα της ιστοσελίδας περιεχομένων βοήθειας"
-
-#: ../res/MainWindow.glade.h:7
 msgid "Play the first track of the playlist"
 msgstr "Παίξε το πρώτο αρχείο στη λίστα"
 
-#: ../res/MainWindow.glade.h:8
+#: ../res/MainWindow.glade.h:2
 msgid "Play the next track"
 msgstr "Αναπαραγωγή επόμενου κομματιού"
 
-#: ../res/MainWindow.glade.h:9
+#: ../res/MainWindow.glade.h:3
 msgid "Play the previous track"
 msgstr "Αναπαραγωγή προηγούμενου κομματιού"
 
-#: ../res/MainWindow.glade.h:10
-msgid "Playlist"
-msgstr ""
-
-#: ../res/MainWindow.glade.h:11
-msgid "Quit the application"
-msgstr "Έξοδος από την εφαρμογή"
-
-#: ../res/MainWindow.glade.h:12
-msgid "Remaining time"
-msgstr "Υπόλοιπος χρόνος"
-
-#: ../res/MainWindow.glade.h:13
+#: ../res/MainWindow.glade.h:4
 msgid "Seek a position in the current track"
 msgstr "Αναζήτηση θέσης στο τρέχον κομμάτι"
 
-#: ../res/MainWindow.glade.h:14
-msgid "Select an explorer"
-msgstr "Επιλογή εξερευνητή"
+#~ msgid ""
+#~ "Enter your username and password for\n"
+#~ "%(reason)s"
+#~ msgstr ""
+#~ "Εισάγετε το όνομα χρήστη και κωδικό για το\n"
+#~ "%(reason)s"
 
-#: ../res/MainWindow.glade.h:15
-msgid "Stop the current track"
-msgstr "Διακοπή αναπαραγωγής"
+#~ msgid "Password required"
+#~ msgstr "Απαιτείται κωδικός"
 
-#: ../res/MainWindow.glade.h:16
-msgid "_Edit"
-msgstr "_Επεξεργασία"
+#~ msgid "About password storage safety"
+#~ msgstr "Σχετικά με την ασφάλεια αποθήκευσης κωδικών"
 
-#: ../res/MainWindow.glade.h:17
-msgid "_File"
-msgstr "_Αρχείο"
+#~ msgid ""
+#~ "If you use Gnome, it is safe to store your password since the Gnome "
+#~ "keyring is used."
+#~ msgstr ""
+#~ "Αν χρησιμοποιείτε το Gnome, είναι ασφαλές να αποθηκεύσετε τον κωδικό σας "
+#~ "εφόσον χρησιμοποιείται το σύστημα διαχείρισης κωδικών του Gnome."
 
-#: ../res/MainWindow.glade.h:18
-msgid "_Help"
-msgstr "_Βοήθεια"
+#~ msgid ""
+#~ "If you do not use Gnome, beware that, although not stored as clear text, "
+#~ "an attacker <i>could</i> retrieve it."
+#~ msgstr ""
+#~ "Αν δεν χρησιμοποιείτε το Gnome, έχετε υπ' όψιν σας ότι παρόλο που δεν "
+#~ "αποθηκεύεται σαν απλό κείμενο, κάποιος <i>μπορεί</i> να τον ανακτήσει."
 
-#: ../res/MainWindow.glade.h:19
+#~ msgid "Home"
+#~ msgstr "Αρχικός κατάλογος"
+
+#~ msgid "Show hidden files"
+#~ msgstr "Εμφάνιση κρυφών αρχείων"
+
+#~ msgid ""
+#~ "You will be able to add this root folder again later on if you wish so."
+#~ msgstr ""
+#~ "Θα έχετε τη δυνατότητα να προσθέσετε αυτόν τον αρχικό κατάλογο αργότερα "
+#~ "αν επιθυμείτε."
+
+#~ msgid "Remove the selected entry?"
+#~ msgstr "Να αφαιρεθεί το επιλεγμένο στοιχείο;"
+
+#~ msgid ""
+#~ "You will be able to add these root folders again later on if you wish so."
+#~ msgstr ""
+#~ "Θα μπορέσετε να προσθεσετε αυτούς τους αρχικούς φακέλους ξανά αργότερα αν "
+#~ "θελήσετε."
+
+#~ msgid "Remove all selected entries?"
+#~ msgstr "Να αφαιρεθούν όλα τα επιλεγμένα στοιχεία;"
+
+#~ msgid "Your media files will not be deleted."
+#~ msgstr "Τα μουσικά αρχεία σας δεν θα σβηστούν."
+
+#~ msgid "This module allows you to browse the files on your drives."
+#~ msgstr ""
+#~ "Αυτό το πρόσθετο σας επιτρέπει να πλοηγείστε στα αρχεία τών δίσκων σας."
+
+#~ msgid "Usage"
+#~ msgstr "Χρήση"
+
+#~ msgid ""
+#~ "At least one root folder must be added to browse your files. This folder "
+#~ "then becomes the root of the file explorer tree in the main window."
+#~ msgstr ""
+#~ "Τουλάχιστον ένας αρχικός φάκελος πρέπει να καθοριστεί ώστε να πλοηγηθείτε "
+#~ "στα αρχεία σας. Αυτός ο φάκελος τότε γίνεται ο αρχικός του δέντρου "
+#~ "πλοήγησης φακέλων στο κυρίως παράθυρο."
+
 #, fuzzy
-msgid "_View"
-msgstr "_Αρχείο"
+#~ msgid "by <i>%(artist)s</i> from <i>%(album)s</i>"
+#~ msgstr ""
+#~ "των/του/της %(artist)s\n"
+#~ "από το %(album)s"
 
-#: ../res/SelectPath.glade.h:1
-msgid "Name:"
-msgstr "Όνομα:"
+#~ msgid ""
+#~ "Please select an explorer\n"
+#~ "in the combo box below."
+#~ msgstr ""
+#~ "Παρακαλώ επιλέξτε έναν εξερευνητή\n"
+#~ "στο κουτάκι από κάτω."
 
-#: ../res/SelectPath.glade.h:2
-msgid "Path:"
-msgstr "Διαδρομή:"
+#~ msgid "Password:"
+#~ msgstr "Κωδικός:"
+
+#~ msgid "Remember this password"
+#~ msgstr "Απομνημόνευση κωδικού"
+
+#~ msgid "Username:"
+#~ msgstr "Όνομα χρήστη:"
+
+#~ msgid "label"
+#~ msgstr "ετικέτα"
+
+#~ msgid "<b>Root Folders</b>"
+#~ msgstr "<b>Αρχικοί φάκελοι</b>"
+
+#~ msgid "Add a new root folder to the file explorer"
+#~ msgstr "Πρόσθήκη νέου αρχικού φακέλου στον εξερευνητή αρχείων"
+
+#~ msgid "Remove the selected root folders"
+#~ msgstr "Αφαίρεση επιλεγμένων φακέλων"
+
+#~ msgid "Rename"
+#~ msgstr "Μετονομασία"
+
+#~ msgid "Rename the selected root folder"
+#~ msgstr "Μετονομασία του επιλεγμένου αρχικού φακέλου"
+
+#~ msgid "Whether hidden files should be shown in the file explorer"
+#~ msgstr "Αν τα κρυμμένα αρχεία θα εμφανίζονται στον εξερευνητή αρχείων"
+
+#~ msgid "Display about dialog box"
+#~ msgstr "Εμφάνιση διαλόγου πληροφοριών προγράμματος"
+
+#~ msgid "Display preferences"
+#~ msgstr "Εμφάνιση επιλογών"
+
+#~ msgid "Online _Help"
+#~ msgstr "Βοήθεια στο διαδίκτυο"
+
+#~ msgid "Open the online help web page"
+#~ msgstr "Άνοιγμα της ιστοσελίδας περιεχομένων βοήθειας"
+
+#~ msgid "Quit the application"
+#~ msgstr "Έξοδος από την εφαρμογή"
+
+#~ msgid "Remaining time"
+#~ msgstr "Υπόλοιπος χρόνος"
+
+#~ msgid "Select an explorer"
+#~ msgstr "Επιλογή εξερευνητή"
+
+#~ msgid "Stop the current track"
+#~ msgstr "Διακοπή αναπαραγωγής"
+
+#~ msgid "_Edit"
+#~ msgstr "_Επεξεργασία"
+
+#~ msgid "_File"
+#~ msgstr "_Αρχείο"
+
+#~ msgid "_Help"
+#~ msgstr "_Βοήθεια"
+
+#, fuzzy
+#~ msgid "_View"
+#~ msgstr "_Αρχείο"
+
+#~ msgid "Name:"
+#~ msgstr "Όνομα:"
+
+#~ msgid "Path:"
+#~ msgstr "Διαδρομή:"
 
 #~ msgid "Instant Messenger Status"
 #~ msgstr "Προσωπικό μήνυμα προγράμματος άμεσων μηνυμάτων."

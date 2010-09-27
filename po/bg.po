@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: decibel-audio-player\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-09-16 22:21+0200\n"
+"POT-Creation-Date: 2010-09-27 21:03+0200\n"
 "PO-Revision-Date: 2009-08-24 13:13+0000\n"
 "Last-Translator: ivan mikov <idm@dir.bg>\n"
 "Language-Team: Bulgarian <bg@li.org>\n"
@@ -91,20 +91,20 @@ msgstr ""
 msgid "Preferences"
 msgstr "Предпочитания"
 
-#: ../src/gui/preferences.py:116
+#: ../src/gui/preferences.py:128
 msgid "Unable to load this module."
 msgstr "Този модул не може да бъде зареден."
 
-#: ../src/gui/preferences.py:125
+#: ../src/gui/preferences.py:137
 msgid "Modules"
 msgstr "Модули"
 
-#: ../src/gui/preferences.py:126 ../src/modules/FileExplorer.py:588
-#: ../src/modules/DesktopNotification.py:212 ../src/modules/Covers.py:419
+#: ../src/gui/preferences.py:138 ../src/modules/DesktopNotification.py:212
+#: ../src/modules/Covers.py:419
 msgid "Description"
 msgstr "Описание"
 
-#: ../src/gui/preferences.py:127
+#: ../src/gui/preferences.py:139
 msgid ""
 "This dialog box shows the list of available modules, which are small pieces "
 "of code that add some functionnalities to the application. You can enable/"
@@ -117,11 +117,11 @@ msgstr ""
 "внимание, че някои модули (например, Файловият браузър) не могат да бъдат "
 "изключени."
 
-#: ../src/gui/preferences.py:130
+#: ../src/gui/preferences.py:142
 msgid "Configuring a Module"
 msgstr "Конфигуриране на модул"
 
-#: ../src/gui/preferences.py:131
+#: ../src/gui/preferences.py:143
 msgid ""
 "When a module may be configured, a specific icon is displayed on the right "
 "of the corresponding line. To configure a module, simply select it and then "
@@ -166,39 +166,6 @@ msgstr ""
 "Използването на символа %s не е разрешено.\n"
 "Изберете друго име."
 
-#: ../src/gui/authentication.py:131
-#, python-format
-msgid ""
-"Enter your username and password for\n"
-"%(reason)s"
-msgstr ""
-"Въведете вашето име и парола за\n"
-"%(reason)s"
-
-#: ../src/gui/authentication.py:133 ../res/Authentication.glade.h:1
-msgid "Password required"
-msgstr "Изисква се парола"
-
-#: ../src/gui/authentication.py:170
-msgid "About password storage safety"
-msgstr "За сигурността на съхранение на паролата"
-
-#: ../src/gui/authentication.py:171
-msgid ""
-"If you use Gnome, it is safe to store your password since the Gnome keyring "
-"is used."
-msgstr ""
-"Ако използвате Gnome е безопасно да запазите вашата парола, щом се използва "
-"ключодържателя на Gnome."
-
-#: ../src/gui/authentication.py:172
-msgid ""
-"If you do not use Gnome, beware that, although not stored as clear text, an "
-"attacker <i>could</i> retrieve it."
-msgstr ""
-"Ако не използвате Gnome внимавайте, макар че паролите не се съхраняват като "
-"обикновен текст, то някой <i>може</i> да я извлече."
-
 #: ../src/gui/about.py:39
 msgid "translator-credits"
 msgstr ""
@@ -209,9 +176,13 @@ msgstr ""
 msgid "Developer:"
 msgstr "Разработчик:"
 
-#: ../src/gui/about.py:46
+#: ../src/gui/about.py:47
 msgid "Thanks to:"
 msgstr "Благодарение на:"
+
+#: ../src/gui/about.py:49
+msgid "(Developer of Decibel Audio Player)"
+msgstr ""
 
 #: ../src/modules/Zeitgeist.py:26
 msgid "Send track information to the Zeitgeist service"
@@ -225,60 +196,22 @@ msgstr "Файлов браузър"
 msgid "Browse your file system"
 msgstr "Прегледайте вашата файлова система"
 
-#: ../src/modules/FileExplorer.py:31
-msgid "Home"
-msgstr "Начало"
-
-#: ../src/modules/FileExplorer.py:31
-msgid "Root"
-msgstr "Root"
-
-#: ../src/modules/FileExplorer.py:182
+#: ../src/modules/FileExplorer.py:158
 msgid "loading..."
 msgstr "зареждане…"
 
-#: ../src/modules/FileExplorer.py:350
-msgid "Collapse all"
-msgstr "Сгъни всичко"
-
-#: ../src/modules/FileExplorer.py:363 ../res/FileExplorer.glade.h:8
-msgid "Show hidden files"
-msgstr "Покажи скритите файлове"
-
-#: ../src/modules/FileExplorer.py:525
-msgid "You will be able to add this root folder again later on if you wish so."
-msgstr "Вие ще можете да добавите тази root папка по-късно, ако пожелаете."
-
-#: ../src/modules/FileExplorer.py:526
-msgid "Remove the selected entry?"
-msgstr "Премахване на избраното?"
-
-#: ../src/modules/FileExplorer.py:528
-msgid ""
-"You will be able to add these root folders again later on if you wish so."
-msgstr "Вие ще можете да добавите тази root папки по-късно, ако пожелаете."
-
-#: ../src/modules/FileExplorer.py:529
-msgid "Remove all selected entries?"
-msgstr "Премахване на всичко избрано?"
-
-#: ../src/modules/FileExplorer.py:531
-msgid "Your media files will not be deleted."
-msgstr "Вашите файлове няма да бъдат изтрити."
-
-#: ../src/modules/FileExplorer.py:589
-msgid "This module allows you to browse the files on your drives."
-msgstr "Този модул позволява да преглеждате файловете на вашия компютър."
-
-#: ../src/modules/FileExplorer.py:590
-msgid "Usage"
-msgstr "Употреба"
-
-#: ../src/modules/FileExplorer.py:591
-msgid ""
-"At least one root folder must be added to browse your files. This folder "
-"then becomes the root of the file explorer tree in the main window."
+#: ../src/modules/FileExplorer.py:325
+msgid "Append"
 msgstr ""
+
+#: ../src/modules/FileExplorer.py:448
+msgid "Music"
+msgstr ""
+
+#: ../src/modules/FileExplorer.py:448
+#, fuzzy
+msgid "Albums"
+msgstr "Албум"
 
 #: ../src/modules/__init__.py:75
 msgid "The following Python modules are not available:"
@@ -296,23 +229,16 @@ msgstr "Изисква се рестартиране"
 msgid "You must restart the application for this modification to take effect."
 msgstr "Трябва да рестартирате приложението за да се отрази промяната."
 
-#: ../src/modules/TrackPanel.py:128
-#, fuzzy, python-format
-msgid "by <i>%(artist)s</i> from <i>%(album)s</i>"
-msgstr ""
-"изпълнява %(artist)s\n"
-"от албума %(album)s"
-
-#: ../src/modules/CtrlPanel.py:102 ../src/modules/CtrlPanel.py:163
+#: ../src/modules/CtrlPanel.py:206 ../src/modules/CtrlPanel.py:267
 msgid "Pause the current track"
 msgstr "Паузирай текущият запис"
 
-#: ../src/modules/CtrlPanel.py:121
+#: ../src/modules/CtrlPanel.py:225
 #, fuzzy
 msgid "Play the first selected track of the playlist"
 msgstr "Изпълни първият запис от списъка"
 
-#: ../src/modules/CtrlPanel.py:157
+#: ../src/modules/CtrlPanel.py:261
 msgid "Continue playing the current track"
 msgstr "Продължи изпълнението на текущия запис"
 
@@ -426,21 +352,13 @@ msgid ""
 "none, the cover is downloaded."
 msgstr ""
 
-#: ../src/modules/Tracktree.py:313
+#: ../src/modules/Tracktree.py:328
 msgid "Save playlist"
 msgstr "Запазване на списъка"
 
-#: ../src/modules/Tracktree.py:363
+#: ../src/modules/Tracktree.py:378
 msgid "Clear Playlist"
 msgstr "Изчисти списъка за изпълнение"
-
-#: ../src/modules/Explorer.py:68
-msgid ""
-"Please select an explorer\n"
-"in the combo box below."
-msgstr ""
-"Изберете файловия браузър\n"
-"от падащото меню."
 
 #: ../src/modules/Equalizer.py:24 ../src/modules/Equalizer.py:55
 #: ../src/modules/Equalizer.py:69
@@ -496,22 +414,6 @@ msgstr "Неизвестен изпълнител"
 msgid "Unknown Album Artist"
 msgstr "Неизвестен албум"
 
-#: ../res/Authentication.glade.h:2
-msgid "Password:"
-msgstr "Парола:"
-
-#: ../res/Authentication.glade.h:3
-msgid "Remember this password"
-msgstr "Запомняне на паролата"
-
-#: ../res/Authentication.glade.h:4
-msgid "Username:"
-msgstr "Потребителско име:"
-
-#: ../res/Authentication.glade.h:5 ../res/Progress.glade.h:1
-msgid "label"
-msgstr "етикет"
-
 #: ../res/Covers.glade.h:1
 msgid "<b>Internet Covers</b>"
 msgstr "<b>Обложки от интернет</b>"
@@ -548,7 +450,7 @@ msgstr "Опитай изтеглянето на обложките от инт�
 msgid "<b>Body</b>"
 msgstr ""
 
-#: ../res/DesktopNotification.glade.h:2 ../res/FileExplorer.glade.h:1
+#: ../res/DesktopNotification.glade.h:2
 msgid "<b>Miscellaneous</b>"
 msgstr "<b>Разни</b>"
 
@@ -576,124 +478,157 @@ msgstr "секунди"
 msgid "Preset:"
 msgstr ""
 
-#: ../res/FileExplorer.glade.h:2
-msgid "<b>Root Folders</b>"
-msgstr ""
-
-#: ../res/FileExplorer.glade.h:3
-msgid "Add a new root folder to the file explorer"
-msgstr ""
-
-#: ../res/FileExplorer.glade.h:4
-msgid "Add files to playlist by filename"
-msgstr ""
-
-#: ../res/FileExplorer.glade.h:5
-msgid "Remove the selected root folders"
-msgstr ""
-
-#: ../res/FileExplorer.glade.h:6
-msgid "Rename"
-msgstr "Преименуване"
-
-#: ../res/FileExplorer.glade.h:7
-msgid "Rename the selected root folder"
-msgstr ""
-
-#: ../res/FileExplorer.glade.h:9
-msgid ""
-"Whether files should be added to the playlist by their name rather than by "
-"their tags"
-msgstr ""
-
-#: ../res/FileExplorer.glade.h:10
-msgid "Whether hidden files should be shown in the file explorer"
-msgstr "Дали скритите файлове да се показват във файловия браузър"
-
 #: ../res/MainWindow.glade.h:1
-msgid "Display about dialog box"
-msgstr ""
-
-#: ../res/MainWindow.glade.h:2
-msgid "Display preferences"
-msgstr "Покажи настройките"
-
-#: ../res/MainWindow.glade.h:3
-msgid "Full"
-msgstr ""
-
-#: ../res/MainWindow.glade.h:4
-msgid "Mini"
-msgstr ""
-
-#: ../res/MainWindow.glade.h:5
-msgid "Online _Help"
-msgstr "Онлайн _помощ"
-
-#: ../res/MainWindow.glade.h:6
-msgid "Open the online help web page"
-msgstr "Отвори страницата в интернет за онлайн помощ"
-
-#: ../res/MainWindow.glade.h:7
 msgid "Play the first track of the playlist"
 msgstr "Изпълни първият запис от списъка"
 
-#: ../res/MainWindow.glade.h:8
+#: ../res/MainWindow.glade.h:2
 msgid "Play the next track"
 msgstr "Изпълни следващият запис"
 
-#: ../res/MainWindow.glade.h:9
+#: ../res/MainWindow.glade.h:3
 msgid "Play the previous track"
 msgstr "Изпълни предходният запис"
 
-#: ../res/MainWindow.glade.h:10
-msgid "Playlist"
-msgstr "Списък за изпълнение"
-
-#: ../res/MainWindow.glade.h:11
-msgid "Quit the application"
-msgstr "Спиране на програмата"
-
-#: ../res/MainWindow.glade.h:12
-msgid "Remaining time"
-msgstr "Оставащо време"
-
-#: ../res/MainWindow.glade.h:13
+#: ../res/MainWindow.glade.h:4
 msgid "Seek a position in the current track"
 msgstr "Търси определено място в текущия запис"
 
-#: ../res/MainWindow.glade.h:14
-msgid "Select an explorer"
-msgstr "Избери файлов браузър"
+#~ msgid ""
+#~ "Enter your username and password for\n"
+#~ "%(reason)s"
+#~ msgstr ""
+#~ "Въведете вашето име и парола за\n"
+#~ "%(reason)s"
 
-#: ../res/MainWindow.glade.h:15
-msgid "Stop the current track"
-msgstr "Спри текушият запис"
+#~ msgid "Password required"
+#~ msgstr "Изисква се парола"
 
-#: ../res/MainWindow.glade.h:16
-msgid "_Edit"
-msgstr "_Редактиране"
+#~ msgid "About password storage safety"
+#~ msgstr "За сигурността на съхранение на паролата"
 
-#: ../res/MainWindow.glade.h:17
-msgid "_File"
-msgstr "_Файл"
+#~ msgid ""
+#~ "If you use Gnome, it is safe to store your password since the Gnome "
+#~ "keyring is used."
+#~ msgstr ""
+#~ "Ако използвате Gnome е безопасно да запазите вашата парола, щом се "
+#~ "използва ключодържателя на Gnome."
 
-#: ../res/MainWindow.glade.h:18
-msgid "_Help"
-msgstr "_Помощ"
+#~ msgid ""
+#~ "If you do not use Gnome, beware that, although not stored as clear text, "
+#~ "an attacker <i>could</i> retrieve it."
+#~ msgstr ""
+#~ "Ако не използвате Gnome внимавайте, макар че паролите не се съхраняват "
+#~ "като обикновен текст, то някой <i>може</i> да я извлече."
 
-#: ../res/MainWindow.glade.h:19
+#~ msgid "Home"
+#~ msgstr "Начало"
+
+#~ msgid "Root"
+#~ msgstr "Root"
+
+#~ msgid "Collapse all"
+#~ msgstr "Сгъни всичко"
+
+#~ msgid "Show hidden files"
+#~ msgstr "Покажи скритите файлове"
+
+#~ msgid ""
+#~ "You will be able to add this root folder again later on if you wish so."
+#~ msgstr "Вие ще можете да добавите тази root папка по-късно, ако пожелаете."
+
+#~ msgid "Remove the selected entry?"
+#~ msgstr "Премахване на избраното?"
+
+#~ msgid ""
+#~ "You will be able to add these root folders again later on if you wish so."
+#~ msgstr "Вие ще можете да добавите тази root папки по-късно, ако пожелаете."
+
+#~ msgid "Remove all selected entries?"
+#~ msgstr "Премахване на всичко избрано?"
+
+#~ msgid "Your media files will not be deleted."
+#~ msgstr "Вашите файлове няма да бъдат изтрити."
+
+#~ msgid "This module allows you to browse the files on your drives."
+#~ msgstr "Този модул позволява да преглеждате файловете на вашия компютър."
+
+#~ msgid "Usage"
+#~ msgstr "Употреба"
+
 #, fuzzy
-msgid "_View"
-msgstr "_Файл"
+#~ msgid "by <i>%(artist)s</i> from <i>%(album)s</i>"
+#~ msgstr ""
+#~ "изпълнява %(artist)s\n"
+#~ "от албума %(album)s"
 
-#: ../res/SelectPath.glade.h:1
-msgid "Name:"
-msgstr "Име:"
+#~ msgid ""
+#~ "Please select an explorer\n"
+#~ "in the combo box below."
+#~ msgstr ""
+#~ "Изберете файловия браузър\n"
+#~ "от падащото меню."
 
-#: ../res/SelectPath.glade.h:2
-msgid "Path:"
-msgstr "Път:"
+#~ msgid "Password:"
+#~ msgstr "Парола:"
+
+#~ msgid "Remember this password"
+#~ msgstr "Запомняне на паролата"
+
+#~ msgid "Username:"
+#~ msgstr "Потребителско име:"
+
+#~ msgid "label"
+#~ msgstr "етикет"
+
+#~ msgid "Rename"
+#~ msgstr "Преименуване"
+
+#~ msgid "Whether hidden files should be shown in the file explorer"
+#~ msgstr "Дали скритите файлове да се показват във файловия браузър"
+
+#~ msgid "Display preferences"
+#~ msgstr "Покажи настройките"
+
+#~ msgid "Online _Help"
+#~ msgstr "Онлайн _помощ"
+
+#~ msgid "Open the online help web page"
+#~ msgstr "Отвори страницата в интернет за онлайн помощ"
+
+#~ msgid "Playlist"
+#~ msgstr "Списък за изпълнение"
+
+#~ msgid "Quit the application"
+#~ msgstr "Спиране на програмата"
+
+#~ msgid "Remaining time"
+#~ msgstr "Оставащо време"
+
+#~ msgid "Select an explorer"
+#~ msgstr "Избери файлов браузър"
+
+#~ msgid "Stop the current track"
+#~ msgstr "Спри текушият запис"
+
+#~ msgid "_Edit"
+#~ msgstr "_Редактиране"
+
+#~ msgid "_File"
+#~ msgstr "_Файл"
+
+#~ msgid "_Help"
+#~ msgstr "_Помощ"
+
+#, fuzzy
+#~ msgid "_View"
+#~ msgstr "_Файл"
+
+#~ msgid "Name:"
+#~ msgstr "Име:"
+
+#~ msgid "Path:"
+#~ msgstr "Път:"
 
 #~ msgid "Instant Messenger Status"
 #~ msgstr "Статус на клиента за моментни съобщения"

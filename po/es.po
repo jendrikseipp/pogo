@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: decibel-audio-player\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-09-16 22:21+0200\n"
+"POT-Creation-Date: 2010-09-27 21:03+0200\n"
 "PO-Revision-Date: 2009-05-14 19:37+0000\n"
 "Last-Translator: Carlos Andrés Albornoz Concha <caralbornozc@gmail.com>\n"
 "Language-Team: Spanish <es@li.org>\n"
@@ -91,20 +91,20 @@ msgstr ""
 msgid "Preferences"
 msgstr "Preferencias"
 
-#: ../src/gui/preferences.py:116
+#: ../src/gui/preferences.py:128
 msgid "Unable to load this module."
 msgstr "Imposible cargar este módulo"
 
-#: ../src/gui/preferences.py:125
+#: ../src/gui/preferences.py:137
 msgid "Modules"
 msgstr "Módulos"
 
-#: ../src/gui/preferences.py:126 ../src/modules/FileExplorer.py:588
-#: ../src/modules/DesktopNotification.py:212 ../src/modules/Covers.py:419
+#: ../src/gui/preferences.py:138 ../src/modules/DesktopNotification.py:212
+#: ../src/modules/Covers.py:419
 msgid "Description"
 msgstr "Descripción"
 
-#: ../src/gui/preferences.py:127
+#: ../src/gui/preferences.py:139
 msgid ""
 "This dialog box shows the list of available modules, which are small pieces "
 "of code that add some functionnalities to the application. You can enable/"
@@ -117,11 +117,11 @@ msgstr ""
 "cuadro de verificación en el frente de éste. Tenga en cuenta que algunos "
 "módulos (ej. el Explorador de archivos) no pueden ser desactivados."
 
-#: ../src/gui/preferences.py:130
+#: ../src/gui/preferences.py:142
 msgid "Configuring a Module"
 msgstr "Configurando un módulo"
 
-#: ../src/gui/preferences.py:131
+#: ../src/gui/preferences.py:143
 msgid ""
 "When a module may be configured, a specific icon is displayed on the right "
 "of the corresponding line. To configure a module, simply select it and then "
@@ -167,39 +167,6 @@ msgstr ""
 "EL caractér %s no está permitido.\n"
 "Por favor use otro nombre."
 
-#: ../src/gui/authentication.py:131
-#, python-format
-msgid ""
-"Enter your username and password for\n"
-"%(reason)s"
-msgstr ""
-"Entre su nombre de usuario y contraseña para\n"
-"%(reason)s"
-
-#: ../src/gui/authentication.py:133 ../res/Authentication.glade.h:1
-msgid "Password required"
-msgstr "Contraseña requerida"
-
-#: ../src/gui/authentication.py:170
-msgid "About password storage safety"
-msgstr "Acerca del almacenaje seguro de claves"
-
-#: ../src/gui/authentication.py:171
-msgid ""
-"If you use Gnome, it is safe to store your password since the Gnome keyring "
-"is used."
-msgstr ""
-"Si usa GNOME, es seguro almacenar su clave ya que se usa el gestor de claves "
-"de GNOME."
-
-#: ../src/gui/authentication.py:172
-msgid ""
-"If you do not use Gnome, beware that, although not stored as clear text, an "
-"attacker <i>could</i> retrieve it."
-msgstr ""
-"Si no usa GNOME tenga en cuenta que, aunque no guarde la clave en texto "
-"plano, un atacante <i>podría</i> conseguirla."
-
 #: ../src/gui/about.py:39
 msgid "translator-credits"
 msgstr ""
@@ -217,9 +184,13 @@ msgstr ""
 msgid "Developer:"
 msgstr "Desarrollador:"
 
-#: ../src/gui/about.py:46
+#: ../src/gui/about.py:47
 msgid "Thanks to:"
 msgstr "Gracias a:"
+
+#: ../src/gui/about.py:49
+msgid "(Developer of Decibel Audio Player)"
+msgstr ""
 
 #: ../src/modules/Zeitgeist.py:26
 msgid "Send track information to the Zeitgeist service"
@@ -233,65 +204,22 @@ msgstr "Explorador de archivos"
 msgid "Browse your file system"
 msgstr "Explorar tu sistema de archivos"
 
-#: ../src/modules/FileExplorer.py:31
-msgid "Home"
-msgstr "Carpeta personal"
-
-#: ../src/modules/FileExplorer.py:31
-msgid "Root"
-msgstr ""
-
-#: ../src/modules/FileExplorer.py:182
+#: ../src/modules/FileExplorer.py:158
 msgid "loading..."
 msgstr "cargando…"
 
-#: ../src/modules/FileExplorer.py:350
-msgid "Collapse all"
+#: ../src/modules/FileExplorer.py:325
+msgid "Append"
 msgstr ""
 
-#: ../src/modules/FileExplorer.py:363 ../res/FileExplorer.glade.h:8
-msgid "Show hidden files"
-msgstr "Mostrar archivos ocultos"
-
-#: ../src/modules/FileExplorer.py:525
-msgid "You will be able to add this root folder again later on if you wish so."
+#: ../src/modules/FileExplorer.py:448
+msgid "Music"
 msgstr ""
-"Usted podrá añadir esta carpeta raíz nuevamente más adelante si así lo desea."
 
-#: ../src/modules/FileExplorer.py:526
-msgid "Remove the selected entry?"
-msgstr "¿Eliminar la entrada seleccionada?"
-
-#: ../src/modules/FileExplorer.py:528
-msgid ""
-"You will be able to add these root folders again later on if you wish so."
-msgstr ""
-"Usted podrá añadir estas carpetas raíz nuevamente más adelante si así lo "
-"desea."
-
-#: ../src/modules/FileExplorer.py:529
-msgid "Remove all selected entries?"
-msgstr "¿Eliminar todas entradas seleccionadas?"
-
-#: ../src/modules/FileExplorer.py:531
-msgid "Your media files will not be deleted."
-msgstr "Tus archivos multimedios no serán eliminados"
-
-#: ../src/modules/FileExplorer.py:589
-msgid "This module allows you to browse the files on your drives."
-msgstr "Este módulo le permite explorar los archivos en tus discos."
-
-#: ../src/modules/FileExplorer.py:590
-msgid "Usage"
-msgstr "Uso"
-
-#: ../src/modules/FileExplorer.py:591
-msgid ""
-"At least one root folder must be added to browse your files. This folder "
-"then becomes the root of the file explorer tree in the main window."
-msgstr ""
-"Para explorar sus archivos debe adicionar al menos una carpeta raíz. Esta "
-"carpeta será la raíz del árbol de exploración en la ventana principal."
+#: ../src/modules/FileExplorer.py:448
+#, fuzzy
+msgid "Albums"
+msgstr "Álbum"
 
 #: ../src/modules/__init__.py:75
 msgid "The following Python modules are not available:"
@@ -309,23 +237,16 @@ msgstr ""
 msgid "You must restart the application for this modification to take effect."
 msgstr ""
 
-#: ../src/modules/TrackPanel.py:128
-#, fuzzy, python-format
-msgid "by <i>%(artist)s</i> from <i>%(album)s</i>"
-msgstr ""
-"por %(artist)s\n"
-"de %(album)s"
-
-#: ../src/modules/CtrlPanel.py:102 ../src/modules/CtrlPanel.py:163
+#: ../src/modules/CtrlPanel.py:206 ../src/modules/CtrlPanel.py:267
 msgid "Pause the current track"
 msgstr "Pausar la pista actual"
 
-#: ../src/modules/CtrlPanel.py:121
+#: ../src/modules/CtrlPanel.py:225
 #, fuzzy
 msgid "Play the first selected track of the playlist"
 msgstr "Reproducir la pista primera de la lista de reproducción"
 
-#: ../src/modules/CtrlPanel.py:157
+#: ../src/modules/CtrlPanel.py:261
 msgid "Continue playing the current track"
 msgstr "Continuar reproduciendo la pista actual"
 
@@ -457,21 +378,13 @@ msgstr ""
 "existe para la pista actual, ésta se usa. Si no hay ninguna, la caratula "
 "será descargada."
 
-#: ../src/modules/Tracktree.py:313
+#: ../src/modules/Tracktree.py:328
 msgid "Save playlist"
 msgstr "Guardar lista de reproducción"
 
-#: ../src/modules/Tracktree.py:363
+#: ../src/modules/Tracktree.py:378
 msgid "Clear Playlist"
 msgstr ""
-
-#: ../src/modules/Explorer.py:68
-msgid ""
-"Please select an explorer\n"
-"in the combo box below."
-msgstr ""
-"Por favor, elija un explorador\n"
-"en el cuadro combinado de abajo."
 
 #: ../src/modules/Equalizer.py:24 ../src/modules/Equalizer.py:55
 #: ../src/modules/Equalizer.py:69
@@ -527,22 +440,6 @@ msgstr "Artista desconocido"
 msgid "Unknown Album Artist"
 msgstr "Artista del álbum desconocido"
 
-#: ../res/Authentication.glade.h:2
-msgid "Password:"
-msgstr "Contraseña:"
-
-#: ../res/Authentication.glade.h:3
-msgid "Remember this password"
-msgstr "Recordar esta contraseña"
-
-#: ../res/Authentication.glade.h:4
-msgid "Username:"
-msgstr "Nombre de usuario:"
-
-#: ../res/Authentication.glade.h:5 ../res/Progress.glade.h:1
-msgid "label"
-msgstr "etiqueta"
-
 #: ../res/Covers.glade.h:1
 msgid "<b>Internet Covers</b>"
 msgstr "<b>Caratulas de Internet</b>"
@@ -579,7 +476,7 @@ msgstr "Intentar descargar caratulas desde Internet"
 msgid "<b>Body</b>"
 msgstr "<b>Cuerpo</b>"
 
-#: ../res/DesktopNotification.glade.h:2 ../res/FileExplorer.glade.h:1
+#: ../res/DesktopNotification.glade.h:2
 msgid "<b>Miscellaneous</b>"
 msgstr "<b>Varios</b>"
 
@@ -607,125 +504,175 @@ msgstr "segundos"
 msgid "Preset:"
 msgstr ""
 
-#: ../res/FileExplorer.glade.h:2
-msgid "<b>Root Folders</b>"
-msgstr "<b>Carpeta raíz</b>"
-
-#: ../res/FileExplorer.glade.h:3
-msgid "Add a new root folder to the file explorer"
-msgstr "Añadir una carpeta raíz nueva al explorador de los archivos"
-
-#: ../res/FileExplorer.glade.h:4
-msgid "Add files to playlist by filename"
-msgstr ""
-
-#: ../res/FileExplorer.glade.h:5
-msgid "Remove the selected root folders"
-msgstr "Eliminar la carpetas raíces seleccionadas"
-
-#: ../res/FileExplorer.glade.h:6
-msgid "Rename"
-msgstr "Renombrar"
-
-#: ../res/FileExplorer.glade.h:7
-msgid "Rename the selected root folder"
-msgstr "Renombrar la carpeta raíz seleccionada"
-
-#: ../res/FileExplorer.glade.h:9
-msgid ""
-"Whether files should be added to the playlist by their name rather than by "
-"their tags"
-msgstr ""
-
-#: ../res/FileExplorer.glade.h:10
-msgid "Whether hidden files should be shown in the file explorer"
-msgstr ""
-"Si los archivos ocultos deberían mostrarse en el explorador de archivos"
-
 #: ../res/MainWindow.glade.h:1
-msgid "Display about dialog box"
-msgstr "Mostrar el diálogo \"Acerca de...\""
-
-#: ../res/MainWindow.glade.h:2
-msgid "Display preferences"
-msgstr "Preferencias de visualización"
-
-#: ../res/MainWindow.glade.h:3
-msgid "Full"
-msgstr ""
-
-#: ../res/MainWindow.glade.h:4
-msgid "Mini"
-msgstr ""
-
-#: ../res/MainWindow.glade.h:5
-msgid "Online _Help"
-msgstr "A_yuda en linea"
-
-#: ../res/MainWindow.glade.h:6
-msgid "Open the online help web page"
-msgstr "Abrir el pagina web de ayuda en linea"
-
-#: ../res/MainWindow.glade.h:7
 msgid "Play the first track of the playlist"
 msgstr "Reproducir la pista primera de la lista de reproducción"
 
-#: ../res/MainWindow.glade.h:8
+#: ../res/MainWindow.glade.h:2
 msgid "Play the next track"
 msgstr "Reproducir la pista siguiente"
 
-#: ../res/MainWindow.glade.h:9
+#: ../res/MainWindow.glade.h:3
 msgid "Play the previous track"
 msgstr "Reproducir la última pista"
 
-#: ../res/MainWindow.glade.h:10
-msgid "Playlist"
-msgstr ""
-
-#: ../res/MainWindow.glade.h:11
-msgid "Quit the application"
-msgstr "Termina la aplicación"
-
-#: ../res/MainWindow.glade.h:12
-msgid "Remaining time"
-msgstr "Tiempo restante"
-
-#: ../res/MainWindow.glade.h:13
+#: ../res/MainWindow.glade.h:4
 msgid "Seek a position in the current track"
 msgstr "Buscar una posición en la pista actual"
 
-#: ../res/MainWindow.glade.h:14
-msgid "Select an explorer"
-msgstr "Elija un explorador"
+#~ msgid ""
+#~ "Enter your username and password for\n"
+#~ "%(reason)s"
+#~ msgstr ""
+#~ "Entre su nombre de usuario y contraseña para\n"
+#~ "%(reason)s"
 
-#: ../res/MainWindow.glade.h:15
-msgid "Stop the current track"
-msgstr "Detener la pista actual"
+#~ msgid "Password required"
+#~ msgstr "Contraseña requerida"
 
-#: ../res/MainWindow.glade.h:16
-msgid "_Edit"
-msgstr "_Edición"
+#~ msgid "About password storage safety"
+#~ msgstr "Acerca del almacenaje seguro de claves"
 
-#: ../res/MainWindow.glade.h:17
-msgid "_File"
-msgstr "_Archivo"
+#~ msgid ""
+#~ "If you use Gnome, it is safe to store your password since the Gnome "
+#~ "keyring is used."
+#~ msgstr ""
+#~ "Si usa GNOME, es seguro almacenar su clave ya que se usa el gestor de "
+#~ "claves de GNOME."
 
-#: ../res/MainWindow.glade.h:18
-msgid "_Help"
-msgstr "A_yuda"
+#~ msgid ""
+#~ "If you do not use Gnome, beware that, although not stored as clear text, "
+#~ "an attacker <i>could</i> retrieve it."
+#~ msgstr ""
+#~ "Si no usa GNOME tenga en cuenta que, aunque no guarde la clave en texto "
+#~ "plano, un atacante <i>podría</i> conseguirla."
 
-#: ../res/MainWindow.glade.h:19
+#~ msgid "Home"
+#~ msgstr "Carpeta personal"
+
+#~ msgid "Show hidden files"
+#~ msgstr "Mostrar archivos ocultos"
+
+#~ msgid ""
+#~ "You will be able to add this root folder again later on if you wish so."
+#~ msgstr ""
+#~ "Usted podrá añadir esta carpeta raíz nuevamente más adelante si así lo "
+#~ "desea."
+
+#~ msgid "Remove the selected entry?"
+#~ msgstr "¿Eliminar la entrada seleccionada?"
+
+#~ msgid ""
+#~ "You will be able to add these root folders again later on if you wish so."
+#~ msgstr ""
+#~ "Usted podrá añadir estas carpetas raíz nuevamente más adelante si así lo "
+#~ "desea."
+
+#~ msgid "Remove all selected entries?"
+#~ msgstr "¿Eliminar todas entradas seleccionadas?"
+
+#~ msgid "Your media files will not be deleted."
+#~ msgstr "Tus archivos multimedios no serán eliminados"
+
+#~ msgid "This module allows you to browse the files on your drives."
+#~ msgstr "Este módulo le permite explorar los archivos en tus discos."
+
+#~ msgid "Usage"
+#~ msgstr "Uso"
+
+#~ msgid ""
+#~ "At least one root folder must be added to browse your files. This folder "
+#~ "then becomes the root of the file explorer tree in the main window."
+#~ msgstr ""
+#~ "Para explorar sus archivos debe adicionar al menos una carpeta raíz. Esta "
+#~ "carpeta será la raíz del árbol de exploración en la ventana principal."
+
 #, fuzzy
-msgid "_View"
-msgstr "_Archivo"
+#~ msgid "by <i>%(artist)s</i> from <i>%(album)s</i>"
+#~ msgstr ""
+#~ "por %(artist)s\n"
+#~ "de %(album)s"
 
-#: ../res/SelectPath.glade.h:1
-msgid "Name:"
-msgstr "Nombre:"
+#~ msgid ""
+#~ "Please select an explorer\n"
+#~ "in the combo box below."
+#~ msgstr ""
+#~ "Por favor, elija un explorador\n"
+#~ "en el cuadro combinado de abajo."
 
-#: ../res/SelectPath.glade.h:2
-msgid "Path:"
-msgstr "Ruta:"
+#~ msgid "Password:"
+#~ msgstr "Contraseña:"
+
+#~ msgid "Remember this password"
+#~ msgstr "Recordar esta contraseña"
+
+#~ msgid "Username:"
+#~ msgstr "Nombre de usuario:"
+
+#~ msgid "label"
+#~ msgstr "etiqueta"
+
+#~ msgid "<b>Root Folders</b>"
+#~ msgstr "<b>Carpeta raíz</b>"
+
+#~ msgid "Add a new root folder to the file explorer"
+#~ msgstr "Añadir una carpeta raíz nueva al explorador de los archivos"
+
+#~ msgid "Remove the selected root folders"
+#~ msgstr "Eliminar la carpetas raíces seleccionadas"
+
+#~ msgid "Rename"
+#~ msgstr "Renombrar"
+
+#~ msgid "Rename the selected root folder"
+#~ msgstr "Renombrar la carpeta raíz seleccionada"
+
+#~ msgid "Whether hidden files should be shown in the file explorer"
+#~ msgstr ""
+#~ "Si los archivos ocultos deberían mostrarse en el explorador de archivos"
+
+#~ msgid "Display about dialog box"
+#~ msgstr "Mostrar el diálogo \"Acerca de...\""
+
+#~ msgid "Display preferences"
+#~ msgstr "Preferencias de visualización"
+
+#~ msgid "Online _Help"
+#~ msgstr "A_yuda en linea"
+
+#~ msgid "Open the online help web page"
+#~ msgstr "Abrir el pagina web de ayuda en linea"
+
+#~ msgid "Quit the application"
+#~ msgstr "Termina la aplicación"
+
+#~ msgid "Remaining time"
+#~ msgstr "Tiempo restante"
+
+#~ msgid "Select an explorer"
+#~ msgstr "Elija un explorador"
+
+#~ msgid "Stop the current track"
+#~ msgstr "Detener la pista actual"
+
+#~ msgid "_Edit"
+#~ msgstr "_Edición"
+
+#~ msgid "_File"
+#~ msgstr "_Archivo"
+
+#~ msgid "_Help"
+#~ msgstr "A_yuda"
+
+#, fuzzy
+#~ msgid "_View"
+#~ msgstr "_Archivo"
+
+#~ msgid "Name:"
+#~ msgstr "Nombre:"
+
+#~ msgid "Path:"
+#~ msgstr "Ruta:"
 
 #~ msgid "Instant Messenger Status"
 #~ msgstr "Estado del mensajero instantáneo"

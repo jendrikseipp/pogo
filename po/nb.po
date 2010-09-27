@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: decibel-audio-player\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-09-16 22:21+0200\n"
+"POT-Creation-Date: 2010-09-27 21:03+0200\n"
 "PO-Revision-Date: 2008-05-16 19:06+0000\n"
 "Last-Translator: mamaar <mamaar@gmail.com>\n"
 "Language-Team: Norwegian Bokmal <nb@li.org>\n"
@@ -91,20 +91,20 @@ msgstr ""
 msgid "Preferences"
 msgstr ""
 
-#: ../src/gui/preferences.py:116
+#: ../src/gui/preferences.py:128
 msgid "Unable to load this module."
 msgstr "Kunne ikke laste modulen."
 
-#: ../src/gui/preferences.py:125
+#: ../src/gui/preferences.py:137
 msgid "Modules"
 msgstr "Moduler"
 
-#: ../src/gui/preferences.py:126 ../src/modules/FileExplorer.py:588
-#: ../src/modules/DesktopNotification.py:212 ../src/modules/Covers.py:419
+#: ../src/gui/preferences.py:138 ../src/modules/DesktopNotification.py:212
+#: ../src/modules/Covers.py:419
 msgid "Description"
 msgstr "Beskrivelse"
 
-#: ../src/gui/preferences.py:127
+#: ../src/gui/preferences.py:139
 msgid ""
 "This dialog box shows the list of available modules, which are small pieces "
 "of code that add some functionnalities to the application. You can enable/"
@@ -112,11 +112,11 @@ msgid ""
 "that some modules (e.g., the File Explorer) cannot be disabled."
 msgstr ""
 
-#: ../src/gui/preferences.py:130
+#: ../src/gui/preferences.py:142
 msgid "Configuring a Module"
 msgstr "Konfigurer en modul"
 
-#: ../src/gui/preferences.py:131
+#: ../src/gui/preferences.py:143
 msgid ""
 "When a module may be configured, a specific icon is displayed on the right "
 "of the corresponding line. To configure a module, simply select it and then "
@@ -157,37 +157,6 @@ msgstr ""
 "Tegnet %s er ikke tillatt.\n"
 "Bruk et annet navn."
 
-#: ../src/gui/authentication.py:131
-#, python-format
-msgid ""
-"Enter your username and password for\n"
-"%(reason)s"
-msgstr ""
-
-#: ../src/gui/authentication.py:133 ../res/Authentication.glade.h:1
-msgid "Password required"
-msgstr "Passord er påkrevd"
-
-#: ../src/gui/authentication.py:170
-msgid "About password storage safety"
-msgstr "Om passordlagringstrygghet"
-
-#: ../src/gui/authentication.py:171
-msgid ""
-"If you use Gnome, it is safe to store your password since the Gnome keyring "
-"is used."
-msgstr ""
-"Dersom du bruker Gnome, er det trygt å lagre passordet siden Gnome-"
-"nøkkelringen brukes."
-
-#: ../src/gui/authentication.py:172
-msgid ""
-"If you do not use Gnome, beware that, although not stored as clear text, an "
-"attacker <i>could</i> retrieve it."
-msgstr ""
-"Dersom du ikke bruker Gnome, vær klar over at en angriper <i>kan</i> få tak "
-"i passordet, selvom det ikke blir lagret i klartekst."
-
 #: ../src/gui/about.py:39
 msgid "translator-credits"
 msgstr ""
@@ -198,9 +167,13 @@ msgstr ""
 msgid "Developer:"
 msgstr "Utvikler:"
 
-#: ../src/gui/about.py:46
+#: ../src/gui/about.py:47
 msgid "Thanks to:"
 msgstr "Takk til:"
+
+#: ../src/gui/about.py:49
+msgid "(Developer of Decibel Audio Player)"
+msgstr ""
 
 #: ../src/modules/Zeitgeist.py:26
 msgid "Send track information to the Zeitgeist service"
@@ -214,60 +187,22 @@ msgstr "Filutforsker"
 msgid "Browse your file system"
 msgstr "Bla gjennom filsystemet"
 
-#: ../src/modules/FileExplorer.py:31
-msgid "Home"
-msgstr "Hjem"
-
-#: ../src/modules/FileExplorer.py:31
-msgid "Root"
-msgstr ""
-
-#: ../src/modules/FileExplorer.py:182
+#: ../src/modules/FileExplorer.py:158
 msgid "loading..."
 msgstr ""
 
-#: ../src/modules/FileExplorer.py:350
-msgid "Collapse all"
+#: ../src/modules/FileExplorer.py:325
+msgid "Append"
 msgstr ""
 
-#: ../src/modules/FileExplorer.py:363 ../res/FileExplorer.glade.h:8
-msgid "Show hidden files"
-msgstr "Vis skjulte filer"
-
-#: ../src/modules/FileExplorer.py:525
-msgid "You will be able to add this root folder again later on if you wish so."
-msgstr "Du kan legge til denne rotmappen igjen senere dersom du ønsker det."
-
-#: ../src/modules/FileExplorer.py:526
-msgid "Remove the selected entry?"
+#: ../src/modules/FileExplorer.py:448
+msgid "Music"
 msgstr ""
 
-#: ../src/modules/FileExplorer.py:528
-msgid ""
-"You will be able to add these root folders again later on if you wish so."
-msgstr "Du kan legge til disse rotmappene igjen senere dersom du ønsker det."
-
-#: ../src/modules/FileExplorer.py:529
-msgid "Remove all selected entries?"
-msgstr "Fjerne alle valgte oppføringer?"
-
-#: ../src/modules/FileExplorer.py:531
-msgid "Your media files will not be deleted."
-msgstr "Dine mediafiler vil ikke bli slettet."
-
-#: ../src/modules/FileExplorer.py:589
-msgid "This module allows you to browse the files on your drives."
-msgstr "Denne modulen lar deg bla gjennom filene på diskene dine."
-
-#: ../src/modules/FileExplorer.py:590
-msgid "Usage"
-msgstr ""
-
-#: ../src/modules/FileExplorer.py:591
-msgid ""
-"At least one root folder must be added to browse your files. This folder "
-"then becomes the root of the file explorer tree in the main window."
-msgstr ""
+#: ../src/modules/FileExplorer.py:448
+#, fuzzy
+msgid "Albums"
+msgstr "Album"
 
 #: ../src/modules/__init__.py:75
 msgid "The following Python modules are not available:"
@@ -285,21 +220,16 @@ msgstr ""
 msgid "You must restart the application for this modification to take effect."
 msgstr ""
 
-#: ../src/modules/TrackPanel.py:128
-#, python-format
-msgid "by <i>%(artist)s</i> from <i>%(album)s</i>"
-msgstr ""
-
-#: ../src/modules/CtrlPanel.py:102 ../src/modules/CtrlPanel.py:163
+#: ../src/modules/CtrlPanel.py:206 ../src/modules/CtrlPanel.py:267
 msgid "Pause the current track"
 msgstr ""
 
-#: ../src/modules/CtrlPanel.py:121
+#: ../src/modules/CtrlPanel.py:225
 #, fuzzy
 msgid "Play the first selected track of the playlist"
 msgstr "Spill første sporet i spillelisten"
 
-#: ../src/modules/CtrlPanel.py:157
+#: ../src/modules/CtrlPanel.py:261
 msgid "Continue playing the current track"
 msgstr ""
 
@@ -411,18 +341,12 @@ msgid ""
 "none, the cover is downloaded."
 msgstr ""
 
-#: ../src/modules/Tracktree.py:313
+#: ../src/modules/Tracktree.py:328
 msgid "Save playlist"
 msgstr "Lagre spilleliste"
 
-#: ../src/modules/Tracktree.py:363
+#: ../src/modules/Tracktree.py:378
 msgid "Clear Playlist"
-msgstr ""
-
-#: ../src/modules/Explorer.py:68
-msgid ""
-"Please select an explorer\n"
-"in the combo box below."
 msgstr ""
 
 #: ../src/modules/Equalizer.py:24 ../src/modules/Equalizer.py:55
@@ -479,22 +403,6 @@ msgstr "Ukjent artist"
 msgid "Unknown Album Artist"
 msgstr ""
 
-#: ../res/Authentication.glade.h:2
-msgid "Password:"
-msgstr "Passord:"
-
-#: ../res/Authentication.glade.h:3
-msgid "Remember this password"
-msgstr "Husk dette passordet"
-
-#: ../res/Authentication.glade.h:4
-msgid "Username:"
-msgstr "Brukernavn:"
-
-#: ../res/Authentication.glade.h:5 ../res/Progress.glade.h:1
-msgid "label"
-msgstr ""
-
 #: ../res/Covers.glade.h:1
 msgid "<b>Internet Covers</b>"
 msgstr ""
@@ -531,7 +439,7 @@ msgstr ""
 msgid "<b>Body</b>"
 msgstr ""
 
-#: ../res/DesktopNotification.glade.h:2 ../res/FileExplorer.glade.h:1
+#: ../res/DesktopNotification.glade.h:2
 msgid "<b>Miscellaneous</b>"
 msgstr ""
 
@@ -559,124 +467,96 @@ msgstr ""
 msgid "Preset:"
 msgstr ""
 
-#: ../res/FileExplorer.glade.h:2
-msgid "<b>Root Folders</b>"
-msgstr ""
-
-#: ../res/FileExplorer.glade.h:3
-msgid "Add a new root folder to the file explorer"
-msgstr ""
-
-#: ../res/FileExplorer.glade.h:4
-msgid "Add files to playlist by filename"
-msgstr ""
-
-#: ../res/FileExplorer.glade.h:5
-msgid "Remove the selected root folders"
-msgstr ""
-
-#: ../res/FileExplorer.glade.h:6
-msgid "Rename"
-msgstr "Gi nytt navn"
-
-#: ../res/FileExplorer.glade.h:7
-msgid "Rename the selected root folder"
-msgstr ""
-
-#: ../res/FileExplorer.glade.h:9
-msgid ""
-"Whether files should be added to the playlist by their name rather than by "
-"their tags"
-msgstr ""
-
-#: ../res/FileExplorer.glade.h:10
-msgid "Whether hidden files should be shown in the file explorer"
-msgstr ""
-
 #: ../res/MainWindow.glade.h:1
-msgid "Display about dialog box"
-msgstr ""
-
-#: ../res/MainWindow.glade.h:2
-msgid "Display preferences"
-msgstr ""
-
-#: ../res/MainWindow.glade.h:3
-msgid "Full"
-msgstr ""
-
-#: ../res/MainWindow.glade.h:4
-msgid "Mini"
-msgstr ""
-
-#: ../res/MainWindow.glade.h:5
-msgid "Online _Help"
-msgstr ""
-
-#: ../res/MainWindow.glade.h:6
-msgid "Open the online help web page"
-msgstr ""
-
-#: ../res/MainWindow.glade.h:7
 msgid "Play the first track of the playlist"
 msgstr "Spill første sporet i spillelisten"
 
-#: ../res/MainWindow.glade.h:8
+#: ../res/MainWindow.glade.h:2
 msgid "Play the next track"
 msgstr ""
 
-#: ../res/MainWindow.glade.h:9
+#: ../res/MainWindow.glade.h:3
 msgid "Play the previous track"
 msgstr ""
 
-#: ../res/MainWindow.glade.h:10
-msgid "Playlist"
-msgstr ""
-
-#: ../res/MainWindow.glade.h:11
-msgid "Quit the application"
-msgstr ""
-
-#: ../res/MainWindow.glade.h:12
-msgid "Remaining time"
-msgstr ""
-
-#: ../res/MainWindow.glade.h:13
+#: ../res/MainWindow.glade.h:4
 msgid "Seek a position in the current track"
 msgstr ""
 
-#: ../res/MainWindow.glade.h:14
-msgid "Select an explorer"
-msgstr "Velg en utforsker"
+#~ msgid "Password required"
+#~ msgstr "Passord er påkrevd"
 
-#: ../res/MainWindow.glade.h:15
-msgid "Stop the current track"
-msgstr ""
+#~ msgid "About password storage safety"
+#~ msgstr "Om passordlagringstrygghet"
 
-#: ../res/MainWindow.glade.h:16
-msgid "_Edit"
-msgstr ""
+#~ msgid ""
+#~ "If you use Gnome, it is safe to store your password since the Gnome "
+#~ "keyring is used."
+#~ msgstr ""
+#~ "Dersom du bruker Gnome, er det trygt å lagre passordet siden Gnome-"
+#~ "nøkkelringen brukes."
 
-#: ../res/MainWindow.glade.h:17
-msgid "_File"
-msgstr "_Fil"
+#~ msgid ""
+#~ "If you do not use Gnome, beware that, although not stored as clear text, "
+#~ "an attacker <i>could</i> retrieve it."
+#~ msgstr ""
+#~ "Dersom du ikke bruker Gnome, vær klar over at en angriper <i>kan</i> få "
+#~ "tak i passordet, selvom det ikke blir lagret i klartekst."
 
-#: ../res/MainWindow.glade.h:18
-msgid "_Help"
-msgstr "_Hjelp"
+#~ msgid "Home"
+#~ msgstr "Hjem"
 
-#: ../res/MainWindow.glade.h:19
+#~ msgid "Show hidden files"
+#~ msgstr "Vis skjulte filer"
+
+#~ msgid ""
+#~ "You will be able to add this root folder again later on if you wish so."
+#~ msgstr "Du kan legge til denne rotmappen igjen senere dersom du ønsker det."
+
+#~ msgid ""
+#~ "You will be able to add these root folders again later on if you wish so."
+#~ msgstr ""
+#~ "Du kan legge til disse rotmappene igjen senere dersom du ønsker det."
+
+#~ msgid "Remove all selected entries?"
+#~ msgstr "Fjerne alle valgte oppføringer?"
+
+#~ msgid "Your media files will not be deleted."
+#~ msgstr "Dine mediafiler vil ikke bli slettet."
+
+#~ msgid "This module allows you to browse the files on your drives."
+#~ msgstr "Denne modulen lar deg bla gjennom filene på diskene dine."
+
+#~ msgid "Password:"
+#~ msgstr "Passord:"
+
+#~ msgid "Remember this password"
+#~ msgstr "Husk dette passordet"
+
+#~ msgid "Username:"
+#~ msgstr "Brukernavn:"
+
+#~ msgid "Rename"
+#~ msgstr "Gi nytt navn"
+
+#~ msgid "Select an explorer"
+#~ msgstr "Velg en utforsker"
+
+#~ msgid "_File"
+#~ msgstr "_Fil"
+
+#~ msgid "_Help"
+#~ msgstr "_Hjelp"
+
 #, fuzzy
-msgid "_View"
-msgstr "_Fil"
+#~ msgid "_View"
+#~ msgstr "_Fil"
 
-#: ../res/SelectPath.glade.h:1
-msgid "Name:"
-msgstr "Navn:"
+#~ msgid "Name:"
+#~ msgstr "Navn:"
 
-#: ../res/SelectPath.glade.h:2
-msgid "Path:"
-msgstr "Sti:"
+#~ msgid "Path:"
+#~ msgstr "Sti:"
 
 #~ msgid "Instant Messenger Status"
 #~ msgstr "Lynmeldingsstatus"

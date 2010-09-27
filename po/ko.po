@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: decibel-audio-player\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-09-16 22:21+0200\n"
+"POT-Creation-Date: 2010-09-27 21:03+0200\n"
 "PO-Revision-Date: 2007-12-14 15:54+0000\n"
 "Last-Translator: onlyeriko <onlyeriko@gmail.com>\n"
 "Language-Team: Korean <ko@li.org>\n"
@@ -91,20 +91,20 @@ msgstr ""
 msgid "Preferences"
 msgstr "환경설정"
 
-#: ../src/gui/preferences.py:116
+#: ../src/gui/preferences.py:128
 msgid "Unable to load this module."
 msgstr "열수없는 모듈"
 
-#: ../src/gui/preferences.py:125
+#: ../src/gui/preferences.py:137
 msgid "Modules"
 msgstr "모듈"
 
-#: ../src/gui/preferences.py:126 ../src/modules/FileExplorer.py:588
-#: ../src/modules/DesktopNotification.py:212 ../src/modules/Covers.py:419
+#: ../src/gui/preferences.py:138 ../src/modules/DesktopNotification.py:212
+#: ../src/modules/Covers.py:419
 msgid "Description"
 msgstr "설명"
 
-#: ../src/gui/preferences.py:127
+#: ../src/gui/preferences.py:139
 msgid ""
 "This dialog box shows the list of available modules, which are small pieces "
 "of code that add some functionnalities to the application. You can enable/"
@@ -112,11 +112,11 @@ msgid ""
 "that some modules (e.g., the File Explorer) cannot be disabled."
 msgstr ""
 
-#: ../src/gui/preferences.py:130
+#: ../src/gui/preferences.py:142
 msgid "Configuring a Module"
 msgstr ""
 
-#: ../src/gui/preferences.py:131
+#: ../src/gui/preferences.py:143
 msgid ""
 "When a module may be configured, a specific icon is displayed on the right "
 "of the corresponding line. To configure a module, simply select it and then "
@@ -153,34 +153,6 @@ msgid ""
 "Please use another name."
 msgstr "문자 %s 사용될 수 없음, 다시 입력하세요"
 
-#: ../src/gui/authentication.py:131
-#, python-format
-msgid ""
-"Enter your username and password for\n"
-"%(reason)s"
-msgstr ""
-
-#: ../src/gui/authentication.py:133 ../res/Authentication.glade.h:1
-msgid "Password required"
-msgstr "암호 필요"
-
-#: ../src/gui/authentication.py:170
-msgid "About password storage safety"
-msgstr "패스워드 안전하게 저장"
-
-#: ../src/gui/authentication.py:171
-msgid ""
-"If you use Gnome, it is safe to store your password since the Gnome keyring "
-"is used."
-msgstr "Gnome을 사용한다면 당신의 패스워드는 안전하다"
-
-#: ../src/gui/authentication.py:172
-msgid ""
-"If you do not use Gnome, beware that, although not stored as clear text, an "
-"attacker <i>could</i> retrieve it."
-msgstr ""
-"Gnome을 사용하지 않을지라도 저장하지 않은 지워진 텍스트라도 회복 가능하다"
-
 #: ../src/gui/about.py:39
 msgid "translator-credits"
 msgstr ""
@@ -191,9 +163,13 @@ msgstr ""
 msgid "Developer:"
 msgstr ""
 
-#: ../src/gui/about.py:46
+#: ../src/gui/about.py:47
 msgid "Thanks to:"
 msgstr "고마운 사람:"
+
+#: ../src/gui/about.py:49
+msgid "(Developer of Decibel Audio Player)"
+msgstr ""
 
 #: ../src/modules/Zeitgeist.py:26
 msgid "Send track information to the Zeitgeist service"
@@ -207,60 +183,22 @@ msgstr "파일 찾기"
 msgid "Browse your file system"
 msgstr ""
 
-#: ../src/modules/FileExplorer.py:31
-msgid "Home"
-msgstr "홈"
-
-#: ../src/modules/FileExplorer.py:31
-msgid "Root"
-msgstr ""
-
-#: ../src/modules/FileExplorer.py:182
+#: ../src/modules/FileExplorer.py:158
 msgid "loading..."
 msgstr ""
 
-#: ../src/modules/FileExplorer.py:350
-msgid "Collapse all"
+#: ../src/modules/FileExplorer.py:325
+msgid "Append"
 msgstr ""
 
-#: ../src/modules/FileExplorer.py:363 ../res/FileExplorer.glade.h:8
-msgid "Show hidden files"
-msgstr "숨은 파일 보기"
-
-#: ../src/modules/FileExplorer.py:525
-msgid "You will be able to add this root folder again later on if you wish so."
+#: ../src/modules/FileExplorer.py:448
+msgid "Music"
 msgstr ""
 
-#: ../src/modules/FileExplorer.py:526
-msgid "Remove the selected entry?"
-msgstr "선택된 입력 제거"
-
-#: ../src/modules/FileExplorer.py:528
-msgid ""
-"You will be able to add these root folders again later on if you wish so."
-msgstr ""
-
-#: ../src/modules/FileExplorer.py:529
-msgid "Remove all selected entries?"
-msgstr "선택된 입력 모두 제거"
-
-#: ../src/modules/FileExplorer.py:531
-msgid "Your media files will not be deleted."
-msgstr "선택된 파일 지우지 못함"
-
-#: ../src/modules/FileExplorer.py:589
-msgid "This module allows you to browse the files on your drives."
-msgstr ""
-
-#: ../src/modules/FileExplorer.py:590
-msgid "Usage"
-msgstr "사용량"
-
-#: ../src/modules/FileExplorer.py:591
-msgid ""
-"At least one root folder must be added to browse your files. This folder "
-"then becomes the root of the file explorer tree in the main window."
-msgstr ""
+#: ../src/modules/FileExplorer.py:448
+#, fuzzy
+msgid "Albums"
+msgstr "앨범"
 
 #: ../src/modules/__init__.py:75
 msgid "The following Python modules are not available:"
@@ -278,21 +216,16 @@ msgstr ""
 msgid "You must restart the application for this modification to take effect."
 msgstr ""
 
-#: ../src/modules/TrackPanel.py:128
-#, python-format
-msgid "by <i>%(artist)s</i> from <i>%(album)s</i>"
-msgstr ""
-
-#: ../src/modules/CtrlPanel.py:102 ../src/modules/CtrlPanel.py:163
+#: ../src/modules/CtrlPanel.py:206 ../src/modules/CtrlPanel.py:267
 msgid "Pause the current track"
 msgstr "현재 트랙 정지"
 
-#: ../src/modules/CtrlPanel.py:121
+#: ../src/modules/CtrlPanel.py:225
 #, fuzzy
 msgid "Play the first selected track of the playlist"
 msgstr "플레이 리스트 첫번째"
 
-#: ../src/modules/CtrlPanel.py:157
+#: ../src/modules/CtrlPanel.py:261
 msgid "Continue playing the current track"
 msgstr "현재 트랙 계속"
 
@@ -404,18 +337,12 @@ msgid ""
 "none, the cover is downloaded."
 msgstr ""
 
-#: ../src/modules/Tracktree.py:313
+#: ../src/modules/Tracktree.py:328
 msgid "Save playlist"
 msgstr "재생목록 저장"
 
-#: ../src/modules/Tracktree.py:363
+#: ../src/modules/Tracktree.py:378
 msgid "Clear Playlist"
-msgstr ""
-
-#: ../src/modules/Explorer.py:68
-msgid ""
-"Please select an explorer\n"
-"in the combo box below."
 msgstr ""
 
 #: ../src/modules/Equalizer.py:24 ../src/modules/Equalizer.py:55
@@ -472,22 +399,6 @@ msgstr "알 수 없는 아티스트"
 msgid "Unknown Album Artist"
 msgstr ""
 
-#: ../res/Authentication.glade.h:2
-msgid "Password:"
-msgstr "패스워드:"
-
-#: ../res/Authentication.glade.h:3
-msgid "Remember this password"
-msgstr "이 열쇠글 기억"
-
-#: ../res/Authentication.glade.h:4
-msgid "Username:"
-msgstr "사용자 이름:"
-
-#: ../res/Authentication.glade.h:5 ../res/Progress.glade.h:1
-msgid "label"
-msgstr "레이블"
-
 #: ../res/Covers.glade.h:1
 msgid "<b>Internet Covers</b>"
 msgstr ""
@@ -524,7 +435,7 @@ msgstr ""
 msgid "<b>Body</b>"
 msgstr "<b>Body</b>"
 
-#: ../res/DesktopNotification.glade.h:2 ../res/FileExplorer.glade.h:1
+#: ../res/DesktopNotification.glade.h:2
 msgid "<b>Miscellaneous</b>"
 msgstr "<b>기타</b>"
 
@@ -552,124 +463,114 @@ msgstr "초"
 msgid "Preset:"
 msgstr ""
 
-#: ../res/FileExplorer.glade.h:2
-msgid "<b>Root Folders</b>"
-msgstr "<b>루트 폴더</b>"
-
-#: ../res/FileExplorer.glade.h:3
-msgid "Add a new root folder to the file explorer"
-msgstr "새로운 루트 폴더 추가"
-
-#: ../res/FileExplorer.glade.h:4
-msgid "Add files to playlist by filename"
-msgstr ""
-
-#: ../res/FileExplorer.glade.h:5
-msgid "Remove the selected root folders"
-msgstr "선택된 루트 폴더 제거"
-
-#: ../res/FileExplorer.glade.h:6
-msgid "Rename"
-msgstr ""
-
-#: ../res/FileExplorer.glade.h:7
-msgid "Rename the selected root folder"
-msgstr ""
-
-#: ../res/FileExplorer.glade.h:9
-msgid ""
-"Whether files should be added to the playlist by their name rather than by "
-"their tags"
-msgstr ""
-
-#: ../res/FileExplorer.glade.h:10
-msgid "Whether hidden files should be shown in the file explorer"
-msgstr ""
-
 #: ../res/MainWindow.glade.h:1
-msgid "Display about dialog box"
-msgstr "다이얼로그 박스 디스플레이"
-
-#: ../res/MainWindow.glade.h:2
-msgid "Display preferences"
-msgstr "디스플레이 설정"
-
-#: ../res/MainWindow.glade.h:3
-msgid "Full"
-msgstr ""
-
-#: ../res/MainWindow.glade.h:4
-msgid "Mini"
-msgstr ""
-
-#: ../res/MainWindow.glade.h:5
-msgid "Online _Help"
-msgstr "온라인 도움"
-
-#: ../res/MainWindow.glade.h:6
-msgid "Open the online help web page"
-msgstr "Help 웹 페이지 열기"
-
-#: ../res/MainWindow.glade.h:7
 msgid "Play the first track of the playlist"
 msgstr "플레이 리스트 첫번째"
 
-#: ../res/MainWindow.glade.h:8
+#: ../res/MainWindow.glade.h:2
 msgid "Play the next track"
 msgstr "다음 트랙 재생"
 
-#: ../res/MainWindow.glade.h:9
+#: ../res/MainWindow.glade.h:3
 msgid "Play the previous track"
 msgstr "이전 트랙 재생"
 
-#: ../res/MainWindow.glade.h:10
-msgid "Playlist"
-msgstr ""
-
-#: ../res/MainWindow.glade.h:11
-msgid "Quit the application"
-msgstr "프로그램 끝내기"
-
-#: ../res/MainWindow.glade.h:12
-msgid "Remaining time"
-msgstr ""
-
-#: ../res/MainWindow.glade.h:13
+#: ../res/MainWindow.glade.h:4
 msgid "Seek a position in the current track"
 msgstr ""
 
-#: ../res/MainWindow.glade.h:14
-msgid "Select an explorer"
-msgstr ""
+#~ msgid "Password required"
+#~ msgstr "암호 필요"
 
-#: ../res/MainWindow.glade.h:15
-msgid "Stop the current track"
-msgstr "현재 트랙 정지"
+#~ msgid "About password storage safety"
+#~ msgstr "패스워드 안전하게 저장"
 
-#: ../res/MainWindow.glade.h:16
-msgid "_Edit"
-msgstr "편집"
+#~ msgid ""
+#~ "If you use Gnome, it is safe to store your password since the Gnome "
+#~ "keyring is used."
+#~ msgstr "Gnome을 사용한다면 당신의 패스워드는 안전하다"
 
-#: ../res/MainWindow.glade.h:17
-msgid "_File"
-msgstr "파일"
+#~ msgid ""
+#~ "If you do not use Gnome, beware that, although not stored as clear text, "
+#~ "an attacker <i>could</i> retrieve it."
+#~ msgstr ""
+#~ "Gnome을 사용하지 않을지라도 저장하지 않은 지워진 텍스트라도 회복 가능하다"
 
-#: ../res/MainWindow.glade.h:18
-msgid "_Help"
-msgstr "도움말"
+#~ msgid "Home"
+#~ msgstr "홈"
 
-#: ../res/MainWindow.glade.h:19
+#~ msgid "Show hidden files"
+#~ msgstr "숨은 파일 보기"
+
+#~ msgid "Remove the selected entry?"
+#~ msgstr "선택된 입력 제거"
+
+#~ msgid "Remove all selected entries?"
+#~ msgstr "선택된 입력 모두 제거"
+
+#~ msgid "Your media files will not be deleted."
+#~ msgstr "선택된 파일 지우지 못함"
+
+#~ msgid "Usage"
+#~ msgstr "사용량"
+
+#~ msgid "Password:"
+#~ msgstr "패스워드:"
+
+#~ msgid "Remember this password"
+#~ msgstr "이 열쇠글 기억"
+
+#~ msgid "Username:"
+#~ msgstr "사용자 이름:"
+
+#~ msgid "label"
+#~ msgstr "레이블"
+
+#~ msgid "<b>Root Folders</b>"
+#~ msgstr "<b>루트 폴더</b>"
+
+#~ msgid "Add a new root folder to the file explorer"
+#~ msgstr "새로운 루트 폴더 추가"
+
+#~ msgid "Remove the selected root folders"
+#~ msgstr "선택된 루트 폴더 제거"
+
+#~ msgid "Display about dialog box"
+#~ msgstr "다이얼로그 박스 디스플레이"
+
+#~ msgid "Display preferences"
+#~ msgstr "디스플레이 설정"
+
+#~ msgid "Online _Help"
+#~ msgstr "온라인 도움"
+
+#~ msgid "Open the online help web page"
+#~ msgstr "Help 웹 페이지 열기"
+
+#~ msgid "Quit the application"
+#~ msgstr "프로그램 끝내기"
+
+#~ msgid "Stop the current track"
+#~ msgstr "현재 트랙 정지"
+
+#~ msgid "_Edit"
+#~ msgstr "편집"
+
+#~ msgid "_File"
+#~ msgstr "파일"
+
+#~ msgid "_Help"
+#~ msgstr "도움말"
+
 #, fuzzy
-msgid "_View"
-msgstr "파일"
+#~ msgid "_View"
+#~ msgstr "파일"
 
-#: ../res/SelectPath.glade.h:1
-msgid "Name:"
-msgstr "이름:"
+#~ msgid "Name:"
+#~ msgstr "이름:"
 
-#: ../res/SelectPath.glade.h:2
-msgid "Path:"
-msgstr "경로:"
+#~ msgid "Path:"
+#~ msgstr "경로:"
 
 #~ msgid "Instant Messenger Status"
 #~ msgstr "긴박한 메신저 상태"

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: decibel-audio-player\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-09-16 22:21+0200\n"
+"POT-Creation-Date: 2010-09-27 21:03+0200\n"
 "PO-Revision-Date: 2008-09-13 16:03+0000\n"
 "Last-Translator: Aron Xu <happyaron.xu@gmail.com>\n"
 "Language-Team: Simplified Chinese <zh_CN@li.org>\n"
@@ -91,20 +91,20 @@ msgstr ""
 msgid "Preferences"
 msgstr "首选项"
 
-#: ../src/gui/preferences.py:116
+#: ../src/gui/preferences.py:128
 msgid "Unable to load this module."
 msgstr "无法载入此模块"
 
-#: ../src/gui/preferences.py:125
+#: ../src/gui/preferences.py:137
 msgid "Modules"
 msgstr "模块"
 
-#: ../src/gui/preferences.py:126 ../src/modules/FileExplorer.py:588
-#: ../src/modules/DesktopNotification.py:212 ../src/modules/Covers.py:419
+#: ../src/gui/preferences.py:138 ../src/modules/DesktopNotification.py:212
+#: ../src/modules/Covers.py:419
 msgid "Description"
 msgstr "描述"
 
-#: ../src/gui/preferences.py:127
+#: ../src/gui/preferences.py:139
 msgid ""
 "This dialog box shows the list of available modules, which are small pieces "
 "of code that add some functionnalities to the application. You can enable/"
@@ -115,11 +115,11 @@ msgstr ""
 "选择/清除某个模块前面的复选框来激活/禁用它。注意，有一些模块（如文件浏览器）"
 "无法被禁用。"
 
-#: ../src/gui/preferences.py:130
+#: ../src/gui/preferences.py:142
 msgid "Configuring a Module"
 msgstr "配置一个模块"
 
-#: ../src/gui/preferences.py:131
+#: ../src/gui/preferences.py:143
 msgid ""
 "When a module may be configured, a specific icon is displayed on the right "
 "of the corresponding line. To configure a module, simply select it and then "
@@ -163,34 +163,6 @@ msgstr ""
 "该符号%s禁止使用。\n"
 "请另选择一个名字。"
 
-#: ../src/gui/authentication.py:131
-#, python-format
-msgid ""
-"Enter your username and password for\n"
-"%(reason)s"
-msgstr ""
-
-#: ../src/gui/authentication.py:133 ../res/Authentication.glade.h:1
-msgid "Password required"
-msgstr "需要密码"
-
-#: ../src/gui/authentication.py:170
-msgid "About password storage safety"
-msgstr "关于密码存储的安全性"
-
-#: ../src/gui/authentication.py:171
-msgid ""
-"If you use Gnome, it is safe to store your password since the Gnome keyring "
-"is used."
-msgstr "如果你使用Gnome，由于使用了Gnome kerying，存储密码是安全的。"
-
-#: ../src/gui/authentication.py:172
-msgid ""
-"If you do not use Gnome, beware that, although not stored as clear text, an "
-"attacker <i>could</i> retrieve it."
-msgstr ""
-"如果你不使用Gnome，请注意，尽管非明文存储，密码<i>可能</i>会被黑客获取。"
-
 #: ../src/gui/about.py:39
 msgid "translator-credits"
 msgstr ""
@@ -203,9 +175,13 @@ msgstr ""
 msgid "Developer:"
 msgstr "开发者："
 
-#: ../src/gui/about.py:46
+#: ../src/gui/about.py:47
 msgid "Thanks to:"
 msgstr "鸣谢："
+
+#: ../src/gui/about.py:49
+msgid "(Developer of Decibel Audio Player)"
+msgstr ""
 
 #: ../src/modules/Zeitgeist.py:26
 msgid "Send track information to the Zeitgeist service"
@@ -219,62 +195,22 @@ msgstr "文件浏览器"
 msgid "Browse your file system"
 msgstr "浏览你的文件系统"
 
-#: ../src/modules/FileExplorer.py:31
-msgid "Home"
-msgstr "主页"
-
-#: ../src/modules/FileExplorer.py:31
-msgid "Root"
-msgstr ""
-
-#: ../src/modules/FileExplorer.py:182
+#: ../src/modules/FileExplorer.py:158
 msgid "loading..."
 msgstr ""
 
-#: ../src/modules/FileExplorer.py:350
-msgid "Collapse all"
+#: ../src/modules/FileExplorer.py:325
+msgid "Append"
 msgstr ""
 
-#: ../src/modules/FileExplorer.py:363 ../res/FileExplorer.glade.h:8
-msgid "Show hidden files"
-msgstr "显示隐藏文件"
-
-#: ../src/modules/FileExplorer.py:525
-msgid "You will be able to add this root folder again later on if you wish so."
-msgstr "如果你愿意，你可以稍后再添加根文件夹。"
-
-#: ../src/modules/FileExplorer.py:526
-msgid "Remove the selected entry?"
-msgstr "移除选定的项？"
-
-#: ../src/modules/FileExplorer.py:528
-msgid ""
-"You will be able to add these root folders again later on if you wish so."
-msgstr "如果你愿意，你可以稍后再添加这些根文件夹。"
-
-#: ../src/modules/FileExplorer.py:529
-msgid "Remove all selected entries?"
-msgstr "移除所有选定的项？"
-
-#: ../src/modules/FileExplorer.py:531
-msgid "Your media files will not be deleted."
-msgstr "你的媒体文件不会被删除。"
-
-#: ../src/modules/FileExplorer.py:589
-msgid "This module allows you to browse the files on your drives."
-msgstr "该模块可以让你浏览驱动器上的文件。"
-
-#: ../src/modules/FileExplorer.py:590
-msgid "Usage"
-msgstr "用法"
-
-#: ../src/modules/FileExplorer.py:591
-msgid ""
-"At least one root folder must be added to browse your files. This folder "
-"then becomes the root of the file explorer tree in the main window."
+#: ../src/modules/FileExplorer.py:448
+msgid "Music"
 msgstr ""
-"至少需要添加一个根文件夹来浏览你的文件。该文件夹则成为主窗口内文件浏览器树形"
-"目录的根目录。"
+
+#: ../src/modules/FileExplorer.py:448
+#, fuzzy
+msgid "Albums"
+msgstr "专辑"
 
 #: ../src/modules/__init__.py:75
 msgid "The following Python modules are not available:"
@@ -292,21 +228,16 @@ msgstr ""
 msgid "You must restart the application for this modification to take effect."
 msgstr ""
 
-#: ../src/modules/TrackPanel.py:128
-#, python-format
-msgid "by <i>%(artist)s</i> from <i>%(album)s</i>"
-msgstr ""
-
-#: ../src/modules/CtrlPanel.py:102 ../src/modules/CtrlPanel.py:163
+#: ../src/modules/CtrlPanel.py:206 ../src/modules/CtrlPanel.py:267
 msgid "Pause the current track"
 msgstr "暂停当前音轨"
 
-#: ../src/modules/CtrlPanel.py:121
+#: ../src/modules/CtrlPanel.py:225
 #, fuzzy
 msgid "Play the first selected track of the playlist"
 msgstr "播放列表中的第一音轨"
 
-#: ../src/modules/CtrlPanel.py:157
+#: ../src/modules/CtrlPanel.py:261
 msgid "Continue playing the current track"
 msgstr "继续播放当前音轨"
 
@@ -422,19 +353,13 @@ msgid ""
 "none, the cover is downloaded."
 msgstr ""
 
-#: ../src/modules/Tracktree.py:313
+#: ../src/modules/Tracktree.py:328
 msgid "Save playlist"
 msgstr "保存播放列表"
 
-#: ../src/modules/Tracktree.py:363
+#: ../src/modules/Tracktree.py:378
 msgid "Clear Playlist"
 msgstr ""
-
-#: ../src/modules/Explorer.py:68
-msgid ""
-"Please select an explorer\n"
-"in the combo box below."
-msgstr "请在下面的组合框中选择一个浏览器。"
 
 #: ../src/modules/Equalizer.py:24 ../src/modules/Equalizer.py:55
 #: ../src/modules/Equalizer.py:69
@@ -490,22 +415,6 @@ msgstr "未知艺术家"
 msgid "Unknown Album Artist"
 msgstr ""
 
-#: ../res/Authentication.glade.h:2
-msgid "Password:"
-msgstr "口令："
-
-#: ../res/Authentication.glade.h:3
-msgid "Remember this password"
-msgstr "记住此密码"
-
-#: ../res/Authentication.glade.h:4
-msgid "Username:"
-msgstr "用户名："
-
-#: ../res/Authentication.glade.h:5 ../res/Progress.glade.h:1
-msgid "label"
-msgstr "标签"
-
 #: ../res/Covers.glade.h:1
 msgid "<b>Internet Covers</b>"
 msgstr ""
@@ -542,7 +451,7 @@ msgstr ""
 msgid "<b>Body</b>"
 msgstr ""
 
-#: ../res/DesktopNotification.glade.h:2 ../res/FileExplorer.glade.h:1
+#: ../res/DesktopNotification.glade.h:2
 msgid "<b>Miscellaneous</b>"
 msgstr "<b>杂项</b>"
 
@@ -570,124 +479,152 @@ msgstr "秒"
 msgid "Preset:"
 msgstr ""
 
-#: ../res/FileExplorer.glade.h:2
-msgid "<b>Root Folders</b>"
-msgstr "<b>根文件夹</b>"
-
-#: ../res/FileExplorer.glade.h:3
-msgid "Add a new root folder to the file explorer"
-msgstr "在文件浏览器中添加一个新的根文件夹"
-
-#: ../res/FileExplorer.glade.h:4
-msgid "Add files to playlist by filename"
-msgstr ""
-
-#: ../res/FileExplorer.glade.h:5
-msgid "Remove the selected root folders"
-msgstr "移除选定的根文件夹"
-
-#: ../res/FileExplorer.glade.h:6
-msgid "Rename"
-msgstr "重命名"
-
-#: ../res/FileExplorer.glade.h:7
-msgid "Rename the selected root folder"
-msgstr "重命名所选的根目录"
-
-#: ../res/FileExplorer.glade.h:9
-msgid ""
-"Whether files should be added to the playlist by their name rather than by "
-"their tags"
-msgstr ""
-
-#: ../res/FileExplorer.glade.h:10
-msgid "Whether hidden files should be shown in the file explorer"
-msgstr "隐藏文件是否显示在文件浏览器中"
-
 #: ../res/MainWindow.glade.h:1
-msgid "Display about dialog box"
-msgstr "显示关于对话窗口"
-
-#: ../res/MainWindow.glade.h:2
-msgid "Display preferences"
-msgstr "显示首选项"
-
-#: ../res/MainWindow.glade.h:3
-msgid "Full"
-msgstr ""
-
-#: ../res/MainWindow.glade.h:4
-msgid "Mini"
-msgstr ""
-
-#: ../res/MainWindow.glade.h:5
-msgid "Online _Help"
-msgstr "在线帮助(_H)"
-
-#: ../res/MainWindow.glade.h:6
-msgid "Open the online help web page"
-msgstr "打开在线帮助页面"
-
-#: ../res/MainWindow.glade.h:7
 msgid "Play the first track of the playlist"
 msgstr "播放列表中的第一音轨"
 
-#: ../res/MainWindow.glade.h:8
+#: ../res/MainWindow.glade.h:2
 msgid "Play the next track"
 msgstr "播放下一音轨"
 
-#: ../res/MainWindow.glade.h:9
+#: ../res/MainWindow.glade.h:3
 msgid "Play the previous track"
 msgstr "播放上一音轨"
 
-#: ../res/MainWindow.glade.h:10
-msgid "Playlist"
-msgstr ""
-
-#: ../res/MainWindow.glade.h:11
-msgid "Quit the application"
-msgstr "退出程序"
-
-#: ../res/MainWindow.glade.h:12
-msgid "Remaining time"
-msgstr "剩余时间"
-
-#: ../res/MainWindow.glade.h:13
+#: ../res/MainWindow.glade.h:4
 msgid "Seek a position in the current track"
 msgstr "跳至当前音轨中的某个位置"
 
-#: ../res/MainWindow.glade.h:14
-msgid "Select an explorer"
-msgstr "选择一个浏览器"
+#~ msgid "Password required"
+#~ msgstr "需要密码"
 
-#: ../res/MainWindow.glade.h:15
-msgid "Stop the current track"
-msgstr "停止当前音轨"
+#~ msgid "About password storage safety"
+#~ msgstr "关于密码存储的安全性"
 
-#: ../res/MainWindow.glade.h:16
-msgid "_Edit"
-msgstr "编辑(_E)"
+#~ msgid ""
+#~ "If you use Gnome, it is safe to store your password since the Gnome "
+#~ "keyring is used."
+#~ msgstr "如果你使用Gnome，由于使用了Gnome kerying，存储密码是安全的。"
 
-#: ../res/MainWindow.glade.h:17
-msgid "_File"
-msgstr "文件(_F)"
+#~ msgid ""
+#~ "If you do not use Gnome, beware that, although not stored as clear text, "
+#~ "an attacker <i>could</i> retrieve it."
+#~ msgstr ""
+#~ "如果你不使用Gnome，请注意，尽管非明文存储，密码<i>可能</i>会被黑客获取。"
 
-#: ../res/MainWindow.glade.h:18
-msgid "_Help"
-msgstr "帮助(_H)"
+#~ msgid "Home"
+#~ msgstr "主页"
 
-#: ../res/MainWindow.glade.h:19
+#~ msgid "Show hidden files"
+#~ msgstr "显示隐藏文件"
+
+#~ msgid ""
+#~ "You will be able to add this root folder again later on if you wish so."
+#~ msgstr "如果你愿意，你可以稍后再添加根文件夹。"
+
+#~ msgid "Remove the selected entry?"
+#~ msgstr "移除选定的项？"
+
+#~ msgid ""
+#~ "You will be able to add these root folders again later on if you wish so."
+#~ msgstr "如果你愿意，你可以稍后再添加这些根文件夹。"
+
+#~ msgid "Remove all selected entries?"
+#~ msgstr "移除所有选定的项？"
+
+#~ msgid "Your media files will not be deleted."
+#~ msgstr "你的媒体文件不会被删除。"
+
+#~ msgid "This module allows you to browse the files on your drives."
+#~ msgstr "该模块可以让你浏览驱动器上的文件。"
+
+#~ msgid "Usage"
+#~ msgstr "用法"
+
+#~ msgid ""
+#~ "At least one root folder must be added to browse your files. This folder "
+#~ "then becomes the root of the file explorer tree in the main window."
+#~ msgstr ""
+#~ "至少需要添加一个根文件夹来浏览你的文件。该文件夹则成为主窗口内文件浏览器树"
+#~ "形目录的根目录。"
+
+#~ msgid ""
+#~ "Please select an explorer\n"
+#~ "in the combo box below."
+#~ msgstr "请在下面的组合框中选择一个浏览器。"
+
+#~ msgid "Password:"
+#~ msgstr "口令："
+
+#~ msgid "Remember this password"
+#~ msgstr "记住此密码"
+
+#~ msgid "Username:"
+#~ msgstr "用户名："
+
+#~ msgid "label"
+#~ msgstr "标签"
+
+#~ msgid "<b>Root Folders</b>"
+#~ msgstr "<b>根文件夹</b>"
+
+#~ msgid "Add a new root folder to the file explorer"
+#~ msgstr "在文件浏览器中添加一个新的根文件夹"
+
+#~ msgid "Remove the selected root folders"
+#~ msgstr "移除选定的根文件夹"
+
+#~ msgid "Rename"
+#~ msgstr "重命名"
+
+#~ msgid "Rename the selected root folder"
+#~ msgstr "重命名所选的根目录"
+
+#~ msgid "Whether hidden files should be shown in the file explorer"
+#~ msgstr "隐藏文件是否显示在文件浏览器中"
+
+#~ msgid "Display about dialog box"
+#~ msgstr "显示关于对话窗口"
+
+#~ msgid "Display preferences"
+#~ msgstr "显示首选项"
+
+#~ msgid "Online _Help"
+#~ msgstr "在线帮助(_H)"
+
+#~ msgid "Open the online help web page"
+#~ msgstr "打开在线帮助页面"
+
+#~ msgid "Quit the application"
+#~ msgstr "退出程序"
+
+#~ msgid "Remaining time"
+#~ msgstr "剩余时间"
+
+#~ msgid "Select an explorer"
+#~ msgstr "选择一个浏览器"
+
+#~ msgid "Stop the current track"
+#~ msgstr "停止当前音轨"
+
+#~ msgid "_Edit"
+#~ msgstr "编辑(_E)"
+
+#~ msgid "_File"
+#~ msgstr "文件(_F)"
+
+#~ msgid "_Help"
+#~ msgstr "帮助(_H)"
+
 #, fuzzy
-msgid "_View"
-msgstr "文件(_F)"
+#~ msgid "_View"
+#~ msgstr "文件(_F)"
 
-#: ../res/SelectPath.glade.h:1
-msgid "Name:"
-msgstr "名称："
+#~ msgid "Name:"
+#~ msgstr "名称："
 
-#: ../res/SelectPath.glade.h:2
-msgid "Path:"
-msgstr "路径："
+#~ msgid "Path:"
+#~ msgstr "路径："
 
 #~ msgid "Instant Messenger Status"
 #~ msgstr "聊天软件状态"
