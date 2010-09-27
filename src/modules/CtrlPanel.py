@@ -54,8 +54,6 @@ class CtrlPanel(modules.Module):
         elapsed = sec2str(seconds)
         #remaining = sec2str(self.currTrackLength - seconds)
         total = sec2str(self.currTrackLength)
-        ##self.lblRemaining.set_label('%s / %s' % (elapsed, total))
-        ##self.sclSeek.set_tooltip_text(elapsed)
         self.sclSeek.set_tooltip_text('%s / %s' % (elapsed, total))
         
     
@@ -93,8 +91,6 @@ class CtrlPanel(modules.Module):
         self.btnPrev      = wTree.get_widget('btn-previous')
         self.sclSeek      = wTree.get_widget('scl-position')
         self.btnVolume    = wTree.get_widget('btn-volume')
-        ##self.lblElapsed   = wTree.get_widget('lbl-elapsedTime')
-        ##self.lblRemaining = wTree.get_widget('lbl-remainingTime')
 
         # Restore the volume
         volume = prefs.get(__name__, 'volume', PREFS_DEFAULT_VOLUME)
@@ -102,14 +98,13 @@ class CtrlPanel(modules.Module):
         modules.postMsg(consts.MSG_CMD_SET_VOLUME, {'value': volume})
 
         # GTK handlers
-        ##self.btnStop.connect('clicked', lambda widget: modules.postMsg(consts.MSG_CMD_STOP))
         self.btnNext.connect('clicked', lambda widget: modules.postMsg(consts.MSG_CMD_NEXT))
         self.btnPrev.connect('clicked', lambda widget: modules.postMsg(consts.MSG_CMD_PREVIOUS))
         self.btnPlay.connect('clicked', lambda widget: modules.postMsg(consts.MSG_CMD_TOGGLE_PAUSE))
         self.sclSeek.connect('change-value', self.onSeekChangingValue)
         self.sclSeek.connect('value-changed', self.onSeekValueChanged)
         
-        ## Left mouse click jumps to current position
+        # Left mouse click jumps to current position
         self.sclSeek.connect('button-press-event', self.onSeekButtonPressed)
         self.sclSeek.connect('button-release-event', self.onSeekButtonReleased)
         
@@ -190,15 +185,12 @@ class CtrlPanel(modules.Module):
 
     def onNewTrack(self, track):
         """ A new track is being played """
-        ##self.btnStop.set_sensitive(True)
         self.btnPlay.set_sensitive(True)
         self.btnPlay.set_image(gtk.image_new_from_stock(gtk.STOCK_MEDIA_PAUSE, PLAY_PAUSE_ICON_SIZE))
         self.btnPlay.set_tooltip_text(_('Pause the current track'))
 
         self.currTrackLength = track.getLength()
         self.sclSeek.show()
-        ##self.lblElapsed.show()
-        ##self.lblRemaining.show()
         self.onNewTrackPosition(0)
 
         # Must be done last
@@ -208,14 +200,11 @@ class CtrlPanel(modules.Module):
 
     def onStopped(self):
         """ The playback has been stopped """
-        ##self.btnStop.set_sensitive(False)
         self.btnNext.set_sensitive(False)
         self.btnPrev.set_sensitive(False)
         self.btnPlay.set_image(gtk.image_new_from_stock(gtk.STOCK_MEDIA_PLAY, PLAY_PAUSE_ICON_SIZE))
         self.btnPlay.set_tooltip_text(_('Play the first selected track of the playlist'))
         self.sclSeek.hide()
-        ##self.lblElapsed.hide()
-        ##self.lblRemaining.hide()
 
 
     def onNewTrackPosition(self, seconds):
@@ -278,8 +267,6 @@ class CtrlPanel(modules.Module):
         if value >= self.currTrackLength: value = self.currTrackLength
         else:                             value = int(value)
 
-        ##self.lblElapsed.set_label(sec2str(value))
-        ##self.lblRemaining.set_label(sec2str(self.currTrackLength - value))
         self.set_time(value)
         
         

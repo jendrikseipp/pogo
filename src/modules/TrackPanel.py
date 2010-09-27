@@ -106,7 +106,6 @@ class TrackPanel(modules.Module):
         wTree                  = tools.prefs.getWidgetsTree()
         evtBox                 = wTree.get_widget('evtbox-cover')
         self.img               = wTree.get_widget('img-cover')
-        ##self.txtMisc           = wTree.get_widget('lbl-trkMisc')
         self.txtTitle          = wTree.get_widget('lbl-trkTitle')
         self.imgFrame          = wTree.get_widget('frm-cover')
         self.currTrack         = None
@@ -142,7 +141,6 @@ class TrackPanel(modules.Module):
 
         self.__setImage(None)
         self.__setTitle(consts.appName)
-        ##self.txtMisc.set_text('... simply music')
 
 
     def onSetCover(self, track, pathThumbnail, pathFullSize):

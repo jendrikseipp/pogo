@@ -188,7 +188,6 @@ class TrackTreeView(ExtTreeView):
         '''
         Look for the previous iter in the tree
         '''
-        #assert self.mark
         if iter is None:
             iter = self.getMark()
             if iter is None:
@@ -209,7 +208,6 @@ class TrackTreeView(ExtTreeView):
         '''
         Look for the next iter in the tree
         '''
-        #assert self.mark
         if iter is None:
             iter = self.getMark()
             if iter is None:
@@ -276,7 +274,6 @@ class TrackTreeView(ExtTreeView):
         iter = self.store.iter_children(parent)
 
         while iter is not None:
-            #print 'RETURNING', self.getLabel(iter), 'PARENT', parent, self.getLabel(self.store.get_iter_first())
             yield iter
             iter = self.store.iter_next(iter)
     
@@ -291,15 +288,11 @@ class TrackTreeView(ExtTreeView):
 
     def clearMark(self):
         """ Remove the mark """
-        #if self.mark is not None:
-            ##self.setItem(self.mark, self.markColumn, False)
         self.mark = None
 
 
     def getMark(self):
         """ Return the iter of the marked row """
-        #if not self.hasMark():
-        #    self.setMark(self.store.get_iter_root())
         if self.mark is None or not self.mark.valid():
             return None
         return self.store.get_iter(self.mark.get_path())
@@ -307,7 +300,6 @@ class TrackTreeView(ExtTreeView):
 
     def setMark(self, iter):
         """ Put the mark on the given row, it will move with the row itself (e.g., D'n'D) """
-        #self.clearMark()
         self.mark = gtk.TreeRowReference(self.store, self.store.get_path(iter))
         
     
@@ -318,7 +310,6 @@ class TrackTreeView(ExtTreeView):
         '''
         if not self.hasMark():
             return False
-        #print 'EQUALS', self.store.get_path(self.getMark()), self.store.get_path(iter), self.store.get_path(self.getMark()) == self.store.get_path(iter)
         return self.store.get_path(self.getMark()) == self.store.get_path(iter)
     
         
@@ -444,8 +435,6 @@ class TrackTreeView(ExtTreeView):
             
             drop_into = drop[1] in [gtk.TREE_VIEW_DROP_INTO_OR_AFTER, gtk.TREE_VIEW_DROP_INTO_OR_BEFORE]
             drop_around = not drop_into
-            #drop_before = (drop[1] == gtk.TREE_VIEW_DROP_BEFORE)
-            #drop_after = (drop[1] == gtk.TREE_VIEW_DROP_AFTER)
             
             # At least one dir is being dropped
             if self.dir_selected:
@@ -473,7 +462,6 @@ if __name__ == '__main__':
     from media import getTracks
     
     tracks = getTracks(['/home/jendrik/Musik/Clearlake - Amber'])
-    #print tracks
     
     columns = (('',   [(gtk.CellRendererPixbuf(), gtk.gdk.Pixbuf), (gtk.CellRendererText(), TYPE_STRING)], True),
                    (None, [(None, TYPE_INT)],                                                                 False),

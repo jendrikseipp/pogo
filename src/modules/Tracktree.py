@@ -296,7 +296,6 @@ class Tracktree(modules.Module):
             new_label = track.get_label(parent_label)
             self.tree.setLabel(new_iter, new_label)
         if highlight:
-            #path = self.tree.store.get_path(new_iter)
             gobject.idle_add(self.tree.get_selection().select_iter, new_iter)
         return new_iter
 
@@ -335,7 +334,6 @@ class Tracktree(modules.Module):
     def remove(self, iter=None):
         """ Remove the given track, or the selection if iter is None """
         hadMark = self.tree.hasMark()
-        #self.previousTracklist = [row[ROW_TRK] for row in self.tree]
         
         iters = [iter] if iter else list(self.tree.iterSelectedRows())
         
@@ -384,16 +382,6 @@ class Tracktree(modules.Module):
         else:
             clear.connect('activate', lambda item: modules.postMsg(consts.MSG_CMD_TRACKLIST_CLR))
 
-        #popup.append(gtk.SeparatorMenuItem())
-
-        # Save
-        #save = gtk.ImageMenuItem(_('Save Playlist As...'))
-        #save.set_image(gtk.image_new_from_stock(gtk.STOCK_SAVE_AS, gtk.ICON_SIZE_MENU))
-        #popup.append(save)
-
-        #if len(list) == 0: save.set_sensitive(False)
-        #else:              save.connect('activate', lambda item: self.savePlaylist())
-
         popup.show_all()
         popup.popup(None, None, None, button, time)
 
@@ -441,19 +429,12 @@ class Tracktree(modules.Module):
         
         wTree.get_widget('scrolled-tracklist').add(self.tree)
         
-        # GTK handlers
-        #self.tree.connect('row-activated', self.on_row_activated)
-        #self.tree.store.connect('row-inserted', self.on_row_inserted)
-        #self.tree.store.connect('row-deleted', self.on_row_deleted)
-        
-        #self.tree.selection.connect('changed', self.onSelectionChanged)
-         
+        # GTK handlers         
         self.tree.connect('exttreeview-button-pressed', self.onMouseButton)
         self.tree.connect('tracktreeview-dnd', self.onDND)
         self.tree.connect('key-press-event', self.onKeyboard)
         #self.tree.connect('extlistview-modified', self.onListModified)
         #self.tree.connect('button-pressed', self.onButtonPressed)
-        
         #self.btnClear.connect('clicked', lambda widget: modules.postMsg(consts.MSG_CMD_TRACKLIST_CLR))
         #self.btnRepeat.connect('toggled', self.onButtonRepeat)
         #self.btnShuffle.connect('clicked', lambda widget: modules.postMsg(consts.MSG_CMD_TRACKLIST_SHUFFLE))
@@ -462,10 +443,6 @@ class Tracktree(modules.Module):
         # Set icons
         #wTree.get_widget('img-repeat').set_from_icon_name('stock_repeat', gtk.ICON_SIZE_BUTTON)
         #wTree.get_widget('img-shuffle').set_from_icon_name('stock_shuffle', gtk.ICON_SIZE_BUTTON)
-        
-        # Hide stop button (like in banshee, rhythmbox and itunes)
-        ##self.stop_button = wTree.get_widget('btn-stop')
-        ##self.stop_button.hide()
 
 
     def onTrackEnded(self, withError):
@@ -504,8 +481,6 @@ class Tracktree(modules.Module):
         if self.tree.hasMark():
             currTrack = self.tree.getMark()
             self.set_track_playing(currTrack, False)
-            #if self.tree.getItem(currTrack, ROW_ICO) != icons.errorMenuIcon():
-            #    self.tree.setItem(currTrack, ROW_ICO, icons.nullMenuIcon())
             self.tree.clearMark()
 
 
@@ -555,24 +530,12 @@ class Tracktree(modules.Module):
 
     def onListModified(self):
         """ Some rows have been added/removed/moved """
-        
-        # Update playlist length and playlist position for all tracks
-        #for position, row in enumerate(self.tree):
-        #    row[ROW_TRK].setPlaylistPos(position + 1)
-        #    row[ROW_TRK].setPlaylistLen(len(self.tree))
         tracks = self.getTrackDir()
         
         modules.postMsg(consts.MSG_EVT_NEW_TRACKLIST, {'tracks': tracks, 'playtime': self.playtime})
 
         if self.tree.hasMark():
             modules.postMsg(consts.MSG_EVT_TRACK_MOVED, {'hasPrevious': self.__hasPreviousTrack(), 'hasNext':  self.__hasNextTrack()})
-
-
-    #def onSelectionChanged(self, selection):
-    #    """ The selection has changed """
-    #    rows = self.tree.getSelectedRows()
-    #    tracks = self.getTracks(rows)
-    #    modules.postMsg(consts.MSG_EVT_TRACKLIST_NEW_SEL, {'tracks': tracks})
 
 
     def onDND(self, list, context, x, y, dragData, dndId, time):
