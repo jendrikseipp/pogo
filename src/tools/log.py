@@ -17,14 +17,39 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301 USA
 
-import consts
+import sys
 import logging
+
+import consts
+
 
 class Logger:
 
     def __init__(self, filename):
         """ Constructor """
         self.handler = open(filename, 'wt')
+        
+        root_logger = logging.getLogger('')
+        root_logger.setLevel(logging.DEBUG)
+        
+        # Python adds a default handler if some log is generated before here
+        # Remove all handlers that have been added automatically
+        for handler in root_logger.handlers:
+            root_logger.removeHandler(handler)
+            
+        level = logging.DEBUG
+        # define a Handler which writes "level" messages or higher to sys.stdout
+        console = logging.StreamHandler(sys.stdout)
+        console.setLevel(level)
+        # set a format which is simpler for console use
+        formatter = logging.Formatter('%(levelname)-8s %(message)s')
+        # tell the handler to use this format
+        console.setFormatter(formatter)
+        # add the handler to the root logger
+        root_logger.addHandler(console)
+        
+        logging.debug('stdout logging level: %s' % level)
+        logging.info('Writing log to file "%s"' % filename)
 
 
     def __log(self, msgType, msg):
