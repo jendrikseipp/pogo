@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 #
-# Author: Ingelrest François (Francois.Ingelrest@gmail.com)
+# Authors: Ingelrest François (Francois.Ingelrest@gmail.com)
+#          Jendrik Seipp (jendrikseipp@web.de)
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
