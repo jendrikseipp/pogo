@@ -54,7 +54,8 @@ class CtrlPanel(modules.Module):
         #remaining = sec2str(self.currTrackLength - seconds)
         total = sec2str(self.currTrackLength)
         ##self.lblRemaining.set_label('%s / %s' % (elapsed, total))
-        self.sclSeek.set_tooltip_text(elapsed)
+        ##self.sclSeek.set_tooltip_text(elapsed)
+        self.sclSeek.set_tooltip_text('%s / %s' % (elapsed, total))
         
     
     def set_tooltips(self, uimanager):
@@ -69,7 +70,6 @@ class CtrlPanel(modules.Module):
         for group in groups:
             actions = group.list_actions()
             for action in actions:
-                print action.get_accel_path()
                 widgets = action.get_proxies()
                 tooltip = action.get_property('tooltip')
                 if tooltip:
@@ -277,7 +277,6 @@ class CtrlPanel(modules.Module):
 
     def onSeekValueChanged(self, range):
         """ The user has moved the seek slider """
-        print 'onSeekValueChanged'
         modules.postMsg(consts.MSG_CMD_SEEK, {'seconds': int(range.get_value())})
         self.sclBeingDragged = False
 
