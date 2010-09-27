@@ -362,7 +362,7 @@ class Track:
                 artist = ''
                 
         # Handle useless tags
-        if 'unknown' in title.lower():
+        if self._unknown_in_tags():
             label = self.get_basename()
         else:
             parts = [part for part in [artist, album, number, title] if part]
@@ -381,11 +381,16 @@ class Track:
         artist = self.getArtist()
         
         # Handle useless tags
-        if 'unknown' in title.lower():
+        if self._unknown_in_tags():
             label = self.get_basename()
         else:
             label = '%s - %s' % (artist, title)
         return label
+        
+    
+    def _unknown_in_tags(self):
+        title = self.getTitle().lower()
+        return 'unknown' in title or _('unknown') in title
 
 
 def unserialize(serialTrack):

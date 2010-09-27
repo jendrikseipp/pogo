@@ -167,26 +167,15 @@ class CtrlPanel(modules.Module):
         toggle_button.remove(arrow)
         hbox = gtk.HBox()
         hbox.add(img)
-        #hbox.add(gtk.Label('hello'))
-        #hbox.add(arrow)
         toggle_button.add(hbox)
         menu_button.show()
         
         
         toolbar_hbox = wTree.get_widget('hbox3')
-        from gui.widgets import PopupMenuButton
-        self.ctrl_button = PopupMenuButton(label='oho')
-        image = gtk.Image()
-        image.set_from_stock(gtk.STOCK_MEDIA_RECORD, gtk.ICON_SIZE_BUTTON)
-        #self.ctrl_button.set_image(image)
-        self.ctrl_button.set_property("image", image)
-        #self.ctrl_button.set_menu(menu)
-        #toolbar_hbox.pack_end(self.ctrl_button, False)
         toolbar_hbox.pack_end(menu_button, False)
         # Move it to the right
         toolbar_hbox.reorder_child(menu_button, 1)
         menu_button.set_menu(button_menu)
-        self.ctrl_button.show()
         
         self.set_tooltips(self.uimanager)
         accelgroup = self.uimanager.get_accel_group()
