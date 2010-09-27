@@ -27,6 +27,7 @@ X Let slider tooltip display elapsed seconds
 X Put menubar into preference button
 O Profiling
 O Fix segfault/freeze
+O Fix tracktree internal dnd
 
 0.x:
 O Application Indicator
@@ -41,6 +42,7 @@ O Lyrics?
 O Open containing folder item
 O Playlist loading
 O Make window resizing faster
+O Append files added from nautilus
 
 0.y:
 O Party View
