@@ -406,6 +406,5 @@ class ExtTreeView(gtk.TreeView):
 
     def onDragBegin(self, tree, context):
         """ A drag'n'drop operation has begun """
-        print 'START2'
         if self.getSelectedRowsCount() == 1: context.set_icon_stock(gtk.STOCK_DND,          0, 0)
         else:                                context.set_icon_stock(gtk.STOCK_DND_MULTIPLE, 0, 0)
