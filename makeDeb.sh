@@ -28,9 +28,6 @@ cp -R src "pogo"$INSTALL_DIR"/"
 
 # Resources
 mkdir -p "pogo"$INSTALL_DIR"/res"
-cd res
-./optiglade.py
-cd ..
 cp res/*.glade "pogo"$INSTALL_DIR"/res/"
 
 mkdir -p "pogo"$INSTALL_DIR"/pix"
@@ -38,7 +35,7 @@ cp pix/*.png "pogo"$INSTALL_DIR"/pix/"
 
 mkdir -p "pogo"$INSTALL_DIR"/doc"
 cp doc/LICENCE "pogo"$INSTALL_DIR"/doc/"
-cp doc/ChangeLog "pogo"$INSTALL_DIR"/doc/"
+cp doc/CHANGELOG "pogo"$INSTALL_DIR"/doc/"
 
 mkdir -p "pogo"$APP_DIR
 cp res/*.desktop "pogo"$APP_DIR
