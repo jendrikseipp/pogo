@@ -120,8 +120,6 @@ class CtrlPanel(modules.Module):
         <popup name="ButtonMenu">
             <menuitem action="Options"/>
             <menuitem action="About"/>
-            <separator/>
-            <menuitem action="Quit"/>
         </popup>
         </ui>'''
 
@@ -131,8 +129,8 @@ class CtrlPanel(modules.Module):
         # Create actions
         actiongroup.add_actions([
             ('ButtonMenu', None, None),
-            ('Quit', gtk.STOCK_QUIT, None, None, None,
-                lambda widget: self.onDelete(self.main_window, None)),
+            #('Quit', gtk.STOCK_QUIT, None, None, None,
+            #    lambda widget: self.onDelete(self.main_window, None)),
             ('Options', gtk.STOCK_PREFERENCES, None,
                 '<Ctrl>p', None, lambda item: modules.showPreferences()),
             #('Help', gtk.STOCK_HELP, None,
