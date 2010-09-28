@@ -420,7 +420,8 @@ class Covers(modules.ThreadedModule):
         helpDlg.addSection(_('Description'),
                            _('This module displays the cover of the album the current track comes from. Covers '
                               'may be loaded from local pictures, located in the same directory as the current '
-                              'track, or may be downloaded from the Internet.'))
+                              'track, or may be downloaded from the Internet.') + ' ' + \
+                           _('Currently album covers are only shown in desktop notifications.'))
         helpDlg.addSection(_('User Covers'),
                            _('A user cover is a picture located in the same directory as the current track. '
                              'When specifying filenames, you do not need to provide file extensions, supported '
