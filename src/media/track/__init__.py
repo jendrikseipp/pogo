@@ -345,7 +345,8 @@ class Track:
         
         number = str(number).zfill(2)
         
-        connectors = ['the', 'and', '&', ',', '.', '?', '!', "'", ':', '-']
+        # Delete whitespace at the end
+        connectors = ['the', 'and', '&', ',', '.', '?', '!', "'", ':', '-', ' ']
         
         if parent_label:
             parent_label = parent_label.lower()
@@ -355,7 +356,7 @@ class Track:
                 parent_label = parent_label.replace(connector, '')
                 short_album = short_album.replace(connector, '')
                 short_artist = short_artist.replace(connector, '')
-            parent_label = parent_label.strip()
+            #parent_label = parent_label.strip()
             if short_album.strip() in parent_label:
                 album = ''
             if short_artist.strip() in parent_label:

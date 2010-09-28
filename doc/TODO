@@ -28,6 +28,7 @@ X Put menubar into preference button
 O Profiling
 O Fix segfault/freeze
 O Fix tracktree internal dnd
+O Do not add empty dirs to Tracktree
 
 0.x:
 O Application Indicator
