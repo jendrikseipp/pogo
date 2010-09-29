@@ -17,6 +17,8 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301 USA
 
+import logging
+
 import gobject, gtk, modules, os.path, tools
 
 from tools   import consts
@@ -54,31 +56,68 @@ class TrackPanel(modules.Module):
         else:              self.txtTitle.set_markup('<span size="larger"><b>%s</b></span>  [%s]' % (title, tools.sec2str(length)))
 
 
-    def __setImage(self, imgPath):
-        """
-            Change the current image to imgPath.
-            Use the application's icon if imgPath is None.
-        """
-        if imgPath is None: self.img.set_from_file(os.path.join(tools.consts.dirPix, 'cover-none.png'))
-        else:               self.img.set_from_file(imgPath)
+    
+            
+            
+
+        
+        
 
 
-    def __showCover(self, x, y):
+    def __showCover(self, show_thumb=True):
         """
             Display a popup window showing the full size cover.
             The window closes automatically when clicked or when the mouse leaves it.
         """
         # Don't do anything if there's already a cover
-        if self.coverWindow is not None:
-            return
+        #if self.coverWindow is not None:
+        #    return
+            
+        #if self.currCoverPath is None:
+        #    logging.debug('No cover to show')
+        #    return
 
         frame            = gtk.Frame()
-        image            = gtk.Image()
+        #image            = gtk.Image()
         evtBox           = gtk.EventBox()
         self.coverWindow = gtk.Window(gtk.WINDOW_POPUP)
 
         # Construct the window
-        image.set_from_file(self.currCoverPath)
+        wTree = tools.prefs.getWidgetsTree()
+        scrolled = wTree.get_widget('scrolled-tracklist')
+        tree = scrolled.get_child()
+        
+        #tree_coords = tree.get_visible_rect()
+        #_1, _1, x_tree, y_tree = tree_coords
+        #x_widget, y_widget = tree.tree_to_widget_coords(x_tree, y_tree)
+        #print 'WIDGET', x_widget, y_widget
+        
+        #allocation = tree.get_allocation()
+        #print 'ALLOCATION', allocation
+        #x1,y1,x2,y2 = allocation
+        #print 'TOP', tree.get_toplevel()
+        #x_abs, y_abs = tree.translate_coordinates(tree.get_toplevel(), x2, y2)
+        #print 'ABS', x_abs, y_abs
+        
+        main_win = wTree.get_widget('win-main')
+        main_win_pos = main_win.get_position()
+        main_win_top_left_x, main_win_top_left_y = main_win_pos
+        main_win_width, main_win_height = main_win.get_size()
+        
+        main_win_bottom_right_x = main_win_top_left_x + main_win_width
+        main_win_bottom_right_y = main_win_top_left_y + main_win_height
+        
+        offset_x, offset_y = -30, -1
+        
+        x, y = main_win_bottom_right_x + offset_x, main_win_bottom_right_y + offset_y
+        
+        #image.set_from_file(self.currCoverPath)
+        if show_thumb:
+            image = self.thumb_image
+        else:
+            image = self.cover_image
+            
+        #image = self.img
         evtBox.add(image)
         frame.set_shadow_type(gtk.SHADOW_IN)
         frame.add(evtBox)
@@ -88,13 +127,14 @@ class TrackPanel(modules.Module):
         pixbuf = image.get_pixbuf()
         width  = pixbuf.get_width()
         height = pixbuf.get_height()
-        self.coverWindow.move(int(x - width/2), int(y - height/2))
+        self.coverWindow.move(int(x - width), int(y - height))
 
         # Destroy the window when clicked and when the mouse leaves it
-        evtBox.connect('button-press-event', self.onCoverWindowDestroy)
-        evtBox.connect('leave-notify-event', self.onCoverWindowDestroy)
+        evtBox.connect('button-press-event', self.onCoverClicked)
+        #evtBox.connect('leave-notify-event', self.onCoverWindowDestroy)
 
         self.coverWindow.show_all()
+        self.show_thumb = show_thumb
 
 
     # --== Message handlers ==--
@@ -109,17 +149,22 @@ class TrackPanel(modules.Module):
         self.txtTitle          = wTree.get_widget('lbl-trkTitle')
         self.imgFrame          = wTree.get_widget('frm-cover')
         self.currTrack         = None
-        self.coverWindow       = None
         self.coverTimerId      = None
         self.currCoverPath     = None
         self.lastMousePosition = (0, 0)
+        
         # GTK handlers
-        evtBox.connect('leave-notify-event', self.onImgMouseLeave)
-        evtBox.connect('enter-notify-event', self.onImgMouseEnter)
+        ##evtBox.connect('leave-notify-event', self.onImgMouseLeave)
+        ##evtBox.connect('enter-notify-event', self.onImgMouseEnter)
         
         ##
         self.txtTitle.hide()
+        self.cover_spot = CoverSpot()
         self.imgFrame.hide()
+        #self.cover_image = gtk.Image()
+        #self.thumb_image = gtk.Image()
+        #self.__setImage(None, None)
+        #evtBox.connect('button-press-event', self.__showCover)
 
 
     def onNewTrack(self, track):
@@ -137,18 +182,17 @@ class TrackPanel(modules.Module):
     def onStopped(self):
         """ Playback has been stopped """
         self.currTrack     = None
-        self.currCoverPath = None
 
-        self.__setImage(None)
+        self.cover_spot.set_images(None, None)
         self.__setTitle(consts.appName)
 
 
     def onSetCover(self, track, pathThumbnail, pathFullSize):
         """ Set the cover that is currently displayed """
+        print 'SET COVER'
         # Must check if currTrack is not None, because '==' calls the cmp() method and this fails on None
         if self.currTrack is not None and track == self.currTrack:
-            self.currCoverPath = pathFullSize
-            self.__setImage(pathThumbnail)
+            self.cover_spot.set_images(pathFullSize, pathThumbnail)
 
 
     # --== GTK handlers ==--
@@ -181,3 +225,127 @@ class TrackPanel(modules.Module):
             self.coverWindow.destroy()
             self.coverWindow = None
             self.lastMousePosition = tools.getCursorPosition()
+            
+            
+            
+class CoverSpot(object):
+    def __init__(self):
+        self.show_thumb = None
+        
+        self.cover_window = CoverWindow()
+        self.thumb_window = CoverWindow()
+        
+        # Switch sizes, when clicked
+        self.cover_window.evtBox.connect('button-press-event', self.onCoverClicked, True)
+        self.thumb_window.evtBox.connect('button-press-event', self.onCoverClicked, False)
+        
+        wTree = tools.prefs.getWidgetsTree()
+        main_win = wTree.get_widget('win-main')
+        
+        main_win.connect('focus-out-event', self.on_focus_out)
+        main_win.connect('focus-in-event', self.on_focus_in)
+        main_win.connect('size-allocate', self.on_resize)
+        
+        
+    def set_images(self, cover_path, thumb_path):
+        self.cover_window.set_image(cover_path)
+        self.thumb_window.set_image(thumb_path)
+        if self.show_thumb is None:
+            self.onCoverClicked(None, None, True)
+        
+        
+    def onCoverClicked(self, widget, event, show_thumb):
+        """ Destroy the cover window """
+        if show_thumb:
+            self.cover_window.hide()
+            self.thumb_window.update_position()
+            self.thumb_window.show()
+        else:
+            self.cover_window.update_position()
+            self.cover_window.show()
+            self.thumb_window.hide()
+        self.show_thumb = show_thumb        
+        
+        
+    def on_focus_out(self, widget, event):
+        print 'FOCUS OUT'
+        self.cover_window.hide()
+        self.thumb_window.hide()
+        
+        
+    def on_focus_in(self, widget, event):
+        print 'FOCUS IN'
+        self.onCoverClicked(None, None, self.show_thumb)
+        
+    
+    def on_resize(self, win, rectangle):
+        print 'RESIZE'
+        self.cover_window.update_position()
+        self.thumb_window.update_position()
+        
+            
+            
+class CoverWindow(gtk.Window):
+    def __init__(self):
+        gtk.Window.__init__(self, gtk.WINDOW_POPUP)
+        frame = gtk.Frame()
+        self.evtBox = gtk.EventBox()
+        self.image = gtk.Image()
+        self.set_image(None)
+        self.evtBox.add(self.image)
+        frame.set_shadow_type(gtk.SHADOW_IN)
+        frame.add(self.evtBox)
+        self.add(frame)
+        
+        
+    def set_image(self, path):
+        """
+            Change the current image to imgPath.
+            Use the application's icon if imgPath is None.
+        """
+        if path is None:
+            self.image.set_from_file(os.path.join(tools.consts.dirPix, 'cover-none.png'))
+        else:
+            self.image.set_from_file(path)
+        self.update_position()
+        
+        
+    def update_position(self):
+        # Make the window exactly as big as the image, not bigger
+        self.resize(2, 2)
+        
+        # Position the window in the bottom right corner
+        wTree = tools.prefs.getWidgetsTree()
+        
+        scrolled = wTree.get_widget('scrolled-tracklist')
+        scrollbar_x = scrolled.get_hscrollbar()
+        scrollbar_x_visible = scrollbar_x.get_property('visible')
+        scrollbar_y = scrolled.get_vscrollbar()
+        scrollbar_y_visible = scrollbar_y.get_property('visible')
+        
+        main_win = wTree.get_widget('win-main')
+        main_win_pos = main_win.get_position()
+        main_win_top_left_x, main_win_top_left_y = main_win_pos
+        main_win_width, main_win_height = main_win.get_size()
+        
+        main_win_bottom_right_x = main_win_top_left_x + main_win_width
+        main_win_bottom_right_y = main_win_top_left_y + main_win_height
+        
+        # Ambiance: -13, 15, scrollbar size: 16
+        # Elementary: -12, 11, scrollbar size: 14
+        offset_x, offset_y = -12, 11
+        if scrollbar_x_visible:
+            offset_y -= 16
+        if scrollbar_y_visible:
+            offset_x -= 16
+        
+        x, y = main_win_bottom_right_x + offset_x, main_win_bottom_right_y + offset_y
+        
+        pixbuf = self.image.get_pixbuf()
+        width  = pixbuf.get_width()
+        height = pixbuf.get_height()
+        self.move(int(x - width), int(y - height))
+            
+        
+    def show(self):
+        gtk.Window.show_all(self)

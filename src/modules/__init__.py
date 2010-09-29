@@ -350,7 +350,7 @@ mModulesLock    = threading.Lock()                                             #
 mHandlersLock   = threading.Lock()                                             # Protects the handlers list from concurrent access
 mEnabledModules = prefs.get(__name__, 'enabled_modules', [])                   # List of modules currently enabled
 
-mEnabledModules = []
+
 # Do not load modules in blacklist. They also won't show up in the preferences
 blacklist = ['DBus', 'GnomeMediaKeys', 'Zeitgeist']
 

@@ -29,9 +29,10 @@ O Profiling
 O Fix segfault/freeze
 O Fix tracktree internal dnd
 O Do not add empty dirs to Tracktree
+O Do not show underscores in FileExplorer
 
 0.x:
-O Application Indicator
+O Sound Indicator
 O Search
 O Stop after current album / track
 O Save playlist
@@ -44,6 +45,7 @@ O Open containing folder item
 O Playlist loading
 O Make window resizing faster
 O Append files added from nautilus
+O Add "show covers" option to desktop notifications
 
 0.y:
 O Party View
