@@ -210,7 +210,8 @@ class DesktopNotification(modules.Module):
 
         helpDlg = gui.help.HelpDlg(MOD_INFO[modules.MODINFO_L10N])
         helpDlg.addSection(_('Description'),
-                           _('This module displays a small popup window on your desktop when a new track starts.'))
+                           _('This module displays a small popup window on your desktop when a new track starts.') + ' ' + \
+                           _('If the Covers module is enabled, the popup also shows the album cover.'))
         helpDlg.addSection(_('Customizing the Notification'),
                            _('You can change the title and the body of the notification to any text you want. Before displaying '
                              'the popup window, fields of the form {field} are replaced by their corresponding value. '
