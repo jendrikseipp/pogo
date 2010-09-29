@@ -18,7 +18,9 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301 USA
 
-import dbus, optparse
+import optparse
+
+##import dbus
 
 from tools import consts
 
@@ -26,6 +28,7 @@ from tools import consts
 # Command line
 optparser = optparse.OptionParser(usage='Usage: %prog [options] [FILE(s)]')
 optparser.add_option('-p', '--playbin', action='store_true', default=False, help='use the playbin GStreamer component instead of playbin2')
+##optparser.add_option('-p', '--playbin', action='store_false', default=True, help='use the playbin GStreamer component instead of playbin2')
 optparser.add_option('--no-glossy-cover', action='store_true', default=False, help='disable the gloss effect applied to covers')
 optparser.add_option('--multiple-instances', action='store_true', default=False, help='start a new instance even if one is already running')
 
@@ -33,7 +36,7 @@ optparser.add_option('--multiple-instances', action='store_true', default=False,
 
 
 # Check whether Pogo is already running?
-if not optOptions.multiple_instances:
+if False:##not optOptions.multiple_instances:
     shouldStop  = False
     dbusSession = None
 
@@ -75,7 +78,9 @@ def realStartup():
         Perform all the initialization stuff which is not mandatory to display the window
         This function should be called within the GTK main loop, once the window has been displayed
     """
-    import atexit, dbus.mainloop.glib, modules, signal
+    import atexit, signal
+    ##import dbus.mainloop.glib
+    import modules
 
 
     def onDelete(win, event):
@@ -108,7 +113,7 @@ def realStartup():
 
 
     # D-Bus
-    dbus.mainloop.glib.DBusGMainLoop(set_as_default=True)
+    ##dbus.mainloop.glib.DBusGMainLoop(set_as_default=True)
 
     # Register some handlers
     atexit.register(atExit)

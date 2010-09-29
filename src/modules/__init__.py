@@ -350,10 +350,16 @@ mModulesLock    = threading.Lock()                                             #
 mHandlersLock   = threading.Lock()                                             # Protects the handlers list from concurrent access
 mEnabledModules = prefs.get(__name__, 'enabled_modules', [])                   # List of modules currently enabled
 
+mEnabledModules = []
+# Do not load modules in blacklist. They also won't show up in the preferences
+blacklist = ['DBus', 'GnomeMediaKeys', 'Zeitgeist']
+
 
 # Find modules, instantiate those that are mandatory or that have been previously enabled by the user
 sys.path.append(mModDir)
 for file in [os.path.splitext(file)[0] for file in os.listdir(mModDir) if file.endswith('.py') and file != '__init__.py']:
+    if file in blacklist:
+        continue
     try:
         pModule = __import__(file)
         modInfo = getattr(pModule, 'MOD_INFO')
