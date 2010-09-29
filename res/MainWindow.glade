@@ -88,11 +88,11 @@
                     <child>
                       <widget class="GtkAlignment" id="alignment3">
                         <property name="visible">True</property>
-                        <property name="left_padding">5</property>
+                        <property name="left_padding">15</property>
                         <property name="right_padding">5</property>
                         <child>
                           <widget class="GtkHScale" id="scl-position">
-                            <property name="width_request">150</property>
+                            <property name="width_request">180</property>
                             <property name="can_focus">True</property>
                             <property name="no_show_all">True</property>
                             <property name="has_tooltip">True</property>
