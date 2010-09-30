@@ -257,7 +257,7 @@ class Tracktree(modules.Module):
             new = self.tree.insert(target, source_row, drop_mode)
             drop_mode = gtk.TREE_VIEW_DROP_INTO_OR_AFTER
             if highlight:
-                gobject.idle_add(self.tree.get_selection().select_iter, new)
+                self.tree.select(new)
         
         dest = new
         for index, subdir in enumerate(trackdir.subdirs):
@@ -296,7 +296,7 @@ class Tracktree(modules.Module):
             new_label = track.get_label(parent_label)
             self.tree.setLabel(new_iter, new_label)
         if highlight:
-            gobject.idle_add(self.tree.get_selection().select_iter, new_iter)
+            self.tree.select(new_iter)
         return new_iter
 
 
@@ -495,12 +495,12 @@ class Tracktree(modules.Module):
         self.tree.dir_selected = dir_selected
         if dir_selected:
             # Save expanded rows
-            def expanded(treeview, path):
-                row = self.tree.store.get_iter(path)
-                self.tree.expanded_rows.append(row)
+            #def expanded(treeview, path):
+            #    row = self.tree.store.get_iter(path)
+            #    self.tree.expanded_rows.append(row)
             
-            self.tree.expanded_rows = []
-            self.tree.map_expanded_rows(expanded)
+            #self.tree.expanded_rows = []
+            #self.tree.map_expanded_rows(expanded)
         
             self.tree.collapse_all()
 

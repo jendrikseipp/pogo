@@ -27,7 +27,7 @@ X Let slider tooltip display elapsed seconds
 X Put menubar into preference button
 O Profiling
 O Fix segfault/freeze
-O Fix tracktree internal dnd
+X Fix tracktree internal dnd
 O Do not add empty dirs to Tracktree
 O Do not show underscores in FileExplorer
 

@@ -20,6 +20,7 @@
 import sys, os
 
 import gtk
+import gobject
 from gobject import signal_new, TYPE_INT, TYPE_STRING, TYPE_BOOLEAN, TYPE_PYOBJECT, TYPE_NONE, SIGNAL_RUN_LAST
 
 if __name__ == '__main__':
@@ -68,7 +69,7 @@ class TrackTreeView(ExtTreeView):
             #        self.dndTargets+[DND_INTERNAL_TARGET], gtk.gdk.ACTION_MOVE)
             self.enable_model_drag_dest(self.dndTargets, gtk.gdk.ACTION_DEFAULT)
         
-        #self.connect('drag-begin', self.onDragBegin)
+        self.connect('drag-begin', self.onDragBegin)
         self.connect('drag-motion', self.onDragMotion)
         self.connect('drag-data-received', self.onDragDataReceived)
         
@@ -316,6 +317,13 @@ class TrackTreeView(ExtTreeView):
     
     # DRAG AND DROP
     
+    def select(self, iter):
+        '''
+        Select and highlight an iter
+        '''
+        gobject.idle_add(self.get_selection().select_iter, iter)
+        
+    
     def move_selected_rows(self, x, y):
         '''
         Method called when dnd happens inside the treeview
@@ -356,6 +364,7 @@ class TrackTreeView(ExtTreeView):
             if track:
                 row = model[iter]
                 dest = self.insert(dest, row, drop_mode)
+                self.select(dest)
                 
                 # adjust track label to __new__ parent
                 parent = self.store.iter_parent(dest)
@@ -381,6 +390,7 @@ class TrackTreeView(ExtTreeView):
         children = self.store[dir_iter].iterchildren()
         dir_row = self.store[dir_iter]
         new_target = self.insert(target, dir_row, drop_mode)
+        self.select(new_target)
         for child in children:
             child = child.iter
             track = self.getTrack(child)
@@ -408,6 +418,16 @@ class TrackTreeView(ExtTreeView):
             self.move_selected_rows(x, y)
         else:
             self.emit('tracktreeview-dnd', context, int(x), int(y), selection, dndId, time)
+            
+            
+    def onDragBegin(self, tree, context):
+        dir_selected = False
+        for row in self.getSelectedRows():
+            track = self.getTrack(row)
+            if not track:
+                dir_selected = True
+                break
+        self.dir_selected = dir_selected
 
 
     def onDragMotion(self, tree, context, x, y, time):
