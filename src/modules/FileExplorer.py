@@ -175,11 +175,18 @@ class FileExplorer(modules.Module):
         directories = []
 
         for (file, path) in tools.listDir(directory):
+            file = unicode(file, errors='replace')
+            
+            # Make directory names prettier
+            junk = ['_', '.']
+            for item in junk:
+                file = file.replace(item, ' ')
+            
             if isdir(path):
-                directories.append((icons.dirMenuIcon(), tools.htmlEscape(unicode(file, errors='replace')), TYPE_DIR, path))
+                directories.append((icons.dirMenuIcon(), tools.htmlEscape(file), TYPE_DIR, path))
             elif isfile(path):
                 if media.isSupported(file):
-                    mediaFiles.append((icons.mediaFileMenuIcon(), tools.htmlEscape(unicode(file, errors='replace')), TYPE_FILE, path))
+                    mediaFiles.append((icons.mediaFileMenuIcon(), tools.htmlEscape(file), TYPE_FILE, path))
                 ##elif playlist.isSupported(file):
                 ##    playlists.append((icons.mediaFileMenuIcon(), tools.htmlEscape(unicode(file, errors='replace')), TYPE_FILE, path))
 

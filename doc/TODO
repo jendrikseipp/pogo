@@ -29,7 +29,7 @@ O Profiling
 O Fix segfault/freeze
 X Fix tracktree internal dnd
 O Do not add empty dirs to Tracktree
-O Do not show underscores in FileExplorer
+X Do not show underscores in FileExplorer
 
 0.x:
 O Sound Indicator
