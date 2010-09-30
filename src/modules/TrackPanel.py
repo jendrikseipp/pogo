@@ -314,32 +314,30 @@ class CoverWindow(gtk.Window):
         # Make the window exactly as big as the image, not bigger
         self.resize(2, 2)
         
+        # Use default when tree is not yet realized
+        x, y = 0,0
+        
         # Position the window in the bottom right corner
         wTree = tools.prefs.getWidgetsTree()
-        
         scrolled = wTree.get_widget('scrolled-tracklist')
-        scrollbar_x = scrolled.get_hscrollbar()
-        scrollbar_x_visible = scrollbar_x.get_property('visible')
-        scrollbar_y = scrolled.get_vscrollbar()
-        scrollbar_y_visible = scrollbar_y.get_property('visible')
-        
-        main_win = wTree.get_widget('win-main')
-        main_win_pos = main_win.get_position()
-        main_win_top_left_x, main_win_top_left_y = main_win_pos
-        main_win_width, main_win_height = main_win.get_size()
-        
-        main_win_bottom_right_x = main_win_top_left_x + main_win_width
-        main_win_bottom_right_y = main_win_top_left_y + main_win_height
-        
-        # Ambiance: -13, 15, scrollbar size: 16
-        # Elementary: -12, 11, scrollbar size: 14
-        offset_x, offset_y = -12, 11
-        if scrollbar_x_visible:
-            offset_y -= 16
-        if scrollbar_y_visible:
-            offset_x -= 16
-        
-        x, y = main_win_bottom_right_x + offset_x, main_win_bottom_right_y + offset_y
+        tree = scrolled.get_child()
+        if tree:
+            tree_x, tree_y, tree_width, tree_height = tree.get_allocation()
+            # Get the window, the tracktree is painted on
+            tree_win = tree.get_parent_window()
+            
+            # Get absolute position of the gtk.gdk.Window without the window decos
+            orig_tree_win_x, orig_tree_win_y = tree_win.get_origin()
+            
+            # Calculate absolute position of upper left corner
+            x = orig_tree_win_x + tree_x
+            y = orig_tree_win_y + tree_y
+            
+            # get lower right corner
+            x, y = x + tree_width, y + tree_height
+            
+            # leave a little padding space
+            x, y = x-10, y-9
         
         pixbuf = self.image.get_pixbuf()
         width  = pixbuf.get_width()
