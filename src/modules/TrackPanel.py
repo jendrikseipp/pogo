@@ -54,15 +54,7 @@ class TrackPanel(modules.Module):
 
         if length is None: self.txtTitle.set_markup('<span size="larger"><b>%s</b></span>' % title)
         else:              self.txtTitle.set_markup('<span size="larger"><b>%s</b></span>  [%s]' % (title, tools.sec2str(length)))
-
-
-    
-            
-            
-
         
-        
-
 
     def __showCover(self, show_thumb=True):
         """
@@ -86,18 +78,6 @@ class TrackPanel(modules.Module):
         wTree = tools.prefs.getWidgetsTree()
         scrolled = wTree.get_widget('scrolled-tracklist')
         tree = scrolled.get_child()
-        
-        #tree_coords = tree.get_visible_rect()
-        #_1, _1, x_tree, y_tree = tree_coords
-        #x_widget, y_widget = tree.tree_to_widget_coords(x_tree, y_tree)
-        #print 'WIDGET', x_widget, y_widget
-        
-        #allocation = tree.get_allocation()
-        #print 'ALLOCATION', allocation
-        #x1,y1,x2,y2 = allocation
-        #print 'TOP', tree.get_toplevel()
-        #x_abs, y_abs = tree.translate_coordinates(tree.get_toplevel(), x2, y2)
-        #print 'ABS', x_abs, y_abs
         
         main_win = wTree.get_widget('win-main')
         main_win_pos = main_win.get_position()
@@ -189,7 +169,6 @@ class TrackPanel(modules.Module):
 
     def onSetCover(self, track, pathThumbnail, pathFullSize):
         """ Set the cover that is currently displayed """
-        print 'SET COVER'
         # Must check if currTrack is not None, because '==' calls the cmp() method and this fails on None
         if self.currTrack is not None and track == self.currTrack:
             self.cover_spot.set_images(pathFullSize, pathThumbnail)
@@ -252,6 +231,8 @@ class CoverSpot(object):
         self.thumb_window.set_image(thumb_path)
         if self.show_thumb is None:
             self.onCoverClicked(None, None, True)
+        else:
+            self.onCoverClicked(None, None, self.show_thumb)
         
         
     def onCoverClicked(self, widget, event, show_thumb):
@@ -268,18 +249,15 @@ class CoverSpot(object):
         
         
     def on_focus_out(self, widget, event):
-        print 'FOCUS OUT'
         self.cover_window.hide()
         self.thumb_window.hide()
         
         
     def on_focus_in(self, widget, event):
-        print 'FOCUS IN'
         self.onCoverClicked(None, None, self.show_thumb)
         
     
     def on_resize(self, win, rectangle):
-        print 'RESIZE'
         self.cover_window.update_position()
         self.thumb_window.update_position()
         
@@ -297,6 +275,8 @@ class CoverWindow(gtk.Window):
         frame.add(self.evtBox)
         self.add(frame)
         
+        self.has_cover = False
+        
         
     def set_image(self, path):
         """
@@ -305,9 +285,13 @@ class CoverWindow(gtk.Window):
         """
         if path is None:
             self.image.set_from_file(os.path.join(tools.consts.dirPix, 'cover-none.png'))
+            # If there is no album to show, hide window
+            self.hide()
+            self.has_cover = False
         else:
             self.image.set_from_file(path)
-        self.update_position()
+            self.update_position()
+            self.has_cover = True
         
         
     def update_position(self):
@@ -346,4 +330,5 @@ class CoverWindow(gtk.Window):
             
         
     def show(self):
-        gtk.Window.show_all(self)
+        if self.has_cover:
+            gtk.Window.show_all(self)
