@@ -56,66 +56,6 @@ class TrackPanel(modules.Module):
         else:              self.txtTitle.set_markup('<span size="larger"><b>%s</b></span>  [%s]' % (title, tools.sec2str(length)))
         
 
-    def __showCover(self, show_thumb=True):
-        """
-            Display a popup window showing the full size cover.
-            The window closes automatically when clicked or when the mouse leaves it.
-        """
-        # Don't do anything if there's already a cover
-        #if self.coverWindow is not None:
-        #    return
-            
-        #if self.currCoverPath is None:
-        #    logging.debug('No cover to show')
-        #    return
-
-        frame            = gtk.Frame()
-        #image            = gtk.Image()
-        evtBox           = gtk.EventBox()
-        self.coverWindow = gtk.Window(gtk.WINDOW_POPUP)
-
-        # Construct the window
-        wTree = tools.prefs.getWidgetsTree()
-        scrolled = wTree.get_widget('scrolled-tracklist')
-        tree = scrolled.get_child()
-        
-        main_win = wTree.get_widget('win-main')
-        main_win_pos = main_win.get_position()
-        main_win_top_left_x, main_win_top_left_y = main_win_pos
-        main_win_width, main_win_height = main_win.get_size()
-        
-        main_win_bottom_right_x = main_win_top_left_x + main_win_width
-        main_win_bottom_right_y = main_win_top_left_y + main_win_height
-        
-        offset_x, offset_y = -30, -1
-        
-        x, y = main_win_bottom_right_x + offset_x, main_win_bottom_right_y + offset_y
-        
-        #image.set_from_file(self.currCoverPath)
-        if show_thumb:
-            image = self.thumb_image
-        else:
-            image = self.cover_image
-            
-        #image = self.img
-        evtBox.add(image)
-        frame.set_shadow_type(gtk.SHADOW_IN)
-        frame.add(evtBox)
-        self.coverWindow.add(frame)
-
-        # Center the window around (x, y)
-        pixbuf = image.get_pixbuf()
-        width  = pixbuf.get_width()
-        height = pixbuf.get_height()
-        self.coverWindow.move(int(x - width), int(y - height))
-
-        # Destroy the window when clicked and when the mouse leaves it
-        evtBox.connect('button-press-event', self.onCoverClicked)
-        #evtBox.connect('leave-notify-event', self.onCoverWindowDestroy)
-
-        self.coverWindow.show_all()
-        self.show_thumb = show_thumb
-
 
     # --== Message handlers ==--
 
@@ -124,27 +64,19 @@ class TrackPanel(modules.Module):
         """ Real initialization function, called when this module has been loaded """
         # Widgets
         wTree                  = tools.prefs.getWidgetsTree()
-        evtBox                 = wTree.get_widget('evtbox-cover')
-        self.img               = wTree.get_widget('img-cover')
+        #evtBox                 = wTree.get_widget('evtbox-cover')
+        #self.img               = wTree.get_widget('img-cover')
         self.txtTitle          = wTree.get_widget('lbl-trkTitle')
-        self.imgFrame          = wTree.get_widget('frm-cover')
+        #self.imgFrame          = wTree.get_widget('frm-cover')
         self.currTrack         = None
-        self.coverTimerId      = None
-        self.currCoverPath     = None
-        self.lastMousePosition = (0, 0)
-        
-        # GTK handlers
-        ##evtBox.connect('leave-notify-event', self.onImgMouseLeave)
-        ##evtBox.connect('enter-notify-event', self.onImgMouseEnter)
+        #self.coverTimerId      = None
+        #self.currCoverPath     = None
+        #self.lastMousePosition = (0, 0)
         
         ##
         self.txtTitle.hide()
         self.cover_spot = CoverSpot()
         self.imgFrame.hide()
-        #self.cover_image = gtk.Image()
-        #self.thumb_image = gtk.Image()
-        #self.__setImage(None, None)
-        #evtBox.connect('button-press-event', self.__showCover)
 
 
     def onNewTrack(self, track):
@@ -172,38 +104,6 @@ class TrackPanel(modules.Module):
         # Must check if currTrack is not None, because '==' calls the cmp() method and this fails on None
         if self.currTrack is not None and track == self.currTrack:
             self.cover_spot.set_images(pathFullSize, pathThumbnail)
-
-
-    # --== GTK handlers ==--
-
-
-    def onImgMouseEnter(self, evtBox, event):
-        """ The mouse is over the event box """
-        if self.currCoverPath is not None and (event.x_root, event.y_root) != self.lastMousePosition:
-            self.coverTimerId = gobject.timeout_add(600, self.onCoverTimerTimedOut)
-
-
-    def onImgMouseLeave(self, evtBox, event):
-        """ The mouse left the event box """
-        self.lastMousePosition = (0, 0)
-        if self.coverTimerId is not None:
-            gobject.source_remove(self.coverTimerId)
-            self.coverTimerId = None
-
-
-    def onCoverTimerTimedOut(self):
-        """ The mouse has been over the cover thumbnail during enough time """
-        if self.currCoverPath is not None:
-            self.__showCover(*tools.getCursorPosition())
-        return False
-
-
-    def onCoverWindowDestroy(self, widget, event):
-        """ Destroy the cover window """
-        if self.coverWindow is not None:
-            self.coverWindow.destroy()
-            self.coverWindow = None
-            self.lastMousePosition = tools.getCursorPosition()
             
             
             
