@@ -428,6 +428,8 @@ class TrackTreeView(ExtTreeView):
                 dir_selected = True
                 break
         self.dir_selected = dir_selected
+        if dir_selected:
+            self.collapse_all()
 
 
     def onDragMotion(self, tree, context, x, y, time):

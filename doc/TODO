@@ -25,15 +25,15 @@ X Do not show playlists in FileExplorer
 O Correctly add layers > 2
 X Let slider tooltip display elapsed seconds
 X Put menubar into preference button
-O Profiling
 O Fix segfault/freeze
 X Fix tracktree internal dnd
-O Do not add empty dirs to Tracktree
 X Do not show underscores in FileExplorer
+O Scale full pictures with original ratios
 
 0.x:
 O Sound Indicator
 O Search
+O Profiling
 O Stop after current album / track
 O Save playlist
 O Enqueue
@@ -46,8 +46,13 @@ O Playlist loading
 O Make window resizing faster
 O Append files added from nautilus
 O Add "show covers" option to desktop notifications
+O Ellipsize names?
 
 0.y:
 O Party View
 O Play audio CDs?
 O Let user add more directories to file browser?
+
+
+=== Features that will not be implemented ===
+- Do not add empty dirs to Tracktree (Irritating)
