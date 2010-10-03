@@ -178,15 +178,16 @@ class FileExplorer(modules.Module):
             file = unicode(file, errors='replace')
             
             # Make directory names prettier
-            junk = ['_', '.']
+            junk = ['_']
+            pretty_name = file
             for item in junk:
-                file = file.replace(item, ' ')
-            
+                pretty_name = pretty_name.replace(item, ' ')
+                
             if isdir(path):
-                directories.append((icons.dirMenuIcon(), tools.htmlEscape(file), TYPE_DIR, path))
+                directories.append((icons.dirMenuIcon(), tools.htmlEscape(pretty_name), TYPE_DIR, path))
             elif isfile(path):
                 if media.isSupported(file):
-                    mediaFiles.append((icons.mediaFileMenuIcon(), tools.htmlEscape(file), TYPE_FILE, path))
+                    mediaFiles.append((icons.mediaFileMenuIcon(), tools.htmlEscape(pretty_name), TYPE_FILE, path))
                 ##elif playlist.isSupported(file):
                 ##    playlists.append((icons.mediaFileMenuIcon(), tools.htmlEscape(unicode(file, errors='replace')), TYPE_FILE, path))
 
@@ -249,11 +250,12 @@ class FileExplorer(modules.Module):
         if treePath is None:
             # Update all paths
             for child in self.tree.iterChildren(None):
-                idle_add(self.refresh, child)
-                return
+                if self.tree.row_expanded(child):
+                    idle_add(self.refresh, child)
+            return
         
         directory = self.tree.getItem(treePath, ROW_FULLPATH)
-
+        
         directories, playlists, mediaFiles = self.getDirContents(directory)
 
         disk                   = directories + playlists + mediaFiles
