@@ -67,7 +67,7 @@ class TrackPanel(modules.Module):
         #evtBox                 = wTree.get_widget('evtbox-cover')
         #self.img               = wTree.get_widget('img-cover')
         self.txtTitle          = wTree.get_widget('lbl-trkTitle')
-        #self.imgFrame          = wTree.get_widget('frm-cover')
+        self.imgFrame          = wTree.get_widget('frm-cover')
         self.currTrack         = None
         #self.coverTimerId      = None
         #self.currCoverPath     = None

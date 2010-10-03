@@ -128,14 +128,14 @@ class Covers(modules.ThreadedModule):
             cover = cover.resize((newWidth, newHeight), Image.ANTIALIAS)
 
             # Paste the resized cover into our model
-            model = Image.open(THUMBNAIL_MODEL).convert('RGBA')
-            model.paste(cover, (THUMBNAIL_OFFSETX + offsetX, THUMBNAIL_OFFSETY + offsetY), cover)
-            cover = model
+            #model = Image.open(THUMBNAIL_MODEL).convert('RGBA')
+            #model.paste(cover, (THUMBNAIL_OFFSETX + offsetX, THUMBNAIL_OFFSETY + offsetY), cover)
+            #cover = model
 
             # Don't apply the gloss effect if asked to
-            if not prefs.getCmdLine()[0].no_glossy_cover:
-                gloss = Image.open(THUMBNAIL_GLOSS).convert('RGBA')
-                cover.paste(gloss, (0, 0), gloss)
+            #if not prefs.getCmdLine()[0].no_glossy_cover:
+            #    gloss = Image.open(THUMBNAIL_GLOSS).convert('RGBA')
+            #    cover.paste(gloss, (0, 0), gloss)
 
             # We're done
             cover.save(outFile, format)
