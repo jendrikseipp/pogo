@@ -207,3 +207,19 @@ def dirname(dir):
     dirname, basename = os.path.split(dir)
     # Return "/" if journal is located at /
     return basename or dirname
+    
+    
+def resize(w_old, h_old, max_width, max_height):
+    '''
+    Resize image dimensions keeping the original ratio
+    '''
+    ratio = w_old / h_old
+    w_new = min([w_old, max_width])
+    h_new = w_new / ratio
+    if h_new > max_height:
+        h_new = max_height
+        w_new = ratio * h_new
+    assert w_new <= max_width, '%s <= %s' % (w_new, max_width)
+    assert h_new <= max_height, '%s <= %s' % (h_new, max_height)
+    assert round(ratio, 3) == round(w_new / h_new, 3), '%s == %s / %s == %s ' % (ratio, w_new, h_new, w_new / h_new)
+    return (w_new, h_new)

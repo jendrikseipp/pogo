@@ -28,7 +28,7 @@ X Put menubar into preference button
 O Fix segfault/freeze
 X Fix tracktree internal dnd
 X Do not show underscores in FileExplorer
-O Scale full pictures with original ratios
+X Keep original ratio when scaling covers
 
 0.x:
 O Sound Indicator

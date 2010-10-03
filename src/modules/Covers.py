@@ -17,6 +17,8 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301 USA
 
+from __future__ import division
+
 import modules, os, tools, traceback
 
 from tools     import consts, prefs
@@ -88,12 +90,18 @@ class Covers(modules.ThreadedModule):
             cover = Image.open(inFile)
 
             # Resize in the best way we can
-            if cover.size[0] < FULL_SIZE_COVER_WIDTH: newWidth = cover.size[0]
-            else:                                     newWidth = FULL_SIZE_COVER_WIDTH
+            #if cover.size[0] < FULL_SIZE_COVER_WIDTH: newWidth = cover.size[0]
+            #else:                                     newWidth = FULL_SIZE_COVER_WIDTH
 
-            if cover.size[1] < FULL_SIZE_COVER_HEIGHT: newHeight = cover.size[1]
-            else:                                      newHeight = FULL_SIZE_COVER_HEIGHT
-
+            #if cover.size[1] < FULL_SIZE_COVER_HEIGHT: newHeight = cover.size[1]
+            #else:                                      newHeight = FULL_SIZE_COVER_HEIGHT
+            
+            width = cover.size[0]
+            height = cover.size[1]
+            max_width = FULL_SIZE_COVER_WIDTH
+            max_height = FULL_SIZE_COVER_HEIGHT
+            newWidth, newHeight = tools.resize(width, height, max_width, max_height)
+            
             cover = cover.resize((newWidth, newHeight), Image.ANTIALIAS)
 
             # We're done
@@ -111,19 +119,25 @@ class Covers(modules.ThreadedModule):
             cover = Image.open(inFile).convert('RGBA')
 
             # Resize in the best way we can
-            if cover.size[0] < THUMBNAIL_WIDTH:
-                newWidth = cover.size[0]
-                offsetX  = (THUMBNAIL_WIDTH - cover.size[0]) / 2
-            else:
-                newWidth = THUMBNAIL_WIDTH
-                offsetX  = 0
+            #if cover.size[0] < THUMBNAIL_WIDTH:
+            #    newWidth = cover.size[0]
+            #    #offsetX  = (THUMBNAIL_WIDTH - cover.size[0]) / 2
+            #else:
+            #    newWidth = THUMBNAIL_WIDTH
+                #offsetX  = 0
 
-            if cover.size[1] < THUMBNAIL_HEIGHT:
-                newHeight = cover.size[1]
-                offsetY   = (THUMBNAIL_HEIGHT - cover.size[1]) / 2
-            else:
-                newHeight = THUMBNAIL_HEIGHT
-                offsetY   = 0
+            #if cover.size[1] < THUMBNAIL_HEIGHT:
+            #    newHeight = cover.size[1]
+                #offsetY   = (THUMBNAIL_HEIGHT - cover.size[1]) / 2
+            #else:
+            #    newHeight = THUMBNAIL_HEIGHT
+                #offsetY   = 0
+                
+            width = cover.size[0]
+            height = cover.size[1]
+            max_width = THUMBNAIL_WIDTH
+            max_height = THUMBNAIL_HEIGHT
+            newWidth, newHeight = tools.resize(width, height, max_width, max_height)
 
             cover = cover.resize((newWidth, newHeight), Image.ANTIALIAS)
 
