@@ -15,4 +15,8 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301 USA
 
+
+# This file is used as a template for the Makefile. It can only be invoked
+# after running "make install" which replaces "prefix" with the actual prefix.
+
 python prefix/share/pogo/pogo.py "$@" &
