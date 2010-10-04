@@ -221,6 +221,7 @@ def resize(w_old, h_old, max_width, max_height):
     if h_new > max_height:
         h_new = max_height
         w_new = ratio * h_new
+    w_new, h_new = int(w_new), int(h_new)
     assert w_new <= max_width, '%s <= %s' % (w_new, max_width)
     assert h_new <= max_height, '%s <= %s' % (h_new, max_height)
     assert round(ratio, 3) == round(w_new / h_new, 3), '%s == %s / %s == %s ' % (ratio, w_new, h_new, w_new / h_new)

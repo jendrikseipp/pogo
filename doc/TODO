@@ -29,6 +29,8 @@ O Fix segfault/freeze
 X Fix tracktree internal dnd
 X Do not show underscores in FileExplorer
 X Keep original ratio when scaling covers
+O Handle directory dnd from other applications
+O Reenable dbus
 
 0.x:
 O Sound Indicator
@@ -44,8 +46,7 @@ O Lyrics?
 O Open containing folder item
 O Playlist loading
 O Make window resizing faster
-O Append files added from nautilus
-O Add "show covers" option to desktop notifications
+O Append files added from nautilus right-click menu
 O Ellipsize names?
 
 0.y:
