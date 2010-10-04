@@ -32,7 +32,12 @@ cp Makefile $DEST/
 cp pogo.py $DEST/
 
 # Doc
-cp -R ./doc/ $DEST/
+#cp -R ./doc/ $DEST/
+mkdir $DEST/doc
+cp ./doc/COPYING $DEST/
+cp ./doc/NEWS $DEST/
+
+cp ./doc/pogo.1 $DEST/doc
 
 # Locales
 mkdir $DEST/po
