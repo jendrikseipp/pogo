@@ -1,0 +1,43 @@
+ Pogo - A simple audio player
+========================================================================
+Pogo is probably the simplest and fastest audio player for Linux. 
+Its elementary-inspired design uses the screen-space very efficiently. 
+Pogo is especially well-suited for people who organize their music by 
+albums on the harddrive. The main interface components are a directory 
+tree and a playlist that groups albums in an innovative way.
+
+Supported file formats include Ogg Vorbis, MP3, FLAC, Musepack,
+Wavpack, and MPEG-4 AAC.
+
+To report bugs, suggest features, ask a question, get the latest version,
+or help us out, visit http://launchpad.net/pogo.
+
+
+ Run Pogo
+====================
+ ./pogo.py
+ 
+
+ Installing Pogo
+====================
+ make install
+ 
+
+After installing, you can just run `pogo'.
+
+
+ Requirements
+====================
+
+Pogo depends on the Python runtime and associated libraries.
+
+    * Python (>= 2.5):      http://www.python.org
+    * PyGTK (>= 2.12):      http://www.pygtk.org
+    * PyGST (>= 0.10.2):    http://gstreamer.freedesktop.org/
+    * Mutagen (>= 1.10)
+    * Python DBus:          http://dbus.freedesktop.org/
+
+Particular audio formats depend on various GStreamer decoding elements, 
+as well as other Python modules. GStreamer splits their downlads into 
+good, bad, ugly, and ffmpeg packages, each of which contains elements; 
+you probably want them all.
