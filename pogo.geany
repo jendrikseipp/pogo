@@ -8,7 +8,7 @@ indent_mode=2
 
 [project]
 name=pogo
-base_path=/home/jendrik/projects/Pogo/
+base_path=./
 description=
 
 [long line marker]

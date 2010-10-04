@@ -22,16 +22,14 @@ cp -R ./pix/ $DEST/
 
 # Resources
 mkdir $DEST/res/
-#cd res
-#./optiglade.py
-#cd ..
 cp ./res/*.glade $DEST/res/
 cp ./res/*.desktop $DEST/res/
 
 # Scripts
 cp Makefile $DEST/
-cp start-release.sh $DEST/start.sh
-cp start-remote-release.sh $DEST/start-remote.sh
+#cp start-release.sh $DEST/start.sh
+#cp start-remote-release.sh $DEST/start-remote.sh
+cp pogo.py $DEST/
 
 # Doc
 cp -R ./doc/ $DEST/
