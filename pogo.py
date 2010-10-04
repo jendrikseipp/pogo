@@ -18,9 +18,12 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301 USA
 
-import optparse
+import optparse, os, sys
 
 ##import dbus
+
+src_dir = os.path.abspath(os.path.join(os.path.abspath(__file__), '../src'))
+sys.path.insert(0, src_dir)
 
 from tools import consts
 

@@ -1,0 +1,21 @@
+
+[indentation]
+indent_width=4
+indent_type=0
+indent_hard_tab_width=8
+detect_indent=false
+indent_mode=2
+
+[project]
+name=pogo
+base_path=/home/jendrik/projects/Pogo/
+description=
+
+[long line marker]
+long_line_behaviour=1
+long_line_column=80
+
+[build-menu]
+EX_00_LB=_Ausführen
+EX_00_CM=python pogo.py
+EX_00_WD=

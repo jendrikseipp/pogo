@@ -31,6 +31,7 @@ X Do not show underscores in FileExplorer
 X Keep original ratio when scaling covers
 O Handle directory dnd from other applications
 O Reenable dbus
+O Do not show covers on trackchange when window not visible
 
 0.x:
 O Sound Indicator
