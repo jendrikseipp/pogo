@@ -3,6 +3,9 @@ Version: 0.1
 Section: Multimedia
 Priority: optional
 Architecture: all
-Depends: python (>=2.4), python-gnome2 (>=2.16), python-gtk2 (>=2.6.3-2), python-glade2 (>=2.6.3-2), python-mutagen (>= 1.10), python-gst0.10 (>=0.10), python-dbus (>=0.80), python-imaging (>=1.1.6)
+Depends: python (>=2.5), python-gnome2 (>=2.16), python-gtk2 (>=2.6.3-2), python-glade2 (>=2.6.3-2), python-mutagen (>= 1.10), python-gst0.10 (>=0.10), python-dbus (>=0.80), python-imaging (>=1.1.6)
 Maintainer: Jendrik Seipp (jendrikseipp@web.de)
-Description: Pogo is a simple and fast audio player. It uses innovative hierarchical playtrees instead of flat playlists.
+Description: Pogo is probably the simplest and fastest audio player for Linux. 
+ Its elementary-inspired design uses the screen-space very efficiently. 
+ Pogo is especially well-suited for people who organize their music by albums on the harddrive. 
+ The main interface components are a directory tree and a playlist that groups albums in an innovative way.

@@ -23,7 +23,9 @@ import optparse, os, sys
 ##import dbus
 
 src_dir = os.path.abspath(os.path.join(os.path.abspath(__file__), '../src'))
-sys.path.insert(0, src_dir)
+print src_dir
+if os.path.exists(src_dir):
+    sys.path.insert(0, src_dir)
 
 from tools import consts
 

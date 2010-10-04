@@ -20,7 +20,7 @@ cp pix/pogo.png "pogo"$ICO_DIR
 
 mkdir -p "pogo"$MAN_DIR
 cp doc/pogo.1 "pogo"$MAN_DIR
-cp doc/pogo-remote.1 "pogo"$MAN_DIR
+#cp doc/pogo-remote.1 "pogo"$MAN_DIR
 
 mkdir -p "pogo"$INSTALL_DIR
 
@@ -34,15 +34,19 @@ mkdir -p "pogo"$INSTALL_DIR"/pix"
 cp pix/*.png "pogo"$INSTALL_DIR"/pix/"
 
 mkdir -p "pogo"$INSTALL_DIR"/doc"
-cp doc/LICENCE "pogo"$INSTALL_DIR"/doc/"
-cp doc/CHANGELOG "pogo"$INSTALL_DIR"/doc/"
+cp doc/COPYING "pogo"$INSTALL_DIR"/doc/"
+cp doc/NEWS "pogo"$INSTALL_DIR"/doc/"
+cp doc/README "pogo"$INSTALL_DIR"/doc/"
 
 mkdir -p "pogo"$APP_DIR
 cp res/*.desktop "pogo"$APP_DIR
 
 mkdir -p "pogo"$BIN_DIR
+#cp start-package.sh "pogo"$BIN_DIR"/pogo"
+#cp start-remote-package.sh "pogo"$BIN_DIR"/pogo-remote"
+#cp pogo.py "pogo"$BIN_DIR"/pogo"
 cp start-package.sh "pogo"$BIN_DIR"/pogo"
-cp start-remote-package.sh "pogo"$BIN_DIR"/pogo-remote"
+cp pogo.py "pogo"$INSTALL_DIR
 
 # Create locales
 rm -rf locale

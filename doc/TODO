@@ -32,6 +32,7 @@ X Keep original ratio when scaling covers
 O Handle directory dnd from other applications
 O Reenable dbus
 O Do not show covers on trackchange when window not visible
+O Fix deb paths
 
 0.x:
 O Sound Indicator

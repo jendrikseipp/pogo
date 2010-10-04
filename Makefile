@@ -2,7 +2,8 @@ INSTALL ?= install
 MAKE ?= make
 RM ?= rm
 RMDIR ?= rmdir
-prefix ?= /usr/local
+#prefix ?= /usr/local
+prefix ?= /usr
 
 
 PREFIX = $(DESTDIR)$(prefix)
@@ -34,7 +35,7 @@ help:
 
 install:
 	cat start.sh | $(CONFIGURE_IN) > pogo;
-	cat start-remote.sh | $(CONFIGURE_IN) > pogo-remote;
+	#cat start-remote.sh | $(CONFIGURE_IN) > pogo-remote;
 	echo $(PREFIX)
 	$(INSTALL) -m 755 -d $(BINDIR) $(MANDIR) $(DATADIR) $(SRCDIR) $(RESDIR) $(APPDIR) $(PIXDIR) $(ICONDIR)
 	$(INSTALL) -m 755 -d $(SRCDIR)/gui
@@ -52,14 +53,16 @@ install:
 	$(INSTALL) -m 644 src/modules/*.py $(SRCDIR)/modules
 	$(INSTALL) -m 644 res/*.glade $(RESDIR)
 	$(INSTALL) -m 644 doc/pogo.1 $(MANDIR)
-	$(INSTALL) -m 644 doc/pogo-remote.1 $(MANDIR)
+	#$(INSTALL) -m 644 doc/pogo-remote.1 $(MANDIR)
 	$(INSTALL) -m 644 pix/*.png $(PIXDIR)
 	$(INSTALL) -m 644 pix/pogo.png $(ICONDIR)
 	$(INSTALL) -m 644 res/pogo.desktop $(APPDIR)
 	if test -L $(BINDIR)/pogo; then ${RM} $(BINDIR)/pogo; fi
 	$(INSTALL) -m 755 pogo $(BINDIR)
-	if test -L $(BINDIR)/pogo-remote; then ${RM} $(BINDIR)/pogo-remote; fi
-	$(INSTALL) -m 755 pogo-remote $(BINDIR)
+	##
+	$(INSTALL) -m 644 pogo.py $(DATADIR)
+	#if test -L $(BINDIR)/pogo-remote; then ${RM} $(BINDIR)/pogo-remote; fi
+	#$(INSTALL) -m 755 pogo-remote $(BINDIR)
 	$(MAKE) -C po dist
 	for lang in $(LANGUAGES); do \
 		${INSTALL} -m 755 -d $(LOCALEDIR)/$$lang/LC_MESSAGES;\
@@ -69,10 +72,10 @@ install:
 
 uninstall:
 	${RM} $(BINDIR)/pogo
-	${RM} $(BINDIR)/pogo-remote
+	#${RM} $(BINDIR)/pogo-remote
 	${RM} $(APPDIR)/pogo.desktop
 	${RM} $(MANDIR)/pogo.1
-	${RM} $(MANDIR)/pogo-remote.1
+	#${RM} $(MANDIR)/pogo-remote.1
 	${RM} $(ICONDIR)/pogo.png
 	${RM} -rf $(DATADIR)
 	$(RMDIR) --ignore-fail-on-non-empty $(BINDIR) $(MANDIR) $(APPDIR)
@@ -83,6 +86,7 @@ uninstall:
 clean:
 	$(MAKE) -C po clean
 	${RM} src/*.py[co] res/*~ res/*.bak
-	${RM} pogo pogo-remote
+	${RM} pogo 
+	#pogo-remote
 
 .PHONY: help clean install
