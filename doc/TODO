@@ -25,7 +25,6 @@ X Do not show playlists in FileExplorer
 O Correctly add layers > 2
 X Let slider tooltip display elapsed seconds
 X Put menubar into preference button
-O Fix segfault/freeze
 X Fix tracktree internal dnd
 X Do not show underscores in FileExplorer
 X Keep original ratio when scaling covers
@@ -33,7 +32,6 @@ X Handle directory dnd from other applications
 X Reenable dbus
 X Do not show covers on trackchange when window not visible
 X Fix deb paths
-O remove remote.py
 X Show cover in lower right corner
 
 0.x:

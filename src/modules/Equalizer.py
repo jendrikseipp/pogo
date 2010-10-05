@@ -52,7 +52,8 @@ class Equalizer(modules.Module):
         self.preset    = prefs.get(__name__, 'preset', _('Flat'))
         self.cfgWindow = None
 
-        modules.addMenuItem(_('Equalizer'), self.configure, '<Control>E')
+        # We do not have the edit menu anymore
+        ##modules.addMenuItem(_('Equalizer'), self.configure, '<Control>E')
 
 
     # --== Message handlers ==--
@@ -66,7 +67,8 @@ class Equalizer(modules.Module):
 
     def onModUnloaded(self):
         """ The module has been unloaded """
-        modules.delMenuItem(_('Equalizer'))
+        # We do not have the edit menu anymore
+        ##modules.delMenuItem(_('Equalizer'))
         self.restartRequired()
 
 
