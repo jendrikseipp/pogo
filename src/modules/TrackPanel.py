@@ -110,6 +110,7 @@ class TrackPanel(modules.Module):
 class CoverSpot(object):
     def __init__(self):
         self.show_thumb = None
+        self.has_focus = True
         
         self.cover_window = CoverWindow()
         self.thumb_window = CoverWindow()
@@ -131,7 +132,7 @@ class CoverSpot(object):
         self.thumb_window.set_image(thumb_path)
         if self.show_thumb is None:
             self.onCoverClicked(None, None, True)
-        else:
+        elif self.has_focus:
             self.onCoverClicked(None, None, self.show_thumb)
         
         
@@ -149,11 +150,13 @@ class CoverSpot(object):
         
         
     def on_focus_out(self, widget, event):
+        self.has_focus = False
         self.cover_window.hide()
         self.thumb_window.hide()
         
         
     def on_focus_in(self, widget, event):
+        self.has_focus = True
         self.onCoverClicked(None, None, self.show_thumb)
         
     

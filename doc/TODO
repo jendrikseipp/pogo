@@ -31,9 +31,10 @@ X Do not show underscores in FileExplorer
 X Keep original ratio when scaling covers
 O Handle directory dnd from other applications
 X Reenable dbus
-O Do not show covers on trackchange when window not visible
+X Do not show covers on trackchange when window not visible
 X Fix deb paths
 O remove remote.py
+X Show cover in lower right corner
 
 0.x:
 O Sound Indicator
@@ -42,7 +43,6 @@ O Profiling
 O Stop after current album / track
 O Save playlist
 O Enqueue
-O Cover in lower right corner (whenever enough space is available?)?
 O Shuffle
 O Repeat
 O Lyrics?
