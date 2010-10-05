@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: decibel-audio-player\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-09-27 21:03+0200\n"
+"POT-Creation-Date: 2010-10-05 03:15+0200\n"
 "PO-Revision-Date: 2008-11-08 12:03+0000\n"
 "Last-Translator: Yaron <sh.yaron@gmail.com>\n"
 "Language-Team: Hebrew <he@li.org>\n"
@@ -18,74 +18,79 @@ msgstr ""
 "X-Launchpad-Export-Date: 2009-09-01 15:20+0000\n"
 "X-Generator: Launchpad (build Unknown)\n"
 
-#: ../src/media/track/__init__.py:53
+#: ../src/media/track/__init__.py:54
 msgid "Track number"
 msgstr "מספר הרצועה"
 
-#: ../src/media/track/__init__.py:54
+#: ../src/media/track/__init__.py:55
 msgid "Title"
 msgstr "כותרת"
 
-#: ../src/media/track/__init__.py:55
+#: ../src/media/track/__init__.py:56
 msgid "Artist"
 msgstr "אמן"
 
-#: ../src/media/track/__init__.py:56
+#: ../src/media/track/__init__.py:57
 msgid "Album"
 msgstr "אלבום"
 
-#: ../src/media/track/__init__.py:57
+#: ../src/media/track/__init__.py:58
 msgid "Genre"
 msgstr "סגנון"
 
-#: ../src/media/track/__init__.py:58
+#: ../src/media/track/__init__.py:59
 msgid "Date"
 msgstr "תאריך"
 
-#: ../src/media/track/__init__.py:59
+#: ../src/media/track/__init__.py:60
 msgid "Disc number"
 msgstr "מספר התקליטור"
 
-#: ../src/media/track/__init__.py:60
+#: ../src/media/track/__init__.py:61
 msgid "Bit rate"
 msgstr ""
 
-#: ../src/media/track/__init__.py:61
+#: ../src/media/track/__init__.py:62
 msgid "Sample rate"
 msgstr ""
 
-#: ../src/media/track/__init__.py:62
+#: ../src/media/track/__init__.py:63
 msgid "Duration in seconds (e.g., 194)"
 msgstr "משך בשניות (למשל 194)"
 
-#: ../src/media/track/__init__.py:63
+#: ../src/media/track/__init__.py:64
 msgid "Duration as a string (e.g., 3:14)"
 msgstr "משך כמחרוזת (למשל 3:14)"
 
-#: ../src/media/track/__init__.py:64
+#: ../src/media/track/__init__.py:65
 msgid "Position of the track in the playlist"
 msgstr "מיקום הרצועה ברשימת‏־ההשמעה"
 
-#: ../src/media/track/__init__.py:65
+#: ../src/media/track/__init__.py:66
 msgid "Number of tracks in the playlist"
 msgstr "מספר הרצועות ברשימת-השמעה"
 
-#: ../src/media/track/__init__.py:66
+#: ../src/media/track/__init__.py:67
 msgid "Full path to the file"
 msgstr "הנתיב המלא אל הקובץ"
 
-#: ../src/media/track/__init__.py:148
+#: ../src/media/track/__init__.py:149
 msgid "N/A"
 msgstr ""
 
-#: ../src/media/track/__init__.py:174
+#: ../src/media/track/__init__.py:175
 #, python-format
 msgid "%(album)s  [Disc %(discnum)u]"
 msgstr "%(album)s [תקליטור %(discnum)u]"
 
-#: ../src/media/track/__init__.py:181
+#: ../src/media/track/__init__.py:182
 msgid "CDDA Track"
 msgstr ""
+
+#: ../src/media/track/__init__.py:393
+#, fuzzy
+msgid "unknown"
+msgstr "סגנון לא ידוע"
 
 #: ../src/gui/preferences.py:43
 msgid "Preferences"
@@ -100,7 +105,7 @@ msgid "Modules"
 msgstr "מודולים"
 
 #: ../src/gui/preferences.py:138 ../src/modules/DesktopNotification.py:212
-#: ../src/modules/Covers.py:419
+#: ../src/modules/Covers.py:432
 msgid "Description"
 msgstr "תיאור"
 
@@ -164,22 +169,22 @@ msgstr ""
 "אין להשתמש בתו %s.\n"
 "נא בחרו בשם אחר."
 
-#: ../src/gui/about.py:39
+#: ../src/gui/about.py:40
 msgid "translator-credits"
 msgstr ""
 "Launchpad Contributions:\n"
 "  Alex Let https://launchpad.net/~lolikas\n"
 "  Yaron https://launchpad.net/~sh-yaron"
 
-#: ../src/gui/about.py:43
+#: ../src/gui/about.py:44
 msgid "Developer:"
 msgstr "מפתח:"
 
-#: ../src/gui/about.py:47
+#: ../src/gui/about.py:48
 msgid "Thanks to:"
 msgstr "תודות ל:"
 
-#: ../src/gui/about.py:49
+#: ../src/gui/about.py:50
 msgid "(Developer of Decibel Audio Player)"
 msgstr ""
 
@@ -187,27 +192,27 @@ msgstr ""
 msgid "Send track information to the Zeitgeist service"
 msgstr ""
 
-#: ../src/modules/FileExplorer.py:27
+#: ../src/modules/FileExplorer.py:28
 msgid "File Explorer"
 msgstr "סייר הקבצים"
 
-#: ../src/modules/FileExplorer.py:27
+#: ../src/modules/FileExplorer.py:28
 msgid "Browse your file system"
 msgstr "סייר במערכת הקבצים שלך"
 
-#: ../src/modules/FileExplorer.py:158
+#: ../src/modules/FileExplorer.py:159
 msgid "loading..."
 msgstr "טוען..."
 
-#: ../src/modules/FileExplorer.py:325
+#: ../src/modules/FileExplorer.py:335
 msgid "Append"
 msgstr ""
 
-#: ../src/modules/FileExplorer.py:448
+#: ../src/modules/FileExplorer.py:444
 msgid "Music"
 msgstr ""
 
-#: ../src/modules/FileExplorer.py:448
+#: ../src/modules/FileExplorer.py:444
 #, fuzzy
 msgid "Albums"
 msgstr "אלבום"
@@ -228,16 +233,16 @@ msgstr ""
 msgid "You must restart the application for this modification to take effect."
 msgstr ""
 
-#: ../src/modules/CtrlPanel.py:206 ../src/modules/CtrlPanel.py:267
+#: ../src/modules/CtrlPanel.py:188 ../src/modules/CtrlPanel.py:244
 msgid "Pause the current track"
 msgstr "השהה את הרצועה הנוכחית"
 
-#: ../src/modules/CtrlPanel.py:225
+#: ../src/modules/CtrlPanel.py:204
 #, fuzzy
 msgid "Play the first selected track of the playlist"
 msgstr "נגן את הרצועה הראשונה ברשימת ההשמעה"
 
-#: ../src/modules/CtrlPanel.py:261
+#: ../src/modules/CtrlPanel.py:238
 msgid "Continue playing the current track"
 msgstr "המשך לנגן את הרצועה הנוכחית"
 
@@ -261,10 +266,14 @@ msgid ""
 msgstr "מודול זה מציג חלונית קטנה על גבי שולחן העבודה כאשר מתנגנת רצועה חדשה."
 
 #: ../src/modules/DesktopNotification.py:214
+msgid "If the Covers module is enabled, the popup also shows the album cover."
+msgstr ""
+
+#: ../src/modules/DesktopNotification.py:215
 msgid "Customizing the Notification"
 msgstr "התאמת ההתראה"
 
-#: ../src/modules/DesktopNotification.py:215
+#: ../src/modules/DesktopNotification.py:216
 msgid ""
 "You can change the title and the body of the notification to any text you "
 "want. Before displaying the popup window, fields of the form {field} are "
@@ -275,11 +284,11 @@ msgstr ""
 "שדות שצורתם {שדה} יוחלפו בערכם התואם. שדות אפשריים הינם:\n"
 "\n"
 
-#: ../src/modules/DesktopNotification.py:218
+#: ../src/modules/DesktopNotification.py:219
 msgid "Markup"
 msgstr "סימון"
 
-#: ../src/modules/DesktopNotification.py:219
+#: ../src/modules/DesktopNotification.py:220
 msgid ""
 "You can use the Pango markup language to format the text. More information "
 "on that language is available on the following web page:"
@@ -287,43 +296,43 @@ msgstr ""
 "תוכלו להשתמש בשפת הסימון Pango כדי לעצב את הטקסט. מידע נוסף אודות שפה זו "
 "זמין בכתובת:"
 
-#: ../src/modules/StatusbarTitlebar.py:48
+#: ../src/modules/StatusbarTitlebar.py:49
 msgid "[paused]"
 msgstr "[מושהה]"
 
-#: ../src/modules/StatusbarTitlebar.py:63
+#: ../src/modules/StatusbarTitlebar.py:64
 #, python-format
 msgid "One track in playlist  [%(length)s]"
 msgid_plural "%(count)u tracks in playlist  [%(length)s]"
 msgstr[0] "רצועה אחת ברשימת ההשמעה  [%(length)s]"
 msgstr[1] "%(count)u רצועות ברשימת ההשמעה  [%(length)s]"
 
-#: ../src/modules/StatusbarTitlebar.py:71
+#: ../src/modules/StatusbarTitlebar.py:72
 #, python-format
 msgid "One track selected"
 msgid_plural "%(count)u tracks selected"
 msgstr[0] ""
 msgstr[1] ""
 
-#: ../src/modules/StatusbarTitlebar.py:76
-#: ../src/modules/StatusbarTitlebar.py:82
+#: ../src/modules/StatusbarTitlebar.py:77
+#: ../src/modules/StatusbarTitlebar.py:83
 msgid "various"
 msgstr ""
 
-#: ../src/modules/StatusbarTitlebar.py:85
+#: ../src/modules/StatusbarTitlebar.py:86
 #, python-format
 msgid "%(selection)s (Type: %(type)s, Bitrate: %(bitrate)s)"
 msgstr ""
 
-#: ../src/modules/Covers.py:27
+#: ../src/modules/Covers.py:28
 msgid "Covers"
 msgstr "עטיפות"
 
-#: ../src/modules/Covers.py:27
+#: ../src/modules/Covers.py:28
 msgid "Show album covers"
 msgstr "הצג עטיפות אלבומים"
 
-#: ../src/modules/Covers.py:420
+#: ../src/modules/Covers.py:433
 msgid ""
 "This module displays the cover of the album the current track comes from. "
 "Covers may be loaded from local pictures, located in the same directory as "
@@ -333,11 +342,11 @@ msgstr ""
 "מתמונות מקומיות, הממוקמות באותה התיקייה כמו הרצועה הנוכחית, או ניתנות להורדה "
 "מהאינטרנט."
 
-#: ../src/modules/Covers.py:423
+#: ../src/modules/Covers.py:436
 msgid "User Covers"
 msgstr "עטיפות המשתמש"
 
-#: ../src/modules/Covers.py:424
+#: ../src/modules/Covers.py:437
 #, python-format
 msgid ""
 "A user cover is a picture located in the same directory as the current "
@@ -348,11 +357,11 @@ msgstr ""
 "שמות הקבצים, לא תצטרך לספק סיומות קבצים, נעשה שימוש בסוגי קבצים נתמכים (%s) "
 "אוטומטית."
 
-#: ../src/modules/Covers.py:427
+#: ../src/modules/Covers.py:440
 msgid "Internet Covers"
 msgstr "עטיפות מהאינטרנט"
 
-#: ../src/modules/Covers.py:428
+#: ../src/modules/Covers.py:441
 msgid ""
 "Covers may be downloaded from the Internet, based on the tags of the current "
 "track. You can ask to always prefer user covers to Internet ones. In this "
@@ -364,11 +373,11 @@ msgstr ""
 "וקיימת עטיפת משתמש עבור הרצועה הנוכחית, בה יעשה שמוש. במידה ואין, העטיפה "
 "תורד מהאינטרנט."
 
-#: ../src/modules/Tracktree.py:328
+#: ../src/modules/Tracktree.py:327
 msgid "Save playlist"
 msgstr "שמור את רשימת־ההשמעה"
 
-#: ../src/modules/Tracktree.py:378
+#: ../src/modules/Tracktree.py:376
 msgid "Clear Playlist"
 msgstr ""
 
@@ -406,23 +415,23 @@ msgstr ""
 msgid "The format of the file is incorrect."
 msgstr ""
 
-#: ../src/tools/consts.py:93
+#: ../src/tools/consts.py:94
 msgid "Unknown Genre"
 msgstr "סגנון לא ידוע"
 
-#: ../src/tools/consts.py:94
+#: ../src/tools/consts.py:95
 msgid "Unknown Title"
 msgstr "כותרת לא ידועה"
 
-#: ../src/tools/consts.py:95
+#: ../src/tools/consts.py:96
 msgid "Unknown Album"
 msgstr "אלבום לא ידוע"
 
-#: ../src/tools/consts.py:96
+#: ../src/tools/consts.py:97
 msgid "Unknown Artist"
 msgstr "אמן לא ידוע"
 
-#: ../src/tools/consts.py:104
+#: ../src/tools/consts.py:105
 msgid "Unknown Album Artist"
 msgstr "אמן התקליטור אינו ידוע"
 

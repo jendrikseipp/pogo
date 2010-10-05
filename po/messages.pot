@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-09-27 21:03+0200\n"
+"POT-Creation-Date: 2010-10-05 03:15+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,73 +17,77 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 
-#: ../src/media/track/__init__.py:53
+#: ../src/media/track/__init__.py:54
 msgid "Track number"
 msgstr ""
 
-#: ../src/media/track/__init__.py:54
+#: ../src/media/track/__init__.py:55
 msgid "Title"
 msgstr ""
 
-#: ../src/media/track/__init__.py:55
+#: ../src/media/track/__init__.py:56
 msgid "Artist"
 msgstr ""
 
-#: ../src/media/track/__init__.py:56
+#: ../src/media/track/__init__.py:57
 msgid "Album"
 msgstr ""
 
-#: ../src/media/track/__init__.py:57
+#: ../src/media/track/__init__.py:58
 msgid "Genre"
 msgstr ""
 
-#: ../src/media/track/__init__.py:58
+#: ../src/media/track/__init__.py:59
 msgid "Date"
 msgstr ""
 
-#: ../src/media/track/__init__.py:59
+#: ../src/media/track/__init__.py:60
 msgid "Disc number"
 msgstr ""
 
-#: ../src/media/track/__init__.py:60
+#: ../src/media/track/__init__.py:61
 msgid "Bit rate"
 msgstr ""
 
-#: ../src/media/track/__init__.py:61
+#: ../src/media/track/__init__.py:62
 msgid "Sample rate"
 msgstr ""
 
-#: ../src/media/track/__init__.py:62
+#: ../src/media/track/__init__.py:63
 msgid "Duration in seconds (e.g., 194)"
 msgstr ""
 
-#: ../src/media/track/__init__.py:63
+#: ../src/media/track/__init__.py:64
 msgid "Duration as a string (e.g., 3:14)"
 msgstr ""
 
-#: ../src/media/track/__init__.py:64
+#: ../src/media/track/__init__.py:65
 msgid "Position of the track in the playlist"
 msgstr ""
 
-#: ../src/media/track/__init__.py:65
+#: ../src/media/track/__init__.py:66
 msgid "Number of tracks in the playlist"
 msgstr ""
 
-#: ../src/media/track/__init__.py:66
+#: ../src/media/track/__init__.py:67
 msgid "Full path to the file"
 msgstr ""
 
-#: ../src/media/track/__init__.py:148
+#: ../src/media/track/__init__.py:149
 msgid "N/A"
 msgstr ""
 
-#: ../src/media/track/__init__.py:174
+#: ../src/media/track/__init__.py:175
 #, python-format
 msgid "%(album)s  [Disc %(discnum)u]"
 msgstr ""
 
-#: ../src/media/track/__init__.py:181
+#: ../src/media/track/__init__.py:182
 msgid "CDDA Track"
+msgstr ""
+
+#: ../src/media/track/__init__.py:393
+msgid "unknown"
 msgstr ""
 
 #: ../src/gui/preferences.py:43
@@ -99,7 +103,7 @@ msgid "Modules"
 msgstr ""
 
 #: ../src/gui/preferences.py:138 ../src/modules/DesktopNotification.py:212
-#: ../src/modules/Covers.py:419
+#: ../src/modules/Covers.py:432
 msgid "Description"
 msgstr ""
 
@@ -152,19 +156,19 @@ msgid ""
 "Please use another name."
 msgstr ""
 
-#: ../src/gui/about.py:39
+#: ../src/gui/about.py:40
 msgid "translator-credits"
 msgstr ""
 
-#: ../src/gui/about.py:43
+#: ../src/gui/about.py:44
 msgid "Developer:"
 msgstr ""
 
-#: ../src/gui/about.py:47
+#: ../src/gui/about.py:48
 msgid "Thanks to:"
 msgstr ""
 
-#: ../src/gui/about.py:49
+#: ../src/gui/about.py:50
 msgid "(Developer of Decibel Audio Player)"
 msgstr ""
 
@@ -172,27 +176,27 @@ msgstr ""
 msgid "Send track information to the Zeitgeist service"
 msgstr ""
 
-#: ../src/modules/FileExplorer.py:27
+#: ../src/modules/FileExplorer.py:28
 msgid "File Explorer"
 msgstr ""
 
-#: ../src/modules/FileExplorer.py:27
+#: ../src/modules/FileExplorer.py:28
 msgid "Browse your file system"
 msgstr ""
 
-#: ../src/modules/FileExplorer.py:158
+#: ../src/modules/FileExplorer.py:159
 msgid "loading..."
 msgstr ""
 
-#: ../src/modules/FileExplorer.py:325
+#: ../src/modules/FileExplorer.py:335
 msgid "Append"
 msgstr ""
 
-#: ../src/modules/FileExplorer.py:448
+#: ../src/modules/FileExplorer.py:444
 msgid "Music"
 msgstr ""
 
-#: ../src/modules/FileExplorer.py:448
+#: ../src/modules/FileExplorer.py:444
 msgid "Albums"
 msgstr ""
 
@@ -212,15 +216,15 @@ msgstr ""
 msgid "You must restart the application for this modification to take effect."
 msgstr ""
 
-#: ../src/modules/CtrlPanel.py:206 ../src/modules/CtrlPanel.py:267
+#: ../src/modules/CtrlPanel.py:188 ../src/modules/CtrlPanel.py:244
 msgid "Pause the current track"
 msgstr ""
 
-#: ../src/modules/CtrlPanel.py:225
+#: ../src/modules/CtrlPanel.py:204
 msgid "Play the first selected track of the playlist"
 msgstr ""
 
-#: ../src/modules/CtrlPanel.py:261
+#: ../src/modules/CtrlPanel.py:238
 msgid "Continue playing the current track"
 msgstr ""
 
@@ -244,10 +248,14 @@ msgid ""
 msgstr ""
 
 #: ../src/modules/DesktopNotification.py:214
-msgid "Customizing the Notification"
+msgid "If the Covers module is enabled, the popup also shows the album cover."
 msgstr ""
 
 #: ../src/modules/DesktopNotification.py:215
+msgid "Customizing the Notification"
+msgstr ""
+
+#: ../src/modules/DesktopNotification.py:216
 msgid ""
 "You can change the title and the body of the notification to any text you "
 "want. Before displaying the popup window, fields of the form {field} are "
@@ -255,64 +263,64 @@ msgid ""
 "\n"
 msgstr ""
 
-#: ../src/modules/DesktopNotification.py:218
+#: ../src/modules/DesktopNotification.py:219
 msgid "Markup"
 msgstr ""
 
-#: ../src/modules/DesktopNotification.py:219
+#: ../src/modules/DesktopNotification.py:220
 msgid ""
 "You can use the Pango markup language to format the text. More information "
 "on that language is available on the following web page:"
 msgstr ""
 
-#: ../src/modules/StatusbarTitlebar.py:48
+#: ../src/modules/StatusbarTitlebar.py:49
 msgid "[paused]"
 msgstr ""
 
-#: ../src/modules/StatusbarTitlebar.py:63
+#: ../src/modules/StatusbarTitlebar.py:64
 #, python-format
 msgid "One track in playlist  [%(length)s]"
 msgid_plural "%(count)u tracks in playlist  [%(length)s]"
 msgstr[0] ""
 msgstr[1] ""
 
-#: ../src/modules/StatusbarTitlebar.py:71
+#: ../src/modules/StatusbarTitlebar.py:72
 #, python-format
 msgid "One track selected"
 msgid_plural "%(count)u tracks selected"
 msgstr[0] ""
 msgstr[1] ""
 
-#: ../src/modules/StatusbarTitlebar.py:76
-#: ../src/modules/StatusbarTitlebar.py:82
+#: ../src/modules/StatusbarTitlebar.py:77
+#: ../src/modules/StatusbarTitlebar.py:83
 msgid "various"
 msgstr ""
 
-#: ../src/modules/StatusbarTitlebar.py:85
+#: ../src/modules/StatusbarTitlebar.py:86
 #, python-format
 msgid "%(selection)s (Type: %(type)s, Bitrate: %(bitrate)s)"
 msgstr ""
 
-#: ../src/modules/Covers.py:27
+#: ../src/modules/Covers.py:28
 msgid "Covers"
 msgstr ""
 
-#: ../src/modules/Covers.py:27
+#: ../src/modules/Covers.py:28
 msgid "Show album covers"
 msgstr ""
 
-#: ../src/modules/Covers.py:420
+#: ../src/modules/Covers.py:433
 msgid ""
 "This module displays the cover of the album the current track comes from. "
 "Covers may be loaded from local pictures, located in the same directory as "
 "the current track, or may be downloaded from the Internet."
 msgstr ""
 
-#: ../src/modules/Covers.py:423
+#: ../src/modules/Covers.py:436
 msgid "User Covers"
 msgstr ""
 
-#: ../src/modules/Covers.py:424
+#: ../src/modules/Covers.py:437
 #, python-format
 msgid ""
 "A user cover is a picture located in the same directory as the current "
@@ -320,11 +328,11 @@ msgid ""
 "extensions, supported file formats (%s) are automatically used."
 msgstr ""
 
-#: ../src/modules/Covers.py:427
+#: ../src/modules/Covers.py:440
 msgid "Internet Covers"
 msgstr ""
 
-#: ../src/modules/Covers.py:428
+#: ../src/modules/Covers.py:441
 msgid ""
 "Covers may be downloaded from the Internet, based on the tags of the current "
 "track. You can ask to always prefer user covers to Internet ones. In this "
@@ -332,11 +340,11 @@ msgid ""
 "none, the cover is downloaded."
 msgstr ""
 
-#: ../src/modules/Tracktree.py:328
+#: ../src/modules/Tracktree.py:327
 msgid "Save playlist"
 msgstr ""
 
-#: ../src/modules/Tracktree.py:378
+#: ../src/modules/Tracktree.py:376
 msgid "Clear Playlist"
 msgstr ""
 
@@ -374,23 +382,23 @@ msgstr ""
 msgid "The format of the file is incorrect."
 msgstr ""
 
-#: ../src/tools/consts.py:93
+#: ../src/tools/consts.py:94
 msgid "Unknown Genre"
 msgstr ""
 
-#: ../src/tools/consts.py:94
+#: ../src/tools/consts.py:95
 msgid "Unknown Title"
 msgstr ""
 
-#: ../src/tools/consts.py:95
+#: ../src/tools/consts.py:96
 msgid "Unknown Album"
 msgstr ""
 
-#: ../src/tools/consts.py:96
+#: ../src/tools/consts.py:97
 msgid "Unknown Artist"
 msgstr ""
 
-#: ../src/tools/consts.py:104
+#: ../src/tools/consts.py:105
 msgid "Unknown Album Artist"
 msgstr ""
 
