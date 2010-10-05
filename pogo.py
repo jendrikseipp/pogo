@@ -20,10 +20,7 @@
 
 import optparse, os, sys
 
-##import dbus
-
 src_dir = os.path.abspath(os.path.join(os.path.abspath(__file__), '../src'))
-print src_dir
 if os.path.exists(src_dir):
     sys.path.insert(0, src_dir)
 
@@ -42,6 +39,8 @@ optparser.add_option('--multiple-instances', action='store_true', default=False,
 
 # Check whether Pogo is already running?
 if False:##not optOptions.multiple_instances:
+    import dbus
+    
     shouldStop  = False
     dbusSession = None
 
@@ -84,7 +83,7 @@ def realStartup():
         This function should be called within the GTK main loop, once the window has been displayed
     """
     import atexit, signal
-    ##import dbus.mainloop.glib
+    import dbus.mainloop.glib
     import modules
 
 
@@ -118,7 +117,7 @@ def realStartup():
 
 
     # D-Bus
-    ##dbus.mainloop.glib.DBusGMainLoop(set_as_default=True)
+    dbus.mainloop.glib.DBusGMainLoop(set_as_default=True)
 
     # Register some handlers
     atexit.register(atExit)

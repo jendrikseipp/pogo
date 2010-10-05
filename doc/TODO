@@ -30,9 +30,10 @@ X Fix tracktree internal dnd
 X Do not show underscores in FileExplorer
 X Keep original ratio when scaling covers
 O Handle directory dnd from other applications
-O Reenable dbus
+X Reenable dbus
 O Do not show covers on trackchange when window not visible
-O Fix deb paths
+X Fix deb paths
+O remove remote.py
 
 0.x:
 O Sound Indicator

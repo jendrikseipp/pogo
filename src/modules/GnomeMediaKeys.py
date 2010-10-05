@@ -61,6 +61,7 @@ class GnomeMediaKeys(modules.Module):
             self.dbusInterface.connect_to_signal('MediaPlayerKeyPressed', self.onMediaKey)
         except:
             # If it didn't work, try the old way
+            print traceback.format_exc()
             try:
                 service = dbus.SessionBus().get_object('org.gnome.SettingsDaemon', '/org/gnome/SettingsDaemon')
                 self.dbusInterface = dbus.Interface(service, 'org.gnome.SettingsDaemon')
