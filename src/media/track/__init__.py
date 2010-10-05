@@ -52,7 +52,7 @@ from tools import consts, sec2str
 # Special fields that may be used to call format()
 FIELDS = (
             ( 'track'       , _('Track number')                          ),
-            ( 'title'       , '\t' + _('Title')                          ),
+            ( 'title'       , _('Title')                                 ),
             ( 'artist'      , _('Artist')                                ),
             ( 'album'       , _('Album')                                 ),
             ( 'genre'       , _('Genre')                                 ),
