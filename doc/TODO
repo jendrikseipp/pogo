@@ -1,38 +1,7 @@
 === Roadmap ===
 
 0.1:
-X Rebranding
-X Fix "Delete All -> Segfault" bug
-X Make pref dialog more accessible
-X Make track position slider clickable with left mouse clicks
-X Do not make time info bold
-X Highlight all parents when playing
-X Fix album display
-X Use own audioscrobbler key
-X Use quod libet style for directory tree
-X Load/restore dirs
-X Make play icon smaller
-X Handle "and" and "&" in titles
-X Remove explorer.py
-X Write new menu for button
-X Restrict to two layers?
-X Handle layers > 2
-X Design logo
-X Highlight/select dropped rows
-X Scroll during dnd
-X Collapse rows when dragging only dirs
-X Do not show playlists in FileExplorer
-O Correctly add layers > 2
-X Let slider tooltip display elapsed seconds
-X Put menubar into preference button
-X Fix tracktree internal dnd
-X Do not show underscores in FileExplorer
-X Keep original ratio when scaling covers
-X Handle directory dnd from other applications
-X Reenable dbus
-X Do not show covers on trackchange when window not visible
-X Fix deb paths
-X Show cover in lower right corner
+
 
 0.x:
 O Sound Indicator
@@ -49,6 +18,7 @@ O Playlist loading
 O Make window resizing faster
 O Append files added from nautilus right-click menu
 O Ellipsize names?
+O Correctly add layers > 2
 
 0.y:
 O Party View

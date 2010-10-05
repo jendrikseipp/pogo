@@ -32,13 +32,14 @@ After installing, you can just run `pogo'.
  Requirements
 ====================
 
-Pogo depends on the Python runtime and associated libraries.
+Pogo depends on the Python runtime and the following libraries: 
 
     * Python (>= 2.5):      http://www.python.org
     * PyGTK (>= 2.12):      http://www.pygtk.org
     * PyGST (>= 0.10.2):    http://gstreamer.freedesktop.org/
-    * Mutagen (>= 1.10)
+    * Mutagen (>= 1.10):    http://code.google.com/p/mutagen/
     * Python DBus:          http://dbus.freedesktop.org/
+    * Python Imaging (PIL): http://www.pythonware.com/products/pil/
 
 Particular audio formats depend on various GStreamer decoding elements, 
 as well as other Python modules. GStreamer splits their downlads into 

@@ -24,6 +24,7 @@ src_dir = os.path.abspath(os.path.join(os.path.abspath(__file__), '../src'))
 if os.path.exists(src_dir):
     sys.path.insert(0, src_dir)
 
+
 from tools import consts
 
 
@@ -31,14 +32,13 @@ from tools import consts
 optparser = optparse.OptionParser(usage='Usage: %prog [options] [FILE(s)]')
 ##optparser.add_option('-p', '--playbin', action='store_true', default=False, help='use the playbin GStreamer component instead of playbin2')
 optparser.add_option('-p', '--playbin', action='store_false', default=True, help='use the playbin GStreamer component instead of playbin2')
-##optparser.add_option('--no-glossy-cover', action='store_true', default=False, help='disable the gloss effect applied to covers')
 optparser.add_option('--multiple-instances', action='store_true', default=False, help='start a new instance even if one is already running')
 
 (optOptions, optArgs) = optparser.parse_args()
 
 
 # Check whether Pogo is already running?
-if False:##not optOptions.multiple_instances:
+if False:#not optOptions.multiple_instances:
     import dbus
     
     shouldStop  = False

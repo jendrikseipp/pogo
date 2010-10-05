@@ -26,7 +26,7 @@ MOD_INFO = ('Desktop Notification', _('Desktop Notification'), _('Display a desk
 
 
 # Default preferences
-PREFS_DEFAULT_BODY       = 'by {artist} on {album} ({playlist_pos} / {playlist_len})'
+PREFS_DEFAULT_BODY       = 'by {artist} on {album}'
 PREFS_DEFAULT_TITLE      = '{title}  [{duration_str}]'
 PREFS_DEFAULT_TIMEOUT    = 10
 PREFS_DEFAULT_SKIP_TRACK = False

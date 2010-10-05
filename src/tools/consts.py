@@ -80,7 +80,7 @@ fileImgStar16 = os.path.join(dirPix, 'star-16.png')
 
 # --- Files
 fileLog     = os.path.join(dirLog, 'log')
-filePrefs   = os.path.join(dirCfg, 'prefs.txt')
+filePrefs   = os.path.join(dirCfg, 'prefs')
 fileLicense = os.path.join(dirDoc, 'LICENCE')
 
 

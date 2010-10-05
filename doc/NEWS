@@ -1,1 +1,22 @@
+ Pogo NEWS
+==============
+
 === 0.1 ===
+* Initial release
+* Fork decibel audio player
+* Rebranding
+* Restructure interface (use space more efficiently, simplify)
+* Write new playlist widget which groups albums
+* Show clickable cover in lower right corner
+* Make preferences dialog more accessible
+* Make track position slider clickable with left mouse clicks
+* Highlight all parents when playing a track
+* Automatically hide redundant information in track titles
+* Remove menubar and statusbar
+* Add preferences button
+* Highlight dropped rows after drag'n'drop
+* Collapse rows when dragging only dirs
+* Let slider tooltip display elapsed seconds
+* Keep original ratio when scaling covers
+* Remove unnecessary code
+* Much code refactoring

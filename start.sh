@@ -19,4 +19,4 @@
 # This file is used as a template for the Makefile. It can only be invoked
 # after running "make install" which replaces "prefix" with the actual prefix.
 
-python prefix/share/pogo/pogo.py "$@" &
+python prefix/share/pogo/pogo.py
