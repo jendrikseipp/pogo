@@ -62,8 +62,8 @@ FIELDS = (
             ( 'sample_rate' , _('Sample rate')                           ),
             ( 'duration_sec', _('Duration in seconds (e.g., 194)')       ),
             ( 'duration_str', _('Duration as a string (e.g., 3:14)')     ),
-            ( 'playlist_pos', _('Position of the track in the playlist') ),
-            ( 'playlist_len', _('Number of tracks in the playlist')      ),
+            ##( 'playlist_pos', _('Position of the track in the playlist') ),
+            ##( 'playlist_len', _('Number of tracks in the playlist')      ),
             ( 'path'        , _('Full path to the file')                 ),
          )
 

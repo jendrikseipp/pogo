@@ -206,9 +206,10 @@ class DesktopNotification(modules.Module):
 
     def onBtnHelp(self, btn):
         """ Display a small help message box """
-        import gui, media
+        import media
+        from gui.help import HelpDlg 
 
-        helpDlg = gui.help.HelpDlg(MOD_INFO[modules.MODINFO_L10N])
+        helpDlg = HelpDlg(MOD_INFO[modules.MODINFO_L10N])
         helpDlg.addSection(_('Description'),
                            _('This module displays a small popup window on your desktop when a new track starts.') + ' ' + \
                            _('If the Covers module is enabled, the popup also shows the album cover.'))
