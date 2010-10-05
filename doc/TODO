@@ -1,7 +1,7 @@
 === Roadmap ===
 
 0.x:
-O Sound Indicator
+O Enable DBus
 O Search
 O Profiling
 O Stop after current album / track
@@ -10,14 +10,14 @@ O Enqueue
 O Shuffle
 O Repeat
 O Lyrics?
-O Open containing folder item
+O Open containing folder item?
 O Playlist loading
 O Make window resizing faster
 O Append files added from nautilus right-click menu
-O Ellipsize names?
 O Correctly add layers > 2
 
 0.y:
+O Sound Indicator
 O Party View
 O Play audio CDs?
 O Let user add more directories to file browser?
@@ -25,3 +25,4 @@ O Let user add more directories to file browser?
 
 === Features that will not be implemented ===
 - Do not add empty dirs to Tracktree (Irritating)
+- Ellipsize names (Looks odd)
