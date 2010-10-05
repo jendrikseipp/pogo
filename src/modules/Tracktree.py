@@ -568,5 +568,9 @@ class Tracktree(modules.Module):
             self.insert(tracks, iter, drop_mode, highlight=True)
             
         #self.restore_expanded_rows()
+        
+        # We want to allow dropping tracks only when we are sure that no dir is
+        # selected. This is needed for dnd from nautilus.
+        self.tree.dir_selected = True
 
         context.finish(True, False, time)

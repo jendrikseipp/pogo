@@ -382,6 +382,10 @@ class TrackTreeView(ExtTreeView):
         
         self.thaw_child_notify()
         
+        # We want to allow dropping tracks only when we are sure that no dir is
+        # selected. This is needed for dnd from nautilus.
+        self.dir_selected = True
+        
         
     def move_dir(self, dir_iter, target, drop_mode):
         '''
