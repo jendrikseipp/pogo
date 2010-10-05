@@ -93,7 +93,7 @@ class TrackPanel(modules.Module):
 
     def onStopped(self):
         """ Playback has been stopped """
-        self.currTrack     = None
+        self.currTrack = None
 
         self.cover_spot.set_images(None, None)
         self.__setTitle(consts.appName)
