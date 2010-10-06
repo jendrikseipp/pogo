@@ -55,7 +55,7 @@ FULL_SIZE_COVER_HEIGHT = 300
 ACCEPTED_FILE_FORMATS = {'.jpg': None, '.jpeg': None, '.png': None, '.gif': None}
 
 # Default preferences
-PREFS_DFT_DOWNLOAD_COVERS      = False
+PREFS_DFT_DOWNLOAD_COVERS      = True
 PREFS_DFT_PREFER_USER_COVERS   = True
 PREFS_DFT_USER_COVER_FILENAMES = ['folder', 'cover', 'art', 'front', '*']
 
