@@ -153,14 +153,22 @@ class TrackDir(object):
     def empty(self):
         return not self.tracks and not self.subdirs
         
-    def iter_all_tracks(self):
+    def get_all_tracks(self):
+        tracks = []
         for track in self.tracks:
-            yield track
+            tracks.append(track)
         for subdir in self.subdirs:
-            subdir.iter_all_tracks()
+            tracks.extend(subdir.get_all_tracks())
+        return tracks
+            
+    def get_playtime(self):
+        time = 0
+        for track in self.get_all_tracks():
+            time += track.getLength()
+        return time
         
     def __len__(self):
-        return len(list(self.iter_all_tracks()))        
+        return len(self.get_all_tracks())
                 
     def __str__(self, indent=0):
         res = ''

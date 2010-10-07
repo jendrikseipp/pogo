@@ -59,7 +59,6 @@ class FileExplorer(modules.Module):
         handlers = {
                         consts.MSG_EVT_APP_QUIT:         self.onAppQuit,
                         consts.MSG_EVT_APP_STARTED:      self.onAppStarted,
-                        #consts.MSG_EVT_EXPLORER_CHANGED: self.onExplorerChanged,
                    }
 
         modules.Module.__init__(self, handlers)
