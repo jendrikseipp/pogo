@@ -17,12 +17,11 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301 USA
 
-from __future__ import division
-
 import cPickle, os
 from xml.sax.saxutils import escape, unescape
 
-import gtk, gtk.glade
+import gtk
+import gtk.glade
 
 import consts
 
@@ -215,7 +214,7 @@ def resize(w_old, h_old, max_width, max_height):
     '''
     Resize image dimensions keeping the original ratio
     '''
-    ratio = w_old / h_old
+    ratio = float(w_old) / float(h_old)
     w_new = min([w_old, max_width])
     h_new = w_new / ratio
     if h_new > max_height:
