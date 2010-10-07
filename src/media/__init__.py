@@ -49,7 +49,10 @@ def getSupportedFormats():
     return ['*' + ext for ext in mFormats]
 
 
-def getTrackFromFile(file):
+
+__track_cache = {}
+
+def __getTrackFromFile(file):
     """
         Return a Track object, based on the tags of the given file
         The 'file' parameter must be a real file (not a playlist or a directory)
@@ -59,6 +62,17 @@ def getTrackFromFile(file):
     except:
         logger.error('Unable to extract information from %s\n\n%s' % (file, traceback.format_exc()))
         return FileTrack(file)
+        
+def getTrackFromFile(file):
+    """
+        Return a Track object, based on the tags of the given file
+        The 'file' parameter must be a real file (not a playlist or a directory)
+    """
+    if file in __track_cache:
+        return __track_cache[file]
+    track = __getTrackFromFile(file)
+    __track_cache[file] = track
+    return track
 
 
 def getTracksFromFiles(files):
