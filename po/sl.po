@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: decibel-audio-player\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-10-05 03:15+0200\n"
+"POT-Creation-Date: 2010-10-07 12:23+0200\n"
 "PO-Revision-Date: 2008-08-15 17:18+0000\n"
 "Last-Translator: Alan Pepelko <alan.pepelko@gmail.com>\n"
 "Language-Team: Slovenian <sl@li.org>\n"
@@ -63,14 +63,6 @@ msgstr "Trajanje v sekundah (npr. 194)"
 msgid "Duration as a string (e.g., 3:14)"
 msgstr ""
 
-#: ../src/media/track/__init__.py:65
-msgid "Position of the track in the playlist"
-msgstr "Mesto skladbe v seznamu predvajanja"
-
-#: ../src/media/track/__init__.py:66
-msgid "Number of tracks in the playlist"
-msgstr "Število skladb v seznamu predvajanja"
-
 #: ../src/media/track/__init__.py:67
 msgid "Full path to the file"
 msgstr "Pot do datoteke"
@@ -105,7 +97,7 @@ msgstr ""
 msgid "Modules"
 msgstr ""
 
-#: ../src/gui/preferences.py:138 ../src/modules/DesktopNotification.py:212
+#: ../src/gui/preferences.py:138 ../src/modules/DesktopNotification.py:213
 #: ../src/modules/Covers.py:432
 msgid "Description"
 msgstr ""
@@ -189,19 +181,19 @@ msgstr ""
 msgid "Browse your file system"
 msgstr ""
 
-#: ../src/modules/FileExplorer.py:159
+#: ../src/modules/FileExplorer.py:158
 msgid "loading..."
 msgstr ""
 
-#: ../src/modules/FileExplorer.py:335
+#: ../src/modules/FileExplorer.py:334
 msgid "Append"
 msgstr ""
 
-#: ../src/modules/FileExplorer.py:444
+#: ../src/modules/FileExplorer.py:443
 msgid "Music"
 msgstr ""
 
-#: ../src/modules/FileExplorer.py:444
+#: ../src/modules/FileExplorer.py:443
 msgid "Albums"
 msgstr ""
 
@@ -217,7 +209,7 @@ msgstr ""
 msgid "Restart required"
 msgstr ""
 
-#: ../src/modules/__init__.py:266
+#: ../src/modules/__init__.py:267
 msgid "You must restart the application for this modification to take effect."
 msgstr ""
 
@@ -247,21 +239,21 @@ msgstr ""
 msgid "Skip track"
 msgstr ""
 
-#: ../src/modules/DesktopNotification.py:213
+#: ../src/modules/DesktopNotification.py:214
 msgid ""
 "This module displays a small popup window on your desktop when a new track "
 "starts."
 msgstr ""
 
-#: ../src/modules/DesktopNotification.py:214
+#: ../src/modules/DesktopNotification.py:215
 msgid "If the Covers module is enabled, the popup also shows the album cover."
 msgstr ""
 
-#: ../src/modules/DesktopNotification.py:215
+#: ../src/modules/DesktopNotification.py:216
 msgid "Customizing the Notification"
 msgstr ""
 
-#: ../src/modules/DesktopNotification.py:216
+#: ../src/modules/DesktopNotification.py:217
 msgid ""
 "You can change the title and the body of the notification to any text you "
 "want. Before displaying the popup window, fields of the form {field} are "
@@ -269,11 +261,11 @@ msgid ""
 "\n"
 msgstr ""
 
-#: ../src/modules/DesktopNotification.py:219
+#: ../src/modules/DesktopNotification.py:220
 msgid "Markup"
 msgstr ""
 
-#: ../src/modules/DesktopNotification.py:220
+#: ../src/modules/DesktopNotification.py:221
 msgid ""
 "You can use the Pango markup language to format the text. More information "
 "on that language is available on the following web page:"
@@ -348,16 +340,15 @@ msgid ""
 "none, the cover is downloaded."
 msgstr ""
 
-#: ../src/modules/Tracktree.py:327
+#: ../src/modules/Tracktree.py:366
 msgid "Save playlist"
 msgstr ""
 
-#: ../src/modules/Tracktree.py:376
+#: ../src/modules/Tracktree.py:415
 msgid "Clear Playlist"
 msgstr ""
 
-#: ../src/modules/Equalizer.py:24 ../src/modules/Equalizer.py:55
-#: ../src/modules/Equalizer.py:69
+#: ../src/modules/Equalizer.py:24
 msgid "Equalizer"
 msgstr ""
 
@@ -369,24 +360,24 @@ msgstr ""
 msgid "Flat"
 msgstr ""
 
-#: ../src/modules/Equalizer.py:123 ../src/modules/Equalizer.py:211
-#: ../src/modules/Equalizer.py:224
+#: ../src/modules/Equalizer.py:125 ../src/modules/Equalizer.py:213
+#: ../src/modules/Equalizer.py:226
 msgid "Custom"
 msgstr ""
 
-#: ../src/modules/Equalizer.py:164
+#: ../src/modules/Equalizer.py:166
 msgid "Save levels"
 msgstr ""
 
-#: ../src/modules/Equalizer.py:175
+#: ../src/modules/Equalizer.py:177
 msgid "Load levels"
 msgstr ""
 
-#: ../src/modules/Equalizer.py:202
+#: ../src/modules/Equalizer.py:204
 msgid "Could not load the file"
 msgstr ""
 
-#: ../src/modules/Equalizer.py:202
+#: ../src/modules/Equalizer.py:204
 msgid "The format of the file is incorrect."
 msgstr ""
 
@@ -489,6 +480,12 @@ msgstr ""
 #: ../res/MainWindow.glade.h:4
 msgid "Seek a position in the current track"
 msgstr ""
+
+#~ msgid "Position of the track in the playlist"
+#~ msgstr "Mesto skladbe v seznamu predvajanja"
+
+#~ msgid "Number of tracks in the playlist"
+#~ msgstr "Število skladb v seznamu predvajanja"
 
 #~ msgid "Password required"
 #~ msgstr "Potrebno je geslo"

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: decibel-audio-player\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-10-05 03:15+0200\n"
+"POT-Creation-Date: 2010-10-07 12:23+0200\n"
 "PO-Revision-Date: 2009-08-24 13:13+0000\n"
 "Last-Translator: ivan mikov <idm@dir.bg>\n"
 "Language-Team: Bulgarian <bg@li.org>\n"
@@ -62,14 +62,6 @@ msgstr "Продължителност в секунди (например, 194)
 msgid "Duration as a string (e.g., 3:14)"
 msgstr "Продължителност (например, 3:14)"
 
-#: ../src/media/track/__init__.py:65
-msgid "Position of the track in the playlist"
-msgstr "Място на записа в списъка за изпълнение"
-
-#: ../src/media/track/__init__.py:66
-msgid "Number of tracks in the playlist"
-msgstr "Брой записи в списъка за изпълнение"
-
 #: ../src/media/track/__init__.py:67
 msgid "Full path to the file"
 msgstr "Пълен път до файла"
@@ -104,7 +96,7 @@ msgstr "Този модул не може да бъде зареден."
 msgid "Modules"
 msgstr "Модули"
 
-#: ../src/gui/preferences.py:138 ../src/modules/DesktopNotification.py:212
+#: ../src/gui/preferences.py:138 ../src/modules/DesktopNotification.py:213
 #: ../src/modules/Covers.py:432
 msgid "Description"
 msgstr "Описание"
@@ -201,19 +193,19 @@ msgstr "Файлов браузър"
 msgid "Browse your file system"
 msgstr "Прегледайте вашата файлова система"
 
-#: ../src/modules/FileExplorer.py:159
+#: ../src/modules/FileExplorer.py:158
 msgid "loading..."
 msgstr "зареждане…"
 
-#: ../src/modules/FileExplorer.py:335
+#: ../src/modules/FileExplorer.py:334
 msgid "Append"
 msgstr ""
 
-#: ../src/modules/FileExplorer.py:444
+#: ../src/modules/FileExplorer.py:443
 msgid "Music"
 msgstr ""
 
-#: ../src/modules/FileExplorer.py:444
+#: ../src/modules/FileExplorer.py:443
 #, fuzzy
 msgid "Albums"
 msgstr "Албум"
@@ -230,7 +222,7 @@ msgstr "Трябва да ги инсталирате, ако искате да 
 msgid "Restart required"
 msgstr "Изисква се рестартиране"
 
-#: ../src/modules/__init__.py:266
+#: ../src/modules/__init__.py:267
 msgid "You must restart the application for this modification to take effect."
 msgstr "Трябва да рестартирате приложението за да се отрази промяната."
 
@@ -260,7 +252,7 @@ msgstr "Покажи известие на работния плот при см
 msgid "Skip track"
 msgstr "Пропусни записа"
 
-#: ../src/modules/DesktopNotification.py:213
+#: ../src/modules/DesktopNotification.py:214
 msgid ""
 "This module displays a small popup window on your desktop when a new track "
 "starts."
@@ -268,15 +260,15 @@ msgstr ""
 "Този модул показва малък изкачащ прозорец на работния плот когато започва "
 "нов запис."
 
-#: ../src/modules/DesktopNotification.py:214
+#: ../src/modules/DesktopNotification.py:215
 msgid "If the Covers module is enabled, the popup also shows the album cover."
 msgstr ""
 
-#: ../src/modules/DesktopNotification.py:215
+#: ../src/modules/DesktopNotification.py:216
 msgid "Customizing the Notification"
 msgstr "Параметри на известията"
 
-#: ../src/modules/DesktopNotification.py:216
+#: ../src/modules/DesktopNotification.py:217
 msgid ""
 "You can change the title and the body of the notification to any text you "
 "want. Before displaying the popup window, fields of the form {field} are "
@@ -284,11 +276,11 @@ msgid ""
 "\n"
 msgstr ""
 
-#: ../src/modules/DesktopNotification.py:219
+#: ../src/modules/DesktopNotification.py:220
 msgid "Markup"
 msgstr "Маркиране"
 
-#: ../src/modules/DesktopNotification.py:220
+#: ../src/modules/DesktopNotification.py:221
 msgid ""
 "You can use the Pango markup language to format the text. More information "
 "on that language is available on the following web page:"
@@ -361,16 +353,15 @@ msgid ""
 "none, the cover is downloaded."
 msgstr ""
 
-#: ../src/modules/Tracktree.py:327
+#: ../src/modules/Tracktree.py:366
 msgid "Save playlist"
 msgstr "Запазване на списъка"
 
-#: ../src/modules/Tracktree.py:376
+#: ../src/modules/Tracktree.py:415
 msgid "Clear Playlist"
 msgstr "Изчисти списъка за изпълнение"
 
-#: ../src/modules/Equalizer.py:24 ../src/modules/Equalizer.py:55
-#: ../src/modules/Equalizer.py:69
+#: ../src/modules/Equalizer.py:24
 msgid "Equalizer"
 msgstr "Еквалайзер"
 
@@ -382,24 +373,24 @@ msgstr ""
 msgid "Flat"
 msgstr ""
 
-#: ../src/modules/Equalizer.py:123 ../src/modules/Equalizer.py:211
-#: ../src/modules/Equalizer.py:224
+#: ../src/modules/Equalizer.py:125 ../src/modules/Equalizer.py:213
+#: ../src/modules/Equalizer.py:226
 msgid "Custom"
 msgstr ""
 
-#: ../src/modules/Equalizer.py:164
+#: ../src/modules/Equalizer.py:166
 msgid "Save levels"
 msgstr ""
 
-#: ../src/modules/Equalizer.py:175
+#: ../src/modules/Equalizer.py:177
 msgid "Load levels"
 msgstr ""
 
-#: ../src/modules/Equalizer.py:202
+#: ../src/modules/Equalizer.py:204
 msgid "Could not load the file"
 msgstr "Файлът не може да се зареди"
 
-#: ../src/modules/Equalizer.py:202
+#: ../src/modules/Equalizer.py:204
 msgid "The format of the file is incorrect."
 msgstr "Неточен формат на файла"
 
@@ -502,6 +493,12 @@ msgstr "Изпълни предходният запис"
 #: ../res/MainWindow.glade.h:4
 msgid "Seek a position in the current track"
 msgstr "Търси определено място в текущия запис"
+
+#~ msgid "Position of the track in the playlist"
+#~ msgstr "Място на записа в списъка за изпълнение"
+
+#~ msgid "Number of tracks in the playlist"
+#~ msgstr "Брой записи в списъка за изпълнение"
 
 #~ msgid ""
 #~ "Enter your username and password for\n"

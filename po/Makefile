@@ -8,7 +8,7 @@ GLADEHFILES := $(GLADEFILES:.glade=.glade.h)
 
 help:
 	@echo USAGE:
-	@echo "make update - updates messages.pot and .po files"
+	@echo "make update - updates pogo.pot and .po files"
 	@echo "make dist   - creates .mo files in ../locale dir"
 	@echo "make pl.po  - updates pl.po file OR creates new one"
 	@echo "              (replace 'pl' with your language code)"
@@ -18,13 +18,13 @@ help:
 	sed -i '/^char \*s = N_("gtk-.*");$$/d' $@
 
 
-messages.pot: $(GLADEHFILES) $(PYFILES)
-	xgettext -k_ -kN_ -o messages.pot $(PYFILES) $(GLADEHFILES) --from-code=utf-8
+pogo.pot: $(GLADEHFILES) $(PYFILES)
+	xgettext -k_ -kN_ -o pogo.pot $(PYFILES) $(GLADEHFILES) --from-code=utf-8
 
-%.po: messages.pot
+%.po: pogo.pot
 	@if test -f $@; then \
 		echo -n "Updating '$*' language ";\
-		msgmerge -U $@ messages.pot;\
+		msgmerge -U $@ pogo.pot;\
 	else \
 		msginit -l $*.UTF8 -o $@; \
 	fi
@@ -43,6 +43,6 @@ dist: $(POFILES:%.po=../locale/%/LC_MESSAGES/pogo.mo)
 clean:
 	$(RM) $(GLADEHFILES)
 	$(RM) $(POFILES:%.po=../locale/%/LC_MESSAGES/pogo.mo)
-	#$(RM) messages.pot
+	#$(RM) pogo.pot
 
 .PHONY:  update

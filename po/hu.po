@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: decibel-audio-player\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-10-05 03:15+0200\n"
+"POT-Creation-Date: 2010-10-07 12:23+0200\n"
 "PO-Revision-Date: 2009-03-12 11:15+0000\n"
 "Last-Translator: gibbis <Unknown>\n"
 "Language-Team: Hungarian <hu@li.org>\n"
@@ -62,14 +62,6 @@ msgstr "Időtartam másodpercben (pl. 194)"
 msgid "Duration as a string (e.g., 3:14)"
 msgstr "Időtartam percben (pl. 3:14)"
 
-#: ../src/media/track/__init__.py:65
-msgid "Position of the track in the playlist"
-msgstr "A szám pozíciója a lejátszási listában"
-
-#: ../src/media/track/__init__.py:66
-msgid "Number of tracks in the playlist"
-msgstr "Dalok száma a lejátszási listában"
-
 #: ../src/media/track/__init__.py:67
 msgid "Full path to the file"
 msgstr "Teljes útvonal a fájlhoz"
@@ -104,7 +96,7 @@ msgstr "Nem tudom betölteni ezt a modult"
 msgid "Modules"
 msgstr "Modulok"
 
-#: ../src/gui/preferences.py:138 ../src/modules/DesktopNotification.py:212
+#: ../src/gui/preferences.py:138 ../src/modules/DesktopNotification.py:213
 #: ../src/modules/Covers.py:432
 msgid "Description"
 msgstr "Leírás"
@@ -205,19 +197,19 @@ msgstr "File böngésző"
 msgid "Browse your file system"
 msgstr "Fájlrendszer böngészése"
 
-#: ../src/modules/FileExplorer.py:159
+#: ../src/modules/FileExplorer.py:158
 msgid "loading..."
 msgstr "töltés folyamatban..."
 
-#: ../src/modules/FileExplorer.py:335
+#: ../src/modules/FileExplorer.py:334
 msgid "Append"
 msgstr ""
 
-#: ../src/modules/FileExplorer.py:444
+#: ../src/modules/FileExplorer.py:443
 msgid "Music"
 msgstr ""
 
-#: ../src/modules/FileExplorer.py:444
+#: ../src/modules/FileExplorer.py:443
 #, fuzzy
 msgid "Albums"
 msgstr "Album"
@@ -234,7 +226,7 @@ msgstr "A modul engedélyezéséhez telepítenie kell azokat."
 msgid "Restart required"
 msgstr ""
 
-#: ../src/modules/__init__.py:266
+#: ../src/modules/__init__.py:267
 msgid "You must restart the application for this modification to take effect."
 msgstr ""
 
@@ -264,7 +256,7 @@ msgstr "Értesítsen az Írópulton számváltáskor"
 msgid "Skip track"
 msgstr "Zeneszám kihagyása"
 
-#: ../src/modules/DesktopNotification.py:213
+#: ../src/modules/DesktopNotification.py:214
 msgid ""
 "This module displays a small popup window on your desktop when a new track "
 "starts."
@@ -272,15 +264,15 @@ msgstr ""
 "Ez a modul apró felugró ablakot jelentet meg az Írópulton, mikor új zeneszám "
 "indul."
 
-#: ../src/modules/DesktopNotification.py:214
+#: ../src/modules/DesktopNotification.py:215
 msgid "If the Covers module is enabled, the popup also shows the album cover."
 msgstr ""
 
-#: ../src/modules/DesktopNotification.py:215
+#: ../src/modules/DesktopNotification.py:216
 msgid "Customizing the Notification"
 msgstr "Az értesítés testreszabása"
 
-#: ../src/modules/DesktopNotification.py:216
+#: ../src/modules/DesktopNotification.py:217
 msgid ""
 "You can change the title and the body of the notification to any text you "
 "want. Before displaying the popup window, fields of the form {field} are "
@@ -292,11 +284,11 @@ msgstr ""
 "kitöltve. A lehetséges értékek:\n"
 "\n"
 
-#: ../src/modules/DesktopNotification.py:219
+#: ../src/modules/DesktopNotification.py:220
 msgid "Markup"
 msgstr "Leíró nyelv"
 
-#: ../src/modules/DesktopNotification.py:220
+#: ../src/modules/DesktopNotification.py:221
 msgid ""
 "You can use the Pango markup language to format the text. More information "
 "on that language is available on the following web page:"
@@ -382,16 +374,15 @@ msgstr ""
 "letölthetöekkel szemben. Ebben az esetben ha a zeneszám mellett létezik "
 "borító, az lesz használva. Ha nincsen akkor az internetöl letöltött."
 
-#: ../src/modules/Tracktree.py:327
+#: ../src/modules/Tracktree.py:366
 msgid "Save playlist"
 msgstr "Lejátszólista mentése"
 
-#: ../src/modules/Tracktree.py:376
+#: ../src/modules/Tracktree.py:415
 msgid "Clear Playlist"
 msgstr ""
 
-#: ../src/modules/Equalizer.py:24 ../src/modules/Equalizer.py:55
-#: ../src/modules/Equalizer.py:69
+#: ../src/modules/Equalizer.py:24
 msgid "Equalizer"
 msgstr ""
 
@@ -403,24 +394,24 @@ msgstr ""
 msgid "Flat"
 msgstr ""
 
-#: ../src/modules/Equalizer.py:123 ../src/modules/Equalizer.py:211
-#: ../src/modules/Equalizer.py:224
+#: ../src/modules/Equalizer.py:125 ../src/modules/Equalizer.py:213
+#: ../src/modules/Equalizer.py:226
 msgid "Custom"
 msgstr ""
 
-#: ../src/modules/Equalizer.py:164
+#: ../src/modules/Equalizer.py:166
 msgid "Save levels"
 msgstr ""
 
-#: ../src/modules/Equalizer.py:175
+#: ../src/modules/Equalizer.py:177
 msgid "Load levels"
 msgstr ""
 
-#: ../src/modules/Equalizer.py:202
+#: ../src/modules/Equalizer.py:204
 msgid "Could not load the file"
 msgstr ""
 
-#: ../src/modules/Equalizer.py:202
+#: ../src/modules/Equalizer.py:204
 msgid "The format of the file is incorrect."
 msgstr ""
 
@@ -523,6 +514,12 @@ msgstr "Előző szám lejátszása"
 #: ../res/MainWindow.glade.h:4
 msgid "Seek a position in the current track"
 msgstr "Aktuáis számban való keresés"
+
+#~ msgid "Position of the track in the playlist"
+#~ msgstr "A szám pozíciója a lejátszási listában"
+
+#~ msgid "Number of tracks in the playlist"
+#~ msgstr "Dalok száma a lejátszási listában"
 
 #~ msgid ""
 #~ "Enter your username and password for\n"
