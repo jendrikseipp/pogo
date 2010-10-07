@@ -87,8 +87,10 @@ class Tracktree(modules.Module):
             #elif self.tree.row_expanded(child):     grandChildren = self.getTreeDump(child)
             #else:                                   grandChildren = []
             else: grandChildren = self.getTreeDump(child)
+            
+            name = row[ROW_NAME].replace('<b>', '').replace('</b>', '')
 
-            list.append([(row[ROW_NAME], row[ROW_TRK]), grandChildren])
+            list.append([(name, row[ROW_TRK]), grandChildren])
 
         return list
 

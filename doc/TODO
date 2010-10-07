@@ -1,5 +1,8 @@
 === Roadmap ===
 
+0.2:
+O Make startup even faster by saving the playlist with its formatting
+
 0.x:
 O Enable DBus
 O Search
