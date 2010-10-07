@@ -196,7 +196,7 @@ class TrackDir(object):
         return res
         
     
-def getTracks(filenames, sortByFilename=False):
+def getTracks(filenames, sortByFilename=True):
     """ Same as getTracksFromFiles(), but works for any kind of filenames (files, playlists, directories) """
     assert type(filenames) == list, 'filenames has to be a list'
     

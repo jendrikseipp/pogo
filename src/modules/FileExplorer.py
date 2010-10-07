@@ -517,4 +517,7 @@ class FileExplorer(modules.Module):
         """
         paths = [row[ROW_FULLPATH] for row in tree.getSelectedRows()]
         modules.postMsg(consts.MSG_CMD_FILE_EXPLORER_DRAG_BEGIN, {'paths': paths})
-        
+        #idle_add(media.getTracks, paths)
+        import threading
+        crawler = threading.Thread(target=media.getTracks, args=(paths,))
+        crawler.start()
