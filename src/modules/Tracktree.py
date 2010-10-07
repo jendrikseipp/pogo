@@ -18,13 +18,14 @@
 # Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301 USA
 
 import os
+import traceback
 
 import gtk, gobject
 
-import gui, media, modules, tools, os
+import gui, media, modules, tools
 
 from gui             import fileChooser
-from tools           import consts, icons
+from tools           import consts, icons, prefs, pickleLoad, pickleSave, log
 from gettext         import gettext as _
 from gobject         import TYPE_STRING, TYPE_INT, TYPE_PYOBJECT
 from gui.widgets     import TrackTreeView
@@ -59,6 +60,7 @@ class Tracktree(modules.Module):
                         consts.MSG_CMD_PREVIOUS:          self.jumpToPrevious,
                         consts.MSG_EVT_NEED_BUFFER:       self.onBufferingNeeded,
                         consts.MSG_EVT_APP_STARTED:       self.onAppStarted,
+                        consts.MSG_EVT_APP_QUIT:          self.onAppQuit,
                         consts.MSG_CMD_TOGGLE_PAUSE:      self.togglePause,
                         consts.MSG_CMD_TRACKLIST_DEL:     self.remove,
                         consts.MSG_CMD_TRACKLIST_ADD:     self.insert,
@@ -72,6 +74,43 @@ class Tracktree(modules.Module):
                    }
 
         modules.Module.__init__(self, handlers)
+        
+        
+    def getTreeDump(self, path=None):
+        """ Recursively dump the given tree starting at path (None for the root of the tree) """
+        list = []
+
+        for child in self.tree.iterChildren(path):
+            row = self.tree.getRow(child)
+
+            if self.tree.getNbChildren(child) == 0: grandChildren = None
+            #elif self.tree.row_expanded(child):     grandChildren = self.getTreeDump(child)
+            #else:                                   grandChildren = []
+            else: grandChildren = self.getTreeDump(child)
+
+            list.append([(row[ROW_NAME], row[ROW_TRK]), grandChildren])
+
+        return list
+
+
+    def restoreTreeDump(self, dump, parent=None):
+        """ Recursively restore the dump under the given parent (None for the root of the tree) """
+        for item in dump:
+            (name, track) = item[0]
+
+            if track:
+                self.tree.appendRow((icons.nullMenuIcon(), name, track), parent)
+            else:
+                newNode = self.tree.appendRow((icons.mediaDirMenuIcon(), name, None), parent)
+
+                if item[1] is not None:
+                    #fakeChild = self.tree.appendRow((icons.dirMenuIcon(), '', TYPE_NONE, ''), newNode)
+
+                    if len(item[1]) != 0:
+                        # We must expand the row before adding the real children, but this works only if there is already at least one child
+                        #self.tree.expandRow(newNode)
+                        self.restoreTreeDump(item[1], newNode)
+                        #self.tree.removeRow(fakeChild)
         
         
     def getTracks(self, rows):
@@ -443,6 +482,35 @@ class Tracktree(modules.Module):
         # Set icons
         #wTree.get_widget('img-repeat').set_from_icon_name('stock_repeat', gtk.ICON_SIZE_BUTTON)
         #wTree.get_widget('img-shuffle').set_from_icon_name('stock_shuffle', gtk.ICON_SIZE_BUTTON)
+        
+        # Populate the playlist with commandline args or the saved playlist
+        (options, args)    = prefs.getCmdLine()
+
+        if len(args) != 0:
+            log.logger.info('[%s] Filling playlist with files given on command line' % MOD_INFO[modules.MODINFO_NAME])
+            modules.postMsg(consts.MSG_CMD_TRACKLIST_SET, {'tracks': media.getTracks(args), 'playNow': True})
+        else:
+            dump = None
+            self.savedPlaylist = os.path.join(consts.dirCfg, 'saved-playlist')
+            if os.path.exists(self.savedPlaylist):
+                try:
+                    dump = pickleLoad(self.savedPlaylist)
+                except:
+                    msg = '[%s] Unable to restore playlist from %s\n\n%s'
+                    log.logger.error(msg % (MOD_INFO[modules.MODINFO_NAME], 
+                                    self.savedPlaylist, traceback.format_exc()))
+            
+            if dump:
+                self.restoreTreeDump(dump)
+                log.logger.info('[%s] Restored playlist' % MOD_INFO[modules.MODINFO_NAME])
+                self.tree.collapse_all()
+                self.onListModified()
+        
+    
+    def onAppQuit(self):
+        """ The module is going to be unloaded """
+        dump = self.getTreeDump()
+        pickleSave(self.savedPlaylist, dump)
 
 
     def onTrackEnded(self, withError):
@@ -530,7 +598,10 @@ class Tracktree(modules.Module):
 
     def onListModified(self):
         """ Some rows have been added/removed/moved """
+        # Getting the trackdir takes virtually no time, so we can do it on every
+        # paylist change
         tracks = self.getTrackDir()
+        self.playtime = tracks.get_playtime()
         
         modules.postMsg(consts.MSG_EVT_NEW_TRACKLIST, {'tracks': tracks, 'playtime': self.playtime})
 
