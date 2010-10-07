@@ -49,7 +49,7 @@ class Equalizer(modules.Module):
     def modInit(self):
         """ Initialize the module """
         self.lvls      = prefs.get(__name__, 'levels', [0, 0, 0, 0, 0, 0, 0, 0, 0, 0])
-        self.preset    = prefs.get(__name__, 'preset', _('Flat'))
+        self.preset    = prefs.get(__name__, 'preset', 'Flat')
         self.cfgWindow = None
 
         # We do not have the edit menu anymore

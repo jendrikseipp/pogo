@@ -61,29 +61,32 @@ class StatusbarTitlebar(modules.Module):
         if count == 0:
             self.status1.set_label('')
         else:
-            self.status1.set_label(ngettext('One track in playlist  [%(length)s]', '%(count)u tracks in playlist  [%(length)s]', count) \
-                                      % {'count': count, 'length': tools.sec2str(self.playtime)})
+            label = 'Tracks in playlist: %s  [%s]' % (count, tools.sec2str(self.playtime))
+            ##self.status1.set_label(ngettext('One track in playlist  [%(length)s]', '%(count)u tracks in playlist  [%(length)s]', count) \
+            ##                          % {'count': count, 'length': tools.sec2str(self.playtime)})
+            self.status1.set_label(label)
 
         # Selected tracks
         count = len(self.selTracks)
         if count == 0:
             self.status2.set_label('')
         else:
-            selection = ngettext('One track selected', '%(count)u tracks selected', count) % {'count': count}
+            ##selection = ngettext('One track selected', '%(count)u tracks selected', count) % {'count': count}
+            selection = 'Tracks selected: %s' % (count)
 
             audioType = self.selTracks[0].getType()
             for track in self.selTracks[1:]:
                 if track.getType() != audioType:
-                    audioType = _('various')
+                    audioType = ('various')
                     break
 
             bitrate = self.selTracks[0].getBitrate()
             for track in self.selTracks[1:]:
                 if track.getBitrate() != bitrate:
-                    bitrate = _('various')
+                    bitrate = ('various')
                     break
 
-            self.status2.set_label(_('%(selection)s (Type: %(type)s, Bitrate: %(bitrate)s)') % {'selection': selection, 'type': audioType, 'bitrate': bitrate})
+            self.status2.set_label(('%(selection)s (Type: %(type)s, Bitrate: %(bitrate)s)') % {'selection': selection, 'type': audioType, 'bitrate': bitrate})
 
 
     # --== Message handlers ==--

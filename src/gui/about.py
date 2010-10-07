@@ -47,7 +47,7 @@ def show(parent):
         '',
         _('Thanks to:'),
         'François Ingelrest <Francois.Ingelrest@gmail.com>',
-        _('(Developer of Decibel Audio Player)')
+        '(Developer of Decibel Audio Player)',
     ])
 
     # Set logo

@@ -1,12 +1,13 @@
 === Roadmap ===
 
 0.2:
-O Make startup even faster by saving the playlist with its formatting
+X Make startup even faster by saving the playlist with its formatting
+X Make track drag'n'drop faster by caching the tracks
+X Enable DBus: Send MPRIS messages about play events
+X Do some profiling to improve general speed
 
 0.x:
-O Enable DBus
 O Search
-O Profiling
 O Stop after current album / track
 O Save playlist
 O Enqueue
@@ -24,6 +25,7 @@ O Sound Indicator
 O Party View
 O Play audio CDs?
 O Let user add more directories to file browser?
+O Scrobbling Support?
 
 
 === Features that will not be implemented ===
