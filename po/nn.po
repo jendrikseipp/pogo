@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: decibel-audio-player\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-10-07 15:12+0200\n"
+"POT-Creation-Date: 2010-10-07 15:37+0200\n"
 "PO-Revision-Date: 2008-04-22 07:57+0000\n"
 "Last-Translator: Jon Stødle <jonstodle@gmail.com>\n"
 "Language-Team: Norwegian Nynorsk <nn@li.org>\n"
@@ -98,22 +98,21 @@ msgid "Description"
 msgstr "Skildring"
 
 #: ../src/gui/preferences.py:139
+#, fuzzy
 msgid ""
-"This dialog box shows the list of available modules, which are small pieces "
-"of code that add some functionnalities to the application. You can enable/"
-"disable a module by checking/unchecking the check box in front of it. Note "
-"that some modules (e.g., the File Explorer) cannot be disabled."
+"This window shows the list of available modules. You can enable/disable a "
+"module by checking/unchecking the check box in front of it."
 msgstr ""
 "Denne dialogboksen viser lista over tilgjengelege modular, som er små "
 "kodesnuttar som legg til funksjonar til programmet. Du kan slå ein modul av/"
 "på ved å merke/avmerke avmerkingsboksane framføre dei. Merk at nokre modular "
 "(td filutforskaren) kan ikkje verte skrudd av."
 
-#: ../src/gui/preferences.py:142
+#: ../src/gui/preferences.py:141
 msgid "Configuring a Module"
 msgstr "Still inn ein modul"
 
-#: ../src/gui/preferences.py:143
+#: ../src/gui/preferences.py:142
 msgid ""
 "When a module may be configured, a specific icon is displayed on the right "
 "of the corresponding line. To configure a module, simply select it and then "
@@ -175,14 +174,6 @@ msgstr "TAkk til:"
 #: ../src/modules/Zeitgeist.py:26
 msgid "Send track information to the Zeitgeist service"
 msgstr ""
-
-#: ../src/modules/FileExplorer.py:28
-msgid "File Explorer"
-msgstr "Filutforskar"
-
-#: ../src/modules/FileExplorer.py:28
-msgid "Browse your file system"
-msgstr "Bla gjennom filsystemet"
 
 #: ../src/modules/FileExplorer.py:158
 msgid "loading..."
@@ -458,9 +449,14 @@ msgstr "Spel neste spor"
 msgid "Play the previous track"
 msgstr "Spel førre spor"
 
-#: ../res/MainWindow.glade.h:4
-msgid "Seek a position in the current track"
-msgstr "Søk etter stad i gjeldande spor"
+#~ msgid "File Explorer"
+#~ msgstr "Filutforskar"
+
+#~ msgid "Browse your file system"
+#~ msgstr "Bla gjennom filsystemet"
+
+#~ msgid "Seek a position in the current track"
+#~ msgstr "Søk etter stad i gjeldande spor"
 
 #~ msgid "Position of the track in the playlist"
 #~ msgstr "Plassen til sporet i spelelista"

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: decibel-audio-player\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-10-07 15:12+0200\n"
+"POT-Creation-Date: 2010-10-07 15:37+0200\n"
 "PO-Revision-Date: 2009-08-02 21:24+0000\n"
 "Last-Translator: kitzOgen <kitzogen@gmail.com>\n"
 "Language-Team: Esperanto <eo@li.org>\n"
@@ -99,17 +99,15 @@ msgstr "Priskribo"
 
 #: ../src/gui/preferences.py:139
 msgid ""
-"This dialog box shows the list of available modules, which are small pieces "
-"of code that add some functionnalities to the application. You can enable/"
-"disable a module by checking/unchecking the check box in front of it. Note "
-"that some modules (e.g., the File Explorer) cannot be disabled."
+"This window shows the list of available modules. You can enable/disable a "
+"module by checking/unchecking the check box in front of it."
 msgstr ""
 
-#: ../src/gui/preferences.py:142
+#: ../src/gui/preferences.py:141
 msgid "Configuring a Module"
 msgstr ""
 
-#: ../src/gui/preferences.py:143
+#: ../src/gui/preferences.py:142
 msgid ""
 "When a module may be configured, a specific icon is displayed on the right "
 "of the corresponding line. To configure a module, simply select it and then "
@@ -164,14 +162,6 @@ msgstr "Dankon al:"
 
 #: ../src/modules/Zeitgeist.py:26
 msgid "Send track information to the Zeitgeist service"
-msgstr ""
-
-#: ../src/modules/FileExplorer.py:28
-msgid "File Explorer"
-msgstr ""
-
-#: ../src/modules/FileExplorer.py:28
-msgid "Browse your file system"
 msgstr ""
 
 #: ../src/modules/FileExplorer.py:158
@@ -438,10 +428,6 @@ msgstr ""
 
 #: ../res/MainWindow.glade.h:3
 msgid "Play the previous track"
-msgstr ""
-
-#: ../res/MainWindow.glade.h:4
-msgid "Seek a position in the current track"
 msgstr ""
 
 #~ msgid "Number of tracks in the playlist"

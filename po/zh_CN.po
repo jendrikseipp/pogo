@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: decibel-audio-player\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-10-07 15:12+0200\n"
+"POT-Creation-Date: 2010-10-07 15:37+0200\n"
 "PO-Revision-Date: 2008-09-13 16:03+0000\n"
 "Last-Translator: Aron Xu <happyaron.xu@gmail.com>\n"
 "Language-Team: Simplified Chinese <zh_CN@li.org>\n"
@@ -98,21 +98,20 @@ msgid "Description"
 msgstr "描述"
 
 #: ../src/gui/preferences.py:139
+#, fuzzy
 msgid ""
-"This dialog box shows the list of available modules, which are small pieces "
-"of code that add some functionnalities to the application. You can enable/"
-"disable a module by checking/unchecking the check box in front of it. Note "
-"that some modules (e.g., the File Explorer) cannot be disabled."
+"This window shows the list of available modules. You can enable/disable a "
+"module by checking/unchecking the check box in front of it."
 msgstr ""
 "该对话窗口显示可用模块列表，模块是指为程序增添某些功能的少量代码。你可以通过"
 "选择/清除某个模块前面的复选框来激活/禁用它。注意，有一些模块（如文件浏览器）"
 "无法被禁用。"
 
-#: ../src/gui/preferences.py:142
+#: ../src/gui/preferences.py:141
 msgid "Configuring a Module"
 msgstr "配置一个模块"
 
-#: ../src/gui/preferences.py:143
+#: ../src/gui/preferences.py:142
 msgid ""
 "When a module may be configured, a specific icon is displayed on the right "
 "of the corresponding line. To configure a module, simply select it and then "
@@ -175,14 +174,6 @@ msgstr "鸣谢："
 #: ../src/modules/Zeitgeist.py:26
 msgid "Send track information to the Zeitgeist service"
 msgstr ""
-
-#: ../src/modules/FileExplorer.py:28
-msgid "File Explorer"
-msgstr "文件浏览器"
-
-#: ../src/modules/FileExplorer.py:28
-msgid "Browse your file system"
-msgstr "浏览你的文件系统"
 
 #: ../src/modules/FileExplorer.py:158
 msgid "loading..."
@@ -456,9 +447,14 @@ msgstr "播放下一音轨"
 msgid "Play the previous track"
 msgstr "播放上一音轨"
 
-#: ../res/MainWindow.glade.h:4
-msgid "Seek a position in the current track"
-msgstr "跳至当前音轨中的某个位置"
+#~ msgid "File Explorer"
+#~ msgstr "文件浏览器"
+
+#~ msgid "Browse your file system"
+#~ msgstr "浏览你的文件系统"
+
+#~ msgid "Seek a position in the current track"
+#~ msgstr "跳至当前音轨中的某个位置"
 
 #~ msgid "Position of the track in the playlist"
 #~ msgstr "播放列表中的音轨位置"

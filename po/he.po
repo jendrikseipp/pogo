@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: decibel-audio-player\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-10-07 15:12+0200\n"
+"POT-Creation-Date: 2010-10-07 15:37+0200\n"
 "PO-Revision-Date: 2008-11-08 12:03+0000\n"
 "Last-Translator: Yaron <sh.yaron@gmail.com>\n"
 "Language-Team: Hebrew <he@li.org>\n"
@@ -98,22 +98,21 @@ msgid "Description"
 msgstr "תיאור"
 
 #: ../src/gui/preferences.py:139
+#, fuzzy
 msgid ""
-"This dialog box shows the list of available modules, which are small pieces "
-"of code that add some functionnalities to the application. You can enable/"
-"disable a module by checking/unchecking the check box in front of it. Note "
-"that some modules (e.g., the File Explorer) cannot be disabled."
+"This window shows the list of available modules. You can enable/disable a "
+"module by checking/unchecking the check box in front of it."
 msgstr ""
 "בתיבת דו שיח זו מוצגים המודולים הזמינים, אשר הינם חלקים קטנים של קוד "
 "המוסיפים תכונות נוספות ליישום. ניתן לבטל/להפעיל מודול על ידי סימון/ביטול "
 "הסימון בתיבת הסימון שלפניו. שימו לב שלא ניתן לבטל כמה מהמודולים (לדוגמה: "
 "סייר הקבצים)."
 
-#: ../src/gui/preferences.py:142
+#: ../src/gui/preferences.py:141
 msgid "Configuring a Module"
 msgstr "הגדרת מודול"
 
-#: ../src/gui/preferences.py:143
+#: ../src/gui/preferences.py:142
 msgid ""
 "When a module may be configured, a specific icon is displayed on the right "
 "of the corresponding line. To configure a module, simply select it and then "
@@ -175,14 +174,6 @@ msgstr "תודות ל:"
 #: ../src/modules/Zeitgeist.py:26
 msgid "Send track information to the Zeitgeist service"
 msgstr ""
-
-#: ../src/modules/FileExplorer.py:28
-msgid "File Explorer"
-msgstr "סייר הקבצים"
-
-#: ../src/modules/FileExplorer.py:28
-msgid "Browse your file system"
-msgstr "סייר במערכת הקבצים שלך"
 
 #: ../src/modules/FileExplorer.py:158
 msgid "loading..."
@@ -466,9 +457,14 @@ msgstr "נגן את הרצועה הבאה"
 msgid "Play the previous track"
 msgstr "נגן את הרצועה הקודמת"
 
-#: ../res/MainWindow.glade.h:4
-msgid "Seek a position in the current track"
-msgstr "חפש מיקום ברצועה הנוכחית"
+#~ msgid "File Explorer"
+#~ msgstr "סייר הקבצים"
+
+#~ msgid "Browse your file system"
+#~ msgstr "סייר במערכת הקבצים שלך"
+
+#~ msgid "Seek a position in the current track"
+#~ msgstr "חפש מיקום ברצועה הנוכחית"
 
 #~ msgid "One track in playlist  [%(length)s]"
 #~ msgid_plural "%(count)u tracks in playlist  [%(length)s]"

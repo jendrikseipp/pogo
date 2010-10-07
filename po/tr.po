@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: decibel-audio-player\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-10-07 15:12+0200\n"
+"POT-Creation-Date: 2010-10-07 15:37+0200\n"
 "PO-Revision-Date: 2008-02-05 02:20+0000\n"
 "Last-Translator: DenizCakir <Unknown>\n"
 "Language-Team: Turkish <tr@li.org>\n"
@@ -98,11 +98,10 @@ msgid "Description"
 msgstr "Tanım"
 
 #: ../src/gui/preferences.py:139
+#, fuzzy
 msgid ""
-"This dialog box shows the list of available modules, which are small pieces "
-"of code that add some functionnalities to the application. You can enable/"
-"disable a module by checking/unchecking the check box in front of it. Note "
-"that some modules (e.g., the File Explorer) cannot be disabled."
+"This window shows the list of available modules. You can enable/disable a "
+"module by checking/unchecking the check box in front of it."
 msgstr ""
 "Bu iletişim kutusu olanaklı modüllerin listesini gösterir. Modüller "
 "uygulamaya kimi beceriler ekleyen küçük kod parçalarıdır. Herhangi bir "
@@ -110,11 +109,11 @@ msgstr ""
 "kılabilirsiniz. Unutmayın ki bazı modüller (örneğin : Dosya Gezgini) "
 "geçersiz kılınamaz."
 
-#: ../src/gui/preferences.py:142
+#: ../src/gui/preferences.py:141
 msgid "Configuring a Module"
 msgstr "Modül Ayarlama"
 
-#: ../src/gui/preferences.py:143
+#: ../src/gui/preferences.py:142
 msgid ""
 "When a module may be configured, a specific icon is displayed on the right "
 "of the corresponding line. To configure a module, simply select it and then "
@@ -171,14 +170,6 @@ msgstr "Teşekkürler:"
 
 #: ../src/modules/Zeitgeist.py:26
 msgid "Send track information to the Zeitgeist service"
-msgstr ""
-
-#: ../src/modules/FileExplorer.py:28
-msgid "File Explorer"
-msgstr ""
-
-#: ../src/modules/FileExplorer.py:28
-msgid "Browse your file system"
 msgstr ""
 
 #: ../src/modules/FileExplorer.py:158
@@ -448,10 +439,6 @@ msgstr ""
 
 #: ../res/MainWindow.glade.h:3
 msgid "Play the previous track"
-msgstr ""
-
-#: ../res/MainWindow.glade.h:4
-msgid "Seek a position in the current track"
 msgstr ""
 
 #~ msgid "Position of the track in the playlist"

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: decibel-audio-player\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-10-07 15:12+0200\n"
+"POT-Creation-Date: 2010-10-07 15:37+0200\n"
 "PO-Revision-Date: 2008-12-22 20:21+0000\n"
 "Last-Translator: koleoptero <Unknown>\n"
 "Language-Team: Greek <el@li.org>\n"
@@ -98,11 +98,10 @@ msgid "Description"
 msgstr "Περιγραφή"
 
 #: ../src/gui/preferences.py:139
+#, fuzzy
 msgid ""
-"This dialog box shows the list of available modules, which are small pieces "
-"of code that add some functionnalities to the application. You can enable/"
-"disable a module by checking/unchecking the check box in front of it. Note "
-"that some modules (e.g., the File Explorer) cannot be disabled."
+"This window shows the list of available modules. You can enable/disable a "
+"module by checking/unchecking the check box in front of it."
 msgstr ""
 "Αυτό το παράθυρο διαλόγου δείχνει τη λίστα με τα διαθέσιμα πρόσθετα, τα "
 "οποία είναι μικρά κομμάτια κώδικα που προσφέρουν κάποιες πρόσθετες "
@@ -111,11 +110,11 @@ msgstr ""
 "σας ότι μερικά πρόσθετα (π.χ. το Εξερευνητής Αρχείων) δεν μπορούν να "
 "απενεργοποιηθούν."
 
-#: ../src/gui/preferences.py:142
+#: ../src/gui/preferences.py:141
 msgid "Configuring a Module"
 msgstr "Ρυθμίζοντας ένα πρόσθετο"
 
-#: ../src/gui/preferences.py:143
+#: ../src/gui/preferences.py:142
 msgid ""
 "When a module may be configured, a specific icon is displayed on the right "
 "of the corresponding line. To configure a module, simply select it and then "
@@ -178,14 +177,6 @@ msgstr "Ευχαριστίες σε:"
 #: ../src/modules/Zeitgeist.py:26
 msgid "Send track information to the Zeitgeist service"
 msgstr ""
-
-#: ../src/modules/FileExplorer.py:28
-msgid "File Explorer"
-msgstr "Εξερευνητής αρχείων"
-
-#: ../src/modules/FileExplorer.py:28
-msgid "Browse your file system"
-msgstr "Πλοηγηθείτε στο σύστημα αρχείων σας"
 
 #: ../src/modules/FileExplorer.py:158
 msgid "loading..."
@@ -478,9 +469,14 @@ msgstr "Αναπαραγωγή επόμενου κομματιού"
 msgid "Play the previous track"
 msgstr "Αναπαραγωγή προηγούμενου κομματιού"
 
-#: ../res/MainWindow.glade.h:4
-msgid "Seek a position in the current track"
-msgstr "Αναζήτηση θέσης στο τρέχον κομμάτι"
+#~ msgid "File Explorer"
+#~ msgstr "Εξερευνητής αρχείων"
+
+#~ msgid "Browse your file system"
+#~ msgstr "Πλοηγηθείτε στο σύστημα αρχείων σας"
+
+#~ msgid "Seek a position in the current track"
+#~ msgstr "Αναζήτηση θέσης στο τρέχον κομμάτι"
 
 #~ msgid "One track in playlist  [%(length)s]"
 #~ msgid_plural "%(count)u tracks in playlist  [%(length)s]"

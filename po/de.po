@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: decibel-audio-player\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-10-07 15:12+0200\n"
+"POT-Creation-Date: 2010-10-07 15:37+0200\n"
 "PO-Revision-Date: 2009-07-02 03:24+0000\n"
 "Last-Translator: Michael Kuhn <Unknown>\n"
 "Language-Team: German <de@li.org>\n"
@@ -98,20 +98,19 @@ msgid "Description"
 msgstr "Beschreibung"
 
 #: ../src/gui/preferences.py:139
+#, fuzzy
 msgid ""
-"This dialog box shows the list of available modules, which are small pieces "
-"of code that add some functionnalities to the application. You can enable/"
-"disable a module by checking/unchecking the check box in front of it. Note "
-"that some modules (e.g., the File Explorer) cannot be disabled."
+"This window shows the list of available modules. You can enable/disable a "
+"module by checking/unchecking the check box in front of it."
 msgstr ""
 "Dieser Dialog zeigt die verfügbaren Module. Module erweitern das Programm um "
 "nützliche Funktionen. Einige Module können nicht deaktiviert werden."
 
-#: ../src/gui/preferences.py:142
+#: ../src/gui/preferences.py:141
 msgid "Configuring a Module"
 msgstr "Modulkonfiguration"
 
-#: ../src/gui/preferences.py:143
+#: ../src/gui/preferences.py:142
 msgid ""
 "When a module may be configured, a specific icon is displayed on the right "
 "of the corresponding line. To configure a module, simply select it and then "
@@ -181,14 +180,6 @@ msgstr "Dank an:"
 #: ../src/modules/Zeitgeist.py:26
 msgid "Send track information to the Zeitgeist service"
 msgstr ""
-
-#: ../src/modules/FileExplorer.py:28
-msgid "File Explorer"
-msgstr "Dateimanager"
-
-#: ../src/modules/FileExplorer.py:28
-msgid "Browse your file system"
-msgstr "Durchsuchen Sie ihr Dateisystem"
 
 #: ../src/modules/FileExplorer.py:158
 msgid "loading..."
@@ -476,9 +467,14 @@ msgstr "Nächstes Stück spielen"
 msgid "Play the previous track"
 msgstr "Vorheriges Stück spielen"
 
-#: ../res/MainWindow.glade.h:4
-msgid "Seek a position in the current track"
-msgstr "Position im aktuellen Stück suchen"
+#~ msgid "File Explorer"
+#~ msgstr "Dateimanager"
+
+#~ msgid "Browse your file system"
+#~ msgstr "Durchsuchen Sie ihr Dateisystem"
+
+#~ msgid "Seek a position in the current track"
+#~ msgstr "Position im aktuellen Stück suchen"
 
 #~ msgid "One track in playlist  [%(length)s]"
 #~ msgid_plural "%(count)u tracks in playlist  [%(length)s]"
