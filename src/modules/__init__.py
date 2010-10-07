@@ -263,7 +263,8 @@ class ModuleBase:
         pass
 
     def restartRequired(self):
-        gobject.idle_add(gui.infoMsgBox, None, _('Restart required'), _('You must restart the application for this modification to take effect.'))
+        gobject.idle_add(gui.infoMsgBox, None, _('Restart required'), 
+            _('You must restart the application for this modification to take effect.'))
 
 
 
@@ -355,6 +356,7 @@ mEnabledModules = prefs.get(__name__, 'enabled_modules', [])                   #
 blacklist = [   'DBus', 
                 #'GnomeMediaKeys', 
                 'Zeitgeist',
+                'CommandLine'
             ]
 
 
