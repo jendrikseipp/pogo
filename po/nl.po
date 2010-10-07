@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: decibel-audio-player\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-10-07 12:23+0200\n"
+"POT-Creation-Date: 2010-10-07 15:12+0200\n"
 "PO-Revision-Date: 2009-05-28 10:58+0000\n"
 "Last-Translator: Robert Wubs <wubsieonline@gmail.com>\n"
 "Language-Team: Dutch <nl@li.org>\n"
@@ -66,9 +66,10 @@ msgstr "Duur als in een string (bijv. 3:14)"
 msgid "Full path to the file"
 msgstr "Volledig pad naar het bestand"
 
-#: ../src/media/track/__init__.py:149
-msgid "N/A"
-msgstr ""
+#: ../src/media/track/__init__.py:149 ../src/media/track/__init__.py:393
+#, fuzzy
+msgid "unknown"
+msgstr "Onbekend Genre"
 
 #: ../src/media/track/__init__.py:175
 #, python-format
@@ -78,11 +79,6 @@ msgstr "%(album)s [Schijf %(discnum)u]"
 #: ../src/media/track/__init__.py:182
 msgid "CDDA Track"
 msgstr ""
-
-#: ../src/media/track/__init__.py:393
-#, fuzzy
-msgid "unknown"
-msgstr "Onbekend Genre"
 
 #: ../src/gui/preferences.py:43
 msgid "Preferences"
@@ -178,10 +174,6 @@ msgstr "Ontwikkelaar:"
 #: ../src/gui/about.py:48
 msgid "Thanks to:"
 msgstr "Met dank aan:"
-
-#: ../src/gui/about.py:50
-msgid "(Developer of Decibel Audio Player)"
-msgstr ""
 
 #: ../src/modules/Zeitgeist.py:26
 msgid "Send track information to the Zeitgeist service"
@@ -299,30 +291,6 @@ msgstr ""
 msgid "[paused]"
 msgstr "[gepauzeerd]"
 
-#: ../src/modules/StatusbarTitlebar.py:64
-#, python-format
-msgid "One track in playlist  [%(length)s]"
-msgid_plural "%(count)u tracks in playlist  [%(length)s]"
-msgstr[0] "Eén nummer in afspeellijst [%(length)s]"
-msgstr[1] "%(count)u nummers in afspeellijst [%(length)s]"
-
-#: ../src/modules/StatusbarTitlebar.py:72
-#, python-format
-msgid "One track selected"
-msgid_plural "%(count)u tracks selected"
-msgstr[0] ""
-msgstr[1] ""
-
-#: ../src/modules/StatusbarTitlebar.py:77
-#: ../src/modules/StatusbarTitlebar.py:83
-msgid "various"
-msgstr ""
-
-#: ../src/modules/StatusbarTitlebar.py:86
-#, python-format
-msgid "%(selection)s (Type: %(type)s, Bitrate: %(bitrate)s)"
-msgstr ""
-
 #: ../src/modules/Covers.py:28
 msgid "Covers"
 msgstr "Omslagen"
@@ -374,11 +342,11 @@ msgstr ""
 "bestaat voor het huidige nummer, wordt het gebruikt. Als er geen is, dan "
 "wordt de omslag gedownload."
 
-#: ../src/modules/Tracktree.py:366
+#: ../src/modules/Tracktree.py:368
 msgid "Save playlist"
 msgstr "Afspeellijst opslaan"
 
-#: ../src/modules/Tracktree.py:415
+#: ../src/modules/Tracktree.py:417
 msgid "Clear Playlist"
 msgstr ""
 
@@ -388,10 +356,6 @@ msgstr ""
 
 #: ../src/modules/Equalizer.py:24
 msgid "Tune the level of the frequency bands"
-msgstr ""
-
-#: ../src/modules/Equalizer.py:52
-msgid "Flat"
 msgstr ""
 
 #: ../src/modules/Equalizer.py:125 ../src/modules/Equalizer.py:213
@@ -514,6 +478,11 @@ msgstr "Speel het vorige nummer af"
 #: ../res/MainWindow.glade.h:4
 msgid "Seek a position in the current track"
 msgstr "Zoek naar een positie in het huidige nummer"
+
+#~ msgid "One track in playlist  [%(length)s]"
+#~ msgid_plural "%(count)u tracks in playlist  [%(length)s]"
+#~ msgstr[0] "Eén nummer in afspeellijst [%(length)s]"
+#~ msgstr[1] "%(count)u nummers in afspeellijst [%(length)s]"
 
 #~ msgid "Position of the track in the playlist"
 #~ msgstr "Positie van het nummer in de afspeellijst"

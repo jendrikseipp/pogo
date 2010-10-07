@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: decibel-audio-player\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-10-07 12:23+0200\n"
+"POT-Creation-Date: 2010-10-07 15:12+0200\n"
 "PO-Revision-Date: 2009-03-12 11:15+0000\n"
 "Last-Translator: gibbis <Unknown>\n"
 "Language-Team: Hungarian <hu@li.org>\n"
@@ -66,9 +66,10 @@ msgstr "Időtartam percben (pl. 3:14)"
 msgid "Full path to the file"
 msgstr "Teljes útvonal a fájlhoz"
 
-#: ../src/media/track/__init__.py:149
-msgid "N/A"
-msgstr ""
+#: ../src/media/track/__init__.py:149 ../src/media/track/__init__.py:393
+#, fuzzy
+msgid "unknown"
+msgstr "Ismeretlen műfaj"
 
 #: ../src/media/track/__init__.py:175
 #, python-format
@@ -78,11 +79,6 @@ msgstr "%(album)s [Disc %(discnum)u]"
 #: ../src/media/track/__init__.py:182
 msgid "CDDA Track"
 msgstr ""
-
-#: ../src/media/track/__init__.py:393
-#, fuzzy
-msgid "unknown"
-msgstr "Ismeretlen műfaj"
 
 #: ../src/gui/preferences.py:43
 msgid "Preferences"
@@ -180,10 +176,6 @@ msgstr "Fejlesztő:"
 #: ../src/gui/about.py:48
 msgid "Thanks to:"
 msgstr "Köszönetnyilvánítás:"
-
-#: ../src/gui/about.py:50
-msgid "(Developer of Decibel Audio Player)"
-msgstr ""
 
 #: ../src/modules/Zeitgeist.py:26
 msgid "Send track information to the Zeitgeist service"
@@ -300,30 +292,6 @@ msgstr ""
 msgid "[paused]"
 msgstr "[szüneteltetve]"
 
-#: ../src/modules/StatusbarTitlebar.py:64
-#, python-format
-msgid "One track in playlist  [%(length)s]"
-msgid_plural "%(count)u tracks in playlist  [%(length)s]"
-msgstr[0] "Egy zeneszám a lejátszási listában [%(length)s]"
-msgstr[1] "%(count)u zeneszám a lejátszási listában  [%(length)s]"
-
-#: ../src/modules/StatusbarTitlebar.py:72
-#, python-format
-msgid "One track selected"
-msgid_plural "%(count)u tracks selected"
-msgstr[0] ""
-msgstr[1] ""
-
-#: ../src/modules/StatusbarTitlebar.py:77
-#: ../src/modules/StatusbarTitlebar.py:83
-msgid "various"
-msgstr ""
-
-#: ../src/modules/StatusbarTitlebar.py:86
-#, python-format
-msgid "%(selection)s (Type: %(type)s, Bitrate: %(bitrate)s)"
-msgstr ""
-
 #: ../src/modules/Covers.py:28
 msgid "Covers"
 msgstr "Borítók"
@@ -374,11 +342,11 @@ msgstr ""
 "letölthetöekkel szemben. Ebben az esetben ha a zeneszám mellett létezik "
 "borító, az lesz használva. Ha nincsen akkor az internetöl letöltött."
 
-#: ../src/modules/Tracktree.py:366
+#: ../src/modules/Tracktree.py:368
 msgid "Save playlist"
 msgstr "Lejátszólista mentése"
 
-#: ../src/modules/Tracktree.py:415
+#: ../src/modules/Tracktree.py:417
 msgid "Clear Playlist"
 msgstr ""
 
@@ -388,10 +356,6 @@ msgstr ""
 
 #: ../src/modules/Equalizer.py:24
 msgid "Tune the level of the frequency bands"
-msgstr ""
-
-#: ../src/modules/Equalizer.py:52
-msgid "Flat"
 msgstr ""
 
 #: ../src/modules/Equalizer.py:125 ../src/modules/Equalizer.py:213
@@ -514,6 +478,11 @@ msgstr "Előző szám lejátszása"
 #: ../res/MainWindow.glade.h:4
 msgid "Seek a position in the current track"
 msgstr "Aktuáis számban való keresés"
+
+#~ msgid "One track in playlist  [%(length)s]"
+#~ msgid_plural "%(count)u tracks in playlist  [%(length)s]"
+#~ msgstr[0] "Egy zeneszám a lejátszási listában [%(length)s]"
+#~ msgstr[1] "%(count)u zeneszám a lejátszási listában  [%(length)s]"
 
 #~ msgid "Position of the track in the playlist"
 #~ msgstr "A szám pozíciója a lejátszási listában"

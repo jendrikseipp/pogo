@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: decibel-audio-player\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-10-07 12:23+0200\n"
+"POT-Creation-Date: 2010-10-07 15:12+0200\n"
 "PO-Revision-Date: 2008-11-08 12:03+0000\n"
 "Last-Translator: Yaron <sh.yaron@gmail.com>\n"
 "Language-Team: Hebrew <he@li.org>\n"
@@ -66,9 +66,10 @@ msgstr "משך כמחרוזת (למשל 3:14)"
 msgid "Full path to the file"
 msgstr "הנתיב המלא אל הקובץ"
 
-#: ../src/media/track/__init__.py:149
-msgid "N/A"
-msgstr ""
+#: ../src/media/track/__init__.py:149 ../src/media/track/__init__.py:393
+#, fuzzy
+msgid "unknown"
+msgstr "סגנון לא ידוע"
 
 #: ../src/media/track/__init__.py:175
 #, python-format
@@ -78,11 +79,6 @@ msgstr "%(album)s [תקליטור %(discnum)u]"
 #: ../src/media/track/__init__.py:182
 msgid "CDDA Track"
 msgstr ""
-
-#: ../src/media/track/__init__.py:393
-#, fuzzy
-msgid "unknown"
-msgstr "סגנון לא ידוע"
 
 #: ../src/gui/preferences.py:43
 msgid "Preferences"
@@ -175,10 +171,6 @@ msgstr "מפתח:"
 #: ../src/gui/about.py:48
 msgid "Thanks to:"
 msgstr "תודות ל:"
-
-#: ../src/gui/about.py:50
-msgid "(Developer of Decibel Audio Player)"
-msgstr ""
 
 #: ../src/modules/Zeitgeist.py:26
 msgid "Send track information to the Zeitgeist service"
@@ -292,30 +284,6 @@ msgstr ""
 msgid "[paused]"
 msgstr "[מושהה]"
 
-#: ../src/modules/StatusbarTitlebar.py:64
-#, python-format
-msgid "One track in playlist  [%(length)s]"
-msgid_plural "%(count)u tracks in playlist  [%(length)s]"
-msgstr[0] "רצועה אחת ברשימת ההשמעה  [%(length)s]"
-msgstr[1] "%(count)u רצועות ברשימת ההשמעה  [%(length)s]"
-
-#: ../src/modules/StatusbarTitlebar.py:72
-#, python-format
-msgid "One track selected"
-msgid_plural "%(count)u tracks selected"
-msgstr[0] ""
-msgstr[1] ""
-
-#: ../src/modules/StatusbarTitlebar.py:77
-#: ../src/modules/StatusbarTitlebar.py:83
-msgid "various"
-msgstr ""
-
-#: ../src/modules/StatusbarTitlebar.py:86
-#, python-format
-msgid "%(selection)s (Type: %(type)s, Bitrate: %(bitrate)s)"
-msgstr ""
-
 #: ../src/modules/Covers.py:28
 msgid "Covers"
 msgstr "עטיפות"
@@ -365,11 +333,11 @@ msgstr ""
 "וקיימת עטיפת משתמש עבור הרצועה הנוכחית, בה יעשה שמוש. במידה ואין, העטיפה "
 "תורד מהאינטרנט."
 
-#: ../src/modules/Tracktree.py:366
+#: ../src/modules/Tracktree.py:368
 msgid "Save playlist"
 msgstr "שמור את רשימת־ההשמעה"
 
-#: ../src/modules/Tracktree.py:415
+#: ../src/modules/Tracktree.py:417
 msgid "Clear Playlist"
 msgstr ""
 
@@ -379,10 +347,6 @@ msgstr ""
 
 #: ../src/modules/Equalizer.py:24
 msgid "Tune the level of the frequency bands"
-msgstr ""
-
-#: ../src/modules/Equalizer.py:52
-msgid "Flat"
 msgstr ""
 
 #: ../src/modules/Equalizer.py:125 ../src/modules/Equalizer.py:213
@@ -505,6 +469,11 @@ msgstr "נגן את הרצועה הקודמת"
 #: ../res/MainWindow.glade.h:4
 msgid "Seek a position in the current track"
 msgstr "חפש מיקום ברצועה הנוכחית"
+
+#~ msgid "One track in playlist  [%(length)s]"
+#~ msgid_plural "%(count)u tracks in playlist  [%(length)s]"
+#~ msgstr[0] "רצועה אחת ברשימת ההשמעה  [%(length)s]"
+#~ msgstr[1] "%(count)u רצועות ברשימת ההשמעה  [%(length)s]"
 
 #~ msgid "Position of the track in the playlist"
 #~ msgstr "מיקום הרצועה ברשימת‏־ההשמעה"
