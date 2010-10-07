@@ -136,9 +136,8 @@ class Preferences:
 
         helpDlg = help.HelpDlg(_('Modules'))
         helpDlg.addSection(_('Description'),
-                           _('This dialog box shows the list of available modules, which are small pieces of code that add '
-                             'some functionnalities to the application. You can enable/disable a module by checking/unchecking '
-                             'the check box in front of it. Note that some modules (e.g., the File Explorer) cannot be disabled.'))
+                           _('This window shows the list of available modules. You can enable/disable a module by checking/unchecking '
+                             'the check box in front of it.'))
         helpDlg.addSection(_('Configuring a Module'),
                            _('When a module may be configured, a specific icon is displayed on the right of the corresponding line. '
                              'To configure a module, simply select it and then click on the "Preferences" button on the bottom of '

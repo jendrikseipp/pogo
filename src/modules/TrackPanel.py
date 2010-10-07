@@ -64,19 +64,12 @@ class TrackPanel(modules.Module):
         """ Real initialization function, called when this module has been loaded """
         # Widgets
         wTree                  = tools.prefs.getWidgetsTree()
-        #evtBox                 = wTree.get_widget('evtbox-cover')
-        #self.img               = wTree.get_widget('img-cover')
         self.txtTitle          = wTree.get_widget('lbl-trkTitle')
-        self.imgFrame          = wTree.get_widget('frm-cover')
         self.currTrack         = None
-        #self.coverTimerId      = None
-        #self.currCoverPath     = None
-        #self.lastMousePosition = (0, 0)
         
         ##
         self.txtTitle.hide()
         self.cover_spot = CoverSpot()
-        self.imgFrame.hide()
 
 
     def onNewTrack(self, track):
