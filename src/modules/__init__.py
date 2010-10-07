@@ -353,7 +353,7 @@ mEnabledModules = prefs.get(__name__, 'enabled_modules', [])                   #
 
 
 # Do not load modules in blacklist. They also won't show up in the preferences
-blacklist = [   'DBus', 
+blacklist = [   #'DBus', 
                 #'GnomeMediaKeys', 
                 'Zeitgeist',
                 'CommandLine'
