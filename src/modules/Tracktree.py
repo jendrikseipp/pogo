@@ -276,7 +276,7 @@ class Tracktree(modules.Module):
         # TODO: playNow wanted? Buggy in current state
         if playNow:
             if parent is None:
-                dest = self.tree.get_lowest_root()
+                dest = self.tree.get_last_root()
             else:
                 dest = self.tree.get_last_child_iter(parent)
             self.jumpTo(dest)

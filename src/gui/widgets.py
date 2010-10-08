@@ -160,9 +160,12 @@ class TrackTreeView(ExtTreeView):
         return self.store.get_iter_root()
         
     def get_last_iter(self):
-        return self.get_lowest_descendant(self.get_lowest_root())
+        lowest_root = self.get_last_root()
+        if lowest_root is None:
+            return None
+        return self.get_lowest_descendant(lowest_root)
         
-    def get_lowest_root(self):
+    def get_last_root(self):
         root_nodes = len(self.store)
         if root_nodes == 0:
             return None
@@ -338,7 +341,7 @@ class TrackTreeView(ExtTreeView):
             dest = model.get_iter(dest)
         else:
             # Dropped on free space -> append
-            dest, drop_mode = self.get_last_iter(), gtk.TREE_VIEW_DROP_AFTER
+            dest, drop_mode = self.get_last_root(), gtk.TREE_VIEW_DROP_AFTER
             
         self.freeze_child_notify()
         
