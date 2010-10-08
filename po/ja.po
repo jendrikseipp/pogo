@@ -8,14 +8,14 @@ msgstr ""
 "Project-Id-Version: decibel-audio-player\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2010-10-07 15:37+0200\n"
-"PO-Revision-Date: 2008-04-02 19:28+0000\n"
+"PO-Revision-Date: 2010-10-07 11:29+0000\n"
 "Last-Translator: Tom Adams <tom@holizz.com>\n"
 "Language-Team: Japanese <ja@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Launchpad-Export-Date: 2009-09-01 15:20+0000\n"
+"X-Launchpad-Export-Date: 2010-10-08 04:58+0000\n"
 "X-Generator: Launchpad (build Unknown)\n"
 
 #: ../src/media/track/__init__.py:54
@@ -67,9 +67,8 @@ msgid "Full path to the file"
 msgstr ""
 
 #: ../src/media/track/__init__.py:149 ../src/media/track/__init__.py:393
-#, fuzzy
 msgid "unknown"
-msgstr "不明なアルバム"
+msgstr ""
 
 #: ../src/media/track/__init__.py:175
 #, python-format
@@ -175,9 +174,8 @@ msgid "Music"
 msgstr ""
 
 #: ../src/modules/FileExplorer.py:443
-#, fuzzy
 msgid "Albums"
-msgstr "アルバム"
+msgstr ""
 
 #: ../src/modules/__init__.py:75
 msgid "The following Python modules are not available:"
@@ -192,7 +190,8 @@ msgid "Restart required"
 msgstr ""
 
 #: ../src/modules/__init__.py:267
-msgid "You must restart the application for this modification to take effect."
+msgid ""
+"You must restart the application for this modification to take effect."
 msgstr ""
 
 #: ../src/modules/CtrlPanel.py:188 ../src/modules/CtrlPanel.py:244
@@ -227,7 +226,8 @@ msgid ""
 msgstr ""
 
 #: ../src/modules/DesktopNotification.py:215
-msgid "If the Covers module is enabled, the popup also shows the album cover."
+msgid ""
+"If the Covers module is enabled, the popup also shows the album cover."
 msgstr ""
 
 #: ../src/modules/DesktopNotification.py:216
@@ -463,10 +463,6 @@ msgstr ""
 
 #~ msgid "_Help"
 #~ msgstr "ヘルプ(_H)"
-
-#, fuzzy
-#~ msgid "_View"
-#~ msgstr "ファイル(_F)"
 
 #~ msgid "Name:"
 #~ msgstr "名前:"

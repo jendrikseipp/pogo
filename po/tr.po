@@ -8,14 +8,14 @@ msgstr ""
 "Project-Id-Version: decibel-audio-player\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2010-10-07 15:37+0200\n"
-"PO-Revision-Date: 2008-02-05 02:20+0000\n"
-"Last-Translator: DenizCakir <Unknown>\n"
+"PO-Revision-Date: 2010-10-07 11:37+0000\n"
+"Last-Translator: Jendrik Seipp <jendrikseipp@web.de>\n"
 "Language-Team: Turkish <tr@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Launchpad-Export-Date: 2009-09-01 15:20+0000\n"
+"X-Launchpad-Export-Date: 2010-10-08 04:58+0000\n"
 "X-Generator: Launchpad (build Unknown)\n"
 
 #: ../src/media/track/__init__.py:54
@@ -67,9 +67,8 @@ msgid "Full path to the file"
 msgstr "Dosyanın tam yolu"
 
 #: ../src/media/track/__init__.py:149 ../src/media/track/__init__.py:393
-#, fuzzy
 msgid "unknown"
-msgstr "Bilinmeyen Albüm"
+msgstr ""
 
 #: ../src/media/track/__init__.py:175
 #, python-format
@@ -98,16 +97,10 @@ msgid "Description"
 msgstr "Tanım"
 
 #: ../src/gui/preferences.py:139
-#, fuzzy
 msgid ""
 "This window shows the list of available modules. You can enable/disable a "
 "module by checking/unchecking the check box in front of it."
 msgstr ""
-"Bu iletişim kutusu olanaklı modüllerin listesini gösterir. Modüller "
-"uygulamaya kimi beceriler ekleyen küçük kod parçalarıdır. Herhangi bir "
-"modülü önündeki kutucuğu işaretleyerek/işaretlemeyerek geçerli/geçersiz "
-"kılabilirsiniz. Unutmayın ki bazı modüller (örneğin : Dosya Gezgini) "
-"geçersiz kılınamaz."
 
 #: ../src/gui/preferences.py:141
 msgid "Configuring a Module"
@@ -156,9 +149,7 @@ msgstr ""
 msgid "translator-credits"
 msgstr ""
 "Launchpad Contributions:\n"
-"  Atbeyi https://launchpad.net/~atbeyi\n"
-"  DenizCakir https://launchpad.net/~dezincakir\n"
-"  denz https://launchpad.net/~psycho2dct"
+"  Jendrik Seipp https://launchpad.net/~jendrikseipp"
 
 #: ../src/gui/about.py:44
 msgid "Developer:"
@@ -201,7 +192,8 @@ msgid "Restart required"
 msgstr ""
 
 #: ../src/modules/__init__.py:267
-msgid "You must restart the application for this modification to take effect."
+msgid ""
+"You must restart the application for this modification to take effect."
 msgstr ""
 
 #: ../src/modules/CtrlPanel.py:188 ../src/modules/CtrlPanel.py:244
@@ -209,9 +201,8 @@ msgid "Pause the current track"
 msgstr "Çalan şarkıyı beklet"
 
 #: ../src/modules/CtrlPanel.py:204
-#, fuzzy
 msgid "Play the first selected track of the playlist"
-msgstr "Playlistteki ilk şarkıyı çal"
+msgstr ""
 
 #: ../src/modules/CtrlPanel.py:238
 msgid "Continue playing the current track"
@@ -238,7 +229,8 @@ msgstr ""
 "Bu modül yeni bir şarkı başladığında masaüstünüzde küçük pencere gösterir"
 
 #: ../src/modules/DesktopNotification.py:215
-msgid "If the Covers module is enabled, the popup also shows the album cover."
+msgid ""
+"If the Covers module is enabled, the popup also shows the album cover."
 msgstr ""
 
 #: ../src/modules/DesktopNotification.py:216
@@ -441,6 +433,18 @@ msgstr ""
 msgid "Play the previous track"
 msgstr ""
 
+#~ msgid ""
+#~ "This dialog box shows the list of available modules, which are small pieces "
+#~ "of code that add some functionnalities to the application. You can "
+#~ "enable/disable a module by checking/unchecking the check box in front of it. "
+#~ "Note that some modules (e.g., the File Explorer) cannot be disabled."
+#~ msgstr ""
+#~ "Bu iletişim kutusu olanaklı modüllerin listesini gösterir. Modüller "
+#~ "uygulamaya kimi beceriler ekleyen küçük kod parçalarıdır. Herhangi bir "
+#~ "modülü önündeki kutucuğu işaretleyerek/işaretlemeyerek geçerli/geçersiz "
+#~ "kılabilirsiniz. Unutmayın ki bazı modüller (örneğin : Dosya Gezgini) "
+#~ "geçersiz kılınamaz."
+
 #~ msgid "Position of the track in the playlist"
 #~ msgstr "İz'in çalma listesindeki sırası"
 
@@ -454,15 +458,15 @@ msgstr ""
 #~ msgstr "Parola saklama güvenliği ile ilgili"
 
 #~ msgid ""
-#~ "If you use Gnome, it is safe to store your password since the Gnome "
-#~ "keyring is used."
+#~ "If you use Gnome, it is safe to store your password since the Gnome keyring "
+#~ "is used."
 #~ msgstr ""
-#~ "Eğer Gnome kullanıyorsanız, parolalarınızı güvenle saklayabilirsiniz "
-#~ "çünkü Gnome Keyring aracını kullanılmaktadır."
+#~ "Eğer Gnome kullanıyorsanız, parolalarınızı güvenle saklayabilirsiniz çünkü "
+#~ "Gnome Keyring aracını kullanılmaktadır."
 
 #~ msgid ""
-#~ "If you do not use Gnome, beware that, although not stored as clear text, "
-#~ "an attacker <i>could</i> retrieve it."
+#~ "If you do not use Gnome, beware that, although not stored as clear text, an "
+#~ "attacker <i>could</i> retrieve it."
 #~ msgstr ""
 #~ "Eğer Gnome kullanmıyorsanız, bilmelisiniz ki , her ne kadar basit metin "
 #~ "dosyası olarak saklanmasa da bir saldırgan <i>ele geçirebilir</i>"

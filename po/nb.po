@@ -8,14 +8,14 @@ msgstr ""
 "Project-Id-Version: decibel-audio-player\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2010-10-07 15:37+0200\n"
-"PO-Revision-Date: 2008-05-16 19:06+0000\n"
+"PO-Revision-Date: 2010-10-07 11:29+0000\n"
 "Last-Translator: mamaar <mamaar@gmail.com>\n"
 "Language-Team: Norwegian Bokmal <nb@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Launchpad-Export-Date: 2009-09-01 15:20+0000\n"
+"X-Launchpad-Export-Date: 2010-10-08 04:58+0000\n"
 "X-Generator: Launchpad (build Unknown)\n"
 
 #: ../src/media/track/__init__.py:54
@@ -67,9 +67,8 @@ msgid "Full path to the file"
 msgstr "Full sti til filen"
 
 #: ../src/media/track/__init__.py:149 ../src/media/track/__init__.py:393
-#, fuzzy
 msgid "unknown"
-msgstr "Ukjent album"
+msgstr ""
 
 #: ../src/media/track/__init__.py:175
 #, python-format
@@ -179,9 +178,8 @@ msgid "Music"
 msgstr ""
 
 #: ../src/modules/FileExplorer.py:443
-#, fuzzy
 msgid "Albums"
-msgstr "Album"
+msgstr ""
 
 #: ../src/modules/__init__.py:75
 msgid "The following Python modules are not available:"
@@ -196,7 +194,8 @@ msgid "Restart required"
 msgstr ""
 
 #: ../src/modules/__init__.py:267
-msgid "You must restart the application for this modification to take effect."
+msgid ""
+"You must restart the application for this modification to take effect."
 msgstr ""
 
 #: ../src/modules/CtrlPanel.py:188 ../src/modules/CtrlPanel.py:244
@@ -204,9 +203,8 @@ msgid "Pause the current track"
 msgstr ""
 
 #: ../src/modules/CtrlPanel.py:204
-#, fuzzy
 msgid "Play the first selected track of the playlist"
-msgstr "Spill første sporet i spillelisten"
+msgstr ""
 
 #: ../src/modules/CtrlPanel.py:238
 msgid "Continue playing the current track"
@@ -232,7 +230,8 @@ msgid ""
 msgstr ""
 
 #: ../src/modules/DesktopNotification.py:215
-msgid "If the Covers module is enabled, the popup also shows the album cover."
+msgid ""
+"If the Covers module is enabled, the popup also shows the album cover."
 msgstr ""
 
 #: ../src/modules/DesktopNotification.py:216
@@ -452,18 +451,18 @@ msgstr ""
 #~ msgstr "Om passordlagringstrygghet"
 
 #~ msgid ""
-#~ "If you use Gnome, it is safe to store your password since the Gnome "
-#~ "keyring is used."
+#~ "If you use Gnome, it is safe to store your password since the Gnome keyring "
+#~ "is used."
 #~ msgstr ""
 #~ "Dersom du bruker Gnome, er det trygt å lagre passordet siden Gnome-"
 #~ "nøkkelringen brukes."
 
 #~ msgid ""
-#~ "If you do not use Gnome, beware that, although not stored as clear text, "
-#~ "an attacker <i>could</i> retrieve it."
+#~ "If you do not use Gnome, beware that, although not stored as clear text, an "
+#~ "attacker <i>could</i> retrieve it."
 #~ msgstr ""
-#~ "Dersom du ikke bruker Gnome, vær klar over at en angriper <i>kan</i> få "
-#~ "tak i passordet, selvom det ikke blir lagret i klartekst."
+#~ "Dersom du ikke bruker Gnome, vær klar over at en angriper <i>kan</i> få tak "
+#~ "i passordet, selvom det ikke blir lagret i klartekst."
 
 #~ msgid "Home"
 #~ msgstr "Hjem"
@@ -477,8 +476,7 @@ msgstr ""
 
 #~ msgid ""
 #~ "You will be able to add these root folders again later on if you wish so."
-#~ msgstr ""
-#~ "Du kan legge til disse rotmappene igjen senere dersom du ønsker det."
+#~ msgstr "Du kan legge til disse rotmappene igjen senere dersom du ønsker det."
 
 #~ msgid "Remove all selected entries?"
 #~ msgstr "Fjerne alle valgte oppføringer?"
@@ -509,10 +507,6 @@ msgstr ""
 
 #~ msgid "_Help"
 #~ msgstr "_Hjelp"
-
-#, fuzzy
-#~ msgid "_View"
-#~ msgstr "_Fil"
 
 #~ msgid "Name:"
 #~ msgstr "Navn:"
@@ -603,10 +597,8 @@ msgstr ""
 #~ msgstr "Genererer en tekstfil med gjeldene status"
 
 #~ msgid ""
-#~ "The path to the selected file is not valid. Please choose an existing "
-#~ "path."
-#~ msgstr ""
-#~ "Stien til den valgte filen er ikke gyldig. Velg en eksisterende sti."
+#~ "The path to the selected file is not valid. Please choose an existing path."
+#~ msgstr "Stien til den valgte filen er ikke gyldig. Velg en eksisterende sti."
 
 #~ msgid "Choose a file"
 #~ msgstr "Velg en fil"

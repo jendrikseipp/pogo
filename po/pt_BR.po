@@ -8,14 +8,14 @@ msgstr ""
 "Project-Id-Version: decibel-audio-player\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2010-10-07 15:37+0200\n"
-"PO-Revision-Date: 2009-05-13 12:21+0000\n"
+"PO-Revision-Date: 2010-10-07 11:32+0000\n"
 "Last-Translator: Alexandre Cavedon <alexandre.cavedon@gmail.com>\n"
 "Language-Team: Brazilian Portuguese <pt_BR@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Launchpad-Export-Date: 2009-09-01 15:20+0000\n"
+"X-Launchpad-Export-Date: 2010-10-08 04:58+0000\n"
 "X-Generator: Launchpad (build Unknown)\n"
 
 #: ../src/media/track/__init__.py:54
@@ -67,9 +67,8 @@ msgid "Full path to the file"
 msgstr "Caminho completo do arquivo"
 
 #: ../src/media/track/__init__.py:149 ../src/media/track/__init__.py:393
-#, fuzzy
 msgid "unknown"
-msgstr "Gênero Desconhecido"
+msgstr ""
 
 #: ../src/media/track/__init__.py:175
 #, python-format
@@ -98,16 +97,10 @@ msgid "Description"
 msgstr "Descrição"
 
 #: ../src/gui/preferences.py:139
-#, fuzzy
 msgid ""
 "This window shows the list of available modules. You can enable/disable a "
 "module by checking/unchecking the check box in front of it."
 msgstr ""
-"Este diálogo apresenta uma lista dos módulos disponíveis, que são pequenos "
-"programas que permitem adicionar funcionalidades ao Decibel Audio Player. "
-"Você pode ativar ou desativar um módulo, marcando/desmarcando a caixa na "
-"frente dele. Observe que alguns módulos (como por exemplo o File Explorer) "
-"não podem ser desativados."
 
 #: ../src/gui/preferences.py:141
 msgid "Configuring a Module"
@@ -163,8 +156,7 @@ msgstr ""
 msgid "translator-credits"
 msgstr ""
 "Launchpad Contributions:\n"
-"  Alexandre Cavedon https://launchpad.net/~alexandrecavedon\n"
-"  François Ingelrest https://launchpad.net/~athropos"
+"  Alexandre Cavedon https://launchpad.net/~alexandrecavedon"
 
 #: ../src/gui/about.py:44
 msgid "Developer:"
@@ -191,9 +183,8 @@ msgid "Music"
 msgstr ""
 
 #: ../src/modules/FileExplorer.py:443
-#, fuzzy
 msgid "Albums"
-msgstr "Álbum"
+msgstr ""
 
 #: ../src/modules/__init__.py:75
 msgid "The following Python modules are not available:"
@@ -208,7 +199,8 @@ msgid "Restart required"
 msgstr ""
 
 #: ../src/modules/__init__.py:267
-msgid "You must restart the application for this modification to take effect."
+msgid ""
+"You must restart the application for this modification to take effect."
 msgstr ""
 
 #: ../src/modules/CtrlPanel.py:188 ../src/modules/CtrlPanel.py:244
@@ -216,9 +208,8 @@ msgid "Pause the current track"
 msgstr "Pausar a faixa corrente"
 
 #: ../src/modules/CtrlPanel.py:204
-#, fuzzy
 msgid "Play the first selected track of the playlist"
-msgstr "Tocar a primeira faixa da playlist"
+msgstr ""
 
 #: ../src/modules/CtrlPanel.py:238
 msgid "Continue playing the current track"
@@ -246,7 +237,8 @@ msgstr ""
 "quando uma nova faixa é iniciada."
 
 #: ../src/modules/DesktopNotification.py:215
-msgid "If the Covers module is enabled, the popup also shows the album cover."
+msgid ""
+"If the Covers module is enabled, the popup also shows the album cover."
 msgstr ""
 
 #: ../src/modules/DesktopNotification.py:216
@@ -402,7 +394,8 @@ msgstr "Todos preferem utilizar arte de capa"
 
 #: ../res/Covers.glade.h:4
 msgid "Don't download covers when there is a user one"
-msgstr "Não realizar o download das artes de capa quando há somente um usuário"
+msgstr ""
+"Não realizar o download das artes de capa quando há somente um usuário"
 
 #: ../res/Covers.glade.h:5
 msgid "Download covers"
@@ -464,19 +457,32 @@ msgstr "Tocar a próxima faixa"
 msgid "Play the previous track"
 msgstr "Tocar a faixa anterior"
 
+#~ msgid ""
+#~ "This dialog box shows the list of available modules, which are small pieces "
+#~ "of code that add some functionnalities to the application. You can "
+#~ "enable/disable a module by checking/unchecking the check box in front of it. "
+#~ "Note that some modules (e.g., the File Explorer) cannot be disabled."
+#~ msgstr ""
+#~ "Este diálogo apresenta uma lista dos módulos disponíveis, que são pequenos "
+#~ "programas que permitem adicionar funcionalidades ao Decibel Audio Player. "
+#~ "Você pode ativar ou desativar um módulo, marcando/desmarcando a caixa na "
+#~ "frente dele. Observe que alguns módulos (como por exemplo o File Explorer) "
+#~ "não podem ser desativados."
+
 #~ msgid "File Explorer"
 #~ msgstr "Gerenciador de arquivos"
 
 #~ msgid "Browse your file system"
 #~ msgstr "Navega no seu sistema de arquivos"
 
-#~ msgid "Seek a position in the current track"
-#~ msgstr "Navegue na posição da música que está tocando"
-
+#, python-format
 #~ msgid "One track in playlist  [%(length)s]"
 #~ msgid_plural "%(count)u tracks in playlist  [%(length)s]"
 #~ msgstr[0] "Uma música na playlist [%(length)s]"
 #~ msgstr[1] "%(count)u músicas na playlist  [%(length)s]"
+
+#~ msgid "Seek a position in the current track"
+#~ msgstr "Navegue na posição da música que está tocando"
 
 #~ msgid "Position of the track in the playlist"
 #~ msgstr "Posição da faixa na playlist"
@@ -498,15 +504,15 @@ msgstr "Tocar a faixa anterior"
 #~ msgstr "Sobre a segurança no armazenamento das senhas"
 
 #~ msgid ""
-#~ "If you use Gnome, it is safe to store your password since the Gnome "
-#~ "keyring is used."
+#~ "If you use Gnome, it is safe to store your password since the Gnome keyring "
+#~ "is used."
 #~ msgstr ""
-#~ "Se você usa Gnome o chaveiro gnome-keyring será usado (forma mais segura "
-#~ "de armazenamento)."
+#~ "Se você usa Gnome o chaveiro gnome-keyring será usado (forma mais segura de "
+#~ "armazenamento)."
 
 #~ msgid ""
-#~ "If you do not use Gnome, beware that, although not stored as clear text, "
-#~ "an attacker <i>could</i> retrieve it."
+#~ "If you do not use Gnome, beware that, although not stored as clear text, an "
+#~ "attacker <i>could</i> retrieve it."
 #~ msgstr ""
 #~ "Se você não usa Gnome, cuidado ao armazenar sua senha - pois a mesma será "
 #~ "gravada utilizando texto puro - e desta forma um invasor pode facilmente "
@@ -546,12 +552,6 @@ msgstr "Tocar a faixa anterior"
 #~ "then becomes the root of the file explorer tree in the main window."
 #~ msgstr ""
 #~ "Pelo menos um diretório raiz deve ser adicionado ao navegar seus arquivos."
-
-#, fuzzy
-#~ msgid "by <i>%(artist)s</i> from <i>%(album)s</i>"
-#~ msgstr ""
-#~ "por %(artist)s\n"
-#~ "em %(album)s"
 
 #~ msgid ""
 #~ "Please select an explorer\n"
@@ -623,10 +623,6 @@ msgstr "Tocar a faixa anterior"
 #~ msgid "_Help"
 #~ msgstr "_Ajuda"
 
-#, fuzzy
-#~ msgid "_View"
-#~ msgstr "_Arquivo"
-
 #~ msgid "Name:"
 #~ msgstr "Nome:"
 
@@ -638,8 +634,8 @@ msgstr "Tocar a faixa anterior"
 
 #~ msgid "Update the status message of your IM client"
 #~ msgstr ""
-#~ "Atualiza a mensagem de status do seu cliente de mensagens instantâneas "
-#~ "com o artista/faixa atual"
+#~ "Atualiza a mensagem de status do seu cliente de mensagens instantâneas com o "
+#~ "artista/faixa atual"
 
 #~ msgid "Decibel is stopped"
 #~ msgstr "Decibel está parado"
@@ -659,9 +655,9 @@ msgstr "Tocar a faixa anterior"
 #~ msgstr "Customizar o Status"
 
 #~ msgid ""
-#~ "You can set the status to any text you want. Before setting it, the "
-#~ "module replaces all fields of the form {field} by their corresponding "
-#~ "value. Available fields are:"
+#~ "You can set the status to any text you want. Before setting it, the module "
+#~ "replaces all fields of the form {field} by their corresponding value. "
+#~ "Available fields are:"
 #~ msgstr ""
 #~ "Você pode definir o status da forma como desejar, porém atente-se que "
 #~ "existem palavras-chave que o módulo automaticamente substitui pela "
@@ -673,13 +669,13 @@ msgstr "Tocar a faixa anterior"
 #~ msgid ""
 #~ "You can define some words that to sanitize before using them to set your "
 #~ "status. In this case, the middle characters of matching words is "
-#~ "automatically replaced with asterisks (e.g., \"Metallica - Live S**t "
-#~ "Binge & Purge\"). Put one word per line."
+#~ "automatically replaced with asterisks (e.g., \"Metallica - Live S**t Binge & "
+#~ "Purge\"). Put one word per line."
 #~ msgstr ""
 #~ "Você pode definir algumas palavras que sofrerão censura - e não serão "
 #~ "exibidas. Neste caso, o meio da palavra correspondente é automaticamente "
-#~ "substituído por asteriscos (por exemplo, \"Metallica - Live S ** t Binge "
-#~ "& Purga\"). Apresente uma palavra por linha no box específico."
+#~ "substituído por asteriscos (por exemplo, \"Metallica - Live S ** t Binge & "
+#~ "Purga\"). Apresente uma palavra por linha no box específico."
 
 #~ msgid "Keep your Last.fm profile up to date"
 #~ msgstr "Mantém seus dados do Last.fm atualizados"
@@ -715,8 +711,8 @@ msgstr "Tocar a faixa anterior"
 #~ "The directory is scanned for media files. This can take some time.\n"
 #~ "Please wait."
 #~ msgstr ""
-#~ "Este diretório é constantemente varrido atrás de novas músicas - e isso "
-#~ "pode demorar alguns minutos.\n"
+#~ "Este diretório é constantemente varrido atrás de novas músicas - e isso pode "
+#~ "demorar alguns minutos.\n"
 #~ "Por favor aguarde."
 
 #~ msgid "Scanning directories (one track found)"
@@ -742,8 +738,7 @@ msgstr "Tocar a faixa anterior"
 #~ msgid "Remove the selected library?"
 #~ msgstr "Remover a biblioteca selecionada?"
 
-#~ msgid ""
-#~ "You will be able to recreate these libraries later on if you wish so."
+#~ msgid "You will be able to recreate these libraries later on if you wish so."
 #~ msgstr "Você poderá adicionar este diretório raíz depois se desejar."
 
 #~ msgid "Remove all selected libraries?"
@@ -757,10 +752,9 @@ msgstr "Tocar a faixa anterior"
 #~ "structure of your drive. Loading tracks is also faster because their tags "
 #~ "are already known and do not have to be read again."
 #~ msgstr ""
-#~ "Este módulo organiza seus arquivos por tags em vez de utilizar a "
-#~ "estrutura de diretórios. O carregamento de faixas também fica mais "
-#~ "rápido, pois suas tags já serão reconhecidas, não sendo necessário "
-#~ "carregá-las novamente."
+#~ "Este módulo organiza seus arquivos por tags em vez de utilizar a estrutura "
+#~ "de diretórios. O carregamento de faixas também fica mais rápido, pois suas "
+#~ "tags já serão reconhecidas, não sendo necessário carregá-las novamente."
 
 #~ msgid ""
 #~ "When you add a new library, you have to give the full path to the root "
@@ -773,13 +767,12 @@ msgstr "Tocar a faixa anterior"
 #~ "verificados e armazenados em um banco de dados."
 
 #~ msgid ""
-#~ "Upon refreshing a library, the file structure under the root directory "
-#~ "and all media files are scanned for changes, to update the database "
-#~ "accordingly."
+#~ "Upon refreshing a library, the file structure under the root directory and "
+#~ "all media files are scanned for changes, to update the database accordingly."
 #~ msgstr ""
 #~ "Após atualizar uma biblioteca, toda estrutura de diretórios é novamente "
-#~ "verificadas para atualizar o banco de dados, deixando-o em conformidade "
-#~ "com sua alteração."
+#~ "verificadas para atualizar o banco de dados, deixando-o em conformidade com "
+#~ "sua alteração."
 
 #~ msgid "Status Icon"
 #~ msgstr "Ícone de Status"
@@ -816,30 +809,29 @@ msgstr "Tocar a faixa anterior"
 #~ msgstr "Caminho inválido"
 
 #~ msgid ""
-#~ "The path to the CD-ROM device is not valid. Please choose an existing "
-#~ "path."
+#~ "The path to the CD-ROM device is not valid. Please choose an existing path."
 #~ msgstr ""
 #~ "O caminho do dispositivo de CD-ROM é inválido. Por favor informe um novo "
 #~ "caminho."
 
 #~ msgid "This module lets you play audio discs from your CD-ROM device."
 #~ msgstr ""
-#~ "Este módulo permite reproduzir discos de áudio a partir do seu "
-#~ "dispositivo de CD-ROM."
+#~ "Este módulo permite reproduzir discos de áudio a partir do seu dispositivo "
+#~ "de CD-ROM."
 
 #~ msgid "Compact Disc Data Base (CDDB)"
 #~ msgstr "Compact Disc Data Base (CDDB)"
 
 #~ msgid ""
 #~ "Disc information, such as artist and album title, may be automatically "
-#~ "downloaded from an online database if you wish so. This information may "
-#~ "also be saved on your hard drive to avoid downloading it again the next "
-#~ "time you play the same disc."
+#~ "downloaded from an online database if you wish so. This information may also "
+#~ "be saved on your hard drive to avoid downloading it again the next time you "
+#~ "play the same disc."
 #~ msgstr ""
 #~ "Informações do disco, tal como o artista e o título do álbum, podem ser "
-#~ "automaticamente descarregados a partir de uma linha base, se assim "
-#~ "desejar. Estas informações também podem ser armazenadas no seu HD para "
-#~ "evitar um novo download na próxima vez em que você tocar o mesmo disco."
+#~ "automaticamente descarregados a partir de uma linha base, se assim desejar. "
+#~ "Estas informações também podem ser armazenadas no seu HD para evitar um novo "
+#~ "download na próxima vez em que você tocar o mesmo disco."
 
 #~ msgid "Status File"
 #~ msgstr "Arquivo de Status"
@@ -848,17 +840,14 @@ msgstr "Tocar a faixa anterior"
 #~ msgstr "Gera um arquivo texto com o status da música que está tocando"
 
 #~ msgid ""
-#~ "The path to the selected file is not valid. Please choose an existing "
-#~ "path."
-#~ msgstr ""
-#~ "O caminho informado não é válido. Por favor informe um novo caminho."
+#~ "The path to the selected file is not valid. Please choose an existing path."
+#~ msgstr "O caminho informado não é válido. Por favor informe um novo caminho."
 
 #~ msgid "Choose a file"
 #~ msgstr "Escolha um arquivo"
 
 #~ msgid ""
-#~ "This module generates a text file with regards to the track currently "
-#~ "played."
+#~ "This module generates a text file with regards to the track currently played."
 #~ msgstr "Este módulo gera um arquivo texto com a faixa tocada."
 
 #~ msgid "Customizing the File"
@@ -870,10 +859,9 @@ msgstr "Tocar a faixa anterior"
 #~ "corresponding value. Available fields are:\n"
 #~ "\n"
 #~ msgstr ""
-#~ "Você pode alterar o conteúdo do arquivo para qualquer texto que você "
-#~ "deseja. Antes de gerar o arquivo, os campos que estão entre chaves serão "
-#~ "substituídos por seus valores correspondentes. Os campos disponíveis "
-#~ "são:\n"
+#~ "Você pode alterar o conteúdo do arquivo para qualquer texto que você deseja. "
+#~ "Antes de gerar o arquivo, os campos que estão entre chaves serão "
+#~ "substituídos por seus valores correspondentes. Os campos disponíveis são:\n"
 #~ "\n"
 
 #~ msgid "<b>CDDB</b>"
@@ -958,8 +946,7 @@ msgstr "Tocar a faixa anterior"
 #~ msgstr "Renomear a biblioteca selecionada"
 
 #~ msgid "Update the selected library by rescanning the disk"
-#~ msgstr ""
-#~ "Atualizar a biblioteca selecionada de acordo com a verificação do HD"
+#~ msgstr "Atualizar a biblioteca selecionada de acordo com a verificação do HD"
 
 #~ msgid "Clear"
 #~ msgstr "Limpar"
