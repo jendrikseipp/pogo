@@ -60,7 +60,7 @@ if len(sys.argv) > 1:
 if not cmdLineOk:
     print 'Usage: %s command [arg1 arg2...]\n' % os.path.basename(sys.argv[0])
     print 'Command  | Arguments        | Description'
-    print '-----------------------------------------------------------------------'
+    print '-------------------------------------------------------------------------'
     for cmd, data in sorted(commands.iteritems()):
         print '%s| %s| %s' % (cmd.ljust(9), data[CMD_ARGS].ljust(17), data[CMD_HELP])
     sys.exit(1)
@@ -88,4 +88,4 @@ elif cmd == PAUSE:    player.Pause()
 elif cmd == CLEAR:    tracklist.Clear()
 elif cmd == VOLUME:   player.VolumeSet(int(sys.argv[2]))
 elif cmd == SHUFFLE:  tracklist.SetRandom(True)
-elif cmd == PREVIOUS: player.Previous()
+elif cmd == PREVIOUS: player.Prev()
