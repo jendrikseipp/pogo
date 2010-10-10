@@ -19,6 +19,7 @@
 
 import os
 import sys
+import threading
 
 if __name__ == '__main__':
     base_dir = os.path.abspath(os.path.join(os.path.abspath(__file__), '../../'))
@@ -50,9 +51,12 @@ def getSupportedFormats():
 
 
 
-__track_cache = {}
+_track_cache = {}
+# It seems a lock is not really necessary here. It does slow down execution
+# a little bit though, so don't use it.
+#_track_cache_lock = threading.Lock()
 
-def __getTrackFromFile(file):
+def _getTrackFromFile(file):
     """
         Return a Track object, based on the tags of the given file
         The 'file' parameter must be a real file (not a playlist or a directory)
@@ -68,10 +72,14 @@ def getTrackFromFile(file):
         Return a Track object, based on the tags of the given file
         The 'file' parameter must be a real file (not a playlist or a directory)
     """
-    if file in __track_cache:
-        return __track_cache[file]
-    track = __getTrackFromFile(file)
-    __track_cache[file] = track
+    #_track_cache_lock.acquire()
+    name = os.path.basename(file)
+    if file in _track_cache:
+        #_track_cache_lock.release()
+        return _track_cache[file]
+    track = _getTrackFromFile(file)
+    _track_cache[file] = track
+    #_track_cache_lock.release()
     return track
 
 
@@ -133,7 +141,7 @@ class TrackDir(object):
         
     def scan(self):
         import tools
-        for filename, path in sorted(tools.listDir(self.dir)):
+        for filename, path in tools.listDir(self.dir):
             if os.path.isdir(path):
                 trackdir = TrackDir(dir=path)
                 # Only add subdirs that contain songs
@@ -195,6 +203,20 @@ class TrackDir(object):
             
         return res
         
+        
+def preloadTracks(paths):
+    '''
+    Function for preloading tracks. It is invoked when a dnd action starts
+    and preloads the selected tracks in reverse order, so that the tracks are
+    loaded, when the real loading function comes to them.
+    '''
+    for path in reversed(paths):
+        if os.path.isdir(path):
+            subpaths = [path for (name, path) in tools.listDir(path)]
+            preloadTracks(subpaths)
+        elif isSupported(path):
+            getTrackFromFile(path)
+        
     
 def getTracks(filenames, sortByFilename=True):
     """ Same as getTracksFromFiles(), but works for any kind of filenames (files, playlists, directories) """
@@ -213,14 +235,14 @@ def getTracks(filenames, sortByFilename=True):
     return tracks
     
     
+    
 if __name__ == '__main__':
     base_dir = os.path.abspath(os.path.join(os.path.abspath(__file__), '../../'))
     sys.path.insert(0, base_dir)
     
-    print dirname('/home/')
-    print dirname('/home/dir')
-    print dirname('/home/dir/..')
-    print dirname('/')
+    dirs = ['/home/jendrik/tmp/Horses'] * 50
     
-    dir = getTracks(['/home/jendrik/tmp/Elbow - The Seldom Seen Kid (2008)/'])
-    print dir
+    import timeit
+    t1 = timeit.Timer("getTracks(dirs)",
+                    'from __main__ import getTracks, dirs')
+    print t1.timeit(1000)

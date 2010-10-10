@@ -519,10 +519,9 @@ class FileExplorer(modules.Module):
         modules.postMsg(consts.MSG_CMD_FILE_EXPLORER_DRAG_BEGIN, {'paths': paths})
         #idle_add(media.getTracks, paths)
         
-        # Handle last paths first, to be ready when the real function comes to them
-        paths = list(reversed(paths))
+        # Preload the tracks to speedup their addition to the playlist
         import threading
-        crawler = threading.Thread(target=media.getTracks, args=(paths,))
+        crawler = threading.Thread(target=media.preloadTracks, args=(paths,))
         crawler.start()
         
         #from multiprocessing import Process
