@@ -8,14 +8,14 @@ msgstr ""
 "Project-Id-Version: decibel-audio-player\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2010-10-07 15:37+0200\n"
-"PO-Revision-Date: 2009-01-04 17:45+0000\n"
+"PO-Revision-Date: 2010-10-07 11:29+0000\n"
 "Last-Translator: AlckO <adrysoft04@alice.it>\n"
 "Language-Team: Italian <it@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Launchpad-Export-Date: 2009-09-01 15:20+0000\n"
+"X-Launchpad-Export-Date: 2010-10-08 04:58+0000\n"
 "X-Generator: Launchpad (build Unknown)\n"
 
 #: ../src/media/track/__init__.py:54
@@ -67,9 +67,8 @@ msgid "Full path to the file"
 msgstr "Percorso completo del file"
 
 #: ../src/media/track/__init__.py:149 ../src/media/track/__init__.py:393
-#, fuzzy
 msgid "unknown"
-msgstr "Genere sconosciuto"
+msgstr ""
 
 #: ../src/media/track/__init__.py:175
 #, python-format
@@ -98,16 +97,10 @@ msgid "Description"
 msgstr "Descrizione"
 
 #: ../src/gui/preferences.py:139
-#, fuzzy
 msgid ""
 "This window shows the list of available modules. You can enable/disable a "
 "module by checking/unchecking the check box in front of it."
 msgstr ""
-"Questa finestra di dialogo mostra la lista dei moduli disponibili, che sono "
-"dei piccoli pezzi di codice che aggiungono alcune funzioni all'applicazione. "
-"Puoi abilitare/disabilitare un modulo aggiungendo/togliendo il simbolo di "
-"spunta dalla casella vicina. Nota che alcuni moduli (per es. il File "
-"Explorer) non possono essere disabilitati."
 
 #: ../src/gui/preferences.py:141
 msgid "Configuring a Module"
@@ -162,13 +155,7 @@ msgstr ""
 msgid "translator-credits"
 msgstr ""
 "Launchpad Contributions:\n"
-"  AlckO https://launchpad.net/~alckox\n"
-"  Kurama https://launchpad.net/~luca.perri\n"
-"  Luca Livraghi https://launchpad.net/~luca91\n"
-"  Nicolò Ricco https://launchpad.net/~hapellone\n"
-"  Riccardo Magliocchetti https://launchpad.net/~riccardo\n"
-"  calabrozzo https://launchpad.net/~calabrozzo\n"
-"  texxxxxx https://launchpad.net/~asdfghjkl01"
+"  AlckO https://launchpad.net/~alckox"
 
 #: ../src/gui/about.py:44
 msgid "Developer:"
@@ -195,9 +182,8 @@ msgid "Music"
 msgstr ""
 
 #: ../src/modules/FileExplorer.py:443
-#, fuzzy
 msgid "Albums"
-msgstr "Album"
+msgstr ""
 
 #: ../src/modules/__init__.py:75
 msgid "The following Python modules are not available:"
@@ -212,7 +198,8 @@ msgid "Restart required"
 msgstr ""
 
 #: ../src/modules/__init__.py:267
-msgid "You must restart the application for this modification to take effect."
+msgid ""
+"You must restart the application for this modification to take effect."
 msgstr ""
 
 #: ../src/modules/CtrlPanel.py:188 ../src/modules/CtrlPanel.py:244
@@ -220,9 +207,8 @@ msgid "Pause the current track"
 msgstr "Metti in pausa la traccia corrente"
 
 #: ../src/modules/CtrlPanel.py:204
-#, fuzzy
 msgid "Play the first selected track of the playlist"
-msgstr "Ascolta la prima traccia della playlist"
+msgstr ""
 
 #: ../src/modules/CtrlPanel.py:238
 msgid "Continue playing the current track"
@@ -250,7 +236,8 @@ msgstr ""
 "inizia una nuova traccia"
 
 #: ../src/modules/DesktopNotification.py:215
-msgid "If the Covers module is enabled, the popup also shows the album cover."
+msgid ""
+"If the Covers module is enabled, the popup also shows the album cover."
 msgstr ""
 
 #: ../src/modules/DesktopNotification.py:216
@@ -464,19 +451,32 @@ msgstr "Riproduci la traccia successiva"
 msgid "Play the previous track"
 msgstr "Riproduci la traccia precedente"
 
+#~ msgid ""
+#~ "This dialog box shows the list of available modules, which are small pieces "
+#~ "of code that add some functionnalities to the application. You can "
+#~ "enable/disable a module by checking/unchecking the check box in front of it. "
+#~ "Note that some modules (e.g., the File Explorer) cannot be disabled."
+#~ msgstr ""
+#~ "Questa finestra di dialogo mostra la lista dei moduli disponibili, che sono "
+#~ "dei piccoli pezzi di codice che aggiungono alcune funzioni all'applicazione. "
+#~ "Puoi abilitare/disabilitare un modulo aggiungendo/togliendo il simbolo di "
+#~ "spunta dalla casella vicina. Nota che alcuni moduli (per es. il File "
+#~ "Explorer) non possono essere disabilitati."
+
 #~ msgid "File Explorer"
 #~ msgstr "File Explorer"
 
 #~ msgid "Browse your file system"
 #~ msgstr "Sfoglia il tuo file system"
 
-#~ msgid "Seek a position in the current track"
-#~ msgstr "Cerca una posizione nella traccia corrente"
-
+#, python-format
 #~ msgid "One track in playlist  [%(length)s]"
 #~ msgid_plural "%(count)u tracks in playlist  [%(length)s]"
 #~ msgstr[0] "Una traccia nella playlist [%(length)s]"
 #~ msgstr[1] "%(count)u tracce nella playlist [%(length)s]"
+
+#~ msgid "Seek a position in the current track"
+#~ msgstr "Cerca una posizione nella traccia corrente"
 
 #~ msgid "Position of the track in the playlist"
 #~ msgstr "Posizione della traccia nella playlist"
@@ -498,8 +498,8 @@ msgstr "Riproduci la traccia precedente"
 #~ msgstr "Informazioni sul salvataggio sicuro della password"
 
 #~ msgid ""
-#~ "If you use Gnome, it is safe to store your password since the Gnome "
-#~ "keyring is used."
+#~ "If you use Gnome, it is safe to store your password since the Gnome keyring "
+#~ "is used."
 #~ msgstr ""
 #~ "Se stai usando Gnome,è sicuro memorizzare la tua password da quando Gnome "
 #~ "keyring è usato."
@@ -597,10 +597,6 @@ msgstr "Riproduci la traccia precedente"
 #~ msgid "_Help"
 #~ msgstr "_Aiuto"
 
-#, fuzzy
-#~ msgid "_View"
-#~ msgstr "_File"
-
 #~ msgid "Name:"
 #~ msgstr "Nome:"
 
@@ -623,9 +619,8 @@ msgstr "Riproduci la traccia precedente"
 #~ "This module detects any running instant messenger and updates your status "
 #~ "with regards to the track you are listening to. Supported messengers are:"
 #~ msgstr ""
-#~ "Questo modulo rileva i programmi di messaggistica istantanea e ne "
-#~ "aggiorna lo stato con la traccia che stai ascoltando. I programmi "
-#~ "supportati sono:"
+#~ "Questo modulo rileva i programmi di messaggistica istantanea e ne aggiorna "
+#~ "lo stato con la traccia che stai ascoltando. I programmi supportati sono:"
 
 #~ msgid "Customizing the Status"
 #~ msgstr "Personalizza lo stato"
@@ -690,8 +685,7 @@ msgstr "Riproduci la traccia precedente"
 #~ msgid "Remove the selected library?"
 #~ msgstr "Rimuovere la libreria selezionata?"
 
-#~ msgid ""
-#~ "You will be able to recreate these libraries later on if you wish so."
+#~ msgid "You will be able to recreate these libraries later on if you wish so."
 #~ msgstr "Potrai ricreare questa librerie anche in seguito, se lo desideri."
 
 #~ msgid "Remove all selected libraries?"
@@ -705,10 +699,9 @@ msgstr "Riproduci la traccia precedente"
 #~ "structure of your drive. Loading tracks is also faster because their tags "
 #~ "are already known and do not have to be read again."
 #~ msgstr ""
-#~ "Questo modulo organizza la libreria musicale in base ai tags,  invece "
-#~ "della struttura dei file sul disco. Il caricamento delle tracce è anche "
-#~ "più veloce perchè i tags sono già noti e non devono essere acquisiti di "
-#~ "nuovo."
+#~ "Questo modulo organizza la libreria musicale in base ai tags,  invece della "
+#~ "struttura dei file sul disco. Il caricamento delle tracce è anche più veloce "
+#~ "perchè i tags sono già noti e non devono essere acquisiti di nuovo."
 
 #~ msgid ""
 #~ "When you add a new library, you have to give the full path to the root "
@@ -717,9 +710,9 @@ msgstr "Riproduci la traccia precedente"
 #~ "database."
 #~ msgstr ""
 #~ "Quando aggiungi una libreria musicale, bisogna inserire il path completo "
-#~ "della directory di root della stessa libreria.Quindi tutte le cartelle "
-#~ "del path fornito vengono scansite, incluse sottocartelle,leggendo tutti i "
-#~ "tags dei file musicali che verrano memorizzati in un database."
+#~ "della directory di root della stessa libreria.Quindi tutte le cartelle del "
+#~ "path fornito vengono scansite, incluse sottocartelle,leggendo tutti i tags "
+#~ "dei file musicali che verrano memorizzati in un database."
 
 #~ msgid "Status Icon"
 #~ msgstr "Icona di stato"
@@ -756,11 +749,9 @@ msgstr "Riproduci la traccia precedente"
 #~ msgstr "Percorso non valido"
 
 #~ msgid ""
-#~ "The path to the CD-ROM device is not valid. Please choose an existing "
-#~ "path."
+#~ "The path to the CD-ROM device is not valid. Please choose an existing path."
 #~ msgstr ""
-#~ "Il percorso dell'unità CD-ROM non è valido. Scegliere un percorso "
-#~ "esistente."
+#~ "Il percorso dell'unità CD-ROM non è valido. Scegliere un percorso esistente."
 
 #~ msgid "This module lets you play audio discs from your CD-ROM device."
 #~ msgstr ""
@@ -772,15 +763,14 @@ msgstr "Riproduci la traccia precedente"
 
 #~ msgid ""
 #~ "Disc information, such as artist and album title, may be automatically "
-#~ "downloaded from an online database if you wish so. This information may "
-#~ "also be saved on your hard drive to avoid downloading it again the next "
-#~ "time you play the same disc."
+#~ "downloaded from an online database if you wish so. This information may also "
+#~ "be saved on your hard drive to avoid downloading it again the next time you "
+#~ "play the same disc."
 #~ msgstr ""
 #~ "Se si desidera, le informazioni sul disco come: artista e titolo album, "
 #~ "posso essere scaricate automaticamente dal database remoto. Queste "
-#~ "informazioni possono essere salvate sul tuo hard disk per evitare di "
-#~ "essere scaricate nuovamente nel momento in cui viene ascoltato lo stesso "
-#~ "disco."
+#~ "informazioni possono essere salvate sul tuo hard disk per evitare di essere "
+#~ "scaricate nuovamente nel momento in cui viene ascoltato lo stesso disco."
 
 #~ msgid "Status File"
 #~ msgstr "File di stato"
@@ -789,8 +779,7 @@ msgstr "Riproduci la traccia precedente"
 #~ msgstr "Genera un file di testo con lo stato corrente"
 
 #~ msgid ""
-#~ "The path to the selected file is not valid. Please choose an existing "
-#~ "path."
+#~ "The path to the selected file is not valid. Please choose an existing path."
 #~ msgstr ""
 #~ "Il percorso per il file selezionato non è valido. Per favore scegli un "
 #~ "percorso valido."
@@ -799,8 +788,7 @@ msgstr "Riproduci la traccia precedente"
 #~ msgstr "Scegli un file"
 
 #~ msgid ""
-#~ "This module generates a text file with regards to the track currently "
-#~ "played."
+#~ "This module generates a text file with regards to the track currently played."
 #~ msgstr ""
 #~ "Questo modulo genera un file di testo  riguardo alla traccia che si sta "
 #~ "ascoltando."

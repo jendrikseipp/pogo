@@ -8,14 +8,14 @@ msgstr ""
 "Project-Id-Version: decibel-audio-player\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2010-10-07 15:37+0200\n"
-"PO-Revision-Date: 2009-08-24 13:13+0000\n"
-"Last-Translator: ivan mikov <idm@dir.bg>\n"
+"PO-Revision-Date: 2010-10-07 11:24+0000\n"
+"Last-Translator: ivan mikov <Unknown>\n"
 "Language-Team: Bulgarian <bg@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Launchpad-Export-Date: 2009-09-01 15:20+0000\n"
+"X-Launchpad-Export-Date: 2010-10-08 04:58+0000\n"
 "X-Generator: Launchpad (build Unknown)\n"
 
 #: ../src/media/track/__init__.py:54
@@ -67,9 +67,8 @@ msgid "Full path to the file"
 msgstr "Пълен път до файла"
 
 #: ../src/media/track/__init__.py:149 ../src/media/track/__init__.py:393
-#, fuzzy
 msgid "unknown"
-msgstr "Неизвестен жанр"
+msgstr ""
 
 #: ../src/media/track/__init__.py:175
 #, python-format
@@ -98,16 +97,10 @@ msgid "Description"
 msgstr "Описание"
 
 #: ../src/gui/preferences.py:139
-#, fuzzy
 msgid ""
 "This window shows the list of available modules. You can enable/disable a "
 "module by checking/unchecking the check box in front of it."
 msgstr ""
-"Този прозорец показва списък с достъпните модули, които са малки части код, "
-"добавящи нови функционалности към приложението. Можете да включвате/"
-"изключвате модула, поставяйки/премахвайки отметката срещу него. Обърнете "
-"внимание, че някои модули (например, Файловият браузър) не могат да бъдат "
-"изключени."
 
 #: ../src/gui/preferences.py:141
 msgid "Configuring a Module"
@@ -162,7 +155,7 @@ msgstr ""
 msgid "translator-credits"
 msgstr ""
 "Launchpad Contributions:\n"
-"  ivan mikov https://launchpad.net/~ivandm"
+"  ivan mikov https://launchpad.net/~idm-dir"
 
 #: ../src/gui/about.py:44
 msgid "Developer:"
@@ -189,9 +182,8 @@ msgid "Music"
 msgstr ""
 
 #: ../src/modules/FileExplorer.py:443
-#, fuzzy
 msgid "Albums"
-msgstr "Албум"
+msgstr ""
 
 #: ../src/modules/__init__.py:75
 msgid "The following Python modules are not available:"
@@ -206,7 +198,8 @@ msgid "Restart required"
 msgstr "Изисква се рестартиране"
 
 #: ../src/modules/__init__.py:267
-msgid "You must restart the application for this modification to take effect."
+msgid ""
+"You must restart the application for this modification to take effect."
 msgstr "Трябва да рестартирате приложението за да се отрази промяната."
 
 #: ../src/modules/CtrlPanel.py:188 ../src/modules/CtrlPanel.py:244
@@ -214,9 +207,8 @@ msgid "Pause the current track"
 msgstr "Паузирай текущият запис"
 
 #: ../src/modules/CtrlPanel.py:204
-#, fuzzy
 msgid "Play the first selected track of the playlist"
-msgstr "Изпълни първият запис от списъка"
+msgstr ""
 
 #: ../src/modules/CtrlPanel.py:238
 msgid "Continue playing the current track"
@@ -244,7 +236,8 @@ msgstr ""
 "нов запис."
 
 #: ../src/modules/DesktopNotification.py:215
-msgid "If the Covers module is enabled, the popup also shows the album cover."
+msgid ""
+"If the Covers module is enabled, the popup also shows the album cover."
 msgstr ""
 
 #: ../src/modules/DesktopNotification.py:216
@@ -445,6 +438,18 @@ msgstr "Изпълни следващият запис"
 msgid "Play the previous track"
 msgstr "Изпълни предходният запис"
 
+#~ msgid ""
+#~ "This dialog box shows the list of available modules, which are small pieces "
+#~ "of code that add some functionnalities to the application. You can "
+#~ "enable/disable a module by checking/unchecking the check box in front of it. "
+#~ "Note that some modules (e.g., the File Explorer) cannot be disabled."
+#~ msgstr ""
+#~ "Този прозорец показва списък с достъпните модули, които са малки части код, "
+#~ "добавящи нови функционалности към приложението. Можете да "
+#~ "включвате/изключвате модула, поставяйки/премахвайки отметката срещу него. "
+#~ "Обърнете внимание, че някои модули (например, Файловият браузър) не могат да "
+#~ "бъдат изключени."
+
 #~ msgid "File Explorer"
 #~ msgstr "Файлов браузър"
 
@@ -474,18 +479,18 @@ msgstr "Изпълни предходният запис"
 #~ msgstr "За сигурността на съхранение на паролата"
 
 #~ msgid ""
-#~ "If you use Gnome, it is safe to store your password since the Gnome "
-#~ "keyring is used."
+#~ "If you use Gnome, it is safe to store your password since the Gnome keyring "
+#~ "is used."
 #~ msgstr ""
-#~ "Ако използвате Gnome е безопасно да запазите вашата парола, щом се "
-#~ "използва ключодържателя на Gnome."
+#~ "Ако използвате Gnome е безопасно да запазите вашата парола, щом се използва "
+#~ "ключодържателя на Gnome."
 
 #~ msgid ""
-#~ "If you do not use Gnome, beware that, although not stored as clear text, "
-#~ "an attacker <i>could</i> retrieve it."
+#~ "If you do not use Gnome, beware that, although not stored as clear text, an "
+#~ "attacker <i>could</i> retrieve it."
 #~ msgstr ""
-#~ "Ако не използвате Gnome внимавайте, макар че паролите не се съхраняват "
-#~ "като обикновен текст, то някой <i>може</i> да я извлече."
+#~ "Ако не използвате Gnome внимавайте, макар че паролите не се съхраняват като "
+#~ "обикновен текст, то някой <i>може</i> да я извлече."
 
 #~ msgid "Home"
 #~ msgstr "Начало"
@@ -521,12 +526,6 @@ msgstr "Изпълни предходният запис"
 
 #~ msgid "Usage"
 #~ msgstr "Употреба"
-
-#, fuzzy
-#~ msgid "by <i>%(artist)s</i> from <i>%(album)s</i>"
-#~ msgstr ""
-#~ "изпълнява %(artist)s\n"
-#~ "от албума %(album)s"
 
 #~ msgid ""
 #~ "Please select an explorer\n"
@@ -586,10 +585,6 @@ msgstr "Изпълни предходният запис"
 #~ msgid "_Help"
 #~ msgstr "_Помощ"
 
-#, fuzzy
-#~ msgid "_View"
-#~ msgstr "_Файл"
-
 #~ msgid "Name:"
 #~ msgstr "Име:"
 
@@ -612,20 +607,20 @@ msgstr "Изпълни предходният запис"
 #~ "This module detects any running instant messenger and updates your status "
 #~ "with regards to the track you are listening to. Supported messengers are:"
 #~ msgstr ""
-#~ "Този модул засича всеки работещ IM клиент и обновява вашия статус "
-#~ "съобразно записа, който слушате. Поддържани IM клиенти са:"
+#~ "Този модул засича всеки работещ IM клиент и обновява вашия статус съобразно "
+#~ "записа, който слушате. Поддържани IM клиенти са:"
 
 #~ msgid "Customizing the Status"
 #~ msgstr "Настройка на статуса"
 
 #~ msgid ""
-#~ "You can set the status to any text you want. Before setting it, the "
-#~ "module replaces all fields of the form {field} by their corresponding "
-#~ "value. Available fields are:"
+#~ "You can set the status to any text you want. Before setting it, the module "
+#~ "replaces all fields of the form {field} by their corresponding value. "
+#~ "Available fields are:"
 #~ msgstr ""
-#~ "Можете да изберете всякакъв текст за статуса. Преди да го поставите, "
-#~ "модулът заменя всички полета от вида {поле} с техните съответни значения. "
-#~ "Достъпни са следните полета:"
+#~ "Можете да изберете всякакъв текст за статуса. Преди да го поставите, модулът "
+#~ "заменя всички полета от вида {поле} с техните съответни значения. Достъпни "
+#~ "са следните полета:"
 
 #~ msgid "Sanitization"
 #~ msgstr "Прочистване"
@@ -633,13 +628,13 @@ msgstr "Изпълни предходният запис"
 #~ msgid ""
 #~ "You can define some words that to sanitize before using them to set your "
 #~ "status. In this case, the middle characters of matching words is "
-#~ "automatically replaced with asterisks (e.g., \"Metallica - Live S**t "
-#~ "Binge & Purge\"). Put one word per line."
+#~ "automatically replaced with asterisks (e.g., \"Metallica - Live S**t Binge & "
+#~ "Purge\"). Put one word per line."
 #~ msgstr ""
 #~ "Можете да определите някои думи, които да бъдат прочистени преди да ги "
-#~ "използвате при поставянето на вашия статус. В този случай средните букви "
-#~ "на съвпадащите думи автоматично се заменят със звездичка (напр. "
-#~ "\"Metallica - Live S**t Binge & Purge\"). Поставете по една дума на ред."
+#~ "използвате при поставянето на вашия статус. В този случай средните букви на "
+#~ "съвпадащите думи автоматично се заменят със звездичка (напр. \"Metallica - "
+#~ "Live S**t Binge & Purge\"). Поставете по една дума на ред."
 
 #~ msgid "Keep your Last.fm profile up to date"
 #~ msgstr "Обновява вашият Last.fm профил"
@@ -704,16 +699,13 @@ msgstr "Изпълни предходният запис"
 #~ msgstr "записи"
 
 #~ msgid "You will be able to recreate this library later on if you wish so."
-#~ msgstr ""
-#~ "По-късно ще може да създадете отново тази библиотека, ако пожелаете."
+#~ msgstr "По-късно ще може да създадете отново тази библиотека, ако пожелаете."
 
 #~ msgid "Remove the selected library?"
 #~ msgstr "Премахване на избраната библиотека?"
 
-#~ msgid ""
-#~ "You will be able to recreate these libraries later on if you wish so."
-#~ msgstr ""
-#~ "По-късно ще може да създадете отново тези библиотеки, ако пожелаете."
+#~ msgid "You will be able to recreate these libraries later on if you wish so."
+#~ msgstr "По-късно ще може да създадете отново тези библиотеки, ако пожелаете."
 
 #~ msgid "Remove all selected libraries?"
 #~ msgstr "Премахване на всички избрани библиотеки?"
@@ -752,36 +744,33 @@ msgstr "Изпълни предходният запис"
 #~ msgstr "Невалиден път"
 
 #~ msgid ""
-#~ "The path to the CD-ROM device is not valid. Please choose an existing "
-#~ "path."
+#~ "The path to the CD-ROM device is not valid. Please choose an existing path."
 #~ msgstr ""
 #~ "Пътя до CD-ROM устройството е невалиден. Моля изберете съществуващ път."
 
 #~ msgid "This module lets you play audio discs from your CD-ROM device."
 #~ msgstr ""
-#~ "Този модул позволява пускането на аудио дискове от вашето CD-ROM "
-#~ "устройство."
+#~ "Този модул позволява пускането на аудио дискове от вашето CD-ROM устройство."
 
 #~ msgid "Compact Disc Data Base (CDDB)"
 #~ msgstr "База данни за компакт дискове (CDDB)"
 
 #~ msgid ""
 #~ "Disc information, such as artist and album title, may be automatically "
-#~ "downloaded from an online database if you wish so. This information may "
-#~ "also be saved on your hard drive to avoid downloading it again the next "
-#~ "time you play the same disc."
+#~ "downloaded from an online database if you wish so. This information may also "
+#~ "be saved on your hard drive to avoid downloading it again the next time you "
+#~ "play the same disc."
 #~ msgstr ""
-#~ "Ако желаете, информацията за диска, като името на изпълнителя и албума, "
-#~ "може да бъде автоматично изтеглена от онлайн база данни. Тази информация "
-#~ "може, също така, да бъде запазена на вашия хард диск, за да се избегне "
-#~ "повторното изтегляне следващият път когато прослушвате същия диск."
+#~ "Ако желаете, информацията за диска, като името на изпълнителя и албума, може "
+#~ "да бъде автоматично изтеглена от онлайн база данни. Тази информация може, "
+#~ "също така, да бъде запазена на вашия хард диск, за да се избегне повторното "
+#~ "изтегляне следващият път когато прослушвате същия диск."
 
 #~ msgid "Generate a text file with the current status"
 #~ msgstr "Създай текстови файл с текущия статус"
 
 #~ msgid ""
-#~ "The path to the selected file is not valid. Please choose an existing "
-#~ "path."
+#~ "The path to the selected file is not valid. Please choose an existing path."
 #~ msgstr "Пътя до избраният файл е невалиден. Моля изберете съществуващ път."
 
 #~ msgid "Choose a file"
