@@ -269,8 +269,6 @@ class Tracktree(modules.Module):
         self.tree.get_selection().unselect_all()
         self.insertDir(tracks, target, drop_mode, highlight)
         self.onListModified()
-        
-        # TODO: Find out which node to highlight
         return
             
         # TODO: playNow wanted? Buggy in current state

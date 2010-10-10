@@ -5,6 +5,8 @@ X Make startup even faster by saving the playlist with its formatting
 X Make track drag'n'drop faster by caching the tracks
 X Enable DBus: Send MPRIS messages about play events
 X Do some profiling to improve general speed
+X Append files added on commandline (pogo mytrack.mp3 myalbum myothertrack.mp3)
+X Append files added from nautilus right-click menu
 
 0.x:
 O Search
@@ -17,7 +19,6 @@ O Lyrics?
 O Open containing folder item?
 O Playlist loading
 O Make window resizing faster
-O Append files added from nautilus right-click menu
 O Correctly add layers > 2
 O Add Zeitgeist module
 

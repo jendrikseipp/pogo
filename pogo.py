@@ -36,14 +36,14 @@ optparser = optparse.OptionParser(usage='Usage: %prog [options] [FILE(s)]')
 ##              help='use the playbin GStreamer component instead of playbin2')
 optparser.add_option('-p', '--playbin', action='store_false', default=True,
                 help='use the playbin GStreamer component instead of playbin2')
-#optparser.add_option('--multiple-instances', action='store_true',
-#    default=False, help='start a new instance even if one is already running')
+optparser.add_option('--multiple-instances', action='store_true',
+    default=False, help='start a new instance even if one is already running')
 
 (optOptions, optArgs) = optparser.parse_args()
 
 
 # Check whether Pogo is already running?
-if False:  # not optOptions.multiple_instances:
+if not optOptions.multiple_instances:
     import dbus
 
     shouldStop = False
@@ -59,8 +59,9 @@ if False:  # not optOptions.multiple_instances:
 
             # Fill the current instance with the given tracks, if any
             if len(optArgs) != 0:
+                print 'Appending %s to the playlist' % ','.join(optArgs)
                 dbus.Interface(dbusSession.get_object(consts.dbusService,
-                '/TrackList'), consts.dbusInterface).SetTracks(optArgs, True)
+                '/TrackList'), consts.dbusInterface).AddTracks(optArgs, True)
     except:
         pass
 
@@ -69,6 +70,7 @@ if False:  # not optOptions.multiple_instances:
 
     if shouldStop:
         import sys
+        print 'There is already one Pogo instance running. Exiting.'
         sys.exit(1)
 
 
