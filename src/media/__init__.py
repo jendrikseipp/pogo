@@ -134,43 +134,7 @@ class TrackDir(object):
         self.flat = flat
         
         self.tracks = []
-        self.subdirs = []
-        
-        if dir and not flat:
-            self.scan()
-        
-    def scan(self):
-        import tools
-        for filename, path in tools.listDir(self.dir):
-            if os.path.isdir(path):
-                trackdir = TrackDir(dir=path)
-                # Only add subdirs that contain songs
-                if trackdir.tracks or trackdir.subdirs:
-                    self.subdirs.append(trackdir)
-            elif isSupported(filename):
-                track = getTrackFromFile(path)
-                self.tracks.append(track)
-                
-        # If a directory contains no tracks and only one subdir, 
-        # collapse them into one dir
-        #if not self.tracks and len(self.subdirs) == 1:
-        #    subdir = self.subdirs.pop(0)
-        #    self.tracks = subdir.tracks
-        #    self.dirname += ' / ' + subdir.dirname
-        
-        for subdir in self.subdirs:
-            subdir.dirname = self.dirname + ' / ' + subdir.dirname
-        
-        if self.subdirs:
-            # TODO: Handle multiple layers (Music -> Albums -> The Band)
-            self.flat = True
-            
-            if self.tracks:
-                trackdir = TrackDir(name=self.dirname)
-                trackdir.tracks = self.tracks
-                self.tracks = []
-                self.subdirs.insert(0, trackdir)
-            
+        self.subdirs = []            
                 
     def empty(self):
         return not self.tracks and not self.subdirs
@@ -216,6 +180,42 @@ def preloadTracks(paths):
             preloadTracks(subpaths)
         elif isSupported(path):
             getTrackFromFile(path)
+            
+
+def scanPath(path, name='', tracks=None):
+    # UNUSED
+    if tracks is None:
+        from collections import defaultdict
+        tracks = defaultdict(list)
+        
+    if os.path.isdir(path):
+        for (subname, subpath) in tools.listDir(path):
+            if os.path.isdir(subpath):
+                subname = name + ' / ' + subname if name else subname
+            else:
+                subname = name
+            tracks.update(scanPath(subpath, subname, tracks))
+    elif isSupported(path):
+        track = getTrackFromFile(path)
+        tracks[name].append(track)
+    return tracks
+    
+    
+def scanPaths(dir_info, name='', tracks=None):
+    if tracks is None:
+        from collections import defaultdict
+        tracks = defaultdict(list)
+        
+    for (subname, subpath) in dir_info:
+        if os.path.isdir(subpath):
+            subname = name + ' / ' + subname if name else subname
+            tracks.update(scanPaths(tools.listDir(subpath), subname, tracks))
+        elif isSupported(subpath):
+            track = getTrackFromFile(subpath)
+            tracks[name].append(track)
+    return tracks
+            
+    
         
     
 def getTracks(filenames, sortByFilename=True):
@@ -226,8 +226,12 @@ def getTracks(filenames, sortByFilename=True):
     
     for path in sorted(filenames):
         if os.path.isdir(path):
-            trackdir = TrackDir(dir=path)
-            tracks.subdirs.append(trackdir)
+            dirname = tools.dirname(path)
+            track_dict = scanPaths(tools.listDir(path), name=dirname)
+            for name, track_list in sorted(track_dict.iteritems()):
+                trackdir = TrackDir(name=name)
+                trackdir.tracks = track_list
+                tracks.subdirs.append(trackdir)
         elif isSupported(path):
             track = getTrackFromFile(path)
             tracks.tracks.append(track)
@@ -241,6 +245,19 @@ if __name__ == '__main__':
     sys.path.insert(0, base_dir)
     
     dirs = ['/home/jendrik/tmp/Horses'] * 50
+    
+    from pprint import pprint
+    dir = '/home/jendrik/tmp/Horses'
+    tracks = scanPaths(tools.listDir(dir))
+    for key, value in sorted(tracks.iteritems()):
+        print key
+        print value
+        print
+        
+    tracks = getTracks(['/home/jendrik/tmp/Horses'])
+    print tracks
+    
+    sys.exit()
     
     import timeit
     t1 = timeit.Timer("getTracks(dirs)",

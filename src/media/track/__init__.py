@@ -391,6 +391,9 @@ class Track:
     def _unknown_in_tags(self):
         title = self.getTitle().lower()
         return 'unknown' in title or _('unknown') in title
+        
+    def __repr__(self):
+        return '<Track %s>' % self.get_window_title()
 
 
 def unserialize(serialTrack):
