@@ -8,14 +8,14 @@ msgstr ""
 "Project-Id-Version: decibel-audio-player\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2010-10-07 15:37+0200\n"
-"PO-Revision-Date: 2010-10-07 11:32+0000\n"
-"Last-Translator: Alexandre Cavedon <alexandre.cavedon@gmail.com>\n"
+"PO-Revision-Date: 2010-10-11 03:41+0000\n"
+"Last-Translator: André Gondim <andregondim@ubuntu.com>\n"
 "Language-Team: Brazilian Portuguese <pt_BR@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Launchpad-Export-Date: 2010-10-08 04:58+0000\n"
+"X-Launchpad-Export-Date: 2010-10-11 05:00+0000\n"
 "X-Generator: Launchpad (build Unknown)\n"
 
 #: ../src/media/track/__init__.py:54
@@ -48,11 +48,11 @@ msgstr "Número do disco"
 
 #: ../src/media/track/__init__.py:61
 msgid "Bit rate"
-msgstr ""
+msgstr "Taxa de bit"
 
 #: ../src/media/track/__init__.py:62
 msgid "Sample rate"
-msgstr ""
+msgstr "Taxa de amostra"
 
 #: ../src/media/track/__init__.py:63
 msgid "Duration in seconds (e.g., 194)"
@@ -68,7 +68,7 @@ msgstr "Caminho completo do arquivo"
 
 #: ../src/media/track/__init__.py:149 ../src/media/track/__init__.py:393
 msgid "unknown"
-msgstr ""
+msgstr "desconhecido"
 
 #: ../src/media/track/__init__.py:175
 #, python-format
@@ -77,7 +77,7 @@ msgstr "%(album)s [Álbum %(discnum)u]"
 
 #: ../src/media/track/__init__.py:182
 msgid "CDDA Track"
-msgstr ""
+msgstr "Faixa CDDA"
 
 #: ../src/gui/preferences.py:43
 msgid "Preferences"
@@ -156,7 +156,8 @@ msgstr ""
 msgid "translator-credits"
 msgstr ""
 "Launchpad Contributions:\n"
-"  Alexandre Cavedon https://launchpad.net/~alexandrecavedon"
+"  Alexandre Cavedon https://launchpad.net/~alexandrecavedon\n"
+"  André Gondim https://launchpad.net/~andregondim"
 
 #: ../src/gui/about.py:44
 msgid "Developer:"
@@ -176,15 +177,15 @@ msgstr "carregando..."
 
 #: ../src/modules/FileExplorer.py:334
 msgid "Append"
-msgstr ""
+msgstr "Adicionar"
 
 #: ../src/modules/FileExplorer.py:443
 msgid "Music"
-msgstr ""
+msgstr "Música"
 
 #: ../src/modules/FileExplorer.py:443
 msgid "Albums"
-msgstr ""
+msgstr "Álbuns"
 
 #: ../src/modules/__init__.py:75
 msgid "The following Python modules are not available:"
@@ -196,12 +197,13 @@ msgstr "Você deve instalá-los se deseja ativar este módulo."
 
 #: ../src/modules/__init__.py:266
 msgid "Restart required"
-msgstr ""
+msgstr "Reinicialização necessária"
 
 #: ../src/modules/__init__.py:267
 msgid ""
 "You must restart the application for this modification to take effect."
 msgstr ""
+"Você deve reiniciar o aplicativo para que esta modificação tenha efeito."
 
 #: ../src/modules/CtrlPanel.py:188 ../src/modules/CtrlPanel.py:244
 msgid "Pause the current track"
@@ -329,36 +331,36 @@ msgstr "Salvar playlist"
 
 #: ../src/modules/Tracktree.py:417
 msgid "Clear Playlist"
-msgstr ""
+msgstr "Limpar lista de reprodução"
 
 #: ../src/modules/Equalizer.py:24
 msgid "Equalizer"
-msgstr ""
+msgstr "Equalizador"
 
 #: ../src/modules/Equalizer.py:24
 msgid "Tune the level of the frequency bands"
-msgstr ""
+msgstr "Ajuste o nível das bandas de frequência"
 
 #: ../src/modules/Equalizer.py:125 ../src/modules/Equalizer.py:213
 #: ../src/modules/Equalizer.py:226
 msgid "Custom"
-msgstr ""
+msgstr "Personalizado"
 
 #: ../src/modules/Equalizer.py:166
 msgid "Save levels"
-msgstr ""
+msgstr "Salvar níveis"
 
 #: ../src/modules/Equalizer.py:177
 msgid "Load levels"
-msgstr ""
+msgstr "Carregar níveis"
 
 #: ../src/modules/Equalizer.py:204
 msgid "Could not load the file"
-msgstr ""
+msgstr "Não foi possível carregar o arquivo"
 
 #: ../src/modules/Equalizer.py:204
 msgid "The format of the file is incorrect."
-msgstr ""
+msgstr "O formato do arquivo está incorreto."
 
 #: ../src/tools/consts.py:94
 msgid "Unknown Genre"
@@ -443,7 +445,7 @@ msgstr "segundos"
 
 #: ../res/Equalizer.glade.h:1
 msgid "Preset:"
-msgstr ""
+msgstr "Predefinido:"
 
 #: ../res/MainWindow.glade.h:1
 msgid "Play the first track of the playlist"

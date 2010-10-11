@@ -1,106 +1,108 @@
-# Catalan translation for decibel-audio-player
-# Copyright (c) 2008 Rosetta Contributors and Canonical Ltd 2008
-# This file is distributed under the same license as the decibel-audio-player package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2008.
+# Bengali translation for pogo
+# Copyright (c) 2010 Rosetta Contributors and Canonical Ltd 2010
+# This file is distributed under the same license as the pogo package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2010.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: decibel-audio-player\n"
-"Report-Msgid-Bugs-To: \n"
+"Project-Id-Version: pogo\n"
+"Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2010-10-07 15:37+0200\n"
-"PO-Revision-Date: 2010-10-07 11:25+0000\n"
-"Last-Translator: toni <unmail.toni@gmail.com>\n"
-"Language-Team: Catalan <ca@li.org>\n"
+"PO-Revision-Date: 2010-10-11 01:30+0000\n"
+"Last-Translator: Aniruddha Adhikary <Unknown>\n"
+"Language-Team: Bengali <bn@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Launchpad-Export-Date: 2010-10-11 05:00+0000\n"
+"X-Launchpad-Export-Date: 2010-10-11 04:59+0000\n"
 "X-Generator: Launchpad (build Unknown)\n"
 
 #: ../src/media/track/__init__.py:54
 msgid "Track number"
-msgstr "Número de pista"
+msgstr "ট্র্যাক নং"
 
 #: ../src/media/track/__init__.py:55
 msgid "Title"
-msgstr "Títol"
+msgstr "শিরোনাম"
 
 #: ../src/media/track/__init__.py:56
 msgid "Artist"
-msgstr "Artista"
+msgstr "শিল্পী"
 
 #: ../src/media/track/__init__.py:57
 msgid "Album"
-msgstr "Àlbum"
+msgstr "এ্যালবাম"
 
 #: ../src/media/track/__init__.py:58
 msgid "Genre"
-msgstr "Gènere"
+msgstr "ঘরানা"
 
 #: ../src/media/track/__init__.py:59
 msgid "Date"
-msgstr "Data"
+msgstr "তারিখ"
 
 #: ../src/media/track/__init__.py:60
 msgid "Disc number"
-msgstr "Número de disc"
+msgstr "ডিস্ক নং"
 
 #: ../src/media/track/__init__.py:61
 msgid "Bit rate"
-msgstr ""
+msgstr "বিট রেট"
 
 #: ../src/media/track/__init__.py:62
 msgid "Sample rate"
-msgstr ""
+msgstr "স্যাম্পল রেট"
 
 #: ../src/media/track/__init__.py:63
 msgid "Duration in seconds (e.g., 194)"
-msgstr "Duració en segons"
+msgstr "দৈর্ঘ্য (সেকেন্ডে)"
 
 #: ../src/media/track/__init__.py:64
 msgid "Duration as a string (e.g., 3:14)"
-msgstr "Duració en cadena de text"
+msgstr "দৈর্ঘ্য(স্ট্রিং)"
 
 #: ../src/media/track/__init__.py:67
 msgid "Full path to the file"
-msgstr "Ruta sencera fins a l'arxiu"
+msgstr "ফাইলের সম্পূর্ণ প্যাথ"
 
 #: ../src/media/track/__init__.py:149 ../src/media/track/__init__.py:393
 msgid "unknown"
-msgstr ""
+msgstr "অজানা"
 
 #: ../src/media/track/__init__.py:175
 #, python-format
 msgid "%(album)s  [Disc %(discnum)u]"
-msgstr ""
+msgstr "%(album)s [ডিস্ক %(discnum)u]"
 
 #: ../src/media/track/__init__.py:182
 msgid "CDDA Track"
-msgstr ""
+msgstr "সিডিডিএ ট্র্যাক"
 
 #: ../src/gui/preferences.py:43
 msgid "Preferences"
-msgstr "Preferències"
+msgstr "পছন্দসমূহ"
 
 #: ../src/gui/preferences.py:128
 msgid "Unable to load this module."
-msgstr "No s'ha pogut carregar aquest mòdul."
+msgstr "মডিউলটি লোড করা সম্ভব হয় নি"
 
 #: ../src/gui/preferences.py:137
 msgid "Modules"
-msgstr "Mòduls"
+msgstr "মডিউলসমূহ"
 
 #: ../src/gui/preferences.py:138 ../src/modules/DesktopNotification.py:213
 #: ../src/modules/Covers.py:432
 msgid "Description"
-msgstr "Descripció"
+msgstr "বিবরণ"
 
 #: ../src/gui/preferences.py:139
 msgid ""
 "This window shows the list of available modules. You can enable/disable a "
 "module by checking/unchecking the check box in front of it."
 msgstr ""
+"এই উইন্ডো আপনাকে ব্যবহারোপযোগী মডিউলসমূহের একটি তালিকা দেখাচ্ছে। আপনি সামনের "
+"চেক বক্সে ক্লিক করে চেক/আনচেক করে যেকোন মডিউল কার্যকর/অকার্যকর করতে পারেন।"
 
 #: ../src/gui/preferences.py:141
 msgid "Configuring a Module"
@@ -147,15 +149,15 @@ msgstr ""
 msgid "translator-credits"
 msgstr ""
 "Launchpad Contributions:\n"
-"  toni https://launchpad.net/~unmail-toni"
+"  Aniruddha Adhikary https://launchpad.net/~digitiger1"
 
 #: ../src/gui/about.py:44
 msgid "Developer:"
-msgstr "Desenvolupador"
+msgstr ""
 
 #: ../src/gui/about.py:48
 msgid "Thanks to:"
-msgstr "Gràcies a:"
+msgstr ""
 
 #: ../src/modules/Zeitgeist.py:26
 msgid "Send track information to the Zeitgeist service"
@@ -334,23 +336,23 @@ msgstr ""
 
 #: ../src/tools/consts.py:94
 msgid "Unknown Genre"
-msgstr "Gènere desconegut"
+msgstr ""
 
 #: ../src/tools/consts.py:95
 msgid "Unknown Title"
-msgstr "Títol desconegut"
+msgstr ""
 
 #: ../src/tools/consts.py:96
 msgid "Unknown Album"
-msgstr "Àlbum desconegut"
+msgstr ""
 
 #: ../src/tools/consts.py:97
 msgid "Unknown Artist"
-msgstr "Artista desconegut"
+msgstr ""
 
 #: ../src/tools/consts.py:105
 msgid "Unknown Album Artist"
-msgstr "Àlbum de l'Artista desconegut"
+msgstr ""
 
 #: ../res/Covers.glade.h:1
 msgid "<b>Internet Covers</b>"
@@ -427,29 +429,3 @@ msgstr ""
 #: ../res/MainWindow.glade.h:3
 msgid "Play the previous track"
 msgstr ""
-
-#~ msgid "Position of the track in the playlist"
-#~ msgstr "Posició de la pista dins la llista de reproducció"
-
-#~ msgid "Number of tracks in the playlist"
-#~ msgstr "Número de pistes a la llista de reproducció"
-
-#~ msgid "Password required"
-#~ msgstr "Es necessita el mot de pas"
-
-#~ msgid "About password storage safety"
-#~ msgstr "Sobre la seguretat per a desar el mot de pas"
-
-#~ msgid ""
-#~ "If you use Gnome, it is safe to store your password since the Gnome keyring "
-#~ "is used."
-#~ msgstr ""
-#~ "Si empres Gnome, pots desar el teu mot de pas de manera segura ja que s'està "
-#~ "fent servir l'anell de claus de Gnome."
-
-#~ msgid ""
-#~ "If you do not use Gnome, beware that, although not stored as clear text, an "
-#~ "attacker <i>could</i> retrieve it."
-#~ msgstr ""
-#~ "SI no fas servir Gnome, tingues en compte que encara que no es desi com a "
-#~ "una cadena de text, un attacant <i>podria</i> aconseguir-lo."

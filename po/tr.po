@@ -8,14 +8,14 @@ msgstr ""
 "Project-Id-Version: decibel-audio-player\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2010-10-07 15:37+0200\n"
-"PO-Revision-Date: 2010-10-07 11:37+0000\n"
-"Last-Translator: Jendrik Seipp <jendrikseipp@web.de>\n"
+"PO-Revision-Date: 2010-10-10 15:00+0000\n"
+"Last-Translator: zeugma <Unknown>\n"
 "Language-Team: Turkish <tr@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Launchpad-Export-Date: 2010-10-08 04:58+0000\n"
+"X-Launchpad-Export-Date: 2010-10-11 05:00+0000\n"
 "X-Generator: Launchpad (build Unknown)\n"
 
 #: ../src/media/track/__init__.py:54
@@ -24,15 +24,15 @@ msgstr "Parça numarası"
 
 #: ../src/media/track/__init__.py:55
 msgid "Title"
-msgstr ""
+msgstr "Başlık"
 
 #: ../src/media/track/__init__.py:56
 msgid "Artist"
-msgstr ""
+msgstr "Sanatçı"
 
 #: ../src/media/track/__init__.py:57
 msgid "Album"
-msgstr ""
+msgstr "Albüm"
 
 #: ../src/media/track/__init__.py:58
 msgid "Genre"
@@ -40,15 +40,15 @@ msgstr ""
 
 #: ../src/media/track/__init__.py:59
 msgid "Date"
-msgstr ""
+msgstr "Tarih"
 
 #: ../src/media/track/__init__.py:60
 msgid "Disc number"
-msgstr ""
+msgstr "Disk numarası"
 
 #: ../src/media/track/__init__.py:61
 msgid "Bit rate"
-msgstr ""
+msgstr "Bit oranı"
 
 #: ../src/media/track/__init__.py:62
 msgid "Sample rate"
@@ -68,7 +68,7 @@ msgstr "Dosyanın tam yolu"
 
 #: ../src/media/track/__init__.py:149 ../src/media/track/__init__.py:393
 msgid "unknown"
-msgstr ""
+msgstr "Bilinmiyor"
 
 #: ../src/media/track/__init__.py:175
 #, python-format
@@ -149,7 +149,8 @@ msgstr ""
 msgid "translator-credits"
 msgstr ""
 "Launchpad Contributions:\n"
-"  Jendrik Seipp https://launchpad.net/~jendrikseipp"
+"  Jendrik Seipp https://launchpad.net/~jendrikseipp\n"
+"  zeugma https://launchpad.net/~sunder67"
 
 #: ../src/gui/about.py:44
 msgid "Developer:"
@@ -165,7 +166,7 @@ msgstr ""
 
 #: ../src/modules/FileExplorer.py:158
 msgid "loading..."
-msgstr ""
+msgstr "yükleniyor..."
 
 #: ../src/modules/FileExplorer.py:334
 msgid "Append"
@@ -173,11 +174,11 @@ msgstr ""
 
 #: ../src/modules/FileExplorer.py:443
 msgid "Music"
-msgstr ""
+msgstr "Müzik"
 
 #: ../src/modules/FileExplorer.py:443
 msgid "Albums"
-msgstr ""
+msgstr "Albümler"
 
 #: ../src/modules/__init__.py:75
 msgid "The following Python modules are not available:"
@@ -206,11 +207,11 @@ msgstr ""
 
 #: ../src/modules/CtrlPanel.py:238
 msgid "Continue playing the current track"
-msgstr ""
+msgstr "Mevcut parçayı çalmaya devam et"
 
 #: ../src/modules/DesktopNotification.py:25
 msgid "Desktop Notification"
-msgstr ""
+msgstr "Masaüstü Uyarısı"
 
 #: ../src/modules/DesktopNotification.py:25
 msgid "Display a desktop notification on track change"
@@ -263,11 +264,11 @@ msgstr "[Beklemede]"
 
 #: ../src/modules/Covers.py:28
 msgid "Covers"
-msgstr ""
+msgstr "Albüm Kapakları"
 
 #: ../src/modules/Covers.py:28
 msgid "Show album covers"
-msgstr ""
+msgstr "Albüm kapaklarını göster"
 
 #: ../src/modules/Covers.py:433
 msgid ""
@@ -278,7 +279,7 @@ msgstr ""
 
 #: ../src/modules/Covers.py:436
 msgid "User Covers"
-msgstr ""
+msgstr "Kullanıcı Kapakları"
 
 #: ../src/modules/Covers.py:437
 #, python-format
@@ -290,7 +291,7 @@ msgstr ""
 
 #: ../src/modules/Covers.py:440
 msgid "Internet Covers"
-msgstr ""
+msgstr "İnternet Kapakları"
 
 #: ../src/modules/Covers.py:441
 msgid ""
@@ -302,15 +303,15 @@ msgstr ""
 
 #: ../src/modules/Tracktree.py:368
 msgid "Save playlist"
-msgstr ""
+msgstr "Çalma listesini kaydet"
 
 #: ../src/modules/Tracktree.py:417
 msgid "Clear Playlist"
-msgstr ""
+msgstr "Çalma Listesini Temizle"
 
 #: ../src/modules/Equalizer.py:24
 msgid "Equalizer"
-msgstr ""
+msgstr "Ekolayzır"
 
 #: ../src/modules/Equalizer.py:24
 msgid "Tune the level of the frequency bands"
@@ -319,11 +320,11 @@ msgstr ""
 #: ../src/modules/Equalizer.py:125 ../src/modules/Equalizer.py:213
 #: ../src/modules/Equalizer.py:226
 msgid "Custom"
-msgstr ""
+msgstr "Özel"
 
 #: ../src/modules/Equalizer.py:166
 msgid "Save levels"
-msgstr ""
+msgstr "Bölümleri kaydet"
 
 #: ../src/modules/Equalizer.py:177
 msgid "Load levels"
@@ -339,11 +340,11 @@ msgstr ""
 
 #: ../src/tools/consts.py:94
 msgid "Unknown Genre"
-msgstr ""
+msgstr "Bilinmeyen Tarz"
 
 #: ../src/tools/consts.py:95
 msgid "Unknown Title"
-msgstr ""
+msgstr "Bilinmeyen Başlık"
 
 #: ../src/tools/consts.py:96
 msgid "Unknown Album"
@@ -355,7 +356,7 @@ msgstr "Bilinmeyen Sanatçı"
 
 #: ../src/tools/consts.py:105
 msgid "Unknown Album Artist"
-msgstr ""
+msgstr "Bilinmeyen Albüm Sanatçısı"
 
 #: ../res/Covers.glade.h:1
 msgid "<b>Internet Covers</b>"
@@ -383,7 +384,7 @@ msgstr ""
 
 #: ../res/Covers.glade.h:7
 msgid "Filenames:"
-msgstr ""
+msgstr "Dosya isimleri:"
 
 #: ../res/Covers.glade.h:8
 msgid "Try to download covers from the Internet"
@@ -399,11 +400,11 @@ msgstr ""
 
 #: ../res/DesktopNotification.glade.h:3
 msgid "<b>Title</b>"
-msgstr ""
+msgstr "<b>Başlık</b>"
 
 #: ../res/DesktopNotification.glade.h:4
 msgid "Notification timeout:"
-msgstr ""
+msgstr "Uyarı zaman aşımı:"
 
 #: ../res/DesktopNotification.glade.h:5
 msgid "Show a \"skip track\" button"
@@ -415,7 +416,7 @@ msgstr ""
 
 #: ../res/DesktopNotification.glade.h:7
 msgid "seconds"
-msgstr ""
+msgstr "saniye"
 
 #: ../res/Equalizer.glade.h:1
 msgid "Preset:"
@@ -427,11 +428,11 @@ msgstr "Playlistteki ilk şarkıyı çal"
 
 #: ../res/MainWindow.glade.h:2
 msgid "Play the next track"
-msgstr ""
+msgstr "Sonraki parçayı oynat"
 
 #: ../res/MainWindow.glade.h:3
 msgid "Play the previous track"
-msgstr ""
+msgstr "Önceki parçayı oynat"
 
 #~ msgid ""
 #~ "This dialog box shows the list of available modules, which are small pieces "
