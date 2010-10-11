@@ -7,7 +7,7 @@ X Enable DBus: Send MPRIS messages about play events
 X Do some profiling to improve general speed
 X Append files added on commandline (pogo mytrack.mp3 myalbum myothertrack.mp3)
 X Append files added from nautilus right-click menu
-O Correctly add layers > 2
+X Correctly add multiply nested directories
 
 0.x:
 O Search

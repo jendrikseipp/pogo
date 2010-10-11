@@ -150,6 +150,14 @@ def realStartup(window, paned):
 
     # Let's go
     gobject.idle_add(modules.postMsg, consts.MSG_EVT_APP_STARTED)
+    
+    # Is the application started for the first time?
+    if prefs.get(__name__, 'first-time', True):
+        prefs.set(__name__, 'first-time', False)
+        
+        # Enable some modules by default
+        prefs.set(__name__, 'enabled_modules', ['Covers', 'Desktop Notification'])
+        ##gobject.idle_add(modules.showPreferences)
 
 
 # --== Entry point ==--

@@ -427,7 +427,7 @@ class Tracktree(modules.Module):
 
     def togglePause(self):
         """ Start playing if not already playing """
-        if not self.tree.hasMark():
+        if len(self.tree) != 0 and not self.tree.hasMark():
             if self.tree.selection.count_selected_rows() > 0:
                 model, sel_rows_list = self.tree.selection.get_selected_rows()
                 first_sel_iter = self.tree.store.get_iter(sel_rows_list[0])
