@@ -1,0 +1,460 @@
+# Bengali translation for pogo
+# Copyright (c) 2010 Rosetta Contributors and Canonical Ltd 2010
+# This file is distributed under the same license as the pogo package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2010.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: pogo\n"
+"Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
+"POT-Creation-Date: 2010-10-07 15:37+0200\n"
+"PO-Revision-Date: 2010-10-11 07:26+0000\n"
+"Last-Translator: Aniruddha Adhikary <Unknown>\n"
+"Language-Team: Bengali <bn@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Launchpad-Export-Date: 2010-10-12 05:06+0000\n"
+"X-Generator: Launchpad (build Unknown)\n"
+
+#: ../src/media/track/__init__.py:54
+msgid "Track number"
+msgstr "ট্র্যাক নং"
+
+#: ../src/media/track/__init__.py:55
+msgid "Title"
+msgstr "শিরোনাম"
+
+#: ../src/media/track/__init__.py:56
+msgid "Artist"
+msgstr "শিল্পী"
+
+#: ../src/media/track/__init__.py:57
+msgid "Album"
+msgstr "এ্যালবাম"
+
+#: ../src/media/track/__init__.py:58
+msgid "Genre"
+msgstr "ঘরানা"
+
+#: ../src/media/track/__init__.py:59
+msgid "Date"
+msgstr "তারিখ"
+
+#: ../src/media/track/__init__.py:60
+msgid "Disc number"
+msgstr "ডিস্ক নং"
+
+#: ../src/media/track/__init__.py:61
+msgid "Bit rate"
+msgstr "বিট রেট"
+
+#: ../src/media/track/__init__.py:62
+msgid "Sample rate"
+msgstr "স্যাম্পল রেট"
+
+#: ../src/media/track/__init__.py:63
+msgid "Duration in seconds (e.g., 194)"
+msgstr "দৈর্ঘ্য (সেকেন্ডে)"
+
+#: ../src/media/track/__init__.py:64
+msgid "Duration as a string (e.g., 3:14)"
+msgstr "দৈর্ঘ্য(স্ট্রিং)"
+
+#: ../src/media/track/__init__.py:67
+msgid "Full path to the file"
+msgstr "ফাইলের সম্পূর্ণ প্যাথ"
+
+#: ../src/media/track/__init__.py:149 ../src/media/track/__init__.py:393
+msgid "unknown"
+msgstr "অজানা"
+
+#: ../src/media/track/__init__.py:175
+#, python-format
+msgid "%(album)s  [Disc %(discnum)u]"
+msgstr "%(album)s [ডিস্ক %(discnum)u]"
+
+#: ../src/media/track/__init__.py:182
+msgid "CDDA Track"
+msgstr "সিডিডিএ ট্র্যাক"
+
+#: ../src/gui/preferences.py:43
+msgid "Preferences"
+msgstr "পছন্দসমূহ"
+
+#: ../src/gui/preferences.py:128
+msgid "Unable to load this module."
+msgstr "মডিউলটি লোড করা সম্ভব হয় নি"
+
+#: ../src/gui/preferences.py:137
+msgid "Modules"
+msgstr "মডিউলসমূহ"
+
+#: ../src/gui/preferences.py:138 ../src/modules/DesktopNotification.py:213
+#: ../src/modules/Covers.py:432
+msgid "Description"
+msgstr "বিবরণ"
+
+#: ../src/gui/preferences.py:139
+msgid ""
+"This window shows the list of available modules. You can enable/disable a "
+"module by checking/unchecking the check box in front of it."
+msgstr ""
+"এই উইন্ডো আপনাকে ব্যবহারোপযোগী মডিউলসমূহের একটি তালিকা দেখাচ্ছে। আপনি সামনের "
+"চেক বক্সে ক্লিক করে চেক/আনচেক করে যেকোন মডিউল কার্যকর/অকার্যকর করতে পারেন।"
+
+#: ../src/gui/preferences.py:141
+msgid "Configuring a Module"
+msgstr "মডিউল কনফিগার করা"
+
+#: ../src/gui/preferences.py:142
+msgid ""
+"When a module may be configured, a specific icon is displayed on the right "
+"of the corresponding line. To configure a module, simply select it and then "
+"click on the \"Preferences\" button on the bottom of the dialog box. Note "
+"that configuring a module is only possible when it is enabled."
+msgstr ""
+"যখন একটি মডিউল কনফিগার করা যেতে পারে, লাইনের ডানে একটি নির্দিষ্ট আইকন দেখা "
+"যাবে। মডিউল কনফিগার করতে এটি সিলেক্ট করে ডায়ালগ বক্সের নিচে \"পছন্দসমূহ\" "
+"বাটনে ক্লিক করুন। বিঃদ্রঃ শুধুমাত্র মডিউল কার্যকর করা থাকলেই সেটি কনফিগার "
+"করা সম্ভব।"
+
+#: ../src/gui/selectPath.py:79
+msgid "Choose a folder"
+msgstr "একটি ফোল্ডার নির্বাচন করুন"
+
+#: ../src/gui/selectPath.py:96
+msgid "This path does not exist"
+msgstr "প্যাথটির অস্তিত্ব নেই"
+
+#: ../src/gui/selectPath.py:96
+msgid "Please select an existing directory."
+msgstr "অনুগ্রহ করে একটি বাস্তব ডাইরেক্টরী সিলেক্ট করুন।"
+
+#: ../src/gui/selectPath.py:99 ../src/gui/selectPath.py:104
+msgid "The name is incorrect"
+msgstr "নামটি ভুল"
+
+#: ../src/gui/selectPath.py:99
+msgid ""
+"This name is not allowed.\n"
+"Please use another one."
+msgstr ""
+"এই নামটি অনুমিত নয়।\n"
+"অনুগ্রহ করে আরেকটি নাম ব্যবহার করুন।"
+
+#: ../src/gui/selectPath.py:104
+#, python-format
+msgid ""
+"The character %s is not allowed.\n"
+"Please use another name."
+msgstr ""
+"%s ক্যারেক্টারটি ব্যবহার করা যাবে না।\n"
+"আরেকটি নাম ব্যবহার করুন।"
+
+#: ../src/gui/about.py:40
+msgid "translator-credits"
+msgstr ""
+"Launchpad Contributions:\n"
+"  Aniruddha Adhikary https://launchpad.net/~digitiger1"
+
+#: ../src/gui/about.py:44
+msgid "Developer:"
+msgstr "ডেভেলপারঃ"
+
+#: ../src/gui/about.py:48
+msgid "Thanks to:"
+msgstr "ধন্যবাদান্তেঃ"
+
+#: ../src/modules/Zeitgeist.py:26
+msgid "Send track information to the Zeitgeist service"
+msgstr "ট্র্যাক তথ্য Zeitgeist সার্ভিসে পাঠাও"
+
+#: ../src/modules/FileExplorer.py:158
+msgid "loading..."
+msgstr "লোড করা হচ্ছে..."
+
+#: ../src/modules/FileExplorer.py:334
+msgid "Append"
+msgstr "সংযুক্ত করুন"
+
+#: ../src/modules/FileExplorer.py:443
+msgid "Music"
+msgstr "সংগীত"
+
+#: ../src/modules/FileExplorer.py:443
+msgid "Albums"
+msgstr "এ্যালবামসমূহ"
+
+#: ../src/modules/__init__.py:75
+msgid "The following Python modules are not available:"
+msgstr "নিম্নের Python মডিউলটি নেইঃ"
+
+#: ../src/modules/__init__.py:79
+msgid "You must install them if you want to enable this module."
+msgstr ""
+"আপনাকে অবশ্যই এগুলো ইন্সটল করতে হবে যদি আপনি মডিউলটি কার্যকর করতে চান।"
+
+#: ../src/modules/__init__.py:266
+msgid "Restart required"
+msgstr "বন্ধ করে পুনরায় চালু করা প্রয়োজন"
+
+#: ../src/modules/__init__.py:267
+msgid ""
+"You must restart the application for this modification to take effect."
+msgstr ""
+"এই পরিবর্তনটি কার্যকর করার জন্য আপনাকে অ্যাপ্লিকেশনটি পুনরায় চালু করতে হবে।"
+
+#: ../src/modules/CtrlPanel.py:188 ../src/modules/CtrlPanel.py:244
+msgid "Pause the current track"
+msgstr "বর্তমান ট্র্যাকটি পজ কর"
+
+#: ../src/modules/CtrlPanel.py:204
+msgid "Play the first selected track of the playlist"
+msgstr "প্লেলিস্টের প্রথম ট্র্যাকটি প্লে কর"
+
+#: ../src/modules/CtrlPanel.py:238
+msgid "Continue playing the current track"
+msgstr "বর্তমান ট্র্যাক থেকে প্লে করা শুরু কর"
+
+#: ../src/modules/DesktopNotification.py:25
+msgid "Desktop Notification"
+msgstr "ডেস্কটপ নোটিফিকেশন"
+
+#: ../src/modules/DesktopNotification.py:25
+msgid "Display a desktop notification on track change"
+msgstr "ট্র্যাক পরিবর্তনে একটি ডেস্কটপ নোটিফিকেশন দেখাও"
+
+#: ../src/modules/DesktopNotification.py:78
+#: ../src/modules/DesktopNotification.py:188
+msgid "Skip track"
+msgstr "ট্র্যাক বাদ দাও"
+
+#: ../src/modules/DesktopNotification.py:214
+msgid ""
+"This module displays a small popup window on your desktop when a new track "
+"starts."
+msgstr ""
+"যখন একটি নতুন ট্র্যাক শুরু হয়, তখন এই মডিউলটি আপনার ডেস্কটপে একটি ছোট পপ-আপ "
+"উইন্ডো দেখায়।"
+
+#: ../src/modules/DesktopNotification.py:215
+msgid ""
+"If the Covers module is enabled, the popup also shows the album cover."
+msgstr ""
+"যদি \"কভারসমূহ\" মডিউলটি কার্যকর করা থাকে, পপ-আপটি এ্যালবাম কভারটিও দেখায়।"
+
+#: ../src/modules/DesktopNotification.py:216
+msgid "Customizing the Notification"
+msgstr "নোটিফিকেশনটি কাস্টমাইজ করা"
+
+#: ../src/modules/DesktopNotification.py:217
+msgid ""
+"You can change the title and the body of the notification to any text you "
+"want. Before displaying the popup window, fields of the form {field} are "
+"replaced by their corresponding value. Available fields are:\n"
+"\n"
+msgstr ""
+"আপনি চাইলে নোটিফিকেশনের শিরোনাম এবং বডি টেক্সট পরিবর্তন করতে পারবেন। পপ-আপ "
+"উইন্ডো দেখানোর পূর্বে {field} ফর্মের ফিল্ডগুলো তাদের মান দ্বারা প্রতিস্থাপিত "
+"হয়। ফিল্ডগুলো হলঃ\n"
+"\n"
+
+#: ../src/modules/DesktopNotification.py:220
+msgid "Markup"
+msgstr "মার্কআপ"
+
+#: ../src/modules/DesktopNotification.py:221
+msgid ""
+"You can use the Pango markup language to format the text. More information "
+"on that language is available on the following web page:"
+msgstr ""
+"আপনি লেখা পরিবর্তন করতে Pango মার্কআপ ল্যাঙ্গুয়েজ ব্যবহার করতে পারবেন। "
+"নিম্নের ওয়েবসাইটটিতে ল্যাঙ্গুয়েজটি সম্পর্কে বিস্তারিত তথ্য আছেঃ"
+
+#: ../src/modules/StatusbarTitlebar.py:49
+msgid "[paused]"
+msgstr "[পজ করা]"
+
+#: ../src/modules/Covers.py:28
+msgid "Covers"
+msgstr "কভারসমূহ"
+
+#: ../src/modules/Covers.py:28
+msgid "Show album covers"
+msgstr "এ্যালবাম কভারসমূহ দেখাও"
+
+#: ../src/modules/Covers.py:433
+msgid ""
+"This module displays the cover of the album the current track comes from. "
+"Covers may be loaded from local pictures, located in the same directory as "
+"the current track, or may be downloaded from the Internet."
+msgstr ""
+"বর্তমান ট্র্যাকটি যে এ্যালবাম থেকে এসেছে, এই মডিউলটি তার কভার প্রদর্শন করে। "
+"কভারসমূহ লোকাল ছবি, যা ট্র্যাকের ডিরেক্টরীতে রাখা আছে কিংবা ইন্টারনেট থেকে "
+"ডাউনলোড করা যেতে পারে।"
+
+#: ../src/modules/Covers.py:436
+msgid "User Covers"
+msgstr "ব্যবহারকারীর কভারসমূহ"
+
+#: ../src/modules/Covers.py:437
+#, python-format
+msgid ""
+"A user cover is a picture located in the same directory as the current "
+"track. When specifying filenames, you do not need to provide file "
+"extensions, supported file formats (%s) are automatically used."
+msgstr ""
+"একটি ব্যবহারকারীর কভার হল একটি ছবি যা বর্তমান ট্র্যাকের ডিরেক্টরিতে রাখা "
+"আছে। যখন ফাইলসময়হের নাম উল্লেখ করা হয়, আপনার ফাইল এক্সটেনশন দেবার প্রয়োজন "
+"নেই, সাপোর্টকৃত ফাইল ফরম্যাটসমূহ (%s) স্বয়ংক্রিয়ভাবে ব্যবহৃত হয়।"
+
+#: ../src/modules/Covers.py:440
+msgid "Internet Covers"
+msgstr "ইন্টারনেট থেকে প্রাপ্ত কভারসমূহ"
+
+#: ../src/modules/Covers.py:441
+msgid ""
+"Covers may be downloaded from the Internet, based on the tags of the current "
+"track. You can ask to always prefer user covers to Internet ones. In this "
+"case, if a user cover exists for the current track, it is used. If there is "
+"none, the cover is downloaded."
+msgstr ""
+"বর্তমান ট্রাকের ওপর ভিত্তি করে কভারসমূহ ইন্টারনেট থেকে ডাউনলোড করা যেতে "
+"পারে। আপনি সবসময় ব্যবহারকারীর কভার ইন্টারনেট থেকে প্রাপ্ত কভারের পরিবর্তে "
+"ব্যবহার করতে পারেন। এই ক্ষেত্রে, যদি বর্তমান ট্র্যাকে ব্যবহারকারীর কভার থেকে "
+"থাকে, এটি ব্যবহৃত হয়। অন্যথায় কভার ডাউনলোড করা হয়।"
+
+#: ../src/modules/Tracktree.py:368
+msgid "Save playlist"
+msgstr "প্লেলিস্ট সংরক্ষণ কর"
+
+#: ../src/modules/Tracktree.py:417
+msgid "Clear Playlist"
+msgstr "প্লেলিস্ট পরিষ্কার কর"
+
+#: ../src/modules/Equalizer.py:24
+msgid "Equalizer"
+msgstr "ইকুয়ালাইজার"
+
+#: ../src/modules/Equalizer.py:24
+msgid "Tune the level of the frequency bands"
+msgstr "ফ্রিকুয়েন্সি ব্যান্ডের মাত্রা টিউন কর"
+
+#: ../src/modules/Equalizer.py:125 ../src/modules/Equalizer.py:213
+#: ../src/modules/Equalizer.py:226
+msgid "Custom"
+msgstr "কাস্টম্"
+
+#: ../src/modules/Equalizer.py:166
+msgid "Save levels"
+msgstr "একই মাত্রাসমূহ"
+
+#: ../src/modules/Equalizer.py:177
+msgid "Load levels"
+msgstr "মাত্রাসমূহ লোড কর"
+
+#: ../src/modules/Equalizer.py:204
+msgid "Could not load the file"
+msgstr "ফাইলটি লোড করা সম্ভব হয় নি"
+
+#: ../src/modules/Equalizer.py:204
+msgid "The format of the file is incorrect."
+msgstr "ফাইল ফরম্যাটটি ভুল।"
+
+#: ../src/tools/consts.py:94
+msgid "Unknown Genre"
+msgstr "অজানা ধরণ"
+
+#: ../src/tools/consts.py:95
+msgid "Unknown Title"
+msgstr "অজানা শিরোনাম"
+
+#: ../src/tools/consts.py:96
+msgid "Unknown Album"
+msgstr "অজানা এ্যালবাম"
+
+#: ../src/tools/consts.py:97
+msgid "Unknown Artist"
+msgstr "অজানা শিল্পী"
+
+#: ../src/tools/consts.py:105
+msgid "Unknown Album Artist"
+msgstr "অজানা এ্যালবাম শিল্পী"
+
+#: ../res/Covers.glade.h:1
+msgid "<b>Internet Covers</b>"
+msgstr "<b>ইন্টারনেট থেকে প্রাপ্ত কভারসমূহ</b>"
+
+#: ../res/Covers.glade.h:2
+msgid "<b>User Covers</b>"
+msgstr "<b>ব্যবহারকারীর কভারসমূহ</b>"
+
+#: ../res/Covers.glade.h:3
+msgid "Always prefer user covers"
+msgstr "সবসময় ব্যবহারকারীর কভারসমুহকে প্রাধান্য দেবে"
+
+#: ../res/Covers.glade.h:4
+msgid "Don't download covers when there is a user one"
+msgstr "ব্যবহারকারীর কভার থাকলে কভারসমুহ ডাউনলোড করো না"
+
+#: ../res/Covers.glade.h:5
+msgid "Download covers"
+msgstr "কভারসমুহ ডাউনলোড কর"
+
+#: ../res/Covers.glade.h:6
+msgid "Filenames to look for (e.g., folder, cover)"
+msgstr "খোঁজার জন্য ফাইলের নাম (যেমনঃ folder, cover)"
+
+#: ../res/Covers.glade.h:7
+msgid "Filenames:"
+msgstr "ফাইলসমূহের নামঃ"
+
+#: ../res/Covers.glade.h:8
+msgid "Try to download covers from the Internet"
+msgstr "ইন্টারনেট থেকে কভারসমূহ ডাউনলোড করার চেষ্টা কর"
+
+#: ../res/DesktopNotification.glade.h:1
+msgid "<b>Body</b>"
+msgstr "<b>বডি</b>"
+
+#: ../res/DesktopNotification.glade.h:2
+msgid "<b>Miscellaneous</b>"
+msgstr "<b>বিবিধ</b>"
+
+#: ../res/DesktopNotification.glade.h:3
+msgid "<b>Title</b>"
+msgstr "<b>শিরোনাম</b>"
+
+#: ../res/DesktopNotification.glade.h:4
+msgid "Notification timeout:"
+msgstr "নোটিফিকেশনের টাইম-আউটঃ"
+
+#: ../res/DesktopNotification.glade.h:5
+msgid "Show a \"skip track\" button"
+msgstr "একটি ট্র্যাক বাদ দেয়ার বাটন দেখাও"
+
+#: ../res/DesktopNotification.glade.h:6
+msgid "Time during which the notification is displayed"
+msgstr "যতক্ষণ ধরে নোটিফিকেশনটি দেখানো হবে"
+
+#: ../res/DesktopNotification.glade.h:7
+msgid "seconds"
+msgstr "সেকেন্ড"
+
+#: ../res/Equalizer.glade.h:1
+msgid "Preset:"
+msgstr "প্রিসেটঃ"
+
+#: ../res/MainWindow.glade.h:1
+msgid "Play the first track of the playlist"
+msgstr "প্লেলিস্টের প্রথম ট্র্যাকটি প্লে কর"
+
+#: ../res/MainWindow.glade.h:2
+msgid "Play the next track"
+msgstr "পরবর্তী ট্র্যাকটি প্লে কর"
+
+#: ../res/MainWindow.glade.h:3
+msgid "Play the previous track"
+msgstr "পূর্ববর্তী ট্র্যাকটি প্লে কর"

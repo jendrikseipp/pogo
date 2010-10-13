@@ -8,14 +8,14 @@ msgstr ""
 "Project-Id-Version: decibel-audio-player\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2010-10-07 15:37+0200\n"
-"PO-Revision-Date: 2010-10-07 11:24+0000\n"
-"Last-Translator: Jendrik Seipp <jendrikseipp@web.de>\n"
+"PO-Revision-Date: 2010-10-12 20:02+0000\n"
+"Last-Translator: Ask Hjorth Larsen <asklarsen@gmail.com>\n"
 "Language-Team: Danish <da@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Launchpad-Export-Date: 2010-10-08 04:58+0000\n"
+"X-Launchpad-Export-Date: 2010-10-13 05:13+0000\n"
 "X-Generator: Launchpad (build Unknown)\n"
 
 #: ../src/media/track/__init__.py:54
@@ -52,7 +52,7 @@ msgstr ""
 
 #: ../src/media/track/__init__.py:62
 msgid "Sample rate"
-msgstr ""
+msgstr "Målefrekvens"
 
 #: ../src/media/track/__init__.py:63
 msgid "Duration in seconds (e.g., 194)"
@@ -68,7 +68,7 @@ msgstr "Filens komplette sti"
 
 #: ../src/media/track/__init__.py:149 ../src/media/track/__init__.py:393
 msgid "unknown"
-msgstr ""
+msgstr "ukendt"
 
 #: ../src/media/track/__init__.py:175
 #, python-format
@@ -113,9 +113,9 @@ msgid ""
 "click on the \"Preferences\" button on the bottom of the dialog box. Note "
 "that configuring a module is only possible when it is enabled."
 msgstr ""
-"Når et modul kan konfigureres vises et bestemt ikon på højre side af den "
+"Når et modul kan konfigureres, vises et bestemt ikon på højre side af den "
 "pågældende linje. For at konfigurere et modul skal du markere det og klikke "
-"på \"Indstillinger\"-knappen nederest i dialogboksen. Bemærk at moduler kun "
+"på \"Indstillinger\"-knappen nederst i dialogboksen. Bemærk at moduler kun "
 "kan konfigureres når de er slået til."
 
 #: ../src/gui/selectPath.py:79
@@ -155,6 +155,7 @@ msgstr ""
 msgid "translator-credits"
 msgstr ""
 "Launchpad Contributions:\n"
+"  Ask Hjorth Larsen https://launchpad.net/~askhl\n"
 "  Jendrik Seipp https://launchpad.net/~jendrikseipp"
 
 #: ../src/gui/about.py:44
@@ -179,11 +180,11 @@ msgstr ""
 
 #: ../src/modules/FileExplorer.py:443
 msgid "Music"
-msgstr ""
+msgstr "Musik"
 
 #: ../src/modules/FileExplorer.py:443
 msgid "Albums"
-msgstr ""
+msgstr "Albummer"
 
 #: ../src/modules/__init__.py:75
 msgid "The following Python modules are not available:"
@@ -195,12 +196,14 @@ msgstr "Du skal installere dem hvis du vil bruge dette modul."
 
 #: ../src/modules/__init__.py:266
 msgid "Restart required"
-msgstr ""
+msgstr "Genstart påkrævet"
 
 #: ../src/modules/__init__.py:267
 msgid ""
 "You must restart the application for this modification to take effect."
 msgstr ""
+"Du er nødt til at genstarte programmet, for at dine ændringer kan træde "
+"igennem."
 
 #: ../src/modules/CtrlPanel.py:188 ../src/modules/CtrlPanel.py:244
 msgid "Pause the current track"
@@ -216,11 +219,11 @@ msgstr "Fortsæt det nuværende nummer"
 
 #: ../src/modules/DesktopNotification.py:25
 msgid "Desktop Notification"
-msgstr "Desktop Notification"
+msgstr "Skrivebordspåmindelse"
 
 #: ../src/modules/DesktopNotification.py:25
 msgid "Display a desktop notification on track change"
-msgstr "Vis en desktop notification når nummeret skifter"
+msgstr "Vis en skrivebordspåmindelse når nummeret skifter"
 
 #: ../src/modules/DesktopNotification.py:78
 #: ../src/modules/DesktopNotification.py:188
@@ -232,7 +235,7 @@ msgid ""
 "This module displays a small popup window on your desktop when a new track "
 "starts."
 msgstr ""
-"Dette modul viser et småt popup-vindue på dit skrivebord når et nyt nummer "
+"Dette modul viser et småt pop op-vindue på dit skrivebord når et nyt nummer "
 "starter."
 
 #: ../src/modules/DesktopNotification.py:215
@@ -242,7 +245,7 @@ msgstr ""
 
 #: ../src/modules/DesktopNotification.py:216
 msgid "Customizing the Notification"
-msgstr "Indstiller Notification"
+msgstr "Indstilling af påmindelsen"
 
 #: ../src/modules/DesktopNotification.py:217
 msgid ""
@@ -251,22 +254,22 @@ msgid ""
 "replaced by their corresponding value. Available fields are:\n"
 "\n"
 msgstr ""
-"Du kan ændre titlen og teksten i en notification til hvad du vil. Før popup-"
-"vinduet vises erstattes felter i formen {felt} med deres tilhørende værdi. "
+"Du kan ændre titlen og teksten i en påmindelse til hvad du vil. Før pop op-"
+"vinduet vises, erstattes felter på formen {felt} med deres tilhørende værdi. "
 "Tilgængelige felter er:\n"
 "\n"
 
 #: ../src/modules/DesktopNotification.py:220
 msgid "Markup"
-msgstr "Markup"
+msgstr "Opmærkning"
 
 #: ../src/modules/DesktopNotification.py:221
 msgid ""
 "You can use the Pango markup language to format the text. More information "
 "on that language is available on the following web page:"
 msgstr ""
-"Du kan bruge Pango markup sprog til formattering af teksten. Mere "
-"information om sproget kan findes på følgende website:"
+"Du kan bruge opmærkningssproget Pango til formatering af teksten. Mere "
+"information om sproget kan findes på følgende webside:"
 
 #: ../src/modules/StatusbarTitlebar.py:49
 msgid "[paused]"
@@ -278,7 +281,7 @@ msgstr "Omslag"
 
 #: ../src/modules/Covers.py:28
 msgid "Show album covers"
-msgstr ""
+msgstr "Vis albumomslag"
 
 #: ../src/modules/Covers.py:433
 msgid ""
@@ -289,7 +292,7 @@ msgstr ""
 
 #: ../src/modules/Covers.py:436
 msgid "User Covers"
-msgstr ""
+msgstr "Brugeromslag"
 
 #: ../src/modules/Covers.py:437
 #, python-format
@@ -301,7 +304,7 @@ msgstr ""
 
 #: ../src/modules/Covers.py:440
 msgid "Internet Covers"
-msgstr ""
+msgstr "Internetomslag"
 
 #: ../src/modules/Covers.py:441
 msgid ""
@@ -313,40 +316,40 @@ msgstr ""
 
 #: ../src/modules/Tracktree.py:368
 msgid "Save playlist"
-msgstr "Gem spilleliste"
+msgstr "Gem afspilningsliste"
 
 #: ../src/modules/Tracktree.py:417
 msgid "Clear Playlist"
-msgstr ""
+msgstr "Ryd afspilningslisten"
 
 #: ../src/modules/Equalizer.py:24
 msgid "Equalizer"
-msgstr ""
+msgstr "Equalizer"
 
 #: ../src/modules/Equalizer.py:24
 msgid "Tune the level of the frequency bands"
-msgstr ""
+msgstr "Justér niveauet på frekvensbåndene"
 
 #: ../src/modules/Equalizer.py:125 ../src/modules/Equalizer.py:213
 #: ../src/modules/Equalizer.py:226
 msgid "Custom"
-msgstr ""
+msgstr "Brugerdefineret"
 
 #: ../src/modules/Equalizer.py:166
 msgid "Save levels"
-msgstr ""
+msgstr "Gem niveauer"
 
 #: ../src/modules/Equalizer.py:177
 msgid "Load levels"
-msgstr ""
+msgstr "Indlæs niveauer"
 
 #: ../src/modules/Equalizer.py:204
 msgid "Could not load the file"
-msgstr ""
+msgstr "Kunne ikke indlæse filen"
 
 #: ../src/modules/Equalizer.py:204
 msgid "The format of the file is incorrect."
-msgstr ""
+msgstr "Denne fil har et forkert format."
 
 #: ../src/tools/consts.py:94
 msgid "Unknown Genre"
@@ -354,7 +357,7 @@ msgstr "Ukendt genre"
 
 #: ../src/tools/consts.py:95
 msgid "Unknown Title"
-msgstr "Ukendt Titel"
+msgstr "Ukendt titel"
 
 #: ../src/tools/consts.py:96
 msgid "Unknown Album"
@@ -366,19 +369,19 @@ msgstr "Ukendt kunstner"
 
 #: ../src/tools/consts.py:105
 msgid "Unknown Album Artist"
-msgstr "Ukendt Album Kunstner"
+msgstr "Ukendt albumkunstner"
 
 #: ../res/Covers.glade.h:1
 msgid "<b>Internet Covers</b>"
-msgstr ""
+msgstr "<b>Internetomslag</b>"
 
 #: ../res/Covers.glade.h:2
 msgid "<b>User Covers</b>"
-msgstr ""
+msgstr "<b>Brugeromslag</b>"
 
 #: ../res/Covers.glade.h:3
 msgid "Always prefer user covers"
-msgstr ""
+msgstr "Foretræk altid brugeromslag"
 
 #: ../res/Covers.glade.h:4
 msgid "Don't download covers when there is a user one"
@@ -406,7 +409,7 @@ msgstr ""
 
 #: ../res/DesktopNotification.glade.h:2
 msgid "<b>Miscellaneous</b>"
-msgstr ""
+msgstr "<b>Diverse</b>"
 
 #: ../res/DesktopNotification.glade.h:3
 msgid "<b>Title</b>"
@@ -430,19 +433,19 @@ msgstr "sekunder"
 
 #: ../res/Equalizer.glade.h:1
 msgid "Preset:"
-msgstr ""
+msgstr "Forudindstilling:"
 
 #: ../res/MainWindow.glade.h:1
 msgid "Play the first track of the playlist"
-msgstr "Spil det første nummer i playlisten"
+msgstr "Spil det første nummer i afspilningslisten"
 
 #: ../res/MainWindow.glade.h:2
 msgid "Play the next track"
-msgstr ""
+msgstr "Spil det næste nummer"
 
 #: ../res/MainWindow.glade.h:3
 msgid "Play the previous track"
-msgstr ""
+msgstr "Spil det forrige nummer"
 
 #~ msgid ""
 #~ "This dialog box shows the list of available modules, which are small pieces "

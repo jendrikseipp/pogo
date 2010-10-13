@@ -8,14 +8,14 @@ msgstr ""
 "Project-Id-Version: decibel-audio-player\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2010-10-07 15:37+0200\n"
-"PO-Revision-Date: 2010-10-07 11:37+0000\n"
-"Last-Translator: Jendrik Seipp <jendrikseipp@web.de>\n"
+"PO-Revision-Date: 2010-10-12 20:19+0000\n"
+"Last-Translator: David Bengtsson <Unknown>\n"
 "Language-Team: Swedish <sv@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Launchpad-Export-Date: 2010-10-08 04:58+0000\n"
+"X-Launchpad-Export-Date: 2010-10-13 05:13+0000\n"
 "X-Generator: Launchpad (build Unknown)\n"
 
 #: ../src/media/track/__init__.py:54
@@ -44,15 +44,15 @@ msgstr "Datum"
 
 #: ../src/media/track/__init__.py:60
 msgid "Disc number"
-msgstr "Skiva"
+msgstr "Skivnummer"
 
 #: ../src/media/track/__init__.py:61
 msgid "Bit rate"
-msgstr ""
+msgstr "Bithastighet"
 
 #: ../src/media/track/__init__.py:62
 msgid "Sample rate"
-msgstr ""
+msgstr "Samplingsfrekvens"
 
 #: ../src/media/track/__init__.py:63
 msgid "Duration in seconds (e.g., 194)"
@@ -68,7 +68,7 @@ msgstr "Fullständig sökväg till filen"
 
 #: ../src/media/track/__init__.py:149 ../src/media/track/__init__.py:393
 msgid "unknown"
-msgstr ""
+msgstr "okänd"
 
 #: ../src/media/track/__init__.py:175
 #, python-format
@@ -77,7 +77,7 @@ msgstr "%(album)s [Skiva %(discnum)u]"
 
 #: ../src/media/track/__init__.py:182
 msgid "CDDA Track"
-msgstr ""
+msgstr "CDDA-spår"
 
 #: ../src/gui/preferences.py:43
 msgid "Preferences"
@@ -101,6 +101,9 @@ msgid ""
 "This window shows the list of available modules. You can enable/disable a "
 "module by checking/unchecking the check box in front of it."
 msgstr ""
+"Detta fönster visar listan över tillgängliga moduler. Du kan "
+"aktivera/inaktivera en modul genom att markera/avmarkera kryssrutan framför "
+"den."
 
 #: ../src/gui/preferences.py:141
 msgid "Configuring a Module"
@@ -113,11 +116,11 @@ msgid ""
 "click on the \"Preferences\" button on the bottom of the dialog box. Note "
 "that configuring a module is only possible when it is enabled."
 msgstr ""
-"När en modul kan konfigureras kommer en specifik ikon att visas till höger "
-"på motsvarande rad. För att konfigurera en modul, \r\n"
-"markera helt enkelt modulen och klicka sedan på knappen \"Inställningar\" i "
-"nederkant av dialogrutan. Observera att konfiguration av en modul endast är "
-"möjlig när den är aktiverad."
+"När en modul kan konfigureras, kommer en specifik ikon att visas till höger "
+"på motsvarande rad. För att konfigurera en modul, markera helt enkelt "
+"modulen och klicka sedan på \"Inställningar\"-knappen i nederkant av "
+"dialogrutan. Observera att konfigurering av en modul endast är möjlig när "
+"den är aktiverad."
 
 #: ../src/gui/selectPath.py:79
 msgid "Choose a folder"
@@ -156,6 +159,7 @@ msgstr ""
 msgid "translator-credits"
 msgstr ""
 "Launchpad Contributions:\n"
+"  David Bengtsson https://launchpad.net/~justfaking\n"
 "  Jendrik Seipp https://launchpad.net/~jendrikseipp"
 
 #: ../src/gui/about.py:44
@@ -168,7 +172,7 @@ msgstr "Tack till:"
 
 #: ../src/modules/Zeitgeist.py:26
 msgid "Send track information to the Zeitgeist service"
-msgstr ""
+msgstr "Skicka spårinformation till Zeitgeist-tjänsten"
 
 #: ../src/modules/FileExplorer.py:158
 msgid "loading..."
@@ -176,15 +180,15 @@ msgstr "läser in..."
 
 #: ../src/modules/FileExplorer.py:334
 msgid "Append"
-msgstr ""
+msgstr "Lägg till"
 
 #: ../src/modules/FileExplorer.py:443
 msgid "Music"
-msgstr ""
+msgstr "Musik"
 
 #: ../src/modules/FileExplorer.py:443
 msgid "Albums"
-msgstr ""
+msgstr "Album"
 
 #: ../src/modules/__init__.py:75
 msgid "The following Python modules are not available:"
@@ -196,24 +200,25 @@ msgstr "Du måste installera dem om du vill aktivera denna modul."
 
 #: ../src/modules/__init__.py:266
 msgid "Restart required"
-msgstr ""
+msgstr "Omstart krävs"
 
 #: ../src/modules/__init__.py:267
 msgid ""
 "You must restart the application for this modification to take effect."
 msgstr ""
+"Du måste starta om programmet för att denna modifiering ska få effekt."
 
 #: ../src/modules/CtrlPanel.py:188 ../src/modules/CtrlPanel.py:244
 msgid "Pause the current track"
-msgstr "Pausa det aktuella spåret"
+msgstr "Gör paus i aktuellt spår"
 
 #: ../src/modules/CtrlPanel.py:204
 msgid "Play the first selected track of the playlist"
-msgstr ""
+msgstr "Spela upp det första valda spåret i spellistan"
 
 #: ../src/modules/CtrlPanel.py:238
 msgid "Continue playing the current track"
-msgstr "Fortsätt spela det aktuella spåret"
+msgstr "Fortsätt uppspelning av aktuellt spår"
 
 #: ../src/modules/DesktopNotification.py:25
 msgid "Desktop Notification"
@@ -233,13 +238,15 @@ msgid ""
 "This module displays a small popup window on your desktop when a new track "
 "starts."
 msgstr ""
-"Denna modul visar ett litet popupfönster på ditt skrivbord när ett nytt spår "
-"börjar."
+"Denna modul visar ett liten popup-notifiering på ditt skrivbord när ett nytt "
+"spår påbörjas."
 
 #: ../src/modules/DesktopNotification.py:215
 msgid ""
 "If the Covers module is enabled, the popup also shows the album cover."
 msgstr ""
+"Om modulen för omslagsbilder är aktiverad, visar popup-notifieringen även "
+"omslagsbilden."
 
 #: ../src/modules/DesktopNotification.py:216
 msgid "Customizing the Notification"
@@ -253,21 +260,21 @@ msgid ""
 "\n"
 msgstr ""
 "Du kan ändra titeln och texten för notifieringen till valfri text. Innan "
-"popupfönstret visas kommer fälten i formuläret {field} att ersättas med "
-"deras motsvarande värden. Tillgängliga fält är:\n"
+"popup-notifieringen visas, kommer fälten i formuläret {field} att ersättas "
+"med deras motsvarande värden. Tillgängliga fält är:\n"
 "\n"
 
 #: ../src/modules/DesktopNotification.py:220
 msgid "Markup"
-msgstr "Markup"
+msgstr "Märkning"
 
 #: ../src/modules/DesktopNotification.py:221
 msgid ""
 "You can use the Pango markup language to format the text. More information "
 "on that language is available on the following web page:"
 msgstr ""
-"Du kan använda markupspråket Pango för att formatera texten. Mer information "
-"om språket finns tillgänglig på följande webbsida:"
+"Du kan använda märkspråket Pango för att formatera texten. Mer information "
+"om språket finns tillgänglig på följande webbplats:"
 
 #: ../src/modules/StatusbarTitlebar.py:49
 msgid "[paused]"
@@ -287,13 +294,13 @@ msgid ""
 "Covers may be loaded from local pictures, located in the same directory as "
 "the current track, or may be downloaded from the Internet."
 msgstr ""
-"Denna modul visar omslagsbilden från det album som det aktuella spåret "
-"kommer från. Omslagsbilder kan hämtas från lokala bilder från samma katalog "
-"som det aktuella spåret, eller hämtas ner från Internet."
+"Denna modul visar omslagsbilden för albumet som det aktuella spåret kommer "
+"från. Omslagsbilder kan läsas in från lokala bilder som finns i samma "
+"katalog som det aktuella spåret, eller så kan de hämtas ner från internet."
 
 #: ../src/modules/Covers.py:436
 msgid "User Covers"
-msgstr "Lokala omslagsbilder"
+msgstr "Användaromslag"
 
 #: ../src/modules/Covers.py:437
 #, python-format
@@ -303,12 +310,12 @@ msgid ""
 "extensions, supported file formats (%s) are automatically used."
 msgstr ""
 "Ett användaromslag är en bild som finns i samma katalog som det aktuella "
-"spåret. När filnamn anges så behöver du inte ange filens ändelse efter som "
-"stödda filformat (%s) automatiskt kommer att användas."
+"spåret. När filnamn anges behöver du inte ange filändelser, då stödda "
+"filformat (%s) används automatiskt."
 
 #: ../src/modules/Covers.py:440
 msgid "Internet Covers"
-msgstr "Omslagsbilder från internet"
+msgstr "Internetomslag"
 
 #: ../src/modules/Covers.py:441
 msgid ""
@@ -317,11 +324,10 @@ msgid ""
 "case, if a user cover exists for the current track, it is used. If there is "
 "none, the cover is downloaded."
 msgstr ""
-"Omslag kan hämtas ner från Internet, baserat på taggarna för det aktuella "
-"spåret. Du kan ange att alltid föredra användarens egna omslag istället för "
-"de från Internet. Om ett användaromslag, i detta fall, redan finns för det "
-"aktuella spåret så kommer det att användas. Om det inte redan finns så "
-"kommer det att hämtas."
+"Omslag kan hämtas från internet, vilket baseras på det aktuella spårets "
+"taggar. Du kan ange att alltid föredra användaromslag istället för de från "
+"internet. I detta fall används användaromslag för det aktuella spåret om ett "
+"sådant finns. Om det inte finns något så hämtas omslagsbilden."
 
 #: ../src/modules/Tracktree.py:368
 msgid "Save playlist"
@@ -329,36 +335,36 @@ msgstr "Spara spellista"
 
 #: ../src/modules/Tracktree.py:417
 msgid "Clear Playlist"
-msgstr ""
+msgstr "Rensa spellista"
 
 #: ../src/modules/Equalizer.py:24
 msgid "Equalizer"
-msgstr ""
+msgstr "Equalizer"
 
 #: ../src/modules/Equalizer.py:24
 msgid "Tune the level of the frequency bands"
-msgstr ""
+msgstr "Ställ in nivåerna för frekvensbanden"
 
 #: ../src/modules/Equalizer.py:125 ../src/modules/Equalizer.py:213
 #: ../src/modules/Equalizer.py:226
 msgid "Custom"
-msgstr ""
+msgstr "Anpassad"
 
 #: ../src/modules/Equalizer.py:166
 msgid "Save levels"
-msgstr ""
+msgstr "Spara nivåer"
 
 #: ../src/modules/Equalizer.py:177
 msgid "Load levels"
-msgstr ""
+msgstr "Läs in nivåer"
 
 #: ../src/modules/Equalizer.py:204
 msgid "Could not load the file"
-msgstr ""
+msgstr "Kunde inte läsa in filen"
 
 #: ../src/modules/Equalizer.py:204
 msgid "The format of the file is incorrect."
-msgstr ""
+msgstr "Formatet på filen är felaktigt."
 
 #: ../src/tools/consts.py:94
 msgid "Unknown Genre"
@@ -382,20 +388,19 @@ msgstr "Okänd albumartist"
 
 #: ../res/Covers.glade.h:1
 msgid "<b>Internet Covers</b>"
-msgstr "<b>Omslagsbilder från internet</b>"
+msgstr "<b>Internetomslag</b>"
 
 #: ../res/Covers.glade.h:2
 msgid "<b>User Covers</b>"
-msgstr "<b>Lokala omslagsbilder</b>"
+msgstr "<b>Användaromslag</b>"
 
 #: ../res/Covers.glade.h:3
 msgid "Always prefer user covers"
-msgstr "Använd lokala omslagsbilder i första hand"
+msgstr "Föredra alltid användaromslag"
 
 #: ../res/Covers.glade.h:4
 msgid "Don't download covers when there is a user one"
-msgstr ""
-"Hämta inte omslagsbilder från internet om det finns en lokal omslagsbild"
+msgstr "Hämta inte omslagsbilder om det finns lokala sådana"
 
 #: ../res/Covers.glade.h:5
 msgid "Download covers"
@@ -415,7 +420,7 @@ msgstr "Försök hämta omslagsbilder från internet"
 
 #: ../res/DesktopNotification.glade.h:1
 msgid "<b>Body</b>"
-msgstr "<b>Text</b>"
+msgstr "<b>Brödtext</b>"
 
 #: ../res/DesktopNotification.glade.h:2
 msgid "<b>Miscellaneous</b>"
@@ -443,11 +448,11 @@ msgstr "sekunder"
 
 #: ../res/Equalizer.glade.h:1
 msgid "Preset:"
-msgstr ""
+msgstr "Förinställda:"
 
 #: ../res/MainWindow.glade.h:1
 msgid "Play the first track of the playlist"
-msgstr "Spela det första spåret i spellistan"
+msgstr "Spela upp det första spåret i spellistan"
 
 #: ../res/MainWindow.glade.h:2
 msgid "Play the next track"
