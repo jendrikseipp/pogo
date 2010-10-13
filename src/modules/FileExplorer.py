@@ -17,6 +17,8 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301 USA
 
+import re
+
 import gtk, media, modules, os, tools
 
 from tools   import consts, prefs, icons
@@ -32,6 +34,8 @@ MOD_L10N = MOD_INFO[modules.MODINFO_L10N]
 ##PREFS_DEFAULT_MEDIA_FOLDERS     = {'Home': consts.dirBaseUsr, 'Root': '/'}    # List of media folders that are used as roots for the file explorer
 PREFS_DEFAULT_ADD_BY_FILENAME   = False                                             # True if files should be added to the playlist by their filename
 PREFS_DEFAULT_SHOW_HIDDEN_FILES = False                                             # True if hidden files should be shown
+
+MUSIC_DIRS = ['/home/jendrik/Musik']
 
 
 # The format of a row in the treeview
@@ -59,6 +63,8 @@ class FileExplorer(modules.Module):
         handlers = {
                         consts.MSG_EVT_APP_QUIT:         self.onAppQuit,
                         consts.MSG_EVT_APP_STARTED:      self.onAppStarted,
+                        consts.MSG_EVT_SEARCH_END:       self.onSearchEnd,
+                        consts.MSG_EVT_SEARCH_RESET:     self.onSearchReset,
                    }
 
         modules.Module.__init__(self, handlers)
@@ -161,7 +167,7 @@ class FileExplorer(modules.Module):
     def stopLoading(self, row):
         """ Tell the user that the contents of row has been loaded"""
         name  = self.tree.getItem(row, ROW_NAME)
-        index = name.find('<')
+        index = name.find('<span')
 
         if index != -1:
             self.tree.setItem(row, ROW_NAME, name[:index-2])
@@ -394,6 +400,17 @@ class FileExplorer(modules.Module):
     def _is_separator(self, model, iter):
         return model[iter][ROW_NAME] is None
         
+        
+    def restore_tree(self):
+        self.tree.handler_block_by_func(self.onRowExpanded)
+        self.restoreTreeDump(self.treeState['tree-state'])
+        self.tree.handler_unblock_by_func(self.onRowExpanded)
+        idle_add(self.scrolled.get_vscrollbar().set_value, self.treeState['vscrollbar-pos'])
+        idle_add(self.scrolled.get_hscrollbar().set_value, self.treeState['hscrollbar-pos'])
+        idle_add(self.tree.selectPaths, self.treeState['selected-paths'])
+        idle_add(self.refresh)
+        
+        
     def populate_tree(self):
         '''
         Bookmarks code from Quod Libet
@@ -405,13 +422,7 @@ class FileExplorer(modules.Module):
             
         # Restore the tree if we have any to restore, else build new one
         if self.treeState:
-            self.tree.handler_block_by_func(self.onRowExpanded)
-            self.restoreTreeDump(self.treeState['tree-state'])
-            self.tree.handler_unblock_by_func(self.onRowExpanded)
-            idle_add(self.scrolled.get_vscrollbar().set_value, self.treeState['vscrollbar-pos'])
-            idle_add(self.scrolled.get_hscrollbar().set_value, self.treeState['hscrollbar-pos'])
-            idle_add(self.tree.selectPaths, self.treeState['selected-paths'])
-            idle_add(self.refresh)
+            self.restore_tree()
             return
             
         folders = ['/', consts.dirBaseUsr]
@@ -497,6 +508,7 @@ class FileExplorer(modules.Module):
         left_vbox = prefs.getWidgetsTree().get_widget('vbox3')
         left_vbox.pack_start(self.scrolled)
         
+        self.displaying_results = False
         self.populate_tree()
         
         self.tree.connect('drag-begin', self.onDragBegin)
@@ -504,8 +516,65 @@ class FileExplorer(modules.Module):
 
     def onAppQuit(self):
         """ The module is going to be unloaded """
-        self.saveTreeState()
-        prefs.set(__name__, 'saved-states', self.treeState)
+        if not self.displaying_results:
+            self.saveTreeState()
+            prefs.set(__name__, 'saved-states', self.treeState)
+        
+        
+    def onSearchEnd(self, results, query):
+        if not self.displaying_results:
+            self.saveTreeState()
+        
+        self.tree.clear()
+        
+        last_dir = ''
+        last_dir_iter = None
+        
+        dirs = []
+        files = []
+        for path in results:
+            # Check if this is only a subpath of a directory already handled
+            is_subpath = False
+            for dir in dirs:
+                if path.startswith(dir):
+                    is_subpath = True
+                    break
+                    
+            if not is_subpath:
+                if os.path.isdir(path):
+                    dirs.append(path)
+                elif media.isSupported(path):
+                    files.append(path)
+            
+        def same_case_bold(match):
+            return '<b>%s</b>' % match.group(0)
+            
+        def get_nodename(path):
+            name = path
+            for music_dir in MUSIC_DIRS:
+                name = name.replace(music_dir, '')
+            name = name.strip('/')
+            name = tools.htmlEscape(name)
+            for part in query.split():
+                insensitive_part = re.compile(part, re.IGNORECASE)
+                name = insensitive_part.sub(same_case_bold, name)
+            return name
+        
+        for path in dirs:
+            name = get_nodename(path)
+            new_node = self.tree.appendRow((icons.mediaDirMenuIcon(), name, TYPE_DIR, path), None)
+            fakeChild = self.tree.appendRow((icons.dirMenuIcon(), '', TYPE_NONE, ''), new_node)
+            
+        for file in files:
+            filename = get_nodename(file)
+            self.tree.appendRow((icons.mediaFileMenuIcon(), filename, TYPE_FILE, file), None)
+        
+        self.displaying_results = True
+        
+        
+    def onSearchReset(self):
+        self.restore_tree()
+        self.displaying_results = False
         
     
     # --== GTK Handlers ==--

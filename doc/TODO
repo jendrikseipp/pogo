@@ -8,9 +8,10 @@ X Do some profiling to improve general speed
 X Append files added on commandline (pogo mytrack.mp3 myalbum myothertrack.mp3)
 X Append files added from nautilus right-click menu
 X Correctly add multiply nested directories
+X Activate the Covers and Notifications module by default
 
 0.x:
-O Search
+O Search (use find)
 O Stop after current album / track
 O Save playlist
 O Enqueue
