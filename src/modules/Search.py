@@ -22,6 +22,7 @@ import logging
 from gettext import gettext as _
 
 import gtk
+import gobject
 
 import tools
 import modules
@@ -43,18 +44,29 @@ class Search(modules.ThreadedModule):
     def __init__(self):
         """ Constructor """
         handlers = {
-                        consts.MSG_EVT_MOD_LOADED:   self.onModLoaded,
-                        consts.MSG_EVT_APP_STARTED:  self.onModLoaded,
+                        #consts.MSG_EVT_MOD_LOADED:   self.onModLoaded,
+                        consts.MSG_EVT_APP_STARTED:  self.onAppStarted,
                         consts.MSG_EVT_SEARCH_START: self.onSearch,
                    }
 
         modules.ThreadedModule.__init__(self, handlers)
+        
+        
+    def search_dir(self, dir, query):
+        cmd = ['find', dir]
+        for part in query.split():
+            cmd.extend(['-iwholename', '*%s*' % part])
+        logging.info('Searching with command: %s' % ' '.join(cmd))
+        output = subprocess.Popen(cmd, stdout=subprocess.PIPE).communicate()[0]
+        output = sorted(output.splitlines(), key=lambda path: path.lower())
+        logging.info('Results for %s: %s' % (query, len(output)))
+        return output
 
 
     # --== Message handlers ==--
 
 
-    def onModLoaded(self):
+    def onAppStarted(self):
         """ The module has been loaded """
         wTree = tools.prefs.getWidgetsTree()
         self.searchbox = wTree.get_widget('searchbox')
@@ -68,18 +80,13 @@ class Search(modules.ThreadedModule):
         self.searchbox.connect('activate', self.on_searchbox_activate)
         self.searchbox.connect('changed', self.on_searchbox_changed)
         
+        gobject.idle_add(self.search_dir, SEARCH_DIRS[0], 'caching_files')
+        
         
     def onSearch(self, query):
         dir = SEARCH_DIRS[0]
-        
-        cmd = ['find', dir]
-        for part in query.split():
-            cmd.extend(['-iwholename', '*%s*' % part])
-        logging.info('Searching with command: %s' % ' '.join(cmd))
-        output = subprocess.Popen(cmd, stdout=subprocess.PIPE).communicate()[0]
-        output = sorted(output.splitlines(), key=lambda path: path.lower())
-        logging.info('Results: %s' % output)
-        modules.postMsg(consts.MSG_EVT_SEARCH_END, {'results': output, 'query': query})
+        results = self.search_dir(dir, query)
+        modules.postMsg(consts.MSG_EVT_SEARCH_END, {'results': results, 'query': query})
         
         
     #------- GTK handlers ----------------
