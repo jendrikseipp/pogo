@@ -574,8 +574,10 @@ class FileExplorer(modules.Module):
         
         
     def onSearchReset(self):
-        self.restore_tree()
-        self.displaying_results = False
+        if self.displaying_results:
+            self.tree.clear()
+            self.restore_tree()
+            self.displaying_results = False
         
     
     # --== GTK Handlers ==--

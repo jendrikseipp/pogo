@@ -105,7 +105,6 @@ def realStartup(window, paned):
         
         # Enable some modules by default
         prefs.set('modules', 'enabled_modules', ['Covers', 'Desktop Notification'])
-        ##gobject.idle_add(modules.showPreferences)
     
     import atexit
     import signal
