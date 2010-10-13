@@ -549,15 +549,16 @@ class FileExplorer(modules.Module):
         def same_case_bold(match):
             return '<b>%s</b>' % match.group(0)
             
+        regexes = [re.compile(part, re.IGNORECASE) for part in query.split()]
+            
         def get_nodename(path):
             name = path
             for music_dir in MUSIC_DIRS:
                 name = name.replace(music_dir, '')
             name = name.strip('/')
             name = tools.htmlEscape(name)
-            for part in query.split():
-                insensitive_part = re.compile(part, re.IGNORECASE)
-                name = insensitive_part.sub(same_case_bold, name)
+            for regex in regexes:
+                name = regex.sub(same_case_bold, name)
             return name
         
         for path in dirs:
