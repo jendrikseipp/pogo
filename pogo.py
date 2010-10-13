@@ -96,6 +96,17 @@ def realStartup(window, paned):
     window. This function should be called within the GTK main loop, once the
     window has been displayed
     """
+    
+    # Is the application started for the first time?
+    first_start = prefs.get(__name__, 'first-time', True)
+    print 'First start:', first_start
+    if first_start:
+        prefs.set(__name__, 'first-time', False)
+        
+        # Enable some modules by default
+        prefs.set('modules', 'enabled_modules', ['Covers', 'Desktop Notification'])
+        ##gobject.idle_add(modules.showPreferences)
+    
     import atexit
     import signal
     import dbus.mainloop.glib
@@ -150,14 +161,6 @@ def realStartup(window, paned):
 
     # Let's go
     gobject.idle_add(modules.postMsg, consts.MSG_EVT_APP_STARTED)
-    
-    # Is the application started for the first time?
-    if prefs.get(__name__, 'first-time', True):
-        prefs.set(__name__, 'first-time', False)
-        
-        # Enable some modules by default
-        prefs.set(__name__, 'enabled_modules', ['Covers', 'Desktop Notification'])
-        ##gobject.idle_add(modules.showPreferences)
 
 
 # --== Entry point ==--
