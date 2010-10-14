@@ -1,74 +1,74 @@
-# Kazakh translation for decibel-audio-player
-# Copyright (c) 2009 Rosetta Contributors and Canonical Ltd 2009
-# This file is distributed under the same license as the decibel-audio-player package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2009.
+# Malay translation for pogo
+# Copyright (c) 2010 Rosetta Contributors and Canonical Ltd 2010
+# This file is distributed under the same license as the pogo package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2010.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: decibel-audio-player\n"
-"Report-Msgid-Bugs-To: \n"
+"Project-Id-Version: pogo\n"
+"Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2010-10-07 15:37+0200\n"
-"PO-Revision-Date: 2010-10-07 11:29+0000\n"
-"Last-Translator: Jendrik Seipp <jendrikseipp@web.de>\n"
-"Language-Team: Kazakh <kk@li.org>\n"
+"PO-Revision-Date: 2010-10-13 10:22+0000\n"
+"Last-Translator: abuyop <Unknown>\n"
+"Language-Team: Malay <ms@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=1; plural=0;\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Launchpad-Export-Date: 2010-10-14 04:59+0000\n"
 "X-Generator: Launchpad (build Unknown)\n"
 
 #: ../src/media/track/__init__.py:54
 msgid "Track number"
-msgstr "Трек нөмірі"
+msgstr "Nombor trek"
 
 #: ../src/media/track/__init__.py:55
 msgid "Title"
-msgstr "Трек аты"
+msgstr "Tajuk"
 
 #: ../src/media/track/__init__.py:56
 msgid "Artist"
-msgstr "Орындайтын"
+msgstr "Artis"
 
 #: ../src/media/track/__init__.py:57
 msgid "Album"
-msgstr "Альбом"
+msgstr "Album"
 
 #: ../src/media/track/__init__.py:58
 msgid "Genre"
-msgstr "Жанры"
+msgstr "Genre"
 
 #: ../src/media/track/__init__.py:59
 msgid "Date"
-msgstr "Күні"
+msgstr "Tarikh"
 
 #: ../src/media/track/__init__.py:60
 msgid "Disc number"
-msgstr "Диск нөмірі"
+msgstr "Nombor Cakera"
 
 #: ../src/media/track/__init__.py:61
 msgid "Bit rate"
-msgstr ""
+msgstr "Kadar bit"
 
 #: ../src/media/track/__init__.py:62
 msgid "Sample rate"
-msgstr ""
+msgstr "Kadar sampel"
 
 #: ../src/media/track/__init__.py:63
 msgid "Duration in seconds (e.g., 194)"
-msgstr ""
+msgstr "Jangkamasa dalam saat (cth., 194)"
 
 #: ../src/media/track/__init__.py:64
 msgid "Duration as a string (e.g., 3:14)"
-msgstr ""
+msgstr "Jangkamasa sebagai rentetan (cth., 314)"
 
 #: ../src/media/track/__init__.py:67
 msgid "Full path to the file"
-msgstr ""
+msgstr "Laluan penuh ke fail"
 
 #: ../src/media/track/__init__.py:149 ../src/media/track/__init__.py:393
 msgid "unknown"
-msgstr ""
+msgstr "tidak diketahui"
 
 #: ../src/media/track/__init__.py:175
 #, python-format
@@ -77,24 +77,24 @@ msgstr ""
 
 #: ../src/media/track/__init__.py:182
 msgid "CDDA Track"
-msgstr ""
+msgstr "Trek CDDA"
 
 #: ../src/gui/preferences.py:43
 msgid "Preferences"
-msgstr "Баптаулар"
+msgstr "Keutamaan"
 
 #: ../src/gui/preferences.py:128
 msgid "Unable to load this module."
-msgstr "Бұл модульді жүктеу мүмкін емес."
+msgstr "Tidak boleh memuatkan modul ini."
 
 #: ../src/gui/preferences.py:137
 msgid "Modules"
-msgstr "Модульдер"
+msgstr "Modul"
 
 #: ../src/gui/preferences.py:138 ../src/modules/DesktopNotification.py:213
 #: ../src/modules/Covers.py:432
 msgid "Description"
-msgstr "Анықтамасы"
+msgstr "Keterangan"
 
 #: ../src/gui/preferences.py:139
 msgid ""
@@ -116,27 +116,25 @@ msgstr ""
 
 #: ../src/gui/selectPath.py:79
 msgid "Choose a folder"
-msgstr "Буманы таңдаңыз"
+msgstr "Pilih folder"
 
 #: ../src/gui/selectPath.py:96
 msgid "This path does not exist"
-msgstr "Жол қате"
+msgstr "Laluan ini tidak wujud"
 
 #: ../src/gui/selectPath.py:96
 msgid "Please select an existing directory."
-msgstr "Бар болып тұрған буманы таңдаңыз."
+msgstr ""
 
 #: ../src/gui/selectPath.py:99 ../src/gui/selectPath.py:104
 msgid "The name is incorrect"
-msgstr "Аты дұрыс емес"
+msgstr "Nama salah"
 
 #: ../src/gui/selectPath.py:99
 msgid ""
 "This name is not allowed.\n"
 "Please use another one."
 msgstr ""
-"Бұл атауға рұқсат жоқ.\n"
-"Басқасын таңдаңыз."
 
 #: ../src/gui/selectPath.py:104
 #, python-format
@@ -149,15 +147,15 @@ msgstr ""
 msgid "translator-credits"
 msgstr ""
 "Launchpad Contributions:\n"
-"  Jendrik Seipp https://launchpad.net/~jendrikseipp"
+"  abuyop https://launchpad.net/~abuyop"
 
 #: ../src/gui/about.py:44
 msgid "Developer:"
-msgstr ""
+msgstr "Pembangun:"
 
 #: ../src/gui/about.py:48
 msgid "Thanks to:"
-msgstr ""
+msgstr "Terima kasih kepada:"
 
 #: ../src/modules/Zeitgeist.py:26
 msgid "Send track information to the Zeitgeist service"
@@ -165,19 +163,19 @@ msgstr ""
 
 #: ../src/modules/FileExplorer.py:158
 msgid "loading..."
-msgstr ""
+msgstr "memuatkan..."
 
 #: ../src/modules/FileExplorer.py:334
 msgid "Append"
-msgstr ""
+msgstr "Tambah"
 
 #: ../src/modules/FileExplorer.py:443
 msgid "Music"
-msgstr ""
+msgstr "Muzik"
 
 #: ../src/modules/FileExplorer.py:443
 msgid "Albums"
-msgstr ""
+msgstr "Album"
 
 #: ../src/modules/__init__.py:75
 msgid "The following Python modules are not available:"
@@ -189,7 +187,7 @@ msgstr ""
 
 #: ../src/modules/__init__.py:266
 msgid "Restart required"
-msgstr ""
+msgstr "Mula semula aplikasi diperlukan"
 
 #: ../src/modules/__init__.py:267
 msgid ""
@@ -429,6 +427,3 @@ msgstr ""
 #: ../res/MainWindow.glade.h:3
 msgid "Play the previous track"
 msgstr ""
-
-#~ msgid "Password required"
-#~ msgstr "Пароль керек"

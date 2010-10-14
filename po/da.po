@@ -8,14 +8,14 @@ msgstr ""
 "Project-Id-Version: decibel-audio-player\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2010-10-07 15:37+0200\n"
-"PO-Revision-Date: 2010-10-12 20:02+0000\n"
-"Last-Translator: Ask Hjorth Larsen <asklarsen@gmail.com>\n"
+"PO-Revision-Date: 2010-10-13 16:43+0000\n"
+"Last-Translator: Joe Hansen <Unknown>\n"
 "Language-Team: Danish <da@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Launchpad-Export-Date: 2010-10-13 05:13+0000\n"
+"X-Launchpad-Export-Date: 2010-10-14 04:59+0000\n"
 "X-Generator: Launchpad (build Unknown)\n"
 
 #: ../src/media/track/__init__.py:54
@@ -48,7 +48,7 @@ msgstr "Disknummer"
 
 #: ../src/media/track/__init__.py:61
 msgid "Bit rate"
-msgstr ""
+msgstr "Bitrate"
 
 #: ../src/media/track/__init__.py:62
 msgid "Sample rate"
@@ -77,7 +77,7 @@ msgstr "%(album)s [Disk %(discnum)u]"
 
 #: ../src/media/track/__init__.py:182
 msgid "CDDA Track"
-msgstr ""
+msgstr "CDDA-spor"
 
 #: ../src/gui/preferences.py:43
 msgid "Preferences"
@@ -101,6 +101,8 @@ msgid ""
 "This window shows the list of available modules. You can enable/disable a "
 "module by checking/unchecking the check box in front of it."
 msgstr ""
+"Dette vindue viser listen af tilgængelige moduler. Du kan slå et modul til "
+"eller fra ved at sætte eller fjerne krydset i afkrydsningsfeltet foran det."
 
 #: ../src/gui/preferences.py:141
 msgid "Configuring a Module"
@@ -156,7 +158,8 @@ msgid "translator-credits"
 msgstr ""
 "Launchpad Contributions:\n"
 "  Ask Hjorth Larsen https://launchpad.net/~askhl\n"
-"  Jendrik Seipp https://launchpad.net/~jendrikseipp"
+"  Jendrik Seipp https://launchpad.net/~jendrikseipp\n"
+"  Joe Hansen https://launchpad.net/~joedalton2"
 
 #: ../src/gui/about.py:44
 msgid "Developer:"
@@ -168,7 +171,7 @@ msgstr "Tak til:"
 
 #: ../src/modules/Zeitgeist.py:26
 msgid "Send track information to the Zeitgeist service"
-msgstr ""
+msgstr "Send sporinformation til Zeitgeist-tjenesten"
 
 #: ../src/modules/FileExplorer.py:158
 msgid "loading..."
@@ -176,7 +179,7 @@ msgstr "indlæser..."
 
 #: ../src/modules/FileExplorer.py:334
 msgid "Append"
-msgstr ""
+msgstr "Tilføj"
 
 #: ../src/modules/FileExplorer.py:443
 msgid "Music"
@@ -211,7 +214,7 @@ msgstr "Sæt dette nummer på pause"
 
 #: ../src/modules/CtrlPanel.py:204
 msgid "Play the first selected track of the playlist"
-msgstr ""
+msgstr "Afspil det første valgte spor i afspilningslisten"
 
 #: ../src/modules/CtrlPanel.py:238
 msgid "Continue playing the current track"
@@ -241,7 +244,7 @@ msgstr ""
 #: ../src/modules/DesktopNotification.py:215
 msgid ""
 "If the Covers module is enabled, the popup also shows the album cover."
-msgstr ""
+msgstr "Hvis omslagsmodulet er slået til, vises også albummets omslag."
 
 #: ../src/modules/DesktopNotification.py:216
 msgid "Customizing the Notification"
@@ -289,6 +292,9 @@ msgid ""
 "Covers may be loaded from local pictures, located in the same directory as "
 "the current track, or may be downloaded from the Internet."
 msgstr ""
+"Dette modul viser omslaget for det album, som det nuværende nummer kommer "
+"fra. Omslag kan indlæses fra lokale billeder, som ligger i samme mappe som "
+"det nuværende nummer, eller de kan hentes fra nettet."
 
 #: ../src/modules/Covers.py:436
 msgid "User Covers"
@@ -301,6 +307,9 @@ msgid ""
 "track. When specifying filenames, you do not need to provide file "
 "extensions, supported file formats (%s) are automatically used."
 msgstr ""
+"Et brugeromslag er et billede, der ligger i samme mappe som det nuværende "
+"nummer. Når du angiver filnavne, behøver du ikke angive filendelser. "
+"Understøttede filformater (%s) bruges automatisk."
 
 #: ../src/modules/Covers.py:440
 msgid "Internet Covers"
@@ -313,6 +322,10 @@ msgid ""
 "case, if a user cover exists for the current track, it is used. If there is "
 "none, the cover is downloaded."
 msgstr ""
+"Omslag kan hentes fra nettet afhængigt af det nuværende nummers mærker. Du "
+"kan altid foretrække brugeromslag for internetomslag. Hvis der findes et "
+"brugeromslag for et givet nummer, vil dette blive brugt. Ellers hentes et "
+"omslag fra nettet."
 
 #: ../src/modules/Tracktree.py:368
 msgid "Save playlist"
@@ -385,27 +398,27 @@ msgstr "Foretræk altid brugeromslag"
 
 #: ../res/Covers.glade.h:4
 msgid "Don't download covers when there is a user one"
-msgstr ""
+msgstr "Hent ikke omslag, når der er et brugerangivet omslag"
 
 #: ../res/Covers.glade.h:5
 msgid "Download covers"
-msgstr ""
+msgstr "Hent omslag"
 
 #: ../res/Covers.glade.h:6
 msgid "Filenames to look for (e.g., folder, cover)"
-msgstr ""
+msgstr "Filnavne der skal kigges efter (f.eks. mappe, omslag)"
 
 #: ../res/Covers.glade.h:7
 msgid "Filenames:"
-msgstr ""
+msgstr "Filnavne:"
 
 #: ../res/Covers.glade.h:8
 msgid "Try to download covers from the Internet"
-msgstr ""
+msgstr "Forsøg at hente omslag fra nettet"
 
 #: ../res/DesktopNotification.glade.h:1
 msgid "<b>Body</b>"
-msgstr ""
+msgstr "<b>Krop</b>"
 
 #: ../res/DesktopNotification.glade.h:2
 msgid "<b>Miscellaneous</b>"
@@ -417,15 +430,15 @@ msgstr "<b>Titel</b>"
 
 #: ../res/DesktopNotification.glade.h:4
 msgid "Notification timeout:"
-msgstr ""
+msgstr "Tidsudløb for påmindelser:"
 
 #: ../res/DesktopNotification.glade.h:5
 msgid "Show a \"skip track\" button"
-msgstr ""
+msgstr "Vis en \"spring nummer over\"-knap"
 
 #: ../res/DesktopNotification.glade.h:6
 msgid "Time during which the notification is displayed"
-msgstr ""
+msgstr "Varigheden for visning af påmindelsen"
 
 #: ../res/DesktopNotification.glade.h:7
 msgid "seconds"
