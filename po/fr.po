@@ -8,14 +8,14 @@ msgstr ""
 "Project-Id-Version: decibel-audio-player\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2010-10-07 15:37+0200\n"
-"PO-Revision-Date: 2010-10-07 11:27+0000\n"
-"Last-Translator: Jendrik Seipp <jendrikseipp@web.de>\n"
+"PO-Revision-Date: 2010-10-14 09:33+0000\n"
+"Last-Translator: Ptitphysik <amalpeyre@gmail.com>\n"
 "Language-Team: French <fr@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Launchpad-Export-Date: 2010-10-11 05:00+0000\n"
+"X-Launchpad-Export-Date: 2010-10-15 05:07+0000\n"
 "X-Generator: Launchpad (build Unknown)\n"
 
 #: ../src/media/track/__init__.py:54
@@ -48,11 +48,11 @@ msgstr "Numéro de disque"
 
 #: ../src/media/track/__init__.py:61
 msgid "Bit rate"
-msgstr ""
+msgstr "Débit"
 
 #: ../src/media/track/__init__.py:62
 msgid "Sample rate"
-msgstr ""
+msgstr "Fréquence d'échantillonage"
 
 #: ../src/media/track/__init__.py:63
 msgid "Duration in seconds (e.g., 194)"
@@ -68,7 +68,7 @@ msgstr "Chemin d'accès au fichier"
 
 #: ../src/media/track/__init__.py:149 ../src/media/track/__init__.py:393
 msgid "unknown"
-msgstr ""
+msgstr "inconnu(e)"
 
 #: ../src/media/track/__init__.py:175
 #, python-format
@@ -77,7 +77,7 @@ msgstr "%(album)s  [Disque %(discnum)u]"
 
 #: ../src/media/track/__init__.py:182
 msgid "CDDA Track"
-msgstr ""
+msgstr "Piste CDDA"
 
 #: ../src/gui/preferences.py:43
 msgid "Preferences"
@@ -101,6 +101,8 @@ msgid ""
 "This window shows the list of available modules. You can enable/disable a "
 "module by checking/unchecking the check box in front of it."
 msgstr ""
+"Cette fenêtre présente la liste des modules disponibles. Vous pouvez "
+"activer/désactiver un module en cliquant sur sa case à cocher."
 
 #: ../src/gui/preferences.py:141
 msgid "Configuring a Module"
@@ -155,7 +157,9 @@ msgstr ""
 msgid "translator-credits"
 msgstr ""
 "Launchpad Contributions:\n"
-"  Jendrik Seipp https://launchpad.net/~jendrikseipp"
+"  Bubblegum https://launchpad.net/~bubblegum\n"
+"  Jendrik Seipp https://launchpad.net/~jendrikseipp\n"
+"  Ptitphysik https://launchpad.net/~amalpeyre"
 
 #: ../src/gui/about.py:44
 msgid "Developer:"
@@ -167,7 +171,7 @@ msgstr "Merci à:"
 
 #: ../src/modules/Zeitgeist.py:26
 msgid "Send track information to the Zeitgeist service"
-msgstr ""
+msgstr "Envoyer les informations de la piste vers le service Zeitgeist"
 
 #: ../src/modules/FileExplorer.py:158
 msgid "loading..."
@@ -175,15 +179,15 @@ msgstr "chargement..."
 
 #: ../src/modules/FileExplorer.py:334
 msgid "Append"
-msgstr ""
+msgstr "Ajouter"
 
 #: ../src/modules/FileExplorer.py:443
 msgid "Music"
-msgstr ""
+msgstr "Musique"
 
 #: ../src/modules/FileExplorer.py:443
 msgid "Albums"
-msgstr ""
+msgstr "Albums"
 
 #: ../src/modules/__init__.py:75
 msgid "The following Python modules are not available:"
@@ -209,7 +213,7 @@ msgstr "Mettre en pause"
 
 #: ../src/modules/CtrlPanel.py:204
 msgid "Play the first selected track of the playlist"
-msgstr ""
+msgstr "Lire la première piste sélectionnée de la liste de lecture"
 
 #: ../src/modules/CtrlPanel.py:238
 msgid "Continue playing the current track"
@@ -240,6 +244,8 @@ msgstr ""
 msgid ""
 "If the Covers module is enabled, the popup also shows the album cover."
 msgstr ""
+"Si le module Pochettes est activé, la fenêtre affiche aussi la pochette de "
+"l'album."
 
 #: ../src/modules/DesktopNotification.py:216
 msgid "Customizing the Notification"
@@ -343,7 +349,7 @@ msgstr "Ajuster le niveau des bandes de fréquence"
 #: ../src/modules/Equalizer.py:125 ../src/modules/Equalizer.py:213
 #: ../src/modules/Equalizer.py:226
 msgid "Custom"
-msgstr ""
+msgstr "Personnalisé"
 
 #: ../src/modules/Equalizer.py:166
 msgid "Save levels"
@@ -443,7 +449,7 @@ msgstr "secondes"
 
 #: ../res/Equalizer.glade.h:1
 msgid "Preset:"
-msgstr ""
+msgstr "Prédéfini :"
 
 #: ../res/MainWindow.glade.h:1
 msgid "Play the first track of the playlist"
