@@ -80,7 +80,7 @@ class Search(modules.ThreadedModule):
         self.searchbox.connect('activate', self.on_searchbox_activate)
         self.searchbox.connect('changed', self.on_searchbox_changed)
         
-        gobject.idle_add(self.search_dir, SEARCH_DIRS[0], 'caching_files')
+        gobject.timeout_add_seconds(10, self.search_dir, SEARCH_DIRS[0], 'caching_files')
         
         
     def onSearch(self, query):

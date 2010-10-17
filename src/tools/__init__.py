@@ -42,7 +42,7 @@ def listDir(directory, listHiddenFiles=False):
     if mTime != cachedMTime:
         # Make sure it's readable
         if os.access(directory, os.R_OK | os.X_OK):
-            list = sorted(os.listdir(directory))
+            list = sorted(os.listdir(directory), key=lambda file: file.lower())
         else:
             list = []
 

@@ -73,7 +73,8 @@ class Preferences:
         """ Show the dialog box """
         if not self.window.isVisible():
             self.list.unselectAll()
-            self.window.getWidget('btn-close').grab_focus()
+            self.list.grab_focus()
+            ##self.window.getWidget('btn-close').grab_focus()
             ##self.window.getWidget('btn-prefs').set_sensitive(False)
             self.prefs_button.set_sensitive(False)
         self.window.show()

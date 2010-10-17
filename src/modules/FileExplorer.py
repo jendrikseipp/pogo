@@ -563,7 +563,7 @@ class FileExplorer(modules.Module):
         
         for path in dirs:
             name = get_nodename(path)
-            new_node = self.tree.appendRow((icons.mediaDirMenuIcon(), name, TYPE_DIR, path), None)
+            new_node = self.tree.appendRow((icons.dirMenuIcon(), name, TYPE_DIR, path), None)
             fakeChild = self.tree.appendRow((icons.dirMenuIcon(), '', TYPE_NONE, ''), new_node)
             
         for file in files:

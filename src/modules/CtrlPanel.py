@@ -93,9 +93,11 @@ class CtrlPanel(modules.Module):
         self.btnVolume    = wTree.get_widget('btn-volume')
 
         # Restore the volume
-        volume = prefs.get(__name__, 'volume', PREFS_DEFAULT_VOLUME)
-        self.btnVolume.set_value(volume)
-        modules.postMsg(consts.MSG_CMD_SET_VOLUME, {'value': volume})
+        ##volume = prefs.get(__name__, 'volume', PREFS_DEFAULT_VOLUME)
+        #volume = PREFS_DEFAULT_VOLUME
+        ##self.btnVolume.set_value(volume)
+        self.btnVolume.hide()
+        ##modules.postMsg(consts.MSG_CMD_SET_VOLUME, {'value': volume})
 
         # GTK handlers
         self.btnNext.connect('clicked', lambda widget: modules.postMsg(consts.MSG_CMD_NEXT))
