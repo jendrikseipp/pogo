@@ -9,6 +9,7 @@ X Append files added on commandline (pogo mytrack.mp3 myalbum myothertrack.mp3)
 X Append files added from nautilus right-click menu
 X Correctly add multiply nested directories
 X Activate the Covers and Notifications modules by default
+X Hide Volume button (Only duplicates functionality of the Sound Indicator)
 
 0.x:
 O Search (use find)
