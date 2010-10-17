@@ -3,12 +3,12 @@
 0.2:
 X Make startup even faster by saving the playlist with its formatting
 X Make track drag'n'drop faster by caching the tracks
-X Enable DBus: Send MPRIS messages about play events
+X Enable DBus: Send MPRIS messages about play events (code from decibel)
 X Do some profiling to improve general speed
 X Append files added on commandline (pogo mytrack.mp3 myalbum myothertrack.mp3)
 X Append files added from nautilus right-click menu
 X Correctly add multiply nested directories
-X Activate the Covers and Notifications module by default
+X Activate the Covers and Notifications modules by default
 
 0.x:
 O Search (use find)

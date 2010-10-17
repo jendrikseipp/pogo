@@ -166,7 +166,7 @@ class CtrlPanel(modules.Module):
         menu_button.show()
         
         
-        toolbar_hbox = wTree.get_widget('hbox3')
+        toolbar_hbox = wTree.get_widget('hbox4')
         toolbar_hbox.pack_end(menu_button, False)
         # Move it to the right
         toolbar_hbox.reorder_child(menu_button, 0)

@@ -64,11 +64,11 @@ class TrackPanel(modules.Module):
         """ Real initialization function, called when this module has been loaded """
         # Widgets
         wTree                  = tools.prefs.getWidgetsTree()
-        self.txtTitle          = wTree.get_widget('lbl-trkTitle')
+        ##self.txtTitle          = wTree.get_widget('lbl-trkTitle')
         self.currTrack         = None
         
         ##
-        self.txtTitle.hide()
+        #self.txtTitle.hide()
         self.cover_spot = CoverSpot()
 
 
@@ -76,7 +76,7 @@ class TrackPanel(modules.Module):
         """ A new track is being played """
         self.currTrack = track
 
-        self.__setTitle(track.getTitle(), track.getLength())
+        #self.__setTitle(track.getTitle(), track.getLength())
         title = tools.htmlEscape(track.getTitle())
         artist = tools.htmlEscape(track.getArtist())
         album = tools.htmlEscape(track.getExtendedAlbum())
@@ -89,7 +89,7 @@ class TrackPanel(modules.Module):
         self.currTrack = None
 
         self.cover_spot.set_images(None, None)
-        self.__setTitle(consts.appName)
+        #self.__setTitle(consts.appName)
 
 
     def onSetCover(self, track, pathThumbnail, pathFullSize):
