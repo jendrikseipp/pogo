@@ -20,27 +20,6 @@
                 <child>
                   <widget class="GtkHBox" id="hbox3">
                     <property name="visible">True</property>
-                    <property name="homogeneous">True</property>
-                    <child>
-                      <widget class="GtkHBox" id="hbox2">
-                        <property name="visible">True</property>
-                        <child>
-                          <widget class="GtkEntry" id="searchbox">
-                            <property name="width_request">210</property>
-                            <property name="visible">True</property>
-                            <property name="can_focus">True</property>
-                            <property name="invisible_char">•</property>
-                          </widget>
-                          <packing>
-                            <property name="expand">False</property>
-                            <property name="position">0</property>
-                          </packing>
-                        </child>
-                      </widget>
-                      <packing>
-                        <property name="position">0</property>
-                      </packing>
-                    </child>
                     <child>
                       <widget class="GtkHBox" id="hbox1">
                         <child>
@@ -104,7 +83,7 @@
                       <packing>
                         <property name="expand">False</property>
                         <property name="fill">False</property>
-                        <property name="position">1</property>
+                        <property name="position">0</property>
                       </packing>
                     </child>
                     <child>
@@ -153,7 +132,7 @@ audio-volume-medium</property>
                         </child>
                       </widget>
                       <packing>
-                        <property name="position">2</property>
+                        <property name="position">1</property>
                       </packing>
                     </child>
                   </widget>

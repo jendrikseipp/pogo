@@ -37,8 +37,6 @@ MOD_NAME = MOD_INFO[modules.MODINFO_NAME]
 MIN_CHARS = 3
 SEARCH_DIRS = ['/home/jendrik/Musik']
 
-SEARCH_ENABLED = False
-
 
 
 class Search(modules.ThreadedModule):
@@ -71,25 +69,30 @@ class Search(modules.ThreadedModule):
     def onAppStarted(self):
         """ The module has been loaded """
         wTree = tools.prefs.getWidgetsTree()
-        self.searchbox = wTree.get_widget('searchbox')
+        self.searchbox = gtk.Entry()
+        self.searchbox.set_size_request(210, -1)
         
-        if not SEARCH_ENABLED:
-            hbox3 = wTree.get_widget('hbox3')
-            hbox2 = wTree.get_widget('hbox2')
-            hbox2.hide()
-            hbox3.set_property('homogeneous', False)
-        else:
-            if hasattr(self.searchbox, 'set_icon_from_stock'):
-                #self.searchbox.set_icon_from_stock(0, gtk.STOCK_FIND)
-                #self.searchbox.set_icon_sensitive(0, False)
-                self.searchbox.set_icon_from_stock(1, gtk.STOCK_CLEAR)
-                self.searchbox.connect('icon-press', self.on_searchbox_clear)
-            
-            self.searchbox.connect('activate', self.on_searchbox_activate)
-            self.searchbox.connect('changed', self.on_searchbox_changed)
-            
-            # Cache results for a faster first search
-            gobject.timeout_add_seconds(10, self.search_dir, SEARCH_DIRS[0], 'caching_files')
+        search_container = gtk.HBox()
+        search_container.pack_start(self.searchbox, False)
+        search_container.show_all()
+        
+        hbox3 = wTree.get_widget('hbox3')
+        hbox3.pack_start(search_container)
+        hbox3.set_property('homogeneous', True)
+        hbox3.reorder_child(search_container, 0)
+        
+        
+        if hasattr(self.searchbox, 'set_icon_from_stock'):
+            #self.searchbox.set_icon_from_stock(0, gtk.STOCK_FIND)
+            #self.searchbox.set_icon_sensitive(0, False)
+            self.searchbox.set_icon_from_stock(1, gtk.STOCK_CLEAR)
+            self.searchbox.connect('icon-press', self.on_searchbox_clear)
+        
+        self.searchbox.connect('activate', self.on_searchbox_activate)
+        self.searchbox.connect('changed', self.on_searchbox_changed)
+        
+        # Cache results for a faster first search
+        gobject.timeout_add_seconds(10, self.search_dir, SEARCH_DIRS[0], 'caching_files')
         
         
     def onSearch(self, query):
