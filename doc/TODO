@@ -1,37 +1,28 @@
 === Roadmap ===
 
-0.2:
-X Make startup even faster by saving the playlist with its formatting
-X Make track drag'n'drop faster by caching the tracks
-X Enable DBus: Send MPRIS messages about play events (code from decibel)
-X Do some profiling to improve general speed
-X Append files added on commandline (pogo mytrack.mp3 myalbum myothertrack.mp3)
-X Append files added from nautilus right-click menu
-X Correctly add multiply nested directories
-X Activate the Covers and Notifications modules by default
-X Hide Volume button (Only duplicates functionality of the Sound Indicator)
+0.3:
+O Search for tracks in the music folders
+O Let user add more directories to file browser?
 
 0.x:
-O Search (use find)
 O Stop after current album / track
 O Save playlist
-O Enqueue
 O Shuffle
 O Repeat
-O Lyrics?
-O Open containing folder item?
+O Open containing folder (option in context menu for playlist)
 O Playlist loading (Only add tracks in pl not added anyways)
 O Add Zeitgeist module
+O Sound Indicator
 
 
 0.y:
-O Sound Indicator
-O Party View
-O Play audio CDs?
-O Let user add more directories to file browser?
+O Enqueue
+O Party View?
 O Scrobbling Support?
+O Lyrics?
 
 
 === Features that will not be implemented ===
 - Do not add empty dirs to Tracktree (Irritating)
 - Ellipsize names (Looks odd)
+- Play audio CDs (Rip and play is nicer anyways)

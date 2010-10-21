@@ -1,7 +1,21 @@
  Pogo NEWS
 ==============
 
-=== 0.1 "Businessmen drink my blood" (2010-10-05) ===
+ 0.2 "I hold the candle while you dance upon the flame" (2010-10-21)
+====================================================================
+* Make startup even faster by saving the playlist with its formatting
+* Make track drag'n'drop faster by caching the tracks
+* Enable DBus: Send MPRIS messages about play events (code from decibel)
+* Do some profiling to improve general speed
+* Append files added on commandline (pogo mytrack.mp3 myalbum myothertrack.mp3)
+* Append files added from nautilus right-click menu
+* Correctly add multiply nested directories
+* Activate the Covers and Notifications modules by default
+* Hide volume button (Only duplicates functionality of the Sound Indicator)
+
+
+ 0.1 "Businessmen drink my blood" (2010-10-05)
+==============================================
 * Initial release
 * Fork decibel audio player
 * Rebranding
