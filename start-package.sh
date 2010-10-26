@@ -18,4 +18,4 @@
 INSTALL_DIR="/usr/share/pogo"
 
 cd $INSTALL_DIR
-python pogo.py
+python pogo.py "$@"

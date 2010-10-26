@@ -5,7 +5,7 @@
 ====================================================================
 * Make startup even faster by saving the playlist with its formatting
 * Make track drag'n'drop faster by caching the tracks
-* Enable DBus: Send MPRIS messages about play events (code from decibel)
+* MPRIS support: Send DBus messages about play events (code from decibel)
 * Do some profiling to improve general speed
 * Append files added on commandline (pogo mytrack.mp3 myalbum myothertrack.mp3)
 * Append files added from nautilus right-click menu

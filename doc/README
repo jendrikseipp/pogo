@@ -18,12 +18,12 @@ or help out, visit http://launchpad.net/pogo.
 
  Run Pogo
 ====================
- ./pogo.py
+ $ ./pogo.py
  
 
  Installing Pogo
 ====================
- make install
+ $ sudo make install
  
 
 After installing, you can just run `pogo'.
