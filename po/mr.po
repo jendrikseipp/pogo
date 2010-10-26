@@ -1,4 +1,4 @@
-# Malay translation for pogo
+# Marathi translation for pogo
 # Copyright (c) 2010 Rosetta Contributors and Canonical Ltd 2010
 # This file is distributed under the same license as the pogo package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2010.
@@ -8,9 +8,10 @@ msgstr ""
 "Project-Id-Version: pogo\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2010-10-07 15:37+0200\n"
-"PO-Revision-Date: 2010-10-25 02:27+0000\n"
-"Last-Translator: abuyop <Unknown>\n"
-"Language-Team: Malay <ms@li.org>\n"
+"PO-Revision-Date: 2010-10-26 04:56+0000\n"
+"Last-Translator: Launchpad Translations Administrators "
+"<rosetta@launchpad.net>\n"
+"Language-Team: Marathi <mr@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -20,93 +21,91 @@ msgstr ""
 
 #: ../src/media/track/__init__.py:54
 msgid "Track number"
-msgstr "Nombor trek"
+msgstr ""
 
 #: ../src/media/track/__init__.py:55
 msgid "Title"
-msgstr "Tajuk"
+msgstr ""
 
 #: ../src/media/track/__init__.py:56
 msgid "Artist"
-msgstr "Artis"
+msgstr ""
 
 #: ../src/media/track/__init__.py:57
 msgid "Album"
-msgstr "Album"
+msgstr ""
 
 #: ../src/media/track/__init__.py:58
 msgid "Genre"
-msgstr "Genre"
+msgstr ""
 
 #: ../src/media/track/__init__.py:59
 msgid "Date"
-msgstr "Tarikh"
+msgstr ""
 
 #: ../src/media/track/__init__.py:60
 msgid "Disc number"
-msgstr "Nombor Cakera"
+msgstr ""
 
 #: ../src/media/track/__init__.py:61
 msgid "Bit rate"
-msgstr "Kadar bit"
+msgstr ""
 
 #: ../src/media/track/__init__.py:62
 msgid "Sample rate"
-msgstr "Kadar sampel"
+msgstr ""
 
 #: ../src/media/track/__init__.py:63
 msgid "Duration in seconds (e.g., 194)"
-msgstr "Jangkamasa dalam saat (cth., 194)"
+msgstr ""
 
 #: ../src/media/track/__init__.py:64
 msgid "Duration as a string (e.g., 3:14)"
-msgstr "Jangkamasa sebagai rentetan (cth., 314)"
+msgstr ""
 
 #: ../src/media/track/__init__.py:67
 msgid "Full path to the file"
-msgstr "Laluan penuh ke fail"
+msgstr ""
 
 #: ../src/media/track/__init__.py:149 ../src/media/track/__init__.py:393
 msgid "unknown"
-msgstr "tidak diketahui"
+msgstr ""
 
 #: ../src/media/track/__init__.py:175
 #, python-format
 msgid "%(album)s  [Disc %(discnum)u]"
-msgstr "%(album)s  [Disc %(discnum)u]"
+msgstr ""
 
 #: ../src/media/track/__init__.py:182
 msgid "CDDA Track"
-msgstr "Trek CDDA"
+msgstr ""
 
 #: ../src/gui/preferences.py:43
 msgid "Preferences"
-msgstr "Keutamaan"
+msgstr ""
 
 #: ../src/gui/preferences.py:128
 msgid "Unable to load this module."
-msgstr "Tidak boleh memuatkan modul ini."
+msgstr ""
 
 #: ../src/gui/preferences.py:137
 msgid "Modules"
-msgstr "Modul"
+msgstr ""
 
 #: ../src/gui/preferences.py:138 ../src/modules/DesktopNotification.py:213
 #: ../src/modules/Covers.py:432
 msgid "Description"
-msgstr "Keterangan"
+msgstr ""
 
 #: ../src/gui/preferences.py:139
 msgid ""
 "This window shows the list of available modules. You can enable/disable a "
 "module by checking/unchecking the check box in front of it."
 msgstr ""
-"Tetingkap ini memaparkan senarai modul yang ada. Anda boleh "
-"benarkan/lumpuhkan modul dengan menanda/nyahtanda kekotak tanda dihadapannya."
 
 #: ../src/gui/preferences.py:141
 msgid "Configuring a Module"
-msgstr "Menkonfigur Modul"
+msgstr ""
 
 #: ../src/gui/preferences.py:142
 msgid ""
@@ -115,34 +114,28 @@ msgid ""
 "click on the \"Preferences\" button on the bottom of the dialog box. Note "
 "that configuring a module is only possible when it is enabled."
 msgstr ""
-"Bila modul boleh dikonfigur, ikon spesifik dipaparkan disebelah kanan pada "
-"baris yang berkenaan. Untuk mengkonfigur modul, pilih ia dan klik pada "
-"butang \"Keutamaan\" pada bahagian bawah kotak dialog. Ambil perhatian, "
-"pemkonfiguran modul hanya boleh bila ia dibenarkan."
 
 #: ../src/gui/selectPath.py:79
 msgid "Choose a folder"
-msgstr "Pilih folder"
+msgstr ""
 
 #: ../src/gui/selectPath.py:96
 msgid "This path does not exist"
-msgstr "Laluan ini tidak wujud"
+msgstr ""
 
 #: ../src/gui/selectPath.py:96
 msgid "Please select an existing directory."
-msgstr "Sila pilih direktori yang ada."
+msgstr ""
 
 #: ../src/gui/selectPath.py:99 ../src/gui/selectPath.py:104
 msgid "The name is incorrect"
-msgstr "Nama salah"
+msgstr ""
 
 #: ../src/gui/selectPath.py:99
 msgid ""
 "This name is not allowed.\n"
 "Please use another one."
 msgstr ""
-"Nama ini tidak dibenarkan.\n"
-"Sila gunakan yang lain."
 
 #: ../src/gui/selectPath.py:104
 #, python-format
@@ -150,103 +143,95 @@ msgid ""
 "The character %s is not allowed.\n"
 "Please use another name."
 msgstr ""
-"Aksara %s tidak dibenarkan.\n"
-"Sila guna nama yang lain."
 
 #: ../src/gui/about.py:40
 msgid "translator-credits"
 msgstr ""
-"Launchpad Contributions:\n"
-"  abuyop https://launchpad.net/~abuyop"
 
 #: ../src/gui/about.py:44
 msgid "Developer:"
-msgstr "Pembangun:"
+msgstr ""
 
 #: ../src/gui/about.py:48
 msgid "Thanks to:"
-msgstr "Terima kasih kepada:"
+msgstr ""
 
 #: ../src/modules/Zeitgeist.py:26
 msgid "Send track information to the Zeitgeist service"
-msgstr "Hantar maklumat trek kepada perkhidmatan Zeitgest"
+msgstr ""
 
 #: ../src/modules/FileExplorer.py:158
 msgid "loading..."
-msgstr "memuatkan..."
+msgstr ""
 
 #: ../src/modules/FileExplorer.py:334
 msgid "Append"
-msgstr "Tambah"
+msgstr ""
 
 #: ../src/modules/FileExplorer.py:443
 msgid "Music"
-msgstr "Muzik"
+msgstr ""
 
 #: ../src/modules/FileExplorer.py:443
 msgid "Albums"
-msgstr "Album"
+msgstr ""
 
 #: ../src/modules/__init__.py:75
 msgid "The following Python modules are not available:"
-msgstr "Modul Python berikut tiada:"
+msgstr ""
 
 #: ../src/modules/__init__.py:79
 msgid "You must install them if you want to enable this module."
-msgstr "Anda mesti memasangnya jika anda ingin mengaktifkan modul ini."
+msgstr ""
 
 #: ../src/modules/__init__.py:266
 msgid "Restart required"
-msgstr "Mula semula aplikasi diperlukan"
+msgstr ""
 
 #: ../src/modules/__init__.py:267
 msgid ""
 "You must restart the application for this modification to take effect."
 msgstr ""
-"Anda mesti memulakan semula aplikasi supaya pengubahsuaian ini berkesan."
 
 #: ../src/modules/CtrlPanel.py:188 ../src/modules/CtrlPanel.py:244
 msgid "Pause the current track"
-msgstr "Jeda trek semasa"
+msgstr ""
 
 #: ../src/modules/CtrlPanel.py:204
 msgid "Play the first selected track of the playlist"
-msgstr "Main trek pilihan pertama daripada senarai main"
+msgstr ""
 
 #: ../src/modules/CtrlPanel.py:238
 msgid "Continue playing the current track"
-msgstr "Teruskan main trek semasa"
+msgstr ""
 
 #: ../src/modules/DesktopNotification.py:25
 msgid "Desktop Notification"
-msgstr "Pemberitahuan Desktop"
+msgstr ""
 
 #: ../src/modules/DesktopNotification.py:25
 msgid "Display a desktop notification on track change"
-msgstr "Papar pemberitahuan desktop bila trek berubah"
+msgstr ""
 
 #: ../src/modules/DesktopNotification.py:78
 #: ../src/modules/DesktopNotification.py:188
 msgid "Skip track"
-msgstr "Langkau trek"
+msgstr ""
 
 #: ../src/modules/DesktopNotification.py:214
 msgid ""
 "This module displays a small popup window on your desktop when a new track "
 "starts."
 msgstr ""
-"Modul ini akan paparkan tetingkap timbul kecil pada desktop anda bila trek "
-"baru bermula."
 
 #: ../src/modules/DesktopNotification.py:215
 msgid ""
 "If the Covers module is enabled, the popup also shows the album cover."
 msgstr ""
-"Jika modul Kulit Album dibenarkan, tetingkap timbul juga akan memaparkannya."
 
 #: ../src/modules/DesktopNotification.py:216
 msgid "Customizing the Notification"
-msgstr "Menyuai Pemberitahuan"
+msgstr ""
 
 #: ../src/modules/DesktopNotification.py:217
 msgid ""
@@ -255,34 +240,28 @@ msgid ""
 "replaced by their corresponding value. Available fields are:\n"
 "\n"
 msgstr ""
-"Anda boleh mengubah tajuk dan kandungan pemberitahuan kepada apa-apa teks "
-"yang anda ingini. Sebelum tetingkap timbul dipaparkan, ruang kosong {field} "
-"akan digantikan dengan nilai yang berkenaan. Ruang yang ada ialah:\n"
-"\n"
 
 #: ../src/modules/DesktopNotification.py:220
 msgid "Markup"
-msgstr "Penanda"
+msgstr ""
 
 #: ../src/modules/DesktopNotification.py:221
 msgid ""
 "You can use the Pango markup language to format the text. More information "
 "on that language is available on the following web page:"
 msgstr ""
-"Anda boleh menggunakan bahasa penanda Pango untuk memformat teks. Maklumat "
-"lanjut mengenai bahasa tersebut ada didalam laman sesawang berikut:"
 
 #: ../src/modules/StatusbarTitlebar.py:49
 msgid "[paused]"
-msgstr "[dijeda]"
+msgstr ""
 
 #: ../src/modules/Covers.py:28
 msgid "Covers"
-msgstr "Kulit Album"
+msgstr ""
 
 #: ../src/modules/Covers.py:28
 msgid "Show album covers"
-msgstr "Papar kulit album"
+msgstr ""
 
 #: ../src/modules/Covers.py:433
 msgid ""
@@ -290,13 +269,10 @@ msgid ""
 "Covers may be loaded from local pictures, located in the same directory as "
 "the current track, or may be downloaded from the Internet."
 msgstr ""
-"Modul ini memaparkan kulit album untuk trek semasa. Kulit album mungkin "
-"dimuatkan dari gambar setempat, yang diletakkan didalam direktori yang sama "
-"dengan trek semasa, atau mungkin dimuat turun dari Internet."
 
 #: ../src/modules/Covers.py:436
 msgid "User Covers"
-msgstr "Kulit Album Pengguna"
+msgstr ""
 
 #: ../src/modules/Covers.py:437
 #, python-format
@@ -305,14 +281,10 @@ msgid ""
 "track. When specifying filenames, you do not need to provide file "
 "extensions, supported file formats (%s) are automatically used."
 msgstr ""
-"Kulit album pengguna ialah gambar yang diletakkan didalam direktori yang "
-"sama dengan trek semasa. Bila menentukan nama fail, anda tidak perlu "
-"sediakan sambungan fail, format fail yang disokong (%s) akan digunakan "
-"secara automatik."
 
 #: ../src/modules/Covers.py:440
 msgid "Internet Covers"
-msgstr "Kulit Album Internet"
+msgstr ""
 
 #: ../src/modules/Covers.py:441
 msgid ""
@@ -321,141 +293,136 @@ msgid ""
 "case, if a user cover exists for the current track, it is used. If there is "
 "none, the cover is downloaded."
 msgstr ""
-"Kulit album boleh dimuat turun di Internet, berdasarkan tag trek semasa. "
-"Anda boleh utamakan kulit album pengguna berbanding sumber Internet, jila "
-"kulit album pengguna sudah wujud bagi trek semasa, ia akan digunakan. Jika "
-"tiada, kulit album akan dimuat turun."
 
 #: ../src/modules/Tracktree.py:368
 msgid "Save playlist"
-msgstr "Simpan senarai main"
+msgstr ""
 
 #: ../src/modules/Tracktree.py:417
 msgid "Clear Playlist"
-msgstr "Kosongkan Senarai Main"
+msgstr ""
 
 #: ../src/modules/Equalizer.py:24
 msgid "Equalizer"
-msgstr "Penyama"
+msgstr ""
 
 #: ../src/modules/Equalizer.py:24
 msgid "Tune the level of the frequency bands"
-msgstr "Laraskan aras jalur frekuensi"
+msgstr ""
 
 #: ../src/modules/Equalizer.py:125 ../src/modules/Equalizer.py:213
 #: ../src/modules/Equalizer.py:226
 msgid "Custom"
-msgstr "Suai"
+msgstr ""
 
 #: ../src/modules/Equalizer.py:166
 msgid "Save levels"
-msgstr "Simpan aras"
+msgstr ""
 
 #: ../src/modules/Equalizer.py:177
 msgid "Load levels"
-msgstr "Muat aras"
+msgstr ""
 
 #: ../src/modules/Equalizer.py:204
 msgid "Could not load the file"
-msgstr "Tidak dapat memuatkan fail"
+msgstr ""
 
 #: ../src/modules/Equalizer.py:204
 msgid "The format of the file is incorrect."
-msgstr "Format fail salah."
+msgstr ""
 
 #: ../src/tools/consts.py:94
 msgid "Unknown Genre"
-msgstr "Genre Tidak Diketahui"
+msgstr ""
 
 #: ../src/tools/consts.py:95
 msgid "Unknown Title"
-msgstr "Tajuk Tidak Diketahui"
+msgstr ""
 
 #: ../src/tools/consts.py:96
 msgid "Unknown Album"
-msgstr "Album Tidak Diketahui"
+msgstr ""
 
 #: ../src/tools/consts.py:97
 msgid "Unknown Artist"
-msgstr "Artis Tidak Diketahui"
+msgstr ""
 
 #: ../src/tools/consts.py:105
 msgid "Unknown Album Artist"
-msgstr "Album Artis Tidak Diketahui"
+msgstr ""
 
 #: ../res/Covers.glade.h:1
 msgid "<b>Internet Covers</b>"
-msgstr "<b>Kulit Album Internet</b>"
+msgstr ""
 
 #: ../res/Covers.glade.h:2
 msgid "<b>User Covers</b>"
-msgstr "<b>Kulit Album Pengguna</b>"
+msgstr ""
 
 #: ../res/Covers.glade.h:3
 msgid "Always prefer user covers"
-msgstr "Sentiasa utamakan kulit album pengguna"
+msgstr ""
 
 #: ../res/Covers.glade.h:4
 msgid "Don't download covers when there is a user one"
 msgstr ""
-"Jangan muat turun kulit album jika terdapat kulit album dari pengguna"
 
 #: ../res/Covers.glade.h:5
 msgid "Download covers"
-msgstr "Muat turun kulit album"
+msgstr ""
 
 #: ../res/Covers.glade.h:6
 msgid "Filenames to look for (e.g., folder, cover)"
-msgstr "Nama fail yang dicari (cth., folder, kulit album)"
+msgstr ""
 
 #: ../res/Covers.glade.h:7
 msgid "Filenames:"
-msgstr "Nama Fail:"
+msgstr ""
 
 #: ../res/Covers.glade.h:8
 msgid "Try to download covers from the Internet"
-msgstr "Cuba muat turun kulit album dari internet"
+msgstr ""
 
 #: ../res/DesktopNotification.glade.h:1
 msgid "<b>Body</b>"
-msgstr "<b>Badan</b>"
+msgstr ""
 
 #: ../res/DesktopNotification.glade.h:2
 msgid "<b>Miscellaneous</b>"
-msgstr "<b>Pelbagai</b>"
+msgstr ""
 
 #: ../res/DesktopNotification.glade.h:3
 msgid "<b>Title</b>"
-msgstr "<b>Tajuk</b>"
+msgstr ""
 
 #: ../res/DesktopNotification.glade.h:4
 msgid "Notification timeout:"
-msgstr "Masa tamat pemberitahuan:"
+msgstr ""
 
 #: ../res/DesktopNotification.glade.h:5
 msgid "Show a \"skip track\" button"
-msgstr "Papar butang \"langkau trek\""
+msgstr ""
 
 #: ../res/DesktopNotification.glade.h:6
 msgid "Time during which the notification is displayed"
-msgstr "Masa bila pemberitahuan dipaparkan"
+msgstr ""
 
 #: ../res/DesktopNotification.glade.h:7
 msgid "seconds"
-msgstr "saat"
+msgstr ""
 
 #: ../res/Equalizer.glade.h:1
 msgid "Preset:"
-msgstr "Praset:"
+msgstr ""
 
 #: ../res/MainWindow.glade.h:1
 msgid "Play the first track of the playlist"
-msgstr "Main trek pertama dari senarai main"
+msgstr ""
 
 #: ../res/MainWindow.glade.h:2
 msgid "Play the next track"
-msgstr "Main trek berikutnya"
+msgstr ""
 
 #: ../res/MainWindow.glade.h:3
 msgid "Play the previous track"
-msgstr "Main trek terdahulu"
+msgstr ""
