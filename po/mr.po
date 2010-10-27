@@ -8,40 +8,39 @@ msgstr ""
 "Project-Id-Version: pogo\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2010-10-07 15:37+0200\n"
-"PO-Revision-Date: 2010-10-26 04:56+0000\n"
-"Last-Translator: Launchpad Translations Administrators "
-"<rosetta@launchpad.net>\n"
+"PO-Revision-Date: 2010-10-26 05:30+0000\n"
+"Last-Translator: Mithun J. Shitole <Unknown>\n"
 "Language-Team: Marathi <mr@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Launchpad-Export-Date: 2010-10-26 04:58+0000\n"
+"X-Launchpad-Export-Date: 2010-10-27 05:19+0000\n"
 "X-Generator: Launchpad (build Unknown)\n"
 
 #: ../src/media/track/__init__.py:54
 msgid "Track number"
-msgstr ""
+msgstr "गाणे क्रमांक"
 
 #: ../src/media/track/__init__.py:55
 msgid "Title"
-msgstr ""
+msgstr "शीर्षक"
 
 #: ../src/media/track/__init__.py:56
 msgid "Artist"
-msgstr ""
+msgstr "कलाकार"
 
 #: ../src/media/track/__init__.py:57
 msgid "Album"
-msgstr ""
+msgstr "अल्बम"
 
 #: ../src/media/track/__init__.py:58
 msgid "Genre"
-msgstr ""
+msgstr "श्रेणी"
 
 #: ../src/media/track/__init__.py:59
 msgid "Date"
-msgstr ""
+msgstr "दिनांक"
 
 #: ../src/media/track/__init__.py:60
 msgid "Disc number"
@@ -57,11 +56,11 @@ msgstr ""
 
 #: ../src/media/track/__init__.py:63
 msgid "Duration in seconds (e.g., 194)"
-msgstr ""
+msgstr "कालावधी (सेकंद )"
 
 #: ../src/media/track/__init__.py:64
 msgid "Duration as a string (e.g., 3:14)"
-msgstr ""
+msgstr "कालावधी (अक्षरी)"
 
 #: ../src/media/track/__init__.py:67
 msgid "Full path to the file"
@@ -69,7 +68,7 @@ msgstr ""
 
 #: ../src/media/track/__init__.py:149 ../src/media/track/__init__.py:393
 msgid "unknown"
-msgstr ""
+msgstr "अज्ञात"
 
 #: ../src/media/track/__init__.py:175
 #, python-format
@@ -82,7 +81,7 @@ msgstr ""
 
 #: ../src/gui/preferences.py:43
 msgid "Preferences"
-msgstr ""
+msgstr "प्राधान्य"
 
 #: ../src/gui/preferences.py:128
 msgid "Unable to load this module."
@@ -90,12 +89,12 @@ msgstr ""
 
 #: ../src/gui/preferences.py:137
 msgid "Modules"
-msgstr ""
+msgstr "विभाग"
 
 #: ../src/gui/preferences.py:138 ../src/modules/DesktopNotification.py:213
 #: ../src/modules/Covers.py:432
 msgid "Description"
-msgstr ""
+msgstr "वर्णन"
 
 #: ../src/gui/preferences.py:139
 msgid ""
@@ -117,25 +116,27 @@ msgstr ""
 
 #: ../src/gui/selectPath.py:79
 msgid "Choose a folder"
-msgstr ""
+msgstr "संचयिका निवडा"
 
 #: ../src/gui/selectPath.py:96
 msgid "This path does not exist"
-msgstr ""
+msgstr "हा मार्ग अस्तित्वात नाही"
 
 #: ../src/gui/selectPath.py:96
 msgid "Please select an existing directory."
-msgstr ""
+msgstr "कृपया असतीत्वत असलेली संचयिका निवडा"
 
 #: ../src/gui/selectPath.py:99 ../src/gui/selectPath.py:104
 msgid "The name is incorrect"
-msgstr ""
+msgstr "नाव चुकीचे आहे"
 
 #: ../src/gui/selectPath.py:99
 msgid ""
 "This name is not allowed.\n"
 "Please use another one."
 msgstr ""
+"हे नावाची परवानगी नाही.\n"
+"कृपया दुसरे नाव वापरा."
 
 #: ../src/gui/selectPath.py:104
 #, python-format
@@ -143,18 +144,22 @@ msgid ""
 "The character %s is not allowed.\n"
 "Please use another name."
 msgstr ""
+"%s अक्षराची परवानगी नाही.\n"
+"कृपया दुसरे नाव वापरा."
 
 #: ../src/gui/about.py:40
 msgid "translator-credits"
 msgstr ""
+"Launchpad Contributions:\n"
+"  Mithun J. Shitole https://launchpad.net/~mithunit"
 
 #: ../src/gui/about.py:44
 msgid "Developer:"
-msgstr ""
+msgstr "निर्माता:"
 
 #: ../src/gui/about.py:48
 msgid "Thanks to:"
-msgstr ""
+msgstr "यांना धन्यवाद:"
 
 #: ../src/modules/Zeitgeist.py:26
 msgid "Send track information to the Zeitgeist service"
@@ -162,19 +167,19 @@ msgstr ""
 
 #: ../src/modules/FileExplorer.py:158
 msgid "loading..."
-msgstr ""
+msgstr "दाखल करीत आहे..."
 
 #: ../src/modules/FileExplorer.py:334
 msgid "Append"
-msgstr ""
+msgstr "जोडत आहे."
 
 #: ../src/modules/FileExplorer.py:443
 msgid "Music"
-msgstr ""
+msgstr "संगीत"
 
 #: ../src/modules/FileExplorer.py:443
 msgid "Albums"
-msgstr ""
+msgstr "अल्बमस्"
 
 #: ../src/modules/__init__.py:75
 msgid "The following Python modules are not available:"
@@ -186,12 +191,12 @@ msgstr ""
 
 #: ../src/modules/__init__.py:266
 msgid "Restart required"
-msgstr ""
+msgstr "पुन्हा चालू करणे आवश्यक"
 
 #: ../src/modules/__init__.py:267
 msgid ""
 "You must restart the application for this modification to take effect."
-msgstr ""
+msgstr "बदल वापरात येण्याकरिता तुम्हाला हा उपक्रम पुन्हा चालू करावाच लागेल."
 
 #: ../src/modules/CtrlPanel.py:188 ../src/modules/CtrlPanel.py:244
 msgid "Pause the current track"
