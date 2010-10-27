@@ -31,7 +31,7 @@ from tools.log import logger
 
 
 # Module information
-MOD_INFO = ('Search', ('Search'), ('Search your filesystem for music'), [], True, False)
+MOD_INFO = ('Search', ('Search'), ('Search your filesystem for music'), [], False, False)
 MOD_NAME = MOD_INFO[modules.MODINFO_NAME]
 
 MIN_CHARS = 3

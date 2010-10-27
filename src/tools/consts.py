@@ -30,7 +30,7 @@ socketTimeout = 10
 
 # --- Strings
 appName      = 'Pogo'
-appVersion   = '0.2'
+appVersion   = '0.3'
 appNameShort = 'pogo'
 
 
