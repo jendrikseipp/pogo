@@ -20,6 +20,7 @@
 import re
 
 import gtk, media, modules, os, tools
+import urllib2
 
 from tools   import consts, prefs, icons
 from media   import playlist
@@ -133,6 +134,7 @@ class FileExplorer(modules.Module):
                     'vscrollbar-pos': self.scrolled.get_vscrollbar().get_value(),
                     'hscrollbar-pos': self.scrolled.get_hscrollbar().get_value(),
                     }
+        prefs.set(__name__, 'saved-states', self.treeState)
 
 
     def sortKey(self, row):
@@ -411,6 +413,48 @@ class FileExplorer(modules.Module):
         idle_add(self.refresh)
         
         
+    def _get_xdg_music_dir(self):
+        ''' Read XDG music directory '''
+        xdg_file = os.path.join(consts.dirBaseUsr, '.config', 'user-dirs.dirs')
+        if not os.path.exists(xdg_file):
+            return None
+            
+        import re
+        folder_regex = re.compile(r'XDG_MUSIC_DIR\=\"\$HOME/(.+)\"')
+        with open(xdg_file) as f:
+            content = f.read()
+            match = folder_regex.search(content)
+            if match:
+                dirname = match.group(1)
+                # Unquote dirname: "My%20folder" -> "My folder"
+                dirname = urllib2.unquote(dirname)
+                path = os.path.join(consts.dirBaseUsr, dirname)
+                return path
+        return None
+        
+        
+    def search_music_paths(self):
+        """
+        Checks some standard directories and returns them if they contain music
+        """
+        paths = []
+        xdg_music_dir = self._get_xdg_music_dir()
+        if xdg_music_dir:
+            paths.append(xdg_music_dir)
+            
+        # Try other music folders
+        names = ['Albums', _('Albums')]
+        if not xdg_music_dir:
+            names.extend(['Music', _('Music')])
+        for name in names:
+            for case in [name, name.lower()]:
+                music_folder = os.path.join(consts.dirBaseUsr, name)
+                # Check if dir exists and has files
+                if os.path.isdir(music_folder) and os.listdir(music_folder):
+                    paths.append(music_folder)
+        return paths
+        
+        
     def populate_tree(self):
         '''
         Bookmarks code from Quod Libet
@@ -425,63 +469,14 @@ class FileExplorer(modules.Module):
             self.restore_tree()
             return
             
-        folders = ['/', consts.dirBaseUsr]
+        paths = ['/', consts.dirBaseUsr]
         
-        def add_path(path, prepend=False):
-            if not os.path.isdir(path) or path in folders:
-                return
-            if prepend:
-                folders.insert(0, path)
-            else:
-                folders.append(path)
+        if self.music_paths:
+            # Add separator
+            path.append(None)
+            paths.extend(music_paths)
         
-        # Read XDG music directory
-        xdg_file = os.path.join(consts.dirBaseUsr, '.config', 'user-dirs.dirs')
-        if os.path.exists(xdg_file):
-            with open(xdg_file) as f:
-                import re
-                folder_regex = re.compile(r'XDG_MUSIC_DIR\=\"\$HOME/(.+)\"')
-                
-                content = f.read()
-                match = folder_regex.search(content)
-                if match:
-                    dirname = match.group(1)
-                    path = os.path.join(consts.dirBaseUsr, dirname)
-                    folders.append(None)
-                    add_path(path, prepend=False)
-                else:
-                    # Try other music folders
-                    names = ['Music', 'Albums', _('Music'), _('Albums')]
-                    for name in names:
-                        for case in [name, name.lower()]:
-                            music_folder = os.path.join(consts.dirBaseUsr, name)
-                            if os.path.isdir(music_folder):
-                                add_path(music_folder)
-                
-        
-        # Read in the GTK bookmarks list; gjc says this is the right way
-        # import urlparse, urllib2
-        #bookmarks_file = os.path.join(consts.dirBaseUsr, ".gtk-bookmarks")
-        #if os.path.exists(bookmarks_file):
-        #    try:
-        #        with open(bookmarks_file) as f:
-        #            folders.append(None)
-        #            for line in f.readlines():
-        #                folder_url = line.split()[0]
-        #                path = urlparse.urlsplit(folder_url)[2]
-        #                # "My%20folder" -> "My folder"
-        #                path = urllib2.unquote(path)
-        #                add_path(path)
-        #    except EnvironmentError:
-        #        pass
-
-        #def is_folder(filename):
-        #    return filename is None or os.path.isdir(filename)
-        #folders = filter(is_folder, folders)
-        #if folders[-1] is None:
-        #    folders.pop()
-        
-        for path in folders:
+        for path in paths:
             if path is None:
                 # Separator
                 self.tree.appendRow((icons.nullMenuIcon(), None, TYPE_NONE, None), None)
@@ -504,9 +499,13 @@ class FileExplorer(modules.Module):
         self.scrolled.set_policy(gtk.POLICY_AUTOMATIC, gtk.POLICY_AUTOMATIC)
         self.scrolled.show()
 
-        ##
         left_vbox = prefs.getWidgetsTree().get_widget('vbox3')
         left_vbox.pack_start(self.scrolled)
+        
+        self.music_paths = prefs.get(__name__, 'music-paths', [])
+        if not self.music_paths:
+            self.music_paths = self.search_music_paths()
+        modules.postMsg(consts.MSG_EVT_MUSIC_PATHS_CHANGED, {'paths': self.music_paths})
         
         self.displaying_results = False
         self.populate_tree()
@@ -518,7 +517,6 @@ class FileExplorer(modules.Module):
         """ The module is going to be unloaded """
         if not self.displaying_results:
             self.saveTreeState()
-            prefs.set(__name__, 'saved-states', self.treeState)
         
         
     def onSearchEnd(self, results, query):

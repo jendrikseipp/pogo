@@ -203,7 +203,9 @@ DND_TARGETS = {
     MSG_EVT_SEARCH_START,
     MSG_EVT_SEARCH_END,
     MSG_EVT_SEARCH_RESET,
+    
+    MSG_EVT_MUSIC_PATHS_CHANGED,
 
     # End value
     MSG_END_VALUE
-) = range(47)
+) = range(48)
