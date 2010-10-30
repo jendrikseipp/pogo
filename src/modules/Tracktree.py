@@ -485,13 +485,18 @@ class Tracktree(modules.Module):
         
         # Populate the playlist with commandline args or the saved playlist
         (options, args)    = prefs.getCmdLine()
+        
+        self.savedPlaylist = os.path.join(consts.dirCfg, 'saved-playlist')
 
         if len(args) != 0:
             log.logger.info('[%s] Filling playlist with files given on command line' % MOD_INFO[modules.MODINFO_NAME])
-            modules.postMsg(consts.MSG_CMD_TRACKLIST_SET, {'tracks': media.getTracks(args), 'playNow': True})
+            # make paths absolute
+            paths = map(os.path.abspath, args)
+            print 'Appending to the playlist:'
+            print '\n'.join(paths)
+            modules.postMsg(consts.MSG_CMD_TRACKLIST_SET, {'tracks': media.getTracks(paths), 'playNow': True})
         else:
             dump = None
-            self.savedPlaylist = os.path.join(consts.dirCfg, 'saved-playlist')
             if os.path.exists(self.savedPlaylist):
                 try:
                     dump = pickleLoad(self.savedPlaylist)

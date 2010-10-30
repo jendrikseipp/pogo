@@ -276,13 +276,21 @@ class DBusObjectTracklist(dbus.service.Object):
     @dbus.service.method(consts.dbusInterface, in_signature='asb', out_signature='')
     def AddTracks(self, uris, playNow):
         """ Appends multiple URIs to the tracklist """
-        gobject.idle_add(modules.postMsg, consts.MSG_CMD_TRACKLIST_ADD, {'tracks': media.getTracks([file for file in uris]), 'playNow': playNow})
+        # uris is a DBus array we want a Python list
+        # We add the empty string to convert the uris from DBus.String to unicode
+        paths = [uri + '' for uri in uris]
+        gobject.idle_add(modules.postMsg, consts.MSG_CMD_TRACKLIST_ADD, 
+                        {'tracks': media.getTracks(paths), 'playNow': playNow})
 
 
     @dbus.service.method(consts.dbusInterface, in_signature='asb', out_signature='')
     def SetTracks(self, uris, playNow):
         """ Replace the tracklist by the given URIs """
-        gobject.idle_add(modules.postMsg, consts.MSG_CMD_TRACKLIST_SET, {'tracks': media.getTracks([file for file in uris]), 'playNow': playNow})
+        # uris is a DBus array we want a Python list
+        # We add the empty string to convert the uris from DBus.String to unicode
+        paths = [uri + '' for uri in uris]
+        gobject.idle_add(modules.postMsg, consts.MSG_CMD_TRACKLIST_SET, 
+                        {'tracks': media.getTracks(paths), 'playNow': playNow})
 
 
 

@@ -4,7 +4,7 @@
 X Search for tracks in the music folders
 O Let user add more directories to file browser?
 X Fix Loading files from commandline (make paths absolute)
-O Save playlist also when files have been added on the commandline
+X Fix: Save playlist also when files have been added on the commandline
 
 0.x:
 O Stop after current album / track
