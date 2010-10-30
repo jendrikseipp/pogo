@@ -31,9 +31,10 @@ import media
 from tools import consts, prefs
 from tools.log import logger
 
+search_text = _('Search in your music directories')
 
 # Module information
-MOD_INFO = ('Search', ('Search'), ('Search your filesystem for music'), [], True, False)
+MOD_INFO = ('Search', ('Search'), search_text, [], True, False)
 MOD_NAME = MOD_INFO[modules.MODINFO_NAME]
 
 MIN_CHARS = 3
@@ -118,6 +119,7 @@ class Search(modules.ThreadedModule):
         wTree = tools.prefs.getWidgetsTree()
         self.searchbox = gtk.Entry()
         self.searchbox.set_size_request(210, -1)
+        self.searchbox.set_tooltip_text(search_text)
         
         search_container = gtk.HBox()
         search_container.pack_start(self.searchbox, False)
