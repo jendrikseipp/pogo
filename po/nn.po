@@ -7,10 +7,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: decibel-audio-player\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-10-07 15:37+0200\n"
+"POT-Creation-Date: 2010-10-30 03:21+0200\n"
 "PO-Revision-Date: 2010-10-07 11:31+0000\n"
 "Last-Translator: Jon Stødle <jonstodle@gmail.com>\n"
 "Language-Team: Norwegian Nynorsk <nn@li.org>\n"
+"Language: nn\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -83,30 +84,30 @@ msgstr ""
 msgid "Preferences"
 msgstr "Instillingar"
 
-#: ../src/gui/preferences.py:128
+#: ../src/gui/preferences.py:129
 msgid "Unable to load this module."
 msgstr "Kunne ikkje laste modulen."
 
-#: ../src/gui/preferences.py:137
+#: ../src/gui/preferences.py:138
 msgid "Modules"
 msgstr "Modular"
 
-#: ../src/gui/preferences.py:138 ../src/modules/DesktopNotification.py:213
+#: ../src/gui/preferences.py:139 ../src/modules/DesktopNotification.py:213
 #: ../src/modules/Covers.py:432
 msgid "Description"
 msgstr "Skildring"
 
-#: ../src/gui/preferences.py:139
+#: ../src/gui/preferences.py:140
 msgid ""
 "This window shows the list of available modules. You can enable/disable a "
 "module by checking/unchecking the check box in front of it."
 msgstr ""
 
-#: ../src/gui/preferences.py:141
+#: ../src/gui/preferences.py:142
 msgid "Configuring a Module"
 msgstr "Still inn ein modul"
 
-#: ../src/gui/preferences.py:142
+#: ../src/gui/preferences.py:143
 msgid ""
 "When a module may be configured, a specific icon is displayed on the right "
 "of the corresponding line. To configure a module, simply select it and then "
@@ -165,24 +166,28 @@ msgstr "Utviklar:"
 msgid "Thanks to:"
 msgstr "TAkk til:"
 
+#: ../src/modules/Search.py:34
+msgid "Search in your music directories"
+msgstr ""
+
 #: ../src/modules/Zeitgeist.py:26
 msgid "Send track information to the Zeitgeist service"
 msgstr ""
 
-#: ../src/modules/FileExplorer.py:158
+#: ../src/modules/FileExplorer.py:170
 msgid "loading..."
 msgstr ""
 
-#: ../src/modules/FileExplorer.py:334
+#: ../src/modules/FileExplorer.py:346
 msgid "Append"
 msgstr ""
 
-#: ../src/modules/FileExplorer.py:443
-msgid "Music"
+#: ../src/modules/FileExplorer.py:450
+msgid "Albums"
 msgstr ""
 
-#: ../src/modules/FileExplorer.py:443
-msgid "Albums"
+#: ../src/modules/FileExplorer.py:452
+msgid "Music"
 msgstr ""
 
 #: ../src/modules/__init__.py:75
@@ -198,19 +203,18 @@ msgid "Restart required"
 msgstr ""
 
 #: ../src/modules/__init__.py:267
-msgid ""
-"You must restart the application for this modification to take effect."
+msgid "You must restart the application for this modification to take effect."
 msgstr ""
 
-#: ../src/modules/CtrlPanel.py:188 ../src/modules/CtrlPanel.py:244
+#: ../src/modules/CtrlPanel.py:190 ../src/modules/CtrlPanel.py:246
 msgid "Pause the current track"
 msgstr "Pause sporet"
 
-#: ../src/modules/CtrlPanel.py:204
+#: ../src/modules/CtrlPanel.py:206
 msgid "Play the first selected track of the playlist"
 msgstr ""
 
-#: ../src/modules/CtrlPanel.py:238
+#: ../src/modules/CtrlPanel.py:240
 msgid "Continue playing the current track"
 msgstr "Hald fram med å spele sporet"
 
@@ -235,8 +239,7 @@ msgstr ""
 "Denne modulen viser eit lite sprettopp-vindauge når eit nytt spor startar."
 
 #: ../src/modules/DesktopNotification.py:215
-msgid ""
-"If the Covers module is enabled, the popup also shows the album cover."
+msgid "If the Covers module is enabled, the popup also shows the album cover."
 msgstr ""
 
 #: ../src/modules/DesktopNotification.py:216
@@ -267,7 +270,7 @@ msgstr ""
 "Du kan bruke Pango oppmerkingsspråk til å formatere teksten. Meir "
 "informasjon om språket kan du finne på den følgjande vevsida:"
 
-#: ../src/modules/StatusbarTitlebar.py:49
+#: ../src/modules/StatusbarTitlebar.py:47
 msgid "[paused]"
 msgstr "[pausa]"
 
@@ -310,11 +313,11 @@ msgid ""
 "none, the cover is downloaded."
 msgstr ""
 
-#: ../src/modules/Tracktree.py:368
+#: ../src/modules/Tracktree.py:366
 msgid "Save playlist"
 msgstr "Lagre speleliste"
 
-#: ../src/modules/Tracktree.py:417
+#: ../src/modules/Tracktree.py:415
 msgid "Clear Playlist"
 msgstr ""
 
@@ -444,10 +447,10 @@ msgid "Play the previous track"
 msgstr "Spel førre spor"
 
 #~ msgid ""
-#~ "This dialog box shows the list of available modules, which are small pieces "
-#~ "of code that add some functionnalities to the application. You can "
-#~ "enable/disable a module by checking/unchecking the check box in front of it. "
-#~ "Note that some modules (e.g., the File Explorer) cannot be disabled."
+#~ "This dialog box shows the list of available modules, which are small "
+#~ "pieces of code that add some functionnalities to the application. You can "
+#~ "enable/disable a module by checking/unchecking the check box in front of "
+#~ "it. Note that some modules (e.g., the File Explorer) cannot be disabled."
 #~ msgstr ""
 #~ "Denne dialogboksen viser lista over tilgjengelege modular, som er små "
 #~ "kodesnuttar som legg til funksjonar til programmet. Du kan slå ein modul "
@@ -476,18 +479,18 @@ msgstr "Spel førre spor"
 #~ msgstr "Om passordlagringstryggleik"
 
 #~ msgid ""
-#~ "If you use Gnome, it is safe to store your password since the Gnome keyring "
-#~ "is used."
+#~ "If you use Gnome, it is safe to store your password since the Gnome "
+#~ "keyring is used."
 #~ msgstr ""
-#~ "Om du bruker Gnome er det trygt å lagre passordet sidan Gnome-nykkelringen "
-#~ "brukes."
+#~ "Om du bruker Gnome er det trygt å lagre passordet sidan Gnome-"
+#~ "nykkelringen brukes."
 
 #~ msgid ""
-#~ "If you do not use Gnome, beware that, although not stored as clear text, an "
-#~ "attacker <i>could</i> retrieve it."
+#~ "If you do not use Gnome, beware that, although not stored as clear text, "
+#~ "an attacker <i>could</i> retrieve it."
 #~ msgstr ""
-#~ "Om du ikkje bruker Gnome, ver klar over at ein angripar <i>kan</i> få tak i "
-#~ "passordet, sjølv om det ikkje er i klartekst."
+#~ "Om du ikkje bruker Gnome, ver klar over at ein angripar <i>kan</i> få tak "
+#~ "i passordet, sjølv om det ikkje er i klartekst."
 
 #~ msgid "Home"
 #~ msgstr "Heim"
@@ -621,13 +624,13 @@ msgstr "Spel førre spor"
 #~ msgstr "Tilpass statusen"
 
 #~ msgid ""
-#~ "You can set the status to any text you want. Before setting it, the module "
-#~ "replaces all fields of the form {field} by their corresponding value. "
-#~ "Available fields are:"
+#~ "You can set the status to any text you want. Before setting it, the "
+#~ "module replaces all fields of the form {field} by their corresponding "
+#~ "value. Available fields are:"
 #~ msgstr ""
-#~ "Du kan endre statusen til kva tekst til det du vil. Før modulen endrar han, "
-#~ "endrar modulen alle felta i skjemaet med deira tilhøyrande verdi: Moglege "
-#~ "felt er:"
+#~ "Du kan endre statusen til kva tekst til det du vil. Før modulen endrar "
+#~ "han, endrar modulen alle felta i skjemaet med deira tilhøyrande verdi: "
+#~ "Moglege felt er:"
 
 #~ msgid "Sanitization"
 #~ msgstr "Sensurering"
@@ -635,13 +638,13 @@ msgstr "Spel førre spor"
 #~ msgid ""
 #~ "You can define some words that to sanitize before using them to set your "
 #~ "status. In this case, the middle characters of matching words is "
-#~ "automatically replaced with asterisks (e.g., \"Metallica - Live S**t Binge & "
-#~ "Purge\"). Put one word per line."
+#~ "automatically replaced with asterisks (e.g., \"Metallica - Live S**t "
+#~ "Binge & Purge\"). Put one word per line."
 #~ msgstr ""
-#~ "Du kan definere nokre ord som skal sensurerast før dei vert brukt i statusen "
-#~ "din. I desse tilfella vil bokstavane i midten av orda verte endra til "
-#~ "asteriskar autmatisk (td \"Metallica - Live S**t Binge & Purge\"). Eit ord "
-#~ "på kvar linje."
+#~ "Du kan definere nokre ord som skal sensurerast før dei vert brukt i "
+#~ "statusen din. I desse tilfella vil bokstavane i midten av orda verte "
+#~ "endra til asteriskar autmatisk (td \"Metallica - Live S**t Binge & Purge"
+#~ "\"). Eit ord på kvar linje."
 
 #~ msgid "Keep your Last.fm profile up to date"
 #~ msgstr "Hald Last.fm profilen din oppdatert"
@@ -695,7 +698,8 @@ msgstr "Spel førre spor"
 #~ msgid "Remove the selected library?"
 #~ msgstr "Fjerne det velde biblioteket?"
 
-#~ msgid "You will be able to recreate these libraries later on if you wish so."
+#~ msgid ""
+#~ "You will be able to recreate these libraries later on if you wish so."
 #~ msgstr "Du kan lage desse biblioteka på ny seinare om du har lyst."
 
 #~ msgid "Remove all selected libraries?"
@@ -709,9 +713,9 @@ msgstr "Spel førre spor"
 #~ "structure of your drive. Loading tracks is also faster because their tags "
 #~ "are already known and do not have to be read again."
 #~ msgstr ""
-#~ "Denne modulen organiserer mediafilene etter merkelappar i staden for etter "
-#~ "mappestruktur. Lasting av spor vil òg verte raskare sidan merkelappen er "
-#~ "allereie kjend og treng ikkje lesast på ny."
+#~ "Denne modulen organiserer mediafilene etter merkelappar i staden for "
+#~ "etter mappestruktur. Lasting av spor vil òg verte raskare sidan "
+#~ "merkelappen er allereie kjend og treng ikkje lesast på ny."
 
 #~ msgid ""
 #~ "When you add a new library, you have to give the full path to the root "
@@ -719,13 +723,15 @@ msgstr "Spel førre spor"
 #~ "recursively scanned for media files whose tags are read and stored in a "
 #~ "database."
 #~ msgstr ""
-#~ "Når du legg til eit nytt bibliotek må du oppgje heile stien til rotmappa til "
-#~ "biblioteket. Då vil alle mappene i denne rotmappa verte søkt gjennom fleire "
-#~ "gongar for mediafiler og merkelappane vil verte lest og lagra i ein database."
+#~ "Når du legg til eit nytt bibliotek må du oppgje heile stien til rotmappa "
+#~ "til biblioteket. Då vil alle mappene i denne rotmappa verte søkt gjennom "
+#~ "fleire gongar for mediafiler og merkelappane vil verte lest og lagra i "
+#~ "ein database."
 
 #~ msgid ""
-#~ "Upon refreshing a library, the file structure under the root directory and "
-#~ "all media files are scanned for changes, to update the database accordingly."
+#~ "Upon refreshing a library, the file structure under the root directory "
+#~ "and all media files are scanned for changes, to update the database "
+#~ "accordingly."
 #~ msgstr ""
 #~ "Når eit bibliotek vert oppdatert vil filstrukturen i rotmappa og alle "
 #~ "mediafiler verte søkt gjennom for endringar, for å oppdatere databasen."
@@ -758,7 +764,8 @@ msgstr "Spel førre spor"
 #~ msgstr "Feil i sti"
 
 #~ msgid ""
-#~ "The path to the CD-ROM device is not valid. Please choose an existing path."
+#~ "The path to the CD-ROM device is not valid. Please choose an existing "
+#~ "path."
 #~ msgstr "Stien til CD-ROM-en er ikkje riktig. Vel ein eksisterande sti."
 
 #~ msgid "This module lets you play audio discs from your CD-ROM device."
@@ -769,14 +776,14 @@ msgstr "Spel førre spor"
 
 #~ msgid ""
 #~ "Disc information, such as artist and album title, may be automatically "
-#~ "downloaded from an online database if you wish so. This information may also "
-#~ "be saved on your hard drive to avoid downloading it again the next time you "
-#~ "play the same disc."
+#~ "downloaded from an online database if you wish so. This information may "
+#~ "also be saved on your hard drive to avoid downloading it again the next "
+#~ "time you play the same disc."
 #~ msgstr ""
-#~ "Diskinformasjon, som artist og albumtittel, kan verte lasta ned automatisk "
-#~ "fra ein database på veven om ynskjar det. Denne informasjonen kan òg lagrast "
-#~ "på harddisken din for avverge at han vert lasta ned på nytt neste gong "
-#~ "disken vert spelt."
+#~ "Diskinformasjon, som artist og albumtittel, kan verte lasta ned "
+#~ "automatisk fra ein database på veven om ynskjar det. Denne informasjonen "
+#~ "kan òg lagrast på harddisken din for avverge at han vert lasta ned på "
+#~ "nytt neste gong disken vert spelt."
 
 #~ msgid "Status File"
 #~ msgstr "Statusfil"
@@ -785,14 +792,16 @@ msgstr "Spel førre spor"
 #~ msgstr "Generer ei tekstfil med gjeldande status"
 
 #~ msgid ""
-#~ "The path to the selected file is not valid. Please choose an existing path."
+#~ "The path to the selected file is not valid. Please choose an existing "
+#~ "path."
 #~ msgstr "Stien til den valde fila er ikkje gyldig. Vel ein eksisterande sti."
 
 #~ msgid "Choose a file"
 #~ msgstr "Vel ei fil"
 
 #~ msgid ""
-#~ "This module generates a text file with regards to the track currently played."
+#~ "This module generates a text file with regards to the track currently "
+#~ "played."
 #~ msgstr ""
 #~ "Denne modulen lagar ei tekstfil med omsyn til sporet som vert spelt av."
 

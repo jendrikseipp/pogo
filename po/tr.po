@@ -7,10 +7,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: decibel-audio-player\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-10-07 15:37+0200\n"
+"POT-Creation-Date: 2010-10-30 03:21+0200\n"
 "PO-Revision-Date: 2010-10-11 07:21+0000\n"
 "Last-Translator: Burak Ilgicioglu <Unknown>\n"
 "Language-Team: Turkish <tr@li.org>\n"
+"Language: tr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -83,20 +84,20 @@ msgstr "CDDA şarkısı"
 msgid "Preferences"
 msgstr "Tercihler"
 
-#: ../src/gui/preferences.py:128
+#: ../src/gui/preferences.py:129
 msgid "Unable to load this module."
 msgstr "Bu modül yüklenemedi"
 
-#: ../src/gui/preferences.py:137
+#: ../src/gui/preferences.py:138
 msgid "Modules"
 msgstr "Modüller"
 
-#: ../src/gui/preferences.py:138 ../src/modules/DesktopNotification.py:213
+#: ../src/gui/preferences.py:139 ../src/modules/DesktopNotification.py:213
 #: ../src/modules/Covers.py:432
 msgid "Description"
 msgstr "Tanım"
 
-#: ../src/gui/preferences.py:139
+#: ../src/gui/preferences.py:140
 msgid ""
 "This window shows the list of available modules. You can enable/disable a "
 "module by checking/unchecking the check box in front of it."
@@ -104,11 +105,11 @@ msgstr ""
 "Bu pencere mevcut modüllerin listesini gösterir. Yanındaki düğmeye "
 "tıklayarak modülleri aktive/deaktive edebilirsiniz."
 
-#: ../src/gui/preferences.py:141
+#: ../src/gui/preferences.py:142
 msgid "Configuring a Module"
 msgstr "Modül Ayarlama"
 
-#: ../src/gui/preferences.py:142
+#: ../src/gui/preferences.py:143
 msgid ""
 "When a module may be configured, a specific icon is displayed on the right "
 "of the corresponding line. To configure a module, simply select it and then "
@@ -169,25 +170,29 @@ msgstr "Geliştirici"
 msgid "Thanks to:"
 msgstr "Teşekkürler:"
 
+#: ../src/modules/Search.py:34
+msgid "Search in your music directories"
+msgstr ""
+
 #: ../src/modules/Zeitgeist.py:26
 msgid "Send track information to the Zeitgeist service"
 msgstr "Şarkı bilgisini Zeitgeist cihazına yolla"
 
-#: ../src/modules/FileExplorer.py:158
+#: ../src/modules/FileExplorer.py:170
 msgid "loading..."
 msgstr "yükleniyor..."
 
-#: ../src/modules/FileExplorer.py:334
+#: ../src/modules/FileExplorer.py:346
 msgid "Append"
 msgstr "Sonuna Ekle"
 
-#: ../src/modules/FileExplorer.py:443
-msgid "Music"
-msgstr "Müzik"
-
-#: ../src/modules/FileExplorer.py:443
+#: ../src/modules/FileExplorer.py:450
 msgid "Albums"
 msgstr "Albümler"
+
+#: ../src/modules/FileExplorer.py:452
+msgid "Music"
+msgstr "Müzik"
 
 #: ../src/modules/__init__.py:75
 msgid "The following Python modules are not available:"
@@ -203,21 +208,20 @@ msgid "Restart required"
 msgstr "Yeniden başlatma gerekiyor"
 
 #: ../src/modules/__init__.py:267
-msgid ""
-"You must restart the application for this modification to take effect."
+msgid "You must restart the application for this modification to take effect."
 msgstr ""
 "Uygulamadaki değişikliklerin aktif olması için programı yeniden "
 "başlatmalısınız."
 
-#: ../src/modules/CtrlPanel.py:188 ../src/modules/CtrlPanel.py:244
+#: ../src/modules/CtrlPanel.py:190 ../src/modules/CtrlPanel.py:246
 msgid "Pause the current track"
 msgstr "Çalan şarkıyı beklet"
 
-#: ../src/modules/CtrlPanel.py:204
+#: ../src/modules/CtrlPanel.py:206
 msgid "Play the first selected track of the playlist"
 msgstr "Şarkı listesindeki seçilen ilk şarkıyı çal"
 
-#: ../src/modules/CtrlPanel.py:238
+#: ../src/modules/CtrlPanel.py:240
 msgid "Continue playing the current track"
 msgstr "Mevcut parçayı çalmaya devam et"
 
@@ -242,8 +246,7 @@ msgstr ""
 "Bu modül yeni bir şarkı başladığında masaüstünüzde küçük pencere gösterir"
 
 #: ../src/modules/DesktopNotification.py:215
-msgid ""
-"If the Covers module is enabled, the popup also shows the album cover."
+msgid "If the Covers module is enabled, the popup also shows the album cover."
 msgstr ""
 "Eğer albüm kapakları modülü aktif ise yeni pencere albüm kapağını da "
 "gösterir."
@@ -276,7 +279,7 @@ msgstr ""
 "Metni biçimlendirmek için Pango dilini kullanabilirsiniz. Bu dille ilgili "
 "daha fazla bilgiyi verilen bu adreste bulabilirsiniz:"
 
-#: ../src/modules/StatusbarTitlebar.py:49
+#: ../src/modules/StatusbarTitlebar.py:47
 msgid "[paused]"
 msgstr "[duraklatıldı]"
 
@@ -324,16 +327,16 @@ msgid ""
 "case, if a user cover exists for the current track, it is used. If there is "
 "none, the cover is downloaded."
 msgstr ""
-"Albüm kapakları çalan şarkının etiketlerine göre internetten "
-"indirilebilir.Her zaman internet albüm kapaklarının kullanılmasını "
-"seçebilirsiniz. Bu durumda kullanıcı albüm kapağı varsa kullanılır, eğer "
-"yoksa internetten indirilir."
+"Albüm kapakları çalan şarkının etiketlerine göre internetten indirilebilir."
+"Her zaman internet albüm kapaklarının kullanılmasını seçebilirsiniz. Bu "
+"durumda kullanıcı albüm kapağı varsa kullanılır, eğer yoksa internetten "
+"indirilir."
 
-#: ../src/modules/Tracktree.py:368
+#: ../src/modules/Tracktree.py:366
 msgid "Save playlist"
 msgstr "Şarkı listesini kaydet"
 
-#: ../src/modules/Tracktree.py:417
+#: ../src/modules/Tracktree.py:415
 msgid "Clear Playlist"
 msgstr "Şarkı listesini temizle"
 
@@ -463,10 +466,10 @@ msgid "Play the previous track"
 msgstr "Önceki şarkıyı çal"
 
 #~ msgid ""
-#~ "This dialog box shows the list of available modules, which are small pieces "
-#~ "of code that add some functionnalities to the application. You can "
-#~ "enable/disable a module by checking/unchecking the check box in front of it. "
-#~ "Note that some modules (e.g., the File Explorer) cannot be disabled."
+#~ "This dialog box shows the list of available modules, which are small "
+#~ "pieces of code that add some functionnalities to the application. You can "
+#~ "enable/disable a module by checking/unchecking the check box in front of "
+#~ "it. Note that some modules (e.g., the File Explorer) cannot be disabled."
 #~ msgstr ""
 #~ "Bu iletişim kutusu olanaklı modüllerin listesini gösterir. Modüller "
 #~ "uygulamaya kimi beceriler ekleyen küçük kod parçalarıdır. Herhangi bir "
@@ -487,15 +490,15 @@ msgstr "Önceki şarkıyı çal"
 #~ msgstr "Parola saklama güvenliği ile ilgili"
 
 #~ msgid ""
-#~ "If you use Gnome, it is safe to store your password since the Gnome keyring "
-#~ "is used."
+#~ "If you use Gnome, it is safe to store your password since the Gnome "
+#~ "keyring is used."
 #~ msgstr ""
-#~ "Eğer Gnome kullanıyorsanız, parolalarınızı güvenle saklayabilirsiniz çünkü "
-#~ "Gnome Keyring aracını kullanılmaktadır."
+#~ "Eğer Gnome kullanıyorsanız, parolalarınızı güvenle saklayabilirsiniz "
+#~ "çünkü Gnome Keyring aracını kullanılmaktadır."
 
 #~ msgid ""
-#~ "If you do not use Gnome, beware that, although not stored as clear text, an "
-#~ "attacker <i>could</i> retrieve it."
+#~ "If you do not use Gnome, beware that, although not stored as clear text, "
+#~ "an attacker <i>could</i> retrieve it."
 #~ msgstr ""
 #~ "Eğer Gnome kullanmıyorsanız, bilmelisiniz ki , her ne kadar basit metin "
 #~ "dosyası olarak saklanmasa da bir saldırgan <i>ele geçirebilir</i>"

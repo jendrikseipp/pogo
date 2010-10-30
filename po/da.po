@@ -7,10 +7,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: decibel-audio-player\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-10-07 15:37+0200\n"
+"POT-Creation-Date: 2010-10-30 03:21+0200\n"
 "PO-Revision-Date: 2010-10-13 16:43+0000\n"
 "Last-Translator: Joe Hansen <Unknown>\n"
 "Language-Team: Danish <da@li.org>\n"
+"Language: da\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -83,20 +84,20 @@ msgstr "CDDA-spor"
 msgid "Preferences"
 msgstr "Indstillinger"
 
-#: ../src/gui/preferences.py:128
+#: ../src/gui/preferences.py:129
 msgid "Unable to load this module."
 msgstr "Kunne ikke indlæse dette modul."
 
-#: ../src/gui/preferences.py:137
+#: ../src/gui/preferences.py:138
 msgid "Modules"
 msgstr "Moduler"
 
-#: ../src/gui/preferences.py:138 ../src/modules/DesktopNotification.py:213
+#: ../src/gui/preferences.py:139 ../src/modules/DesktopNotification.py:213
 #: ../src/modules/Covers.py:432
 msgid "Description"
 msgstr "Beskrivelse"
 
-#: ../src/gui/preferences.py:139
+#: ../src/gui/preferences.py:140
 msgid ""
 "This window shows the list of available modules. You can enable/disable a "
 "module by checking/unchecking the check box in front of it."
@@ -104,11 +105,11 @@ msgstr ""
 "Dette vindue viser listen af tilgængelige moduler. Du kan slå et modul til "
 "eller fra ved at sætte eller fjerne krydset i afkrydsningsfeltet foran det."
 
-#: ../src/gui/preferences.py:141
+#: ../src/gui/preferences.py:142
 msgid "Configuring a Module"
 msgstr "Konfigurerer et modul"
 
-#: ../src/gui/preferences.py:142
+#: ../src/gui/preferences.py:143
 msgid ""
 "When a module may be configured, a specific icon is displayed on the right "
 "of the corresponding line. To configure a module, simply select it and then "
@@ -169,25 +170,29 @@ msgstr "Udvikler:"
 msgid "Thanks to:"
 msgstr "Tak til:"
 
+#: ../src/modules/Search.py:34
+msgid "Search in your music directories"
+msgstr ""
+
 #: ../src/modules/Zeitgeist.py:26
 msgid "Send track information to the Zeitgeist service"
 msgstr "Send sporinformation til Zeitgeist-tjenesten"
 
-#: ../src/modules/FileExplorer.py:158
+#: ../src/modules/FileExplorer.py:170
 msgid "loading..."
 msgstr "indlæser..."
 
-#: ../src/modules/FileExplorer.py:334
+#: ../src/modules/FileExplorer.py:346
 msgid "Append"
 msgstr "Tilføj"
 
-#: ../src/modules/FileExplorer.py:443
-msgid "Music"
-msgstr "Musik"
-
-#: ../src/modules/FileExplorer.py:443
+#: ../src/modules/FileExplorer.py:450
 msgid "Albums"
 msgstr "Albummer"
+
+#: ../src/modules/FileExplorer.py:452
+msgid "Music"
+msgstr "Musik"
 
 #: ../src/modules/__init__.py:75
 msgid "The following Python modules are not available:"
@@ -202,21 +207,20 @@ msgid "Restart required"
 msgstr "Genstart påkrævet"
 
 #: ../src/modules/__init__.py:267
-msgid ""
-"You must restart the application for this modification to take effect."
+msgid "You must restart the application for this modification to take effect."
 msgstr ""
 "Du er nødt til at genstarte programmet, for at dine ændringer kan træde "
 "igennem."
 
-#: ../src/modules/CtrlPanel.py:188 ../src/modules/CtrlPanel.py:244
+#: ../src/modules/CtrlPanel.py:190 ../src/modules/CtrlPanel.py:246
 msgid "Pause the current track"
 msgstr "Sæt dette nummer på pause"
 
-#: ../src/modules/CtrlPanel.py:204
+#: ../src/modules/CtrlPanel.py:206
 msgid "Play the first selected track of the playlist"
 msgstr "Afspil det første valgte spor i afspilningslisten"
 
-#: ../src/modules/CtrlPanel.py:238
+#: ../src/modules/CtrlPanel.py:240
 msgid "Continue playing the current track"
 msgstr "Fortsæt det nuværende nummer"
 
@@ -242,8 +246,7 @@ msgstr ""
 "starter."
 
 #: ../src/modules/DesktopNotification.py:215
-msgid ""
-"If the Covers module is enabled, the popup also shows the album cover."
+msgid "If the Covers module is enabled, the popup also shows the album cover."
 msgstr "Hvis omslagsmodulet er slået til, vises også albummets omslag."
 
 #: ../src/modules/DesktopNotification.py:216
@@ -274,7 +277,7 @@ msgstr ""
 "Du kan bruge opmærkningssproget Pango til formatering af teksten. Mere "
 "information om sproget kan findes på følgende webside:"
 
-#: ../src/modules/StatusbarTitlebar.py:49
+#: ../src/modules/StatusbarTitlebar.py:47
 msgid "[paused]"
 msgstr "[pause]"
 
@@ -327,11 +330,11 @@ msgstr ""
 "brugeromslag for et givet nummer, vil dette blive brugt. Ellers hentes et "
 "omslag fra nettet."
 
-#: ../src/modules/Tracktree.py:368
+#: ../src/modules/Tracktree.py:366
 msgid "Save playlist"
 msgstr "Gem afspilningsliste"
 
-#: ../src/modules/Tracktree.py:417
+#: ../src/modules/Tracktree.py:415
 msgid "Clear Playlist"
 msgstr "Ryd afspilningslisten"
 
@@ -461,15 +464,15 @@ msgid "Play the previous track"
 msgstr "Spil det forrige nummer"
 
 #~ msgid ""
-#~ "This dialog box shows the list of available modules, which are small pieces "
-#~ "of code that add some functionnalities to the application. You can "
-#~ "enable/disable a module by checking/unchecking the check box in front of it. "
-#~ "Note that some modules (e.g., the File Explorer) cannot be disabled."
+#~ "This dialog box shows the list of available modules, which are small "
+#~ "pieces of code that add some functionnalities to the application. You can "
+#~ "enable/disable a module by checking/unchecking the check box in front of "
+#~ "it. Note that some modules (e.g., the File Explorer) cannot be disabled."
 #~ msgstr ""
 #~ "Denne dialogboks viser en liste med de tilgængelige moduler, som er små "
-#~ "stykker kode som tilføjer funktionalitet til programmet. Du kan slå et modul "
-#~ "til eller fra ved at bruge checkboksen foran det. Bemærk at nogle moduler "
-#~ "(for eksempel File Explorer) kan ikke slås fra."
+#~ "stykker kode som tilføjer funktionalitet til programmet. Du kan slå et "
+#~ "modul til eller fra ved at bruge checkboksen foran det. Bemærk at nogle "
+#~ "moduler (for eksempel File Explorer) kan ikke slås fra."
 
 #~ msgid "File Explorer"
 #~ msgstr "File Explorer"
@@ -487,15 +490,15 @@ msgstr "Spil det forrige nummer"
 #~ msgstr "Om kodeord og lagringssikkerhed"
 
 #~ msgid ""
-#~ "If you use Gnome, it is safe to store your password since the Gnome keyring "
-#~ "is used."
+#~ "If you use Gnome, it is safe to store your password since the Gnome "
+#~ "keyring is used."
 #~ msgstr ""
-#~ "Hvis du bruger Gnome, er det sikkert at gemme dit kodeord, da Gnome Keyring "
-#~ "bliver brugt."
+#~ "Hvis du bruger Gnome, er det sikkert at gemme dit kodeord, da Gnome "
+#~ "Keyring bliver brugt."
 
 #~ msgid ""
-#~ "If you do not use Gnome, beware that, although not stored as clear text, an "
-#~ "attacker <i>could</i> retrieve it."
+#~ "If you do not use Gnome, beware that, although not stored as clear text, "
+#~ "an attacker <i>could</i> retrieve it."
 #~ msgstr ""
 #~ "Hvis du ikke bruger Gnome, vær da opmærksom på, at selvom kodeordet ikke "
 #~ "bliver gemt i ren tekst, så <i>kan</i> en uvedkommende få adgang til det."
@@ -565,20 +568,20 @@ msgstr "Spil det forrige nummer"
 #~ "This module detects any running instant messenger and updates your status "
 #~ "with regards to the track you are listening to. Supported messengers are:"
 #~ msgstr ""
-#~ "Dette modul opdaterer din status i et kørende Instant Messenger program med "
-#~ "data fra det nummer du lytter til. Understøttede IM-programmer er:"
+#~ "Dette modul opdaterer din status i et kørende Instant Messenger program "
+#~ "med data fra det nummer du lytter til. Understøttede IM-programmer er:"
 
 #~ msgid "Customizing the Status"
 #~ msgstr "Tilpasser Status"
 
 #~ msgid ""
-#~ "You can set the status to any text you want. Before setting it, the module "
-#~ "replaces all fields of the form {field} by their corresponding value. "
-#~ "Available fields are:"
+#~ "You can set the status to any text you want. Before setting it, the "
+#~ "module replaces all fields of the form {field} by their corresponding "
+#~ "value. Available fields are:"
 #~ msgstr ""
 #~ "Du kan indstille statusteksten til hvadsomhelst. Før den indstilles "
-#~ "erstatter modulet alle felter med formen {felt} med dets tilhørende værdi. "
-#~ "De tilgængelige felter er:"
+#~ "erstatter modulet alle felter med formen {felt} med dets tilhørende "
+#~ "værdi. De tilgængelige felter er:"
 
 #~ msgid "Sanitization"
 #~ msgstr "Oprydning"
@@ -586,13 +589,13 @@ msgstr "Spil det forrige nummer"
 #~ msgid ""
 #~ "You can define some words that to sanitize before using them to set your "
 #~ "status. In this case, the middle characters of matching words is "
-#~ "automatically replaced with asterisks (e.g., \"Metallica - Live S**t Binge & "
-#~ "Purge\"). Put one word per line."
+#~ "automatically replaced with asterisks (e.g., \"Metallica - Live S**t "
+#~ "Binge & Purge\"). Put one word per line."
 #~ msgstr ""
-#~ "Du kan definere nogle ord som skal opryddes før de indstilles som status. I "
-#~ "dette tilfælde erstattes de midterste bogstaver i et matchende ord "
-#~ "automatisk med stjerner (eksempelvis \"Metallica - Live S**t Binge & "
-#~ "Purge\"). Put ét ord per linie."
+#~ "Du kan definere nogle ord som skal opryddes før de indstilles som status. "
+#~ "I dette tilfælde erstattes de midterste bogstaver i et matchende ord "
+#~ "automatisk med stjerner (eksempelvis \"Metallica - Live S**t Binge & Purge"
+#~ "\"). Put ét ord per linie."
 
 #~ msgid "Keep your Last.fm profile up to date"
 #~ msgstr "Hold din Last.fm-profil opdateret."

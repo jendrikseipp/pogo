@@ -8,10 +8,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-10-07 15:37+0200\n"
+"POT-Creation-Date: 2010-10-30 03:21+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -81,30 +82,30 @@ msgstr ""
 msgid "Preferences"
 msgstr ""
 
-#: ../src/gui/preferences.py:128
+#: ../src/gui/preferences.py:129
 msgid "Unable to load this module."
 msgstr ""
 
-#: ../src/gui/preferences.py:137
+#: ../src/gui/preferences.py:138
 msgid "Modules"
 msgstr ""
 
-#: ../src/gui/preferences.py:138 ../src/modules/DesktopNotification.py:213
+#: ../src/gui/preferences.py:139 ../src/modules/DesktopNotification.py:213
 #: ../src/modules/Covers.py:432
 msgid "Description"
 msgstr ""
 
-#: ../src/gui/preferences.py:139
+#: ../src/gui/preferences.py:140
 msgid ""
 "This window shows the list of available modules. You can enable/disable a "
 "module by checking/unchecking the check box in front of it."
 msgstr ""
 
-#: ../src/gui/preferences.py:141
+#: ../src/gui/preferences.py:142
 msgid "Configuring a Module"
 msgstr ""
 
-#: ../src/gui/preferences.py:142
+#: ../src/gui/preferences.py:143
 msgid ""
 "When a module may be configured, a specific icon is displayed on the right "
 "of the corresponding line. To configure a module, simply select it and then "
@@ -153,24 +154,28 @@ msgstr ""
 msgid "Thanks to:"
 msgstr ""
 
+#: ../src/modules/Search.py:34
+msgid "Search in your music directories"
+msgstr ""
+
 #: ../src/modules/Zeitgeist.py:26
 msgid "Send track information to the Zeitgeist service"
 msgstr ""
 
-#: ../src/modules/FileExplorer.py:158
+#: ../src/modules/FileExplorer.py:170
 msgid "loading..."
 msgstr ""
 
-#: ../src/modules/FileExplorer.py:334
+#: ../src/modules/FileExplorer.py:346
 msgid "Append"
 msgstr ""
 
-#: ../src/modules/FileExplorer.py:443
-msgid "Music"
+#: ../src/modules/FileExplorer.py:450
+msgid "Albums"
 msgstr ""
 
-#: ../src/modules/FileExplorer.py:443
-msgid "Albums"
+#: ../src/modules/FileExplorer.py:452
+msgid "Music"
 msgstr ""
 
 #: ../src/modules/__init__.py:75
@@ -189,15 +194,15 @@ msgstr ""
 msgid "You must restart the application for this modification to take effect."
 msgstr ""
 
-#: ../src/modules/CtrlPanel.py:188 ../src/modules/CtrlPanel.py:244
+#: ../src/modules/CtrlPanel.py:190 ../src/modules/CtrlPanel.py:246
 msgid "Pause the current track"
 msgstr ""
 
-#: ../src/modules/CtrlPanel.py:204
+#: ../src/modules/CtrlPanel.py:206
 msgid "Play the first selected track of the playlist"
 msgstr ""
 
-#: ../src/modules/CtrlPanel.py:238
+#: ../src/modules/CtrlPanel.py:240
 msgid "Continue playing the current track"
 msgstr ""
 
@@ -246,7 +251,7 @@ msgid ""
 "on that language is available on the following web page:"
 msgstr ""
 
-#: ../src/modules/StatusbarTitlebar.py:49
+#: ../src/modules/StatusbarTitlebar.py:47
 msgid "[paused]"
 msgstr ""
 
@@ -289,11 +294,11 @@ msgid ""
 "none, the cover is downloaded."
 msgstr ""
 
-#: ../src/modules/Tracktree.py:368
+#: ../src/modules/Tracktree.py:366
 msgid "Save playlist"
 msgstr ""
 
-#: ../src/modules/Tracktree.py:417
+#: ../src/modules/Tracktree.py:415
 msgid "Clear Playlist"
 msgstr ""
 
