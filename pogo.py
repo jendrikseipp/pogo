@@ -59,9 +59,12 @@ if not optOptions.multiple_instances:
 
             # Fill the current instance with the given tracks, if any
             if len(optArgs) != 0:
-                print 'Appending %s to the playlist' % ','.join(optArgs)
+                # make the paths absolute
+                paths = map(os.path.abspath, optArgs)
+                print 'Appending to the playlist:'
+                print '\n'.join(paths)
                 dbus.Interface(dbusSession.get_object(consts.dbusService,
-                '/TrackList'), consts.dbusInterface).AddTracks(optArgs, True)
+                '/TrackList'), consts.dbusInterface).AddTracks(paths, True)
     except:
         pass
 
