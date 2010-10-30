@@ -19,6 +19,7 @@
 import os
 import subprocess
 import logging
+import re
 from gettext import gettext as _
 
 import gtk
@@ -26,16 +27,16 @@ import gobject
 
 import tools
 import modules
+import media
 from tools import consts, prefs
 from tools.log import logger
 
 
 # Module information
-MOD_INFO = ('Search', ('Search'), ('Search your filesystem for music'), [], False, False)
+MOD_INFO = ('Search', ('Search'), ('Search your filesystem for music'), [], True, False)
 MOD_NAME = MOD_INFO[modules.MODINFO_NAME]
 
 MIN_CHARS = 3
-SEARCH_DIRS = ['/home/jendrik/Musik']
 
 
 
@@ -44,9 +45,10 @@ class Search(modules.ThreadedModule):
     def __init__(self):
         """ Constructor """
         handlers = {
-                        #consts.MSG_EVT_MOD_LOADED:   self.onModLoaded,
-                        consts.MSG_EVT_APP_STARTED:  self.onAppStarted,
-                        consts.MSG_EVT_SEARCH_START: self.onSearch,
+                        #consts.MSG_EVT_MOD_LOADED:         self.onModLoaded,
+                        consts.MSG_EVT_APP_STARTED:         self.onAppStarted,
+                        consts.MSG_EVT_SEARCH_START:        self.onSearch,
+                        consts.MSG_EVT_MUSIC_PATHS_CHANGED: self.onPathsChanged,
                    }
 
         modules.ThreadedModule.__init__(self, handlers)
@@ -61,6 +63,51 @@ class Search(modules.ThreadedModule):
         output = sorted(output.splitlines(), key=lambda path: path.lower())
         logging.info('Results for %s: %s' % (query, len(output)))
         return output
+        
+        
+    def filter_results(self, results, search_path, regexes):
+        '''
+        Remove subpaths of parent directories
+        '''
+        def same_case_bold(match):
+            return '<b>%s</b>' % match.group(0)
+            
+        def get_name(path):
+            # Remove the search path from the name
+            name = path.replace(search_path, '')
+            name = name.strip('/')
+            name = tools.htmlEscape(name)
+            for regex in regexes:
+                name = regex.sub(same_case_bold, name)
+            return name
+        
+        dirs = []
+        files = []
+        for path in results:
+            # Check if this is only a subpath of a directory already handled
+            is_subpath = False
+            for dir in dirs:
+                if path.startswith(dir):
+                    is_subpath = True
+                    break
+                    
+            if not is_subpath:
+                name = get_name(path)
+                    
+                if os.path.isdir(path):
+                    dirs.append((path, name))
+                elif media.isSupported(path):
+                    files.append((path, name))
+        
+        return (dirs, files)
+        
+        
+    def cache(self):
+        ''' Cache results for a faster first search '''
+        for index, path in enumerate(self.paths, 1):
+            # Cache dirs one by one after a small timeout 
+            gobject.timeout_add_seconds(5 * index, self.search_dir, path, \
+                                        'caching_files')
 
 
     # --== Message handlers ==--
@@ -91,14 +138,27 @@ class Search(modules.ThreadedModule):
         self.searchbox.connect('activate', self.on_searchbox_activate)
         self.searchbox.connect('changed', self.on_searchbox_changed)
         
-        # Cache results for a faster first search
-        gobject.timeout_add_seconds(10, self.search_dir, SEARCH_DIRS[0], 'caching_files')
+        self.paths = []
         
         
     def onSearch(self, query):
-        dir = SEARCH_DIRS[0]
-        results = self.search_dir(dir, query)
-        modules.postMsg(consts.MSG_EVT_SEARCH_END, {'results': results, 'query': query})
+        regexes = [re.compile(part, re.IGNORECASE) for part in query.split()]
+        
+        all_dirs = []
+        all_files = []
+        
+        for dir in self.paths:
+            results = self.search_dir(dir, query)
+            dirs, files = self.filter_results(results, dir, regexes)
+            all_dirs.extend(dirs)
+            all_files.extend(files)
+        modules.postMsg(consts.MSG_EVT_SEARCH_END, 
+                            {'results': (all_dirs, all_files), 'query': query})
+        
+    
+    def onPathsChanged(self, paths):
+        self.paths = paths
+        self.cache()
         
         
     #------- GTK handlers ----------------
@@ -106,7 +166,8 @@ class Search(modules.ThreadedModule):
     def on_searchbox_activate(self, entry):
         query = self.searchbox.get_text().strip()
         if len(query) < MIN_CHARS:
-            logging.info('Search term has to have at least %d characters' % MIN_CHARS)
+            msg = 'Search term has to have at least %d characters' % MIN_CHARS
+            logging.info(msg)
             return
         #print repr(self.searchbox.get_text()), repr(self.searchbox.get_text().decode('utf-8'))
         query = self.searchbox.get_text().decode('utf-8')
@@ -120,7 +181,8 @@ class Search(modules.ThreadedModule):
             
     
     def on_searchbox_clear(self, entry, icon_pos, event):
+        '''
+        An icon has been pressed
+        '''
         if icon_pos == 1:
             self.searchbox.set_text('')
-        
-    

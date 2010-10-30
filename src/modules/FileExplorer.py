@@ -17,16 +17,22 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301 USA
 
-import re
-
-import gtk, media, modules, os, tools
+import os
 import urllib2
-
-from tools   import consts, prefs, icons
-from media   import playlist
+import itertools
 from gettext import gettext as _
 from os.path import isdir, isfile
+
+import gtk
 from gobject import idle_add, TYPE_STRING, TYPE_INT
+
+import media
+import modules
+import tools
+from tools   import consts, prefs, icons
+from media   import playlist
+
+
 
 MOD_INFO = ('File Explorer', 'File Explorer', 'Browse your file system', [], True, False)
 MOD_L10N = MOD_INFO[modules.MODINFO_L10N]
@@ -35,8 +41,6 @@ MOD_L10N = MOD_INFO[modules.MODINFO_L10N]
 ##PREFS_DEFAULT_MEDIA_FOLDERS     = {'Home': consts.dirBaseUsr, 'Root': '/'}    # List of media folders that are used as roots for the file explorer
 PREFS_DEFAULT_ADD_BY_FILENAME   = False                                             # True if files should be added to the playlist by their filename
 PREFS_DEFAULT_SHOW_HIDDEN_FILES = False                                             # True if hidden files should be shown
-
-MUSIC_DIRS = ['/home/jendrik/Musik']
 
 
 # The format of a row in the treeview
@@ -446,8 +450,14 @@ class FileExplorer(modules.Module):
         names = ['Albums', _('Albums')]
         if not xdg_music_dir:
             names.extend(['Music', _('Music')])
+            
+        # Check lowercase names too
+        names = [[name, name.lower()] for name in names]
+        # Fold into one list again and remove duplicate names
+        names = set(itertools.chain(*names))
+        
         for name in names:
-            for case in [name, name.lower()]:
+            #for case in [name, name.lower()]:
                 music_folder = os.path.join(consts.dirBaseUsr, name)
                 # Check if dir exists and has files
                 if os.path.isdir(music_folder) and os.listdir(music_folder):
@@ -465,15 +475,17 @@ class FileExplorer(modules.Module):
         self.tree.set_row_separator_func(self._is_separator)
             
         # Restore the tree if we have any to restore, else build new one
-        if self.treeState:
+        if False and self.treeState:
             self.restore_tree()
             return
             
-        paths = ['/', consts.dirBaseUsr]
+        paths = self.static_paths[:]
         
-        if self.music_paths:
+        music_paths = self.search_music_paths()
+        
+        if music_paths:
             # Add separator
-            path.append(None)
+            paths.append(None)
             paths.extend(music_paths)
         
         for path in paths:
@@ -482,6 +494,15 @@ class FileExplorer(modules.Module):
                 self.tree.appendRow((icons.nullMenuIcon(), None, TYPE_NONE, None), None)
             else:
                 self.add_dir(path)
+                
+    def get_music_paths_from_tree(self):
+        music_paths = []
+        for child in self.tree.iterChildren(None):
+            row = self.tree.getRow(child)
+            path = row[ROW_FULLPATH]
+            if path and path not in self.static_paths:
+                music_paths.append(path)
+        return music_paths
 
 
    # --== Message handlers ==--
@@ -502,13 +523,13 @@ class FileExplorer(modules.Module):
         left_vbox = prefs.getWidgetsTree().get_widget('vbox3')
         left_vbox.pack_start(self.scrolled)
         
-        self.music_paths = prefs.get(__name__, 'music-paths', [])
-        if not self.music_paths:
-            self.music_paths = self.search_music_paths()
-        modules.postMsg(consts.MSG_EVT_MUSIC_PATHS_CHANGED, {'paths': self.music_paths})
+        self.static_paths = ['/', consts.dirBaseUsr]
         
         self.displaying_results = False
         self.populate_tree()
+        
+        music_paths = self.get_music_paths_from_tree()
+        modules.postMsg(consts.MSG_EVT_MUSIC_PATHS_CHANGED, {'paths': music_paths})
         
         self.tree.connect('drag-begin', self.onDragBegin)
 
@@ -525,48 +546,14 @@ class FileExplorer(modules.Module):
         
         self.tree.clear()
         
-        last_dir = ''
-        last_dir_iter = None
+        dirs, files = results
         
-        dirs = []
-        files = []
-        for path in results:
-            # Check if this is only a subpath of a directory already handled
-            is_subpath = False
-            for dir in dirs:
-                if path.startswith(dir):
-                    is_subpath = True
-                    break
-                    
-            if not is_subpath:
-                if os.path.isdir(path):
-                    dirs.append(path)
-                elif media.isSupported(path):
-                    files.append(path)
-            
-        def same_case_bold(match):
-            return '<b>%s</b>' % match.group(0)
-            
-        regexes = [re.compile(part, re.IGNORECASE) for part in query.split()]
-            
-        def get_nodename(path):
-            name = path
-            for music_dir in MUSIC_DIRS:
-                name = name.replace(music_dir, '')
-            name = name.strip('/')
-            name = tools.htmlEscape(name)
-            for regex in regexes:
-                name = regex.sub(same_case_bold, name)
-            return name
-        
-        for path in dirs:
-            name = get_nodename(path)
+        for path, name in dirs:
             new_node = self.tree.appendRow((icons.dirMenuIcon(), name, TYPE_DIR, path), None)
             fakeChild = self.tree.appendRow((icons.dirMenuIcon(), '', TYPE_NONE, ''), new_node)
             
-        for file in files:
-            filename = get_nodename(file)
-            self.tree.appendRow((icons.mediaFileMenuIcon(), filename, TYPE_FILE, file), None)
+        for file, name in files:
+            self.tree.appendRow((icons.mediaFileMenuIcon(), name, TYPE_FILE, file), None)
         
         self.displaying_results = True
         
