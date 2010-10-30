@@ -231,7 +231,9 @@ class Covers(modules.ThreadedModule):
                 malformed = False
 
         if malformed:
-            logger.error('[%s] Received malformed data\n\n%s' % (MOD_NAME, data))
+            ## Do not show the data in the log every time no cover is found
+            if coverURL:
+                logger.error('[%s] Received malformed data\n\n%s' % (MOD_NAME, data))
             return None
 
         # Download the cover image
