@@ -2,6 +2,7 @@
 
 0.3:
 X Search for tracks in the music folders
+O Highlight found occurences for umlauts
 O Let user add more directories to file browser?
 X Fix Loading files from commandline (make paths absolute)
 X Fix: Save playlist also when files have been added on the commandline

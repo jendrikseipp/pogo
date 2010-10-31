@@ -176,15 +176,6 @@ def getCursorPosition():
 def htmlEscape(string):
     """ Replace characters &, <, and > by their equivalent HTML code """
     return escape(string)
-    output = ''
-
-    for c in string:
-        if c == '&':   output += '&amp;'
-        elif c == '<': output += '&lt;'
-        elif c == '>': output += '&gt;'
-        else:          output += c
-
-    return output
     
     
 def htmlUnescape(s):
@@ -192,11 +183,6 @@ def htmlUnescape(s):
     Unescape '&amp;', '&lt;', and '&gt;' in a string of data.
     '''
     return unescape(s)
-    s = s.replace("&lt;", "<")
-    s = s.replace("&gt;", ">")
-    # this has to be last:
-    s = s.replace("&amp;", "&")
-    return s
     
     
 def dirname(dir):
