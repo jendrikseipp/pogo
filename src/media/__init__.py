@@ -20,18 +20,19 @@
 import os
 import sys
 import threading
+import traceback
+from collections import defaultdict
+from os.path import splitext
 
 if __name__ == '__main__':
     base_dir = os.path.abspath(os.path.join(os.path.abspath(__file__), '../../'))
     sys.path.insert(0, base_dir)
 
-import playlist, traceback
+import playlist
 
 from format          import monkeysaudio, asf, flac, mp3, mp4, mpc, ogg, wavpack
-from os.path         import splitext
 from tools.log       import logger
 from track.fileTrack import FileTrack
-
 import tools
 
 
@@ -180,30 +181,10 @@ def preloadTracks(paths):
             preloadTracks(subpaths)
         elif isSupported(path):
             getTrackFromFile(path)
-            
-
-def scanPath(path, name='', tracks=None):
-    # UNUSED
-    if tracks is None:
-        from collections import defaultdict
-        tracks = defaultdict(list)
-        
-    if os.path.isdir(path):
-        for (subname, subpath) in tools.listDir(path):
-            if os.path.isdir(subpath):
-                subname = name + ' / ' + subname if name else subname
-            else:
-                subname = name
-            tracks.update(scanPath(subpath, subname, tracks))
-    elif isSupported(path):
-        track = getTrackFromFile(path)
-        tracks[name].append(track)
-    return tracks
     
     
 def scanPaths(dir_info, name='', tracks=None):
     if tracks is None:
-        from collections import defaultdict
         tracks = defaultdict(list)
         
     for (subname, subpath) in dir_info:
@@ -214,8 +195,6 @@ def scanPaths(dir_info, name='', tracks=None):
             track = getTrackFromFile(subpath)
             tracks[name].append(track)
     return tracks
-            
-    
         
     
 def getTracks(filenames, sortByFilename=True):
