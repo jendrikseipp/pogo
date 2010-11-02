@@ -82,7 +82,7 @@ class Search(modules.ThreadedModule):
             name = name.strip('/')
             name = tools.htmlEscape(name)
             for regex in regexes:
-                name = regex.sub(same_case_bold, name)
+                name = regex.sub(same_case_bold, unicode(name))
             return name
         
         dirs = []
@@ -147,7 +147,7 @@ class Search(modules.ThreadedModule):
         
         
     def onSearch(self, query):
-        regexes = [re.compile(part, re.IGNORECASE) for part in query.split()]
+        regexes = [re.compile(unicode(part), re.IGNORECASE) for part in query.split()]
         
         all_dirs = []
         all_files = []
@@ -176,7 +176,7 @@ class Search(modules.ThreadedModule):
             return
         #print repr(self.searchbox.get_text()), repr(self.searchbox.get_text().decode('utf-8'))
         query = self.searchbox.get_text().decode('utf-8')
-        logging.info('Query: %s' % repr(query))
+        logging.info('Query: %s' % query)
         modules.postMsg(consts.MSG_EVT_SEARCH_START, {'query': query})
         
         

@@ -2,7 +2,7 @@
 
 0.3:
 X Search for tracks in the music folders
-O Highlight found occurences for umlauts
+X Highlight found occurences for umlauts too
 X Show status messages when searching
 O Let users add more directories to file browser?
 X Fix Loading files from commandline (make paths absolute)
