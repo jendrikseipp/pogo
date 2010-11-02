@@ -2,9 +2,9 @@
 
 0.3:
 X Search for tracks in the music folders
-X Highlight found occurences for umlauts too
-X Show status messages when searching
 O Let users add more directories to file browser?
+X Highlight found occurences for searches with non-ASCII characters too
+X Show status messages when searching
 X Fix Loading files from commandline (make paths absolute)
 X Fix: Save playlist also when files have been added on the commandline
 
