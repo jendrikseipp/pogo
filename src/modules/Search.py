@@ -37,7 +37,7 @@ search_text = _('Search in your music directories')
 MOD_INFO = ('Search', ('Search'), search_text, [], True, False)
 MOD_NAME = MOD_INFO[modules.MODINFO_NAME]
 
-MIN_CHARS = 3
+MIN_CHARS = 2
 
 
 
@@ -75,7 +75,10 @@ class Search(modules.ThreadedModule):
             
         def get_name(path):
             # Remove the search path from the name
-            name = path.replace(search_path, '')
+            if path == search_path:
+                name = tools.dirname(path)
+            else:
+                name = path.replace(search_path, '')
             name = name.strip('/')
             name = tools.htmlEscape(name)
             for regex in regexes:

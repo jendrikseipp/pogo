@@ -68,6 +68,7 @@ class FileExplorer(modules.Module):
         handlers = {
                         consts.MSG_EVT_APP_QUIT:         self.onAppQuit,
                         consts.MSG_EVT_APP_STARTED:      self.onAppStarted,
+                        consts.MSG_EVT_SEARCH_START:     self.onSearchStart,
                         consts.MSG_EVT_SEARCH_END:       self.onSearchEnd,
                         consts.MSG_EVT_SEARCH_RESET:     self.onSearchReset,
                    }
@@ -538,15 +539,32 @@ class FileExplorer(modules.Module):
         """ The module is going to be unloaded """
         if not self.displaying_results:
             self.saveTreeState()
-        
-        
-    def onSearchEnd(self, results, query):
+            
+            
+    def onSearchStart(self, query):
         if not self.displaying_results:
             self.saveTreeState()
         
         self.tree.clear()
+        self.displaying_results = True
+        
+        text = _('Searching ...')
+        self.tree.appendRow((icons.nullMenuIcon(), text, TYPE_NONE, ''), None)
+        
+        
+    def onSearchEnd(self, results, query):
+        # Remove the "Searching ..." node
+        self.tree.clear()
+        # Set it again, if ever onSearchEnd gets called without a 
+        # previous onSearchStart
+        self.displaying_results = True
         
         dirs, files = results
+        
+        if not dirs and not files:
+            text = _('No tracks found')
+            self.tree.appendRow((icons.nullMenuIcon(), text, TYPE_NONE, ''), None)
+            return
         
         for path, name in dirs:
             new_node = self.tree.appendRow((icons.dirMenuIcon(), name, TYPE_DIR, path), None)
@@ -554,9 +572,7 @@ class FileExplorer(modules.Module):
             
         for file, name in files:
             self.tree.appendRow((icons.mediaFileMenuIcon(), name, TYPE_FILE, file), None)
-        
-        self.displaying_results = True
-        
+            
         
     def onSearchReset(self):
         if self.displaying_results:

@@ -19,6 +19,7 @@
 
 import os
 import traceback
+import logging
 
 import gtk, gobject
 
@@ -515,6 +516,7 @@ class Tracktree(modules.Module):
     def onAppQuit(self):
         """ The module is going to be unloaded """
         dump = self.getTreeDump()
+        logging.info('Saving playlist')
         pickleSave(self.savedPlaylist, dump)
 
 

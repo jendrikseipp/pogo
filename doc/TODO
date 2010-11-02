@@ -3,13 +3,15 @@
 0.3:
 X Search for tracks in the music folders
 O Highlight found occurences for umlauts
-O Let user add more directories to file browser?
+X Show status messages when searching
+O Let users add more directories to file browser?
 X Fix Loading files from commandline (make paths absolute)
 X Fix: Save playlist also when files have been added on the commandline
 
 0.x:
 O Stop after current album / track
-O Save playlist
+O Save playlist periodically to prevent losing it during a shutdown
+O Export playlist to .m3u format
 O Shuffle
 O Repeat
 O Open containing folder (option in context menu for playlist)
@@ -19,7 +21,7 @@ O Sound Indicator
 
 
 0.y:
-O Enqueue
+O Enqueue?
 O Party View?
 O Scrobbling Support?
 O Lyrics?
