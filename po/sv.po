@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: pogo\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2010-10-30 03:21+0200\n"
-"PO-Revision-Date: 2010-10-13 17:18+0000\n"
+"PO-Revision-Date: 2010-11-02 16:14+0000\n"
 "Last-Translator: David Bengtsson <Unknown>\n"
 "Language-Team: Launchpad Swedish Translators <lp-l10n-"
 "sv@lists.launchpad.net>\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Launchpad-Export-Date: 2010-11-02 05:10+0000\n"
+"X-Launchpad-Export-Date: 2010-11-03 05:21+0000\n"
 "X-Generator: Launchpad (build Unknown)\n"
 "X-Poedit-Language: Swedish\n"
 
@@ -174,7 +174,7 @@ msgstr "Tack till:"
 
 #: ../src/modules/Search.py:34
 msgid "Search in your music directories"
-msgstr ""
+msgstr "Sök i dina musik-kataloger"
 
 #: ../src/modules/Zeitgeist.py:26
 msgid "Send track information to the Zeitgeist service"
