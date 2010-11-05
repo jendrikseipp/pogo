@@ -147,7 +147,7 @@ class FileExplorer(modules.Module):
         """
         ## never replace
         replace = False
-
+        
         if path is None: tracks = media.getTracks([row[ROW_FULLPATH] for row in self.tree.getSelectedRows()], self.addByFilename)
         else:            tracks = media.getTracks([self.tree.getRow(path)[ROW_FULLPATH]], self.addByFilename)
 
@@ -181,13 +181,13 @@ class FileExplorer(modules.Module):
 
         for (file, path) in tools.listDir(directory):
             file = unicode(file, errors='replace')
-
+            
             # Make directory names prettier
             junk = ['_']
             pretty_name = file
             for item in junk:
                 pretty_name = pretty_name.replace(item, ' ')
-
+                
             if isdir(path):
                 directories.append((icons.dirMenuIcon(), tools.htmlEscape(pretty_name), TYPE_DIR, path))
             elif isfile(path):
@@ -258,9 +258,9 @@ class FileExplorer(modules.Module):
                 if self.tree.row_expanded(child):
                     idle_add(self.refresh, child)
             return
-
+        
         directory = self.tree.getItem(treePath, ROW_FULLPATH)
-
+        
         directories, playlists, mediaFiles = self.getDirContents(directory)
 
         disk                   = directories + playlists + mediaFiles
@@ -402,8 +402,8 @@ class FileExplorer(modules.Module):
         """ Provide information about the data being dragged """
         import urllib
         selection.set('text/uri-list', 8, ' '.join([urllib.pathname2url(file) for file in [row[ROW_FULLPATH] for row in tree.getSelectedRows()]]))
-
-
+        
+        
     def add_dir(self, path):
         '''
         Add a directory with one fake child to the tree
@@ -412,12 +412,12 @@ class FileExplorer(modules.Module):
         name = tools.htmlEscape(unicode(name, errors='replace'))
         parent = self.tree.appendRow((icons.dirMenuIcon(), name, TYPE_DIR, path), None)
         fakeChild = self.tree.appendRow((icons.dirMenuIcon(), '', TYPE_NONE, ''), parent)
-
-
+        
+    
     def _is_separator(self, model, iter):
         return model[iter][ROW_NAME] is None
-
-
+        
+        
     def restore_tree(self):
         self.tree.handler_block_by_func(self.onRowExpanded)
         self.restoreTreeDump(self.treeState['tree-state'])
@@ -426,8 +426,8 @@ class FileExplorer(modules.Module):
         idle_add(self.scrolled.get_hscrollbar().set_value, self.treeState['hscrollbar-pos'])
         idle_add(self.tree.selectPaths, self.treeState['selected-paths'])
         idle_add(self.refresh)
-
-
+        
+        
     def populate_tree(self):
         '''
         Bookmarks code from Quod Libet
@@ -436,14 +436,14 @@ class FileExplorer(modules.Module):
         self.createTree()
         #self.tree.set_row_separator_func(lambda model, iter: model[iter][ROW_NAME] is None)
         self.tree.set_row_separator_func(self._is_separator)
-
+            
         # Restore the tree if we have any to restore, else build new one
         if self.treeState:
             self.restore_tree()
             return
-
+            
         folders = ['/', consts.dirBaseUsr]
-
+        
         def add_path(path, prepend=False):
             if not os.path.isdir(path) or path in folders:
                 return
@@ -451,14 +451,14 @@ class FileExplorer(modules.Module):
                 folders.insert(0, path)
             else:
                 folders.append(path)
-
+        
         # Read XDG music directory
         xdg_file = os.path.join(consts.dirBaseUsr, '.config', 'user-dirs.dirs')
         if os.path.exists(xdg_file):
             with open(xdg_file) as f:
                 import re
                 folder_regex = re.compile(r'XDG_MUSIC_DIR\=\"\$HOME/(.+)\"')
-
+                
                 content = f.read()
                 match = folder_regex.search(content)
                 if match:
@@ -474,8 +474,8 @@ class FileExplorer(modules.Module):
                             music_folder = os.path.join(consts.dirBaseUsr, name)
                             if os.path.isdir(music_folder):
                                 add_path(music_folder)
-
-
+                
+        
         # Read in the GTK bookmarks list; gjc says this is the right way
         # import urlparse, urllib2
         #bookmarks_file = os.path.join(consts.dirBaseUsr, ".gtk-bookmarks")
@@ -497,7 +497,7 @@ class FileExplorer(modules.Module):
         #folders = filter(is_folder, folders)
         #if folders[-1] is None:
         #    folders.pop()
-
+        
         for path in folders:
             if path is None:
                 # Separator
@@ -524,10 +524,10 @@ class FileExplorer(modules.Module):
         ##
         left_vbox = prefs.getWidgetsTree().get_widget('vbox3')
         left_vbox.pack_start(self.scrolled)
-
+        
         self.displaying_results = False
         self.populate_tree()
-
+        
         self.tree.connect('drag-begin', self.onDragBegin)
 
 
@@ -536,17 +536,17 @@ class FileExplorer(modules.Module):
         if not self.displaying_results:
             self.saveTreeState()
             prefs.set(__name__, 'saved-states', self.treeState)
-
-
+        
+        
     def onSearchEnd(self, results, query):
         if not self.displaying_results:
             self.saveTreeState()
-
+        
         self.tree.clear()
-
+        
         last_dir = ''
         last_dir_iter = None
-
+        
         dirs = []
         files = []
         for path in results:
@@ -556,18 +556,18 @@ class FileExplorer(modules.Module):
                 if path.startswith(dir):
                     is_subpath = True
                     break
-
+                    
             if not is_subpath:
                 if os.path.isdir(path):
                     dirs.append(path)
                 elif media.isSupported(path):
                     files.append(path)
-
+            
         def same_case_bold(match):
             return '<b>%s</b>' % match.group(0)
-
+            
         regexes = [re.compile(part, re.IGNORECASE) for part in query.split()]
-
+            
         def get_nodename(path):
             name = path
             for music_dir in MUSIC_DIRS:
@@ -577,28 +577,28 @@ class FileExplorer(modules.Module):
             for regex in regexes:
                 name = regex.sub(same_case_bold, name)
             return name
-
+        
         for path in dirs:
             name = get_nodename(path)
             new_node = self.tree.appendRow((icons.dirMenuIcon(), name, TYPE_DIR, path), None)
             fakeChild = self.tree.appendRow((icons.dirMenuIcon(), '', TYPE_NONE, ''), new_node)
-
+            
         for file in files:
             filename = get_nodename(file)
             self.tree.appendRow((icons.mediaFileMenuIcon(), filename, TYPE_FILE, file), None)
-
+        
         self.displaying_results = True
-
-
+        
+        
     def onSearchReset(self):
         if self.displaying_results:
             self.tree.clear()
             self.restore_tree()
             self.displaying_results = False
-
-
+        
+    
     # --== GTK Handlers ==--
-
+    
     def onDragBegin(self, tree, context):
         """
         A drag'n'drop operation has begun
@@ -607,17 +607,16 @@ class FileExplorer(modules.Module):
         paths = [row[ROW_FULLPATH] for row in tree.getSelectedRows()]
         modules.postMsg(consts.MSG_CMD_FILE_EXPLORER_DRAG_BEGIN, {'paths': paths})
         #idle_add(media.getTracks, paths)
-
+        
         # Preload the tracks to speedup their addition to the playlist
         import threading
         crawler = threading.Thread(target=media.preloadTracks, args=(paths,))
         crawler.start()
-
+        
         #from multiprocessing import Process
         #p = Process(target=media.getTracks, args=(paths,))
         #p.start()
-
+        
         #from multiprocessing import Pool
         #pool = Pool(processes=4)              # start 4 worker processes
         #result = pool.map_async(media.getTracks, [[path] for path in paths])
-
