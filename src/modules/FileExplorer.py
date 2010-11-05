@@ -29,8 +29,9 @@ from gobject import idle_add, TYPE_STRING, TYPE_INT
 import media
 import modules
 import tools
-from tools   import consts, prefs, icons
-from media   import playlist
+from tools import consts, prefs, icons
+from media import playlist
+from gui import fileChooser, errorMsgBox
 
 
 
@@ -340,6 +341,10 @@ class FileExplorer(modules.Module):
 
     def onShowPopupMenu(self, tree, button, time, path):
         """ Show a popup menu """
+        if path and self.tree.getItem(path, ROW_FULLPATH) is None:
+            # separator selected
+            return
+            
         popup = gtk.Menu()
 
         # Play selection
@@ -358,9 +363,44 @@ class FileExplorer(modules.Module):
         refresh = gtk.ImageMenuItem(gtk.STOCK_REFRESH)
         refresh.connect('activate', lambda widget: self.refresh())
         popup.append(refresh)
+        
+        
+        # Add new dir
+        dir = gtk.ImageMenuItem(gtk.STOCK_DIRECTORY)
+        if path is None:
+            dir.set_label(_('Add music directory'))
+            dir.connect('activate', self.on_add_dir)
+            popup.append(dir)
+        else:
+            # Check that the dir is top-level and not $HOME or /
+            filepath = self.tree.getItem(path, ROW_FULLPATH)
+            samefile = lambda p: os.path.samefile(p, filepath)
+            static_selected = any(map(samefile, self.static_paths))
+            store = self.tree.store
+            depth = store.iter_depth(store.get_iter(path))
+            top_level = (depth == 0)
+            if top_level and not static_selected:
+                dir.set_label(_('Hide directory'))
+                dir.connect('activate', self.on_remove_dir, path)
+                popup.append(dir)
+                                        
 
         popup.show_all()
         popup.popup(None, None, None, button, time)
+        
+        
+    def on_add_dir(self, widget):
+        path = fileChooser.openDirectory(None, _('Choose a directory'))
+        if path is not None:
+            if os.path.isdir(path):
+                self.add_dir(path)
+            else:
+                errorMsgBox(None, _('This path does not exist'),
+                    '"%s"\n' % path + _('Please select an existing directory.'))
+                
+        
+    def on_remove_dir(self, widget, path):
+        self.tree.removeRow(path)
 
 
     def onKeyPressed(self, tree, event):
