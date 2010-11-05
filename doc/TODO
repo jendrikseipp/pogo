@@ -2,7 +2,8 @@
 
 0.3:
 X Search for tracks in the music folders
-O Let users add more directories to file browser?
+X Let users add and hide directories in file browser
+O Add "Open containing folder" context menu item
 X Highlight found occurences for searches with non-ASCII characters too
 X Show status messages when searching
 X Fix Loading files from commandline (make paths absolute)
@@ -14,7 +15,6 @@ O Save playlist periodically to prevent losing it during a shutdown
 O Export playlist to .m3u format
 O Shuffle
 O Repeat
-O Open containing folder (option in context menu for playlist)
 O Playlist loading (Only add tracks in pl not added anyways)
 O Add Zeitgeist module
 O Sound Indicator
