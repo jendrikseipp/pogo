@@ -20,6 +20,7 @@
 import os
 import urllib2
 import itertools
+import re
 from gettext import gettext as _
 from os.path import isdir, isfile
 
@@ -321,8 +322,8 @@ class FileExplorer(modules.Module):
         for child in self.tree.iterChildren(treePath):
             if self.tree.row_expanded(child):
                 idle_add(self.refresh, child)
-
-
+            
+            
     # --== GTK handlers ==--
 
 
@@ -368,7 +369,7 @@ class FileExplorer(modules.Module):
         # Add new dir
         dir = gtk.ImageMenuItem(gtk.STOCK_DIRECTORY)
         if path is None:
-            dir.set_label(_('Add music directory'))
+            dir.set_label(_('Add music folder'))
             dir.connect('activate', self.on_add_dir)
             popup.append(dir)
         else:
@@ -380,10 +381,19 @@ class FileExplorer(modules.Module):
             depth = store.iter_depth(store.get_iter(path))
             top_level = (depth == 0)
             if top_level and not static_selected:
-                dir.set_label(_('Hide directory'))
+                dir.set_label(_('Hide folder'))
                 dir.connect('activate', self.on_remove_dir, path)
                 popup.append(dir)
-                                        
+        
+
+        # open containing folder
+        if path:
+            show_folder = gtk.ImageMenuItem(gtk.STOCK_OPEN)
+            show_folder.set_label(_('Open containing folder'))
+            filepath = self.tree.getItem(path, ROW_FULLPATH)
+            parent_path = os.path.dirname(filepath)
+            show_folder.connect('activate', lambda widget: tools.open_path(parent_path))
+            popup.append(show_folder)
 
         popup.show_all()
         popup.popup(None, None, None, button, time)

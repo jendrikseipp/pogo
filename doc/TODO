@@ -3,7 +3,7 @@
 0.3:
 X Search for tracks in the music folders
 X Let users add and hide directories in file browser
-O Add "Open containing folder" context menu item
+X Add "Open containing folder" context menu item
 X Highlight found occurences for searches with non-ASCII characters too
 X Show status messages when searching
 X Fix Loading files from commandline (make paths absolute)

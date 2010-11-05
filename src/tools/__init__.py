@@ -17,7 +17,9 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301 USA
 
-import cPickle, os
+import os
+import cPickle
+import subprocess
 from xml.sax.saxutils import escape, unescape
 
 import gtk
@@ -213,3 +215,16 @@ def resize(w_old, h_old, max_width, max_height):
     assert h_new <= max_height, '%s <= %s' % (h_new, max_height)
     #assert round(ratio, 3) == round(w_new / h_new, 3), '%s == %s / %s == %s ' % (ratio, w_new, h_new, w_new / h_new)
     return (w_new, h_new)
+    
+    
+def open_path(path):
+    """ Show containing folder in default file browser """
+    if os.name == 'mac':
+        subprocess.call(('open', path))
+    elif os.name == 'nt':
+        subprocess.call(('start', path))
+    elif os.name == 'posix':
+        subprocess.call(('xdg-open', path))
+    else:
+        import webbrowser
+        webbrowser.open(path)

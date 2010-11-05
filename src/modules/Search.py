@@ -31,7 +31,7 @@ import media
 from tools import consts, prefs
 from tools.log import logger
 
-search_text = _('Search in your music directories')
+search_text = _('Search in your music folders')
 
 # Module information
 MOD_INFO = ('Search', ('Search'), search_text, [], True, False)
