@@ -7,16 +7,71 @@ msgid ""
 msgstr ""
 "Project-Id-Version: decibel-audio-player\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-10-30 03:21+0200\n"
+"POT-Creation-Date: 2010-11-07 01:42+0100\n"
 "PO-Revision-Date: 2010-10-07 11:26+0000\n"
 "Last-Translator: Jendrik Seipp <jendrikseipp@web.de>\n"
 "Language-Team: Greek <el@li.org>\n"
+"Language: el\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Launchpad-Export-Date: 2010-11-02 05:10+0000\n"
 "X-Generator: Launchpad (build Unknown)\n"
+
+#: ../src/gui/about.py:40
+msgid "translator-credits"
+msgstr ""
+"Launchpad Contributions:\n"
+"  Jendrik Seipp https://launchpad.net/~jendrikseipp"
+
+#: ../src/gui/about.py:44
+msgid "Developer:"
+msgstr "Δημιουργός:"
+
+#: ../src/gui/about.py:48
+msgid "Thanks to:"
+msgstr "Ευχαριστίες σε:"
+
+#: ../src/gui/preferences.py:43
+msgid "Preferences"
+msgstr "Προτιμήσεις"
+
+#: ../src/gui/preferences.py:129
+msgid "Unable to load this module."
+msgstr "Το πρόσθετο δεν μπόρεσε να φορτωθεί."
+
+#: ../src/gui/preferences.py:138
+msgid "Modules"
+msgstr "Πρόσθετα"
+
+#: ../src/gui/preferences.py:139 ../src/modules/Covers.py:434
+#: ../src/modules/DesktopNotification.py:213
+msgid "Description"
+msgstr "Περιγραφή"
+
+#: ../src/gui/preferences.py:140
+msgid ""
+"This window shows the list of available modules. You can enable/disable a "
+"module by checking/unchecking the check box in front of it."
+msgstr ""
+
+#: ../src/gui/preferences.py:142
+msgid "Configuring a Module"
+msgstr "Ρυθμίζοντας ένα πρόσθετο"
+
+#: ../src/gui/preferences.py:143
+msgid ""
+"When a module may be configured, a specific icon is displayed on the right "
+"of the corresponding line. To configure a module, simply select it and then "
+"click on the \"Preferences\" button on the bottom of the dialog box. Note "
+"that configuring a module is only possible when it is enabled."
+msgstr ""
+"Όταν ένα πρόσθετο μπορεί να ρυθμιστεί, υπάρχει ένα είκονίδιο στα δεξιά της "
+"αντίστοιχης γραμμής. Για να ρυθμίσετε το πρόσθετο, απλά επιλέξτε το και μετά "
+"κάντε κλικ στο κουμπί \"Προτιμήσεις\" που βρίσκεται στο κάτω μέρος του "
+"παραθύρου. Έχετε υπ' όψιν σας ότι ένα πρόσθετο μπορεί να ρυθμιστεί μόνο όταν "
+"είναι ενεργοποιημένο."
 
 #: ../src/media/track/__init__.py:54
 msgid "Track number"
@@ -79,134 +134,56 @@ msgstr "%(album)s [Δίσκος %(discnum)u]"
 msgid "CDDA Track"
 msgstr ""
 
-#: ../src/gui/preferences.py:43
-msgid "Preferences"
-msgstr "Προτιμήσεις"
-
-#: ../src/gui/preferences.py:129
-msgid "Unable to load this module."
-msgstr "Το πρόσθετο δεν μπόρεσε να φορτωθεί."
-
-#: ../src/gui/preferences.py:138
-msgid "Modules"
-msgstr "Πρόσθετα"
-
-#: ../src/gui/preferences.py:139 ../src/modules/DesktopNotification.py:213
-#: ../src/modules/Covers.py:432
-msgid "Description"
-msgstr "Περιγραφή"
-
-#: ../src/gui/preferences.py:140
-msgid ""
-"This window shows the list of available modules. You can enable/disable a "
-"module by checking/unchecking the check box in front of it."
-msgstr ""
-
-#: ../src/gui/preferences.py:142
-msgid "Configuring a Module"
-msgstr "Ρυθμίζοντας ένα πρόσθετο"
-
-#: ../src/gui/preferences.py:143
-msgid ""
-"When a module may be configured, a specific icon is displayed on the right "
-"of the corresponding line. To configure a module, simply select it and then "
-"click on the \"Preferences\" button on the bottom of the dialog box. Note "
-"that configuring a module is only possible when it is enabled."
-msgstr ""
-"Όταν ένα πρόσθετο μπορεί να ρυθμιστεί, υπάρχει ένα είκονίδιο στα δεξιά της "
-"αντίστοιχης γραμμής. Για να ρυθμίσετε το πρόσθετο, απλά επιλέξτε το και μετά "
-"κάντε κλικ στο κουμπί \"Προτιμήσεις\" που βρίσκεται στο κάτω μέρος του "
-"παραθύρου. Έχετε υπ' όψιν σας ότι ένα πρόσθετο μπορεί να ρυθμιστεί μόνο όταν "
-"είναι ενεργοποιημένο."
-
-#: ../src/gui/selectPath.py:79
-msgid "Choose a folder"
-msgstr "Επιλογή φακέλου"
-
-#: ../src/gui/selectPath.py:96
-msgid "This path does not exist"
-msgstr "Η διαδρομή αυτή δεν υπάρχει"
-
-#: ../src/gui/selectPath.py:96
-msgid "Please select an existing directory."
-msgstr "Παρακαλώ επιλέξτε ένα ήδη υπάρχον φάκελο"
-
-#: ../src/gui/selectPath.py:99 ../src/gui/selectPath.py:104
-msgid "The name is incorrect"
-msgstr "Το όνομα είναι λάθος"
-
-#: ../src/gui/selectPath.py:99
-msgid ""
-"This name is not allowed.\n"
-"Please use another one."
-msgstr ""
-"Το όνομα αυτό δεν επιτρέπεται.\n"
-"Παρακαλώ επιλέξτε κάποιο άλλο."
-
-#: ../src/gui/selectPath.py:104
-#, python-format
-msgid ""
-"The character %s is not allowed.\n"
-"Please use another name."
-msgstr ""
-"Ο χαρακτήρας %s δεν επιτρέπεται.\n"
-"Παρακαλώ χρησιμοποιήστε ένα άλλο όνομα."
-
-#: ../src/gui/about.py:40
-msgid "translator-credits"
-msgstr ""
-"Launchpad Contributions:\n"
-"  Jendrik Seipp https://launchpad.net/~jendrikseipp"
-
-#: ../src/gui/about.py:44
-msgid "Developer:"
-msgstr "Δημιουργός:"
-
-#: ../src/gui/about.py:48
-msgid "Thanks to:"
-msgstr "Ευχαριστίες σε:"
-
-#: ../src/modules/Search.py:34
-msgid "Search in your music directories"
-msgstr ""
-
-#: ../src/modules/Zeitgeist.py:26
-msgid "Send track information to the Zeitgeist service"
-msgstr ""
-
-#: ../src/modules/FileExplorer.py:170
+#: ../src/modules/FileExplorer.py:173
 msgid "loading..."
 msgstr "φόρτωση..."
 
-#: ../src/modules/FileExplorer.py:346
+#: ../src/modules/FileExplorer.py:353
 msgid "Append"
 msgstr ""
 
-#: ../src/modules/FileExplorer.py:450
+#: ../src/modules/FileExplorer.py:372
+msgid "Add music folder"
+msgstr ""
+
+#: ../src/modules/FileExplorer.py:384
+#, fuzzy
+msgid "Hide folder"
+msgstr "Επιλογή φακέλου"
+
+#: ../src/modules/FileExplorer.py:392
+msgid "Open containing folder"
+msgstr ""
+
+#: ../src/modules/FileExplorer.py:403
+#, fuzzy
+msgid "Choose a directory"
+msgstr "Επιλογή φακέλου"
+
+#: ../src/modules/FileExplorer.py:408
+msgid "This path does not exist"
+msgstr "Η διαδρομή αυτή δεν υπάρχει"
+
+#: ../src/modules/FileExplorer.py:409
+msgid "Please select an existing directory."
+msgstr "Παρακαλώ επιλέξτε ένα ήδη υπάρχον φάκελο"
+
+#: ../src/modules/FileExplorer.py:501
 msgid "Albums"
 msgstr ""
 
-#: ../src/modules/FileExplorer.py:452
+#: ../src/modules/FileExplorer.py:503
 msgid "Music"
 msgstr ""
 
-#: ../src/modules/__init__.py:75
-msgid "The following Python modules are not available:"
-msgstr "Τα παρακάτω πρόσθετα της Python δεν είναι διαθέσιμα:"
-
-#: ../src/modules/__init__.py:79
-msgid "You must install them if you want to enable this module."
-msgstr ""
-"Πρέπει να τα εγκαταστήσετε αν θέλετε να ενεργοποιήσετε αυτό το πρόσθετο."
-
-#: ../src/modules/__init__.py:266
-msgid "Restart required"
+#: ../src/modules/FileExplorer.py:601
+msgid "Searching ..."
 msgstr ""
 
-#: ../src/modules/__init__.py:267
-msgid ""
-"You must restart the application for this modification to take effect."
-msgstr ""
+#: ../src/modules/FileExplorer.py:615
+#, fuzzy
+msgid "No tracks found"
+msgstr "Δεν βρέθηκε δίσκος"
 
 #: ../src/modules/CtrlPanel.py:190 ../src/modules/CtrlPanel.py:246
 msgid "Pause the current track"
@@ -220,123 +197,19 @@ msgstr ""
 msgid "Continue playing the current track"
 msgstr "Συνέχεια"
 
-#: ../src/modules/DesktopNotification.py:25
-msgid "Desktop Notification"
-msgstr "Ειδοποίηση επιφάνειας εργασίας"
-
-#: ../src/modules/DesktopNotification.py:25
-msgid "Display a desktop notification on track change"
-msgstr ""
-"Εμφανίζει μια είδοποίηση στην επιφάνεια εργασίας όταν αλλάζει το κομμάτι."
-
-#: ../src/modules/DesktopNotification.py:78
-#: ../src/modules/DesktopNotification.py:188
-msgid "Skip track"
-msgstr "Επόμενο κομμάτι"
-
-#: ../src/modules/DesktopNotification.py:214
-msgid ""
-"This module displays a small popup window on your desktop when a new track "
-"starts."
-msgstr ""
-"Αυτό το πρόσθετο εμφανίζει ένα μικρό αναδυόμενο παράθυρο στην επιφάνεια "
-"εργασίας όταν ξεκινάει ένα νέο κομμάτι."
-
-#: ../src/modules/DesktopNotification.py:215
-msgid ""
-"If the Covers module is enabled, the popup also shows the album cover."
-msgstr ""
-
-#: ../src/modules/DesktopNotification.py:216
-msgid "Customizing the Notification"
-msgstr "Προσαρμόζοντας τις ειδοποιήσεις"
-
-#: ../src/modules/DesktopNotification.py:217
-msgid ""
-"You can change the title and the body of the notification to any text you "
-"want. Before displaying the popup window, fields of the form {field} are "
-"replaced by their corresponding value. Available fields are:\n"
-"\n"
-msgstr ""
-"Μπορείτε να αλλάξετε τον τίτλο και το περιεχόμενο της είδοποίησης όπως σας "
-"βολεύει. Πρίν εμφανιστεί το αναδυόμενο παράθυρο πεδία της μορφής {πεδίο} "
-"αντικαθίστανται με την αντίστοιχη τιμή. Διαθέσιμα πεδία είναι τα:\n"
-"\n"
-
-#: ../src/modules/DesktopNotification.py:220
-msgid "Markup"
-msgstr "Προσημείωση"
-
-#: ../src/modules/DesktopNotification.py:221
-msgid ""
-"You can use the Pango markup language to format the text. More information "
-"on that language is available on the following web page:"
-msgstr ""
-"Μπορείτε να χρησιμοποιήσετε την γλώσσα προσημειώσεων Pango για να "
-"διαμορφώσετε το κείμενο. Περισσότερες πληροφορίες για την γλώσσα αυτή "
-"μπορείτε να βρείτε στην ιστοσελίδα:"
-
 #: ../src/modules/StatusbarTitlebar.py:47
 msgid "[paused]"
 msgstr "[παύση]"
 
-#: ../src/modules/Covers.py:28
-msgid "Covers"
-msgstr "Εξώφυλλα"
-
-#: ../src/modules/Covers.py:28
-msgid "Show album covers"
-msgstr "Εμφάνιση Εξώφυλλων Δίσκων"
-
-#: ../src/modules/Covers.py:433
-msgid ""
-"This module displays the cover of the album the current track comes from. "
-"Covers may be loaded from local pictures, located in the same directory as "
-"the current track, or may be downloaded from the Internet."
+#: ../src/modules/Search.py:34
+msgid "Search in your music folders"
 msgstr ""
-"Αυτό το πρόσθετο εμφανίζει το εξώφυλλο του άλμπουμ στο οποίο περιέχετε το "
-"τρέχον κομμάτι. Τα εξώφυλλα μπορούν να εμφανίζονται από τοπικά αρχεία που "
-"βρίσκονται στον ίδιο φάκελο με το τρέχον κομμάτι, ή να φορτώνονται από το "
-"διαδίκτυο."
 
-#: ../src/modules/Covers.py:436
-msgid "User Covers"
-msgstr "Εξώφυλλα χρηστών"
-
-#: ../src/modules/Covers.py:437
-#, python-format
-msgid ""
-"A user cover is a picture located in the same directory as the current "
-"track. When specifying filenames, you do not need to provide file "
-"extensions, supported file formats (%s) are automatically used."
-msgstr ""
-"Ένα εξώφυλλο χρήστη είναι μιά εικόνα που περιέχεται στον ίδιο φάκελο με το "
-"τρέχον κομμάτι. Όταν καθορίζετε τα ονόματα τών αρχείων δεν χρειάζετε να "
-"παρέχετε και τις επεκτάσεις τους. Οι τύποι αρχείων που υποστηρίζονται (%s) "
-"θα χρησιμοποιούνται αυτόματα."
-
-#: ../src/modules/Covers.py:440
-msgid "Internet Covers"
-msgstr "Εξώφυλλα από το διαδίκτυο"
-
-#: ../src/modules/Covers.py:441
-msgid ""
-"Covers may be downloaded from the Internet, based on the tags of the current "
-"track. You can ask to always prefer user covers to Internet ones. In this "
-"case, if a user cover exists for the current track, it is used. If there is "
-"none, the cover is downloaded."
-msgstr ""
-"Τα εξώφυλλα μπορούν να κατέβουν από το διαδίκτυο, με βάση τα στοιχέια του "
-"τρέχοντος κομματιού. Μπορείτε να δηλώσετε προτίμηση για εξώφυλλα χρήση "
-"έναντι εξώφυλλων διαδικτύου. Σε αυτή την περίπτωση, αν υπάρχει εξώφυλλο "
-"χρήστη για το τρέχον κομμάτι, θα χρησιμοποιηθεί. Άν όχι, θα χρησιμοποιηθεί "
-"εξώφυλλο από το διαδίκτυο."
-
-#: ../src/modules/Tracktree.py:366
+#: ../src/modules/Tracktree.py:367
 msgid "Save playlist"
 msgstr "Αποθήκευση λίστας αναπαραγωγής"
 
-#: ../src/modules/Tracktree.py:415
+#: ../src/modules/Tracktree.py:416
 msgid "Clear Playlist"
 msgstr ""
 
@@ -368,6 +241,134 @@ msgstr ""
 #: ../src/modules/Equalizer.py:204
 msgid "The format of the file is incorrect."
 msgstr ""
+
+#: ../src/modules/__init__.py:75
+msgid "The following Python modules are not available:"
+msgstr "Τα παρακάτω πρόσθετα της Python δεν είναι διαθέσιμα:"
+
+#: ../src/modules/__init__.py:79
+msgid "You must install them if you want to enable this module."
+msgstr ""
+"Πρέπει να τα εγκαταστήσετε αν θέλετε να ενεργοποιήσετε αυτό το πρόσθετο."
+
+#: ../src/modules/__init__.py:266
+msgid "Restart required"
+msgstr ""
+
+#: ../src/modules/__init__.py:267
+msgid "You must restart the application for this modification to take effect."
+msgstr ""
+
+#: ../src/modules/Zeitgeist.py:26
+msgid "Send track information to the Zeitgeist service"
+msgstr ""
+
+#: ../src/modules/Covers.py:28
+msgid "Covers"
+msgstr "Εξώφυλλα"
+
+#: ../src/modules/Covers.py:28
+msgid "Show album covers"
+msgstr "Εμφάνιση Εξώφυλλων Δίσκων"
+
+#: ../src/modules/Covers.py:435
+msgid ""
+"This module displays the cover of the album the current track comes from. "
+"Covers may be loaded from local pictures, located in the same directory as "
+"the current track, or may be downloaded from the Internet."
+msgstr ""
+"Αυτό το πρόσθετο εμφανίζει το εξώφυλλο του άλμπουμ στο οποίο περιέχετε το "
+"τρέχον κομμάτι. Τα εξώφυλλα μπορούν να εμφανίζονται από τοπικά αρχεία που "
+"βρίσκονται στον ίδιο φάκελο με το τρέχον κομμάτι, ή να φορτώνονται από το "
+"διαδίκτυο."
+
+#: ../src/modules/Covers.py:438
+msgid "User Covers"
+msgstr "Εξώφυλλα χρηστών"
+
+#: ../src/modules/Covers.py:439
+#, python-format
+msgid ""
+"A user cover is a picture located in the same directory as the current "
+"track. When specifying filenames, you do not need to provide file "
+"extensions, supported file formats (%s) are automatically used."
+msgstr ""
+"Ένα εξώφυλλο χρήστη είναι μιά εικόνα που περιέχεται στον ίδιο φάκελο με το "
+"τρέχον κομμάτι. Όταν καθορίζετε τα ονόματα τών αρχείων δεν χρειάζετε να "
+"παρέχετε και τις επεκτάσεις τους. Οι τύποι αρχείων που υποστηρίζονται (%s) "
+"θα χρησιμοποιούνται αυτόματα."
+
+#: ../src/modules/Covers.py:442
+msgid "Internet Covers"
+msgstr "Εξώφυλλα από το διαδίκτυο"
+
+#: ../src/modules/Covers.py:443
+msgid ""
+"Covers may be downloaded from the Internet, based on the tags of the current "
+"track. You can ask to always prefer user covers to Internet ones. In this "
+"case, if a user cover exists for the current track, it is used. If there is "
+"none, the cover is downloaded."
+msgstr ""
+"Τα εξώφυλλα μπορούν να κατέβουν από το διαδίκτυο, με βάση τα στοιχέια του "
+"τρέχοντος κομματιού. Μπορείτε να δηλώσετε προτίμηση για εξώφυλλα χρήση "
+"έναντι εξώφυλλων διαδικτύου. Σε αυτή την περίπτωση, αν υπάρχει εξώφυλλο "
+"χρήστη για το τρέχον κομμάτι, θα χρησιμοποιηθεί. Άν όχι, θα χρησιμοποιηθεί "
+"εξώφυλλο από το διαδίκτυο."
+
+#: ../src/modules/DesktopNotification.py:25
+msgid "Desktop Notification"
+msgstr "Ειδοποίηση επιφάνειας εργασίας"
+
+#: ../src/modules/DesktopNotification.py:25
+msgid "Display a desktop notification on track change"
+msgstr ""
+"Εμφανίζει μια είδοποίηση στην επιφάνεια εργασίας όταν αλλάζει το κομμάτι."
+
+#: ../src/modules/DesktopNotification.py:78
+#: ../src/modules/DesktopNotification.py:188
+msgid "Skip track"
+msgstr "Επόμενο κομμάτι"
+
+#: ../src/modules/DesktopNotification.py:214
+msgid ""
+"This module displays a small popup window on your desktop when a new track "
+"starts."
+msgstr ""
+"Αυτό το πρόσθετο εμφανίζει ένα μικρό αναδυόμενο παράθυρο στην επιφάνεια "
+"εργασίας όταν ξεκινάει ένα νέο κομμάτι."
+
+#: ../src/modules/DesktopNotification.py:215
+msgid "If the Covers module is enabled, the popup also shows the album cover."
+msgstr ""
+
+#: ../src/modules/DesktopNotification.py:216
+msgid "Customizing the Notification"
+msgstr "Προσαρμόζοντας τις ειδοποιήσεις"
+
+#: ../src/modules/DesktopNotification.py:217
+msgid ""
+"You can change the title and the body of the notification to any text you "
+"want. Before displaying the popup window, fields of the form {field} are "
+"replaced by their corresponding value. Available fields are:\n"
+"\n"
+msgstr ""
+"Μπορείτε να αλλάξετε τον τίτλο και το περιεχόμενο της είδοποίησης όπως σας "
+"βολεύει. Πρίν εμφανιστεί το αναδυόμενο παράθυρο πεδία της μορφής {πεδίο} "
+"αντικαθίστανται με την αντίστοιχη τιμή. Διαθέσιμα πεδία είναι τα:\n"
+"\n"
+
+#: ../src/modules/DesktopNotification.py:220
+msgid "Markup"
+msgstr "Προσημείωση"
+
+#: ../src/modules/DesktopNotification.py:221
+msgid ""
+"You can use the Pango markup language to format the text. More information "
+"on that language is available on the following web page:"
+msgstr ""
+"Μπορείτε να χρησιμοποιήσετε την γλώσσα προσημειώσεων Pango για να "
+"διαμορφώσετε το κείμενο. Περισσότερες πληροφορίες για την γλώσσα αυτή "
+"μπορείτε να βρείτε στην ιστοσελίδα:"
 
 #: ../src/tools/consts.py:94
 msgid "Unknown Genre"
@@ -465,18 +466,35 @@ msgstr "Αναπαραγωγή επόμενου κομματιού"
 msgid "Play the previous track"
 msgstr "Αναπαραγωγή προηγούμενου κομματιού"
 
+#~ msgid "The name is incorrect"
+#~ msgstr "Το όνομα είναι λάθος"
+
 #~ msgid ""
-#~ "This dialog box shows the list of available modules, which are small pieces "
-#~ "of code that add some functionnalities to the application. You can "
-#~ "enable/disable a module by checking/unchecking the check box in front of it. "
-#~ "Note that some modules (e.g., the File Explorer) cannot be disabled."
+#~ "This name is not allowed.\n"
+#~ "Please use another one."
+#~ msgstr ""
+#~ "Το όνομα αυτό δεν επιτρέπεται.\n"
+#~ "Παρακαλώ επιλέξτε κάποιο άλλο."
+
+#~ msgid ""
+#~ "The character %s is not allowed.\n"
+#~ "Please use another name."
+#~ msgstr ""
+#~ "Ο χαρακτήρας %s δεν επιτρέπεται.\n"
+#~ "Παρακαλώ χρησιμοποιήστε ένα άλλο όνομα."
+
+#~ msgid ""
+#~ "This dialog box shows the list of available modules, which are small "
+#~ "pieces of code that add some functionnalities to the application. You can "
+#~ "enable/disable a module by checking/unchecking the check box in front of "
+#~ "it. Note that some modules (e.g., the File Explorer) cannot be disabled."
 #~ msgstr ""
 #~ "Αυτό το παράθυρο διαλόγου δείχνει τη λίστα με τα διαθέσιμα πρόσθετα, τα "
 #~ "οποία είναι μικρά κομμάτια κώδικα που προσφέρουν κάποιες πρόσθετες "
-#~ "λειτουργίες στην εφαρμογή. Μπορείτε να ενεργοποιήσετε/απενεργοποιήσετε ένα "
-#~ "πρόσθετο, χρησιμοποιώντας το κουτάκι που βρίσκεται μπροστά του. Έχετε υπόψιν "
-#~ "σας ότι μερικά πρόσθετα (π.χ. το Εξερευνητής Αρχείων) δεν μπορούν να "
-#~ "απενεργοποιηθούν."
+#~ "λειτουργίες στην εφαρμογή. Μπορείτε να ενεργοποιήσετε/απενεργοποιήσετε "
+#~ "ένα πρόσθετο, χρησιμοποιώντας το κουτάκι που βρίσκεται μπροστά του. Έχετε "
+#~ "υπόψιν σας ότι μερικά πρόσθετα (π.χ. το Εξερευνητής Αρχείων) δεν μπορούν "
+#~ "να απενεργοποιηθούν."
 
 #~ msgid "File Explorer"
 #~ msgstr "Εξερευνητής αρχείων"
@@ -484,7 +502,6 @@ msgstr "Αναπαραγωγή προηγούμενου κομματιού"
 #~ msgid "Browse your file system"
 #~ msgstr "Πλοηγηθείτε στο σύστημα αρχείων σας"
 
-#, python-format
 #~ msgid "One track in playlist  [%(length)s]"
 #~ msgid_plural "%(count)u tracks in playlist  [%(length)s]"
 #~ msgstr[0] "Ένα κομμάτι στην λίστα [%(length)s]"
@@ -513,15 +530,15 @@ msgstr "Αναπαραγωγή προηγούμενου κομματιού"
 #~ msgstr "Σχετικά με την ασφάλεια αποθήκευσης κωδικών"
 
 #~ msgid ""
-#~ "If you use Gnome, it is safe to store your password since the Gnome keyring "
-#~ "is used."
+#~ "If you use Gnome, it is safe to store your password since the Gnome "
+#~ "keyring is used."
 #~ msgstr ""
 #~ "Αν χρησιμοποιείτε το Gnome, είναι ασφαλές να αποθηκεύσετε τον κωδικό σας "
 #~ "εφόσον χρησιμοποιείται το σύστημα διαχείρισης κωδικών του Gnome."
 
 #~ msgid ""
-#~ "If you do not use Gnome, beware that, although not stored as clear text, an "
-#~ "attacker <i>could</i> retrieve it."
+#~ "If you do not use Gnome, beware that, although not stored as clear text, "
+#~ "an attacker <i>could</i> retrieve it."
 #~ msgstr ""
 #~ "Αν δεν χρησιμοποιείτε το Gnome, έχετε υπ' όψιν σας ότι παρόλο που δεν "
 #~ "αποθηκεύεται σαν απλό κείμενο, κάποιος <i>μπορεί</i> να τον ανακτήσει."
@@ -535,8 +552,8 @@ msgstr "Αναπαραγωγή προηγούμενου κομματιού"
 #~ msgid ""
 #~ "You will be able to add this root folder again later on if you wish so."
 #~ msgstr ""
-#~ "Θα έχετε τη δυνατότητα να προσθέσετε αυτόν τον αρχικό κατάλογο αργότερα αν "
-#~ "επιθυμείτε."
+#~ "Θα έχετε τη δυνατότητα να προσθέσετε αυτόν τον αρχικό κατάλογο αργότερα "
+#~ "αν επιθυμείτε."
 
 #~ msgid "Remove the selected entry?"
 #~ msgstr "Να αφαιρεθεί το επιλεγμένο στοιχείο;"
@@ -565,8 +582,8 @@ msgstr "Αναπαραγωγή προηγούμενου κομματιού"
 #~ "then becomes the root of the file explorer tree in the main window."
 #~ msgstr ""
 #~ "Τουλάχιστον ένας αρχικός φάκελος πρέπει να καθοριστεί ώστε να πλοηγηθείτε "
-#~ "στα αρχεία σας. Αυτός ο φάκελος τότε γίνεται ο αρχικός του δέντρου πλοήγησης "
-#~ "φακέλων στο κυρίως παράθυρο."
+#~ "στα αρχεία σας. Αυτός ο φάκελος τότε γίνεται ο αρχικός του δέντρου "
+#~ "πλοήγησης φακέλων στο κυρίως παράθυρο."
 
 #~ msgid ""
 #~ "Please select an explorer\n"
@@ -669,9 +686,9 @@ msgstr "Αναπαραγωγή προηγούμενου κομματιού"
 #~ msgstr "Προσαρμόζοντας την κατάσταση λειτουργίας"
 
 #~ msgid ""
-#~ "You can set the status to any text you want. Before setting it, the module "
-#~ "replaces all fields of the form {field} by their corresponding value. "
-#~ "Available fields are:"
+#~ "You can set the status to any text you want. Before setting it, the "
+#~ "module replaces all fields of the form {field} by their corresponding "
+#~ "value. Available fields are:"
 #~ msgstr ""
 #~ "Μπορείτε να ορίσετε την κατάσταση λειτουργίας με ότι κείμενο θέλετε. Πριν "
 #~ "την καθορίσει, το πρόσθετο αντικαθιστά όλα τα πεδία της φόρμας {πεδίο} με "
@@ -683,13 +700,14 @@ msgstr "Αναπαραγωγή προηγούμενου κομματιού"
 #~ msgid ""
 #~ "You can define some words that to sanitize before using them to set your "
 #~ "status. In this case, the middle characters of matching words is "
-#~ "automatically replaced with asterisks (e.g., \"Metallica - Live S**t Binge & "
-#~ "Purge\"). Put one word per line."
+#~ "automatically replaced with asterisks (e.g., \"Metallica - Live S**t "
+#~ "Binge & Purge\"). Put one word per line."
 #~ msgstr ""
 #~ "Μπορείτε να καθορίσετε κάποιοες λέξεις που θέλετε να μην εμφανίζονται στο "
-#~ "προσωπικό μήνυμα όπως είναι. Σε αυτή την περίπτωση, οι ενδιάμεσοι χαρακτήρες "
-#~ "των λέξεων αυτών θα αντικαθιστούνται με αστεράκια (π.χ. \"Metallica - Live "
-#~ "S**t Binge & Purge\"). Τοποθετήστε μόνο μία λέξη ανά γραμμή."
+#~ "προσωπικό μήνυμα όπως είναι. Σε αυτή την περίπτωση, οι ενδιάμεσοι "
+#~ "χαρακτήρες των λέξεων αυτών θα αντικαθιστούνται με αστεράκια (π.χ. "
+#~ "\"Metallica - Live S**t Binge & Purge\"). Τοποθετήστε μόνο μία λέξη ανά "
+#~ "γραμμή."
 
 #~ msgid "Keep your Last.fm profile up to date"
 #~ msgstr "Κρατήστε το προφίλ σας στο Last.fm ενημερωμένο"
@@ -714,7 +732,8 @@ msgstr "Αναπαραγωγή προηγούμενου κομματιού"
 
 #~ msgid "Organize your music by tags instead of files"
 #~ msgstr ""
-#~ "Οργανώστε τη μουσική σας με βάση τα στοιχεία των κομματιών αντί για τα αρχεία"
+#~ "Οργανώστε τη μουσική σας με βάση τα στοιχεία των κομματιών αντί για τα "
+#~ "αρχεία"
 
 #~ msgid "Creating library"
 #~ msgstr "Δημιουργία βιβλιοθήκης"
@@ -754,7 +773,8 @@ msgstr "Αναπαραγωγή προηγούμενου κομματιού"
 #~ msgid "Remove the selected library?"
 #~ msgstr "Να αφαιρεθεί η επιλεγμένη βιβλιοθήκη;"
 
-#~ msgid "You will be able to recreate these libraries later on if you wish so."
+#~ msgid ""
+#~ "You will be able to recreate these libraries later on if you wish so."
 #~ msgstr ""
 #~ "θα μπορέσετε να επαναδημιουργήσετε τις βιβλιοθήκες αυτές αργότερα αν το "
 #~ "επιθυμήσετε."
@@ -781,18 +801,19 @@ msgstr "Αναπαραγωγή προηγούμενου κομματιού"
 #~ "recursively scanned for media files whose tags are read and stored in a "
 #~ "database."
 #~ msgstr ""
-#~ "Όταν προσθέτετε μια νέα βιβλιοθήκη, πρέπει να δώσετε την πλήρη διαδρομή προς "
-#~ "τον κεντρικό φάκελο αυτής της βιβλιοθήκης. Τότε, όλοι οι φάκελοι που "
+#~ "Όταν προσθέτετε μια νέα βιβλιοθήκη, πρέπει να δώσετε την πλήρη διαδρομή "
+#~ "προς τον κεντρικό φάκελο αυτής της βιβλιοθήκης. Τότε, όλοι οι φάκελοι που "
 #~ "βρίσκονται μέσα σε αυτόν ανιχνεύονται για μουσικά αρχεία των οποίων τα "
 #~ "στοιχεία διαβάζονται και αποθηκεύονται σε μια βάση δεδομένων."
 
 #~ msgid ""
-#~ "Upon refreshing a library, the file structure under the root directory and "
-#~ "all media files are scanned for changes, to update the database accordingly."
+#~ "Upon refreshing a library, the file structure under the root directory "
+#~ "and all media files are scanned for changes, to update the database "
+#~ "accordingly."
 #~ msgstr ""
-#~ "Όταν ανανεώνετε μια βιβλιοθήκη, οι υποφάκελοι και τα αρχεία που βρίσκονται "
-#~ "μέσα στον κεντρικό φάκελο της βιβλιοθήκης ανιχνεύονται για αλλαγές, και η "
-#~ "βάση δεδομένων ενημερώνεται ανάλογα."
+#~ "Όταν ανανεώνετε μια βιβλιοθήκη, οι υποφάκελοι και τα αρχεία που "
+#~ "βρίσκονται μέσα στον κεντρικό φάκελο της βιβλιοθήκης ανιχνεύονται για "
+#~ "αλλαγές, και η βάση δεδομένων ενημερώνεται ανάλογα."
 
 #~ msgid "Status Icon"
 #~ msgstr "Εικονίδιο κατάστασης"
@@ -815,13 +836,10 @@ msgstr "Αναπαραγωγή προηγούμενου κομματιού"
 #~ msgid "Track %02u"
 #~ msgstr "Κομμάτι %02u"
 
-#~ msgid "No disc found"
-#~ msgstr "Δεν βρέθηκε δίσκος"
-
 #~ msgid "This will remove all disc information stored on your hard drive."
 #~ msgstr ""
-#~ "Αυτό θα σβήσει όλες τις πληροφορίες για δίσκους που είναι αποθηκευμένες στον "
-#~ "σκληρό δίσκο."
+#~ "Αυτό θα σβήσει όλες τις πληροφορίες για δίσκους που είναι αποθηκευμένες "
+#~ "στον σκληρό δίσκο."
 
 #~ msgid "Clear CDDB cache?"
 #~ msgstr "Καθαρισμός βάσης CDDB;"
@@ -830,29 +848,31 @@ msgstr "Αναπαραγωγή προηγούμενου κομματιού"
 #~ msgstr "Μη έγκυρη διαδρομή"
 
 #~ msgid ""
-#~ "The path to the CD-ROM device is not valid. Please choose an existing path."
+#~ "The path to the CD-ROM device is not valid. Please choose an existing "
+#~ "path."
 #~ msgstr ""
 #~ "Η διαδρομή προς τη συσκευή CD-ROM δεν έιναι έγκυρη. Παρακαλώ επιλέξτε μια "
 #~ "ήδη υπάρχουσα."
 
 #~ msgid "This module lets you play audio discs from your CD-ROM device."
 #~ msgstr ""
-#~ "Αυτό το πρόσθετο σας επιτρέπει να αναπαράγετε δίσκους ήχου από τον οδηγό CD."
+#~ "Αυτό το πρόσθετο σας επιτρέπει να αναπαράγετε δίσκους ήχου από τον οδηγό "
+#~ "CD."
 
 #~ msgid "Compact Disc Data Base (CDDB)"
 #~ msgstr "Βάση δεδομένων στοιχείων δίσκων (CDDB)"
 
 #~ msgid ""
 #~ "Disc information, such as artist and album title, may be automatically "
-#~ "downloaded from an online database if you wish so. This information may also "
-#~ "be saved on your hard drive to avoid downloading it again the next time you "
-#~ "play the same disc."
+#~ "downloaded from an online database if you wish so. This information may "
+#~ "also be saved on your hard drive to avoid downloading it again the next "
+#~ "time you play the same disc."
 #~ msgstr ""
-#~ "Πληροφορίες για τους δίσκους, όπως καλλιτέχνης και τίτλος δίσκου, μπορούν να "
-#~ "κατεβαίνουν αυτόματα απο μία βάση δεδομένων στο διαδίκτυο αν θέλετε. Οι "
-#~ "πληροφορίες αυτές μπορούν επίσης να αποθηκεύονται στον σκληρό δίσκο για να "
-#~ "αποφευχθεί η ανάγκη να κατέβουν ξανά την επόμενη φορά που θα παίξετε τον "
-#~ "ίδιο δίσκο."
+#~ "Πληροφορίες για τους δίσκους, όπως καλλιτέχνης και τίτλος δίσκου, μπορούν "
+#~ "να κατεβαίνουν αυτόματα απο μία βάση δεδομένων στο διαδίκτυο αν θέλετε. "
+#~ "Οι πληροφορίες αυτές μπορούν επίσης να αποθηκεύονται στον σκληρό δίσκο "
+#~ "για να αποφευχθεί η ανάγκη να κατέβουν ξανά την επόμενη φορά που θα "
+#~ "παίξετε τον ίδιο δίσκο."
 
 #~ msgid "Status File"
 #~ msgstr "Αρχείο κατάστασης"
@@ -861,16 +881,18 @@ msgstr "Αναπαραγωγή προηγούμενου κομματιού"
 #~ msgstr "Δημιουργεί ένα αρχείο με την τρέχουσα κατάσταση"
 
 #~ msgid ""
-#~ "The path to the selected file is not valid. Please choose an existing path."
+#~ "The path to the selected file is not valid. Please choose an existing "
+#~ "path."
 #~ msgstr ""
-#~ "Η διαδρομή προς το συγκεκριμένο αρχείο δεν είναι έγκυρη. Παρακαλώ επιλέξτε "
-#~ "μία υπάρχουσα διαδρομη."
+#~ "Η διαδρομή προς το συγκεκριμένο αρχείο δεν είναι έγκυρη. Παρακαλώ "
+#~ "επιλέξτε μία υπάρχουσα διαδρομη."
 
 #~ msgid "Choose a file"
 #~ msgstr "Επιλέξτε ένα αρχείο"
 
 #~ msgid ""
-#~ "This module generates a text file with regards to the track currently played."
+#~ "This module generates a text file with regards to the track currently "
+#~ "played."
 #~ msgstr ""
 #~ "Αυτό το πρόσθετο δημιουργεί ένα αρχείο με βάση το αρχείο που αναπαράγεται "
 #~ "αυτή τη στιγμή."

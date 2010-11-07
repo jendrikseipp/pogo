@@ -7,16 +7,66 @@ msgid ""
 msgstr ""
 "Project-Id-Version: decibel-audio-player\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-10-30 03:21+0200\n"
+"POT-Creation-Date: 2010-11-07 01:42+0100\n"
 "PO-Revision-Date: 2010-10-07 11:29+0000\n"
 "Last-Translator: Tom Adams <tom@holizz.com>\n"
 "Language-Team: Japanese <ja@li.org>\n"
+"Language: ja\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Launchpad-Export-Date: 2010-11-02 05:10+0000\n"
 "X-Generator: Launchpad (build Unknown)\n"
+
+#: ../src/gui/about.py:40
+msgid "translator-credits"
+msgstr ""
+"Launchpad Contributions:\n"
+"  Tom Adams https://launchpad.net/~holizz"
+
+#: ../src/gui/about.py:44
+msgid "Developer:"
+msgstr "開発者:"
+
+#: ../src/gui/about.py:48
+msgid "Thanks to:"
+msgstr ""
+
+#: ../src/gui/preferences.py:43
+msgid "Preferences"
+msgstr "設定"
+
+#: ../src/gui/preferences.py:129
+msgid "Unable to load this module."
+msgstr ""
+
+#: ../src/gui/preferences.py:138
+msgid "Modules"
+msgstr "モジュール"
+
+#: ../src/gui/preferences.py:139 ../src/modules/Covers.py:434
+#: ../src/modules/DesktopNotification.py:213
+msgid "Description"
+msgstr "説明"
+
+#: ../src/gui/preferences.py:140
+msgid ""
+"This window shows the list of available modules. You can enable/disable a "
+"module by checking/unchecking the check box in front of it."
+msgstr ""
+
+#: ../src/gui/preferences.py:142
+msgid "Configuring a Module"
+msgstr ""
+
+#: ../src/gui/preferences.py:143
+msgid ""
+"When a module may be configured, a specific icon is displayed on the right "
+"of the corresponding line. To configure a module, simply select it and then "
+"click on the \"Preferences\" button on the bottom of the dialog box. Note "
+"that configuring a module is only possible when it is enabled."
+msgstr ""
 
 #: ../src/media/track/__init__.py:54
 msgid "Track number"
@@ -79,123 +129,54 @@ msgstr ""
 msgid "CDDA Track"
 msgstr ""
 
-#: ../src/gui/preferences.py:43
-msgid "Preferences"
-msgstr "設定"
-
-#: ../src/gui/preferences.py:129
-msgid "Unable to load this module."
-msgstr ""
-
-#: ../src/gui/preferences.py:138
-msgid "Modules"
-msgstr "モジュール"
-
-#: ../src/gui/preferences.py:139 ../src/modules/DesktopNotification.py:213
-#: ../src/modules/Covers.py:432
-msgid "Description"
-msgstr "説明"
-
-#: ../src/gui/preferences.py:140
-msgid ""
-"This window shows the list of available modules. You can enable/disable a "
-"module by checking/unchecking the check box in front of it."
-msgstr ""
-
-#: ../src/gui/preferences.py:142
-msgid "Configuring a Module"
-msgstr ""
-
-#: ../src/gui/preferences.py:143
-msgid ""
-"When a module may be configured, a specific icon is displayed on the right "
-"of the corresponding line. To configure a module, simply select it and then "
-"click on the \"Preferences\" button on the bottom of the dialog box. Note "
-"that configuring a module is only possible when it is enabled."
-msgstr ""
-
-#: ../src/gui/selectPath.py:79
-msgid "Choose a folder"
-msgstr "フォルダの選択"
-
-#: ../src/gui/selectPath.py:96
-msgid "This path does not exist"
-msgstr "このパスは存在しません"
-
-#: ../src/gui/selectPath.py:96
-msgid "Please select an existing directory."
-msgstr ""
-
-#: ../src/gui/selectPath.py:99 ../src/gui/selectPath.py:104
-msgid "The name is incorrect"
-msgstr ""
-
-#: ../src/gui/selectPath.py:99
-msgid ""
-"This name is not allowed.\n"
-"Please use another one."
-msgstr ""
-
-#: ../src/gui/selectPath.py:104
-#, python-format
-msgid ""
-"The character %s is not allowed.\n"
-"Please use another name."
-msgstr ""
-
-#: ../src/gui/about.py:40
-msgid "translator-credits"
-msgstr ""
-"Launchpad Contributions:\n"
-"  Tom Adams https://launchpad.net/~holizz"
-
-#: ../src/gui/about.py:44
-msgid "Developer:"
-msgstr "開発者:"
-
-#: ../src/gui/about.py:48
-msgid "Thanks to:"
-msgstr ""
-
-#: ../src/modules/Search.py:34
-msgid "Search in your music directories"
-msgstr ""
-
-#: ../src/modules/Zeitgeist.py:26
-msgid "Send track information to the Zeitgeist service"
-msgstr ""
-
-#: ../src/modules/FileExplorer.py:170
+#: ../src/modules/FileExplorer.py:173
 msgid "loading..."
 msgstr ""
 
-#: ../src/modules/FileExplorer.py:346
+#: ../src/modules/FileExplorer.py:353
 msgid "Append"
 msgstr ""
 
-#: ../src/modules/FileExplorer.py:450
+#: ../src/modules/FileExplorer.py:372
+msgid "Add music folder"
+msgstr ""
+
+#: ../src/modules/FileExplorer.py:384
+#, fuzzy
+msgid "Hide folder"
+msgstr "フォルダの選択"
+
+#: ../src/modules/FileExplorer.py:392
+msgid "Open containing folder"
+msgstr ""
+
+#: ../src/modules/FileExplorer.py:403
+#, fuzzy
+msgid "Choose a directory"
+msgstr "フォルダの選択"
+
+#: ../src/modules/FileExplorer.py:408
+msgid "This path does not exist"
+msgstr "このパスは存在しません"
+
+#: ../src/modules/FileExplorer.py:409
+msgid "Please select an existing directory."
+msgstr ""
+
+#: ../src/modules/FileExplorer.py:501
 msgid "Albums"
 msgstr ""
 
-#: ../src/modules/FileExplorer.py:452
+#: ../src/modules/FileExplorer.py:503
 msgid "Music"
 msgstr ""
 
-#: ../src/modules/__init__.py:75
-msgid "The following Python modules are not available:"
+#: ../src/modules/FileExplorer.py:601
+msgid "Searching ..."
 msgstr ""
 
-#: ../src/modules/__init__.py:79
-msgid "You must install them if you want to enable this module."
-msgstr ""
-
-#: ../src/modules/__init__.py:266
-msgid "Restart required"
-msgstr ""
-
-#: ../src/modules/__init__.py:267
-msgid ""
-"You must restart the application for this modification to take effect."
+#: ../src/modules/FileExplorer.py:615
+msgid "No tracks found"
 msgstr ""
 
 #: ../src/modules/CtrlPanel.py:190 ../src/modules/CtrlPanel.py:246
@@ -210,100 +191,19 @@ msgstr ""
 msgid "Continue playing the current track"
 msgstr ""
 
-#: ../src/modules/DesktopNotification.py:25
-msgid "Desktop Notification"
-msgstr ""
-
-#: ../src/modules/DesktopNotification.py:25
-msgid "Display a desktop notification on track change"
-msgstr ""
-
-#: ../src/modules/DesktopNotification.py:78
-#: ../src/modules/DesktopNotification.py:188
-msgid "Skip track"
-msgstr ""
-
-#: ../src/modules/DesktopNotification.py:214
-msgid ""
-"This module displays a small popup window on your desktop when a new track "
-"starts."
-msgstr ""
-
-#: ../src/modules/DesktopNotification.py:215
-msgid ""
-"If the Covers module is enabled, the popup also shows the album cover."
-msgstr ""
-
-#: ../src/modules/DesktopNotification.py:216
-msgid "Customizing the Notification"
-msgstr ""
-
-#: ../src/modules/DesktopNotification.py:217
-msgid ""
-"You can change the title and the body of the notification to any text you "
-"want. Before displaying the popup window, fields of the form {field} are "
-"replaced by their corresponding value. Available fields are:\n"
-"\n"
-msgstr ""
-
-#: ../src/modules/DesktopNotification.py:220
-msgid "Markup"
-msgstr "マークアップ"
-
-#: ../src/modules/DesktopNotification.py:221
-msgid ""
-"You can use the Pango markup language to format the text. More information "
-"on that language is available on the following web page:"
-msgstr ""
-
 #: ../src/modules/StatusbarTitlebar.py:47
 msgid "[paused]"
 msgstr "[中止]"
 
-#: ../src/modules/Covers.py:28
-msgid "Covers"
+#: ../src/modules/Search.py:34
+msgid "Search in your music folders"
 msgstr ""
 
-#: ../src/modules/Covers.py:28
-msgid "Show album covers"
-msgstr ""
-
-#: ../src/modules/Covers.py:433
-msgid ""
-"This module displays the cover of the album the current track comes from. "
-"Covers may be loaded from local pictures, located in the same directory as "
-"the current track, or may be downloaded from the Internet."
-msgstr ""
-
-#: ../src/modules/Covers.py:436
-msgid "User Covers"
-msgstr ""
-
-#: ../src/modules/Covers.py:437
-#, python-format
-msgid ""
-"A user cover is a picture located in the same directory as the current "
-"track. When specifying filenames, you do not need to provide file "
-"extensions, supported file formats (%s) are automatically used."
-msgstr ""
-
-#: ../src/modules/Covers.py:440
-msgid "Internet Covers"
-msgstr ""
-
-#: ../src/modules/Covers.py:441
-msgid ""
-"Covers may be downloaded from the Internet, based on the tags of the current "
-"track. You can ask to always prefer user covers to Internet ones. In this "
-"case, if a user cover exists for the current track, it is used. If there is "
-"none, the cover is downloaded."
-msgstr ""
-
-#: ../src/modules/Tracktree.py:366
+#: ../src/modules/Tracktree.py:367
 msgid "Save playlist"
 msgstr "プレイリストを保存"
 
-#: ../src/modules/Tracktree.py:415
+#: ../src/modules/Tracktree.py:416
 msgid "Clear Playlist"
 msgstr ""
 
@@ -334,6 +234,110 @@ msgstr ""
 
 #: ../src/modules/Equalizer.py:204
 msgid "The format of the file is incorrect."
+msgstr ""
+
+#: ../src/modules/__init__.py:75
+msgid "The following Python modules are not available:"
+msgstr ""
+
+#: ../src/modules/__init__.py:79
+msgid "You must install them if you want to enable this module."
+msgstr ""
+
+#: ../src/modules/__init__.py:266
+msgid "Restart required"
+msgstr ""
+
+#: ../src/modules/__init__.py:267
+msgid "You must restart the application for this modification to take effect."
+msgstr ""
+
+#: ../src/modules/Zeitgeist.py:26
+msgid "Send track information to the Zeitgeist service"
+msgstr ""
+
+#: ../src/modules/Covers.py:28
+msgid "Covers"
+msgstr ""
+
+#: ../src/modules/Covers.py:28
+msgid "Show album covers"
+msgstr ""
+
+#: ../src/modules/Covers.py:435
+msgid ""
+"This module displays the cover of the album the current track comes from. "
+"Covers may be loaded from local pictures, located in the same directory as "
+"the current track, or may be downloaded from the Internet."
+msgstr ""
+
+#: ../src/modules/Covers.py:438
+msgid "User Covers"
+msgstr ""
+
+#: ../src/modules/Covers.py:439
+#, python-format
+msgid ""
+"A user cover is a picture located in the same directory as the current "
+"track. When specifying filenames, you do not need to provide file "
+"extensions, supported file formats (%s) are automatically used."
+msgstr ""
+
+#: ../src/modules/Covers.py:442
+msgid "Internet Covers"
+msgstr ""
+
+#: ../src/modules/Covers.py:443
+msgid ""
+"Covers may be downloaded from the Internet, based on the tags of the current "
+"track. You can ask to always prefer user covers to Internet ones. In this "
+"case, if a user cover exists for the current track, it is used. If there is "
+"none, the cover is downloaded."
+msgstr ""
+
+#: ../src/modules/DesktopNotification.py:25
+msgid "Desktop Notification"
+msgstr ""
+
+#: ../src/modules/DesktopNotification.py:25
+msgid "Display a desktop notification on track change"
+msgstr ""
+
+#: ../src/modules/DesktopNotification.py:78
+#: ../src/modules/DesktopNotification.py:188
+msgid "Skip track"
+msgstr ""
+
+#: ../src/modules/DesktopNotification.py:214
+msgid ""
+"This module displays a small popup window on your desktop when a new track "
+"starts."
+msgstr ""
+
+#: ../src/modules/DesktopNotification.py:215
+msgid "If the Covers module is enabled, the popup also shows the album cover."
+msgstr ""
+
+#: ../src/modules/DesktopNotification.py:216
+msgid "Customizing the Notification"
+msgstr ""
+
+#: ../src/modules/DesktopNotification.py:217
+msgid ""
+"You can change the title and the body of the notification to any text you "
+"want. Before displaying the popup window, fields of the form {field} are "
+"replaced by their corresponding value. Available fields are:\n"
+"\n"
+msgstr ""
+
+#: ../src/modules/DesktopNotification.py:220
+msgid "Markup"
+msgstr "マークアップ"
+
+#: ../src/modules/DesktopNotification.py:221
+msgid ""
+"You can use the Pango markup language to format the text. More information "
+"on that language is available on the following web page:"
 msgstr ""
 
 #: ../src/tools/consts.py:94

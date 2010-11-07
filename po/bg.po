@@ -7,16 +7,70 @@ msgid ""
 msgstr ""
 "Project-Id-Version: decibel-audio-player\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-10-30 03:21+0200\n"
+"POT-Creation-Date: 2010-11-07 01:42+0100\n"
 "PO-Revision-Date: 2010-10-07 11:24+0000\n"
 "Last-Translator: ivan mikov <Unknown>\n"
 "Language-Team: Bulgarian <bg@li.org>\n"
+"Language: bg\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Launchpad-Export-Date: 2010-11-02 05:09+0000\n"
 "X-Generator: Launchpad (build Unknown)\n"
+
+#: ../src/gui/about.py:40
+msgid "translator-credits"
+msgstr ""
+"Launchpad Contributions:\n"
+"  ivan mikov https://launchpad.net/~idm-dir"
+
+#: ../src/gui/about.py:44
+msgid "Developer:"
+msgstr "Разработчик:"
+
+#: ../src/gui/about.py:48
+msgid "Thanks to:"
+msgstr "Благодарение на:"
+
+#: ../src/gui/preferences.py:43
+msgid "Preferences"
+msgstr "Предпочитания"
+
+#: ../src/gui/preferences.py:129
+msgid "Unable to load this module."
+msgstr "Този модул не може да бъде зареден."
+
+#: ../src/gui/preferences.py:138
+msgid "Modules"
+msgstr "Модули"
+
+#: ../src/gui/preferences.py:139 ../src/modules/Covers.py:434
+#: ../src/modules/DesktopNotification.py:213
+msgid "Description"
+msgstr "Описание"
+
+#: ../src/gui/preferences.py:140
+msgid ""
+"This window shows the list of available modules. You can enable/disable a "
+"module by checking/unchecking the check box in front of it."
+msgstr ""
+
+#: ../src/gui/preferences.py:142
+msgid "Configuring a Module"
+msgstr "Конфигуриране на модул"
+
+#: ../src/gui/preferences.py:143
+msgid ""
+"When a module may be configured, a specific icon is displayed on the right "
+"of the corresponding line. To configure a module, simply select it and then "
+"click on the \"Preferences\" button on the bottom of the dialog box. Note "
+"that configuring a module is only possible when it is enabled."
+msgstr ""
+"Когато модулът може да бъде настройван, в дясно се показва специфична икона. "
+"За да се настрои модула, просто го изберете и натиснете бутона "
+"\"Предпочитания\" долу в диалоговия прозорец. Обърнете внимание, че "
+"настройването на модула е възможно само когато той е включен."
 
 #: ../src/media/track/__init__.py:54
 msgid "Track number"
@@ -79,132 +133,56 @@ msgstr "%(album)s [Диск %(discnum)u]"
 msgid "CDDA Track"
 msgstr ""
 
-#: ../src/gui/preferences.py:43
-msgid "Preferences"
-msgstr "Предпочитания"
-
-#: ../src/gui/preferences.py:129
-msgid "Unable to load this module."
-msgstr "Този модул не може да бъде зареден."
-
-#: ../src/gui/preferences.py:138
-msgid "Modules"
-msgstr "Модули"
-
-#: ../src/gui/preferences.py:139 ../src/modules/DesktopNotification.py:213
-#: ../src/modules/Covers.py:432
-msgid "Description"
-msgstr "Описание"
-
-#: ../src/gui/preferences.py:140
-msgid ""
-"This window shows the list of available modules. You can enable/disable a "
-"module by checking/unchecking the check box in front of it."
-msgstr ""
-
-#: ../src/gui/preferences.py:142
-msgid "Configuring a Module"
-msgstr "Конфигуриране на модул"
-
-#: ../src/gui/preferences.py:143
-msgid ""
-"When a module may be configured, a specific icon is displayed on the right "
-"of the corresponding line. To configure a module, simply select it and then "
-"click on the \"Preferences\" button on the bottom of the dialog box. Note "
-"that configuring a module is only possible when it is enabled."
-msgstr ""
-"Когато модулът може да бъде настройван, в дясно се показва специфична икона. "
-"За да се настрои модула, просто го изберете и натиснете бутона "
-"\"Предпочитания\" долу в диалоговия прозорец. Обърнете внимание, че "
-"настройването на модула е възможно само когато той е включен."
-
-#: ../src/gui/selectPath.py:79
-msgid "Choose a folder"
-msgstr "Изберете папка"
-
-#: ../src/gui/selectPath.py:96
-msgid "This path does not exist"
-msgstr "Този път не съществува"
-
-#: ../src/gui/selectPath.py:96
-msgid "Please select an existing directory."
-msgstr "Моля изберете съществуваща директория"
-
-#: ../src/gui/selectPath.py:99 ../src/gui/selectPath.py:104
-msgid "The name is incorrect"
-msgstr "Името е неточно"
-
-#: ../src/gui/selectPath.py:99
-msgid ""
-"This name is not allowed.\n"
-"Please use another one."
-msgstr ""
-"Това име не е разрешено.\n"
-"Моля използвайте някое друго."
-
-#: ../src/gui/selectPath.py:104
-#, python-format
-msgid ""
-"The character %s is not allowed.\n"
-"Please use another name."
-msgstr ""
-"Използването на символа %s не е разрешено.\n"
-"Изберете друго име."
-
-#: ../src/gui/about.py:40
-msgid "translator-credits"
-msgstr ""
-"Launchpad Contributions:\n"
-"  ivan mikov https://launchpad.net/~idm-dir"
-
-#: ../src/gui/about.py:44
-msgid "Developer:"
-msgstr "Разработчик:"
-
-#: ../src/gui/about.py:48
-msgid "Thanks to:"
-msgstr "Благодарение на:"
-
-#: ../src/modules/Search.py:34
-msgid "Search in your music directories"
-msgstr ""
-
-#: ../src/modules/Zeitgeist.py:26
-msgid "Send track information to the Zeitgeist service"
-msgstr ""
-
-#: ../src/modules/FileExplorer.py:170
+#: ../src/modules/FileExplorer.py:173
 msgid "loading..."
 msgstr "зареждане…"
 
-#: ../src/modules/FileExplorer.py:346
+#: ../src/modules/FileExplorer.py:353
 msgid "Append"
 msgstr ""
 
-#: ../src/modules/FileExplorer.py:450
+#: ../src/modules/FileExplorer.py:372
+msgid "Add music folder"
+msgstr ""
+
+#: ../src/modules/FileExplorer.py:384
+#, fuzzy
+msgid "Hide folder"
+msgstr "Изберете папка"
+
+#: ../src/modules/FileExplorer.py:392
+msgid "Open containing folder"
+msgstr ""
+
+#: ../src/modules/FileExplorer.py:403
+#, fuzzy
+msgid "Choose a directory"
+msgstr "Изберете папка"
+
+#: ../src/modules/FileExplorer.py:408
+msgid "This path does not exist"
+msgstr "Този път не съществува"
+
+#: ../src/modules/FileExplorer.py:409
+msgid "Please select an existing directory."
+msgstr "Моля изберете съществуваща директория"
+
+#: ../src/modules/FileExplorer.py:501
 msgid "Albums"
 msgstr ""
 
-#: ../src/modules/FileExplorer.py:452
+#: ../src/modules/FileExplorer.py:503
 msgid "Music"
 msgstr ""
 
-#: ../src/modules/__init__.py:75
-msgid "The following Python modules are not available:"
-msgstr "Следните модули на Python не са налични:"
+#: ../src/modules/FileExplorer.py:601
+msgid "Searching ..."
+msgstr ""
 
-#: ../src/modules/__init__.py:79
-msgid "You must install them if you want to enable this module."
-msgstr "Трябва да ги инсталирате, ако искате да използвате този модул."
-
-#: ../src/modules/__init__.py:266
-msgid "Restart required"
-msgstr "Изисква се рестартиране"
-
-#: ../src/modules/__init__.py:267
-msgid ""
-"You must restart the application for this modification to take effect."
-msgstr "Трябва да рестартирате приложението за да се отрази промяната."
+#: ../src/modules/FileExplorer.py:615
+#, fuzzy
+msgid "No tracks found"
+msgstr "Не е намерен диск"
 
 #: ../src/modules/CtrlPanel.py:190 ../src/modules/CtrlPanel.py:246
 msgid "Pause the current track"
@@ -218,102 +196,19 @@ msgstr ""
 msgid "Continue playing the current track"
 msgstr "Продължи изпълнението на текущия запис"
 
-#: ../src/modules/DesktopNotification.py:25
-msgid "Desktop Notification"
-msgstr "Известие на работния плот"
-
-#: ../src/modules/DesktopNotification.py:25
-msgid "Display a desktop notification on track change"
-msgstr "Покажи известие на работния плот при смяната на записа"
-
-#: ../src/modules/DesktopNotification.py:78
-#: ../src/modules/DesktopNotification.py:188
-msgid "Skip track"
-msgstr "Пропусни записа"
-
-#: ../src/modules/DesktopNotification.py:214
-msgid ""
-"This module displays a small popup window on your desktop when a new track "
-"starts."
-msgstr ""
-"Този модул показва малък изкачащ прозорец на работния плот когато започва "
-"нов запис."
-
-#: ../src/modules/DesktopNotification.py:215
-msgid ""
-"If the Covers module is enabled, the popup also shows the album cover."
-msgstr ""
-
-#: ../src/modules/DesktopNotification.py:216
-msgid "Customizing the Notification"
-msgstr "Параметри на известията"
-
-#: ../src/modules/DesktopNotification.py:217
-msgid ""
-"You can change the title and the body of the notification to any text you "
-"want. Before displaying the popup window, fields of the form {field} are "
-"replaced by their corresponding value. Available fields are:\n"
-"\n"
-msgstr ""
-
-#: ../src/modules/DesktopNotification.py:220
-msgid "Markup"
-msgstr "Маркиране"
-
-#: ../src/modules/DesktopNotification.py:221
-msgid ""
-"You can use the Pango markup language to format the text. More information "
-"on that language is available on the following web page:"
-msgstr ""
-
 #: ../src/modules/StatusbarTitlebar.py:47
 msgid "[paused]"
 msgstr "[паузирано]"
 
-#: ../src/modules/Covers.py:28
-msgid "Covers"
-msgstr "Обложки"
-
-#: ../src/modules/Covers.py:28
-msgid "Show album covers"
-msgstr "Покажи обложките на албумите"
-
-#: ../src/modules/Covers.py:433
-msgid ""
-"This module displays the cover of the album the current track comes from. "
-"Covers may be loaded from local pictures, located in the same directory as "
-"the current track, or may be downloaded from the Internet."
+#: ../src/modules/Search.py:34
+msgid "Search in your music folders"
 msgstr ""
 
-#: ../src/modules/Covers.py:436
-msgid "User Covers"
-msgstr "Потребителски обложки"
-
-#: ../src/modules/Covers.py:437
-#, python-format
-msgid ""
-"A user cover is a picture located in the same directory as the current "
-"track. When specifying filenames, you do not need to provide file "
-"extensions, supported file formats (%s) are automatically used."
-msgstr ""
-
-#: ../src/modules/Covers.py:440
-msgid "Internet Covers"
-msgstr "Обложки от интернет"
-
-#: ../src/modules/Covers.py:441
-msgid ""
-"Covers may be downloaded from the Internet, based on the tags of the current "
-"track. You can ask to always prefer user covers to Internet ones. In this "
-"case, if a user cover exists for the current track, it is used. If there is "
-"none, the cover is downloaded."
-msgstr ""
-
-#: ../src/modules/Tracktree.py:366
+#: ../src/modules/Tracktree.py:367
 msgid "Save playlist"
 msgstr "Запазване на списъка"
 
-#: ../src/modules/Tracktree.py:415
+#: ../src/modules/Tracktree.py:416
 msgid "Clear Playlist"
 msgstr "Изчисти списъка за изпълнение"
 
@@ -345,6 +240,112 @@ msgstr "Файлът не може да се зареди"
 #: ../src/modules/Equalizer.py:204
 msgid "The format of the file is incorrect."
 msgstr "Неточен формат на файла"
+
+#: ../src/modules/__init__.py:75
+msgid "The following Python modules are not available:"
+msgstr "Следните модули на Python не са налични:"
+
+#: ../src/modules/__init__.py:79
+msgid "You must install them if you want to enable this module."
+msgstr "Трябва да ги инсталирате, ако искате да използвате този модул."
+
+#: ../src/modules/__init__.py:266
+msgid "Restart required"
+msgstr "Изисква се рестартиране"
+
+#: ../src/modules/__init__.py:267
+msgid "You must restart the application for this modification to take effect."
+msgstr "Трябва да рестартирате приложението за да се отрази промяната."
+
+#: ../src/modules/Zeitgeist.py:26
+msgid "Send track information to the Zeitgeist service"
+msgstr ""
+
+#: ../src/modules/Covers.py:28
+msgid "Covers"
+msgstr "Обложки"
+
+#: ../src/modules/Covers.py:28
+msgid "Show album covers"
+msgstr "Покажи обложките на албумите"
+
+#: ../src/modules/Covers.py:435
+msgid ""
+"This module displays the cover of the album the current track comes from. "
+"Covers may be loaded from local pictures, located in the same directory as "
+"the current track, or may be downloaded from the Internet."
+msgstr ""
+
+#: ../src/modules/Covers.py:438
+msgid "User Covers"
+msgstr "Потребителски обложки"
+
+#: ../src/modules/Covers.py:439
+#, python-format
+msgid ""
+"A user cover is a picture located in the same directory as the current "
+"track. When specifying filenames, you do not need to provide file "
+"extensions, supported file formats (%s) are automatically used."
+msgstr ""
+
+#: ../src/modules/Covers.py:442
+msgid "Internet Covers"
+msgstr "Обложки от интернет"
+
+#: ../src/modules/Covers.py:443
+msgid ""
+"Covers may be downloaded from the Internet, based on the tags of the current "
+"track. You can ask to always prefer user covers to Internet ones. In this "
+"case, if a user cover exists for the current track, it is used. If there is "
+"none, the cover is downloaded."
+msgstr ""
+
+#: ../src/modules/DesktopNotification.py:25
+msgid "Desktop Notification"
+msgstr "Известие на работния плот"
+
+#: ../src/modules/DesktopNotification.py:25
+msgid "Display a desktop notification on track change"
+msgstr "Покажи известие на работния плот при смяната на записа"
+
+#: ../src/modules/DesktopNotification.py:78
+#: ../src/modules/DesktopNotification.py:188
+msgid "Skip track"
+msgstr "Пропусни записа"
+
+#: ../src/modules/DesktopNotification.py:214
+msgid ""
+"This module displays a small popup window on your desktop when a new track "
+"starts."
+msgstr ""
+"Този модул показва малък изкачащ прозорец на работния плот когато започва "
+"нов запис."
+
+#: ../src/modules/DesktopNotification.py:215
+msgid "If the Covers module is enabled, the popup also shows the album cover."
+msgstr ""
+
+#: ../src/modules/DesktopNotification.py:216
+msgid "Customizing the Notification"
+msgstr "Параметри на известията"
+
+#: ../src/modules/DesktopNotification.py:217
+msgid ""
+"You can change the title and the body of the notification to any text you "
+"want. Before displaying the popup window, fields of the form {field} are "
+"replaced by their corresponding value. Available fields are:\n"
+"\n"
+msgstr ""
+
+#: ../src/modules/DesktopNotification.py:220
+msgid "Markup"
+msgstr "Маркиране"
+
+#: ../src/modules/DesktopNotification.py:221
+msgid ""
+"You can use the Pango markup language to format the text. More information "
+"on that language is available on the following web page:"
+msgstr ""
 
 #: ../src/tools/consts.py:94
 msgid "Unknown Genre"
@@ -442,17 +443,34 @@ msgstr "Изпълни следващият запис"
 msgid "Play the previous track"
 msgstr "Изпълни предходният запис"
 
+#~ msgid "The name is incorrect"
+#~ msgstr "Името е неточно"
+
 #~ msgid ""
-#~ "This dialog box shows the list of available modules, which are small pieces "
-#~ "of code that add some functionnalities to the application. You can "
-#~ "enable/disable a module by checking/unchecking the check box in front of it. "
-#~ "Note that some modules (e.g., the File Explorer) cannot be disabled."
+#~ "This name is not allowed.\n"
+#~ "Please use another one."
 #~ msgstr ""
-#~ "Този прозорец показва списък с достъпните модули, които са малки части код, "
-#~ "добавящи нови функционалности към приложението. Можете да "
-#~ "включвате/изключвате модула, поставяйки/премахвайки отметката срещу него. "
-#~ "Обърнете внимание, че някои модули (например, Файловият браузър) не могат да "
-#~ "бъдат изключени."
+#~ "Това име не е разрешено.\n"
+#~ "Моля използвайте някое друго."
+
+#~ msgid ""
+#~ "The character %s is not allowed.\n"
+#~ "Please use another name."
+#~ msgstr ""
+#~ "Използването на символа %s не е разрешено.\n"
+#~ "Изберете друго име."
+
+#~ msgid ""
+#~ "This dialog box shows the list of available modules, which are small "
+#~ "pieces of code that add some functionnalities to the application. You can "
+#~ "enable/disable a module by checking/unchecking the check box in front of "
+#~ "it. Note that some modules (e.g., the File Explorer) cannot be disabled."
+#~ msgstr ""
+#~ "Този прозорец показва списък с достъпните модули, които са малки части "
+#~ "код, добавящи нови функционалности към приложението. Можете да включвате/"
+#~ "изключвате модула, поставяйки/премахвайки отметката срещу него. Обърнете "
+#~ "внимание, че някои модули (например, Файловият браузър) не могат да бъдат "
+#~ "изключени."
 
 #~ msgid "File Explorer"
 #~ msgstr "Файлов браузър"
@@ -483,18 +501,18 @@ msgstr "Изпълни предходният запис"
 #~ msgstr "За сигурността на съхранение на паролата"
 
 #~ msgid ""
-#~ "If you use Gnome, it is safe to store your password since the Gnome keyring "
-#~ "is used."
+#~ "If you use Gnome, it is safe to store your password since the Gnome "
+#~ "keyring is used."
 #~ msgstr ""
-#~ "Ако използвате Gnome е безопасно да запазите вашата парола, щом се използва "
-#~ "ключодържателя на Gnome."
+#~ "Ако използвате Gnome е безопасно да запазите вашата парола, щом се "
+#~ "използва ключодържателя на Gnome."
 
 #~ msgid ""
-#~ "If you do not use Gnome, beware that, although not stored as clear text, an "
-#~ "attacker <i>could</i> retrieve it."
+#~ "If you do not use Gnome, beware that, although not stored as clear text, "
+#~ "an attacker <i>could</i> retrieve it."
 #~ msgstr ""
-#~ "Ако не използвате Gnome внимавайте, макар че паролите не се съхраняват като "
-#~ "обикновен текст, то някой <i>може</i> да я извлече."
+#~ "Ако не използвате Gnome внимавайте, макар че паролите не се съхраняват "
+#~ "като обикновен текст, то някой <i>може</i> да я извлече."
 
 #~ msgid "Home"
 #~ msgstr "Начало"
@@ -611,20 +629,20 @@ msgstr "Изпълни предходният запис"
 #~ "This module detects any running instant messenger and updates your status "
 #~ "with regards to the track you are listening to. Supported messengers are:"
 #~ msgstr ""
-#~ "Този модул засича всеки работещ IM клиент и обновява вашия статус съобразно "
-#~ "записа, който слушате. Поддържани IM клиенти са:"
+#~ "Този модул засича всеки работещ IM клиент и обновява вашия статус "
+#~ "съобразно записа, който слушате. Поддържани IM клиенти са:"
 
 #~ msgid "Customizing the Status"
 #~ msgstr "Настройка на статуса"
 
 #~ msgid ""
-#~ "You can set the status to any text you want. Before setting it, the module "
-#~ "replaces all fields of the form {field} by their corresponding value. "
-#~ "Available fields are:"
+#~ "You can set the status to any text you want. Before setting it, the "
+#~ "module replaces all fields of the form {field} by their corresponding "
+#~ "value. Available fields are:"
 #~ msgstr ""
-#~ "Можете да изберете всякакъв текст за статуса. Преди да го поставите, модулът "
-#~ "заменя всички полета от вида {поле} с техните съответни значения. Достъпни "
-#~ "са следните полета:"
+#~ "Можете да изберете всякакъв текст за статуса. Преди да го поставите, "
+#~ "модулът заменя всички полета от вида {поле} с техните съответни значения. "
+#~ "Достъпни са следните полета:"
 
 #~ msgid "Sanitization"
 #~ msgstr "Прочистване"
@@ -632,13 +650,13 @@ msgstr "Изпълни предходният запис"
 #~ msgid ""
 #~ "You can define some words that to sanitize before using them to set your "
 #~ "status. In this case, the middle characters of matching words is "
-#~ "automatically replaced with asterisks (e.g., \"Metallica - Live S**t Binge & "
-#~ "Purge\"). Put one word per line."
+#~ "automatically replaced with asterisks (e.g., \"Metallica - Live S**t "
+#~ "Binge & Purge\"). Put one word per line."
 #~ msgstr ""
 #~ "Можете да определите някои думи, които да бъдат прочистени преди да ги "
-#~ "използвате при поставянето на вашия статус. В този случай средните букви на "
-#~ "съвпадащите думи автоматично се заменят със звездичка (напр. \"Metallica - "
-#~ "Live S**t Binge & Purge\"). Поставете по една дума на ред."
+#~ "използвате при поставянето на вашия статус. В този случай средните букви "
+#~ "на съвпадащите думи автоматично се заменят със звездичка (напр. "
+#~ "\"Metallica - Live S**t Binge & Purge\"). Поставете по една дума на ред."
 
 #~ msgid "Keep your Last.fm profile up to date"
 #~ msgstr "Обновява вашият Last.fm профил"
@@ -703,13 +721,16 @@ msgstr "Изпълни предходният запис"
 #~ msgstr "записи"
 
 #~ msgid "You will be able to recreate this library later on if you wish so."
-#~ msgstr "По-късно ще може да създадете отново тази библиотека, ако пожелаете."
+#~ msgstr ""
+#~ "По-късно ще може да създадете отново тази библиотека, ако пожелаете."
 
 #~ msgid "Remove the selected library?"
 #~ msgstr "Премахване на избраната библиотека?"
 
-#~ msgid "You will be able to recreate these libraries later on if you wish so."
-#~ msgstr "По-късно ще може да създадете отново тези библиотеки, ако пожелаете."
+#~ msgid ""
+#~ "You will be able to recreate these libraries later on if you wish so."
+#~ msgstr ""
+#~ "По-късно ще може да създадете отново тези библиотеки, ако пожелаете."
 
 #~ msgid "Remove all selected libraries?"
 #~ msgstr "Премахване на всички избрани библиотеки?"
@@ -738,9 +759,6 @@ msgstr "Изпълни предходният запис"
 #~ msgid "Track %02u"
 #~ msgstr "Запис %02u"
 
-#~ msgid "No disc found"
-#~ msgstr "Не е намерен диск"
-
 #~ msgid "Clear CDDB cache?"
 #~ msgstr "Изчистване на CDDB кеша?"
 
@@ -748,33 +766,36 @@ msgstr "Изпълни предходният запис"
 #~ msgstr "Невалиден път"
 
 #~ msgid ""
-#~ "The path to the CD-ROM device is not valid. Please choose an existing path."
+#~ "The path to the CD-ROM device is not valid. Please choose an existing "
+#~ "path."
 #~ msgstr ""
 #~ "Пътя до CD-ROM устройството е невалиден. Моля изберете съществуващ път."
 
 #~ msgid "This module lets you play audio discs from your CD-ROM device."
 #~ msgstr ""
-#~ "Този модул позволява пускането на аудио дискове от вашето CD-ROM устройство."
+#~ "Този модул позволява пускането на аудио дискове от вашето CD-ROM "
+#~ "устройство."
 
 #~ msgid "Compact Disc Data Base (CDDB)"
 #~ msgstr "База данни за компакт дискове (CDDB)"
 
 #~ msgid ""
 #~ "Disc information, such as artist and album title, may be automatically "
-#~ "downloaded from an online database if you wish so. This information may also "
-#~ "be saved on your hard drive to avoid downloading it again the next time you "
-#~ "play the same disc."
+#~ "downloaded from an online database if you wish so. This information may "
+#~ "also be saved on your hard drive to avoid downloading it again the next "
+#~ "time you play the same disc."
 #~ msgstr ""
-#~ "Ако желаете, информацията за диска, като името на изпълнителя и албума, може "
-#~ "да бъде автоматично изтеглена от онлайн база данни. Тази информация може, "
-#~ "също така, да бъде запазена на вашия хард диск, за да се избегне повторното "
-#~ "изтегляне следващият път когато прослушвате същия диск."
+#~ "Ако желаете, информацията за диска, като името на изпълнителя и албума, "
+#~ "може да бъде автоматично изтеглена от онлайн база данни. Тази информация "
+#~ "може, също така, да бъде запазена на вашия хард диск, за да се избегне "
+#~ "повторното изтегляне следващият път когато прослушвате същия диск."
 
 #~ msgid "Generate a text file with the current status"
 #~ msgstr "Създай текстови файл с текущия статус"
 
 #~ msgid ""
-#~ "The path to the selected file is not valid. Please choose an existing path."
+#~ "The path to the selected file is not valid. Please choose an existing "
+#~ "path."
 #~ msgstr "Пътя до избраният файл е невалиден. Моля изберете съществуващ път."
 
 #~ msgid "Choose a file"
