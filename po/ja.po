@@ -8,21 +8,22 @@ msgstr ""
 "Project-Id-Version: decibel-audio-player\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2010-11-07 01:42+0100\n"
-"PO-Revision-Date: 2010-10-07 11:29+0000\n"
-"Last-Translator: Tom Adams <tom@holizz.com>\n"
+"PO-Revision-Date: 2010-11-08 02:53+0000\n"
+"Last-Translator: Hiroshi Tagawa <Unknown>\n"
 "Language-Team: Japanese <ja@li.org>\n"
-"Language: ja\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Launchpad-Export-Date: 2010-11-02 05:10+0000\n"
+"X-Launchpad-Export-Date: 2010-11-08 05:31+0000\n"
 "X-Generator: Launchpad (build Unknown)\n"
 
 #: ../src/gui/about.py:40
 msgid "translator-credits"
 msgstr ""
 "Launchpad Contributions:\n"
+"  Hiroshi Tagawa https://launchpad.net/~kuponuga\n"
+"  José Lou Chang https://launchpad.net/~obake\n"
 "  Tom Adams https://launchpad.net/~holizz"
 
 #: ../src/gui/about.py:44
@@ -31,7 +32,7 @@ msgstr "開発者:"
 
 #: ../src/gui/about.py:48
 msgid "Thanks to:"
-msgstr ""
+msgstr "Thanks to:"
 
 #: ../src/gui/preferences.py:43
 msgid "Preferences"
@@ -39,7 +40,7 @@ msgstr "設定"
 
 #: ../src/gui/preferences.py:129
 msgid "Unable to load this module."
-msgstr ""
+msgstr "このモジュールを読み込むことができません。"
 
 #: ../src/gui/preferences.py:138
 msgid "Modules"
@@ -55,10 +56,12 @@ msgid ""
 "This window shows the list of available modules. You can enable/disable a "
 "module by checking/unchecking the check box in front of it."
 msgstr ""
+"このウィンドウでは利用可能なモジュールのリストを表示します。モジュールを有効にするにはチェックボックスにチェックを入れてください。無効にする場合はチェック"
+"を外してください。"
 
 #: ../src/gui/preferences.py:142
 msgid "Configuring a Module"
-msgstr ""
+msgstr "モジュールの設定"
 
 #: ../src/gui/preferences.py:143
 msgid ""
@@ -86,23 +89,23 @@ msgstr "アルバム"
 
 #: ../src/media/track/__init__.py:58
 msgid "Genre"
-msgstr ""
+msgstr "ジャンル"
 
 #: ../src/media/track/__init__.py:59
 msgid "Date"
-msgstr ""
+msgstr "日付"
 
 #: ../src/media/track/__init__.py:60
 msgid "Disc number"
-msgstr ""
+msgstr "ディスク番号"
 
 #: ../src/media/track/__init__.py:61
 msgid "Bit rate"
-msgstr ""
+msgstr "ビットレート"
 
 #: ../src/media/track/__init__.py:62
 msgid "Sample rate"
-msgstr ""
+msgstr "サンプルレート"
 
 #: ../src/media/track/__init__.py:63
 msgid "Duration in seconds (e.g., 194)"
@@ -114,46 +117,44 @@ msgstr ""
 
 #: ../src/media/track/__init__.py:67
 msgid "Full path to the file"
-msgstr ""
+msgstr "ファイルへのフルパス"
 
 #: ../src/media/track/__init__.py:149 ../src/media/track/__init__.py:393
 msgid "unknown"
-msgstr ""
+msgstr "不明"
 
 #: ../src/media/track/__init__.py:175
 #, python-format
 msgid "%(album)s  [Disc %(discnum)u]"
-msgstr ""
+msgstr "%(album)s  [ディスク %(discnum)u]"
 
 #: ../src/media/track/__init__.py:182
 msgid "CDDA Track"
-msgstr ""
+msgstr "CDDAのトラック"
 
 #: ../src/modules/FileExplorer.py:173
 msgid "loading..."
-msgstr ""
+msgstr "読み込み中"
 
 #: ../src/modules/FileExplorer.py:353
 msgid "Append"
-msgstr ""
+msgstr "追加"
 
 #: ../src/modules/FileExplorer.py:372
 msgid "Add music folder"
-msgstr ""
+msgstr "音楽フォルダを追加"
 
 #: ../src/modules/FileExplorer.py:384
-#, fuzzy
 msgid "Hide folder"
-msgstr "フォルダの選択"
+msgstr "フォルダを隠す"
 
 #: ../src/modules/FileExplorer.py:392
 msgid "Open containing folder"
 msgstr ""
 
 #: ../src/modules/FileExplorer.py:403
-#, fuzzy
 msgid "Choose a directory"
-msgstr "フォルダの選択"
+msgstr "ディレクトリを選択してください"
 
 #: ../src/modules/FileExplorer.py:408
 msgid "This path does not exist"
@@ -165,15 +166,15 @@ msgstr ""
 
 #: ../src/modules/FileExplorer.py:501
 msgid "Albums"
-msgstr ""
+msgstr "アルバム"
 
 #: ../src/modules/FileExplorer.py:503
 msgid "Music"
-msgstr ""
+msgstr "音楽"
 
 #: ../src/modules/FileExplorer.py:601
 msgid "Searching ..."
-msgstr ""
+msgstr "検索中..."
 
 #: ../src/modules/FileExplorer.py:615
 msgid "No tracks found"
@@ -181,7 +182,7 @@ msgstr ""
 
 #: ../src/modules/CtrlPanel.py:190 ../src/modules/CtrlPanel.py:246
 msgid "Pause the current track"
-msgstr ""
+msgstr "現在のトラックを一時停止"
 
 #: ../src/modules/CtrlPanel.py:206
 msgid "Play the first selected track of the playlist"
@@ -249,7 +250,8 @@ msgid "Restart required"
 msgstr ""
 
 #: ../src/modules/__init__.py:267
-msgid "You must restart the application for this modification to take effect."
+msgid ""
+"You must restart the application for this modification to take effect."
 msgstr ""
 
 #: ../src/modules/Zeitgeist.py:26
@@ -315,7 +317,8 @@ msgid ""
 msgstr ""
 
 #: ../src/modules/DesktopNotification.py:215
-msgid "If the Covers module is enabled, the popup also shows the album cover."
+msgid ""
+"If the Covers module is enabled, the popup also shows the album cover."
 msgstr ""
 
 #: ../src/modules/DesktopNotification.py:216
@@ -435,6 +438,9 @@ msgstr ""
 #: ../res/MainWindow.glade.h:3
 msgid "Play the previous track"
 msgstr ""
+
+#~ msgid "Choose a folder"
+#~ msgstr "フォルダの選択"
 
 #~ msgid "Password required"
 #~ msgstr "パスワードが必要です"
