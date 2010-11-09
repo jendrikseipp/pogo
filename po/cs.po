@@ -8,14 +8,14 @@ msgstr ""
 "Project-Id-Version: decibel-audio-player\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2010-11-07 01:42+0100\n"
-"PO-Revision-Date: 2010-11-05 09:58+0000\n"
-"Last-Translator: Konki <pavel.konkol@seznam.cz>\n"
+"PO-Revision-Date: 2010-11-08 10:05+0000\n"
+"Last-Translator: Martin Rotter <skunkic@seznam.cz>\n"
 "Language-Team: Czech <cs@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
-"X-Launchpad-Export-Date: 2010-11-07 05:07+0000\n"
+"X-Launchpad-Export-Date: 2010-11-09 05:08+0000\n"
 "X-Generator: Launchpad (build Unknown)\n"
 
 #: ../src/gui/about.py:40
@@ -23,7 +23,8 @@ msgid "translator-credits"
 msgstr ""
 "Launchpad Contributions:\n"
 "  Jendrik Seipp https://launchpad.net/~jendrikseipp\n"
-"  Konki https://launchpad.net/~pavel-konkol"
+"  Konki https://launchpad.net/~pavel-konkol\n"
+"  Martin Rotter https://launchpad.net/~skunkic"
 
 #: ../src/gui/about.py:44
 msgid "Developer:"
@@ -60,7 +61,7 @@ msgstr ""
 
 #: ../src/gui/preferences.py:142
 msgid "Configuring a Module"
-msgstr "Nastavení modulu"
+msgstr "Nastavení Modulu"
 
 #: ../src/gui/preferences.py:143
 msgid ""
@@ -69,10 +70,10 @@ msgid ""
 "click on the \"Preferences\" button on the bottom of the dialog box. Note "
 "that configuring a module is only possible when it is enabled."
 msgstr ""
-"Pokud má modul možnost nastavení, je to idikováno příslušnou ikonou napravo "
-"od modulu. Pro nastavení modulu stačí zvolit příslušný modul a klepnout na "
-"tlačítko \"Nastavení\" vespod okna. Nastavení modulu je možné jen pokud je "
-"příslušný modul povolený."
+"Možnost nastavení modulu je idnikována iknkou napravo od něj. Pro nastavení "
+"modulu stačí zvolit příslušný modul a klepnout na tlačítko \"Nastavení\" ve "
+"spodní části okna. Nastavení modulu je možné jen pokud je příslušný modul "
+"povolený."
 
 #: ../src/media/track/__init__.py:54
 msgid "Track number"
@@ -112,7 +113,7 @@ msgstr "Vzorkovací frekvence"
 
 #: ../src/media/track/__init__.py:63
 msgid "Duration in seconds (e.g., 194)"
-msgstr "Doba v sekundách (např. 194)"
+msgstr "Délka ve vteřinách (např. 194)"
 
 #: ../src/media/track/__init__.py:64
 msgid "Duration as a string (e.g., 3:14)"
@@ -129,7 +130,7 @@ msgstr "neznámý"
 #: ../src/media/track/__init__.py:175
 #, python-format
 msgid "%(album)s  [Disc %(discnum)u]"
-msgstr ""
+msgstr "%(album)s [Disk %(discnum)u]"
 
 #: ../src/media/track/__init__.py:182
 msgid "CDDA Track"
@@ -145,19 +146,19 @@ msgstr "Přidat"
 
 #: ../src/modules/FileExplorer.py:372
 msgid "Add music folder"
-msgstr ""
+msgstr "Přidat adresář s hudbou"
 
 #: ../src/modules/FileExplorer.py:384
 msgid "Hide folder"
-msgstr ""
+msgstr "Skrýt adresář"
 
 #: ../src/modules/FileExplorer.py:392
 msgid "Open containing folder"
-msgstr ""
+msgstr "Otevřít podřazený adresář"
 
 #: ../src/modules/FileExplorer.py:403
 msgid "Choose a directory"
-msgstr ""
+msgstr "Zvolit adresář"
 
 #: ../src/modules/FileExplorer.py:408
 msgid "This path does not exist"
@@ -177,11 +178,11 @@ msgstr "Hudba"
 
 #: ../src/modules/FileExplorer.py:601
 msgid "Searching ..."
-msgstr ""
+msgstr "Hledání ..."
 
 #: ../src/modules/FileExplorer.py:615
 msgid "No tracks found"
-msgstr ""
+msgstr "Nebyly nalezeny žádné skladby"
 
 #: ../src/modules/CtrlPanel.py:190 ../src/modules/CtrlPanel.py:246
 msgid "Pause the current track"
@@ -201,7 +202,7 @@ msgstr "[pauza]"
 
 #: ../src/modules/Search.py:34
 msgid "Search in your music folders"
-msgstr ""
+msgstr "Prohledat adresáře s hudbou"
 
 #: ../src/modules/Tracktree.py:367
 msgid "Save playlist"
@@ -275,6 +276,8 @@ msgid ""
 "Covers may be loaded from local pictures, located in the same directory as "
 "the current track, or may be downloaded from the Internet."
 msgstr ""
+"Tento modul zobrazuje obrázek alba, ze kterého pochází přehrávaná skladba. "
+"Obrázky alb mohou být načteny buď z lokálního uložiště nebo z internetu."
 
 #: ../src/modules/Covers.py:438
 msgid "User Covers"
@@ -287,6 +290,9 @@ msgid ""
 "track. When specifying filenames, you do not need to provide file "
 "extensions, supported file formats (%s) are automatically used."
 msgstr ""
+"Uživatelský obrázek alba je uložen ve stejném adresáři jako aktuální "
+"skladba. Pokud zadáváte názvy, tak není třeba vypisovat příponu souboru, "
+"neboť jsou automaticky použity podporované typy souborů(%s)."
 
 #: ../src/modules/Covers.py:442
 msgid "Internet Covers"
@@ -299,6 +305,10 @@ msgid ""
 "case, if a user cover exists for the current track, it is used. If there is "
 "none, the cover is downloaded."
 msgstr ""
+"Obrázky alb mohou být staženy z internetu, přičemž záleží na ID3 informacích "
+"dané skladby. Můžete si nastavit, zda chcete preferovat lokální obrázky před "
+"těmi staženými z internetu. V tom případě, pokud existuje daný obrázek alba, "
+"tak je použit. Jinak je stažen z internetu."
 
 #: ../src/modules/DesktopNotification.py:25
 msgid "Desktop Notification"
