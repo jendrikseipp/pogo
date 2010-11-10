@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: pogo\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2010-11-07 01:42+0100\n"
-"PO-Revision-Date: 2010-11-08 20:00+0000\n"
+"PO-Revision-Date: 2010-11-09 16:39+0000\n"
 "Last-Translator: Serge Gavrilenko <Unknown>\n"
 "Language-Team: Ukrainian <uk@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
-"X-Launchpad-Export-Date: 2010-11-09 05:09+0000\n"
+"X-Launchpad-Export-Date: 2010-11-10 05:21+0000\n"
 "X-Generator: Launchpad (build Unknown)\n"
 
 #: ../src/gui/about.py:40
@@ -116,44 +116,44 @@ msgstr "Тривалість в секундах (наприклад, 194)"
 
 #: ../src/media/track/__init__.py:64
 msgid "Duration as a string (e.g., 3:14)"
-msgstr ""
+msgstr "Тривалість (наприклад, 3:14)"
 
 #: ../src/media/track/__init__.py:67
 msgid "Full path to the file"
-msgstr ""
+msgstr "Повний шлях до файлу"
 
 #: ../src/media/track/__init__.py:149 ../src/media/track/__init__.py:393
 msgid "unknown"
-msgstr ""
+msgstr "невідомо"
 
 #: ../src/media/track/__init__.py:175
 #, python-format
 msgid "%(album)s  [Disc %(discnum)u]"
-msgstr ""
+msgstr "%(album)s [Диск %(discnum)u]"
 
 #: ../src/media/track/__init__.py:182
 msgid "CDDA Track"
-msgstr ""
+msgstr "Доріжка CDDA"
 
 #: ../src/modules/FileExplorer.py:173
 msgid "loading..."
-msgstr ""
+msgstr "завантаження..."
 
 #: ../src/modules/FileExplorer.py:353
 msgid "Append"
-msgstr ""
+msgstr "Додати"
 
 #: ../src/modules/FileExplorer.py:372
 msgid "Add music folder"
-msgstr ""
+msgstr "Додати папку з музикою"
 
 #: ../src/modules/FileExplorer.py:384
 msgid "Hide folder"
-msgstr ""
+msgstr "Сховати папку"
 
 #: ../src/modules/FileExplorer.py:392
 msgid "Open containing folder"
-msgstr ""
+msgstr "Відкрити вміст папки"
 
 #: ../src/modules/FileExplorer.py:403
 msgid "Choose a directory"
