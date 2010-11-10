@@ -1,67 +1,66 @@
-# Japanese translation for decibel-audio-player
-# Copyright (c) 2008 Rosetta Contributors and Canonical Ltd 2008
-# This file is distributed under the same license as the decibel-audio-player package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2008.
-#
+# Faroese translation for pogo
+# Copyright (c) 2010 Rosetta Contributors and Canonical Ltd 2010
+# This file is distributed under the same license as the pogo package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2010.
+# Gunleif Joensen <gunleif@gmail.com>, 2010.
 msgid ""
 msgstr ""
-"Project-Id-Version: decibel-audio-player\n"
-"Report-Msgid-Bugs-To: \n"
+"Project-Id-Version: pogo\n"
+"Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2010-11-07 01:42+0100\n"
-"PO-Revision-Date: 2010-11-08 02:53+0000\n"
-"Last-Translator: Hiroshi Tagawa <Unknown>\n"
-"Language-Team: Japanese <ja@li.org>\n"
+"PO-Revision-Date: 2010-11-09 17:41+0000\n"
+"Last-Translator: Gunleif Joensen <Unknown>\n"
+"Language-Team: Føroyabólkurin\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=1; plural=0;\n"
-"X-Launchpad-Export-Date: 2010-11-09 05:09+0000\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Launchpad-Export-Date: 2010-11-10 05:21+0000\n"
 "X-Generator: Launchpad (build Unknown)\n"
+"Language: fo\n"
 
 #: ../src/gui/about.py:40
 msgid "translator-credits"
 msgstr ""
 "Launchpad Contributions:\n"
-"  Hiroshi Tagawa https://launchpad.net/~kuponuga\n"
-"  José Lou Chang https://launchpad.net/~obake\n"
-"  Tom Adams https://launchpad.net/~holizz"
+"  Gunleif Joensen https://launchpad.net/~gunleif"
 
 #: ../src/gui/about.py:44
 msgid "Developer:"
-msgstr "開発者:"
+msgstr "Mennari:"
 
 #: ../src/gui/about.py:48
 msgid "Thanks to:"
-msgstr "Thanks to:"
+msgstr "Takk til:"
 
 #: ../src/gui/preferences.py:43
 msgid "Preferences"
-msgstr "設定"
+msgstr "Sertokkar"
 
 #: ../src/gui/preferences.py:129
 msgid "Unable to load this module."
-msgstr "このモジュールを読み込むことができません。"
+msgstr "Ikki før fyri at løða mótulin."
 
 #: ../src/gui/preferences.py:138
 msgid "Modules"
-msgstr "モジュール"
+msgstr "Mótular"
 
 #: ../src/gui/preferences.py:139 ../src/modules/Covers.py:434
 #: ../src/modules/DesktopNotification.py:213
 msgid "Description"
-msgstr "説明"
+msgstr "Lýsing"
 
 #: ../src/gui/preferences.py:140
 msgid ""
 "This window shows the list of available modules. You can enable/disable a "
 "module by checking/unchecking the check box in front of it."
 msgstr ""
-"このウィンドウでは利用可能なモジュールのリストを表示します。モジュールを有効にするにはチェックボックスにチェックを入れてください。無効にする場合はチェック"
-"を外してください。"
+"Hetta vindeyga sýnir listan við tøkum mótulum. Tú kann gilda/ógilda ein "
+"mótul, við at merkja/avmerkja kassan framman fyri mótulin."
 
 #: ../src/gui/preferences.py:142
 msgid "Configuring a Module"
-msgstr "モジュールの設定"
+msgstr "Samanseti ein mótul"
 
 #: ../src/gui/preferences.py:143
 msgid ""
@@ -73,198 +72,199 @@ msgstr ""
 
 #: ../src/media/track/__init__.py:54
 msgid "Track number"
-msgstr "トラック番号"
+msgstr "Lag nummar"
 
 #: ../src/media/track/__init__.py:55
 msgid "Title"
-msgstr "タイトル"
+msgstr "Heiti"
 
 #: ../src/media/track/__init__.py:56
 msgid "Artist"
-msgstr "演奏者"
+msgstr "Listarfólk"
 
 #: ../src/media/track/__init__.py:57
 msgid "Album"
-msgstr "アルバム"
+msgstr "Album"
 
 #: ../src/media/track/__init__.py:58
 msgid "Genre"
-msgstr "ジャンル"
+msgstr "Slag"
 
 #: ../src/media/track/__init__.py:59
 msgid "Date"
-msgstr "日付"
+msgstr "Dato"
 
 #: ../src/media/track/__init__.py:60
 msgid "Disc number"
-msgstr "ディスク番号"
+msgstr "Diskanummar"
 
 #: ../src/media/track/__init__.py:61
 msgid "Bit rate"
-msgstr "ビットレート"
+msgstr "Bitferð"
 
 #: ../src/media/track/__init__.py:62
 msgid "Sample rate"
-msgstr "サンプルレート"
+msgstr ""
 
 #: ../src/media/track/__init__.py:63
 msgid "Duration in seconds (e.g., 194)"
-msgstr ""
+msgstr "Tíðarlongd í sekundum (s.s. 194)"
 
 #: ../src/media/track/__init__.py:64
 msgid "Duration as a string (e.g., 3:14)"
-msgstr ""
+msgstr "tíðarlongd sum ein strongur (s.s. 3:14)"
 
 #: ../src/media/track/__init__.py:67
 msgid "Full path to the file"
-msgstr "ファイルへのフルパス"
+msgstr "Full leið til fíluna"
 
 #: ../src/media/track/__init__.py:149 ../src/media/track/__init__.py:393
 msgid "unknown"
-msgstr "不明"
+msgstr "ókent"
 
 #: ../src/media/track/__init__.py:175
 #, python-format
 msgid "%(album)s  [Disc %(discnum)u]"
-msgstr "%(album)s  [ディスク %(discnum)u]"
+msgstr "%(album)s [diskur %(discnum)u]"
 
 #: ../src/media/track/__init__.py:182
 msgid "CDDA Track"
-msgstr "CDDAのトラック"
+msgstr "CDDA spor"
 
 #: ../src/modules/FileExplorer.py:173
 msgid "loading..."
-msgstr "読み込み中"
+msgstr "løði..."
 
 #: ../src/modules/FileExplorer.py:353
 msgid "Append"
-msgstr "追加"
+msgstr "Ískoyta"
 
 #: ../src/modules/FileExplorer.py:372
 msgid "Add music folder"
-msgstr "音楽フォルダを追加"
+msgstr "Legg tónleikamappu til"
 
 #: ../src/modules/FileExplorer.py:384
 msgid "Hide folder"
-msgstr "フォルダを隠す"
+msgstr "Fjal mappu"
 
 #: ../src/modules/FileExplorer.py:392
 msgid "Open containing folder"
-msgstr ""
+msgstr "Opna innihaldandi mappu"
 
 #: ../src/modules/FileExplorer.py:403
 msgid "Choose a directory"
-msgstr "ディレクトリを選択してください"
+msgstr "Vel eina fíluskrá"
 
 #: ../src/modules/FileExplorer.py:408
 msgid "This path does not exist"
-msgstr "このパスは存在しません"
+msgstr "Leiðin finst ei"
 
 #: ../src/modules/FileExplorer.py:409
 msgid "Please select an existing directory."
-msgstr ""
+msgstr "Vinarliga vel eina mappu ið finst."
 
 #: ../src/modules/FileExplorer.py:501
 msgid "Albums"
-msgstr "アルバム"
+msgstr "Album"
 
 #: ../src/modules/FileExplorer.py:503
 msgid "Music"
-msgstr "音楽"
+msgstr "Tónleikur"
 
 #: ../src/modules/FileExplorer.py:601
 msgid "Searching ..."
-msgstr "検索中..."
+msgstr "Leiti..."
 
 #: ../src/modules/FileExplorer.py:615
 msgid "No tracks found"
-msgstr ""
+msgstr "Eingi løg funnin"
 
 #: ../src/modules/CtrlPanel.py:190 ../src/modules/CtrlPanel.py:246
 msgid "Pause the current track"
-msgstr "現在のトラックを一時停止"
+msgstr "Steðga núverandi lagið"
 
 #: ../src/modules/CtrlPanel.py:206
 msgid "Play the first selected track of the playlist"
-msgstr ""
+msgstr "Spæl av tað fyrst valda lagið, á avspælingarlistanum"
 
 #: ../src/modules/CtrlPanel.py:240
 msgid "Continue playing the current track"
-msgstr ""
+msgstr "Hald fram at spæla núverandi lagið"
 
 #: ../src/modules/StatusbarTitlebar.py:47
 msgid "[paused]"
-msgstr "[中止]"
+msgstr "[steðgað]"
 
 #: ../src/modules/Search.py:34
 msgid "Search in your music folders"
-msgstr ""
+msgstr "Leita í tínum tónleikamappum"
 
 #: ../src/modules/Tracktree.py:367
 msgid "Save playlist"
-msgstr "プレイリストを保存"
+msgstr "Goym avspælingarlistan"
 
 #: ../src/modules/Tracktree.py:416
 msgid "Clear Playlist"
-msgstr ""
+msgstr "Reinsa avspælingarlistan"
 
 #: ../src/modules/Equalizer.py:24
 msgid "Equalizer"
-msgstr ""
+msgstr "Miksari"
 
 #: ../src/modules/Equalizer.py:24
 msgid "Tune the level of the frequency bands"
-msgstr ""
+msgstr "Neyvstilla stigið á frekvensbondunum"
 
 #: ../src/modules/Equalizer.py:125 ../src/modules/Equalizer.py:213
 #: ../src/modules/Equalizer.py:226
 msgid "Custom"
-msgstr ""
+msgstr "Tillagað"
 
 #: ../src/modules/Equalizer.py:166
 msgid "Save levels"
-msgstr ""
+msgstr "Goym stig"
 
 #: ../src/modules/Equalizer.py:177
 msgid "Load levels"
-msgstr ""
+msgstr "Løð stig"
 
 #: ../src/modules/Equalizer.py:204
 msgid "Could not load the file"
-msgstr ""
+msgstr "Kundi ikki løða fíluna"
 
 #: ../src/modules/Equalizer.py:204
 msgid "The format of the file is incorrect."
-msgstr ""
+msgstr "Fílusniðið er ikki rætt."
 
 #: ../src/modules/__init__.py:75
 msgid "The following Python modules are not available:"
-msgstr ""
+msgstr "Fylgjandi Python-mótulurin er ikki tøkur:"
 
 #: ../src/modules/__init__.py:79
 msgid "You must install them if you want to enable this module."
-msgstr ""
+msgstr "Tú má leggja tey inn, um tú vil virkja henda mótulin."
 
 #: ../src/modules/__init__.py:266
 msgid "Restart required"
-msgstr ""
+msgstr "Endurbyrjan tørvað"
 
 #: ../src/modules/__init__.py:267
 msgid ""
 "You must restart the application for this modification to take effect."
 msgstr ""
+"Tú mást endurbyrja nýtsluskipanina, fyri at hendan broytingin skal taka við."
 
 #: ../src/modules/Zeitgeist.py:26
 msgid "Send track information to the Zeitgeist service"
-msgstr ""
+msgstr "Send lag-upplýsing til Zeitgeist tænastuna"
 
 #: ../src/modules/Covers.py:28
 msgid "Covers"
-msgstr ""
+msgstr "Permur"
 
 #: ../src/modules/Covers.py:28
 msgid "Show album covers"
-msgstr ""
+msgstr "Sýn album permur"
 
 #: ../src/modules/Covers.py:435
 msgid ""
@@ -275,7 +275,7 @@ msgstr ""
 
 #: ../src/modules/Covers.py:438
 msgid "User Covers"
-msgstr ""
+msgstr "Brúkara permur"
 
 #: ../src/modules/Covers.py:439
 #, python-format
@@ -287,7 +287,7 @@ msgstr ""
 
 #: ../src/modules/Covers.py:442
 msgid "Internet Covers"
-msgstr ""
+msgstr "Alnets permur"
 
 #: ../src/modules/Covers.py:443
 msgid ""
@@ -299,31 +299,33 @@ msgstr ""
 
 #: ../src/modules/DesktopNotification.py:25
 msgid "Desktop Notification"
-msgstr ""
+msgstr "Skriviborðsfráboðan"
 
 #: ../src/modules/DesktopNotification.py:25
 msgid "Display a desktop notification on track change"
-msgstr ""
+msgstr "Sýn eina skriviborðsfráboðan, við lagskifti"
 
 #: ../src/modules/DesktopNotification.py:78
 #: ../src/modules/DesktopNotification.py:188
 msgid "Skip track"
-msgstr ""
+msgstr "Leyp lag um"
 
 #: ../src/modules/DesktopNotification.py:214
 msgid ""
 "This module displays a small popup window on your desktop when a new track "
 "starts."
 msgstr ""
+"Hesin mótulurin sýnir eitt lítið støkkvindeyga á skriviborðinum,  tá eitt "
+"nýtt lag byrjar."
 
 #: ../src/modules/DesktopNotification.py:215
 msgid ""
 "If the Covers module is enabled, the popup also shows the album cover."
-msgstr ""
+msgstr "Um permumótulurin er gildur, verður perman eisini sýnd."
 
 #: ../src/modules/DesktopNotification.py:216
 msgid "Customizing the Notification"
-msgstr ""
+msgstr "Laga fráboðanina til"
 
 #: ../src/modules/DesktopNotification.py:217
 msgid ""
@@ -335,7 +337,7 @@ msgstr ""
 
 #: ../src/modules/DesktopNotification.py:220
 msgid "Markup"
-msgstr "マークアップ"
+msgstr ""
 
 #: ../src/modules/DesktopNotification.py:221
 msgid ""
@@ -345,168 +347,96 @@ msgstr ""
 
 #: ../src/tools/consts.py:94
 msgid "Unknown Genre"
-msgstr ""
+msgstr "Ókent slag"
 
 #: ../src/tools/consts.py:95
 msgid "Unknown Title"
-msgstr ""
+msgstr "Ókent heiti"
 
 #: ../src/tools/consts.py:96
 msgid "Unknown Album"
-msgstr "不明なアルバム"
+msgstr "Ókent album"
 
 #: ../src/tools/consts.py:97
 msgid "Unknown Artist"
-msgstr "不明な演奏者"
+msgstr "Ókent listarfólk"
 
 #: ../src/tools/consts.py:105
 msgid "Unknown Album Artist"
-msgstr ""
+msgstr "Ókent listarfólk á album"
 
 #: ../res/Covers.glade.h:1
 msgid "<b>Internet Covers</b>"
-msgstr ""
+msgstr "<b>Alnets permur</b>"
 
 #: ../res/Covers.glade.h:2
 msgid "<b>User Covers</b>"
-msgstr ""
+msgstr "<b>Brúkarapermur</b>"
 
 #: ../res/Covers.glade.h:3
 msgid "Always prefer user covers"
-msgstr ""
+msgstr "Ný altíð brúkarapermur"
 
 #: ../res/Covers.glade.h:4
 msgid "Don't download covers when there is a user one"
-msgstr ""
+msgstr "Ikki taka permur niður, tá brúkarin hevur eina"
 
 #: ../res/Covers.glade.h:5
 msgid "Download covers"
-msgstr ""
+msgstr "Tak permur niður"
 
 #: ../res/Covers.glade.h:6
 msgid "Filenames to look for (e.g., folder, cover)"
-msgstr ""
+msgstr "Fílunøvn ið hyggjast skal eftir (s.s. mappur, permur)"
 
 #: ../res/Covers.glade.h:7
 msgid "Filenames:"
-msgstr ""
+msgstr "Fílunøvn:"
 
 #: ../res/Covers.glade.h:8
 msgid "Try to download covers from the Internet"
-msgstr ""
+msgstr "Royn at niðurtaka permur úr alnetinum"
 
 #: ../res/DesktopNotification.glade.h:1
 msgid "<b>Body</b>"
-msgstr ""
+msgstr "<b>Kroppur</b>"
 
 #: ../res/DesktopNotification.glade.h:2
 msgid "<b>Miscellaneous</b>"
-msgstr ""
+msgstr "<b>Ymiskt</b>"
 
 #: ../res/DesktopNotification.glade.h:3
 msgid "<b>Title</b>"
-msgstr "<b>タイトル</b>"
+msgstr "<b>Heiti</b>"
 
 #: ../res/DesktopNotification.glade.h:4
 msgid "Notification timeout:"
-msgstr ""
+msgstr "Fráboðan rennur út:"
 
 #: ../res/DesktopNotification.glade.h:5
 msgid "Show a \"skip track\" button"
-msgstr ""
+msgstr "Sýn ein \"leyp lag um\" knapp"
 
 #: ../res/DesktopNotification.glade.h:6
 msgid "Time during which the notification is displayed"
-msgstr ""
+msgstr "Tíðarskeið, ið fráboðanin er sýnd"
 
 #: ../res/DesktopNotification.glade.h:7
 msgid "seconds"
-msgstr "秒"
+msgstr "sekund"
 
 #: ../res/Equalizer.glade.h:1
 msgid "Preset:"
-msgstr ""
+msgstr "Føst innstilling:"
 
 #: ../res/MainWindow.glade.h:1
 msgid "Play the first track of the playlist"
-msgstr ""
+msgstr "Spæl av tað fyrsta lagið, á avspælingarlistanum"
 
 #: ../res/MainWindow.glade.h:2
 msgid "Play the next track"
-msgstr ""
+msgstr "Spæl næsta lagið"
 
 #: ../res/MainWindow.glade.h:3
 msgid "Play the previous track"
-msgstr ""
-
-#~ msgid "Choose a folder"
-#~ msgstr "フォルダの選択"
-
-#~ msgid "Password required"
-#~ msgstr "パスワードが必要です"
-
-#~ msgid "Home"
-#~ msgstr "ホーム"
-
-#~ msgid "Show hidden files"
-#~ msgstr "隠しファイルを表示"
-
-#~ msgid "Usage"
-#~ msgstr "使用"
-
-#~ msgid "Password:"
-#~ msgstr "パスワード:"
-
-#~ msgid "Remember this password"
-#~ msgstr "パスワードを記憶"
-
-#~ msgid "Username:"
-#~ msgstr "ユーザ名:"
-
-#~ msgid "Rename"
-#~ msgstr "名前を変更"
-
-#~ msgid "Quit the application"
-#~ msgstr "アプリケーションの終了"
-
-#~ msgid "_Edit"
-#~ msgstr "編集(_E)"
-
-#~ msgid "_File"
-#~ msgstr "ファイル(_F)"
-
-#~ msgid "_Help"
-#~ msgstr "ヘルプ(_H)"
-
-#~ msgid "Name:"
-#~ msgstr "名前:"
-
-#~ msgid "Path:"
-#~ msgstr "パス:"
-
-#~ msgid "Library"
-#~ msgstr "図書館"
-
-#~ msgid "tracks"
-#~ msgstr "トラック"
-
-#~ msgid "Choose a file"
-#~ msgstr "ファイルを選択"
-
-#~ msgid "Clear cache"
-#~ msgstr "キャッシュのクリア"
-
-#~ msgid "Add to Playlist"
-#~ msgstr "プレイリストに追加"
-
-#~ msgid "Do nothing"
-#~ msgstr "何もしない"
-
-#~ msgid "Message:"
-#~ msgstr "メッセージ:"
-
-#~ msgid "Shuffle"
-#~ msgstr "シャッフル"
-
-#~ msgid "<b>File</b>"
-#~ msgstr "<b>ファイル</b>"
+msgstr "Spæl fyrra lagið"

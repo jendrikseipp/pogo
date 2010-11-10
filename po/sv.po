@@ -8,16 +8,15 @@ msgstr ""
 "Project-Id-Version: pogo\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2010-11-07 01:42+0100\n"
-"PO-Revision-Date: 2010-11-02 16:14+0000\n"
+"PO-Revision-Date: 2010-11-09 15:37+0000\n"
 "Last-Translator: David Bengtsson <Unknown>\n"
-"Language-Team: Launchpad Swedish Translators <lp-l10n-sv@lists.launchpad."
-"net>\n"
-"Language: \n"
+"Language-Team: Launchpad Swedish Translators <lp-l10n-"
+"sv@lists.launchpad.net>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Launchpad-Export-Date: 2010-11-03 05:21+0000\n"
+"X-Launchpad-Export-Date: 2010-11-10 05:21+0000\n"
 "X-Generator: Launchpad (build Unknown)\n"
 "X-Poedit-Language: Swedish\n"
 
@@ -58,8 +57,9 @@ msgid ""
 "This window shows the list of available modules. You can enable/disable a "
 "module by checking/unchecking the check box in front of it."
 msgstr ""
-"Detta fönster visar listan över tillgängliga moduler. Du kan aktivera/"
-"inaktivera en modul genom att markera/avmarkera kryssrutan framför den."
+"Detta fönster visar listan över tillgängliga moduler. Du kan "
+"aktivera/inaktivera en modul genom att markera/avmarkera kryssrutan framför "
+"den."
 
 #: ../src/gui/preferences.py:142
 msgid "Configuring a Module"
@@ -149,21 +149,19 @@ msgstr "Lägg till"
 
 #: ../src/modules/FileExplorer.py:372
 msgid "Add music folder"
-msgstr ""
+msgstr "Lägg till musikmapp"
 
 #: ../src/modules/FileExplorer.py:384
-#, fuzzy
 msgid "Hide folder"
-msgstr "Välj en mapp"
+msgstr "Dölj mapp"
 
 #: ../src/modules/FileExplorer.py:392
 msgid "Open containing folder"
-msgstr ""
+msgstr "Öppna innehållande mapp"
 
 #: ../src/modules/FileExplorer.py:403
-#, fuzzy
 msgid "Choose a directory"
-msgstr "Välj en mapp"
+msgstr "Välj en katalog"
 
 #: ../src/modules/FileExplorer.py:408
 msgid "This path does not exist"
@@ -183,11 +181,11 @@ msgstr "Musik"
 
 #: ../src/modules/FileExplorer.py:601
 msgid "Searching ..."
-msgstr ""
+msgstr "Söker ..."
 
 #: ../src/modules/FileExplorer.py:615
 msgid "No tracks found"
-msgstr ""
+msgstr "Inga spår hittades"
 
 #: ../src/modules/CtrlPanel.py:190 ../src/modules/CtrlPanel.py:246
 msgid "Pause the current track"
@@ -206,9 +204,8 @@ msgid "[paused]"
 msgstr "[pausad]"
 
 #: ../src/modules/Search.py:34
-#, fuzzy
 msgid "Search in your music folders"
-msgstr "Sök i dina musik-kataloger"
+msgstr "Sök i dina musikmappar"
 
 #: ../src/modules/Tracktree.py:367
 msgid "Save playlist"
@@ -260,8 +257,10 @@ msgid "Restart required"
 msgstr "Omstart krävs"
 
 #: ../src/modules/__init__.py:267
-msgid "You must restart the application for this modification to take effect."
-msgstr "Du måste starta om programmet för att denna modifiering ska få effekt."
+msgid ""
+"You must restart the application for this modification to take effect."
+msgstr ""
+"Du måste starta om programmet för att denna modifiering ska få effekt."
 
 #: ../src/modules/Zeitgeist.py:26
 msgid "Send track information to the Zeitgeist service"
@@ -338,7 +337,8 @@ msgstr ""
 "spår påbörjas."
 
 #: ../src/modules/DesktopNotification.py:215
-msgid "If the Covers module is enabled, the popup also shows the album cover."
+msgid ""
+"If the Covers module is enabled, the popup also shows the album cover."
 msgstr ""
 "Om modulen för omslagsbilder är aktiverad, visar popup-notifieringen även "
 "omslagsbilden."
@@ -467,6 +467,9 @@ msgstr "Spela upp nästa spår"
 msgid "Play the previous track"
 msgstr "Spela upp föregående spår"
 
+#~ msgid "Choose a folder"
+#~ msgstr "Välj en mapp"
+
 #~ msgid "The name is incorrect"
 #~ msgstr "Namnet är felaktigt"
 
@@ -477,6 +480,7 @@ msgstr "Spela upp föregående spår"
 #~ "Det här namnet tillåts inte.\n"
 #~ "Använd ett annat namn."
 
+#, python-format
 #~ msgid ""
 #~ "The character %s is not allowed.\n"
 #~ "Please use another name."

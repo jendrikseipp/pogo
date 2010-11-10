@@ -1,67 +1,66 @@
-# Japanese translation for decibel-audio-player
-# Copyright (c) 2008 Rosetta Contributors and Canonical Ltd 2008
-# This file is distributed under the same license as the decibel-audio-player package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2008.
+# Ukrainian translation for pogo
+# Copyright (c) 2010 Rosetta Contributors and Canonical Ltd 2010
+# This file is distributed under the same license as the pogo package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2010.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: decibel-audio-player\n"
-"Report-Msgid-Bugs-To: \n"
+"Project-Id-Version: pogo\n"
+"Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2010-11-07 01:42+0100\n"
-"PO-Revision-Date: 2010-11-08 02:53+0000\n"
-"Last-Translator: Hiroshi Tagawa <Unknown>\n"
-"Language-Team: Japanese <ja@li.org>\n"
+"PO-Revision-Date: 2010-11-09 16:39+0000\n"
+"Last-Translator: Serge Gavrilenko <Unknown>\n"
+"Language-Team: Ukrainian <uk@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=1; plural=0;\n"
-"X-Launchpad-Export-Date: 2010-11-09 05:09+0000\n"
+"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+"n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"X-Launchpad-Export-Date: 2010-11-10 05:21+0000\n"
 "X-Generator: Launchpad (build Unknown)\n"
 
 #: ../src/gui/about.py:40
 msgid "translator-credits"
 msgstr ""
 "Launchpad Contributions:\n"
-"  Hiroshi Tagawa https://launchpad.net/~kuponuga\n"
-"  José Lou Chang https://launchpad.net/~obake\n"
-"  Tom Adams https://launchpad.net/~holizz"
+"  Serge Gavrilenko https://launchpad.net/~screamer-sg"
 
 #: ../src/gui/about.py:44
 msgid "Developer:"
-msgstr "開発者:"
+msgstr "Розробник:"
 
 #: ../src/gui/about.py:48
 msgid "Thanks to:"
-msgstr "Thanks to:"
+msgstr "Вдячності:"
 
 #: ../src/gui/preferences.py:43
 msgid "Preferences"
-msgstr "設定"
+msgstr "Установки"
 
 #: ../src/gui/preferences.py:129
 msgid "Unable to load this module."
-msgstr "このモジュールを読み込むことができません。"
+msgstr "Не вдалося завантажити цей модуль."
 
 #: ../src/gui/preferences.py:138
 msgid "Modules"
-msgstr "モジュール"
+msgstr "Модулі"
 
 #: ../src/gui/preferences.py:139 ../src/modules/Covers.py:434
 #: ../src/modules/DesktopNotification.py:213
 msgid "Description"
-msgstr "説明"
+msgstr "Опис"
 
 #: ../src/gui/preferences.py:140
 msgid ""
 "This window shows the list of available modules. You can enable/disable a "
 "module by checking/unchecking the check box in front of it."
 msgstr ""
-"このウィンドウでは利用可能なモジュールのリストを表示します。モジュールを有効にするにはチェックボックスにチェックを入れてください。無効にする場合はチェック"
-"を外してください。"
+"Це вікно відображає список доступних модулів. Модулі можливо ввімкнути\\"
+"вимкнути за допомогою галочки перед назвою модуля."
 
 #: ../src/gui/preferences.py:142
 msgid "Configuring a Module"
-msgstr "モジュールの設定"
+msgstr "Конфігурування Модулів"
 
 #: ../src/gui/preferences.py:143
 msgid ""
@@ -70,95 +69,99 @@ msgid ""
 "click on the \"Preferences\" button on the bottom of the dialog box. Note "
 "that configuring a module is only possible when it is enabled."
 msgstr ""
+"Якщо модуль має власні налаштування, справа від нього з'явиться специфічний "
+"значок. Щоб налаштувати модуль, просто оберіть його та натисніть кнопку "
+"\"Налаштування\", розташовану внизу вікна. Зауважте - модуль можливо "
+"налаштувати, лише якщо він увімкнений."
 
 #: ../src/media/track/__init__.py:54
 msgid "Track number"
-msgstr "トラック番号"
+msgstr "Номер доріжки"
 
 #: ../src/media/track/__init__.py:55
 msgid "Title"
-msgstr "タイトル"
+msgstr "Назва"
 
 #: ../src/media/track/__init__.py:56
 msgid "Artist"
-msgstr "演奏者"
+msgstr "Виконавець"
 
 #: ../src/media/track/__init__.py:57
 msgid "Album"
-msgstr "アルバム"
+msgstr "Альбом"
 
 #: ../src/media/track/__init__.py:58
 msgid "Genre"
-msgstr "ジャンル"
+msgstr "Жанр"
 
 #: ../src/media/track/__init__.py:59
 msgid "Date"
-msgstr "日付"
+msgstr "Дата"
 
 #: ../src/media/track/__init__.py:60
 msgid "Disc number"
-msgstr "ディスク番号"
+msgstr "Номер диску"
 
 #: ../src/media/track/__init__.py:61
 msgid "Bit rate"
-msgstr "ビットレート"
+msgstr "Бітрейт"
 
 #: ../src/media/track/__init__.py:62
 msgid "Sample rate"
-msgstr "サンプルレート"
+msgstr "Частота дискретизації"
 
 #: ../src/media/track/__init__.py:63
 msgid "Duration in seconds (e.g., 194)"
-msgstr ""
+msgstr "Тривалість в секундах (наприклад, 194)"
 
 #: ../src/media/track/__init__.py:64
 msgid "Duration as a string (e.g., 3:14)"
-msgstr ""
+msgstr "Тривалість (наприклад, 3:14)"
 
 #: ../src/media/track/__init__.py:67
 msgid "Full path to the file"
-msgstr "ファイルへのフルパス"
+msgstr "Повний шлях до файлу"
 
 #: ../src/media/track/__init__.py:149 ../src/media/track/__init__.py:393
 msgid "unknown"
-msgstr "不明"
+msgstr "невідомо"
 
 #: ../src/media/track/__init__.py:175
 #, python-format
 msgid "%(album)s  [Disc %(discnum)u]"
-msgstr "%(album)s  [ディスク %(discnum)u]"
+msgstr "%(album)s [Диск %(discnum)u]"
 
 #: ../src/media/track/__init__.py:182
 msgid "CDDA Track"
-msgstr "CDDAのトラック"
+msgstr "Доріжка CDDA"
 
 #: ../src/modules/FileExplorer.py:173
 msgid "loading..."
-msgstr "読み込み中"
+msgstr "завантаження..."
 
 #: ../src/modules/FileExplorer.py:353
 msgid "Append"
-msgstr "追加"
+msgstr "Додати"
 
 #: ../src/modules/FileExplorer.py:372
 msgid "Add music folder"
-msgstr "音楽フォルダを追加"
+msgstr "Додати папку з музикою"
 
 #: ../src/modules/FileExplorer.py:384
 msgid "Hide folder"
-msgstr "フォルダを隠す"
+msgstr "Сховати папку"
 
 #: ../src/modules/FileExplorer.py:392
 msgid "Open containing folder"
-msgstr ""
+msgstr "Відкрити вміст папки"
 
 #: ../src/modules/FileExplorer.py:403
 msgid "Choose a directory"
-msgstr "ディレクトリを選択してください"
+msgstr ""
 
 #: ../src/modules/FileExplorer.py:408
 msgid "This path does not exist"
-msgstr "このパスは存在しません"
+msgstr ""
 
 #: ../src/modules/FileExplorer.py:409
 msgid "Please select an existing directory."
@@ -166,15 +169,15 @@ msgstr ""
 
 #: ../src/modules/FileExplorer.py:501
 msgid "Albums"
-msgstr "アルバム"
+msgstr ""
 
 #: ../src/modules/FileExplorer.py:503
 msgid "Music"
-msgstr "音楽"
+msgstr ""
 
 #: ../src/modules/FileExplorer.py:601
 msgid "Searching ..."
-msgstr "検索中..."
+msgstr ""
 
 #: ../src/modules/FileExplorer.py:615
 msgid "No tracks found"
@@ -182,7 +185,7 @@ msgstr ""
 
 #: ../src/modules/CtrlPanel.py:190 ../src/modules/CtrlPanel.py:246
 msgid "Pause the current track"
-msgstr "現在のトラックを一時停止"
+msgstr ""
 
 #: ../src/modules/CtrlPanel.py:206
 msgid "Play the first selected track of the playlist"
@@ -194,7 +197,7 @@ msgstr ""
 
 #: ../src/modules/StatusbarTitlebar.py:47
 msgid "[paused]"
-msgstr "[中止]"
+msgstr ""
 
 #: ../src/modules/Search.py:34
 msgid "Search in your music folders"
@@ -202,7 +205,7 @@ msgstr ""
 
 #: ../src/modules/Tracktree.py:367
 msgid "Save playlist"
-msgstr "プレイリストを保存"
+msgstr ""
 
 #: ../src/modules/Tracktree.py:416
 msgid "Clear Playlist"
@@ -335,7 +338,7 @@ msgstr ""
 
 #: ../src/modules/DesktopNotification.py:220
 msgid "Markup"
-msgstr "マークアップ"
+msgstr ""
 
 #: ../src/modules/DesktopNotification.py:221
 msgid ""
@@ -353,11 +356,11 @@ msgstr ""
 
 #: ../src/tools/consts.py:96
 msgid "Unknown Album"
-msgstr "不明なアルバム"
+msgstr ""
 
 #: ../src/tools/consts.py:97
 msgid "Unknown Artist"
-msgstr "不明な演奏者"
+msgstr ""
 
 #: ../src/tools/consts.py:105
 msgid "Unknown Album Artist"
@@ -405,7 +408,7 @@ msgstr ""
 
 #: ../res/DesktopNotification.glade.h:3
 msgid "<b>Title</b>"
-msgstr "<b>タイトル</b>"
+msgstr ""
 
 #: ../res/DesktopNotification.glade.h:4
 msgid "Notification timeout:"
@@ -421,7 +424,7 @@ msgstr ""
 
 #: ../res/DesktopNotification.glade.h:7
 msgid "seconds"
-msgstr "秒"
+msgstr ""
 
 #: ../res/Equalizer.glade.h:1
 msgid "Preset:"
@@ -438,75 +441,3 @@ msgstr ""
 #: ../res/MainWindow.glade.h:3
 msgid "Play the previous track"
 msgstr ""
-
-#~ msgid "Choose a folder"
-#~ msgstr "フォルダの選択"
-
-#~ msgid "Password required"
-#~ msgstr "パスワードが必要です"
-
-#~ msgid "Home"
-#~ msgstr "ホーム"
-
-#~ msgid "Show hidden files"
-#~ msgstr "隠しファイルを表示"
-
-#~ msgid "Usage"
-#~ msgstr "使用"
-
-#~ msgid "Password:"
-#~ msgstr "パスワード:"
-
-#~ msgid "Remember this password"
-#~ msgstr "パスワードを記憶"
-
-#~ msgid "Username:"
-#~ msgstr "ユーザ名:"
-
-#~ msgid "Rename"
-#~ msgstr "名前を変更"
-
-#~ msgid "Quit the application"
-#~ msgstr "アプリケーションの終了"
-
-#~ msgid "_Edit"
-#~ msgstr "編集(_E)"
-
-#~ msgid "_File"
-#~ msgstr "ファイル(_F)"
-
-#~ msgid "_Help"
-#~ msgstr "ヘルプ(_H)"
-
-#~ msgid "Name:"
-#~ msgstr "名前:"
-
-#~ msgid "Path:"
-#~ msgstr "パス:"
-
-#~ msgid "Library"
-#~ msgstr "図書館"
-
-#~ msgid "tracks"
-#~ msgstr "トラック"
-
-#~ msgid "Choose a file"
-#~ msgstr "ファイルを選択"
-
-#~ msgid "Clear cache"
-#~ msgstr "キャッシュのクリア"
-
-#~ msgid "Add to Playlist"
-#~ msgstr "プレイリストに追加"
-
-#~ msgid "Do nothing"
-#~ msgstr "何もしない"
-
-#~ msgid "Message:"
-#~ msgstr "メッセージ:"
-
-#~ msgid "Shuffle"
-#~ msgstr "シャッフル"
-
-#~ msgid "<b>File</b>"
-#~ msgstr "<b>ファイル</b>"

@@ -8,14 +8,14 @@ msgstr ""
 "Project-Id-Version: decibel-audio-player\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2010-11-07 01:42+0100\n"
-"PO-Revision-Date: 2010-11-07 13:28+0000\n"
-"Last-Translator: 英华 <wantinghard@gmail.com>\n"
+"PO-Revision-Date: 2010-11-08 15:06+0000\n"
+"Last-Translator: lhquark <lhquark@yahoo.com.cn>\n"
 "Language-Team: Simplified Chinese <zh_CN@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Launchpad-Export-Date: 2010-11-08 05:31+0000\n"
+"X-Launchpad-Export-Date: 2010-11-09 05:09+0000\n"
 "X-Generator: Launchpad (build Unknown)\n"
 
 #: ../src/gui/about.py:40
@@ -23,6 +23,8 @@ msgid "translator-credits"
 msgstr ""
 "Launchpad Contributions:\n"
 "  Aron Xu https://launchpad.net/~happyaron\n"
+"  Billy Way https://launchpad.net/~weixq316\n"
+"  lhquark https://launchpad.net/~lhquark\n"
 "  英华 https://launchpad.net/~wantinghard"
 
 #: ../src/gui/about.py:44
@@ -185,7 +187,7 @@ msgstr "暂停当前音轨"
 
 #: ../src/modules/CtrlPanel.py:206
 msgid "Play the first selected track of the playlist"
-msgstr ""
+msgstr "播放列表中第一首选中的音轨"
 
 #: ../src/modules/CtrlPanel.py:240
 msgid "Continue playing the current track"
@@ -197,7 +199,7 @@ msgstr "[暂停]"
 
 #: ../src/modules/Search.py:34
 msgid "Search in your music folders"
-msgstr ""
+msgstr "在您的音乐文件夹中寻找"
 
 #: ../src/modules/Tracktree.py:367
 msgid "Save playlist"
@@ -205,11 +207,11 @@ msgstr "保存播放列表"
 
 #: ../src/modules/Tracktree.py:416
 msgid "Clear Playlist"
-msgstr ""
+msgstr "清空播放列表"
 
 #: ../src/modules/Equalizer.py:24
 msgid "Equalizer"
-msgstr ""
+msgstr "均衡器"
 
 #: ../src/modules/Equalizer.py:24
 msgid "Tune the level of the frequency bands"
@@ -218,23 +220,23 @@ msgstr ""
 #: ../src/modules/Equalizer.py:125 ../src/modules/Equalizer.py:213
 #: ../src/modules/Equalizer.py:226
 msgid "Custom"
-msgstr ""
+msgstr "自定义"
 
 #: ../src/modules/Equalizer.py:166
 msgid "Save levels"
-msgstr ""
+msgstr "保存 EQ 设置"
 
 #: ../src/modules/Equalizer.py:177
 msgid "Load levels"
-msgstr ""
+msgstr "加载 EQ 设置"
 
 #: ../src/modules/Equalizer.py:204
 msgid "Could not load the file"
-msgstr ""
+msgstr "无法载入文件"
 
 #: ../src/modules/Equalizer.py:204
 msgid "The format of the file is incorrect."
-msgstr ""
+msgstr "文件格式不正确"
 
 #: ../src/modules/__init__.py:75
 msgid "The following Python modules are not available:"
@@ -246,12 +248,12 @@ msgstr "这些模块需要安装后才能被激活。"
 
 #: ../src/modules/__init__.py:266
 msgid "Restart required"
-msgstr ""
+msgstr "需要重启"
 
 #: ../src/modules/__init__.py:267
 msgid ""
 "You must restart the application for this modification to take effect."
-msgstr ""
+msgstr "您必须重启程序以使此更改起作用。"
 
 #: ../src/modules/Zeitgeist.py:26
 msgid "Send track information to the Zeitgeist service"
@@ -259,22 +261,22 @@ msgstr ""
 
 #: ../src/modules/Covers.py:28
 msgid "Covers"
-msgstr ""
+msgstr "封面"
 
 #: ../src/modules/Covers.py:28
 msgid "Show album covers"
-msgstr ""
+msgstr "显示专辑封面"
 
 #: ../src/modules/Covers.py:435
 msgid ""
 "This module displays the cover of the album the current track comes from. "
 "Covers may be loaded from local pictures, located in the same directory as "
 "the current track, or may be downloaded from the Internet."
-msgstr ""
+msgstr "此模块显示当前音轨的专辑封面。封面图片可以从当前音轨的同文件夹下的本地图片载入，也可从互联网下载。"
 
 #: ../src/modules/Covers.py:438
 msgid "User Covers"
-msgstr ""
+msgstr "用户封面"
 
 #: ../src/modules/Covers.py:439
 #, python-format
@@ -282,11 +284,11 @@ msgid ""
 "A user cover is a picture located in the same directory as the current "
 "track. When specifying filenames, you do not need to provide file "
 "extensions, supported file formats (%s) are automatically used."
-msgstr ""
+msgstr "用户封面是当前音轨的同文件夹下的图片。指定文件名时无需提供文件扩展名，程序会自动使用支持的文件格式 (%s) 。"
 
 #: ../src/modules/Covers.py:442
 msgid "Internet Covers"
-msgstr ""
+msgstr "互联网封面"
 
 #: ../src/modules/Covers.py:443
 msgid ""
@@ -295,6 +297,7 @@ msgid ""
 "case, if a user cover exists for the current track, it is used. If there is "
 "none, the cover is downloaded."
 msgstr ""
+"封面可以根据当前音轨的标签从互联网下载。您可以选择总是优先使用用户封面，此时，如果当前音轨存在用户封面，就会使用用户封面，否则就从互联网下载。"
 
 #: ../src/modules/DesktopNotification.py:25
 msgid "Desktop Notification"
@@ -318,7 +321,7 @@ msgstr "当新的曲目开始播放时，该模块会在桌面上显示一个小
 #: ../src/modules/DesktopNotification.py:215
 msgid ""
 "If the Covers module is enabled, the popup also shows the album cover."
-msgstr ""
+msgstr "如果启用封面模块，弹出提示也会显示专辑封面。"
 
 #: ../src/modules/DesktopNotification.py:216
 msgid "Customizing the Notification"
@@ -346,11 +349,11 @@ msgstr "你可以使用 Pango 标记语言来格式化文本。更多关于该�
 
 #: ../src/tools/consts.py:94
 msgid "Unknown Genre"
-msgstr ""
+msgstr "未知类型"
 
 #: ../src/tools/consts.py:95
 msgid "Unknown Title"
-msgstr ""
+msgstr "未知标题"
 
 #: ../src/tools/consts.py:96
 msgid "Unknown Album"
@@ -362,39 +365,39 @@ msgstr "未知艺术家"
 
 #: ../src/tools/consts.py:105
 msgid "Unknown Album Artist"
-msgstr ""
+msgstr "未知专辑艺术家"
 
 #: ../res/Covers.glade.h:1
 msgid "<b>Internet Covers</b>"
-msgstr ""
+msgstr "<b>互联网封面</b>"
 
 #: ../res/Covers.glade.h:2
 msgid "<b>User Covers</b>"
-msgstr ""
+msgstr "<b>用户封面</b>"
 
 #: ../res/Covers.glade.h:3
 msgid "Always prefer user covers"
-msgstr ""
+msgstr "总是优先使用用户封面"
 
 #: ../res/Covers.glade.h:4
 msgid "Don't download covers when there is a user one"
-msgstr ""
+msgstr "当存在用户封面时不要从互联网下载封面"
 
 #: ../res/Covers.glade.h:5
 msgid "Download covers"
-msgstr ""
+msgstr "下载封面"
 
 #: ../res/Covers.glade.h:6
 msgid "Filenames to look for (e.g., folder, cover)"
-msgstr ""
+msgstr "要查找的文件名 (例如：folder, cover)"
 
 #: ../res/Covers.glade.h:7
 msgid "Filenames:"
-msgstr ""
+msgstr "文件名："
 
 #: ../res/Covers.glade.h:8
 msgid "Try to download covers from the Internet"
-msgstr ""
+msgstr "尝试从互联网下载封面"
 
 #: ../res/DesktopNotification.glade.h:1
 msgid "<b>Body</b>"
@@ -426,7 +429,7 @@ msgstr "秒"
 
 #: ../res/Equalizer.glade.h:1
 msgid "Preset:"
-msgstr ""
+msgstr "预设："
 
 #: ../res/MainWindow.glade.h:1
 msgid "Play the first track of the playlist"
