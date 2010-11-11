@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: pogo\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2010-11-07 01:42+0100\n"
-"PO-Revision-Date: 2010-11-09 16:39+0000\n"
+"PO-Revision-Date: 2010-11-10 20:41+0000\n"
 "Last-Translator: Serge Gavrilenko <Unknown>\n"
 "Language-Team: Ukrainian <uk@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
-"X-Launchpad-Export-Date: 2010-11-10 05:21+0000\n"
+"X-Launchpad-Export-Date: 2010-11-11 05:06+0000\n"
 "X-Generator: Launchpad (build Unknown)\n"
 
 #: ../src/gui/about.py:40
@@ -157,117 +157,117 @@ msgstr "Відкрити вміст папки"
 
 #: ../src/modules/FileExplorer.py:403
 msgid "Choose a directory"
-msgstr ""
+msgstr "Оберіть каталог"
 
 #: ../src/modules/FileExplorer.py:408
 msgid "This path does not exist"
-msgstr ""
+msgstr "Шлях не існує"
 
 #: ../src/modules/FileExplorer.py:409
 msgid "Please select an existing directory."
-msgstr ""
+msgstr "Будь-ласка, оберіть існуючу папку."
 
 #: ../src/modules/FileExplorer.py:501
 msgid "Albums"
-msgstr ""
+msgstr "Альбоми"
 
 #: ../src/modules/FileExplorer.py:503
 msgid "Music"
-msgstr ""
+msgstr "Музика"
 
 #: ../src/modules/FileExplorer.py:601
 msgid "Searching ..."
-msgstr ""
+msgstr "Йде пошук..."
 
 #: ../src/modules/FileExplorer.py:615
 msgid "No tracks found"
-msgstr ""
+msgstr "Доріжки не знайдено"
 
 #: ../src/modules/CtrlPanel.py:190 ../src/modules/CtrlPanel.py:246
 msgid "Pause the current track"
-msgstr ""
+msgstr "Призупинити поточну композицію"
 
 #: ../src/modules/CtrlPanel.py:206
 msgid "Play the first selected track of the playlist"
-msgstr ""
+msgstr "Грати першу обрану доріжку зі списку"
 
 #: ../src/modules/CtrlPanel.py:240
 msgid "Continue playing the current track"
-msgstr ""
+msgstr "Продовжити відтворення поточної композиції"
 
 #: ../src/modules/StatusbarTitlebar.py:47
 msgid "[paused]"
-msgstr ""
+msgstr "[призупинено]"
 
 #: ../src/modules/Search.py:34
 msgid "Search in your music folders"
-msgstr ""
+msgstr "Шукати у Ваших папках з музикою"
 
 #: ../src/modules/Tracktree.py:367
 msgid "Save playlist"
-msgstr ""
+msgstr "Зберегти список"
 
 #: ../src/modules/Tracktree.py:416
 msgid "Clear Playlist"
-msgstr ""
+msgstr "Очистити список"
 
 #: ../src/modules/Equalizer.py:24
 msgid "Equalizer"
-msgstr ""
+msgstr "Еквалайзер"
 
 #: ../src/modules/Equalizer.py:24
 msgid "Tune the level of the frequency bands"
-msgstr ""
+msgstr "Налаштувати рівні частотних діапазонів"
 
 #: ../src/modules/Equalizer.py:125 ../src/modules/Equalizer.py:213
 #: ../src/modules/Equalizer.py:226
 msgid "Custom"
-msgstr ""
+msgstr "Користувацький"
 
 #: ../src/modules/Equalizer.py:166
 msgid "Save levels"
-msgstr ""
+msgstr "Зберегти рівні"
 
 #: ../src/modules/Equalizer.py:177
 msgid "Load levels"
-msgstr ""
+msgstr "Завантажити рівні"
 
 #: ../src/modules/Equalizer.py:204
 msgid "Could not load the file"
-msgstr ""
+msgstr "Неможливо завантажити файл"
 
 #: ../src/modules/Equalizer.py:204
 msgid "The format of the file is incorrect."
-msgstr ""
+msgstr "Невірний формат файлу"
 
 #: ../src/modules/__init__.py:75
 msgid "The following Python modules are not available:"
-msgstr ""
+msgstr "Наступні необхідні модулі Python недоступні:"
 
 #: ../src/modules/__init__.py:79
 msgid "You must install them if you want to enable this module."
-msgstr ""
+msgstr "Ви маєте встановити їх, якщо бажаєте використовувати модуль."
 
 #: ../src/modules/__init__.py:266
 msgid "Restart required"
-msgstr ""
+msgstr "Необхідний перезапуск"
 
 #: ../src/modules/__init__.py:267
 msgid ""
 "You must restart the application for this modification to take effect."
-msgstr ""
+msgstr "Ві маєте перезапустити програму, щоб зміни вступили в силу."
 
 #: ../src/modules/Zeitgeist.py:26
 msgid "Send track information to the Zeitgeist service"
-msgstr ""
+msgstr "Відправити інформацію про доріжку в службу Zeitgeist"
 
 #: ../src/modules/Covers.py:28
 msgid "Covers"
-msgstr ""
+msgstr "Обкладинки"
 
 #: ../src/modules/Covers.py:28
 msgid "Show album covers"
-msgstr ""
+msgstr "Показати обкладинки альбомів"
 
 #: ../src/modules/Covers.py:435
 msgid ""
@@ -275,10 +275,13 @@ msgid ""
 "Covers may be loaded from local pictures, located in the same directory as "
 "the current track, or may be downloaded from the Internet."
 msgstr ""
+"Даний модуль відображає обкладинку альбому поточної композиції. Обкладинки "
+"можуть бути локальними файлами, розташованими в каталозі з піснею, або "
+"можуть бути завантажені з Інтернету."
 
 #: ../src/modules/Covers.py:438
 msgid "User Covers"
-msgstr ""
+msgstr "Користувацькі обкладинки"
 
 #: ../src/modules/Covers.py:439
 #, python-format
@@ -287,10 +290,13 @@ msgid ""
 "track. When specifying filenames, you do not need to provide file "
 "extensions, supported file formats (%s) are automatically used."
 msgstr ""
+"Локальна обкладинка - це зображення, розташоване в папці з поточною "
+"композицією. При вказуванні імен файлів не потрібно вказувати розширення; "
+"підтримувані формати (%s), будуть розпізнані автоматично."
 
 #: ../src/modules/Covers.py:442
 msgid "Internet Covers"
-msgstr ""
+msgstr "Інтернет-обкладинки"
 
 #: ../src/modules/Covers.py:443
 msgid ""
@@ -299,34 +305,42 @@ msgid ""
 "case, if a user cover exists for the current track, it is used. If there is "
 "none, the cover is downloaded."
 msgstr ""
+"Обкладинки можуть бути завантажені через Інтернет, згідно тегів композицій. "
+"Існує можливість першочергового завантаження локальних обкладинок. В такому "
+"випадку буде використано локальну обкладинку, якщо така є; інакше обкладинка "
+"буде завантажена з мережі."
 
 #: ../src/modules/DesktopNotification.py:25
 msgid "Desktop Notification"
-msgstr ""
+msgstr "Повідомлення на робочому столі"
 
 #: ../src/modules/DesktopNotification.py:25
 msgid "Display a desktop notification on track change"
-msgstr ""
+msgstr "Відображає повідомлення на робочому столі при зміні композиції"
 
 #: ../src/modules/DesktopNotification.py:78
 #: ../src/modules/DesktopNotification.py:188
 msgid "Skip track"
-msgstr ""
+msgstr "Пропустити пісню"
 
 #: ../src/modules/DesktopNotification.py:214
 msgid ""
 "This module displays a small popup window on your desktop when a new track "
 "starts."
 msgstr ""
+"Цей модуль відображає виринаюче вікно на робочому столі, коли починає грати "
+"наступна композиція."
 
 #: ../src/modules/DesktopNotification.py:215
 msgid ""
 "If the Covers module is enabled, the popup also shows the album cover."
 msgstr ""
+"Якщо модуль \"Обкладинка\" активований, то у виринаючому вікні буде показано "
+"обкладинку альбому."
 
 #: ../src/modules/DesktopNotification.py:216
 msgid "Customizing the Notification"
-msgstr ""
+msgstr "Параметри повідомлень"
 
 #: ../src/modules/DesktopNotification.py:217
 msgid ""
@@ -335,109 +349,115 @@ msgid ""
 "replaced by their corresponding value. Available fields are:\n"
 "\n"
 msgstr ""
+"Ви можете змінити заголовок та вміст повідомлення на будь-який текст. Перед "
+"виведенням виринаючого вікна, модуль замінить всі поля виду {поле} на їх "
+"відповідні значення. Доступними є такі поля:\n"
+"\n"
 
 #: ../src/modules/DesktopNotification.py:220
 msgid "Markup"
-msgstr ""
+msgstr "Розмітка"
 
 #: ../src/modules/DesktopNotification.py:221
 msgid ""
 "You can use the Pango markup language to format the text. More information "
 "on that language is available on the following web page:"
 msgstr ""
+"Ви можете використати мову розмітки Pango для форматування тексту. Більше "
+"інформації про Pango на веб-сторінці:"
 
 #: ../src/tools/consts.py:94
 msgid "Unknown Genre"
-msgstr ""
+msgstr "Невідомий жанр"
 
 #: ../src/tools/consts.py:95
 msgid "Unknown Title"
-msgstr ""
+msgstr "Невідома назва"
 
 #: ../src/tools/consts.py:96
 msgid "Unknown Album"
-msgstr ""
+msgstr "Невідомий альбом"
 
 #: ../src/tools/consts.py:97
 msgid "Unknown Artist"
-msgstr ""
+msgstr "Невідомий артист"
 
 #: ../src/tools/consts.py:105
 msgid "Unknown Album Artist"
-msgstr ""
+msgstr "Невідомий альбом"
 
 #: ../res/Covers.glade.h:1
 msgid "<b>Internet Covers</b>"
-msgstr ""
+msgstr "<b>Інтернет-обкладинки</b>"
 
 #: ../res/Covers.glade.h:2
 msgid "<b>User Covers</b>"
-msgstr ""
+msgstr "<b>Обкладинки користувача</b>"
 
 #: ../res/Covers.glade.h:3
 msgid "Always prefer user covers"
-msgstr ""
+msgstr "Надавати перевагу обкладинкам користувача"
 
 #: ../res/Covers.glade.h:4
 msgid "Don't download covers when there is a user one"
-msgstr ""
+msgstr "Не завантажувати обкладинку, якщо вже знайдена користувацька"
 
 #: ../res/Covers.glade.h:5
 msgid "Download covers"
-msgstr ""
+msgstr "Завантажити обкладинки"
 
 #: ../res/Covers.glade.h:6
 msgid "Filenames to look for (e.g., folder, cover)"
-msgstr ""
+msgstr "Імена для пошуку (наприклад,folder, cover)"
 
 #: ../res/Covers.glade.h:7
 msgid "Filenames:"
-msgstr ""
+msgstr "Імена файлів"
 
 #: ../res/Covers.glade.h:8
 msgid "Try to download covers from the Internet"
-msgstr ""
+msgstr "Спробуйте завантажити обкладинки з Інтернету"
 
 #: ../res/DesktopNotification.glade.h:1
 msgid "<b>Body</b>"
-msgstr ""
+msgstr "<b>Тіло</b>"
 
 #: ../res/DesktopNotification.glade.h:2
 msgid "<b>Miscellaneous</b>"
-msgstr ""
+msgstr "<b>Додатково</b>"
 
 #: ../res/DesktopNotification.glade.h:3
 msgid "<b>Title</b>"
-msgstr ""
+msgstr "<b>Заголовок</b>"
 
 #: ../res/DesktopNotification.glade.h:4
 msgid "Notification timeout:"
-msgstr ""
+msgstr "Час відображення повідомлень"
 
 #: ../res/DesktopNotification.glade.h:5
 msgid "Show a \"skip track\" button"
-msgstr ""
+msgstr "Показувати кнопку \"Пропустити композицію\""
 
 #: ../res/DesktopNotification.glade.h:6
 msgid "Time during which the notification is displayed"
-msgstr ""
+msgstr "Час, протягом якого повідомлення будуть відображатися"
 
 #: ../res/DesktopNotification.glade.h:7
 msgid "seconds"
-msgstr ""
+msgstr "секунди"
 
 #: ../res/Equalizer.glade.h:1
 msgid "Preset:"
-msgstr ""
+msgstr "Профиль"
 
 #: ../res/MainWindow.glade.h:1
 msgid "Play the first track of the playlist"
-msgstr ""
+msgstr "Слухати першу композицію зі списку"
 
 #: ../res/MainWindow.glade.h:2
 msgid "Play the next track"
-msgstr ""
+msgstr "Слухати наступну композицію"
 
 #: ../res/MainWindow.glade.h:3
 msgid "Play the previous track"
-msgstr ""
+msgstr "Слухати попередню композицію"
