@@ -23,6 +23,7 @@ or help out, visit http://launchpad.net/pogo.
 
  Installing Pogo
 ====================
+ $ sudo apt-get install gettext python-mutagen python-gst0.10 python-dbus python-imaging
  $ sudo make install
  
 

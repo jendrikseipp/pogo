@@ -9,25 +9,28 @@ X Show status messages when searching
 X Fix Loading files from commandline (make paths absolute)
 X Fix: Save playlist also when files have been added on the commandline
 
+0.4:
+O Stop after current album / track (Playlist context menu entry)
+
 0.x:
-O Stop after current album / track
 O Save playlist periodically to prevent losing it during a shutdown
 O Export playlist to .m3u format
+O Export tracks in playlist into a directory
 O Shuffle
 O Repeat
-O Playlist loading (Only add tracks in pl not added anyways)
+O Playlist loading (Only add tracks in playlist not added anyways)
 O Add Zeitgeist module
 O Sound Indicator
 
 
-0.y:
+=== Features that will MAYBE be implemented ===
 O Enqueue?
-O Party View?
+O Party View (Fullscreen)?
 O Scrobbling Support?
 O Lyrics?
 
 
-=== Features that will not be implemented ===
+=== Features that will NOT be implemented ===
 - Do not add empty dirs to Tracktree (Irritating)
 - Ellipsize names (Looks odd)
 - Play audio CDs (Rip and play is nicer anyways)
