@@ -8,14 +8,14 @@ msgstr ""
 "Project-Id-Version: decibel-audio-player\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2010-11-07 01:42+0100\n"
-"PO-Revision-Date: 2010-11-08 02:53+0000\n"
-"Last-Translator: Hiroshi Tagawa <Unknown>\n"
+"PO-Revision-Date: 2010-11-11 23:51+0000\n"
+"Last-Translator: José Lou Chang <Unknown>\n"
 "Language-Team: Japanese <ja@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Launchpad-Export-Date: 2010-11-09 05:09+0000\n"
+"X-Launchpad-Export-Date: 2010-11-12 05:11+0000\n"
 "X-Generator: Launchpad (build Unknown)\n"
 
 #: ../src/gui/about.py:40
@@ -109,11 +109,11 @@ msgstr "サンプルレート"
 
 #: ../src/media/track/__init__.py:63
 msgid "Duration in seconds (e.g., 194)"
-msgstr ""
+msgstr "時間を秒単位で（例：194）"
 
 #: ../src/media/track/__init__.py:64
 msgid "Duration as a string (e.g., 3:14)"
-msgstr ""
+msgstr "時間を文字列として（例：3:14）"
 
 #: ../src/media/track/__init__.py:67
 msgid "Full path to the file"
@@ -134,7 +134,7 @@ msgstr "CDDAのトラック"
 
 #: ../src/modules/FileExplorer.py:173
 msgid "loading..."
-msgstr "読み込み中"
+msgstr "読み込み中…"
 
 #: ../src/modules/FileExplorer.py:353
 msgid "Append"
@@ -162,7 +162,7 @@ msgstr "このパスは存在しません"
 
 #: ../src/modules/FileExplorer.py:409
 msgid "Please select an existing directory."
-msgstr ""
+msgstr "既存であるディレクトリを選択してください。"
 
 #: ../src/modules/FileExplorer.py:501
 msgid "Albums"
@@ -178,7 +178,7 @@ msgstr "検索中..."
 
 #: ../src/modules/FileExplorer.py:615
 msgid "No tracks found"
-msgstr ""
+msgstr "トラック見つけませんでした"
 
 #: ../src/modules/CtrlPanel.py:190 ../src/modules/CtrlPanel.py:246
 msgid "Pause the current track"
@@ -186,11 +186,11 @@ msgstr "現在のトラックを一時停止"
 
 #: ../src/modules/CtrlPanel.py:206
 msgid "Play the first selected track of the playlist"
-msgstr ""
+msgstr "選択したプレイリストの最初のトラックを再生"
 
 #: ../src/modules/CtrlPanel.py:240
 msgid "Continue playing the current track"
-msgstr ""
+msgstr "現在のトラックの再生を続行する"
 
 #: ../src/modules/StatusbarTitlebar.py:47
 msgid "[paused]"
@@ -198,7 +198,7 @@ msgstr "[中止]"
 
 #: ../src/modules/Search.py:34
 msgid "Search in your music folders"
-msgstr ""
+msgstr "貴方の音楽フォルダ内で検索する"
 
 #: ../src/modules/Tracktree.py:367
 msgid "Save playlist"
@@ -206,11 +206,11 @@ msgstr "プレイリストを保存"
 
 #: ../src/modules/Tracktree.py:416
 msgid "Clear Playlist"
-msgstr ""
+msgstr "プレイリストを消去"
 
 #: ../src/modules/Equalizer.py:24
 msgid "Equalizer"
-msgstr ""
+msgstr "イコライザ"
 
 #: ../src/modules/Equalizer.py:24
 msgid "Tune the level of the frequency bands"
@@ -219,23 +219,23 @@ msgstr ""
 #: ../src/modules/Equalizer.py:125 ../src/modules/Equalizer.py:213
 #: ../src/modules/Equalizer.py:226
 msgid "Custom"
-msgstr ""
+msgstr "カスタム"
 
 #: ../src/modules/Equalizer.py:166
 msgid "Save levels"
-msgstr ""
+msgstr "レベルを保存"
 
 #: ../src/modules/Equalizer.py:177
 msgid "Load levels"
-msgstr ""
+msgstr "レベルを読み込む"
 
 #: ../src/modules/Equalizer.py:204
 msgid "Could not load the file"
-msgstr ""
+msgstr "ファイルを読み込めませんでした"
 
 #: ../src/modules/Equalizer.py:204
 msgid "The format of the file is incorrect."
-msgstr ""
+msgstr "ファイルの形式が間違っています。"
 
 #: ../src/modules/__init__.py:75
 msgid "The following Python modules are not available:"
@@ -247,12 +247,12 @@ msgstr ""
 
 #: ../src/modules/__init__.py:266
 msgid "Restart required"
-msgstr ""
+msgstr "再起動が必要です"
 
 #: ../src/modules/__init__.py:267
 msgid ""
 "You must restart the application for this modification to take effect."
-msgstr ""
+msgstr "この変更を有効にするには、アプリケーションを再起動する必要があります。"
 
 #: ../src/modules/Zeitgeist.py:26
 msgid "Send track information to the Zeitgeist service"
@@ -260,7 +260,7 @@ msgstr ""
 
 #: ../src/modules/Covers.py:28
 msgid "Covers"
-msgstr ""
+msgstr "カバー"
 
 #: ../src/modules/Covers.py:28
 msgid "Show album covers"
@@ -299,7 +299,7 @@ msgstr ""
 
 #: ../src/modules/DesktopNotification.py:25
 msgid "Desktop Notification"
-msgstr ""
+msgstr "デスクトップ通知"
 
 #: ../src/modules/DesktopNotification.py:25
 msgid "Display a desktop notification on track change"

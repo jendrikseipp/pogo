@@ -8,14 +8,14 @@ msgstr ""
 "Project-Id-Version: pogo\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2010-11-07 01:42+0100\n"
-"PO-Revision-Date: 2010-11-06 17:40+0000\n"
+"PO-Revision-Date: 2010-11-11 14:39+0000\n"
 "Last-Translator: Rakhi Attal <Unknown>\n"
 "Language-Team: Marathi <mr@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Launchpad-Export-Date: 2010-11-07 05:07+0000\n"
+"X-Launchpad-Export-Date: 2010-11-12 05:11+0000\n"
 "X-Generator: Launchpad (build Unknown)\n"
 
 #: ../src/gui/about.py:40
@@ -171,7 +171,7 @@ msgstr "संगीत"
 
 #: ../src/modules/FileExplorer.py:601
 msgid "Searching ..."
-msgstr ""
+msgstr "शोधत आहे ..."
 
 #: ../src/modules/FileExplorer.py:615
 msgid "No tracks found"
