@@ -8,14 +8,14 @@ msgstr ""
 "Project-Id-Version: decibel-audio-player\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2010-11-07 01:42+0100\n"
-"PO-Revision-Date: 2010-11-11 23:51+0000\n"
+"PO-Revision-Date: 2010-11-12 19:52+0000\n"
 "Last-Translator: José Lou Chang <Unknown>\n"
 "Language-Team: Japanese <ja@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Launchpad-Export-Date: 2010-11-12 05:11+0000\n"
+"X-Launchpad-Export-Date: 2010-11-13 05:15+0000\n"
 "X-Generator: Launchpad (build Unknown)\n"
 
 #: ../src/gui/about.py:40
@@ -256,7 +256,7 @@ msgstr "この変更を有効にするには、アプリケーションを再起
 
 #: ../src/modules/Zeitgeist.py:26
 msgid "Send track information to the Zeitgeist service"
-msgstr ""
+msgstr "トラック情報をZeitgeistのサービスへ送信"
 
 #: ../src/modules/Covers.py:28
 msgid "Covers"
@@ -308,7 +308,7 @@ msgstr ""
 #: ../src/modules/DesktopNotification.py:78
 #: ../src/modules/DesktopNotification.py:188
 msgid "Skip track"
-msgstr ""
+msgstr "トラックをスキップ"
 
 #: ../src/modules/DesktopNotification.py:214
 msgid ""
@@ -323,7 +323,7 @@ msgstr ""
 
 #: ../src/modules/DesktopNotification.py:216
 msgid "Customizing the Notification"
-msgstr ""
+msgstr "通知をカスタマイズする"
 
 #: ../src/modules/DesktopNotification.py:217
 msgid ""
@@ -345,31 +345,31 @@ msgstr ""
 
 #: ../src/tools/consts.py:94
 msgid "Unknown Genre"
-msgstr ""
+msgstr "ジャンル不明"
 
 #: ../src/tools/consts.py:95
 msgid "Unknown Title"
-msgstr ""
+msgstr "タイトル不明"
 
 #: ../src/tools/consts.py:96
 msgid "Unknown Album"
-msgstr "不明なアルバム"
+msgstr "アルバム不明"
 
 #: ../src/tools/consts.py:97
 msgid "Unknown Artist"
-msgstr "不明な演奏者"
+msgstr "演奏者不明"
 
 #: ../src/tools/consts.py:105
 msgid "Unknown Album Artist"
-msgstr ""
+msgstr "アルバム・アーティスト不明"
 
 #: ../res/Covers.glade.h:1
 msgid "<b>Internet Covers</b>"
-msgstr ""
+msgstr "<b>インターネット・カバー</b>"
 
 #: ../res/Covers.glade.h:2
 msgid "<b>User Covers</b>"
-msgstr ""
+msgstr "ユーザー・カバー"
 
 #: ../res/Covers.glade.h:3
 msgid "Always prefer user covers"
@@ -377,11 +377,11 @@ msgstr ""
 
 #: ../res/Covers.glade.h:4
 msgid "Don't download covers when there is a user one"
-msgstr ""
+msgstr "ユーザーカバーがある場合はインターネットからダウンロードしない"
 
 #: ../res/Covers.glade.h:5
 msgid "Download covers"
-msgstr ""
+msgstr "カバーをダウンロードする"
 
 #: ../res/Covers.glade.h:6
 msgid "Filenames to look for (e.g., folder, cover)"
@@ -389,11 +389,11 @@ msgstr ""
 
 #: ../res/Covers.glade.h:7
 msgid "Filenames:"
-msgstr ""
+msgstr "ファイル名:"
 
 #: ../res/Covers.glade.h:8
 msgid "Try to download covers from the Internet"
-msgstr ""
+msgstr "インターネットからカバーをダウンロードして見てください"
 
 #: ../res/DesktopNotification.glade.h:1
 msgid "<b>Body</b>"
