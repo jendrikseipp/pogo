@@ -1,14 +1,5 @@
 === Roadmap ===
 
-0.3:
-X Search for tracks in the music folders
-X Let users add and hide directories in file browser
-X Add "Open containing folder" context menu item
-X Highlight found occurences for searches with non-ASCII characters too
-X Show status messages when searching
-X Fix Loading files from commandline (make paths absolute)
-X Fix: Save playlist also when files have been added on the commandline
-
 0.4:
 O Stop after current album / track (Playlist context menu entry)
 
@@ -26,7 +17,7 @@ O Sound Indicator
 === Features that will MAYBE be implemented ===
 O Enqueue?
 O Party View (Fullscreen)?
-O Scrobbling Support?
+O Scrobbling Support (using decibel code)?
 O Lyrics?
 
 

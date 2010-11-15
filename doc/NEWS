@@ -1,6 +1,15 @@
  Pogo NEWS
 ==============
 
+ 0.3 "I go hard, I go home" ()
+==========
+* Search for tracks in the music folders
+* Let users add and hide directories in file browser
+* Add "Open containing folder" context menu item
+* Fix Loading files from commandline (make paths absolute)
+* Fix: Save playlist also when files have been added on the commandline
+
+
  0.2 "I hold the candle while you dance upon the flame" (2010-10-21)
 ====================================================================
 * Make startup even faster by saving the playlist with its formatting
