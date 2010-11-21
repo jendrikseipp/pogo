@@ -7,73 +7,17 @@ msgid ""
 msgstr ""
 "Project-Id-Version: decibel-audio-player\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-11-07 01:42+0100\n"
+"POT-Creation-Date: 2010-11-21 20:05+0100\n"
 "PO-Revision-Date: 2010-11-07 13:51+0000\n"
 "Last-Translator: Burak Ilgicioglu <Unknown>\n"
 "Language-Team: Turkish <tr@li.org>\n"
+"Language: tr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Launchpad-Export-Date: 2010-11-08 05:31+0000\n"
 "X-Generator: Launchpad (build Unknown)\n"
-
-#: ../src/gui/about.py:40
-msgid "translator-credits"
-msgstr ""
-"Launchpad Contributions:\n"
-"  Burak Ilgicioglu https://launchpad.net/~ilgicioglu\n"
-"  Jendrik Seipp https://launchpad.net/~jendrikseipp\n"
-"  zeugma https://launchpad.net/~sunder67"
-
-#: ../src/gui/about.py:44
-msgid "Developer:"
-msgstr "Geliştirici"
-
-#: ../src/gui/about.py:48
-msgid "Thanks to:"
-msgstr "Teşekkürler:"
-
-#: ../src/gui/preferences.py:43
-msgid "Preferences"
-msgstr "Tercihler"
-
-#: ../src/gui/preferences.py:129
-msgid "Unable to load this module."
-msgstr "Bu modül yüklenemedi"
-
-#: ../src/gui/preferences.py:138
-msgid "Modules"
-msgstr "Modüller"
-
-#: ../src/gui/preferences.py:139 ../src/modules/Covers.py:434
-#: ../src/modules/DesktopNotification.py:213
-msgid "Description"
-msgstr "Tanım"
-
-#: ../src/gui/preferences.py:140
-msgid ""
-"This window shows the list of available modules. You can enable/disable a "
-"module by checking/unchecking the check box in front of it."
-msgstr ""
-"Bu pencere mevcut modüllerin listesini gösterir. Yanındaki düğmeye "
-"tıklayarak modülleri aktive/deaktive edebilirsiniz."
-
-#: ../src/gui/preferences.py:142
-msgid "Configuring a Module"
-msgstr "Modül Ayarlama"
-
-#: ../src/gui/preferences.py:143
-msgid ""
-"When a module may be configured, a specific icon is displayed on the right "
-"of the corresponding line. To configure a module, simply select it and then "
-"click on the \"Preferences\" button on the bottom of the dialog box. Note "
-"that configuring a module is only possible when it is enabled."
-msgstr ""
-"Ekranın sağ tarafında özel bir simge belirdiğinde modülü "
-"yapılandırabilrsiniz. Bir modül yapılandırmak için kolayca seçin ve iletişim "
-"kutusunun altında bulunan \"Özellikler\" butonuna tıklayın. Not: Sadece "
-"modül aktif olduğunda yapılandırılabilir."
 
 #: ../src/media/track/__init__.py:54
 msgid "Track number"
@@ -136,6 +80,71 @@ msgstr "%(album)s  [Disc %(discnum)u]"
 msgid "CDDA Track"
 msgstr "CDDA şarkısı"
 
+#: ../src/gui/preferences.py:43
+msgid "Preferences"
+msgstr "Tercihler"
+
+#: ../src/gui/preferences.py:129
+msgid "Unable to load this module."
+msgstr "Bu modül yüklenemedi"
+
+#: ../src/gui/preferences.py:138
+msgid "Modules"
+msgstr "Modüller"
+
+#: ../src/gui/preferences.py:139 ../src/modules/DesktopNotification.py:213
+#: ../src/modules/Covers.py:434
+msgid "Description"
+msgstr "Tanım"
+
+#: ../src/gui/preferences.py:140
+msgid ""
+"This window shows the list of available modules. You can enable/disable a "
+"module by checking/unchecking the check box in front of it."
+msgstr ""
+"Bu pencere mevcut modüllerin listesini gösterir. Yanındaki düğmeye "
+"tıklayarak modülleri aktive/deaktive edebilirsiniz."
+
+#: ../src/gui/preferences.py:142
+msgid "Configuring a Module"
+msgstr "Modül Ayarlama"
+
+#: ../src/gui/preferences.py:143
+msgid ""
+"When a module may be configured, a specific icon is displayed on the right "
+"of the corresponding line. To configure a module, simply select it and then "
+"click on the \"Preferences\" button on the bottom of the dialog box. Note "
+"that configuring a module is only possible when it is enabled."
+msgstr ""
+"Ekranın sağ tarafında özel bir simge belirdiğinde modülü "
+"yapılandırabilrsiniz. Bir modül yapılandırmak için kolayca seçin ve iletişim "
+"kutusunun altında bulunan \"Özellikler\" butonuna tıklayın. Not: Sadece "
+"modül aktif olduğunda yapılandırılabilir."
+
+#: ../src/gui/about.py:40
+msgid "translator-credits"
+msgstr ""
+"Launchpad Contributions:\n"
+"  Burak Ilgicioglu https://launchpad.net/~ilgicioglu\n"
+"  Jendrik Seipp https://launchpad.net/~jendrikseipp\n"
+"  zeugma https://launchpad.net/~sunder67"
+
+#: ../src/gui/about.py:44
+msgid "Developer:"
+msgstr "Geliştirici"
+
+#: ../src/gui/about.py:48
+msgid "Thanks to:"
+msgstr "Teşekkürler:"
+
+#: ../src/modules/Search.py:34
+msgid "Search in your music folders"
+msgstr "Müzik klasörlerinde ara"
+
+#: ../src/modules/Zeitgeist.py:26
+msgid "Send track information to the Zeitgeist service"
+msgstr "Şarkı bilgisini Zeitgeist cihazına yolla"
+
 #: ../src/modules/FileExplorer.py:173
 msgid "loading..."
 msgstr "yükleniyor..."
@@ -184,63 +193,6 @@ msgstr "Aranıyor..."
 msgid "No tracks found"
 msgstr "Hiç şarkı bulunmadı"
 
-#: ../src/modules/CtrlPanel.py:190 ../src/modules/CtrlPanel.py:246
-msgid "Pause the current track"
-msgstr "Çalan şarkıyı beklet"
-
-#: ../src/modules/CtrlPanel.py:206
-msgid "Play the first selected track of the playlist"
-msgstr "Şarkı listesindeki seçilen ilk şarkıyı çal"
-
-#: ../src/modules/CtrlPanel.py:240
-msgid "Continue playing the current track"
-msgstr "Mevcut parçayı çalmaya devam et"
-
-#: ../src/modules/StatusbarTitlebar.py:47
-msgid "[paused]"
-msgstr "[duraklatıldı]"
-
-#: ../src/modules/Search.py:34
-msgid "Search in your music folders"
-msgstr "Müzik klasörlerinde ara"
-
-#: ../src/modules/Tracktree.py:367
-msgid "Save playlist"
-msgstr "Şarkı listesini kaydet"
-
-#: ../src/modules/Tracktree.py:416
-msgid "Clear Playlist"
-msgstr "Şarkı listesini temizle"
-
-#: ../src/modules/Equalizer.py:24
-msgid "Equalizer"
-msgstr "Ekolayzır"
-
-#: ../src/modules/Equalizer.py:24
-msgid "Tune the level of the frequency bands"
-msgstr "Frekans bant seviyelerini ayarla"
-
-#: ../src/modules/Equalizer.py:125 ../src/modules/Equalizer.py:213
-#: ../src/modules/Equalizer.py:226
-msgid "Custom"
-msgstr "Özel"
-
-#: ../src/modules/Equalizer.py:166
-msgid "Save levels"
-msgstr "Seviyeleri kaydet"
-
-#: ../src/modules/Equalizer.py:177
-msgid "Load levels"
-msgstr "Seviyeleri yükle"
-
-#: ../src/modules/Equalizer.py:204
-msgid "Could not load the file"
-msgstr "Dosya açılamadı."
-
-#: ../src/modules/Equalizer.py:204
-msgid "The format of the file is incorrect."
-msgstr "Dosya formatı yanlış"
-
 #: ../src/modules/__init__.py:75
 msgid "The following Python modules are not available:"
 msgstr "Bu Python modülleri kullanılmıyor"
@@ -255,15 +207,80 @@ msgid "Restart required"
 msgstr "Yeniden başlatma gerekiyor"
 
 #: ../src/modules/__init__.py:267
-msgid ""
-"You must restart the application for this modification to take effect."
+msgid "You must restart the application for this modification to take effect."
 msgstr ""
 "Uygulamadaki değişikliklerin aktif olması için programı yeniden "
 "başlatmalısınız."
 
-#: ../src/modules/Zeitgeist.py:26
-msgid "Send track information to the Zeitgeist service"
-msgstr "Şarkı bilgisini Zeitgeist cihazına yolla"
+#: ../src/modules/CtrlPanel.py:190 ../src/modules/CtrlPanel.py:246
+msgid "Pause the current track"
+msgstr "Çalan şarkıyı beklet"
+
+#: ../src/modules/CtrlPanel.py:206
+msgid "Play the first selected track of the playlist"
+msgstr "Şarkı listesindeki seçilen ilk şarkıyı çal"
+
+#: ../src/modules/CtrlPanel.py:240
+msgid "Continue playing the current track"
+msgstr "Mevcut parçayı çalmaya devam et"
+
+#: ../src/modules/DesktopNotification.py:25
+msgid "Desktop Notification"
+msgstr "Masaüstü Uyarısı"
+
+#: ../src/modules/DesktopNotification.py:25
+msgid "Display a desktop notification on track change"
+msgstr "Şarkı değiştiğinde masaüstünde hatırlatma göster"
+
+#: ../src/modules/DesktopNotification.py:78
+#: ../src/modules/DesktopNotification.py:188
+msgid "Skip track"
+msgstr "Şarkıyı atla"
+
+#: ../src/modules/DesktopNotification.py:214
+msgid ""
+"This module displays a small popup window on your desktop when a new track "
+"starts."
+msgstr ""
+"Bu modül yeni bir şarkı başladığında masaüstünüzde küçük pencere gösterir"
+
+#: ../src/modules/DesktopNotification.py:215
+msgid "If the Covers module is enabled, the popup also shows the album cover."
+msgstr ""
+"Eğer albüm kapakları modülü aktif ise yeni pencere albüm kapağını da "
+"gösterir."
+
+#: ../src/modules/DesktopNotification.py:216
+msgid "Customizing the Notification"
+msgstr "Hatırlatmayı kişiselleştir"
+
+#: ../src/modules/DesktopNotification.py:217
+msgid ""
+"You can change the title and the body of the notification to any text you "
+"want. Before displaying the popup window, fields of the form {field} are "
+"replaced by their corresponding value. Available fields are:\n"
+"\n"
+msgstr ""
+"Uyarının başlık ve metnini istediğiniz gibi değiştirebilirsiniz. Yeni "
+"pencere görüntülenmeden önce formun {field} alanı eşleşen değerle "
+"değiştirilir.\n"
+"\n"
+
+#: ../src/modules/DesktopNotification.py:220
+msgid "Markup"
+msgstr "Markup"
+
+#: ../src/modules/DesktopNotification.py:221
+msgid ""
+"You can use the Pango markup language to format the text. More information "
+"on that language is available on the following web page:"
+msgstr ""
+"Metni biçimlendirmek için Pango dilini kullanabilirsiniz. Bu dille ilgili "
+"daha fazla bilgiyi verilen bu adreste bulabilirsiniz:"
+
+#: ../src/modules/StatusbarTitlebar.py:47
+msgid "[paused]"
+msgstr "[duraklatıldı]"
 
 #: ../src/modules/Covers.py:28
 msgid "Covers"
@@ -309,65 +326,47 @@ msgid ""
 "case, if a user cover exists for the current track, it is used. If there is "
 "none, the cover is downloaded."
 msgstr ""
-"Albüm kapakları çalan şarkının etiketlerine göre internetten "
-"indirilebilir.Her zaman internet albüm kapaklarının kullanılmasını "
-"seçebilirsiniz. Bu durumda kullanıcı albüm kapağı varsa kullanılır, eğer "
-"yoksa internetten indirilir."
+"Albüm kapakları çalan şarkının etiketlerine göre internetten indirilebilir."
+"Her zaman internet albüm kapaklarının kullanılmasını seçebilirsiniz. Bu "
+"durumda kullanıcı albüm kapağı varsa kullanılır, eğer yoksa internetten "
+"indirilir."
 
-#: ../src/modules/DesktopNotification.py:25
-msgid "Desktop Notification"
-msgstr "Masaüstü Uyarısı"
+#: ../src/modules/Tracktree.py:367
+msgid "Save playlist"
+msgstr "Şarkı listesini kaydet"
 
-#: ../src/modules/DesktopNotification.py:25
-msgid "Display a desktop notification on track change"
-msgstr "Şarkı değiştiğinde masaüstünde hatırlatma göster"
+#: ../src/modules/Tracktree.py:416
+msgid "Clear Playlist"
+msgstr "Şarkı listesini temizle"
 
-#: ../src/modules/DesktopNotification.py:78
-#: ../src/modules/DesktopNotification.py:188
-msgid "Skip track"
-msgstr "Şarkıyı atla"
+#: ../src/modules/Equalizer.py:24
+msgid "Equalizer"
+msgstr "Ekolayzır"
 
-#: ../src/modules/DesktopNotification.py:214
-msgid ""
-"This module displays a small popup window on your desktop when a new track "
-"starts."
-msgstr ""
-"Bu modül yeni bir şarkı başladığında masaüstünüzde küçük pencere gösterir"
+#: ../src/modules/Equalizer.py:24
+msgid "Tune the level of the frequency bands"
+msgstr "Frekans bant seviyelerini ayarla"
 
-#: ../src/modules/DesktopNotification.py:215
-msgid ""
-"If the Covers module is enabled, the popup also shows the album cover."
-msgstr ""
-"Eğer albüm kapakları modülü aktif ise yeni pencere albüm kapağını da "
-"gösterir."
+#: ../src/modules/Equalizer.py:125 ../src/modules/Equalizer.py:213
+#: ../src/modules/Equalizer.py:226
+msgid "Custom"
+msgstr "Özel"
 
-#: ../src/modules/DesktopNotification.py:216
-msgid "Customizing the Notification"
-msgstr "Hatırlatmayı kişiselleştir"
+#: ../src/modules/Equalizer.py:166
+msgid "Save levels"
+msgstr "Seviyeleri kaydet"
 
-#: ../src/modules/DesktopNotification.py:217
-msgid ""
-"You can change the title and the body of the notification to any text you "
-"want. Before displaying the popup window, fields of the form {field} are "
-"replaced by their corresponding value. Available fields are:\n"
-"\n"
-msgstr ""
-"Uyarının başlık ve metnini istediğiniz gibi değiştirebilirsiniz. Yeni "
-"pencere görüntülenmeden önce formun {field} alanı eşleşen değerle "
-"değiştirilir.\n"
-"\n"
+#: ../src/modules/Equalizer.py:177
+msgid "Load levels"
+msgstr "Seviyeleri yükle"
 
-#: ../src/modules/DesktopNotification.py:220
-msgid "Markup"
-msgstr "Markup"
+#: ../src/modules/Equalizer.py:204
+msgid "Could not load the file"
+msgstr "Dosya açılamadı."
 
-#: ../src/modules/DesktopNotification.py:221
-msgid ""
-"You can use the Pango markup language to format the text. More information "
-"on that language is available on the following web page:"
-msgstr ""
-"Metni biçimlendirmek için Pango dilini kullanabilirsiniz. Bu dille ilgili "
-"daha fazla bilgiyi verilen bu adreste bulabilirsiniz:"
+#: ../src/modules/Equalizer.py:204
+msgid "The format of the file is incorrect."
+msgstr "Dosya formatı yanlış"
 
 #: ../src/tools/consts.py:94
 msgid "Unknown Genre"
@@ -466,10 +465,10 @@ msgid "Play the previous track"
 msgstr "Önceki şarkıyı çal"
 
 #~ msgid ""
-#~ "This dialog box shows the list of available modules, which are small pieces "
-#~ "of code that add some functionnalities to the application. You can "
-#~ "enable/disable a module by checking/unchecking the check box in front of it. "
-#~ "Note that some modules (e.g., the File Explorer) cannot be disabled."
+#~ "This dialog box shows the list of available modules, which are small "
+#~ "pieces of code that add some functionnalities to the application. You can "
+#~ "enable/disable a module by checking/unchecking the check box in front of "
+#~ "it. Note that some modules (e.g., the File Explorer) cannot be disabled."
 #~ msgstr ""
 #~ "Bu iletişim kutusu olanaklı modüllerin listesini gösterir. Modüller "
 #~ "uygulamaya kimi beceriler ekleyen küçük kod parçalarıdır. Herhangi bir "
@@ -480,7 +479,6 @@ msgstr "Önceki şarkıyı çal"
 #~ msgid "Choose a folder"
 #~ msgstr "Bir klasör seçin"
 
-#, python-format
 #~ msgid ""
 #~ "The character %s is not allowed.\n"
 #~ "Please use another name."
@@ -501,15 +499,15 @@ msgstr "Önceki şarkıyı çal"
 #~ msgstr "Parola saklama güvenliği ile ilgili"
 
 #~ msgid ""
-#~ "If you use Gnome, it is safe to store your password since the Gnome keyring "
-#~ "is used."
+#~ "If you use Gnome, it is safe to store your password since the Gnome "
+#~ "keyring is used."
 #~ msgstr ""
-#~ "Eğer Gnome kullanıyorsanız, parolalarınızı güvenle saklayabilirsiniz çünkü "
-#~ "Gnome Keyring aracını kullanılmaktadır."
+#~ "Eğer Gnome kullanıyorsanız, parolalarınızı güvenle saklayabilirsiniz "
+#~ "çünkü Gnome Keyring aracını kullanılmaktadır."
 
 #~ msgid ""
-#~ "If you do not use Gnome, beware that, although not stored as clear text, an "
-#~ "attacker <i>could</i> retrieve it."
+#~ "If you do not use Gnome, beware that, although not stored as clear text, "
+#~ "an attacker <i>could</i> retrieve it."
 #~ msgstr ""
 #~ "Eğer Gnome kullanmıyorsanız, bilmelisiniz ki , her ne kadar basit metin "
 #~ "dosyası olarak saklanmasa da bir saldırgan <i>ele geçirebilir</i>"

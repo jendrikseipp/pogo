@@ -6,72 +6,18 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: pogo\n"
-"Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
-"POT-Creation-Date: 2010-11-07 01:42+0100\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2010-11-21 20:05+0100\n"
 "PO-Revision-Date: 2010-11-06 16:31+0000\n"
 "Last-Translator: Aniruddha Adhikary <Unknown>\n"
 "Language-Team: Bengali <bn@li.org>\n"
+"Language: bn\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Launchpad-Export-Date: 2010-11-07 05:07+0000\n"
 "X-Generator: Launchpad (build Unknown)\n"
-
-#: ../src/gui/about.py:40
-msgid "translator-credits"
-msgstr ""
-"Launchpad Contributions:\n"
-"  Aniruddha Adhikary https://launchpad.net/~digitiger1"
-
-#: ../src/gui/about.py:44
-msgid "Developer:"
-msgstr "ডেভেলপারঃ"
-
-#: ../src/gui/about.py:48
-msgid "Thanks to:"
-msgstr "ধন্যবাদান্তেঃ"
-
-#: ../src/gui/preferences.py:43
-msgid "Preferences"
-msgstr "পছন্দসমূহ"
-
-#: ../src/gui/preferences.py:129
-msgid "Unable to load this module."
-msgstr "মডিউলটি লোড করা সম্ভব হয় নি"
-
-#: ../src/gui/preferences.py:138
-msgid "Modules"
-msgstr "মডিউলসমূহ"
-
-#: ../src/gui/preferences.py:139 ../src/modules/Covers.py:434
-#: ../src/modules/DesktopNotification.py:213
-msgid "Description"
-msgstr "বিবরণ"
-
-#: ../src/gui/preferences.py:140
-msgid ""
-"This window shows the list of available modules. You can enable/disable a "
-"module by checking/unchecking the check box in front of it."
-msgstr ""
-"এই উইন্ডো আপনাকে ব্যবহারোপযোগী মডিউলসমূহের একটি তালিকা দেখাচ্ছে। আপনি সামনের "
-"চেক বক্সে ক্লিক করে চেক/আনচেক করে যেকোন মডিউল কার্যকর/অকার্যকর করতে পারেন।"
-
-#: ../src/gui/preferences.py:142
-msgid "Configuring a Module"
-msgstr "মডিউল কনফিগার করা"
-
-#: ../src/gui/preferences.py:143
-msgid ""
-"When a module may be configured, a specific icon is displayed on the right "
-"of the corresponding line. To configure a module, simply select it and then "
-"click on the \"Preferences\" button on the bottom of the dialog box. Note "
-"that configuring a module is only possible when it is enabled."
-msgstr ""
-"যখন একটি মডিউল কনফিগার করা যেতে পারে, লাইনের ডানে একটি নির্দিষ্ট আইকন দেখা "
-"যাবে। মডিউল কনফিগার করতে এটি সিলেক্ট করে ডায়ালগ বক্সের নিচে \"পছন্দসমূহ\" "
-"বাটনে ক্লিক করুন। বিঃদ্রঃ শুধুমাত্র মডিউল কার্যকর করা থাকলেই সেটি কনফিগার "
-"করা সম্ভব।"
 
 #: ../src/media/track/__init__.py:54
 msgid "Track number"
@@ -134,6 +80,68 @@ msgstr "%(album)s [ডিস্ক %(discnum)u]"
 msgid "CDDA Track"
 msgstr "সিডিডিএ ট্র্যাক"
 
+#: ../src/gui/preferences.py:43
+msgid "Preferences"
+msgstr "পছন্দসমূহ"
+
+#: ../src/gui/preferences.py:129
+msgid "Unable to load this module."
+msgstr "মডিউলটি লোড করা সম্ভব হয় নি"
+
+#: ../src/gui/preferences.py:138
+msgid "Modules"
+msgstr "মডিউলসমূহ"
+
+#: ../src/gui/preferences.py:139 ../src/modules/DesktopNotification.py:213
+#: ../src/modules/Covers.py:434
+msgid "Description"
+msgstr "বিবরণ"
+
+#: ../src/gui/preferences.py:140
+msgid ""
+"This window shows the list of available modules. You can enable/disable a "
+"module by checking/unchecking the check box in front of it."
+msgstr ""
+"এই উইন্ডো আপনাকে ব্যবহারোপযোগী মডিউলসমূহের একটি তালিকা দেখাচ্ছে। আপনি সামনের চেক "
+"বক্সে ক্লিক করে চেক/আনচেক করে যেকোন মডিউল কার্যকর/অকার্যকর করতে পারেন।"
+
+#: ../src/gui/preferences.py:142
+msgid "Configuring a Module"
+msgstr "মডিউল কনফিগার করা"
+
+#: ../src/gui/preferences.py:143
+msgid ""
+"When a module may be configured, a specific icon is displayed on the right "
+"of the corresponding line. To configure a module, simply select it and then "
+"click on the \"Preferences\" button on the bottom of the dialog box. Note "
+"that configuring a module is only possible when it is enabled."
+msgstr ""
+"যখন একটি মডিউল কনফিগার করা যেতে পারে, লাইনের ডানে একটি নির্দিষ্ট আইকন দেখা "
+"যাবে। মডিউল কনফিগার করতে এটি সিলেক্ট করে ডায়ালগ বক্সের নিচে \"পছন্দসমূহ\" বাটনে "
+"ক্লিক করুন। বিঃদ্রঃ শুধুমাত্র মডিউল কার্যকর করা থাকলেই সেটি কনফিগার করা সম্ভব।"
+
+#: ../src/gui/about.py:40
+msgid "translator-credits"
+msgstr ""
+"Launchpad Contributions:\n"
+"  Aniruddha Adhikary https://launchpad.net/~digitiger1"
+
+#: ../src/gui/about.py:44
+msgid "Developer:"
+msgstr "ডেভেলপারঃ"
+
+#: ../src/gui/about.py:48
+msgid "Thanks to:"
+msgstr "ধন্যবাদান্তেঃ"
+
+#: ../src/modules/Search.py:34
+msgid "Search in your music folders"
+msgstr ""
+
+#: ../src/modules/Zeitgeist.py:26
+msgid "Send track information to the Zeitgeist service"
+msgstr "ট্র্যাক তথ্য Zeitgeist সার্ভিসে পাঠাও"
+
 #: ../src/modules/FileExplorer.py:173
 msgid "loading..."
 msgstr "লোড করা হচ্ছে..."
@@ -182,6 +190,22 @@ msgstr ""
 msgid "No tracks found"
 msgstr ""
 
+#: ../src/modules/__init__.py:75
+msgid "The following Python modules are not available:"
+msgstr "নিম্নের Python মডিউলটি নেইঃ"
+
+#: ../src/modules/__init__.py:79
+msgid "You must install them if you want to enable this module."
+msgstr "আপনাকে অবশ্যই এগুলো ইন্সটল করতে হবে যদি আপনি মডিউলটি কার্যকর করতে চান।"
+
+#: ../src/modules/__init__.py:266
+msgid "Restart required"
+msgstr "বন্ধ করে পুনরায় চালু করা প্রয়োজন"
+
+#: ../src/modules/__init__.py:267
+msgid "You must restart the application for this modification to take effect."
+msgstr "এই পরিবর্তনটি কার্যকর করার জন্য আপনাকে অ্যাপ্লিকেশনটি পুনরায় চালু করতে হবে।"
+
 #: ../src/modules/CtrlPanel.py:190 ../src/modules/CtrlPanel.py:246
 msgid "Pause the current track"
 msgstr "বর্তমান ট্র্যাকটি পজ কর"
@@ -194,13 +218,112 @@ msgstr "প্লেলিস্টের প্রথম ট্র্যাক�
 msgid "Continue playing the current track"
 msgstr "বর্তমান ট্র্যাক থেকে প্লে করা শুরু কর"
 
+#: ../src/modules/DesktopNotification.py:25
+msgid "Desktop Notification"
+msgstr "ডেস্কটপ নোটিফিকেশন"
+
+#: ../src/modules/DesktopNotification.py:25
+msgid "Display a desktop notification on track change"
+msgstr "ট্র্যাক পরিবর্তনে একটি ডেস্কটপ নোটিফিকেশন দেখাও"
+
+#: ../src/modules/DesktopNotification.py:78
+#: ../src/modules/DesktopNotification.py:188
+msgid "Skip track"
+msgstr "ট্র্যাক বাদ দাও"
+
+#: ../src/modules/DesktopNotification.py:214
+msgid ""
+"This module displays a small popup window on your desktop when a new track "
+"starts."
+msgstr ""
+"যখন একটি নতুন ট্র্যাক শুরু হয়, তখন এই মডিউলটি আপনার ডেস্কটপে একটি ছোট পপ-আপ উইন্ডো "
+"দেখায়।"
+
+#: ../src/modules/DesktopNotification.py:215
+msgid "If the Covers module is enabled, the popup also shows the album cover."
+msgstr ""
+"যদি \"কভারসমূহ\" মডিউলটি কার্যকর করা থাকে, পপ-আপটি এ্যালবাম কভারটিও দেখায়।"
+
+#: ../src/modules/DesktopNotification.py:216
+msgid "Customizing the Notification"
+msgstr "নোটিফিকেশনটি কাস্টমাইজ করা"
+
+#: ../src/modules/DesktopNotification.py:217
+msgid ""
+"You can change the title and the body of the notification to any text you "
+"want. Before displaying the popup window, fields of the form {field} are "
+"replaced by their corresponding value. Available fields are:\n"
+"\n"
+msgstr ""
+"আপনি চাইলে নোটিফিকেশনের শিরোনাম এবং বডি টেক্সট পরিবর্তন করতে পারবেন। পপ-আপ "
+"উইন্ডো দেখানোর পূর্বে {field} ফর্মের ফিল্ডগুলো তাদের মান দ্বারা প্রতিস্থাপিত হয়। "
+"ফিল্ডগুলো হলঃ\n"
+"\n"
+
+#: ../src/modules/DesktopNotification.py:220
+msgid "Markup"
+msgstr "মার্কআপ"
+
+#: ../src/modules/DesktopNotification.py:221
+msgid ""
+"You can use the Pango markup language to format the text. More information "
+"on that language is available on the following web page:"
+msgstr ""
+"আপনি লেখা পরিবর্তন করতে Pango মার্কআপ ল্যাঙ্গুয়েজ ব্যবহার করতে পারবেন। নিম্নের "
+"ওয়েবসাইটটিতে ল্যাঙ্গুয়েজটি সম্পর্কে বিস্তারিত তথ্য আছেঃ"
+
 #: ../src/modules/StatusbarTitlebar.py:47
 msgid "[paused]"
 msgstr "[পজ করা]"
 
-#: ../src/modules/Search.py:34
-msgid "Search in your music folders"
+#: ../src/modules/Covers.py:28
+msgid "Covers"
+msgstr "কভারসমূহ"
+
+#: ../src/modules/Covers.py:28
+msgid "Show album covers"
+msgstr "এ্যালবাম কভারসমূহ দেখাও"
+
+#: ../src/modules/Covers.py:435
+msgid ""
+"This module displays the cover of the album the current track comes from. "
+"Covers may be loaded from local pictures, located in the same directory as "
+"the current track, or may be downloaded from the Internet."
 msgstr ""
+"বর্তমান ট্র্যাকটি যে এ্যালবাম থেকে এসেছে, এই মডিউলটি তার কভার প্রদর্শন করে। "
+"কভারসমূহ লোকাল ছবি, যা ট্র্যাকের ডিরেক্টরীতে রাখা আছে কিংবা ইন্টারনেট থেকে "
+"ডাউনলোড করা যেতে পারে।"
+
+#: ../src/modules/Covers.py:438
+msgid "User Covers"
+msgstr "ব্যবহারকারীর কভারসমূহ"
+
+#: ../src/modules/Covers.py:439
+#, python-format
+msgid ""
+"A user cover is a picture located in the same directory as the current "
+"track. When specifying filenames, you do not need to provide file "
+"extensions, supported file formats (%s) are automatically used."
+msgstr ""
+"একটি ব্যবহারকারীর কভার হল একটি ছবি যা বর্তমান ট্র্যাকের ডিরেক্টরিতে রাখা আছে। যখন "
+"ফাইলসময়হের নাম উল্লেখ করা হয়, আপনার ফাইল এক্সটেনশন দেবার প্রয়োজন নেই, সাপোর্টকৃত "
+"ফাইল ফরম্যাটসমূহ (%s) স্বয়ংক্রিয়ভাবে ব্যবহৃত হয়।"
+
+#: ../src/modules/Covers.py:442
+msgid "Internet Covers"
+msgstr "ইন্টারনেট থেকে প্রাপ্ত কভারসমূহ"
+
+#: ../src/modules/Covers.py:443
+msgid ""
+"Covers may be downloaded from the Internet, based on the tags of the current "
+"track. You can ask to always prefer user covers to Internet ones. In this "
+"case, if a user cover exists for the current track, it is used. If there is "
+"none, the cover is downloaded."
+msgstr ""
+"বর্তমান ট্রাকের ওপর ভিত্তি করে কভারসমূহ ইন্টারনেট থেকে ডাউনলোড করা যেতে পারে। "
+"আপনি সবসময় ব্যবহারকারীর কভার ইন্টারনেট থেকে প্রাপ্ত কভারের পরিবর্তে ব্যবহার করতে "
+"পারেন। এই ক্ষেত্রে, যদি বর্তমান ট্র্যাকে ব্যবহারকারীর কভার থেকে থাকে, এটি ব্যবহৃত "
+"হয়। অন্যথায় কভার ডাউনলোড করা হয়।"
 
 #: ../src/modules/Tracktree.py:367
 msgid "Save playlist"
@@ -238,133 +361,6 @@ msgstr "ফাইলটি লোড করা সম্ভব হয় নি"
 #: ../src/modules/Equalizer.py:204
 msgid "The format of the file is incorrect."
 msgstr "ফাইল ফরম্যাটটি ভুল।"
-
-#: ../src/modules/__init__.py:75
-msgid "The following Python modules are not available:"
-msgstr "নিম্নের Python মডিউলটি নেইঃ"
-
-#: ../src/modules/__init__.py:79
-msgid "You must install them if you want to enable this module."
-msgstr ""
-"আপনাকে অবশ্যই এগুলো ইন্সটল করতে হবে যদি আপনি মডিউলটি কার্যকর করতে চান।"
-
-#: ../src/modules/__init__.py:266
-msgid "Restart required"
-msgstr "বন্ধ করে পুনরায় চালু করা প্রয়োজন"
-
-#: ../src/modules/__init__.py:267
-msgid ""
-"You must restart the application for this modification to take effect."
-msgstr ""
-"এই পরিবর্তনটি কার্যকর করার জন্য আপনাকে অ্যাপ্লিকেশনটি পুনরায় চালু করতে হবে।"
-
-#: ../src/modules/Zeitgeist.py:26
-msgid "Send track information to the Zeitgeist service"
-msgstr "ট্র্যাক তথ্য Zeitgeist সার্ভিসে পাঠাও"
-
-#: ../src/modules/Covers.py:28
-msgid "Covers"
-msgstr "কভারসমূহ"
-
-#: ../src/modules/Covers.py:28
-msgid "Show album covers"
-msgstr "এ্যালবাম কভারসমূহ দেখাও"
-
-#: ../src/modules/Covers.py:435
-msgid ""
-"This module displays the cover of the album the current track comes from. "
-"Covers may be loaded from local pictures, located in the same directory as "
-"the current track, or may be downloaded from the Internet."
-msgstr ""
-"বর্তমান ট্র্যাকটি যে এ্যালবাম থেকে এসেছে, এই মডিউলটি তার কভার প্রদর্শন করে। "
-"কভারসমূহ লোকাল ছবি, যা ট্র্যাকের ডিরেক্টরীতে রাখা আছে কিংবা ইন্টারনেট থেকে "
-"ডাউনলোড করা যেতে পারে।"
-
-#: ../src/modules/Covers.py:438
-msgid "User Covers"
-msgstr "ব্যবহারকারীর কভারসমূহ"
-
-#: ../src/modules/Covers.py:439
-#, python-format
-msgid ""
-"A user cover is a picture located in the same directory as the current "
-"track. When specifying filenames, you do not need to provide file "
-"extensions, supported file formats (%s) are automatically used."
-msgstr ""
-"একটি ব্যবহারকারীর কভার হল একটি ছবি যা বর্তমান ট্র্যাকের ডিরেক্টরিতে রাখা "
-"আছে। যখন ফাইলসময়হের নাম উল্লেখ করা হয়, আপনার ফাইল এক্সটেনশন দেবার প্রয়োজন "
-"নেই, সাপোর্টকৃত ফাইল ফরম্যাটসমূহ (%s) স্বয়ংক্রিয়ভাবে ব্যবহৃত হয়।"
-
-#: ../src/modules/Covers.py:442
-msgid "Internet Covers"
-msgstr "ইন্টারনেট থেকে প্রাপ্ত কভারসমূহ"
-
-#: ../src/modules/Covers.py:443
-msgid ""
-"Covers may be downloaded from the Internet, based on the tags of the current "
-"track. You can ask to always prefer user covers to Internet ones. In this "
-"case, if a user cover exists for the current track, it is used. If there is "
-"none, the cover is downloaded."
-msgstr ""
-"বর্তমান ট্রাকের ওপর ভিত্তি করে কভারসমূহ ইন্টারনেট থেকে ডাউনলোড করা যেতে "
-"পারে। আপনি সবসময় ব্যবহারকারীর কভার ইন্টারনেট থেকে প্রাপ্ত কভারের পরিবর্তে "
-"ব্যবহার করতে পারেন। এই ক্ষেত্রে, যদি বর্তমান ট্র্যাকে ব্যবহারকারীর কভার থেকে "
-"থাকে, এটি ব্যবহৃত হয়। অন্যথায় কভার ডাউনলোড করা হয়।"
-
-#: ../src/modules/DesktopNotification.py:25
-msgid "Desktop Notification"
-msgstr "ডেস্কটপ নোটিফিকেশন"
-
-#: ../src/modules/DesktopNotification.py:25
-msgid "Display a desktop notification on track change"
-msgstr "ট্র্যাক পরিবর্তনে একটি ডেস্কটপ নোটিফিকেশন দেখাও"
-
-#: ../src/modules/DesktopNotification.py:78
-#: ../src/modules/DesktopNotification.py:188
-msgid "Skip track"
-msgstr "ট্র্যাক বাদ দাও"
-
-#: ../src/modules/DesktopNotification.py:214
-msgid ""
-"This module displays a small popup window on your desktop when a new track "
-"starts."
-msgstr ""
-"যখন একটি নতুন ট্র্যাক শুরু হয়, তখন এই মডিউলটি আপনার ডেস্কটপে একটি ছোট পপ-আপ "
-"উইন্ডো দেখায়।"
-
-#: ../src/modules/DesktopNotification.py:215
-msgid ""
-"If the Covers module is enabled, the popup also shows the album cover."
-msgstr ""
-"যদি \"কভারসমূহ\" মডিউলটি কার্যকর করা থাকে, পপ-আপটি এ্যালবাম কভারটিও দেখায়।"
-
-#: ../src/modules/DesktopNotification.py:216
-msgid "Customizing the Notification"
-msgstr "নোটিফিকেশনটি কাস্টমাইজ করা"
-
-#: ../src/modules/DesktopNotification.py:217
-msgid ""
-"You can change the title and the body of the notification to any text you "
-"want. Before displaying the popup window, fields of the form {field} are "
-"replaced by their corresponding value. Available fields are:\n"
-"\n"
-msgstr ""
-"আপনি চাইলে নোটিফিকেশনের শিরোনাম এবং বডি টেক্সট পরিবর্তন করতে পারবেন। পপ-আপ "
-"উইন্ডো দেখানোর পূর্বে {field} ফর্মের ফিল্ডগুলো তাদের মান দ্বারা প্রতিস্থাপিত "
-"হয়। ফিল্ডগুলো হলঃ\n"
-"\n"
-
-#: ../src/modules/DesktopNotification.py:220
-msgid "Markup"
-msgstr "মার্কআপ"
-
-#: ../src/modules/DesktopNotification.py:221
-msgid ""
-"You can use the Pango markup language to format the text. More information "
-"on that language is available on the following web page:"
-msgstr ""
-"আপনি লেখা পরিবর্তন করতে Pango মার্কআপ ল্যাঙ্গুয়েজ ব্যবহার করতে পারবেন। "
-"নিম্নের ওয়েবসাইটটিতে ল্যাঙ্গুয়েজটি সম্পর্কে বিস্তারিত তথ্য আছেঃ"
 
 #: ../src/tools/consts.py:94
 msgid "Unknown Genre"

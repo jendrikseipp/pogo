@@ -6,67 +6,18 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: pogo\n"
-"Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
-"POT-Creation-Date: 2010-11-07 01:42+0100\n"
-"PO-Revision-Date: 2010-11-06 17:40+0000\n"
-"Last-Translator: Rakhi Attal <Unknown>\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2010-11-21 20:05+0100\n"
+"PO-Revision-Date: 2010-11-13 19:08+0000\n"
+"Last-Translator: Mithun J. Shitole <Unknown>\n"
 "Language-Team: Marathi <mr@li.org>\n"
+"Language: mr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Launchpad-Export-Date: 2010-11-07 05:07+0000\n"
+"X-Launchpad-Export-Date: 2010-11-14 05:31+0000\n"
 "X-Generator: Launchpad (build Unknown)\n"
-
-#: ../src/gui/about.py:40
-msgid "translator-credits"
-msgstr ""
-"Launchpad Contributions:\n"
-"  Mithun J. Shitole https://launchpad.net/~mithunit\n"
-"  Rakhi Attal https://launchpad.net/~attal-rakhi"
-
-#: ../src/gui/about.py:44
-msgid "Developer:"
-msgstr "निर्माता:"
-
-#: ../src/gui/about.py:48
-msgid "Thanks to:"
-msgstr "यांना धन्यवाद:"
-
-#: ../src/gui/preferences.py:43
-msgid "Preferences"
-msgstr "प्राधान्य"
-
-#: ../src/gui/preferences.py:129
-msgid "Unable to load this module."
-msgstr "हा विभाग आत्ता दिसू शकत नाही"
-
-#: ../src/gui/preferences.py:138
-msgid "Modules"
-msgstr "विभाग"
-
-#: ../src/gui/preferences.py:139 ../src/modules/Covers.py:434
-#: ../src/modules/DesktopNotification.py:213
-msgid "Description"
-msgstr "वर्णन"
-
-#: ../src/gui/preferences.py:140
-msgid ""
-"This window shows the list of available modules. You can enable/disable a "
-"module by checking/unchecking the check box in front of it."
-msgstr ""
-
-#: ../src/gui/preferences.py:142
-msgid "Configuring a Module"
-msgstr ""
-
-#: ../src/gui/preferences.py:143
-msgid ""
-"When a module may be configured, a specific icon is displayed on the right "
-"of the corresponding line. To configure a module, simply select it and then "
-"click on the \"Preferences\" button on the bottom of the dialog box. Note "
-"that configuring a module is only possible when it is enabled."
-msgstr ""
 
 #: ../src/media/track/__init__.py:54
 msgid "Track number"
@@ -94,15 +45,15 @@ msgstr "दिनांक"
 
 #: ../src/media/track/__init__.py:60
 msgid "Disc number"
-msgstr ""
+msgstr "थाळी क्रमांक"
 
 #: ../src/media/track/__init__.py:61
 msgid "Bit rate"
-msgstr ""
+msgstr "बीट वारंवारता"
 
 #: ../src/media/track/__init__.py:62
 msgid "Sample rate"
-msgstr ""
+msgstr "प्रतिरूप वारंवारता"
 
 #: ../src/media/track/__init__.py:63
 msgid "Duration in seconds (e.g., 194)"
@@ -129,6 +80,64 @@ msgstr ""
 msgid "CDDA Track"
 msgstr ""
 
+#: ../src/gui/preferences.py:43
+msgid "Preferences"
+msgstr "प्राधान्य"
+
+#: ../src/gui/preferences.py:129
+msgid "Unable to load this module."
+msgstr "हा विभाग आत्ता दिसू शकत नाही"
+
+#: ../src/gui/preferences.py:138
+msgid "Modules"
+msgstr "विभाग"
+
+#: ../src/gui/preferences.py:139 ../src/modules/DesktopNotification.py:213
+#: ../src/modules/Covers.py:434
+msgid "Description"
+msgstr "वर्णन"
+
+#: ../src/gui/preferences.py:140
+msgid ""
+"This window shows the list of available modules. You can enable/disable a "
+"module by checking/unchecking the check box in front of it."
+msgstr ""
+
+#: ../src/gui/preferences.py:142
+msgid "Configuring a Module"
+msgstr "ह्या विभागाची मांडणी होत आहे"
+
+#: ../src/gui/preferences.py:143
+msgid ""
+"When a module may be configured, a specific icon is displayed on the right "
+"of the corresponding line. To configure a module, simply select it and then "
+"click on the \"Preferences\" button on the bottom of the dialog box. Note "
+"that configuring a module is only possible when it is enabled."
+msgstr ""
+
+#: ../src/gui/about.py:40
+msgid "translator-credits"
+msgstr ""
+"Launchpad Contributions:\n"
+"  Mithun J. Shitole https://launchpad.net/~mithunit\n"
+"  Rakhi Attal https://launchpad.net/~attal-rakhi"
+
+#: ../src/gui/about.py:44
+msgid "Developer:"
+msgstr "निर्माता:"
+
+#: ../src/gui/about.py:48
+msgid "Thanks to:"
+msgstr "यांना धन्यवाद:"
+
+#: ../src/modules/Search.py:34
+msgid "Search in your music folders"
+msgstr "संगीताच्या फोल्डर मध्ये शोधा"
+
+#: ../src/modules/Zeitgeist.py:26
+msgid "Send track information to the Zeitgeist service"
+msgstr ""
+
 #: ../src/modules/FileExplorer.py:173
 msgid "loading..."
 msgstr "दाखल करीत आहे..."
@@ -143,15 +152,15 @@ msgstr ""
 
 #: ../src/modules/FileExplorer.py:384
 msgid "Hide folder"
-msgstr ""
+msgstr "फोल्डर लपवा"
 
 #: ../src/modules/FileExplorer.py:392
 msgid "Open containing folder"
-msgstr ""
+msgstr "मुळ फोल्डर उघडा"
 
 #: ../src/modules/FileExplorer.py:403
 msgid "Choose a directory"
-msgstr ""
+msgstr "एक मार्गदर्शिका निवडा"
 
 #: ../src/modules/FileExplorer.py:408
 msgid "This path does not exist"
@@ -171,68 +180,11 @@ msgstr "संगीत"
 
 #: ../src/modules/FileExplorer.py:601
 msgid "Searching ..."
-msgstr ""
+msgstr "शोधत आहे ..."
 
 #: ../src/modules/FileExplorer.py:615
 msgid "No tracks found"
-msgstr ""
-
-#: ../src/modules/CtrlPanel.py:190 ../src/modules/CtrlPanel.py:246
-msgid "Pause the current track"
-msgstr "चालू गाणे विराम करा"
-
-#: ../src/modules/CtrlPanel.py:206
-msgid "Play the first selected track of the playlist"
-msgstr ""
-
-#: ../src/modules/CtrlPanel.py:240
-msgid "Continue playing the current track"
-msgstr "चालू गाणे सुरु करा"
-
-#: ../src/modules/StatusbarTitlebar.py:47
-msgid "[paused]"
-msgstr "[विराम]"
-
-#: ../src/modules/Search.py:34
-msgid "Search in your music folders"
-msgstr ""
-
-#: ../src/modules/Tracktree.py:367
-msgid "Save playlist"
-msgstr ""
-
-#: ../src/modules/Tracktree.py:416
-msgid "Clear Playlist"
-msgstr ""
-
-#: ../src/modules/Equalizer.py:24
-msgid "Equalizer"
-msgstr ""
-
-#: ../src/modules/Equalizer.py:24
-msgid "Tune the level of the frequency bands"
-msgstr ""
-
-#: ../src/modules/Equalizer.py:125 ../src/modules/Equalizer.py:213
-#: ../src/modules/Equalizer.py:226
-msgid "Custom"
-msgstr ""
-
-#: ../src/modules/Equalizer.py:166
-msgid "Save levels"
-msgstr ""
-
-#: ../src/modules/Equalizer.py:177
-msgid "Load levels"
-msgstr ""
-
-#: ../src/modules/Equalizer.py:204
-msgid "Could not load the file"
-msgstr ""
-
-#: ../src/modules/Equalizer.py:204
-msgid "The format of the file is incorrect."
-msgstr ""
+msgstr "गाणे सापडले नाही"
 
 #: ../src/modules/__init__.py:75
 msgid "The following Python modules are not available:"
@@ -247,13 +199,69 @@ msgid "Restart required"
 msgstr "पुन्हा चालू करणे आवश्यक"
 
 #: ../src/modules/__init__.py:267
-msgid ""
-"You must restart the application for this modification to take effect."
+msgid "You must restart the application for this modification to take effect."
 msgstr "बदल वापरात येण्याकरिता तुम्हाला हा उपक्रम पुन्हा चालू करावाच लागेल."
 
-#: ../src/modules/Zeitgeist.py:26
-msgid "Send track information to the Zeitgeist service"
+#: ../src/modules/CtrlPanel.py:190 ../src/modules/CtrlPanel.py:246
+msgid "Pause the current track"
+msgstr "चालू गाणे विराम करा"
+
+#: ../src/modules/CtrlPanel.py:206
+msgid "Play the first selected track of the playlist"
+msgstr "गानेक्रमानिकेतील पहिले गाणे चालवा"
+
+#: ../src/modules/CtrlPanel.py:240
+msgid "Continue playing the current track"
+msgstr "चालू गाणे सुरु करा"
+
+#: ../src/modules/DesktopNotification.py:25
+msgid "Desktop Notification"
 msgstr ""
+
+#: ../src/modules/DesktopNotification.py:25
+msgid "Display a desktop notification on track change"
+msgstr ""
+
+#: ../src/modules/DesktopNotification.py:78
+#: ../src/modules/DesktopNotification.py:188
+msgid "Skip track"
+msgstr ""
+
+#: ../src/modules/DesktopNotification.py:214
+msgid ""
+"This module displays a small popup window on your desktop when a new track "
+"starts."
+msgstr ""
+
+#: ../src/modules/DesktopNotification.py:215
+msgid "If the Covers module is enabled, the popup also shows the album cover."
+msgstr ""
+
+#: ../src/modules/DesktopNotification.py:216
+msgid "Customizing the Notification"
+msgstr ""
+
+#: ../src/modules/DesktopNotification.py:217
+msgid ""
+"You can change the title and the body of the notification to any text you "
+"want. Before displaying the popup window, fields of the form {field} are "
+"replaced by their corresponding value. Available fields are:\n"
+"\n"
+msgstr ""
+
+#: ../src/modules/DesktopNotification.py:220
+msgid "Markup"
+msgstr ""
+
+#: ../src/modules/DesktopNotification.py:221
+msgid ""
+"You can use the Pango markup language to format the text. More information "
+"on that language is available on the following web page:"
+msgstr ""
+
+#: ../src/modules/StatusbarTitlebar.py:47
+msgid "[paused]"
+msgstr "[विराम]"
 
 #: ../src/modules/Covers.py:28
 msgid "Covers"
@@ -294,50 +302,41 @@ msgid ""
 "none, the cover is downloaded."
 msgstr ""
 
-#: ../src/modules/DesktopNotification.py:25
-msgid "Desktop Notification"
+#: ../src/modules/Tracktree.py:367
+msgid "Save playlist"
+msgstr "गानेक्रमानिका सुरक्षित करा"
+
+#: ../src/modules/Tracktree.py:416
+msgid "Clear Playlist"
+msgstr "गानेक्रमानिका खोडा"
+
+#: ../src/modules/Equalizer.py:24
+msgid "Equalizer"
+msgstr "समतोलक"
+
+#: ../src/modules/Equalizer.py:24
+msgid "Tune the level of the frequency bands"
+msgstr "वारंवारता सारणी चा स्तर निश्चित करा"
+
+#: ../src/modules/Equalizer.py:125 ../src/modules/Equalizer.py:213
+#: ../src/modules/Equalizer.py:226
+msgid "Custom"
 msgstr ""
 
-#: ../src/modules/DesktopNotification.py:25
-msgid "Display a desktop notification on track change"
+#: ../src/modules/Equalizer.py:166
+msgid "Save levels"
 msgstr ""
 
-#: ../src/modules/DesktopNotification.py:78
-#: ../src/modules/DesktopNotification.py:188
-msgid "Skip track"
+#: ../src/modules/Equalizer.py:177
+msgid "Load levels"
 msgstr ""
 
-#: ../src/modules/DesktopNotification.py:214
-msgid ""
-"This module displays a small popup window on your desktop when a new track "
-"starts."
+#: ../src/modules/Equalizer.py:204
+msgid "Could not load the file"
 msgstr ""
 
-#: ../src/modules/DesktopNotification.py:215
-msgid ""
-"If the Covers module is enabled, the popup also shows the album cover."
-msgstr ""
-
-#: ../src/modules/DesktopNotification.py:216
-msgid "Customizing the Notification"
-msgstr ""
-
-#: ../src/modules/DesktopNotification.py:217
-msgid ""
-"You can change the title and the body of the notification to any text you "
-"want. Before displaying the popup window, fields of the form {field} are "
-"replaced by their corresponding value. Available fields are:\n"
-"\n"
-msgstr ""
-
-#: ../src/modules/DesktopNotification.py:220
-msgid "Markup"
-msgstr ""
-
-#: ../src/modules/DesktopNotification.py:221
-msgid ""
-"You can use the Pango markup language to format the text. More information "
-"on that language is available on the following web page:"
+#: ../src/modules/Equalizer.py:204
+msgid "The format of the file is incorrect."
 msgstr ""
 
 #: ../src/tools/consts.py:94
@@ -418,7 +417,7 @@ msgstr ""
 
 #: ../res/DesktopNotification.glade.h:7
 msgid "seconds"
-msgstr ""
+msgstr "सेकंद"
 
 #: ../res/Equalizer.glade.h:1
 msgid "Preset:"
@@ -426,12 +425,12 @@ msgstr ""
 
 #: ../res/MainWindow.glade.h:1
 msgid "Play the first track of the playlist"
-msgstr ""
+msgstr "गानेक्रमानिकेतील पहिले गाणे चालावा"
 
 #: ../res/MainWindow.glade.h:2
 msgid "Play the next track"
-msgstr ""
+msgstr "पुढील गाणे चालवा"
 
 #: ../res/MainWindow.glade.h:3
 msgid "Play the previous track"
-msgstr ""
+msgstr "आधीचे गाणे चालावा"

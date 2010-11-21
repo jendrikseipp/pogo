@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: decibel-audio-player\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-11-07 01:42+0100\n"
+"POT-Creation-Date: 2010-11-21 20:05+0100\n"
 "PO-Revision-Date: 2010-10-11 08:02+0000\n"
 "Last-Translator: Monkey <monkey.libre@gmail.com>\n"
 "Language-Team: Spanish <es@li.org>\n"
@@ -18,61 +18,6 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Launchpad-Export-Date: 2010-11-02 05:10+0000\n"
 "X-Generator: Launchpad (build Unknown)\n"
-
-#: ../src/gui/about.py:40
-msgid "translator-credits"
-msgstr ""
-"Launchpad Contributions:\n"
-"  Carlos Albornoz https://launchpad.net/~caralbornozc\n"
-"  Monkey https://launchpad.net/~monkey-libre"
-
-#: ../src/gui/about.py:44
-msgid "Developer:"
-msgstr "Desarrollador:"
-
-#: ../src/gui/about.py:48
-msgid "Thanks to:"
-msgstr "Gracias a:"
-
-#: ../src/gui/preferences.py:43
-msgid "Preferences"
-msgstr "Preferencias"
-
-#: ../src/gui/preferences.py:129
-msgid "Unable to load this module."
-msgstr "Imposible cargar este módulo"
-
-#: ../src/gui/preferences.py:138
-msgid "Modules"
-msgstr "Módulos"
-
-#: ../src/gui/preferences.py:139 ../src/modules/Covers.py:434
-#: ../src/modules/DesktopNotification.py:213
-msgid "Description"
-msgstr "Descripción"
-
-#: ../src/gui/preferences.py:140
-msgid ""
-"This window shows the list of available modules. You can enable/disable a "
-"module by checking/unchecking the check box in front of it."
-msgstr ""
-
-#: ../src/gui/preferences.py:142
-msgid "Configuring a Module"
-msgstr "Configurando un módulo"
-
-#: ../src/gui/preferences.py:143
-msgid ""
-"When a module may be configured, a specific icon is displayed on the right "
-"of the corresponding line. To configure a module, simply select it and then "
-"click on the \"Preferences\" button on the bottom of the dialog box. Note "
-"that configuring a module is only possible when it is enabled."
-msgstr ""
-"Cuando un modulo puede ser configurado, un icono se muestra a la derecha en "
-"la linea correspondiente. Para configurar un modulo simplemente selecciónelo "
-"y luego haga clic en el botón \"Preferencias\" en la parte inferior de la "
-"ventana de diálogo. Note que configurar un módulo es sólo posible cuando "
-"está activado"
 
 #: ../src/media/track/__init__.py:54
 msgid "Track number"
@@ -135,6 +80,69 @@ msgstr "%(album)s  [Disco %(discnum)u]"
 msgid "CDDA Track"
 msgstr ""
 
+#: ../src/gui/preferences.py:43
+msgid "Preferences"
+msgstr "Preferencias"
+
+#: ../src/gui/preferences.py:129
+msgid "Unable to load this module."
+msgstr "Imposible cargar este módulo"
+
+#: ../src/gui/preferences.py:138
+msgid "Modules"
+msgstr "Módulos"
+
+#: ../src/gui/preferences.py:139 ../src/modules/DesktopNotification.py:213
+#: ../src/modules/Covers.py:434
+msgid "Description"
+msgstr "Descripción"
+
+#: ../src/gui/preferences.py:140
+msgid ""
+"This window shows the list of available modules. You can enable/disable a "
+"module by checking/unchecking the check box in front of it."
+msgstr ""
+
+#: ../src/gui/preferences.py:142
+msgid "Configuring a Module"
+msgstr "Configurando un módulo"
+
+#: ../src/gui/preferences.py:143
+msgid ""
+"When a module may be configured, a specific icon is displayed on the right "
+"of the corresponding line. To configure a module, simply select it and then "
+"click on the \"Preferences\" button on the bottom of the dialog box. Note "
+"that configuring a module is only possible when it is enabled."
+msgstr ""
+"Cuando un modulo puede ser configurado, un icono se muestra a la derecha en "
+"la linea correspondiente. Para configurar un modulo simplemente selecciónelo "
+"y luego haga clic en el botón \"Preferencias\" en la parte inferior de la "
+"ventana de diálogo. Note que configurar un módulo es sólo posible cuando "
+"está activado"
+
+#: ../src/gui/about.py:40
+msgid "translator-credits"
+msgstr ""
+"Launchpad Contributions:\n"
+"  Carlos Albornoz https://launchpad.net/~caralbornozc\n"
+"  Monkey https://launchpad.net/~monkey-libre"
+
+#: ../src/gui/about.py:44
+msgid "Developer:"
+msgstr "Desarrollador:"
+
+#: ../src/gui/about.py:48
+msgid "Thanks to:"
+msgstr "Gracias a:"
+
+#: ../src/modules/Search.py:34
+msgid "Search in your music folders"
+msgstr ""
+
+#: ../src/modules/Zeitgeist.py:26
+msgid "Send track information to the Zeitgeist service"
+msgstr ""
+
 #: ../src/modules/FileExplorer.py:173
 msgid "loading..."
 msgstr "cargando…"
@@ -186,63 +194,6 @@ msgstr ""
 msgid "No tracks found"
 msgstr "No se encuentra ningún disco"
 
-#: ../src/modules/CtrlPanel.py:190 ../src/modules/CtrlPanel.py:246
-msgid "Pause the current track"
-msgstr "Pausar la pista actual"
-
-#: ../src/modules/CtrlPanel.py:206
-msgid "Play the first selected track of the playlist"
-msgstr ""
-
-#: ../src/modules/CtrlPanel.py:240
-msgid "Continue playing the current track"
-msgstr "Continuar reproduciendo la pista actual"
-
-#: ../src/modules/StatusbarTitlebar.py:47
-msgid "[paused]"
-msgstr "[pausado]"
-
-#: ../src/modules/Search.py:34
-msgid "Search in your music folders"
-msgstr ""
-
-#: ../src/modules/Tracktree.py:367
-msgid "Save playlist"
-msgstr "Guardar lista de reproducción"
-
-#: ../src/modules/Tracktree.py:416
-msgid "Clear Playlist"
-msgstr "Limpiar lista de reproducción"
-
-#: ../src/modules/Equalizer.py:24
-msgid "Equalizer"
-msgstr ""
-
-#: ../src/modules/Equalizer.py:24
-msgid "Tune the level of the frequency bands"
-msgstr "Afinar el nivel de las bandas de frecuencia"
-
-#: ../src/modules/Equalizer.py:125 ../src/modules/Equalizer.py:213
-#: ../src/modules/Equalizer.py:226
-msgid "Custom"
-msgstr ""
-
-#: ../src/modules/Equalizer.py:166
-msgid "Save levels"
-msgstr ""
-
-#: ../src/modules/Equalizer.py:177
-msgid "Load levels"
-msgstr "Cargar niveles"
-
-#: ../src/modules/Equalizer.py:204
-msgid "Could not load the file"
-msgstr "No se pudo cargar el archivo"
-
-#: ../src/modules/Equalizer.py:204
-msgid "The format of the file is incorrect."
-msgstr ""
-
 #: ../src/modules/__init__.py:75
 msgid "The following Python modules are not available:"
 msgstr "Los siguientes módulos de Python no están disponibles:"
@@ -259,60 +210,17 @@ msgstr ""
 msgid "You must restart the application for this modification to take effect."
 msgstr "Debe reiniciar la aplicación para que esta modificación tenga efecto."
 
-#: ../src/modules/Zeitgeist.py:26
-msgid "Send track information to the Zeitgeist service"
+#: ../src/modules/CtrlPanel.py:190 ../src/modules/CtrlPanel.py:246
+msgid "Pause the current track"
+msgstr "Pausar la pista actual"
+
+#: ../src/modules/CtrlPanel.py:206
+msgid "Play the first selected track of the playlist"
 msgstr ""
 
-#: ../src/modules/Covers.py:28
-msgid "Covers"
-msgstr "Caratulas"
-
-#: ../src/modules/Covers.py:28
-msgid "Show album covers"
-msgstr "Mostrar caratulas de álbumes"
-
-#: ../src/modules/Covers.py:435
-msgid ""
-"This module displays the cover of the album the current track comes from. "
-"Covers may be loaded from local pictures, located in the same directory as "
-"the current track, or may be downloaded from the Internet."
-msgstr ""
-"Éste módulo muestra la caratula del álbum del cual procede la pista actual. "
-"Las caratulas pueden cargarse de imágenes locales, localizadas en el mismo "
-"directorio que la pista actual, o pueden ser descargadas desde Internet."
-
-#: ../src/modules/Covers.py:438
-msgid "User Covers"
-msgstr "Caratulas del usuario"
-
-#: ../src/modules/Covers.py:439
-#, python-format
-msgid ""
-"A user cover is a picture located in the same directory as the current "
-"track. When specifying filenames, you do not need to provide file "
-"extensions, supported file formats (%s) are automatically used."
-msgstr ""
-"Una caratula del usuario es una imagen localizada en el mismo directorio que "
-"la pista actual. Cuando se especifican nombres de archivos, usted no "
-"necesita proveer extensiones de archivos, los formatos de archivos "
-"soportados (%s) se usan automáticamente."
-
-#: ../src/modules/Covers.py:442
-msgid "Internet Covers"
-msgstr "Caratulas de Internet"
-
-#: ../src/modules/Covers.py:443
-msgid ""
-"Covers may be downloaded from the Internet, based on the tags of the current "
-"track. You can ask to always prefer user covers to Internet ones. In this "
-"case, if a user cover exists for the current track, it is used. If there is "
-"none, the cover is downloaded."
-msgstr ""
-"Las caratulas pueden descargarse de Internet, basándose en las etiquetas de "
-"la pista actual. Usted puede pedir que siempre se prefieran las caratulas "
-"del usuario a las de Internet. En este caso, si una caratula del usuario "
-"existe para la pista actual, ésta se usa. Si no hay ninguna, la caratula "
-"será descargada."
+#: ../src/modules/CtrlPanel.py:240
+msgid "Continue playing the current track"
+msgstr "Continuar reproduciendo la pista actual"
 
 #: ../src/modules/DesktopNotification.py:25
 msgid "Desktop Notification"
@@ -366,6 +274,98 @@ msgid ""
 msgstr ""
 "Puede usar la idioma de Pango <em>markup</em> para formatear el texto. Mas "
 "información sobre este lenguaje está disponible en la  siguiente página web:"
+
+#: ../src/modules/StatusbarTitlebar.py:47
+msgid "[paused]"
+msgstr "[pausado]"
+
+#: ../src/modules/Covers.py:28
+msgid "Covers"
+msgstr "Caratulas"
+
+#: ../src/modules/Covers.py:28
+msgid "Show album covers"
+msgstr "Mostrar caratulas de álbumes"
+
+#: ../src/modules/Covers.py:435
+msgid ""
+"This module displays the cover of the album the current track comes from. "
+"Covers may be loaded from local pictures, located in the same directory as "
+"the current track, or may be downloaded from the Internet."
+msgstr ""
+"Éste módulo muestra la caratula del álbum del cual procede la pista actual. "
+"Las caratulas pueden cargarse de imágenes locales, localizadas en el mismo "
+"directorio que la pista actual, o pueden ser descargadas desde Internet."
+
+#: ../src/modules/Covers.py:438
+msgid "User Covers"
+msgstr "Caratulas del usuario"
+
+#: ../src/modules/Covers.py:439
+#, python-format
+msgid ""
+"A user cover is a picture located in the same directory as the current "
+"track. When specifying filenames, you do not need to provide file "
+"extensions, supported file formats (%s) are automatically used."
+msgstr ""
+"Una caratula del usuario es una imagen localizada en el mismo directorio que "
+"la pista actual. Cuando se especifican nombres de archivos, usted no "
+"necesita proveer extensiones de archivos, los formatos de archivos "
+"soportados (%s) se usan automáticamente."
+
+#: ../src/modules/Covers.py:442
+msgid "Internet Covers"
+msgstr "Caratulas de Internet"
+
+#: ../src/modules/Covers.py:443
+msgid ""
+"Covers may be downloaded from the Internet, based on the tags of the current "
+"track. You can ask to always prefer user covers to Internet ones. In this "
+"case, if a user cover exists for the current track, it is used. If there is "
+"none, the cover is downloaded."
+msgstr ""
+"Las caratulas pueden descargarse de Internet, basándose en las etiquetas de "
+"la pista actual. Usted puede pedir que siempre se prefieran las caratulas "
+"del usuario a las de Internet. En este caso, si una caratula del usuario "
+"existe para la pista actual, ésta se usa. Si no hay ninguna, la caratula "
+"será descargada."
+
+#: ../src/modules/Tracktree.py:367
+msgid "Save playlist"
+msgstr "Guardar lista de reproducción"
+
+#: ../src/modules/Tracktree.py:416
+msgid "Clear Playlist"
+msgstr "Limpiar lista de reproducción"
+
+#: ../src/modules/Equalizer.py:24
+msgid "Equalizer"
+msgstr ""
+
+#: ../src/modules/Equalizer.py:24
+msgid "Tune the level of the frequency bands"
+msgstr "Afinar el nivel de las bandas de frecuencia"
+
+#: ../src/modules/Equalizer.py:125 ../src/modules/Equalizer.py:213
+#: ../src/modules/Equalizer.py:226
+msgid "Custom"
+msgstr ""
+
+#: ../src/modules/Equalizer.py:166
+msgid "Save levels"
+msgstr ""
+
+#: ../src/modules/Equalizer.py:177
+msgid "Load levels"
+msgstr "Cargar niveles"
+
+#: ../src/modules/Equalizer.py:204
+msgid "Could not load the file"
+msgstr "No se pudo cargar el archivo"
+
+#: ../src/modules/Equalizer.py:204
+msgid "The format of the file is incorrect."
+msgstr ""
 
 #: ../src/tools/consts.py:94
 msgid "Unknown Genre"

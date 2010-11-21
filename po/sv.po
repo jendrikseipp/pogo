@@ -7,11 +7,12 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pogo\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-11-07 01:42+0100\n"
+"POT-Creation-Date: 2010-11-21 20:05+0100\n"
 "PO-Revision-Date: 2010-11-09 15:37+0000\n"
 "Last-Translator: David Bengtsson <Unknown>\n"
-"Language-Team: Launchpad Swedish Translators <lp-l10n-"
-"sv@lists.launchpad.net>\n"
+"Language-Team: Launchpad Swedish Translators <lp-l10n-sv@lists.launchpad."
+"net>\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -19,64 +20,6 @@ msgstr ""
 "X-Launchpad-Export-Date: 2010-11-10 05:21+0000\n"
 "X-Generator: Launchpad (build Unknown)\n"
 "X-Poedit-Language: Swedish\n"
-
-#: ../src/gui/about.py:40
-msgid "translator-credits"
-msgstr ""
-"Launchpad Contributions:\n"
-"  David Bengtsson https://launchpad.net/~justfaking\n"
-"  Jendrik Seipp https://launchpad.net/~jendrikseipp"
-
-#: ../src/gui/about.py:44
-msgid "Developer:"
-msgstr "Utvecklare:"
-
-#: ../src/gui/about.py:48
-msgid "Thanks to:"
-msgstr "Tack till:"
-
-#: ../src/gui/preferences.py:43
-msgid "Preferences"
-msgstr "Inställningar"
-
-#: ../src/gui/preferences.py:129
-msgid "Unable to load this module."
-msgstr "Kunde inte läsa in denna modul."
-
-#: ../src/gui/preferences.py:138
-msgid "Modules"
-msgstr "Moduler"
-
-#: ../src/gui/preferences.py:139 ../src/modules/Covers.py:434
-#: ../src/modules/DesktopNotification.py:213
-msgid "Description"
-msgstr "Beskrivning"
-
-#: ../src/gui/preferences.py:140
-msgid ""
-"This window shows the list of available modules. You can enable/disable a "
-"module by checking/unchecking the check box in front of it."
-msgstr ""
-"Detta fönster visar listan över tillgängliga moduler. Du kan "
-"aktivera/inaktivera en modul genom att markera/avmarkera kryssrutan framför "
-"den."
-
-#: ../src/gui/preferences.py:142
-msgid "Configuring a Module"
-msgstr "Konfigurera en modul"
-
-#: ../src/gui/preferences.py:143
-msgid ""
-"When a module may be configured, a specific icon is displayed on the right "
-"of the corresponding line. To configure a module, simply select it and then "
-"click on the \"Preferences\" button on the bottom of the dialog box. Note "
-"that configuring a module is only possible when it is enabled."
-msgstr ""
-"När en modul kan konfigureras, kommer en specifik ikon att visas till höger "
-"på motsvarande rad. För att konfigurera en modul, markera helt enkelt "
-"modulen och klicka sedan på \"Inställningar\"-knappen i nederkant av "
-"dialogrutan. Observera att konfigurering av en modul endast är möjlig när "
-"den är aktiverad."
 
 #: ../src/media/track/__init__.py:54
 msgid "Track number"
@@ -139,6 +82,71 @@ msgstr "%(album)s [Skiva %(discnum)u]"
 msgid "CDDA Track"
 msgstr "CDDA-spår"
 
+#: ../src/gui/preferences.py:43
+msgid "Preferences"
+msgstr "Inställningar"
+
+#: ../src/gui/preferences.py:129
+msgid "Unable to load this module."
+msgstr "Kunde inte läsa in denna modul."
+
+#: ../src/gui/preferences.py:138
+msgid "Modules"
+msgstr "Moduler"
+
+#: ../src/gui/preferences.py:139 ../src/modules/DesktopNotification.py:213
+#: ../src/modules/Covers.py:434
+msgid "Description"
+msgstr "Beskrivning"
+
+#: ../src/gui/preferences.py:140
+msgid ""
+"This window shows the list of available modules. You can enable/disable a "
+"module by checking/unchecking the check box in front of it."
+msgstr ""
+"Detta fönster visar listan över tillgängliga moduler. Du kan aktivera/"
+"inaktivera en modul genom att markera/avmarkera kryssrutan framför den."
+
+#: ../src/gui/preferences.py:142
+msgid "Configuring a Module"
+msgstr "Konfigurera en modul"
+
+#: ../src/gui/preferences.py:143
+msgid ""
+"When a module may be configured, a specific icon is displayed on the right "
+"of the corresponding line. To configure a module, simply select it and then "
+"click on the \"Preferences\" button on the bottom of the dialog box. Note "
+"that configuring a module is only possible when it is enabled."
+msgstr ""
+"När en modul kan konfigureras, kommer en specifik ikon att visas till höger "
+"på motsvarande rad. För att konfigurera en modul, markera helt enkelt "
+"modulen och klicka sedan på \"Inställningar\"-knappen i nederkant av "
+"dialogrutan. Observera att konfigurering av en modul endast är möjlig när "
+"den är aktiverad."
+
+#: ../src/gui/about.py:40
+msgid "translator-credits"
+msgstr ""
+"Launchpad Contributions:\n"
+"  David Bengtsson https://launchpad.net/~justfaking\n"
+"  Jendrik Seipp https://launchpad.net/~jendrikseipp"
+
+#: ../src/gui/about.py:44
+msgid "Developer:"
+msgstr "Utvecklare:"
+
+#: ../src/gui/about.py:48
+msgid "Thanks to:"
+msgstr "Tack till:"
+
+#: ../src/modules/Search.py:34
+msgid "Search in your music folders"
+msgstr "Sök i dina musikmappar"
+
+#: ../src/modules/Zeitgeist.py:26
+msgid "Send track information to the Zeitgeist service"
+msgstr "Skicka spårinformation till Zeitgeist-tjänsten"
+
 #: ../src/modules/FileExplorer.py:173
 msgid "loading..."
 msgstr "läser in..."
@@ -187,63 +195,6 @@ msgstr "Söker ..."
 msgid "No tracks found"
 msgstr "Inga spår hittades"
 
-#: ../src/modules/CtrlPanel.py:190 ../src/modules/CtrlPanel.py:246
-msgid "Pause the current track"
-msgstr "Gör paus i aktuellt spår"
-
-#: ../src/modules/CtrlPanel.py:206
-msgid "Play the first selected track of the playlist"
-msgstr "Spela upp valt spår i spellistan"
-
-#: ../src/modules/CtrlPanel.py:240
-msgid "Continue playing the current track"
-msgstr "Fortsätt uppspelning av aktuellt spår"
-
-#: ../src/modules/StatusbarTitlebar.py:47
-msgid "[paused]"
-msgstr "[pausad]"
-
-#: ../src/modules/Search.py:34
-msgid "Search in your music folders"
-msgstr "Sök i dina musikmappar"
-
-#: ../src/modules/Tracktree.py:367
-msgid "Save playlist"
-msgstr "Spara spellista"
-
-#: ../src/modules/Tracktree.py:416
-msgid "Clear Playlist"
-msgstr "Rensa spellista"
-
-#: ../src/modules/Equalizer.py:24
-msgid "Equalizer"
-msgstr "Equalizer"
-
-#: ../src/modules/Equalizer.py:24
-msgid "Tune the level of the frequency bands"
-msgstr "Ställ in nivåerna på frekvensbanden"
-
-#: ../src/modules/Equalizer.py:125 ../src/modules/Equalizer.py:213
-#: ../src/modules/Equalizer.py:226
-msgid "Custom"
-msgstr "Anpassad"
-
-#: ../src/modules/Equalizer.py:166
-msgid "Save levels"
-msgstr "Spara nivåer"
-
-#: ../src/modules/Equalizer.py:177
-msgid "Load levels"
-msgstr "Läs in nivåer"
-
-#: ../src/modules/Equalizer.py:204
-msgid "Could not load the file"
-msgstr "Kunde inte läsa in filen"
-
-#: ../src/modules/Equalizer.py:204
-msgid "The format of the file is incorrect."
-msgstr "Formatet på filen är felaktigt."
-
 #: ../src/modules/__init__.py:75
 msgid "The following Python modules are not available:"
 msgstr "Följande Python-moduler är inte tillgängliga:"
@@ -257,14 +208,79 @@ msgid "Restart required"
 msgstr "Omstart krävs"
 
 #: ../src/modules/__init__.py:267
-msgid ""
-"You must restart the application for this modification to take effect."
-msgstr ""
-"Du måste starta om programmet för att denna modifiering ska få effekt."
+msgid "You must restart the application for this modification to take effect."
+msgstr "Du måste starta om programmet för att denna modifiering ska få effekt."
 
-#: ../src/modules/Zeitgeist.py:26
-msgid "Send track information to the Zeitgeist service"
-msgstr "Skicka spårinformation till Zeitgeist-tjänsten"
+#: ../src/modules/CtrlPanel.py:190 ../src/modules/CtrlPanel.py:246
+msgid "Pause the current track"
+msgstr "Gör paus i aktuellt spår"
+
+#: ../src/modules/CtrlPanel.py:206
+msgid "Play the first selected track of the playlist"
+msgstr "Spela upp valt spår i spellistan"
+
+#: ../src/modules/CtrlPanel.py:240
+msgid "Continue playing the current track"
+msgstr "Fortsätt uppspelning av aktuellt spår"
+
+#: ../src/modules/DesktopNotification.py:25
+msgid "Desktop Notification"
+msgstr "Skrivbordsnotifiering"
+
+#: ../src/modules/DesktopNotification.py:25
+msgid "Display a desktop notification on track change"
+msgstr "Visa en skrivbordsnotifiering vid spårbyte"
+
+#: ../src/modules/DesktopNotification.py:78
+#: ../src/modules/DesktopNotification.py:188
+msgid "Skip track"
+msgstr "Hoppa över spår"
+
+#: ../src/modules/DesktopNotification.py:214
+msgid ""
+"This module displays a small popup window on your desktop when a new track "
+"starts."
+msgstr ""
+"Denna modul visar en liten popup-notifiering på ditt skrivbord när ett nytt "
+"spår påbörjas."
+
+#: ../src/modules/DesktopNotification.py:215
+msgid "If the Covers module is enabled, the popup also shows the album cover."
+msgstr ""
+"Om modulen för omslagsbilder är aktiverad, visar popup-notifieringen även "
+"omslagsbilden."
+
+#: ../src/modules/DesktopNotification.py:216
+msgid "Customizing the Notification"
+msgstr "Anpassa notifieringen"
+
+#: ../src/modules/DesktopNotification.py:217
+msgid ""
+"You can change the title and the body of the notification to any text you "
+"want. Before displaying the popup window, fields of the form {field} are "
+"replaced by their corresponding value. Available fields are:\n"
+"\n"
+msgstr ""
+"Du kan ändra notifieringens titel och brödtext till valfri text. Innan popup-"
+"notifieringen visas, kommer fälten i formuläret {field} att ersättas med "
+"deras motsvarande värden. Tillgängliga fält är:\n"
+"\n"
+
+#: ../src/modules/DesktopNotification.py:220
+msgid "Markup"
+msgstr "Märkning"
+
+#: ../src/modules/DesktopNotification.py:221
+msgid ""
+"You can use the Pango markup language to format the text. More information "
+"on that language is available on the following web page:"
+msgstr ""
+"Du kan använda märkspråket Pango för att formatera texten. Mer information "
+"om språket finns tillgänglig på följande webbplats:"
+
+#: ../src/modules/StatusbarTitlebar.py:47
+msgid "[paused]"
+msgstr "[pausad]"
 
 #: ../src/modules/Covers.py:28
 msgid "Covers"
@@ -315,61 +331,42 @@ msgstr ""
 "internet. I detta fall används användaromslag för det aktuella spåret om ett "
 "sådant finns. Om det inte finns något så hämtas omslagsbilden."
 
-#: ../src/modules/DesktopNotification.py:25
-msgid "Desktop Notification"
-msgstr "Skrivbordsnotifiering"
+#: ../src/modules/Tracktree.py:367
+msgid "Save playlist"
+msgstr "Spara spellista"
 
-#: ../src/modules/DesktopNotification.py:25
-msgid "Display a desktop notification on track change"
-msgstr "Visa en skrivbordsnotifiering vid spårbyte"
+#: ../src/modules/Tracktree.py:416
+msgid "Clear Playlist"
+msgstr "Rensa spellista"
 
-#: ../src/modules/DesktopNotification.py:78
-#: ../src/modules/DesktopNotification.py:188
-msgid "Skip track"
-msgstr "Hoppa över spår"
+#: ../src/modules/Equalizer.py:24
+msgid "Equalizer"
+msgstr "Equalizer"
 
-#: ../src/modules/DesktopNotification.py:214
-msgid ""
-"This module displays a small popup window on your desktop when a new track "
-"starts."
-msgstr ""
-"Denna modul visar en liten popup-notifiering på ditt skrivbord när ett nytt "
-"spår påbörjas."
+#: ../src/modules/Equalizer.py:24
+msgid "Tune the level of the frequency bands"
+msgstr "Ställ in nivåerna på frekvensbanden"
 
-#: ../src/modules/DesktopNotification.py:215
-msgid ""
-"If the Covers module is enabled, the popup also shows the album cover."
-msgstr ""
-"Om modulen för omslagsbilder är aktiverad, visar popup-notifieringen även "
-"omslagsbilden."
+#: ../src/modules/Equalizer.py:125 ../src/modules/Equalizer.py:213
+#: ../src/modules/Equalizer.py:226
+msgid "Custom"
+msgstr "Anpassad"
 
-#: ../src/modules/DesktopNotification.py:216
-msgid "Customizing the Notification"
-msgstr "Anpassa notifieringen"
+#: ../src/modules/Equalizer.py:166
+msgid "Save levels"
+msgstr "Spara nivåer"
 
-#: ../src/modules/DesktopNotification.py:217
-msgid ""
-"You can change the title and the body of the notification to any text you "
-"want. Before displaying the popup window, fields of the form {field} are "
-"replaced by their corresponding value. Available fields are:\n"
-"\n"
-msgstr ""
-"Du kan ändra notifieringens titel och brödtext till valfri text. Innan popup-"
-"notifieringen visas, kommer fälten i formuläret {field} att ersättas med "
-"deras motsvarande värden. Tillgängliga fält är:\n"
-"\n"
+#: ../src/modules/Equalizer.py:177
+msgid "Load levels"
+msgstr "Läs in nivåer"
 
-#: ../src/modules/DesktopNotification.py:220
-msgid "Markup"
-msgstr "Märkning"
+#: ../src/modules/Equalizer.py:204
+msgid "Could not load the file"
+msgstr "Kunde inte läsa in filen"
 
-#: ../src/modules/DesktopNotification.py:221
-msgid ""
-"You can use the Pango markup language to format the text. More information "
-"on that language is available on the following web page:"
-msgstr ""
-"Du kan använda märkspråket Pango för att formatera texten. Mer information "
-"om språket finns tillgänglig på följande webbplats:"
+#: ../src/modules/Equalizer.py:204
+msgid "The format of the file is incorrect."
+msgstr "Formatet på filen är felaktigt."
 
 #: ../src/tools/consts.py:94
 msgid "Unknown Genre"
@@ -480,7 +477,6 @@ msgstr "Spela upp föregående spår"
 #~ "Det här namnet tillåts inte.\n"
 #~ "Använd ett annat namn."
 
-#, python-format
 #~ msgid ""
 #~ "The character %s is not allowed.\n"
 #~ "Please use another name."

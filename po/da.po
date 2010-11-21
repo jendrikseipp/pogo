@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: decibel-audio-player\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-11-07 01:42+0100\n"
+"POT-Creation-Date: 2010-11-21 20:05+0100\n"
 "PO-Revision-Date: 2010-10-13 16:43+0000\n"
 "Last-Translator: Joe Hansen <Unknown>\n"
 "Language-Team: Danish <da@li.org>\n"
@@ -18,63 +18,6 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Launchpad-Export-Date: 2010-11-02 05:09+0000\n"
 "X-Generator: Launchpad (build Unknown)\n"
-
-#: ../src/gui/about.py:40
-msgid "translator-credits"
-msgstr ""
-"Launchpad Contributions:\n"
-"  Ask Hjorth Larsen https://launchpad.net/~askhl\n"
-"  Jendrik Seipp https://launchpad.net/~jendrikseipp\n"
-"  Joe Hansen https://launchpad.net/~joedalton2"
-
-#: ../src/gui/about.py:44
-msgid "Developer:"
-msgstr "Udvikler:"
-
-#: ../src/gui/about.py:48
-msgid "Thanks to:"
-msgstr "Tak til:"
-
-#: ../src/gui/preferences.py:43
-msgid "Preferences"
-msgstr "Indstillinger"
-
-#: ../src/gui/preferences.py:129
-msgid "Unable to load this module."
-msgstr "Kunne ikke indlæse dette modul."
-
-#: ../src/gui/preferences.py:138
-msgid "Modules"
-msgstr "Moduler"
-
-#: ../src/gui/preferences.py:139 ../src/modules/Covers.py:434
-#: ../src/modules/DesktopNotification.py:213
-msgid "Description"
-msgstr "Beskrivelse"
-
-#: ../src/gui/preferences.py:140
-msgid ""
-"This window shows the list of available modules. You can enable/disable a "
-"module by checking/unchecking the check box in front of it."
-msgstr ""
-"Dette vindue viser listen af tilgængelige moduler. Du kan slå et modul til "
-"eller fra ved at sætte eller fjerne krydset i afkrydsningsfeltet foran det."
-
-#: ../src/gui/preferences.py:142
-msgid "Configuring a Module"
-msgstr "Konfigurerer et modul"
-
-#: ../src/gui/preferences.py:143
-msgid ""
-"When a module may be configured, a specific icon is displayed on the right "
-"of the corresponding line. To configure a module, simply select it and then "
-"click on the \"Preferences\" button on the bottom of the dialog box. Note "
-"that configuring a module is only possible when it is enabled."
-msgstr ""
-"Når et modul kan konfigureres, vises et bestemt ikon på højre side af den "
-"pågældende linje. For at konfigurere et modul skal du markere det og klikke "
-"på \"Indstillinger\"-knappen nederst i dialogboksen. Bemærk at moduler kun "
-"kan konfigureres når de er slået til."
 
 #: ../src/media/track/__init__.py:54
 msgid "Track number"
@@ -137,6 +80,71 @@ msgstr "%(album)s [Disk %(discnum)u]"
 msgid "CDDA Track"
 msgstr "CDDA-spor"
 
+#: ../src/gui/preferences.py:43
+msgid "Preferences"
+msgstr "Indstillinger"
+
+#: ../src/gui/preferences.py:129
+msgid "Unable to load this module."
+msgstr "Kunne ikke indlæse dette modul."
+
+#: ../src/gui/preferences.py:138
+msgid "Modules"
+msgstr "Moduler"
+
+#: ../src/gui/preferences.py:139 ../src/modules/DesktopNotification.py:213
+#: ../src/modules/Covers.py:434
+msgid "Description"
+msgstr "Beskrivelse"
+
+#: ../src/gui/preferences.py:140
+msgid ""
+"This window shows the list of available modules. You can enable/disable a "
+"module by checking/unchecking the check box in front of it."
+msgstr ""
+"Dette vindue viser listen af tilgængelige moduler. Du kan slå et modul til "
+"eller fra ved at sætte eller fjerne krydset i afkrydsningsfeltet foran det."
+
+#: ../src/gui/preferences.py:142
+msgid "Configuring a Module"
+msgstr "Konfigurerer et modul"
+
+#: ../src/gui/preferences.py:143
+msgid ""
+"When a module may be configured, a specific icon is displayed on the right "
+"of the corresponding line. To configure a module, simply select it and then "
+"click on the \"Preferences\" button on the bottom of the dialog box. Note "
+"that configuring a module is only possible when it is enabled."
+msgstr ""
+"Når et modul kan konfigureres, vises et bestemt ikon på højre side af den "
+"pågældende linje. For at konfigurere et modul skal du markere det og klikke "
+"på \"Indstillinger\"-knappen nederst i dialogboksen. Bemærk at moduler kun "
+"kan konfigureres når de er slået til."
+
+#: ../src/gui/about.py:40
+msgid "translator-credits"
+msgstr ""
+"Launchpad Contributions:\n"
+"  Ask Hjorth Larsen https://launchpad.net/~askhl\n"
+"  Jendrik Seipp https://launchpad.net/~jendrikseipp\n"
+"  Joe Hansen https://launchpad.net/~joedalton2"
+
+#: ../src/gui/about.py:44
+msgid "Developer:"
+msgstr "Udvikler:"
+
+#: ../src/gui/about.py:48
+msgid "Thanks to:"
+msgstr "Tak til:"
+
+#: ../src/modules/Search.py:34
+msgid "Search in your music folders"
+msgstr ""
+
+#: ../src/modules/Zeitgeist.py:26
+msgid "Send track information to the Zeitgeist service"
+msgstr "Send sporinformation til Zeitgeist-tjenesten"
+
 #: ../src/modules/FileExplorer.py:173
 msgid "loading..."
 msgstr "indlæser..."
@@ -187,63 +195,6 @@ msgstr ""
 msgid "No tracks found"
 msgstr ""
 
-#: ../src/modules/CtrlPanel.py:190 ../src/modules/CtrlPanel.py:246
-msgid "Pause the current track"
-msgstr "Sæt dette nummer på pause"
-
-#: ../src/modules/CtrlPanel.py:206
-msgid "Play the first selected track of the playlist"
-msgstr "Afspil det første valgte spor i afspilningslisten"
-
-#: ../src/modules/CtrlPanel.py:240
-msgid "Continue playing the current track"
-msgstr "Fortsæt det nuværende nummer"
-
-#: ../src/modules/StatusbarTitlebar.py:47
-msgid "[paused]"
-msgstr "[pause]"
-
-#: ../src/modules/Search.py:34
-msgid "Search in your music folders"
-msgstr ""
-
-#: ../src/modules/Tracktree.py:367
-msgid "Save playlist"
-msgstr "Gem afspilningsliste"
-
-#: ../src/modules/Tracktree.py:416
-msgid "Clear Playlist"
-msgstr "Ryd afspilningslisten"
-
-#: ../src/modules/Equalizer.py:24
-msgid "Equalizer"
-msgstr "Equalizer"
-
-#: ../src/modules/Equalizer.py:24
-msgid "Tune the level of the frequency bands"
-msgstr "Justér niveauet på frekvensbåndene"
-
-#: ../src/modules/Equalizer.py:125 ../src/modules/Equalizer.py:213
-#: ../src/modules/Equalizer.py:226
-msgid "Custom"
-msgstr "Brugerdefineret"
-
-#: ../src/modules/Equalizer.py:166
-msgid "Save levels"
-msgstr "Gem niveauer"
-
-#: ../src/modules/Equalizer.py:177
-msgid "Load levels"
-msgstr "Indlæs niveauer"
-
-#: ../src/modules/Equalizer.py:204
-msgid "Could not load the file"
-msgstr "Kunne ikke indlæse filen"
-
-#: ../src/modules/Equalizer.py:204
-msgid "The format of the file is incorrect."
-msgstr "Denne fil har et forkert format."
-
 #: ../src/modules/__init__.py:75
 msgid "The following Python modules are not available:"
 msgstr "De følgende Python-moduler er ikke tilgængelige:"
@@ -262,58 +213,17 @@ msgstr ""
 "Du er nødt til at genstarte programmet, for at dine ændringer kan træde "
 "igennem."
 
-#: ../src/modules/Zeitgeist.py:26
-msgid "Send track information to the Zeitgeist service"
-msgstr "Send sporinformation til Zeitgeist-tjenesten"
+#: ../src/modules/CtrlPanel.py:190 ../src/modules/CtrlPanel.py:246
+msgid "Pause the current track"
+msgstr "Sæt dette nummer på pause"
 
-#: ../src/modules/Covers.py:28
-msgid "Covers"
-msgstr "Omslag"
+#: ../src/modules/CtrlPanel.py:206
+msgid "Play the first selected track of the playlist"
+msgstr "Afspil det første valgte spor i afspilningslisten"
 
-#: ../src/modules/Covers.py:28
-msgid "Show album covers"
-msgstr "Vis albumomslag"
-
-#: ../src/modules/Covers.py:435
-msgid ""
-"This module displays the cover of the album the current track comes from. "
-"Covers may be loaded from local pictures, located in the same directory as "
-"the current track, or may be downloaded from the Internet."
-msgstr ""
-"Dette modul viser omslaget for det album, som det nuværende nummer kommer "
-"fra. Omslag kan indlæses fra lokale billeder, som ligger i samme mappe som "
-"det nuværende nummer, eller de kan hentes fra nettet."
-
-#: ../src/modules/Covers.py:438
-msgid "User Covers"
-msgstr "Brugeromslag"
-
-#: ../src/modules/Covers.py:439
-#, python-format
-msgid ""
-"A user cover is a picture located in the same directory as the current "
-"track. When specifying filenames, you do not need to provide file "
-"extensions, supported file formats (%s) are automatically used."
-msgstr ""
-"Et brugeromslag er et billede, der ligger i samme mappe som det nuværende "
-"nummer. Når du angiver filnavne, behøver du ikke angive filendelser. "
-"Understøttede filformater (%s) bruges automatisk."
-
-#: ../src/modules/Covers.py:442
-msgid "Internet Covers"
-msgstr "Internetomslag"
-
-#: ../src/modules/Covers.py:443
-msgid ""
-"Covers may be downloaded from the Internet, based on the tags of the current "
-"track. You can ask to always prefer user covers to Internet ones. In this "
-"case, if a user cover exists for the current track, it is used. If there is "
-"none, the cover is downloaded."
-msgstr ""
-"Omslag kan hentes fra nettet afhængigt af det nuværende nummers mærker. Du "
-"kan altid foretrække brugeromslag for internetomslag. Hvis der findes et "
-"brugeromslag for et givet nummer, vil dette blive brugt. Ellers hentes et "
-"omslag fra nettet."
+#: ../src/modules/CtrlPanel.py:240
+msgid "Continue playing the current track"
+msgstr "Fortsæt det nuværende nummer"
 
 #: ../src/modules/DesktopNotification.py:25
 msgid "Desktop Notification"
@@ -367,6 +277,96 @@ msgid ""
 msgstr ""
 "Du kan bruge opmærkningssproget Pango til formatering af teksten. Mere "
 "information om sproget kan findes på følgende webside:"
+
+#: ../src/modules/StatusbarTitlebar.py:47
+msgid "[paused]"
+msgstr "[pause]"
+
+#: ../src/modules/Covers.py:28
+msgid "Covers"
+msgstr "Omslag"
+
+#: ../src/modules/Covers.py:28
+msgid "Show album covers"
+msgstr "Vis albumomslag"
+
+#: ../src/modules/Covers.py:435
+msgid ""
+"This module displays the cover of the album the current track comes from. "
+"Covers may be loaded from local pictures, located in the same directory as "
+"the current track, or may be downloaded from the Internet."
+msgstr ""
+"Dette modul viser omslaget for det album, som det nuværende nummer kommer "
+"fra. Omslag kan indlæses fra lokale billeder, som ligger i samme mappe som "
+"det nuværende nummer, eller de kan hentes fra nettet."
+
+#: ../src/modules/Covers.py:438
+msgid "User Covers"
+msgstr "Brugeromslag"
+
+#: ../src/modules/Covers.py:439
+#, python-format
+msgid ""
+"A user cover is a picture located in the same directory as the current "
+"track. When specifying filenames, you do not need to provide file "
+"extensions, supported file formats (%s) are automatically used."
+msgstr ""
+"Et brugeromslag er et billede, der ligger i samme mappe som det nuværende "
+"nummer. Når du angiver filnavne, behøver du ikke angive filendelser. "
+"Understøttede filformater (%s) bruges automatisk."
+
+#: ../src/modules/Covers.py:442
+msgid "Internet Covers"
+msgstr "Internetomslag"
+
+#: ../src/modules/Covers.py:443
+msgid ""
+"Covers may be downloaded from the Internet, based on the tags of the current "
+"track. You can ask to always prefer user covers to Internet ones. In this "
+"case, if a user cover exists for the current track, it is used. If there is "
+"none, the cover is downloaded."
+msgstr ""
+"Omslag kan hentes fra nettet afhængigt af det nuværende nummers mærker. Du "
+"kan altid foretrække brugeromslag for internetomslag. Hvis der findes et "
+"brugeromslag for et givet nummer, vil dette blive brugt. Ellers hentes et "
+"omslag fra nettet."
+
+#: ../src/modules/Tracktree.py:367
+msgid "Save playlist"
+msgstr "Gem afspilningsliste"
+
+#: ../src/modules/Tracktree.py:416
+msgid "Clear Playlist"
+msgstr "Ryd afspilningslisten"
+
+#: ../src/modules/Equalizer.py:24
+msgid "Equalizer"
+msgstr "Equalizer"
+
+#: ../src/modules/Equalizer.py:24
+msgid "Tune the level of the frequency bands"
+msgstr "Justér niveauet på frekvensbåndene"
+
+#: ../src/modules/Equalizer.py:125 ../src/modules/Equalizer.py:213
+#: ../src/modules/Equalizer.py:226
+msgid "Custom"
+msgstr "Brugerdefineret"
+
+#: ../src/modules/Equalizer.py:166
+msgid "Save levels"
+msgstr "Gem niveauer"
+
+#: ../src/modules/Equalizer.py:177
+msgid "Load levels"
+msgstr "Indlæs niveauer"
+
+#: ../src/modules/Equalizer.py:204
+msgid "Could not load the file"
+msgstr "Kunne ikke indlæse filen"
+
+#: ../src/modules/Equalizer.py:204
+msgid "The format of the file is incorrect."
+msgstr "Denne fil har et forkert format."
 
 #: ../src/tools/consts.py:94
 msgid "Unknown Genre"

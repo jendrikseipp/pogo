@@ -7,73 +7,17 @@ msgid ""
 msgstr ""
 "Project-Id-Version: decibel-audio-player\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-11-07 01:42+0100\n"
+"POT-Creation-Date: 2010-11-21 20:05+0100\n"
 "PO-Revision-Date: 2010-11-08 10:05+0000\n"
 "Last-Translator: Martin Rotter <skunkic@seznam.cz>\n"
 "Language-Team: Czech <cs@li.org>\n"
+"Language: cs\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
 "X-Launchpad-Export-Date: 2010-11-09 05:08+0000\n"
 "X-Generator: Launchpad (build Unknown)\n"
-
-#: ../src/gui/about.py:40
-msgid "translator-credits"
-msgstr ""
-"Launchpad Contributions:\n"
-"  Jendrik Seipp https://launchpad.net/~jendrikseipp\n"
-"  Konki https://launchpad.net/~pavel-konkol\n"
-"  Martin Rotter https://launchpad.net/~skunkic"
-
-#: ../src/gui/about.py:44
-msgid "Developer:"
-msgstr "Vývojář:"
-
-#: ../src/gui/about.py:48
-msgid "Thanks to:"
-msgstr "Poděkování:"
-
-#: ../src/gui/preferences.py:43
-msgid "Preferences"
-msgstr "Nastavení"
-
-#: ../src/gui/preferences.py:129
-msgid "Unable to load this module."
-msgstr "Nelze načíst tento modul"
-
-#: ../src/gui/preferences.py:138
-msgid "Modules"
-msgstr "Moduly"
-
-#: ../src/gui/preferences.py:139 ../src/modules/Covers.py:434
-#: ../src/modules/DesktopNotification.py:213
-msgid "Description"
-msgstr "Popis"
-
-#: ../src/gui/preferences.py:140
-msgid ""
-"This window shows the list of available modules. You can enable/disable a "
-"module by checking/unchecking the check box in front of it."
-msgstr ""
-"Toto okno zobrazuje seznam dostupných modulů. Můžete povolit / zakázat "
-"kontrolu modulu zaškrtnutím / odškrtnutím políčka před ním."
-
-#: ../src/gui/preferences.py:142
-msgid "Configuring a Module"
-msgstr "Nastavení Modulu"
-
-#: ../src/gui/preferences.py:143
-msgid ""
-"When a module may be configured, a specific icon is displayed on the right "
-"of the corresponding line. To configure a module, simply select it and then "
-"click on the \"Preferences\" button on the bottom of the dialog box. Note "
-"that configuring a module is only possible when it is enabled."
-msgstr ""
-"Možnost nastavení modulu je idnikována iknkou napravo od něj. Pro nastavení "
-"modulu stačí zvolit příslušný modul a klepnout na tlačítko \"Nastavení\" ve "
-"spodní části okna. Nastavení modulu je možné jen pokud je příslušný modul "
-"povolený."
 
 #: ../src/media/track/__init__.py:54
 msgid "Track number"
@@ -136,6 +80,71 @@ msgstr "%(album)s [Disk %(discnum)u]"
 msgid "CDDA Track"
 msgstr "CDDA Stopa"
 
+#: ../src/gui/preferences.py:43
+msgid "Preferences"
+msgstr "Nastavení"
+
+#: ../src/gui/preferences.py:129
+msgid "Unable to load this module."
+msgstr "Nelze načíst tento modul"
+
+#: ../src/gui/preferences.py:138
+msgid "Modules"
+msgstr "Moduly"
+
+#: ../src/gui/preferences.py:139 ../src/modules/DesktopNotification.py:213
+#: ../src/modules/Covers.py:434
+msgid "Description"
+msgstr "Popis"
+
+#: ../src/gui/preferences.py:140
+msgid ""
+"This window shows the list of available modules. You can enable/disable a "
+"module by checking/unchecking the check box in front of it."
+msgstr ""
+"Toto okno zobrazuje seznam dostupných modulů. Můžete povolit / zakázat "
+"kontrolu modulu zaškrtnutím / odškrtnutím políčka před ním."
+
+#: ../src/gui/preferences.py:142
+msgid "Configuring a Module"
+msgstr "Nastavení Modulu"
+
+#: ../src/gui/preferences.py:143
+msgid ""
+"When a module may be configured, a specific icon is displayed on the right "
+"of the corresponding line. To configure a module, simply select it and then "
+"click on the \"Preferences\" button on the bottom of the dialog box. Note "
+"that configuring a module is only possible when it is enabled."
+msgstr ""
+"Možnost nastavení modulu je idnikována iknkou napravo od něj. Pro nastavení "
+"modulu stačí zvolit příslušný modul a klepnout na tlačítko \"Nastavení\" ve "
+"spodní části okna. Nastavení modulu je možné jen pokud je příslušný modul "
+"povolený."
+
+#: ../src/gui/about.py:40
+msgid "translator-credits"
+msgstr ""
+"Launchpad Contributions:\n"
+"  Jendrik Seipp https://launchpad.net/~jendrikseipp\n"
+"  Konki https://launchpad.net/~pavel-konkol\n"
+"  Martin Rotter https://launchpad.net/~skunkic"
+
+#: ../src/gui/about.py:44
+msgid "Developer:"
+msgstr "Vývojář:"
+
+#: ../src/gui/about.py:48
+msgid "Thanks to:"
+msgstr "Poděkování:"
+
+#: ../src/modules/Search.py:34
+msgid "Search in your music folders"
+msgstr "Prohledat adresáře s hudbou"
+
+#: ../src/modules/Zeitgeist.py:26
+msgid "Send track information to the Zeitgeist service"
+msgstr "Zaslat informace o skladbě do služby Zeitgeist"
+
 #: ../src/modules/FileExplorer.py:173
 msgid "loading..."
 msgstr "načítám..."
@@ -184,63 +193,6 @@ msgstr "Hledání ..."
 msgid "No tracks found"
 msgstr "Nebyly nalezeny žádné skladby"
 
-#: ../src/modules/CtrlPanel.py:190 ../src/modules/CtrlPanel.py:246
-msgid "Pause the current track"
-msgstr "Pozastavit přehrávání"
-
-#: ../src/modules/CtrlPanel.py:206
-msgid "Play the first selected track of the playlist"
-msgstr "Přehrát první vybranou skladbu ze seznamu skladeb"
-
-#: ../src/modules/CtrlPanel.py:240
-msgid "Continue playing the current track"
-msgstr "Pokračovat v přehrávání"
-
-#: ../src/modules/StatusbarTitlebar.py:47
-msgid "[paused]"
-msgstr "[pauza]"
-
-#: ../src/modules/Search.py:34
-msgid "Search in your music folders"
-msgstr "Prohledat adresáře s hudbou"
-
-#: ../src/modules/Tracktree.py:367
-msgid "Save playlist"
-msgstr "Uložit seznam skladeb"
-
-#: ../src/modules/Tracktree.py:416
-msgid "Clear Playlist"
-msgstr "Vyprázdnit seznam skladeb"
-
-#: ../src/modules/Equalizer.py:24
-msgid "Equalizer"
-msgstr "Ekvalizér"
-
-#: ../src/modules/Equalizer.py:24
-msgid "Tune the level of the frequency bands"
-msgstr "Přizpůsobit úroveň frekvenčních pásem"
-
-#: ../src/modules/Equalizer.py:125 ../src/modules/Equalizer.py:213
-#: ../src/modules/Equalizer.py:226
-msgid "Custom"
-msgstr "Vlastní"
-
-#: ../src/modules/Equalizer.py:166
-msgid "Save levels"
-msgstr "Uložit úrovně"
-
-#: ../src/modules/Equalizer.py:177
-msgid "Load levels"
-msgstr "Načíst úrovně"
-
-#: ../src/modules/Equalizer.py:204
-msgid "Could not load the file"
-msgstr "Nemohu načíst soubor"
-
-#: ../src/modules/Equalizer.py:204
-msgid "The format of the file is incorrect."
-msgstr "Formát souboru je neplatný."
-
 #: ../src/modules/__init__.py:75
 msgid "The following Python modules are not available:"
 msgstr "Následující moduly Pythonu nejsou dostupné:"
@@ -254,13 +206,77 @@ msgid "Restart required"
 msgstr "Vyžadován restart"
 
 #: ../src/modules/__init__.py:267
-msgid ""
-"You must restart the application for this modification to take effect."
+msgid "You must restart the application for this modification to take effect."
 msgstr "Musíte restartovat aplikaci, aby tato změna měla efekt."
 
-#: ../src/modules/Zeitgeist.py:26
-msgid "Send track information to the Zeitgeist service"
-msgstr "Zaslat informace o skladbě do služby Zeitgeist"
+#: ../src/modules/CtrlPanel.py:190 ../src/modules/CtrlPanel.py:246
+msgid "Pause the current track"
+msgstr "Pozastavit přehrávání"
+
+#: ../src/modules/CtrlPanel.py:206
+msgid "Play the first selected track of the playlist"
+msgstr "Přehrát první vybranou skladbu ze seznamu skladeb"
+
+#: ../src/modules/CtrlPanel.py:240
+msgid "Continue playing the current track"
+msgstr "Pokračovat v přehrávání"
+
+#: ../src/modules/DesktopNotification.py:25
+msgid "Desktop Notification"
+msgstr "Upozornění na ploše"
+
+#: ../src/modules/DesktopNotification.py:25
+msgid "Display a desktop notification on track change"
+msgstr "Při změně skladby zobrazí upozornění na ploše uživatele"
+
+#: ../src/modules/DesktopNotification.py:78
+#: ../src/modules/DesktopNotification.py:188
+msgid "Skip track"
+msgstr "Přeskočit skladbu"
+
+#: ../src/modules/DesktopNotification.py:214
+msgid ""
+"This module displays a small popup window on your desktop when a new track "
+"starts."
+msgstr ""
+"Tento modul zobrazí malé vyskakovací okno na vaší pracovní ploše jakmile "
+"začne nová skladby"
+
+#: ../src/modules/DesktopNotification.py:215
+msgid "If the Covers module is enabled, the popup also shows the album cover."
+msgstr "Pokud je modul obalů zapnutý, výsuvník také ukazuje obal alba."
+
+#: ../src/modules/DesktopNotification.py:216
+msgid "Customizing the Notification"
+msgstr "Úprava oznámení"
+
+#: ../src/modules/DesktopNotification.py:217
+msgid ""
+"You can change the title and the body of the notification to any text you "
+"want. Before displaying the popup window, fields of the form {field} are "
+"replaced by their corresponding value. Available fields are:\n"
+"\n"
+msgstr ""
+"Můžete změnit nadpis a tělo zobrazované zprávy na cokoli chcete. Před "
+"samotným zobrazením jsou položky ve formátu {položka} nahrazeny svou "
+"aktuální hodnotou. Možné položky jsou:\n"
+"\n"
+
+#: ../src/modules/DesktopNotification.py:220
+msgid "Markup"
+msgstr "Značkování"
+
+#: ../src/modules/DesktopNotification.py:221
+msgid ""
+"You can use the Pango markup language to format the text. More information "
+"on that language is available on the following web page:"
+msgstr ""
+"Můžete použít jazyk Pango markup pro formátování textu. Více informací o "
+"tomto jazyku je na internetové adrese:"
+
+#: ../src/modules/StatusbarTitlebar.py:47
+msgid "[paused]"
+msgstr "[pauza]"
 
 #: ../src/modules/Covers.py:28
 msgid "Covers"
@@ -310,59 +326,42 @@ msgstr ""
 "těmi staženými z internetu. V tom případě, pokud existuje daný obrázek alba, "
 "tak je použit. Jinak je stažen z internetu."
 
-#: ../src/modules/DesktopNotification.py:25
-msgid "Desktop Notification"
-msgstr "Upozornění na ploše"
+#: ../src/modules/Tracktree.py:367
+msgid "Save playlist"
+msgstr "Uložit seznam skladeb"
 
-#: ../src/modules/DesktopNotification.py:25
-msgid "Display a desktop notification on track change"
-msgstr "Při změně skladby zobrazí upozornění na ploše uživatele"
+#: ../src/modules/Tracktree.py:416
+msgid "Clear Playlist"
+msgstr "Vyprázdnit seznam skladeb"
 
-#: ../src/modules/DesktopNotification.py:78
-#: ../src/modules/DesktopNotification.py:188
-msgid "Skip track"
-msgstr "Přeskočit skladbu"
+#: ../src/modules/Equalizer.py:24
+msgid "Equalizer"
+msgstr "Ekvalizér"
 
-#: ../src/modules/DesktopNotification.py:214
-msgid ""
-"This module displays a small popup window on your desktop when a new track "
-"starts."
-msgstr ""
-"Tento modul zobrazí malé vyskakovací okno na vaší pracovní ploše jakmile "
-"začne nová skladby"
+#: ../src/modules/Equalizer.py:24
+msgid "Tune the level of the frequency bands"
+msgstr "Přizpůsobit úroveň frekvenčních pásem"
 
-#: ../src/modules/DesktopNotification.py:215
-msgid ""
-"If the Covers module is enabled, the popup also shows the album cover."
-msgstr "Pokud je modul obalů zapnutý, výsuvník také ukazuje obal alba."
+#: ../src/modules/Equalizer.py:125 ../src/modules/Equalizer.py:213
+#: ../src/modules/Equalizer.py:226
+msgid "Custom"
+msgstr "Vlastní"
 
-#: ../src/modules/DesktopNotification.py:216
-msgid "Customizing the Notification"
-msgstr "Úprava oznámení"
+#: ../src/modules/Equalizer.py:166
+msgid "Save levels"
+msgstr "Uložit úrovně"
 
-#: ../src/modules/DesktopNotification.py:217
-msgid ""
-"You can change the title and the body of the notification to any text you "
-"want. Before displaying the popup window, fields of the form {field} are "
-"replaced by their corresponding value. Available fields are:\n"
-"\n"
-msgstr ""
-"Můžete změnit nadpis a tělo zobrazované zprávy na cokoli chcete. Před "
-"samotným zobrazením jsou položky ve formátu {položka} nahrazeny svou "
-"aktuální hodnotou. Možné položky jsou:\n"
-"\n"
+#: ../src/modules/Equalizer.py:177
+msgid "Load levels"
+msgstr "Načíst úrovně"
 
-#: ../src/modules/DesktopNotification.py:220
-msgid "Markup"
-msgstr "Značkování"
+#: ../src/modules/Equalizer.py:204
+msgid "Could not load the file"
+msgstr "Nemohu načíst soubor"
 
-#: ../src/modules/DesktopNotification.py:221
-msgid ""
-"You can use the Pango markup language to format the text. More information "
-"on that language is available on the following web page:"
-msgstr ""
-"Můžete použít jazyk Pango markup pro formátování textu. Více informací o "
-"tomto jazyku je na internetové adrese:"
+#: ../src/modules/Equalizer.py:204
+msgid "The format of the file is incorrect."
+msgstr "Formát souboru je neplatný."
 
 #: ../src/tools/consts.py:94
 msgid "Unknown Genre"
@@ -461,15 +460,15 @@ msgid "Play the previous track"
 msgstr "Přehrát předchozí skladbu"
 
 #~ msgid ""
-#~ "This dialog box shows the list of available modules, which are small pieces "
-#~ "of code that add some functionnalities to the application. You can "
-#~ "enable/disable a module by checking/unchecking the check box in front of it. "
-#~ "Note that some modules (e.g., the File Explorer) cannot be disabled."
+#~ "This dialog box shows the list of available modules, which are small "
+#~ "pieces of code that add some functionnalities to the application. You can "
+#~ "enable/disable a module by checking/unchecking the check box in front of "
+#~ "it. Note that some modules (e.g., the File Explorer) cannot be disabled."
 #~ msgstr ""
-#~ "Tento dialog obsahuje seznam dostupných modulů, které do aplikace přidávají "
-#~ "nové funkce. Moduly můžete zapínat/vypínat pouhým zaškrtnutím nebo "
-#~ "odškrtnutím políčka v řádku. Některé moduly (jako např. Prohlížeč souborů) "
-#~ "nemohou být vypnuty."
+#~ "Tento dialog obsahuje seznam dostupných modulů, které do aplikace "
+#~ "přidávají nové funkce. Moduly můžete zapínat/vypínat pouhým zaškrtnutím "
+#~ "nebo odškrtnutím políčka v řádku. Některé moduly (jako např. Prohlížeč "
+#~ "souborů) nemohou být vypnuty."
 
 #~ msgid "Choose a folder"
 #~ msgstr "Zvolte složku"
@@ -484,7 +483,6 @@ msgstr "Přehrát předchozí skladbu"
 #~ "Tento název není povolen.\n"
 #~ "Zvolte prosím jiný."
 
-#, python-format
 #~ msgid ""
 #~ "The character %s is not allowed.\n"
 #~ "Please use another name."
@@ -511,18 +509,18 @@ msgstr "Přehrát předchozí skladbu"
 #~ msgstr "O bezpečnosti uložení hesla"
 
 #~ msgid ""
-#~ "If you use Gnome, it is safe to store your password since the Gnome keyring "
-#~ "is used."
+#~ "If you use Gnome, it is safe to store your password since the Gnome "
+#~ "keyring is used."
 #~ msgstr ""
 #~ "Pokud používáte Gnome, uložení hesla je bezpečné, protože se použije "
 #~ "klíčenka Gnome."
 
 #~ msgid ""
-#~ "If you do not use Gnome, beware that, although not stored as clear text, an "
-#~ "attacker <i>could</i> retrieve it."
+#~ "If you do not use Gnome, beware that, although not stored as clear text, "
+#~ "an attacker <i>could</i> retrieve it."
 #~ msgstr ""
-#~ "Pokud nepoužíváte Gnome, mějte na paměti, že přesto, že heslo není uloženo "
-#~ "jako prostý text, útočník ho <i>může</i> získat."
+#~ "Pokud nepoužíváte Gnome, mějte na paměti, že přesto, že heslo není "
+#~ "uloženo jako prostý text, útočník ho <i>může</i> získat."
 
 #~ msgid "Home"
 #~ msgstr "Domů"
@@ -546,8 +544,8 @@ msgstr "Přehrát předchozí skladbu"
 #~ "At least one root folder must be added to browse your files. This folder "
 #~ "then becomes the root of the file explorer tree in the main window."
 #~ msgstr ""
-#~ "Abyste mohli procházet soubory, musí existovat minimálně jedna složka. Tato "
-#~ "složka se pak stane kořenovou v prohlížeči souborů hlavního okna."
+#~ "Abyste mohli procházet soubory, musí existovat minimálně jedna složka. "
+#~ "Tato složka se pak stane kořenovou v prohlížeči souborů hlavního okna."
 
 #~ msgid ""
 #~ "Please select an explorer\n"
@@ -617,14 +615,17 @@ msgstr "Přehrát předchozí skladbu"
 
 #~ msgid "You will be able to recreate this library later on if you wish so."
 #~ msgstr ""
-#~ "Budete mít možnost znovu vytvořit tuto knihovnu později, pokud budete chtít."
+#~ "Budete mít možnost znovu vytvořit tuto knihovnu později, pokud budete "
+#~ "chtít."
 
 #~ msgid "Remove the selected library?"
 #~ msgstr "Odstranit vybranou knihovnu?"
 
-#~ msgid "You will be able to recreate these libraries later on if you wish so."
+#~ msgid ""
+#~ "You will be able to recreate these libraries later on if you wish so."
 #~ msgstr ""
-#~ "Budete mít možnost znovu vytvořit tuto knihovnu později, pokud budete chtít."
+#~ "Budete mít možnost znovu vytvořit tuto knihovnu později, pokud budete "
+#~ "chtít."
 
 #~ msgid "Remove all selected libraries?"
 #~ msgstr "Odstranit všechny vybrané knihovny?"
@@ -637,9 +638,9 @@ msgstr "Přehrát předchozí skladbu"
 #~ "structure of your drive. Loading tracks is also faster because their tags "
 #~ "are already known and do not have to be read again."
 #~ msgstr ""
-#~ "Tento modul umožňuje organizovat vaše soubory s médii pomocí značek (tags) "
-#~ "místo adresářů. Nahrávání skladeb je také rychlejší protože jejich značky "
-#~ "jsou předem známy a není třeba je nahrávat znovu."
+#~ "Tento modul umožňuje organizovat vaše soubory s médii pomocí značek "
+#~ "(tags) místo adresářů. Nahrávání skladeb je také rychlejší protože jejich "
+#~ "značky jsou předem známy a není třeba je nahrávat znovu."
 
 #~ msgid "Status Icon"
 #~ msgstr "Stavová ikona"

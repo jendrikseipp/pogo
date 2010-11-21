@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: decibel-audio-player\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-11-07 01:42+0100\n"
+"POT-Creation-Date: 2010-11-21 20:05+0100\n"
 "PO-Revision-Date: 2010-10-11 05:10+0000\n"
 "Last-Translator: Oleg Koptev <koptev.oleg@gmail.com>\n"
 "Language-Team: Russian <ru@li.org>\n"
@@ -21,61 +21,6 @@ msgstr ""
 "X-Generator: Launchpad (build Unknown)\n"
 "X-Poedit-Country: RUSSIAN FEDERATION\n"
 "X-Poedit-Language: Russian\n"
-
-#: ../src/gui/about.py:40
-msgid "translator-credits"
-msgstr ""
-"Launchpad Contributions:\n"
-"  Oleg Koptev https://launchpad.net/~koptev-oleg\n"
-"  Sergey Ivanov https://launchpad.net/~rus-patriot"
-
-#: ../src/gui/about.py:44
-msgid "Developer:"
-msgstr "Разработчик:"
-
-#: ../src/gui/about.py:48
-msgid "Thanks to:"
-msgstr "Благодарности:"
-
-#: ../src/gui/preferences.py:43
-msgid "Preferences"
-msgstr "Параметры"
-
-#: ../src/gui/preferences.py:129
-msgid "Unable to load this module."
-msgstr "Не удалось загрузить данный модуль."
-
-#: ../src/gui/preferences.py:138
-msgid "Modules"
-msgstr "Модули"
-
-#: ../src/gui/preferences.py:139 ../src/modules/Covers.py:434
-#: ../src/modules/DesktopNotification.py:213
-msgid "Description"
-msgstr "Описание"
-
-#: ../src/gui/preferences.py:140
-msgid ""
-"This window shows the list of available modules. You can enable/disable a "
-"module by checking/unchecking the check box in front of it."
-msgstr ""
-"Это окно отображает список доступных модулей. Модули можно включить/"
-"выключить с помощью галочки перед названием модуля."
-
-#: ../src/gui/preferences.py:142
-msgid "Configuring a Module"
-msgstr "Настройка модулей"
-
-#: ../src/gui/preferences.py:143
-msgid ""
-"When a module may be configured, a specific icon is displayed on the right "
-"of the corresponding line. To configure a module, simply select it and then "
-"click on the \"Preferences\" button on the bottom of the dialog box. Note "
-"that configuring a module is only possible when it is enabled."
-msgstr ""
-"Когда модуль имеет собственные настройки, справа от модуля показывается "
-"особый значок. Чтобы настроить модуль, просто выберите его и нажмите кнопку "
-"«Параметры», которая расположена внизу диалогового окна."
 
 #: ../src/media/track/__init__.py:54
 msgid "Track number"
@@ -138,6 +83,69 @@ msgstr "%(album)s [Диск %(discnum)u]"
 msgid "CDDA Track"
 msgstr "Дорожка CDDA"
 
+#: ../src/gui/preferences.py:43
+msgid "Preferences"
+msgstr "Параметры"
+
+#: ../src/gui/preferences.py:129
+msgid "Unable to load this module."
+msgstr "Не удалось загрузить данный модуль."
+
+#: ../src/gui/preferences.py:138
+msgid "Modules"
+msgstr "Модули"
+
+#: ../src/gui/preferences.py:139 ../src/modules/DesktopNotification.py:213
+#: ../src/modules/Covers.py:434
+msgid "Description"
+msgstr "Описание"
+
+#: ../src/gui/preferences.py:140
+msgid ""
+"This window shows the list of available modules. You can enable/disable a "
+"module by checking/unchecking the check box in front of it."
+msgstr ""
+"Это окно отображает список доступных модулей. Модули можно включить/"
+"выключить с помощью галочки перед названием модуля."
+
+#: ../src/gui/preferences.py:142
+msgid "Configuring a Module"
+msgstr "Настройка модулей"
+
+#: ../src/gui/preferences.py:143
+msgid ""
+"When a module may be configured, a specific icon is displayed on the right "
+"of the corresponding line. To configure a module, simply select it and then "
+"click on the \"Preferences\" button on the bottom of the dialog box. Note "
+"that configuring a module is only possible when it is enabled."
+msgstr ""
+"Когда модуль имеет собственные настройки, справа от модуля показывается "
+"особый значок. Чтобы настроить модуль, просто выберите его и нажмите кнопку "
+"«Параметры», которая расположена внизу диалогового окна."
+
+#: ../src/gui/about.py:40
+msgid "translator-credits"
+msgstr ""
+"Launchpad Contributions:\n"
+"  Oleg Koptev https://launchpad.net/~koptev-oleg\n"
+"  Sergey Ivanov https://launchpad.net/~rus-patriot"
+
+#: ../src/gui/about.py:44
+msgid "Developer:"
+msgstr "Разработчик:"
+
+#: ../src/gui/about.py:48
+msgid "Thanks to:"
+msgstr "Благодарности:"
+
+#: ../src/modules/Search.py:34
+msgid "Search in your music folders"
+msgstr ""
+
+#: ../src/modules/Zeitgeist.py:26
+msgid "Send track information to the Zeitgeist service"
+msgstr "Отправить информацию о дорожке в службу Zeitgeist"
+
 #: ../src/modules/FileExplorer.py:173
 msgid "loading..."
 msgstr "загрузка..."
@@ -189,63 +197,6 @@ msgstr ""
 msgid "No tracks found"
 msgstr "Диск не найден"
 
-#: ../src/modules/CtrlPanel.py:190 ../src/modules/CtrlPanel.py:246
-msgid "Pause the current track"
-msgstr "Приостановить воспроизведение текущей композиции"
-
-#: ../src/modules/CtrlPanel.py:206
-msgid "Play the first selected track of the playlist"
-msgstr "Проиграть первую выбранную дорожку в списке воспроизведения"
-
-#: ../src/modules/CtrlPanel.py:240
-msgid "Continue playing the current track"
-msgstr "Продолжить воспроизведение текущей композиции"
-
-#: ../src/modules/StatusbarTitlebar.py:47
-msgid "[paused]"
-msgstr "[приостановлено]"
-
-#: ../src/modules/Search.py:34
-msgid "Search in your music folders"
-msgstr ""
-
-#: ../src/modules/Tracktree.py:367
-msgid "Save playlist"
-msgstr "Сохранить список воспроизведения"
-
-#: ../src/modules/Tracktree.py:416
-msgid "Clear Playlist"
-msgstr "Очистить список воспроизведения"
-
-#: ../src/modules/Equalizer.py:24
-msgid "Equalizer"
-msgstr "Эквалайзер"
-
-#: ../src/modules/Equalizer.py:24
-msgid "Tune the level of the frequency bands"
-msgstr "Настроить уровни частотных диапазонов"
-
-#: ../src/modules/Equalizer.py:125 ../src/modules/Equalizer.py:213
-#: ../src/modules/Equalizer.py:226
-msgid "Custom"
-msgstr "Пользовательский"
-
-#: ../src/modules/Equalizer.py:166
-msgid "Save levels"
-msgstr "Сохранить уровни"
-
-#: ../src/modules/Equalizer.py:177
-msgid "Load levels"
-msgstr "Загрузить уровни"
-
-#: ../src/modules/Equalizer.py:204
-msgid "Could not load the file"
-msgstr "Невозможно загрузить файл"
-
-#: ../src/modules/Equalizer.py:204
-msgid "The format of the file is incorrect."
-msgstr "Неправильный формат файла"
-
 #: ../src/modules/__init__.py:75
 msgid "The following Python modules are not available:"
 msgstr "Следующие модули Python требуются, но не доступны:"
@@ -262,58 +213,17 @@ msgstr "Требуется перезапуск"
 msgid "You must restart the application for this modification to take effect."
 msgstr "Вы должны перезапустить приложение, чтобы изменения вступили в силу."
 
-#: ../src/modules/Zeitgeist.py:26
-msgid "Send track information to the Zeitgeist service"
-msgstr "Отправить информацию о дорожке в службу Zeitgeist"
+#: ../src/modules/CtrlPanel.py:190 ../src/modules/CtrlPanel.py:246
+msgid "Pause the current track"
+msgstr "Приостановить воспроизведение текущей композиции"
 
-#: ../src/modules/Covers.py:28
-msgid "Covers"
-msgstr "Обложки"
+#: ../src/modules/CtrlPanel.py:206
+msgid "Play the first selected track of the playlist"
+msgstr "Проиграть первую выбранную дорожку в списке воспроизведения"
 
-#: ../src/modules/Covers.py:28
-msgid "Show album covers"
-msgstr "Показ обложек альбомов"
-
-#: ../src/modules/Covers.py:435
-msgid ""
-"This module displays the cover of the album the current track comes from. "
-"Covers may be loaded from local pictures, located in the same directory as "
-"the current track, or may be downloaded from the Internet."
-msgstr ""
-"Данный модуль отображает обложку альбома воспроизводимой композиции. Обложки "
-"могут быть локальными изображениями, расположенными в одной папке с "
-"композицией, либо они могут быть получены из Интернета."
-
-#: ../src/modules/Covers.py:438
-msgid "User Covers"
-msgstr "Локальные обложки"
-
-#: ../src/modules/Covers.py:439
-#, python-format
-msgid ""
-"A user cover is a picture located in the same directory as the current "
-"track. When specifying filenames, you do not need to provide file "
-"extensions, supported file formats (%s) are automatically used."
-msgstr ""
-"Локальная обложка — это изображение, расположенное в той же папке, что и "
-"текущая композиция. При указании имён файлов не следует указывать "
-"расширение; поддерживаемые форматы (%s) будут распознаны автоматически."
-
-#: ../src/modules/Covers.py:442
-msgid "Internet Covers"
-msgstr "Интернет-обложки"
-
-#: ../src/modules/Covers.py:443
-msgid ""
-"Covers may be downloaded from the Internet, based on the tags of the current "
-"track. You can ask to always prefer user covers to Internet ones. In this "
-"case, if a user cover exists for the current track, it is used. If there is "
-"none, the cover is downloaded."
-msgstr ""
-"Обложки могут быть загружены через Интернет, основываясь на тегах "
-"композиции. Есть возможность предпочтения локальных обложек загружаемым. В "
-"таком случае будет использоваться локальная обложка, если таковая найдена; "
-"иначе же обложка будет загружена из Интернета."
+#: ../src/modules/CtrlPanel.py:240
+msgid "Continue playing the current track"
+msgstr "Продолжить воспроизведение текущей композиции"
 
 #: ../src/modules/DesktopNotification.py:25
 msgid "Desktop Notification"
@@ -369,6 +279,96 @@ msgid ""
 msgstr ""
 "Вы можете использовать язык разметки Pango для форматирования текста. "
 "Дополнительная информация доступна на следующем веб-сайте:"
+
+#: ../src/modules/StatusbarTitlebar.py:47
+msgid "[paused]"
+msgstr "[приостановлено]"
+
+#: ../src/modules/Covers.py:28
+msgid "Covers"
+msgstr "Обложки"
+
+#: ../src/modules/Covers.py:28
+msgid "Show album covers"
+msgstr "Показ обложек альбомов"
+
+#: ../src/modules/Covers.py:435
+msgid ""
+"This module displays the cover of the album the current track comes from. "
+"Covers may be loaded from local pictures, located in the same directory as "
+"the current track, or may be downloaded from the Internet."
+msgstr ""
+"Данный модуль отображает обложку альбома воспроизводимой композиции. Обложки "
+"могут быть локальными изображениями, расположенными в одной папке с "
+"композицией, либо они могут быть получены из Интернета."
+
+#: ../src/modules/Covers.py:438
+msgid "User Covers"
+msgstr "Локальные обложки"
+
+#: ../src/modules/Covers.py:439
+#, python-format
+msgid ""
+"A user cover is a picture located in the same directory as the current "
+"track. When specifying filenames, you do not need to provide file "
+"extensions, supported file formats (%s) are automatically used."
+msgstr ""
+"Локальная обложка — это изображение, расположенное в той же папке, что и "
+"текущая композиция. При указании имён файлов не следует указывать "
+"расширение; поддерживаемые форматы (%s) будут распознаны автоматически."
+
+#: ../src/modules/Covers.py:442
+msgid "Internet Covers"
+msgstr "Интернет-обложки"
+
+#: ../src/modules/Covers.py:443
+msgid ""
+"Covers may be downloaded from the Internet, based on the tags of the current "
+"track. You can ask to always prefer user covers to Internet ones. In this "
+"case, if a user cover exists for the current track, it is used. If there is "
+"none, the cover is downloaded."
+msgstr ""
+"Обложки могут быть загружены через Интернет, основываясь на тегах "
+"композиции. Есть возможность предпочтения локальных обложек загружаемым. В "
+"таком случае будет использоваться локальная обложка, если таковая найдена; "
+"иначе же обложка будет загружена из Интернета."
+
+#: ../src/modules/Tracktree.py:367
+msgid "Save playlist"
+msgstr "Сохранить список воспроизведения"
+
+#: ../src/modules/Tracktree.py:416
+msgid "Clear Playlist"
+msgstr "Очистить список воспроизведения"
+
+#: ../src/modules/Equalizer.py:24
+msgid "Equalizer"
+msgstr "Эквалайзер"
+
+#: ../src/modules/Equalizer.py:24
+msgid "Tune the level of the frequency bands"
+msgstr "Настроить уровни частотных диапазонов"
+
+#: ../src/modules/Equalizer.py:125 ../src/modules/Equalizer.py:213
+#: ../src/modules/Equalizer.py:226
+msgid "Custom"
+msgstr "Пользовательский"
+
+#: ../src/modules/Equalizer.py:166
+msgid "Save levels"
+msgstr "Сохранить уровни"
+
+#: ../src/modules/Equalizer.py:177
+msgid "Load levels"
+msgstr "Загрузить уровни"
+
+#: ../src/modules/Equalizer.py:204
+msgid "Could not load the file"
+msgstr "Невозможно загрузить файл"
+
+#: ../src/modules/Equalizer.py:204
+msgid "The format of the file is incorrect."
+msgstr "Неправильный формат файла"
 
 #: ../src/tools/consts.py:94
 msgid "Unknown Genre"

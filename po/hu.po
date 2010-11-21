@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: decibel-audio-player\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-11-07 01:42+0100\n"
+"POT-Creation-Date: 2010-11-21 20:05+0100\n"
 "PO-Revision-Date: 2010-10-12 17:36+0000\n"
 "Last-Translator: Papp Bence <papp.bence89@gmail.com>\n"
 "Language-Team: Hungarian <hu@li.org>\n"
@@ -18,63 +18,6 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Launchpad-Export-Date: 2010-11-02 05:10+0000\n"
 "X-Generator: Launchpad (build Unknown)\n"
-
-#: ../src/gui/about.py:40
-msgid "translator-credits"
-msgstr ""
-"Launchpad Contributions:\n"
-"  Jendrik Seipp https://launchpad.net/~jendrikseipp\n"
-"  Papp Bence https://launchpad.net/~sclegnrbs"
-
-#: ../src/gui/about.py:44
-msgid "Developer:"
-msgstr "Fejlesztő:"
-
-#: ../src/gui/about.py:48
-msgid "Thanks to:"
-msgstr "Köszönetnyilvánítás:"
-
-#: ../src/gui/preferences.py:43
-msgid "Preferences"
-msgstr "Beállítások"
-
-#: ../src/gui/preferences.py:129
-msgid "Unable to load this module."
-msgstr "Nem tudom betölteni ezt a modult"
-
-#: ../src/gui/preferences.py:138
-msgid "Modules"
-msgstr "Modulok"
-
-#: ../src/gui/preferences.py:139 ../src/modules/Covers.py:434
-#: ../src/modules/DesktopNotification.py:213
-msgid "Description"
-msgstr "Leírás"
-
-#: ../src/gui/preferences.py:140
-msgid ""
-"This window shows the list of available modules. You can enable/disable a "
-"module by checking/unchecking the check box in front of it."
-msgstr ""
-"Ez az ablak ez elérhető modulok listáját mutatja. Ön engedélyzeni/letiltani "
-"tudja a modulokat a doboz kipipálásával/a pipa eltávolításával."
-
-#: ../src/gui/preferences.py:142
-msgid "Configuring a Module"
-msgstr "Modul beállítása"
-
-#: ../src/gui/preferences.py:143
-msgid ""
-"When a module may be configured, a specific icon is displayed on the right "
-"of the corresponding line. To configure a module, simply select it and then "
-"click on the \"Preferences\" button on the bottom of the dialog box. Note "
-"that configuring a module is only possible when it is enabled."
-msgstr ""
-"Mikor egy modul külön beállítható, egy jellegzetes ikon jelenik meg a sor "
-"jobb oldalán. Hogy beállíthassuk a modult, válasszuk ki a beállítani kívánt "
-"modult, majd kattintsunk a \"Beállítások\" gombra a dialógus-ablak aljában. "
-"Megjegyzés: csak akkor lehet beállításokat eszközölni egy modulnál, ha az "
-"előzőleg engedélyezve lett."
 
 #: ../src/media/track/__init__.py:54
 msgid "Track number"
@@ -137,6 +80,71 @@ msgstr "%(album)s [Disc %(discnum)u]"
 msgid "CDDA Track"
 msgstr "CDDA Track"
 
+#: ../src/gui/preferences.py:43
+msgid "Preferences"
+msgstr "Beállítások"
+
+#: ../src/gui/preferences.py:129
+msgid "Unable to load this module."
+msgstr "Nem tudom betölteni ezt a modult"
+
+#: ../src/gui/preferences.py:138
+msgid "Modules"
+msgstr "Modulok"
+
+#: ../src/gui/preferences.py:139 ../src/modules/DesktopNotification.py:213
+#: ../src/modules/Covers.py:434
+msgid "Description"
+msgstr "Leírás"
+
+#: ../src/gui/preferences.py:140
+msgid ""
+"This window shows the list of available modules. You can enable/disable a "
+"module by checking/unchecking the check box in front of it."
+msgstr ""
+"Ez az ablak ez elérhető modulok listáját mutatja. Ön engedélyzeni/letiltani "
+"tudja a modulokat a doboz kipipálásával/a pipa eltávolításával."
+
+#: ../src/gui/preferences.py:142
+msgid "Configuring a Module"
+msgstr "Modul beállítása"
+
+#: ../src/gui/preferences.py:143
+msgid ""
+"When a module may be configured, a specific icon is displayed on the right "
+"of the corresponding line. To configure a module, simply select it and then "
+"click on the \"Preferences\" button on the bottom of the dialog box. Note "
+"that configuring a module is only possible when it is enabled."
+msgstr ""
+"Mikor egy modul külön beállítható, egy jellegzetes ikon jelenik meg a sor "
+"jobb oldalán. Hogy beállíthassuk a modult, válasszuk ki a beállítani kívánt "
+"modult, majd kattintsunk a \"Beállítások\" gombra a dialógus-ablak aljában. "
+"Megjegyzés: csak akkor lehet beállításokat eszközölni egy modulnál, ha az "
+"előzőleg engedélyezve lett."
+
+#: ../src/gui/about.py:40
+msgid "translator-credits"
+msgstr ""
+"Launchpad Contributions:\n"
+"  Jendrik Seipp https://launchpad.net/~jendrikseipp\n"
+"  Papp Bence https://launchpad.net/~sclegnrbs"
+
+#: ../src/gui/about.py:44
+msgid "Developer:"
+msgstr "Fejlesztő:"
+
+#: ../src/gui/about.py:48
+msgid "Thanks to:"
+msgstr "Köszönetnyilvánítás:"
+
+#: ../src/modules/Search.py:34
+msgid "Search in your music folders"
+msgstr ""
+
+#: ../src/modules/Zeitgeist.py:26
+msgid "Send track information to the Zeitgeist service"
+msgstr "Track információ küldése a Zeitgeist szolgáltatásnak"
+
 #: ../src/modules/FileExplorer.py:173
 msgid "loading..."
 msgstr "töltés folyamatban..."
@@ -188,63 +196,6 @@ msgstr ""
 msgid "No tracks found"
 msgstr "Nem találtam lemezt"
 
-#: ../src/modules/CtrlPanel.py:190 ../src/modules/CtrlPanel.py:246
-msgid "Pause the current track"
-msgstr "Az aktuális zeneszám szüneteltetése"
-
-#: ../src/modules/CtrlPanel.py:206
-msgid "Play the first selected track of the playlist"
-msgstr "Az első kiválasztott track lejátszása a lejátszási listáról"
-
-#: ../src/modules/CtrlPanel.py:240
-msgid "Continue playing the current track"
-msgstr "Az aktuális zeneszám továbbjátszása"
-
-#: ../src/modules/StatusbarTitlebar.py:47
-msgid "[paused]"
-msgstr "[szüneteltetve]"
-
-#: ../src/modules/Search.py:34
-msgid "Search in your music folders"
-msgstr ""
-
-#: ../src/modules/Tracktree.py:367
-msgid "Save playlist"
-msgstr "Lejátszólista mentése"
-
-#: ../src/modules/Tracktree.py:416
-msgid "Clear Playlist"
-msgstr "Lejátszólista törlése"
-
-#: ../src/modules/Equalizer.py:24
-msgid "Equalizer"
-msgstr "Hangszínszabályzó"
-
-#: ../src/modules/Equalizer.py:24
-msgid "Tune the level of the frequency bands"
-msgstr "Frekvenciasávok szintjének beállítása"
-
-#: ../src/modules/Equalizer.py:125 ../src/modules/Equalizer.py:213
-#: ../src/modules/Equalizer.py:226
-msgid "Custom"
-msgstr "Egyéni"
-
-#: ../src/modules/Equalizer.py:166
-msgid "Save levels"
-msgstr "Szintek mentése"
-
-#: ../src/modules/Equalizer.py:177
-msgid "Load levels"
-msgstr "Szintek betöltése"
-
-#: ../src/modules/Equalizer.py:204
-msgid "Could not load the file"
-msgstr "A fájl betöltése nem sikerült."
-
-#: ../src/modules/Equalizer.py:204
-msgid "The format of the file is incorrect."
-msgstr "A fájlformátum nem megfelelő."
-
 #: ../src/modules/__init__.py:75
 msgid "The following Python modules are not available:"
 msgstr "A következő Python modulok nem találhatók:"
@@ -261,59 +212,17 @@ msgstr "Újraindítás szükséges"
 msgid "You must restart the application for this modification to take effect."
 msgstr "A változások életbelépéséhez az alkalmazást újra kell indítani."
 
-#: ../src/modules/Zeitgeist.py:26
-msgid "Send track information to the Zeitgeist service"
-msgstr "Track információ küldése a Zeitgeist szolgáltatásnak"
+#: ../src/modules/CtrlPanel.py:190 ../src/modules/CtrlPanel.py:246
+msgid "Pause the current track"
+msgstr "Az aktuális zeneszám szüneteltetése"
 
-#: ../src/modules/Covers.py:28
-msgid "Covers"
-msgstr "Borítók"
+#: ../src/modules/CtrlPanel.py:206
+msgid "Play the first selected track of the playlist"
+msgstr "Az első kiválasztott track lejátszása a lejátszási listáról"
 
-#: ../src/modules/Covers.py:28
-msgid "Show album covers"
-msgstr "Lemezborítók megjelenítése"
-
-#: ../src/modules/Covers.py:435
-msgid ""
-"This module displays the cover of the album the current track comes from. "
-"Covers may be loaded from local pictures, located in the same directory as "
-"the current track, or may be downloaded from the Internet."
-msgstr ""
-"Ez a modul megjeleníti annak az albumnak a borítóját, melyhez a jelenleg "
-"játszott szám tartozik. A borítók helyi hozzáférésű képekből, ugyanabból a "
-"mappából származhatnak, vagy letölthetők az internetről."
-
-#: ../src/modules/Covers.py:438
-msgid "User Covers"
-msgstr "Felhasználói borítók"
-
-#: ../src/modules/Covers.py:439
-#, python-format
-msgid ""
-"A user cover is a picture located in the same directory as the current "
-"track. When specifying filenames, you do not need to provide file "
-"extensions, supported file formats (%s) are automatically used."
-msgstr ""
-"A felhasználó lemezborítójaként egy kép van használva az épp lejátszott "
-"zeneszám könyvtárából. A filenevek megadásánál nem szükséges a "
-"kiterjesztések megadása, automatikusan a támogatott (%s) formátumokat "
-"használja."
-
-#: ../src/modules/Covers.py:442
-msgid "Internet Covers"
-msgstr "Internetes lemezborítók."
-
-#: ../src/modules/Covers.py:443
-msgid ""
-"Covers may be downloaded from the Internet, based on the tags of the current "
-"track. You can ask to always prefer user covers to Internet ones. In this "
-"case, if a user cover exists for the current track, it is used. If there is "
-"none, the cover is downloaded."
-msgstr ""
-"Lemezborítók az internetröl tölthetőek le a zeneszámok tag-jei alapján. "
-"Beállíthatja hogy a felhasználói borítókat használja az internetröl "
-"letölthetöekkel szemben. Ebben az esetben ha a zeneszám mellett létezik "
-"borító, az lesz használva. Ha nincsen akkor az internetöl letöltött."
+#: ../src/modules/CtrlPanel.py:240
+msgid "Continue playing the current track"
+msgstr "Az aktuális zeneszám továbbjátszása"
 
 #: ../src/modules/DesktopNotification.py:25
 msgid "Desktop Notification"
@@ -369,6 +278,97 @@ msgid ""
 msgstr ""
 "A szöveg formázására a Pango leíró nyelvet használhatja. További információ "
 "erről a nyelvről a következő weboldalon található:"
+
+#: ../src/modules/StatusbarTitlebar.py:47
+msgid "[paused]"
+msgstr "[szüneteltetve]"
+
+#: ../src/modules/Covers.py:28
+msgid "Covers"
+msgstr "Borítók"
+
+#: ../src/modules/Covers.py:28
+msgid "Show album covers"
+msgstr "Lemezborítók megjelenítése"
+
+#: ../src/modules/Covers.py:435
+msgid ""
+"This module displays the cover of the album the current track comes from. "
+"Covers may be loaded from local pictures, located in the same directory as "
+"the current track, or may be downloaded from the Internet."
+msgstr ""
+"Ez a modul megjeleníti annak az albumnak a borítóját, melyhez a jelenleg "
+"játszott szám tartozik. A borítók helyi hozzáférésű képekből, ugyanabból a "
+"mappából származhatnak, vagy letölthetők az internetről."
+
+#: ../src/modules/Covers.py:438
+msgid "User Covers"
+msgstr "Felhasználói borítók"
+
+#: ../src/modules/Covers.py:439
+#, python-format
+msgid ""
+"A user cover is a picture located in the same directory as the current "
+"track. When specifying filenames, you do not need to provide file "
+"extensions, supported file formats (%s) are automatically used."
+msgstr ""
+"A felhasználó lemezborítójaként egy kép van használva az épp lejátszott "
+"zeneszám könyvtárából. A filenevek megadásánál nem szükséges a "
+"kiterjesztések megadása, automatikusan a támogatott (%s) formátumokat "
+"használja."
+
+#: ../src/modules/Covers.py:442
+msgid "Internet Covers"
+msgstr "Internetes lemezborítók."
+
+#: ../src/modules/Covers.py:443
+msgid ""
+"Covers may be downloaded from the Internet, based on the tags of the current "
+"track. You can ask to always prefer user covers to Internet ones. In this "
+"case, if a user cover exists for the current track, it is used. If there is "
+"none, the cover is downloaded."
+msgstr ""
+"Lemezborítók az internetröl tölthetőek le a zeneszámok tag-jei alapján. "
+"Beállíthatja hogy a felhasználói borítókat használja az internetröl "
+"letölthetöekkel szemben. Ebben az esetben ha a zeneszám mellett létezik "
+"borító, az lesz használva. Ha nincsen akkor az internetöl letöltött."
+
+#: ../src/modules/Tracktree.py:367
+msgid "Save playlist"
+msgstr "Lejátszólista mentése"
+
+#: ../src/modules/Tracktree.py:416
+msgid "Clear Playlist"
+msgstr "Lejátszólista törlése"
+
+#: ../src/modules/Equalizer.py:24
+msgid "Equalizer"
+msgstr "Hangszínszabályzó"
+
+#: ../src/modules/Equalizer.py:24
+msgid "Tune the level of the frequency bands"
+msgstr "Frekvenciasávok szintjének beállítása"
+
+#: ../src/modules/Equalizer.py:125 ../src/modules/Equalizer.py:213
+#: ../src/modules/Equalizer.py:226
+msgid "Custom"
+msgstr "Egyéni"
+
+#: ../src/modules/Equalizer.py:166
+msgid "Save levels"
+msgstr "Szintek mentése"
+
+#: ../src/modules/Equalizer.py:177
+msgid "Load levels"
+msgstr "Szintek betöltése"
+
+#: ../src/modules/Equalizer.py:204
+msgid "Could not load the file"
+msgstr "A fájl betöltése nem sikerült."
+
+#: ../src/modules/Equalizer.py:204
+msgid "The format of the file is incorrect."
+msgstr "A fájlformátum nem megfelelő."
 
 #: ../src/tools/consts.py:94
 msgid "Unknown Genre"
