@@ -1,5 +1,9 @@
 === Roadmap ===
 
+0.3:
+O Fix saving added folders
+O Fix covers with compiz
+
 0.4:
 O Stop after current album / track (Playlist context menu entry)
 
@@ -10,7 +14,7 @@ O Export tracks in playlist into a directory
 O Shuffle
 O Repeat
 O Playlist loading (Only add tracks in playlist not added anyways)
-O Add Zeitgeist module
+O Add Zeitgeist module (check rhythmbox and banshee first)
 O Sound Indicator
 
 
