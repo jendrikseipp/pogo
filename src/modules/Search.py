@@ -150,7 +150,7 @@ class Search(modules.ThreadedModule):
         
     def onSearch(self, query):
         def get_regex(part):
-            quantifiers = ['?', '+', '*']
+            quantifiers = ['?', '*']
             pattern = re.escape(unicode(part))
             for quantifier in quantifiers:
                 pattern = pattern.replace('\\' + quantifier, '.' + quantifier)

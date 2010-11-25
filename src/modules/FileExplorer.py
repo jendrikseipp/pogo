@@ -357,6 +357,12 @@ class FileExplorer(modules.Module):
             play.set_sensitive(False)
         else:
             play.connect('activate', lambda widget: self.play(True))
+            
+        # Do not show the other options when we are displaying results
+        if self.displaying_results:
+            popup.show_all()
+            popup.popup(None, None, None, button, time)
+            return
 
         popup.append(gtk.SeparatorMenuItem())
 
@@ -404,6 +410,8 @@ class FileExplorer(modules.Module):
         if path is not None:
             if os.path.isdir(path):
                 self.add_dir(path)
+                music_paths = self.get_music_paths_from_tree()
+                modules.postMsg(consts.MSG_EVT_MUSIC_PATHS_CHANGED, {'paths': music_paths})
             else:
                 errorMsgBox(None, _('This path does not exist'),
                     '"%s"\n' % path + _('Please select an existing directory.'))

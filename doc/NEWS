@@ -4,6 +4,7 @@
  0.3 "I go hard, I go home" ()
 ==========
 * Search for tracks in the music folders
+* Searching supports * and ? wildcards
 * Let users add and hide directories in file browser
 * Add "Open containing folder" context menu item
 * Make trackslider bigger
