@@ -526,7 +526,7 @@ class FileExplorer(modules.Module):
         self.tree.set_row_separator_func(self._is_separator)
             
         # Restore the tree if we have any to restore, else build new one
-        if False and self.treeState:
+        if self.treeState:
             self.restore_tree()
             return
             

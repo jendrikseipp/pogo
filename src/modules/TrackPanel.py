@@ -125,6 +125,9 @@ class CoverSpot(object):
         self.thumb_window.set_image(thumb_path)
         if self.show_thumb is None:
             self.onCoverClicked(None, None, True)
+            # This somehow fixes the compiz problem where the cover was only 
+            # shown after the window had been redrawn
+            self.thumb_window.update_position()
         elif self.has_focus:
             self.onCoverClicked(None, None, self.show_thumb)
         
@@ -139,7 +142,7 @@ class CoverSpot(object):
             self.cover_window.update_position()
             self.cover_window.show()
             self.thumb_window.hide()
-        self.show_thumb = show_thumb        
+        self.show_thumb = show_thumb
         
         
     def on_focus_out(self, widget, event):
@@ -176,8 +179,8 @@ class CoverWindow(gtk.Window):
         
     def set_image(self, path):
         """
-            Change the current image to imgPath.
-            Use the application's icon if imgPath is None.
+        Change the current image to imgPath.
+        Use the application's icon if imgPath is None.
         """
         if path is None:
             self.image.set_from_file(os.path.join(tools.consts.dirPix, 'cover-none.png'))
