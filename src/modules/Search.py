@@ -145,9 +145,18 @@ class Search(modules.ThreadedModule):
         
         self.paths = []
         
+        self.searchbox.grab_focus()
+        
         
     def onSearch(self, query):
-        regexes = [re.compile(unicode(part), re.IGNORECASE) for part in query.split()]
+        def get_regex(part):
+            quantifiers = ['?', '+', '*']
+            pattern = re.escape(unicode(part))
+            for quantifier in quantifiers:
+                pattern = pattern.replace('\\' + quantifier, '.' + quantifier)
+            return re.compile(pattern, re.IGNORECASE)
+            
+        regexes = [get_regex(part) for part in query.split()]
         
         all_dirs = []
         all_files = []
