@@ -8,14 +8,14 @@ msgstr ""
 "Project-Id-Version: decibel-audio-player\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2010-11-21 20:05+0100\n"
-"PO-Revision-Date: 2010-11-09 20:48+0000\n"
+"PO-Revision-Date: 2010-11-24 14:12+0000\n"
 "Last-Translator: Paolo Sammicheli <paolo@sammicheli.net>\n"
 "Language-Team: Italian <it@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Launchpad-Export-Date: 2010-11-22 05:14+0000\n"
+"X-Launchpad-Export-Date: 2010-11-25 05:15+0000\n"
 "X-Generator: Launchpad (build Unknown)\n"
 
 #: ../src/media/track/__init__.py:54
@@ -163,7 +163,7 @@ msgstr "Nascondi cartella"
 
 #: ../src/modules/FileExplorer.py:392
 msgid "Open containing folder"
-msgstr ""
+msgstr "Apri cartella selezionata"
 
 #: ../src/modules/FileExplorer.py:403
 msgid "Choose a directory"
