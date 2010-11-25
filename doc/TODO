@@ -1,8 +1,5 @@
 === Roadmap ===
 
-0.3:
-X Fix: When compiz is active the first cover is only shown after the window is redrawn
-
 0.4:
 O Stop after current album / track (Playlist context menu entry)
 

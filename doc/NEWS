@@ -6,8 +6,10 @@
 * Search for tracks in the music folders
 * Let users add and hide directories in file browser
 * Add "Open containing folder" context menu item
+* Make trackslider bigger
 * Fix Loading files from commandline (make paths absolute)
 * Fix: Save playlist also when files have been added on the commandline
+* Fix: With compiz the first cover is only shown after the window is redrawn
 
 
  0.2 "I hold the candle while you dance upon the flame" (2010-10-21)
