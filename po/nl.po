@@ -7,74 +7,16 @@ msgid ""
 msgstr ""
 "Project-Id-Version: decibel-audio-player\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-11-07 01:42+0100\n"
-"PO-Revision-Date: 2010-10-11 04:54+0000\n"
+"POT-Creation-Date: 2010-11-21 20:05+0100\n"
+"PO-Revision-Date: 2010-11-08 09:14+0000\n"
 "Last-Translator: Peter Schelleman <Unknown>\n"
 "Language-Team: Dutch <nl@li.org>\n"
-"Language: nl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Launchpad-Export-Date: 2010-11-02 05:09+0000\n"
+"X-Launchpad-Export-Date: 2010-11-26 05:13+0000\n"
 "X-Generator: Launchpad (build Unknown)\n"
-
-#: ../src/gui/about.py:40
-msgid "translator-credits"
-msgstr ""
-"Launchpad Contributions:\n"
-"  Peter Schelleman https://launchpad.net/~peterschelleman\n"
-"  Robert Wubs https://launchpad.net/~wubsieonline"
-
-#: ../src/gui/about.py:44
-msgid "Developer:"
-msgstr "Ontwikkelaar:"
-
-#: ../src/gui/about.py:48
-msgid "Thanks to:"
-msgstr "Met dank aan:"
-
-#: ../src/gui/preferences.py:43
-msgid "Preferences"
-msgstr "Voorkeuren"
-
-#: ../src/gui/preferences.py:129
-msgid "Unable to load this module."
-msgstr "Niet in staat om deze module te laden"
-
-#: ../src/gui/preferences.py:138
-msgid "Modules"
-msgstr "Modules"
-
-#: ../src/gui/preferences.py:139 ../src/modules/Covers.py:434
-#: ../src/modules/DesktopNotification.py:213
-msgid "Description"
-msgstr "Beschrijving"
-
-#: ../src/gui/preferences.py:140
-msgid ""
-"This window shows the list of available modules. You can enable/disable a "
-"module by checking/unchecking the check box in front of it."
-msgstr ""
-"Dit kader toont een lijst van beschikbare modules. Je kunt een module aan/"
-"uitzetten via het blokje ervoor"
-
-#: ../src/gui/preferences.py:142
-msgid "Configuring a Module"
-msgstr "Configureren van een Module"
-
-#: ../src/gui/preferences.py:143
-msgid ""
-"When a module may be configured, a specific icon is displayed on the right "
-"of the corresponding line. To configure a module, simply select it and then "
-"click on the \"Preferences\" button on the bottom of the dialog box. Note "
-"that configuring a module is only possible when it is enabled."
-msgstr ""
-"Wanneer een module geconfigureerd mag worden, verschijnt een een specifiek "
-"pictogram aan de rechterkant van de lijn. Om een module te configureren, "
-"klik simpelweg op de module en klik dan op de \"Voorkeuren\" knop onderaan "
-"het dialoogvenster. Let op dat het configureren van een module alleen "
-"mogelijk is wanneer het aan staat."
 
 #: ../src/media/track/__init__.py:54
 msgid "Track number"
@@ -137,6 +79,71 @@ msgstr "%(album)s [Schijf %(discnum)u]"
 msgid "CDDA Track"
 msgstr "CDDA spoor"
 
+#: ../src/gui/preferences.py:43
+msgid "Preferences"
+msgstr "Voorkeuren"
+
+#: ../src/gui/preferences.py:129
+msgid "Unable to load this module."
+msgstr "Niet in staat om deze module te laden"
+
+#: ../src/gui/preferences.py:138
+msgid "Modules"
+msgstr "Modules"
+
+#: ../src/gui/preferences.py:139 ../src/modules/DesktopNotification.py:213
+#: ../src/modules/Covers.py:434
+msgid "Description"
+msgstr "Beschrijving"
+
+#: ../src/gui/preferences.py:140
+msgid ""
+"This window shows the list of available modules. You can enable/disable a "
+"module by checking/unchecking the check box in front of it."
+msgstr ""
+"Dit kader toont een lijst van beschikbare modules. Je kunt een module "
+"aan/uitzetten via het blokje ervoor"
+
+#: ../src/gui/preferences.py:142
+msgid "Configuring a Module"
+msgstr "Configureren van een Module"
+
+#: ../src/gui/preferences.py:143
+msgid ""
+"When a module may be configured, a specific icon is displayed on the right "
+"of the corresponding line. To configure a module, simply select it and then "
+"click on the \"Preferences\" button on the bottom of the dialog box. Note "
+"that configuring a module is only possible when it is enabled."
+msgstr ""
+"Wanneer een module geconfigureerd mag worden, verschijnt een een specifiek "
+"pictogram aan de rechterkant van de lijn. Om een module te configureren, "
+"klik simpelweg op de module en klik dan op de \"Voorkeuren\" knop onderaan "
+"het dialoogvenster. Let op dat het configureren van een module alleen "
+"mogelijk is wanneer het aan staat."
+
+#: ../src/gui/about.py:40
+msgid "translator-credits"
+msgstr ""
+"Launchpad Contributions:\n"
+"  Peter Schelleman https://launchpad.net/~peterschelleman\n"
+"  Robert Wubs https://launchpad.net/~wubsieonline"
+
+#: ../src/gui/about.py:44
+msgid "Developer:"
+msgstr "Ontwikkelaar:"
+
+#: ../src/gui/about.py:48
+msgid "Thanks to:"
+msgstr "Met dank aan:"
+
+#: ../src/modules/Search.py:34
+msgid "Search in your music folders"
+msgstr "Zoek in je muziek mappen"
+
+#: ../src/modules/Zeitgeist.py:26
+msgid "Send track information to the Zeitgeist service"
+msgstr "Zend spoor informatie naar de Zeitgeist service"
+
 #: ../src/modules/FileExplorer.py:173
 msgid "loading..."
 msgstr "laden...."
@@ -147,21 +154,19 @@ msgstr "Voeg toe"
 
 #: ../src/modules/FileExplorer.py:372
 msgid "Add music folder"
-msgstr ""
+msgstr "Voeg een muziek map toe"
 
 #: ../src/modules/FileExplorer.py:384
-#, fuzzy
 msgid "Hide folder"
-msgstr "Kies een map"
+msgstr "Verberg de map"
 
 #: ../src/modules/FileExplorer.py:392
 msgid "Open containing folder"
-msgstr ""
+msgstr "Open de map met inhoud"
 
 #: ../src/modules/FileExplorer.py:403
-#, fuzzy
 msgid "Choose a directory"
-msgstr "Kies een map"
+msgstr "kies een map"
 
 #: ../src/modules/FileExplorer.py:408
 msgid "This path does not exist"
@@ -181,69 +186,11 @@ msgstr "Muziek"
 
 #: ../src/modules/FileExplorer.py:601
 msgid "Searching ..."
-msgstr ""
+msgstr "Aan het zoeken ..."
 
 #: ../src/modules/FileExplorer.py:615
-#, fuzzy
 msgid "No tracks found"
-msgstr "Geen schijf gevonden"
-
-#: ../src/modules/CtrlPanel.py:190 ../src/modules/CtrlPanel.py:246
-msgid "Pause the current track"
-msgstr "Pauzeer het huidige nummer"
-
-#: ../src/modules/CtrlPanel.py:206
-msgid "Play the first selected track of the playlist"
-msgstr "Speel het eerstgekozen nummer van de afspeel lijst"
-
-#: ../src/modules/CtrlPanel.py:240
-msgid "Continue playing the current track"
-msgstr "Ga door met het spelen van het huidige nummer"
-
-#: ../src/modules/StatusbarTitlebar.py:47
-msgid "[paused]"
-msgstr "[gepauzeerd]"
-
-#: ../src/modules/Search.py:34
-msgid "Search in your music folders"
-msgstr ""
-
-#: ../src/modules/Tracktree.py:367
-msgid "Save playlist"
-msgstr "Afspeellijst opslaan"
-
-#: ../src/modules/Tracktree.py:416
-msgid "Clear Playlist"
-msgstr ""
-
-#: ../src/modules/Equalizer.py:24
-msgid "Equalizer"
-msgstr "Equalizer"
-
-#: ../src/modules/Equalizer.py:24
-msgid "Tune the level of the frequency bands"
-msgstr "Stel het niveau van de frequenties af"
-
-#: ../src/modules/Equalizer.py:125 ../src/modules/Equalizer.py:213
-#: ../src/modules/Equalizer.py:226
-msgid "Custom"
-msgstr "Speciaal"
-
-#: ../src/modules/Equalizer.py:166
-msgid "Save levels"
-msgstr "Sla de niveaus op"
-
-#: ../src/modules/Equalizer.py:177
-msgid "Load levels"
-msgstr "Laad niveaus"
-
-#: ../src/modules/Equalizer.py:204
-msgid "Could not load the file"
-msgstr "Kon het bestand niet laden"
-
-#: ../src/modules/Equalizer.py:204
-msgid "The format of the file is incorrect."
-msgstr "Het bestandsformaat is niet correct."
+msgstr "Geen sporen gevonden"
 
 #: ../src/modules/__init__.py:75
 msgid "The following Python modules are not available:"
@@ -258,12 +205,80 @@ msgid "Restart required"
 msgstr "Herstart vereist"
 
 #: ../src/modules/__init__.py:267
-msgid "You must restart the application for this modification to take effect."
+msgid ""
+"You must restart the application for this modification to take effect."
 msgstr "U moet het programma herstarten om deze wijziging door te voeren."
 
-#: ../src/modules/Zeitgeist.py:26
-msgid "Send track information to the Zeitgeist service"
-msgstr "Zend spoor informatie naar de Zeitgeist service"
+#: ../src/modules/CtrlPanel.py:190 ../src/modules/CtrlPanel.py:246
+msgid "Pause the current track"
+msgstr "Pauzeer het huidige nummer"
+
+#: ../src/modules/CtrlPanel.py:206
+msgid "Play the first selected track of the playlist"
+msgstr "Speel het eerstgekozen nummer van de afspeel lijst"
+
+#: ../src/modules/CtrlPanel.py:240
+msgid "Continue playing the current track"
+msgstr "Ga door met het spelen van het huidige nummer"
+
+#: ../src/modules/DesktopNotification.py:25
+msgid "Desktop Notification"
+msgstr "Desktopnotificaties"
+
+#: ../src/modules/DesktopNotification.py:25
+msgid "Display a desktop notification on track change"
+msgstr "Laat een desktopnotificatie zien bij nummerverandering"
+
+#: ../src/modules/DesktopNotification.py:78
+#: ../src/modules/DesktopNotification.py:188
+msgid "Skip track"
+msgstr "Sla nummer over"
+
+#: ../src/modules/DesktopNotification.py:214
+msgid ""
+"This module displays a small popup window on your desktop when a new track "
+"starts."
+msgstr ""
+"Deze module laat een klein popup scherm zien op je desktop wanneer een nieuw "
+"nummer start"
+
+#: ../src/modules/DesktopNotification.py:215
+msgid ""
+"If the Covers module is enabled, the popup also shows the album cover."
+msgstr "Als de hoes module aanstaat toont de popup ook de hoes"
+
+#: ../src/modules/DesktopNotification.py:216
+msgid "Customizing the Notification"
+msgstr "Aanpassen van de notificatie"
+
+#: ../src/modules/DesktopNotification.py:217
+msgid ""
+"You can change the title and the body of the notification to any text you "
+"want. Before displaying the popup window, fields of the form {field} are "
+"replaced by their corresponding value. Available fields are:\n"
+"\n"
+msgstr ""
+"Je kan de titel en de body van de notificatie veranderen naar elke die tekst "
+"je maar wil. Voordat het popup scherm zich laat zien, worden de velden van "
+"het formulier {field} vervangen voor hun corresponderende waarde. "
+"Verkrijgbare velden zijn:\n"
+"\n"
+
+#: ../src/modules/DesktopNotification.py:220
+msgid "Markup"
+msgstr "Opmaak"
+
+#: ../src/modules/DesktopNotification.py:221
+msgid ""
+"You can use the Pango markup language to format the text. More information "
+"on that language is available on the following web page:"
+msgstr ""
+"Je kan de Pango markup taal gebruiken om de tekst te veranderen. Meer "
+"informatie over de taal is verkrijgbaar op de volgende webpagina:"
+
+#: ../src/modules/StatusbarTitlebar.py:47
+msgid "[paused]"
+msgstr "[gepauzeerd]"
 
 #: ../src/modules/Covers.py:28
 msgid "Covers"
@@ -316,59 +331,42 @@ msgstr ""
 "bestaat voor het huidige nummer, wordt het gebruikt. Als er geen is, dan "
 "wordt de omslag gedownload."
 
-#: ../src/modules/DesktopNotification.py:25
-msgid "Desktop Notification"
-msgstr "Desktopnotificaties"
+#: ../src/modules/Tracktree.py:367
+msgid "Save playlist"
+msgstr "Afspeellijst opslaan"
 
-#: ../src/modules/DesktopNotification.py:25
-msgid "Display a desktop notification on track change"
-msgstr "Laat een desktopnotificatie zien bij nummerverandering"
+#: ../src/modules/Tracktree.py:416
+msgid "Clear Playlist"
+msgstr "Verwijder de afspeellijst"
 
-#: ../src/modules/DesktopNotification.py:78
-#: ../src/modules/DesktopNotification.py:188
-msgid "Skip track"
-msgstr "Sla nummer over"
+#: ../src/modules/Equalizer.py:24
+msgid "Equalizer"
+msgstr "Equalizer"
 
-#: ../src/modules/DesktopNotification.py:214
-msgid ""
-"This module displays a small popup window on your desktop when a new track "
-"starts."
-msgstr ""
-"Deze module laat een klein popup scherm zien op je desktop wanneer een nieuw "
-"nummer start"
+#: ../src/modules/Equalizer.py:24
+msgid "Tune the level of the frequency bands"
+msgstr "Stel het niveau van de frequenties af"
 
-#: ../src/modules/DesktopNotification.py:215
-msgid "If the Covers module is enabled, the popup also shows the album cover."
-msgstr "Als de hoes module aanstaat toont de popup ook de hoes"
+#: ../src/modules/Equalizer.py:125 ../src/modules/Equalizer.py:213
+#: ../src/modules/Equalizer.py:226
+msgid "Custom"
+msgstr "Speciaal"
 
-#: ../src/modules/DesktopNotification.py:216
-msgid "Customizing the Notification"
-msgstr "Aanpassen van de notificatie"
+#: ../src/modules/Equalizer.py:166
+msgid "Save levels"
+msgstr "Sla de niveaus op"
 
-#: ../src/modules/DesktopNotification.py:217
-msgid ""
-"You can change the title and the body of the notification to any text you "
-"want. Before displaying the popup window, fields of the form {field} are "
-"replaced by their corresponding value. Available fields are:\n"
-"\n"
-msgstr ""
-"Je kan de titel en de body van de notificatie veranderen naar elke die tekst "
-"je maar wil. Voordat het popup scherm zich laat zien, worden de velden van "
-"het formulier {field} vervangen voor hun corresponderende waarde. "
-"Verkrijgbare velden zijn:\n"
-"\n"
+#: ../src/modules/Equalizer.py:177
+msgid "Load levels"
+msgstr "Laad niveaus"
 
-#: ../src/modules/DesktopNotification.py:220
-msgid "Markup"
-msgstr "Opmaak"
+#: ../src/modules/Equalizer.py:204
+msgid "Could not load the file"
+msgstr "Kon het bestand niet laden"
 
-#: ../src/modules/DesktopNotification.py:221
-msgid ""
-"You can use the Pango markup language to format the text. More information "
-"on that language is available on the following web page:"
-msgstr ""
-"Je kan de Pango markup taal gebruiken om de tekst te veranderen. Meer "
-"informatie over de taal is verkrijgbaar op de volgende webpagina:"
+#: ../src/modules/Equalizer.py:204
+msgid "The format of the file is incorrect."
+msgstr "Het bestandsformaat is niet correct."
 
 #: ../src/tools/consts.py:94
 msgid "Unknown Genre"
@@ -466,6 +464,21 @@ msgstr "Speel het volgende nummer"
 msgid "Play the previous track"
 msgstr "Speel het vorige nummer af"
 
+#~ msgid ""
+#~ "This dialog box shows the list of available modules, which are small pieces "
+#~ "of code that add some functionnalities to the application. You can "
+#~ "enable/disable a module by checking/unchecking the check box in front of it. "
+#~ "Note that some modules (e.g., the File Explorer) cannot be disabled."
+#~ msgstr ""
+#~ "Dit dialooogvenster laat een lijst van de beschikbare modules zien, die "
+#~ "kleine stukjes code zijn, die wat functies toevoegen aan de applicatie. Je "
+#~ "kan een module in- en uitschakelen door het aan- of afvinken in de checkbox "
+#~ "er voor. Let op dat sommige modules (bijv. de Bestandsbladeraar) niet kunnen "
+#~ "worden uitgeschakeld."
+
+#~ msgid "Choose a folder"
+#~ msgstr "Kies een map"
+
 #~ msgid "The name is incorrect"
 #~ msgstr "De naam is incorrect"
 
@@ -476,6 +489,7 @@ msgstr "Speel het vorige nummer af"
 #~ "Deze naam is niet toegestaan.\n"
 #~ "Gebruik a.u.b. een andere."
 
+#, python-format
 #~ msgid ""
 #~ "The character %s is not allowed.\n"
 #~ "Please use another name."
@@ -483,24 +497,13 @@ msgstr "Speel het vorige nummer af"
 #~ "Het symbool %s is niet toegestaan.\n"
 #~ "Gebruik a.u.b. een andere naam."
 
-#~ msgid ""
-#~ "This dialog box shows the list of available modules, which are small "
-#~ "pieces of code that add some functionnalities to the application. You can "
-#~ "enable/disable a module by checking/unchecking the check box in front of "
-#~ "it. Note that some modules (e.g., the File Explorer) cannot be disabled."
-#~ msgstr ""
-#~ "Dit dialooogvenster laat een lijst van de beschikbare modules zien, die "
-#~ "kleine stukjes code zijn, die wat functies toevoegen aan de applicatie. "
-#~ "Je kan een module in- en uitschakelen door het aan- of afvinken in de "
-#~ "checkbox er voor. Let op dat sommige modules (bijv. de Bestandsbladeraar) "
-#~ "niet kunnen worden uitgeschakeld."
-
 #~ msgid "File Explorer"
 #~ msgstr "Bestandsbladeraar"
 
 #~ msgid "Browse your file system"
 #~ msgstr "Blader in je bestandssysteem"
 
+#, python-format
 #~ msgid "One track in playlist  [%(length)s]"
 #~ msgid_plural "%(count)u tracks in playlist  [%(length)s]"
 #~ msgstr[0] "Eén nummer in afspeellijst [%(length)s]"
@@ -529,18 +532,18 @@ msgstr "Speel het vorige nummer af"
 #~ msgstr "Over veiligheid van wachtwoordopslag"
 
 #~ msgid ""
-#~ "If you use Gnome, it is safe to store your password since the Gnome "
-#~ "keyring is used."
+#~ "If you use Gnome, it is safe to store your password since the Gnome keyring "
+#~ "is used."
 #~ msgstr ""
 #~ "Als je Gnome gebruikt, is het veilig om je wachtwoord op te slaan, omdat "
 #~ "Gnome keyring is gebruikt."
 
 #~ msgid ""
-#~ "If you do not use Gnome, beware that, although not stored as clear text, "
-#~ "an attacker <i>could</i> retrieve it."
+#~ "If you do not use Gnome, beware that, although not stored as clear text, an "
+#~ "attacker <i>could</i> retrieve it."
 #~ msgstr ""
-#~ "Als je niet Gnome gebruikt, hou er rekening mee dat, ook al niet "
-#~ "opgeslagen als tekst, een aanvaller het <i>zou kunnen</i> achterhalen."
+#~ "Als je niet Gnome gebruikt, hou er rekening mee dat, ook al niet opgeslagen "
+#~ "als tekst, een aanvaller het <i>zou kunnen</i> achterhalen."
 
 #~ msgid "Home"
 #~ msgstr "Persoonlijke map"
@@ -551,8 +554,8 @@ msgstr "Speel het vorige nummer af"
 #~ msgid ""
 #~ "You will be able to add this root folder again later on if you wish so."
 #~ msgstr ""
-#~ "Je zal in staat zijn om de root map later opnieuw toe te voegen, als je "
-#~ "dat wil."
+#~ "Je zal in staat zijn om de root map later opnieuw toe te voegen, als je dat "
+#~ "wil."
 
 #~ msgid "Remove the selected entry?"
 #~ msgstr "Verwijder de geselcteerde invoer"
@@ -560,8 +563,7 @@ msgstr "Speel het vorige nummer af"
 #~ msgid ""
 #~ "You will be able to add these root folders again later on if you wish so."
 #~ msgstr ""
-#~ "Je zal in staat zijn om de root map later weer toe te voegen, als je dat "
-#~ "wil"
+#~ "Je zal in staat zijn om de root map later weer toe te voegen, als je dat wil"
 
 #~ msgid "Remove all selected entries?"
 #~ msgstr "Verwijder alle geselecteerde invoer"
@@ -677,21 +679,20 @@ msgstr "Speel het vorige nummer af"
 #~ "This module detects any running instant messenger and updates your status "
 #~ "with regards to the track you are listening to. Supported messengers are:"
 #~ msgstr ""
-#~ "Deze module zoekt naar elke draaiende instant messenger en updates je "
-#~ "status betreffende het nummer waar je naar luistert. Ondersteunde "
-#~ "messengers zijn:"
+#~ "Deze module zoekt naar elke draaiende instant messenger en updates je status "
+#~ "betreffende het nummer waar je naar luistert. Ondersteunde messengers zijn:"
 
 #~ msgid "Customizing the Status"
 #~ msgstr "Aanpassen van de Status"
 
 #~ msgid ""
-#~ "You can set the status to any text you want. Before setting it, the "
-#~ "module replaces all fields of the form {field} by their corresponding "
-#~ "value. Available fields are:"
+#~ "You can set the status to any text you want. Before setting it, the module "
+#~ "replaces all fields of the form {field} by their corresponding value. "
+#~ "Available fields are:"
 #~ msgstr ""
 #~ "Je kan de status instellen naar elke tekst die je wilt. Voordat je het "
-#~ "instelt, vervangt de module alle velden van het formulier {field} voor "
-#~ "hun corresponderende waarde. Verkrijgbare velden zijn:"
+#~ "instelt, vervangt de module alle velden van het formulier {field} voor hun "
+#~ "corresponderende waarde. Verkrijgbare velden zijn:"
 
 #~ msgid "Sanitization"
 #~ msgstr "Sanitizering"
@@ -699,13 +700,13 @@ msgstr "Speel het vorige nummer af"
 #~ msgid ""
 #~ "You can define some words that to sanitize before using them to set your "
 #~ "status. In this case, the middle characters of matching words is "
-#~ "automatically replaced with asterisks (e.g., \"Metallica - Live S**t "
-#~ "Binge & Purge\"). Put one word per line."
+#~ "automatically replaced with asterisks (e.g., \"Metallica - Live S**t Binge & "
+#~ "Purge\"). Put one word per line."
 #~ msgstr ""
-#~ "Je kan aangeven of sommige worden gesanitizeerd moeten worden voordat je "
-#~ "ze gebruikt in je status. In dit geval, is het middelste karakter van de "
-#~ "overeenkomstige woorden vervangen voor asterisks (bijv. \"Metallica - "
-#~ "Live S**t Blinge & Purge\"). Typ 1 woord per zin."
+#~ "Je kan aangeven of sommige worden gesanitizeerd moeten worden voordat je ze "
+#~ "gebruikt in je status. In dit geval, is het middelste karakter van de "
+#~ "overeenkomstige woorden vervangen voor asterisks (bijv. \"Metallica - Live "
+#~ "S**t Blinge & Purge\"). Typ 1 woord per zin."
 
 #~ msgid "Keep your Last.fm profile up to date"
 #~ msgstr "Hou je Last.fm profiel up to date"
@@ -767,8 +768,7 @@ msgstr "Speel het vorige nummer af"
 #~ msgid "Remove the selected library?"
 #~ msgstr "Verwijder de geselecteerde bibliotheek?"
 
-#~ msgid ""
-#~ "You will be able to recreate these libraries later on if you wish so."
+#~ msgid "You will be able to recreate these libraries later on if you wish so."
 #~ msgstr "Je kunt deze bibliotheken later opnieuw aanmaken als je dat wil."
 
 #~ msgid "Remove all selected libraries?"
@@ -783,9 +783,9 @@ msgstr "Speel het vorige nummer af"
 #~ "are already known and do not have to be read again."
 #~ msgstr ""
 #~ "Deze module organiseert je mediabestanden door tags in plaats van het "
-#~ "gebruiken van de bestandenstructuur van je schijven. Het laden van "
-#~ "nummers is ook sneller want de tags zijn al bekend en hoeven niet nog een "
-#~ "keer gelezen te worden."
+#~ "gebruiken van de bestandenstructuur van je schijven. Het laden van nummers "
+#~ "is ook sneller want de tags zijn al bekend en hoeven niet nog een keer "
+#~ "gelezen te worden."
 
 #~ msgid ""
 #~ "When you add a new library, you have to give the full path to the root "
@@ -793,19 +793,18 @@ msgstr "Speel het vorige nummer af"
 #~ "recursively scanned for media files whose tags are read and stored in a "
 #~ "database."
 #~ msgstr ""
-#~ "Wanneer je een nieuwe bibliotheek toevoegt moet je het volledige pad naar "
-#~ "de root van die bibliotheek opgeven. Dan worden alle mappen en submappen "
-#~ "onder de root recursief gescand voor mediabestanden wiens tags gelezen en "
+#~ "Wanneer je een nieuwe bibliotheek toevoegt moet je het volledige pad naar de "
+#~ "root van die bibliotheek opgeven. Dan worden alle mappen en submappen onder "
+#~ "de root recursief gescand voor mediabestanden wiens tags gelezen en "
 #~ "opgeslagen zijn in de database."
 
 #~ msgid ""
-#~ "Upon refreshing a library, the file structure under the root directory "
-#~ "and all media files are scanned for changes, to update the database "
-#~ "accordingly."
+#~ "Upon refreshing a library, the file structure under the root directory and "
+#~ "all media files are scanned for changes, to update the database accordingly."
 #~ msgstr ""
-#~ "Bij het verversen van een bibliotheek, word de hele bestandenstructuur "
-#~ "van de rootmap gescand en alle mediabestanden gescand op verandering, om "
-#~ "de database te updaten."
+#~ "Bij het verversen van een bibliotheek, word de hele bestandenstructuur van "
+#~ "de rootmap gescand en alle mediabestanden gescand op verandering, om de "
+#~ "database te updaten."
 
 #~ msgid "Status Icon"
 #~ msgstr "Statuspictogram"
@@ -828,6 +827,9 @@ msgstr "Speel het vorige nummer af"
 #~ msgid "Track %02u"
 #~ msgstr "Nummer %02u"
 
+#~ msgid "No disc found"
+#~ msgstr "Geen schijf gevonden"
+
 #~ msgid "This will remove all disc information stored on your hard drive."
 #~ msgstr ""
 #~ "Dit zal alle schijfinformatie verwijderen die opgeslagen is op de harde "
@@ -840,11 +842,9 @@ msgstr "Speel het vorige nummer af"
 #~ msgstr "Ongeldig pad"
 
 #~ msgid ""
-#~ "The path to the CD-ROM device is not valid. Please choose an existing "
-#~ "path."
+#~ "The path to the CD-ROM device is not valid. Please choose an existing path."
 #~ msgstr ""
-#~ "Het pad naar het CD-ROM apparaat is ongeldig. Kies a.u.b. een bestaand "
-#~ "pad."
+#~ "Het pad naar het CD-ROM apparaat is ongeldig. Kies a.u.b. een bestaand pad."
 
 #~ msgid "This module lets you play audio discs from your CD-ROM device."
 #~ msgstr "Deze moudule laat je audio CD's spelen vanaf je CD-ROM apparaat."
@@ -854,14 +854,14 @@ msgstr "Speel het vorige nummer af"
 
 #~ msgid ""
 #~ "Disc information, such as artist and album title, may be automatically "
-#~ "downloaded from an online database if you wish so. This information may "
-#~ "also be saved on your hard drive to avoid downloading it again the next "
-#~ "time you play the same disc."
+#~ "downloaded from an online database if you wish so. This information may also "
+#~ "be saved on your hard drive to avoid downloading it again the next time you "
+#~ "play the same disc."
 #~ msgstr ""
 #~ "Schijfinformatie, zoals artiest en album titel, kunnen automatisch worden "
-#~ "gedownload van een online database, als je dat wil. Deze informatie zal "
-#~ "ook opgeslagen worden op je harde schijf om te voorkomen dat hij het nog "
-#~ "een keer download bij het opnieuw afpelen van dezelfde cd."
+#~ "gedownload van een online database, als je dat wil. Deze informatie zal ook "
+#~ "opgeslagen worden op je harde schijf om te voorkomen dat hij het nog een "
+#~ "keer download bij het opnieuw afpelen van dezelfde cd."
 
 #~ msgid "Status File"
 #~ msgstr "Status Bestand"
@@ -870,8 +870,7 @@ msgstr "Speel het vorige nummer af"
 #~ msgstr "Genereer een tekstbestand met de huidige status"
 
 #~ msgid ""
-#~ "The path to the selected file is not valid. Please choose an existing "
-#~ "path."
+#~ "The path to the selected file is not valid. Please choose an existing path."
 #~ msgstr ""
 #~ "Het pad naar het geselecteerde bestand is niet geldig. Kies a.u.b. een "
 #~ "bestaand pad."
@@ -880,8 +879,7 @@ msgstr "Speel het vorige nummer af"
 #~ msgstr "Kies een bestand"
 
 #~ msgid ""
-#~ "This module generates a text file with regards to the track currently "
-#~ "played."
+#~ "This module generates a text file with regards to the track currently played."
 #~ msgstr ""
 #~ "Deze module genereert een tekstbestand betreffende het nummer dat net "
 #~ "gedraaid is."
@@ -895,10 +893,9 @@ msgstr "Speel het vorige nummer af"
 #~ "corresponding value. Available fields are:\n"
 #~ "\n"
 #~ msgstr ""
-#~ "Je kan de inhoud van het bestand veranderen voor elke tekst die je wil. "
-#~ "Voor het genereren van dit bestand, worden de velden van dit formulier "
-#~ "{field} vervangen door de corresponderende waarde, Verkrijgbare velden "
-#~ "zijn:\n"
+#~ "Je kan de inhoud van het bestand veranderen voor elke tekst die je wil. Voor "
+#~ "het genereren van dit bestand, worden de velden van dit formulier {field} "
+#~ "vervangen door de corresponderende waarde, Verkrijgbare velden zijn:\n"
 #~ "\n"
 
 #~ msgid "<b>CDDB</b>"
@@ -983,8 +980,7 @@ msgstr "Speel het vorige nummer af"
 #~ msgstr "Hernoem de geselecteerde bibliotheek"
 
 #~ msgid "Update the selected library by rescanning the disk"
-#~ msgstr ""
-#~ "Update de geslecteerde bibliotheek door het herscannen van je schijf"
+#~ msgstr "Update de geslecteerde bibliotheek door het herscannen van je schijf"
 
 #~ msgid "Clear"
 #~ msgstr "Wissen"

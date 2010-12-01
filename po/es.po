@@ -7,72 +7,16 @@ msgid ""
 msgstr ""
 "Project-Id-Version: decibel-audio-player\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-11-07 01:42+0100\n"
+"POT-Creation-Date: 2010-11-21 20:05+0100\n"
 "PO-Revision-Date: 2010-10-11 08:02+0000\n"
 "Last-Translator: Monkey <monkey.libre@gmail.com>\n"
 "Language-Team: Spanish <es@li.org>\n"
-"Language: es\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Launchpad-Export-Date: 2010-11-02 05:10+0000\n"
+"X-Launchpad-Export-Date: 2010-11-26 05:13+0000\n"
 "X-Generator: Launchpad (build Unknown)\n"
-
-#: ../src/gui/about.py:40
-msgid "translator-credits"
-msgstr ""
-"Launchpad Contributions:\n"
-"  Carlos Albornoz https://launchpad.net/~caralbornozc\n"
-"  Monkey https://launchpad.net/~monkey-libre"
-
-#: ../src/gui/about.py:44
-msgid "Developer:"
-msgstr "Desarrollador:"
-
-#: ../src/gui/about.py:48
-msgid "Thanks to:"
-msgstr "Gracias a:"
-
-#: ../src/gui/preferences.py:43
-msgid "Preferences"
-msgstr "Preferencias"
-
-#: ../src/gui/preferences.py:129
-msgid "Unable to load this module."
-msgstr "Imposible cargar este módulo"
-
-#: ../src/gui/preferences.py:138
-msgid "Modules"
-msgstr "Módulos"
-
-#: ../src/gui/preferences.py:139 ../src/modules/Covers.py:434
-#: ../src/modules/DesktopNotification.py:213
-msgid "Description"
-msgstr "Descripción"
-
-#: ../src/gui/preferences.py:140
-msgid ""
-"This window shows the list of available modules. You can enable/disable a "
-"module by checking/unchecking the check box in front of it."
-msgstr ""
-
-#: ../src/gui/preferences.py:142
-msgid "Configuring a Module"
-msgstr "Configurando un módulo"
-
-#: ../src/gui/preferences.py:143
-msgid ""
-"When a module may be configured, a specific icon is displayed on the right "
-"of the corresponding line. To configure a module, simply select it and then "
-"click on the \"Preferences\" button on the bottom of the dialog box. Note "
-"that configuring a module is only possible when it is enabled."
-msgstr ""
-"Cuando un modulo puede ser configurado, un icono se muestra a la derecha en "
-"la linea correspondiente. Para configurar un modulo simplemente selecciónelo "
-"y luego haga clic en el botón \"Preferencias\" en la parte inferior de la "
-"ventana de diálogo. Note que configurar un módulo es sólo posible cuando "
-"está activado"
 
 #: ../src/media/track/__init__.py:54
 msgid "Track number"
@@ -135,6 +79,71 @@ msgstr "%(album)s  [Disco %(discnum)u]"
 msgid "CDDA Track"
 msgstr ""
 
+#: ../src/gui/preferences.py:43
+msgid "Preferences"
+msgstr "Preferencias"
+
+#: ../src/gui/preferences.py:129
+msgid "Unable to load this module."
+msgstr "Imposible cargar este módulo"
+
+#: ../src/gui/preferences.py:138
+msgid "Modules"
+msgstr "Módulos"
+
+#: ../src/gui/preferences.py:139 ../src/modules/DesktopNotification.py:213
+#: ../src/modules/Covers.py:434
+msgid "Description"
+msgstr "Descripción"
+
+#: ../src/gui/preferences.py:140
+msgid ""
+"This window shows the list of available modules. You can enable/disable a "
+"module by checking/unchecking the check box in front of it."
+msgstr ""
+
+#: ../src/gui/preferences.py:142
+msgid "Configuring a Module"
+msgstr "Configurando un módulo"
+
+#: ../src/gui/preferences.py:143
+msgid ""
+"When a module may be configured, a specific icon is displayed on the right "
+"of the corresponding line. To configure a module, simply select it and then "
+"click on the \"Preferences\" button on the bottom of the dialog box. Note "
+"that configuring a module is only possible when it is enabled."
+msgstr ""
+"Cuando un modulo puede ser configurado, un icono se muestra a la derecha en "
+"la linea correspondiente. Para configurar un modulo simplemente selecciónelo "
+"y luego haga clic en el botón \"Preferencias\" en la parte inferior de la "
+"ventana de diálogo. Note que configurar un módulo es sólo posible cuando "
+"está activado"
+
+#: ../src/gui/about.py:40
+msgid "translator-credits"
+msgstr ""
+"Launchpad Contributions:\n"
+"  Carlos Albornoz https://launchpad.net/~caralbornozc\n"
+"  Gerardo Zamudio https://launchpad.net/~gerardo.zamudio\n"
+"  José Lou Chang https://launchpad.net/~obake\n"
+"  Monkey https://launchpad.net/~monkey-libre"
+
+#: ../src/gui/about.py:44
+msgid "Developer:"
+msgstr "Desarrollador:"
+
+#: ../src/gui/about.py:48
+msgid "Thanks to:"
+msgstr "Gracias a:"
+
+#: ../src/modules/Search.py:34
+msgid "Search in your music folders"
+msgstr ""
+
+#: ../src/modules/Zeitgeist.py:26
+msgid "Send track information to the Zeitgeist service"
+msgstr ""
+
 #: ../src/modules/FileExplorer.py:173
 msgid "loading..."
 msgstr "cargando…"
@@ -148,18 +157,16 @@ msgid "Add music folder"
 msgstr ""
 
 #: ../src/modules/FileExplorer.py:384
-#, fuzzy
 msgid "Hide folder"
-msgstr "Elija una carpeta"
+msgstr ""
 
 #: ../src/modules/FileExplorer.py:392
 msgid "Open containing folder"
 msgstr ""
 
 #: ../src/modules/FileExplorer.py:403
-#, fuzzy
 msgid "Choose a directory"
-msgstr "Elija una carpeta"
+msgstr ""
 
 #: ../src/modules/FileExplorer.py:408
 msgid "This path does not exist"
@@ -182,65 +189,7 @@ msgid "Searching ..."
 msgstr ""
 
 #: ../src/modules/FileExplorer.py:615
-#, fuzzy
 msgid "No tracks found"
-msgstr "No se encuentra ningún disco"
-
-#: ../src/modules/CtrlPanel.py:190 ../src/modules/CtrlPanel.py:246
-msgid "Pause the current track"
-msgstr "Pausar la pista actual"
-
-#: ../src/modules/CtrlPanel.py:206
-msgid "Play the first selected track of the playlist"
-msgstr ""
-
-#: ../src/modules/CtrlPanel.py:240
-msgid "Continue playing the current track"
-msgstr "Continuar reproduciendo la pista actual"
-
-#: ../src/modules/StatusbarTitlebar.py:47
-msgid "[paused]"
-msgstr "[pausado]"
-
-#: ../src/modules/Search.py:34
-msgid "Search in your music folders"
-msgstr ""
-
-#: ../src/modules/Tracktree.py:367
-msgid "Save playlist"
-msgstr "Guardar lista de reproducción"
-
-#: ../src/modules/Tracktree.py:416
-msgid "Clear Playlist"
-msgstr "Limpiar lista de reproducción"
-
-#: ../src/modules/Equalizer.py:24
-msgid "Equalizer"
-msgstr ""
-
-#: ../src/modules/Equalizer.py:24
-msgid "Tune the level of the frequency bands"
-msgstr "Afinar el nivel de las bandas de frecuencia"
-
-#: ../src/modules/Equalizer.py:125 ../src/modules/Equalizer.py:213
-#: ../src/modules/Equalizer.py:226
-msgid "Custom"
-msgstr ""
-
-#: ../src/modules/Equalizer.py:166
-msgid "Save levels"
-msgstr ""
-
-#: ../src/modules/Equalizer.py:177
-msgid "Load levels"
-msgstr "Cargar niveles"
-
-#: ../src/modules/Equalizer.py:204
-msgid "Could not load the file"
-msgstr "No se pudo cargar el archivo"
-
-#: ../src/modules/Equalizer.py:204
-msgid "The format of the file is incorrect."
 msgstr ""
 
 #: ../src/modules/__init__.py:75
@@ -256,12 +205,80 @@ msgid "Restart required"
 msgstr ""
 
 #: ../src/modules/__init__.py:267
-msgid "You must restart the application for this modification to take effect."
-msgstr "Debe reiniciar la aplicación para que esta modificación tenga efecto."
-
-#: ../src/modules/Zeitgeist.py:26
-msgid "Send track information to the Zeitgeist service"
+msgid ""
+"You must restart the application for this modification to take effect."
 msgstr ""
+"Debe reiniciar la aplicación para que esta modificación tenga efecto."
+
+#: ../src/modules/CtrlPanel.py:190 ../src/modules/CtrlPanel.py:246
+msgid "Pause the current track"
+msgstr "Pausar la pista actual"
+
+#: ../src/modules/CtrlPanel.py:206
+msgid "Play the first selected track of the playlist"
+msgstr ""
+
+#: ../src/modules/CtrlPanel.py:240
+msgid "Continue playing the current track"
+msgstr "Continuar reproduciendo la pista actual"
+
+#: ../src/modules/DesktopNotification.py:25
+msgid "Desktop Notification"
+msgstr "Notificación de escritorio"
+
+#: ../src/modules/DesktopNotification.py:25
+msgid "Display a desktop notification on track change"
+msgstr "Mostrar una notificación de escritorio al cambiar la pista"
+
+#: ../src/modules/DesktopNotification.py:78
+#: ../src/modules/DesktopNotification.py:188
+msgid "Skip track"
+msgstr "Saltar pista"
+
+#: ../src/modules/DesktopNotification.py:214
+msgid ""
+"This module displays a small popup window on your desktop when a new track "
+"starts."
+msgstr ""
+"Este módulo muestra una ventanita en su escritorio cuando comienza una pista "
+"nueva."
+
+#: ../src/modules/DesktopNotification.py:215
+msgid ""
+"If the Covers module is enabled, the popup also shows the album cover."
+msgstr ""
+
+#: ../src/modules/DesktopNotification.py:216
+msgid "Customizing the Notification"
+msgstr "Personalizando la notificación"
+
+#: ../src/modules/DesktopNotification.py:217
+msgid ""
+"You can change the title and the body of the notification to any text you "
+"want. Before displaying the popup window, fields of the form {field} are "
+"replaced by their corresponding value. Available fields are:\n"
+"\n"
+msgstr ""
+"Puede cambiar el título y el cuerpo de la notificación a cualquier texto que "
+"quiera. Antes de mostrar la ventanita, los campos de la forma {campo} se "
+"reemplazarán por el valor correspondiente. Campos disponibles:\n"
+"\n"
+
+#: ../src/modules/DesktopNotification.py:220
+msgid "Markup"
+msgstr "Marcado"
+
+#: ../src/modules/DesktopNotification.py:221
+msgid ""
+"You can use the Pango markup language to format the text. More information "
+"on that language is available on the following web page:"
+msgstr ""
+"Puede usar la idioma de Pango <em>markup</em> para formatear el texto. Mas "
+"información sobre este lenguaje está disponible en la  siguiente página web:"
+
+#: ../src/modules/StatusbarTitlebar.py:47
+msgid "[paused]"
+msgstr "[pausado]"
 
 #: ../src/modules/Covers.py:28
 msgid "Covers"
@@ -314,58 +331,42 @@ msgstr ""
 "existe para la pista actual, ésta se usa. Si no hay ninguna, la caratula "
 "será descargada."
 
-#: ../src/modules/DesktopNotification.py:25
-msgid "Desktop Notification"
-msgstr "Notificación de escritorio"
+#: ../src/modules/Tracktree.py:367
+msgid "Save playlist"
+msgstr "Guardar lista de reproducción"
 
-#: ../src/modules/DesktopNotification.py:25
-msgid "Display a desktop notification on track change"
-msgstr "Mostrar una notificación de escritorio al cambiar la pista"
+#: ../src/modules/Tracktree.py:416
+msgid "Clear Playlist"
+msgstr "Limpiar lista de reproducción"
 
-#: ../src/modules/DesktopNotification.py:78
-#: ../src/modules/DesktopNotification.py:188
-msgid "Skip track"
-msgstr "Saltar pista"
-
-#: ../src/modules/DesktopNotification.py:214
-msgid ""
-"This module displays a small popup window on your desktop when a new track "
-"starts."
-msgstr ""
-"Este módulo muestra una ventanita en su escritorio cuando comienza una pista "
-"nueva."
-
-#: ../src/modules/DesktopNotification.py:215
-msgid "If the Covers module is enabled, the popup also shows the album cover."
+#: ../src/modules/Equalizer.py:24
+msgid "Equalizer"
 msgstr ""
 
-#: ../src/modules/DesktopNotification.py:216
-msgid "Customizing the Notification"
-msgstr "Personalizando la notificación"
+#: ../src/modules/Equalizer.py:24
+msgid "Tune the level of the frequency bands"
+msgstr "Afinar el nivel de las bandas de frecuencia"
 
-#: ../src/modules/DesktopNotification.py:217
-msgid ""
-"You can change the title and the body of the notification to any text you "
-"want. Before displaying the popup window, fields of the form {field} are "
-"replaced by their corresponding value. Available fields are:\n"
-"\n"
+#: ../src/modules/Equalizer.py:125 ../src/modules/Equalizer.py:213
+#: ../src/modules/Equalizer.py:226
+msgid "Custom"
 msgstr ""
-"Puede cambiar el título y el cuerpo de la notificación a cualquier texto que "
-"quiera. Antes de mostrar la ventanita, los campos de la forma {campo} se "
-"reemplazarán por el valor correspondiente. Campos disponibles:\n"
-"\n"
 
-#: ../src/modules/DesktopNotification.py:220
-msgid "Markup"
-msgstr "Marcado"
-
-#: ../src/modules/DesktopNotification.py:221
-msgid ""
-"You can use the Pango markup language to format the text. More information "
-"on that language is available on the following web page:"
+#: ../src/modules/Equalizer.py:166
+msgid "Save levels"
 msgstr ""
-"Puede usar la idioma de Pango <em>markup</em> para formatear el texto. Mas "
-"información sobre este lenguaje está disponible en la  siguiente página web:"
+
+#: ../src/modules/Equalizer.py:177
+msgid "Load levels"
+msgstr "Cargar niveles"
+
+#: ../src/modules/Equalizer.py:204
+msgid "Could not load the file"
+msgstr "No se pudo cargar el archivo"
+
+#: ../src/modules/Equalizer.py:204
+msgid "The format of the file is incorrect."
+msgstr ""
 
 #: ../src/tools/consts.py:94
 msgid "Unknown Genre"
@@ -463,6 +464,21 @@ msgstr "Reproducir la pista siguiente"
 msgid "Play the previous track"
 msgstr "Reproducir la última pista"
 
+#~ msgid ""
+#~ "This dialog box shows the list of available modules, which are small pieces "
+#~ "of code that add some functionnalities to the application. You can "
+#~ "enable/disable a module by checking/unchecking the check box in front of it. "
+#~ "Note that some modules (e.g., the File Explorer) cannot be disabled."
+#~ msgstr ""
+#~ "Este cuadro de diálogo muestra la lista de módulos disponibles, los cuales "
+#~ "son pequeñas piezas de código que agregan algunas funcionalidades a la "
+#~ "aplicación. Puede activar/desactivar un módulo marcando/desmarcando el "
+#~ "cuadro de verificación en el frente de éste. Tenga en cuenta que algunos "
+#~ "módulos (ej. el Explorador de archivos) no pueden ser desactivados."
+
+#~ msgid "Choose a folder"
+#~ msgstr "Elija una carpeta"
+
 #~ msgid "The name is incorrect"
 #~ msgstr "El nombre es incorrecto"
 
@@ -473,6 +489,7 @@ msgstr "Reproducir la última pista"
 #~ "Este nombre no es permitido.\n"
 #~ "Por favor use otro."
 
+#, python-format
 #~ msgid ""
 #~ "The character %s is not allowed.\n"
 #~ "Please use another name."
@@ -480,25 +497,13 @@ msgstr "Reproducir la última pista"
 #~ "EL caractér %s no está permitido.\n"
 #~ "Por favor use otro nombre."
 
-#~ msgid ""
-#~ "This dialog box shows the list of available modules, which are small "
-#~ "pieces of code that add some functionnalities to the application. You can "
-#~ "enable/disable a module by checking/unchecking the check box in front of "
-#~ "it. Note that some modules (e.g., the File Explorer) cannot be disabled."
-#~ msgstr ""
-#~ "Este cuadro de diálogo muestra la lista de módulos disponibles, los "
-#~ "cuales son pequeñas piezas de código que agregan algunas funcionalidades "
-#~ "a la aplicación. Puede activar/desactivar un módulo marcando/desmarcando "
-#~ "el cuadro de verificación en el frente de éste. Tenga en cuenta que "
-#~ "algunos módulos (ej. el Explorador de archivos) no pueden ser "
-#~ "desactivados."
-
 #~ msgid "File Explorer"
 #~ msgstr "Explorador de archivos"
 
 #~ msgid "Browse your file system"
 #~ msgstr "Explorar tu sistema de archivos"
 
+#, python-format
 #~ msgid "One track in playlist  [%(length)s]"
 #~ msgid_plural "%(count)u tracks in playlist  [%(length)s]"
 #~ msgstr[0] "Una pista en la lista de reproducción  [%(length)s]"
@@ -527,15 +532,15 @@ msgstr "Reproducir la última pista"
 #~ msgstr "Acerca del almacenaje seguro de claves"
 
 #~ msgid ""
-#~ "If you use Gnome, it is safe to store your password since the Gnome "
-#~ "keyring is used."
+#~ "If you use Gnome, it is safe to store your password since the Gnome keyring "
+#~ "is used."
 #~ msgstr ""
-#~ "Si usa GNOME, es seguro almacenar su clave ya que se usa el gestor de "
-#~ "claves de GNOME."
+#~ "Si usa GNOME, es seguro almacenar su clave ya que se usa el gestor de claves "
+#~ "de GNOME."
 
 #~ msgid ""
-#~ "If you do not use Gnome, beware that, although not stored as clear text, "
-#~ "an attacker <i>could</i> retrieve it."
+#~ "If you do not use Gnome, beware that, although not stored as clear text, an "
+#~ "attacker <i>could</i> retrieve it."
 #~ msgstr ""
 #~ "Si no usa GNOME tenga en cuenta que, aunque no guarde la clave en texto "
 #~ "plano, un atacante <i>podría</i> conseguirla."
@@ -549,8 +554,7 @@ msgstr "Reproducir la última pista"
 #~ msgid ""
 #~ "You will be able to add this root folder again later on if you wish so."
 #~ msgstr ""
-#~ "Usted podrá añadir esta carpeta raíz nuevamente más adelante si así lo "
-#~ "desea."
+#~ "Usted podrá añadir esta carpeta raíz nuevamente más adelante si así lo desea."
 
 #~ msgid "Remove the selected entry?"
 #~ msgstr "¿Eliminar la entrada seleccionada?"
@@ -674,21 +678,21 @@ msgstr "Reproducir la última pista"
 #~ "This module detects any running instant messenger and updates your status "
 #~ "with regards to the track you are listening to. Supported messengers are:"
 #~ msgstr ""
-#~ "Este modulo detecta cualquier cliente de mensajería instantánea corriendo "
-#~ "y actualiza su estado relativo a la pista que usted esté escuchando. \r\n"
+#~ "Este modulo detecta cualquier cliente de mensajería instantánea corriendo y "
+#~ "actualiza su estado relativo a la pista que usted esté escuchando. \r\n"
 #~ "Los clientes de mensajería soportados son:"
 
 #~ msgid "Customizing the Status"
 #~ msgstr "Personalizar el Estado"
 
 #~ msgid ""
-#~ "You can set the status to any text you want. Before setting it, the "
-#~ "module replaces all fields of the form {field} by their corresponding "
-#~ "value. Available fields are:"
+#~ "You can set the status to any text you want. Before setting it, the module "
+#~ "replaces all fields of the form {field} by their corresponding value. "
+#~ "Available fields are:"
 #~ msgstr ""
 #~ "Puede configurar el estado a cualquier texto que desee. Antes de "
-#~ "configurarlo, el módulo reemplaza todos los campos de la forma {campo} a "
-#~ "sus valores correspondientes. Campos disponibles:"
+#~ "configurarlo, el módulo reemplaza todos los campos de la forma {campo} a sus "
+#~ "valores correspondientes. Campos disponibles:"
 
 #~ msgid "Sanitization"
 #~ msgstr "Higienización"
@@ -696,11 +700,11 @@ msgstr "Reproducir la última pista"
 #~ msgid ""
 #~ "You can define some words that to sanitize before using them to set your "
 #~ "status. In this case, the middle characters of matching words is "
-#~ "automatically replaced with asterisks (e.g., \"Metallica - Live S**t "
-#~ "Binge & Purge\"). Put one word per line."
+#~ "automatically replaced with asterisks (e.g., \"Metallica - Live S**t Binge & "
+#~ "Purge\"). Put one word per line."
 #~ msgstr ""
-#~ "Puedes definir algunas palabras para higienizar antes de usarlas para "
-#~ "poner tu estado. En este caso, los caracteres en el medio de las palabras "
+#~ "Puedes definir algunas palabras para higienizar antes de usarlas para poner "
+#~ "tu estado. En este caso, los caracteres en el medio de las palabras "
 #~ "coincidentes son reemplazadas automáticamente por asteriscos (ej. "
 #~ "\"Metallica - Live S**t Bing & Purge\"). Pon una palabra por línea."
 
@@ -738,8 +742,8 @@ msgstr "Reproducir la última pista"
 #~ "The directory is scanned for media files. This can take some time.\n"
 #~ "Please wait."
 #~ msgstr ""
-#~ "Se examina el directorio buscando buscando archivos multimedios. Esto "
-#~ "puede tomar un tiempo.\n"
+#~ "Se examina el directorio buscando buscando archivos multimedios. Esto puede "
+#~ "tomar un tiempo.\n"
 #~ "Por favor, espere."
 
 #~ msgid "Scanning directories (one track found)"
@@ -765,8 +769,7 @@ msgstr "Reproducir la última pista"
 #~ msgid "Remove the selected library?"
 #~ msgstr "¿Eliminar la biblioteca seleccionada?"
 
-#~ msgid ""
-#~ "You will be able to recreate these libraries later on if you wish so."
+#~ msgid "You will be able to recreate these libraries later on if you wish so."
 #~ msgstr "Podrá recrear estas bibliotecas más adelante si así lo desea."
 
 #~ msgid "Remove all selected libraries?"
@@ -780,10 +783,9 @@ msgstr "Reproducir la última pista"
 #~ "structure of your drive. Loading tracks is also faster because their tags "
 #~ "are already known and do not have to be read again."
 #~ msgstr ""
-#~ "Este módulo organiza tus archivos multimedios por etiquetas en vez de "
-#~ "usar la estructura de carpetas de tu disco. La carga de pistas es también "
-#~ "más rápida porque sus etiquetas ya se conocen y es necesario leerlas otra "
-#~ "vez."
+#~ "Este módulo organiza tus archivos multimedios por etiquetas en vez de usar "
+#~ "la estructura de carpetas de tu disco. La carga de pistas es también más "
+#~ "rápida porque sus etiquetas ya se conocen y es necesario leerlas otra vez."
 
 #~ msgid ""
 #~ "When you add a new library, you have to give the full path to the root "
@@ -791,19 +793,18 @@ msgstr "Reproducir la última pista"
 #~ "recursively scanned for media files whose tags are read and stored in a "
 #~ "database."
 #~ msgstr ""
-#~ "Cuando añade una biblioteca nueva, debe dar la ruta completa al "
-#~ "directorio raíz de esta biblioteca. Entonces, todos los directorios en "
-#~ "esta ruta raíz se examinarán recursivamente para archivos multimedios "
-#~ "cuyas etiquetas se han leído y almacenado en una base de datos."
+#~ "Cuando añade una biblioteca nueva, debe dar la ruta completa al directorio "
+#~ "raíz de esta biblioteca. Entonces, todos los directorios en esta ruta raíz "
+#~ "se examinarán recursivamente para archivos multimedios cuyas etiquetas se "
+#~ "han leído y almacenado en una base de datos."
 
 #~ msgid ""
-#~ "Upon refreshing a library, the file structure under the root directory "
-#~ "and all media files are scanned for changes, to update the database "
-#~ "accordingly."
+#~ "Upon refreshing a library, the file structure under the root directory and "
+#~ "all media files are scanned for changes, to update the database accordingly."
 #~ msgstr ""
-#~ "Al actualizar una biblioteca, la estructura de archivos bajo el "
-#~ "directorio raíz y todos los archivos multimedios son examinados en busca "
-#~ "de cambios para actualizar la base de datos en consecuencia."
+#~ "Al actualizar una biblioteca, la estructura de archivos bajo el directorio "
+#~ "raíz y todos los archivos multimedios son examinados en busca de cambios "
+#~ "para actualizar la base de datos en consecuencia."
 
 #~ msgid "Status Icon"
 #~ msgstr "Ícono de estado"
@@ -826,6 +827,9 @@ msgstr "Reproducir la última pista"
 #~ msgid "Track %02u"
 #~ msgstr "Pista %02u"
 
+#~ msgid "No disc found"
+#~ msgstr "No se encuentra ningún disco"
+
 #~ msgid "This will remove all disc information stored on your hard drive."
 #~ msgstr ""
 #~ "Esto eliminará toda información del disco almacenado en tu disco duro."
@@ -837,30 +841,29 @@ msgstr "Reproducir la última pista"
 #~ msgstr "Ruta inválida"
 
 #~ msgid ""
-#~ "The path to the CD-ROM device is not valid. Please choose an existing "
-#~ "path."
+#~ "The path to the CD-ROM device is not valid. Please choose an existing path."
 #~ msgstr ""
 #~ "La ruta al dispositivo de CD-ROM no es válida. Por favor elija una ruta "
 #~ "válida."
 
 #~ msgid "This module lets you play audio discs from your CD-ROM device."
 #~ msgstr ""
-#~ "Éste módulo te permite reproducir discos de audio desde tu dispositivo de "
-#~ "CD-ROM."
+#~ "Éste módulo te permite reproducir discos de audio desde tu dispositivo de CD-"
+#~ "ROM."
 
 #~ msgid "Compact Disc Data Base (CDDB)"
 #~ msgstr "Base de Datos de Discos Compactos"
 
 #~ msgid ""
 #~ "Disc information, such as artist and album title, may be automatically "
-#~ "downloaded from an online database if you wish so. This information may "
-#~ "also be saved on your hard drive to avoid downloading it again the next "
-#~ "time you play the same disc."
+#~ "downloaded from an online database if you wish so. This information may also "
+#~ "be saved on your hard drive to avoid downloading it again the next time you "
+#~ "play the same disc."
 #~ msgstr ""
-#~ "La información del disco, tal como el artista y título del álbum, puede "
-#~ "ser descargada automáticamente desde una base de datos en línea si así lo "
-#~ "desea. Esta información puede ser guardada en su disco duro para evitar "
-#~ "descargarla nuevamente la próxima vez que reproduzca el mismo disco."
+#~ "La información del disco, tal como el artista y título del álbum, puede ser "
+#~ "descargada automáticamente desde una base de datos en línea si así lo desea. "
+#~ "Esta información puede ser guardada en su disco duro para evitar descargarla "
+#~ "nuevamente la próxima vez que reproduzca el mismo disco."
 
 #~ msgid "Status File"
 #~ msgstr "Archivo de estado"
@@ -869,8 +872,7 @@ msgstr "Reproducir la última pista"
 #~ msgstr "Generar un archivo texto con el estado actual"
 
 #~ msgid ""
-#~ "The path to the selected file is not valid. Please choose an existing "
-#~ "path."
+#~ "The path to the selected file is not valid. Please choose an existing path."
 #~ msgstr ""
 #~ "La ruta al archivo seleccionado no es válida. Por favor elija una ruta "
 #~ "existente."
@@ -879,11 +881,10 @@ msgstr "Reproducir la última pista"
 #~ msgstr "Elija un archivo"
 
 #~ msgid ""
-#~ "This module generates a text file with regards to the track currently "
-#~ "played."
+#~ "This module generates a text file with regards to the track currently played."
 #~ msgstr ""
-#~ "Este módulo genera un archivo de texto con información acerca de la pista "
-#~ "en reproducción."
+#~ "Este módulo genera un archivo de texto con información acerca de la pista en "
+#~ "reproducción."
 
 #~ msgid "Customizing the File"
 #~ msgstr "Personalizar el archivo"
@@ -894,9 +895,9 @@ msgstr "Reproducir la última pista"
 #~ "corresponding value. Available fields are:\n"
 #~ "\n"
 #~ msgstr ""
-#~ "Puedes cambiar el contenido del archivo a cualquier texto si así lo "
-#~ "deseas. Antes generar el archivo, los campos con la forma {campo} se "
-#~ "reemplazan por sus valores correspondientes. Los campos disponibles son:\n"
+#~ "Puedes cambiar el contenido del archivo a cualquier texto si así lo deseas. "
+#~ "Antes generar el archivo, los campos con la forma {campo} se reemplazan por "
+#~ "sus valores correspondientes. Los campos disponibles son:\n"
 #~ "\n"
 
 #~ msgid "<b>CDDB</b>"
@@ -934,8 +935,7 @@ msgstr "Reproducir la última pista"
 
 #~ msgid "Replace the playlist by the selection and start playback"
 #~ msgstr ""
-#~ "Reemplezar la lista de reproducción por la selección y comenzar a "
-#~ "reproducir"
+#~ "Reemplezar la lista de reproducción por la selección y comenzar a reproducir"
 
 #~ msgid "Rescan the audio disc"
 #~ msgstr "Examinar el disco de audio otra vez"

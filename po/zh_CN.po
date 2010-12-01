@@ -7,69 +7,16 @@ msgid ""
 msgstr ""
 "Project-Id-Version: decibel-audio-player\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-11-07 01:42+0100\n"
-"PO-Revision-Date: 2010-10-07 11:37+0000\n"
-"Last-Translator: Aron Xu <happyaron.xu@gmail.com>\n"
+"POT-Creation-Date: 2010-11-21 20:05+0100\n"
+"PO-Revision-Date: 2010-11-08 15:06+0000\n"
+"Last-Translator: lhquark <lhquark@yahoo.com.cn>\n"
 "Language-Team: Simplified Chinese <zh_CN@li.org>\n"
-"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Launchpad-Export-Date: 2010-11-02 05:10+0000\n"
+"X-Launchpad-Export-Date: 2010-11-26 05:13+0000\n"
 "X-Generator: Launchpad (build Unknown)\n"
-
-#: ../src/gui/about.py:40
-msgid "translator-credits"
-msgstr ""
-"Launchpad Contributions:\n"
-"  Aron Xu https://launchpad.net/~happyaron"
-
-#: ../src/gui/about.py:44
-msgid "Developer:"
-msgstr "开发者："
-
-#: ../src/gui/about.py:48
-msgid "Thanks to:"
-msgstr "鸣谢："
-
-#: ../src/gui/preferences.py:43
-msgid "Preferences"
-msgstr "首选项"
-
-#: ../src/gui/preferences.py:129
-msgid "Unable to load this module."
-msgstr "无法载入此模块"
-
-#: ../src/gui/preferences.py:138
-msgid "Modules"
-msgstr "模块"
-
-#: ../src/gui/preferences.py:139 ../src/modules/Covers.py:434
-#: ../src/modules/DesktopNotification.py:213
-msgid "Description"
-msgstr "描述"
-
-#: ../src/gui/preferences.py:140
-msgid ""
-"This window shows the list of available modules. You can enable/disable a "
-"module by checking/unchecking the check box in front of it."
-msgstr ""
-
-#: ../src/gui/preferences.py:142
-msgid "Configuring a Module"
-msgstr "配置一个模块"
-
-#: ../src/gui/preferences.py:143
-msgid ""
-"When a module may be configured, a specific icon is displayed on the right "
-"of the corresponding line. To configure a module, simply select it and then "
-"click on the \"Preferences\" button on the bottom of the dialog box. Note "
-"that configuring a module is only possible when it is enabled."
-msgstr ""
-"当一个模块可以被配置，在其所在行的右端会显示一个图标。要配置一个模块，先选中"
-"它然后单击对话窗口下端的“首选项”按钮。注意，一个模块只有在被激活时才可以被配"
-"置。"
 
 #: ../src/media/track/__init__.py:54
 msgid "Track number"
@@ -89,23 +36,23 @@ msgstr "专辑"
 
 #: ../src/media/track/__init__.py:58
 msgid "Genre"
-msgstr ""
+msgstr "流派"
 
 #: ../src/media/track/__init__.py:59
 msgid "Date"
-msgstr ""
+msgstr "日期"
 
 #: ../src/media/track/__init__.py:60
 msgid "Disc number"
-msgstr ""
+msgstr "盘片号"
 
 #: ../src/media/track/__init__.py:61
 msgid "Bit rate"
-msgstr ""
+msgstr "位速率"
 
 #: ../src/media/track/__init__.py:62
 msgid "Sample rate"
-msgstr ""
+msgstr "采样率"
 
 #: ../src/media/track/__init__.py:63
 msgid "Duration in seconds (e.g., 194)"
@@ -121,7 +68,7 @@ msgstr "文件路径"
 
 #: ../src/media/track/__init__.py:149 ../src/media/track/__init__.py:393
 msgid "unknown"
-msgstr ""
+msgstr "未知"
 
 #: ../src/media/track/__init__.py:175
 #, python-format
@@ -130,31 +77,91 @@ msgstr ""
 
 #: ../src/media/track/__init__.py:182
 msgid "CDDA Track"
+msgstr "CDDA 音轨"
+
+#: ../src/gui/preferences.py:43
+msgid "Preferences"
+msgstr "首选项"
+
+#: ../src/gui/preferences.py:129
+msgid "Unable to load this module."
+msgstr "无法载入此模块"
+
+#: ../src/gui/preferences.py:138
+msgid "Modules"
+msgstr "模块"
+
+#: ../src/gui/preferences.py:139 ../src/modules/DesktopNotification.py:213
+#: ../src/modules/Covers.py:434
+msgid "Description"
+msgstr "描述"
+
+#: ../src/gui/preferences.py:140
+msgid ""
+"This window shows the list of available modules. You can enable/disable a "
+"module by checking/unchecking the check box in front of it."
+msgstr "此窗口显示了可用的模块清单。您可以通过选择/取消选择各项前面的复选框来启用/禁用那个模块。"
+
+#: ../src/gui/preferences.py:142
+msgid "Configuring a Module"
+msgstr "配置一个模块"
+
+#: ../src/gui/preferences.py:143
+msgid ""
+"When a module may be configured, a specific icon is displayed on the right "
+"of the corresponding line. To configure a module, simply select it and then "
+"click on the \"Preferences\" button on the bottom of the dialog box. Note "
+"that configuring a module is only possible when it is enabled."
+msgstr ""
+"当一个模块可以被配置，在其所在行的右端会显示一个图标。要配置一个模块，先选中它然后单击对话窗口下端的“首选项”按钮。注意，一个模块只有在被激活时才可以被配"
+"置。"
+
+#: ../src/gui/about.py:40
+msgid "translator-credits"
+msgstr ""
+"Launchpad Contributions:\n"
+"  Aron Xu https://launchpad.net/~happyaron\n"
+"  Billy Way https://launchpad.net/~weixq316\n"
+"  lhquark https://launchpad.net/~lhquark\n"
+"  英华 https://launchpad.net/~wantinghard"
+
+#: ../src/gui/about.py:44
+msgid "Developer:"
+msgstr "开发者："
+
+#: ../src/gui/about.py:48
+msgid "Thanks to:"
+msgstr "鸣谢："
+
+#: ../src/modules/Search.py:34
+msgid "Search in your music folders"
+msgstr "在您的音乐文件夹中寻找"
+
+#: ../src/modules/Zeitgeist.py:26
+msgid "Send track information to the Zeitgeist service"
 msgstr ""
 
 #: ../src/modules/FileExplorer.py:173
 msgid "loading..."
-msgstr ""
+msgstr "正在加载..."
 
 #: ../src/modules/FileExplorer.py:353
 msgid "Append"
-msgstr ""
+msgstr "追加"
 
 #: ../src/modules/FileExplorer.py:372
 msgid "Add music folder"
-msgstr ""
+msgstr "添加音频文件夹"
 
 #: ../src/modules/FileExplorer.py:384
-#, fuzzy
 msgid "Hide folder"
-msgstr "选择一个文件夹"
+msgstr "隐藏文件夹"
 
 #: ../src/modules/FileExplorer.py:392
 msgid "Open containing folder"
-msgstr ""
+msgstr "打开包含文件夹"
 
 #: ../src/modules/FileExplorer.py:403
-#, fuzzy
 msgid "Choose a directory"
 msgstr "选择一个文件夹"
 
@@ -168,77 +175,19 @@ msgstr "请选择一个已有的文件夹"
 
 #: ../src/modules/FileExplorer.py:501
 msgid "Albums"
-msgstr ""
+msgstr "专辑"
 
 #: ../src/modules/FileExplorer.py:503
 msgid "Music"
-msgstr ""
+msgstr "音乐"
 
 #: ../src/modules/FileExplorer.py:601
 msgid "Searching ..."
-msgstr ""
+msgstr "搜索..."
 
 #: ../src/modules/FileExplorer.py:615
-#, fuzzy
 msgid "No tracks found"
-msgstr "未找到光碟"
-
-#: ../src/modules/CtrlPanel.py:190 ../src/modules/CtrlPanel.py:246
-msgid "Pause the current track"
-msgstr "暂停当前音轨"
-
-#: ../src/modules/CtrlPanel.py:206
-msgid "Play the first selected track of the playlist"
-msgstr ""
-
-#: ../src/modules/CtrlPanel.py:240
-msgid "Continue playing the current track"
-msgstr "继续播放当前音轨"
-
-#: ../src/modules/StatusbarTitlebar.py:47
-msgid "[paused]"
-msgstr "[暂停]"
-
-#: ../src/modules/Search.py:34
-msgid "Search in your music folders"
-msgstr ""
-
-#: ../src/modules/Tracktree.py:367
-msgid "Save playlist"
-msgstr "保存播放列表"
-
-#: ../src/modules/Tracktree.py:416
-msgid "Clear Playlist"
-msgstr ""
-
-#: ../src/modules/Equalizer.py:24
-msgid "Equalizer"
-msgstr ""
-
-#: ../src/modules/Equalizer.py:24
-msgid "Tune the level of the frequency bands"
-msgstr ""
-
-#: ../src/modules/Equalizer.py:125 ../src/modules/Equalizer.py:213
-#: ../src/modules/Equalizer.py:226
-msgid "Custom"
-msgstr ""
-
-#: ../src/modules/Equalizer.py:166
-msgid "Save levels"
-msgstr ""
-
-#: ../src/modules/Equalizer.py:177
-msgid "Load levels"
-msgstr ""
-
-#: ../src/modules/Equalizer.py:204
-msgid "Could not load the file"
-msgstr ""
-
-#: ../src/modules/Equalizer.py:204
-msgid "The format of the file is incorrect."
-msgstr ""
+msgstr "没有发现音轨"
 
 #: ../src/modules/__init__.py:75
 msgid "The following Python modules are not available:"
@@ -250,54 +199,24 @@ msgstr "这些模块需要安装后才能被激活。"
 
 #: ../src/modules/__init__.py:266
 msgid "Restart required"
-msgstr ""
+msgstr "需要重启"
 
 #: ../src/modules/__init__.py:267
-msgid "You must restart the application for this modification to take effect."
-msgstr ""
-
-#: ../src/modules/Zeitgeist.py:26
-msgid "Send track information to the Zeitgeist service"
-msgstr ""
-
-#: ../src/modules/Covers.py:28
-msgid "Covers"
-msgstr ""
-
-#: ../src/modules/Covers.py:28
-msgid "Show album covers"
-msgstr ""
-
-#: ../src/modules/Covers.py:435
 msgid ""
-"This module displays the cover of the album the current track comes from. "
-"Covers may be loaded from local pictures, located in the same directory as "
-"the current track, or may be downloaded from the Internet."
-msgstr ""
+"You must restart the application for this modification to take effect."
+msgstr "您必须重启程序以使此更改起作用。"
 
-#: ../src/modules/Covers.py:438
-msgid "User Covers"
-msgstr ""
+#: ../src/modules/CtrlPanel.py:190 ../src/modules/CtrlPanel.py:246
+msgid "Pause the current track"
+msgstr "暂停当前音轨"
 
-#: ../src/modules/Covers.py:439
-#, python-format
-msgid ""
-"A user cover is a picture located in the same directory as the current "
-"track. When specifying filenames, you do not need to provide file "
-"extensions, supported file formats (%s) are automatically used."
-msgstr ""
+#: ../src/modules/CtrlPanel.py:206
+msgid "Play the first selected track of the playlist"
+msgstr "播放列表中第一首选中的音轨"
 
-#: ../src/modules/Covers.py:442
-msgid "Internet Covers"
-msgstr ""
-
-#: ../src/modules/Covers.py:443
-msgid ""
-"Covers may be downloaded from the Internet, based on the tags of the current "
-"track. You can ask to always prefer user covers to Internet ones. In this "
-"case, if a user cover exists for the current track, it is used. If there is "
-"none, the cover is downloaded."
-msgstr ""
+#: ../src/modules/CtrlPanel.py:240
+msgid "Continue playing the current track"
+msgstr "继续播放当前音轨"
 
 #: ../src/modules/DesktopNotification.py:25
 msgid "Desktop Notification"
@@ -319,8 +238,9 @@ msgid ""
 msgstr "当新的曲目开始播放时，该模块会在桌面上显示一个小的弹出窗口。"
 
 #: ../src/modules/DesktopNotification.py:215
-msgid "If the Covers module is enabled, the popup also shows the album cover."
-msgstr ""
+msgid ""
+"If the Covers module is enabled, the popup also shows the album cover."
+msgstr "如果启用封面模块，弹出提示也会显示专辑封面。"
 
 #: ../src/modules/DesktopNotification.py:216
 msgid "Customizing the Notification"
@@ -333,8 +253,7 @@ msgid ""
 "replaced by their corresponding value. Available fields are:\n"
 "\n"
 msgstr ""
-"你可将提示信息的标题和内容修改为任何想要的文字。在显示弹出窗口前，{field}形式"
-"的字段将全被替换为对应的值。可用的字段有：\n"
+"你可将提示信息的标题和内容修改为任何想要的文字。在显示弹出窗口前，{field}形式的字段将全被替换为对应的值。可用的字段有：\n"
 "\n"
 
 #: ../src/modules/DesktopNotification.py:220
@@ -345,17 +264,96 @@ msgstr "标记"
 msgid ""
 "You can use the Pango markup language to format the text. More information "
 "on that language is available on the following web page:"
+msgstr "你可以使用 Pango 标记语言来格式化文本。更多关于该语言的信息可以从以下网页获取："
+
+#: ../src/modules/StatusbarTitlebar.py:47
+msgid "[paused]"
+msgstr "[暂停]"
+
+#: ../src/modules/Covers.py:28
+msgid "Covers"
+msgstr "封面"
+
+#: ../src/modules/Covers.py:28
+msgid "Show album covers"
+msgstr "显示专辑封面"
+
+#: ../src/modules/Covers.py:435
+msgid ""
+"This module displays the cover of the album the current track comes from. "
+"Covers may be loaded from local pictures, located in the same directory as "
+"the current track, or may be downloaded from the Internet."
+msgstr "此模块显示当前音轨的专辑封面。封面图片可以从当前音轨的同文件夹下的本地图片载入，也可从互联网下载。"
+
+#: ../src/modules/Covers.py:438
+msgid "User Covers"
+msgstr "用户封面"
+
+#: ../src/modules/Covers.py:439
+#, python-format
+msgid ""
+"A user cover is a picture located in the same directory as the current "
+"track. When specifying filenames, you do not need to provide file "
+"extensions, supported file formats (%s) are automatically used."
+msgstr "用户封面是当前音轨的同文件夹下的图片。指定文件名时无需提供文件扩展名，程序会自动使用支持的文件格式 (%s) 。"
+
+#: ../src/modules/Covers.py:442
+msgid "Internet Covers"
+msgstr "互联网封面"
+
+#: ../src/modules/Covers.py:443
+msgid ""
+"Covers may be downloaded from the Internet, based on the tags of the current "
+"track. You can ask to always prefer user covers to Internet ones. In this "
+"case, if a user cover exists for the current track, it is used. If there is "
+"none, the cover is downloaded."
 msgstr ""
-"你可以使用 Pango 标记语言来格式化文本。更多关于该语言的信息可以从以下网页获"
-"取："
+"封面可以根据当前音轨的标签从互联网下载。您可以选择总是优先使用用户封面，此时，如果当前音轨存在用户封面，就会使用用户封面，否则就从互联网下载。"
+
+#: ../src/modules/Tracktree.py:367
+msgid "Save playlist"
+msgstr "保存播放列表"
+
+#: ../src/modules/Tracktree.py:416
+msgid "Clear Playlist"
+msgstr "清空播放列表"
+
+#: ../src/modules/Equalizer.py:24
+msgid "Equalizer"
+msgstr "均衡器"
+
+#: ../src/modules/Equalizer.py:24
+msgid "Tune the level of the frequency bands"
+msgstr ""
+
+#: ../src/modules/Equalizer.py:125 ../src/modules/Equalizer.py:213
+#: ../src/modules/Equalizer.py:226
+msgid "Custom"
+msgstr "自定义"
+
+#: ../src/modules/Equalizer.py:166
+msgid "Save levels"
+msgstr "保存 EQ 设置"
+
+#: ../src/modules/Equalizer.py:177
+msgid "Load levels"
+msgstr "加载 EQ 设置"
+
+#: ../src/modules/Equalizer.py:204
+msgid "Could not load the file"
+msgstr "无法载入文件"
+
+#: ../src/modules/Equalizer.py:204
+msgid "The format of the file is incorrect."
+msgstr "文件格式不正确"
 
 #: ../src/tools/consts.py:94
 msgid "Unknown Genre"
-msgstr ""
+msgstr "未知类型"
 
 #: ../src/tools/consts.py:95
 msgid "Unknown Title"
-msgstr ""
+msgstr "未知标题"
 
 #: ../src/tools/consts.py:96
 msgid "Unknown Album"
@@ -367,39 +365,39 @@ msgstr "未知艺术家"
 
 #: ../src/tools/consts.py:105
 msgid "Unknown Album Artist"
-msgstr ""
+msgstr "未知专辑艺术家"
 
 #: ../res/Covers.glade.h:1
 msgid "<b>Internet Covers</b>"
-msgstr ""
+msgstr "<b>互联网封面</b>"
 
 #: ../res/Covers.glade.h:2
 msgid "<b>User Covers</b>"
-msgstr ""
+msgstr "<b>用户封面</b>"
 
 #: ../res/Covers.glade.h:3
 msgid "Always prefer user covers"
-msgstr ""
+msgstr "总是优先使用用户封面"
 
 #: ../res/Covers.glade.h:4
 msgid "Don't download covers when there is a user one"
-msgstr ""
+msgstr "当存在用户封面时不要从互联网下载封面"
 
 #: ../res/Covers.glade.h:5
 msgid "Download covers"
-msgstr ""
+msgstr "下载封面"
 
 #: ../res/Covers.glade.h:6
 msgid "Filenames to look for (e.g., folder, cover)"
-msgstr ""
+msgstr "要查找的文件名 (例如：folder, cover)"
 
 #: ../res/Covers.glade.h:7
 msgid "Filenames:"
-msgstr ""
+msgstr "文件名："
 
 #: ../res/Covers.glade.h:8
 msgid "Try to download covers from the Internet"
-msgstr ""
+msgstr "尝试从互联网下载封面"
 
 #: ../res/DesktopNotification.glade.h:1
 msgid "<b>Body</b>"
@@ -431,7 +429,7 @@ msgstr "秒"
 
 #: ../res/Equalizer.glade.h:1
 msgid "Preset:"
-msgstr ""
+msgstr "预设："
 
 #: ../res/MainWindow.glade.h:1
 msgid "Play the first track of the playlist"
@@ -445,6 +443,18 @@ msgstr "播放下一音轨"
 msgid "Play the previous track"
 msgstr "播放上一音轨"
 
+#~ msgid ""
+#~ "This dialog box shows the list of available modules, which are small pieces "
+#~ "of code that add some functionnalities to the application. You can "
+#~ "enable/disable a module by checking/unchecking the check box in front of it. "
+#~ "Note that some modules (e.g., the File Explorer) cannot be disabled."
+#~ msgstr ""
+#~ "该对话窗口显示可用模块列表，模块是指为程序增添某些功能的少量代码。你可以通过选择/清除某个模块前面的复选框来激活/禁用它。注意，有一些模块（如文件浏览器）"
+#~ "无法被禁用。"
+
+#~ msgid "Choose a folder"
+#~ msgstr "选择一个文件夹"
+
 #~ msgid "The name is incorrect"
 #~ msgstr "名称错误"
 
@@ -455,22 +465,13 @@ msgstr "播放上一音轨"
 #~ "该名字禁止使用。\n"
 #~ "请另选择一个。"
 
+#, python-format
 #~ msgid ""
 #~ "The character %s is not allowed.\n"
 #~ "Please use another name."
 #~ msgstr ""
 #~ "该符号%s禁止使用。\n"
 #~ "请另选择一个名字。"
-
-#~ msgid ""
-#~ "This dialog box shows the list of available modules, which are small "
-#~ "pieces of code that add some functionnalities to the application. You can "
-#~ "enable/disable a module by checking/unchecking the check box in front of "
-#~ "it. Note that some modules (e.g., the File Explorer) cannot be disabled."
-#~ msgstr ""
-#~ "该对话窗口显示可用模块列表，模块是指为程序增添某些功能的少量代码。你可以通"
-#~ "过选择/清除某个模块前面的复选框来激活/禁用它。注意，有一些模块（如文件浏览"
-#~ "器）无法被禁用。"
 
 #~ msgid "File Explorer"
 #~ msgstr "文件浏览器"
@@ -494,15 +495,14 @@ msgstr "播放上一音轨"
 #~ msgstr "关于密码存储的安全性"
 
 #~ msgid ""
-#~ "If you use Gnome, it is safe to store your password since the Gnome "
-#~ "keyring is used."
+#~ "If you use Gnome, it is safe to store your password since the Gnome keyring "
+#~ "is used."
 #~ msgstr "如果你使用Gnome，由于使用了Gnome kerying，存储密码是安全的。"
 
 #~ msgid ""
-#~ "If you do not use Gnome, beware that, although not stored as clear text, "
-#~ "an attacker <i>could</i> retrieve it."
-#~ msgstr ""
-#~ "如果你不使用Gnome，请注意，尽管非明文存储，密码<i>可能</i>会被黑客获取。"
+#~ "If you do not use Gnome, beware that, although not stored as clear text, an "
+#~ "attacker <i>could</i> retrieve it."
+#~ msgstr "如果你不使用Gnome，请注意，尽管非明文存储，密码<i>可能</i>会被黑客获取。"
 
 #~ msgid "Home"
 #~ msgstr "主页"
@@ -536,9 +536,7 @@ msgstr "播放上一音轨"
 #~ msgid ""
 #~ "At least one root folder must be added to browse your files. This folder "
 #~ "then becomes the root of the file explorer tree in the main window."
-#~ msgstr ""
-#~ "至少需要添加一个根文件夹来浏览你的文件。该文件夹则成为主窗口内文件浏览器树"
-#~ "形目录的根目录。"
+#~ msgstr "至少需要添加一个根文件夹来浏览你的文件。该文件夹则成为主窗口内文件浏览器树形目录的根目录。"
 
 #~ msgid ""
 #~ "Please select an explorer\n"
@@ -626,20 +624,16 @@ msgstr "播放上一音轨"
 #~ msgid ""
 #~ "This module detects any running instant messenger and updates your status "
 #~ "with regards to the track you are listening to. Supported messengers are:"
-#~ msgstr ""
-#~ "此模块会检测任何正在运行的即时消息软件并根据你正在听的曲目更新你的状态信"
-#~ "息。支持的即时消息软件有："
+#~ msgstr "此模块会检测任何正在运行的即时消息软件并根据你正在听的曲目更新你的状态信息。支持的即时消息软件有："
 
 #~ msgid "Customizing the Status"
 #~ msgstr "自定义状态"
 
 #~ msgid ""
-#~ "You can set the status to any text you want. Before setting it, the "
-#~ "module replaces all fields of the form {field} by their corresponding "
-#~ "value. Available fields are:"
-#~ msgstr ""
-#~ "你可将状态信息设置成为任何你想要的文本。在设置前，该模块会将所有形式为 "
-#~ "{field} 的字段替换为对应的值。有效的值为："
+#~ "You can set the status to any text you want. Before setting it, the module "
+#~ "replaces all fields of the form {field} by their corresponding value. "
+#~ "Available fields are:"
+#~ msgstr "你可将状态信息设置成为任何你想要的文本。在设置前，该模块会将所有形式为 {field} 的字段替换为对应的值。有效的值为："
 
 #~ msgid "Sanitization"
 #~ msgstr "和谐"
@@ -647,11 +641,11 @@ msgstr "播放上一音轨"
 #~ msgid ""
 #~ "You can define some words that to sanitize before using them to set your "
 #~ "status. In this case, the middle characters of matching words is "
-#~ "automatically replaced with asterisks (e.g., \"Metallica - Live S**t "
-#~ "Binge & Purge\"). Put one word per line."
+#~ "automatically replaced with asterisks (e.g., \"Metallica - Live S**t Binge & "
+#~ "Purge\"). Put one word per line."
 #~ msgstr ""
-#~ "你可在设置状态信息前定义需和谐的单词。匹配的单词的中间部分字符会被自动替换"
-#~ "为星号。 (如：\"Metallica - Live S**t Binge & Purge\")"
+#~ "你可在设置状态信息前定义需和谐的单词。匹配的单词的中间部分字符会被自动替换为星号。 (如：\"Metallica - Live S**t Binge & "
+#~ "Purge\")"
 
 #~ msgid "Keep your Last.fm profile up to date"
 #~ msgstr "将你的Last.fm的资料保持最新"
@@ -702,8 +696,7 @@ msgstr "播放上一音轨"
 #~ msgid "Remove the selected library?"
 #~ msgstr "移除选定的媒体库？"
 
-#~ msgid ""
-#~ "You will be able to recreate these libraries later on if you wish so."
+#~ msgid "You will be able to recreate these libraries later on if you wish so."
 #~ msgstr "如果你愿意，这些媒体库可在稍后被重建。"
 
 #~ msgid "Remove all selected libraries?"
@@ -716,9 +709,7 @@ msgstr "播放上一音轨"
 #~ "This module organizes your media files by tags instead of using the file "
 #~ "structure of your drive. Loading tracks is also faster because their tags "
 #~ "are already known and do not have to be read again."
-#~ msgstr ""
-#~ "该模块通过使用标签而非使用磁盘上文件结构的方式来管理你的媒体文件。由于标签"
-#~ "信息已知而不必再次读取，音轨的加载也会更迅速。"
+#~ msgstr "该模块通过使用标签而非使用磁盘上文件结构的方式来管理你的媒体文件。由于标签信息已知而不必再次读取，音轨的加载也会更迅速。"
 
 #~ msgid ""
 #~ "When you add a new library, you have to give the full path to the root "
@@ -726,17 +717,12 @@ msgstr "播放上一音轨"
 #~ "recursively scanned for media files whose tags are read and stored in a "
 #~ "database."
 #~ msgstr ""
-#~ "当添加一个新的媒体库时，你需要提供媒体库根目录的完整路径。此后，会以递归方"
-#~ "式从该路径下的所有目录中扫描媒体文件。媒体文件的标签将被读取和储存在数据库"
-#~ "中。"
+#~ "当添加一个新的媒体库时，你需要提供媒体库根目录的完整路径。此后，会以递归方式从该路径下的所有目录中扫描媒体文件。媒体文件的标签将被读取和储存在数据库中。"
 
 #~ msgid ""
-#~ "Upon refreshing a library, the file structure under the root directory "
-#~ "and all media files are scanned for changes, to update the database "
-#~ "accordingly."
-#~ msgstr ""
-#~ "刷新媒体库时，根目录下的文件结构以及所有的媒体文件都将被扫描改动，使数据库"
-#~ "随之更新。"
+#~ "Upon refreshing a library, the file structure under the root directory and "
+#~ "all media files are scanned for changes, to update the database accordingly."
+#~ msgstr "刷新媒体库时，根目录下的文件结构以及所有的媒体文件都将被扫描改动，使数据库随之更新。"
 
 #~ msgid "Status Icon"
 #~ msgstr "状态图标"
@@ -753,6 +739,9 @@ msgstr "播放上一音轨"
 #~ msgid "downloading data..."
 #~ msgstr "下载数据中..."
 
+#~ msgid "No disc found"
+#~ msgstr "未找到光碟"
+
 #~ msgid "This will remove all disc information stored on your hard drive."
 #~ msgstr "这将会删除你硬盘上存储的所有光碟信息"
 
@@ -763,8 +752,7 @@ msgstr "播放上一音轨"
 #~ msgstr "无效路径"
 
 #~ msgid ""
-#~ "The path to the CD-ROM device is not valid. Please choose an existing "
-#~ "path."
+#~ "The path to the CD-ROM device is not valid. Please choose an existing path."
 #~ msgstr "CD-ROM设备的路径无效。请选择一个存在的路径。"
 
 #~ msgid "This module lets you play audio discs from your CD-ROM device."
@@ -775,12 +763,10 @@ msgstr "播放上一音轨"
 
 #~ msgid ""
 #~ "Disc information, such as artist and album title, may be automatically "
-#~ "downloaded from an online database if you wish so. This information may "
-#~ "also be saved on your hard drive to avoid downloading it again the next "
-#~ "time you play the same disc."
-#~ msgstr ""
-#~ "光碟信息，如艺术家和专辑标题，如果你愿意，它可以自动从在线数据库下载。该信"
-#~ "息可能被保存于你的硬盘，以避免在你下次播放该光碟时重复下载。"
+#~ "downloaded from an online database if you wish so. This information may also "
+#~ "be saved on your hard drive to avoid downloading it again the next time you "
+#~ "play the same disc."
+#~ msgstr "光碟信息，如艺术家和专辑标题，如果你愿意，它可以自动从在线数据库下载。该信息可能被保存于你的硬盘，以避免在你下次播放该光碟时重复下载。"
 
 #~ msgid "Status File"
 #~ msgstr "状态文件"
@@ -789,16 +775,14 @@ msgstr "播放上一音轨"
 #~ msgstr "生成当前状态的文本文件"
 
 #~ msgid ""
-#~ "The path to the selected file is not valid. Please choose an existing "
-#~ "path."
+#~ "The path to the selected file is not valid. Please choose an existing path."
 #~ msgstr "选定文件的路径无效。请选择一个已存的路径。"
 
 #~ msgid "Choose a file"
 #~ msgstr "选择文件"
 
 #~ msgid ""
-#~ "This module generates a text file with regards to the track currently "
-#~ "played."
+#~ "This module generates a text file with regards to the track currently played."
 #~ msgstr "该模块根据当前正在播放的音轨生成一个文本文件。"
 
 #~ msgid "Customizing the File"
@@ -810,8 +794,7 @@ msgstr "播放上一音轨"
 #~ "corresponding value. Available fields are:\n"
 #~ "\n"
 #~ msgstr ""
-#~ "你可将文件内容修改为任何想要的文本。在文件生成前，形式为{field}的字段将被"
-#~ "替换为对应的值。可用的字段有：\n"
+#~ "你可将文件内容修改为任何想要的文本。在文件生成前，形式为{field}的字段将被替换为对应的值。可用的字段有：\n"
 #~ "\n"
 
 #~ msgid "<b>CDDB</b>"

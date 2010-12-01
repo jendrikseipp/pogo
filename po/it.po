@@ -7,70 +7,16 @@ msgid ""
 msgstr ""
 "Project-Id-Version: decibel-audio-player\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-11-07 01:42+0100\n"
-"PO-Revision-Date: 2010-10-07 11:29+0000\n"
-"Last-Translator: AlckO <adrysoft04@alice.it>\n"
+"POT-Creation-Date: 2010-11-21 20:05+0100\n"
+"PO-Revision-Date: 2010-11-24 14:12+0000\n"
+"Last-Translator: Paolo Sammicheli <paolo@sammicheli.net>\n"
 "Language-Team: Italian <it@li.org>\n"
-"Language: it\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Launchpad-Export-Date: 2010-11-02 05:10+0000\n"
+"X-Launchpad-Export-Date: 2010-11-26 05:13+0000\n"
 "X-Generator: Launchpad (build Unknown)\n"
-
-#: ../src/gui/about.py:40
-msgid "translator-credits"
-msgstr ""
-"Launchpad Contributions:\n"
-"  AlckO https://launchpad.net/~alckox"
-
-#: ../src/gui/about.py:44
-msgid "Developer:"
-msgstr "Sviluppatore:"
-
-#: ../src/gui/about.py:48
-msgid "Thanks to:"
-msgstr "Si ringrazia:"
-
-#: ../src/gui/preferences.py:43
-msgid "Preferences"
-msgstr "Preferenze"
-
-#: ../src/gui/preferences.py:129
-msgid "Unable to load this module."
-msgstr "Impossibile caricare il modulo."
-
-#: ../src/gui/preferences.py:138
-msgid "Modules"
-msgstr "Moduli"
-
-#: ../src/gui/preferences.py:139 ../src/modules/Covers.py:434
-#: ../src/modules/DesktopNotification.py:213
-msgid "Description"
-msgstr "Descrizione"
-
-#: ../src/gui/preferences.py:140
-msgid ""
-"This window shows the list of available modules. You can enable/disable a "
-"module by checking/unchecking the check box in front of it."
-msgstr ""
-
-#: ../src/gui/preferences.py:142
-msgid "Configuring a Module"
-msgstr "Configura un modulo"
-
-#: ../src/gui/preferences.py:143
-msgid ""
-"When a module may be configured, a specific icon is displayed on the right "
-"of the corresponding line. To configure a module, simply select it and then "
-"click on the \"Preferences\" button on the bottom of the dialog box. Note "
-"that configuring a module is only possible when it is enabled."
-msgstr ""
-"Quando un modulo viene configurato, è presente un'icona specifica sulla "
-"destra della riga corrispondente. Per configurare un modulo, selezionalo e "
-"premi sul pulsante \"Preferenze\" della finestra di dialogo. Nota che è "
-"possibile configurare un modulo solo quando questo è abilitato."
 
 #: ../src/media/track/__init__.py:54
 msgid "Track number"
@@ -102,15 +48,15 @@ msgstr "Numero disco"
 
 #: ../src/media/track/__init__.py:61
 msgid "Bit rate"
-msgstr ""
+msgstr "Bitrate"
 
 #: ../src/media/track/__init__.py:62
 msgid "Sample rate"
-msgstr ""
+msgstr "Campionaura"
 
 #: ../src/media/track/__init__.py:63
 msgid "Duration in seconds (e.g., 194)"
-msgstr "Durata in secondi (e.g., 194)"
+msgstr "Durata in secondi (es. 194)"
 
 #: ../src/media/track/__init__.py:64
 msgid "Duration as a string (e.g., 3:14)"
@@ -122,16 +68,82 @@ msgstr "Percorso completo del file"
 
 #: ../src/media/track/__init__.py:149 ../src/media/track/__init__.py:393
 msgid "unknown"
-msgstr ""
+msgstr "sconosciuto"
 
 #: ../src/media/track/__init__.py:175
 #, python-format
 msgid "%(album)s  [Disc %(discnum)u]"
-msgstr ""
+msgstr "%(album)s [Disco n° %(discnum)u]"
 
 #: ../src/media/track/__init__.py:182
 msgid "CDDA Track"
+msgstr "Traccia CDDA"
+
+#: ../src/gui/preferences.py:43
+msgid "Preferences"
+msgstr "Preferenze"
+
+#: ../src/gui/preferences.py:129
+msgid "Unable to load this module."
+msgstr "Impossibile caricare questo modulo."
+
+#: ../src/gui/preferences.py:138
+msgid "Modules"
+msgstr "Moduli"
+
+#: ../src/gui/preferences.py:139 ../src/modules/DesktopNotification.py:213
+#: ../src/modules/Covers.py:434
+msgid "Description"
+msgstr "Descrizione"
+
+#: ../src/gui/preferences.py:140
+msgid ""
+"This window shows the list of available modules. You can enable/disable a "
+"module by checking/unchecking the check box in front of it."
 msgstr ""
+"Questa finestra mostra l'elenco dei moduli disponibili. E' possibile "
+"abilitare/disabilitare un modulo selezionando/deselezionando la casella "
+"posta davanti ad esso."
+
+#: ../src/gui/preferences.py:142
+msgid "Configuring a Module"
+msgstr "Configura un modulo"
+
+#: ../src/gui/preferences.py:143
+msgid ""
+"When a module may be configured, a specific icon is displayed on the right "
+"of the corresponding line. To configure a module, simply select it and then "
+"click on the \"Preferences\" button on the bottom of the dialog box. Note "
+"that configuring a module is only possible when it is enabled."
+msgstr ""
+"Quando un modulo viene configurato, viene mostrata una specifica icona sulla "
+"destra della riga corrispondente. Per configurare un modulo, selezionarlo e "
+"premere sul pulsante \"Preferenze\" della finestra di dialogo. Da notare che "
+"è possibile configurare un modulo solo quando questo è abilitato."
+
+#: ../src/gui/about.py:40
+msgid "translator-credits"
+msgstr ""
+"Launchpad Contributions:\n"
+"  AlckO https://launchpad.net/~alckox\n"
+"  Paolo Rotolo https://launchpad.net/~paolorotolo\n"
+"  Paolo Sammicheli https://launchpad.net/~xdatap1"
+
+#: ../src/gui/about.py:44
+msgid "Developer:"
+msgstr "Sviluppatore:"
+
+#: ../src/gui/about.py:48
+msgid "Thanks to:"
+msgstr "Si ringrazia:"
+
+#: ../src/modules/Search.py:34
+msgid "Search in your music folders"
+msgstr "Cerca nella cartelle musicali"
+
+#: ../src/modules/Zeitgeist.py:26
+msgid "Send track information to the Zeitgeist service"
+msgstr "Inviare le informazioni sul brano al servizio Zeitgeist"
 
 #: ../src/modules/FileExplorer.py:173
 msgid "loading..."
@@ -139,23 +151,21 @@ msgstr "Caricamento in corso..."
 
 #: ../src/modules/FileExplorer.py:353
 msgid "Append"
-msgstr ""
+msgstr "Aggiungere"
 
 #: ../src/modules/FileExplorer.py:372
 msgid "Add music folder"
-msgstr ""
+msgstr "Aggiungi una cartella musicale"
 
 #: ../src/modules/FileExplorer.py:384
-#, fuzzy
 msgid "Hide folder"
-msgstr "Scegli una cartella"
+msgstr "Nascondi cartella"
 
 #: ../src/modules/FileExplorer.py:392
 msgid "Open containing folder"
-msgstr ""
+msgstr "Apri cartella selezionata"
 
 #: ../src/modules/FileExplorer.py:403
-#, fuzzy
 msgid "Choose a directory"
 msgstr "Scegli una cartella"
 
@@ -165,81 +175,23 @@ msgstr "Questo percorso non esiste"
 
 #: ../src/modules/FileExplorer.py:409
 msgid "Please select an existing directory."
-msgstr "Per favore seleziona una cartella esistente"
+msgstr "Selezionare una cartella esistente."
 
 #: ../src/modules/FileExplorer.py:501
 msgid "Albums"
-msgstr ""
+msgstr "Album"
 
 #: ../src/modules/FileExplorer.py:503
 msgid "Music"
-msgstr ""
+msgstr "Musica"
 
 #: ../src/modules/FileExplorer.py:601
 msgid "Searching ..."
-msgstr ""
+msgstr "Ricerca..."
 
 #: ../src/modules/FileExplorer.py:615
-#, fuzzy
 msgid "No tracks found"
-msgstr "Nessun disco trovato"
-
-#: ../src/modules/CtrlPanel.py:190 ../src/modules/CtrlPanel.py:246
-msgid "Pause the current track"
-msgstr "Metti in pausa la traccia corrente"
-
-#: ../src/modules/CtrlPanel.py:206
-msgid "Play the first selected track of the playlist"
-msgstr ""
-
-#: ../src/modules/CtrlPanel.py:240
-msgid "Continue playing the current track"
-msgstr "Continua l'ascolto della traccia corrente"
-
-#: ../src/modules/StatusbarTitlebar.py:47
-msgid "[paused]"
-msgstr "[pausa]"
-
-#: ../src/modules/Search.py:34
-msgid "Search in your music folders"
-msgstr ""
-
-#: ../src/modules/Tracktree.py:367
-msgid "Save playlist"
-msgstr "Salva playlist"
-
-#: ../src/modules/Tracktree.py:416
-msgid "Clear Playlist"
-msgstr ""
-
-#: ../src/modules/Equalizer.py:24
-msgid "Equalizer"
-msgstr ""
-
-#: ../src/modules/Equalizer.py:24
-msgid "Tune the level of the frequency bands"
-msgstr ""
-
-#: ../src/modules/Equalizer.py:125 ../src/modules/Equalizer.py:213
-#: ../src/modules/Equalizer.py:226
-msgid "Custom"
-msgstr ""
-
-#: ../src/modules/Equalizer.py:166
-msgid "Save levels"
-msgstr ""
-
-#: ../src/modules/Equalizer.py:177
-msgid "Load levels"
-msgstr ""
-
-#: ../src/modules/Equalizer.py:204
-msgid "Could not load the file"
-msgstr ""
-
-#: ../src/modules/Equalizer.py:204
-msgid "The format of the file is incorrect."
-msgstr ""
+msgstr "Nessuna traccia trovata"
 
 #: ../src/modules/__init__.py:75
 msgid "The following Python modules are not available:"
@@ -247,69 +199,33 @@ msgstr "I seguenti moduli Python non sono disponibili:"
 
 #: ../src/modules/__init__.py:79
 msgid "You must install them if you want to enable this module."
-msgstr "Devi installarli se vuoi abilitare questo modulo."
+msgstr "Occorre installarli se si desidera abilitare questo modulo."
 
 #: ../src/modules/__init__.py:266
 msgid "Restart required"
-msgstr ""
+msgstr "È richiesto un riavvio"
 
 #: ../src/modules/__init__.py:267
-msgid "You must restart the application for this modification to take effect."
-msgstr ""
-
-#: ../src/modules/Zeitgeist.py:26
-msgid "Send track information to the Zeitgeist service"
-msgstr ""
-
-#: ../src/modules/Covers.py:28
-msgid "Covers"
-msgstr "Copertine"
-
-#: ../src/modules/Covers.py:28
-msgid "Show album covers"
-msgstr "Mostra copertine album"
-
-#: ../src/modules/Covers.py:435
 msgid ""
-"This module displays the cover of the album the current track comes from. "
-"Covers may be loaded from local pictures, located in the same directory as "
-"the current track, or may be downloaded from the Internet."
+"You must restart the application for this modification to take effect."
 msgstr ""
-"Questo modulo visualizza la cover dell'album della traccia che stai "
-"ascoltando. Le covers posso essere caricate da immagini locali, presenti "
-"nella stessa cartella della traccia, o essere scaricate da Internet."
+"E' necessario riavviare l'applicazione per rendere effettive le modifiche"
 
-#: ../src/modules/Covers.py:438
-msgid "User Covers"
-msgstr "Covers utente"
+#: ../src/modules/CtrlPanel.py:190 ../src/modules/CtrlPanel.py:246
+msgid "Pause the current track"
+msgstr "Mette in pausa la traccia corrente"
 
-#: ../src/modules/Covers.py:439
-#, python-format
-msgid ""
-"A user cover is a picture located in the same directory as the current "
-"track. When specifying filenames, you do not need to provide file "
-"extensions, supported file formats (%s) are automatically used."
-msgstr ""
-"Le Covers utente sono immagini che si trovano nella stessa directory della "
-"traccia corrente.  Quando specifichi un nome del file, non è neccessario "
-"indicare l'estensione poichè verrano caricati automaticamente i file "
-"supportati (%s)."
+#: ../src/modules/CtrlPanel.py:206
+msgid "Play the first selected track of the playlist"
+msgstr "Ascolta la prima traccia selezionata nella scaletta"
 
-#: ../src/modules/Covers.py:442
-msgid "Internet Covers"
-msgstr "Covers Scaricate"
-
-#: ../src/modules/Covers.py:443
-msgid ""
-"Covers may be downloaded from the Internet, based on the tags of the current "
-"track. You can ask to always prefer user covers to Internet ones. In this "
-"case, if a user cover exists for the current track, it is used. If there is "
-"none, the cover is downloaded."
-msgstr ""
+#: ../src/modules/CtrlPanel.py:240
+msgid "Continue playing the current track"
+msgstr "Continua l'ascolto della traccia corrente"
 
 #: ../src/modules/DesktopNotification.py:25
 msgid "Desktop Notification"
-msgstr "Notifica desktop"
+msgstr "Notifiche desktop"
 
 #: ../src/modules/DesktopNotification.py:25
 msgid "Display a desktop notification on track change"
@@ -325,12 +241,15 @@ msgid ""
 "This module displays a small popup window on your desktop when a new track "
 "starts."
 msgstr ""
-"Questo modulo visualizza una piccola finestra pop-up sul desktop quando "
-"inizia una nuova traccia"
+"Questo modulo visualizza una piccola finestra sul desktop quando inizia una "
+"nuova traccia"
 
 #: ../src/modules/DesktopNotification.py:215
-msgid "If the Covers module is enabled, the popup also shows the album cover."
+msgid ""
+"If the Covers module is enabled, the popup also shows the album cover."
 msgstr ""
+"Se il modulo delle copertine è attivato, la finestra mostrerà anche la "
+"copertina dell'album."
 
 #: ../src/modules/DesktopNotification.py:216
 msgid "Customizing the Notification"
@@ -343,9 +262,10 @@ msgid ""
 "replaced by their corresponding value. Available fields are:\n"
 "\n"
 msgstr ""
-"È possibile personalizzare il titolo e il corpo della notifica in qualsiasi "
-"modo. Prima della visualizzazione della finestra pop-up, i campi {field} "
-"saranno rimpiazzati con i corrispondenti valori. I campi disponibili sono:\n"
+"È possibile personalizzare il titolo e il corpo della finestra di notifica "
+"in qualsiasi modo. Prima della visualizzazione della finestra i campi "
+"{field} saranno rimpiazzati con i corrispondenti valori. I campi disponibili "
+"sono:\n"
 "\n"
 
 #: ../src/modules/DesktopNotification.py:220
@@ -357,8 +277,101 @@ msgid ""
 "You can use the Pango markup language to format the text. More information "
 "on that language is available on the following web page:"
 msgstr ""
-"Puoi usare il linguaggio di markup Pango per formattare il testo. Maggiori "
-"informazioni sul linguaggio sono disponibili sulla seguente pagina web:"
+"È possibile usare il linguaggio di markup Pango per formattare il testo. "
+"Ulteriori informazioni sul linguaggio sono disponibili al seguente indirizzo "
+"web:"
+
+#: ../src/modules/StatusbarTitlebar.py:47
+msgid "[paused]"
+msgstr "[pausa]"
+
+#: ../src/modules/Covers.py:28
+msgid "Covers"
+msgstr "Copertine"
+
+#: ../src/modules/Covers.py:28
+msgid "Show album covers"
+msgstr "Mostra le copertine degli album"
+
+#: ../src/modules/Covers.py:435
+msgid ""
+"This module displays the cover of the album the current track comes from. "
+"Covers may be loaded from local pictures, located in the same directory as "
+"the current track, or may be downloaded from the Internet."
+msgstr ""
+"Questo modulo visualizza la copertine dell'album della traccia che si sta "
+"ascoltando. Le copertine posso essere caricate da immagini locali, presenti "
+"nella stessa cartella della traccia o essere scaricate da Internet."
+
+#: ../src/modules/Covers.py:438
+msgid "User Covers"
+msgstr "Copertine utente"
+
+#: ../src/modules/Covers.py:439
+#, python-format
+msgid ""
+"A user cover is a picture located in the same directory as the current "
+"track. When specifying filenames, you do not need to provide file "
+"extensions, supported file formats (%s) are automatically used."
+msgstr ""
+"Le copertine utente sono immagini posizionate nella stessa cartella della "
+"traccia corrente. Quando si specifica il nome dei file non è necessario "
+"fornire l'estensione in quanto i formati supportati (%s) verranno usati "
+"automaticamente."
+
+#: ../src/modules/Covers.py:442
+msgid "Internet Covers"
+msgstr "Copertine da Internet"
+
+#: ../src/modules/Covers.py:443
+msgid ""
+"Covers may be downloaded from the Internet, based on the tags of the current "
+"track. You can ask to always prefer user covers to Internet ones. In this "
+"case, if a user cover exists for the current track, it is used. If there is "
+"none, the cover is downloaded."
+msgstr ""
+"Le copertine possono essere scaricate da internet, in base ai tag del brano "
+"corrente. È possibile impostare la preferenza delle copertine utente a "
+"quelle scaricate da Internet. In questo caso, se una copertina esiste nel "
+"percorso della traccia utente, essa sarà usata, altrimenti ne verrà "
+"scaricata una da Internet."
+
+#: ../src/modules/Tracktree.py:367
+msgid "Save playlist"
+msgstr "Salva scaletta"
+
+#: ../src/modules/Tracktree.py:416
+msgid "Clear Playlist"
+msgstr "Cancella la scaletta"
+
+#: ../src/modules/Equalizer.py:24
+msgid "Equalizer"
+msgstr "Equilizzatore"
+
+#: ../src/modules/Equalizer.py:24
+msgid "Tune the level of the frequency bands"
+msgstr "Regola il livello delle bande di frequenza"
+
+#: ../src/modules/Equalizer.py:125 ../src/modules/Equalizer.py:213
+#: ../src/modules/Equalizer.py:226
+msgid "Custom"
+msgstr "Personalizzato"
+
+#: ../src/modules/Equalizer.py:166
+msgid "Save levels"
+msgstr "Salva livelli"
+
+#: ../src/modules/Equalizer.py:177
+msgid "Load levels"
+msgstr "Carica livelli"
+
+#: ../src/modules/Equalizer.py:204
+msgid "Could not load the file"
+msgstr "Impossibile caricare il file"
+
+#: ../src/modules/Equalizer.py:204
+msgid "The format of the file is incorrect."
+msgstr "Il formato del file è incorretto."
 
 #: ../src/tools/consts.py:94
 msgid "Unknown Genre"
@@ -378,23 +391,23 @@ msgstr "Artista sconosciuto"
 
 #: ../src/tools/consts.py:105
 msgid "Unknown Album Artist"
-msgstr "Artista Sconosciuto"
+msgstr "Artista dell'album sconosciuto"
 
 #: ../res/Covers.glade.h:1
 msgid "<b>Internet Covers</b>"
-msgstr ""
+msgstr "<b> Copertine da Internet </b>"
 
 #: ../res/Covers.glade.h:2
 msgid "<b>User Covers</b>"
-msgstr ""
+msgstr "<b>Copertine utente</b>"
 
 #: ../res/Covers.glade.h:3
 msgid "Always prefer user covers"
-msgstr "Preferisci sempre le copertine definite dall'utente"
+msgstr "Preferire le copertine utente"
 
 #: ../res/Covers.glade.h:4
 msgid "Don't download covers when there is a user one"
-msgstr "Non scaricare la copertina quando ne esiste una definita dall'utente"
+msgstr "Non scaricare la copertina quando ne esiste una utente"
 
 #: ../res/Covers.glade.h:5
 msgid "Download covers"
@@ -402,15 +415,15 @@ msgstr "Scarica copertine"
 
 #: ../res/Covers.glade.h:6
 msgid "Filenames to look for (e.g., folder, cover)"
-msgstr ""
+msgstr "Nome file da cercare (es: cartella, copertina)"
 
 #: ../res/Covers.glade.h:7
 msgid "Filenames:"
-msgstr ""
+msgstr "Nome dei file:"
 
 #: ../res/Covers.glade.h:8
 msgid "Try to download covers from the Internet"
-msgstr ""
+msgstr "Provare a scaricare una copertina da Internet"
 
 #: ../res/DesktopNotification.glade.h:1
 msgid "<b>Body</b>"
@@ -426,7 +439,7 @@ msgstr "<b>Titolo</b>"
 
 #: ../res/DesktopNotification.glade.h:4
 msgid "Notification timeout:"
-msgstr ""
+msgstr "Timeout notifiche:"
 
 #: ../res/DesktopNotification.glade.h:5
 msgid "Show a \"skip track\" button"
@@ -442,7 +455,7 @@ msgstr "secondi"
 
 #: ../res/Equalizer.glade.h:1
 msgid "Preset:"
-msgstr ""
+msgstr "Preselezione:"
 
 #: ../res/MainWindow.glade.h:1
 msgid "Play the first track of the playlist"
@@ -450,11 +463,26 @@ msgstr "Ascolta la prima traccia della playlist"
 
 #: ../res/MainWindow.glade.h:2
 msgid "Play the next track"
-msgstr "Riproduci la traccia successiva"
+msgstr "Riproduce la traccia successiva"
 
 #: ../res/MainWindow.glade.h:3
 msgid "Play the previous track"
-msgstr "Riproduci la traccia precedente"
+msgstr "Riproduce la traccia precedente"
+
+#~ msgid ""
+#~ "This dialog box shows the list of available modules, which are small pieces "
+#~ "of code that add some functionnalities to the application. You can "
+#~ "enable/disable a module by checking/unchecking the check box in front of it. "
+#~ "Note that some modules (e.g., the File Explorer) cannot be disabled."
+#~ msgstr ""
+#~ "Questa finestra di dialogo mostra la lista dei moduli disponibili, che sono "
+#~ "dei piccoli pezzi di codice che aggiungono alcune funzioni all'applicazione. "
+#~ "Puoi abilitare/disabilitare un modulo aggiungendo/togliendo il simbolo di "
+#~ "spunta dalla casella vicina. Nota che alcuni moduli (per es. il File "
+#~ "Explorer) non possono essere disabilitati."
+
+#~ msgid "Choose a folder"
+#~ msgstr "Scegli una cartella"
 
 #~ msgid "The name is incorrect"
 #~ msgstr "Il nome non è corretto"
@@ -466,6 +494,7 @@ msgstr "Riproduci la traccia precedente"
 #~ "Questo nome non è ammesso.\n"
 #~ "Prova a sceglierne un altro."
 
+#, python-format
 #~ msgid ""
 #~ "The character %s is not allowed.\n"
 #~ "Please use another name."
@@ -473,24 +502,13 @@ msgstr "Riproduci la traccia precedente"
 #~ "Il carattere %s non è ammesso.\n"
 #~ "Prova a sceglierne un altro."
 
-#~ msgid ""
-#~ "This dialog box shows the list of available modules, which are small "
-#~ "pieces of code that add some functionnalities to the application. You can "
-#~ "enable/disable a module by checking/unchecking the check box in front of "
-#~ "it. Note that some modules (e.g., the File Explorer) cannot be disabled."
-#~ msgstr ""
-#~ "Questa finestra di dialogo mostra la lista dei moduli disponibili, che "
-#~ "sono dei piccoli pezzi di codice che aggiungono alcune funzioni "
-#~ "all'applicazione. Puoi abilitare/disabilitare un modulo aggiungendo/"
-#~ "togliendo il simbolo di spunta dalla casella vicina. Nota che alcuni "
-#~ "moduli (per es. il File Explorer) non possono essere disabilitati."
-
 #~ msgid "File Explorer"
 #~ msgstr "File Explorer"
 
 #~ msgid "Browse your file system"
 #~ msgstr "Sfoglia il tuo file system"
 
+#, python-format
 #~ msgid "One track in playlist  [%(length)s]"
 #~ msgid_plural "%(count)u tracks in playlist  [%(length)s]"
 #~ msgstr[0] "Una traccia nella playlist [%(length)s]"
@@ -519,8 +537,8 @@ msgstr "Riproduci la traccia precedente"
 #~ msgstr "Informazioni sul salvataggio sicuro della password"
 
 #~ msgid ""
-#~ "If you use Gnome, it is safe to store your password since the Gnome "
-#~ "keyring is used."
+#~ "If you use Gnome, it is safe to store your password since the Gnome keyring "
+#~ "is used."
 #~ msgstr ""
 #~ "Se stai usando Gnome,è sicuro memorizzare la tua password da quando Gnome "
 #~ "keyring è usato."
@@ -640,9 +658,8 @@ msgstr "Riproduci la traccia precedente"
 #~ "This module detects any running instant messenger and updates your status "
 #~ "with regards to the track you are listening to. Supported messengers are:"
 #~ msgstr ""
-#~ "Questo modulo rileva i programmi di messaggistica istantanea e ne "
-#~ "aggiorna lo stato con la traccia che stai ascoltando. I programmi "
-#~ "supportati sono:"
+#~ "Questo modulo rileva i programmi di messaggistica istantanea e ne aggiorna "
+#~ "lo stato con la traccia che stai ascoltando. I programmi supportati sono:"
 
 #~ msgid "Customizing the Status"
 #~ msgstr "Personalizza lo stato"
@@ -707,8 +724,7 @@ msgstr "Riproduci la traccia precedente"
 #~ msgid "Remove the selected library?"
 #~ msgstr "Rimuovere la libreria selezionata?"
 
-#~ msgid ""
-#~ "You will be able to recreate these libraries later on if you wish so."
+#~ msgid "You will be able to recreate these libraries later on if you wish so."
 #~ msgstr "Potrai ricreare questa librerie anche in seguito, se lo desideri."
 
 #~ msgid "Remove all selected libraries?"
@@ -722,10 +738,9 @@ msgstr "Riproduci la traccia precedente"
 #~ "structure of your drive. Loading tracks is also faster because their tags "
 #~ "are already known and do not have to be read again."
 #~ msgstr ""
-#~ "Questo modulo organizza la libreria musicale in base ai tags,  invece "
-#~ "della struttura dei file sul disco. Il caricamento delle tracce è anche "
-#~ "più veloce perchè i tags sono già noti e non devono essere acquisiti di "
-#~ "nuovo."
+#~ "Questo modulo organizza la libreria musicale in base ai tags,  invece della "
+#~ "struttura dei file sul disco. Il caricamento delle tracce è anche più veloce "
+#~ "perchè i tags sono già noti e non devono essere acquisiti di nuovo."
 
 #~ msgid ""
 #~ "When you add a new library, you have to give the full path to the root "
@@ -734,9 +749,9 @@ msgstr "Riproduci la traccia precedente"
 #~ "database."
 #~ msgstr ""
 #~ "Quando aggiungi una libreria musicale, bisogna inserire il path completo "
-#~ "della directory di root della stessa libreria.Quindi tutte le cartelle "
-#~ "del path fornito vengono scansite, incluse sottocartelle,leggendo tutti i "
-#~ "tags dei file musicali che verrano memorizzati in un database."
+#~ "della directory di root della stessa libreria.Quindi tutte le cartelle del "
+#~ "path fornito vengono scansite, incluse sottocartelle,leggendo tutti i tags "
+#~ "dei file musicali che verrano memorizzati in un database."
 
 #~ msgid "Status Icon"
 #~ msgstr "Icona di stato"
@@ -759,6 +774,9 @@ msgstr "Riproduci la traccia precedente"
 #~ msgid "Track %02u"
 #~ msgstr "Traccia %02u"
 
+#~ msgid "No disc found"
+#~ msgstr "Nessun disco trovato"
+
 #~ msgid "This will remove all disc information stored on your hard drive."
 #~ msgstr ""
 #~ "Questo rimuoverà ogni informazione del disco memorizzata sull'hard-disk"
@@ -770,11 +788,9 @@ msgstr "Riproduci la traccia precedente"
 #~ msgstr "Percorso non valido"
 
 #~ msgid ""
-#~ "The path to the CD-ROM device is not valid. Please choose an existing "
-#~ "path."
+#~ "The path to the CD-ROM device is not valid. Please choose an existing path."
 #~ msgstr ""
-#~ "Il percorso dell'unità CD-ROM non è valido. Scegliere un percorso "
-#~ "esistente."
+#~ "Il percorso dell'unità CD-ROM non è valido. Scegliere un percorso esistente."
 
 #~ msgid "This module lets you play audio discs from your CD-ROM device."
 #~ msgstr ""
@@ -786,15 +802,14 @@ msgstr "Riproduci la traccia precedente"
 
 #~ msgid ""
 #~ "Disc information, such as artist and album title, may be automatically "
-#~ "downloaded from an online database if you wish so. This information may "
-#~ "also be saved on your hard drive to avoid downloading it again the next "
-#~ "time you play the same disc."
+#~ "downloaded from an online database if you wish so. This information may also "
+#~ "be saved on your hard drive to avoid downloading it again the next time you "
+#~ "play the same disc."
 #~ msgstr ""
 #~ "Se si desidera, le informazioni sul disco come: artista e titolo album, "
 #~ "posso essere scaricate automaticamente dal database remoto. Queste "
-#~ "informazioni possono essere salvate sul tuo hard disk per evitare di "
-#~ "essere scaricate nuovamente nel momento in cui viene ascoltato lo stesso "
-#~ "disco."
+#~ "informazioni possono essere salvate sul tuo hard disk per evitare di essere "
+#~ "scaricate nuovamente nel momento in cui viene ascoltato lo stesso disco."
 
 #~ msgid "Status File"
 #~ msgstr "File di stato"
@@ -803,8 +818,7 @@ msgstr "Riproduci la traccia precedente"
 #~ msgstr "Genera un file di testo con lo stato corrente"
 
 #~ msgid ""
-#~ "The path to the selected file is not valid. Please choose an existing "
-#~ "path."
+#~ "The path to the selected file is not valid. Please choose an existing path."
 #~ msgstr ""
 #~ "Il percorso per il file selezionato non è valido. Per favore scegli un "
 #~ "percorso valido."
@@ -813,8 +827,7 @@ msgstr "Riproduci la traccia precedente"
 #~ msgstr "Scegli un file"
 
 #~ msgid ""
-#~ "This module generates a text file with regards to the track currently "
-#~ "played."
+#~ "This module generates a text file with regards to the track currently played."
 #~ msgstr ""
 #~ "Questo modulo genera un file di testo  riguardo alla traccia che si sta "
 #~ "ascoltando."

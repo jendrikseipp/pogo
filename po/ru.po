@@ -7,75 +7,19 @@ msgid ""
 msgstr ""
 "Project-Id-Version: decibel-audio-player\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-11-07 01:42+0100\n"
+"POT-Creation-Date: 2010-11-21 20:05+0100\n"
 "PO-Revision-Date: 2010-10-11 05:10+0000\n"
 "Last-Translator: Oleg Koptev <koptev.oleg@gmail.com>\n"
 "Language-Team: Russian <ru@li.org>\n"
-"Language: ru\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
-"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
-"X-Launchpad-Export-Date: 2010-11-02 05:10+0000\n"
+"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+"n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"X-Launchpad-Export-Date: 2010-11-26 05:13+0000\n"
 "X-Generator: Launchpad (build Unknown)\n"
 "X-Poedit-Country: RUSSIAN FEDERATION\n"
 "X-Poedit-Language: Russian\n"
-
-#: ../src/gui/about.py:40
-msgid "translator-credits"
-msgstr ""
-"Launchpad Contributions:\n"
-"  Oleg Koptev https://launchpad.net/~koptev-oleg\n"
-"  Sergey Ivanov https://launchpad.net/~rus-patriot"
-
-#: ../src/gui/about.py:44
-msgid "Developer:"
-msgstr "Разработчик:"
-
-#: ../src/gui/about.py:48
-msgid "Thanks to:"
-msgstr "Благодарности:"
-
-#: ../src/gui/preferences.py:43
-msgid "Preferences"
-msgstr "Параметры"
-
-#: ../src/gui/preferences.py:129
-msgid "Unable to load this module."
-msgstr "Не удалось загрузить данный модуль."
-
-#: ../src/gui/preferences.py:138
-msgid "Modules"
-msgstr "Модули"
-
-#: ../src/gui/preferences.py:139 ../src/modules/Covers.py:434
-#: ../src/modules/DesktopNotification.py:213
-msgid "Description"
-msgstr "Описание"
-
-#: ../src/gui/preferences.py:140
-msgid ""
-"This window shows the list of available modules. You can enable/disable a "
-"module by checking/unchecking the check box in front of it."
-msgstr ""
-"Это окно отображает список доступных модулей. Модули можно включить/"
-"выключить с помощью галочки перед названием модуля."
-
-#: ../src/gui/preferences.py:142
-msgid "Configuring a Module"
-msgstr "Настройка модулей"
-
-#: ../src/gui/preferences.py:143
-msgid ""
-"When a module may be configured, a specific icon is displayed on the right "
-"of the corresponding line. To configure a module, simply select it and then "
-"click on the \"Preferences\" button on the bottom of the dialog box. Note "
-"that configuring a module is only possible when it is enabled."
-msgstr ""
-"Когда модуль имеет собственные настройки, справа от модуля показывается "
-"особый значок. Чтобы настроить модуль, просто выберите его и нажмите кнопку "
-"«Параметры», которая расположена внизу диалогового окна."
 
 #: ../src/media/track/__init__.py:54
 msgid "Track number"
@@ -138,6 +82,71 @@ msgstr "%(album)s [Диск %(discnum)u]"
 msgid "CDDA Track"
 msgstr "Дорожка CDDA"
 
+#: ../src/gui/preferences.py:43
+msgid "Preferences"
+msgstr "Параметры"
+
+#: ../src/gui/preferences.py:129
+msgid "Unable to load this module."
+msgstr "Не удалось загрузить данный модуль."
+
+#: ../src/gui/preferences.py:138
+msgid "Modules"
+msgstr "Модули"
+
+#: ../src/gui/preferences.py:139 ../src/modules/DesktopNotification.py:213
+#: ../src/modules/Covers.py:434
+msgid "Description"
+msgstr "Описание"
+
+#: ../src/gui/preferences.py:140
+msgid ""
+"This window shows the list of available modules. You can enable/disable a "
+"module by checking/unchecking the check box in front of it."
+msgstr ""
+"Это окно отображает список доступных модулей. Модули можно "
+"включить/выключить с помощью галочки перед названием модуля."
+
+#: ../src/gui/preferences.py:142
+msgid "Configuring a Module"
+msgstr "Настройка модулей"
+
+#: ../src/gui/preferences.py:143
+msgid ""
+"When a module may be configured, a specific icon is displayed on the right "
+"of the corresponding line. To configure a module, simply select it and then "
+"click on the \"Preferences\" button on the bottom of the dialog box. Note "
+"that configuring a module is only possible when it is enabled."
+msgstr ""
+"Когда модуль имеет собственные настройки, справа от модуля показывается "
+"особый значок. Чтобы настроить модуль, просто выберите его и нажмите кнопку "
+"«Параметры», которая расположена внизу диалогового окна."
+
+#: ../src/gui/about.py:40
+msgid "translator-credits"
+msgstr ""
+"Launchpad Contributions:\n"
+"  HsH https://launchpad.net/~hsh\n"
+"  Oleg Koptev https://launchpad.net/~koptev-oleg\n"
+"  Serge Gavrilenko https://launchpad.net/~screamer-sg\n"
+"  Sergey Ivanov https://launchpad.net/~rus-patriot"
+
+#: ../src/gui/about.py:44
+msgid "Developer:"
+msgstr "Разработчик:"
+
+#: ../src/gui/about.py:48
+msgid "Thanks to:"
+msgstr "Благодарности:"
+
+#: ../src/modules/Search.py:34
+msgid "Search in your music folders"
+msgstr ""
+
+#: ../src/modules/Zeitgeist.py:26
+msgid "Send track information to the Zeitgeist service"
+msgstr "Отправить информацию о дорожке в службу Zeitgeist"
+
 #: ../src/modules/FileExplorer.py:173
 msgid "loading..."
 msgstr "загрузка..."
@@ -151,18 +160,16 @@ msgid "Add music folder"
 msgstr ""
 
 #: ../src/modules/FileExplorer.py:384
-#, fuzzy
 msgid "Hide folder"
-msgstr "Выберите папку"
+msgstr ""
 
 #: ../src/modules/FileExplorer.py:392
 msgid "Open containing folder"
 msgstr ""
 
 #: ../src/modules/FileExplorer.py:403
-#, fuzzy
 msgid "Choose a directory"
-msgstr "Выберите папку"
+msgstr ""
 
 #: ../src/modules/FileExplorer.py:408
 msgid "This path does not exist"
@@ -185,66 +192,8 @@ msgid "Searching ..."
 msgstr ""
 
 #: ../src/modules/FileExplorer.py:615
-#, fuzzy
 msgid "No tracks found"
-msgstr "Диск не найден"
-
-#: ../src/modules/CtrlPanel.py:190 ../src/modules/CtrlPanel.py:246
-msgid "Pause the current track"
-msgstr "Приостановить воспроизведение текущей композиции"
-
-#: ../src/modules/CtrlPanel.py:206
-msgid "Play the first selected track of the playlist"
-msgstr "Проиграть первую выбранную дорожку в списке воспроизведения"
-
-#: ../src/modules/CtrlPanel.py:240
-msgid "Continue playing the current track"
-msgstr "Продолжить воспроизведение текущей композиции"
-
-#: ../src/modules/StatusbarTitlebar.py:47
-msgid "[paused]"
-msgstr "[приостановлено]"
-
-#: ../src/modules/Search.py:34
-msgid "Search in your music folders"
 msgstr ""
-
-#: ../src/modules/Tracktree.py:367
-msgid "Save playlist"
-msgstr "Сохранить список воспроизведения"
-
-#: ../src/modules/Tracktree.py:416
-msgid "Clear Playlist"
-msgstr "Очистить список воспроизведения"
-
-#: ../src/modules/Equalizer.py:24
-msgid "Equalizer"
-msgstr "Эквалайзер"
-
-#: ../src/modules/Equalizer.py:24
-msgid "Tune the level of the frequency bands"
-msgstr "Настроить уровни частотных диапазонов"
-
-#: ../src/modules/Equalizer.py:125 ../src/modules/Equalizer.py:213
-#: ../src/modules/Equalizer.py:226
-msgid "Custom"
-msgstr "Пользовательский"
-
-#: ../src/modules/Equalizer.py:166
-msgid "Save levels"
-msgstr "Сохранить уровни"
-
-#: ../src/modules/Equalizer.py:177
-msgid "Load levels"
-msgstr "Загрузить уровни"
-
-#: ../src/modules/Equalizer.py:204
-msgid "Could not load the file"
-msgstr "Невозможно загрузить файл"
-
-#: ../src/modules/Equalizer.py:204
-msgid "The format of the file is incorrect."
-msgstr "Неправильный формат файла"
 
 #: ../src/modules/__init__.py:75
 msgid "The following Python modules are not available:"
@@ -259,12 +208,81 @@ msgid "Restart required"
 msgstr "Требуется перезапуск"
 
 #: ../src/modules/__init__.py:267
-msgid "You must restart the application for this modification to take effect."
+msgid ""
+"You must restart the application for this modification to take effect."
 msgstr "Вы должны перезапустить приложение, чтобы изменения вступили в силу."
 
-#: ../src/modules/Zeitgeist.py:26
-msgid "Send track information to the Zeitgeist service"
-msgstr "Отправить информацию о дорожке в службу Zeitgeist"
+#: ../src/modules/CtrlPanel.py:190 ../src/modules/CtrlPanel.py:246
+msgid "Pause the current track"
+msgstr "Приостановить воспроизведение текущей композиции"
+
+#: ../src/modules/CtrlPanel.py:206
+msgid "Play the first selected track of the playlist"
+msgstr "Проиграть первую выбранную дорожку в списке воспроизведения"
+
+#: ../src/modules/CtrlPanel.py:240
+msgid "Continue playing the current track"
+msgstr "Продолжить воспроизведение текущей композиции"
+
+#: ../src/modules/DesktopNotification.py:25
+msgid "Desktop Notification"
+msgstr "Уведомления на рабочем столе"
+
+#: ../src/modules/DesktopNotification.py:25
+msgid "Display a desktop notification on track change"
+msgstr "Отображает уведомления на рабочем столе при смене композиции"
+
+#: ../src/modules/DesktopNotification.py:78
+#: ../src/modules/DesktopNotification.py:188
+msgid "Skip track"
+msgstr "Пропустить композицию"
+
+#: ../src/modules/DesktopNotification.py:214
+msgid ""
+"This module displays a small popup window on your desktop when a new track "
+"starts."
+msgstr ""
+"Этот модуль отображает небольшое всплывающее окно на вашем рабочем столе, "
+"когда начинает играть следующая композиция."
+
+#: ../src/modules/DesktopNotification.py:215
+msgid ""
+"If the Covers module is enabled, the popup also shows the album cover."
+msgstr ""
+"Если активирован модуль «Обложки», во всплывающем окне будет показана "
+"обложка альбома."
+
+#: ../src/modules/DesktopNotification.py:216
+msgid "Customizing the Notification"
+msgstr "Параметры уведомлений"
+
+#: ../src/modules/DesktopNotification.py:217
+msgid ""
+"You can change the title and the body of the notification to any text you "
+"want. Before displaying the popup window, fields of the form {field} are "
+"replaced by their corresponding value. Available fields are:\n"
+"\n"
+msgstr ""
+"Вы можете использовать любой текст в качестве заголовка и тела уведомления. "
+"Перед тем, как отобразить всплывающее окно, модуль заменяет все поля вида "
+"{поле} их соответствующими значениями. Доступны следующие поля:\n"
+"\n"
+
+#: ../src/modules/DesktopNotification.py:220
+msgid "Markup"
+msgstr "Разметка"
+
+#: ../src/modules/DesktopNotification.py:221
+msgid ""
+"You can use the Pango markup language to format the text. More information "
+"on that language is available on the following web page:"
+msgstr ""
+"Вы можете использовать язык разметки Pango для форматирования текста. "
+"Дополнительная информация доступна на следующем веб-сайте:"
+
+#: ../src/modules/StatusbarTitlebar.py:47
+msgid "[paused]"
+msgstr "[приостановлено]"
 
 #: ../src/modules/Covers.py:28
 msgid "Covers"
@@ -315,60 +333,42 @@ msgstr ""
 "таком случае будет использоваться локальная обложка, если таковая найдена; "
 "иначе же обложка будет загружена из Интернета."
 
-#: ../src/modules/DesktopNotification.py:25
-msgid "Desktop Notification"
-msgstr "Уведомления на рабочем столе"
+#: ../src/modules/Tracktree.py:367
+msgid "Save playlist"
+msgstr "Сохранить список воспроизведения"
 
-#: ../src/modules/DesktopNotification.py:25
-msgid "Display a desktop notification on track change"
-msgstr "Отображает уведомления на рабочем столе при смене композиции"
+#: ../src/modules/Tracktree.py:416
+msgid "Clear Playlist"
+msgstr "Очистить список воспроизведения"
 
-#: ../src/modules/DesktopNotification.py:78
-#: ../src/modules/DesktopNotification.py:188
-msgid "Skip track"
-msgstr "Пропустить композицию"
+#: ../src/modules/Equalizer.py:24
+msgid "Equalizer"
+msgstr "Эквалайзер"
 
-#: ../src/modules/DesktopNotification.py:214
-msgid ""
-"This module displays a small popup window on your desktop when a new track "
-"starts."
-msgstr ""
-"Этот модуль отображает небольшое всплывающее окно на вашем рабочем столе, "
-"когда начинает играть следующая композиция."
+#: ../src/modules/Equalizer.py:24
+msgid "Tune the level of the frequency bands"
+msgstr "Настроить уровни частотных диапазонов"
 
-#: ../src/modules/DesktopNotification.py:215
-msgid "If the Covers module is enabled, the popup also shows the album cover."
-msgstr ""
-"Если активирован модуль «Обложки», во всплывающем окне будет показана "
-"обложка альбома."
+#: ../src/modules/Equalizer.py:125 ../src/modules/Equalizer.py:213
+#: ../src/modules/Equalizer.py:226
+msgid "Custom"
+msgstr "Пользовательский"
 
-#: ../src/modules/DesktopNotification.py:216
-msgid "Customizing the Notification"
-msgstr "Параметры уведомлений"
+#: ../src/modules/Equalizer.py:166
+msgid "Save levels"
+msgstr "Сохранить уровни"
 
-#: ../src/modules/DesktopNotification.py:217
-msgid ""
-"You can change the title and the body of the notification to any text you "
-"want. Before displaying the popup window, fields of the form {field} are "
-"replaced by their corresponding value. Available fields are:\n"
-"\n"
-msgstr ""
-"Вы можете использовать любой текст в качестве заголовка и тела уведомления. "
-"Перед тем, как отобразить всплывающее окно, модуль заменяет все поля вида "
-"{поле} их соответствующими значениями. Доступны следующие поля:\n"
-"\n"
+#: ../src/modules/Equalizer.py:177
+msgid "Load levels"
+msgstr "Загрузить уровни"
 
-#: ../src/modules/DesktopNotification.py:220
-msgid "Markup"
-msgstr "Разметка"
+#: ../src/modules/Equalizer.py:204
+msgid "Could not load the file"
+msgstr "Невозможно загрузить файл"
 
-#: ../src/modules/DesktopNotification.py:221
-msgid ""
-"You can use the Pango markup language to format the text. More information "
-"on that language is available on the following web page:"
-msgstr ""
-"Вы можете использовать язык разметки Pango для форматирования текста. "
-"Дополнительная информация доступна на следующем веб-сайте:"
+#: ../src/modules/Equalizer.py:204
+msgid "The format of the file is incorrect."
+msgstr "Неправильный формат файла"
 
 #: ../src/tools/consts.py:94
 msgid "Unknown Genre"
@@ -466,6 +466,20 @@ msgstr "Воспроизвести следующую композицию"
 msgid "Play the previous track"
 msgstr "Воспроизвести предыдущую композицию"
 
+#~ msgid ""
+#~ "This dialog box shows the list of available modules, which are small pieces "
+#~ "of code that add some functionnalities to the application. You can "
+#~ "enable/disable a module by checking/unchecking the check box in front of it. "
+#~ "Note that some modules (e.g., the File Explorer) cannot be disabled."
+#~ msgstr ""
+#~ "Это окно отображает список доступных модулей, которые добавляют новые "
+#~ "возможности приложению. Вы можете включить/отключить модуль, поставив/убрав "
+#~ "галочку напротив него. Заметьте, что некоторые модули (например, "
+#~ "Обозреватель файлов) не могут быть отключены."
+
+#~ msgid "Choose a folder"
+#~ msgstr "Выберите папку"
+
 #~ msgid "The name is incorrect"
 #~ msgstr "Неправильное имя"
 
@@ -476,6 +490,7 @@ msgstr "Воспроизвести предыдущую композицию"
 #~ "Использовать данное имя не разрешено.\n"
 #~ "Выберите другое."
 
+#, python-format
 #~ msgid ""
 #~ "The character %s is not allowed.\n"
 #~ "Please use another name."
@@ -483,23 +498,13 @@ msgstr "Воспроизвести предыдущую композицию"
 #~ "Использовать символ %s не разрешено.\n"
 #~ "Выберите другое имя."
 
-#~ msgid ""
-#~ "This dialog box shows the list of available modules, which are small "
-#~ "pieces of code that add some functionnalities to the application. You can "
-#~ "enable/disable a module by checking/unchecking the check box in front of "
-#~ "it. Note that some modules (e.g., the File Explorer) cannot be disabled."
-#~ msgstr ""
-#~ "Это окно отображает список доступных модулей, которые добавляют новые "
-#~ "возможности приложению. Вы можете включить/отключить модуль, поставив/"
-#~ "убрав галочку напротив него. Заметьте, что некоторые модули (например, "
-#~ "Обозреватель файлов) не могут быть отключены."
-
 #~ msgid "File Explorer"
 #~ msgstr "Обозреватель файлов"
 
 #~ msgid "Browse your file system"
 #~ msgstr "Позволяет просматривать файлы и папки"
 
+#, python-format
 #~ msgid "One track in playlist  [%(length)s]"
 #~ msgid_plural "%(count)u tracks in playlist  [%(length)s]"
 #~ msgstr[0] "%(count)u композиция в списке воспроизведения  [%(length)s]"
@@ -529,15 +534,15 @@ msgstr "Воспроизвести предыдущую композицию"
 #~ msgstr "О безопасности хранения паролей"
 
 #~ msgid ""
-#~ "If you use Gnome, it is safe to store your password since the Gnome "
-#~ "keyring is used."
+#~ "If you use Gnome, it is safe to store your password since the Gnome keyring "
+#~ "is used."
 #~ msgstr ""
-#~ "Если вы используете Gnome, сохранять ваши пароли — безопасно, так как в "
-#~ "этом случае используются брелоки Gnome (Gnome Keyrings)."
+#~ "Если вы используете Gnome, сохранять ваши пароли — безопасно, так как в этом "
+#~ "случае используются брелоки Gnome (Gnome Keyrings)."
 
 #~ msgid ""
-#~ "If you do not use Gnome, beware that, although not stored as clear text, "
-#~ "an attacker <i>could</i> retrieve it."
+#~ "If you do not use Gnome, beware that, although not stored as clear text, an "
+#~ "attacker <i>could</i> retrieve it."
 #~ msgstr ""
 #~ "Если вы не используете Gnome, остерегайтесь этого. Конечно, пароли не "
 #~ "сохраняются в виде обычного текста, но, тем не менее, злоумышленник "
@@ -578,8 +583,8 @@ msgstr "Воспроизвести предыдущую композицию"
 #~ "then becomes the root of the file explorer tree in the main window."
 #~ msgstr ""
 #~ "Для того, чтобы просмотреть файлы, вам необходимо выбрать хотя бы одну "
-#~ "корневую папку. После этого указанная папка послужит корнем дерева файлов "
-#~ "в главном окне."
+#~ "корневую папку. После этого указанная папка послужит корнем дерева файлов в "
+#~ "главном окне."
 
 #~ msgid ""
 #~ "Please select an explorer\n"
@@ -676,16 +681,16 @@ msgstr "Воспроизвести предыдущую композицию"
 #~ "with regards to the track you are listening to. Supported messengers are:"
 #~ msgstr ""
 #~ "Данный модуль определяет любой запущенный клиент обмена мгновенными "
-#~ "сообщениями и указывает в сообщении о статусе название композиции, "
-#~ "которую вы слушаете. Поддерживаются следующие клиенты:"
+#~ "сообщениями и указывает в сообщении о статусе название композиции, которую "
+#~ "вы слушаете. Поддерживаются следующие клиенты:"
 
 #~ msgid "Customizing the Status"
 #~ msgstr "Настройка сообщения"
 
 #~ msgid ""
-#~ "You can set the status to any text you want. Before setting it, the "
-#~ "module replaces all fields of the form {field} by their corresponding "
-#~ "value. Available fields are:"
+#~ "You can set the status to any text you want. Before setting it, the module "
+#~ "replaces all fields of the form {field} by their corresponding value. "
+#~ "Available fields are:"
 #~ msgstr ""
 #~ "Вы можете выбрать любой текст в качестве сообщения. Перед тем, как "
 #~ "отобразить ваш текст, модуль заменяет все поля вида {поле} их "
@@ -697,13 +702,13 @@ msgstr "Воспроизвести предыдущую композицию"
 #~ msgid ""
 #~ "You can define some words that to sanitize before using them to set your "
 #~ "status. In this case, the middle characters of matching words is "
-#~ "automatically replaced with asterisks (e.g., \"Metallica - Live S**t "
-#~ "Binge & Purge\"). Put one word per line."
+#~ "automatically replaced with asterisks (e.g., \"Metallica - Live S**t Binge & "
+#~ "Purge\"). Put one word per line."
 #~ msgstr ""
 #~ "Вы можете определить слова, которые будут подвергнуты фильтрации при их "
 #~ "отображении в сообщении о статусе. В этом случае, буквы в середине слова "
-#~ "будут заменены звёздочками (например, «Ленинград — Маде Ин Ж**а»). "
-#~ "Вводите каждое слово на новой строке."
+#~ "будут заменены звёздочками (например, «Ленинград — Маде Ин Ж**а»). Вводите "
+#~ "каждое слово на новой строке."
 
 #~ msgid "Keep your Last.fm profile up to date"
 #~ msgstr "Обновляет ваш профиль пользователя на Last.fm"
@@ -739,8 +744,8 @@ msgstr "Воспроизвести предыдущую композицию"
 #~ "The directory is scanned for media files. This can take some time.\n"
 #~ "Please wait."
 #~ msgstr ""
-#~ "Папка просматривается на наличие звуковых файлов. Это может занять "
-#~ "некоторое время.\n"
+#~ "Папка просматривается на наличие звуковых файлов. Это может занять некоторое "
+#~ "время.\n"
 #~ "Пожалуйста, подождите."
 
 #~ msgid "Scanning directories (one track found)"
@@ -767,8 +772,7 @@ msgstr "Воспроизвести предыдущую композицию"
 #~ msgid "Remove the selected library?"
 #~ msgstr "Удалить выбранную фонотеку?"
 
-#~ msgid ""
-#~ "You will be able to recreate these libraries later on if you wish so."
+#~ msgid "You will be able to recreate these libraries later on if you wish so."
 #~ msgstr "Вы сможете создать эти фонотеки заново позднее, если пожелаете."
 
 #~ msgid "Remove all selected libraries?"
@@ -782,10 +786,10 @@ msgstr "Воспроизвести предыдущую композицию"
 #~ "structure of your drive. Loading tracks is also faster because their tags "
 #~ "are already known and do not have to be read again."
 #~ msgstr ""
-#~ "Этот модуль позволяет получить доступ к вашей музыку по тегам (например, "
-#~ "по исполнителю или названию альбома), не используя структуру файлов "
-#~ "вашего компьютера. Загрузка композиций происходит быстрее, за счёт того, "
-#~ "что их теги уже известны, и нет необходимости считывать данные заново."
+#~ "Этот модуль позволяет получить доступ к вашей музыку по тегам (например, по "
+#~ "исполнителю или названию альбома), не используя структуру файлов вашего "
+#~ "компьютера. Загрузка композиций происходит быстрее, за счёт того, что их "
+#~ "теги уже известны, и нет необходимости считывать данные заново."
 
 #~ msgid ""
 #~ "When you add a new library, you have to give the full path to the root "
@@ -794,19 +798,18 @@ msgstr "Воспроизвести предыдущую композицию"
 #~ "database."
 #~ msgstr ""
 #~ "Когда вы добавляете новую фонотеку, вам необходимо указать полный путь к "
-#~ "главной папке вашей фонотеки. Затем будет произведён поиск звуковых "
-#~ "файлов в этой папке и во всех её вложенных папках. Теги композиций будут "
-#~ "занесены в базу данных."
+#~ "главной папке вашей фонотеки. Затем будет произведён поиск звуковых файлов в "
+#~ "этой папке и во всех её вложенных папках. Теги композиций будут занесены в "
+#~ "базу данных."
 
 #~ msgid ""
-#~ "Upon refreshing a library, the file structure under the root directory "
-#~ "and all media files are scanned for changes, to update the database "
-#~ "accordingly."
+#~ "Upon refreshing a library, the file structure under the root directory and "
+#~ "all media files are scanned for changes, to update the database accordingly."
 #~ msgstr ""
 #~ "При обновлении фонотеки, главная папка и все вложенные папки будут "
-#~ "просмотрены на наличие изменённых или новых файлов. После этого база "
-#~ "данных будет изменена соответствующим образом, чтобы отразить "
-#~ "произошедшие изменения."
+#~ "просмотрены на наличие изменённых или новых файлов. После этого база данных "
+#~ "будет изменена соответствующим образом, чтобы отразить произошедшие "
+#~ "изменения."
 
 #~ msgid "Status Icon"
 #~ msgstr "Значок состояния"
@@ -829,6 +832,9 @@ msgstr "Воспроизвести предыдущую композицию"
 #~ msgid "Track %02u"
 #~ msgstr "Трек %02u"
 
+#~ msgid "No disc found"
+#~ msgstr "Диск не найден"
+
 #~ msgid "This will remove all disc information stored on your hard drive."
 #~ msgstr "Это удалит всю информацию о компакт-дисках с вашего компьютера."
 
@@ -839,23 +845,22 @@ msgstr "Воспроизвести предыдущую композицию"
 #~ msgstr "Неверный путь"
 
 #~ msgid ""
-#~ "The path to the CD-ROM device is not valid. Please choose an existing "
-#~ "path."
+#~ "The path to the CD-ROM device is not valid. Please choose an existing path."
 #~ msgstr "Неверный путь к устройству CD-ROM. Укажите правильный."
 
 #~ msgid "This module lets you play audio discs from your CD-ROM device."
 #~ msgstr ""
-#~ "Этот модуль позволяет проигрывать звуковые компакт-диски с вашего "
-#~ "устройства CD-ROM"
+#~ "Этот модуль позволяет проигрывать звуковые компакт-диски с вашего устройства "
+#~ "CD-ROM"
 
 #~ msgid "Compact Disc Data Base (CDDB)"
 #~ msgstr "База данных компакт-дисков (CDDB)"
 
 #~ msgid ""
 #~ "Disc information, such as artist and album title, may be automatically "
-#~ "downloaded from an online database if you wish so. This information may "
-#~ "also be saved on your hard drive to avoid downloading it again the next "
-#~ "time you play the same disc."
+#~ "downloaded from an online database if you wish so. This information may also "
+#~ "be saved on your hard drive to avoid downloading it again the next time you "
+#~ "play the same disc."
 #~ msgstr ""
 #~ "Информация о диске, такая как, например, исполнитель и название альбома, "
 #~ "может быть загружена автоматически из Интернета, если вы пожелаете. Эта "
@@ -869,19 +874,17 @@ msgstr "Воспроизвести предыдущую композицию"
 #~ msgstr "Создаёт текстовый файл с информацией о состоянии"
 
 #~ msgid ""
-#~ "The path to the selected file is not valid. Please choose an existing "
-#~ "path."
+#~ "The path to the selected file is not valid. Please choose an existing path."
 #~ msgstr "Был указан неправильный путь к файлу. Укажите подходящий путь."
 
 #~ msgid "Choose a file"
 #~ msgstr "Выберите файл"
 
 #~ msgid ""
-#~ "This module generates a text file with regards to the track currently "
-#~ "played."
+#~ "This module generates a text file with regards to the track currently played."
 #~ msgstr ""
-#~ "Этот модуль создаёт файл с информацией о композиции, которая "
-#~ "воспроизводится в данный момент."
+#~ "Этот модуль создаёт файл с информацией о композиции, которая воспроизводится "
+#~ "в данный момент."
 
 #~ msgid "Customizing the File"
 #~ msgstr "Параметры файла"
@@ -968,8 +971,8 @@ msgstr "Воспроизвести предыдущую композицию"
 
 #~ msgid "Update your status on pause/unpause events"
 #~ msgstr ""
-#~ "Обновлять сообщение о статусе, когда воспроизведение приостанавливается/"
-#~ "продолжается"
+#~ "Обновлять сообщение о статусе, когда воспроизведение "
+#~ "приостанавливается/продолжается"
 
 #~ msgid "<b>Libraries</b>"
 #~ msgstr "<b>Фонотеки</b>"

@@ -1,33 +1,30 @@
 === Roadmap ===
 
-0.3:
-X Search for tracks in the music folders
-X Let users add and hide directories in file browser
-X Add "Open containing folder" context menu item
-X Highlight found occurences for searches with non-ASCII characters too
-X Show status messages when searching
-X Fix Loading files from commandline (make paths absolute)
-X Fix: Save playlist also when files have been added on the commandline
+0.4:
+O Stop after current album / track (Playlist context menu entry)
+O When track is added from nautilus etc. start track if not already playing
+O Use multiprocessing for searching
+O Add search shortcut
 
 0.x:
-O Stop after current album / track
 O Save playlist periodically to prevent losing it during a shutdown
 O Export playlist to .m3u format
+O Export tracks in playlist into a directory
 O Shuffle
 O Repeat
-O Playlist loading (Only add tracks in pl not added anyways)
-O Add Zeitgeist module
-O Sound Indicator
+O Playlist loading (Only add tracks in playlist not added anyways)
+O Add Zeitgeist module (check rhythmbox and banshee first)
+O Sound Indicator (https://github.com/sunng87/Exaile-Soundmenu-Indicator)
 
 
-0.y:
+=== Features that will MAYBE be implemented ===
 O Enqueue?
-O Party View?
-O Scrobbling Support?
+O Party View (Fullscreen)?
+O Scrobbling Support (using decibel code)?
 O Lyrics?
 
 
-=== Features that will not be implemented ===
+=== Features that will NOT be implemented ===
 - Do not add empty dirs to Tracktree (Irritating)
 - Ellipsize names (Looks odd)
 - Play audio CDs (Rip and play is nicer anyways)

@@ -7,74 +7,16 @@ msgid ""
 msgstr ""
 "Project-Id-Version: decibel-audio-player\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-11-07 01:42+0100\n"
-"PO-Revision-Date: 2010-10-14 09:33+0000\n"
-"Last-Translator: Ptitphysik <amalpeyre@gmail.com>\n"
+"POT-Creation-Date: 2010-11-21 20:05+0100\n"
+"PO-Revision-Date: 2010-11-07 13:37+0000\n"
+"Last-Translator: Nicolas Delvaux <Unknown>\n"
 "Language-Team: French <fr@li.org>\n"
-"Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Launchpad-Export-Date: 2010-11-02 05:09+0000\n"
+"X-Launchpad-Export-Date: 2010-11-26 05:13+0000\n"
 "X-Generator: Launchpad (build Unknown)\n"
-
-#: ../src/gui/about.py:40
-msgid "translator-credits"
-msgstr ""
-"Launchpad Contributions:\n"
-"  Bubblegum https://launchpad.net/~bubblegum\n"
-"  Jendrik Seipp https://launchpad.net/~jendrikseipp\n"
-"  Ptitphysik https://launchpad.net/~amalpeyre"
-
-#: ../src/gui/about.py:44
-msgid "Developer:"
-msgstr "Développeur :"
-
-#: ../src/gui/about.py:48
-msgid "Thanks to:"
-msgstr "Merci à:"
-
-#: ../src/gui/preferences.py:43
-msgid "Preferences"
-msgstr "Préférences"
-
-#: ../src/gui/preferences.py:129
-msgid "Unable to load this module."
-msgstr "Impossible de charger ce module"
-
-#: ../src/gui/preferences.py:138
-msgid "Modules"
-msgstr "Modules"
-
-#: ../src/gui/preferences.py:139 ../src/modules/Covers.py:434
-#: ../src/modules/DesktopNotification.py:213
-msgid "Description"
-msgstr "Description"
-
-#: ../src/gui/preferences.py:140
-msgid ""
-"This window shows the list of available modules. You can enable/disable a "
-"module by checking/unchecking the check box in front of it."
-msgstr ""
-"Cette fenêtre présente la liste des modules disponibles. Vous pouvez activer/"
-"désactiver un module en cliquant sur sa case à cocher."
-
-#: ../src/gui/preferences.py:142
-msgid "Configuring a Module"
-msgstr "Configurer un module"
-
-#: ../src/gui/preferences.py:143
-msgid ""
-"When a module may be configured, a specific icon is displayed on the right "
-"of the corresponding line. To configure a module, simply select it and then "
-"click on the \"Preferences\" button on the bottom of the dialog box. Note "
-"that configuring a module is only possible when it is enabled."
-msgstr ""
-"Quand un module peut être configuré, une icône apparaît à droite de la ligne "
-"correspondante. Pour configurer un module, sélectionnez-le puis cliquez sur "
-"le bouton « Préférences » en bas de la boîte de dialogue. Un module ne peut "
-"être configuré que s'il est activé."
 
 #: ../src/media/track/__init__.py:54
 msgid "Track number"
@@ -110,7 +52,7 @@ msgstr "Débit"
 
 #: ../src/media/track/__init__.py:62
 msgid "Sample rate"
-msgstr "Fréquence d'échantillonage"
+msgstr "Fréquence d'échantillonnage"
 
 #: ../src/media/track/__init__.py:63
 msgid "Duration in seconds (e.g., 194)"
@@ -137,6 +79,74 @@ msgstr "%(album)s  [Disque %(discnum)u]"
 msgid "CDDA Track"
 msgstr "Piste CDDA"
 
+#: ../src/gui/preferences.py:43
+msgid "Preferences"
+msgstr "Préférences"
+
+#: ../src/gui/preferences.py:129
+msgid "Unable to load this module."
+msgstr "Impossible de charger ce module."
+
+#: ../src/gui/preferences.py:138
+msgid "Modules"
+msgstr "Modules"
+
+#: ../src/gui/preferences.py:139 ../src/modules/DesktopNotification.py:213
+#: ../src/modules/Covers.py:434
+msgid "Description"
+msgstr "Description"
+
+#: ../src/gui/preferences.py:140
+msgid ""
+"This window shows the list of available modules. You can enable/disable a "
+"module by checking/unchecking the check box in front of it."
+msgstr ""
+"Cette fenêtre affiche la liste des modules disponibles. Vous pouvez "
+"activer/désactiver un module en cliquant sur sa case à cocher."
+
+#: ../src/gui/preferences.py:142
+msgid "Configuring a Module"
+msgstr "Configurer un module"
+
+#: ../src/gui/preferences.py:143
+msgid ""
+"When a module may be configured, a specific icon is displayed on the right "
+"of the corresponding line. To configure a module, simply select it and then "
+"click on the \"Preferences\" button on the bottom of the dialog box. Note "
+"that configuring a module is only possible when it is enabled."
+msgstr ""
+"Quand un module peut être configuré, une icône apparaît à droite de la ligne "
+"correspondante. Pour configurer un module, sélectionnez-le puis cliquez sur "
+"le bouton « Préférences » en bas de la boîte de dialogue. Un module ne peut "
+"être configuré que s'il est activé."
+
+#: ../src/gui/about.py:40
+msgid "translator-credits"
+msgstr ""
+"Launchpad Contributions:\n"
+"  Bubblegum https://launchpad.net/~bubblegum\n"
+"  Hugues Belaib https://launchpad.net/~hugues-belaib\n"
+"  Jendrik Seipp https://launchpad.net/~jendrikseipp\n"
+"  Nicolas Delvaux https://launchpad.net/~malaria\n"
+"  Ptitphysik https://launchpad.net/~amalpeyre\n"
+"  fragarch https://launchpad.net/~fragarch"
+
+#: ../src/gui/about.py:44
+msgid "Developer:"
+msgstr "Développeur :"
+
+#: ../src/gui/about.py:48
+msgid "Thanks to:"
+msgstr "Merci à :"
+
+#: ../src/modules/Search.py:34
+msgid "Search in your music folders"
+msgstr "Recherche dans vos dossiers de musiques"
+
+#: ../src/modules/Zeitgeist.py:26
+msgid "Send track information to the Zeitgeist service"
+msgstr "Envoyer les informations de la piste vers le service Zeitgeist"
+
 #: ../src/modules/FileExplorer.py:173
 msgid "loading..."
 msgstr "chargement..."
@@ -147,21 +157,19 @@ msgstr "Ajouter"
 
 #: ../src/modules/FileExplorer.py:372
 msgid "Add music folder"
-msgstr ""
+msgstr "Ajouter un dossier de musiques"
 
 #: ../src/modules/FileExplorer.py:384
-#, fuzzy
 msgid "Hide folder"
-msgstr "Choisissez un répertoire"
+msgstr "Cacher le dossier"
 
 #: ../src/modules/FileExplorer.py:392
 msgid "Open containing folder"
-msgstr ""
+msgstr "Ouvrir le dossier contenant"
 
 #: ../src/modules/FileExplorer.py:403
-#, fuzzy
 msgid "Choose a directory"
-msgstr "Choisissez un répertoire"
+msgstr "Choisissez un dossier"
 
 #: ../src/modules/FileExplorer.py:408
 msgid "This path does not exist"
@@ -169,7 +177,7 @@ msgstr "Ce chemin d'accès n'existe pas"
 
 #: ../src/modules/FileExplorer.py:409
 msgid "Please select an existing directory."
-msgstr "Veuillez choisir un répertoire existant."
+msgstr "Veuillez choisir un dossier existant."
 
 #: ../src/modules/FileExplorer.py:501
 msgid "Albums"
@@ -181,12 +189,29 @@ msgstr "Musique"
 
 #: ../src/modules/FileExplorer.py:601
 msgid "Searching ..."
-msgstr ""
+msgstr "Recherche..."
 
 #: ../src/modules/FileExplorer.py:615
-#, fuzzy
 msgid "No tracks found"
-msgstr "Aucun disque détecté"
+msgstr "Aucune piste n'a été trouvée"
+
+#: ../src/modules/__init__.py:75
+msgid "The following Python modules are not available:"
+msgstr "Les modules Python suivants ne sont pas disponibles :"
+
+#: ../src/modules/__init__.py:79
+msgid "You must install them if you want to enable this module."
+msgstr "Vous devez les installer si vous désirez activer ce module."
+
+#: ../src/modules/__init__.py:266
+msgid "Restart required"
+msgstr "Redémarrage nécessaire"
+
+#: ../src/modules/__init__.py:267
+msgid ""
+"You must restart the application for this modification to take effect."
+msgstr ""
+"Vous devez redémarrer l'application pour que cette modification prenne effet."
 
 #: ../src/modules/CtrlPanel.py:190 ../src/modules/CtrlPanel.py:246
 msgid "Pause the current track"
@@ -198,130 +223,15 @@ msgstr "Lire la première piste sélectionnée de la liste de lecture"
 
 #: ../src/modules/CtrlPanel.py:240
 msgid "Continue playing the current track"
-msgstr "Continuer la lecture"
-
-#: ../src/modules/StatusbarTitlebar.py:47
-msgid "[paused]"
-msgstr "[en pause]"
-
-#: ../src/modules/Search.py:34
-msgid "Search in your music folders"
-msgstr ""
-
-#: ../src/modules/Tracktree.py:367
-msgid "Save playlist"
-msgstr "Sauver la playlist"
-
-#: ../src/modules/Tracktree.py:416
-msgid "Clear Playlist"
-msgstr "Effacer la playlist"
-
-#: ../src/modules/Equalizer.py:24
-msgid "Equalizer"
-msgstr "Égaliseur"
-
-#: ../src/modules/Equalizer.py:24
-msgid "Tune the level of the frequency bands"
-msgstr "Ajuster le niveau des bandes de fréquence"
-
-#: ../src/modules/Equalizer.py:125 ../src/modules/Equalizer.py:213
-#: ../src/modules/Equalizer.py:226
-msgid "Custom"
-msgstr "Personnalisé"
-
-#: ../src/modules/Equalizer.py:166
-msgid "Save levels"
-msgstr "Sauver les niveaux"
-
-#: ../src/modules/Equalizer.py:177
-msgid "Load levels"
-msgstr "Charger les niveaux"
-
-#: ../src/modules/Equalizer.py:204
-msgid "Could not load the file"
-msgstr "Impossible de charger le fichier"
-
-#: ../src/modules/Equalizer.py:204
-msgid "The format of the file is incorrect."
-msgstr "Le format du fichier n'est pas correct"
-
-#: ../src/modules/__init__.py:75
-msgid "The following Python modules are not available:"
-msgstr "Les modules Python suivants ne sont pas disponibles :"
-
-#: ../src/modules/__init__.py:79
-msgid "You must install them if you want to enable this module."
-msgstr "Vous devez les installer si vous désirez activer ce module."
-
-#: ../src/modules/__init__.py:266
-msgid "Restart required"
-msgstr "Redémarrage nécessaire"
-
-#: ../src/modules/__init__.py:267
-msgid "You must restart the application for this modification to take effect."
-msgstr ""
-"Vous devez redémarrer l'application pour que cette modification prenne effet."
-
-#: ../src/modules/Zeitgeist.py:26
-msgid "Send track information to the Zeitgeist service"
-msgstr "Envoyer les informations de la piste vers le service Zeitgeist"
-
-#: ../src/modules/Covers.py:28
-msgid "Covers"
-msgstr "Pochettes"
-
-#: ../src/modules/Covers.py:28
-msgid "Show album covers"
-msgstr "Afficher les pochettes des albums"
-
-#: ../src/modules/Covers.py:435
-msgid ""
-"This module displays the cover of the album the current track comes from. "
-"Covers may be loaded from local pictures, located in the same directory as "
-"the current track, or may be downloaded from the Internet."
-msgstr ""
-"Ce module affiche la pochette de l'album dont provient le morceau actuel. "
-"Les pochettes peuvent provenir d'images situées dans le même répertoire que "
-"le morceau courant, ou peuvent être téléchargées depuis Internet."
-
-#: ../src/modules/Covers.py:438
-msgid "User Covers"
-msgstr "Pochettes utilisateur"
-
-#: ../src/modules/Covers.py:439
-#, python-format
-msgid ""
-"A user cover is a picture located in the same directory as the current "
-"track. When specifying filenames, you do not need to provide file "
-"extensions, supported file formats (%s) are automatically used."
-msgstr ""
-"Une pochette utilisateur est une image située dans le même répertoire que le "
-"morceau actuel. Vous n'avez pas besoin de fournir l'extension des noms de "
-"fichiers, les formats supportés (%s) sont automatiquement utilisés."
-
-#: ../src/modules/Covers.py:442
-msgid "Internet Covers"
-msgstr "Téléchargement de pochettes"
-
-#: ../src/modules/Covers.py:443
-msgid ""
-"Covers may be downloaded from the Internet, based on the tags of the current "
-"track. You can ask to always prefer user covers to Internet ones. In this "
-"case, if a user cover exists for the current track, it is used. If there is "
-"none, the cover is downloaded."
-msgstr ""
-"Les pochettes peuvent être téléchargées depuis Internet, à partir des tags "
-"du morceau actuel. Vous pouvez choisir de toujours préférer les pochettes "
-"utilisateur. Dans ce cas, si une pochette utilisateur existe pour le morceau "
-"actuel, elle est utilisée. S'il n'y en a pas, la pochette est téléchargée."
+msgstr "Continuer la lecture de la piste courante"
 
 #: ../src/modules/DesktopNotification.py:25
 msgid "Desktop Notification"
-msgstr "Notification"
+msgstr "Notification de bureau"
 
 #: ../src/modules/DesktopNotification.py:25
 msgid "Display a desktop notification on track change"
-msgstr "Affiche un avertissement à chaque changement de morceau"
+msgstr "Affiche une notification de bureau à chaque changement de morceau"
 
 #: ../src/modules/DesktopNotification.py:78
 #: ../src/modules/DesktopNotification.py:188
@@ -333,13 +243,14 @@ msgid ""
 "This module displays a small popup window on your desktop when a new track "
 "starts."
 msgstr ""
-"Ce module affiche une petite fenêtre d'avertissement quand un morceau "
+"Ce module affiche une petite fenêtre d'avertissement lorsqu'un morceau "
 "commence."
 
 #: ../src/modules/DesktopNotification.py:215
-msgid "If the Covers module is enabled, the popup also shows the album cover."
+msgid ""
+"If the Covers module is enabled, the popup also shows the album cover."
 msgstr ""
-"Si le module Pochettes est activé, la fenêtre affiche aussi la pochette de "
+"Si le module Jaquettes est activé, le popup affiche aussi la jaquette de "
 "l'album."
 
 #: ../src/modules/DesktopNotification.py:216
@@ -356,7 +267,7 @@ msgstr ""
 "Vous pouvez utiliser le texte que vous désirez pour le titre et le contenu "
 "de la notification. Avant d'afficher la fenêtre, les champs de la forme "
 "{champ} sont remplacés par la valeur correspondante. Les champs disponibles "
-"sont :\n"
+"sont :\n"
 "\n"
 
 #: ../src/modules/DesktopNotification.py:220
@@ -370,7 +281,98 @@ msgid ""
 msgstr ""
 "Vous pouvez utiliser le langage de balisage Pango pour formater votre "
 "message. Il est possible de se documenter sur ce langage grâce à la page Web "
-"suivante :"
+"suivante :"
+
+#: ../src/modules/StatusbarTitlebar.py:47
+msgid "[paused]"
+msgstr "[en pause]"
+
+#: ../src/modules/Covers.py:28
+msgid "Covers"
+msgstr "Jaquettes"
+
+#: ../src/modules/Covers.py:28
+msgid "Show album covers"
+msgstr "Afficher les jaquettes des albums"
+
+#: ../src/modules/Covers.py:435
+msgid ""
+"This module displays the cover of the album the current track comes from. "
+"Covers may be loaded from local pictures, located in the same directory as "
+"the current track, or may be downloaded from the Internet."
+msgstr ""
+"Ce module affiche la jaquette de l'album dont provient le morceau actuel. "
+"Les jaquettes peuvent provenir d'images situées dans le même dossier que le "
+"morceau courant, ou peuvent être téléchargées depuis Internet."
+
+#: ../src/modules/Covers.py:438
+msgid "User Covers"
+msgstr "Jaquettes utilisateur"
+
+#: ../src/modules/Covers.py:439
+#, python-format
+msgid ""
+"A user cover is a picture located in the same directory as the current "
+"track. When specifying filenames, you do not need to provide file "
+"extensions, supported file formats (%s) are automatically used."
+msgstr ""
+"Une jaquette utilisateur est une image située dans le même dossier que le "
+"morceau actuel. Vous n'avez pas besoin de fournir l'extension des noms de "
+"fichiers, les formats supportés (%s) sont automatiquement utilisés."
+
+#: ../src/modules/Covers.py:442
+msgid "Internet Covers"
+msgstr "Jaquettes téléchargées"
+
+#: ../src/modules/Covers.py:443
+msgid ""
+"Covers may be downloaded from the Internet, based on the tags of the current "
+"track. You can ask to always prefer user covers to Internet ones. In this "
+"case, if a user cover exists for the current track, it is used. If there is "
+"none, the cover is downloaded."
+msgstr ""
+"Les pochettes peuvent être téléchargées depuis Internet, à partir des "
+"étiquettes du morceau actuel. Vous pouvez choisir de toujours préférer les "
+"pochettes utilisateur. Dans ce cas, si une pochette utilisateur existe pour "
+"le morceau actuel, elle est utilisée. S'il n'y en a pas, la pochette est "
+"téléchargée."
+
+#: ../src/modules/Tracktree.py:367
+msgid "Save playlist"
+msgstr "Enregistrer la liste de lecture"
+
+#: ../src/modules/Tracktree.py:416
+msgid "Clear Playlist"
+msgstr "Effacer la liste de lecture"
+
+#: ../src/modules/Equalizer.py:24
+msgid "Equalizer"
+msgstr "Égaliseur"
+
+#: ../src/modules/Equalizer.py:24
+msgid "Tune the level of the frequency bands"
+msgstr "Ajuster le niveau des bandes de fréquence"
+
+#: ../src/modules/Equalizer.py:125 ../src/modules/Equalizer.py:213
+#: ../src/modules/Equalizer.py:226
+msgid "Custom"
+msgstr "Personnalisé"
+
+#: ../src/modules/Equalizer.py:166
+msgid "Save levels"
+msgstr "Enregistrer les niveaux"
+
+#: ../src/modules/Equalizer.py:177
+msgid "Load levels"
+msgstr "Charger les niveaux"
+
+#: ../src/modules/Equalizer.py:204
+msgid "Could not load the file"
+msgstr "Impossible de charger le fichier"
+
+#: ../src/modules/Equalizer.py:204
+msgid "The format of the file is incorrect."
+msgstr "Le format du fichier est incorrect."
 
 #: ../src/tools/consts.py:94
 msgid "Unknown Genre"
@@ -394,35 +396,36 @@ msgstr "Artiste de l'album inconnu"
 
 #: ../res/Covers.glade.h:1
 msgid "<b>Internet Covers</b>"
-msgstr "<b>Téléchargement</b>"
+msgstr "<b>Jaquettes téléchargées</b>"
 
 #: ../res/Covers.glade.h:2
 msgid "<b>User Covers</b>"
-msgstr "<b>Pochettes Utilisateur</b>"
+msgstr "<b>Jaquettes utilisateur</b>"
 
 #: ../res/Covers.glade.h:3
 msgid "Always prefer user covers"
-msgstr "Toujours préférer les pochettes utilisateurs"
+msgstr "Toujours préférer les jaquettes utilisateurs"
 
 #: ../res/Covers.glade.h:4
 msgid "Don't download covers when there is a user one"
-msgstr "Ne pas télécharger de pochette quand une pochette utilisateur existe"
+msgstr ""
+"Ne pas télécharger de jaquette lorsqu'une jaquette utilisateur existe"
 
 #: ../res/Covers.glade.h:5
 msgid "Download covers"
-msgstr "Télécharger les pochettes"
+msgstr "Télécharger les jaquettes"
 
 #: ../res/Covers.glade.h:6
 msgid "Filenames to look for (e.g., folder, cover)"
-msgstr "Noms de fichiers à rechercher (par exemple folder, cover...)"
+msgstr "Noms de fichiers à rechercher (par exemple dossier, jaquettes...)"
 
 #: ../res/Covers.glade.h:7
 msgid "Filenames:"
-msgstr "Fichiers :"
+msgstr "Fichiers :"
 
 #: ../res/Covers.glade.h:8
 msgid "Try to download covers from the Internet"
-msgstr "Essayer de télécharger les pochettes depuis Internet"
+msgstr "Essayer de télécharger les jaquettes depuis Internet"
 
 #: ../res/DesktopNotification.glade.h:1
 msgid "<b>Body</b>"
@@ -438,7 +441,7 @@ msgstr "<b>Titre</b>"
 
 #: ../res/DesktopNotification.glade.h:4
 msgid "Notification timeout:"
-msgstr "Durée de la notification :"
+msgstr "Durée de la notification :"
 
 #: ../res/DesktopNotification.glade.h:5
 msgid "Show a \"skip track\" button"
@@ -458,15 +461,30 @@ msgstr "Prédéfini :"
 
 #: ../res/MainWindow.glade.h:1
 msgid "Play the first track of the playlist"
-msgstr "Démarrer la lecture de la playlist"
+msgstr "Lire le premier morceau de la liste de lecture"
 
 #: ../res/MainWindow.glade.h:2
 msgid "Play the next track"
-msgstr "Passer au morceau suivant"
+msgstr "Lire le morceau suivant"
 
 #: ../res/MainWindow.glade.h:3
 msgid "Play the previous track"
-msgstr "Revenir au morceau précédent"
+msgstr "Lire le morceau précédent"
+
+#~ msgid ""
+#~ "This dialog box shows the list of available modules, which are small pieces "
+#~ "of code that add some functionnalities to the application. You can "
+#~ "enable/disable a module by checking/unchecking the check box in front of it. "
+#~ "Note that some modules (e.g., the File Explorer) cannot be disabled."
+#~ msgstr ""
+#~ "Cette boîte de dialogue donne la liste des modules disponibles, un module "
+#~ "étant un petit morceau de programme ajoutant de nouvelles fonctionnalités à "
+#~ "l'application. Vous pouvez activer/désactiver un module en cochant/décochant "
+#~ "la ligne correspondante. Certains modules, comme l'explorateur de fichiers, "
+#~ "ne sont pas désactivables."
+
+#~ msgid "Choose a folder"
+#~ msgstr "Choisissez un répertoire"
 
 #~ msgid "The name is incorrect"
 #~ msgstr "Le nom est incorrect"
@@ -478,6 +496,7 @@ msgstr "Revenir au morceau précédent"
 #~ "Ce nom n'est pas autorisé.\n"
 #~ "Veuillez en utiliser un autre."
 
+#, python-format
 #~ msgid ""
 #~ "The character %s is not allowed.\n"
 #~ "Please use another name."
@@ -485,24 +504,13 @@ msgstr "Revenir au morceau précédent"
 #~ "Le caractère %s n'est pas autorisé.\n"
 #~ "Veuillez utiliser un autre nom."
 
-#~ msgid ""
-#~ "This dialog box shows the list of available modules, which are small "
-#~ "pieces of code that add some functionnalities to the application. You can "
-#~ "enable/disable a module by checking/unchecking the check box in front of "
-#~ "it. Note that some modules (e.g., the File Explorer) cannot be disabled."
-#~ msgstr ""
-#~ "Cette boîte de dialogue donne la liste des modules disponibles, un module "
-#~ "étant un petit morceau de programme ajoutant de nouvelles fonctionnalités "
-#~ "à l'application. Vous pouvez activer/désactiver un module en cochant/"
-#~ "décochant la ligne correspondante. Certains modules, comme l'explorateur "
-#~ "de fichiers, ne sont pas désactivables."
-
 #~ msgid "File Explorer"
 #~ msgstr "Explorateur de fichiers"
 
 #~ msgid "Browse your file system"
 #~ msgstr "Vous permet d'explorer vos disques"
 
+#, python-format
 #~ msgid "One track in playlist  [%(length)s]"
 #~ msgid_plural "%(count)u tracks in playlist  [%(length)s]"
 #~ msgstr[0] "Un morceau dans la playlist  [%(length)s]"
@@ -531,19 +539,18 @@ msgstr "Revenir au morceau précédent"
 #~ msgstr "À propos de la sécurité des mots de passe"
 
 #~ msgid ""
-#~ "If you use Gnome, it is safe to store your password since the Gnome "
-#~ "keyring is used."
+#~ "If you use Gnome, it is safe to store your password since the Gnome keyring "
+#~ "is used."
 #~ msgstr ""
-#~ "Si vous utilisez Gnome, votre mot de passe est stocké de manière "
-#~ "sécurisée dans le trousseau de clefs de Gnome."
+#~ "Si vous utilisez Gnome, votre mot de passe est stocké de manière sécurisée "
+#~ "dans le trousseau de clefs de Gnome."
 
 #~ msgid ""
-#~ "If you do not use Gnome, beware that, although not stored as clear text, "
-#~ "an attacker <i>could</i> retrieve it."
+#~ "If you do not use Gnome, beware that, although not stored as clear text, an "
+#~ "attacker <i>could</i> retrieve it."
 #~ msgstr ""
-#~ "Si vous n'utilisez pas Gnome, sachez que bien que votre mot de passe ne "
-#~ "soit pas stocké de manière lisible, un attaquant <i>pourrait</i> le "
-#~ "récupérer."
+#~ "Si vous n'utilisez pas Gnome, sachez que bien que votre mot de passe ne soit "
+#~ "pas stocké de manière lisible, un attaquant <i>pourrait</i> le récupérer."
 
 #~ msgid "Home"
 #~ msgstr "Dossier personnel"
@@ -569,8 +576,8 @@ msgstr "Revenir au morceau précédent"
 #~ msgid ""
 #~ "You will be able to add these root folders again later on if you wish so."
 #~ msgstr ""
-#~ "Vous pourrez ajouter à nouveau ces répertoires racines plus tard si vous "
-#~ "le désirez."
+#~ "Vous pourrez ajouter à nouveau ces répertoires racines plus tard si vous le "
+#~ "désirez."
 
 #~ msgid "Remove all selected entries?"
 #~ msgstr "Supprimer la sélection ?"
@@ -588,9 +595,9 @@ msgstr "Revenir au morceau précédent"
 #~ "At least one root folder must be added to browse your files. This folder "
 #~ "then becomes the root of the file explorer tree in the main window."
 #~ msgstr ""
-#~ "Au moins un répertoire racine doit être ajouté pour parcourir vos "
-#~ "fichiers. Ce répertoire devient alors la racine de l'explorateur de "
-#~ "fichiers dans la fenêtre principale."
+#~ "Au moins un répertoire racine doit être ajouté pour parcourir vos fichiers. "
+#~ "Ce répertoire devient alors la racine de l'explorateur de fichiers dans la "
+#~ "fenêtre principale."
 
 #~ msgid ""
 #~ "Please select an explorer\n"
@@ -697,21 +704,21 @@ msgstr "Revenir au morceau précédent"
 #~ "This module detects any running instant messenger and updates your status "
 #~ "with regards to the track you are listening to. Supported messengers are:"
 #~ msgstr ""
-#~ "Ce module détecte les clients de messagerie instantanée en cours "
-#~ "d'exécution et met à jour votre statut en fonction de ce que vous êtes en "
-#~ "train d'écouter. Les clients supportés sont :"
+#~ "Ce module détecte les clients de messagerie instantanée en cours d'exécution "
+#~ "et met à jour votre statut en fonction de ce que vous êtes en train "
+#~ "d'écouter. Les clients supportés sont :"
 
 #~ msgid "Customizing the Status"
 #~ msgstr "Personnaliser le statut"
 
 #~ msgid ""
-#~ "You can set the status to any text you want. Before setting it, the "
-#~ "module replaces all fields of the form {field} by their corresponding "
-#~ "value. Available fields are:"
+#~ "You can set the status to any text you want. Before setting it, the module "
+#~ "replaces all fields of the form {field} by their corresponding value. "
+#~ "Available fields are:"
 #~ msgstr ""
-#~ "Vous pouvez définir le texte de votre choix. Avant de s'en servir, le "
-#~ "module remplace tous les champs de la forme {champ} par leur valeur. Les "
-#~ "champs disponibles sont :"
+#~ "Vous pouvez définir le texte de votre choix. Avant de s'en servir, le module "
+#~ "remplace tous les champs de la forme {champ} par leur valeur. Les champs "
+#~ "disponibles sont :"
 
 #~ msgid "Sanitization"
 #~ msgstr "Censure"
@@ -719,14 +726,13 @@ msgstr "Revenir au morceau précédent"
 #~ msgid ""
 #~ "You can define some words that to sanitize before using them to set your "
 #~ "status. In this case, the middle characters of matching words is "
-#~ "automatically replaced with asterisks (e.g., \"Metallica - Live S**t "
-#~ "Binge & Purge\"). Put one word per line."
+#~ "automatically replaced with asterisks (e.g., \"Metallica - Live S**t Binge & "
+#~ "Purge\"). Put one word per line."
 #~ msgstr ""
-#~ "Vous pouvez définir des mots à censurer avant qu'ils ne soient utilisés "
-#~ "dans votre statut. Dans ce cas, les caractères du milieu des mots "
-#~ "correspondants sont automatiquement remplacés par des étoiles (par "
-#~ "exemple \"Metallica - Live S**t Binge & Purge\"). Saisissez un mot par "
-#~ "ligne."
+#~ "Vous pouvez définir des mots à censurer avant qu'ils ne soient utilisés dans "
+#~ "votre statut. Dans ce cas, les caractères du milieu des mots correspondants "
+#~ "sont automatiquement remplacés par des étoiles (par exemple \"Metallica - "
+#~ "Live S**t Binge & Purge\"). Saisissez un mot par ligne."
 
 #~ msgid "Keep your Last.fm profile up to date"
 #~ msgstr "Met à jour votre profil Last.fm"
@@ -771,8 +777,8 @@ msgstr "Revenir au morceau précédent"
 #~ "The directory is scanned for media files. This can take some time.\n"
 #~ "Please wait."
 #~ msgstr ""
-#~ "Le répertoire est parcouru de manière récursive pour trouver vos "
-#~ "fichiers. Cela peut prendre du temps.\n"
+#~ "Le répertoire est parcouru de manière récursive pour trouver vos fichiers. "
+#~ "Cela peut prendre du temps.\n"
 #~ "Veuillez patienter."
 
 #~ msgid "Scanning directories (one track found)"
@@ -808,10 +814,8 @@ msgstr "Revenir au morceau précédent"
 #~ msgid "Remove the selected library?"
 #~ msgstr "Supprimer la bibliothèque sélectionnée ?"
 
-#~ msgid ""
-#~ "You will be able to recreate these libraries later on if you wish so."
-#~ msgstr ""
-#~ "Vous pourrez recréer ces bibliothèques plus tard si vous le désirez."
+#~ msgid "You will be able to recreate these libraries later on if you wish so."
+#~ msgstr "Vous pourrez recréer ces bibliothèques plus tard si vous le désirez."
 
 #~ msgid "Remove all selected libraries?"
 #~ msgstr "Supprimer les bibliothèques sélectionnées ?"
@@ -836,18 +840,17 @@ msgstr "Revenir au morceau précédent"
 #~ msgstr ""
 #~ "Quand vous créer une nouvelle bibliothèque, vous devez donner le chemin "
 #~ "d'accès au répertoire racine de cette bibliothèque. Ensuite, tous les "
-#~ "répertoires se situant sous ce répertoire racine sont parcourus de "
-#~ "manière récursive pour trouver vos fichiers musicaux, dont les tags sont "
-#~ "lus et stockés dans une base de données."
+#~ "répertoires se situant sous ce répertoire racine sont parcourus de manière "
+#~ "récursive pour trouver vos fichiers musicaux, dont les tags sont lus et "
+#~ "stockés dans une base de données."
 
 #~ msgid ""
-#~ "Upon refreshing a library, the file structure under the root directory "
-#~ "and all media files are scanned for changes, to update the database "
-#~ "accordingly."
+#~ "Upon refreshing a library, the file structure under the root directory and "
+#~ "all media files are scanned for changes, to update the database accordingly."
 #~ msgstr ""
-#~ "Lorsqu'une bibliothèque est mise à jour, la structure de vos fichiers "
-#~ "depuis le répertoire racine est examinée afin de détecter les changements "
-#~ "et de mettre à jour la base de données si besoin."
+#~ "Lorsqu'une bibliothèque est mise à jour, la structure de vos fichiers depuis "
+#~ "le répertoire racine est examinée afin de détecter les changements et de "
+#~ "mettre à jour la base de données si besoin."
 
 #~ msgid "Status Icon"
 #~ msgstr "Icône de statut"
@@ -870,6 +873,9 @@ msgstr "Revenir au morceau précédent"
 #~ msgid "Track %02u"
 #~ msgstr "Piste %02u"
 
+#~ msgid "No disc found"
+#~ msgstr "Aucun disque détecté"
+
 #~ msgid "This will remove all disc information stored on your hard drive."
 #~ msgstr ""
 #~ "Toutes les données des CD audio vont être supprimées de votre disque dur."
@@ -881,8 +887,7 @@ msgstr "Revenir au morceau précédent"
 #~ msgstr "Chemin d'accès invalide"
 
 #~ msgid ""
-#~ "The path to the CD-ROM device is not valid. Please choose an existing "
-#~ "path."
+#~ "The path to the CD-ROM device is not valid. Please choose an existing path."
 #~ msgstr ""
 #~ "Le chemin d'accès au lecteur CD-ROM est n'est pas correct. Veuillez en "
 #~ "saisir un autre."
@@ -896,15 +901,15 @@ msgstr "Revenir au morceau précédent"
 
 #~ msgid ""
 #~ "Disc information, such as artist and album title, may be automatically "
-#~ "downloaded from an online database if you wish so. This information may "
-#~ "also be saved on your hard drive to avoid downloading it again the next "
-#~ "time you play the same disc."
+#~ "downloaded from an online database if you wish so. This information may also "
+#~ "be saved on your hard drive to avoid downloading it again the next time you "
+#~ "play the same disc."
 #~ msgstr ""
 #~ "Les données des CD audio, comme le nom de l'album, peuvent être "
-#~ "automatiquement téléchargées depuis une base de données en ligne si vous "
-#~ "le désirez. Ces informations peuvent également être sauvegardées sur "
-#~ "votre disque dur afin de ne pas les télécharger de nouveau la prochaine "
-#~ "fois que vous voudrez lire le même CD."
+#~ "automatiquement téléchargées depuis une base de données en ligne si vous le "
+#~ "désirez. Ces informations peuvent également être sauvegardées sur votre "
+#~ "disque dur afin de ne pas les télécharger de nouveau la prochaine fois que "
+#~ "vous voudrez lire le même CD."
 
 #~ msgid "Status File"
 #~ msgstr "Fichier de statut"
@@ -913,20 +918,16 @@ msgstr "Revenir au morceau précédent"
 #~ msgstr "Génère un fichier texte selon ce que vous écoutez"
 
 #~ msgid ""
-#~ "The path to the selected file is not valid. Please choose an existing "
-#~ "path."
-#~ msgstr ""
-#~ "Le chemin d'accès saisi est invalide. Veuillez en donner un correct."
+#~ "The path to the selected file is not valid. Please choose an existing path."
+#~ msgstr "Le chemin d'accès saisi est invalide. Veuillez en donner un correct."
 
 #~ msgid "Choose a file"
 #~ msgstr "Choisissez un fichier"
 
 #~ msgid ""
-#~ "This module generates a text file with regards to the track currently "
-#~ "played."
+#~ "This module generates a text file with regards to the track currently played."
 #~ msgstr ""
-#~ "Ce module génère un fichier texte en fonction du morceau en cours de "
-#~ "lecture."
+#~ "Ce module génère un fichier texte en fonction du morceau en cours de lecture."
 
 #~ msgid "Customizing the File"
 #~ msgstr "Personnaliser le fichier"
@@ -938,8 +939,8 @@ msgstr "Revenir au morceau précédent"
 #~ "\n"
 #~ msgstr ""
 #~ "Vous pouvez choisir le contenu du fichier. Avant de générer celui-ci, les "
-#~ "champs de la forme {champ} sont remplacés par la valeur correspondante. "
-#~ "Les champs disponibles sont :\n"
+#~ "champs de la forme {champ} sont remplacés par la valeur correspondante. Les "
+#~ "champs disponibles sont :\n"
 #~ "\n"
 
 #~ msgid "Update the status of your Twitter account"

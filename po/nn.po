@@ -7,70 +7,16 @@ msgid ""
 msgstr ""
 "Project-Id-Version: decibel-audio-player\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-11-07 01:42+0100\n"
+"POT-Creation-Date: 2010-11-21 20:05+0100\n"
 "PO-Revision-Date: 2010-10-07 11:31+0000\n"
 "Last-Translator: Jon Stødle <jonstodle@gmail.com>\n"
 "Language-Team: Norwegian Nynorsk <nn@li.org>\n"
-"Language: nn\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Launchpad-Export-Date: 2010-11-02 05:10+0000\n"
+"X-Launchpad-Export-Date: 2010-11-26 05:13+0000\n"
 "X-Generator: Launchpad (build Unknown)\n"
-
-#: ../src/gui/about.py:40
-msgid "translator-credits"
-msgstr ""
-"Launchpad Contributions:\n"
-"  Jon Stødle https://launchpad.net/~jonstodle"
-
-#: ../src/gui/about.py:44
-msgid "Developer:"
-msgstr "Utviklar:"
-
-#: ../src/gui/about.py:48
-msgid "Thanks to:"
-msgstr "TAkk til:"
-
-#: ../src/gui/preferences.py:43
-msgid "Preferences"
-msgstr "Instillingar"
-
-#: ../src/gui/preferences.py:129
-msgid "Unable to load this module."
-msgstr "Kunne ikkje laste modulen."
-
-#: ../src/gui/preferences.py:138
-msgid "Modules"
-msgstr "Modular"
-
-#: ../src/gui/preferences.py:139 ../src/modules/Covers.py:434
-#: ../src/modules/DesktopNotification.py:213
-msgid "Description"
-msgstr "Skildring"
-
-#: ../src/gui/preferences.py:140
-msgid ""
-"This window shows the list of available modules. You can enable/disable a "
-"module by checking/unchecking the check box in front of it."
-msgstr ""
-
-#: ../src/gui/preferences.py:142
-msgid "Configuring a Module"
-msgstr "Still inn ein modul"
-
-#: ../src/gui/preferences.py:143
-msgid ""
-"When a module may be configured, a specific icon is displayed on the right "
-"of the corresponding line. To configure a module, simply select it and then "
-"click on the \"Preferences\" button on the bottom of the dialog box. Note "
-"that configuring a module is only possible when it is enabled."
-msgstr ""
-"Når ein modul kan innstillast vert eit eige ikon vist til høgre for den "
-"gjeldande linja. For å stille inn modulen, treng du berre å velje han og "
-"klikke på \"Instillingar\"-knappen på botnen av dialogboksen. Merk at å "
-"stille inn modulen berre er mogleg nå han er slått på."
 
 #: ../src/media/track/__init__.py:54
 msgid "Track number"
@@ -133,6 +79,67 @@ msgstr ""
 msgid "CDDA Track"
 msgstr ""
 
+#: ../src/gui/preferences.py:43
+msgid "Preferences"
+msgstr "Instillingar"
+
+#: ../src/gui/preferences.py:129
+msgid "Unable to load this module."
+msgstr "Kunne ikkje laste modulen."
+
+#: ../src/gui/preferences.py:138
+msgid "Modules"
+msgstr "Modular"
+
+#: ../src/gui/preferences.py:139 ../src/modules/DesktopNotification.py:213
+#: ../src/modules/Covers.py:434
+msgid "Description"
+msgstr "Skildring"
+
+#: ../src/gui/preferences.py:140
+msgid ""
+"This window shows the list of available modules. You can enable/disable a "
+"module by checking/unchecking the check box in front of it."
+msgstr ""
+
+#: ../src/gui/preferences.py:142
+msgid "Configuring a Module"
+msgstr "Still inn ein modul"
+
+#: ../src/gui/preferences.py:143
+msgid ""
+"When a module may be configured, a specific icon is displayed on the right "
+"of the corresponding line. To configure a module, simply select it and then "
+"click on the \"Preferences\" button on the bottom of the dialog box. Note "
+"that configuring a module is only possible when it is enabled."
+msgstr ""
+"Når ein modul kan innstillast vert eit eige ikon vist til høgre for den "
+"gjeldande linja. For å stille inn modulen, treng du berre å velje han og "
+"klikke på \"Instillingar\"-knappen på botnen av dialogboksen. Merk at å "
+"stille inn modulen berre er mogleg nå han er slått på."
+
+#: ../src/gui/about.py:40
+msgid "translator-credits"
+msgstr ""
+"Launchpad Contributions:\n"
+"  Jon Stødle https://launchpad.net/~jonstodle"
+
+#: ../src/gui/about.py:44
+msgid "Developer:"
+msgstr "Utviklar:"
+
+#: ../src/gui/about.py:48
+msgid "Thanks to:"
+msgstr "TAkk til:"
+
+#: ../src/modules/Search.py:34
+msgid "Search in your music folders"
+msgstr ""
+
+#: ../src/modules/Zeitgeist.py:26
+msgid "Send track information to the Zeitgeist service"
+msgstr ""
+
 #: ../src/modules/FileExplorer.py:173
 msgid "loading..."
 msgstr ""
@@ -146,18 +153,16 @@ msgid "Add music folder"
 msgstr ""
 
 #: ../src/modules/FileExplorer.py:384
-#, fuzzy
 msgid "Hide folder"
-msgstr "Vel ei mappe"
+msgstr ""
 
 #: ../src/modules/FileExplorer.py:392
 msgid "Open containing folder"
 msgstr ""
 
 #: ../src/modules/FileExplorer.py:403
-#, fuzzy
 msgid "Choose a directory"
-msgstr "Vel ei mappe"
+msgstr ""
 
 #: ../src/modules/FileExplorer.py:408
 msgid "This path does not exist"
@@ -180,65 +185,7 @@ msgid "Searching ..."
 msgstr ""
 
 #: ../src/modules/FileExplorer.py:615
-#, fuzzy
 msgid "No tracks found"
-msgstr "Ingen disk funne"
-
-#: ../src/modules/CtrlPanel.py:190 ../src/modules/CtrlPanel.py:246
-msgid "Pause the current track"
-msgstr "Pause sporet"
-
-#: ../src/modules/CtrlPanel.py:206
-msgid "Play the first selected track of the playlist"
-msgstr ""
-
-#: ../src/modules/CtrlPanel.py:240
-msgid "Continue playing the current track"
-msgstr "Hald fram med å spele sporet"
-
-#: ../src/modules/StatusbarTitlebar.py:47
-msgid "[paused]"
-msgstr "[pausa]"
-
-#: ../src/modules/Search.py:34
-msgid "Search in your music folders"
-msgstr ""
-
-#: ../src/modules/Tracktree.py:367
-msgid "Save playlist"
-msgstr "Lagre speleliste"
-
-#: ../src/modules/Tracktree.py:416
-msgid "Clear Playlist"
-msgstr ""
-
-#: ../src/modules/Equalizer.py:24
-msgid "Equalizer"
-msgstr ""
-
-#: ../src/modules/Equalizer.py:24
-msgid "Tune the level of the frequency bands"
-msgstr ""
-
-#: ../src/modules/Equalizer.py:125 ../src/modules/Equalizer.py:213
-#: ../src/modules/Equalizer.py:226
-msgid "Custom"
-msgstr ""
-
-#: ../src/modules/Equalizer.py:166
-msgid "Save levels"
-msgstr ""
-
-#: ../src/modules/Equalizer.py:177
-msgid "Load levels"
-msgstr ""
-
-#: ../src/modules/Equalizer.py:204
-msgid "Could not load the file"
-msgstr ""
-
-#: ../src/modules/Equalizer.py:204
-msgid "The format of the file is incorrect."
 msgstr ""
 
 #: ../src/modules/__init__.py:75
@@ -254,12 +201,78 @@ msgid "Restart required"
 msgstr ""
 
 #: ../src/modules/__init__.py:267
-msgid "You must restart the application for this modification to take effect."
+msgid ""
+"You must restart the application for this modification to take effect."
 msgstr ""
 
-#: ../src/modules/Zeitgeist.py:26
-msgid "Send track information to the Zeitgeist service"
+#: ../src/modules/CtrlPanel.py:190 ../src/modules/CtrlPanel.py:246
+msgid "Pause the current track"
+msgstr "Pause sporet"
+
+#: ../src/modules/CtrlPanel.py:206
+msgid "Play the first selected track of the playlist"
 msgstr ""
+
+#: ../src/modules/CtrlPanel.py:240
+msgid "Continue playing the current track"
+msgstr "Hald fram med å spele sporet"
+
+#: ../src/modules/DesktopNotification.py:25
+msgid "Desktop Notification"
+msgstr "Skrivebordsmelding"
+
+#: ../src/modules/DesktopNotification.py:25
+msgid "Display a desktop notification on track change"
+msgstr "Viser ei skrivebordsmelding når sporet skiftar"
+
+#: ../src/modules/DesktopNotification.py:78
+#: ../src/modules/DesktopNotification.py:188
+msgid "Skip track"
+msgstr "Forbigå spor"
+
+#: ../src/modules/DesktopNotification.py:214
+msgid ""
+"This module displays a small popup window on your desktop when a new track "
+"starts."
+msgstr ""
+"Denne modulen viser eit lite sprettopp-vindauge når eit nytt spor startar."
+
+#: ../src/modules/DesktopNotification.py:215
+msgid ""
+"If the Covers module is enabled, the popup also shows the album cover."
+msgstr ""
+
+#: ../src/modules/DesktopNotification.py:216
+msgid "Customizing the Notification"
+msgstr "Tilpass meldinga"
+
+#: ../src/modules/DesktopNotification.py:217
+msgid ""
+"You can change the title and the body of the notification to any text you "
+"want. Before displaying the popup window, fields of the form {field} are "
+"replaced by their corresponding value. Available fields are:\n"
+"\n"
+msgstr ""
+"Du kan endre tittelen og hovudteksten til meldinga til kva som helst tekst. "
+"Før sprettopp-vindauget vert vist vil felta i skjemaet verte bytta ut med "
+"dei tilsvarande verdiane. Tilgjengelige felt er:\n"
+"\n"
+
+#: ../src/modules/DesktopNotification.py:220
+msgid "Markup"
+msgstr "Oppmerking"
+
+#: ../src/modules/DesktopNotification.py:221
+msgid ""
+"You can use the Pango markup language to format the text. More information "
+"on that language is available on the following web page:"
+msgstr ""
+"Du kan bruke Pango oppmerkingsspråk til å formatere teksten. Meir "
+"informasjon om språket kan du finne på den følgjande vevsida:"
+
+#: ../src/modules/StatusbarTitlebar.py:47
+msgid "[paused]"
+msgstr "[pausa]"
 
 #: ../src/modules/Covers.py:28
 msgid "Covers"
@@ -300,57 +313,42 @@ msgid ""
 "none, the cover is downloaded."
 msgstr ""
 
-#: ../src/modules/DesktopNotification.py:25
-msgid "Desktop Notification"
-msgstr "Skrivebordsmelding"
+#: ../src/modules/Tracktree.py:367
+msgid "Save playlist"
+msgstr "Lagre speleliste"
 
-#: ../src/modules/DesktopNotification.py:25
-msgid "Display a desktop notification on track change"
-msgstr "Viser ei skrivebordsmelding når sporet skiftar"
-
-#: ../src/modules/DesktopNotification.py:78
-#: ../src/modules/DesktopNotification.py:188
-msgid "Skip track"
-msgstr "Forbigå spor"
-
-#: ../src/modules/DesktopNotification.py:214
-msgid ""
-"This module displays a small popup window on your desktop when a new track "
-"starts."
-msgstr ""
-"Denne modulen viser eit lite sprettopp-vindauge når eit nytt spor startar."
-
-#: ../src/modules/DesktopNotification.py:215
-msgid "If the Covers module is enabled, the popup also shows the album cover."
+#: ../src/modules/Tracktree.py:416
+msgid "Clear Playlist"
 msgstr ""
 
-#: ../src/modules/DesktopNotification.py:216
-msgid "Customizing the Notification"
-msgstr "Tilpass meldinga"
-
-#: ../src/modules/DesktopNotification.py:217
-msgid ""
-"You can change the title and the body of the notification to any text you "
-"want. Before displaying the popup window, fields of the form {field} are "
-"replaced by their corresponding value. Available fields are:\n"
-"\n"
+#: ../src/modules/Equalizer.py:24
+msgid "Equalizer"
 msgstr ""
-"Du kan endre tittelen og hovudteksten til meldinga til kva som helst tekst. "
-"Før sprettopp-vindauget vert vist vil felta i skjemaet verte bytta ut med "
-"dei tilsvarande verdiane. Tilgjengelige felt er:\n"
-"\n"
 
-#: ../src/modules/DesktopNotification.py:220
-msgid "Markup"
-msgstr "Oppmerking"
-
-#: ../src/modules/DesktopNotification.py:221
-msgid ""
-"You can use the Pango markup language to format the text. More information "
-"on that language is available on the following web page:"
+#: ../src/modules/Equalizer.py:24
+msgid "Tune the level of the frequency bands"
 msgstr ""
-"Du kan bruke Pango oppmerkingsspråk til å formatere teksten. Meir "
-"informasjon om språket kan du finne på den følgjande vevsida:"
+
+#: ../src/modules/Equalizer.py:125 ../src/modules/Equalizer.py:213
+#: ../src/modules/Equalizer.py:226
+msgid "Custom"
+msgstr ""
+
+#: ../src/modules/Equalizer.py:166
+msgid "Save levels"
+msgstr ""
+
+#: ../src/modules/Equalizer.py:177
+msgid "Load levels"
+msgstr ""
+
+#: ../src/modules/Equalizer.py:204
+msgid "Could not load the file"
+msgstr ""
+
+#: ../src/modules/Equalizer.py:204
+msgid "The format of the file is incorrect."
+msgstr ""
 
 #: ../src/tools/consts.py:94
 msgid "Unknown Genre"
@@ -448,6 +446,20 @@ msgstr "Spel neste spor"
 msgid "Play the previous track"
 msgstr "Spel førre spor"
 
+#~ msgid ""
+#~ "This dialog box shows the list of available modules, which are small pieces "
+#~ "of code that add some functionnalities to the application. You can "
+#~ "enable/disable a module by checking/unchecking the check box in front of it. "
+#~ "Note that some modules (e.g., the File Explorer) cannot be disabled."
+#~ msgstr ""
+#~ "Denne dialogboksen viser lista over tilgjengelege modular, som er små "
+#~ "kodesnuttar som legg til funksjonar til programmet. Du kan slå ein modul "
+#~ "av/på ved å merke/avmerke avmerkingsboksane framføre dei. Merk at nokre "
+#~ "modular (td filutforskaren) kan ikkje verte skrudd av."
+
+#~ msgid "Choose a folder"
+#~ msgstr "Vel ei mappe"
+
 #~ msgid "The name is incorrect"
 #~ msgstr "Namnet er feil"
 
@@ -458,23 +470,13 @@ msgstr "Spel førre spor"
 #~ "Namnet er ikkje tillate.\n"
 #~ "Bruk eit anna."
 
+#, python-format
 #~ msgid ""
 #~ "The character %s is not allowed.\n"
 #~ "Please use another name."
 #~ msgstr ""
 #~ "Teiknet %s er ikkje tillate.\n"
 #~ "Bruk eit anna namn."
-
-#~ msgid ""
-#~ "This dialog box shows the list of available modules, which are small "
-#~ "pieces of code that add some functionnalities to the application. You can "
-#~ "enable/disable a module by checking/unchecking the check box in front of "
-#~ "it. Note that some modules (e.g., the File Explorer) cannot be disabled."
-#~ msgstr ""
-#~ "Denne dialogboksen viser lista over tilgjengelege modular, som er små "
-#~ "kodesnuttar som legg til funksjonar til programmet. Du kan slå ein modul "
-#~ "av/på ved å merke/avmerke avmerkingsboksane framføre dei. Merk at nokre "
-#~ "modular (td filutforskaren) kan ikkje verte skrudd av."
 
 #~ msgid "File Explorer"
 #~ msgstr "Filutforskar"
@@ -498,18 +500,18 @@ msgstr "Spel førre spor"
 #~ msgstr "Om passordlagringstryggleik"
 
 #~ msgid ""
-#~ "If you use Gnome, it is safe to store your password since the Gnome "
-#~ "keyring is used."
+#~ "If you use Gnome, it is safe to store your password since the Gnome keyring "
+#~ "is used."
 #~ msgstr ""
-#~ "Om du bruker Gnome er det trygt å lagre passordet sidan Gnome-"
-#~ "nykkelringen brukes."
+#~ "Om du bruker Gnome er det trygt å lagre passordet sidan Gnome-nykkelringen "
+#~ "brukes."
 
 #~ msgid ""
-#~ "If you do not use Gnome, beware that, although not stored as clear text, "
-#~ "an attacker <i>could</i> retrieve it."
+#~ "If you do not use Gnome, beware that, although not stored as clear text, an "
+#~ "attacker <i>could</i> retrieve it."
 #~ msgstr ""
-#~ "Om du ikkje bruker Gnome, ver klar over at ein angripar <i>kan</i> få tak "
-#~ "i passordet, sjølv om det ikkje er i klartekst."
+#~ "Om du ikkje bruker Gnome, ver klar over at ein angripar <i>kan</i> få tak i "
+#~ "passordet, sjølv om det ikkje er i klartekst."
 
 #~ msgid "Home"
 #~ msgstr "Heim"
@@ -643,13 +645,13 @@ msgstr "Spel førre spor"
 #~ msgstr "Tilpass statusen"
 
 #~ msgid ""
-#~ "You can set the status to any text you want. Before setting it, the "
-#~ "module replaces all fields of the form {field} by their corresponding "
-#~ "value. Available fields are:"
+#~ "You can set the status to any text you want. Before setting it, the module "
+#~ "replaces all fields of the form {field} by their corresponding value. "
+#~ "Available fields are:"
 #~ msgstr ""
-#~ "Du kan endre statusen til kva tekst til det du vil. Før modulen endrar "
-#~ "han, endrar modulen alle felta i skjemaet med deira tilhøyrande verdi: "
-#~ "Moglege felt er:"
+#~ "Du kan endre statusen til kva tekst til det du vil. Før modulen endrar han, "
+#~ "endrar modulen alle felta i skjemaet med deira tilhøyrande verdi: Moglege "
+#~ "felt er:"
 
 #~ msgid "Sanitization"
 #~ msgstr "Sensurering"
@@ -657,13 +659,13 @@ msgstr "Spel førre spor"
 #~ msgid ""
 #~ "You can define some words that to sanitize before using them to set your "
 #~ "status. In this case, the middle characters of matching words is "
-#~ "automatically replaced with asterisks (e.g., \"Metallica - Live S**t "
-#~ "Binge & Purge\"). Put one word per line."
+#~ "automatically replaced with asterisks (e.g., \"Metallica - Live S**t Binge & "
+#~ "Purge\"). Put one word per line."
 #~ msgstr ""
-#~ "Du kan definere nokre ord som skal sensurerast før dei vert brukt i "
-#~ "statusen din. I desse tilfella vil bokstavane i midten av orda verte "
-#~ "endra til asteriskar autmatisk (td \"Metallica - Live S**t Binge & Purge"
-#~ "\"). Eit ord på kvar linje."
+#~ "Du kan definere nokre ord som skal sensurerast før dei vert brukt i statusen "
+#~ "din. I desse tilfella vil bokstavane i midten av orda verte endra til "
+#~ "asteriskar autmatisk (td \"Metallica - Live S**t Binge & Purge\"). Eit ord "
+#~ "på kvar linje."
 
 #~ msgid "Keep your Last.fm profile up to date"
 #~ msgstr "Hald Last.fm profilen din oppdatert"
@@ -717,8 +719,7 @@ msgstr "Spel førre spor"
 #~ msgid "Remove the selected library?"
 #~ msgstr "Fjerne det velde biblioteket?"
 
-#~ msgid ""
-#~ "You will be able to recreate these libraries later on if you wish so."
+#~ msgid "You will be able to recreate these libraries later on if you wish so."
 #~ msgstr "Du kan lage desse biblioteka på ny seinare om du har lyst."
 
 #~ msgid "Remove all selected libraries?"
@@ -732,9 +733,9 @@ msgstr "Spel førre spor"
 #~ "structure of your drive. Loading tracks is also faster because their tags "
 #~ "are already known and do not have to be read again."
 #~ msgstr ""
-#~ "Denne modulen organiserer mediafilene etter merkelappar i staden for "
-#~ "etter mappestruktur. Lasting av spor vil òg verte raskare sidan "
-#~ "merkelappen er allereie kjend og treng ikkje lesast på ny."
+#~ "Denne modulen organiserer mediafilene etter merkelappar i staden for etter "
+#~ "mappestruktur. Lasting av spor vil òg verte raskare sidan merkelappen er "
+#~ "allereie kjend og treng ikkje lesast på ny."
 
 #~ msgid ""
 #~ "When you add a new library, you have to give the full path to the root "
@@ -742,15 +743,13 @@ msgstr "Spel førre spor"
 #~ "recursively scanned for media files whose tags are read and stored in a "
 #~ "database."
 #~ msgstr ""
-#~ "Når du legg til eit nytt bibliotek må du oppgje heile stien til rotmappa "
-#~ "til biblioteket. Då vil alle mappene i denne rotmappa verte søkt gjennom "
-#~ "fleire gongar for mediafiler og merkelappane vil verte lest og lagra i "
-#~ "ein database."
+#~ "Når du legg til eit nytt bibliotek må du oppgje heile stien til rotmappa til "
+#~ "biblioteket. Då vil alle mappene i denne rotmappa verte søkt gjennom fleire "
+#~ "gongar for mediafiler og merkelappane vil verte lest og lagra i ein database."
 
 #~ msgid ""
-#~ "Upon refreshing a library, the file structure under the root directory "
-#~ "and all media files are scanned for changes, to update the database "
-#~ "accordingly."
+#~ "Upon refreshing a library, the file structure under the root directory and "
+#~ "all media files are scanned for changes, to update the database accordingly."
 #~ msgstr ""
 #~ "Når eit bibliotek vert oppdatert vil filstrukturen i rotmappa og alle "
 #~ "mediafiler verte søkt gjennom for endringar, for å oppdatere databasen."
@@ -770,6 +769,9 @@ msgstr "Spel førre spor"
 #~ msgid "downloading data..."
 #~ msgstr "lastar ned data..."
 
+#~ msgid "No disc found"
+#~ msgstr "Ingen disk funne"
+
 #~ msgid "This will remove all disc information stored on your hard drive."
 #~ msgstr "Dette vil fjerne all diskinformasjon lagra på harddisken din."
 
@@ -780,8 +782,7 @@ msgstr "Spel førre spor"
 #~ msgstr "Feil i sti"
 
 #~ msgid ""
-#~ "The path to the CD-ROM device is not valid. Please choose an existing "
-#~ "path."
+#~ "The path to the CD-ROM device is not valid. Please choose an existing path."
 #~ msgstr "Stien til CD-ROM-en er ikkje riktig. Vel ein eksisterande sti."
 
 #~ msgid "This module lets you play audio discs from your CD-ROM device."
@@ -792,14 +793,14 @@ msgstr "Spel førre spor"
 
 #~ msgid ""
 #~ "Disc information, such as artist and album title, may be automatically "
-#~ "downloaded from an online database if you wish so. This information may "
-#~ "also be saved on your hard drive to avoid downloading it again the next "
-#~ "time you play the same disc."
+#~ "downloaded from an online database if you wish so. This information may also "
+#~ "be saved on your hard drive to avoid downloading it again the next time you "
+#~ "play the same disc."
 #~ msgstr ""
-#~ "Diskinformasjon, som artist og albumtittel, kan verte lasta ned "
-#~ "automatisk fra ein database på veven om ynskjar det. Denne informasjonen "
-#~ "kan òg lagrast på harddisken din for avverge at han vert lasta ned på "
-#~ "nytt neste gong disken vert spelt."
+#~ "Diskinformasjon, som artist og albumtittel, kan verte lasta ned automatisk "
+#~ "fra ein database på veven om ynskjar det. Denne informasjonen kan òg lagrast "
+#~ "på harddisken din for avverge at han vert lasta ned på nytt neste gong "
+#~ "disken vert spelt."
 
 #~ msgid "Status File"
 #~ msgstr "Statusfil"
@@ -808,16 +809,14 @@ msgstr "Spel førre spor"
 #~ msgstr "Generer ei tekstfil med gjeldande status"
 
 #~ msgid ""
-#~ "The path to the selected file is not valid. Please choose an existing "
-#~ "path."
+#~ "The path to the selected file is not valid. Please choose an existing path."
 #~ msgstr "Stien til den valde fila er ikkje gyldig. Vel ein eksisterande sti."
 
 #~ msgid "Choose a file"
 #~ msgstr "Vel ei fil"
 
 #~ msgid ""
-#~ "This module generates a text file with regards to the track currently "
-#~ "played."
+#~ "This module generates a text file with regards to the track currently played."
 #~ msgstr ""
 #~ "Denne modulen lagar ei tekstfil med omsyn til sporet som vert spelt av."
 

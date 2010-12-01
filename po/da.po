@@ -7,74 +7,16 @@ msgid ""
 msgstr ""
 "Project-Id-Version: decibel-audio-player\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-11-07 01:42+0100\n"
+"POT-Creation-Date: 2010-11-21 20:05+0100\n"
 "PO-Revision-Date: 2010-10-13 16:43+0000\n"
 "Last-Translator: Joe Hansen <Unknown>\n"
 "Language-Team: Danish <da@li.org>\n"
-"Language: da\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Launchpad-Export-Date: 2010-11-02 05:09+0000\n"
+"X-Launchpad-Export-Date: 2010-11-26 05:13+0000\n"
 "X-Generator: Launchpad (build Unknown)\n"
-
-#: ../src/gui/about.py:40
-msgid "translator-credits"
-msgstr ""
-"Launchpad Contributions:\n"
-"  Ask Hjorth Larsen https://launchpad.net/~askhl\n"
-"  Jendrik Seipp https://launchpad.net/~jendrikseipp\n"
-"  Joe Hansen https://launchpad.net/~joedalton2"
-
-#: ../src/gui/about.py:44
-msgid "Developer:"
-msgstr "Udvikler:"
-
-#: ../src/gui/about.py:48
-msgid "Thanks to:"
-msgstr "Tak til:"
-
-#: ../src/gui/preferences.py:43
-msgid "Preferences"
-msgstr "Indstillinger"
-
-#: ../src/gui/preferences.py:129
-msgid "Unable to load this module."
-msgstr "Kunne ikke indlæse dette modul."
-
-#: ../src/gui/preferences.py:138
-msgid "Modules"
-msgstr "Moduler"
-
-#: ../src/gui/preferences.py:139 ../src/modules/Covers.py:434
-#: ../src/modules/DesktopNotification.py:213
-msgid "Description"
-msgstr "Beskrivelse"
-
-#: ../src/gui/preferences.py:140
-msgid ""
-"This window shows the list of available modules. You can enable/disable a "
-"module by checking/unchecking the check box in front of it."
-msgstr ""
-"Dette vindue viser listen af tilgængelige moduler. Du kan slå et modul til "
-"eller fra ved at sætte eller fjerne krydset i afkrydsningsfeltet foran det."
-
-#: ../src/gui/preferences.py:142
-msgid "Configuring a Module"
-msgstr "Konfigurerer et modul"
-
-#: ../src/gui/preferences.py:143
-msgid ""
-"When a module may be configured, a specific icon is displayed on the right "
-"of the corresponding line. To configure a module, simply select it and then "
-"click on the \"Preferences\" button on the bottom of the dialog box. Note "
-"that configuring a module is only possible when it is enabled."
-msgstr ""
-"Når et modul kan konfigureres, vises et bestemt ikon på højre side af den "
-"pågældende linje. For at konfigurere et modul skal du markere det og klikke "
-"på \"Indstillinger\"-knappen nederst i dialogboksen. Bemærk at moduler kun "
-"kan konfigureres når de er slået til."
 
 #: ../src/media/track/__init__.py:54
 msgid "Track number"
@@ -137,6 +79,71 @@ msgstr "%(album)s [Disk %(discnum)u]"
 msgid "CDDA Track"
 msgstr "CDDA-spor"
 
+#: ../src/gui/preferences.py:43
+msgid "Preferences"
+msgstr "Indstillinger"
+
+#: ../src/gui/preferences.py:129
+msgid "Unable to load this module."
+msgstr "Kunne ikke indlæse dette modul."
+
+#: ../src/gui/preferences.py:138
+msgid "Modules"
+msgstr "Moduler"
+
+#: ../src/gui/preferences.py:139 ../src/modules/DesktopNotification.py:213
+#: ../src/modules/Covers.py:434
+msgid "Description"
+msgstr "Beskrivelse"
+
+#: ../src/gui/preferences.py:140
+msgid ""
+"This window shows the list of available modules. You can enable/disable a "
+"module by checking/unchecking the check box in front of it."
+msgstr ""
+"Dette vindue viser listen af tilgængelige moduler. Du kan slå et modul til "
+"eller fra ved at sætte eller fjerne krydset i afkrydsningsfeltet foran det."
+
+#: ../src/gui/preferences.py:142
+msgid "Configuring a Module"
+msgstr "Konfigurerer et modul"
+
+#: ../src/gui/preferences.py:143
+msgid ""
+"When a module may be configured, a specific icon is displayed on the right "
+"of the corresponding line. To configure a module, simply select it and then "
+"click on the \"Preferences\" button on the bottom of the dialog box. Note "
+"that configuring a module is only possible when it is enabled."
+msgstr ""
+"Når et modul kan konfigureres, vises et bestemt ikon på højre side af den "
+"pågældende linje. For at konfigurere et modul skal du markere det og klikke "
+"på \"Indstillinger\"-knappen nederst i dialogboksen. Bemærk at moduler kun "
+"kan konfigureres når de er slået til."
+
+#: ../src/gui/about.py:40
+msgid "translator-credits"
+msgstr ""
+"Launchpad Contributions:\n"
+"  Ask Hjorth Larsen https://launchpad.net/~askhl\n"
+"  Jendrik Seipp https://launchpad.net/~jendrikseipp\n"
+"  Joe Hansen https://launchpad.net/~joedalton2"
+
+#: ../src/gui/about.py:44
+msgid "Developer:"
+msgstr "Udvikler:"
+
+#: ../src/gui/about.py:48
+msgid "Thanks to:"
+msgstr "Tak til:"
+
+#: ../src/modules/Search.py:34
+msgid "Search in your music folders"
+msgstr ""
+
+#: ../src/modules/Zeitgeist.py:26
+msgid "Send track information to the Zeitgeist service"
+msgstr "Send sporinformation til Zeitgeist-tjenesten"
+
 #: ../src/modules/FileExplorer.py:173
 msgid "loading..."
 msgstr "indlæser..."
@@ -150,18 +157,16 @@ msgid "Add music folder"
 msgstr ""
 
 #: ../src/modules/FileExplorer.py:384
-#, fuzzy
 msgid "Hide folder"
-msgstr "Vælg en mappe"
+msgstr ""
 
 #: ../src/modules/FileExplorer.py:392
 msgid "Open containing folder"
 msgstr ""
 
 #: ../src/modules/FileExplorer.py:403
-#, fuzzy
 msgid "Choose a directory"
-msgstr "Vælg en mappe"
+msgstr ""
 
 #: ../src/modules/FileExplorer.py:408
 msgid "This path does not exist"
@@ -187,63 +192,6 @@ msgstr ""
 msgid "No tracks found"
 msgstr ""
 
-#: ../src/modules/CtrlPanel.py:190 ../src/modules/CtrlPanel.py:246
-msgid "Pause the current track"
-msgstr "Sæt dette nummer på pause"
-
-#: ../src/modules/CtrlPanel.py:206
-msgid "Play the first selected track of the playlist"
-msgstr "Afspil det første valgte spor i afspilningslisten"
-
-#: ../src/modules/CtrlPanel.py:240
-msgid "Continue playing the current track"
-msgstr "Fortsæt det nuværende nummer"
-
-#: ../src/modules/StatusbarTitlebar.py:47
-msgid "[paused]"
-msgstr "[pause]"
-
-#: ../src/modules/Search.py:34
-msgid "Search in your music folders"
-msgstr ""
-
-#: ../src/modules/Tracktree.py:367
-msgid "Save playlist"
-msgstr "Gem afspilningsliste"
-
-#: ../src/modules/Tracktree.py:416
-msgid "Clear Playlist"
-msgstr "Ryd afspilningslisten"
-
-#: ../src/modules/Equalizer.py:24
-msgid "Equalizer"
-msgstr "Equalizer"
-
-#: ../src/modules/Equalizer.py:24
-msgid "Tune the level of the frequency bands"
-msgstr "Justér niveauet på frekvensbåndene"
-
-#: ../src/modules/Equalizer.py:125 ../src/modules/Equalizer.py:213
-#: ../src/modules/Equalizer.py:226
-msgid "Custom"
-msgstr "Brugerdefineret"
-
-#: ../src/modules/Equalizer.py:166
-msgid "Save levels"
-msgstr "Gem niveauer"
-
-#: ../src/modules/Equalizer.py:177
-msgid "Load levels"
-msgstr "Indlæs niveauer"
-
-#: ../src/modules/Equalizer.py:204
-msgid "Could not load the file"
-msgstr "Kunne ikke indlæse filen"
-
-#: ../src/modules/Equalizer.py:204
-msgid "The format of the file is incorrect."
-msgstr "Denne fil har et forkert format."
-
 #: ../src/modules/__init__.py:75
 msgid "The following Python modules are not available:"
 msgstr "De følgende Python-moduler er ikke tilgængelige:"
@@ -257,14 +205,81 @@ msgid "Restart required"
 msgstr "Genstart påkrævet"
 
 #: ../src/modules/__init__.py:267
-msgid "You must restart the application for this modification to take effect."
+msgid ""
+"You must restart the application for this modification to take effect."
 msgstr ""
 "Du er nødt til at genstarte programmet, for at dine ændringer kan træde "
 "igennem."
 
-#: ../src/modules/Zeitgeist.py:26
-msgid "Send track information to the Zeitgeist service"
-msgstr "Send sporinformation til Zeitgeist-tjenesten"
+#: ../src/modules/CtrlPanel.py:190 ../src/modules/CtrlPanel.py:246
+msgid "Pause the current track"
+msgstr "Sæt dette nummer på pause"
+
+#: ../src/modules/CtrlPanel.py:206
+msgid "Play the first selected track of the playlist"
+msgstr "Afspil det første valgte spor i afspilningslisten"
+
+#: ../src/modules/CtrlPanel.py:240
+msgid "Continue playing the current track"
+msgstr "Fortsæt det nuværende nummer"
+
+#: ../src/modules/DesktopNotification.py:25
+msgid "Desktop Notification"
+msgstr "Skrivebordspåmindelse"
+
+#: ../src/modules/DesktopNotification.py:25
+msgid "Display a desktop notification on track change"
+msgstr "Vis en skrivebordspåmindelse når nummeret skifter"
+
+#: ../src/modules/DesktopNotification.py:78
+#: ../src/modules/DesktopNotification.py:188
+msgid "Skip track"
+msgstr "Spring over nummer"
+
+#: ../src/modules/DesktopNotification.py:214
+msgid ""
+"This module displays a small popup window on your desktop when a new track "
+"starts."
+msgstr ""
+"Dette modul viser et småt pop op-vindue på dit skrivebord når et nyt nummer "
+"starter."
+
+#: ../src/modules/DesktopNotification.py:215
+msgid ""
+"If the Covers module is enabled, the popup also shows the album cover."
+msgstr "Hvis omslagsmodulet er slået til, vises også albummets omslag."
+
+#: ../src/modules/DesktopNotification.py:216
+msgid "Customizing the Notification"
+msgstr "Indstilling af påmindelsen"
+
+#: ../src/modules/DesktopNotification.py:217
+msgid ""
+"You can change the title and the body of the notification to any text you "
+"want. Before displaying the popup window, fields of the form {field} are "
+"replaced by their corresponding value. Available fields are:\n"
+"\n"
+msgstr ""
+"Du kan ændre titlen og teksten i en påmindelse til hvad du vil. Før pop op-"
+"vinduet vises, erstattes felter på formen {felt} med deres tilhørende værdi. "
+"Tilgængelige felter er:\n"
+"\n"
+
+#: ../src/modules/DesktopNotification.py:220
+msgid "Markup"
+msgstr "Opmærkning"
+
+#: ../src/modules/DesktopNotification.py:221
+msgid ""
+"You can use the Pango markup language to format the text. More information "
+"on that language is available on the following web page:"
+msgstr ""
+"Du kan bruge opmærkningssproget Pango til formatering af teksten. Mere "
+"information om sproget kan findes på følgende webside:"
+
+#: ../src/modules/StatusbarTitlebar.py:47
+msgid "[paused]"
+msgstr "[pause]"
 
 #: ../src/modules/Covers.py:28
 msgid "Covers"
@@ -315,58 +330,42 @@ msgstr ""
 "brugeromslag for et givet nummer, vil dette blive brugt. Ellers hentes et "
 "omslag fra nettet."
 
-#: ../src/modules/DesktopNotification.py:25
-msgid "Desktop Notification"
-msgstr "Skrivebordspåmindelse"
+#: ../src/modules/Tracktree.py:367
+msgid "Save playlist"
+msgstr "Gem afspilningsliste"
 
-#: ../src/modules/DesktopNotification.py:25
-msgid "Display a desktop notification on track change"
-msgstr "Vis en skrivebordspåmindelse når nummeret skifter"
+#: ../src/modules/Tracktree.py:416
+msgid "Clear Playlist"
+msgstr "Ryd afspilningslisten"
 
-#: ../src/modules/DesktopNotification.py:78
-#: ../src/modules/DesktopNotification.py:188
-msgid "Skip track"
-msgstr "Spring over nummer"
+#: ../src/modules/Equalizer.py:24
+msgid "Equalizer"
+msgstr "Equalizer"
 
-#: ../src/modules/DesktopNotification.py:214
-msgid ""
-"This module displays a small popup window on your desktop when a new track "
-"starts."
-msgstr ""
-"Dette modul viser et småt pop op-vindue på dit skrivebord når et nyt nummer "
-"starter."
+#: ../src/modules/Equalizer.py:24
+msgid "Tune the level of the frequency bands"
+msgstr "Justér niveauet på frekvensbåndene"
 
-#: ../src/modules/DesktopNotification.py:215
-msgid "If the Covers module is enabled, the popup also shows the album cover."
-msgstr "Hvis omslagsmodulet er slået til, vises også albummets omslag."
+#: ../src/modules/Equalizer.py:125 ../src/modules/Equalizer.py:213
+#: ../src/modules/Equalizer.py:226
+msgid "Custom"
+msgstr "Brugerdefineret"
 
-#: ../src/modules/DesktopNotification.py:216
-msgid "Customizing the Notification"
-msgstr "Indstilling af påmindelsen"
+#: ../src/modules/Equalizer.py:166
+msgid "Save levels"
+msgstr "Gem niveauer"
 
-#: ../src/modules/DesktopNotification.py:217
-msgid ""
-"You can change the title and the body of the notification to any text you "
-"want. Before displaying the popup window, fields of the form {field} are "
-"replaced by their corresponding value. Available fields are:\n"
-"\n"
-msgstr ""
-"Du kan ændre titlen og teksten i en påmindelse til hvad du vil. Før pop op-"
-"vinduet vises, erstattes felter på formen {felt} med deres tilhørende værdi. "
-"Tilgængelige felter er:\n"
-"\n"
+#: ../src/modules/Equalizer.py:177
+msgid "Load levels"
+msgstr "Indlæs niveauer"
 
-#: ../src/modules/DesktopNotification.py:220
-msgid "Markup"
-msgstr "Opmærkning"
+#: ../src/modules/Equalizer.py:204
+msgid "Could not load the file"
+msgstr "Kunne ikke indlæse filen"
 
-#: ../src/modules/DesktopNotification.py:221
-msgid ""
-"You can use the Pango markup language to format the text. More information "
-"on that language is available on the following web page:"
-msgstr ""
-"Du kan bruge opmærkningssproget Pango til formatering af teksten. Mere "
-"information om sproget kan findes på følgende webside:"
+#: ../src/modules/Equalizer.py:204
+msgid "The format of the file is incorrect."
+msgstr "Denne fil har et forkert format."
 
 #: ../src/tools/consts.py:94
 msgid "Unknown Genre"
@@ -464,6 +463,20 @@ msgstr "Spil det næste nummer"
 msgid "Play the previous track"
 msgstr "Spil det forrige nummer"
 
+#~ msgid ""
+#~ "This dialog box shows the list of available modules, which are small pieces "
+#~ "of code that add some functionnalities to the application. You can "
+#~ "enable/disable a module by checking/unchecking the check box in front of it. "
+#~ "Note that some modules (e.g., the File Explorer) cannot be disabled."
+#~ msgstr ""
+#~ "Denne dialogboks viser en liste med de tilgængelige moduler, som er små "
+#~ "stykker kode som tilføjer funktionalitet til programmet. Du kan slå et modul "
+#~ "til eller fra ved at bruge checkboksen foran det. Bemærk at nogle moduler "
+#~ "(for eksempel File Explorer) kan ikke slås fra."
+
+#~ msgid "Choose a folder"
+#~ msgstr "Vælg en mappe"
+
 #~ msgid "The name is incorrect"
 #~ msgstr "Navnet er forkert"
 
@@ -474,23 +487,13 @@ msgstr "Spil det forrige nummer"
 #~ "Dette navn er ikke tilladt.\n"
 #~ "Vælg venligst et andet."
 
+#, python-format
 #~ msgid ""
 #~ "The character %s is not allowed.\n"
 #~ "Please use another name."
 #~ msgstr ""
 #~ "Tegnet %s er ikke tilladt.\n"
 #~ "Brug venligst et andet navn."
-
-#~ msgid ""
-#~ "This dialog box shows the list of available modules, which are small "
-#~ "pieces of code that add some functionnalities to the application. You can "
-#~ "enable/disable a module by checking/unchecking the check box in front of "
-#~ "it. Note that some modules (e.g., the File Explorer) cannot be disabled."
-#~ msgstr ""
-#~ "Denne dialogboks viser en liste med de tilgængelige moduler, som er små "
-#~ "stykker kode som tilføjer funktionalitet til programmet. Du kan slå et "
-#~ "modul til eller fra ved at bruge checkboksen foran det. Bemærk at nogle "
-#~ "moduler (for eksempel File Explorer) kan ikke slås fra."
 
 #~ msgid "File Explorer"
 #~ msgstr "File Explorer"
@@ -508,15 +511,15 @@ msgstr "Spil det forrige nummer"
 #~ msgstr "Om kodeord og lagringssikkerhed"
 
 #~ msgid ""
-#~ "If you use Gnome, it is safe to store your password since the Gnome "
-#~ "keyring is used."
+#~ "If you use Gnome, it is safe to store your password since the Gnome keyring "
+#~ "is used."
 #~ msgstr ""
-#~ "Hvis du bruger Gnome, er det sikkert at gemme dit kodeord, da Gnome "
-#~ "Keyring bliver brugt."
+#~ "Hvis du bruger Gnome, er det sikkert at gemme dit kodeord, da Gnome Keyring "
+#~ "bliver brugt."
 
 #~ msgid ""
-#~ "If you do not use Gnome, beware that, although not stored as clear text, "
-#~ "an attacker <i>could</i> retrieve it."
+#~ "If you do not use Gnome, beware that, although not stored as clear text, an "
+#~ "attacker <i>could</i> retrieve it."
 #~ msgstr ""
 #~ "Hvis du ikke bruger Gnome, vær da opmærksom på, at selvom kodeordet ikke "
 #~ "bliver gemt i ren tekst, så <i>kan</i> en uvedkommende få adgang til det."
@@ -586,20 +589,20 @@ msgstr "Spil det forrige nummer"
 #~ "This module detects any running instant messenger and updates your status "
 #~ "with regards to the track you are listening to. Supported messengers are:"
 #~ msgstr ""
-#~ "Dette modul opdaterer din status i et kørende Instant Messenger program "
-#~ "med data fra det nummer du lytter til. Understøttede IM-programmer er:"
+#~ "Dette modul opdaterer din status i et kørende Instant Messenger program med "
+#~ "data fra det nummer du lytter til. Understøttede IM-programmer er:"
 
 #~ msgid "Customizing the Status"
 #~ msgstr "Tilpasser Status"
 
 #~ msgid ""
-#~ "You can set the status to any text you want. Before setting it, the "
-#~ "module replaces all fields of the form {field} by their corresponding "
-#~ "value. Available fields are:"
+#~ "You can set the status to any text you want. Before setting it, the module "
+#~ "replaces all fields of the form {field} by their corresponding value. "
+#~ "Available fields are:"
 #~ msgstr ""
 #~ "Du kan indstille statusteksten til hvadsomhelst. Før den indstilles "
-#~ "erstatter modulet alle felter med formen {felt} med dets tilhørende "
-#~ "værdi. De tilgængelige felter er:"
+#~ "erstatter modulet alle felter med formen {felt} med dets tilhørende værdi. "
+#~ "De tilgængelige felter er:"
 
 #~ msgid "Sanitization"
 #~ msgstr "Oprydning"
@@ -607,13 +610,13 @@ msgstr "Spil det forrige nummer"
 #~ msgid ""
 #~ "You can define some words that to sanitize before using them to set your "
 #~ "status. In this case, the middle characters of matching words is "
-#~ "automatically replaced with asterisks (e.g., \"Metallica - Live S**t "
-#~ "Binge & Purge\"). Put one word per line."
+#~ "automatically replaced with asterisks (e.g., \"Metallica - Live S**t Binge & "
+#~ "Purge\"). Put one word per line."
 #~ msgstr ""
-#~ "Du kan definere nogle ord som skal opryddes før de indstilles som status. "
-#~ "I dette tilfælde erstattes de midterste bogstaver i et matchende ord "
-#~ "automatisk med stjerner (eksempelvis \"Metallica - Live S**t Binge & Purge"
-#~ "\"). Put ét ord per linie."
+#~ "Du kan definere nogle ord som skal opryddes før de indstilles som status. I "
+#~ "dette tilfælde erstattes de midterste bogstaver i et matchende ord "
+#~ "automatisk med stjerner (eksempelvis \"Metallica - Live S**t Binge & "
+#~ "Purge\"). Put ét ord per linie."
 
 #~ msgid "Keep your Last.fm profile up to date"
 #~ msgstr "Hold din Last.fm-profil opdateret."
