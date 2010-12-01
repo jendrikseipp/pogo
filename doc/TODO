@@ -3,6 +3,8 @@
 0.4:
 O Stop after current album / track (Playlist context menu entry)
 O When track is added from nautilus etc. start track if not already playing
+O Use multiprocessing for searching
+O Add search shortcut
 
 0.x:
 O Save playlist periodically to prevent losing it during a shutdown
@@ -12,7 +14,7 @@ O Shuffle
 O Repeat
 O Playlist loading (Only add tracks in playlist not added anyways)
 O Add Zeitgeist module (check rhythmbox and banshee first)
-O Sound Indicator
+O Sound Indicator (https://github.com/sunng87/Exaile-Soundmenu-Indicator)
 
 
 === Features that will MAYBE be implemented ===
