@@ -111,9 +111,9 @@ class Search(modules.ThreadedModule):
         
     def cache(self):
         ''' Cache results for a faster first search '''
-        for index, path in enumerate(self.paths, 1):
+        for index, path in enumerate(self.paths):
             # Cache dirs one by one after a small timeout 
-            gobject.timeout_add_seconds(5 * index, self.search_dir, path, \
+            gobject.timeout_add_seconds(5 * (index+1), self.search_dir, path, \
                                         'caching_files')
 
 
