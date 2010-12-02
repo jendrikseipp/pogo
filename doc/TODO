@@ -4,6 +4,7 @@
 O Stop after current album / track (Playlist context menu entry)
 O When track is added from nautilus etc. start track if not already playing
 O Use multiprocessing for searching
+O Stop search, when user clears field or enters new search phrase
 O Add search shortcut
 
 0.x:

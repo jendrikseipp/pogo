@@ -1,8 +1,8 @@
  Pogo NEWS
 ==============
 
- 0.3 "I go hard, I go home" ()
-==========
+ 0.3 "I go hard, I go home" (2010-12-01)
+========================================
 * Search for tracks in the music folders (Directories below separator)
 * Searching supports * and ? wildcards
 * Let users add and hide directories in file browser
@@ -11,6 +11,7 @@
 * Fix Loading files from commandline (make paths absolute)
 * Fix: Save playlist also when files have been added on the commandline
 * Fix: With compiz the first cover is only shown after the window is redrawn
+* Updated Translations
 
 
  0.2 "I hold the candle while you dance upon the flame" (2010-10-21)

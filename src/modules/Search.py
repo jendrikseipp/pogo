@@ -37,7 +37,7 @@ search_text = _('Search in your music folders')
 MOD_INFO = ('Search', ('Search'), search_text, [], True, False)
 MOD_NAME = MOD_INFO[modules.MODINFO_NAME]
 
-MIN_CHARS = 2
+MIN_CHARS = 1
 
 
 
@@ -71,7 +71,7 @@ class Search(modules.ThreadedModule):
         Remove subpaths of parent directories
         '''
         def same_case_bold(match):
-            return '<b>%s</b>' % match.group(0)
+            return 'STARTBOLD%sENDBOLD' % match.group(0)
             
         def get_name(path):
             # Remove the search path from the name
@@ -80,9 +80,12 @@ class Search(modules.ThreadedModule):
             else:
                 name = path.replace(search_path, '')
             name = name.strip('/')
-            name = tools.htmlEscape(name)
+            
             for regex in regexes:
                 name = regex.sub(same_case_bold, unicode(name))
+            
+            name = tools.htmlEscape(name)
+            name = name.replace('STARTBOLD', '<b>').replace('ENDBOLD', '</b>')
             return name
         
         dirs = []
@@ -108,9 +111,9 @@ class Search(modules.ThreadedModule):
         
     def cache(self):
         ''' Cache results for a faster first search '''
-        for index, path in enumerate(self.paths, 1):
+        for index, path in enumerate(self.paths):
             # Cache dirs one by one after a small timeout 
-            gobject.timeout_add_seconds(5 * index, self.search_dir, path, \
+            gobject.timeout_add_seconds(5 * (index+1), self.search_dir, path, \
                                         'caching_files')
 
 
