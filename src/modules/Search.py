@@ -183,7 +183,7 @@ class Search(modules.ThreadedModule):
         
     #------- GTK handlers ----------------
     
-    def on_key_pressed(widget, event):
+    def on_key_pressed(self, widget, event):
         """
         Let search box grab the focus when "Ctrl-F" is hit
         """
