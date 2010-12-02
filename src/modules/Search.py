@@ -40,6 +40,13 @@ MOD_NAME = MOD_INFO[modules.MODINFO_NAME]
 MIN_CHARS = 1
 
 
+def get_regex(part):
+    quantifiers = ['?', '*']
+    pattern = re.escape(unicode(part))
+    for quantifier in quantifiers:
+        pattern = pattern.replace('\\' + quantifier, '.' + quantifier)
+    return re.compile(pattern, re.IGNORECASE)
+    
 
 class Search(modules.ThreadedModule):
 
@@ -60,11 +67,30 @@ class Search(modules.ThreadedModule):
         for part in query.split():
             cmd.extend(['-iwholename', '*%s*' % part])
         logging.info('Searching with command: %s' % ' '.join(cmd))
-        output = subprocess.Popen(cmd, stdout=subprocess.PIPE).communicate()[0]
-        output = sorted(output.splitlines(), key=lambda path: path.lower())
-        logging.info('Results for %s: %s' % (query, len(output)))
+        search = subprocess.Popen(cmd, stdout=subprocess.PIPE)
+        self.searches.append(search)
+        output, errors = search.communicate()
+        if search.returncode < 0:
+            # Process was killed
+            return None
+        output = sorted(output.splitlines(), key=str.lower)
+        logging.info('Results for %s in %s: %s' % (query, dir, len(output)))
         return output
         
+        
+    def stop_searches(self):
+        # The kill() method was introduced in python2.6
+        self.should_stop = True
+        
+        if not hasattr(subprocess.Popen, 'kill'):
+            self.searches = []
+            return
+            
+        for search in self.searches:
+            if search.returncode is None:
+                search.kill()
+        self.searches = []
+            
         
     def filter_results(self, results, search_path, regexes):
         '''
@@ -91,6 +117,9 @@ class Search(modules.ThreadedModule):
         dirs = []
         files = []
         for path in results:
+            if self.should_stop:
+                return ([], [])
+                
             # Check if this is only a subpath of a directory already handled
             is_subpath = False
             for dir in dirs:
@@ -111,6 +140,7 @@ class Search(modules.ThreadedModule):
         
     def cache(self):
         ''' Cache results for a faster first search '''
+        return
         for index, path in enumerate(self.paths):
             # Cache dirs one by one after a small timeout 
             gobject.timeout_add_seconds(5 * (index+1), self.search_dir, path, \
@@ -148,19 +178,16 @@ class Search(modules.ThreadedModule):
         # Add search shortcut
         main_win = wTree.get_widget('win-main')
         main_win.connect('key-press-event', self.on_key_pressed)
+        self.searchbox.grab_focus()
         
         self.paths = []
         
-        self.searchbox.grab_focus()
+        self.searches = []
+        self.should_stop = False
         
         
     def onSearch(self, query):
-        def get_regex(part):
-            quantifiers = ['?', '*']
-            pattern = re.escape(unicode(part))
-            for quantifier in quantifiers:
-                pattern = pattern.replace('\\' + quantifier, '.' + quantifier)
-            return re.compile(pattern, re.IGNORECASE)
+        self.should_stop = False
             
         regexes = [get_regex(part) for part in query.split()]
         
@@ -168,7 +195,16 @@ class Search(modules.ThreadedModule):
         all_files = []
         
         for dir in self.paths:
+            # Check if search has been aborted during filtering
+            if self.should_stop:
+                return
+                
             results = self.search_dir(dir, query)
+            
+            # Check if search has been aborted during searching
+            if results is None or self.should_stop:
+                return
+                
             dirs, files = self.filter_results(results, dir, regexes)
             all_dirs.extend(dirs)
             all_files.extend(files)
@@ -193,14 +229,15 @@ class Search(modules.ThreadedModule):
         if key_name == 'f' and ctrl_pressed:
             self.searchbox.grab_focus()
             return True
+            
         
     def on_searchbox_activate(self, entry):
+        self.stop_searches()
         query = self.searchbox.get_text().strip()
         if len(query) < MIN_CHARS:
             msg = 'Search term has to have at least %d characters' % MIN_CHARS
             logging.info(msg)
             return
-        #print repr(self.searchbox.get_text()), repr(self.searchbox.get_text().decode('utf-8'))
         query = self.searchbox.get_text().decode('utf-8')
         logging.info('Query: %s' % query)
         modules.postMsg(consts.MSG_EVT_SEARCH_START, {'query': query})
@@ -208,6 +245,7 @@ class Search(modules.ThreadedModule):
         
     def on_searchbox_changed(self, entry):
         if self.searchbox.get_text().strip() == '':
+            self.stop_searches()
             modules.postMsg(consts.MSG_EVT_SEARCH_RESET, {})
             
     
