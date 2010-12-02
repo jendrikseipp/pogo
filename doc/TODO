@@ -4,8 +4,9 @@
 O Stop after current album / track (Playlist context menu entry)
 O When track is added from nautilus etc. start track if not already playing
 O Use multiprocessing for searching
-O Stop search, when user clears field or enters new search phrase
+X Stop old search when user clears search field or enters new search phrase
 X Add search shortcut (Ctrl-F)
+X Do not allow adding root or home directory to music directories
 
 0.x:
 O Save playlist periodically to prevent losing it during a shutdown

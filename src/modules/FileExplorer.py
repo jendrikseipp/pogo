@@ -411,6 +411,10 @@ class FileExplorer(modules.Module):
         path = fileChooser.openDirectory(None, _('Choose a directory'))
         if path is not None:
             if os.path.isdir(path):
+                if path in self.static_paths:
+                    errorMsgBox(None, _('Invalid Folder'),
+                    _('You cannot add your root or home folder to the music directories'))
+                    return
                 self.add_dir(path)
                 music_paths = self.get_music_paths_from_tree()
                 modules.postMsg(consts.MSG_EVT_MUSIC_PATHS_CHANGED, {'paths': music_paths})
