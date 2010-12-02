@@ -136,7 +136,6 @@ class Search(modules.ThreadedModule):
         hbox3.set_property('homogeneous', True)
         hbox3.reorder_child(search_container, 0)
         
-        
         if hasattr(self.searchbox, 'set_icon_from_stock'):
             #self.searchbox.set_icon_from_stock(0, gtk.STOCK_FIND)
             #self.searchbox.set_icon_sensitive(0, False)
@@ -145,6 +144,10 @@ class Search(modules.ThreadedModule):
         
         self.searchbox.connect('activate', self.on_searchbox_activate)
         self.searchbox.connect('changed', self.on_searchbox_changed)
+        
+        # Add search shortcut
+        main_win = wTree.get_widget('win-main')
+        main_win.connect('key-press-event', self.on_key_pressed)
         
         self.paths = []
         
@@ -179,6 +182,17 @@ class Search(modules.ThreadedModule):
         
         
     #------- GTK handlers ----------------
+    
+    def on_key_pressed(widget, event):
+        """
+        Let search box grab the focus when "Ctrl-F" is hit
+        """
+        key_name = gtk.gdk.keyval_name(event.keyval)
+        modifiers = event.get_state()
+        ctrl_pressed = modifiers & gtk.gdk.CONTROL_MASK
+        if key_name == 'f' and ctrl_pressed:
+            self.searchbox.grab_focus()
+            return True
         
     def on_searchbox_activate(self, entry):
         query = self.searchbox.get_text().strip()
