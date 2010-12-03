@@ -6,11 +6,12 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: pogo\n"
-"Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
-"POT-Creation-Date: 2010-11-21 20:05+0100\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2010-12-03 13:45+0100\n"
 "PO-Revision-Date: 2010-11-07 13:29+0000\n"
 "Last-Translator: Xuacu Saturio <xuacusk8@gmail.com>\n"
 "Language-Team: Asturian <ast@li.org>\n"
+"Language: ast\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -101,8 +102,8 @@ msgid ""
 "This window shows the list of available modules. You can enable/disable a "
 "module by checking/unchecking the check box in front of it."
 msgstr ""
-"Esta ventana amuesa la llista de módulos disponibles. Pues "
-"activar/desactivar un módulu marcando/desmarcando la caxella xunto a él."
+"Esta ventana amuesa la llista de módulos disponibles. Pues activar/"
+"desactivar un módulu marcando/desmarcando la caxella xunto a él."
 
 #: ../src/gui/preferences.py:142
 msgid "Configuring a Module"
@@ -142,53 +143,71 @@ msgstr "Guetar nes tos carpetes de música"
 msgid "Send track information to the Zeitgeist service"
 msgstr "Unviar información de la pista al serviciu Zeitgeist"
 
-#: ../src/modules/FileExplorer.py:173
+#: ../src/modules/FileExplorer.py:180
 msgid "loading..."
 msgstr "cargando…"
 
-#: ../src/modules/FileExplorer.py:353
+#: ../src/modules/FileExplorer.py:364
 msgid "Append"
 msgstr "Añader"
 
-#: ../src/modules/FileExplorer.py:372
+#: ../src/modules/FileExplorer.py:389
 msgid "Add music folder"
 msgstr "Añader carpeta de música"
 
-#: ../src/modules/FileExplorer.py:384
+#: ../src/modules/FileExplorer.py:401
 msgid "Hide folder"
 msgstr "Anubrir carpeta"
 
-#: ../src/modules/FileExplorer.py:392
+#: ../src/modules/FileExplorer.py:409
 msgid "Open containing folder"
 msgstr "Abrir la carpeta contenedora"
 
-#: ../src/modules/FileExplorer.py:403
+#: ../src/modules/FileExplorer.py:420
 msgid "Choose a directory"
 msgstr "Escoyer un direutoriu"
 
-#: ../src/modules/FileExplorer.py:408
+#: ../src/modules/FileExplorer.py:424
+#, fuzzy
+msgid "Invalid Folder"
+msgstr "Anubrir carpeta"
+
+#: ../src/modules/FileExplorer.py:425
+msgid "You cannot add your root or home folder to the music directories"
+msgstr ""
+
+#: ../src/modules/FileExplorer.py:432
 msgid "This path does not exist"
 msgstr "Esti camín nun esiste"
 
-#: ../src/modules/FileExplorer.py:409
+#: ../src/modules/FileExplorer.py:433
 msgid "Please select an existing directory."
 msgstr "Tienes d'escoyer un direutoriu esistente"
 
-#: ../src/modules/FileExplorer.py:501
+#: ../src/modules/FileExplorer.py:529
 msgid "Albums"
 msgstr "Álbumes"
 
-#: ../src/modules/FileExplorer.py:503
+#: ../src/modules/FileExplorer.py:531
 msgid "Music"
 msgstr "Música"
 
-#: ../src/modules/FileExplorer.py:601
+#: ../src/modules/FileExplorer.py:606
+#, fuzzy
+msgid "Right-click to add music folders"
+msgstr "Añader carpeta de música"
+
+#: ../src/modules/FileExplorer.py:651
 msgid "Searching ..."
 msgstr "Guetando..."
 
-#: ../src/modules/FileExplorer.py:615
+#: ../src/modules/FileExplorer.py:666
 msgid "No tracks found"
 msgstr "Nun s'alcontraron pistes"
+
+#: ../src/modules/FileExplorer.py:668
+msgid "No music folders have been added"
+msgstr ""
 
 #: ../src/modules/__init__.py:75
 msgid "The following Python modules are not available:"
@@ -203,8 +222,7 @@ msgid "Restart required"
 msgstr "Fai falta reaniciar"
 
 #: ../src/modules/__init__.py:267
-msgid ""
-"You must restart the application for this modification to take effect."
+msgid "You must restart the application for this modification to take effect."
 msgstr "Tienes de reaniciar l'aplicación pa qu'esti cambéu tenga efectu."
 
 #: ../src/modules/CtrlPanel.py:190 ../src/modules/CtrlPanel.py:246
@@ -240,8 +258,7 @@ msgstr ""
 "Esti módulu amuesa un ventanu nel escritoriu cuando comienza una pista nueva."
 
 #: ../src/modules/DesktopNotification.py:215
-msgid ""
-"If the Covers module is enabled, the popup also shows the album cover."
+msgid "If the Covers module is enabled, the popup also shows the album cover."
 msgstr ""
 "Si ta activáu el módulu de Portaes, el ventanu amuesa tamién la portada del "
 "álbum."
@@ -322,11 +339,11 @@ msgstr ""
 "d'Internet. Nesti casu, si hai una portada d'usuariu pa la pista actual, "
 "s'usa esta. Si nun hai denguna, se descargará la portada."
 
-#: ../src/modules/Tracktree.py:367
+#: ../src/modules/Tracktree.py:372
 msgid "Save playlist"
 msgstr "Guardar llista de reproducción"
 
-#: ../src/modules/Tracktree.py:416
+#: ../src/modules/Tracktree.py:421
 msgid "Clear Playlist"
 msgstr "Llimpiar la llista de reproducción"
 

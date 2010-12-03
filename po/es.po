@@ -7,10 +7,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: decibel-audio-player\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-11-21 20:05+0100\n"
+"POT-Creation-Date: 2010-12-03 13:45+0100\n"
 "PO-Revision-Date: 2010-10-11 08:02+0000\n"
 "Last-Translator: Monkey <monkey.libre@gmail.com>\n"
 "Language-Team: Spanish <es@li.org>\n"
+"Language: es\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -144,52 +145,69 @@ msgstr ""
 msgid "Send track information to the Zeitgeist service"
 msgstr ""
 
-#: ../src/modules/FileExplorer.py:173
+#: ../src/modules/FileExplorer.py:180
 msgid "loading..."
 msgstr "cargando…"
 
-#: ../src/modules/FileExplorer.py:353
+#: ../src/modules/FileExplorer.py:364
 msgid "Append"
 msgstr ""
 
-#: ../src/modules/FileExplorer.py:372
+#: ../src/modules/FileExplorer.py:389
 msgid "Add music folder"
 msgstr ""
 
-#: ../src/modules/FileExplorer.py:384
+#: ../src/modules/FileExplorer.py:401
 msgid "Hide folder"
 msgstr ""
 
-#: ../src/modules/FileExplorer.py:392
+#: ../src/modules/FileExplorer.py:409
 msgid "Open containing folder"
 msgstr ""
 
-#: ../src/modules/FileExplorer.py:403
+#: ../src/modules/FileExplorer.py:420
 msgid "Choose a directory"
 msgstr ""
 
-#: ../src/modules/FileExplorer.py:408
+#: ../src/modules/FileExplorer.py:424
+#, fuzzy
+msgid "Invalid Folder"
+msgstr "Ruta inválida"
+
+#: ../src/modules/FileExplorer.py:425
+msgid "You cannot add your root or home folder to the music directories"
+msgstr ""
+
+#: ../src/modules/FileExplorer.py:432
 msgid "This path does not exist"
 msgstr "Esta ruta no existe"
 
-#: ../src/modules/FileExplorer.py:409
+#: ../src/modules/FileExplorer.py:433
 msgid "Please select an existing directory."
 msgstr "Por favor seleccione un directorio existente"
 
-#: ../src/modules/FileExplorer.py:501
+#: ../src/modules/FileExplorer.py:529
 msgid "Albums"
 msgstr "Álbumes"
 
-#: ../src/modules/FileExplorer.py:503
+#: ../src/modules/FileExplorer.py:531
 msgid "Music"
 msgstr ""
 
-#: ../src/modules/FileExplorer.py:601
+#: ../src/modules/FileExplorer.py:606
+msgid "Right-click to add music folders"
+msgstr ""
+
+#: ../src/modules/FileExplorer.py:651
 msgid "Searching ..."
 msgstr ""
 
-#: ../src/modules/FileExplorer.py:615
+#: ../src/modules/FileExplorer.py:666
 msgid "No tracks found"
+msgstr ""
+
+#: ../src/modules/FileExplorer.py:668
+msgid "No music folders have been added"
 msgstr ""
 
 #: ../src/modules/__init__.py:75
@@ -205,10 +223,8 @@ msgid "Restart required"
 msgstr ""
 
 #: ../src/modules/__init__.py:267
-msgid ""
-"You must restart the application for this modification to take effect."
-msgstr ""
-"Debe reiniciar la aplicación para que esta modificación tenga efecto."
+msgid "You must restart the application for this modification to take effect."
+msgstr "Debe reiniciar la aplicación para que esta modificación tenga efecto."
 
 #: ../src/modules/CtrlPanel.py:190 ../src/modules/CtrlPanel.py:246
 msgid "Pause the current track"
@@ -244,8 +260,7 @@ msgstr ""
 "nueva."
 
 #: ../src/modules/DesktopNotification.py:215
-msgid ""
-"If the Covers module is enabled, the popup also shows the album cover."
+msgid "If the Covers module is enabled, the popup also shows the album cover."
 msgstr ""
 
 #: ../src/modules/DesktopNotification.py:216
@@ -331,11 +346,11 @@ msgstr ""
 "existe para la pista actual, ésta se usa. Si no hay ninguna, la caratula "
 "será descargada."
 
-#: ../src/modules/Tracktree.py:367
+#: ../src/modules/Tracktree.py:372
 msgid "Save playlist"
 msgstr "Guardar lista de reproducción"
 
-#: ../src/modules/Tracktree.py:416
+#: ../src/modules/Tracktree.py:421
 msgid "Clear Playlist"
 msgstr "Limpiar lista de reproducción"
 
@@ -465,16 +480,17 @@ msgid "Play the previous track"
 msgstr "Reproducir la última pista"
 
 #~ msgid ""
-#~ "This dialog box shows the list of available modules, which are small pieces "
-#~ "of code that add some functionnalities to the application. You can "
-#~ "enable/disable a module by checking/unchecking the check box in front of it. "
-#~ "Note that some modules (e.g., the File Explorer) cannot be disabled."
+#~ "This dialog box shows the list of available modules, which are small "
+#~ "pieces of code that add some functionnalities to the application. You can "
+#~ "enable/disable a module by checking/unchecking the check box in front of "
+#~ "it. Note that some modules (e.g., the File Explorer) cannot be disabled."
 #~ msgstr ""
-#~ "Este cuadro de diálogo muestra la lista de módulos disponibles, los cuales "
-#~ "son pequeñas piezas de código que agregan algunas funcionalidades a la "
-#~ "aplicación. Puede activar/desactivar un módulo marcando/desmarcando el "
-#~ "cuadro de verificación en el frente de éste. Tenga en cuenta que algunos "
-#~ "módulos (ej. el Explorador de archivos) no pueden ser desactivados."
+#~ "Este cuadro de diálogo muestra la lista de módulos disponibles, los "
+#~ "cuales son pequeñas piezas de código que agregan algunas funcionalidades "
+#~ "a la aplicación. Puede activar/desactivar un módulo marcando/desmarcando "
+#~ "el cuadro de verificación en el frente de éste. Tenga en cuenta que "
+#~ "algunos módulos (ej. el Explorador de archivos) no pueden ser "
+#~ "desactivados."
 
 #~ msgid "Choose a folder"
 #~ msgstr "Elija una carpeta"
@@ -489,7 +505,6 @@ msgstr "Reproducir la última pista"
 #~ "Este nombre no es permitido.\n"
 #~ "Por favor use otro."
 
-#, python-format
 #~ msgid ""
 #~ "The character %s is not allowed.\n"
 #~ "Please use another name."
@@ -503,7 +518,6 @@ msgstr "Reproducir la última pista"
 #~ msgid "Browse your file system"
 #~ msgstr "Explorar tu sistema de archivos"
 
-#, python-format
 #~ msgid "One track in playlist  [%(length)s]"
 #~ msgid_plural "%(count)u tracks in playlist  [%(length)s]"
 #~ msgstr[0] "Una pista en la lista de reproducción  [%(length)s]"
@@ -532,15 +546,15 @@ msgstr "Reproducir la última pista"
 #~ msgstr "Acerca del almacenaje seguro de claves"
 
 #~ msgid ""
-#~ "If you use Gnome, it is safe to store your password since the Gnome keyring "
-#~ "is used."
+#~ "If you use Gnome, it is safe to store your password since the Gnome "
+#~ "keyring is used."
 #~ msgstr ""
-#~ "Si usa GNOME, es seguro almacenar su clave ya que se usa el gestor de claves "
-#~ "de GNOME."
+#~ "Si usa GNOME, es seguro almacenar su clave ya que se usa el gestor de "
+#~ "claves de GNOME."
 
 #~ msgid ""
-#~ "If you do not use Gnome, beware that, although not stored as clear text, an "
-#~ "attacker <i>could</i> retrieve it."
+#~ "If you do not use Gnome, beware that, although not stored as clear text, "
+#~ "an attacker <i>could</i> retrieve it."
 #~ msgstr ""
 #~ "Si no usa GNOME tenga en cuenta que, aunque no guarde la clave en texto "
 #~ "plano, un atacante <i>podría</i> conseguirla."
@@ -554,7 +568,8 @@ msgstr "Reproducir la última pista"
 #~ msgid ""
 #~ "You will be able to add this root folder again later on if you wish so."
 #~ msgstr ""
-#~ "Usted podrá añadir esta carpeta raíz nuevamente más adelante si así lo desea."
+#~ "Usted podrá añadir esta carpeta raíz nuevamente más adelante si así lo "
+#~ "desea."
 
 #~ msgid "Remove the selected entry?"
 #~ msgstr "¿Eliminar la entrada seleccionada?"
@@ -678,21 +693,21 @@ msgstr "Reproducir la última pista"
 #~ "This module detects any running instant messenger and updates your status "
 #~ "with regards to the track you are listening to. Supported messengers are:"
 #~ msgstr ""
-#~ "Este modulo detecta cualquier cliente de mensajería instantánea corriendo y "
-#~ "actualiza su estado relativo a la pista que usted esté escuchando. \r\n"
+#~ "Este modulo detecta cualquier cliente de mensajería instantánea corriendo "
+#~ "y actualiza su estado relativo a la pista que usted esté escuchando. \r\n"
 #~ "Los clientes de mensajería soportados son:"
 
 #~ msgid "Customizing the Status"
 #~ msgstr "Personalizar el Estado"
 
 #~ msgid ""
-#~ "You can set the status to any text you want. Before setting it, the module "
-#~ "replaces all fields of the form {field} by their corresponding value. "
-#~ "Available fields are:"
+#~ "You can set the status to any text you want. Before setting it, the "
+#~ "module replaces all fields of the form {field} by their corresponding "
+#~ "value. Available fields are:"
 #~ msgstr ""
 #~ "Puede configurar el estado a cualquier texto que desee. Antes de "
-#~ "configurarlo, el módulo reemplaza todos los campos de la forma {campo} a sus "
-#~ "valores correspondientes. Campos disponibles:"
+#~ "configurarlo, el módulo reemplaza todos los campos de la forma {campo} a "
+#~ "sus valores correspondientes. Campos disponibles:"
 
 #~ msgid "Sanitization"
 #~ msgstr "Higienización"
@@ -700,11 +715,11 @@ msgstr "Reproducir la última pista"
 #~ msgid ""
 #~ "You can define some words that to sanitize before using them to set your "
 #~ "status. In this case, the middle characters of matching words is "
-#~ "automatically replaced with asterisks (e.g., \"Metallica - Live S**t Binge & "
-#~ "Purge\"). Put one word per line."
+#~ "automatically replaced with asterisks (e.g., \"Metallica - Live S**t "
+#~ "Binge & Purge\"). Put one word per line."
 #~ msgstr ""
-#~ "Puedes definir algunas palabras para higienizar antes de usarlas para poner "
-#~ "tu estado. En este caso, los caracteres en el medio de las palabras "
+#~ "Puedes definir algunas palabras para higienizar antes de usarlas para "
+#~ "poner tu estado. En este caso, los caracteres en el medio de las palabras "
 #~ "coincidentes son reemplazadas automáticamente por asteriscos (ej. "
 #~ "\"Metallica - Live S**t Bing & Purge\"). Pon una palabra por línea."
 
@@ -742,8 +757,8 @@ msgstr "Reproducir la última pista"
 #~ "The directory is scanned for media files. This can take some time.\n"
 #~ "Please wait."
 #~ msgstr ""
-#~ "Se examina el directorio buscando buscando archivos multimedios. Esto puede "
-#~ "tomar un tiempo.\n"
+#~ "Se examina el directorio buscando buscando archivos multimedios. Esto "
+#~ "puede tomar un tiempo.\n"
 #~ "Por favor, espere."
 
 #~ msgid "Scanning directories (one track found)"
@@ -769,7 +784,8 @@ msgstr "Reproducir la última pista"
 #~ msgid "Remove the selected library?"
 #~ msgstr "¿Eliminar la biblioteca seleccionada?"
 
-#~ msgid "You will be able to recreate these libraries later on if you wish so."
+#~ msgid ""
+#~ "You will be able to recreate these libraries later on if you wish so."
 #~ msgstr "Podrá recrear estas bibliotecas más adelante si así lo desea."
 
 #~ msgid "Remove all selected libraries?"
@@ -783,9 +799,10 @@ msgstr "Reproducir la última pista"
 #~ "structure of your drive. Loading tracks is also faster because their tags "
 #~ "are already known and do not have to be read again."
 #~ msgstr ""
-#~ "Este módulo organiza tus archivos multimedios por etiquetas en vez de usar "
-#~ "la estructura de carpetas de tu disco. La carga de pistas es también más "
-#~ "rápida porque sus etiquetas ya se conocen y es necesario leerlas otra vez."
+#~ "Este módulo organiza tus archivos multimedios por etiquetas en vez de "
+#~ "usar la estructura de carpetas de tu disco. La carga de pistas es también "
+#~ "más rápida porque sus etiquetas ya se conocen y es necesario leerlas otra "
+#~ "vez."
 
 #~ msgid ""
 #~ "When you add a new library, you have to give the full path to the root "
@@ -793,18 +810,19 @@ msgstr "Reproducir la última pista"
 #~ "recursively scanned for media files whose tags are read and stored in a "
 #~ "database."
 #~ msgstr ""
-#~ "Cuando añade una biblioteca nueva, debe dar la ruta completa al directorio "
-#~ "raíz de esta biblioteca. Entonces, todos los directorios en esta ruta raíz "
-#~ "se examinarán recursivamente para archivos multimedios cuyas etiquetas se "
-#~ "han leído y almacenado en una base de datos."
+#~ "Cuando añade una biblioteca nueva, debe dar la ruta completa al "
+#~ "directorio raíz de esta biblioteca. Entonces, todos los directorios en "
+#~ "esta ruta raíz se examinarán recursivamente para archivos multimedios "
+#~ "cuyas etiquetas se han leído y almacenado en una base de datos."
 
 #~ msgid ""
-#~ "Upon refreshing a library, the file structure under the root directory and "
-#~ "all media files are scanned for changes, to update the database accordingly."
+#~ "Upon refreshing a library, the file structure under the root directory "
+#~ "and all media files are scanned for changes, to update the database "
+#~ "accordingly."
 #~ msgstr ""
-#~ "Al actualizar una biblioteca, la estructura de archivos bajo el directorio "
-#~ "raíz y todos los archivos multimedios son examinados en busca de cambios "
-#~ "para actualizar la base de datos en consecuencia."
+#~ "Al actualizar una biblioteca, la estructura de archivos bajo el "
+#~ "directorio raíz y todos los archivos multimedios son examinados en busca "
+#~ "de cambios para actualizar la base de datos en consecuencia."
 
 #~ msgid "Status Icon"
 #~ msgstr "Ícono de estado"
@@ -837,33 +855,31 @@ msgstr "Reproducir la última pista"
 #~ msgid "Clear CDDB cache?"
 #~ msgstr "¿Limpiar caché de CDDB?"
 
-#~ msgid "Invalid path"
-#~ msgstr "Ruta inválida"
-
 #~ msgid ""
-#~ "The path to the CD-ROM device is not valid. Please choose an existing path."
+#~ "The path to the CD-ROM device is not valid. Please choose an existing "
+#~ "path."
 #~ msgstr ""
 #~ "La ruta al dispositivo de CD-ROM no es válida. Por favor elija una ruta "
 #~ "válida."
 
 #~ msgid "This module lets you play audio discs from your CD-ROM device."
 #~ msgstr ""
-#~ "Éste módulo te permite reproducir discos de audio desde tu dispositivo de CD-"
-#~ "ROM."
+#~ "Éste módulo te permite reproducir discos de audio desde tu dispositivo de "
+#~ "CD-ROM."
 
 #~ msgid "Compact Disc Data Base (CDDB)"
 #~ msgstr "Base de Datos de Discos Compactos"
 
 #~ msgid ""
 #~ "Disc information, such as artist and album title, may be automatically "
-#~ "downloaded from an online database if you wish so. This information may also "
-#~ "be saved on your hard drive to avoid downloading it again the next time you "
-#~ "play the same disc."
+#~ "downloaded from an online database if you wish so. This information may "
+#~ "also be saved on your hard drive to avoid downloading it again the next "
+#~ "time you play the same disc."
 #~ msgstr ""
-#~ "La información del disco, tal como el artista y título del álbum, puede ser "
-#~ "descargada automáticamente desde una base de datos en línea si así lo desea. "
-#~ "Esta información puede ser guardada en su disco duro para evitar descargarla "
-#~ "nuevamente la próxima vez que reproduzca el mismo disco."
+#~ "La información del disco, tal como el artista y título del álbum, puede "
+#~ "ser descargada automáticamente desde una base de datos en línea si así lo "
+#~ "desea. Esta información puede ser guardada en su disco duro para evitar "
+#~ "descargarla nuevamente la próxima vez que reproduzca el mismo disco."
 
 #~ msgid "Status File"
 #~ msgstr "Archivo de estado"
@@ -872,7 +888,8 @@ msgstr "Reproducir la última pista"
 #~ msgstr "Generar un archivo texto con el estado actual"
 
 #~ msgid ""
-#~ "The path to the selected file is not valid. Please choose an existing path."
+#~ "The path to the selected file is not valid. Please choose an existing "
+#~ "path."
 #~ msgstr ""
 #~ "La ruta al archivo seleccionado no es válida. Por favor elija una ruta "
 #~ "existente."
@@ -881,10 +898,11 @@ msgstr "Reproducir la última pista"
 #~ msgstr "Elija un archivo"
 
 #~ msgid ""
-#~ "This module generates a text file with regards to the track currently played."
+#~ "This module generates a text file with regards to the track currently "
+#~ "played."
 #~ msgstr ""
-#~ "Este módulo genera un archivo de texto con información acerca de la pista en "
-#~ "reproducción."
+#~ "Este módulo genera un archivo de texto con información acerca de la pista "
+#~ "en reproducción."
 
 #~ msgid "Customizing the File"
 #~ msgstr "Personalizar el archivo"
@@ -895,9 +913,9 @@ msgstr "Reproducir la última pista"
 #~ "corresponding value. Available fields are:\n"
 #~ "\n"
 #~ msgstr ""
-#~ "Puedes cambiar el contenido del archivo a cualquier texto si así lo deseas. "
-#~ "Antes generar el archivo, los campos con la forma {campo} se reemplazan por "
-#~ "sus valores correspondientes. Los campos disponibles son:\n"
+#~ "Puedes cambiar el contenido del archivo a cualquier texto si así lo "
+#~ "deseas. Antes generar el archivo, los campos con la forma {campo} se "
+#~ "reemplazan por sus valores correspondientes. Los campos disponibles son:\n"
 #~ "\n"
 
 #~ msgid "<b>CDDB</b>"
@@ -935,7 +953,8 @@ msgstr "Reproducir la última pista"
 
 #~ msgid "Replace the playlist by the selection and start playback"
 #~ msgstr ""
-#~ "Reemplezar la lista de reproducción por la selección y comenzar a reproducir"
+#~ "Reemplezar la lista de reproducción por la selección y comenzar a "
+#~ "reproducir"
 
 #~ msgid "Rescan the audio disc"
 #~ msgstr "Examinar el disco de audio otra vez"

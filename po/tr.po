@@ -7,10 +7,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: decibel-audio-player\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-11-21 20:05+0100\n"
+"POT-Creation-Date: 2010-12-03 13:45+0100\n"
 "PO-Revision-Date: 2010-11-07 13:51+0000\n"
 "Last-Translator: Burak Ilgicioglu <Unknown>\n"
 "Language-Team: Turkish <tr@li.org>\n"
+"Language: tr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -144,53 +145,71 @@ msgstr "Müzik klasörlerinde ara"
 msgid "Send track information to the Zeitgeist service"
 msgstr "Şarkı bilgisini Zeitgeist cihazına yolla"
 
-#: ../src/modules/FileExplorer.py:173
+#: ../src/modules/FileExplorer.py:180
 msgid "loading..."
 msgstr "yükleniyor..."
 
-#: ../src/modules/FileExplorer.py:353
+#: ../src/modules/FileExplorer.py:364
 msgid "Append"
 msgstr "Sonuna Ekle"
 
-#: ../src/modules/FileExplorer.py:372
+#: ../src/modules/FileExplorer.py:389
 msgid "Add music folder"
 msgstr "Müzik klasörü ekle"
 
-#: ../src/modules/FileExplorer.py:384
+#: ../src/modules/FileExplorer.py:401
 msgid "Hide folder"
 msgstr "Klasörü gizle"
 
-#: ../src/modules/FileExplorer.py:392
+#: ../src/modules/FileExplorer.py:409
 msgid "Open containing folder"
 msgstr "İçinde bulunduğu klasörü aç"
 
-#: ../src/modules/FileExplorer.py:403
+#: ../src/modules/FileExplorer.py:420
 msgid "Choose a directory"
 msgstr "Bir klasör seçin"
 
-#: ../src/modules/FileExplorer.py:408
+#: ../src/modules/FileExplorer.py:424
+#, fuzzy
+msgid "Invalid Folder"
+msgstr "Klasörü gizle"
+
+#: ../src/modules/FileExplorer.py:425
+msgid "You cannot add your root or home folder to the music directories"
+msgstr ""
+
+#: ../src/modules/FileExplorer.py:432
 msgid "This path does not exist"
 msgstr "Hatalı dosya adresi"
 
-#: ../src/modules/FileExplorer.py:409
+#: ../src/modules/FileExplorer.py:433
 msgid "Please select an existing directory."
 msgstr "Lütfen var olan bir dizin seçin"
 
-#: ../src/modules/FileExplorer.py:501
+#: ../src/modules/FileExplorer.py:529
 msgid "Albums"
 msgstr "Albümler"
 
-#: ../src/modules/FileExplorer.py:503
+#: ../src/modules/FileExplorer.py:531
 msgid "Music"
 msgstr "Müzik"
 
-#: ../src/modules/FileExplorer.py:601
+#: ../src/modules/FileExplorer.py:606
+#, fuzzy
+msgid "Right-click to add music folders"
+msgstr "Müzik klasörü ekle"
+
+#: ../src/modules/FileExplorer.py:651
 msgid "Searching ..."
 msgstr "Aranıyor..."
 
-#: ../src/modules/FileExplorer.py:615
+#: ../src/modules/FileExplorer.py:666
 msgid "No tracks found"
 msgstr "Hiç şarkı bulunmadı"
+
+#: ../src/modules/FileExplorer.py:668
+msgid "No music folders have been added"
+msgstr ""
 
 #: ../src/modules/__init__.py:75
 msgid "The following Python modules are not available:"
@@ -206,8 +225,7 @@ msgid "Restart required"
 msgstr "Yeniden başlatma gerekiyor"
 
 #: ../src/modules/__init__.py:267
-msgid ""
-"You must restart the application for this modification to take effect."
+msgid "You must restart the application for this modification to take effect."
 msgstr ""
 "Uygulamadaki değişikliklerin aktif olması için programı yeniden "
 "başlatmalısınız."
@@ -245,8 +263,7 @@ msgstr ""
 "Bu modül yeni bir şarkı başladığında masaüstünüzde küçük pencere gösterir"
 
 #: ../src/modules/DesktopNotification.py:215
-msgid ""
-"If the Covers module is enabled, the popup also shows the album cover."
+msgid "If the Covers module is enabled, the popup also shows the album cover."
 msgstr ""
 "Eğer albüm kapakları modülü aktif ise yeni pencere albüm kapağını da "
 "gösterir."
@@ -327,16 +344,16 @@ msgid ""
 "case, if a user cover exists for the current track, it is used. If there is "
 "none, the cover is downloaded."
 msgstr ""
-"Albüm kapakları çalan şarkının etiketlerine göre internetten "
-"indirilebilir.Her zaman internet albüm kapaklarının kullanılmasını "
-"seçebilirsiniz. Bu durumda kullanıcı albüm kapağı varsa kullanılır, eğer "
-"yoksa internetten indirilir."
+"Albüm kapakları çalan şarkının etiketlerine göre internetten indirilebilir."
+"Her zaman internet albüm kapaklarının kullanılmasını seçebilirsiniz. Bu "
+"durumda kullanıcı albüm kapağı varsa kullanılır, eğer yoksa internetten "
+"indirilir."
 
-#: ../src/modules/Tracktree.py:367
+#: ../src/modules/Tracktree.py:372
 msgid "Save playlist"
 msgstr "Şarkı listesini kaydet"
 
-#: ../src/modules/Tracktree.py:416
+#: ../src/modules/Tracktree.py:421
 msgid "Clear Playlist"
 msgstr "Şarkı listesini temizle"
 
@@ -466,10 +483,10 @@ msgid "Play the previous track"
 msgstr "Önceki şarkıyı çal"
 
 #~ msgid ""
-#~ "This dialog box shows the list of available modules, which are small pieces "
-#~ "of code that add some functionnalities to the application. You can "
-#~ "enable/disable a module by checking/unchecking the check box in front of it. "
-#~ "Note that some modules (e.g., the File Explorer) cannot be disabled."
+#~ "This dialog box shows the list of available modules, which are small "
+#~ "pieces of code that add some functionnalities to the application. You can "
+#~ "enable/disable a module by checking/unchecking the check box in front of "
+#~ "it. Note that some modules (e.g., the File Explorer) cannot be disabled."
 #~ msgstr ""
 #~ "Bu iletişim kutusu olanaklı modüllerin listesini gösterir. Modüller "
 #~ "uygulamaya kimi beceriler ekleyen küçük kod parçalarıdır. Herhangi bir "
@@ -480,7 +497,6 @@ msgstr "Önceki şarkıyı çal"
 #~ msgid "Choose a folder"
 #~ msgstr "Bir klasör seçin"
 
-#, python-format
 #~ msgid ""
 #~ "The character %s is not allowed.\n"
 #~ "Please use another name."
@@ -501,15 +517,15 @@ msgstr "Önceki şarkıyı çal"
 #~ msgstr "Parola saklama güvenliği ile ilgili"
 
 #~ msgid ""
-#~ "If you use Gnome, it is safe to store your password since the Gnome keyring "
-#~ "is used."
+#~ "If you use Gnome, it is safe to store your password since the Gnome "
+#~ "keyring is used."
 #~ msgstr ""
-#~ "Eğer Gnome kullanıyorsanız, parolalarınızı güvenle saklayabilirsiniz çünkü "
-#~ "Gnome Keyring aracını kullanılmaktadır."
+#~ "Eğer Gnome kullanıyorsanız, parolalarınızı güvenle saklayabilirsiniz "
+#~ "çünkü Gnome Keyring aracını kullanılmaktadır."
 
 #~ msgid ""
-#~ "If you do not use Gnome, beware that, although not stored as clear text, an "
-#~ "attacker <i>could</i> retrieve it."
+#~ "If you do not use Gnome, beware that, although not stored as clear text, "
+#~ "an attacker <i>could</i> retrieve it."
 #~ msgstr ""
 #~ "Eğer Gnome kullanmıyorsanız, bilmelisiniz ki , her ne kadar basit metin "
 #~ "dosyası olarak saklanmasa da bir saldırgan <i>ele geçirebilir</i>"

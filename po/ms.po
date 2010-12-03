@@ -6,11 +6,12 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: pogo\n"
-"Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
-"POT-Creation-Date: 2010-11-21 20:05+0100\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2010-12-03 13:45+0100\n"
 "PO-Revision-Date: 2010-10-25 02:27+0000\n"
 "Last-Translator: abuyop <Unknown>\n"
 "Language-Team: Malay <ms@li.org>\n"
+"Language: ms\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -101,8 +102,8 @@ msgid ""
 "This window shows the list of available modules. You can enable/disable a "
 "module by checking/unchecking the check box in front of it."
 msgstr ""
-"Tetingkap ini memaparkan senarai modul yang ada. Anda boleh "
-"benarkan/lumpuhkan modul dengan menanda/nyahtanda kekotak tanda dihadapannya."
+"Tetingkap ini memaparkan senarai modul yang ada. Anda boleh benarkan/"
+"lumpuhkan modul dengan menanda/nyahtanda kekotak tanda dihadapannya."
 
 #: ../src/gui/preferences.py:142
 msgid "Configuring a Module"
@@ -142,52 +143,68 @@ msgstr ""
 msgid "Send track information to the Zeitgeist service"
 msgstr "Hantar maklumat trek kepada perkhidmatan Zeitgest"
 
-#: ../src/modules/FileExplorer.py:173
+#: ../src/modules/FileExplorer.py:180
 msgid "loading..."
 msgstr "memuatkan..."
 
-#: ../src/modules/FileExplorer.py:353
+#: ../src/modules/FileExplorer.py:364
 msgid "Append"
 msgstr "Tambah"
 
-#: ../src/modules/FileExplorer.py:372
+#: ../src/modules/FileExplorer.py:389
 msgid "Add music folder"
 msgstr ""
 
-#: ../src/modules/FileExplorer.py:384
+#: ../src/modules/FileExplorer.py:401
 msgid "Hide folder"
 msgstr ""
 
-#: ../src/modules/FileExplorer.py:392
+#: ../src/modules/FileExplorer.py:409
 msgid "Open containing folder"
 msgstr ""
 
-#: ../src/modules/FileExplorer.py:403
+#: ../src/modules/FileExplorer.py:420
 msgid "Choose a directory"
 msgstr ""
 
-#: ../src/modules/FileExplorer.py:408
+#: ../src/modules/FileExplorer.py:424
+msgid "Invalid Folder"
+msgstr ""
+
+#: ../src/modules/FileExplorer.py:425
+msgid "You cannot add your root or home folder to the music directories"
+msgstr ""
+
+#: ../src/modules/FileExplorer.py:432
 msgid "This path does not exist"
 msgstr "Laluan ini tidak wujud"
 
-#: ../src/modules/FileExplorer.py:409
+#: ../src/modules/FileExplorer.py:433
 msgid "Please select an existing directory."
 msgstr "Sila pilih direktori yang ada."
 
-#: ../src/modules/FileExplorer.py:501
+#: ../src/modules/FileExplorer.py:529
 msgid "Albums"
 msgstr "Album"
 
-#: ../src/modules/FileExplorer.py:503
+#: ../src/modules/FileExplorer.py:531
 msgid "Music"
 msgstr "Muzik"
 
-#: ../src/modules/FileExplorer.py:601
+#: ../src/modules/FileExplorer.py:606
+msgid "Right-click to add music folders"
+msgstr ""
+
+#: ../src/modules/FileExplorer.py:651
 msgid "Searching ..."
 msgstr ""
 
-#: ../src/modules/FileExplorer.py:615
+#: ../src/modules/FileExplorer.py:666
 msgid "No tracks found"
+msgstr ""
+
+#: ../src/modules/FileExplorer.py:668
+msgid "No music folders have been added"
 msgstr ""
 
 #: ../src/modules/__init__.py:75
@@ -203,8 +220,7 @@ msgid "Restart required"
 msgstr "Mula semula aplikasi diperlukan"
 
 #: ../src/modules/__init__.py:267
-msgid ""
-"You must restart the application for this modification to take effect."
+msgid "You must restart the application for this modification to take effect."
 msgstr ""
 "Anda mesti memulakan semula aplikasi supaya pengubahsuaian ini berkesan."
 
@@ -242,8 +258,7 @@ msgstr ""
 "baru bermula."
 
 #: ../src/modules/DesktopNotification.py:215
-msgid ""
-"If the Covers module is enabled, the popup also shows the album cover."
+msgid "If the Covers module is enabled, the popup also shows the album cover."
 msgstr ""
 "Jika modul Kulit Album dibenarkan, tetingkap timbul juga akan memaparkannya."
 
@@ -329,11 +344,11 @@ msgstr ""
 "kulit album pengguna sudah wujud bagi trek semasa, ia akan digunakan. Jika "
 "tiada, kulit album akan dimuat turun."
 
-#: ../src/modules/Tracktree.py:367
+#: ../src/modules/Tracktree.py:372
 msgid "Save playlist"
 msgstr "Simpan senarai main"
 
-#: ../src/modules/Tracktree.py:416
+#: ../src/modules/Tracktree.py:421
 msgid "Clear Playlist"
 msgstr "Kosongkan Senarai Main"
 
@@ -400,8 +415,7 @@ msgstr "Sentiasa utamakan kulit album pengguna"
 
 #: ../res/Covers.glade.h:4
 msgid "Don't download covers when there is a user one"
-msgstr ""
-"Jangan muat turun kulit album jika terdapat kulit album dari pengguna"
+msgstr "Jangan muat turun kulit album jika terdapat kulit album dari pengguna"
 
 #: ../res/Covers.glade.h:5
 msgid "Download covers"

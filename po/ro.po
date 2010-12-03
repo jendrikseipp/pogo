@@ -7,10 +7,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: decibel-audio-player\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-11-21 20:05+0100\n"
+"POT-Creation-Date: 2010-12-03 13:45+0100\n"
 "PO-Revision-Date: 2010-10-07 11:33+0000\n"
 "Last-Translator: Jendrik Seipp <jendrikseipp@web.de>\n"
 "Language-Team: Romanian <ro@li.org>\n"
+"Language: ro\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -141,52 +142,69 @@ msgstr ""
 msgid "Send track information to the Zeitgeist service"
 msgstr ""
 
-#: ../src/modules/FileExplorer.py:173
+#: ../src/modules/FileExplorer.py:180
 msgid "loading..."
 msgstr "se încarcă..."
 
-#: ../src/modules/FileExplorer.py:353
+#: ../src/modules/FileExplorer.py:364
 msgid "Append"
 msgstr ""
 
-#: ../src/modules/FileExplorer.py:372
+#: ../src/modules/FileExplorer.py:389
 msgid "Add music folder"
 msgstr ""
 
-#: ../src/modules/FileExplorer.py:384
+#: ../src/modules/FileExplorer.py:401
 msgid "Hide folder"
 msgstr ""
 
-#: ../src/modules/FileExplorer.py:392
+#: ../src/modules/FileExplorer.py:409
 msgid "Open containing folder"
 msgstr ""
 
-#: ../src/modules/FileExplorer.py:403
+#: ../src/modules/FileExplorer.py:420
 msgid "Choose a directory"
 msgstr ""
 
-#: ../src/modules/FileExplorer.py:408
+#: ../src/modules/FileExplorer.py:424
+#, fuzzy
+msgid "Invalid Folder"
+msgstr "Cale invalidă"
+
+#: ../src/modules/FileExplorer.py:425
+msgid "You cannot add your root or home folder to the music directories"
+msgstr ""
+
+#: ../src/modules/FileExplorer.py:432
 msgid "This path does not exist"
 msgstr "Această cale nu există"
 
-#: ../src/modules/FileExplorer.py:409
+#: ../src/modules/FileExplorer.py:433
 msgid "Please select an existing directory."
 msgstr "Vă rugăm selectaţi un director existent."
 
-#: ../src/modules/FileExplorer.py:501
+#: ../src/modules/FileExplorer.py:529
 msgid "Albums"
 msgstr ""
 
-#: ../src/modules/FileExplorer.py:503
+#: ../src/modules/FileExplorer.py:531
 msgid "Music"
 msgstr ""
 
-#: ../src/modules/FileExplorer.py:601
+#: ../src/modules/FileExplorer.py:606
+msgid "Right-click to add music folders"
+msgstr ""
+
+#: ../src/modules/FileExplorer.py:651
 msgid "Searching ..."
 msgstr ""
 
-#: ../src/modules/FileExplorer.py:615
+#: ../src/modules/FileExplorer.py:666
 msgid "No tracks found"
+msgstr ""
+
+#: ../src/modules/FileExplorer.py:668
+msgid "No music folders have been added"
 msgstr ""
 
 #: ../src/modules/__init__.py:75
@@ -202,8 +220,7 @@ msgid "Restart required"
 msgstr ""
 
 #: ../src/modules/__init__.py:267
-msgid ""
-"You must restart the application for this modification to take effect."
+msgid "You must restart the application for this modification to take effect."
 msgstr ""
 
 #: ../src/modules/CtrlPanel.py:190 ../src/modules/CtrlPanel.py:246
@@ -240,8 +257,7 @@ msgstr ""
 "momentul schimbării piesei"
 
 #: ../src/modules/DesktopNotification.py:215
-msgid ""
-"If the Covers module is enabled, the popup also shows the album cover."
+msgid "If the Covers module is enabled, the popup also shows the album cover."
 msgstr ""
 
 #: ../src/modules/DesktopNotification.py:216
@@ -322,11 +338,11 @@ msgid ""
 "none, the cover is downloaded."
 msgstr ""
 
-#: ../src/modules/Tracktree.py:367
+#: ../src/modules/Tracktree.py:372
 msgid "Save playlist"
 msgstr "Salvează lista de piese"
 
-#: ../src/modules/Tracktree.py:416
+#: ../src/modules/Tracktree.py:421
 msgid "Clear Playlist"
 msgstr ""
 
@@ -456,15 +472,15 @@ msgid "Play the previous track"
 msgstr "Redă piesa precedentă"
 
 #~ msgid ""
-#~ "This dialog box shows the list of available modules, which are small pieces "
-#~ "of code that add some functionnalities to the application. You can "
-#~ "enable/disable a module by checking/unchecking the check box in front of it. "
-#~ "Note that some modules (e.g., the File Explorer) cannot be disabled."
+#~ "This dialog box shows the list of available modules, which are small "
+#~ "pieces of code that add some functionnalities to the application. You can "
+#~ "enable/disable a module by checking/unchecking the check box in front of "
+#~ "it. Note that some modules (e.g., the File Explorer) cannot be disabled."
 #~ msgstr ""
-#~ "În acest meniu puteți găsi o lista completă a modulelor, adică bucăți de cod "
-#~ "care adaugă diverse funcții aplicației. Puteți activa/dezactiva un modul "
-#~ "prin selectarea/deselectarea casuței corespunzătoare.  Unele module (ex. "
-#~ "File Explorer) nu pot fi dezactivate."
+#~ "În acest meniu puteți găsi o lista completă a modulelor, adică bucăți de "
+#~ "cod care adaugă diverse funcții aplicației. Puteți activa/dezactiva un "
+#~ "modul prin selectarea/deselectarea casuței corespunzătoare.  Unele module "
+#~ "(ex. File Explorer) nu pot fi dezactivate."
 
 #~ msgid "Choose a folder"
 #~ msgstr "Alegeți un dosar"
@@ -479,7 +495,6 @@ msgstr "Redă piesa precedentă"
 #~ "Acest nume nu este permis.\n"
 #~ "Vă rugăm să folosiţi un alt nume."
 
-#, python-format
 #~ msgid ""
 #~ "The character %s is not allowed.\n"
 #~ "Please use another name."
@@ -513,18 +528,19 @@ msgstr "Redă piesa precedentă"
 #~ msgstr "Despre stocarea în siguranţă a parolei"
 
 #~ msgid ""
-#~ "If you use Gnome, it is safe to store your password since the Gnome keyring "
-#~ "is used."
+#~ "If you use Gnome, it is safe to store your password since the Gnome "
+#~ "keyring is used."
 #~ msgstr ""
 #~ "Dacă folosiți GNOME, este indicată stocare parolei, având în vedere că "
 #~ "utilizați inelul de chei Gnome."
 
 #~ msgid ""
-#~ "If you do not use Gnome, beware that, although not stored as clear text, an "
-#~ "attacker <i>could</i> retrieve it."
+#~ "If you do not use Gnome, beware that, although not stored as clear text, "
+#~ "an attacker <i>could</i> retrieve it."
 #~ msgstr ""
-#~ "Dacă nu folosiţi GNOME, trebuie sa ţineţi cont de faptul că, deşi parola nu "
-#~ "este stocată sub formă de text, un atacator <i>ar putea</i> să o acceseze"
+#~ "Dacă nu folosiţi GNOME, trebuie sa ţineţi cont de faptul că, deşi parola "
+#~ "nu este stocată sub formă de text, un atacator <i>ar putea</i> să o "
+#~ "acceseze"
 
 #~ msgid "Home"
 #~ msgstr "Acasă"
@@ -657,9 +673,9 @@ msgstr "Redă piesa precedentă"
 #~ msgstr "Peronalizaţi mesajul \"status\""
 
 #~ msgid ""
-#~ "You can set the status to any text you want. Before setting it, the module "
-#~ "replaces all fields of the form {field} by their corresponding value. "
-#~ "Available fields are:"
+#~ "You can set the status to any text you want. Before setting it, the "
+#~ "module replaces all fields of the form {field} by their corresponding "
+#~ "value. Available fields are:"
 #~ msgstr ""
 #~ "Puteți adauga status-ului Dvs orice text doriți. Înainte de a-l activa, "
 #~ "modulul înlocuiește toate cîmpurile din formularul {field} cu valorile "
@@ -720,7 +736,8 @@ msgstr "Redă piesa precedentă"
 #~ msgid "Remove the selected library?"
 #~ msgstr "Înlătur colecţia selectată?"
 
-#~ msgid "You will be able to recreate these libraries later on if you wish so."
+#~ msgid ""
+#~ "You will be able to recreate these libraries later on if you wish so."
 #~ msgstr "Aceste colecţii vor putea fi recreate ulterior"
 
 #~ msgid "Remove all selected libraries?"
@@ -735,10 +752,10 @@ msgstr "Redă piesa precedentă"
 #~ "recursively scanned for media files whose tags are read and stored in a "
 #~ "database."
 #~ msgstr ""
-#~ "Cînd se adaugă o librărie nouă, este necesar să se precizeze calea completă "
-#~ "spre directorul rădăcină al acesteia. În acest fel, toate directoarele "
-#~ "existente în rădăcină vor fi scanate recursiv pentru fișiere media a căror "
-#~ "etichetă va fi citită și introdusă în baza de date."
+#~ "Cînd se adaugă o librărie nouă, este necesar să se precizeze calea "
+#~ "completă spre directorul rădăcină al acesteia. În acest fel, toate "
+#~ "directoarele existente în rădăcină vor fi scanate recursiv pentru fișiere "
+#~ "media a căror etichetă va fi citită și introdusă în baza de date."
 
 #~ msgid "Add an icon to the notification area"
 #~ msgstr "Adaugă un icon în zona de notificare"
@@ -760,39 +777,37 @@ msgstr "Redă piesa precedentă"
 
 #~ msgid "This will remove all disc information stored on your hard drive."
 #~ msgstr ""
-#~ "Aceasta va înlătura toate informaţiile referitoare la disc stocate pe hard "
-#~ "drive"
+#~ "Aceasta va înlătura toate informaţiile referitoare la disc stocate pe "
+#~ "hard drive"
 
 #~ msgid "Clear CDDB cache?"
 #~ msgstr "Şterg memoria tampon CDDB?"
 
-#~ msgid "Invalid path"
-#~ msgstr "Cale invalidă"
-
 #~ msgid ""
-#~ "The path to the CD-ROM device is not valid. Please choose an existing path."
+#~ "The path to the CD-ROM device is not valid. Please choose an existing "
+#~ "path."
 #~ msgstr ""
-#~ "Calea spre unitatea optică CD-ROM nu este validă. Alegeți o cale existentă, "
-#~ "vă rog."
+#~ "Calea spre unitatea optică CD-ROM nu este validă. Alegeți o cale "
+#~ "existentă, vă rog."
 
 #~ msgid "This module lets you play audio discs from your CD-ROM device."
 #~ msgstr ""
-#~ "Acest modul vă permite să rulați discuri audio direct din unitatea optică CD-"
-#~ "ROM."
+#~ "Acest modul vă permite să rulați discuri audio direct din unitatea optică "
+#~ "CD-ROM."
 
 #~ msgid "Compact Disc Data Base (CDDB)"
 #~ msgstr "Baza de date cu compact disc-uri (BDCD)"
 
 #~ msgid ""
 #~ "Disc information, such as artist and album title, may be automatically "
-#~ "downloaded from an online database if you wish so. This information may also "
-#~ "be saved on your hard drive to avoid downloading it again the next time you "
-#~ "play the same disc."
+#~ "downloaded from an online database if you wish so. This information may "
+#~ "also be saved on your hard drive to avoid downloading it again the next "
+#~ "time you play the same disc."
 #~ msgstr ""
-#~ "Informații referitoare la disc (ex. numele artistului sau al pistei) pot fi "
-#~ "descărcate dintr-o bază de date aflată on-line. Pentru a evita descărcarea "
-#~ "aceleiași informații din nou în momentul redării repetate a pistei, datele "
-#~ "pot fi stocate pe hard drive."
+#~ "Informații referitoare la disc (ex. numele artistului sau al pistei) pot "
+#~ "fi descărcate dintr-o bază de date aflată on-line. Pentru a evita "
+#~ "descărcarea aceleiași informații din nou în momentul redării repetate a "
+#~ "pistei, datele pot fi stocate pe hard drive."
 
 #~ msgid "Status File"
 #~ msgstr "Statut fișier"

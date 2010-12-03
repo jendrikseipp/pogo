@@ -7,10 +7,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: decibel-audio-player\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-11-21 20:05+0100\n"
+"POT-Creation-Date: 2010-12-03 13:45+0100\n"
 "PO-Revision-Date: 2010-10-07 11:24+0000\n"
 "Last-Translator: ivan mikov <Unknown>\n"
 "Language-Team: Bulgarian <bg@li.org>\n"
+"Language: bg\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -140,52 +141,69 @@ msgstr ""
 msgid "Send track information to the Zeitgeist service"
 msgstr ""
 
-#: ../src/modules/FileExplorer.py:173
+#: ../src/modules/FileExplorer.py:180
 msgid "loading..."
 msgstr "зареждане…"
 
-#: ../src/modules/FileExplorer.py:353
+#: ../src/modules/FileExplorer.py:364
 msgid "Append"
 msgstr ""
 
-#: ../src/modules/FileExplorer.py:372
+#: ../src/modules/FileExplorer.py:389
 msgid "Add music folder"
 msgstr ""
 
-#: ../src/modules/FileExplorer.py:384
+#: ../src/modules/FileExplorer.py:401
 msgid "Hide folder"
 msgstr ""
 
-#: ../src/modules/FileExplorer.py:392
+#: ../src/modules/FileExplorer.py:409
 msgid "Open containing folder"
 msgstr ""
 
-#: ../src/modules/FileExplorer.py:403
+#: ../src/modules/FileExplorer.py:420
 msgid "Choose a directory"
 msgstr ""
 
-#: ../src/modules/FileExplorer.py:408
+#: ../src/modules/FileExplorer.py:424
+#, fuzzy
+msgid "Invalid Folder"
+msgstr "Невалиден път"
+
+#: ../src/modules/FileExplorer.py:425
+msgid "You cannot add your root or home folder to the music directories"
+msgstr ""
+
+#: ../src/modules/FileExplorer.py:432
 msgid "This path does not exist"
 msgstr "Този път не съществува"
 
-#: ../src/modules/FileExplorer.py:409
+#: ../src/modules/FileExplorer.py:433
 msgid "Please select an existing directory."
 msgstr "Моля изберете съществуваща директория"
 
-#: ../src/modules/FileExplorer.py:501
+#: ../src/modules/FileExplorer.py:529
 msgid "Albums"
 msgstr ""
 
-#: ../src/modules/FileExplorer.py:503
+#: ../src/modules/FileExplorer.py:531
 msgid "Music"
 msgstr ""
 
-#: ../src/modules/FileExplorer.py:601
+#: ../src/modules/FileExplorer.py:606
+msgid "Right-click to add music folders"
+msgstr ""
+
+#: ../src/modules/FileExplorer.py:651
 msgid "Searching ..."
 msgstr ""
 
-#: ../src/modules/FileExplorer.py:615
+#: ../src/modules/FileExplorer.py:666
 msgid "No tracks found"
+msgstr ""
+
+#: ../src/modules/FileExplorer.py:668
+msgid "No music folders have been added"
 msgstr ""
 
 #: ../src/modules/__init__.py:75
@@ -201,8 +219,7 @@ msgid "Restart required"
 msgstr "Изисква се рестартиране"
 
 #: ../src/modules/__init__.py:267
-msgid ""
-"You must restart the application for this modification to take effect."
+msgid "You must restart the application for this modification to take effect."
 msgstr "Трябва да рестартирате приложението за да се отрази промяната."
 
 #: ../src/modules/CtrlPanel.py:190 ../src/modules/CtrlPanel.py:246
@@ -239,8 +256,7 @@ msgstr ""
 "нов запис."
 
 #: ../src/modules/DesktopNotification.py:215
-msgid ""
-"If the Covers module is enabled, the popup also shows the album cover."
+msgid "If the Covers module is enabled, the popup also shows the album cover."
 msgstr ""
 
 #: ../src/modules/DesktopNotification.py:216
@@ -308,11 +324,11 @@ msgid ""
 "none, the cover is downloaded."
 msgstr ""
 
-#: ../src/modules/Tracktree.py:367
+#: ../src/modules/Tracktree.py:372
 msgid "Save playlist"
 msgstr "Запазване на списъка"
 
-#: ../src/modules/Tracktree.py:416
+#: ../src/modules/Tracktree.py:421
 msgid "Clear Playlist"
 msgstr "Изчисти списъка за изпълнение"
 
@@ -442,16 +458,16 @@ msgid "Play the previous track"
 msgstr "Изпълни предходният запис"
 
 #~ msgid ""
-#~ "This dialog box shows the list of available modules, which are small pieces "
-#~ "of code that add some functionnalities to the application. You can "
-#~ "enable/disable a module by checking/unchecking the check box in front of it. "
-#~ "Note that some modules (e.g., the File Explorer) cannot be disabled."
+#~ "This dialog box shows the list of available modules, which are small "
+#~ "pieces of code that add some functionnalities to the application. You can "
+#~ "enable/disable a module by checking/unchecking the check box in front of "
+#~ "it. Note that some modules (e.g., the File Explorer) cannot be disabled."
 #~ msgstr ""
-#~ "Този прозорец показва списък с достъпните модули, които са малки части код, "
-#~ "добавящи нови функционалности към приложението. Можете да "
-#~ "включвате/изключвате модула, поставяйки/премахвайки отметката срещу него. "
-#~ "Обърнете внимание, че някои модули (например, Файловият браузър) не могат да "
-#~ "бъдат изключени."
+#~ "Този прозорец показва списък с достъпните модули, които са малки части "
+#~ "код, добавящи нови функционалности към приложението. Можете да включвате/"
+#~ "изключвате модула, поставяйки/премахвайки отметката срещу него. Обърнете "
+#~ "внимание, че някои модули (например, Файловият браузър) не могат да бъдат "
+#~ "изключени."
 
 #~ msgid "Choose a folder"
 #~ msgstr "Изберете папка"
@@ -466,7 +482,6 @@ msgstr "Изпълни предходният запис"
 #~ "Това име не е разрешено.\n"
 #~ "Моля използвайте някое друго."
 
-#, python-format
 #~ msgid ""
 #~ "The character %s is not allowed.\n"
 #~ "Please use another name."
@@ -503,18 +518,18 @@ msgstr "Изпълни предходният запис"
 #~ msgstr "За сигурността на съхранение на паролата"
 
 #~ msgid ""
-#~ "If you use Gnome, it is safe to store your password since the Gnome keyring "
-#~ "is used."
+#~ "If you use Gnome, it is safe to store your password since the Gnome "
+#~ "keyring is used."
 #~ msgstr ""
-#~ "Ако използвате Gnome е безопасно да запазите вашата парола, щом се използва "
-#~ "ключодържателя на Gnome."
+#~ "Ако използвате Gnome е безопасно да запазите вашата парола, щом се "
+#~ "използва ключодържателя на Gnome."
 
 #~ msgid ""
-#~ "If you do not use Gnome, beware that, although not stored as clear text, an "
-#~ "attacker <i>could</i> retrieve it."
+#~ "If you do not use Gnome, beware that, although not stored as clear text, "
+#~ "an attacker <i>could</i> retrieve it."
 #~ msgstr ""
-#~ "Ако не използвате Gnome внимавайте, макар че паролите не се съхраняват като "
-#~ "обикновен текст, то някой <i>може</i> да я извлече."
+#~ "Ако не използвате Gnome внимавайте, макар че паролите не се съхраняват "
+#~ "като обикновен текст, то някой <i>може</i> да я извлече."
 
 #~ msgid "Home"
 #~ msgstr "Начало"
@@ -631,20 +646,20 @@ msgstr "Изпълни предходният запис"
 #~ "This module detects any running instant messenger and updates your status "
 #~ "with regards to the track you are listening to. Supported messengers are:"
 #~ msgstr ""
-#~ "Този модул засича всеки работещ IM клиент и обновява вашия статус съобразно "
-#~ "записа, който слушате. Поддържани IM клиенти са:"
+#~ "Този модул засича всеки работещ IM клиент и обновява вашия статус "
+#~ "съобразно записа, който слушате. Поддържани IM клиенти са:"
 
 #~ msgid "Customizing the Status"
 #~ msgstr "Настройка на статуса"
 
 #~ msgid ""
-#~ "You can set the status to any text you want. Before setting it, the module "
-#~ "replaces all fields of the form {field} by their corresponding value. "
-#~ "Available fields are:"
+#~ "You can set the status to any text you want. Before setting it, the "
+#~ "module replaces all fields of the form {field} by their corresponding "
+#~ "value. Available fields are:"
 #~ msgstr ""
-#~ "Можете да изберете всякакъв текст за статуса. Преди да го поставите, модулът "
-#~ "заменя всички полета от вида {поле} с техните съответни значения. Достъпни "
-#~ "са следните полета:"
+#~ "Можете да изберете всякакъв текст за статуса. Преди да го поставите, "
+#~ "модулът заменя всички полета от вида {поле} с техните съответни значения. "
+#~ "Достъпни са следните полета:"
 
 #~ msgid "Sanitization"
 #~ msgstr "Прочистване"
@@ -652,13 +667,13 @@ msgstr "Изпълни предходният запис"
 #~ msgid ""
 #~ "You can define some words that to sanitize before using them to set your "
 #~ "status. In this case, the middle characters of matching words is "
-#~ "automatically replaced with asterisks (e.g., \"Metallica - Live S**t Binge & "
-#~ "Purge\"). Put one word per line."
+#~ "automatically replaced with asterisks (e.g., \"Metallica - Live S**t "
+#~ "Binge & Purge\"). Put one word per line."
 #~ msgstr ""
 #~ "Можете да определите някои думи, които да бъдат прочистени преди да ги "
-#~ "използвате при поставянето на вашия статус. В този случай средните букви на "
-#~ "съвпадащите думи автоматично се заменят със звездичка (напр. \"Metallica - "
-#~ "Live S**t Binge & Purge\"). Поставете по една дума на ред."
+#~ "използвате при поставянето на вашия статус. В този случай средните букви "
+#~ "на съвпадащите думи автоматично се заменят със звездичка (напр. "
+#~ "\"Metallica - Live S**t Binge & Purge\"). Поставете по една дума на ред."
 
 #~ msgid "Keep your Last.fm profile up to date"
 #~ msgstr "Обновява вашият Last.fm профил"
@@ -723,13 +738,16 @@ msgstr "Изпълни предходният запис"
 #~ msgstr "записи"
 
 #~ msgid "You will be able to recreate this library later on if you wish so."
-#~ msgstr "По-късно ще може да създадете отново тази библиотека, ако пожелаете."
+#~ msgstr ""
+#~ "По-късно ще може да създадете отново тази библиотека, ако пожелаете."
 
 #~ msgid "Remove the selected library?"
 #~ msgstr "Премахване на избраната библиотека?"
 
-#~ msgid "You will be able to recreate these libraries later on if you wish so."
-#~ msgstr "По-късно ще може да създадете отново тези библиотеки, ако пожелаете."
+#~ msgid ""
+#~ "You will be able to recreate these libraries later on if you wish so."
+#~ msgstr ""
+#~ "По-късно ще може да създадете отново тези библиотеки, ако пожелаете."
 
 #~ msgid "Remove all selected libraries?"
 #~ msgstr "Премахване на всички избрани библиотеки?"
@@ -764,37 +782,37 @@ msgstr "Изпълни предходният запис"
 #~ msgid "Clear CDDB cache?"
 #~ msgstr "Изчистване на CDDB кеша?"
 
-#~ msgid "Invalid path"
-#~ msgstr "Невалиден път"
-
 #~ msgid ""
-#~ "The path to the CD-ROM device is not valid. Please choose an existing path."
+#~ "The path to the CD-ROM device is not valid. Please choose an existing "
+#~ "path."
 #~ msgstr ""
 #~ "Пътя до CD-ROM устройството е невалиден. Моля изберете съществуващ път."
 
 #~ msgid "This module lets you play audio discs from your CD-ROM device."
 #~ msgstr ""
-#~ "Този модул позволява пускането на аудио дискове от вашето CD-ROM устройство."
+#~ "Този модул позволява пускането на аудио дискове от вашето CD-ROM "
+#~ "устройство."
 
 #~ msgid "Compact Disc Data Base (CDDB)"
 #~ msgstr "База данни за компакт дискове (CDDB)"
 
 #~ msgid ""
 #~ "Disc information, such as artist and album title, may be automatically "
-#~ "downloaded from an online database if you wish so. This information may also "
-#~ "be saved on your hard drive to avoid downloading it again the next time you "
-#~ "play the same disc."
+#~ "downloaded from an online database if you wish so. This information may "
+#~ "also be saved on your hard drive to avoid downloading it again the next "
+#~ "time you play the same disc."
 #~ msgstr ""
-#~ "Ако желаете, информацията за диска, като името на изпълнителя и албума, може "
-#~ "да бъде автоматично изтеглена от онлайн база данни. Тази информация може, "
-#~ "също така, да бъде запазена на вашия хард диск, за да се избегне повторното "
-#~ "изтегляне следващият път когато прослушвате същия диск."
+#~ "Ако желаете, информацията за диска, като името на изпълнителя и албума, "
+#~ "може да бъде автоматично изтеглена от онлайн база данни. Тази информация "
+#~ "може, също така, да бъде запазена на вашия хард диск, за да се избегне "
+#~ "повторното изтегляне следващият път когато прослушвате същия диск."
 
 #~ msgid "Generate a text file with the current status"
 #~ msgstr "Създай текстови файл с текущия статус"
 
 #~ msgid ""
-#~ "The path to the selected file is not valid. Please choose an existing path."
+#~ "The path to the selected file is not valid. Please choose an existing "
+#~ "path."
 #~ msgstr "Пътя до избраният файл е невалиден. Моля изберете съществуващ път."
 
 #~ msgid "Choose a file"

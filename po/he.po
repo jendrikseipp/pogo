@@ -7,10 +7,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: decibel-audio-player\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-11-21 20:05+0100\n"
+"POT-Creation-Date: 2010-12-03 13:45+0100\n"
 "PO-Revision-Date: 2010-10-11 20:14+0000\n"
 "Last-Translator: Yaron <sh.yaron@gmail.com>\n"
 "Language-Team: Hebrew <he@li.org>\n"
+"Language: he\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -139,52 +140,69 @@ msgstr ""
 msgid "Send track information to the Zeitgeist service"
 msgstr ""
 
-#: ../src/modules/FileExplorer.py:173
+#: ../src/modules/FileExplorer.py:180
 msgid "loading..."
 msgstr "טוען..."
 
-#: ../src/modules/FileExplorer.py:353
+#: ../src/modules/FileExplorer.py:364
 msgid "Append"
 msgstr ""
 
-#: ../src/modules/FileExplorer.py:372
+#: ../src/modules/FileExplorer.py:389
 msgid "Add music folder"
 msgstr ""
 
-#: ../src/modules/FileExplorer.py:384
+#: ../src/modules/FileExplorer.py:401
 msgid "Hide folder"
 msgstr ""
 
-#: ../src/modules/FileExplorer.py:392
+#: ../src/modules/FileExplorer.py:409
 msgid "Open containing folder"
 msgstr ""
 
-#: ../src/modules/FileExplorer.py:403
+#: ../src/modules/FileExplorer.py:420
 msgid "Choose a directory"
 msgstr ""
 
-#: ../src/modules/FileExplorer.py:408
+#: ../src/modules/FileExplorer.py:424
+#, fuzzy
+msgid "Invalid Folder"
+msgstr "נתיב שגוי"
+
+#: ../src/modules/FileExplorer.py:425
+msgid "You cannot add your root or home folder to the music directories"
+msgstr ""
+
+#: ../src/modules/FileExplorer.py:432
 msgid "This path does not exist"
 msgstr "נתיב זה אינו קיים"
 
-#: ../src/modules/FileExplorer.py:409
+#: ../src/modules/FileExplorer.py:433
 msgid "Please select an existing directory."
 msgstr "נא בחרו בתיקייה קיימת."
 
-#: ../src/modules/FileExplorer.py:501
+#: ../src/modules/FileExplorer.py:529
 msgid "Albums"
 msgstr ""
 
-#: ../src/modules/FileExplorer.py:503
+#: ../src/modules/FileExplorer.py:531
 msgid "Music"
 msgstr ""
 
-#: ../src/modules/FileExplorer.py:601
+#: ../src/modules/FileExplorer.py:606
+msgid "Right-click to add music folders"
+msgstr ""
+
+#: ../src/modules/FileExplorer.py:651
 msgid "Searching ..."
 msgstr ""
 
-#: ../src/modules/FileExplorer.py:615
+#: ../src/modules/FileExplorer.py:666
 msgid "No tracks found"
+msgstr ""
+
+#: ../src/modules/FileExplorer.py:668
+msgid "No music folders have been added"
 msgstr ""
 
 #: ../src/modules/__init__.py:75
@@ -200,8 +218,7 @@ msgid "Restart required"
 msgstr ""
 
 #: ../src/modules/__init__.py:267
-msgid ""
-"You must restart the application for this modification to take effect."
+msgid "You must restart the application for this modification to take effect."
 msgstr ""
 
 #: ../src/modules/CtrlPanel.py:190 ../src/modules/CtrlPanel.py:246
@@ -233,12 +250,10 @@ msgstr "דלג על רצועה"
 msgid ""
 "This module displays a small popup window on your desktop when a new track "
 "starts."
-msgstr ""
-"מודול זה מציג חלונית קטנה על גבי שולחן העבודה כאשר מתנגנת רצועה חדשה."
+msgstr "מודול זה מציג חלונית קטנה על גבי שולחן העבודה כאשר מתנגנת רצועה חדשה."
 
 #: ../src/modules/DesktopNotification.py:215
-msgid ""
-"If the Covers module is enabled, the popup also shows the album cover."
+msgid "If the Covers module is enabled, the popup also shows the album cover."
 msgstr ""
 
 #: ../src/modules/DesktopNotification.py:216
@@ -321,11 +336,11 @@ msgstr ""
 "וקיימת עטיפת משתמש עבור הרצועה הנוכחית, בה יעשה שמוש. במידה ואין, העטיפה "
 "תורד מהאינטרנט."
 
-#: ../src/modules/Tracktree.py:367
+#: ../src/modules/Tracktree.py:372
 msgid "Save playlist"
 msgstr "שמור את רשימת־ההשמעה"
 
-#: ../src/modules/Tracktree.py:416
+#: ../src/modules/Tracktree.py:421
 msgid "Clear Playlist"
 msgstr ""
 
@@ -455,10 +470,10 @@ msgid "Play the previous track"
 msgstr "נגן את הרצועה הקודמת"
 
 #~ msgid ""
-#~ "This dialog box shows the list of available modules, which are small pieces "
-#~ "of code that add some functionnalities to the application. You can "
-#~ "enable/disable a module by checking/unchecking the check box in front of it. "
-#~ "Note that some modules (e.g., the File Explorer) cannot be disabled."
+#~ "This dialog box shows the list of available modules, which are small "
+#~ "pieces of code that add some functionnalities to the application. You can "
+#~ "enable/disable a module by checking/unchecking the check box in front of "
+#~ "it. Note that some modules (e.g., the File Explorer) cannot be disabled."
 #~ msgstr ""
 #~ "בתיבת דו שיח זו מוצגים המודולים הזמינים, אשר הינם חלקים קטנים של קוד "
 #~ "המוסיפים תכונות נוספות ליישום. ניתן לבטל/להפעיל מודול על ידי סימון/ביטול "
@@ -478,7 +493,6 @@ msgstr "נגן את הרצועה הקודמת"
 #~ "אין להשתמש בשם זה\n"
 #~ "נא בחרו באחד אחר."
 
-#, python-format
 #~ msgid ""
 #~ "The character %s is not allowed.\n"
 #~ "Please use another name."
@@ -492,7 +506,6 @@ msgstr "נגן את הרצועה הקודמת"
 #~ msgid "Browse your file system"
 #~ msgstr "סייר במערכת הקבצים שלך"
 
-#, python-format
 #~ msgid "One track in playlist  [%(length)s]"
 #~ msgid_plural "%(count)u tracks in playlist  [%(length)s]"
 #~ msgstr[0] "רצועה אחת ברשימת ההשמעה  [%(length)s]"
@@ -521,18 +534,18 @@ msgstr "נגן את הרצועה הקודמת"
 #~ msgstr "אודות אבטחה בשמירת סיסמאות"
 
 #~ msgid ""
-#~ "If you use Gnome, it is safe to store your password since the Gnome keyring "
-#~ "is used."
+#~ "If you use Gnome, it is safe to store your password since the Gnome "
+#~ "keyring is used."
 #~ msgstr ""
-#~ "במידה והנך משתמש ב־GNOME, תוכל לשמור סיסמאות בבטחה כיוון שהפעולה מתבצעת דרך "
-#~ "מחזיק המפתחות של GNOME."
+#~ "במידה והנך משתמש ב־GNOME, תוכל לשמור סיסמאות בבטחה כיוון שהפעולה מתבצעת "
+#~ "דרך מחזיק המפתחות של GNOME."
 
 #~ msgid ""
-#~ "If you do not use Gnome, beware that, although not stored as clear text, an "
-#~ "attacker <i>could</i> retrieve it."
+#~ "If you do not use Gnome, beware that, although not stored as clear text, "
+#~ "an attacker <i>could</i> retrieve it."
 #~ msgstr ""
-#~ "במידה ואינך משתמש ב־GNOME, היה ער לעובדה כי למרות שהסיסמה אינה נשמרת כטקסט "
-#~ "מובהק, מפצח סיסמאות <i>יוכל</i> לאחזר אותה."
+#~ "במידה ואינך משתמש ב־GNOME, היה ער לעובדה כי למרות שהסיסמה אינה נשמרת "
+#~ "כטקסט מובהק, מפצח סיסמאות <i>יוכל</i> לאחזר אותה."
 
 #~ msgid "Home"
 #~ msgstr "דף הבית"
@@ -669,12 +682,12 @@ msgstr "נגן את הרצועה הקודמת"
 #~ msgstr "התאמת הודעת המצב"
 
 #~ msgid ""
-#~ "You can set the status to any text you want. Before setting it, the module "
-#~ "replaces all fields of the form {field} by their corresponding value. "
-#~ "Available fields are:"
+#~ "You can set the status to any text you want. Before setting it, the "
+#~ "module replaces all fields of the form {field} by their corresponding "
+#~ "value. Available fields are:"
 #~ msgstr ""
-#~ "תוכלו להגדיר את הודעת המצב לכל טקסט בו תחפצו. לפני הגדרת הטקסט, המודול מחליף "
-#~ "את כל השדות שצורתם {שדה} בערכם התואם. השדות הזמינים הינם:"
+#~ "תוכלו להגדיר את הודעת המצב לכל טקסט בו תחפצו. לפני הגדרת הטקסט, המודול "
+#~ "מחליף את כל השדות שצורתם {שדה} בערכם התואם. השדות הזמינים הינם:"
 
 #~ msgid "Sanitization"
 #~ msgstr "חיטוי"
@@ -682,12 +695,12 @@ msgstr "נגן את הרצועה הקודמת"
 #~ msgid ""
 #~ "You can define some words that to sanitize before using them to set your "
 #~ "status. In this case, the middle characters of matching words is "
-#~ "automatically replaced with asterisks (e.g., \"Metallica - Live S**t Binge & "
-#~ "Purge\"). Put one word per line."
+#~ "automatically replaced with asterisks (e.g., \"Metallica - Live S**t "
+#~ "Binge & Purge\"). Put one word per line."
 #~ msgstr ""
 #~ "תוכלו לבחור מספר מילים שיעברו \"חיטוי\" לפני שישמשו כחלק מהודעת המצב שלך. "
-#~ "במקרה זה, האותיות המרכזיות של המילים התואמות יוחלפו בכוכביות (לדוגמה: \"הדג "
-#~ "נחש - היא מקבלת ז*ן\"). הזינו מילה אחת לשורה."
+#~ "במקרה זה, האותיות המרכזיות של המילים התואמות יוחלפו בכוכביות (לדוגמה: "
+#~ "\"הדג נחש - היא מקבלת ז*ן\"). הזינו מילה אחת לשורה."
 
 #~ msgid "Keep your Last.fm profile up to date"
 #~ msgstr "שמור על פרופיל ה־Last.fm שלך עדכני"
@@ -749,7 +762,8 @@ msgstr "נגן את הרצועה הקודמת"
 #~ msgid "Remove the selected library?"
 #~ msgstr "האם להסיר את הספרייה הנבחרת?"
 
-#~ msgid "You will be able to recreate these libraries later on if you wish so."
+#~ msgid ""
+#~ "You will be able to recreate these libraries later on if you wish so."
 #~ msgstr "תוכל ליצור תיקיות אלו מחדש מאוחר יותר אם תחפוץ בכך."
 
 #~ msgid "Remove all selected libraries?"
@@ -763,8 +777,9 @@ msgstr "נגן את הרצועה הקודמת"
 #~ "structure of your drive. Loading tracks is also faster because their tags "
 #~ "are already known and do not have to be read again."
 #~ msgstr ""
-#~ "מודול זה מארגן את קבצי המדיה שלך במקום להשתמש במבנה הקבצים של הכונן. טעינת "
-#~ "הרצועות מהירה יותר כיוון שתגיותיהן כבר ידועות ואין צורך לקרוא אותן שוב."
+#~ "מודול זה מארגן את קבצי המדיה שלך במקום להשתמש במבנה הקבצים של הכונן. "
+#~ "טעינת הרצועות מהירה יותר כיוון שתגיותיהן כבר ידועות ואין צורך לקרוא אותן "
+#~ "שוב."
 
 #~ msgid ""
 #~ "When you add a new library, you have to give the full path to the root "
@@ -772,13 +787,14 @@ msgstr "נגן את הרצועה הקודמת"
 #~ "recursively scanned for media files whose tags are read and stored in a "
 #~ "database."
 #~ msgstr ""
-#~ "בעת הוספת ספרייה חדשה, יהיה עליך לציין את הנתיב המלא מתיקיית העל של ספרייה "
-#~ "זו. ואז, כל התיקיות תחת נתיב תיקיית על זו יסרקו באופן נסוג עבור קבצי מדיה "
-#~ "אשר תגיותיהם נקראים ונשמרים במסד נתונים."
+#~ "בעת הוספת ספרייה חדשה, יהיה עליך לציין את הנתיב המלא מתיקיית העל של "
+#~ "ספרייה זו. ואז, כל התיקיות תחת נתיב תיקיית על זו יסרקו באופן נסוג עבור "
+#~ "קבצי מדיה אשר תגיותיהם נקראים ונשמרים במסד נתונים."
 
 #~ msgid ""
-#~ "Upon refreshing a library, the file structure under the root directory and "
-#~ "all media files are scanned for changes, to update the database accordingly."
+#~ "Upon refreshing a library, the file structure under the root directory "
+#~ "and all media files are scanned for changes, to update the database "
+#~ "accordingly."
 #~ msgstr ""
 #~ "בעת רענון ספרייה, מבנה הקבצים תחת תיקיית העל וכל קבצי המדיה נסרקים אחר "
 #~ "שינויים, על מנת לעדכן את מסד התונים בהתאם."
@@ -813,11 +829,9 @@ msgstr "נגן את הרצועה הקודמת"
 #~ msgid "Clear CDDB cache?"
 #~ msgstr "לנקות את מטמון ה־CDDB?"
 
-#~ msgid "Invalid path"
-#~ msgstr "נתיב שגוי"
-
 #~ msgid ""
-#~ "The path to the CD-ROM device is not valid. Please choose an existing path."
+#~ "The path to the CD-ROM device is not valid. Please choose an existing "
+#~ "path."
 #~ msgstr "הנתיב את התקן כונן התקליטורים הינו שגוי. אנא בחר בנתיב קיים."
 
 #~ msgid "This module lets you play audio discs from your CD-ROM device."
@@ -828,13 +842,13 @@ msgstr "נגן את הרצועה הקודמת"
 
 #~ msgid ""
 #~ "Disc information, such as artist and album title, may be automatically "
-#~ "downloaded from an online database if you wish so. This information may also "
-#~ "be saved on your hard drive to avoid downloading it again the next time you "
-#~ "play the same disc."
+#~ "downloaded from an online database if you wish so. This information may "
+#~ "also be saved on your hard drive to avoid downloading it again the next "
+#~ "time you play the same disc."
 #~ msgstr ""
-#~ "נתוני התקליטור, כגון אמן וכותרת האלבום, ניתנים להורדה אוטומטית ממסד נתונים "
-#~ "מקוון במידת הרצון. נתונים אלו עלולים להשמר על הכונן הקשיח שלך כדי להמנע "
-#~ "מהורדה חוזרת בהשמעה הבאה של אותו התקליטור."
+#~ "נתוני התקליטור, כגון אמן וכותרת האלבום, ניתנים להורדה אוטומטית ממסד "
+#~ "נתונים מקוון במידת הרצון. נתונים אלו עלולים להשמר על הכונן הקשיח שלך כדי "
+#~ "להמנע מהורדה חוזרת בהשמעה הבאה של אותו התקליטור."
 
 #~ msgid "Status File"
 #~ msgstr "קובץ מצב"
@@ -843,14 +857,16 @@ msgstr "נגן את הרצועה הקודמת"
 #~ msgstr "יצר קובץ טקסט עם המצב הנוכחי"
 
 #~ msgid ""
-#~ "The path to the selected file is not valid. Please choose an existing path."
+#~ "The path to the selected file is not valid. Please choose an existing "
+#~ "path."
 #~ msgstr "הנתיב אל הקובץ הנבחר אינו תקני. אנא בחר נתיב קיים."
 
 #~ msgid "Choose a file"
 #~ msgstr "בחר קובץ"
 
 #~ msgid ""
-#~ "This module generates a text file with regards to the track currently played."
+#~ "This module generates a text file with regards to the track currently "
+#~ "played."
 #~ msgstr "מודול זה מייצר קובץ טקסט תוך התחשבות ברצועה המתנגנת כעת."
 
 #~ msgid "Customizing the File"
