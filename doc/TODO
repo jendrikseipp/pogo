@@ -4,14 +4,16 @@
 O Stop after current album / track (Playlist context menu entry)
 O When track is added from nautilus etc. start track if not already playing
 O Use multiprocessing for searching
+X Show info messages when no music directories have been added
 X Stop old search when user clears search field or enters new search phrase
 X Add search shortcut (Ctrl-F)
 X Do not allow adding root or home directory to music directories
 
 0.x:
+O Remember last played track
 O Save playlist periodically to prevent losing it during a shutdown
 O Export playlist to .m3u format
-O Export tracks in playlist into a directory
+O Export tracks in playlist into a directory (with subdirectories)
 O Shuffle
 O Repeat
 O Playlist loading (Only add tracks in playlist not added anyways)
@@ -24,6 +26,7 @@ O Enqueue?
 O Party View (Fullscreen)?
 O Scrobbling Support (using decibel code)?
 O Lyrics?
+O WAV support
 
 
 === Features that will NOT be implemented ===

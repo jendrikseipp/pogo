@@ -60,8 +60,9 @@ PREFS_DEFAULT_SHOW_HIDDEN_FILES = False                                         
 (
     TYPE_DIR,   # A directory
     TYPE_FILE,  # A media file
-    TYPE_NONE   # A fake item, used to display a '+' in front of a directory when needed
-) = range(3)
+    TYPE_NONE,   # A fake item, used to display a '+' in front of a directory when needed
+    TYPE_INFO,
+) = range(4)
 
 
 class FileExplorer(modules.Module):
@@ -105,6 +106,9 @@ class FileExplorer(modules.Module):
 
         for child in self.tree.iterChildren(path):
             row = self.tree.getRow(child)
+            
+            if row[ROW_TYPE] == TYPE_INFO:
+                continue
 
             if self.tree.getNbChildren(child) == 0: grandChildren = None
             elif self.tree.row_expanded(child):     grandChildren = self.getTreeDump(child)
@@ -136,7 +140,7 @@ class FileExplorer(modules.Module):
 
 
     def saveTreeState(self):
-        """ Return a dictionary representing the current state of the tree """
+        """ Create a dictionary representing the current state of the tree """
         self.treeState = {
                     'tree-state':     self.getTreeDump(),
                     'selected-paths': self.tree.getSelectedPaths(),
@@ -144,6 +148,7 @@ class FileExplorer(modules.Module):
                     'hscrollbar-pos': self.scrolled.get_hscrollbar().get_value(),
                     }
         prefs.set(__name__, 'saved-states', self.treeState)
+        self.music_paths = self.get_music_paths_from_tree()
 
 
     def sortKey(self, row):
@@ -348,6 +353,10 @@ class FileExplorer(modules.Module):
             # separator selected
             return
             
+        if path and self.tree.getItem(path, ROW_TYPE) == TYPE_INFO:
+            # info node selected, make it clickable
+            path = None
+            
         popup = gtk.Menu()
 
         # Play selection
@@ -418,6 +427,7 @@ class FileExplorer(modules.Module):
                 self.add_dir(path)
                 music_paths = self.get_music_paths_from_tree()
                 modules.postMsg(consts.MSG_EVT_MUSIC_PATHS_CHANGED, {'paths': music_paths})
+                self.set_info_text()
             else:
                 errorMsgBox(None, _('This path does not exist'),
                     '"%s"\n' % path + _('Please select an existing directory.'))
@@ -425,6 +435,9 @@ class FileExplorer(modules.Module):
         
     def on_remove_dir(self, widget, path):
         self.tree.removeRow(path)
+        music_paths = self.get_music_paths_from_tree()
+        modules.postMsg(consts.MSG_EVT_MUSIC_PATHS_CHANGED, {'paths': music_paths})
+        self.set_info_text()
 
 
     def onKeyPressed(self, tree, event):
@@ -542,6 +555,7 @@ class FileExplorer(modules.Module):
         # Restore the tree if we have any to restore, else build new one
         if self.treeState:
             self.restore_tree()
+            self.set_info_text()
             return
             
         paths = self.static_paths[:]
@@ -559,6 +573,9 @@ class FileExplorer(modules.Module):
                 self.tree.appendRow((icons.nullMenuIcon(), None, TYPE_NONE, None), None)
             else:
                 self.add_dir(path)
+        
+        self.set_info_text()
+                
                 
     def get_music_paths_from_tree(self):
         music_paths = []
@@ -568,7 +585,26 @@ class FileExplorer(modules.Module):
             if path and path not in self.static_paths:
                 music_paths.append(path)
         return music_paths
-
+        
+        
+    def set_info_text(self):
+        music_paths = self.get_music_paths_from_tree()
+        
+        last_top_node = self.tree.getChild(None, self.tree.getNbChildren(None) - 1)
+        path = self.tree.getItem(last_top_node, ROW_FULLPATH)
+        typ = self.tree.getItem(last_top_node, ROW_TYPE)
+        last_top_node_info = (typ == TYPE_INFO) and not path
+        
+        if music_paths:
+            for child in reversed(list(self.tree.iterChildren(None))):
+                path = self.tree.getItem(child, ROW_FULLPATH)
+                typ = self.tree.getItem(child, ROW_TYPE)
+                info_node = (typ == TYPE_INFO) and not path
+                if info_node:
+                    self.tree.removeRow(child)
+        elif not music_paths and not last_top_node_info:
+            msg = _('Right-click to add music folders')
+            self.tree.appendRow((icons.infoMenuIcon(), msg, TYPE_INFO, ''), None)
 
    # --== Message handlers ==--
 
@@ -613,7 +649,7 @@ class FileExplorer(modules.Module):
         self.displaying_results = True
         
         text = _('Searching ...')
-        self.tree.appendRow((icons.nullMenuIcon(), text, TYPE_NONE, ''), None)
+        self.tree.appendRow((icons.infoMenuIcon(), text, TYPE_INFO, ''), None)
         
         
     def onSearchEnd(self, results, query):
@@ -626,8 +662,11 @@ class FileExplorer(modules.Module):
         dirs, files = results
         
         if not dirs and not files:
-            text = _('No tracks found')
-            self.tree.appendRow((icons.nullMenuIcon(), text, TYPE_NONE, ''), None)
+            if self.music_paths:
+                text = _('No tracks found')
+            else:
+                text = _('No music folders have been added')
+            self.tree.appendRow((icons.infoMenuIcon(), text, TYPE_INFO, ''), None)
             return
         
         for path, name in dirs:
