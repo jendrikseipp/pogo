@@ -19,7 +19,6 @@
 import os
 import subprocess
 import logging
-import re
 from gettext import gettext as _
 
 import gtk
@@ -39,13 +38,6 @@ MOD_NAME = MOD_INFO[modules.MODINFO_NAME]
 
 MIN_CHARS = 1
 
-
-def get_regex(part):
-    quantifiers = ['?', '*']
-    pattern = re.escape(unicode(part))
-    for quantifier in quantifiers:
-        pattern = pattern.replace('\\' + quantifier, '.' + quantifier)
-    return re.compile(pattern, re.IGNORECASE)
     
 
 class Search(modules.ThreadedModule):
@@ -188,7 +180,7 @@ class Search(modules.ThreadedModule):
     def onSearch(self, query):
         self.should_stop = False
             
-        regexes = [get_regex(part) for part in query.split()]
+        regexes = [tools.get_regex(part) for part in query.split()]
         
         all_dirs = []
         all_files = []

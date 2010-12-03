@@ -18,6 +18,7 @@
 # Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301 USA
 
 import os
+import re
 import cPickle
 import subprocess
 from xml.sax.saxutils import escape, unescape
@@ -228,3 +229,11 @@ def open_path(path):
     else:
         import webbrowser
         webbrowser.open(path)
+        
+
+def get_regex(string):
+    quantifiers = ['?', '*']
+    pattern = re.escape(unicode(string))
+    for quantifier in quantifiers:
+        pattern = pattern.replace('\\' + quantifier, '.' + quantifier)
+    return re.compile(pattern, re.IGNORECASE)
