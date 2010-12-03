@@ -42,9 +42,12 @@ MOD_INFO = ('File Explorer', 'File Explorer', 'Browse your file system', [], Tru
 MOD_L10N = MOD_INFO[modules.MODINFO_L10N]
 
 # Default preferences
-##PREFS_DEFAULT_MEDIA_FOLDERS     = {'Home': consts.dirBaseUsr, 'Root': '/'}    # List of media folders that are used as roots for the file explorer
-PREFS_DEFAULT_ADD_BY_FILENAME   = False                                             # True if files should be added to the playlist by their filename
-PREFS_DEFAULT_SHOW_HIDDEN_FILES = False                                             # True if hidden files should be shown
+# List of media folders that are used as roots for the file explorer
+##PREFS_DEFAULT_MEDIA_FOLDERS     = {'Home': consts.dirBaseUsr, 'Root': '/'}
+# True if files should be added to the playlist by their filename
+PREFS_DEFAULT_ADD_BY_FILENAME   = False
+# True if hidden files should be shown
+PREFS_DEFAULT_SHOW_HIDDEN_FILES = False
 
 
 # The format of a row in the treeview
@@ -85,9 +88,10 @@ class FileExplorer(modules.Module):
         """ Create the tree used to display the file system """
         from gui import extTreeview
 
-        columns = (('',   [(gtk.CellRendererPixbuf(), gtk.gdk.Pixbuf), (gtk.CellRendererText(), TYPE_STRING)], True),
-                   (None, [(None, TYPE_INT)],                                                                  False),
-                   (None, [(None, TYPE_STRING)],                                                               False))
+        columns = (
+            ('',   [(gtk.CellRendererPixbuf(), gtk.gdk.Pixbuf), (gtk.CellRendererText(), TYPE_STRING)], True),
+            (None, [(None, TYPE_INT)],                                                                  False),
+            (None, [(None, TYPE_STRING)],                                                               False))
 
         self.tree = extTreeview.ExtTreeView(columns, True)
 
@@ -133,7 +137,8 @@ class FileExplorer(modules.Module):
                     fakeChild = self.tree.appendRow((icons.dirMenuIcon(), '', TYPE_NONE, ''), newNode)
 
                     if len(item[1]) != 0:
-                        # We must expand the row before adding the real children, but this works only if there is already at least one child
+                        # We must expand the row before adding the real children, 
+                        # but this works only if there is already at least one child
                         self.tree.expandRow(newNode)
                         self.restoreTreeDump(item[1], newNode)
                         self.tree.removeRow(fakeChild)
@@ -164,11 +169,15 @@ class FileExplorer(modules.Module):
         ## never replace
         replace = False
         
-        if path is None: tracks = media.getTracks([row[ROW_FULLPATH] for row in self.tree.getSelectedRows()], self.addByFilename)
-        else:            tracks = media.getTracks([self.tree.getRow(path)[ROW_FULLPATH]], self.addByFilename)
+        if path is None:
+            tracks = media.getTracks([row[ROW_FULLPATH] for row in self.tree.getSelectedRows()])
+        else:
+            tracks = media.getTracks([self.tree.getRow(path)[ROW_FULLPATH]])
 
-        if replace: modules.postMsg(consts.MSG_CMD_TRACKLIST_SET, {'tracks': tracks, 'playNow': True})
-        else:       modules.postMsg(consts.MSG_CMD_TRACKLIST_ADD, {'tracks': tracks, 'playNow': False})
+        if replace:
+            modules.postMsg(consts.MSG_CMD_TRACKLIST_SET, {'tracks': tracks, 'playNow': True})
+        else:
+            modules.postMsg(consts.MSG_CMD_TRACKLIST_ADD, {'tracks': tracks, 'playNow': False})
 
 
     # --== Tree management ==--
@@ -177,7 +186,9 @@ class FileExplorer(modules.Module):
     def startLoading(self, row):
         """ Tell the user that the contents of row is being loaded """
         name = self.tree.getItem(row, ROW_NAME)
-        self.tree.setItem(row, ROW_NAME, '%s  <span size="smaller" foreground="#909090">%s</span>' % (name, _('loading...')))
+        loading_text = '%s  <span size="smaller" foreground="#909090">%s</span>'
+        loading_text %= (name, _('loading...'))
+        self.tree.setItem(row, ROW_NAME, loading_text)
 
 
     def stopLoading(self, row):
@@ -221,8 +232,8 @@ class FileExplorer(modules.Module):
 
     def exploreDir(self, parent, directory, fakeChild=None):
         """
-            List the contents of the given directory and append it to the tree as a child of parent
-            If fakeChild is not None, remove it when the real contents has been loaded
+        List the contents of the given directory and append it to the tree as a child of parent
+        If fakeChild is not None, remove it when the real contents has been loaded
         """
         directories, playlists, mediaFiles = self.getDirContents(directory)
 
@@ -237,9 +248,13 @@ class FileExplorer(modules.Module):
 
 
     def updateDirNodes(self, parent):
-        """ This generator updates the directory nodes, based on whether they should be expandable """
+        """
+        This generator updates the directory nodes, based on whether they 
+        should be expandable
+        """
         for child in self.tree.iterChildren(parent):
-            # Only directories need to be updated and since they all come first, we can stop as soon as we find something else
+            # Only directories need to be updated and since they all come first,
+            # we can stop as soon as we find something else
             if self.tree.getItem(child, ROW_TYPE) != TYPE_DIR:
                 break
 
@@ -248,7 +263,8 @@ class FileExplorer(modules.Module):
             hasContent = False
             if os.access(directory, os.R_OK | os.X_OK):
                 for (file, path) in tools.listDir(directory):
-                    if isdir(path) or (isfile(path) and (media.isSupported(file) or playlist.isSupported(file))):
+                    supported = (media.isSupported(file) or playlist.isSupported(file))
+                    if isdir(path) or (isfile(path) and supported):
                         hasContent = True
                         break
 
@@ -295,7 +311,8 @@ class FileExplorer(modules.Module):
             cmpResult = cmp(self.sortKey(self.tree.getRow(rowPath)), self.sortKey(file))
 
             if cmpResult < 0:
-                # We can't remove the only child left, to prevent the node from being closed automatically
+                # We can't remove the only child left, to prevent the node 
+                # from being closed automatically
                 if self.tree.getNbChildren(treePath) == 1:
                     childLeftIntentionally = True
                     break
@@ -342,9 +359,12 @@ class FileExplorer(modules.Module):
             if event.button == 2:
                 self.play(False, path)
             elif event.button == 1 and event.type == gtk.gdk._2BUTTON_PRESS:
-                if   tree.getItem(path, ROW_PIXBUF) != icons.dirMenuIcon(): self.play(True)
-                elif tree.row_expanded(path):                               tree.collapse_row(path)
-                else:                                                       tree.expand_row(path, False)
+                if   tree.getItem(path, ROW_PIXBUF) != icons.dirMenuIcon():
+                    self.play(True)
+                elif tree.row_expanded(path):
+                    tree.collapse_row(path)
+                else:
+                    tree.expand_row(path, False)
 
 
     def onShowPopupMenu(self, tree, button, time, path):
@@ -418,19 +438,21 @@ class FileExplorer(modules.Module):
         
     def on_add_dir(self, widget):
         path = fileChooser.openDirectory(None, _('Choose a directory'))
-        if path is not None:
-            if os.path.isdir(path):
-                if path in self.static_paths:
-                    errorMsgBox(None, _('Invalid Folder'),
-                    _('You cannot add your root or home folder to the music directories'))
-                    return
-                self.add_dir(path)
-                music_paths = self.get_music_paths_from_tree()
-                modules.postMsg(consts.MSG_EVT_MUSIC_PATHS_CHANGED, {'paths': music_paths})
-                self.set_info_text()
-            else:
-                errorMsgBox(None, _('This path does not exist'),
-                    '"%s"\n' % path + _('Please select an existing directory.'))
+        if path is None:
+            return
+            
+        if os.path.isdir(path):
+            if path in self.static_paths:
+                errorMsgBox(None, _('Invalid Folder'),
+                _('You cannot add your root or home folder to the music directories'))
+                return
+            self.add_dir(path)
+            music_paths = self.get_music_paths_from_tree()
+            modules.postMsg(consts.MSG_EVT_MUSIC_PATHS_CHANGED, {'paths': music_paths})
+            self.set_info_text()
+        else:
+            errorMsgBox(None, _('This path does not exist'),
+                '"%s"\n' % path + _('Please select an existing directory.'))
                 
         
     def on_remove_dir(self, widget, path):
@@ -468,7 +490,8 @@ class FileExplorer(modules.Module):
     def onDragDataGet(self, tree, context, selection, info, time):
         """ Provide information about the data being dragged """
         import urllib
-        selection.set('text/uri-list', 8, ' '.join([urllib.pathname2url(file) for file in [row[ROW_FULLPATH] for row in tree.getSelectedRows()]]))
+        selection.set('text/uri-list', 8, ' '.join([urllib.pathname2url(file) 
+            for file in [row[ROW_FULLPATH] for row in tree.getSelectedRows()]]))
         
         
     def add_dir(self, path):
