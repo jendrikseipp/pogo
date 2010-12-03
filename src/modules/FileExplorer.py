@@ -493,6 +493,7 @@ class FileExplorer(modules.Module):
         idle_add(self.scrolled.get_hscrollbar().set_value, self.treeState['hscrollbar-pos'])
         idle_add(self.tree.selectPaths, self.treeState['selected-paths'])
         idle_add(self.refresh)
+        self.set_info_text()
         
         
     def _get_xdg_music_dir(self):
@@ -555,7 +556,6 @@ class FileExplorer(modules.Module):
         # Restore the tree if we have any to restore, else build new one
         if self.treeState:
             self.restore_tree()
-            self.set_info_text()
             return
             
         paths = self.static_paths[:]
