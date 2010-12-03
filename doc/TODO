@@ -1,13 +1,15 @@
 === Roadmap ===
 
-0.4:
-O Stop after current album / track (Playlist context menu entry)
-O When track is added from nautilus etc. start track if not already playing
-O Use multiprocessing for searching
+0.3.1:
+X When track is added from nautilus etc. start track if not already playing
 X Show info messages when no music directories have been added
 X Stop old search when user clears search field or enters new search phrase
 X Add search shortcut (Ctrl-F)
 X Do not allow adding root or home directory to music directories
+O Fix adding files from command line by removing bash start script
+
+0.4:
+O Stop after current album / track (Playlist context menu entry)
 
 0.x:
 O Remember last played track
@@ -33,3 +35,4 @@ O WAV support
 - Do not add empty dirs to Tracktree (Irritating)
 - Ellipsize names (Looks odd)
 - Play audio CDs (Rip and play is nicer anyways)
+- Use multiprocessing for searching (Too error prone)

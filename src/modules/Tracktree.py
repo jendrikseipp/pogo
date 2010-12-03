@@ -267,18 +267,22 @@ class Tracktree(modules.Module):
             trackdir.tracks = tracks
             tracks = trackdir
             
-        self.tree.get_selection().unselect_all()
-        self.insertDir(tracks, target, drop_mode, highlight)
-        self.onListModified()
-        return
+        children_before = self.tree.store.iter_n_children(target)
             
-        # TODO: playNow wanted? Buggy in current state
-        if playNow:
-            if parent is None:
-                dest = self.tree.get_last_root()
-            else:
-                dest = self.tree.get_last_child_iter(parent)
-            self.jumpTo(dest)
+        self.tree.get_selection().unselect_all()
+        dest = self.insertDir(tracks, target, drop_mode, highlight)
+        self.onListModified()
+        
+        # We only want to start playback if tracks are appended from DBus
+        # In that case target is None
+        # Also don't interrupt playing songs
+        if playNow and target is None and not self.tree.hasMark():
+            # If the target is None, the tracks have to be appended to the top
+            # level and the first new track is the one after the original tracks
+            new = self.tree.store.iter_nth_child(target, children_before)
+            if new:
+                # If new is None, the tracks could not be added
+                self.jumpTo(new)
             
             
     def insertDir(self, trackdir, target=None, drop_mode=None, highlight=False):
@@ -355,7 +359,7 @@ class Tracktree(modules.Module):
         self.tree.clear()
         
         if tracks is not None and not tracks.empty():
-            self.insert(tracks)
+            self.insert(tracks, playNow=playNow)
             
         self.tree.collapse_all()
             
