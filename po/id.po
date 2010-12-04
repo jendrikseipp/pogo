@@ -1,51 +1,51 @@
-# Arabic translation for decibel-audio-player
-# Copyright (c) 2008 Rosetta Contributors and Canonical Ltd 2008
-# This file is distributed under the same license as the decibel-audio-player package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2008.
+# Indonesian translation for pogo
+# Copyright (c) 2010 Rosetta Contributors and Canonical Ltd 2010
+# This file is distributed under the same license as the pogo package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2010.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: decibel-audio-player\n"
-"Report-Msgid-Bugs-To: \n"
+"Project-Id-Version: pogo\n"
+"Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2010-12-03 13:45+0100\n"
-"PO-Revision-Date: 2010-11-07 23:12+0000\n"
-"Last-Translator: someone <Unknown>\n"
-"Language-Team: Arabic <ar@li.org>\n"
+"PO-Revision-Date: 2010-12-03 14:28+0000\n"
+"Last-Translator: Launchpad Translations Administrators "
+"<rosetta@launchpad.net>\n"
+"Language-Team: Indonesian <id@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n % 100 >= "
-"3 && n % 100 <= 10 ? 3 : n % 100 >= 11 && n % 100 <= 99 ? 4 : 5;\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
 "X-Launchpad-Export-Date: 2010-12-04 05:37+0000\n"
 "X-Generator: Launchpad (build Unknown)\n"
 
 #: ../src/media/track/__init__.py:54
 msgid "Track number"
-msgstr "رقم المسار"
+msgstr ""
 
 #: ../src/media/track/__init__.py:55
 msgid "Title"
-msgstr "العنوان"
+msgstr ""
 
 #: ../src/media/track/__init__.py:56
 msgid "Artist"
-msgstr "الفنّان"
+msgstr ""
 
 #: ../src/media/track/__init__.py:57
 msgid "Album"
-msgstr "الألبوم"
+msgstr ""
 
 #: ../src/media/track/__init__.py:58
 msgid "Genre"
-msgstr "النوع"
+msgstr ""
 
 #: ../src/media/track/__init__.py:59
 msgid "Date"
-msgstr "التاريخ"
+msgstr ""
 
 #: ../src/media/track/__init__.py:60
 msgid "Disc number"
-msgstr "رقم القرص"
+msgstr ""
 
 #: ../src/media/track/__init__.py:61
 msgid "Bit rate"
@@ -57,24 +57,24 @@ msgstr ""
 
 #: ../src/media/track/__init__.py:63
 msgid "Duration in seconds (e.g., 194)"
-msgstr "المدة بالثواني (مثال: ١٩٤)"
+msgstr ""
 
 #: ../src/media/track/__init__.py:64
 msgid "Duration as a string (e.g., 3:14)"
-msgstr "المدة بالمتغيّر (مثل ٣:١٤)"
+msgstr ""
 
 #: ../src/media/track/__init__.py:67
 msgid "Full path to the file"
-msgstr "المسار الكامل للملفّ"
+msgstr ""
 
 #: ../src/media/track/__init__.py:149 ../src/media/track/__init__.py:393
 msgid "unknown"
-msgstr "غير معروف"
+msgstr ""
 
 #: ../src/media/track/__init__.py:175
 #, python-format
 msgid "%(album)s  [Disc %(discnum)u]"
-msgstr "%(album)s [قرص %(discnum)u]"
+msgstr ""
 
 #: ../src/media/track/__init__.py:182
 msgid "CDDA Track"
@@ -82,20 +82,20 @@ msgstr ""
 
 #: ../src/gui/preferences.py:43
 msgid "Preferences"
-msgstr "التفضيلات"
+msgstr ""
 
 #: ../src/gui/preferences.py:129
 msgid "Unable to load this module."
-msgstr "لم يتمكن من تحميل من الوحدة النمطية."
+msgstr ""
 
 #: ../src/gui/preferences.py:138
 msgid "Modules"
-msgstr "الوحدات النمطية"
+msgstr ""
 
 #: ../src/gui/preferences.py:139 ../src/modules/DesktopNotification.py:213
 #: ../src/modules/Covers.py:434
 msgid "Description"
-msgstr "الوصف"
+msgstr ""
 
 #: ../src/gui/preferences.py:140
 msgid ""
@@ -105,7 +105,7 @@ msgstr ""
 
 #: ../src/gui/preferences.py:142
 msgid "Configuring a Module"
-msgstr "جارِي ضبط الوحدة النمطية"
+msgstr ""
 
 #: ../src/gui/preferences.py:143
 msgid ""
@@ -119,16 +119,15 @@ msgstr ""
 msgid "translator-credits"
 msgstr ""
 "Launchpad Contributions:\n"
-"  Jendrik Seipp https://launchpad.net/~jendrikseipp\n"
-"  someone https://launchpad.net/~somehow"
+"  Mahyuddin Susanto https://launchpad.net/~udienz"
 
 #: ../src/gui/about.py:44
 msgid "Developer:"
-msgstr "مطوِّر:"
+msgstr ""
 
 #: ../src/gui/about.py:48
 msgid "Thanks to:"
-msgstr "شكراً لكل من:"
+msgstr ""
 
 #: ../src/modules/Search.py:34
 msgid "Search in your music folders"
@@ -140,7 +139,7 @@ msgstr ""
 
 #: ../src/modules/FileExplorer.py:180
 msgid "loading..."
-msgstr "يتم اﻵن التحميل..."
+msgstr ""
 
 #: ../src/modules/FileExplorer.py:364
 msgid "Append"
@@ -152,7 +151,7 @@ msgstr ""
 
 #: ../src/modules/FileExplorer.py:401
 msgid "Hide folder"
-msgstr "إخفاء المجلد"
+msgstr ""
 
 #: ../src/modules/FileExplorer.py:409
 msgid "Open containing folder"
@@ -233,7 +232,7 @@ msgstr ""
 
 #: ../src/modules/DesktopNotification.py:25
 msgid "Desktop Notification"
-msgstr "إشعار على سطح المكتب"
+msgstr ""
 
 #: ../src/modules/DesktopNotification.py:25
 msgid "Display a desktop notification on track change"
@@ -257,7 +256,7 @@ msgstr ""
 
 #: ../src/modules/DesktopNotification.py:216
 msgid "Customizing the Notification"
-msgstr "تخصيص الإشعار"
+msgstr ""
 
 #: ../src/modules/DesktopNotification.py:217
 msgid ""
@@ -279,7 +278,7 @@ msgstr ""
 
 #: ../src/modules/StatusbarTitlebar.py:47
 msgid "[paused]"
-msgstr "[موقّف مؤقّتاً]"
+msgstr ""
 
 #: ../src/modules/Covers.py:28
 msgid "Covers"
@@ -322,7 +321,7 @@ msgstr ""
 
 #: ../src/modules/Tracktree.py:372
 msgid "Save playlist"
-msgstr "حفظ قائمة التشغيل"
+msgstr ""
 
 #: ../src/modules/Tracktree.py:421
 msgid "Clear Playlist"
@@ -359,23 +358,23 @@ msgstr ""
 
 #: ../src/tools/consts.py:94
 msgid "Unknown Genre"
-msgstr "نوع غير معروف"
+msgstr ""
 
 #: ../src/tools/consts.py:95
 msgid "Unknown Title"
-msgstr "عنوان مجهول"
+msgstr ""
 
 #: ../src/tools/consts.py:96
 msgid "Unknown Album"
-msgstr "ألبوم مجهول"
+msgstr ""
 
 #: ../src/tools/consts.py:97
 msgid "Unknown Artist"
-msgstr "فنّان مجهول"
+msgstr ""
 
 #: ../src/tools/consts.py:105
 msgid "Unknown Album Artist"
-msgstr "فنان الألبوم مجهول"
+msgstr ""
 
 #: ../res/Covers.glade.h:1
 msgid "<b>Internet Covers</b>"
@@ -415,11 +414,11 @@ msgstr ""
 
 #: ../res/DesktopNotification.glade.h:2
 msgid "<b>Miscellaneous</b>"
-msgstr "<b>متنوّعات</b>"
+msgstr ""
 
 #: ../res/DesktopNotification.glade.h:3
 msgid "<b>Title</b>"
-msgstr "<b>عنوان</b>"
+msgstr ""
 
 #: ../res/DesktopNotification.glade.h:4
 msgid "Notification timeout:"
@@ -435,7 +434,7 @@ msgstr ""
 
 #: ../res/DesktopNotification.glade.h:7
 msgid "seconds"
-msgstr "ثانية"
+msgstr ""
 
 #: ../res/Equalizer.glade.h:1
 msgid "Preset:"
@@ -447,198 +446,8 @@ msgstr ""
 
 #: ../res/MainWindow.glade.h:2
 msgid "Play the next track"
-msgstr "عزف المقطع التاليّ"
+msgstr ""
 
 #: ../res/MainWindow.glade.h:3
 msgid "Play the previous track"
-msgstr "عزف المقطع السابق"
-
-#~ msgid "Choose a folder"
-#~ msgstr "اختيار المجلّد"
-
-#~ msgid "The name is incorrect"
-#~ msgstr "الاسم خطأ"
-
-#~ msgid "Position of the track in the playlist"
-#~ msgstr "رقم المسار في قائمة التشغيل"
-
-#~ msgid "Number of tracks in the playlist"
-#~ msgstr "عدد المسارات في قائمة التشغيل"
-
-#~ msgid ""
-#~ "Enter your username and password for\n"
-#~ "%(reason)s"
-#~ msgstr ""
-#~ "أدخل إسم المستخدم و كلمة المرور لـ:\n"
-#~ "%(reason)s"
-
-#~ msgid "Home"
-#~ msgstr "منزل"
-
-#~ msgid "Usage"
-#~ msgstr "الاستعمال"
-
-#~ msgid "Password:"
-#~ msgstr "كلمة السرّ:"
-
-#~ msgid "Remember this password"
-#~ msgstr "تذكّر كلمة السرّ"
-
-#~ msgid "Username:"
-#~ msgstr "اسم المستخدم:"
-
-#~ msgid "Rename"
-#~ msgstr "إعادة تسمية"
-
-#~ msgid "Display preferences"
-#~ msgstr "تفضيلات العرض"
-
-#~ msgid "Online _Help"
-#~ msgstr "_مساعدة على الشبكة"
-
-#~ msgid "Quit the application"
-#~ msgstr "مغادرة التطبيق"
-
-#~ msgid "Remaining time"
-#~ msgstr "الزمن الباقي:"
-
-#~ msgid "Stop the current track"
-#~ msgstr "إيقاف المقطع الحاليّ"
-
-#~ msgid "_Edit"
-#~ msgstr "ت_حرير"
-
-#~ msgid "_File"
-#~ msgstr "_ملفّ"
-
-#~ msgid "_Help"
-#~ msgstr "_مساعدة"
-
-#~ msgid "Name:"
-#~ msgstr "الاسم:"
-
-#~ msgid "Path:"
-#~ msgstr "المسار:"
-
-#~ msgid "Instant Messenger Status"
-#~ msgstr "حالة المراسل الفوريّ"
-
-#~ msgid "Decibel is stopped"
-#~ msgstr "تم إيقاف Decibel"
-
-#~ msgid "Customizing the Status"
-#~ msgstr "جارِ تخصيص الحالة"
-
-#~ msgid "your Last.fm account"
-#~ msgstr "حسابك لدى Last.fm"
-
-#~ msgid "Length"
-#~ msgstr "مدّة"
-
-#~ msgid "Repeat"
-#~ msgstr "إعادة"
-
-#~ msgid "Save Playlist As..."
-#~ msgstr "حفظ قائمة التشغيل باسم..."
-
-#~ msgid "Library"
-#~ msgstr "مكتبة"
-
-#~ msgid "Creating library"
-#~ msgstr "جارِ إنشاء المكتبة"
-
-#~ msgid "Refreshing library"
-#~ msgstr "جارِ إعادة تحميل المكتبة"
-
-#~ msgid "Creating library..."
-#~ msgstr "جارِ إنشاء المكتبة..."
-
-#~ msgid "Refreshing library..."
-#~ msgstr "جارِ إعادة تحميل المكتبة..."
-
-#~ msgid "tracks"
-#~ msgstr "مقاطع"
-
-#~ msgid "Remove the selected library?"
-#~ msgstr "حذف المكتبة المنقية؟"
-
-#~ msgid "Status Icon"
-#~ msgstr "أيقونة الحالة"
-
-#~ msgid "Audio CD"
-#~ msgstr "قرص مدمج صوتيّ"
-
-#~ msgid "Play audio discs"
-#~ msgstr "عزف الأقراص الصوتيّة"
-
-#~ msgid "downloading data..."
-#~ msgstr "جارٍ تنزيل البيانات..."
-
-#~ msgid "No disc found"
-#~ msgstr "لم يتم العثور على قرص"
-
-#~ msgid "Status File"
-#~ msgstr "ملفّ الحالة"
-
-#~ msgid "Choose a file"
-#~ msgstr "اختيار الملفّ"
-
-#~ msgid "Customizing the File"
-#~ msgstr "تخصيص الملفّ"
-
-#~ msgid "<b>CDDB</b>"
-#~ msgstr "<b>CDDB</b>"
-
-#~ msgid "CD-ROM device:"
-#~ msgstr "جهاز CD-ROM:"
-
-#~ msgid "Clear cache"
-#~ msgstr "محو الذاكرة المخبئة"
-
-#~ msgid "Download disc information"
-#~ msgstr "تنزيل معلومات القرص"
-
-#~ msgid "Add to Playlist"
-#~ msgstr "إضافة لقائمة التشغيل"
-
-#~ msgid "<b>Status</b>"
-#~ msgstr "<b>الحالة</b>"
-
-#~ msgid "Do nothing"
-#~ msgstr "لا تفعل شيءً"
-
-#~ msgid "Message:"
-#~ msgstr "الرسالة:"
-
-#~ msgid "Set status to:"
-#~ msgstr "تعيين الحالة:"
-
-#~ msgid "<b>Libraries</b>"
-#~ msgstr "<b>مكتبات</b>"
-
-#~ msgid "Add a new library"
-#~ msgstr "إضافة مكتبة جديدة"
-
-#~ msgid "Remove the selected libraries"
-#~ msgstr "حذف المكتبات المنقية"
-
-#~ msgid "Rename the selected library"
-#~ msgstr "إعادة تسمية المكتبة المنقية"
-
-#~ msgid "Clear"
-#~ msgstr "محو"
-
-#~ msgid "Clear the playlist"
-#~ msgstr "محو قائمة التشغيل"
-
-#~ msgid "Elapsed time"
-#~ msgstr "الزمن المنقضي"
-
-#~ msgid "<b>File</b>"
-#~ msgstr "<b>ملفّ</b>"
-
-#~ msgid "<b>Playing Status</b>"
-#~ msgstr "<b>حالة العزف</b>"
-
-#~ msgid "Play/Unpause"
-#~ msgstr "عزف/إيقاف مؤقّتاً"
+msgstr ""
