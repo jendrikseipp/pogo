@@ -8,14 +8,14 @@ msgstr ""
 "Project-Id-Version: pogo\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2010-12-03 13:45+0100\n"
-"PO-Revision-Date: 2010-11-09 17:41+0000\n"
+"PO-Revision-Date: 2010-12-07 10:53+0000\n"
 "Last-Translator: Gunleif Joensen <Unknown>\n"
 "Language-Team: Føroyabólkurin\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Launchpad-Export-Date: 2010-12-04 05:37+0000\n"
+"X-Launchpad-Export-Date: 2010-12-08 05:13+0000\n"
 "X-Generator: Launchpad (build Unknown)\n"
 "Language: fo\n"
 
@@ -165,11 +165,12 @@ msgstr "Vel eina fíluskrá"
 
 #: ../src/modules/FileExplorer.py:424
 msgid "Invalid Folder"
-msgstr ""
+msgstr "Ógildigur faldari"
 
 #: ../src/modules/FileExplorer.py:425
 msgid "You cannot add your root or home folder to the music directories"
 msgstr ""
+"Tú kann ikki leggja, tín rót- ella heimafaldara, afturat tónleikafíluskráunum"
 
 #: ../src/modules/FileExplorer.py:432
 msgid "This path does not exist"
@@ -189,7 +190,7 @@ msgstr "Tónleikur"
 
 #: ../src/modules/FileExplorer.py:606
 msgid "Right-click to add music folders"
-msgstr ""
+msgstr "Høgraklikkja til at leggja tónleikafaldarar til"
 
 #: ../src/modules/FileExplorer.py:651
 msgid "Searching ..."
@@ -201,7 +202,7 @@ msgstr "Eingi løg funnin"
 
 #: ../src/modules/FileExplorer.py:668
 msgid "No music folders have been added"
-msgstr ""
+msgstr "Eingir tónleikafaldarir eru lagdir til"
 
 #: ../src/modules/__init__.py:75
 msgid "The following Python modules are not available:"
