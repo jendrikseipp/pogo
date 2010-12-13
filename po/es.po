@@ -8,14 +8,14 @@ msgstr ""
 "Project-Id-Version: decibel-audio-player\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2010-12-03 13:45+0100\n"
-"PO-Revision-Date: 2010-10-11 08:02+0000\n"
-"Last-Translator: Monkey <monkey.libre@gmail.com>\n"
+"PO-Revision-Date: 2010-12-12 05:24+0000\n"
+"Last-Translator: Fitoschido <Unknown>\n"
 "Language-Team: Spanish <es@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Launchpad-Export-Date: 2010-12-04 05:37+0000\n"
+"X-Launchpad-Export-Date: 2010-12-13 05:45+0000\n"
 "X-Generator: Launchpad (build Unknown)\n"
 
 #: ../src/media/track/__init__.py:54
@@ -48,11 +48,11 @@ msgstr "Número del disco"
 
 #: ../src/media/track/__init__.py:61
 msgid "Bit rate"
-msgstr ""
+msgstr "Tasa de bits"
 
 #: ../src/media/track/__init__.py:62
 msgid "Sample rate"
-msgstr ""
+msgstr "Tasa de muestreo"
 
 #: ../src/media/track/__init__.py:63
 msgid "Duration in seconds (e.g., 194)"
@@ -68,7 +68,7 @@ msgstr "Ruta completa al archivo"
 
 #: ../src/media/track/__init__.py:149 ../src/media/track/__init__.py:393
 msgid "unknown"
-msgstr ""
+msgstr "desconocido"
 
 #: ../src/media/track/__init__.py:175
 #, python-format
@@ -77,7 +77,7 @@ msgstr "%(album)s  [Disco %(discnum)u]"
 
 #: ../src/media/track/__init__.py:182
 msgid "CDDA Track"
-msgstr ""
+msgstr "Pista CDDA"
 
 #: ../src/gui/preferences.py:43
 msgid "Preferences"
@@ -101,6 +101,9 @@ msgid ""
 "This window shows the list of available modules. You can enable/disable a "
 "module by checking/unchecking the check box in front of it."
 msgstr ""
+"Esta ventana muestra la lista de módulos disponibles. Puede "
+"activar/desactivar un módulo marcando/desmarcando la casilla de verificación "
+"delante de él."
 
 #: ../src/gui/preferences.py:142
 msgid "Configuring a Module"
@@ -125,6 +128,7 @@ msgstr ""
 "Launchpad Contributions:\n"
 "  A. Belén López Garello https://launchpad.net/~belen.lg\n"
 "  Carlos Albornoz https://launchpad.net/~caralbornozc\n"
+"  Fitoschido https://launchpad.net/~fitoschido\n"
 "  Gerardo Zamudio https://launchpad.net/~gerardo.zamudio\n"
 "  José Lou Chang https://launchpad.net/~obake\n"
 "  Monkey https://launchpad.net/~monkey-libre"
@@ -139,11 +143,11 @@ msgstr "Gracias a:"
 
 #: ../src/modules/Search.py:34
 msgid "Search in your music folders"
-msgstr ""
+msgstr "Buscar en sus carpetas de música"
 
 #: ../src/modules/Zeitgeist.py:26
 msgid "Send track information to the Zeitgeist service"
-msgstr ""
+msgstr "Enviar información de la pista al servicio Zeitgeist"
 
 #: ../src/modules/FileExplorer.py:180
 msgid "loading..."
@@ -151,27 +155,27 @@ msgstr "cargando…"
 
 #: ../src/modules/FileExplorer.py:364
 msgid "Append"
-msgstr ""
+msgstr "Anexar"
 
 #: ../src/modules/FileExplorer.py:389
 msgid "Add music folder"
-msgstr ""
+msgstr "Añadir carpeta de música"
 
 #: ../src/modules/FileExplorer.py:401
 msgid "Hide folder"
-msgstr ""
+msgstr "Ocultar carpeta"
 
 #: ../src/modules/FileExplorer.py:409
 msgid "Open containing folder"
-msgstr ""
+msgstr "Abrir carpeta contenedora"
 
 #: ../src/modules/FileExplorer.py:420
 msgid "Choose a directory"
-msgstr ""
+msgstr "Elija un directorio"
 
 #: ../src/modules/FileExplorer.py:424
 msgid "Invalid Folder"
-msgstr ""
+msgstr "Carpeta no válida"
 
 #: ../src/modules/FileExplorer.py:425
 msgid "You cannot add your root or home folder to the music directories"
@@ -183,7 +187,7 @@ msgstr "Esta ruta no existe"
 
 #: ../src/modules/FileExplorer.py:433
 msgid "Please select an existing directory."
-msgstr "Por favor seleccione un directorio existente"
+msgstr "Seleccione un directorio existente."
 
 #: ../src/modules/FileExplorer.py:529
 msgid "Albums"
@@ -191,23 +195,23 @@ msgstr "Álbumes"
 
 #: ../src/modules/FileExplorer.py:531
 msgid "Music"
-msgstr ""
+msgstr "Música"
 
 #: ../src/modules/FileExplorer.py:606
 msgid "Right-click to add music folders"
-msgstr ""
+msgstr "Pulse con el botón derecho para añadir carpetas con música"
 
 #: ../src/modules/FileExplorer.py:651
 msgid "Searching ..."
-msgstr ""
+msgstr "Buscando..."
 
 #: ../src/modules/FileExplorer.py:666
 msgid "No tracks found"
-msgstr ""
+msgstr "No se encontró ninguna pista"
 
 #: ../src/modules/FileExplorer.py:668
 msgid "No music folders have been added"
-msgstr ""
+msgstr "No se ha añadido ninguna carpeta de música"
 
 #: ../src/modules/__init__.py:75
 msgid "The following Python modules are not available:"
