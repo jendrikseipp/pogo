@@ -8,15 +8,14 @@ msgstr ""
 "Project-Id-Version: decibel-audio-player\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2010-12-03 13:45+0100\n"
-"PO-Revision-Date: 2010-10-12 17:36+0000\n"
+"PO-Revision-Date: 2010-12-08 22:53+0000\n"
 "Last-Translator: Papp Bence <papp.bence89@gmail.com>\n"
 "Language-Team: Hungarian <hu@li.org>\n"
-"Language: hu\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Launchpad-Export-Date: 2010-12-03 05:29+0000\n"
+"X-Launchpad-Export-Date: 2010-12-09 05:33+0000\n"
 "X-Generator: Launchpad (build Unknown)\n"
 
 #: ../src/media/track/__init__.py:54
@@ -45,7 +44,7 @@ msgstr "Dátum"
 
 #: ../src/media/track/__init__.py:60
 msgid "Disc number"
-msgstr "Album sorszám"
+msgstr "Album sorszáma"
 
 #: ../src/media/track/__init__.py:61
 msgid "Bit rate"
@@ -102,7 +101,7 @@ msgid ""
 "This window shows the list of available modules. You can enable/disable a "
 "module by checking/unchecking the check box in front of it."
 msgstr ""
-"Ez az ablak ez elérhető modulok listáját mutatja. Ön engedélyzeni/letiltani "
+"Ez az ablak az elérhető modulok listáját mutatja. Ön engedélyzeni/letiltani "
 "tudja a modulokat a doboz kipipálásával/a pipa eltávolításával."
 
 #: ../src/gui/preferences.py:142
@@ -139,7 +138,7 @@ msgstr "Köszönetnyilvánítás:"
 
 #: ../src/modules/Search.py:34
 msgid "Search in your music folders"
-msgstr ""
+msgstr "Keresés a zene mappában"
 
 #: ../src/modules/Zeitgeist.py:26
 msgid "Send track information to the Zeitgeist service"
@@ -147,7 +146,7 @@ msgstr "Track információ küldése a Zeitgeist szolgáltatásnak"
 
 #: ../src/modules/FileExplorer.py:180
 msgid "loading..."
-msgstr "töltés folyamatban..."
+msgstr "betöltés…"
 
 #: ../src/modules/FileExplorer.py:364
 msgid "Append"
@@ -155,28 +154,27 @@ msgstr "Hozzáfűz"
 
 #: ../src/modules/FileExplorer.py:389
 msgid "Add music folder"
-msgstr ""
+msgstr "Zene mappa hozzáadása"
 
 #: ../src/modules/FileExplorer.py:401
 msgid "Hide folder"
-msgstr ""
+msgstr "Mappa elrejtése"
 
 #: ../src/modules/FileExplorer.py:409
 msgid "Open containing folder"
-msgstr ""
+msgstr "A tartalmazó mappa megnyitása"
 
 #: ../src/modules/FileExplorer.py:420
 msgid "Choose a directory"
-msgstr ""
+msgstr "Válasszon egy könyvtárat"
 
 #: ../src/modules/FileExplorer.py:424
-#, fuzzy
 msgid "Invalid Folder"
-msgstr "Érvénytelen útvonal"
+msgstr "Érvénytelen mappa"
 
 #: ../src/modules/FileExplorer.py:425
 msgid "You cannot add your root or home folder to the music directories"
-msgstr ""
+msgstr "Root vagy saját mappát nem lehet hozzáadni a zenei könyvtárakhoz"
 
 #: ../src/modules/FileExplorer.py:432
 msgid "This path does not exist"
@@ -196,19 +194,19 @@ msgstr "Zene"
 
 #: ../src/modules/FileExplorer.py:606
 msgid "Right-click to add music folders"
-msgstr ""
+msgstr "Zene mappák hozzáadása jobb-kattintással"
 
 #: ../src/modules/FileExplorer.py:651
 msgid "Searching ..."
-msgstr ""
+msgstr "Keresés ..."
 
 #: ../src/modules/FileExplorer.py:666
 msgid "No tracks found"
-msgstr ""
+msgstr "Szám nem található"
 
 #: ../src/modules/FileExplorer.py:668
 msgid "No music folders have been added"
-msgstr ""
+msgstr "Nincs zene mappa hozzáadva"
 
 #: ../src/modules/__init__.py:75
 msgid "The following Python modules are not available:"
@@ -223,8 +221,9 @@ msgid "Restart required"
 msgstr "Újraindítás szükséges"
 
 #: ../src/modules/__init__.py:267
-msgid "You must restart the application for this modification to take effect."
-msgstr "A változások életbelépéséhez az alkalmazást újra kell indítani."
+msgid ""
+"You must restart the application for this modification to take effect."
+msgstr "A változások életbelépéséhez az alkalmazást újra kell indítania."
 
 #: ../src/modules/CtrlPanel.py:190 ../src/modules/CtrlPanel.py:246
 msgid "Pause the current track"
@@ -232,7 +231,7 @@ msgstr "Az aktuális zeneszám szüneteltetése"
 
 #: ../src/modules/CtrlPanel.py:206
 msgid "Play the first selected track of the playlist"
-msgstr "Az első kiválasztott track lejátszása a lejátszási listáról"
+msgstr "Az első kiválasztott szám lejátszása a lejátszási listáról"
 
 #: ../src/modules/CtrlPanel.py:240
 msgid "Continue playing the current track"
@@ -240,11 +239,11 @@ msgstr "Az aktuális zeneszám továbbjátszása"
 
 #: ../src/modules/DesktopNotification.py:25
 msgid "Desktop Notification"
-msgstr "Értesítés az Írópulton"
+msgstr "Értesítés az Asztalon"
 
 #: ../src/modules/DesktopNotification.py:25
 msgid "Display a desktop notification on track change"
-msgstr "Értesítsen az Írópulton számváltáskor"
+msgstr "Értesítsen az Asztalon számváltáskor"
 
 #: ../src/modules/DesktopNotification.py:78
 #: ../src/modules/DesktopNotification.py:188
@@ -256,11 +255,12 @@ msgid ""
 "This module displays a small popup window on your desktop when a new track "
 "starts."
 msgstr ""
-"Ez a modul apró felugró ablakot jelentet meg az Írópulton, mikor új zeneszám "
-"indul."
+"Ez a modul egy apró felugró ablakkal értesít az asztalon, mikor egy új "
+"zeneszám indul el."
 
 #: ../src/modules/DesktopNotification.py:215
-msgid "If the Covers module is enabled, the popup also shows the album cover."
+msgid ""
+"If the Covers module is enabled, the popup also shows the album cover."
 msgstr ""
 "Ha a Borító modul engedélyezve van, a felugró értesítés szintén mutatni "
 "fogja az album borítóját."
@@ -291,7 +291,7 @@ msgid ""
 "on that language is available on the following web page:"
 msgstr ""
 "A szöveg formázására a Pango leíró nyelvet használhatja. További információ "
-"erről a nyelvről a következő weboldalon található:"
+"a következő weboldalon található:"
 
 #: ../src/modules/StatusbarTitlebar.py:47
 msgid "[paused]"
@@ -311,9 +311,10 @@ msgid ""
 "Covers may be loaded from local pictures, located in the same directory as "
 "the current track, or may be downloaded from the Internet."
 msgstr ""
-"Ez a modul megjeleníti annak az albumnak a borítóját, melyhez a jelenleg "
-"játszott szám tartozik. A borítók helyi hozzáférésű képekből, ugyanabból a "
-"mappából származhatnak, vagy letölthetők az internetről."
+"Ez a modul megjeleníti annak az albumnak a borítóját, amelyhez a jelenleg "
+"lejátszott szám tartozik. A borítók helyi hozzáférésű képekből, ugyanabból a "
+"mappából származhatnak, mint a jelenlegi szám, vagy letölthetők az "
+"Internetről."
 
 #: ../src/modules/Covers.py:438
 msgid "User Covers"
@@ -327,13 +328,13 @@ msgid ""
 "extensions, supported file formats (%s) are automatically used."
 msgstr ""
 "A felhasználó lemezborítójaként egy kép van használva az épp lejátszott "
-"zeneszám könyvtárából. A filenevek megadásánál nem szükséges a "
+"zeneszám könyvtárából. A fájlnevek megadásánál nem szükséges a "
 "kiterjesztések megadása, automatikusan a támogatott (%s) formátumokat "
 "használja."
 
 #: ../src/modules/Covers.py:442
 msgid "Internet Covers"
-msgstr "Internetes lemezborítók."
+msgstr "Internetes lemezborítók"
 
 #: ../src/modules/Covers.py:443
 msgid ""
@@ -342,10 +343,10 @@ msgid ""
 "case, if a user cover exists for the current track, it is used. If there is "
 "none, the cover is downloaded."
 msgstr ""
-"Lemezborítók az internetröl tölthetőek le a zeneszámok tag-jei alapján. "
-"Beállíthatja hogy a felhasználói borítókat használja az internetröl "
-"letölthetöekkel szemben. Ebben az esetben ha a zeneszám mellett létezik "
-"borító, az lesz használva. Ha nincsen akkor az internetöl letöltött."
+"Lemezborítók az Internetről letölthetőek  a zeneszámok adatai  alapján. "
+"Beállíthatja, hogy a felhasználói borítókat használja az Internetről "
+"letölthetőekkel szemben. Ebben az esetben, ha a zeneszám mellett létezik "
+"borító, az lesz használva. Ha nincs, akkor az Internetről fogja letölteni."
 
 #: ../src/modules/Tracktree.py:372
 msgid "Save playlist"
@@ -378,7 +379,7 @@ msgstr "Szintek betöltése"
 
 #: ../src/modules/Equalizer.py:204
 msgid "Could not load the file"
-msgstr "A fájl betöltése nem sikerült."
+msgstr "A fájl betöltése nem sikerült"
 
 #: ../src/modules/Equalizer.py:204
 msgid "The format of the file is incorrect."
@@ -418,7 +419,7 @@ msgstr "Mindíg a felhasználói lemezborítók használata van előnyben"
 
 #: ../res/Covers.glade.h:4
 msgid "Don't download covers when there is a user one"
-msgstr "Ne töltsön le lemezborítót ha létezik felhasználói borító"
+msgstr "Ne töltsön le lemezborítót, ha létezik felhasználói borító"
 
 #: ../res/Covers.glade.h:5
 msgid "Download covers"
@@ -426,15 +427,15 @@ msgstr "Lemezborítók letöltése"
 
 #: ../res/Covers.glade.h:6
 msgid "Filenames to look for (e.g., folder, cover)"
-msgstr "Mely file-neveket keressek (pl. könyvtárnév, lemezborító)"
+msgstr "Milyen fájl-neveket keressek (pl. könyvtárnév, lemezborító)"
 
 #: ../res/Covers.glade.h:7
 msgid "Filenames:"
-msgstr "Filenevek"
+msgstr "Fájlnevek:"
 
 #: ../res/Covers.glade.h:8
 msgid "Try to download covers from the Internet"
-msgstr "Próbálja a lemezborítok internetről való letöltését"
+msgstr "Próbáljon letölteni lemezborítókat az Internetről"
 
 #: ../res/DesktopNotification.glade.h:1
 msgid "<b>Body</b>"
@@ -450,7 +451,7 @@ msgstr "<b>Cím</b>"
 
 #: ../res/DesktopNotification.glade.h:4
 msgid "Notification timeout:"
-msgstr "Értesítés időhossz:"
+msgstr "Értesítés időhossza:"
 
 #: ../res/DesktopNotification.glade.h:5
 msgid "Show a \"skip track\" button"
@@ -458,7 +459,7 @@ msgstr "A \"szám kihagyása\" gomb mutatása"
 
 #: ../res/DesktopNotification.glade.h:6
 msgid "Time during which the notification is displayed"
-msgstr "mennyi ideig lesz az értesítés mutatva"
+msgstr "Az értesítés ennyi ideig lesz mutatva"
 
 #: ../res/DesktopNotification.glade.h:7
 msgid "seconds"
@@ -481,10 +482,10 @@ msgid "Play the previous track"
 msgstr "Előző szám lejátszása"
 
 #~ msgid ""
-#~ "This dialog box shows the list of available modules, which are small "
-#~ "pieces of code that add some functionnalities to the application. You can "
-#~ "enable/disable a module by checking/unchecking the check box in front of "
-#~ "it. Note that some modules (e.g., the File Explorer) cannot be disabled."
+#~ "This dialog box shows the list of available modules, which are small pieces "
+#~ "of code that add some functionnalities to the application. You can "
+#~ "enable/disable a module by checking/unchecking the check box in front of it. "
+#~ "Note that some modules (e.g., the File Explorer) cannot be disabled."
 #~ msgstr ""
 #~ "A párbeszédablakban az elérhető modulok listája található, melyek kis "
 #~ "kódrészletek, amik újabb funkcionalitást nyújtanak az alkalmazásban. Egy "
@@ -505,6 +506,7 @@ msgstr "Előző szám lejátszása"
 #~ "E név használata nem engedélyezett.\n"
 #~ "Kérem, használjon másikat!"
 
+#, python-format
 #~ msgid ""
 #~ "The character %s is not allowed.\n"
 #~ "Please use another name."
@@ -518,6 +520,7 @@ msgstr "Előző szám lejátszása"
 #~ msgid "Browse your file system"
 #~ msgstr "Fájlrendszer böngészése"
 
+#, python-format
 #~ msgid "One track in playlist  [%(length)s]"
 #~ msgid_plural "%(count)u tracks in playlist  [%(length)s]"
 #~ msgstr[0] "Egy zeneszám a lejátszási listában [%(length)s]"
@@ -546,15 +549,15 @@ msgstr "Előző szám lejátszása"
 #~ msgstr "A biztonságos jelszótárolásról"
 
 #~ msgid ""
-#~ "If you use Gnome, it is safe to store your password since the Gnome "
-#~ "keyring is used."
+#~ "If you use Gnome, it is safe to store your password since the Gnome keyring "
+#~ "is used."
 #~ msgstr ""
-#~ "Ha a Gnome-ot használja, biztonságosan tárolhatja jelszavát a Gnome "
-#~ "keyring használatával."
+#~ "Ha a Gnome-ot használja, biztonságosan tárolhatja jelszavát a Gnome keyring "
+#~ "használatával."
 
 #~ msgid ""
-#~ "If you do not use Gnome, beware that, although not stored as clear text, "
-#~ "an attacker <i>could</i> retrieve it."
+#~ "If you do not use Gnome, beware that, although not stored as clear text, an "
+#~ "attacker <i>could</i> retrieve it."
 #~ msgstr ""
 #~ "Ha nem a Gnome-ot használja, vigyázat, habár nem sima szövegként van "
 #~ "tárolva, egy támadó <i>akár</i> meg is szerezheti."
@@ -593,9 +596,8 @@ msgstr "Előző szám lejátszása"
 #~ "At least one root folder must be added to browse your files. This folder "
 #~ "then becomes the root of the file explorer tree in the main window."
 #~ msgstr ""
-#~ "Legalább egy gyökérkönyvtárat meg kell adnia ahhoz, hogy tudjon böngészni "
-#~ "a fájljai közt. Ez a mappa a főablakban található fájlböngésző gyökerévé "
-#~ "válik."
+#~ "Legalább egy gyökérkönyvtárat meg kell adnia ahhoz, hogy tudjon böngészni a "
+#~ "fájljai közt. Ez a mappa a főablakban található fájlböngésző gyökerévé válik."
 
 #~ msgid ""
 #~ "Please select an explorer\n"
@@ -689,20 +691,20 @@ msgstr "Előző szám lejátszása"
 #~ "This module detects any running instant messenger and updates your status "
 #~ "with regards to the track you are listening to. Supported messengers are:"
 #~ msgstr ""
-#~ "Ez a modul felismeri bármely futó chat-kliensét, és frissíti annak "
-#~ "státuszát az alapján, hogy éppen milyen számot hallgat. A támogatott chat-"
-#~ "kliensek listája:"
+#~ "Ez a modul felismeri bármely futó chat-kliensét, és frissíti annak státuszát "
+#~ "az alapján, hogy éppen milyen számot hallgat. A támogatott chat-kliensek "
+#~ "listája:"
 
 #~ msgid "Customizing the Status"
 #~ msgstr "A Státusz testreszabása"
 
 #~ msgid ""
-#~ "You can set the status to any text you want. Before setting it, the "
-#~ "module replaces all fields of the form {field} by their corresponding "
-#~ "value. Available fields are:"
+#~ "You can set the status to any text you want. Before setting it, the module "
+#~ "replaces all fields of the form {field} by their corresponding value. "
+#~ "Available fields are:"
 #~ msgstr ""
-#~ "A státuszt tetszőleges szövegre állíthatja. Mielőtt beállítaná, a modul "
-#~ "az összes {field} mezőt a megfelelő értékre állítja. A használható mezők "
+#~ "A státuszt tetszőleges szövegre állíthatja. Mielőtt beállítaná, a modul az "
+#~ "összes {field} mezőt a megfelelő értékre állítja. A használható mezők "
 #~ "listája:"
 
 #~ msgid "Sanitization"
@@ -711,13 +713,13 @@ msgstr "Előző szám lejátszása"
 #~ msgid ""
 #~ "You can define some words that to sanitize before using them to set your "
 #~ "status. In this case, the middle characters of matching words is "
-#~ "automatically replaced with asterisks (e.g., \"Metallica - Live S**t "
-#~ "Binge & Purge\"). Put one word per line."
+#~ "automatically replaced with asterisks (e.g., \"Metallica - Live S**t Binge & "
+#~ "Purge\"). Put one word per line."
 #~ msgstr ""
 #~ "Megadhat szavakat, melyeket cenzúrázva szeretne látni, mikor a státuszát "
 #~ "beállítja. Ebben az esetben a megfelelő szavak nem kezdő és nem záró "
-#~ "karakterei automatikusan csillag karakterrel (*) lesznek helyettesítve, "
-#~ "pl. 'Erie Maffia - B***d fel a kéket'. Soronként egy szót írjon."
+#~ "karakterei automatikusan csillag karakterrel (*) lesznek helyettesítve, pl. "
+#~ "'Erie Maffia - B***d fel a kéket'. Soronként egy szót írjon."
 
 #~ msgid "Keep your Last.fm profile up to date"
 #~ msgstr "Tartsa karban Last.fm profilját"
@@ -779,8 +781,7 @@ msgstr "Előző szám lejátszása"
 #~ msgid "Remove the selected library?"
 #~ msgstr "A kiválasztott médiatár eltávolítása?"
 
-#~ msgid ""
-#~ "You will be able to recreate these libraries later on if you wish so."
+#~ msgid "You will be able to recreate these libraries later on if you wish so."
 #~ msgstr "Később újra létrehozhatja ezeket a médiatárakat, ha úgy kívánja."
 
 #~ msgid "Remove all selected libraries?"
@@ -794,9 +795,9 @@ msgstr "Előző szám lejátszása"
 #~ "structure of your drive. Loading tracks is also faster because their tags "
 #~ "are already known and do not have to be read again."
 #~ msgstr ""
-#~ "Ez a modul ahelyett, hogy a merevlemeze fájlstruktúráját venné alapul, "
-#~ "tagek alapján rendezi médiafájljait. A számok betöltése is gyorsabb, "
-#~ "mivel a tagjeik már ismertek és nem kerülnek újból beolvasásra."
+#~ "Ez a modul ahelyett, hogy a merevlemeze fájlstruktúráját venné alapul, tagek "
+#~ "alapján rendezi médiafájljait. A számok betöltése is gyorsabb, mivel a "
+#~ "tagjeik már ismertek és nem kerülnek újból beolvasásra."
 
 #~ msgid ""
 #~ "When you add a new library, you have to give the full path to the root "
@@ -804,19 +805,18 @@ msgstr "Előző szám lejátszása"
 #~ "recursively scanned for media files whose tags are read and stored in a "
 #~ "database."
 #~ msgstr ""
-#~ "Új médiatár hozzáadásánal meg kell adnia a médiatár gyökérmappájához "
-#~ "vezető teljes elérési útvonalat. Ezután az összes e gyökérútvonal alatt "
-#~ "található mappa beolvasásra kerül, a felfedezett médiafájlok tagjei pedig "
-#~ "egy adatbázisban kerülnek tárolásra."
+#~ "Új médiatár hozzáadásánal meg kell adnia a médiatár gyökérmappájához vezető "
+#~ "teljes elérési útvonalat. Ezután az összes e gyökérútvonal alatt található "
+#~ "mappa beolvasásra kerül, a felfedezett médiafájlok tagjei pedig egy "
+#~ "adatbázisban kerülnek tárolásra."
 
 #~ msgid ""
-#~ "Upon refreshing a library, the file structure under the root directory "
-#~ "and all media files are scanned for changes, to update the database "
-#~ "accordingly."
+#~ "Upon refreshing a library, the file structure under the root directory and "
+#~ "all media files are scanned for changes, to update the database accordingly."
 #~ msgstr ""
-#~ "Mikor médiatárat frissít, az összes a gyökérútvonal alatt található mappa "
-#~ "és az összes médiafájl újból beolvasásra kerül, hogy az adatbázis "
-#~ "naprakész legyen."
+#~ "Mikor médiatárat frissít, az összes a gyökérútvonal alatt található mappa és "
+#~ "az összes médiafájl újból beolvasásra kerül, hogy az adatbázis naprakész "
+#~ "legyen."
 
 #~ msgid "Status Icon"
 #~ msgstr "Státusz ikon"
@@ -848,12 +848,14 @@ msgstr "Előző szám lejátszása"
 #~ msgid "Clear CDDB cache?"
 #~ msgstr "CDDB gyorsítótár ürítése?"
 
+#~ msgid "Invalid path"
+#~ msgstr "Érvénytelen útvonal"
+
 #~ msgid ""
-#~ "The path to the CD-ROM device is not valid. Please choose an existing "
-#~ "path."
+#~ "The path to the CD-ROM device is not valid. Please choose an existing path."
 #~ msgstr ""
-#~ "A CD-ROM elérési útvonala helytelen. Kérem, válasszon ki egy létező "
-#~ "elérési útvonalat."
+#~ "A CD-ROM elérési útvonala helytelen. Kérem, válasszon ki egy létező elérési "
+#~ "útvonalat."
 
 #~ msgid "This module lets you play audio discs from your CD-ROM device."
 #~ msgstr ""
@@ -865,14 +867,14 @@ msgstr "Előző szám lejátszása"
 
 #~ msgid ""
 #~ "Disc information, such as artist and album title, may be automatically "
-#~ "downloaded from an online database if you wish so. This information may "
-#~ "also be saved on your hard drive to avoid downloading it again the next "
-#~ "time you play the same disc."
+#~ "downloaded from an online database if you wish so. This information may also "
+#~ "be saved on your hard drive to avoid downloading it again the next time you "
+#~ "play the same disc."
 #~ msgstr ""
 #~ "Lemezinformációk, úgymint előadó és az album címe, ha úgy kívánja, "
-#~ "automatikusan letölthető egy online adatbázisból. Ez az információ "
-#~ "mentésre kerülhet a merevlemezén annak érdekében, hogy ne kelljen újból "
-#~ "letölteni, mikor ismét ugyanazt a lemezt játsza le."
+#~ "automatikusan letölthető egy online adatbázisból. Ez az információ mentésre "
+#~ "kerülhet a merevlemezén annak érdekében, hogy ne kelljen újból letölteni, "
+#~ "mikor ismét ugyanazt a lemezt játsza le."
 
 #~ msgid "Status File"
 #~ msgstr "Státusz file."
@@ -881,18 +883,16 @@ msgstr "Előző szám lejátszása"
 #~ msgstr "Egy szövegfile-t generál a pillanatnyi státusszal"
 
 #~ msgid ""
-#~ "The path to the selected file is not valid. Please choose an existing "
-#~ "path."
+#~ "The path to the selected file is not valid. Please choose an existing path."
 #~ msgstr ""
-#~ "A kvalasztott file elérési útvonala érvénytelen. Kérem válasszon egy "
-#~ "létező útvonalat."
+#~ "A kvalasztott file elérési útvonala érvénytelen. Kérem válasszon egy létező "
+#~ "útvonalat."
 
 #~ msgid "Choose a file"
 #~ msgstr "Válasszon fájlt"
 
 #~ msgid ""
-#~ "This module generates a text file with regards to the track currently "
-#~ "played."
+#~ "This module generates a text file with regards to the track currently played."
 #~ msgstr ""
 #~ "Ez a modul egy szövegfájlt generál az éppen játszott zeneszámmal "
 #~ "kapcsolatban."
@@ -906,9 +906,9 @@ msgstr "Előző szám lejátszása"
 #~ "corresponding value. Available fields are:\n"
 #~ "\n"
 #~ msgstr ""
-#~ "Megvátoztathatja a file tartalmát bármilyen kívánt szövegre. Mielőtt a "
-#~ "file generálása megkezdődik a {field} mezők helyettesítve lesznek a "
-#~ "megfelelő mezők értékeivel. A használható mezők a következők:\n"
+#~ "Megvátoztathatja a file tartalmát bármilyen kívánt szövegre. Mielőtt a file "
+#~ "generálása megkezdődik a {field} mezők helyettesítve lesznek a megfelelő "
+#~ "mezők értékeivel. A használható mezők a következők:\n"
 #~ "\n"
 
 #~ msgid "<b>CDDB</b>"

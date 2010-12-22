@@ -11,12 +11,11 @@ msgstr ""
 "PO-Revision-Date: 2010-10-07 11:29+0000\n"
 "Last-Translator: mamaar <mamaar@gmail.com>\n"
 "Language-Team: Norwegian Bokmal <nb@li.org>\n"
-"Language: nb\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Launchpad-Export-Date: 2010-12-03 05:29+0000\n"
+"X-Launchpad-Export-Date: 2010-12-04 05:37+0000\n"
 "X-Generator: Launchpad (build Unknown)\n"
 
 #: ../src/media/track/__init__.py:54
@@ -162,9 +161,8 @@ msgid "Choose a directory"
 msgstr ""
 
 #: ../src/modules/FileExplorer.py:424
-#, fuzzy
 msgid "Invalid Folder"
-msgstr "Ugyldig sti"
+msgstr ""
 
 #: ../src/modules/FileExplorer.py:425
 msgid "You cannot add your root or home folder to the music directories"
@@ -215,7 +213,8 @@ msgid "Restart required"
 msgstr ""
 
 #: ../src/modules/__init__.py:267
-msgid "You must restart the application for this modification to take effect."
+msgid ""
+"You must restart the application for this modification to take effect."
 msgstr ""
 
 #: ../src/modules/CtrlPanel.py:190 ../src/modules/CtrlPanel.py:246
@@ -250,7 +249,8 @@ msgid ""
 msgstr ""
 
 #: ../src/modules/DesktopNotification.py:215
-msgid "If the Covers module is enabled, the popup also shows the album cover."
+msgid ""
+"If the Covers module is enabled, the popup also shows the album cover."
 msgstr ""
 
 #: ../src/modules/DesktopNotification.py:216
@@ -464,6 +464,7 @@ msgstr ""
 #~ "Dette navnet er ikke tillatt.\n"
 #~ "Bruk et annet."
 
+#, python-format
 #~ msgid ""
 #~ "The character %s is not allowed.\n"
 #~ "Please use another name."
@@ -490,18 +491,18 @@ msgstr ""
 #~ msgstr "Om passordlagringstrygghet"
 
 #~ msgid ""
-#~ "If you use Gnome, it is safe to store your password since the Gnome "
-#~ "keyring is used."
+#~ "If you use Gnome, it is safe to store your password since the Gnome keyring "
+#~ "is used."
 #~ msgstr ""
 #~ "Dersom du bruker Gnome, er det trygt å lagre passordet siden Gnome-"
 #~ "nøkkelringen brukes."
 
 #~ msgid ""
-#~ "If you do not use Gnome, beware that, although not stored as clear text, "
-#~ "an attacker <i>could</i> retrieve it."
+#~ "If you do not use Gnome, beware that, although not stored as clear text, an "
+#~ "attacker <i>could</i> retrieve it."
 #~ msgstr ""
-#~ "Dersom du ikke bruker Gnome, vær klar over at en angriper <i>kan</i> få "
-#~ "tak i passordet, selvom det ikke blir lagret i klartekst."
+#~ "Dersom du ikke bruker Gnome, vær klar over at en angriper <i>kan</i> få tak "
+#~ "i passordet, selvom det ikke blir lagret i klartekst."
 
 #~ msgid "Home"
 #~ msgstr "Hjem"
@@ -515,8 +516,7 @@ msgstr ""
 
 #~ msgid ""
 #~ "You will be able to add these root folders again later on if you wish so."
-#~ msgstr ""
-#~ "Du kan legge til disse rotmappene igjen senere dersom du ønsker det."
+#~ msgstr "Du kan legge til disse rotmappene igjen senere dersom du ønsker det."
 
 #~ msgid "Remove all selected entries?"
 #~ msgstr "Fjerne alle valgte oppføringer?"
@@ -627,6 +627,9 @@ msgstr ""
 #~ msgid "This will remove all disc information stored on your hard drive."
 #~ msgstr "Dette vil fjerne all diskinformasjon lagret på harddisken din."
 
+#~ msgid "Invalid path"
+#~ msgstr "Ugyldig sti"
+
 #~ msgid "Status File"
 #~ msgstr "Statusfil"
 
@@ -634,10 +637,8 @@ msgstr ""
 #~ msgstr "Genererer en tekstfil med gjeldene status"
 
 #~ msgid ""
-#~ "The path to the selected file is not valid. Please choose an existing "
-#~ "path."
-#~ msgstr ""
-#~ "Stien til den valgte filen er ikke gyldig. Velg en eksisterende sti."
+#~ "The path to the selected file is not valid. Please choose an existing path."
+#~ msgstr "Stien til den valgte filen er ikke gyldig. Velg en eksisterende sti."
 
 #~ msgid "Choose a file"
 #~ msgstr "Velg en fil"
