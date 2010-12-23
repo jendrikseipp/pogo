@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Launchpad-Export-Date: 2010-12-04 05:37+0000\n"
+"X-Launchpad-Export-Date: 2010-12-23 05:44+0000\n"
 "X-Generator: Launchpad (build Unknown)\n"
 
 #: ../src/media/track/__init__.py:54
@@ -123,6 +123,8 @@ msgstr ""
 #: ../src/gui/about.py:40
 msgid "translator-credits"
 msgstr ""
+"This is a dummy translation so that the credits are counted as translated.\n"
+"\n"
 "Launchpad Contributions:\n"
 "  abuyop https://launchpad.net/~abuyop"
 
@@ -478,3 +480,24 @@ msgstr "Main trek berikutnya"
 #: ../res/MainWindow.glade.h:3
 msgid "Play the previous track"
 msgstr "Main trek terdahulu"
+
+#~ msgid "Choose a folder"
+#~ msgstr "Pilih folder"
+
+#~ msgid "The name is incorrect"
+#~ msgstr "Nama salah"
+
+#~ msgid ""
+#~ "This name is not allowed.\n"
+#~ "Please use another one."
+#~ msgstr ""
+#~ "Nama ini tidak dibenarkan.\n"
+#~ "Sila gunakan yang lain."
+
+#, python-format
+#~ msgid ""
+#~ "The character %s is not allowed.\n"
+#~ "Please use another name."
+#~ msgstr ""
+#~ "Aksara %s tidak dibenarkan.\n"
+#~ "Sila guna nama yang lain."

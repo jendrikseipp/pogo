@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Launchpad-Export-Date: 2010-12-04 05:37+0000\n"
+"X-Launchpad-Export-Date: 2010-12-23 05:44+0000\n"
 "X-Generator: Launchpad (build Unknown)\n"
 
 #: ../src/media/track/__init__.py:54
@@ -117,6 +117,8 @@ msgstr ""
 #: ../src/gui/about.py:40
 msgid "translator-credits"
 msgstr ""
+"This is a dummy translation so that the credits are counted as translated.\n"
+"\n"
 "Launchpad Contributions:\n"
 "  Mithun J. Shitole https://launchpad.net/~mithunit\n"
 "  Rakhi Attal https://launchpad.net/~attal-rakhi"
@@ -451,3 +453,27 @@ msgstr "पुढील गाणे चालवा"
 #: ../res/MainWindow.glade.h:3
 msgid "Play the previous track"
 msgstr "आधीचे गाणे चालावा"
+
+#~ msgid "Choose a folder"
+#~ msgstr "संचयिका निवडा"
+
+#, python-format
+#~ msgid ""
+#~ "The character %s is not allowed.\n"
+#~ "Please use another name."
+#~ msgstr ""
+#~ "%s अक्षराची परवानगी नाही.\n"
+#~ "कृपया दुसरे नाव वापरा."
+
+#~ msgid ""
+#~ "This name is not allowed.\n"
+#~ "Please use another one."
+#~ msgstr ""
+#~ "हे नावाची परवानगी नाही.\n"
+#~ "कृपया दुसरे नाव वापरा."
+
+#~ msgid "The name is incorrect"
+#~ msgstr "नाव चुकीचे आहे"
+
+#~ msgid "Search in your music directories"
+#~ msgstr "आपल्या संगीत संचायीके मध्ये शोधा"
