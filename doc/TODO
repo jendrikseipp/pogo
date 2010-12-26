@@ -3,6 +3,7 @@
 0.4:
 O Stop after current album / track (Playlist context menu entry)
 O Fix adding files from command line by removing bash start script
+O Save maximized state
 
 0.x:
 O Remember last played track

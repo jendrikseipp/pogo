@@ -112,7 +112,8 @@ class Tracktree(modules.Module):
 
                 if item[1] is not None:
                     if len(item[1]) != 0:
-                        # We must expand the row before adding the real children, but this works only if there is already at least one child
+                        # We must expand the row before adding the real children, 
+                        # but this works only if there is already at least one child
                         self.restoreTreeDump(item[1], newNode)
         
         
