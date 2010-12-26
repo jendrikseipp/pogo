@@ -7,15 +7,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: decibel-audio-player\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-11-21 20:05+0100\n"
-"PO-Revision-Date: 2010-11-09 18:50+0000\n"
-"Last-Translator: cmdrhenner <cmdrhenner@gmail.com>\n"
+"POT-Creation-Date: 2010-12-03 13:45+0100\n"
+"PO-Revision-Date: 2010-12-04 20:01+0000\n"
+"Last-Translator: Jens Maucher <Unknown>\n"
 "Language-Team: German <de@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Launchpad-Export-Date: 2010-12-02 05:14+0000\n"
+"X-Launchpad-Export-Date: 2010-12-05 05:12+0000\n"
 "X-Generator: Launchpad (build Unknown)\n"
 
 #: ../src/media/track/__init__.py:54
@@ -126,6 +126,7 @@ msgstr ""
 "Launchpad Contributions:\n"
 "  Jendrik Seipp https://launchpad.net/~jendrikseipp\n"
 "  Jens Maucher https://launchpad.net/~jensmaucher\n"
+"  Samuel Mehrbrodt https://launchpad.net/~sam92\n"
 "  tim♡mint https://launchpad.net/~tim.h.s"
 
 #: ../src/gui/about.py:44
@@ -144,53 +145,71 @@ msgstr "Suche in Deinen Musik-Ordnern"
 msgid "Send track information to the Zeitgeist service"
 msgstr "Sende Informationen über gespielte Titel an Zeitgeist"
 
-#: ../src/modules/FileExplorer.py:173
+#: ../src/modules/FileExplorer.py:180
 msgid "loading..."
 msgstr "wird geladen…"
 
-#: ../src/modules/FileExplorer.py:353
+#: ../src/modules/FileExplorer.py:364
 msgid "Append"
 msgstr "Anhängen"
 
-#: ../src/modules/FileExplorer.py:372
+#: ../src/modules/FileExplorer.py:389
 msgid "Add music folder"
 msgstr "Füge Musik-Ordner hinzu"
 
-#: ../src/modules/FileExplorer.py:384
+#: ../src/modules/FileExplorer.py:401
 msgid "Hide folder"
 msgstr "Ordner verstecken"
 
-#: ../src/modules/FileExplorer.py:392
+#: ../src/modules/FileExplorer.py:409
 msgid "Open containing folder"
 msgstr "Öffnen des Ordners"
 
-#: ../src/modules/FileExplorer.py:403
+#: ../src/modules/FileExplorer.py:420
 msgid "Choose a directory"
 msgstr "Wähle ein Verzeichnis"
 
-#: ../src/modules/FileExplorer.py:408
+#: ../src/modules/FileExplorer.py:424
+msgid "Invalid Folder"
+msgstr "Ungültiger Ordner"
+
+#: ../src/modules/FileExplorer.py:425
+msgid "You cannot add your root or home folder to the music directories"
+msgstr ""
+"Sie können den Root-Ordner oder Ihr Heimatverzeichnis nicht zu den Musik-"
+"Verzeichnissen hinzufügen."
+
+#: ../src/modules/FileExplorer.py:432
 msgid "This path does not exist"
 msgstr "Dieser Pfad existiert nicht"
 
-#: ../src/modules/FileExplorer.py:409
+#: ../src/modules/FileExplorer.py:433
 msgid "Please select an existing directory."
 msgstr "Bitte wählen Sie ein existierendes Verzeichnis"
 
-#: ../src/modules/FileExplorer.py:501
+#: ../src/modules/FileExplorer.py:529
 msgid "Albums"
 msgstr "Alben"
 
-#: ../src/modules/FileExplorer.py:503
+#: ../src/modules/FileExplorer.py:531
 msgid "Music"
 msgstr "Musik"
 
-#: ../src/modules/FileExplorer.py:601
+#: ../src/modules/FileExplorer.py:606
+msgid "Right-click to add music folders"
+msgstr "Rechts-Klick zum Hinzufügen der Musik-Verzeichnisse"
+
+#: ../src/modules/FileExplorer.py:651
 msgid "Searching ..."
 msgstr "Suche läuft …"
 
-#: ../src/modules/FileExplorer.py:615
+#: ../src/modules/FileExplorer.py:666
 msgid "No tracks found"
 msgstr "Keine Songs gefunden"
+
+#: ../src/modules/FileExplorer.py:668
+msgid "No music folders have been added"
+msgstr "Es wuden keine Musik-Verzeichnisse hinzugefügt"
 
 #: ../src/modules/__init__.py:75
 msgid "The following Python modules are not available:"
@@ -332,11 +351,11 @@ msgstr ""
 "werden. Falls ein Benutzer-Cover zum aktuellen Titel existiert, wird dieses "
 "verwendet, ansonsten wird ein Cover aus dem Internet heruntergeladen."
 
-#: ../src/modules/Tracktree.py:367
+#: ../src/modules/Tracktree.py:372
 msgid "Save playlist"
 msgstr "Wiedergabeliste speichern"
 
-#: ../src/modules/Tracktree.py:416
+#: ../src/modules/Tracktree.py:421
 msgid "Clear Playlist"
 msgstr "Wiedergabeliste leeren"
 

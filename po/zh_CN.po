@@ -7,15 +7,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: decibel-audio-player\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-11-21 20:05+0100\n"
-"PO-Revision-Date: 2010-11-08 15:06+0000\n"
-"Last-Translator: lhquark <lhquark@yahoo.com.cn>\n"
+"POT-Creation-Date: 2010-12-03 13:45+0100\n"
+"PO-Revision-Date: 2010-12-11 04:20+0000\n"
+"Last-Translator: XsLiDian <Unknown>\n"
 "Language-Team: Simplified Chinese <zh_CN@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Launchpad-Export-Date: 2010-12-02 05:14+0000\n"
+"X-Launchpad-Export-Date: 2010-12-12 05:19+0000\n"
 "X-Generator: Launchpad (build Unknown)\n"
 
 #: ../src/media/track/__init__.py:54
@@ -73,7 +73,7 @@ msgstr "未知"
 #: ../src/media/track/__init__.py:175
 #, python-format
 msgid "%(album)s  [Disc %(discnum)u]"
-msgstr ""
+msgstr "%(album)s  [盘 %(discnum)u]"
 
 #: ../src/media/track/__init__.py:182
 msgid "CDDA Track"
@@ -122,6 +122,7 @@ msgstr ""
 "Launchpad Contributions:\n"
 "  Aron Xu https://launchpad.net/~happyaron\n"
 "  Billy Way https://launchpad.net/~weixq316\n"
+"  XsLiDian https://launchpad.net/~xslidian\n"
 "  lhquark https://launchpad.net/~lhquark\n"
 "  英华 https://launchpad.net/~wantinghard"
 
@@ -141,53 +142,69 @@ msgstr "在您的音乐文件夹中寻找"
 msgid "Send track information to the Zeitgeist service"
 msgstr ""
 
-#: ../src/modules/FileExplorer.py:173
+#: ../src/modules/FileExplorer.py:180
 msgid "loading..."
 msgstr "正在加载..."
 
-#: ../src/modules/FileExplorer.py:353
+#: ../src/modules/FileExplorer.py:364
 msgid "Append"
 msgstr "追加"
 
-#: ../src/modules/FileExplorer.py:372
+#: ../src/modules/FileExplorer.py:389
 msgid "Add music folder"
 msgstr "添加音频文件夹"
 
-#: ../src/modules/FileExplorer.py:384
+#: ../src/modules/FileExplorer.py:401
 msgid "Hide folder"
 msgstr "隐藏文件夹"
 
-#: ../src/modules/FileExplorer.py:392
+#: ../src/modules/FileExplorer.py:409
 msgid "Open containing folder"
 msgstr "打开包含文件夹"
 
-#: ../src/modules/FileExplorer.py:403
+#: ../src/modules/FileExplorer.py:420
 msgid "Choose a directory"
 msgstr "选择一个文件夹"
 
-#: ../src/modules/FileExplorer.py:408
+#: ../src/modules/FileExplorer.py:424
+msgid "Invalid Folder"
+msgstr ""
+
+#: ../src/modules/FileExplorer.py:425
+msgid "You cannot add your root or home folder to the music directories"
+msgstr ""
+
+#: ../src/modules/FileExplorer.py:432
 msgid "This path does not exist"
 msgstr "此路径不存在"
 
-#: ../src/modules/FileExplorer.py:409
+#: ../src/modules/FileExplorer.py:433
 msgid "Please select an existing directory."
 msgstr "请选择一个已有的文件夹"
 
-#: ../src/modules/FileExplorer.py:501
+#: ../src/modules/FileExplorer.py:529
 msgid "Albums"
 msgstr "专辑"
 
-#: ../src/modules/FileExplorer.py:503
+#: ../src/modules/FileExplorer.py:531
 msgid "Music"
 msgstr "音乐"
 
-#: ../src/modules/FileExplorer.py:601
+#: ../src/modules/FileExplorer.py:606
+msgid "Right-click to add music folders"
+msgstr ""
+
+#: ../src/modules/FileExplorer.py:651
 msgid "Searching ..."
 msgstr "搜索..."
 
-#: ../src/modules/FileExplorer.py:615
+#: ../src/modules/FileExplorer.py:666
 msgid "No tracks found"
 msgstr "没有发现音轨"
+
+#: ../src/modules/FileExplorer.py:668
+msgid "No music folders have been added"
+msgstr ""
 
 #: ../src/modules/__init__.py:75
 msgid "The following Python modules are not available:"
@@ -310,11 +327,11 @@ msgid ""
 msgstr ""
 "封面可以根据当前音轨的标签从互联网下载。您可以选择总是优先使用用户封面，此时，如果当前音轨存在用户封面，就会使用用户封面，否则就从互联网下载。"
 
-#: ../src/modules/Tracktree.py:367
+#: ../src/modules/Tracktree.py:372
 msgid "Save playlist"
 msgstr "保存播放列表"
 
-#: ../src/modules/Tracktree.py:416
+#: ../src/modules/Tracktree.py:421
 msgid "Clear Playlist"
 msgstr "清空播放列表"
 

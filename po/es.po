@@ -7,15 +7,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: decibel-audio-player\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-11-21 20:05+0100\n"
-"PO-Revision-Date: 2010-10-11 08:02+0000\n"
-"Last-Translator: Monkey <monkey.libre@gmail.com>\n"
+"POT-Creation-Date: 2010-12-03 13:45+0100\n"
+"PO-Revision-Date: 2010-12-14 07:58+0000\n"
+"Last-Translator: Fitoschido <Unknown>\n"
 "Language-Team: Spanish <es@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Launchpad-Export-Date: 2010-12-02 05:14+0000\n"
+"X-Launchpad-Export-Date: 2010-12-15 06:06+0000\n"
 "X-Generator: Launchpad (build Unknown)\n"
 
 #: ../src/media/track/__init__.py:54
@@ -48,11 +48,11 @@ msgstr "Número del disco"
 
 #: ../src/media/track/__init__.py:61
 msgid "Bit rate"
-msgstr ""
+msgstr "Tasa de bits"
 
 #: ../src/media/track/__init__.py:62
 msgid "Sample rate"
-msgstr ""
+msgstr "Tasa de muestreo"
 
 #: ../src/media/track/__init__.py:63
 msgid "Duration in seconds (e.g., 194)"
@@ -68,7 +68,7 @@ msgstr "Ruta completa al archivo"
 
 #: ../src/media/track/__init__.py:149 ../src/media/track/__init__.py:393
 msgid "unknown"
-msgstr ""
+msgstr "desconocido"
 
 #: ../src/media/track/__init__.py:175
 #, python-format
@@ -77,7 +77,7 @@ msgstr "%(album)s  [Disco %(discnum)u]"
 
 #: ../src/media/track/__init__.py:182
 msgid "CDDA Track"
-msgstr ""
+msgstr "Pista CDDA"
 
 #: ../src/gui/preferences.py:43
 msgid "Preferences"
@@ -101,6 +101,9 @@ msgid ""
 "This window shows the list of available modules. You can enable/disable a "
 "module by checking/unchecking the check box in front of it."
 msgstr ""
+"Esta ventana muestra la lista de módulos disponibles. Puede "
+"activar/desactivar un módulo marcando/desmarcando la casilla de verificación "
+"delante de él."
 
 #: ../src/gui/preferences.py:142
 msgid "Configuring a Module"
@@ -123,7 +126,9 @@ msgstr ""
 msgid "translator-credits"
 msgstr ""
 "Launchpad Contributions:\n"
+"  A. Belén López Garello https://launchpad.net/~belen.lg\n"
 "  Carlos Albornoz https://launchpad.net/~caralbornozc\n"
+"  Fitoschido https://launchpad.net/~fitoschido\n"
 "  Gerardo Zamudio https://launchpad.net/~gerardo.zamudio\n"
 "  José Lou Chang https://launchpad.net/~obake\n"
 "  Monkey https://launchpad.net/~monkey-libre"
@@ -138,59 +143,76 @@ msgstr "Gracias a:"
 
 #: ../src/modules/Search.py:34
 msgid "Search in your music folders"
-msgstr ""
+msgstr "Buscar en sus carpetas de música"
 
 #: ../src/modules/Zeitgeist.py:26
 msgid "Send track information to the Zeitgeist service"
-msgstr ""
+msgstr "Enviar información de la pista al servicio Zeitgeist"
 
-#: ../src/modules/FileExplorer.py:173
+#: ../src/modules/FileExplorer.py:180
 msgid "loading..."
 msgstr "cargando…"
 
-#: ../src/modules/FileExplorer.py:353
+#: ../src/modules/FileExplorer.py:364
 msgid "Append"
-msgstr ""
+msgstr "Anexar"
 
-#: ../src/modules/FileExplorer.py:372
+#: ../src/modules/FileExplorer.py:389
 msgid "Add music folder"
-msgstr ""
+msgstr "Añadir carpeta de música"
 
-#: ../src/modules/FileExplorer.py:384
+#: ../src/modules/FileExplorer.py:401
 msgid "Hide folder"
-msgstr ""
+msgstr "Ocultar carpeta"
 
-#: ../src/modules/FileExplorer.py:392
+#: ../src/modules/FileExplorer.py:409
 msgid "Open containing folder"
-msgstr ""
+msgstr "Abrir carpeta contenedora"
 
-#: ../src/modules/FileExplorer.py:403
+#: ../src/modules/FileExplorer.py:420
 msgid "Choose a directory"
-msgstr ""
+msgstr "Elija un directorio"
 
-#: ../src/modules/FileExplorer.py:408
+#: ../src/modules/FileExplorer.py:424
+msgid "Invalid Folder"
+msgstr "Carpeta no válida"
+
+#: ../src/modules/FileExplorer.py:425
+msgid "You cannot add your root or home folder to the music directories"
+msgstr ""
+"No puede añadir su carpeta de inicio o raíz a los directorios de música"
+
+#: ../src/modules/FileExplorer.py:432
 msgid "This path does not exist"
 msgstr "Esta ruta no existe"
 
-#: ../src/modules/FileExplorer.py:409
+#: ../src/modules/FileExplorer.py:433
 msgid "Please select an existing directory."
-msgstr "Por favor seleccione un directorio existente"
+msgstr "Seleccione un directorio existente."
 
-#: ../src/modules/FileExplorer.py:501
+#: ../src/modules/FileExplorer.py:529
 msgid "Albums"
 msgstr "Álbumes"
 
-#: ../src/modules/FileExplorer.py:503
+#: ../src/modules/FileExplorer.py:531
 msgid "Music"
-msgstr ""
+msgstr "Música"
 
-#: ../src/modules/FileExplorer.py:601
+#: ../src/modules/FileExplorer.py:606
+msgid "Right-click to add music folders"
+msgstr "Pulse con el botón derecho para añadir carpetas con música"
+
+#: ../src/modules/FileExplorer.py:651
 msgid "Searching ..."
-msgstr ""
+msgstr "Buscando..."
 
-#: ../src/modules/FileExplorer.py:615
+#: ../src/modules/FileExplorer.py:666
 msgid "No tracks found"
-msgstr ""
+msgstr "No se encontró ninguna pista"
+
+#: ../src/modules/FileExplorer.py:668
+msgid "No music folders have been added"
+msgstr "No se ha añadido ninguna carpeta de música"
 
 #: ../src/modules/__init__.py:75
 msgid "The following Python modules are not available:"
@@ -202,7 +224,7 @@ msgstr "Debe instalarlos si quiere activar este módulo."
 
 #: ../src/modules/__init__.py:266
 msgid "Restart required"
-msgstr ""
+msgstr "Es necesario reiniciar"
 
 #: ../src/modules/__init__.py:267
 msgid ""
@@ -216,7 +238,7 @@ msgstr "Pausar la pista actual"
 
 #: ../src/modules/CtrlPanel.py:206
 msgid "Play the first selected track of the playlist"
-msgstr ""
+msgstr "Reproducir la primer pista seleccionada en la lista de reproducción"
 
 #: ../src/modules/CtrlPanel.py:240
 msgid "Continue playing the current track"
@@ -247,6 +269,8 @@ msgstr ""
 msgid ""
 "If the Covers module is enabled, the popup also shows the album cover."
 msgstr ""
+"Si el módulo de carátulas está habilitado, la ventana emergente también "
+"muestra la carátula del álbum."
 
 #: ../src/modules/DesktopNotification.py:216
 msgid "Customizing the Notification"
@@ -273,8 +297,8 @@ msgid ""
 "You can use the Pango markup language to format the text. More information "
 "on that language is available on the following web page:"
 msgstr ""
-"Puede usar la idioma de Pango <em>markup</em> para formatear el texto. Mas "
-"información sobre este lenguaje está disponible en la  siguiente página web:"
+"Puede usar el lenguaje de marcado de Pango para formatear el texto. Mas "
+"información sobre este lenguaje está disponible en la página web siguiente:"
 
 #: ../src/modules/StatusbarTitlebar.py:47
 msgid "[paused]"
@@ -331,17 +355,17 @@ msgstr ""
 "existe para la pista actual, ésta se usa. Si no hay ninguna, la caratula "
 "será descargada."
 
-#: ../src/modules/Tracktree.py:367
+#: ../src/modules/Tracktree.py:372
 msgid "Save playlist"
 msgstr "Guardar lista de reproducción"
 
-#: ../src/modules/Tracktree.py:416
+#: ../src/modules/Tracktree.py:421
 msgid "Clear Playlist"
 msgstr "Limpiar lista de reproducción"
 
 #: ../src/modules/Equalizer.py:24
 msgid "Equalizer"
-msgstr ""
+msgstr "Ecualizador"
 
 #: ../src/modules/Equalizer.py:24
 msgid "Tune the level of the frequency bands"
@@ -350,11 +374,11 @@ msgstr "Afinar el nivel de las bandas de frecuencia"
 #: ../src/modules/Equalizer.py:125 ../src/modules/Equalizer.py:213
 #: ../src/modules/Equalizer.py:226
 msgid "Custom"
-msgstr ""
+msgstr "Personalizado"
 
 #: ../src/modules/Equalizer.py:166
 msgid "Save levels"
-msgstr ""
+msgstr "Guardar niveles"
 
 #: ../src/modules/Equalizer.py:177
 msgid "Load levels"
@@ -366,7 +390,7 @@ msgstr "No se pudo cargar el archivo"
 
 #: ../src/modules/Equalizer.py:204
 msgid "The format of the file is incorrect."
-msgstr ""
+msgstr "El formato de archivo es incorrecto."
 
 #: ../src/tools/consts.py:94
 msgid "Unknown Genre"
@@ -390,27 +414,27 @@ msgstr "Artista del álbum desconocido"
 
 #: ../res/Covers.glade.h:1
 msgid "<b>Internet Covers</b>"
-msgstr "<b>Caratulas de Internet</b>"
+msgstr "<b>Carátulas de Internet</b>"
 
 #: ../res/Covers.glade.h:2
 msgid "<b>User Covers</b>"
-msgstr "<b>Caratulas del Usuario</b>"
+msgstr "<b>Carátulas del usuario</b>"
 
 #: ../res/Covers.glade.h:3
 msgid "Always prefer user covers"
-msgstr "Siempre preferir las caratulas del usuario"
+msgstr "Siempre preferir las carátulas del usuario"
 
 #: ../res/Covers.glade.h:4
 msgid "Don't download covers when there is a user one"
-msgstr "No descargar caratulas cuando hay una del usuario"
+msgstr "No descargar carátulas cuando hay una del usuario"
 
 #: ../res/Covers.glade.h:5
 msgid "Download covers"
-msgstr "Descargar caratulas"
+msgstr "Descargar carátulas"
 
 #: ../res/Covers.glade.h:6
 msgid "Filenames to look for (e.g., folder, cover)"
-msgstr "Nombres de archivos a buscar (ej.: carpeta, caratula)"
+msgstr "Nombres de archivos a buscar (ej.: carpeta, carátula)"
 
 #: ../res/Covers.glade.h:7
 msgid "Filenames:"
@@ -418,7 +442,7 @@ msgstr "Nombres de archivos:"
 
 #: ../res/Covers.glade.h:8
 msgid "Try to download covers from the Internet"
-msgstr "Intentar descargar caratulas desde Internet"
+msgstr "Intentar descargar carátulas desde Internet"
 
 #: ../res/DesktopNotification.glade.h:1
 msgid "<b>Body</b>"
@@ -438,7 +462,7 @@ msgstr "Tiempo límite de la notificación:"
 
 #: ../res/DesktopNotification.glade.h:5
 msgid "Show a \"skip track\" button"
-msgstr "Mostrar un boton \"saltar pista\""
+msgstr "Mostrar un botón «saltar pista»"
 
 #: ../res/DesktopNotification.glade.h:6
 msgid "Time during which the notification is displayed"
@@ -450,11 +474,11 @@ msgstr "segundos"
 
 #: ../res/Equalizer.glade.h:1
 msgid "Preset:"
-msgstr ""
+msgstr "Preajuste:"
 
 #: ../res/MainWindow.glade.h:1
 msgid "Play the first track of the playlist"
-msgstr "Reproducir la pista primera de la lista de reproducción"
+msgstr "Reproducir la primera pista de la lista de reproducción"
 
 #: ../res/MainWindow.glade.h:2
 msgid "Play the next track"
@@ -462,7 +486,7 @@ msgstr "Reproducir la pista siguiente"
 
 #: ../res/MainWindow.glade.h:3
 msgid "Play the previous track"
-msgstr "Reproducir la última pista"
+msgstr "Reproducir la pista anterior"
 
 #~ msgid ""
 #~ "This dialog box shows the list of available modules, which are small pieces "

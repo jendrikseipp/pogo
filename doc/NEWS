@@ -1,6 +1,16 @@
  Pogo NEWS
 ==============
 
+ 0.3.1 "You are a radar detector" (2010-12-26)
+==============================================
+* When a track is added from nautilus etc. start playback if not already playing
+* Show info messages when no music directories have been added
+* Stop old search when user clears search field or enters new search phrase
+* Add search shortcut (Ctrl-F)
+* Do not allow adding root or home directory to music directories
+* Translations updated
+
+
  0.3 "I go hard, I go home" (2010-12-01)
 ========================================
 * Search for tracks in the music folders (Directories below separator)

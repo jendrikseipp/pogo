@@ -55,9 +55,9 @@ class Tracktree(modules.Module):
         """ Constructor """
         handlers = {
                         consts.MSG_CMD_NEXT:              self.jumpToNext,
-                        consts.MSG_EVT_PAUSED:            lambda: self.onPausedToggled(icons.pauseMenuIcon()),
+                        consts.MSG_EVT_PAUSED:            self.onPaused,
                         consts.MSG_EVT_STOPPED:           self.onStopped,
-                        consts.MSG_EVT_UNPAUSED:          lambda: self.onPausedToggled(icons.playMenuIcon()),
+                        consts.MSG_EVT_UNPAUSED:          self.onUnPaused,
                         consts.MSG_CMD_PREVIOUS:          self.jumpToPrevious,
                         consts.MSG_EVT_NEED_BUFFER:       self.onBufferingNeeded,
                         consts.MSG_EVT_APP_STARTED:       self.onAppStarted,
@@ -267,18 +267,23 @@ class Tracktree(modules.Module):
             trackdir.tracks = tracks
             tracks = trackdir
             
-        self.tree.get_selection().unselect_all()
-        self.insertDir(tracks, target, drop_mode, highlight)
-        self.onListModified()
-        return
+        children_before = self.tree.store.iter_n_children(target)
             
-        # TODO: playNow wanted? Buggy in current state
-        if playNow:
-            if parent is None:
-                dest = self.tree.get_last_root()
-            else:
-                dest = self.tree.get_last_child_iter(parent)
-            self.jumpTo(dest)
+        self.tree.get_selection().unselect_all()
+        dest = self.insertDir(tracks, target, drop_mode, highlight)
+        self.onListModified()
+        
+        # We only want to start playback if tracks are appended from DBus
+        # In that case target is None
+        # Also don't interrupt playing songs
+        if playNow and target is None and (not self.tree.hasMark() or self.paused):
+            # If the target is None, the tracks have to be appended to the top
+            # level and the first new track is the one after the original tracks
+            new = self.tree.store.iter_nth_child(target, children_before)
+            if new:
+                # If new is None, the tracks could not be added
+                self.jumpTo(new)
+                self.paused = False
             
             
     def insertDir(self, trackdir, target=None, drop_mode=None, highlight=False):
@@ -355,7 +360,7 @@ class Tracktree(modules.Module):
         self.tree.clear()
         
         if tracks is not None and not tracks.empty():
-            self.insert(tracks)
+            self.insert(tracks, playNow=playNow)
             
         self.tree.collapse_all()
             
@@ -473,21 +478,12 @@ class Tracktree(modules.Module):
         self.tree.connect('exttreeview-button-pressed', self.onMouseButton)
         self.tree.connect('tracktreeview-dnd', self.onDND)
         self.tree.connect('key-press-event', self.onKeyboard)
-        #self.tree.connect('extlistview-modified', self.onListModified)
-        #self.tree.connect('button-pressed', self.onButtonPressed)
-        #self.btnClear.connect('clicked', lambda widget: modules.postMsg(consts.MSG_CMD_TRACKLIST_CLR))
-        #self.btnRepeat.connect('toggled', self.onButtonRepeat)
-        #self.btnShuffle.connect('clicked', lambda widget: modules.postMsg(consts.MSG_CMD_TRACKLIST_SHUFFLE))
-        # Restore preferences
-        #self.btnRepeat.set_active(tools.prefs.get(__name__, 'repeat-status', PREFS_DEFAULT_REPEAT_STATUS))
-        # Set icons
-        #wTree.get_widget('img-repeat').set_from_icon_name('stock_repeat', gtk.ICON_SIZE_BUTTON)
-        #wTree.get_widget('img-shuffle').set_from_icon_name('stock_shuffle', gtk.ICON_SIZE_BUTTON)
         
         # Populate the playlist with commandline args or the saved playlist
         (options, args)    = prefs.getCmdLine()
         
         self.savedPlaylist = os.path.join(consts.dirCfg, 'saved-playlist')
+        self.paused = False
 
         if len(args) != 0:
             log.logger.info('[%s] Filling playlist with files given on command line' % MOD_INFO[modules.MODINFO_NAME])
@@ -563,6 +559,15 @@ class Tracktree(modules.Module):
         """ Switch between paused and unpaused """
         if self.tree.hasMark():
             self.tree.setItem(self.tree.getMark(), ROW_ICO, icon)
+            
+            
+    def onPaused(self):
+        self.paused = True
+        self.onPausedToggled(icons.pauseMenuIcon())
+        
+    def onUnPaused(self):
+        self.paused = False
+        self.onPausedToggled(icons.pauseMenuIcon())
             
             
     def onDragBegin(self, paths):

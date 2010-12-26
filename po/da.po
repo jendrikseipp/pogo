@@ -7,15 +7,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: decibel-audio-player\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-11-21 20:05+0100\n"
-"PO-Revision-Date: 2010-10-13 16:43+0000\n"
-"Last-Translator: Joe Hansen <Unknown>\n"
+"POT-Creation-Date: 2010-12-03 13:45+0100\n"
+"PO-Revision-Date: 2010-12-06 00:13+0000\n"
+"Last-Translator: Ask Hjorth Larsen <asklarsen@gmail.com>\n"
 "Language-Team: Danish <da@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Launchpad-Export-Date: 2010-12-02 05:14+0000\n"
+"X-Launchpad-Export-Date: 2010-12-07 05:19+0000\n"
 "X-Generator: Launchpad (build Unknown)\n"
 
 #: ../src/media/track/__init__.py:54
@@ -124,6 +124,7 @@ msgstr ""
 msgid "translator-credits"
 msgstr ""
 "Launchpad Contributions:\n"
+"  AJenbo https://launchpad.net/~ajenbo\n"
 "  Ask Hjorth Larsen https://launchpad.net/~askhl\n"
 "  Jendrik Seipp https://launchpad.net/~jendrikseipp\n"
 "  Joe Hansen https://launchpad.net/~joedalton2"
@@ -138,59 +139,75 @@ msgstr "Tak til:"
 
 #: ../src/modules/Search.py:34
 msgid "Search in your music folders"
-msgstr ""
+msgstr "Søg i dine musikmapper"
 
 #: ../src/modules/Zeitgeist.py:26
 msgid "Send track information to the Zeitgeist service"
 msgstr "Send sporinformation til Zeitgeist-tjenesten"
 
-#: ../src/modules/FileExplorer.py:173
+#: ../src/modules/FileExplorer.py:180
 msgid "loading..."
 msgstr "indlæser..."
 
-#: ../src/modules/FileExplorer.py:353
+#: ../src/modules/FileExplorer.py:364
 msgid "Append"
 msgstr "Tilføj"
 
-#: ../src/modules/FileExplorer.py:372
+#: ../src/modules/FileExplorer.py:389
 msgid "Add music folder"
-msgstr ""
+msgstr "Tilføj musikmappe"
 
-#: ../src/modules/FileExplorer.py:384
+#: ../src/modules/FileExplorer.py:401
 msgid "Hide folder"
-msgstr ""
+msgstr "Skjul mappe"
 
-#: ../src/modules/FileExplorer.py:392
+#: ../src/modules/FileExplorer.py:409
 msgid "Open containing folder"
-msgstr ""
+msgstr "Åbn indeholdende mappe"
 
-#: ../src/modules/FileExplorer.py:403
+#: ../src/modules/FileExplorer.py:420
 msgid "Choose a directory"
-msgstr ""
+msgstr "Vælg en mappe"
 
-#: ../src/modules/FileExplorer.py:408
+#: ../src/modules/FileExplorer.py:424
+msgid "Invalid Folder"
+msgstr "Ugyldig mappe"
+
+#: ../src/modules/FileExplorer.py:425
+msgid "You cannot add your root or home folder to the music directories"
+msgstr "Du kan ikke tilføje din rod eller hjemmemappe til musikmapperne"
+
+#: ../src/modules/FileExplorer.py:432
 msgid "This path does not exist"
 msgstr "Denne sti eksisterer ikke"
 
-#: ../src/modules/FileExplorer.py:409
+#: ../src/modules/FileExplorer.py:433
 msgid "Please select an existing directory."
 msgstr "Vælg en eksisterende mappe."
 
-#: ../src/modules/FileExplorer.py:501
+#: ../src/modules/FileExplorer.py:529
 msgid "Albums"
 msgstr "Albummer"
 
-#: ../src/modules/FileExplorer.py:503
+#: ../src/modules/FileExplorer.py:531
 msgid "Music"
 msgstr "Musik"
 
-#: ../src/modules/FileExplorer.py:601
-msgid "Searching ..."
-msgstr ""
+#: ../src/modules/FileExplorer.py:606
+msgid "Right-click to add music folders"
+msgstr "Højreklik for at tilføje musikmapper"
 
-#: ../src/modules/FileExplorer.py:615
+#: ../src/modules/FileExplorer.py:651
+msgid "Searching ..."
+msgstr "Søger..."
+
+#: ../src/modules/FileExplorer.py:666
 msgid "No tracks found"
-msgstr ""
+msgstr "Ingen numre fundet"
+
+#: ../src/modules/FileExplorer.py:668
+msgid "No music folders have been added"
+msgstr "Der er ikke blevet tilføjet nogen musikmapper"
 
 #: ../src/modules/__init__.py:75
 msgid "The following Python modules are not available:"
@@ -330,11 +347,11 @@ msgstr ""
 "brugeromslag for et givet nummer, vil dette blive brugt. Ellers hentes et "
 "omslag fra nettet."
 
-#: ../src/modules/Tracktree.py:367
+#: ../src/modules/Tracktree.py:372
 msgid "Save playlist"
 msgstr "Gem afspilningsliste"
 
-#: ../src/modules/Tracktree.py:416
+#: ../src/modules/Tracktree.py:421
 msgid "Clear Playlist"
 msgstr "Ryd afspilningslisten"
 

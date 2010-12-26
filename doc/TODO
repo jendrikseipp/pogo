@@ -2,15 +2,13 @@
 
 0.4:
 O Stop after current album / track (Playlist context menu entry)
-O When track is added from nautilus etc. start track if not already playing
-O Use multiprocessing for searching
-O Stop search, when user clears field or enters new search phrase
-O Add search shortcut
+O Fix adding files from command line by removing bash start script
 
 0.x:
+O Remember last played track
 O Save playlist periodically to prevent losing it during a shutdown
 O Export playlist to .m3u format
-O Export tracks in playlist into a directory
+O Export tracks in playlist into a directory (with subdirectories)
 O Shuffle
 O Repeat
 O Playlist loading (Only add tracks in playlist not added anyways)
@@ -23,9 +21,11 @@ O Enqueue?
 O Party View (Fullscreen)?
 O Scrobbling Support (using decibel code)?
 O Lyrics?
+O WAV support
 
 
 === Features that will NOT be implemented ===
 - Do not add empty dirs to Tracktree (Irritating)
 - Ellipsize names (Looks odd)
 - Play audio CDs (Rip and play is nicer anyways)
+- Use multiprocessing for searching (Too error prone)

@@ -7,15 +7,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: decibel-audio-player\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-11-21 20:05+0100\n"
-"PO-Revision-Date: 2010-10-12 17:36+0000\n"
+"POT-Creation-Date: 2010-12-03 13:45+0100\n"
+"PO-Revision-Date: 2010-12-08 22:53+0000\n"
 "Last-Translator: Papp Bence <papp.bence89@gmail.com>\n"
 "Language-Team: Hungarian <hu@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Launchpad-Export-Date: 2010-12-02 05:14+0000\n"
+"X-Launchpad-Export-Date: 2010-12-09 05:33+0000\n"
 "X-Generator: Launchpad (build Unknown)\n"
 
 #: ../src/media/track/__init__.py:54
@@ -44,7 +44,7 @@ msgstr "Dátum"
 
 #: ../src/media/track/__init__.py:60
 msgid "Disc number"
-msgstr "Album sorszám"
+msgstr "Album sorszáma"
 
 #: ../src/media/track/__init__.py:61
 msgid "Bit rate"
@@ -101,7 +101,7 @@ msgid ""
 "This window shows the list of available modules. You can enable/disable a "
 "module by checking/unchecking the check box in front of it."
 msgstr ""
-"Ez az ablak ez elérhető modulok listáját mutatja. Ön engedélyzeni/letiltani "
+"Ez az ablak az elérhető modulok listáját mutatja. Ön engedélyzeni/letiltani "
 "tudja a modulokat a doboz kipipálásával/a pipa eltávolításával."
 
 #: ../src/gui/preferences.py:142
@@ -138,59 +138,75 @@ msgstr "Köszönetnyilvánítás:"
 
 #: ../src/modules/Search.py:34
 msgid "Search in your music folders"
-msgstr ""
+msgstr "Keresés a zene mappában"
 
 #: ../src/modules/Zeitgeist.py:26
 msgid "Send track information to the Zeitgeist service"
 msgstr "Track információ küldése a Zeitgeist szolgáltatásnak"
 
-#: ../src/modules/FileExplorer.py:173
+#: ../src/modules/FileExplorer.py:180
 msgid "loading..."
-msgstr "töltés folyamatban..."
+msgstr "betöltés…"
 
-#: ../src/modules/FileExplorer.py:353
+#: ../src/modules/FileExplorer.py:364
 msgid "Append"
 msgstr "Hozzáfűz"
 
-#: ../src/modules/FileExplorer.py:372
+#: ../src/modules/FileExplorer.py:389
 msgid "Add music folder"
-msgstr ""
+msgstr "Zene mappa hozzáadása"
 
-#: ../src/modules/FileExplorer.py:384
+#: ../src/modules/FileExplorer.py:401
 msgid "Hide folder"
-msgstr ""
+msgstr "Mappa elrejtése"
 
-#: ../src/modules/FileExplorer.py:392
+#: ../src/modules/FileExplorer.py:409
 msgid "Open containing folder"
-msgstr ""
+msgstr "A tartalmazó mappa megnyitása"
 
-#: ../src/modules/FileExplorer.py:403
+#: ../src/modules/FileExplorer.py:420
 msgid "Choose a directory"
-msgstr ""
+msgstr "Válasszon egy könyvtárat"
 
-#: ../src/modules/FileExplorer.py:408
+#: ../src/modules/FileExplorer.py:424
+msgid "Invalid Folder"
+msgstr "Érvénytelen mappa"
+
+#: ../src/modules/FileExplorer.py:425
+msgid "You cannot add your root or home folder to the music directories"
+msgstr "Root vagy saját mappát nem lehet hozzáadni a zenei könyvtárakhoz"
+
+#: ../src/modules/FileExplorer.py:432
 msgid "This path does not exist"
 msgstr "Ez az útvonal nem létezik"
 
-#: ../src/modules/FileExplorer.py:409
+#: ../src/modules/FileExplorer.py:433
 msgid "Please select an existing directory."
 msgstr "Kérem, válasszon ki egy már létező könyvtárat."
 
-#: ../src/modules/FileExplorer.py:501
+#: ../src/modules/FileExplorer.py:529
 msgid "Albums"
 msgstr "Albumok"
 
-#: ../src/modules/FileExplorer.py:503
+#: ../src/modules/FileExplorer.py:531
 msgid "Music"
 msgstr "Zene"
 
-#: ../src/modules/FileExplorer.py:601
-msgid "Searching ..."
-msgstr ""
+#: ../src/modules/FileExplorer.py:606
+msgid "Right-click to add music folders"
+msgstr "Zene mappák hozzáadása jobb-kattintással"
 
-#: ../src/modules/FileExplorer.py:615
+#: ../src/modules/FileExplorer.py:651
+msgid "Searching ..."
+msgstr "Keresés ..."
+
+#: ../src/modules/FileExplorer.py:666
 msgid "No tracks found"
-msgstr ""
+msgstr "Szám nem található"
+
+#: ../src/modules/FileExplorer.py:668
+msgid "No music folders have been added"
+msgstr "Nincs zene mappa hozzáadva"
 
 #: ../src/modules/__init__.py:75
 msgid "The following Python modules are not available:"
@@ -207,7 +223,7 @@ msgstr "Újraindítás szükséges"
 #: ../src/modules/__init__.py:267
 msgid ""
 "You must restart the application for this modification to take effect."
-msgstr "A változások életbelépéséhez az alkalmazást újra kell indítani."
+msgstr "A változások életbelépéséhez az alkalmazást újra kell indítania."
 
 #: ../src/modules/CtrlPanel.py:190 ../src/modules/CtrlPanel.py:246
 msgid "Pause the current track"
@@ -215,7 +231,7 @@ msgstr "Az aktuális zeneszám szüneteltetése"
 
 #: ../src/modules/CtrlPanel.py:206
 msgid "Play the first selected track of the playlist"
-msgstr "Az első kiválasztott track lejátszása a lejátszási listáról"
+msgstr "Az első kiválasztott szám lejátszása a lejátszási listáról"
 
 #: ../src/modules/CtrlPanel.py:240
 msgid "Continue playing the current track"
@@ -223,11 +239,11 @@ msgstr "Az aktuális zeneszám továbbjátszása"
 
 #: ../src/modules/DesktopNotification.py:25
 msgid "Desktop Notification"
-msgstr "Értesítés az Írópulton"
+msgstr "Értesítés az Asztalon"
 
 #: ../src/modules/DesktopNotification.py:25
 msgid "Display a desktop notification on track change"
-msgstr "Értesítsen az Írópulton számváltáskor"
+msgstr "Értesítsen az Asztalon számváltáskor"
 
 #: ../src/modules/DesktopNotification.py:78
 #: ../src/modules/DesktopNotification.py:188
@@ -239,8 +255,8 @@ msgid ""
 "This module displays a small popup window on your desktop when a new track "
 "starts."
 msgstr ""
-"Ez a modul apró felugró ablakot jelentet meg az Írópulton, mikor új zeneszám "
-"indul."
+"Ez a modul egy apró felugró ablakkal értesít az asztalon, mikor egy új "
+"zeneszám indul el."
 
 #: ../src/modules/DesktopNotification.py:215
 msgid ""
@@ -275,7 +291,7 @@ msgid ""
 "on that language is available on the following web page:"
 msgstr ""
 "A szöveg formázására a Pango leíró nyelvet használhatja. További információ "
-"erről a nyelvről a következő weboldalon található:"
+"a következő weboldalon található:"
 
 #: ../src/modules/StatusbarTitlebar.py:47
 msgid "[paused]"
@@ -295,9 +311,10 @@ msgid ""
 "Covers may be loaded from local pictures, located in the same directory as "
 "the current track, or may be downloaded from the Internet."
 msgstr ""
-"Ez a modul megjeleníti annak az albumnak a borítóját, melyhez a jelenleg "
-"játszott szám tartozik. A borítók helyi hozzáférésű képekből, ugyanabból a "
-"mappából származhatnak, vagy letölthetők az internetről."
+"Ez a modul megjeleníti annak az albumnak a borítóját, amelyhez a jelenleg "
+"lejátszott szám tartozik. A borítók helyi hozzáférésű képekből, ugyanabból a "
+"mappából származhatnak, mint a jelenlegi szám, vagy letölthetők az "
+"Internetről."
 
 #: ../src/modules/Covers.py:438
 msgid "User Covers"
@@ -311,13 +328,13 @@ msgid ""
 "extensions, supported file formats (%s) are automatically used."
 msgstr ""
 "A felhasználó lemezborítójaként egy kép van használva az épp lejátszott "
-"zeneszám könyvtárából. A filenevek megadásánál nem szükséges a "
+"zeneszám könyvtárából. A fájlnevek megadásánál nem szükséges a "
 "kiterjesztések megadása, automatikusan a támogatott (%s) formátumokat "
 "használja."
 
 #: ../src/modules/Covers.py:442
 msgid "Internet Covers"
-msgstr "Internetes lemezborítók."
+msgstr "Internetes lemezborítók"
 
 #: ../src/modules/Covers.py:443
 msgid ""
@@ -326,16 +343,16 @@ msgid ""
 "case, if a user cover exists for the current track, it is used. If there is "
 "none, the cover is downloaded."
 msgstr ""
-"Lemezborítók az internetröl tölthetőek le a zeneszámok tag-jei alapján. "
-"Beállíthatja hogy a felhasználói borítókat használja az internetröl "
-"letölthetöekkel szemben. Ebben az esetben ha a zeneszám mellett létezik "
-"borító, az lesz használva. Ha nincsen akkor az internetöl letöltött."
+"Lemezborítók az Internetről letölthetőek  a zeneszámok adatai  alapján. "
+"Beállíthatja, hogy a felhasználói borítókat használja az Internetről "
+"letölthetőekkel szemben. Ebben az esetben, ha a zeneszám mellett létezik "
+"borító, az lesz használva. Ha nincs, akkor az Internetről fogja letölteni."
 
-#: ../src/modules/Tracktree.py:367
+#: ../src/modules/Tracktree.py:372
 msgid "Save playlist"
 msgstr "Lejátszólista mentése"
 
-#: ../src/modules/Tracktree.py:416
+#: ../src/modules/Tracktree.py:421
 msgid "Clear Playlist"
 msgstr "Lejátszólista törlése"
 
@@ -362,7 +379,7 @@ msgstr "Szintek betöltése"
 
 #: ../src/modules/Equalizer.py:204
 msgid "Could not load the file"
-msgstr "A fájl betöltése nem sikerült."
+msgstr "A fájl betöltése nem sikerült"
 
 #: ../src/modules/Equalizer.py:204
 msgid "The format of the file is incorrect."
@@ -402,7 +419,7 @@ msgstr "Mindíg a felhasználói lemezborítók használata van előnyben"
 
 #: ../res/Covers.glade.h:4
 msgid "Don't download covers when there is a user one"
-msgstr "Ne töltsön le lemezborítót ha létezik felhasználói borító"
+msgstr "Ne töltsön le lemezborítót, ha létezik felhasználói borító"
 
 #: ../res/Covers.glade.h:5
 msgid "Download covers"
@@ -410,15 +427,15 @@ msgstr "Lemezborítók letöltése"
 
 #: ../res/Covers.glade.h:6
 msgid "Filenames to look for (e.g., folder, cover)"
-msgstr "Mely file-neveket keressek (pl. könyvtárnév, lemezborító)"
+msgstr "Milyen fájl-neveket keressek (pl. könyvtárnév, lemezborító)"
 
 #: ../res/Covers.glade.h:7
 msgid "Filenames:"
-msgstr "Filenevek"
+msgstr "Fájlnevek:"
 
 #: ../res/Covers.glade.h:8
 msgid "Try to download covers from the Internet"
-msgstr "Próbálja a lemezborítok internetről való letöltését"
+msgstr "Próbáljon letölteni lemezborítókat az Internetről"
 
 #: ../res/DesktopNotification.glade.h:1
 msgid "<b>Body</b>"
@@ -434,7 +451,7 @@ msgstr "<b>Cím</b>"
 
 #: ../res/DesktopNotification.glade.h:4
 msgid "Notification timeout:"
-msgstr "Értesítés időhossz:"
+msgstr "Értesítés időhossza:"
 
 #: ../res/DesktopNotification.glade.h:5
 msgid "Show a \"skip track\" button"
@@ -442,7 +459,7 @@ msgstr "A \"szám kihagyása\" gomb mutatása"
 
 #: ../res/DesktopNotification.glade.h:6
 msgid "Time during which the notification is displayed"
-msgstr "mennyi ideig lesz az értesítés mutatva"
+msgstr "Az értesítés ennyi ideig lesz mutatva"
 
 #: ../res/DesktopNotification.glade.h:7
 msgid "seconds"
