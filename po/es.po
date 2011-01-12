@@ -8,14 +8,14 @@ msgstr ""
 "Project-Id-Version: decibel-audio-player\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2010-12-03 13:45+0100\n"
-"PO-Revision-Date: 2010-12-14 07:58+0000\n"
+"PO-Revision-Date: 2011-01-12 04:08+0000\n"
 "Last-Translator: Fitoschido <Unknown>\n"
 "Language-Team: Spanish <es@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Launchpad-Export-Date: 2010-12-27 05:13+0000\n"
+"X-Launchpad-Export-Date: 2011-01-12 05:54+0000\n"
 "X-Generator: Launchpad (build Unknown)\n"
 
 #: ../src/media/track/__init__.py:54
@@ -306,11 +306,11 @@ msgstr "[pausado]"
 
 #: ../src/modules/Covers.py:28
 msgid "Covers"
-msgstr "Caratulas"
+msgstr "Portadas"
 
 #: ../src/modules/Covers.py:28
 msgid "Show album covers"
-msgstr "Mostrar caratulas de álbumes"
+msgstr "Mostrar portadas de álbumes"
 
 #: ../src/modules/Covers.py:435
 msgid ""
@@ -318,13 +318,13 @@ msgid ""
 "Covers may be loaded from local pictures, located in the same directory as "
 "the current track, or may be downloaded from the Internet."
 msgstr ""
-"Éste módulo muestra la caratula del álbum del cual procede la pista actual. "
-"Las caratulas pueden cargarse de imágenes locales, localizadas en el mismo "
-"directorio que la pista actual, o pueden ser descargadas desde Internet."
+"Éste módulo muestra la portada del álbum del cual procede la pista actual. "
+"Las portadas pueden cargarse de imágenes locales, localizadas en el mismo "
+"directorio que la pista actual, o pueden descargarse desde Internet."
 
 #: ../src/modules/Covers.py:438
 msgid "User Covers"
-msgstr "Caratulas del usuario"
+msgstr "Portadas del usuario"
 
 #: ../src/modules/Covers.py:439
 #, python-format
@@ -333,14 +333,14 @@ msgid ""
 "track. When specifying filenames, you do not need to provide file "
 "extensions, supported file formats (%s) are automatically used."
 msgstr ""
-"Una caratula del usuario es una imagen localizada en el mismo directorio que "
-"la pista actual. Cuando se especifican nombres de archivos, usted no "
-"necesita proveer extensiones de archivos, los formatos de archivos "
+"Una portada del usuario es una imagen localizada en el mismo directorio que "
+"la pista actual. Cuando se especifican nombres de archivos, no necesita "
+"proporcionar las extensiones de archivos, los formatos de archivos "
 "soportados (%s) se usan automáticamente."
 
 #: ../src/modules/Covers.py:442
 msgid "Internet Covers"
-msgstr "Caratulas de Internet"
+msgstr "Portadas de Internet"
 
 #: ../src/modules/Covers.py:443
 msgid ""
@@ -349,11 +349,11 @@ msgid ""
 "case, if a user cover exists for the current track, it is used. If there is "
 "none, the cover is downloaded."
 msgstr ""
-"Las caratulas pueden descargarse de Internet, basándose en las etiquetas de "
-"la pista actual. Usted puede pedir que siempre se prefieran las caratulas "
-"del usuario a las de Internet. En este caso, si una caratula del usuario "
-"existe para la pista actual, ésta se usa. Si no hay ninguna, la caratula "
-"será descargada."
+"Las portadas pueden descargarse de Internet, basándose en las etiquetas de "
+"la pista actual. Puede configurar que siempre se prefieran las portadas del "
+"usuario a las de Internet. En este caso, si una portada del usuario existe "
+"para la pista actual, ésta se usa. Si no hay ninguna, la caratula será "
+"descargada."
 
 #: ../src/modules/Tracktree.py:372
 msgid "Save playlist"
