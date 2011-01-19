@@ -8,15 +8,15 @@ msgstr ""
 "Project-Id-Version: pogo\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2010-12-03 13:45+0100\n"
-"PO-Revision-Date: 2010-11-13 19:08+0000\n"
-"Last-Translator: Mithun J. Shitole <Unknown>\n"
+"PO-Revision-Date: 2011-01-12 14:46+0000\n"
+"Last-Translator: Rakhi Attal <Unknown>\n"
 "Language-Team: Marathi <mr@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Launchpad-Export-Date: 2010-12-04 05:37+0000\n"
-"X-Generator: Launchpad (build Unknown)\n"
+"X-Launchpad-Export-Date: 2011-01-13 05:35+0000\n"
+"X-Generator: Launchpad (build 12177)\n"
 
 #: ../src/media/track/__init__.py:54
 msgid "Track number"
@@ -451,3 +451,27 @@ msgstr "पुढील गाणे चालवा"
 #: ../res/MainWindow.glade.h:3
 msgid "Play the previous track"
 msgstr "आधीचे गाणे चालावा"
+
+#~ msgid "Choose a folder"
+#~ msgstr "संचयिका निवडा"
+
+#, python-format
+#~ msgid ""
+#~ "The character %s is not allowed.\n"
+#~ "Please use another name."
+#~ msgstr ""
+#~ "%s अक्षराची परवानगी नाही.\n"
+#~ "कृपया दुसरे नाव वापरा."
+
+#~ msgid ""
+#~ "This name is not allowed.\n"
+#~ "Please use another one."
+#~ msgstr ""
+#~ "हे नावाची परवानगी नाही.\n"
+#~ "कृपया दुसरे नाव वापरा."
+
+#~ msgid "The name is incorrect"
+#~ msgstr "नाव चुकीचे आहे"
+
+#~ msgid "Search in your music directories"
+#~ msgstr "आपल्या संगीत संचायीके मध्ये शोधा"

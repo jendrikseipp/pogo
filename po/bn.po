@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Launchpad-Export-Date: 2010-12-04 05:37+0000\n"
+"X-Launchpad-Export-Date: 2010-12-27 05:13+0000\n"
 "X-Generator: Launchpad (build Unknown)\n"
 
 #: ../src/media/track/__init__.py:54
@@ -123,6 +123,8 @@ msgstr ""
 #: ../src/gui/about.py:40
 msgid "translator-credits"
 msgstr ""
+"This is a dummy translation so that the credits are counted as translated.\n"
+"\n"
 "Launchpad Contributions:\n"
 "  Aniruddha Adhikary https://launchpad.net/~digitiger1"
 
@@ -477,3 +479,27 @@ msgstr "পরবর্তী ট্র্যাকটি প্লে কর"
 #: ../res/MainWindow.glade.h:3
 msgid "Play the previous track"
 msgstr "পূর্ববর্তী ট্র্যাকটি প্লে কর"
+
+#~ msgid "Choose a folder"
+#~ msgstr "একটি ফোল্ডার নির্বাচন করুন"
+
+#, python-format
+#~ msgid ""
+#~ "The character %s is not allowed.\n"
+#~ "Please use another name."
+#~ msgstr ""
+#~ "%s ক্যারেক্টারটি ব্যবহার করা যাবে না।\n"
+#~ "আরেকটি নাম ব্যবহার করুন।"
+
+#~ msgid ""
+#~ "This name is not allowed.\n"
+#~ "Please use another one."
+#~ msgstr ""
+#~ "এই নামটি অনুমিত নয়।\n"
+#~ "অনুগ্রহ করে আরেকটি নাম ব্যবহার করুন।"
+
+#~ msgid "The name is incorrect"
+#~ msgstr "নামটি ভুল"
+
+#~ msgid "Search in your music directories"
+#~ msgstr "আপনার সঙ্গীত ডিরেক্টরীতে খুঁজুন"

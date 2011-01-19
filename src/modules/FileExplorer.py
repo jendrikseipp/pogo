@@ -388,9 +388,21 @@ class FileExplorer(modules.Module):
             play.set_sensitive(False)
         else:
             play.connect('activate', lambda widget: self.play(True))
-            
+
+        # open containing folder
+        show_folder = None
+        if path:
+            show_folder = gtk.ImageMenuItem(gtk.STOCK_OPEN)
+            show_folder.set_label(_('Open containing folder'))
+            filepath = self.tree.getItem(path, ROW_FULLPATH)
+            parent_path = os.path.dirname(filepath)
+            show_folder.connect('activate', lambda widget: tools.open_path(parent_path))
+            popup.append(show_folder)
+
         # Do not show the other options when we are displaying results
         if self.displaying_results:
+            if show_folder:
+                popup.append(show_folder)
             popup.show_all()
             popup.popup(None, None, None, button, time)
             return
@@ -424,12 +436,7 @@ class FileExplorer(modules.Module):
         
 
         # open containing folder
-        if path:
-            show_folder = gtk.ImageMenuItem(gtk.STOCK_OPEN)
-            show_folder.set_label(_('Open containing folder'))
-            filepath = self.tree.getItem(path, ROW_FULLPATH)
-            parent_path = os.path.dirname(filepath)
-            show_folder.connect('activate', lambda widget: tools.open_path(parent_path))
+        if show_folder:
             popup.append(show_folder)
 
         popup.show_all()

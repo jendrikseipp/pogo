@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Launchpad-Export-Date: 2010-12-04 05:38+0000\n"
+"X-Launchpad-Export-Date: 2010-12-27 05:13+0000\n"
 "X-Generator: Launchpad (build Unknown)\n"
 
 #: ../src/media/track/__init__.py:54
@@ -538,3 +538,13 @@ msgstr "Önceki şarkıyı çal"
 
 #~ msgid "your Last.fm account"
 #~ msgstr "Last.fm hesabınız"
+
+#~ msgid ""
+#~ "This name is not allowed.\n"
+#~ "Please use another one."
+#~ msgstr ""
+#~ "İsim kabul edilmiyor.\n"
+#~ "Lütfen başka bir isim kullanın."
+
+#~ msgid "The name is incorrect"
+#~ msgstr "Hatalı isim"

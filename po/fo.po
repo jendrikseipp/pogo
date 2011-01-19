@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Launchpad-Export-Date: 2010-12-08 05:13+0000\n"
+"X-Launchpad-Export-Date: 2010-12-27 05:13+0000\n"
 "X-Generator: Launchpad (build Unknown)\n"
 "Language: fo\n"
 
@@ -120,6 +120,8 @@ msgstr ""
 #: ../src/gui/about.py:40
 msgid "translator-credits"
 msgstr ""
+"This is a dummy translation so that the credits are counted as translated.\n"
+"\n"
 "Launchpad Contributions:\n"
 "  Gunleif Joensen https://launchpad.net/~gunleif"
 

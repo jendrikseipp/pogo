@@ -1,16 +1,10 @@
 === Roadmap ===
 
-0.3.1:
-X When track is added from nautilus etc. start track if not already playing
-X Show info messages when no music directories have been added
-X Stop old search when user clears search field or enters new search phrase
-X Add search shortcut (Ctrl-F)
-X Do not allow adding root or home directory to music directories
-
 0.4:
 O Stop after current album / track (Playlist context menu entry)
 O Fix adding files from command line by removing bash start script
 O Save maximized state
+X Show "Open containing folder" in context menu also for seaches
 
 0.x:
 O Remember last played track
