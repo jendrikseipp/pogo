@@ -37,8 +37,9 @@ MOD_INFO = ('Search', ('Search'), search_text, [], True, False)
 MOD_NAME = MOD_INFO[modules.MODINFO_NAME]
 
 MIN_CHARS = 1
+CACHE_QUERY = "Caching files"
 
-    
+
 
 class Search(modules.ThreadedModule):
 
@@ -52,14 +53,17 @@ class Search(modules.ThreadedModule):
                    }
 
         modules.ThreadedModule.__init__(self, handlers)
-        
-        
+
+
     def search_dir(self, dir, query):
         cmd = ['find', dir]
         for part in query.split():
             cmd.extend(['-iwholename', '*%s*' % part])
-        logging.info('Searching with command: %s' % ' '.join(cmd))
         search = subprocess.Popen(cmd, stdout=subprocess.PIPE)
+        if query == CACHE_QUERY:
+            logging.info('Caching "%s"' % dir)
+            return []
+        logging.info('Searching with command: %s' % ' '.join(cmd))
         self.searches.append(search)
         output, errors = search.communicate()
         if search.returncode < 0:
@@ -68,29 +72,29 @@ class Search(modules.ThreadedModule):
         output = sorted(output.splitlines(), key=str.lower)
         logging.info('Results for %s in %s: %s' % (query, dir, len(output)))
         return output
-        
-        
+
+
     def stop_searches(self):
         # The kill() method was introduced in python2.6
         self.should_stop = True
-        
+
         if not hasattr(subprocess.Popen, 'kill'):
             self.searches = []
             return
-            
+
         for search in self.searches:
             if search.returncode is None:
                 search.kill()
         self.searches = []
-            
-        
+
+
     def filter_results(self, results, search_path, regexes):
         '''
         Remove subpaths of parent directories
         '''
         def same_case_bold(match):
             return 'STARTBOLD%sENDBOLD' % match.group(0)
-            
+
         def get_name(path):
             # Remove the search path from the name
             if path == search_path:
@@ -98,44 +102,44 @@ class Search(modules.ThreadedModule):
             else:
                 name = path.replace(search_path, '')
             name = name.strip('/')
-            
+
             for regex in regexes:
                 name = regex.sub(same_case_bold, unicode(name))
-            
+
             name = tools.htmlEscape(name)
             name = name.replace('STARTBOLD', '<b>').replace('ENDBOLD', '</b>')
             return name
-        
+
         dirs = []
         files = []
         for path in results:
             if self.should_stop:
                 return ([], [])
-                
+
             # Check if this is only a subpath of a directory already handled
             is_subpath = False
             for dir in dirs:
                 if path.startswith(dir):
                     is_subpath = True
                     break
-                    
+
             if not is_subpath:
                 name = get_name(path)
-                    
+
                 if os.path.isdir(path):
                     dirs.append((path, name))
                 elif media.isSupported(path):
                     files.append((path, name))
-        
+
         return (dirs, files)
-        
-        
+
+
     def cache(self):
         ''' Cache results for a faster first search '''
         for index, path in enumerate(self.paths):
-            # Cache dirs one by one after a small timeout 
-            gobject.timeout_add_seconds(5 * (index+3), self.search_dir, path, \
-                                        'caching_files')
+            # Cache dirs one by one after a small timeout
+            gobject.timeout_add_seconds(5 + 3 * (index+1), self.search_dir,
+                                        path, CACHE_QUERY)
 
 
     # --== Message handlers ==--
@@ -147,69 +151,69 @@ class Search(modules.ThreadedModule):
         self.searchbox = gtk.Entry()
         self.searchbox.set_size_request(210, -1)
         self.searchbox.set_tooltip_text(search_text)
-        
+
         search_container = gtk.HBox()
         search_container.pack_start(self.searchbox, False)
         search_container.show_all()
-        
+
         hbox3 = wTree.get_widget('hbox3')
         hbox3.pack_start(search_container)
         hbox3.set_property('homogeneous', True)
         hbox3.reorder_child(search_container, 0)
-        
+
         if hasattr(self.searchbox, 'set_icon_from_stock'):
             #self.searchbox.set_icon_from_stock(0, gtk.STOCK_FIND)
             #self.searchbox.set_icon_sensitive(0, False)
             self.searchbox.set_icon_from_stock(1, gtk.STOCK_CLEAR)
             self.searchbox.connect('icon-press', self.on_searchbox_clear)
-        
+
         self.searchbox.connect('activate', self.on_searchbox_activate)
         self.searchbox.connect('changed', self.on_searchbox_changed)
-        
+
         # Add search shortcut
         main_win = wTree.get_widget('win-main')
         main_win.connect('key-press-event', self.on_key_pressed)
         self.searchbox.grab_focus()
-        
+
         self.paths = []
-        
+
         self.searches = []
         self.should_stop = False
-        
-        
+
+
     def onSearch(self, query):
         self.should_stop = False
-            
+
         regexes = [tools.get_regex(part) for part in query.split()]
-        
+
         all_dirs = []
         all_files = []
-        
+
         for dir in self.paths:
             # Check if search has been aborted during filtering
             if self.should_stop:
                 return
-                
+
             results = self.search_dir(dir, query)
-            
+
             # Check if search has been aborted during searching
             if results is None or self.should_stop:
                 return
-                
+
             dirs, files = self.filter_results(results, dir, regexes)
             all_dirs.extend(dirs)
             all_files.extend(files)
-        modules.postMsg(consts.MSG_EVT_SEARCH_END, 
+        modules.postMsg(consts.MSG_EVT_SEARCH_END,
                             {'results': (all_dirs, all_files), 'query': query})
-        
-    
+
+
     def onPathsChanged(self, paths):
         self.paths = paths
         self.cache()
-        
-        
+
+
     #------- GTK handlers ----------------
-    
+
     def on_key_pressed(self, widget, event):
         """
         Let search box grab the focus when "Ctrl-F" is hit
@@ -220,8 +224,8 @@ class Search(modules.ThreadedModule):
         if key_name == 'f' and ctrl_pressed:
             self.searchbox.grab_focus()
             return True
-            
-        
+
+
     def on_searchbox_activate(self, entry):
         self.stop_searches()
         query = self.searchbox.get_text().strip()
@@ -232,14 +236,14 @@ class Search(modules.ThreadedModule):
         query = self.searchbox.get_text().decode('utf-8')
         logging.info('Query: %s' % query)
         modules.postMsg(consts.MSG_EVT_SEARCH_START, {'query': query})
-        
-        
+
+
     def on_searchbox_changed(self, entry):
         if self.searchbox.get_text().strip() == '':
             self.stop_searches()
             modules.postMsg(consts.MSG_EVT_SEARCH_RESET, {})
-            
-    
+
+
     def on_searchbox_clear(self, entry, icon_pos, event):
         '''
         An icon has been pressed
