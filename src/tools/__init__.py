@@ -21,6 +21,7 @@ import os
 import re
 import cPickle
 import subprocess
+import codecs
 from xml.sax.saxutils import escape, unescape
 
 import gtk
@@ -179,15 +180,15 @@ def getCursorPosition():
 def htmlEscape(string):
     """ Replace characters &, <, and > by their equivalent HTML code """
     return escape(string)
-    
-    
+
+
 def htmlUnescape(s):
     '''
     Unescape '&amp;', '&lt;', and '&gt;' in a string of data.
     '''
     return unescape(s)
-    
-    
+
+
 def dirname(dir):
     '''
     returns the last dirname in path
@@ -195,12 +196,12 @@ def dirname(dir):
     dir = os.path.abspath(dir)
     # Remove double slashes and last slash
     dir = os.path.normpath(dir)
-    
+
     dirname, basename = os.path.split(dir)
     # Return "/" if journal is located at /
     return basename or dirname
-    
-    
+
+
 def resize(w_old, h_old, max_width, max_height):
     '''
     Resize image dimensions keeping the original ratio
@@ -216,8 +217,8 @@ def resize(w_old, h_old, max_width, max_height):
     assert h_new <= max_height, '%s <= %s' % (h_new, max_height)
     #assert round(ratio, 3) == round(w_new / h_new, 3), '%s == %s / %s == %s ' % (ratio, w_new, h_new, w_new / h_new)
     return (w_new, h_new)
-    
-    
+
+
 def open_path(path):
     """ Show containing folder in default file browser """
     if os.name == 'mac':
@@ -229,7 +230,7 @@ def open_path(path):
     else:
         import webbrowser
         webbrowser.open(path)
-        
+
 
 def get_regex(string):
     quantifiers = ['?', '*']
@@ -237,3 +238,26 @@ def get_regex(string):
     for quantifier in quantifiers:
         pattern = pattern.replace('\\' + quantifier, '.' + quantifier)
     return re.compile(pattern, re.IGNORECASE)
+
+def read_file(filename):
+    """Tries to read a given file"""
+    try:
+        # codecs.open returns a file object that can write unicode objects
+        # and whose read() method also returns unicode objects
+        # Internally we want to have unicode only
+        with codecs.open(filename, 'rb', encoding=encoding, errors='replace') as file:
+            data = file.read()
+            return data
+    except Exception, e:
+        logging.error('Error while reading "%s": %s' % (filename, e))
+    return ''
+
+def write_file(filename, content):
+    assert os.path.isabs(filename), filename
+    try:
+        with codecs.open(filename, 'wb', errors='replace', encoding='utf-8') as file:
+            file.write(content)
+        logging.info('Wrote file "%s"' % filename)
+    except IOError, e:
+        logging.error('Error while writing to "%s": %s' % (filename, e))
+
