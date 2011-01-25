@@ -99,16 +99,16 @@ def realStartup(window, paned):
     window. This function should be called within the GTK main loop, once the
     window has been displayed
     """
-    
+
     # Is the application started for the first time?
     first_start = prefs.get(__name__, 'first-time', True)
     print 'First start:', first_start
     if first_start:
         prefs.set(__name__, 'first-time', False)
-        
+
         # Enable some modules by default
         prefs.set('modules', 'enabled_modules', ['Covers', 'Desktop Notification'])
-    
+
     import atexit
     import signal
     import dbus.mainloop.glib
@@ -135,10 +135,11 @@ def realStartup(window, paned):
     def onPanedResize(win, rect):
         prefs.set(__name__, 'paned-pos', paned.get_position())
 
-    def onState(win, evt):
+    def onState(win, event):
         """ Save the new state of the window """
-        maximized = bool(evt.new_window_state & gtk.gdk.WINDOW_STATE_MAXIMIZED)
-        prefs.set(__name__, 'win-is-maximized', maximized)
+        if event.changed_mask & gtk.gdk.WINDOW_STATE_MAXIMIZED:
+            maximized = bool(event.new_window_state & gtk.gdk.WINDOW_STATE_MAXIMIZED)
+            prefs.set(__name__, 'win-is-maximized', maximized)
 
     def atExit():
         """

@@ -3,8 +3,10 @@
 0.4:
 O Stop after current album / track (Playlist context menu entry)
 O Fix adding files from command line by removing bash start script
-O Save maximized state
 X Show "Open containing folder" in context menu also for seaches
+X Save cover size between sessions
+X Fix: Compiz cover display problem
+X Fix: Save maximized state
 
 0.x:
 O Remember last played track
