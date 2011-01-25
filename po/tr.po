@@ -8,14 +8,14 @@ msgstr ""
 "Project-Id-Version: decibel-audio-player\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2010-12-03 13:45+0100\n"
-"PO-Revision-Date: 2010-12-03 15:00+0000\n"
-"Last-Translator: Burak Ilgicioglu <Unknown>\n"
+"PO-Revision-Date: 2011-01-23 11:41+0000\n"
+"Last-Translator: Can Kaya <Unknown>\n"
 "Language-Team: Turkish <tr@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Launchpad-Export-Date: 2011-01-20 05:36+0000\n"
+"X-Launchpad-Export-Date: 2011-01-24 05:30+0000\n"
 "X-Generator: Launchpad (build 12177)\n"
 
 #: ../src/media/track/__init__.py:54
@@ -125,6 +125,7 @@ msgid "translator-credits"
 msgstr ""
 "Launchpad Contributions:\n"
 "  Burak Ilgicioglu https://launchpad.net/~buraki\n"
+"  Can Kaya https://launchpad.net/~ckaya\n"
 "  Jendrik Seipp https://launchpad.net/~jendrikseipp\n"
 "  zeugma https://launchpad.net/~sunder67"
 
@@ -162,7 +163,7 @@ msgstr "Klasörü gizle"
 
 #: ../src/modules/FileExplorer.py:409
 msgid "Open containing folder"
-msgstr "İçinde bulunduğu klasörü aç"
+msgstr "İçinde bulunduğu dizini aç"
 
 #: ../src/modules/FileExplorer.py:420
 msgid "Choose a directory"
