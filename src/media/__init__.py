@@ -67,7 +67,7 @@ def _getTrackFromFile(file):
     except:
         logger.error('Unable to extract information from %s\n\n%s' % (file, traceback.format_exc()))
         return FileTrack(file)
-        
+
 def getTrackFromFile(file):
     """
         Return a Track object, based on the tags of the given file
@@ -118,8 +118,8 @@ def getTracksFlat(filenames, sortByFilename=False):
         allTracks.extend(getTracksFromFiles(playlist.load(pl)))
 
     return allTracks
-   
-    
+
+
 
 class TrackDir(object):
     def __init__(self, name='', dir=None, flat=False):
@@ -130,16 +130,16 @@ class TrackDir(object):
             self.dirname = tools.dirname(dir)
         else:
             self.dirname = 'noname'
-        
+
         # If flat is True, add files without directories
         self.flat = flat
-        
+
         self.tracks = []
-        self.subdirs = []            
-                
+        self.subdirs = []
+
     def empty(self):
         return not self.tracks and not self.subdirs
-        
+
     def get_all_tracks(self):
         tracks = []
         for track in self.tracks:
@@ -147,16 +147,16 @@ class TrackDir(object):
         for subdir in self.subdirs:
             tracks.extend(subdir.get_all_tracks())
         return tracks
-            
+
     def get_playtime(self):
         time = 0
         for track in self.get_all_tracks():
             time += track.getLength()
         return time
-        
+
     def __len__(self):
         return len(self.get_all_tracks())
-                
+
     def __str__(self, indent=0):
         res = ''
         res += '- %s\n' % self.dirname
@@ -165,10 +165,10 @@ class TrackDir(object):
         if self.subdirs:
             for dir in self.subdirs:
                 res += (' '*indent) + '%s' % dir.__str__(indent=indent+4)
-            
+
         return res
-        
-        
+
+
 def preloadTracks(paths):
     '''
     Function for preloading tracks. It is invoked when a dnd action starts
@@ -181,12 +181,12 @@ def preloadTracks(paths):
             preloadTracks(subpaths)
         elif isSupported(path):
             getTrackFromFile(path)
-    
-    
+
+
 def scanPaths(dir_info, name='', tracks=None):
     if tracks is None:
         tracks = defaultdict(list)
-        
+
     for (subname, subpath) in dir_info:
         if os.path.isdir(subpath):
             subname = name + ' / ' + subname if name else subname
@@ -195,14 +195,14 @@ def scanPaths(dir_info, name='', tracks=None):
             track = getTrackFromFile(subpath)
             tracks[name].append(track)
     return tracks
-        
-    
+
+
 def getTracks(filenames, sortByFilename=True):
     """ Same as getTracksFromFiles(), but works for any kind of filenames (files, playlists, directories) """
     assert type(filenames) == list, 'filenames has to be a list'
-    
+
     tracks = TrackDir(flat=True)
-    
+
     for path in sorted(filenames):
         if os.path.isdir(path):
             dirname = tools.dirname(path)
@@ -214,17 +214,17 @@ def getTracks(filenames, sortByFilename=True):
         elif isSupported(path):
             track = getTrackFromFile(path)
             tracks.tracks.append(track)
-            
+
     return tracks
-    
-    
-    
+
+
+
 if __name__ == '__main__':
     base_dir = os.path.abspath(os.path.join(os.path.abspath(__file__), '../../'))
     sys.path.insert(0, base_dir)
-    
+
     dirs = ['/home/jendrik/tmp/Horses'] * 50
-    
+
     from pprint import pprint
     dir = '/home/jendrik/tmp/Horses'
     tracks = scanPaths(tools.listDir(dir))
@@ -232,12 +232,12 @@ if __name__ == '__main__':
         print key
         print value
         print
-        
+
     tracks = getTracks(['/home/jendrik/tmp/Horses'])
     print tracks
-    
+
     sys.exit()
-    
+
     import timeit
     t1 = timeit.Timer("getTracks(dirs)",
                     'from __main__ import getTracks, dirs')

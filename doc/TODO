@@ -10,8 +10,8 @@ X Fix: Compiz cover display problem
 X Fix: Save maximized state
 
 0.x:
-O Remember last played track
-O Save playlist periodically to prevent losing it during a shutdown
+O Remember last played track (LP:684383)
+O Save playlist periodically to prevent losing it during a shutdown (LP:669132)
 O Export playlist to .m3u format
 O Export tracks in playlist into a directory (with subdirectories)
 O Shuffle

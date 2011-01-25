@@ -75,8 +75,8 @@ class Tracktree(modules.Module):
                    }
 
         modules.Module.__init__(self, handlers)
-        
-        
+
+
     def getTreeDump(self, path=None):
         """ Recursively dump the given tree starting at path (None for the root of the tree) """
         list = []
@@ -88,7 +88,7 @@ class Tracktree(modules.Module):
             #elif self.tree.row_expanded(child):     grandChildren = self.getTreeDump(child)
             #else:                                   grandChildren = []
             else: grandChildren = self.getTreeDump(child)
-            
+
             name = row[ROW_NAME].replace('<b>', '').replace('</b>', '')
 
             list.append([(name, row[ROW_TRK]), grandChildren])
@@ -101,7 +101,7 @@ class Tracktree(modules.Module):
         if not type(dump) == list:
             # This dump is from version 0.1 where we saved the TrackDir
             return
-            
+
         for item in dump:
             (name, track) = item[0]
 
@@ -112,11 +112,11 @@ class Tracktree(modules.Module):
 
                 if item[1] is not None:
                     if len(item[1]) != 0:
-                        # We must expand the row before adding the real children, 
+                        # We must expand the row before adding the real children,
                         # but this works only if there is already at least one child
                         self.restoreTreeDump(item[1], newNode)
-        
-        
+
+
     def getTracks(self, rows):
         ## Unused
         tracks = []
@@ -125,14 +125,14 @@ class Tracktree(modules.Module):
             if track:
                 tracks.append(track)
         return tracks
-        
-    
+
+
     def getTrackDir(self, root=None):
         flat = False if root else True
         name = self.tree.getLabel(root) if root else 'playtree'
         name = name.replace('<b>', '').replace('</b>', '')
         trackdir = media.TrackDir(name=name, flat=flat)
-        
+
         for iter in self.tree.iter_children(root):
             track = self.tree.getTrack(iter)
             if track:
@@ -140,9 +140,9 @@ class Tracktree(modules.Module):
             else:
                 subdir = self.getTrackDir(iter)
                 trackdir.subdirs.append(subdir)
-        
+
         return trackdir
-        
+
 
     def __getNextTrackIter(self):
         """ Return the index of the next track, or -1 if there is none """
@@ -151,7 +151,7 @@ class Tracktree(modules.Module):
             next = self.tree.get_next_iter(next)
             if not next:
                 return None
-            
+
             # Check track
             error = self.tree.getItem(next, ROW_ICO) == icons.errorMenuIcon()
             track = self.tree.getItem(next, ROW_TRK)
@@ -172,7 +172,7 @@ class Tracktree(modules.Module):
             prev = self.tree.get_prev_iter(prev)
             if not prev:
                 return None
-            
+
             # Check track
             error = self.tree.getItem(prev, ROW_ICO) == icons.errorMenuIcon()
             track = self.tree.getItem(prev, ROW_TRK)
@@ -198,15 +198,15 @@ class Tracktree(modules.Module):
         where = self.__getPreviousTrackIter()
         if where:
             self.jumpTo(where)
-            
-            
+
+
     def set_track_playing(self, iter, playing):
         if not iter:
             return
         track = self.tree.getTrack(iter)
         if not track:
             return
-            
+
         for parent in self.tree.get_all_parents(iter):
             parent_label = self.tree.getLabel(parent)
             parent_label = tools.htmlUnescape(parent_label)
@@ -217,7 +217,7 @@ class Tracktree(modules.Module):
             elif not playing and is_bold:
                 parent_label = tools.htmlEscape(parent_label[3:-4])
                 self.tree.setLabel(parent, parent_label)
-            
+
         parent = self.tree.store.iter_parent(iter)
         parent_label = self.tree.getLabel(parent) if parent else None
         label = track.get_label(parent_label=parent_label, playing=playing)
@@ -232,27 +232,27 @@ class Tracktree(modules.Module):
             is_dir = (icon == icons.mediaDirMenuIcon())
             if not is_dir and not has_error:
                 self.tree.setItem(iter, ROW_ICO, icons.nullMenuIcon())
-        
+
 
     def jumpTo(self, iter, sendPlayMsg=True):
         """ Jump to the track located at the given iter """
         if not iter:
             return
-            
+
         mark = self.tree.getMark()
         if mark:
             self.set_track_playing(mark, False)
-            
+
         self.tree.setMark(iter)
         self.tree.scroll(iter)
-            
+
         # Check track
         track = self.tree.getTrack(iter)
         if not track:
             # Row may be a directory
             self.jumpTo(self.__getNextTrackIter())
             return
-            
+
         self.set_track_playing(iter, True)
 
         if sendPlayMsg:
@@ -260,20 +260,20 @@ class Tracktree(modules.Module):
 
         modules.postMsg(consts.MSG_EVT_NEW_TRACK,   {'track': track})
         modules.postMsg(consts.MSG_EVT_TRACK_MOVED, {'hasPrevious': self.__hasPreviousTrack(), 'hasNext': self.__hasNextTrack()})
-        
-        
+
+
     def insert(self, tracks, target=None, drop_mode=None, playNow=True, highlight=False):
         if type(tracks) == list:
             trackdir = media.TrackDir(None, flat=True)
             trackdir.tracks = tracks
             tracks = trackdir
-            
+
         children_before = self.tree.store.iter_n_children(target)
-            
+
         self.tree.get_selection().unselect_all()
         dest = self.insertDir(tracks, target, drop_mode, highlight)
         self.onListModified()
-        
+
         # We only want to start playback if tracks are appended from DBus
         # In that case target is None
         # Also don't interrupt playing songs
@@ -285,8 +285,8 @@ class Tracktree(modules.Module):
                 # If new is None, the tracks could not be added
                 self.jumpTo(new)
                 self.paused = False
-            
-            
+
+
     def insertDir(self, trackdir, target=None, drop_mode=None, highlight=False):
         '''
         Insert a directory recursively, return the iter of the first
@@ -299,40 +299,40 @@ class Tracktree(modules.Module):
             string = trackdir.dirname.replace('_', ' ')
             string = tools.htmlEscape(string)
             source_row = (icons.mediaDirMenuIcon(), string, None)
-            
+
             new = self.tree.insert(target, source_row, drop_mode)
             drop_mode = gtk.TREE_VIEW_DROP_INTO_OR_AFTER
             if highlight:
                 self.tree.select(new)
-        
+
         dest = new
         for index, subdir in enumerate(trackdir.subdirs):
             drop = drop_mode if index == 0 else gtk.TREE_VIEW_DROP_AFTER
             dest = self.insertDir(subdir, dest, drop, highlight)
-            
+
         dest = new
         for index, track in enumerate(trackdir.tracks):
             drop = drop_mode if index == 0 else gtk.TREE_VIEW_DROP_AFTER
             highlight &= trackdir.flat
             dest = self.insertTrack(track, dest, drop, highlight)
-            
+
         if not trackdir.flat:
             # Open albums on the first layer
             if target is None or model.iter_depth(new) == 0:
                 self.tree.expand(new)
-        
+
         return new
-        
-        
+
+
     def insertTrack(self, track, target=None, drop_mode=None, highlight=False):
         '''
         Insert a new track into the tracktree under parentPath
         '''
         length = track.getLength()
         self.playtime += length
-        
+
         name = track.get_label()
-        
+
         row = (icons.nullMenuIcon(), name, track)
         new_iter = self.tree.insert(target, row, drop_mode)
         parent = self.tree.store.iter_parent(new_iter)
@@ -349,7 +349,7 @@ class Tracktree(modules.Module):
     def set(self, tracks, playNow):
         """ Replace the tracklist, clear it if tracks is None """
         self.playtime = 0
-        
+
         if type(tracks) == list:
             trackdir = media.TrackDir(None, flat=True)
             trackdir.tracks = tracks
@@ -359,12 +359,12 @@ class Tracktree(modules.Module):
             modules.postMsg(consts.MSG_CMD_STOP)
 
         self.tree.clear()
-        
+
         if tracks is not None and not tracks.empty():
             self.insert(tracks, playNow=playNow)
-            
+
         self.tree.collapse_all()
-            
+
         self.onListModified()
 
 
@@ -380,9 +380,9 @@ class Tracktree(modules.Module):
     def remove(self, iter=None):
         """ Remove the given track, or the selection if iter is None """
         hadMark = self.tree.hasMark()
-        
+
         iters = [iter] if iter else list(self.tree.iterSelectedRows())
-        
+
         # reverse list, so that we remove children before their fathers
         for iter in reversed(iters):
             track = self.tree.getTrack(iter)
@@ -394,7 +394,7 @@ class Tracktree(modules.Module):
 
         if hadMark and not self.tree.hasMark():
             modules.postMsg(consts.MSG_CMD_STOP)
-            
+
         self.onListModified()
 
 
@@ -404,7 +404,7 @@ class Tracktree(modules.Module):
             iter = None
         else:
             iter = tree.store.get_iter(path)
-        
+
         popup = gtk.Menu()
 
         # Remove
@@ -441,8 +441,8 @@ class Tracktree(modules.Module):
                 self.jumpTo(first_sel_iter)
             else:
                 self.jumpTo(self.tree.get_first_iter())
-                
-                
+
+
     def restore_expanded_rows(self):
         for path in self.tree.expanded_rows:
             self.tree.expand(path)
@@ -467,22 +467,22 @@ class Tracktree(modules.Module):
         columns = (('',   [(gtk.CellRendererPixbuf(), gtk.gdk.Pixbuf), (gtk.CellRendererText(), TYPE_STRING)], True),
                    (None, [(None, TYPE_PYOBJECT)], False),
                   )
-        
+
         self.tree = TrackTreeView(columns, use_markup=True)
         self.tree.enableDNDReordering()
         #self.tree.setDNDSources([consts.DND_TARGETS[consts.DND_POGO_TRACKS]])
         self.tree.setDNDSources([DND_INTERNAL_TARGET])
-        
+
         wTree.get_widget('scrolled-tracklist').add(self.tree)
-        
-        # GTK handlers         
+
+        # GTK handlers
         self.tree.connect('exttreeview-button-pressed', self.onMouseButton)
         self.tree.connect('tracktreeview-dnd', self.onDND)
         self.tree.connect('key-press-event', self.onKeyboard)
-        
+
         # Populate the playlist with commandline args or the saved playlist
         (options, args)    = prefs.getCmdLine()
-        
+
         self.savedPlaylist = os.path.join(consts.dirCfg, 'saved-playlist')
         self.paused = False
 
@@ -500,16 +500,16 @@ class Tracktree(modules.Module):
                     dump = pickleLoad(self.savedPlaylist)
                 except:
                     msg = '[%s] Unable to restore playlist from %s\n\n%s'
-                    log.logger.error(msg % (MOD_INFO[modules.MODINFO_NAME], 
+                    log.logger.error(msg % (MOD_INFO[modules.MODINFO_NAME],
                                     self.savedPlaylist, traceback.format_exc()))
-            
+
             if dump:
                 self.restoreTreeDump(dump)
                 log.logger.info('[%s] Restored playlist' % MOD_INFO[modules.MODINFO_NAME])
                 self.tree.collapse_all()
                 self.onListModified()
-        
-    
+
+
     def onAppQuit(self):
         """ The module is going to be unloaded """
         dump = self.getTreeDump()
@@ -560,17 +560,17 @@ class Tracktree(modules.Module):
         """ Switch between paused and unpaused """
         if self.tree.hasMark():
             self.tree.setItem(self.tree.getMark(), ROW_ICO, icon)
-            
-            
+
+
     def onPaused(self):
         self.paused = True
         self.onPausedToggled(icons.pauseMenuIcon())
-        
+
     def onUnPaused(self):
         self.paused = False
         self.onPausedToggled(icons.pauseMenuIcon())
-            
-            
+
+
     def onDragBegin(self, paths):
         dir_selected = any(map(os.path.isdir, paths))
         self.tree.dir_selected = dir_selected
@@ -579,16 +579,16 @@ class Tracktree(modules.Module):
             #def expanded(treeview, path):
             #    row = self.tree.store.get_iter(path)
             #    self.tree.expanded_rows.append(row)
-            
+
             #self.tree.expanded_rows = []
             #self.tree.map_expanded_rows(expanded)
-        
+
             self.tree.collapse_all()
 
 
     # --== GTK handlers ==--
-            
-        
+
+
     def onMouseButton(self, tree, event, path):
         """ A mouse button has been pressed """
         if event.button == 1 and event.type == gtk.gdk._2BUTTON_PRESS and path is not None:
@@ -615,7 +615,7 @@ class Tracktree(modules.Module):
         # paylist change
         tracks = self.getTrackDir()
         self.playtime = tracks.get_playtime()
-        
+
         modules.postMsg(consts.MSG_EVT_NEW_TRACKLIST, {'tracks': tracks, 'playtime': self.playtime})
 
         if self.tree.hasMark():
@@ -650,9 +650,9 @@ class Tracktree(modules.Module):
             path, drop_mode = dropInfo
             iter = self.tree.store.get_iter(path)
             self.insert(tracks, iter, drop_mode, highlight=True)
-            
+
         #self.restore_expanded_rows()
-        
+
         # We want to allow dropping tracks only when we are sure that no dir is
         # selected. This is needed for dnd from nautilus.
         self.tree.dir_selected = True
