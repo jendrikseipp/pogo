@@ -287,10 +287,10 @@ class Tracktree(modules.Module):
         self.onListModified()
 
         # We only want to start playback if tracks are appended from DBus
-        # or appended from the FileExplorer, not when they are dropped
+        # or appended (not inserted) into the playlist
         # In that case target is None
         # Also don't interrupt playing songs
-        if playNow and target is None and (not self.tree.hasMark() or self.paused):
+        if (playNow or target is None) and (not self.tree.hasMark() or self.paused):
             # If the target is None, the tracks have to be appended to the top
             # level and the first new track is the one after the original tracks
             new = self.tree.store.iter_nth_child(target, children_before)
