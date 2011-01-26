@@ -152,9 +152,7 @@ class Tracktree(modules.Module):
                 text += '%s\n' % track.getFilePath()
             else:
                 dirname = self.tree.getLabel(iter).replace('<b>', '').replace('</b>', '')
-                text += '# start %s\n' % dirname
-                text += self.get_m3u_text(iter)
-                text += '# end %s\n' % dirname
+                text += '# %s\n%s\n' % (dirname, self.get_m3u_text(iter))
         return text
 
 

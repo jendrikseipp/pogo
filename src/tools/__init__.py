@@ -22,6 +22,7 @@ import re
 import cPickle
 import subprocess
 import codecs
+import logging
 from xml.sax.saxutils import escape, unescape
 
 import gtk
