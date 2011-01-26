@@ -287,6 +287,7 @@ class Tracktree(modules.Module):
         self.onListModified()
 
         # We only want to start playback if tracks are appended from DBus
+        # or appended from the FileExplorer, not when they are dropped
         # In that case target is None
         # Also don't interrupt playing songs
         if playNow and target is None and (not self.tree.hasMark() or self.paused):
@@ -666,11 +667,11 @@ class Tracktree(modules.Module):
 
         # Insert the tracks, but beware of the AFTER/BEFORE mechanism used by GTK
         if dropInfo is None:
-            self.insert(tracks, highlight=True)
+            self.insert(tracks, playNow=False, highlight=True)
         else:
             path, drop_mode = dropInfo
             iter = self.tree.store.get_iter(path)
-            self.insert(tracks, iter, drop_mode, highlight=True)
+            self.insert(tracks, iter, drop_mode, playNow=False, highlight=True)
 
         #self.restore_expanded_rows()
 

@@ -7,6 +7,8 @@ X When caching the files in the music directories do not slow down application
 X Save cover size between sessions
 X Fix: Compiz cover display problem
 X Fix: Save maximized state
+X Fix: Start playback automatically when tracks are appended, but not when dropped
+X Code: Assert copyright with date (LP:692792)
 
 0.x:
 O Stop after current album / track (Playlist context menu entry)
