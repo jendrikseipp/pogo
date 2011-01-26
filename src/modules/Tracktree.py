@@ -84,10 +84,10 @@ class Tracktree(modules.Module):
         for child in self.tree.iterChildren(path):
             row = self.tree.getRow(child)
 
-            if self.tree.getNbChildren(child) == 0: grandChildren = None
-            #elif self.tree.row_expanded(child):     grandChildren = self.getTreeDump(child)
-            #else:                                   grandChildren = []
-            else: grandChildren = self.getTreeDump(child)
+            if self.tree.getNbChildren(child) == 0:
+                grandChildren = None
+            else:
+                grandChildren = self.getTreeDump(child)
 
             name = row[ROW_NAME].replace('<b>', '').replace('</b>', '')
 
@@ -142,6 +142,20 @@ class Tracktree(modules.Module):
                 trackdir.subdirs.append(subdir)
 
         return trackdir
+
+
+    def get_m3u_text(self, root=None):
+        text = ''
+        for iter in self.tree.iter_children(root):
+            track = self.tree.getTrack(iter)
+            if track:
+                text += '%s\n' % track.getFilePath()
+            else:
+                dirname = self.tree.getLabel(iter).replace('<b>', '').replace('</b>', '')
+                text += '# start %s\n' % dirname
+                text += self.get_m3u_text(iter)
+                text += '# end %s\n' % dirname
+        return text
 
 
     def __getNextTrackIter(self):
@@ -368,13 +382,12 @@ class Tracktree(modules.Module):
         self.onListModified()
 
 
-    def savePlaylist(self):
+    def export_playlist_to_m3u(self):
         """ Save the current tracklist to a playlist """
-        outFile = fileChooser.save(self.window, _('Save playlist'), 'playlist.m3u')
+        outfile = fileChooser.save(self.window, _('Export playlist'), 'playlist.m3u')
 
-        if outFile is not None:
-            allFiles = [row[ROW_TRK].getFilePath() for row in self.tree.iterAllRows()]
-            media.playlist.save(allFiles, outFile)
+        if outfile is not None:
+            tools.write_file(outfile, self.get_m3u_text())
 
 
     def remove(self, iter=None):
@@ -427,6 +440,16 @@ class Tracktree(modules.Module):
             clear.set_sensitive(False)
         else:
             clear.connect('activate', lambda item: modules.postMsg(consts.MSG_CMD_TRACKLIST_CLR))
+
+        # Save to m3u
+        export_m3u = gtk.ImageMenuItem(_('Export Playlist'))
+        export_m3u.set_image(gtk.image_new_from_stock(gtk.STOCK_SAVE, gtk.ICON_SIZE_MENU))
+        popup.append(export_m3u)
+
+        if len(tree.store) == 0:
+            export_m3u.set_sensitive(False)
+        else:
+            export_m3u.connect('activate', lambda item: self.export_playlist_to_m3u())
 
         popup.show_all()
         popup.popup(None, None, None, button, time)
@@ -481,7 +504,7 @@ class Tracktree(modules.Module):
         self.tree.connect('key-press-event', self.onKeyboard)
 
         # Populate the playlist with commandline args or the saved playlist
-        (options, args)    = prefs.getCmdLine()
+        (options, args) = prefs.getCmdLine()
 
         self.savedPlaylist = os.path.join(consts.dirCfg, 'saved-playlist')
         self.paused = False

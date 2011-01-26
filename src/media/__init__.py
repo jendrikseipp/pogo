@@ -165,7 +165,6 @@ class TrackDir(object):
         if self.subdirs:
             for dir in self.subdirs:
                 res += (' '*indent) + '%s' % dir.__str__(indent=indent+4)
-
         return res
 
 
