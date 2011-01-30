@@ -30,14 +30,16 @@ if __name__ == '__main__':
 
 import playlist
 
-from format          import monkeysaudio, asf, flac, mp3, mp4, mpc, ogg, wavpack
+from format          import monkeysaudio, asf, flac, mp3, mp4, mpc, ogg, wav, wavpack
 from tools.log       import logger
 from track.fileTrack import FileTrack
 import tools
 
 
 # Supported formats with associated modules
-mFormats = {'.ac3': monkeysaudio, '.ape': monkeysaudio, '.flac': flac, '.m4a': mp4, '.mp2': mp3, '.mp3': mp3, '.mp4': mp4, '.mpc': mpc,'.oga': ogg, '.ogg': ogg, '.wma': asf, '.wv': wavpack}
+mFormats = {'.ac3': monkeysaudio, '.ape': monkeysaudio, '.flac': flac,
+            '.m4a': mp4, '.mp2': mp3, '.mp3': mp3, '.mp4': mp4, '.mpc': mpc,
+            '.oga': ogg, '.ogg': ogg, '.wav': wav, '.wma': asf, '.wv': wavpack}
 
 
 def isSupported(file):
