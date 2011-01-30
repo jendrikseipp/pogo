@@ -1,6 +1,7 @@
 === Roadmap ===
 
 0.4:
+X Support for WAV files (LP:684161)
 X Export playlist to .m3u format (right-click playlist)
 X Show "Open containing folder" in context menu also for seaches
 X When caching the files in the music directories do not slow down application
