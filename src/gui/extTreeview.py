@@ -333,7 +333,8 @@ class ExtTreeView(gtk.TreeView):
                 self.expand_row(row, False)
 
         if visibleRange is not None:
-            self.scroll(visibleRange[0])
+            if visibleRange[0][0] == 0: self.scrollToPoint(0, 0)
+            else:                       self.scroll(visibleRange[0])
 
         for path in selectedRows:
             self.selection.select_path(path)
