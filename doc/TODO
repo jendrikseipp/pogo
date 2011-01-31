@@ -10,7 +10,7 @@ X Fix: Compiz cover display problem
 X Fix: Save maximized state
 X Fix: Start playback automatically when tracks are appended, but not when inserted
 X Fix: Unhighlight deselected tracks always
-X Code: Assert copyright with date (LP:692792)
+O Code: Assert copyright with date (LP:692792)
 
 0.x:
 O Select new track, when old selected is deleted
