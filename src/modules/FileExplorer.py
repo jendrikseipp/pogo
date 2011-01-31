@@ -391,7 +391,6 @@ class FileExplorer(modules.Module):
             filepath = self.tree.getItem(path, ROW_FULLPATH)
             parent_path = os.path.dirname(filepath)
             show_folder.connect('activate', lambda widget: tools.open_path(parent_path))
-            popup.append(show_folder)
 
         # Do not show the other options when we are displaying results
         if self.displaying_results:

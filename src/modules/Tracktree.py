@@ -54,25 +54,24 @@ class Tracktree(modules.Module):
     def __init__(self):
         """ Constructor """
         handlers = {
-                        consts.MSG_CMD_NEXT:              self.jumpToNext,
-                        consts.MSG_EVT_PAUSED:            self.onPaused,
-                        consts.MSG_EVT_STOPPED:           self.onStopped,
-                        consts.MSG_EVT_UNPAUSED:          self.onUnPaused,
-                        consts.MSG_CMD_PREVIOUS:          self.jumpToPrevious,
-                        consts.MSG_EVT_NEED_BUFFER:       self.onBufferingNeeded,
-                        consts.MSG_EVT_APP_STARTED:       self.onAppStarted,
-                        consts.MSG_EVT_APP_QUIT:          self.onAppQuit,
-                        consts.MSG_CMD_TOGGLE_PAUSE:      self.togglePause,
-                        consts.MSG_CMD_TRACKLIST_DEL:     self.remove,
-                        consts.MSG_CMD_TRACKLIST_ADD:     self.insert,
-                        consts.MSG_CMD_TRACKLIST_SET:     self.set,
-                        consts.MSG_CMD_TRACKLIST_CLR:     lambda: self.set(None, None),
-                        consts.MSG_EVT_TRACK_ENDED_OK:    lambda: self.onTrackEnded(False),
-                        #consts.MSG_CMD_TRACKLIST_REPEAT:  self.setRepeat,
-                        consts.MSG_EVT_TRACK_ENDED_ERROR: lambda: self.onTrackEnded(True),
-                        #consts.MSG_CMD_TRACKLIST_SHUFFLE: self.shuffleTracklist,
-                        consts.MSG_CMD_FILE_EXPLORER_DRAG_BEGIN: self.onDragBegin,
-                   }
+            consts.MSG_CMD_NEXT:              self.jumpToNext,
+            consts.MSG_EVT_PAUSED:            self.onPaused,
+            consts.MSG_EVT_STOPPED:           self.onStopped,
+            consts.MSG_EVT_UNPAUSED:          self.onUnPaused,
+            consts.MSG_CMD_PREVIOUS:          self.jumpToPrevious,
+            consts.MSG_EVT_NEED_BUFFER:       self.onBufferingNeeded,
+            consts.MSG_EVT_APP_STARTED:       self.onAppStarted,
+            consts.MSG_EVT_APP_QUIT:          self.onAppQuit,
+            consts.MSG_CMD_TOGGLE_PAUSE:      self.togglePause,
+            consts.MSG_CMD_TRACKLIST_DEL:     self.remove,
+            consts.MSG_CMD_TRACKLIST_ADD:     self.insert,
+            consts.MSG_CMD_TRACKLIST_SET:     self.set,
+            consts.MSG_CMD_TRACKLIST_CLR:     lambda: self.set(None, None),
+            consts.MSG_EVT_TRACK_ENDED_OK:    lambda: self.onTrackEnded(False),
+            #consts.MSG_CMD_TRACKLIST_REPEAT:  self.setRepeat,
+            consts.MSG_EVT_TRACK_ENDED_ERROR: lambda: self.onTrackEnded(True),
+            #consts.MSG_CMD_TRACKLIST_SHUFFLE: self.shuffleTracklist,
+            consts.MSG_CMD_FILE_EXPLORER_DRAG_BEGIN: self.onDragBegin}
 
         modules.Module.__init__(self, handlers)
 
