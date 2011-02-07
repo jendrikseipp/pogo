@@ -8,14 +8,14 @@ msgstr ""
 "Project-Id-Version: pogo\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2010-12-03 13:45+0100\n"
-"PO-Revision-Date: 2010-10-25 02:27+0000\n"
+"PO-Revision-Date: 2011-02-02 10:24+0000\n"
 "Last-Translator: abuyop <Unknown>\n"
 "Language-Team: Malay <ms@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Launchpad-Export-Date: 2011-01-31 05:35+0000\n"
+"X-Launchpad-Export-Date: 2011-02-03 05:48+0000\n"
 "X-Generator: Launchpad (build 12177)\n"
 
 #: ../src/media/track/__init__.py:54
@@ -136,7 +136,7 @@ msgstr "Terima kasih kepada:"
 
 #: ../src/modules/Search.py:34
 msgid "Search in your music folders"
-msgstr ""
+msgstr "Gelintar didalam folder muzik anda"
 
 #: ../src/modules/Zeitgeist.py:26
 msgid "Send track information to the Zeitgeist service"
@@ -152,27 +152,27 @@ msgstr "Tambah"
 
 #: ../src/modules/FileExplorer.py:389
 msgid "Add music folder"
-msgstr ""
+msgstr "Tambah folder muzik"
 
 #: ../src/modules/FileExplorer.py:401
 msgid "Hide folder"
-msgstr ""
+msgstr "Sembunyi folder"
 
 #: ../src/modules/FileExplorer.py:409
 msgid "Open containing folder"
-msgstr ""
+msgstr "Buka folder yang mengandungi"
 
 #: ../src/modules/FileExplorer.py:420
 msgid "Choose a directory"
-msgstr ""
+msgstr "Pilih direktori"
 
 #: ../src/modules/FileExplorer.py:424
 msgid "Invalid Folder"
-msgstr ""
+msgstr "Folder Tidak Sah"
 
 #: ../src/modules/FileExplorer.py:425
 msgid "You cannot add your root or home folder to the music directories"
-msgstr ""
+msgstr "Anda tidak boleh menambah folder rumah atau root ke direktori muzik"
 
 #: ../src/modules/FileExplorer.py:432
 msgid "This path does not exist"
@@ -192,19 +192,19 @@ msgstr "Muzik"
 
 #: ../src/modules/FileExplorer.py:606
 msgid "Right-click to add music folders"
-msgstr ""
+msgstr "Klik-kanan untuk menambah folder muzik"
 
 #: ../src/modules/FileExplorer.py:651
 msgid "Searching ..."
-msgstr ""
+msgstr "Menggelintar ..."
 
 #: ../src/modules/FileExplorer.py:666
 msgid "No tracks found"
-msgstr ""
+msgstr "Tiada trek ditemui"
 
 #: ../src/modules/FileExplorer.py:668
 msgid "No music folders have been added"
-msgstr ""
+msgstr "Tiada folder muzik telah ditambah"
 
 #: ../src/modules/__init__.py:75
 msgid "The following Python modules are not available:"
