@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 #
-# Author: Ingelrest François (Francois.Ingelrest@gmail.com)
+# Copyright (c) 2007  François Ingelrest (Francois.Ingelrest@gmail.com)
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
