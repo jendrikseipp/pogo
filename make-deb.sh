@@ -5,6 +5,7 @@ MAN_DIR="/usr/share/man/man1"
 BIN_DIR="/usr/bin"
 APP_DIR="/usr/share/applications"
 LOC_DIR="/usr/share/locale"
+DOC_DIR="/usr/share/doc/pogo"
 ICO_DIR="/usr/local/share/pixmaps"
 VERSION=`cat control-install | grep "Version" | cut -d\  -f2`
 
@@ -32,10 +33,10 @@ cp res/*.glade "pogo"$INSTALL_DIR"/res/"
 mkdir -p "pogo"$INSTALL_DIR"/pix"
 cp pix/*.png "pogo"$INSTALL_DIR"/pix/"
 
-mkdir -p "pogo"$INSTALL_DIR"/doc"
-cp doc/COPYING "pogo"$INSTALL_DIR"/doc/"
-cp doc/NEWS "pogo"$INSTALL_DIR"/doc/"
-cp doc/README "pogo"$INSTALL_DIR"/doc/"
+mkdir -p "pogo"$DOC_DIR
+cp doc/COPYING "pogo"$DOC_DIR
+cp doc/NEWS "pogo"$DOC_DIR
+cp doc/README "pogo"$DOC_DIR
 
 mkdir -p "pogo"$APP_DIR
 cp res/*.desktop "pogo"$APP_DIR
