@@ -20,7 +20,6 @@ cp pix/pogo.png "pogo"$ICO_DIR
 
 mkdir -p "pogo"$MAN_DIR
 cp doc/pogo.1 "pogo"$MAN_DIR
-#cp doc/pogo-remote.1 "pogo"$MAN_DIR
 
 mkdir -p "pogo"$INSTALL_DIR
 

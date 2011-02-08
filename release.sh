@@ -30,7 +30,6 @@ cp Makefile $DEST/
 cp pogo.py $DEST/
 
 # Doc
-#cp -R ./doc/ $DEST/
 mkdir $DEST/doc
 cp ./doc/COPYING $DEST/
 cp ./doc/NEWS $DEST/
