@@ -30,7 +30,7 @@ socketTimeout = 10
 
 # --- Strings
 appName      = 'Pogo'
-appVersion   = '0.3.2'
+appVersion   = '0.4'
 appNameShort = 'pogo'
 
 
@@ -198,12 +198,12 @@ DND_TARGETS = {
 
     # Explorer manager
     MSG_EVT_EXPLORER_CHANGED,    # A new explorer has been selected    Parameters: 'modName', 'expName'
-    
+
     MSG_CMD_FILE_EXPLORER_DRAG_BEGIN,
     MSG_EVT_SEARCH_START,
     MSG_EVT_SEARCH_END,
     MSG_EVT_SEARCH_RESET,
-    
+
     MSG_EVT_MUSIC_PATHS_CHANGED,
 
     # End value
