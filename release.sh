@@ -27,10 +27,7 @@ cp ./res/*.desktop $DEST/res/
 
 # Scripts
 cp Makefile $DEST/
-#cp start-release.sh $DEST/start.sh
-#cp start-remote-release.sh $DEST/start-remote.sh
 cp pogo.py $DEST/
-cp start.sh $DEST/
 
 # Doc
 #cp -R ./doc/ $DEST/

@@ -42,11 +42,7 @@ mkdir -p "pogo"$APP_DIR
 cp res/*.desktop "pogo"$APP_DIR
 
 mkdir -p "pogo"$BIN_DIR
-#cp start-package.sh "pogo"$BIN_DIR"/pogo"
-#cp start-remote-package.sh "pogo"$BIN_DIR"/pogo-remote"
-#cp pogo.py "pogo"$BIN_DIR"/pogo"
-cp start-package.sh "pogo"$BIN_DIR"/pogo"
-cp pogo.py "pogo"$INSTALL_DIR
+cp pogo.py "pogo"$BIN_DIR"/pogo"
 
 # Create locales
 rm -rf locale

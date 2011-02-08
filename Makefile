@@ -2,7 +2,6 @@ INSTALL ?= install
 MAKE ?= make
 RM ?= rm
 RMDIR ?= rmdir
-#prefix ?= /usr/local
 prefix ?= /usr
 
 
@@ -19,7 +18,7 @@ APPDIR = $(PREFIX)/share/applications
 ICONDIR = $(PREFIX)/share/pixmaps
 LOCALEDIR = $(PREFIX)/share/locale
 
-CONFIGURE_IN = sed -e 's!prefix!$(prefix)!g'
+CONFIGURE_IN = sed -e "s!prefix = '/usr'!prefix = '$(prefix)'!g"
 
 LANGUAGES = `find locale/ -maxdepth 1 -mindepth 1 -type d -printf "%f "`
 
@@ -34,7 +33,7 @@ help:
 
 
 install:
-	cat start.sh | $(CONFIGURE_IN) > pogo;
+	cat pogo.py | $(CONFIGURE_IN) > pogo;
 	#cat start-remote.sh | $(CONFIGURE_IN) > pogo-remote;
 	echo $(PREFIX)
 	$(INSTALL) -m 755 -d $(BINDIR) $(MANDIR) $(DATADIR) $(SRCDIR) $(RESDIR) $(APPDIR) $(PIXDIR) $(ICONDIR)
@@ -60,7 +59,6 @@ install:
 	if test -L $(BINDIR)/pogo; then ${RM} $(BINDIR)/pogo; fi
 	$(INSTALL) -m 755 pogo $(BINDIR)
 	##
-	$(INSTALL) -m 644 pogo.py $(DATADIR)
 	#if test -L $(BINDIR)/pogo-remote; then ${RM} $(BINDIR)/pogo-remote; fi
 	#$(INSTALL) -m 755 pogo-remote $(BINDIR)
 	$(MAKE) -C po dist
@@ -86,7 +84,7 @@ uninstall:
 clean:
 	$(MAKE) -C po clean
 	${RM} src/*.py[co] res/*~ res/*.bak
-	${RM} pogo 
+	${RM} pogo
 	#pogo-remote
 
 .PHONY: help clean install

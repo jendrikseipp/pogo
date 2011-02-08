@@ -22,9 +22,18 @@ import optparse
 import os
 import sys
 
+prefix = '/usr'
+installed_src_dir = os.path.join(prefix, 'share/pogo/src')
 src_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'src')
+
 if os.path.exists(src_dir):
+    print 'Running from tarball or bzr branch'
     sys.path.insert(0, src_dir)
+elif os.path.exists(installed_src_dir):
+    print 'Running deb package or "make installation"'
+    sys.path.insert(0, installed_src_dir)
+else:
+    sys.exit('Source files could not be found')
 
 
 from tools import consts
