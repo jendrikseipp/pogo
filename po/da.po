@@ -7,10 +7,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: decibel-audio-player\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-12-03 13:45+0100\n"
+"POT-Creation-Date: 2011-03-14 02:57+0100\n"
 "PO-Revision-Date: 2011-01-18 22:17+0000\n"
 "Last-Translator: Ask Hjorth Larsen <asklarsen@gmail.com>\n"
 "Language-Team: Danish <da@li.org>\n"
+"Language: da\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -18,64 +19,64 @@ msgstr ""
 "X-Launchpad-Export-Date: 2011-02-09 05:42+0000\n"
 "X-Generator: Launchpad (build 12177)\n"
 
-#: ../src/media/track/__init__.py:54
+#: ../src/media/track/__init__.py:52
 msgid "Track number"
 msgstr "Nummer"
 
-#: ../src/media/track/__init__.py:55
+#: ../src/media/track/__init__.py:53
 msgid "Title"
 msgstr "Titel"
 
-#: ../src/media/track/__init__.py:56
+#: ../src/media/track/__init__.py:54
 msgid "Artist"
 msgstr "Kunstner"
 
-#: ../src/media/track/__init__.py:57
+#: ../src/media/track/__init__.py:55
 msgid "Album"
 msgstr "Album"
 
-#: ../src/media/track/__init__.py:58
+#: ../src/media/track/__init__.py:56
 msgid "Genre"
 msgstr "Genre"
 
-#: ../src/media/track/__init__.py:59
+#: ../src/media/track/__init__.py:57
 msgid "Date"
 msgstr "Dato"
 
-#: ../src/media/track/__init__.py:60
+#: ../src/media/track/__init__.py:58
 msgid "Disc number"
 msgstr "Disknummer"
 
-#: ../src/media/track/__init__.py:61
+#: ../src/media/track/__init__.py:59
 msgid "Bit rate"
 msgstr "Bitrate"
 
-#: ../src/media/track/__init__.py:62
+#: ../src/media/track/__init__.py:60
 msgid "Sample rate"
 msgstr "Målefrekvens"
 
-#: ../src/media/track/__init__.py:63
+#: ../src/media/track/__init__.py:61
 msgid "Duration in seconds (e.g., 194)"
 msgstr "Varighed i sekunder (f.eks. 194)"
 
-#: ../src/media/track/__init__.py:64
+#: ../src/media/track/__init__.py:62
 msgid "Duration as a string (e.g., 3:14)"
 msgstr "Varighed som tekststreng (f.eks. 3:14)"
 
-#: ../src/media/track/__init__.py:67
+#: ../src/media/track/__init__.py:65
 msgid "Full path to the file"
 msgstr "Filens komplette sti"
 
-#: ../src/media/track/__init__.py:149 ../src/media/track/__init__.py:393
+#: ../src/media/track/__init__.py:147 ../src/media/track/__init__.py:391
 msgid "unknown"
 msgstr "ukendt"
 
-#: ../src/media/track/__init__.py:175
+#: ../src/media/track/__init__.py:173
 #, python-format
 msgid "%(album)s  [Disc %(discnum)u]"
 msgstr "%(album)s [Disk %(discnum)u]"
 
-#: ../src/media/track/__init__.py:182
+#: ../src/media/track/__init__.py:180
 msgid "CDDA Track"
 msgstr "CDDA-spor"
 
@@ -137,7 +138,7 @@ msgstr "Udvikler:"
 msgid "Thanks to:"
 msgstr "Tak til:"
 
-#: ../src/modules/Search.py:34
+#: ../src/modules/Search.py:32
 msgid "Search in your music folders"
 msgstr "Søg i dine musikmapper"
 
@@ -145,67 +146,67 @@ msgstr "Søg i dine musikmapper"
 msgid "Send track information to the Zeitgeist service"
 msgstr "Send sporinformation til Zeitgeist-tjenesten"
 
-#: ../src/modules/FileExplorer.py:180
+#: ../src/modules/FileExplorer.py:183
 msgid "loading..."
 msgstr "indlæser..."
 
-#: ../src/modules/FileExplorer.py:364
+#: ../src/modules/FileExplorer.py:377
 msgid "Append"
 msgstr "Tilføj"
 
 #: ../src/modules/FileExplorer.py:389
-msgid "Add music folder"
-msgstr "Tilføj musikmappe"
-
-#: ../src/modules/FileExplorer.py:401
-msgid "Hide folder"
-msgstr "Skjul mappe"
-
-#: ../src/modules/FileExplorer.py:409
 msgid "Open containing folder"
 msgstr "Åbn indeholdende mappe"
 
-#: ../src/modules/FileExplorer.py:420
+#: ../src/modules/FileExplorer.py:413
+msgid "Add music folder"
+msgstr "Tilføj musikmappe"
+
+#: ../src/modules/FileExplorer.py:425
+msgid "Hide folder"
+msgstr "Skjul mappe"
+
+#: ../src/modules/FileExplorer.py:439
 msgid "Choose a directory"
 msgstr "Vælg en mappe"
 
-#: ../src/modules/FileExplorer.py:424
+#: ../src/modules/FileExplorer.py:445
 msgid "Invalid Folder"
 msgstr "Ugyldig mappe"
 
-#: ../src/modules/FileExplorer.py:425
+#: ../src/modules/FileExplorer.py:446
 msgid "You cannot add your root or home folder to the music directories"
 msgstr "Du kan ikke tilføje din rod eller hjemmemappe til musikmapperne"
 
-#: ../src/modules/FileExplorer.py:432
+#: ../src/modules/FileExplorer.py:453
 msgid "This path does not exist"
 msgstr "Denne sti eksisterer ikke"
 
-#: ../src/modules/FileExplorer.py:433
+#: ../src/modules/FileExplorer.py:454
 msgid "Please select an existing directory."
 msgstr "Vælg en eksisterende mappe."
 
-#: ../src/modules/FileExplorer.py:529
+#: ../src/modules/FileExplorer.py:552
 msgid "Albums"
 msgstr "Albummer"
 
-#: ../src/modules/FileExplorer.py:531
+#: ../src/modules/FileExplorer.py:554
 msgid "Music"
 msgstr "Musik"
 
-#: ../src/modules/FileExplorer.py:606
+#: ../src/modules/FileExplorer.py:629
 msgid "Right-click to add music folders"
 msgstr "Højreklik for at tilføje musikmapper"
 
-#: ../src/modules/FileExplorer.py:651
+#: ../src/modules/FileExplorer.py:674
 msgid "Searching ..."
 msgstr "Søger..."
 
-#: ../src/modules/FileExplorer.py:666
+#: ../src/modules/FileExplorer.py:689
 msgid "No tracks found"
 msgstr "Ingen numre fundet"
 
-#: ../src/modules/FileExplorer.py:668
+#: ../src/modules/FileExplorer.py:691
 msgid "No music folders have been added"
 msgstr "Der er ikke blevet tilføjet nogen musikmapper"
 
@@ -222,8 +223,7 @@ msgid "Restart required"
 msgstr "Genstart påkrævet"
 
 #: ../src/modules/__init__.py:267
-msgid ""
-"You must restart the application for this modification to take effect."
+msgid "You must restart the application for this modification to take effect."
 msgstr ""
 "Du er nødt til at genstarte programmet, for at dine ændringer kan træde "
 "igennem."
@@ -262,8 +262,7 @@ msgstr ""
 "starter."
 
 #: ../src/modules/DesktopNotification.py:215
-msgid ""
-"If the Covers module is enabled, the popup also shows the album cover."
+msgid "If the Covers module is enabled, the popup also shows the album cover."
 msgstr "Hvis omslagsmodulet er slået til, vises også albummets omslag."
 
 #: ../src/modules/DesktopNotification.py:216
@@ -294,7 +293,7 @@ msgstr ""
 "Du kan bruge opmærkningssproget Pango til formatering af teksten. Mere "
 "information om sproget kan findes på følgende webside:"
 
-#: ../src/modules/StatusbarTitlebar.py:47
+#: ../src/modules/StatusbarTitlebar.py:48
 msgid "[paused]"
 msgstr "[pause]"
 
@@ -347,12 +346,18 @@ msgstr ""
 "brugeromslag for et givet nummer, vil dette blive brugt. Ellers hentes et "
 "omslag fra nettet."
 
-#: ../src/modules/Tracktree.py:372
-msgid "Save playlist"
-msgstr "Gem afspilningsliste"
+#: ../src/modules/Tracktree.py:385
+#, fuzzy
+msgid "Export playlist"
+msgstr "Ryd afspilningslisten"
 
-#: ../src/modules/Tracktree.py:421
+#: ../src/modules/Tracktree.py:433
 msgid "Clear Playlist"
+msgstr "Ryd afspilningslisten"
+
+#: ../src/modules/Tracktree.py:443
+#, fuzzy
+msgid "Export Playlist"
 msgstr "Ryd afspilningslisten"
 
 #: ../src/modules/Equalizer.py:24
@@ -480,16 +485,19 @@ msgstr "Spil det næste nummer"
 msgid "Play the previous track"
 msgstr "Spil det forrige nummer"
 
+#~ msgid "Save playlist"
+#~ msgstr "Gem afspilningsliste"
+
 #~ msgid ""
-#~ "This dialog box shows the list of available modules, which are small pieces "
-#~ "of code that add some functionnalities to the application. You can "
-#~ "enable/disable a module by checking/unchecking the check box in front of it. "
-#~ "Note that some modules (e.g., the File Explorer) cannot be disabled."
+#~ "This dialog box shows the list of available modules, which are small "
+#~ "pieces of code that add some functionnalities to the application. You can "
+#~ "enable/disable a module by checking/unchecking the check box in front of "
+#~ "it. Note that some modules (e.g., the File Explorer) cannot be disabled."
 #~ msgstr ""
 #~ "Denne dialogboks viser en liste med de tilgængelige moduler, som er små "
-#~ "stykker kode som tilføjer funktionalitet til programmet. Du kan slå et modul "
-#~ "til eller fra ved at bruge checkboksen foran det. Bemærk at nogle moduler "
-#~ "(for eksempel File Explorer) kan ikke slås fra."
+#~ "stykker kode som tilføjer funktionalitet til programmet. Du kan slå et "
+#~ "modul til eller fra ved at bruge checkboksen foran det. Bemærk at nogle "
+#~ "moduler (for eksempel File Explorer) kan ikke slås fra."
 
 #~ msgid "Choose a folder"
 #~ msgstr "Vælg en mappe"
@@ -504,7 +512,6 @@ msgstr "Spil det forrige nummer"
 #~ "Dette navn er ikke tilladt.\n"
 #~ "Vælg venligst et andet."
 
-#, python-format
 #~ msgid ""
 #~ "The character %s is not allowed.\n"
 #~ "Please use another name."
@@ -528,15 +535,15 @@ msgstr "Spil det forrige nummer"
 #~ msgstr "Om kodeord og lagringssikkerhed"
 
 #~ msgid ""
-#~ "If you use Gnome, it is safe to store your password since the Gnome keyring "
-#~ "is used."
+#~ "If you use Gnome, it is safe to store your password since the Gnome "
+#~ "keyring is used."
 #~ msgstr ""
-#~ "Hvis du bruger Gnome, er det sikkert at gemme dit kodeord, da Gnome Keyring "
-#~ "bliver brugt."
+#~ "Hvis du bruger Gnome, er det sikkert at gemme dit kodeord, da Gnome "
+#~ "Keyring bliver brugt."
 
 #~ msgid ""
-#~ "If you do not use Gnome, beware that, although not stored as clear text, an "
-#~ "attacker <i>could</i> retrieve it."
+#~ "If you do not use Gnome, beware that, although not stored as clear text, "
+#~ "an attacker <i>could</i> retrieve it."
 #~ msgstr ""
 #~ "Hvis du ikke bruger Gnome, vær da opmærksom på, at selvom kodeordet ikke "
 #~ "bliver gemt i ren tekst, så <i>kan</i> en uvedkommende få adgang til det."
@@ -606,20 +613,20 @@ msgstr "Spil det forrige nummer"
 #~ "This module detects any running instant messenger and updates your status "
 #~ "with regards to the track you are listening to. Supported messengers are:"
 #~ msgstr ""
-#~ "Dette modul opdaterer din status i et kørende Instant Messenger program med "
-#~ "data fra det nummer du lytter til. Understøttede IM-programmer er:"
+#~ "Dette modul opdaterer din status i et kørende Instant Messenger program "
+#~ "med data fra det nummer du lytter til. Understøttede IM-programmer er:"
 
 #~ msgid "Customizing the Status"
 #~ msgstr "Tilpasser Status"
 
 #~ msgid ""
-#~ "You can set the status to any text you want. Before setting it, the module "
-#~ "replaces all fields of the form {field} by their corresponding value. "
-#~ "Available fields are:"
+#~ "You can set the status to any text you want. Before setting it, the "
+#~ "module replaces all fields of the form {field} by their corresponding "
+#~ "value. Available fields are:"
 #~ msgstr ""
 #~ "Du kan indstille statusteksten til hvadsomhelst. Før den indstilles "
-#~ "erstatter modulet alle felter med formen {felt} med dets tilhørende værdi. "
-#~ "De tilgængelige felter er:"
+#~ "erstatter modulet alle felter med formen {felt} med dets tilhørende "
+#~ "værdi. De tilgængelige felter er:"
 
 #~ msgid "Sanitization"
 #~ msgstr "Oprydning"
@@ -627,13 +634,13 @@ msgstr "Spil det forrige nummer"
 #~ msgid ""
 #~ "You can define some words that to sanitize before using them to set your "
 #~ "status. In this case, the middle characters of matching words is "
-#~ "automatically replaced with asterisks (e.g., \"Metallica - Live S**t Binge & "
-#~ "Purge\"). Put one word per line."
+#~ "automatically replaced with asterisks (e.g., \"Metallica - Live S**t "
+#~ "Binge & Purge\"). Put one word per line."
 #~ msgstr ""
-#~ "Du kan definere nogle ord som skal opryddes før de indstilles som status. I "
-#~ "dette tilfælde erstattes de midterste bogstaver i et matchende ord "
-#~ "automatisk med stjerner (eksempelvis \"Metallica - Live S**t Binge & "
-#~ "Purge\"). Put ét ord per linie."
+#~ "Du kan definere nogle ord som skal opryddes før de indstilles som status. "
+#~ "I dette tilfælde erstattes de midterste bogstaver i et matchende ord "
+#~ "automatisk med stjerner (eksempelvis \"Metallica - Live S**t Binge & Purge"
+#~ "\"). Put ét ord per linie."
 
 #~ msgid "Keep your Last.fm profile up to date"
 #~ msgstr "Hold din Last.fm-profil opdateret."
@@ -685,9 +692,6 @@ msgstr "Spil det forrige nummer"
 
 #~ msgid "Clear"
 #~ msgstr "Ryd"
-
-#~ msgid "Clear the playlist"
-#~ msgstr "Ryd afspilningslisten"
 
 #~ msgid "Elapsed time"
 #~ msgstr "Tid forløbet"

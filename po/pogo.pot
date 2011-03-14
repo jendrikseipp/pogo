@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-12-03 13:45+0100\n"
+"POT-Creation-Date: 2011-03-14 02:57+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,64 +17,64 @@ msgstr ""
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: ../src/media/track/__init__.py:54
+#: ../src/media/track/__init__.py:52
 msgid "Track number"
 msgstr ""
 
-#: ../src/media/track/__init__.py:55
+#: ../src/media/track/__init__.py:53
 msgid "Title"
 msgstr ""
 
-#: ../src/media/track/__init__.py:56
+#: ../src/media/track/__init__.py:54
 msgid "Artist"
 msgstr ""
 
-#: ../src/media/track/__init__.py:57
+#: ../src/media/track/__init__.py:55
 msgid "Album"
 msgstr ""
 
-#: ../src/media/track/__init__.py:58
+#: ../src/media/track/__init__.py:56
 msgid "Genre"
 msgstr ""
 
-#: ../src/media/track/__init__.py:59
+#: ../src/media/track/__init__.py:57
 msgid "Date"
 msgstr ""
 
-#: ../src/media/track/__init__.py:60
+#: ../src/media/track/__init__.py:58
 msgid "Disc number"
 msgstr ""
 
-#: ../src/media/track/__init__.py:61
+#: ../src/media/track/__init__.py:59
 msgid "Bit rate"
 msgstr ""
 
-#: ../src/media/track/__init__.py:62
+#: ../src/media/track/__init__.py:60
 msgid "Sample rate"
 msgstr ""
 
-#: ../src/media/track/__init__.py:63
+#: ../src/media/track/__init__.py:61
 msgid "Duration in seconds (e.g., 194)"
 msgstr ""
 
-#: ../src/media/track/__init__.py:64
+#: ../src/media/track/__init__.py:62
 msgid "Duration as a string (e.g., 3:14)"
 msgstr ""
 
-#: ../src/media/track/__init__.py:67
+#: ../src/media/track/__init__.py:65
 msgid "Full path to the file"
 msgstr ""
 
-#: ../src/media/track/__init__.py:149 ../src/media/track/__init__.py:393
+#: ../src/media/track/__init__.py:147 ../src/media/track/__init__.py:391
 msgid "unknown"
 msgstr ""
 
-#: ../src/media/track/__init__.py:175
+#: ../src/media/track/__init__.py:173
 #, python-format
 msgid "%(album)s  [Disc %(discnum)u]"
 msgstr ""
 
-#: ../src/media/track/__init__.py:182
+#: ../src/media/track/__init__.py:180
 msgid "CDDA Track"
 msgstr ""
 
@@ -125,7 +125,7 @@ msgstr ""
 msgid "Thanks to:"
 msgstr ""
 
-#: ../src/modules/Search.py:34
+#: ../src/modules/Search.py:32
 msgid "Search in your music folders"
 msgstr ""
 
@@ -133,67 +133,67 @@ msgstr ""
 msgid "Send track information to the Zeitgeist service"
 msgstr ""
 
-#: ../src/modules/FileExplorer.py:180
+#: ../src/modules/FileExplorer.py:183
 msgid "loading..."
 msgstr ""
 
-#: ../src/modules/FileExplorer.py:364
+#: ../src/modules/FileExplorer.py:377
 msgid "Append"
 msgstr ""
 
 #: ../src/modules/FileExplorer.py:389
-msgid "Add music folder"
-msgstr ""
-
-#: ../src/modules/FileExplorer.py:401
-msgid "Hide folder"
-msgstr ""
-
-#: ../src/modules/FileExplorer.py:409
 msgid "Open containing folder"
 msgstr ""
 
-#: ../src/modules/FileExplorer.py:420
-msgid "Choose a directory"
-msgstr ""
-
-#: ../src/modules/FileExplorer.py:424
-msgid "Invalid Folder"
+#: ../src/modules/FileExplorer.py:413
+msgid "Add music folder"
 msgstr ""
 
 #: ../src/modules/FileExplorer.py:425
+msgid "Hide folder"
+msgstr ""
+
+#: ../src/modules/FileExplorer.py:439
+msgid "Choose a directory"
+msgstr ""
+
+#: ../src/modules/FileExplorer.py:445
+msgid "Invalid Folder"
+msgstr ""
+
+#: ../src/modules/FileExplorer.py:446
 msgid "You cannot add your root or home folder to the music directories"
 msgstr ""
 
-#: ../src/modules/FileExplorer.py:432
+#: ../src/modules/FileExplorer.py:453
 msgid "This path does not exist"
 msgstr ""
 
-#: ../src/modules/FileExplorer.py:433
+#: ../src/modules/FileExplorer.py:454
 msgid "Please select an existing directory."
 msgstr ""
 
-#: ../src/modules/FileExplorer.py:529
+#: ../src/modules/FileExplorer.py:552
 msgid "Albums"
 msgstr ""
 
-#: ../src/modules/FileExplorer.py:531
+#: ../src/modules/FileExplorer.py:554
 msgid "Music"
 msgstr ""
 
-#: ../src/modules/FileExplorer.py:606
+#: ../src/modules/FileExplorer.py:629
 msgid "Right-click to add music folders"
 msgstr ""
 
-#: ../src/modules/FileExplorer.py:651
+#: ../src/modules/FileExplorer.py:674
 msgid "Searching ..."
 msgstr ""
 
-#: ../src/modules/FileExplorer.py:666
+#: ../src/modules/FileExplorer.py:689
 msgid "No tracks found"
 msgstr ""
 
-#: ../src/modules/FileExplorer.py:668
+#: ../src/modules/FileExplorer.py:691
 msgid "No music folders have been added"
 msgstr ""
 
@@ -270,7 +270,7 @@ msgid ""
 "on that language is available on the following web page:"
 msgstr ""
 
-#: ../src/modules/StatusbarTitlebar.py:47
+#: ../src/modules/StatusbarTitlebar.py:48
 msgid "[paused]"
 msgstr ""
 
@@ -313,12 +313,16 @@ msgid ""
 "none, the cover is downloaded."
 msgstr ""
 
-#: ../src/modules/Tracktree.py:372
-msgid "Save playlist"
+#: ../src/modules/Tracktree.py:385
+msgid "Export playlist"
 msgstr ""
 
-#: ../src/modules/Tracktree.py:421
+#: ../src/modules/Tracktree.py:433
 msgid "Clear Playlist"
+msgstr ""
+
+#: ../src/modules/Tracktree.py:443
+msgid "Export Playlist"
 msgstr ""
 
 #: ../src/modules/Equalizer.py:24

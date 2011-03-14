@@ -7,10 +7,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: decibel-audio-player\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-12-03 13:45+0100\n"
+"POT-Creation-Date: 2011-03-14 02:57+0100\n"
 "PO-Revision-Date: 2010-12-04 20:01+0000\n"
 "Last-Translator: Jens Maucher <Unknown>\n"
 "Language-Team: German <de@li.org>\n"
+"Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -18,64 +19,64 @@ msgstr ""
 "X-Launchpad-Export-Date: 2011-02-09 05:42+0000\n"
 "X-Generator: Launchpad (build 12177)\n"
 
-#: ../src/media/track/__init__.py:54
+#: ../src/media/track/__init__.py:52
 msgid "Track number"
 msgstr "Titelnummer"
 
-#: ../src/media/track/__init__.py:55
+#: ../src/media/track/__init__.py:53
 msgid "Title"
 msgstr "Titel"
 
-#: ../src/media/track/__init__.py:56
+#: ../src/media/track/__init__.py:54
 msgid "Artist"
 msgstr "Interpret"
 
-#: ../src/media/track/__init__.py:57
+#: ../src/media/track/__init__.py:55
 msgid "Album"
 msgstr "Album"
 
-#: ../src/media/track/__init__.py:58
+#: ../src/media/track/__init__.py:56
 msgid "Genre"
 msgstr "Genre"
 
-#: ../src/media/track/__init__.py:59
+#: ../src/media/track/__init__.py:57
 msgid "Date"
 msgstr "Datum"
 
-#: ../src/media/track/__init__.py:60
+#: ../src/media/track/__init__.py:58
 msgid "Disc number"
 msgstr "Disc-Nummer"
 
-#: ../src/media/track/__init__.py:61
+#: ../src/media/track/__init__.py:59
 msgid "Bit rate"
 msgstr "Bitrate"
 
-#: ../src/media/track/__init__.py:62
+#: ../src/media/track/__init__.py:60
 msgid "Sample rate"
 msgstr "Abtastrate"
 
-#: ../src/media/track/__init__.py:63
+#: ../src/media/track/__init__.py:61
 msgid "Duration in seconds (e.g., 194)"
 msgstr "Dauer in Sekunden (z.B. 194)"
 
-#: ../src/media/track/__init__.py:64
+#: ../src/media/track/__init__.py:62
 msgid "Duration as a string (e.g., 3:14)"
 msgstr "Dauer als Zeichenkette (z.B. 3:14)"
 
-#: ../src/media/track/__init__.py:67
+#: ../src/media/track/__init__.py:65
 msgid "Full path to the file"
 msgstr "Vollständiger Dateipfad"
 
-#: ../src/media/track/__init__.py:149 ../src/media/track/__init__.py:393
+#: ../src/media/track/__init__.py:147 ../src/media/track/__init__.py:391
 msgid "unknown"
 msgstr "unbekannt"
 
-#: ../src/media/track/__init__.py:175
+#: ../src/media/track/__init__.py:173
 #, python-format
 msgid "%(album)s  [Disc %(discnum)u]"
 msgstr "%(album)s  [Disc %(discnum)u]"
 
-#: ../src/media/track/__init__.py:182
+#: ../src/media/track/__init__.py:180
 msgid "CDDA Track"
 msgstr "CDDA Stück"
 
@@ -101,9 +102,8 @@ msgid ""
 "This window shows the list of available modules. You can enable/disable a "
 "module by checking/unchecking the check box in front of it."
 msgstr ""
-"Dieses Fenster zeigt die verfügbaren Plugins. Plugins können "
-"aktiviert/deaktiviert werden, indem vor dem Plugin ein Häkchen "
-"gesetzt/entfernt wird."
+"Dieses Fenster zeigt die verfügbaren Plugins. Plugins können aktiviert/"
+"deaktiviert werden, indem vor dem Plugin ein Häkchen gesetzt/entfernt wird."
 
 #: ../src/gui/preferences.py:142
 msgid "Configuring a Module"
@@ -137,7 +137,7 @@ msgstr "Entwickler:"
 msgid "Thanks to:"
 msgstr "Dank an:"
 
-#: ../src/modules/Search.py:34
+#: ../src/modules/Search.py:32
 msgid "Search in your music folders"
 msgstr "Suche in Deinen Musik-Ordnern"
 
@@ -145,69 +145,69 @@ msgstr "Suche in Deinen Musik-Ordnern"
 msgid "Send track information to the Zeitgeist service"
 msgstr "Sende Informationen über gespielte Titel an Zeitgeist"
 
-#: ../src/modules/FileExplorer.py:180
+#: ../src/modules/FileExplorer.py:183
 msgid "loading..."
 msgstr "wird geladen…"
 
-#: ../src/modules/FileExplorer.py:364
+#: ../src/modules/FileExplorer.py:377
 msgid "Append"
 msgstr "Anhängen"
 
 #: ../src/modules/FileExplorer.py:389
-msgid "Add music folder"
-msgstr "Füge Musik-Ordner hinzu"
-
-#: ../src/modules/FileExplorer.py:401
-msgid "Hide folder"
-msgstr "Ordner verstecken"
-
-#: ../src/modules/FileExplorer.py:409
 msgid "Open containing folder"
 msgstr "Öffnen des Ordners"
 
-#: ../src/modules/FileExplorer.py:420
+#: ../src/modules/FileExplorer.py:413
+msgid "Add music folder"
+msgstr "Füge Musik-Ordner hinzu"
+
+#: ../src/modules/FileExplorer.py:425
+msgid "Hide folder"
+msgstr "Ordner verstecken"
+
+#: ../src/modules/FileExplorer.py:439
 msgid "Choose a directory"
 msgstr "Wähle ein Verzeichnis"
 
-#: ../src/modules/FileExplorer.py:424
+#: ../src/modules/FileExplorer.py:445
 msgid "Invalid Folder"
 msgstr "Ungültiger Ordner"
 
-#: ../src/modules/FileExplorer.py:425
+#: ../src/modules/FileExplorer.py:446
 msgid "You cannot add your root or home folder to the music directories"
 msgstr ""
 "Sie können den Root-Ordner oder Ihr Heimatverzeichnis nicht zu den Musik-"
 "Verzeichnissen hinzufügen."
 
-#: ../src/modules/FileExplorer.py:432
+#: ../src/modules/FileExplorer.py:453
 msgid "This path does not exist"
 msgstr "Dieser Pfad existiert nicht"
 
-#: ../src/modules/FileExplorer.py:433
+#: ../src/modules/FileExplorer.py:454
 msgid "Please select an existing directory."
 msgstr "Bitte wählen Sie ein existierendes Verzeichnis"
 
-#: ../src/modules/FileExplorer.py:529
+#: ../src/modules/FileExplorer.py:552
 msgid "Albums"
 msgstr "Alben"
 
-#: ../src/modules/FileExplorer.py:531
+#: ../src/modules/FileExplorer.py:554
 msgid "Music"
 msgstr "Musik"
 
-#: ../src/modules/FileExplorer.py:606
+#: ../src/modules/FileExplorer.py:629
 msgid "Right-click to add music folders"
 msgstr "Rechts-Klick zum Hinzufügen der Musik-Verzeichnisse"
 
-#: ../src/modules/FileExplorer.py:651
+#: ../src/modules/FileExplorer.py:674
 msgid "Searching ..."
 msgstr "Suche läuft …"
 
-#: ../src/modules/FileExplorer.py:666
+#: ../src/modules/FileExplorer.py:689
 msgid "No tracks found"
 msgstr "Keine Songs gefunden"
 
-#: ../src/modules/FileExplorer.py:668
+#: ../src/modules/FileExplorer.py:691
 msgid "No music folders have been added"
 msgstr "Es wuden keine Musik-Verzeichnisse hinzugefügt"
 
@@ -224,8 +224,7 @@ msgid "Restart required"
 msgstr "Neustart erforderlich"
 
 #: ../src/modules/__init__.py:267
-msgid ""
-"You must restart the application for this modification to take effect."
+msgid "You must restart the application for this modification to take effect."
 msgstr ""
 "Die Anwendung muss neu gestartet werden um diese Änderung zu übernehmen."
 
@@ -263,8 +262,7 @@ msgstr ""
 "gespielt wird."
 
 #: ../src/modules/DesktopNotification.py:215
-msgid ""
-"If the Covers module is enabled, the popup also shows the album cover."
+msgid "If the Covers module is enabled, the popup also shows the album cover."
 msgstr ""
 "Wenn das Covers Modul aktiviert ist, zeigt das Popup Fenster auch das Album "
 "Cover."
@@ -298,7 +296,7 @@ msgstr ""
 "Der Text kann in der Auszeichnungssprache Pango formatiert werden. Für "
 "Informationen zu Pango siehe:"
 
-#: ../src/modules/StatusbarTitlebar.py:47
+#: ../src/modules/StatusbarTitlebar.py:48
 msgid "[paused]"
 msgstr "[Pause]"
 
@@ -351,12 +349,18 @@ msgstr ""
 "werden. Falls ein Benutzer-Cover zum aktuellen Titel existiert, wird dieses "
 "verwendet, ansonsten wird ein Cover aus dem Internet heruntergeladen."
 
-#: ../src/modules/Tracktree.py:372
-msgid "Save playlist"
-msgstr "Wiedergabeliste speichern"
+#: ../src/modules/Tracktree.py:385
+#, fuzzy
+msgid "Export playlist"
+msgstr "Playliste leeren"
 
-#: ../src/modules/Tracktree.py:421
+#: ../src/modules/Tracktree.py:433
 msgid "Clear Playlist"
+msgstr "Wiedergabeliste leeren"
+
+#: ../src/modules/Tracktree.py:443
+#, fuzzy
+msgid "Export Playlist"
 msgstr "Wiedergabeliste leeren"
 
 #: ../src/modules/Equalizer.py:24
@@ -484,14 +488,17 @@ msgstr "Nächstes Stück spielen"
 msgid "Play the previous track"
 msgstr "Vorheriges Stück spielen"
 
+#~ msgid "Save playlist"
+#~ msgstr "Wiedergabeliste speichern"
+
 #~ msgid ""
-#~ "This dialog box shows the list of available modules, which are small pieces "
-#~ "of code that add some functionnalities to the application. You can "
-#~ "enable/disable a module by checking/unchecking the check box in front of it. "
-#~ "Note that some modules (e.g., the File Explorer) cannot be disabled."
+#~ "This dialog box shows the list of available modules, which are small "
+#~ "pieces of code that add some functionnalities to the application. You can "
+#~ "enable/disable a module by checking/unchecking the check box in front of "
+#~ "it. Note that some modules (e.g., the File Explorer) cannot be disabled."
 #~ msgstr ""
-#~ "Dieser Dialog zeigt die verfügbaren Module. Module erweitern das Programm um "
-#~ "nützliche Funktionen. Einige Module können nicht deaktiviert werden."
+#~ "Dieser Dialog zeigt die verfügbaren Module. Module erweitern das Programm "
+#~ "um nützliche Funktionen. Einige Module können nicht deaktiviert werden."
 
 #~ msgid "Choose a folder"
 #~ msgstr "Wählen Sie ein Verzeichnis"
@@ -506,7 +513,6 @@ msgstr "Vorheriges Stück spielen"
 #~ "Dieser Name kann nicht benutzt werden.\n"
 #~ "Bitte wählen Sie einen anderen Namen."
 
-#, python-format
 #~ msgid ""
 #~ "The character %s is not allowed.\n"
 #~ "Please use another name."
@@ -520,7 +526,6 @@ msgstr "Vorheriges Stück spielen"
 #~ msgid "Browse your file system"
 #~ msgstr "Durchsuchen Sie ihr Dateisystem"
 
-#, python-format
 #~ msgid "One track in playlist  [%(length)s]"
 #~ msgid_plural "%(count)u tracks in playlist  [%(length)s]"
 #~ msgstr[0] "Ein Titel in der Wiedergabeliste [%(length)s]"
@@ -549,18 +554,19 @@ msgstr "Vorheriges Stück spielen"
 #~ msgstr "Über die Sicherheit der Passwortspeicherung"
 
 #~ msgid ""
-#~ "If you use Gnome, it is safe to store your password since the Gnome keyring "
-#~ "is used."
+#~ "If you use Gnome, it is safe to store your password since the Gnome "
+#~ "keyring is used."
 #~ msgstr ""
 #~ "Falls GNOME benutzt wird, werden  Passwörter sicher im Gnome-Keyring "
 #~ "gespeichert."
 
 #~ msgid ""
-#~ "If you do not use Gnome, beware that, although not stored as clear text, an "
-#~ "attacker <i>could</i> retrieve it."
+#~ "If you do not use Gnome, beware that, although not stored as clear text, "
+#~ "an attacker <i>could</i> retrieve it."
 #~ msgstr ""
-#~ "Falls GNOME nicht benutzt wird, <i>könnte</i> ein Angreifer unter Umständen "
-#~ "an das Passwort gelangen, obwohl es verschlüsselt gespeichert wird."
+#~ "Falls GNOME nicht benutzt wird, <i>könnte</i> ein Angreifer unter "
+#~ "Umständen an das Passwort gelangen, obwohl es verschlüsselt gespeichert "
+#~ "wird."
 
 #~ msgid "Home"
 #~ msgstr "Persönlicher Ordner"
@@ -598,8 +604,8 @@ msgstr "Vorheriges Stück spielen"
 #~ "then becomes the root of the file explorer tree in the main window."
 #~ msgstr ""
 #~ "Mindestens ein Ordner muss hinzugefügt werden um ihre Dateien zu "
-#~ "durchsuchen. Dieser Ordner wird dann die Wurzel des Dateimanager-Baumes im "
-#~ "Hauptfenster."
+#~ "durchsuchen. Dieser Ordner wird dann die Wurzel des Dateimanager-Baumes "
+#~ "im Hauptfenster."
 
 #~ msgid ""
 #~ "Please select an explorer\n"
@@ -699,9 +705,9 @@ msgstr "Vorheriges Stück spielen"
 #~ msgstr "Angezeigten IM-Status anpassen."
 
 #~ msgid ""
-#~ "You can set the status to any text you want. Before setting it, the module "
-#~ "replaces all fields of the form {field} by their corresponding value. "
-#~ "Available fields are:"
+#~ "You can set the status to any text you want. Before setting it, the "
+#~ "module replaces all fields of the form {field} by their corresponding "
+#~ "value. Available fields are:"
 #~ msgstr ""
 #~ "Der Status enthält beliebigen Text und Variablen in geschweiften Klammern "
 #~ "({Variable}). Variablen werden in der Anzeige durch ihre jeweiligen Werte "
@@ -713,13 +719,13 @@ msgstr "Vorheriges Stück spielen"
 #~ msgid ""
 #~ "You can define some words that to sanitize before using them to set your "
 #~ "status. In this case, the middle characters of matching words is "
-#~ "automatically replaced with asterisks (e.g., \"Metallica - Live S**t Binge & "
-#~ "Purge\"). Put one word per line."
+#~ "automatically replaced with asterisks (e.g., \"Metallica - Live S**t "
+#~ "Binge & Purge\"). Put one word per line."
 #~ msgstr ""
-#~ "Sie können Wörter festlegen, die zensiert werden, bevor sie als Ihren Status "
-#~ "gesetzt werden. Die Mittleren Zeichen eines festgelegten Wortes werden dann "
-#~ "automatisch mit Sternchen erstzt. (z.B. Metallica - Live S**t Binge & "
-#~ "Purge). Verwenden Sie bitte für jedes Worte eine eigene Zeile."
+#~ "Sie können Wörter festlegen, die zensiert werden, bevor sie als Ihren "
+#~ "Status gesetzt werden. Die Mittleren Zeichen eines festgelegten Wortes "
+#~ "werden dann automatisch mit Sternchen erstzt. (z.B. Metallica - Live S**t "
+#~ "Binge & Purge). Verwenden Sie bitte für jedes Worte eine eigene Zeile."
 
 #~ msgid "Keep your Last.fm profile up to date"
 #~ msgstr "Halten sie ihr Last.fm-Profil auf dem neuesten Stand"
@@ -757,7 +763,8 @@ msgstr "Vorheriges Stück spielen"
 #~ "The directory is scanned for media files. This can take some time.\n"
 #~ "Please wait."
 #~ msgstr ""
-#~ "Das Verzeichnis wird nach Mediendateien durchsucht. Dies kann etwas dauern.\n"
+#~ "Das Verzeichnis wird nach Mediendateien durchsucht. Dies kann etwas "
+#~ "dauern.\n"
 #~ "Bitte warten."
 
 #~ msgid "Scanning directories (one track found)"
@@ -784,7 +791,8 @@ msgstr "Vorheriges Stück spielen"
 #~ msgid "Remove the selected library?"
 #~ msgstr "Ausgewählte Sammlung entfernen?"
 
-#~ msgid "You will be able to recreate these libraries later on if you wish so."
+#~ msgid ""
+#~ "You will be able to recreate these libraries later on if you wish so."
 #~ msgstr ""
 #~ "Sie können diese Sammlung später erstellen, sofern von Ihnen gewünscht."
 
@@ -800,8 +808,8 @@ msgstr "Vorheriges Stück spielen"
 #~ "are already known and do not have to be read again."
 #~ msgstr ""
 #~ "Dieses Modul organisiert Ihre Mediendateien nach Tags anstelle der "
-#~ "Verzeichnnisstruktur ihres Laufwerkes zu benutzen. Das Laden der Stücke ist "
-#~ "auch schneller, da ihre Tags schon bekannt sind und nicht noch einmal "
+#~ "Verzeichnnisstruktur ihres Laufwerkes zu benutzen. Das Laden der Stücke "
+#~ "ist auch schneller, da ihre Tags schon bekannt sind und nicht noch einmal "
 #~ "geladen werde müssen."
 
 #~ msgid ""
@@ -810,18 +818,19 @@ msgstr "Vorheriges Stück spielen"
 #~ "recursively scanned for media files whose tags are read and stored in a "
 #~ "database."
 #~ msgstr ""
-#~ "Wenn Sie eine neue Sammlung hinzufügen, müssen Sie den kompletten Pfad zum "
-#~ "Wurzelverzeichnis angeben. Danach werden alle Verzeichnisse unter diesem "
-#~ "Ursprung rekursiv nach Mediendateien durchsucht, deren Tags eingelesen und "
-#~ "in einer Datenbank gespeichert werden."
+#~ "Wenn Sie eine neue Sammlung hinzufügen, müssen Sie den kompletten Pfad "
+#~ "zum Wurzelverzeichnis angeben. Danach werden alle Verzeichnisse unter "
+#~ "diesem Ursprung rekursiv nach Mediendateien durchsucht, deren Tags "
+#~ "eingelesen und in einer Datenbank gespeichert werden."
 
 #~ msgid ""
-#~ "Upon refreshing a library, the file structure under the root directory and "
-#~ "all media files are scanned for changes, to update the database accordingly."
+#~ "Upon refreshing a library, the file structure under the root directory "
+#~ "and all media files are scanned for changes, to update the database "
+#~ "accordingly."
 #~ msgstr ""
-#~ "Falls eine Sammlung neu geladen wird, wird auch die Dateistruktur unterhalb "
-#~ "des Wurzelverzeichnisses und alle Mediendateien auf Veränderungen geprüft, "
-#~ "um die Datenbank entprechend zu aktualisieren."
+#~ "Falls eine Sammlung neu geladen wird, wird auch die Dateistruktur "
+#~ "unterhalb des Wurzelverzeichnisses und alle Mediendateien auf "
+#~ "Veränderungen geprüft, um die Datenbank entprechend zu aktualisieren."
 
 #~ msgid "Status Icon"
 #~ msgstr "Statussymbol"
@@ -857,7 +866,8 @@ msgstr "Vorheriges Stück spielen"
 #~ msgstr "Ungültiger Pfad"
 
 #~ msgid ""
-#~ "The path to the CD-ROM device is not valid. Please choose an existing path."
+#~ "The path to the CD-ROM device is not valid. Please choose an existing "
+#~ "path."
 #~ msgstr ""
 #~ "Der Pfad für das CD-ROM Laufwerk ist nicht gültig. Wählen Sie bitte einen "
 #~ "gültigen."
@@ -872,14 +882,14 @@ msgstr "Vorheriges Stück spielen"
 
 #~ msgid ""
 #~ "Disc information, such as artist and album title, may be automatically "
-#~ "downloaded from an online database if you wish so. This information may also "
-#~ "be saved on your hard drive to avoid downloading it again the next time you "
-#~ "play the same disc."
+#~ "downloaded from an online database if you wish so. This information may "
+#~ "also be saved on your hard drive to avoid downloading it again the next "
+#~ "time you play the same disc."
 #~ msgstr ""
-#~ "Wenn Sie es wünschen, können Informationen zur Audio-CD, wie Interpret oder "
-#~ "Albumtitel, automatisch von einer Online-Datenbank heruntergeladen werden. "
-#~ "Außerdem können diese Daten auf ihrem Rechner gesichert werden, um in "
-#~ "Zukunft nicht erneut heruntergeladen werden zu müssen."
+#~ "Wenn Sie es wünschen, können Informationen zur Audio-CD, wie Interpret "
+#~ "oder Albumtitel, automatisch von einer Online-Datenbank heruntergeladen "
+#~ "werden. Außerdem können diese Daten auf ihrem Rechner gesichert werden, "
+#~ "um in Zukunft nicht erneut heruntergeladen werden zu müssen."
 
 #~ msgid "Status File"
 #~ msgstr "Statusdatei"
@@ -888,7 +898,8 @@ msgstr "Vorheriges Stück spielen"
 #~ msgstr "Eine Textdatei mit dem aktuellen Status generieren"
 
 #~ msgid ""
-#~ "The path to the selected file is not valid. Please choose an existing path."
+#~ "The path to the selected file is not valid. Please choose an existing "
+#~ "path."
 #~ msgstr ""
 #~ "Der Pfad zur gewählten Datei ist ungültig. Bitte wählen Sie einen "
 #~ "existierenden Pfad."
@@ -897,7 +908,8 @@ msgstr "Vorheriges Stück spielen"
 #~ msgstr "Wählen Sie eine Datei"
 
 #~ msgid ""
-#~ "This module generates a text file with regards to the track currently played."
+#~ "This module generates a text file with regards to the track currently "
+#~ "played."
 #~ msgstr ""
 #~ "Dieses Modul generiert eine Textdatei die das aktuell abgespielte Stück "
 #~ "enthält."
@@ -981,7 +993,8 @@ msgstr "Vorheriges Stück spielen"
 #~ msgstr "Aktualisieren wenn pausiert"
 
 #~ msgid "Update your status even if you are marked as unavailable"
-#~ msgstr "Aktualisiere den Status auch, wenn du als unerreichbar markiert bist"
+#~ msgstr ""
+#~ "Aktualisiere den Status auch, wenn du als unerreichbar markiert bist"
 
 #~ msgid "Update your status on pause/unpause events"
 #~ msgstr "Aktualisiere den Status bei Pause/Abspielen-Ereignissen"
@@ -1003,9 +1016,6 @@ msgstr "Vorheriges Stück spielen"
 
 #~ msgid "Clear"
 #~ msgstr "Leeren"
-
-#~ msgid "Clear the playlist"
-#~ msgstr "Playliste leeren"
 
 #~ msgid "Elapsed time"
 #~ msgstr "Abgelaufene Zeit"

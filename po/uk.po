@@ -6,77 +6,78 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: pogo\n"
-"Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
-"POT-Creation-Date: 2010-12-03 13:45+0100\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2011-03-14 02:57+0100\n"
 "PO-Revision-Date: 2010-12-03 19:46+0000\n"
 "Last-Translator: Serge Gavrilenko <Unknown>\n"
 "Language-Team: Ukrainian <uk@li.org>\n"
+"Language: uk\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
-"n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
 "X-Launchpad-Export-Date: 2011-02-09 05:43+0000\n"
 "X-Generator: Launchpad (build 12177)\n"
 
-#: ../src/media/track/__init__.py:54
+#: ../src/media/track/__init__.py:52
 msgid "Track number"
 msgstr "Номер доріжки"
 
-#: ../src/media/track/__init__.py:55
+#: ../src/media/track/__init__.py:53
 msgid "Title"
 msgstr "Назва"
 
-#: ../src/media/track/__init__.py:56
+#: ../src/media/track/__init__.py:54
 msgid "Artist"
 msgstr "Виконавець"
 
-#: ../src/media/track/__init__.py:57
+#: ../src/media/track/__init__.py:55
 msgid "Album"
 msgstr "Альбом"
 
-#: ../src/media/track/__init__.py:58
+#: ../src/media/track/__init__.py:56
 msgid "Genre"
 msgstr "Жанр"
 
-#: ../src/media/track/__init__.py:59
+#: ../src/media/track/__init__.py:57
 msgid "Date"
 msgstr "Дата"
 
-#: ../src/media/track/__init__.py:60
+#: ../src/media/track/__init__.py:58
 msgid "Disc number"
 msgstr "Номер диску"
 
-#: ../src/media/track/__init__.py:61
+#: ../src/media/track/__init__.py:59
 msgid "Bit rate"
 msgstr "Бітрейт"
 
-#: ../src/media/track/__init__.py:62
+#: ../src/media/track/__init__.py:60
 msgid "Sample rate"
 msgstr "Частота дискретизації"
 
-#: ../src/media/track/__init__.py:63
+#: ../src/media/track/__init__.py:61
 msgid "Duration in seconds (e.g., 194)"
 msgstr "Тривалість в секундах (наприклад, 194)"
 
-#: ../src/media/track/__init__.py:64
+#: ../src/media/track/__init__.py:62
 msgid "Duration as a string (e.g., 3:14)"
 msgstr "Тривалість (наприклад, 3:14)"
 
-#: ../src/media/track/__init__.py:67
+#: ../src/media/track/__init__.py:65
 msgid "Full path to the file"
 msgstr "Повний шлях до файлу"
 
-#: ../src/media/track/__init__.py:149 ../src/media/track/__init__.py:393
+#: ../src/media/track/__init__.py:147 ../src/media/track/__init__.py:391
 msgid "unknown"
 msgstr "невідомо"
 
-#: ../src/media/track/__init__.py:175
+#: ../src/media/track/__init__.py:173
 #, python-format
 msgid "%(album)s  [Disc %(discnum)u]"
 msgstr "%(album)s [Диск %(discnum)u]"
 
-#: ../src/media/track/__init__.py:182
+#: ../src/media/track/__init__.py:180
 msgid "CDDA Track"
 msgstr "Доріжка CDDA"
 
@@ -102,8 +103,8 @@ msgid ""
 "This window shows the list of available modules. You can enable/disable a "
 "module by checking/unchecking the check box in front of it."
 msgstr ""
-"Це вікно відображає список доступних модулів. Модулі можливо ввімкнути\\"
-"вимкнути за допомогою галочки перед назвою модуля."
+"Це вікно відображає список доступних модулів. Модулі можливо ввімкнути"
+"\\вимкнути за допомогою галочки перед назвою модуля."
 
 #: ../src/gui/preferences.py:142
 msgid "Configuring a Module"
@@ -135,7 +136,7 @@ msgstr "Розробник:"
 msgid "Thanks to:"
 msgstr "Вдячності:"
 
-#: ../src/modules/Search.py:34
+#: ../src/modules/Search.py:32
 msgid "Search in your music folders"
 msgstr "Шукати у Ваших папках з музикою"
 
@@ -143,68 +144,68 @@ msgstr "Шукати у Ваших папках з музикою"
 msgid "Send track information to the Zeitgeist service"
 msgstr "Відправити інформацію про доріжку в службу Zeitgeist"
 
-#: ../src/modules/FileExplorer.py:180
+#: ../src/modules/FileExplorer.py:183
 msgid "loading..."
 msgstr "завантаження..."
 
-#: ../src/modules/FileExplorer.py:364
+#: ../src/modules/FileExplorer.py:377
 msgid "Append"
 msgstr "Додати"
 
 #: ../src/modules/FileExplorer.py:389
-msgid "Add music folder"
-msgstr "Додати папку з музикою"
-
-#: ../src/modules/FileExplorer.py:401
-msgid "Hide folder"
-msgstr "Сховати папку"
-
-#: ../src/modules/FileExplorer.py:409
 msgid "Open containing folder"
 msgstr "Відкрити вміст папки"
 
-#: ../src/modules/FileExplorer.py:420
+#: ../src/modules/FileExplorer.py:413
+msgid "Add music folder"
+msgstr "Додати папку з музикою"
+
+#: ../src/modules/FileExplorer.py:425
+msgid "Hide folder"
+msgstr "Сховати папку"
+
+#: ../src/modules/FileExplorer.py:439
 msgid "Choose a directory"
 msgstr "Оберіть каталог"
 
-#: ../src/modules/FileExplorer.py:424
+#: ../src/modules/FileExplorer.py:445
 msgid "Invalid Folder"
 msgstr "Невірна папка"
 
-#: ../src/modules/FileExplorer.py:425
+#: ../src/modules/FileExplorer.py:446
 msgid "You cannot add your root or home folder to the music directories"
 msgstr ""
 "Ви не можете додати кореневий та домашній каталог до списку папок з музикою"
 
-#: ../src/modules/FileExplorer.py:432
+#: ../src/modules/FileExplorer.py:453
 msgid "This path does not exist"
 msgstr "Шлях не існує"
 
-#: ../src/modules/FileExplorer.py:433
+#: ../src/modules/FileExplorer.py:454
 msgid "Please select an existing directory."
 msgstr "Будь-ласка, оберіть існуючу папку."
 
-#: ../src/modules/FileExplorer.py:529
+#: ../src/modules/FileExplorer.py:552
 msgid "Albums"
 msgstr "Альбоми"
 
-#: ../src/modules/FileExplorer.py:531
+#: ../src/modules/FileExplorer.py:554
 msgid "Music"
 msgstr "Музика"
 
-#: ../src/modules/FileExplorer.py:606
+#: ../src/modules/FileExplorer.py:629
 msgid "Right-click to add music folders"
 msgstr "Натисніть праву кнопку миші щоб додати папку з музикою"
 
-#: ../src/modules/FileExplorer.py:651
+#: ../src/modules/FileExplorer.py:674
 msgid "Searching ..."
 msgstr "Йде пошук..."
 
-#: ../src/modules/FileExplorer.py:666
+#: ../src/modules/FileExplorer.py:689
 msgid "No tracks found"
 msgstr "Доріжки не знайдено"
 
-#: ../src/modules/FileExplorer.py:668
+#: ../src/modules/FileExplorer.py:691
 msgid "No music folders have been added"
 msgstr "Не додано жодної папки з музикою"
 
@@ -221,8 +222,7 @@ msgid "Restart required"
 msgstr "Необхідний перезапуск"
 
 #: ../src/modules/__init__.py:267
-msgid ""
-"You must restart the application for this modification to take effect."
+msgid "You must restart the application for this modification to take effect."
 msgstr "Ві маєте перезапустити програму, щоб зміни вступили в силу."
 
 #: ../src/modules/CtrlPanel.py:190 ../src/modules/CtrlPanel.py:246
@@ -259,8 +259,7 @@ msgstr ""
 "наступна композиція."
 
 #: ../src/modules/DesktopNotification.py:215
-msgid ""
-"If the Covers module is enabled, the popup also shows the album cover."
+msgid "If the Covers module is enabled, the popup also shows the album cover."
 msgstr ""
 "Якщо модуль \"Обкладинка\" активований, то у виринаючому вікні буде показано "
 "обкладинку альбому."
@@ -293,7 +292,7 @@ msgstr ""
 "Ви можете використати мову розмітки Pango для форматування тексту. Більше "
 "інформації про Pango на веб-сторінці:"
 
-#: ../src/modules/StatusbarTitlebar.py:47
+#: ../src/modules/StatusbarTitlebar.py:48
 msgid "[paused]"
 msgstr "[призупинено]"
 
@@ -346,12 +345,18 @@ msgstr ""
 "випадку буде використано локальну обкладинку, якщо така є; інакше обкладинка "
 "буде завантажена з мережі."
 
-#: ../src/modules/Tracktree.py:372
-msgid "Save playlist"
+#: ../src/modules/Tracktree.py:385
+#, fuzzy
+msgid "Export playlist"
 msgstr "Зберегти список"
 
-#: ../src/modules/Tracktree.py:421
+#: ../src/modules/Tracktree.py:433
 msgid "Clear Playlist"
+msgstr "Очистити список"
+
+#: ../src/modules/Tracktree.py:443
+#, fuzzy
+msgid "Export Playlist"
 msgstr "Очистити список"
 
 #: ../src/modules/Equalizer.py:24

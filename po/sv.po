@@ -7,11 +7,12 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pogo\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-12-03 13:45+0100\n"
+"POT-Creation-Date: 2011-03-14 02:57+0100\n"
 "PO-Revision-Date: 2010-11-09 15:37+0000\n"
 "Last-Translator: David Bengtsson <Unknown>\n"
-"Language-Team: Launchpad Swedish Translators <lp-l10n-"
-"sv@lists.launchpad.net>\n"
+"Language-Team: Launchpad Swedish Translators <lp-l10n-sv@lists.launchpad."
+"net>\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -20,64 +21,64 @@ msgstr ""
 "X-Generator: Launchpad (build 12177)\n"
 "X-Poedit-Language: Swedish\n"
 
-#: ../src/media/track/__init__.py:54
+#: ../src/media/track/__init__.py:52
 msgid "Track number"
 msgstr "Spårnummer"
 
-#: ../src/media/track/__init__.py:55
+#: ../src/media/track/__init__.py:53
 msgid "Title"
 msgstr "Titel"
 
-#: ../src/media/track/__init__.py:56
+#: ../src/media/track/__init__.py:54
 msgid "Artist"
 msgstr "Artist"
 
-#: ../src/media/track/__init__.py:57
+#: ../src/media/track/__init__.py:55
 msgid "Album"
 msgstr "Album"
 
-#: ../src/media/track/__init__.py:58
+#: ../src/media/track/__init__.py:56
 msgid "Genre"
 msgstr "Genre"
 
-#: ../src/media/track/__init__.py:59
+#: ../src/media/track/__init__.py:57
 msgid "Date"
 msgstr "Datum"
 
-#: ../src/media/track/__init__.py:60
+#: ../src/media/track/__init__.py:58
 msgid "Disc number"
 msgstr "Skivnummer"
 
-#: ../src/media/track/__init__.py:61
+#: ../src/media/track/__init__.py:59
 msgid "Bit rate"
 msgstr "Bithastighet"
 
-#: ../src/media/track/__init__.py:62
+#: ../src/media/track/__init__.py:60
 msgid "Sample rate"
 msgstr "Samplingsfrekvens"
 
-#: ../src/media/track/__init__.py:63
+#: ../src/media/track/__init__.py:61
 msgid "Duration in seconds (e.g., 194)"
 msgstr "Speltid i sekunder (t.ex. 194)"
 
-#: ../src/media/track/__init__.py:64
+#: ../src/media/track/__init__.py:62
 msgid "Duration as a string (e.g., 3:14)"
 msgstr "Speltid som en sträng (t.ex. 3:14)"
 
-#: ../src/media/track/__init__.py:67
+#: ../src/media/track/__init__.py:65
 msgid "Full path to the file"
 msgstr "Fullständig sökväg till filen"
 
-#: ../src/media/track/__init__.py:149 ../src/media/track/__init__.py:393
+#: ../src/media/track/__init__.py:147 ../src/media/track/__init__.py:391
 msgid "unknown"
 msgstr "okänd"
 
-#: ../src/media/track/__init__.py:175
+#: ../src/media/track/__init__.py:173
 #, python-format
 msgid "%(album)s  [Disc %(discnum)u]"
 msgstr "%(album)s [Skiva %(discnum)u]"
 
-#: ../src/media/track/__init__.py:182
+#: ../src/media/track/__init__.py:180
 msgid "CDDA Track"
 msgstr "CDDA-spår"
 
@@ -103,9 +104,8 @@ msgid ""
 "This window shows the list of available modules. You can enable/disable a "
 "module by checking/unchecking the check box in front of it."
 msgstr ""
-"Detta fönster visar listan över tillgängliga moduler. Du kan "
-"aktivera/inaktivera en modul genom att markera/avmarkera kryssrutan framför "
-"den."
+"Detta fönster visar listan över tillgängliga moduler. Du kan aktivera/"
+"inaktivera en modul genom att markera/avmarkera kryssrutan framför den."
 
 #: ../src/gui/preferences.py:142
 msgid "Configuring a Module"
@@ -139,7 +139,7 @@ msgstr "Utvecklare:"
 msgid "Thanks to:"
 msgstr "Tack till:"
 
-#: ../src/modules/Search.py:34
+#: ../src/modules/Search.py:32
 msgid "Search in your music folders"
 msgstr "Sök i dina musikmappar"
 
@@ -147,67 +147,67 @@ msgstr "Sök i dina musikmappar"
 msgid "Send track information to the Zeitgeist service"
 msgstr "Skicka spårinformation till Zeitgeist-tjänsten"
 
-#: ../src/modules/FileExplorer.py:180
+#: ../src/modules/FileExplorer.py:183
 msgid "loading..."
 msgstr "läser in..."
 
-#: ../src/modules/FileExplorer.py:364
+#: ../src/modules/FileExplorer.py:377
 msgid "Append"
 msgstr "Lägg till"
 
 #: ../src/modules/FileExplorer.py:389
-msgid "Add music folder"
-msgstr "Lägg till musikmapp"
-
-#: ../src/modules/FileExplorer.py:401
-msgid "Hide folder"
-msgstr "Dölj mapp"
-
-#: ../src/modules/FileExplorer.py:409
 msgid "Open containing folder"
 msgstr "Öppna innehållande mapp"
 
-#: ../src/modules/FileExplorer.py:420
+#: ../src/modules/FileExplorer.py:413
+msgid "Add music folder"
+msgstr "Lägg till musikmapp"
+
+#: ../src/modules/FileExplorer.py:425
+msgid "Hide folder"
+msgstr "Dölj mapp"
+
+#: ../src/modules/FileExplorer.py:439
 msgid "Choose a directory"
 msgstr "Välj en katalog"
 
-#: ../src/modules/FileExplorer.py:424
+#: ../src/modules/FileExplorer.py:445
 msgid "Invalid Folder"
 msgstr ""
 
-#: ../src/modules/FileExplorer.py:425
+#: ../src/modules/FileExplorer.py:446
 msgid "You cannot add your root or home folder to the music directories"
 msgstr ""
 
-#: ../src/modules/FileExplorer.py:432
+#: ../src/modules/FileExplorer.py:453
 msgid "This path does not exist"
 msgstr "Den här sökvägen finns inte"
 
-#: ../src/modules/FileExplorer.py:433
+#: ../src/modules/FileExplorer.py:454
 msgid "Please select an existing directory."
 msgstr "Välj en befintlig katalog."
 
-#: ../src/modules/FileExplorer.py:529
+#: ../src/modules/FileExplorer.py:552
 msgid "Albums"
 msgstr "Album"
 
-#: ../src/modules/FileExplorer.py:531
+#: ../src/modules/FileExplorer.py:554
 msgid "Music"
 msgstr "Musik"
 
-#: ../src/modules/FileExplorer.py:606
+#: ../src/modules/FileExplorer.py:629
 msgid "Right-click to add music folders"
 msgstr ""
 
-#: ../src/modules/FileExplorer.py:651
+#: ../src/modules/FileExplorer.py:674
 msgid "Searching ..."
 msgstr "Söker ..."
 
-#: ../src/modules/FileExplorer.py:666
+#: ../src/modules/FileExplorer.py:689
 msgid "No tracks found"
 msgstr "Inga spår hittades"
 
-#: ../src/modules/FileExplorer.py:668
+#: ../src/modules/FileExplorer.py:691
 msgid "No music folders have been added"
 msgstr ""
 
@@ -224,10 +224,8 @@ msgid "Restart required"
 msgstr "Omstart krävs"
 
 #: ../src/modules/__init__.py:267
-msgid ""
-"You must restart the application for this modification to take effect."
-msgstr ""
-"Du måste starta om programmet för att denna modifiering ska få effekt."
+msgid "You must restart the application for this modification to take effect."
+msgstr "Du måste starta om programmet för att denna modifiering ska få effekt."
 
 #: ../src/modules/CtrlPanel.py:190 ../src/modules/CtrlPanel.py:246
 msgid "Pause the current track"
@@ -263,8 +261,7 @@ msgstr ""
 "spår påbörjas."
 
 #: ../src/modules/DesktopNotification.py:215
-msgid ""
-"If the Covers module is enabled, the popup also shows the album cover."
+msgid "If the Covers module is enabled, the popup also shows the album cover."
 msgstr ""
 "Om modulen för omslagsbilder är aktiverad, visar popup-notifieringen även "
 "omslagsbilden."
@@ -297,7 +294,7 @@ msgstr ""
 "Du kan använda märkspråket Pango för att formatera texten. Mer information "
 "om språket finns tillgänglig på följande webbplats:"
 
-#: ../src/modules/StatusbarTitlebar.py:47
+#: ../src/modules/StatusbarTitlebar.py:48
 msgid "[paused]"
 msgstr "[pausad]"
 
@@ -350,12 +347,18 @@ msgstr ""
 "internet. I detta fall används användaromslag för det aktuella spåret om ett "
 "sådant finns. Om det inte finns något så hämtas omslagsbilden."
 
-#: ../src/modules/Tracktree.py:372
-msgid "Save playlist"
-msgstr "Spara spellista"
+#: ../src/modules/Tracktree.py:385
+#, fuzzy
+msgid "Export playlist"
+msgstr "Töm spellistan"
 
-#: ../src/modules/Tracktree.py:421
+#: ../src/modules/Tracktree.py:433
 msgid "Clear Playlist"
+msgstr "Rensa spellista"
+
+#: ../src/modules/Tracktree.py:443
+#, fuzzy
+msgid "Export Playlist"
 msgstr "Rensa spellista"
 
 #: ../src/modules/Equalizer.py:24
@@ -483,16 +486,20 @@ msgstr "Spela upp nästa spår"
 msgid "Play the previous track"
 msgstr "Spela upp föregående spår"
 
+#~ msgid "Save playlist"
+#~ msgstr "Spara spellista"
+
 #~ msgid ""
-#~ "This dialog box shows the list of available modules, which are small pieces "
-#~ "of code that add some functionnalities to the application. You can "
-#~ "enable/disable a module by checking/unchecking the check box in front of it. "
-#~ "Note that some modules (e.g., the File Explorer) cannot be disabled."
+#~ "This dialog box shows the list of available modules, which are small "
+#~ "pieces of code that add some functionnalities to the application. You can "
+#~ "enable/disable a module by checking/unchecking the check box in front of "
+#~ "it. Note that some modules (e.g., the File Explorer) cannot be disabled."
 #~ msgstr ""
-#~ "Denna dialogruta visar listan över tillgängliga moduler, vilka är små delar "
-#~ "av kod som lägger till viss funktionalitet till programmet. Du kan "
-#~ "aktivera/inaktivera en modul genom att kryssa i/av i kryssrutan framför den. "
-#~ "Observera att vissa moduler (t,ex, Filutforskaren) inte kan inaktiveras."
+#~ "Denna dialogruta visar listan över tillgängliga moduler, vilka är små "
+#~ "delar av kod som lägger till viss funktionalitet till programmet. Du kan "
+#~ "aktivera/inaktivera en modul genom att kryssa i/av i kryssrutan framför "
+#~ "den. Observera att vissa moduler (t,ex, Filutforskaren) inte kan "
+#~ "inaktiveras."
 
 #~ msgid "Choose a folder"
 #~ msgstr "Välj en mapp"
@@ -507,7 +514,6 @@ msgstr "Spela upp föregående spår"
 #~ "Det här namnet tillåts inte.\n"
 #~ "Använd ett annat namn."
 
-#, python-format
 #~ msgid ""
 #~ "The character %s is not allowed.\n"
 #~ "Please use another name."
@@ -521,7 +527,6 @@ msgstr "Spela upp föregående spår"
 #~ msgid "Browse your file system"
 #~ msgstr "Bläddra i ditt filsystem"
 
-#, python-format
 #~ msgid "One track in playlist  [%(length)s]"
 #~ msgid_plural "%(count)u tracks in playlist  [%(length)s]"
 #~ msgstr[0] "Ett spår i spellistan [%(length)s]"
@@ -550,15 +555,15 @@ msgstr "Spela upp föregående spår"
 #~ msgstr "Om säkerhet för lösenordslagring"
 
 #~ msgid ""
-#~ "If you use Gnome, it is safe to store your password since the Gnome keyring "
-#~ "is used."
+#~ "If you use Gnome, it is safe to store your password since the Gnome "
+#~ "keyring is used."
 #~ msgstr ""
 #~ "Om du använder Gnome är det säkert att lagra ditt lösenord eftersom Gnome-"
 #~ "nyckelring används."
 
 #~ msgid ""
-#~ "If you do not use Gnome, beware that, although not stored as clear text, an "
-#~ "attacker <i>could</i> retrieve it."
+#~ "If you do not use Gnome, beware that, although not stored as clear text, "
+#~ "an attacker <i>could</i> retrieve it."
 #~ msgstr ""
 #~ "Om du inte använder Gnome så bör du känna till en attackare skulle "
 #~ "<i>kunna</i> komma över det, även om det inte lagrats i klartext."
@@ -599,8 +604,9 @@ msgstr "Spela upp föregående spår"
 #~ "At least one root folder must be added to browse your files. This folder "
 #~ "then becomes the root of the file explorer tree in the main window."
 #~ msgstr ""
-#~ "Åtminstone en rotmapp måste läggas till för att bläddra i dina filer. Denna "
-#~ "mapp kommer sedan att bli roten för filutforskarens träd i huvudfönstret."
+#~ "Åtminstone en rotmapp måste läggas till för att bläddra i dina filer. "
+#~ "Denna mapp kommer sedan att bli roten för filutforskarens träd i "
+#~ "huvudfönstret."
 
 #~ msgid ""
 #~ "Please select an explorer\n"
@@ -694,19 +700,19 @@ msgstr "Spela upp föregående spår"
 #~ "This module detects any running instant messenger and updates your status "
 #~ "with regards to the track you are listening to. Supported messengers are:"
 #~ msgstr ""
-#~ "Denna modul upptäcker om någon chatklient körs och uppdaterar din status med "
-#~ "information om spåret som du lyssnar på. Klienter som stöds är:"
+#~ "Denna modul upptäcker om någon chatklient körs och uppdaterar din status "
+#~ "med information om spåret som du lyssnar på. Klienter som stöds är:"
 
 #~ msgid "Customizing the Status"
 #~ msgstr "Anpassa statusen"
 
 #~ msgid ""
-#~ "You can set the status to any text you want. Before setting it, the module "
-#~ "replaces all fields of the form {field} by their corresponding value. "
-#~ "Available fields are:"
+#~ "You can set the status to any text you want. Before setting it, the "
+#~ "module replaces all fields of the form {field} by their corresponding "
+#~ "value. Available fields are:"
 #~ msgstr ""
-#~ "Du kan ställa in status till valfri text. Innan den ställs in kommer modulen "
-#~ "att ersätta alla fält i formuläret {field} med motsvarande värde. "
+#~ "Du kan ställa in status till valfri text. Innan den ställs in kommer "
+#~ "modulen att ersätta alla fält i formuläret {field} med motsvarande värde. "
 #~ "Tillgängliga fält är:"
 
 #~ msgid "Sanitization"
@@ -715,13 +721,13 @@ msgstr "Spela upp föregående spår"
 #~ msgid ""
 #~ "You can define some words that to sanitize before using them to set your "
 #~ "status. In this case, the middle characters of matching words is "
-#~ "automatically replaced with asterisks (e.g., \"Metallica - Live S**t Binge & "
-#~ "Purge\"). Put one word per line."
+#~ "automatically replaced with asterisks (e.g., \"Metallica - Live S**t "
+#~ "Binge & Purge\"). Put one word per line."
 #~ msgstr ""
 #~ "Du kan definiera vissa ord som kan städas bort innan de används för att "
-#~ "ställa in din status. I detta fall kommer mellersta bokstäverna av matchande "
-#~ "ord att automatiskt ersättas med stjärnor (t.ex., \"Metallica - Live S**t "
-#~ "Binge & Purge\"). Ange ett ord per rad."
+#~ "ställa in din status. I detta fall kommer mellersta bokstäverna av "
+#~ "matchande ord att automatiskt ersättas med stjärnor (t.ex., \"Metallica - "
+#~ "Live S**t Binge & Purge\"). Ange ett ord per rad."
 
 #~ msgid "Keep your Last.fm profile up to date"
 #~ msgstr "Håll din Last.fm-profil uppdaterad"
@@ -784,7 +790,8 @@ msgstr "Spela upp föregående spår"
 #~ msgid "Remove the selected library?"
 #~ msgstr "Ta bort markerat bibliotek?"
 
-#~ msgid "You will be able to recreate these libraries later on if you wish so."
+#~ msgid ""
+#~ "You will be able to recreate these libraries later on if you wish so."
 #~ msgstr ""
 #~ "Du kommer senare att kunna återskapa dessa bibliotek om du så önskar."
 
@@ -799,9 +806,10 @@ msgstr "Spela upp föregående spår"
 #~ "structure of your drive. Loading tracks is also faster because their tags "
 #~ "are already known and do not have to be read again."
 #~ msgstr ""
-#~ "Denna modul organiserar dina mediafiler med taggar istället för att använda "
-#~ "filstrukturen för din enhet. Inläsning av spåren blir också snabbare därför "
-#~ "att deras taggar redan är kända och behöver inte läsas av igen."
+#~ "Denna modul organiserar dina mediafiler med taggar istället för att "
+#~ "använda filstrukturen för din enhet. Inläsning av spåren blir också "
+#~ "snabbare därför att deras taggar redan är kända och behöver inte läsas av "
+#~ "igen."
 
 #~ msgid ""
 #~ "When you add a new library, you have to give the full path to the root "
@@ -815,11 +823,13 @@ msgstr "Spela upp föregående spår"
 #~ "taggar läses in och lagras i en databas."
 
 #~ msgid ""
-#~ "Upon refreshing a library, the file structure under the root directory and "
-#~ "all media files are scanned for changes, to update the database accordingly."
+#~ "Upon refreshing a library, the file structure under the root directory "
+#~ "and all media files are scanned for changes, to update the database "
+#~ "accordingly."
 #~ msgstr ""
-#~ "Vid uppdatering av ett bibliotek kommer filstrukturen under rotkatalogen och "
-#~ "alla mediafiler att sökas av efter ändringar för att uppdatera databasen."
+#~ "Vid uppdatering av ett bibliotek kommer filstrukturen under rotkatalogen "
+#~ "och alla mediafiler att sökas av efter ändringar för att uppdatera "
+#~ "databasen."
 
 #~ msgid "Status Icon"
 #~ msgstr "Statusikon"
@@ -847,7 +857,8 @@ msgstr "Spela upp föregående spår"
 
 #~ msgid "This will remove all disc information stored on your hard drive."
 #~ msgstr ""
-#~ "Det här kommer att ta bort all skivinformation som lagrats på din hårddisk."
+#~ "Det här kommer att ta bort all skivinformation som lagrats på din "
+#~ "hårddisk."
 
 #~ msgid "Clear CDDB cache?"
 #~ msgstr "Töm CDDB-cache?"
@@ -856,7 +867,8 @@ msgstr "Spela upp föregående spår"
 #~ msgstr "Ogiltig sökväg"
 
 #~ msgid ""
-#~ "The path to the CD-ROM device is not valid. Please choose an existing path."
+#~ "The path to the CD-ROM device is not valid. Please choose an existing "
+#~ "path."
 #~ msgstr ""
 #~ "Sökvägen till cd-rom-enheten är inte giltig. Välj en befintlig sökväg."
 
@@ -868,14 +880,14 @@ msgstr "Spela upp föregående spår"
 
 #~ msgid ""
 #~ "Disc information, such as artist and album title, may be automatically "
-#~ "downloaded from an online database if you wish so. This information may also "
-#~ "be saved on your hard drive to avoid downloading it again the next time you "
-#~ "play the same disc."
+#~ "downloaded from an online database if you wish so. This information may "
+#~ "also be saved on your hard drive to avoid downloading it again the next "
+#~ "time you play the same disc."
 #~ msgstr ""
 #~ "Skivinformation, såsom artist och albumtitel, kan automatiskt hämtas ner "
 #~ "från en databas på Internet om du så önskar. Denna information kan även "
-#~ "sparas på din hårddisk för att undvika att hämta ner den igen nästa gång som "
-#~ "du spelar samma skiva."
+#~ "sparas på din hårddisk för att undvika att hämta ner den igen nästa gång "
+#~ "som du spelar samma skiva."
 
 #~ msgid "Status File"
 #~ msgstr "Statusfil"
@@ -884,15 +896,18 @@ msgstr "Spela upp föregående spår"
 #~ msgstr "Generera en textfil med aktuell status"
 
 #~ msgid ""
-#~ "The path to the selected file is not valid. Please choose an existing path."
+#~ "The path to the selected file is not valid. Please choose an existing "
+#~ "path."
 #~ msgstr ""
-#~ "Sökvägen till den markerade filen är inte giltig. Välj en befintlig sökväg."
+#~ "Sökvägen till den markerade filen är inte giltig. Välj en befintlig "
+#~ "sökväg."
 
 #~ msgid "Choose a file"
 #~ msgstr "Välj en fil"
 
 #~ msgid ""
-#~ "This module generates a text file with regards to the track currently played."
+#~ "This module generates a text file with regards to the track currently "
+#~ "played."
 #~ msgstr ""
 #~ "Denna modul genererar en textfil med information om spåret som spelas upp."
 
@@ -997,9 +1012,6 @@ msgstr "Spela upp föregående spår"
 
 #~ msgid "Clear"
 #~ msgstr "Töm"
-
-#~ msgid "Clear the playlist"
-#~ msgstr "Töm spellistan"
 
 #~ msgid "Elapsed time"
 #~ msgstr "Förfluten tid"
