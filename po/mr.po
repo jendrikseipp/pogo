@@ -6,18 +6,17 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: pogo\n"
-"Report-Msgid-Bugs-To: \n"
+"Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2011-03-14 02:57+0100\n"
 "PO-Revision-Date: 2011-01-12 14:46+0000\n"
 "Last-Translator: Rakhi Attal <Unknown>\n"
 "Language-Team: Marathi <mr@li.org>\n"
-"Language: mr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Launchpad-Export-Date: 2011-02-09 05:42+0000\n"
-"X-Generator: Launchpad (build 12177)\n"
+"X-Launchpad-Export-Date: 2011-03-14 05:26+0000\n"
+"X-Generator: Launchpad (build 12559)\n"
 
 #: ../src/media/track/__init__.py:52
 msgid "Track number"
@@ -215,7 +214,8 @@ msgid "Restart required"
 msgstr "पुन्हा चालू करणे आवश्यक"
 
 #: ../src/modules/__init__.py:267
-msgid "You must restart the application for this modification to take effect."
+msgid ""
+"You must restart the application for this modification to take effect."
 msgstr "बदल वापरात येण्याकरिता तुम्हाला हा उपक्रम पुन्हा चालू करावाच लागेल."
 
 #: ../src/modules/CtrlPanel.py:190 ../src/modules/CtrlPanel.py:246
@@ -250,7 +250,8 @@ msgid ""
 msgstr ""
 
 #: ../src/modules/DesktopNotification.py:215
-msgid "If the Covers module is enabled, the popup also shows the album cover."
+msgid ""
+"If the Covers module is enabled, the popup also shows the album cover."
 msgstr ""
 
 #: ../src/modules/DesktopNotification.py:216
@@ -319,18 +320,16 @@ msgid ""
 msgstr ""
 
 #: ../src/modules/Tracktree.py:385
-#, fuzzy
 msgid "Export playlist"
-msgstr "गानेक्रमानिका सुरक्षित करा"
+msgstr ""
 
 #: ../src/modules/Tracktree.py:433
 msgid "Clear Playlist"
 msgstr "गानेक्रमानिका खोडा"
 
 #: ../src/modules/Tracktree.py:443
-#, fuzzy
 msgid "Export Playlist"
-msgstr "गानेक्रमानिका खोडा"
+msgstr ""
 
 #: ../src/modules/Equalizer.py:24
 msgid "Equalizer"
@@ -460,6 +459,7 @@ msgstr "आधीचे गाणे चालावा"
 #~ msgid "Choose a folder"
 #~ msgstr "संचयिका निवडा"
 
+#, python-format
 #~ msgid ""
 #~ "The character %s is not allowed.\n"
 #~ "Please use another name."
@@ -479,3 +479,6 @@ msgstr "आधीचे गाणे चालावा"
 
 #~ msgid "Search in your music directories"
 #~ msgstr "आपल्या संगीत संचायीके मध्ये शोधा"
+
+#~ msgid "Save playlist"
+#~ msgstr "गानेक्रमानिका सुरक्षित करा"

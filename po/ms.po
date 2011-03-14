@@ -6,18 +6,17 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: pogo\n"
-"Report-Msgid-Bugs-To: \n"
+"Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2011-03-14 02:57+0100\n"
 "PO-Revision-Date: 2011-02-02 10:24+0000\n"
 "Last-Translator: abuyop <Unknown>\n"
 "Language-Team: Malay <ms@li.org>\n"
-"Language: ms\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Launchpad-Export-Date: 2011-02-09 05:42+0000\n"
-"X-Generator: Launchpad (build 12177)\n"
+"X-Launchpad-Export-Date: 2011-03-14 05:26+0000\n"
+"X-Generator: Launchpad (build 12559)\n"
 
 #: ../src/media/track/__init__.py:52
 msgid "Track number"
@@ -102,8 +101,8 @@ msgid ""
 "This window shows the list of available modules. You can enable/disable a "
 "module by checking/unchecking the check box in front of it."
 msgstr ""
-"Tetingkap ini memaparkan senarai modul yang ada. Anda boleh benarkan/"
-"lumpuhkan modul dengan menanda/nyahtanda kekotak tanda dihadapannya."
+"Tetingkap ini memaparkan senarai modul yang ada. Anda boleh "
+"benarkan/lumpuhkan modul dengan menanda/nyahtanda kekotak tanda dihadapannya."
 
 #: ../src/gui/preferences.py:142
 msgid "Configuring a Module"
@@ -220,7 +219,8 @@ msgid "Restart required"
 msgstr "Mula semula aplikasi diperlukan"
 
 #: ../src/modules/__init__.py:267
-msgid "You must restart the application for this modification to take effect."
+msgid ""
+"You must restart the application for this modification to take effect."
 msgstr ""
 "Anda mesti memulakan semula aplikasi supaya pengubahsuaian ini berkesan."
 
@@ -258,7 +258,8 @@ msgstr ""
 "baru bermula."
 
 #: ../src/modules/DesktopNotification.py:215
-msgid "If the Covers module is enabled, the popup also shows the album cover."
+msgid ""
+"If the Covers module is enabled, the popup also shows the album cover."
 msgstr ""
 "Jika modul Kulit Album dibenarkan, tetingkap timbul juga akan memaparkannya."
 
@@ -345,18 +346,16 @@ msgstr ""
 "tiada, kulit album akan dimuat turun."
 
 #: ../src/modules/Tracktree.py:385
-#, fuzzy
 msgid "Export playlist"
-msgstr "Simpan senarai main"
+msgstr ""
 
 #: ../src/modules/Tracktree.py:433
 msgid "Clear Playlist"
 msgstr "Kosongkan Senarai Main"
 
 #: ../src/modules/Tracktree.py:443
-#, fuzzy
 msgid "Export Playlist"
-msgstr "Kosongkan Senarai Main"
+msgstr ""
 
 #: ../src/modules/Equalizer.py:24
 msgid "Equalizer"
@@ -421,7 +420,8 @@ msgstr "Sentiasa utamakan kulit album pengguna"
 
 #: ../res/Covers.glade.h:4
 msgid "Don't download covers when there is a user one"
-msgstr "Jangan muat turun kulit album jika terdapat kulit album dari pengguna"
+msgstr ""
+"Jangan muat turun kulit album jika terdapat kulit album dari pengguna"
 
 #: ../res/Covers.glade.h:5
 msgid "Download covers"
@@ -496,9 +496,13 @@ msgstr "Main trek terdahulu"
 #~ "Nama ini tidak dibenarkan.\n"
 #~ "Sila gunakan yang lain."
 
+#, python-format
 #~ msgid ""
 #~ "The character %s is not allowed.\n"
 #~ "Please use another name."
 #~ msgstr ""
 #~ "Aksara %s tidak dibenarkan.\n"
 #~ "Sila guna nama yang lain."
+
+#~ msgid "Save playlist"
+#~ msgstr "Simpan senarai main"
