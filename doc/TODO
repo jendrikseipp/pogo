@@ -1,18 +1,7 @@
 === Roadmap ===
 
-0.4:
-X Support for WAV files (LP:684161)
-X Export playlist to .m3u format (right-click playlist)
-X Show "Open containing folder" in context menu also for seaches
-X When caching the files in the music directories do not slow down application
-X Save cover size between sessions
-X Fix: adding files from command line by removing bash start script
-X Fix: Compiz cover display problem
-X Fix: Save maximized state
-X Fix: Start playback automatically when tracks are appended, but not when inserted
-X Fix: Unhighlight deselected tracks always
-X Code: Assert copyright with date (LP:692792)
-X Code: Use pogo.py as binary directly for installations
+0.5:
+O Fix: When a track is playing and a directory is appended in nautilus, playback skips to new tracks
 
 0.x:
 O Select new track, when old selected is deleted
@@ -24,7 +13,8 @@ O Shuffle
 O Repeat
 O Playlist loading (Only add tracks in playlist not added anyways)
 O Add Zeitgeist module (check rhythmbox and banshee first)
-O Sound Indicator (https://github.com/sunng87/Exaile-Soundmenu-Indicator)
+O Sound Indicator (https://github.com/sunng87/Exaile-Soundmenu-Indicator,
+  http://theravingrick.blogspot.com/2011/02/easily-support-sound-menu-in-python.html)
 
 
 === Features that will MAYBE be implemented ===
