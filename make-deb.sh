@@ -1,5 +1,7 @@
 #!/bin/sh
 
+set -e
+
 INSTALL_DIR="/usr/share/pogo"
 MAN_DIR="/usr/share/man/man1"
 BIN_DIR="/usr/bin"

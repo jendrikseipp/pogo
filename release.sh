@@ -1,5 +1,7 @@
 #!/bin/sh
 
+set -e
+
 VERSION=`cat control-install | grep "Version" | cut -d\  -f2`
 ARCHIVE="pogo-"$VERSION".tar.gz"
 DEST='pogo-'$VERSION
