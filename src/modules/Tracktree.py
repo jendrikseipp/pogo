@@ -21,14 +21,14 @@ import os
 import traceback
 import logging
 
-import gtk, gobject
+import gtk
 
-import gui, media, modules, tools
+import media, modules, tools
 
 from gui             import fileChooser
 from tools           import consts, icons, prefs, pickleLoad, pickleSave, log
 from gettext         import gettext as _
-from gobject         import TYPE_STRING, TYPE_INT, TYPE_PYOBJECT
+from gobject         import TYPE_STRING, TYPE_PYOBJECT
 from gui.widgets     import TrackTreeView
 
 MOD_INFO = ('Tracktree', 'Tracktree', '', [], True, False)
@@ -282,7 +282,7 @@ class Tracktree(modules.Module):
         children_before = self.tree.store.iter_n_children(target)
 
         self.tree.get_selection().unselect_all()
-        dest = self.insertDir(tracks, target, drop_mode, highlight)
+        self.insertDir(tracks, target, drop_mode, highlight)
         self.onListModified()
 
         # We only want to start playback if tracks are appended from DBus

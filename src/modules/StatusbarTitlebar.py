@@ -17,10 +17,11 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301 USA
 
-import modules, tools
-
-from tools   import consts, prefs
 from gettext import gettext as _
+
+import modules
+from tools   import consts, prefs
+
 
 MOD_INFO = ('Status and Title Bars', 'Status and Title Bars', '', [], True, False)
 

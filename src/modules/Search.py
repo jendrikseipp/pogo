@@ -27,8 +27,7 @@ import gobject
 import tools
 import modules
 import media
-from tools import consts, prefs
-from tools.log import logger
+from tools import consts
 
 search_text = _('Search in your music folders')
 

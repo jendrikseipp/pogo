@@ -17,12 +17,9 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301 USA
 
-import logging
+import gtk, modules, os.path, tools
 
-import gobject, gtk, modules, os.path, tools
-
-from tools   import consts, prefs
-from gettext import gettext as _
+from tools import consts, prefs
 
 MOD_INFO = ('Track Panel', 'Track Panel', '', [], True, False)
 
@@ -64,12 +61,8 @@ class TrackPanel(modules.Module):
     def onAppStarted(self):
         """ Real initialization function, called when this module has been loaded """
         # Widgets
-        wTree                  = tools.prefs.getWidgetsTree()
-        ##self.txtTitle          = wTree.get_widget('lbl-trkTitle')
         self.currTrack         = None
 
-        ##
-        #self.txtTitle.hide()
         show_thumb = prefs.get(__name__, 'show_thumb', True)
         self.cover_spot = CoverSpot(show_thumb)
 
@@ -81,13 +74,6 @@ class TrackPanel(modules.Module):
     def onNewTrack(self, track):
         """ A new track is being played """
         self.currTrack = track
-
-        #self.__setTitle(track.getTitle(), track.getLength())
-        title = tools.htmlEscape(track.getTitle())
-        artist = tools.htmlEscape(track.getArtist())
-        album = tools.htmlEscape(track.getExtendedAlbum())
-        #self.txtMisc.set_markup(_('by <i>%(artist)s</i> from <i>%(album)s</i>' % {'artist': artist, 'album': album}))
-        #self.txtMisc.set_markup('<b>%(artist)s - %(title)s</b>' % locals())
 
 
     def onStopped(self):

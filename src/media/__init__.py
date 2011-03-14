@@ -19,7 +19,6 @@
 
 import os
 import sys
-import threading
 import traceback
 from collections import defaultdict
 from os.path import splitext
@@ -76,7 +75,6 @@ def getTrackFromFile(file):
         The 'file' parameter must be a real file (not a playlist or a directory)
     """
     #_track_cache_lock.acquire()
-    name = os.path.basename(file)
     if file in _track_cache:
         #_track_cache_lock.release()
         return _track_cache[file]
@@ -226,7 +224,6 @@ if __name__ == '__main__':
 
     dirs = ['/home/jendrik/tmp/Horses'] * 50
 
-    from pprint import pprint
     dir = '/home/jendrik/tmp/Horses'
     tracks = scanPaths(tools.listDir(dir))
     for key, value in sorted(tracks.iteritems()):

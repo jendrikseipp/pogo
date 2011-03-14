@@ -21,7 +21,7 @@ import sys, os
 
 import gtk
 import gobject
-from gobject import signal_new, TYPE_INT, TYPE_STRING, TYPE_BOOLEAN, TYPE_PYOBJECT, TYPE_NONE, SIGNAL_RUN_LAST
+from gobject import signal_new, TYPE_INT, TYPE_STRING, TYPE_PYOBJECT, TYPE_NONE, SIGNAL_RUN_LAST
 
 if __name__ == '__main__':
     base_dir = os.path.abspath(os.path.join(os.path.abspath(__file__), '../../'))
@@ -485,7 +485,7 @@ class TrackTreeView(ExtTreeView):
 
 
 if __name__ == '__main__':
-    from gobject import TYPE_STRING, TYPE_INT, TYPE_PYOBJECT
+    from gobject import TYPE_INT, TYPE_PYOBJECT
 
     from tools import icons
     from media import getTracks

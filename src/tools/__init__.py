@@ -246,7 +246,7 @@ def read_file(filename):
         # codecs.open returns a file object that can write unicode objects
         # and whose read() method also returns unicode objects
         # Internally we want to have unicode only
-        with codecs.open(filename, 'rb', encoding=encoding, errors='replace') as file:
+        with codecs.open(filename, 'rb', encoding='utf-8', errors='replace') as file:
             data = file.read()
             return data
     except Exception, e:

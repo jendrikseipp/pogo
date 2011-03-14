@@ -22,7 +22,6 @@ from __future__ import with_statement
 import os
 import urllib2
 import itertools
-import re
 from gettext import gettext as _
 from os.path import isdir, isfile
 
@@ -501,7 +500,8 @@ class FileExplorer(modules.Module):
         name = tools.dirname(path)
         name = tools.htmlEscape(unicode(name, errors='replace'))
         parent = self.tree.appendRow((icons.dirMenuIcon(), name, TYPE_DIR, path), None)
-        fakeChild = self.tree.appendRow((icons.dirMenuIcon(), '', TYPE_NONE, ''), parent)
+        # add fake child
+        self.tree.appendRow((icons.dirMenuIcon(), '', TYPE_NONE, ''), parent)
 
 
     def _is_separator(self, model, iter):
@@ -694,7 +694,8 @@ class FileExplorer(modules.Module):
 
         for path, name in dirs:
             new_node = self.tree.appendRow((icons.dirMenuIcon(), name, TYPE_DIR, path), None)
-            fakeChild = self.tree.appendRow((icons.dirMenuIcon(), '', TYPE_NONE, ''), new_node)
+            # add fake child
+            self.tree.appendRow((icons.dirMenuIcon(), '', TYPE_NONE, ''), new_node)
 
         for file, name in files:
             self.tree.appendRow((icons.mediaFileMenuIcon(), name, TYPE_FILE, file), None)
