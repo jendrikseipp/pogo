@@ -93,13 +93,13 @@ class Covers(modules.ThreadedModule):
 
             #if cover.size[1] < FULL_SIZE_COVER_HEIGHT: newHeight = cover.size[1]
             #else:                                      newHeight = FULL_SIZE_COVER_HEIGHT
-            
+
             width = cover.size[0]
             height = cover.size[1]
             max_width = FULL_SIZE_COVER_WIDTH
             max_height = FULL_SIZE_COVER_HEIGHT
             newWidth, newHeight = tools.resize(width, height, max_width, max_height)
-            
+
             cover = cover.resize((newWidth, newHeight), Image.ANTIALIAS)
 
             # We're done
@@ -130,7 +130,7 @@ class Covers(modules.ThreadedModule):
             #else:
             #    newHeight = THUMBNAIL_HEIGHT
                 #offsetY   = 0
-                
+
             width = cover.size[0]
             height = cover.size[1]
             max_width = THUMBNAIL_WIDTH
@@ -215,6 +215,10 @@ class Covers(modules.ThreadedModule):
                 logger.error('[%s] No known cover for %s / %s' % (MOD_NAME, artist, album))
             else:
                 logger.error('[%s] Information request failed\n\n%s' % (MOD_NAME, traceback.format_exc()))
+            return None
+        except urllib2.URLError:
+            logger.info('[%s] Could not fetch cover. No internet connection.' %
+                         MOD_NAME)
             return None
         except:
             logger.error('[%s] Information request failed\n\n%s' % (MOD_NAME, traceback.format_exc()))
