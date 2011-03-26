@@ -394,6 +394,8 @@ class Tracktree(modules.Module):
 
         iters = [iter] if iter else list(self.tree.iterSelectedRows())
 
+        prev_iter = self.tree.get_prev_iter_or_parent(iters[0])
+
         # reverse list, so that we remove children before their fathers
         for iter in reversed(iters):
             track = self.tree.getTrack(iter)
@@ -405,6 +407,12 @@ class Tracktree(modules.Module):
 
         if hadMark and not self.tree.hasMark():
             modules.postMsg(consts.MSG_CMD_STOP)
+
+        # Select new track when old selected is deleted
+        if prev_iter:
+            self.tree.select(prev_iter)
+        else:
+            self.tree.select(self.tree.get_first_iter())
 
         self.onListModified()
 

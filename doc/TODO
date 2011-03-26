@@ -2,7 +2,7 @@
 
 0.5:
 O Save playlist periodically to prevent losing it during a shutdown (LP:669132)
-O Usability: Select new track, when old selected is deleted
+X Usability: Select new track when old selected is deleted
 O Fix: When a track is playing and a directory is appended in nautilus,
   playback sometimes skips to new tracks
 

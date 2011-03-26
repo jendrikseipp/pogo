@@ -172,13 +172,14 @@ class TrackTreeView(ExtTreeView):
         return self.store.iter_nth_child(None, root_nodes-1)
 
     def get_all_parents(self, iter):
-        ''' Returns a list of parent, grandparent, greatgrandparent, etc. '''
+        """Returns a list of parent, grandparent, greatgrandparent, etc."""
         parent = self.store.iter_parent(iter)
         while parent:
             yield parent
             parent = self.store.iter_parent(parent)
 
     def iter_prev(self, iter):
+        """Return the previous iter on the same level."""
         path = self.store.get_path(iter)
         position = path[-1]
         if position == 0:
@@ -228,9 +229,10 @@ class TrackTreeView(ExtTreeView):
             return next_iter
 
         # iter has no following siblings -> return uncle
-        return self.get_uncle(iter)
+        return self.get_next_iter_on_higher_level(iter)
 
-    def get_uncle(self, iter):
+    def get_next_iter_on_higher_level(self, iter):
+        """Goes up in the hierarchy until one parent has a next node."""
         while True:
             parent = self.store.iter_parent(iter)
             if parent is None:
@@ -240,6 +242,17 @@ class TrackTreeView(ExtTreeView):
             if uncle:
                 return uncle
             iter = parent
+
+    def get_prev_iter_or_parent(self, iter):
+        """
+        Returns the previous node on the same level if there is one or the
+        parent iter. If "iter" is the first iter, None is returned.
+        """
+        prev_iter = self.iter_prev(iter)
+        if prev_iter:
+            return prev_iter
+        parent = self.store.iter_parent(iter)
+        return parent
 
     def get_lowest_descendant(self, iter):
         '''
@@ -514,7 +527,7 @@ if __name__ == '__main__':
         print tree.get_nodename(iter), '->', tree.get_nodename(next)
 
     for iter in [a, b, c, d]:
-        uncle = tree.get_uncle(iter)
+        uncle = tree.get_next_iter_on_higher_level(iter)
         print 'Uncle(%s) = %s' % (tree.get_nodename(iter), tree.get_nodename(uncle))
 
     for iter in [a, b, c, d]:
