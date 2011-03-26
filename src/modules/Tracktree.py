@@ -608,7 +608,7 @@ class Tracktree(modules.Module):
 
     def onUnPaused(self):
         self.paused = False
-        self.onPausedToggled(icons.pauseMenuIcon())
+        self.onPausedToggled(icons.playMenuIcon())
 
 
     def onDragBegin(self, paths):

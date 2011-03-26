@@ -1,15 +1,14 @@
 === Roadmap ===
 
 0.5:
-O Export tracks in playlist into a directory (with subdirectories)
 X Save playlist periodically to prevent losing it during a shutdown (LP:669132)
 X Usability: Select new track when old selected is deleted
+X Fix: Playback after pause should show the play icon, not the pause icon
 O Fix: When a track is playing and a directory is appended in nautilus,
   playback sometimes skips to new tracks
-O Fix: Playback can't be stopped when Pogo wanders through inexistent files
-O Fix: Handle dropping an empty directory onto the playlist
 
 0.x:
+O Export tracks in playlist into a directory (with subdirectories)
 O Stop after current album / track (Playlist context menu entry)
 O Remember last played track (LP:684383)
 O Shuffle
