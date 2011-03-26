@@ -1,6 +1,7 @@
 === Roadmap ===
 
 0.5:
+O Export tracks in playlist into a directory (with subdirectories)
 O Save playlist periodically to prevent losing it during a shutdown (LP:669132)
 X Usability: Select new track when old selected is deleted
 O Fix: When a track is playing and a directory is appended in nautilus,
@@ -9,7 +10,6 @@ O Fix: When a track is playing and a directory is appended in nautilus,
 0.x:
 O Stop after current album / track (Playlist context menu entry)
 O Remember last played track (LP:684383)
-O Export tracks in playlist into a directory (with subdirectories)
 O Shuffle
 O Repeat
 O Playlist loading (Only add tracks in playlist not added anyways)
