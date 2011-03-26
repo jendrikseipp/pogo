@@ -7,10 +7,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: decibel-audio-player\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-03-14 02:57+0100\n"
+"POT-Creation-Date: 2011-03-26 22:32+0100\n"
 "PO-Revision-Date: 2011-01-18 22:17+0000\n"
 "Last-Translator: Ask Hjorth Larsen <asklarsen@gmail.com>\n"
 "Language-Team: Danish <da@li.org>\n"
+"Language: da\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -92,7 +93,7 @@ msgid "Modules"
 msgstr "Moduler"
 
 #: ../src/gui/preferences.py:139 ../src/modules/DesktopNotification.py:213
-#: ../src/modules/Covers.py:434
+#: ../src/modules/Covers.py:438
 msgid "Description"
 msgstr "Beskrivelse"
 
@@ -222,8 +223,7 @@ msgid "Restart required"
 msgstr "Genstart påkrævet"
 
 #: ../src/modules/__init__.py:267
-msgid ""
-"You must restart the application for this modification to take effect."
+msgid "You must restart the application for this modification to take effect."
 msgstr ""
 "Du er nødt til at genstarte programmet, for at dine ændringer kan træde "
 "igennem."
@@ -262,8 +262,7 @@ msgstr ""
 "starter."
 
 #: ../src/modules/DesktopNotification.py:215
-msgid ""
-"If the Covers module is enabled, the popup also shows the album cover."
+msgid "If the Covers module is enabled, the popup also shows the album cover."
 msgstr "Hvis omslagsmodulet er slået til, vises også albummets omslag."
 
 #: ../src/modules/DesktopNotification.py:216
@@ -306,7 +305,7 @@ msgstr "Omslag"
 msgid "Show album covers"
 msgstr "Vis albumomslag"
 
-#: ../src/modules/Covers.py:435
+#: ../src/modules/Covers.py:439
 msgid ""
 "This module displays the cover of the album the current track comes from. "
 "Covers may be loaded from local pictures, located in the same directory as "
@@ -316,11 +315,11 @@ msgstr ""
 "fra. Omslag kan indlæses fra lokale billeder, som ligger i samme mappe som "
 "det nuværende nummer, eller de kan hentes fra nettet."
 
-#: ../src/modules/Covers.py:438
+#: ../src/modules/Covers.py:442
 msgid "User Covers"
 msgstr "Brugeromslag"
 
-#: ../src/modules/Covers.py:439
+#: ../src/modules/Covers.py:443
 #, python-format
 msgid ""
 "A user cover is a picture located in the same directory as the current "
@@ -331,11 +330,11 @@ msgstr ""
 "nummer. Når du angiver filnavne, behøver du ikke angive filendelser. "
 "Understøttede filformater (%s) bruges automatisk."
 
-#: ../src/modules/Covers.py:442
+#: ../src/modules/Covers.py:446
 msgid "Internet Covers"
 msgstr "Internetomslag"
 
-#: ../src/modules/Covers.py:443
+#: ../src/modules/Covers.py:447
 msgid ""
 "Covers may be downloaded from the Internet, based on the tags of the current "
 "track. You can ask to always prefer user covers to Internet ones. In this "
@@ -347,15 +346,15 @@ msgstr ""
 "brugeromslag for et givet nummer, vil dette blive brugt. Ellers hentes et "
 "omslag fra nettet."
 
-#: ../src/modules/Tracktree.py:385
+#: ../src/modules/Tracktree.py:387
 msgid "Export playlist"
 msgstr ""
 
-#: ../src/modules/Tracktree.py:433
+#: ../src/modules/Tracktree.py:443
 msgid "Clear Playlist"
 msgstr "Ryd afspilningslisten"
 
-#: ../src/modules/Tracktree.py:443
+#: ../src/modules/Tracktree.py:453
 msgid "Export Playlist"
 msgstr ""
 
@@ -485,15 +484,15 @@ msgid "Play the previous track"
 msgstr "Spil det forrige nummer"
 
 #~ msgid ""
-#~ "This dialog box shows the list of available modules, which are small pieces "
-#~ "of code that add some functionnalities to the application. You can "
-#~ "enable/disable a module by checking/unchecking the check box in front of it. "
-#~ "Note that some modules (e.g., the File Explorer) cannot be disabled."
+#~ "This dialog box shows the list of available modules, which are small "
+#~ "pieces of code that add some functionnalities to the application. You can "
+#~ "enable/disable a module by checking/unchecking the check box in front of "
+#~ "it. Note that some modules (e.g., the File Explorer) cannot be disabled."
 #~ msgstr ""
 #~ "Denne dialogboks viser en liste med de tilgængelige moduler, som er små "
-#~ "stykker kode som tilføjer funktionalitet til programmet. Du kan slå et modul "
-#~ "til eller fra ved at bruge checkboksen foran det. Bemærk at nogle moduler "
-#~ "(for eksempel File Explorer) kan ikke slås fra."
+#~ "stykker kode som tilføjer funktionalitet til programmet. Du kan slå et "
+#~ "modul til eller fra ved at bruge checkboksen foran det. Bemærk at nogle "
+#~ "moduler (for eksempel File Explorer) kan ikke slås fra."
 
 #~ msgid "Choose a folder"
 #~ msgstr "Vælg en mappe"
@@ -508,7 +507,6 @@ msgstr "Spil det forrige nummer"
 #~ "Dette navn er ikke tilladt.\n"
 #~ "Vælg venligst et andet."
 
-#, python-format
 #~ msgid ""
 #~ "The character %s is not allowed.\n"
 #~ "Please use another name."
@@ -532,15 +530,15 @@ msgstr "Spil det forrige nummer"
 #~ msgstr "Om kodeord og lagringssikkerhed"
 
 #~ msgid ""
-#~ "If you use Gnome, it is safe to store your password since the Gnome keyring "
-#~ "is used."
+#~ "If you use Gnome, it is safe to store your password since the Gnome "
+#~ "keyring is used."
 #~ msgstr ""
-#~ "Hvis du bruger Gnome, er det sikkert at gemme dit kodeord, da Gnome Keyring "
-#~ "bliver brugt."
+#~ "Hvis du bruger Gnome, er det sikkert at gemme dit kodeord, da Gnome "
+#~ "Keyring bliver brugt."
 
 #~ msgid ""
-#~ "If you do not use Gnome, beware that, although not stored as clear text, an "
-#~ "attacker <i>could</i> retrieve it."
+#~ "If you do not use Gnome, beware that, although not stored as clear text, "
+#~ "an attacker <i>could</i> retrieve it."
 #~ msgstr ""
 #~ "Hvis du ikke bruger Gnome, vær da opmærksom på, at selvom kodeordet ikke "
 #~ "bliver gemt i ren tekst, så <i>kan</i> en uvedkommende få adgang til det."
@@ -610,20 +608,20 @@ msgstr "Spil det forrige nummer"
 #~ "This module detects any running instant messenger and updates your status "
 #~ "with regards to the track you are listening to. Supported messengers are:"
 #~ msgstr ""
-#~ "Dette modul opdaterer din status i et kørende Instant Messenger program med "
-#~ "data fra det nummer du lytter til. Understøttede IM-programmer er:"
+#~ "Dette modul opdaterer din status i et kørende Instant Messenger program "
+#~ "med data fra det nummer du lytter til. Understøttede IM-programmer er:"
 
 #~ msgid "Customizing the Status"
 #~ msgstr "Tilpasser Status"
 
 #~ msgid ""
-#~ "You can set the status to any text you want. Before setting it, the module "
-#~ "replaces all fields of the form {field} by their corresponding value. "
-#~ "Available fields are:"
+#~ "You can set the status to any text you want. Before setting it, the "
+#~ "module replaces all fields of the form {field} by their corresponding "
+#~ "value. Available fields are:"
 #~ msgstr ""
 #~ "Du kan indstille statusteksten til hvadsomhelst. Før den indstilles "
-#~ "erstatter modulet alle felter med formen {felt} med dets tilhørende værdi. "
-#~ "De tilgængelige felter er:"
+#~ "erstatter modulet alle felter med formen {felt} med dets tilhørende "
+#~ "værdi. De tilgængelige felter er:"
 
 #~ msgid "Sanitization"
 #~ msgstr "Oprydning"
@@ -631,13 +629,13 @@ msgstr "Spil det forrige nummer"
 #~ msgid ""
 #~ "You can define some words that to sanitize before using them to set your "
 #~ "status. In this case, the middle characters of matching words is "
-#~ "automatically replaced with asterisks (e.g., \"Metallica - Live S**t Binge & "
-#~ "Purge\"). Put one word per line."
+#~ "automatically replaced with asterisks (e.g., \"Metallica - Live S**t "
+#~ "Binge & Purge\"). Put one word per line."
 #~ msgstr ""
-#~ "Du kan definere nogle ord som skal opryddes før de indstilles som status. I "
-#~ "dette tilfælde erstattes de midterste bogstaver i et matchende ord "
-#~ "automatisk med stjerner (eksempelvis \"Metallica - Live S**t Binge & "
-#~ "Purge\"). Put ét ord per linie."
+#~ "Du kan definere nogle ord som skal opryddes før de indstilles som status. "
+#~ "I dette tilfælde erstattes de midterste bogstaver i et matchende ord "
+#~ "automatisk med stjerner (eksempelvis \"Metallica - Live S**t Binge & Purge"
+#~ "\"). Put ét ord per linie."
 
 #~ msgid "Keep your Last.fm profile up to date"
 #~ msgstr "Hold din Last.fm-profil opdateret."

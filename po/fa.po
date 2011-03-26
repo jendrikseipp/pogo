@@ -7,10 +7,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: decibel-audio-player\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-03-14 02:57+0100\n"
+"POT-Creation-Date: 2011-03-26 22:32+0100\n"
 "PO-Revision-Date: 2010-10-07 11:27+0000\n"
 "Last-Translator: Jendrik Seipp <jendrikseipp@web.de>\n"
 "Language-Team: Persian <fa@li.org>\n"
+"Language: fa\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -92,7 +93,7 @@ msgid "Modules"
 msgstr ""
 
 #: ../src/gui/preferences.py:139 ../src/modules/DesktopNotification.py:213
-#: ../src/modules/Covers.py:434
+#: ../src/modules/Covers.py:438
 msgid "Description"
 msgstr "شرح"
 
@@ -213,8 +214,7 @@ msgid "Restart required"
 msgstr ""
 
 #: ../src/modules/__init__.py:267
-msgid ""
-"You must restart the application for this modification to take effect."
+msgid "You must restart the application for this modification to take effect."
 msgstr ""
 
 #: ../src/modules/CtrlPanel.py:190 ../src/modules/CtrlPanel.py:246
@@ -249,8 +249,7 @@ msgid ""
 msgstr ""
 
 #: ../src/modules/DesktopNotification.py:215
-msgid ""
-"If the Covers module is enabled, the popup also shows the album cover."
+msgid "If the Covers module is enabled, the popup also shows the album cover."
 msgstr ""
 
 #: ../src/modules/DesktopNotification.py:216
@@ -287,18 +286,18 @@ msgstr ""
 msgid "Show album covers"
 msgstr ""
 
-#: ../src/modules/Covers.py:435
+#: ../src/modules/Covers.py:439
 msgid ""
 "This module displays the cover of the album the current track comes from. "
 "Covers may be loaded from local pictures, located in the same directory as "
 "the current track, or may be downloaded from the Internet."
 msgstr ""
 
-#: ../src/modules/Covers.py:438
+#: ../src/modules/Covers.py:442
 msgid "User Covers"
 msgstr ""
 
-#: ../src/modules/Covers.py:439
+#: ../src/modules/Covers.py:443
 #, python-format
 msgid ""
 "A user cover is a picture located in the same directory as the current "
@@ -306,11 +305,11 @@ msgid ""
 "extensions, supported file formats (%s) are automatically used."
 msgstr ""
 
-#: ../src/modules/Covers.py:442
+#: ../src/modules/Covers.py:446
 msgid "Internet Covers"
 msgstr ""
 
-#: ../src/modules/Covers.py:443
+#: ../src/modules/Covers.py:447
 msgid ""
 "Covers may be downloaded from the Internet, based on the tags of the current "
 "track. You can ask to always prefer user covers to Internet ones. In this "
@@ -318,15 +317,15 @@ msgid ""
 "none, the cover is downloaded."
 msgstr ""
 
-#: ../src/modules/Tracktree.py:385
+#: ../src/modules/Tracktree.py:387
 msgid "Export playlist"
 msgstr ""
 
-#: ../src/modules/Tracktree.py:433
+#: ../src/modules/Tracktree.py:443
 msgid "Clear Playlist"
 msgstr ""
 
-#: ../src/modules/Tracktree.py:443
+#: ../src/modules/Tracktree.py:453
 msgid "Export Playlist"
 msgstr ""
 
