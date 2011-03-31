@@ -1,16 +1,16 @@
  Pogo - A simple audio player
 ========================================================================
-Pogo is probably the simplest and fastest audio player for Linux. 
-Its elementary-inspired design uses the screen-space very efficiently. 
-Pogo is especially well-suited for people who organize their music by 
-albums on the harddrive. The main interface components are a directory 
+Pogo is probably the simplest and fastest audio player for Linux.
+Its elementary-inspired design uses the screen-space very efficiently.
+Pogo is especially well-suited for people who organize their music by
+albums on the harddrive. The main interface components are a directory
 tree and a playlist that groups albums in an innovative way.
 
 Supported file formats include Ogg Vorbis, MP3, FLAC, Musepack,
 Wavpack, and MPEG-4 AAC.
 
-Pogo is written by Jendrik Seipp (jendrikseipp@web.de). 
-It is a fork of Decibel Audio Player. 
+Pogo is written by Jendrik Seipp (jendrikseipp@web.de).
+It is a fork of Decibel Audio Player.
 
 To report bugs, suggest features, ask a question, get the latest version,
 or help out, visit http://launchpad.net/pogo.
@@ -19,13 +19,13 @@ or help out, visit http://launchpad.net/pogo.
  Run Pogo
 ====================
  $ ./pogo.py
- 
+
 
  Installing Pogo
 ====================
  $ sudo apt-get install gettext python-mutagen python-gst0.10 python-dbus python-imaging
  $ sudo make install
- 
+
 
 After installing, you can just run `pogo'.
 
@@ -33,7 +33,7 @@ After installing, you can just run `pogo'.
  Requirements
 ====================
 
-Pogo depends on the Python runtime and the following libraries: 
+Pogo depends on the Python runtime and the following libraries:
 
     * Python (>= 2.5):      http://www.python.org
     * PyGTK (>= 2.12):      http://www.pygtk.org
@@ -42,7 +42,12 @@ Pogo depends on the Python runtime and the following libraries:
     * Python DBus:          http://dbus.freedesktop.org/
     * Python Imaging (PIL): http://www.pythonware.com/products/pil/
 
-Particular audio formats depend on various GStreamer decoding elements, 
-as well as other Python modules. GStreamer splits their downlads into 
-good, bad, ugly, and ffmpeg packages, each of which contains elements; 
+Recommended libraries (it is likely that they are already installed):
+
+    * python-notify         (Nice notifications)
+    * gnome-settings-daemon (GNOME media keys)
+
+Particular audio formats depend on various GStreamer decoding elements,
+as well as other Python modules. GStreamer splits their downlads into
+good, bad, ugly, and ffmpeg packages, each of which contains elements;
 you probably want them all.
