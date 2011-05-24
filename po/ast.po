@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pogo\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
-"POT-Creation-Date: 2011-03-14 02:57+0100\n"
+"POT-Creation-Date: 2011-03-26 22:32+0100\n"
 "PO-Revision-Date: 2010-12-04 14:18+0000\n"
 "Last-Translator: Xuacu Saturio <xuacusk8@gmail.com>\n"
 "Language-Team: Asturian <ast@li.org>\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Launchpad-Export-Date: 2011-03-15 05:32+0000\n"
+"X-Launchpad-Export-Date: 2011-03-27 05:56+0000\n"
 "X-Generator: Launchpad (build 12559)\n"
 
 #: ../src/media/track/__init__.py:52
@@ -92,7 +92,7 @@ msgid "Modules"
 msgstr "Módulos"
 
 #: ../src/gui/preferences.py:139 ../src/modules/DesktopNotification.py:213
-#: ../src/modules/Covers.py:434
+#: ../src/modules/Covers.py:438
 msgid "Description"
 msgstr "Descripción"
 
@@ -303,7 +303,7 @@ msgstr "Portaes"
 msgid "Show album covers"
 msgstr "Amosar les portaes de los álbumes"
 
-#: ../src/modules/Covers.py:435
+#: ../src/modules/Covers.py:439
 msgid ""
 "This module displays the cover of the album the current track comes from. "
 "Covers may be loaded from local pictures, located in the same directory as "
@@ -313,11 +313,11 @@ msgstr ""
 "portaes pueden cargase dende imaxes llocales, que tean nel mesmu direutoriu "
 "que la pista actual, o pueden descargase d'Internet."
 
-#: ../src/modules/Covers.py:438
+#: ../src/modules/Covers.py:442
 msgid "User Covers"
 msgstr "Portaes del usuariu"
 
-#: ../src/modules/Covers.py:439
+#: ../src/modules/Covers.py:443
 #, python-format
 msgid ""
 "A user cover is a picture located in the same directory as the current "
@@ -329,11 +329,11 @@ msgstr ""
 "estensión del ficheru; s'usen automáticamente los formatos de ficheru "
 "sofitaos (%s)."
 
-#: ../src/modules/Covers.py:442
+#: ../src/modules/Covers.py:446
 msgid "Internet Covers"
 msgstr "Portaes d'Internet"
 
-#: ../src/modules/Covers.py:443
+#: ../src/modules/Covers.py:447
 msgid ""
 "Covers may be downloaded from the Internet, based on the tags of the current "
 "track. You can ask to always prefer user covers to Internet ones. In this "
@@ -345,15 +345,15 @@ msgstr ""
 "d'Internet. Nesti casu, si hai una portada d'usuariu pa la pista actual, "
 "s'usa esta. Si nun hai denguna, se descargará la portada."
 
-#: ../src/modules/Tracktree.py:385
+#: ../src/modules/Tracktree.py:387
 msgid "Export playlist"
 msgstr ""
 
-#: ../src/modules/Tracktree.py:433
+#: ../src/modules/Tracktree.py:443
 msgid "Clear Playlist"
 msgstr "Llimpiar la llista de reproducción"
 
-#: ../src/modules/Tracktree.py:443
+#: ../src/modules/Tracktree.py:453
 msgid "Export Playlist"
 msgstr ""
 

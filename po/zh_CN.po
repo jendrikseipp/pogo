@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: decibel-audio-player\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-03-14 02:57+0100\n"
+"POT-Creation-Date: 2011-03-26 22:32+0100\n"
 "PO-Revision-Date: 2010-12-11 04:20+0000\n"
 "Last-Translator: XsLiDian <xslidian@gmail.com>\n"
 "Language-Team: Simplified Chinese <zh_CN@li.org>\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Launchpad-Export-Date: 2011-03-15 05:33+0000\n"
+"X-Launchpad-Export-Date: 2011-03-27 05:57+0000\n"
 "X-Generator: Launchpad (build 12559)\n"
 
 #: ../src/media/track/__init__.py:52
@@ -92,7 +92,7 @@ msgid "Modules"
 msgstr "模块"
 
 #: ../src/gui/preferences.py:139 ../src/modules/DesktopNotification.py:213
-#: ../src/modules/Covers.py:434
+#: ../src/modules/Covers.py:438
 msgid "Description"
 msgstr "描述"
 
@@ -295,18 +295,18 @@ msgstr "封面"
 msgid "Show album covers"
 msgstr "显示专辑封面"
 
-#: ../src/modules/Covers.py:435
+#: ../src/modules/Covers.py:439
 msgid ""
 "This module displays the cover of the album the current track comes from. "
 "Covers may be loaded from local pictures, located in the same directory as "
 "the current track, or may be downloaded from the Internet."
 msgstr "此模块显示当前音轨的专辑封面。封面图片可以从当前音轨的同文件夹下的本地图片载入，也可从互联网下载。"
 
-#: ../src/modules/Covers.py:438
+#: ../src/modules/Covers.py:442
 msgid "User Covers"
 msgstr "用户封面"
 
-#: ../src/modules/Covers.py:439
+#: ../src/modules/Covers.py:443
 #, python-format
 msgid ""
 "A user cover is a picture located in the same directory as the current "
@@ -314,11 +314,11 @@ msgid ""
 "extensions, supported file formats (%s) are automatically used."
 msgstr "用户封面是当前音轨的同文件夹下的图片。指定文件名时无需提供文件扩展名，程序会自动使用支持的文件格式 (%s) 。"
 
-#: ../src/modules/Covers.py:442
+#: ../src/modules/Covers.py:446
 msgid "Internet Covers"
 msgstr "互联网封面"
 
-#: ../src/modules/Covers.py:443
+#: ../src/modules/Covers.py:447
 msgid ""
 "Covers may be downloaded from the Internet, based on the tags of the current "
 "track. You can ask to always prefer user covers to Internet ones. In this "
@@ -327,15 +327,15 @@ msgid ""
 msgstr ""
 "封面可以根据当前音轨的标签从互联网下载。您可以选择总是优先使用用户封面，此时，如果当前音轨存在用户封面，就会使用用户封面，否则就从互联网下载。"
 
-#: ../src/modules/Tracktree.py:385
+#: ../src/modules/Tracktree.py:387
 msgid "Export playlist"
 msgstr ""
 
-#: ../src/modules/Tracktree.py:433
+#: ../src/modules/Tracktree.py:443
 msgid "Clear Playlist"
 msgstr "清空播放列表"
 
-#: ../src/modules/Tracktree.py:443
+#: ../src/modules/Tracktree.py:453
 msgid "Export Playlist"
 msgstr ""
 

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pogo\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
-"POT-Creation-Date: 2011-03-14 02:57+0100\n"
+"POT-Creation-Date: 2011-03-26 22:32+0100\n"
 "PO-Revision-Date: 2010-12-03 19:46+0000\n"
 "Last-Translator: Serge Gavrilenko <Unknown>\n"
 "Language-Team: Ukrainian <uk@li.org>\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
-"X-Launchpad-Export-Date: 2011-03-15 05:33+0000\n"
+"X-Launchpad-Export-Date: 2011-03-27 05:57+0000\n"
 "X-Generator: Launchpad (build 12559)\n"
 
 #: ../src/media/track/__init__.py:52
@@ -93,7 +93,7 @@ msgid "Modules"
 msgstr "Модулі"
 
 #: ../src/gui/preferences.py:139 ../src/modules/DesktopNotification.py:213
-#: ../src/modules/Covers.py:434
+#: ../src/modules/Covers.py:438
 msgid "Description"
 msgstr "Опис"
 
@@ -305,7 +305,7 @@ msgstr "Обкладинки"
 msgid "Show album covers"
 msgstr "Показати обкладинки альбомів"
 
-#: ../src/modules/Covers.py:435
+#: ../src/modules/Covers.py:439
 msgid ""
 "This module displays the cover of the album the current track comes from. "
 "Covers may be loaded from local pictures, located in the same directory as "
@@ -315,11 +315,11 @@ msgstr ""
 "можуть бути локальними файлами, розташованими в каталозі з піснею, або "
 "можуть бути завантажені з Інтернету."
 
-#: ../src/modules/Covers.py:438
+#: ../src/modules/Covers.py:442
 msgid "User Covers"
 msgstr "Користувацькі обкладинки"
 
-#: ../src/modules/Covers.py:439
+#: ../src/modules/Covers.py:443
 #, python-format
 msgid ""
 "A user cover is a picture located in the same directory as the current "
@@ -330,11 +330,11 @@ msgstr ""
 "композицією. При вказуванні імен файлів не потрібно вказувати розширення; "
 "підтримувані формати (%s), будуть розпізнані автоматично."
 
-#: ../src/modules/Covers.py:442
+#: ../src/modules/Covers.py:446
 msgid "Internet Covers"
 msgstr "Інтернет-обкладинки"
 
-#: ../src/modules/Covers.py:443
+#: ../src/modules/Covers.py:447
 msgid ""
 "Covers may be downloaded from the Internet, based on the tags of the current "
 "track. You can ask to always prefer user covers to Internet ones. In this "
@@ -346,15 +346,15 @@ msgstr ""
 "випадку буде використано локальну обкладинку, якщо така є; інакше обкладинка "
 "буде завантажена з мережі."
 
-#: ../src/modules/Tracktree.py:385
+#: ../src/modules/Tracktree.py:387
 msgid "Export playlist"
 msgstr ""
 
-#: ../src/modules/Tracktree.py:433
+#: ../src/modules/Tracktree.py:443
 msgid "Clear Playlist"
 msgstr "Очистити список"
 
-#: ../src/modules/Tracktree.py:443
+#: ../src/modules/Tracktree.py:453
 msgid "Export Playlist"
 msgstr ""
 

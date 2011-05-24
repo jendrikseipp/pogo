@@ -22,6 +22,7 @@ import traceback
 import logging
 
 import gtk
+import gobject
 
 import media, modules, tools
 
@@ -41,10 +42,11 @@ MOD_INFO = ('Tracktree', 'Tracktree', '', [], True, False)
 ) = range(3)
 
 
-PREFS_DEFAULT_REPEAT_STATUS      = False
+PREFS_DEFAULT_REPEAT_STATUS = False
+SAVE_INTERVAL = 600
 
 # Internal d'n'd (reordering)
-DND_REORDERING_ID   = 1024
+DND_REORDERING_ID = 1024
 DND_INTERNAL_TARGET = ('extListview-internal', gtk.TARGET_SAME_WIDGET, DND_REORDERING_ID)
 
 
@@ -478,6 +480,14 @@ class Tracktree(modules.Module):
         self.tree.expanded_rows = None
 
 
+    def save_track_tree(self):
+        dump = self.getTreeDump()
+        logging.info('Saving playlist')
+        pickleSave(self.savedPlaylist, dump)
+        # tell gobject to keep saving the content in regular intervals
+        return True
+
+
     # --== Message handlers ==--
 
 
@@ -538,12 +548,13 @@ class Tracktree(modules.Module):
                 self.tree.collapse_all()
                 self.onListModified()
 
+        # Automatically save the content at regular intervals
+        gobject.timeout_add_seconds(SAVE_INTERVAL, self.save_track_tree)
+
 
     def onAppQuit(self):
         """ The module is going to be unloaded """
-        dump = self.getTreeDump()
-        logging.info('Saving playlist')
-        pickleSave(self.savedPlaylist, dump)
+        self.save_track_tree()
 
 
     def onTrackEnded(self, withError):
@@ -597,7 +608,7 @@ class Tracktree(modules.Module):
 
     def onUnPaused(self):
         self.paused = False
-        self.onPausedToggled(icons.pauseMenuIcon())
+        self.onPausedToggled(icons.playMenuIcon())
 
 
     def onDragBegin(self, paths):

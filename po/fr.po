@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: decibel-audio-player\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-03-14 02:57+0100\n"
+"POT-Creation-Date: 2011-03-26 22:32+0100\n"
 "PO-Revision-Date: 2010-12-03 20:05+0000\n"
 "Last-Translator: 65GYgzf <Unknown>\n"
 "Language-Team: French <fr@li.org>\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Launchpad-Export-Date: 2011-03-15 05:32+0000\n"
+"X-Launchpad-Export-Date: 2011-03-27 05:56+0000\n"
 "X-Generator: Launchpad (build 12559)\n"
 
 #: ../src/media/track/__init__.py:52
@@ -92,7 +92,7 @@ msgid "Modules"
 msgstr "Modules"
 
 #: ../src/gui/preferences.py:139 ../src/modules/DesktopNotification.py:213
-#: ../src/modules/Covers.py:434
+#: ../src/modules/Covers.py:438
 msgid "Description"
 msgstr "Description"
 
@@ -128,6 +128,7 @@ msgstr ""
 "  Bubblegum https://launchpad.net/~bubblegum\n"
 "  Jean-Luc Aufranc https://launchpad.net/~jean-luc-aufranc\n"
 "  Jendrik Seipp https://launchpad.net/~jendrikseipp\n"
+"  Kwentin https://launchpad.net/~pages-quentin\n"
 "  Nicolas Delvaux https://launchpad.net/~malaria\n"
 "  Ptitphysik https://launchpad.net/~amalpeyre\n"
 "  fragarch https://launchpad.net/~fragarch"
@@ -314,7 +315,7 @@ msgstr "Jaquettes"
 msgid "Show album covers"
 msgstr "Afficher les jaquettes des albums"
 
-#: ../src/modules/Covers.py:435
+#: ../src/modules/Covers.py:439
 msgid ""
 "This module displays the cover of the album the current track comes from. "
 "Covers may be loaded from local pictures, located in the same directory as "
@@ -324,11 +325,11 @@ msgstr ""
 "Les jaquettes peuvent provenir d'images situées dans le même dossier que le "
 "morceau courant, ou peuvent être téléchargées depuis Internet."
 
-#: ../src/modules/Covers.py:438
+#: ../src/modules/Covers.py:442
 msgid "User Covers"
 msgstr "Jaquettes utilisateur"
 
-#: ../src/modules/Covers.py:439
+#: ../src/modules/Covers.py:443
 #, python-format
 msgid ""
 "A user cover is a picture located in the same directory as the current "
@@ -339,11 +340,11 @@ msgstr ""
 "morceau actuel. Vous n'avez pas besoin de fournir l'extension des noms de "
 "fichiers, les formats supportés (%s) sont automatiquement utilisés."
 
-#: ../src/modules/Covers.py:442
+#: ../src/modules/Covers.py:446
 msgid "Internet Covers"
 msgstr "Jaquettes téléchargées"
 
-#: ../src/modules/Covers.py:443
+#: ../src/modules/Covers.py:447
 msgid ""
 "Covers may be downloaded from the Internet, based on the tags of the current "
 "track. You can ask to always prefer user covers to Internet ones. In this "
@@ -356,15 +357,15 @@ msgstr ""
 "le morceau actuel, elle est utilisée. S'il n'y en a pas, la pochette est "
 "téléchargée."
 
-#: ../src/modules/Tracktree.py:385
+#: ../src/modules/Tracktree.py:387
 msgid "Export playlist"
 msgstr ""
 
-#: ../src/modules/Tracktree.py:433
+#: ../src/modules/Tracktree.py:443
 msgid "Clear Playlist"
 msgstr "Effacer la liste de lecture"
 
-#: ../src/modules/Tracktree.py:443
+#: ../src/modules/Tracktree.py:453
 msgid "Export Playlist"
 msgstr ""
 

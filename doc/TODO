@@ -1,13 +1,14 @@
 === Roadmap ===
 
 0.5:
-O Export tracks in playlist into a directory (with subdirectories)
-O Save playlist periodically to prevent losing it during a shutdown (LP:669132)
+X Save playlist periodically to prevent losing it during a shutdown (LP:669132)
 X Usability: Select new track when old selected is deleted
+X Fix: Playback after pause should show the play icon, not the pause icon
 O Fix: When a track is playing and a directory is appended in nautilus,
   playback sometimes skips to new tracks
 
 0.x:
+O Export tracks in playlist into a directory (with subdirectories)
 O Stop after current album / track (Playlist context menu entry)
 O Remember last played track (LP:684383)
 O Shuffle
@@ -16,6 +17,7 @@ O Playlist loading (Only add tracks in playlist not added anyways)
 O Add Zeitgeist module (check rhythmbox and banshee first)
 O Sound Indicator (https://github.com/sunng87/Exaile-Soundmenu-Indicator,
   http://theravingrick.blogspot.com/2011/02/easily-support-sound-menu-in-python.html)
+O Playlist filtering
 
 
 === Features that will MAYBE be implemented ===
