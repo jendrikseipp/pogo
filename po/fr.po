@@ -15,8 +15,8 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Launchpad-Export-Date: 2011-04-01 05:32+0000\n"
-"X-Generator: Launchpad (build 12559)\n"
+"X-Launchpad-Export-Date: 2011-05-25 05:39+0000\n"
+"X-Generator: Launchpad (build 12959)\n"
 
 #: ../src/media/track/__init__.py:52
 msgid "Track number"
@@ -128,9 +128,9 @@ msgstr ""
 "  Bubblegum https://launchpad.net/~bubblegum\n"
 "  Jean-Luc Aufranc https://launchpad.net/~jean-luc-aufranc\n"
 "  Jendrik Seipp https://launchpad.net/~jendrikseipp\n"
-"  Kwentin https://launchpad.net/~pages-quentin\n"
 "  Nicolas Delvaux https://launchpad.net/~malaria\n"
 "  Ptitphysik https://launchpad.net/~amalpeyre\n"
+"  Quentin Pagès https://launchpad.net/~kwentin\n"
 "  fragarch https://launchpad.net/~fragarch"
 
 #: ../src/gui/about.py:44
