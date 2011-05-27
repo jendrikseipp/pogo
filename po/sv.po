@@ -16,8 +16,8 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Launchpad-Export-Date: 2011-04-01 05:33+0000\n"
-"X-Generator: Launchpad (build 12559)\n"
+"X-Launchpad-Export-Date: 2011-05-25 05:39+0000\n"
+"X-Generator: Launchpad (build 12959)\n"
 "X-Poedit-Language: Swedish\n"
 
 #: ../src/media/track/__init__.py:52
@@ -129,7 +129,8 @@ msgid "translator-credits"
 msgstr ""
 "Launchpad Contributions:\n"
 "  David Bengtsson https://launchpad.net/~justfaking\n"
-"  Jendrik Seipp https://launchpad.net/~jendrikseipp"
+"  Jendrik Seipp https://launchpad.net/~jendrikseipp\n"
+"  Lars Jarlvik https://launchpad.net/~lars-jarlvik"
 
 #: ../src/gui/about.py:44
 msgid "Developer:"
