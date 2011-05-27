@@ -8,15 +8,15 @@ msgstr ""
 "Project-Id-Version: decibel-audio-player\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2011-03-26 22:32+0100\n"
-"PO-Revision-Date: 2010-12-03 14:42+0000\n"
-"Last-Translator: Eugênio F <Unknown>\n"
+"PO-Revision-Date: 2011-05-03 23:32+0000\n"
+"Last-Translator: Alisson Depizol <Unknown>\n"
 "Language-Team: Brazilian Portuguese <pt_BR@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Launchpad-Export-Date: 2011-03-27 05:57+0000\n"
-"X-Generator: Launchpad (build 12559)\n"
+"X-Launchpad-Export-Date: 2011-05-05 05:37+0000\n"
+"X-Generator: Launchpad (build 12959)\n"
 
 #: ../src/media/track/__init__.py:52
 msgid "Track number"
@@ -127,6 +127,7 @@ msgid "translator-credits"
 msgstr ""
 "Launchpad Contributions:\n"
 "  Alexandre Cavedon https://launchpad.net/~alexandrecavedon\n"
+"  Alisson Depizol https://launchpad.net/~coffeemachine\n"
 "  André Gondim https://launchpad.net/~andregondim\n"
 "  Celso H. L. S. Junior https://launchpad.net/~celsojunior\n"
 "  Eugênio F https://launchpad.net/~eugf"
@@ -352,7 +353,7 @@ msgstr ""
 
 #: ../src/modules/Tracktree.py:387
 msgid "Export playlist"
-msgstr ""
+msgstr "Exportar lista de reprodução"
 
 #: ../src/modules/Tracktree.py:443
 msgid "Clear Playlist"
@@ -360,7 +361,7 @@ msgstr "Limpar lista de reprodução"
 
 #: ../src/modules/Tracktree.py:453
 msgid "Export Playlist"
-msgstr ""
+msgstr "Exportar lista de reprodução"
 
 #: ../src/modules/Equalizer.py:24
 msgid "Equalizer"
