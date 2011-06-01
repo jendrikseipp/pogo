@@ -7,10 +7,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: decibel-audio-player\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-03-26 22:32+0100\n"
+"POT-Creation-Date: 2011-06-01 12:42+0200\n"
 "PO-Revision-Date: 2010-10-07 11:29+0000\n"
 "Last-Translator: onlyeriko <onlyeriko@gmail.com>\n"
 "Language-Team: Korean <ko@li.org>\n"
+"Language: ko\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -213,8 +214,7 @@ msgid "Restart required"
 msgstr ""
 
 #: ../src/modules/__init__.py:267
-msgid ""
-"You must restart the application for this modification to take effect."
+msgid "You must restart the application for this modification to take effect."
 msgstr ""
 
 #: ../src/modules/CtrlPanel.py:190 ../src/modules/CtrlPanel.py:246
@@ -249,8 +249,7 @@ msgid ""
 msgstr "새 트랙 시작 시 윈도우에 작은 팝업으로 디스플레이"
 
 #: ../src/modules/DesktopNotification.py:215
-msgid ""
-"If the Covers module is enabled, the popup also shows the album cover."
+msgid "If the Covers module is enabled, the popup also shows the album cover."
 msgstr ""
 
 #: ../src/modules/DesktopNotification.py:216
@@ -273,7 +272,8 @@ msgstr "마크업"
 msgid ""
 "You can use the Pango markup language to format the text. More information "
 "on that language is available on the following web page:"
-msgstr "Pango 마크업 언어 형식의 텍스트로 사용. 웹페이지에서 불러온 언어 정보를 이용"
+msgstr ""
+"Pango 마크업 언어 형식의 텍스트로 사용. 웹페이지에서 불러온 언어 정보를 이용"
 
 #: ../src/modules/StatusbarTitlebar.py:48
 msgid "[paused]"
@@ -319,15 +319,23 @@ msgid ""
 msgstr ""
 
 #: ../src/modules/Tracktree.py:387
-msgid "Export playlist"
+msgid "Export playlist to file"
 msgstr ""
 
-#: ../src/modules/Tracktree.py:443
+#: ../src/modules/Tracktree.py:395
+msgid "Export playlist to directory"
+msgstr ""
+
+#: ../src/modules/Tracktree.py:452
 msgid "Clear Playlist"
 msgstr ""
 
-#: ../src/modules/Tracktree.py:453
-msgid "Export Playlist"
+#: ../src/modules/Tracktree.py:462
+msgid "Export Playlist to file"
+msgstr ""
+
+#: ../src/modules/Tracktree.py:467
+msgid "Export Playlist to directory"
 msgstr ""
 
 #: ../src/modules/Equalizer.py:24
@@ -466,7 +474,6 @@ msgstr "이전 트랙 재생"
 #~ "Please use another one."
 #~ msgstr "허락받지 않는 이름"
 
-#, python-format
 #~ msgid ""
 #~ "The character %s is not allowed.\n"
 #~ "Please use another name."
@@ -491,14 +498,15 @@ msgstr "이전 트랙 재생"
 #~ msgstr "패스워드 안전하게 저장"
 
 #~ msgid ""
-#~ "If you use Gnome, it is safe to store your password since the Gnome keyring "
-#~ "is used."
+#~ "If you use Gnome, it is safe to store your password since the Gnome "
+#~ "keyring is used."
 #~ msgstr "Gnome을 사용한다면 당신의 패스워드는 안전하다"
 
 #~ msgid ""
-#~ "If you do not use Gnome, beware that, although not stored as clear text, an "
-#~ "attacker <i>could</i> retrieve it."
-#~ msgstr "Gnome을 사용하지 않을지라도 저장하지 않은 지워진 텍스트라도 회복 가능하다"
+#~ "If you do not use Gnome, beware that, although not stored as clear text, "
+#~ "an attacker <i>could</i> retrieve it."
+#~ msgstr ""
+#~ "Gnome을 사용하지 않을지라도 저장하지 않은 지워진 텍스트라도 회복 가능하다"
 
 #~ msgid "Home"
 #~ msgstr "홈"
@@ -628,7 +636,8 @@ msgstr "이전 트랙 재생"
 #~ msgid "Remove the selected library?"
 #~ msgstr "선택된 라이브러리 제거"
 
-#~ msgid "You will be able to recreate these libraries later on if you wish so."
+#~ msgid ""
+#~ "You will be able to recreate these libraries later on if you wish so."
 #~ msgstr "나중에 라이브러리 다시 만듦"
 
 #~ msgid "Remove all selected libraries?"
@@ -650,7 +659,8 @@ msgstr "이전 트랙 재생"
 #~ msgstr "파일 상태"
 
 #~ msgid ""
-#~ "The path to the selected file is not valid. Please choose an existing path."
+#~ "The path to the selected file is not valid. Please choose an existing "
+#~ "path."
 #~ msgstr "파일 경로가 확실하지 않음. 다시 경로 선택"
 
 #~ msgid "Choose a file"

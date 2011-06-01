@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-03-26 22:32+0100\n"
+"POT-Creation-Date: 2011-06-01 12:42+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -314,15 +314,23 @@ msgid ""
 msgstr ""
 
 #: ../src/modules/Tracktree.py:387
-msgid "Export playlist"
+msgid "Export playlist to file"
 msgstr ""
 
-#: ../src/modules/Tracktree.py:443
+#: ../src/modules/Tracktree.py:395
+msgid "Export playlist to directory"
+msgstr ""
+
+#: ../src/modules/Tracktree.py:452
 msgid "Clear Playlist"
 msgstr ""
 
-#: ../src/modules/Tracktree.py:453
-msgid "Export Playlist"
+#: ../src/modules/Tracktree.py:462
+msgid "Export Playlist to file"
+msgstr ""
+
+#: ../src/modules/Tracktree.py:467
+msgid "Export Playlist to directory"
 msgstr ""
 
 #: ../src/modules/Equalizer.py:24
