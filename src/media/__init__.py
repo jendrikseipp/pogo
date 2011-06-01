@@ -20,6 +20,7 @@
 import os
 import sys
 import traceback
+import logging
 from collections import defaultdict
 from os.path import splitext
 
@@ -153,6 +154,20 @@ class TrackDir(object):
         for track in self.get_all_tracks():
             time += track.getLength()
         return time
+
+    def export_to_dir(self, outdir):
+        import shutil
+        sub_outdir = outdir if self.flat else os.path.join(outdir, self.dirname)
+        for track in self.tracks:
+            src = track.getFilePath()
+            dest = os.path.join(sub_outdir, os.path.basename(src))
+            logging.info('Copying %s to %s' % (src, dest))
+            tools.makedirs(sub_outdir)
+            shutil.copy2(src, dest)
+        for subdir in self.subdirs:
+            subdir.export_to_dir(sub_outdir)
+        if self.flat:
+            logging.info('Export finished')
 
     def __len__(self):
         return len(self.get_all_tracks())

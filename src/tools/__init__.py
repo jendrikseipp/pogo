@@ -126,6 +126,17 @@ def downloadFile(url, cacheTimeout=3600):
     return ('Unknown error', None)
 
 
+def makedirs(dir):
+    """
+    mkdir variant that does not complain when the dir already exists
+    """
+    try:
+        os.makedirs(dir)
+    except OSError:
+        # directory probably exists
+        pass
+
+
 def sec2str(seconds, alwaysShowHours=False):
     """ Return a formatted string based on the given duration in seconds """
     hours, seconds   = divmod(seconds, 3600)

@@ -384,10 +384,19 @@ class Tracktree(modules.Module):
 
     def export_playlist_to_m3u(self):
         """ Save the current tracklist to a playlist """
-        outfile = fileChooser.save(self.window, _('Export playlist'), 'playlist.m3u')
+        outfile = fileChooser.save(self.window, _('Export playlist to file'), 'playlist.m3u')
 
         if outfile is not None:
             tools.write_file(outfile, self.get_m3u_text())
+
+
+    def export_playlist_to_dir(self):
+        """ Save the current tracklist to a playlist """
+        outdir = fileChooser.openDirectory(self.window, _('Export playlist to directory'))
+
+        if outdir is not None:
+            trackdir = self.getTrackDir()
+            trackdir.export_to_dir(outdir)
 
 
     def remove(self, iter=None):
@@ -450,14 +459,21 @@ class Tracktree(modules.Module):
             clear.connect('activate', lambda item: modules.postMsg(consts.MSG_CMD_TRACKLIST_CLR))
 
         # Save to m3u
-        export_m3u = gtk.ImageMenuItem(_('Export Playlist'))
+        export_m3u = gtk.ImageMenuItem(_('Export Playlist to file'))
         export_m3u.set_image(gtk.image_new_from_stock(gtk.STOCK_SAVE, gtk.ICON_SIZE_MENU))
         popup.append(export_m3u)
 
+        # Save to dir
+        export_dir = gtk.ImageMenuItem(_('Export Playlist to directory'))
+        export_dir.set_image(gtk.image_new_from_stock(gtk.STOCK_DIRECTORY, gtk.ICON_SIZE_MENU))
+        popup.append(export_dir)
+
         if len(tree.store) == 0:
             export_m3u.set_sensitive(False)
+            export_dir.set_sensitive(False)
         else:
             export_m3u.connect('activate', lambda item: self.export_playlist_to_m3u())
+            export_dir.connect('activate', lambda item: self.export_playlist_to_dir())
 
         popup.show_all()
         popup.popup(None, None, None, button, time)
