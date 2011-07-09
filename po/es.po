@@ -8,15 +8,15 @@ msgstr ""
 "Project-Id-Version: decibel-audio-player\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2011-03-26 22:32+0100\n"
-"PO-Revision-Date: 2011-01-12 04:08+0000\n"
-"Last-Translator: Fitoschido <fitoschido@gmail.com>\n"
+"PO-Revision-Date: 2011-07-08 16:29+0000\n"
+"Last-Translator: Monkey <monkey.libre@gmail.com>\n"
 "Language-Team: Spanish <es@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Launchpad-Export-Date: 2011-05-25 05:39+0000\n"
-"X-Generator: Launchpad (build 12959)\n"
+"X-Launchpad-Export-Date: 2011-07-09 05:14+0000\n"
+"X-Generator: Launchpad (build 13168)\n"
 
 #: ../src/media/track/__init__.py:52
 msgid "Track number"
@@ -357,7 +357,7 @@ msgstr ""
 
 #: ../src/modules/Tracktree.py:387
 msgid "Export playlist"
-msgstr ""
+msgstr "Exportar lista de reproducción"
 
 #: ../src/modules/Tracktree.py:443
 msgid "Clear Playlist"
@@ -365,7 +365,7 @@ msgstr "Limpiar lista de reproducción"
 
 #: ../src/modules/Tracktree.py:453
 msgid "Export Playlist"
-msgstr ""
+msgstr "Exportar lista de reproducción"
 
 #: ../src/modules/Equalizer.py:24
 msgid "Equalizer"
