@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 #
 # Copyright (c) 2007  François Ingelrest (Francois.Ingelrest@gmail.com)
+# Copyright (c) 2010  Jendrik Seipp (jendrikseipp@web.de)
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -61,14 +62,13 @@ class GnomeMediaKeys(modules.Module):
             self.dbusInterface.connect_to_signal('MediaPlayerKeyPressed', self.onMediaKey)
         except:
             # If it didn't work, try the old way
-            print traceback.format_exc()
             try:
                 service = dbus.SessionBus().get_object('org.gnome.SettingsDaemon', '/org/gnome/SettingsDaemon')
                 self.dbusInterface = dbus.Interface(service, 'org.gnome.SettingsDaemon')
                 self.dbusInterface.GrabMediaPlayerKeys(APP_UID, time())
                 self.dbusInterface.connect_to_signal('MediaPlayerKeyPressed', self.onMediaKey)
-            except:
-                log.logger.error('[%s] Error while initializing\n\n%s' % (MOD_INFO[modules.MODINFO_NAME], traceback.format_exc()))
+            except Exception, err:
+                log.logger.error('[%s] Error while initializing: %s' % (MOD_INFO[modules.MODINFO_NAME], err))
                 self.dbusInterface = None
 
 

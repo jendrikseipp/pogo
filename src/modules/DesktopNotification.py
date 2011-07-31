@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 #
 # Copyright (c) 2007  François Ingelrest (Francois.Ingelrest@gmail.com)
+# Copyright (c) 2010  Jendrik Seipp (jendrikseipp@web.de)
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -101,7 +102,11 @@ class DesktopNotification(modules.Module):
         if self.notif is None: self.__createNotification(title, body, icon)
         else:                  self.notif.update(title, body, icon)
 
-        self.notif.show()
+        ## Catch errors that occur when pynotify is not installed properly
+        try:
+            self.notif.show()
+        except gobject.GError:
+            pass
 
         return False
 
@@ -207,7 +212,7 @@ class DesktopNotification(modules.Module):
     def onBtnHelp(self, btn):
         """ Display a small help message box """
         import media
-        from gui.help import HelpDlg 
+        from gui.help import HelpDlg
 
         helpDlg = HelpDlg(MOD_INFO[modules.MODINFO_L10N])
         helpDlg.addSection(_('Description'),
