@@ -137,6 +137,12 @@ def makedirs(dir):
         pass
 
 
+def samefile(path1, path2):
+    if not os.path.exists(path1) or not os.path.exists(path2):
+        return False
+    return os.path.samefile(path1, path2)
+
+
 def sec2str(seconds, alwaysShowHours=False):
     """ Return a formatted string based on the given duration in seconds """
     hours, seconds   = divmod(seconds, 3600)

@@ -31,7 +31,7 @@ from gobject import idle_add, TYPE_STRING, TYPE_INT
 import media
 import modules
 import tools
-from tools import consts, prefs, icons
+from tools import consts, prefs, icons, samefile
 from media import playlist
 from gui import fileChooser, errorMsgBox
 
@@ -415,9 +415,9 @@ class FileExplorer(modules.Module):
             popup.append(dir)
         else:
             # Check that the dir is top-level and not $HOME or /
-            filepath = self.tree.getItem(path, ROW_FULLPATH)
-            samefile = lambda p: os.path.samefile(p, filepath)
-            static_selected = any(map(samefile, self.static_paths))
+            this_path = self.tree.getItem(path, ROW_FULLPATH)
+            static_selected = any([samefile(static_path, this_path)
+                                   for static_path in self.static_paths])
             store = self.tree.store
             depth = store.iter_depth(store.get_iter(path))
             top_level = (depth == 0)
@@ -568,9 +568,6 @@ class FileExplorer(modules.Module):
 
 
     def populate_tree(self):
-        '''
-        Bookmarks code from Quod Libet
-        '''
         assert self.tree is None
         self.createTree()
         #self.tree.set_row_separator_func(lambda model, iter: model[iter][ROW_NAME] is None)
