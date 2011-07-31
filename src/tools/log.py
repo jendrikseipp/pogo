@@ -28,15 +28,15 @@ class Logger:
     def __init__(self, filename):
         """ Constructor """
         self.handler = open(filename, 'wt')
-        
+
         root_logger = logging.getLogger('')
         root_logger.setLevel(logging.DEBUG)
-        
+
         # Python adds a default handler if some log is generated before here
         # Remove all handlers that have been added automatically
         for handler in root_logger.handlers:
             root_logger.removeHandler(handler)
-            
+
         level = logging.DEBUG
         # define a Handler which writes "level" messages or higher to sys.stdout
         console = logging.StreamHandler(sys.stdout)
@@ -47,7 +47,7 @@ class Logger:
         console.setFormatter(formatter)
         # add the handler to the root logger
         root_logger.addHandler(console)
-        
+
         logging.debug('stdout logging level: %s' % level)
         logging.info('Writing log to file "%s"' % filename)
 
