@@ -278,7 +278,14 @@ class FileExplorer(modules.Module):
     def refresh(self, treePath=None):
         """ Refresh the tree, starting from treePath """
         if treePath is None:
-            # Update all paths
+            # Check all paths in reverse order, because we might remove some
+            for child in reversed(list(self.tree.iterChildren(None))):
+                path = self.tree.getItem(child, ROW_FULLPATH)
+                # Check if path is no separator and does not exist
+                if path is not None and not os.path.exists(path):
+                    self.tree.removeRow(child)
+            # In a second loop (because the iters have changed) we refresh
+            # all expanded nodes.
             for child in self.tree.iterChildren(None):
                 if self.tree.row_expanded(child):
                     idle_add(self.refresh, child)
@@ -608,6 +615,10 @@ class FileExplorer(modules.Module):
 
 
     def set_info_text(self):
+        """
+        Append an item that explains how to add music folders if no music
+        folders are present. Remove the item if music folders are set.
+        """
         music_paths = self.get_music_paths_from_tree()
 
         last_top_node = self.tree.getChild(None, self.tree.getNbChildren(None) - 1)

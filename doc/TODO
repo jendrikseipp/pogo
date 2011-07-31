@@ -10,7 +10,7 @@ O Fix: When a track is playing and a directory is appended in nautilus,
 O Use new logo by Kevin Macphail
 X Cache music folders repeatedly to speedup searches
 X Let user remove music folders that were deleted from the hard disk
-O Do not add music folders that have been deleted
+X Do not add music folders that have been deleted
 
 0.x:
 O Stop after current album / track (Playlist context menu entry)
