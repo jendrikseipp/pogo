@@ -133,12 +133,13 @@ class Search(modules.ThreadedModule):
         return (dirs, files)
 
 
-    def cache(self):
-        ''' Cache results for a faster first search '''
+    def cache_dirs(self, keep_caching):
         for index, path in enumerate(self.paths):
             # Cache dirs one by one after a small timeout
-            gobject.timeout_add_seconds(5 + 3 * (index+1), self.search_dir,
-                                        path, CACHE_QUERY)
+            gobject.timeout_add_seconds(3 * index, self.search_dir, path,
+                                        CACHE_QUERY)
+        # Keep caching in regular intervals
+        return keep_caching
 
 
     # --== Message handlers ==--
@@ -179,6 +180,9 @@ class Search(modules.ThreadedModule):
         self.searches = []
         self.should_stop = False
 
+        # Cache the music folders regularly for faster searches
+        gobject.timeout_add_seconds(100, self.cache_dirs, True)
+
 
     def onSearch(self, query):
         self.should_stop = False
@@ -208,7 +212,8 @@ class Search(modules.ThreadedModule):
 
     def onPathsChanged(self, paths):
         self.paths = paths
-        self.cache()
+        # Cache the new paths once
+        gobject.timeout_add_seconds(5, self.cache_dirs, False)
 
 
     #------- GTK handlers ----------------
