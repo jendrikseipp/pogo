@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: decibel-audio-player\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-06-01 12:42+0200\n"
+"POT-Creation-Date: 2011-08-01 00:17+0200\n"
 "PO-Revision-Date: 2010-12-08 22:53+0000\n"
 "Last-Translator: Papp Bence <papp.bence89@gmail.com>\n"
 "Language-Team: Hungarian <hu@li.org>\n"
@@ -92,7 +92,7 @@ msgstr "Nem tudom betölteni ezt a modult"
 msgid "Modules"
 msgstr "Modulok"
 
-#: ../src/gui/preferences.py:139 ../src/modules/DesktopNotification.py:213
+#: ../src/gui/preferences.py:139 ../src/modules/DesktopNotification.py:218
 #: ../src/modules/Covers.py:438
 msgid "Description"
 msgstr "Leírás"
@@ -149,63 +149,63 @@ msgstr "Track információ küldése a Zeitgeist szolgáltatásnak"
 msgid "loading..."
 msgstr "betöltés…"
 
-#: ../src/modules/FileExplorer.py:377
+#: ../src/modules/FileExplorer.py:384
 msgid "Append"
 msgstr "Hozzáfűz"
 
-#: ../src/modules/FileExplorer.py:389
+#: ../src/modules/FileExplorer.py:396
 msgid "Open containing folder"
 msgstr "A tartalmazó mappa megnyitása"
 
-#: ../src/modules/FileExplorer.py:413
+#: ../src/modules/FileExplorer.py:420
 msgid "Add music folder"
 msgstr "Zene mappa hozzáadása"
 
-#: ../src/modules/FileExplorer.py:425
+#: ../src/modules/FileExplorer.py:432
 msgid "Hide folder"
 msgstr "Mappa elrejtése"
 
-#: ../src/modules/FileExplorer.py:439
+#: ../src/modules/FileExplorer.py:446
 msgid "Choose a directory"
 msgstr "Válasszon egy könyvtárat"
 
-#: ../src/modules/FileExplorer.py:445
+#: ../src/modules/FileExplorer.py:452
 msgid "Invalid Folder"
 msgstr "Érvénytelen mappa"
 
-#: ../src/modules/FileExplorer.py:446
+#: ../src/modules/FileExplorer.py:453
 msgid "You cannot add your root or home folder to the music directories"
 msgstr "Root vagy saját mappát nem lehet hozzáadni a zenei könyvtárakhoz"
 
-#: ../src/modules/FileExplorer.py:453
+#: ../src/modules/FileExplorer.py:460
 msgid "This path does not exist"
 msgstr "Ez az útvonal nem létezik"
 
-#: ../src/modules/FileExplorer.py:454
+#: ../src/modules/FileExplorer.py:461
 msgid "Please select an existing directory."
 msgstr "Kérem, válasszon ki egy már létező könyvtárat."
 
-#: ../src/modules/FileExplorer.py:552
+#: ../src/modules/FileExplorer.py:559
 msgid "Albums"
 msgstr "Albumok"
 
-#: ../src/modules/FileExplorer.py:554
+#: ../src/modules/FileExplorer.py:561
 msgid "Music"
 msgstr "Zene"
 
-#: ../src/modules/FileExplorer.py:629
+#: ../src/modules/FileExplorer.py:637
 msgid "Right-click to add music folders"
 msgstr "Zene mappák hozzáadása jobb-kattintással"
 
-#: ../src/modules/FileExplorer.py:674
+#: ../src/modules/FileExplorer.py:682
 msgid "Searching ..."
 msgstr "Keresés ..."
 
-#: ../src/modules/FileExplorer.py:689
+#: ../src/modules/FileExplorer.py:697
 msgid "No tracks found"
 msgstr "Szám nem található"
 
-#: ../src/modules/FileExplorer.py:691
+#: ../src/modules/FileExplorer.py:699
 msgid "No music folders have been added"
 msgstr "Nincs zene mappa hozzáadva"
 
@@ -237,20 +237,20 @@ msgstr "Az első kiválasztott szám lejátszása a lejátszási listáról"
 msgid "Continue playing the current track"
 msgstr "Az aktuális zeneszám továbbjátszása"
 
-#: ../src/modules/DesktopNotification.py:25
+#: ../src/modules/DesktopNotification.py:26
 msgid "Desktop Notification"
 msgstr "Értesítés az Asztalon"
 
-#: ../src/modules/DesktopNotification.py:25
+#: ../src/modules/DesktopNotification.py:26
 msgid "Display a desktop notification on track change"
 msgstr "Értesítsen az Asztalon számváltáskor"
 
-#: ../src/modules/DesktopNotification.py:78
-#: ../src/modules/DesktopNotification.py:188
+#: ../src/modules/DesktopNotification.py:79
+#: ../src/modules/DesktopNotification.py:193
 msgid "Skip track"
 msgstr "Zeneszám kihagyása"
 
-#: ../src/modules/DesktopNotification.py:214
+#: ../src/modules/DesktopNotification.py:219
 msgid ""
 "This module displays a small popup window on your desktop when a new track "
 "starts."
@@ -258,17 +258,17 @@ msgstr ""
 "Ez a modul egy apró felugró ablakkal értesít az asztalon, mikor egy új "
 "zeneszám indul el."
 
-#: ../src/modules/DesktopNotification.py:215
+#: ../src/modules/DesktopNotification.py:220
 msgid "If the Covers module is enabled, the popup also shows the album cover."
 msgstr ""
 "Ha a Borító modul engedélyezve van, a felugró értesítés szintén mutatni "
 "fogja az album borítóját."
 
-#: ../src/modules/DesktopNotification.py:216
+#: ../src/modules/DesktopNotification.py:221
 msgid "Customizing the Notification"
 msgstr "Az értesítés testreszabása"
 
-#: ../src/modules/DesktopNotification.py:217
+#: ../src/modules/DesktopNotification.py:222
 msgid ""
 "You can change the title and the body of the notification to any text you "
 "want. Before displaying the popup window, fields of the form {field} are "
@@ -280,11 +280,11 @@ msgstr ""
 "kitöltve. A lehetséges értékek:\n"
 "\n"
 
-#: ../src/modules/DesktopNotification.py:220
+#: ../src/modules/DesktopNotification.py:225
 msgid "Markup"
 msgstr "Leíró nyelv"
 
-#: ../src/modules/DesktopNotification.py:221
+#: ../src/modules/DesktopNotification.py:226
 msgid ""
 "You can use the Pango markup language to format the text. More information "
 "on that language is available on the following web page:"

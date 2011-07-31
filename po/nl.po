@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: decibel-audio-player\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-06-01 12:42+0200\n"
+"POT-Creation-Date: 2011-08-01 00:17+0200\n"
 "PO-Revision-Date: 2010-11-08 09:14+0000\n"
 "Last-Translator: Peter Schelleman <Unknown>\n"
 "Language-Team: Dutch <nl@li.org>\n"
@@ -92,7 +92,7 @@ msgstr "Niet in staat om deze module te laden"
 msgid "Modules"
 msgstr "Modules"
 
-#: ../src/gui/preferences.py:139 ../src/modules/DesktopNotification.py:213
+#: ../src/gui/preferences.py:139 ../src/modules/DesktopNotification.py:218
 #: ../src/modules/Covers.py:438
 msgid "Description"
 msgstr "Beschrijving"
@@ -149,63 +149,63 @@ msgstr "Zend spoor informatie naar de Zeitgeist service"
 msgid "loading..."
 msgstr "laden...."
 
-#: ../src/modules/FileExplorer.py:377
+#: ../src/modules/FileExplorer.py:384
 msgid "Append"
 msgstr "Voeg toe"
 
-#: ../src/modules/FileExplorer.py:389
+#: ../src/modules/FileExplorer.py:396
 msgid "Open containing folder"
 msgstr "Open de map met inhoud"
 
-#: ../src/modules/FileExplorer.py:413
+#: ../src/modules/FileExplorer.py:420
 msgid "Add music folder"
 msgstr "Voeg een muziek map toe"
 
-#: ../src/modules/FileExplorer.py:425
+#: ../src/modules/FileExplorer.py:432
 msgid "Hide folder"
 msgstr "Verberg de map"
 
-#: ../src/modules/FileExplorer.py:439
+#: ../src/modules/FileExplorer.py:446
 msgid "Choose a directory"
 msgstr "kies een map"
 
-#: ../src/modules/FileExplorer.py:445
+#: ../src/modules/FileExplorer.py:452
 msgid "Invalid Folder"
 msgstr ""
 
-#: ../src/modules/FileExplorer.py:446
+#: ../src/modules/FileExplorer.py:453
 msgid "You cannot add your root or home folder to the music directories"
 msgstr ""
 
-#: ../src/modules/FileExplorer.py:453
+#: ../src/modules/FileExplorer.py:460
 msgid "This path does not exist"
 msgstr "Dit pad bestaat niet"
 
-#: ../src/modules/FileExplorer.py:454
+#: ../src/modules/FileExplorer.py:461
 msgid "Please select an existing directory."
 msgstr "Kies a.u.b. een bestaande map"
 
-#: ../src/modules/FileExplorer.py:552
+#: ../src/modules/FileExplorer.py:559
 msgid "Albums"
 msgstr "Albums"
 
-#: ../src/modules/FileExplorer.py:554
+#: ../src/modules/FileExplorer.py:561
 msgid "Music"
 msgstr "Muziek"
 
-#: ../src/modules/FileExplorer.py:629
+#: ../src/modules/FileExplorer.py:637
 msgid "Right-click to add music folders"
 msgstr ""
 
-#: ../src/modules/FileExplorer.py:674
+#: ../src/modules/FileExplorer.py:682
 msgid "Searching ..."
 msgstr "Aan het zoeken ..."
 
-#: ../src/modules/FileExplorer.py:689
+#: ../src/modules/FileExplorer.py:697
 msgid "No tracks found"
 msgstr "Geen sporen gevonden"
 
-#: ../src/modules/FileExplorer.py:691
+#: ../src/modules/FileExplorer.py:699
 msgid "No music folders have been added"
 msgstr ""
 
@@ -237,20 +237,20 @@ msgstr "Speel het eerstgekozen nummer van de afspeel lijst"
 msgid "Continue playing the current track"
 msgstr "Ga door met het spelen van het huidige nummer"
 
-#: ../src/modules/DesktopNotification.py:25
+#: ../src/modules/DesktopNotification.py:26
 msgid "Desktop Notification"
 msgstr "Desktopnotificaties"
 
-#: ../src/modules/DesktopNotification.py:25
+#: ../src/modules/DesktopNotification.py:26
 msgid "Display a desktop notification on track change"
 msgstr "Laat een desktopnotificatie zien bij nummerverandering"
 
-#: ../src/modules/DesktopNotification.py:78
-#: ../src/modules/DesktopNotification.py:188
+#: ../src/modules/DesktopNotification.py:79
+#: ../src/modules/DesktopNotification.py:193
 msgid "Skip track"
 msgstr "Sla nummer over"
 
-#: ../src/modules/DesktopNotification.py:214
+#: ../src/modules/DesktopNotification.py:219
 msgid ""
 "This module displays a small popup window on your desktop when a new track "
 "starts."
@@ -258,15 +258,15 @@ msgstr ""
 "Deze module laat een klein popup scherm zien op je desktop wanneer een nieuw "
 "nummer start"
 
-#: ../src/modules/DesktopNotification.py:215
+#: ../src/modules/DesktopNotification.py:220
 msgid "If the Covers module is enabled, the popup also shows the album cover."
 msgstr "Als de hoes module aanstaat toont de popup ook de hoes"
 
-#: ../src/modules/DesktopNotification.py:216
+#: ../src/modules/DesktopNotification.py:221
 msgid "Customizing the Notification"
 msgstr "Aanpassen van de notificatie"
 
-#: ../src/modules/DesktopNotification.py:217
+#: ../src/modules/DesktopNotification.py:222
 msgid ""
 "You can change the title and the body of the notification to any text you "
 "want. Before displaying the popup window, fields of the form {field} are "
@@ -279,11 +279,11 @@ msgstr ""
 "Verkrijgbare velden zijn:\n"
 "\n"
 
-#: ../src/modules/DesktopNotification.py:220
+#: ../src/modules/DesktopNotification.py:225
 msgid "Markup"
 msgstr "Opmaak"
 
-#: ../src/modules/DesktopNotification.py:221
+#: ../src/modules/DesktopNotification.py:226
 msgid ""
 "You can use the Pango markup language to format the text. More information "
 "on that language is available on the following web page:"

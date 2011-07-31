@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pogo\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-06-01 12:42+0200\n"
+"POT-Creation-Date: 2011-08-01 00:17+0200\n"
 "PO-Revision-Date: 2011-01-12 14:46+0000\n"
 "Last-Translator: Rakhi Attal <Unknown>\n"
 "Language-Team: Marathi <mr@li.org>\n"
@@ -92,7 +92,7 @@ msgstr "हा विभाग आत्ता दिसू शकत नाह�
 msgid "Modules"
 msgstr "विभाग"
 
-#: ../src/gui/preferences.py:139 ../src/modules/DesktopNotification.py:213
+#: ../src/gui/preferences.py:139 ../src/modules/DesktopNotification.py:218
 #: ../src/modules/Covers.py:438
 msgid "Description"
 msgstr "वर्णन"
@@ -142,63 +142,63 @@ msgstr ""
 msgid "loading..."
 msgstr "दाखल करीत आहे..."
 
-#: ../src/modules/FileExplorer.py:377
+#: ../src/modules/FileExplorer.py:384
 msgid "Append"
 msgstr "जोडत आहे."
 
-#: ../src/modules/FileExplorer.py:389
+#: ../src/modules/FileExplorer.py:396
 msgid "Open containing folder"
 msgstr "मुळ फोल्डर उघडा"
 
-#: ../src/modules/FileExplorer.py:413
+#: ../src/modules/FileExplorer.py:420
 msgid "Add music folder"
 msgstr "संगीत फोल्डरची भर घाला"
 
-#: ../src/modules/FileExplorer.py:425
+#: ../src/modules/FileExplorer.py:432
 msgid "Hide folder"
 msgstr "फोल्डर लपवा"
 
-#: ../src/modules/FileExplorer.py:439
+#: ../src/modules/FileExplorer.py:446
 msgid "Choose a directory"
 msgstr "एक मार्गदर्शिका निवडा"
 
-#: ../src/modules/FileExplorer.py:445
+#: ../src/modules/FileExplorer.py:452
 msgid "Invalid Folder"
 msgstr "रद्द / चुकीचे फोल्डर"
 
-#: ../src/modules/FileExplorer.py:446
+#: ../src/modules/FileExplorer.py:453
 msgid "You cannot add your root or home folder to the music directories"
 msgstr ""
 
-#: ../src/modules/FileExplorer.py:453
+#: ../src/modules/FileExplorer.py:460
 msgid "This path does not exist"
 msgstr "हा मार्ग अस्तित्वात नाही"
 
-#: ../src/modules/FileExplorer.py:454
+#: ../src/modules/FileExplorer.py:461
 msgid "Please select an existing directory."
 msgstr "कृपया असतीत्वत असलेली संचयिका निवडा"
 
-#: ../src/modules/FileExplorer.py:552
+#: ../src/modules/FileExplorer.py:559
 msgid "Albums"
 msgstr "अल्बमस्"
 
-#: ../src/modules/FileExplorer.py:554
+#: ../src/modules/FileExplorer.py:561
 msgid "Music"
 msgstr "संगीत"
 
-#: ../src/modules/FileExplorer.py:629
+#: ../src/modules/FileExplorer.py:637
 msgid "Right-click to add music folders"
 msgstr "संगीत फोल्डर मिळवण्यासाठी माउसचे उजवे बटण क्लिक करा"
 
-#: ../src/modules/FileExplorer.py:674
+#: ../src/modules/FileExplorer.py:682
 msgid "Searching ..."
 msgstr "शोधत आहे ..."
 
-#: ../src/modules/FileExplorer.py:689
+#: ../src/modules/FileExplorer.py:697
 msgid "No tracks found"
 msgstr "गाणे सापडले नाही"
 
-#: ../src/modules/FileExplorer.py:691
+#: ../src/modules/FileExplorer.py:699
 msgid "No music folders have been added"
 msgstr "संगीत फोल्डर मिळवलेले नाहीत."
 
@@ -230,34 +230,34 @@ msgstr "गानेक्रमानिकेतील पहिले गा�
 msgid "Continue playing the current track"
 msgstr "चालू गाणे सुरु करा"
 
-#: ../src/modules/DesktopNotification.py:25
+#: ../src/modules/DesktopNotification.py:26
 msgid "Desktop Notification"
 msgstr ""
 
-#: ../src/modules/DesktopNotification.py:25
+#: ../src/modules/DesktopNotification.py:26
 msgid "Display a desktop notification on track change"
 msgstr ""
 
-#: ../src/modules/DesktopNotification.py:78
-#: ../src/modules/DesktopNotification.py:188
+#: ../src/modules/DesktopNotification.py:79
+#: ../src/modules/DesktopNotification.py:193
 msgid "Skip track"
 msgstr "गाणे वगळा"
 
-#: ../src/modules/DesktopNotification.py:214
+#: ../src/modules/DesktopNotification.py:219
 msgid ""
 "This module displays a small popup window on your desktop when a new track "
 "starts."
 msgstr ""
 
-#: ../src/modules/DesktopNotification.py:215
+#: ../src/modules/DesktopNotification.py:220
 msgid "If the Covers module is enabled, the popup also shows the album cover."
 msgstr ""
 
-#: ../src/modules/DesktopNotification.py:216
+#: ../src/modules/DesktopNotification.py:221
 msgid "Customizing the Notification"
 msgstr ""
 
-#: ../src/modules/DesktopNotification.py:217
+#: ../src/modules/DesktopNotification.py:222
 msgid ""
 "You can change the title and the body of the notification to any text you "
 "want. Before displaying the popup window, fields of the form {field} are "
@@ -265,11 +265,11 @@ msgid ""
 "\n"
 msgstr ""
 
-#: ../src/modules/DesktopNotification.py:220
+#: ../src/modules/DesktopNotification.py:225
 msgid "Markup"
 msgstr ""
 
-#: ../src/modules/DesktopNotification.py:221
+#: ../src/modules/DesktopNotification.py:226
 msgid ""
 "You can use the Pango markup language to format the text. More information "
 "on that language is available on the following web page:"

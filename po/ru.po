@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: decibel-audio-player\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-06-01 12:42+0200\n"
+"POT-Creation-Date: 2011-08-01 00:17+0200\n"
 "PO-Revision-Date: 2010-12-03 15:37+0000\n"
 "Last-Translator: Oleg Koptev <koptev.oleg@gmail.com>\n"
 "Language-Team: Russian <ru@li.org>\n"
@@ -95,7 +95,7 @@ msgstr "Не удалось загрузить данный модуль."
 msgid "Modules"
 msgstr "Модули"
 
-#: ../src/gui/preferences.py:139 ../src/modules/DesktopNotification.py:213
+#: ../src/gui/preferences.py:139 ../src/modules/DesktopNotification.py:218
 #: ../src/modules/Covers.py:438
 msgid "Description"
 msgstr "Описание"
@@ -154,64 +154,64 @@ msgstr "Отправить информацию о дорожке в служб�
 msgid "loading..."
 msgstr "загрузка..."
 
-#: ../src/modules/FileExplorer.py:377
+#: ../src/modules/FileExplorer.py:384
 msgid "Append"
 msgstr "Добавить"
 
-#: ../src/modules/FileExplorer.py:389
+#: ../src/modules/FileExplorer.py:396
 msgid "Open containing folder"
 msgstr "Открыть папку в обозревателе"
 
-#: ../src/modules/FileExplorer.py:413
+#: ../src/modules/FileExplorer.py:420
 msgid "Add music folder"
 msgstr "Добавить папку с музыкой"
 
-#: ../src/modules/FileExplorer.py:425
+#: ../src/modules/FileExplorer.py:432
 msgid "Hide folder"
 msgstr "Скрыть папку"
 
-#: ../src/modules/FileExplorer.py:439
+#: ../src/modules/FileExplorer.py:446
 msgid "Choose a directory"
 msgstr "Выберите папку"
 
-#: ../src/modules/FileExplorer.py:445
+#: ../src/modules/FileExplorer.py:452
 msgid "Invalid Folder"
 msgstr "Неверная Папка"
 
-#: ../src/modules/FileExplorer.py:446
+#: ../src/modules/FileExplorer.py:453
 msgid "You cannot add your root or home folder to the music directories"
 msgstr ""
 "Вы не можете добавить корневую и домашнюю папки в список папок с музыкой"
 
-#: ../src/modules/FileExplorer.py:453
+#: ../src/modules/FileExplorer.py:460
 msgid "This path does not exist"
 msgstr "Указанный путь не существует"
 
-#: ../src/modules/FileExplorer.py:454
+#: ../src/modules/FileExplorer.py:461
 msgid "Please select an existing directory."
 msgstr "Выберите существующую папку."
 
-#: ../src/modules/FileExplorer.py:552
+#: ../src/modules/FileExplorer.py:559
 msgid "Albums"
 msgstr "Альбомы"
 
-#: ../src/modules/FileExplorer.py:554
+#: ../src/modules/FileExplorer.py:561
 msgid "Music"
 msgstr "Музыка"
 
-#: ../src/modules/FileExplorer.py:629
+#: ../src/modules/FileExplorer.py:637
 msgid "Right-click to add music folders"
 msgstr "Правый клик для добавления папок с музыкой"
 
-#: ../src/modules/FileExplorer.py:674
+#: ../src/modules/FileExplorer.py:682
 msgid "Searching ..."
 msgstr "Поиск..."
 
-#: ../src/modules/FileExplorer.py:689
+#: ../src/modules/FileExplorer.py:697
 msgid "No tracks found"
 msgstr "Песни не найдены"
 
-#: ../src/modules/FileExplorer.py:691
+#: ../src/modules/FileExplorer.py:699
 msgid "No music folders have been added"
 msgstr "Папки с музыкой не были добавлены"
 
@@ -243,20 +243,20 @@ msgstr "Проиграть первую выбранную дорожку в с�
 msgid "Continue playing the current track"
 msgstr "Продолжить воспроизведение текущей композиции"
 
-#: ../src/modules/DesktopNotification.py:25
+#: ../src/modules/DesktopNotification.py:26
 msgid "Desktop Notification"
 msgstr "Уведомления на рабочем столе"
 
-#: ../src/modules/DesktopNotification.py:25
+#: ../src/modules/DesktopNotification.py:26
 msgid "Display a desktop notification on track change"
 msgstr "Отображает уведомления на рабочем столе при смене композиции"
 
-#: ../src/modules/DesktopNotification.py:78
-#: ../src/modules/DesktopNotification.py:188
+#: ../src/modules/DesktopNotification.py:79
+#: ../src/modules/DesktopNotification.py:193
 msgid "Skip track"
 msgstr "Пропустить композицию"
 
-#: ../src/modules/DesktopNotification.py:214
+#: ../src/modules/DesktopNotification.py:219
 msgid ""
 "This module displays a small popup window on your desktop when a new track "
 "starts."
@@ -264,17 +264,17 @@ msgstr ""
 "Этот модуль отображает небольшое всплывающее окно на вашем рабочем столе, "
 "когда начинает играть следующая композиция."
 
-#: ../src/modules/DesktopNotification.py:215
+#: ../src/modules/DesktopNotification.py:220
 msgid "If the Covers module is enabled, the popup also shows the album cover."
 msgstr ""
 "Если активирован модуль «Обложки», во всплывающем окне будет показана "
 "обложка альбома."
 
-#: ../src/modules/DesktopNotification.py:216
+#: ../src/modules/DesktopNotification.py:221
 msgid "Customizing the Notification"
 msgstr "Параметры уведомлений"
 
-#: ../src/modules/DesktopNotification.py:217
+#: ../src/modules/DesktopNotification.py:222
 msgid ""
 "You can change the title and the body of the notification to any text you "
 "want. Before displaying the popup window, fields of the form {field} are "
@@ -286,11 +286,11 @@ msgstr ""
 "{поле} их соответствующими значениями. Доступны следующие поля:\n"
 "\n"
 
-#: ../src/modules/DesktopNotification.py:220
+#: ../src/modules/DesktopNotification.py:225
 msgid "Markup"
 msgstr "Разметка"
 
-#: ../src/modules/DesktopNotification.py:221
+#: ../src/modules/DesktopNotification.py:226
 msgid ""
 "You can use the Pango markup language to format the text. More information "
 "on that language is available on the following web page:"

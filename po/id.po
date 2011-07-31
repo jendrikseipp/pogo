@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pogo\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-06-01 12:42+0200\n"
+"POT-Creation-Date: 2011-08-01 00:17+0200\n"
 "PO-Revision-Date: 2011-01-02 12:12+0000\n"
 "Last-Translator: Mahyuddin Susanto <mahyuddin.susanto@gmail.com>\n"
 "Language-Team: Indonesian <id@li.org>\n"
@@ -92,7 +92,7 @@ msgstr ""
 msgid "Modules"
 msgstr "Modul-Modul"
 
-#: ../src/gui/preferences.py:139 ../src/modules/DesktopNotification.py:213
+#: ../src/gui/preferences.py:139 ../src/modules/DesktopNotification.py:218
 #: ../src/modules/Covers.py:438
 msgid "Description"
 msgstr "Deskripsi"
@@ -141,64 +141,64 @@ msgstr "Kirim informasi trek ke layanan Zeitgeist"
 msgid "loading..."
 msgstr "sedang membuka..."
 
-#: ../src/modules/FileExplorer.py:377
+#: ../src/modules/FileExplorer.py:384
 msgid "Append"
 msgstr "Tambahkan"
 
-#: ../src/modules/FileExplorer.py:389
+#: ../src/modules/FileExplorer.py:396
 msgid "Open containing folder"
 msgstr "Buka folder yang berisi"
 
-#: ../src/modules/FileExplorer.py:413
+#: ../src/modules/FileExplorer.py:420
 msgid "Add music folder"
 msgstr "Tambahkan folder musik"
 
-#: ../src/modules/FileExplorer.py:425
+#: ../src/modules/FileExplorer.py:432
 msgid "Hide folder"
 msgstr "Sembunyikan folder"
 
-#: ../src/modules/FileExplorer.py:439
+#: ../src/modules/FileExplorer.py:446
 msgid "Choose a directory"
 msgstr "Pilih direktori"
 
-#: ../src/modules/FileExplorer.py:445
+#: ../src/modules/FileExplorer.py:452
 msgid "Invalid Folder"
 msgstr "Folder yang tidak benar"
 
-#: ../src/modules/FileExplorer.py:446
+#: ../src/modules/FileExplorer.py:453
 msgid "You cannot add your root or home folder to the music directories"
 msgstr ""
 "Anda tidak dapat menambahkan root atau folder home kedalam direktori musik"
 
-#: ../src/modules/FileExplorer.py:453
+#: ../src/modules/FileExplorer.py:460
 msgid "This path does not exist"
 msgstr "Lokasi ini tidak ada"
 
-#: ../src/modules/FileExplorer.py:454
+#: ../src/modules/FileExplorer.py:461
 msgid "Please select an existing directory."
 msgstr "Silakan pilih direktory yang ada"
 
-#: ../src/modules/FileExplorer.py:552
+#: ../src/modules/FileExplorer.py:559
 msgid "Albums"
 msgstr "Album Lagu"
 
-#: ../src/modules/FileExplorer.py:554
+#: ../src/modules/FileExplorer.py:561
 msgid "Music"
 msgstr "Musik"
 
-#: ../src/modules/FileExplorer.py:629
+#: ../src/modules/FileExplorer.py:637
 msgid "Right-click to add music folders"
 msgstr "Klik kanan untuk menambahkan folder musik"
 
-#: ../src/modules/FileExplorer.py:674
+#: ../src/modules/FileExplorer.py:682
 msgid "Searching ..."
 msgstr "Sedang mencari..."
 
-#: ../src/modules/FileExplorer.py:689
+#: ../src/modules/FileExplorer.py:697
 msgid "No tracks found"
 msgstr "Tidak menemukan trek"
 
-#: ../src/modules/FileExplorer.py:691
+#: ../src/modules/FileExplorer.py:699
 msgid "No music folders have been added"
 msgstr "Tidak adafolder musik yang ditambahkan"
 
@@ -230,34 +230,34 @@ msgstr "Mainkan terk pilihan tertama dari playlist"
 msgid "Continue playing the current track"
 msgstr "Melanjutkan memainkan trek ini"
 
-#: ../src/modules/DesktopNotification.py:25
+#: ../src/modules/DesktopNotification.py:26
 msgid "Desktop Notification"
 msgstr "Notifikasi Desktop"
 
-#: ../src/modules/DesktopNotification.py:25
+#: ../src/modules/DesktopNotification.py:26
 msgid "Display a desktop notification on track change"
 msgstr "Tampilkan notifikasi desktop dalam perubahan trek"
 
-#: ../src/modules/DesktopNotification.py:78
-#: ../src/modules/DesktopNotification.py:188
+#: ../src/modules/DesktopNotification.py:79
+#: ../src/modules/DesktopNotification.py:193
 msgid "Skip track"
 msgstr "Lewatkan trek"
 
-#: ../src/modules/DesktopNotification.py:214
+#: ../src/modules/DesktopNotification.py:219
 msgid ""
 "This module displays a small popup window on your desktop when a new track "
 "starts."
 msgstr "Modul ini menampilkan popup window kecil jika trek baru dimulai"
 
-#: ../src/modules/DesktopNotification.py:215
+#: ../src/modules/DesktopNotification.py:220
 msgid "If the Covers module is enabled, the popup also shows the album cover."
 msgstr "Jika modul Cover di aktifkan, popup juga menunjukkan cover album"
 
-#: ../src/modules/DesktopNotification.py:216
+#: ../src/modules/DesktopNotification.py:221
 msgid "Customizing the Notification"
 msgstr "Sesuaikan notifikasi"
 
-#: ../src/modules/DesktopNotification.py:217
+#: ../src/modules/DesktopNotification.py:222
 msgid ""
 "You can change the title and the body of the notification to any text you "
 "want. Before displaying the popup window, fields of the form {field} are "
@@ -270,11 +270,11 @@ msgstr ""
 "adalah:\n"
 "\n"
 
-#: ../src/modules/DesktopNotification.py:220
+#: ../src/modules/DesktopNotification.py:225
 msgid "Markup"
 msgstr "Markup"
 
-#: ../src/modules/DesktopNotification.py:221
+#: ../src/modules/DesktopNotification.py:226
 msgid ""
 "You can use the Pango markup language to format the text. More information "
 "on that language is available on the following web page:"

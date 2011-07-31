@@ -7,12 +7,12 @@ X Usability: Select new track when old selected is deleted
 X Fix: Playback after pause should show the play icon, not the pause icon
 O Fix: When a track is playing and a directory is appended in nautilus,
   playback sometimes skips to new tracks
-O Use new logo by Kevin Macphail
 X Cache music folders repeatedly to speedup searches
 X Let user remove music folders that were deleted from the hard disk
 X Do not add music folders that have been deleted
 
 0.x:
+O Use new logo by Kevin Macphail
 O Stop after current album / track (Playlist context menu entry)
 O Remember last played track (LP:684383)
 O Shuffle
