@@ -120,9 +120,12 @@ class Track:
 
 
     def __get(self, tag, defaultValue):
-        """ Return the value of tag if it exists, or return defaultValue """
-        try:    return self.tags[tag]
-        except: return defaultValue
+        """Return the value of tag if it exists, or return defaultValue
+
+        We cannot set self.__get to point to self.tags.get, because the Track
+        object has to be pickled.
+        """
+        return self.tags.get(tag, defaultValue)
 
 
     def getFilePath(self):    return self.tags[TAG_RES]
