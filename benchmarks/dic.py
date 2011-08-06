@@ -9,57 +9,52 @@ NB_ITERS = 20000
 
 def exception():
     for i in xrange(100):
-        try:    a = DIC[i]
-        except: a = None
+        try:
+            a = DIC[i]
+        except KeyError:
+            a = None
 
 # ---
 
 def test():
     for i in xrange(100):
-        if i in DIC: a = DIC[i]
-        else:        a = None
+        if i in DIC:
+            a = DIC[i]
+        else:
+            a = None
 
 # ---
 
-t1 = timeit.Timer('exception()', 'from __main__ import exception')
-t2 = timeit.Timer('test()', 'from __main__ import test')
+def test2():
+    for i in xrange(100):
+        a = DIC[i] if i in DIC else None
 
-DIC = {}
-for i in xrange(100):
-    if i < 100:
-        DIC[i] = i
+# ---
 
-print
-print 'Testing if an element belongs to a dictionnary (100% success)'
-print ' * with an exception:', t1.timeit(NB_ITERS)
-print ' * with a test:      ', t2.timeit(NB_ITERS)
+def get():
+    for i in xrange(100):
+        a = DIC.get(i, None)
 
-DIC = {}
-for i in xrange(100):
-    if i < 95:
-        DIC[i] = i
+# ---
 
-print
-print 'Testing if an element belongs to a dictionnary (95% success)'
-print ' * with an exception:', t1.timeit(NB_ITERS)
-print ' * with a test:      ', t2.timeit(NB_ITERS)
+def get2():
+    getter = DIC.get
+    for i in xrange(100):
+        a = getter(i, None)
 
-DIC = {}
-for i in xrange(100):
-    if i < 50:
-        DIC[i] = i
+# ---
 
-print
-print 'Testing if an element belongs to a dictionnary (50% success)'
-print ' * with an exception:', t1.timeit(NB_ITERS)
-print ' * with a test:      ', t2.timeit(NB_ITERS)
+timers = [timeit.Timer('%s()' % func, 'from __main__ import %s' % func)
+          for func in ['exception', 'test', 'test2', 'get', 'get2']]
 
-DIC = {}
-for i in xrange(100):
-    if i < 0:
-        DIC[i] = i
 
-print
-print 'Testing if an element belongs to a dictionnary (0% success)'
-print ' * with an exception:', t1.timeit(NB_ITERS)
-print ' * with a test:      ', t2.timeit(NB_ITERS)
+for rate in [100, 95, 50, 0]:
+    DIC = {}
+    for i in xrange(100):
+        if i < rate:
+            DIC[i] = i
+
+    print
+    print 'Testing if an element belongs to a dictionary (%d%% success)' % rate
+    for i, timer in enumerate(timers, 1):
+        print ' * with %d:' % i, timer.timeit(NB_ITERS)
