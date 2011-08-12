@@ -164,10 +164,26 @@ class Track:
     def getSafeMBTrackId(self): return self.__get(TAG_MBT, '')
 
 
+    def getTitleOrFilename(self):
+        """
+            If the track is properly tagged, return the title
+            Otherwise, return the filename
+        """
+        title = self.getTitle()
+
+        if title == consts.UNKNOWN_TITLE: return self.getFilename()
+        else:                             return title
+
+
     def getURI(self):
         """ Return the complete URI to the resource """
         try:    return self.tags[TAG_SCH] + '://' + self.tags[TAG_RES]
         except: raise RuntimeError, 'The track is an unknown type of resource'
+
+
+    def getFilename(self):
+        """ Return the filename only, not the full path """
+        return os.path.split(self.tags[TAG_RES])[1]
 
 
     def getExtendedAlbum(self):
@@ -323,28 +339,28 @@ class Track:
         for i in xrange(0, len(tags), 2):
             tag = int(tags[i])
 
-            if tag in (TAG_NUM, TAG_LEN, TAG_DNB, TAG_DAT, TAG_PLP, TAG_PLL, TAG_BTR, TAG_SMP, TAG_MOD): self.tags[tag] = int(tags[i+1])
-            else:                                                                                        self.tags[tag] = tags[i+1].replace('\x00', ' ')
-
-
-    def get_basename(self):
-        basename = os.path.basename(self.getURI())
-        filename, ext = os.path.splitext(basename)
-        return filename
+            if tag in (TAG_NUM, TAG_LEN, TAG_DNB, TAG_DAT, TAG_PLP, TAG_PLL,
+                       TAG_BTR, TAG_SMP, TAG_MOD):
+                self.tags[tag] = int(tags[i+1])
+            else:
+                self.tags[tag] = tags[i+1].replace('\x00', ' ')
 
     def get_label(self, parent_label=None, playing=False):
-        '''
-        ## Return a treeview representation
-        '''
-        escape = tools.htmlEscape
+        """
+        Return a treeview representation
+        """
+        title = self.tags.get(TAG_TIT, '')
+        artist = self.tags.get(TAG_ART, '')
 
-        title = self.getTitle()
-        artist = self.getArtist()
         album = self.getExtendedAlbum()
-        number = self.getNumber()
+        if album == consts.UNKNOWN_ALBUM:
+            album = ''
+
+        number = self.tags.get(TAG_NUM, '')
         length = self.getLength()
 
-        number = str(number).zfill(2)
+        if number:
+            number = str(number).zfill(2)
 
         # Delete whitespace at the end
         connectors = ['the', 'and', '&', ',', '.', '?', '!', "'", ':', '-', ' ']
@@ -362,34 +378,33 @@ class Track:
             if short_artist.strip() in parent_label:
                 artist = ''
 
-        # Handle useless tags
-        if self._unknown_in_tags():
-            label = self.get_basename()
+        if title:
+            label = ' - '.join([part for part in [artist, album, number, title] if part])
         else:
-            parts = [part for part in [artist, album, number, title] if part]
-            label = ' - '.join(parts)
+            label = self.getBasename()
 
-        label = escape(label)
+        label = tools.htmlEscape(label)
         if playing:
             label = '<b>%s</b>' % label
         #label += ' <span foreground="gray">[%s]</span>' % tools.sec2str(length)
         label += ' [%s]' % tools.sec2str(length)
-
         return label
+
+    def getBasename(self):
+        name, ext = os.path.splitext(self.getFilename())
+        return name
 
     def get_window_title(self):
-        title = self.getTitle()
-        artist = self.getArtist()
+        title = self.tags.get(TAG_TIT, '')
+        artist = self.tags.get(TAG_ART, '')
 
         # Handle useless tags
-        if self._unknown_in_tags():
-            label = self.get_basename()
-        else:
-            label = '%s - %s' % (artist, title)
-        return label
-
+        if not title:
+            return self.getBasename()
+        return ' - '.join([part for part in [artist, title] if part])
 
     def _unknown_in_tags(self):
+        """ Unused """
         title = self.getTitle().lower()
         return 'unknown' in title or _('unknown') in title
 
