@@ -43,25 +43,13 @@ class TrackPanel(modules.Module):
         modules.Module.__init__(self, handlers)
 
 
-    def __setTitle(self, title, length=None):
-        """ Change the title of the current track """
-        title = tools.htmlEscape(title)
-
-        ## Do not add length
-        length = None
-
-        if length is None: self.txtTitle.set_markup('<span size="larger"><b>%s</b></span>' % title)
-        else:              self.txtTitle.set_markup('<span size="larger"><b>%s</b></span>  [%s]' % (title, tools.sec2str(length)))
-
-
-
     # --== Message handlers ==--
 
 
     def onAppStarted(self):
         """ Real initialization function, called when this module has been loaded """
         # Widgets
-        self.currTrack         = None
+        self.currTrack = None
 
         show_thumb = prefs.get(__name__, 'show_thumb', True)
         self.cover_spot = CoverSpot(show_thumb)
@@ -79,9 +67,7 @@ class TrackPanel(modules.Module):
     def onStopped(self):
         """ Playback has been stopped """
         self.currTrack = None
-
         self.cover_spot.set_images(None, None)
-        #self.__setTitle(consts.appName)
 
 
     def onSetCover(self, track, pathThumbnail, pathFullSize):
