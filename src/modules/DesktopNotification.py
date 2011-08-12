@@ -61,7 +61,11 @@ class DesktopNotification(modules.Module):
             self.timeout = None
 
         if self.notif is not None:
-            self.notif.close()
+            ## Catch errors that occur when pynotify is not installed properly
+            try:
+                self.notif.close()
+            except gobject.GError:
+                pass
 
 
     def __createNotification(self, title, body, icon):
