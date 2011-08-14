@@ -8,15 +8,14 @@ msgstr ""
 "Project-Id-Version: decibel-audio-player\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2011-08-01 00:17+0200\n"
-"PO-Revision-Date: 2011-07-11 19:24+0000\n"
+"PO-Revision-Date: 2011-08-13 09:51+0000\n"
 "Last-Translator: Irmak Bıçakçıgil <Unknown>\n"
 "Language-Team: Turkish <tr@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=1; plural=0;\n"
-"X-Launchpad-Export-Date: 2011-08-01 05:00+0000\n"
-"X-Generator: Launchpad (build 13405)\n"
+"X-Launchpad-Export-Date: 2011-08-14 04:52+0000\n"
+"X-Generator: Launchpad (build 13674)\n"
 
 #: ../src/media/track/__init__.py:52
 msgid "Track number"
@@ -352,11 +351,11 @@ msgstr ""
 
 #: ../src/modules/Tracktree.py:387
 msgid "Export playlist to file"
-msgstr ""
+msgstr "Çalma listesini dosyaya aktar"
 
 #: ../src/modules/Tracktree.py:395
 msgid "Export playlist to directory"
-msgstr ""
+msgstr "Çalma Listesini konuma aktar"
 
 #: ../src/modules/Tracktree.py:452
 msgid "Clear Playlist"
@@ -364,11 +363,11 @@ msgstr "Şarkı listesini temizle"
 
 #: ../src/modules/Tracktree.py:462
 msgid "Export Playlist to file"
-msgstr ""
+msgstr "Çalma Listesini dosyaya aktar"
 
 #: ../src/modules/Tracktree.py:467
 msgid "Export Playlist to directory"
-msgstr ""
+msgstr "Çalma Listesini konuma aktar"
 
 #: ../src/modules/Equalizer.py:24
 msgid "Equalizer"
@@ -494,80 +493,3 @@ msgstr "Sonraki şarkıyı çal"
 #: ../res/MainWindow.glade.h:3
 msgid "Play the previous track"
 msgstr "Önceki şarkıyı çal"
-
-#~ msgid ""
-#~ "This dialog box shows the list of available modules, which are small pieces "
-#~ "of code that add some functionnalities to the application. You can "
-#~ "enable/disable a module by checking/unchecking the check box in front of it. "
-#~ "Note that some modules (e.g., the File Explorer) cannot be disabled."
-#~ msgstr ""
-#~ "Bu iletişim kutusu olanaklı modüllerin listesini gösterir. Modüller "
-#~ "uygulamaya kimi beceriler ekleyen küçük kod parçalarıdır. Herhangi bir "
-#~ "modülü önündeki kutucuğu işaretleyerek/işaretlemeyerek geçerli/geçersiz "
-#~ "kılabilirsiniz. Unutmayın ki bazı modüller (örneğin : Dosya Gezgini) "
-#~ "geçersiz kılınamaz."
-
-#~ msgid "Choose a folder"
-#~ msgstr "Bir klasör seçin"
-
-#, python-format
-#~ msgid ""
-#~ "The character %s is not allowed.\n"
-#~ "Please use another name."
-#~ msgstr ""
-#~ "%s karakteri kullanılamaz.\n"
-#~ "Lütfen başka bir isim girin."
-
-#~ msgid "Position of the track in the playlist"
-#~ msgstr "İz'in çalma listesindeki sırası"
-
-#~ msgid "Number of tracks in the playlist"
-#~ msgstr "Çalma listesindeki iz sayısı"
-
-#~ msgid "Password required"
-#~ msgstr "Parola gerekli"
-
-#~ msgid "About password storage safety"
-#~ msgstr "Parola saklama güvenliği ile ilgili"
-
-#~ msgid ""
-#~ "If you use Gnome, it is safe to store your password since the Gnome keyring "
-#~ "is used."
-#~ msgstr ""
-#~ "Eğer Gnome kullanıyorsanız, parolalarınızı güvenle saklayabilirsiniz çünkü "
-#~ "Gnome Keyring aracını kullanılmaktadır."
-
-#~ msgid ""
-#~ "If you do not use Gnome, beware that, although not stored as clear text, an "
-#~ "attacker <i>could</i> retrieve it."
-#~ msgstr ""
-#~ "Eğer Gnome kullanmıyorsanız, bilmelisiniz ki , her ne kadar basit metin "
-#~ "dosyası olarak saklanmasa da bir saldırgan <i>ele geçirebilir</i>"
-
-#~ msgid "Decibel is stopped"
-#~ msgstr "Decibel durduruldu"
-
-#~ msgid "Keep your Last.fm profile up to date"
-#~ msgstr "Last.fm profilinizi güncel tutun"
-
-#~ msgid "your Last.fm account"
-#~ msgstr "Last.fm hesabınız"
-
-#~ msgid ""
-#~ "This name is not allowed.\n"
-#~ "Please use another one."
-#~ msgstr ""
-#~ "İsim kabul edilmiyor.\n"
-#~ "Lütfen başka bir isim kullanın."
-
-#~ msgid "The name is incorrect"
-#~ msgstr "Hatalı isim"
-
-#~ msgid "Save playlist"
-#~ msgstr "Şarkı listesini kaydet"
-
-#~ msgid "Export playlist"
-#~ msgstr "Çalma listesini dışa aktar"
-
-#~ msgid "Export Playlist"
-#~ msgstr "Çalma Listesini Dışa Aktar"
