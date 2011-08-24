@@ -121,9 +121,9 @@ class GSTPlayer(modules.Module):
         self.playbackTimer = None
 
 
-    def onPlay(self, uri):
+    def onPlay(self, uri, forced):
         """ Play the given URI """
-        if uri != self.nextURI:
+        if forced or uri != self.nextURI:
             self.player.stop()
             self.player.setURI(uri)
             self.__stopUpdateTimer()

@@ -247,7 +247,7 @@ class Tracktree(modules.Module):
                 self.tree.setItem(iter, ROW_ICO, icons.nullMenuIcon())
 
 
-    def jumpTo(self, iter, sendPlayMsg=True):
+    def jumpTo(self, iter, sendPlayMsg=True, forced=True):
         """ Jump to the track located at the given iter """
         if not iter:
             return
@@ -269,7 +269,7 @@ class Tracktree(modules.Module):
         self.set_track_playing(iter, True)
 
         if sendPlayMsg:
-            modules.postMsg(consts.MSG_CMD_PLAY, {'uri': track.getURI()})
+            modules.postMsg(consts.MSG_CMD_PLAY, {'uri': track.getURI(), 'forced': forced})
 
         modules.postMsg(consts.MSG_EVT_NEW_TRACK,   {'track': track})
         modules.postMsg(consts.MSG_EVT_TRACK_MOVED, {'hasPrevious': self.__hasPreviousTrack(), 'hasNext': self.__hasNextTrack()})
@@ -588,7 +588,7 @@ class Tracktree(modules.Module):
             if current_iter:
                 track_name = self.tree.getTrack(current_iter).getURI()
                 send_play_msg = (track_name != self.bufferedTrack)
-            self.jumpTo(next, sendPlayMsg=send_play_msg)
+            self.jumpTo(next, sendPlayMsg=send_play_msg, forced=False)
             self.bufferedTrack = None
             return
 
