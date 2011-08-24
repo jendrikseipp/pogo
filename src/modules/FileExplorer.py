@@ -188,6 +188,18 @@ class FileExplorer(modules.Module):
             self.tree.setItem(row, ROW_NAME, name[:index-2])
 
 
+    def __cmpRowsOnFilename(self, r1, r2):
+        """
+            Compare two filenames:
+              - First the lower case version (we want 'bar' to be before 'Foo')
+              - Then, if an equality occurs, the normal version (we want 'Foo' and 'foo' to be different folders)
+        """
+        result = cmp(r1[ROW_NAME].lower(), r2[ROW_NAME].lower())
+
+        if result == 0: return cmp(r1[ROW_NAME], r2[ROW_NAME])
+        else:           return result
+
+
     def getDirContents(self, directory):
         """ Return a tuple of sorted rows (directories, playlists, mediaFiles) for the given directory """
         playlists   = []
@@ -211,12 +223,10 @@ class FileExplorer(modules.Module):
                 ##elif playlist.isSupported(file):
                 ##    playlists.append((icons.mediaFileMenuIcon(), tools.htmlEscape(unicode(file, errors='replace')), TYPE_FILE, path))
 
-        # Individually sort each type of file by name (disregarding the case)
-        sortKey = lambda row: row[ROW_NAME].lower()
-
-        playlists.sort(key=sortKey)
-        mediaFiles.sort(key=sortKey)
-        directories.sort(key=sortKey)
+        # Individually sort each type of file by name
+        playlists.sort(cmp=self.__cmpRowsOnFilename)
+        mediaFiles.sort(cmp=self.__cmpRowsOnFilename)
+        directories.sort(cmp=self.__cmpRowsOnFilename)
 
         return (directories, playlists, mediaFiles)
 
@@ -305,8 +315,7 @@ class FileExplorer(modules.Module):
             if rowPath is None:
                 break
 
-            file      = disk[diskIndex]
-            cmpResult = cmp(self.tree.getRow(rowPath), file)
+            cmpResult = self.__cmpRowsOnFilename(self.tree.getRow(rowPath), disk[diskIndex])
 
             if cmpResult < 0:
                 # We can't remove the only child left, to prevent the node
@@ -318,7 +327,7 @@ class FileExplorer(modules.Module):
                 self.tree.removeRow(rowPath)
             else:
                 if cmpResult > 0:
-                    self.tree.insertRowBefore(file, treePath, rowPath)
+                    self.tree.insertRowBefore(disk[diskIndex], treePath, rowPath)
                 diskIndex  += 1
                 childIndex += 1
 
