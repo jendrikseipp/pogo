@@ -18,7 +18,7 @@
 
 import dbus, dbus.service, gobject, media, modules, traceback
 
-from tools import consts, log
+from tools import consts, log, prefs
 
 MOD_INFO = ('D-Bus Support', 'D-Bus Support', '', [], True, False)
 
@@ -196,6 +196,12 @@ class DBusObjectRoot(dbus.service.Object):
         return (1, 0)
 
 
+    # This function is not part of the MPRIS
+    @dbus.service.method(consts.dbusInterface, in_signature='', out_signature='')
+    def RaiseWindow(self):
+        """ Raises the window """
+        prefs.getWidgetsTree().get_widget('win-main').present()
+
 
 class DBusObjectTracklist(dbus.service.Object):
 
@@ -279,7 +285,7 @@ class DBusObjectTracklist(dbus.service.Object):
         # uris is a DBus array we want a Python list
         # We add the empty string to convert the uris from DBus.String to unicode
         paths = [uri + '' for uri in uris]
-        gobject.idle_add(modules.postMsg, consts.MSG_CMD_TRACKLIST_ADD, 
+        gobject.idle_add(modules.postMsg, consts.MSG_CMD_TRACKLIST_ADD,
                         {'tracks': media.getTracks(paths), 'playNow': playNow})
 
 
@@ -289,7 +295,7 @@ class DBusObjectTracklist(dbus.service.Object):
         # uris is a DBus array we want a Python list
         # We add the empty string to convert the uris from DBus.String to unicode
         paths = [uri + '' for uri in uris]
-        gobject.idle_add(modules.postMsg, consts.MSG_CMD_TRACKLIST_SET, 
+        gobject.idle_add(modules.postMsg, consts.MSG_CMD_TRACKLIST_SET,
                         {'tracks': media.getTracks(paths), 'playNow': playNow})
 
 

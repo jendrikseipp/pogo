@@ -64,6 +64,10 @@ if not optOptions.multiple_instances:
         if consts.dbusService in activeServices:
             shouldStop = True
 
+            # Raise the window of the already running instance
+            dbus.Interface(dbusSession.get_object(consts.dbusService, '/'),
+                           consts.dbusInterface).RaiseWindow()
+
             # Fill the current instance with the given tracks, if any
             if len(optArgs) != 0:
                 # make the paths absolute
