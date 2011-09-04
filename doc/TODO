@@ -13,6 +13,7 @@ X Do not add music folders that have been deleted
 X Apply fix from decibel: Skipping track just before the end skips the following track
 X Apply fix from decibel: Sort files case-independently
 X Apply fix from decibel: Raise the window of the already running instance if there is one
+X Apply fix from decibel: Create symbolic links to covers so that external apps can access them
 
 0.x:
 O Use new logo by Kevin Macphail

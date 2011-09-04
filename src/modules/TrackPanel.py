@@ -76,6 +76,20 @@ class TrackPanel(modules.Module):
         if self.currTrack is not None and track == self.currTrack:
             self.cover_spot.set_images(pathFullSize, pathThumbnail)
 
+            # Create symbolic links to these covers so that external apps can access them
+            if pathFullSize is not None and pathThumbnail is not None:
+                ext = os.path.splitext(pathFullSize)[1]
+                extThumb = os.path.splitext(pathThumbnail)[1]
+
+                link = os.path.join(consts.dirCfg, 'current-cover' + ext)
+                linkThumb = os.path.join(consts.dirCfg, 'current-cover-small' + extThumb)
+
+                tools.remove(link)
+                tools.remove(linkThumb)
+
+                os.symlink(pathFullSize, link)
+                os.symlink(pathThumbnail, linkThumb)
+
 
 
 class CoverSpot(object):
