@@ -137,6 +137,13 @@ def makedirs(dir):
         pass
 
 
+def remove(filename):
+    try:
+        os.remove(filename)
+    except OSError:
+        pass
+
+
 def samefile(path1, path2):
     if not os.path.exists(path1) or not os.path.exists(path2):
         return False
