@@ -14,9 +14,8 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=1; plural=0;\n"
-"X-Launchpad-Export-Date: 2011-08-01 04:59+0000\n"
-"X-Generator: Launchpad (build 13405)\n"
+"X-Launchpad-Export-Date: 2011-09-05 06:19+0000\n"
+"X-Generator: Launchpad (build 13830)\n"
 
 #: ../src/media/track/__init__.py:52
 msgid "Track number"
@@ -466,78 +465,3 @@ msgstr ""
 #: ../res/MainWindow.glade.h:3
 msgid "Play the previous track"
 msgstr ""
-
-#~ msgid "Choose a folder"
-#~ msgstr "フォルダの選択"
-
-#~ msgid "Save playlist"
-#~ msgstr "プレイリストを保存"
-
-#~ msgid "Password required"
-#~ msgstr "パスワードが必要です"
-
-#~ msgid "Home"
-#~ msgstr "ホーム"
-
-#~ msgid "Show hidden files"
-#~ msgstr "隠しファイルを表示"
-
-#~ msgid "Usage"
-#~ msgstr "使用"
-
-#~ msgid "Password:"
-#~ msgstr "パスワード:"
-
-#~ msgid "Remember this password"
-#~ msgstr "パスワードを記憶"
-
-#~ msgid "Username:"
-#~ msgstr "ユーザ名:"
-
-#~ msgid "Rename"
-#~ msgstr "名前を変更"
-
-#~ msgid "Quit the application"
-#~ msgstr "アプリケーションの終了"
-
-#~ msgid "_Edit"
-#~ msgstr "編集(_E)"
-
-#~ msgid "_File"
-#~ msgstr "ファイル(_F)"
-
-#~ msgid "_Help"
-#~ msgstr "ヘルプ(_H)"
-
-#~ msgid "Name:"
-#~ msgstr "名前:"
-
-#~ msgid "Path:"
-#~ msgstr "パス:"
-
-#~ msgid "Library"
-#~ msgstr "図書館"
-
-#~ msgid "tracks"
-#~ msgstr "トラック"
-
-#~ msgid "Choose a file"
-#~ msgstr "ファイルを選択"
-
-#~ msgid "Clear cache"
-#~ msgstr "キャッシュのクリア"
-
-#~ msgid "Add to Playlist"
-#~ msgstr "プレイリストに追加"
-
-#~ msgid "Do nothing"
-#~ msgstr "何もしない"
-
-#~ msgid "Message:"
-#~ msgstr "メッセージ:"
-
-#~ msgid "Shuffle"
-#~ msgstr "シャッフル"
-
-#~ msgid "<b>File</b>"
-#~ msgstr "<b>ファイル</b>"

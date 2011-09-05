@@ -14,10 +14,8 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=4; plural=(n%100==1 ? 1 : n%100==2 ? 2 : n%100==3 || "
-"n%100==4 ? 3 : 0);\n"
-"X-Launchpad-Export-Date: 2011-08-01 04:59+0000\n"
-"X-Generator: Launchpad (build 13405)\n"
+"X-Launchpad-Export-Date: 2011-09-05 06:19+0000\n"
+"X-Generator: Launchpad (build 13830)\n"
 
 #: ../src/media/track/__init__.py:52
 msgid "Track number"
@@ -119,7 +117,7 @@ msgstr ""
 msgid "translator-credits"
 msgstr ""
 "Launchpad Contributions:\n"
-"  Alan Pepelko https://launchpad.net/~alan-new-deactivatedaccount"
+"  Alan Pepelko https://launchpad.net/~alan-new"
 
 #: ../src/gui/about.py:44
 msgid "Developer:"
@@ -463,29 +461,3 @@ msgstr ""
 #: ../res/MainWindow.glade.h:3
 msgid "Play the previous track"
 msgstr ""
-
-#~ msgid "Position of the track in the playlist"
-#~ msgstr "Mesto skladbe v seznamu predvajanja"
-
-#~ msgid "Number of tracks in the playlist"
-#~ msgstr "Število skladb v seznamu predvajanja"
-
-#~ msgid "Password required"
-#~ msgstr "Potrebno je geslo"
-
-#~ msgid "About password storage safety"
-#~ msgstr "O varnosti hranjenja gesla"
-
-#~ msgid ""
-#~ "If you use Gnome, it is safe to store your password since the Gnome keyring "
-#~ "is used."
-#~ msgstr ""
-#~ "Če uporabljate namizje Gnome, je varno shraniti vaše geslo, saj je v uporabi "
-#~ "Gnome keyring."
-
-#~ msgid ""
-#~ "If you do not use Gnome, beware that, although not stored as clear text, an "
-#~ "attacker <i>could</i> retrieve it."
-#~ msgstr ""
-#~ "Če ne uporabljate namizja Gnome, bodite pozorni na to, da napadalec "
-#~ "<i>lahko</i> pride do vašega gesla, pa čeprav ni shranjeno kot golo besedilo."

@@ -14,10 +14,8 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
-"n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
-"X-Launchpad-Export-Date: 2011-08-01 04:59+0000\n"
-"X-Generator: Launchpad (build 13405)\n"
+"X-Launchpad-Export-Date: 2011-09-05 06:19+0000\n"
+"X-Generator: Launchpad (build 13830)\n"
 
 #: ../src/media/track/__init__.py:52
 msgid "Track number"
@@ -119,7 +117,8 @@ msgstr ""
 msgid "translator-credits"
 msgstr ""
 "Launchpad Contributions:\n"
-"  Branislav Jovanović https://launchpad.net/~branej"
+"  Branislav Jovanović https://launchpad.net/~branej\n"
+"  Jovan Turanjanin https://launchpad.net/~jovan-turanjanin"
 
 #: ../src/gui/about.py:44
 msgid "Developer:"
@@ -463,194 +462,3 @@ msgstr "Репродукуј следећу нумеру"
 #: ../res/MainWindow.glade.h:3
 msgid "Play the previous track"
 msgstr "Репродукуј претходну нумеру"
-
-#~ msgid "Choose a folder"
-#~ msgstr "Одабери фасциклу"
-
-#~ msgid "The name is incorrect"
-#~ msgstr "Име је погрешно"
-
-#~ msgid ""
-#~ "This name is not allowed.\n"
-#~ "Please use another one."
-#~ msgstr ""
-#~ "Ово име није дозвољено.\n"
-#~ "Употребите друго."
-
-#, python-format
-#~ msgid ""
-#~ "The character %s is not allowed.\n"
-#~ "Please use another name."
-#~ msgstr ""
-#~ "Знак %s није дозвољен.\n"
-#~ "Употребите друго име."
-
-#~ msgid "Save playlist"
-#~ msgstr "Сачувај списак песама"
-
-#~ msgid "Seek a position in the current track"
-#~ msgstr "Тражи позицију у тренутној нумери"
-
-#~ msgid "Position of the track in the playlist"
-#~ msgstr "Позиција нумере у листи нумера"
-
-#~ msgid "Password required"
-#~ msgstr "Потребна је лозинка"
-
-#~ msgid "About password storage safety"
-#~ msgstr "О безбедности чувања лозинки"
-
-#~ msgid ""
-#~ "If you use Gnome, it is safe to store your password since the Gnome keyring "
-#~ "is used."
-#~ msgstr ""
-#~ "Ако користите Гном, сигурно је да складиштите своју лозинку будући да се "
-#~ "користи Гномов привезак за кључеве."
-
-#~ msgid ""
-#~ "If you do not use Gnome, beware that, although not stored as clear text, an "
-#~ "attacker <i>could</i> retrieve it."
-#~ msgstr ""
-#~ "Ако не користите Гном, будите свесни да би, мада се лозинка не складишти као "
-#~ "чист текст, нападач <i>могао</i> да је добави."
-
-#~ msgid "Home"
-#~ msgstr "Почетак"
-
-#~ msgid "Show hidden files"
-#~ msgstr "Прикажи скривене фајлове"
-
-#~ msgid "Remove the selected entry?"
-#~ msgstr "Да уклоним изабран унос?"
-
-#~ msgid "Remove all selected entries?"
-#~ msgstr "Да уклоним све изабране уносе?"
-
-#~ msgid "Usage"
-#~ msgstr "Употреба"
-
-#~ msgid "Password:"
-#~ msgstr "Лозинка:"
-
-#~ msgid "Remember this password"
-#~ msgstr "Запамти ову лозинку"
-
-#~ msgid "Username:"
-#~ msgstr "Корисничко име:"
-
-#~ msgid "label"
-#~ msgstr "ознака"
-
-#~ msgid "Rename"
-#~ msgstr "Преименуј"
-
-#~ msgid "Display about dialog box"
-#~ msgstr "Прикажи дијалог о програму"
-
-#~ msgid "Quit the application"
-#~ msgstr "Изађи из програма"
-
-#~ msgid "Stop the current track"
-#~ msgstr "Заустави тренутну нумеру"
-
-#~ msgid "_Edit"
-#~ msgstr "_Уређивање"
-
-#~ msgid "_File"
-#~ msgstr "_Фајл"
-
-#~ msgid "_Help"
-#~ msgstr "_Помоћ"
-
-#~ msgid "Name:"
-#~ msgstr "Име:"
-
-#~ msgid "Path:"
-#~ msgstr "Путања:"
-
-#~ msgid "Customizing the Status"
-#~ msgstr "Прилагођавање статуса"
-
-#~ msgid "Sanitization"
-#~ msgstr "Цензурисање"
-
-#~ msgid "Keep your Last.fm profile up to date"
-#~ msgstr "Одржавајте свој Last.fm профил ажурним"
-
-#~ msgid "your Last.fm account"
-#~ msgstr "ваш Last.fm налог"
-
-#~ msgid "Length"
-#~ msgstr "Дужина"
-
-#~ msgid "Crop"
-#~ msgstr "Исеци"
-
-#~ msgid "Repeat"
-#~ msgstr "Понови"
-
-#~ msgid "Save Playlist As..."
-#~ msgstr "Сачувај листу као..."
-
-#~ msgid "Library"
-#~ msgstr "Збирка"
-
-#~ msgid "Organize your music by tags instead of files"
-#~ msgstr "Организујте своју музику користећи тагове уместо фајлова"
-
-#~ msgid "Refreshing library"
-#~ msgstr "Освежавам збирку"
-
-#~ msgid "Creating library..."
-#~ msgstr "Правим збирку..."
-
-#~ msgid "Refreshing library..."
-#~ msgstr "Освежавам збирку..."
-
-#~ msgid "tracks"
-#~ msgstr "нумера"
-
-#~ msgid "Remove the selected library?"
-#~ msgstr "Да уклоним изабрану збирку?"
-
-#~ msgid "Remove all selected libraries?"
-#~ msgstr "Да уклоним све изабране збирке?"
-
-#~ msgid "Add to Playlist"
-#~ msgstr "Додај у листу нумера"
-
-#~ msgid "<b>Status</b>"
-#~ msgstr "<b>Статус</b>"
-
-#~ msgid "Do nothing"
-#~ msgstr "Не ради ништа"
-
-#~ msgid "Message:"
-#~ msgstr "Порука:"
-
-#~ msgid "Set status to:"
-#~ msgstr "Постави статус на:"
-
-#~ msgid "<b>Libraries</b>"
-#~ msgstr "<b>Збирке</b>"
-
-#~ msgid "Add a new library"
-#~ msgstr "Додај нову збирку"
-
-#~ msgid "Remove the selected libraries"
-#~ msgstr "Уклони изабране збирке"
-
-#~ msgid "Clear the playlist"
-#~ msgstr "Очисти листу нумера"
-
-#~ msgid "Shuffle"
-#~ msgstr "Насумично"
-
-#~ msgid "<b>File</b>"
-#~ msgstr "<b>Фајл</b>"
-
-#~ msgid "<b>Playing Status</b>"
-#~ msgstr "<b>Статус репродукције</b>"
-
-#~ msgid "Play/Unpause"
-#~ msgstr "Репродукуј"
