@@ -1,0 +1,4 @@
+?package(pogo):needs="X11"\
+	section="Applications/Sound"\
+	title="Pogo Audio Player"\
+	command="/usr/bin/pogo"

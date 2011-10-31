@@ -1,0 +1,5 @@
+pogo (0.4-1) experimental; urgency=low
+
+  * Initial debian packaging
+
+ -- Jendrik Seipp <jendrikseipp@web.de>  Mon, 31 Oct 2011 15:50:05 +0200

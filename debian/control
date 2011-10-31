@@ -1,0 +1,32 @@
+Source: pogo
+Section: sound
+Priority: optional
+Maintainer: Jendrik Seipp <jendrikseipp@web.de>
+Build-Depends: debhelper (>= 7.0.50~)
+Build-Depends-Indep: python (>=2.5), python-support
+Standards-Version: 3.9.2
+Homepage: http://launchpad.net/pogo
+Vcs-Bzr: lp:pogo
+Vcs-Browser: http://bazaar.launchpad.net/~jendrikseipp/pogo/trunk/files
+
+Package: pogo
+Architecture: all
+Depends: ${python:Depends},
+         ${misc:Depends},
+         python-gtk2 (>=2.6.3-2),
+         python-glade2 (>=2.6.3-2),
+         python-mutagen (>= 1.10),
+         python-gst0.10 (>=0.10),
+         python-dbus,
+         gstreamer0.10-plugins-base,
+         gstreamer0.10-plugins-good
+Recommends: gstreamer0.10-plugins-ugly,
+            python-notify (>=0.1),
+            python-gnome2,
+            python-gnomekeyring,
+            python-cddb
+Suggests: gstreamer0.10-plugins-bad
+Description: Pogo is probably the simplest and fastest audio player for Linux.
+ Its elementary-inspired design uses the screen-space very efficiently.
+ Pogo is especially well-suited for people who organize their music by albums on the harddrive.
+ The main interface components are a directory tree and a playlist that groups albums in an innovative way.
