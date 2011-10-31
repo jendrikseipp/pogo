@@ -14,9 +14,8 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Launchpad-Export-Date: 2011-08-01 04:59+0000\n"
-"X-Generator: Launchpad (build 13405)\n"
+"X-Launchpad-Export-Date: 2011-09-05 06:19+0000\n"
+"X-Generator: Launchpad (build 13830)\n"
 "Language: fo\n"
 
 #: ../src/media/track/__init__.py:52
@@ -469,6 +468,3 @@ msgstr "Spæl næsta lagið"
 #: ../res/MainWindow.glade.h:3
 msgid "Play the previous track"
 msgstr "Spæl fyrra lagið"
-
-#~ msgid "Save playlist"
-#~ msgstr "Goym avspælingarlistan"

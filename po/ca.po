@@ -14,9 +14,8 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Launchpad-Export-Date: 2011-08-01 04:59+0000\n"
-"X-Generator: Launchpad (build 13405)\n"
+"X-Launchpad-Export-Date: 2011-09-05 06:19+0000\n"
+"X-Generator: Launchpad (build 13830)\n"
 
 #: ../src/media/track/__init__.py:52
 msgid "Track number"
@@ -462,29 +461,3 @@ msgstr ""
 #: ../res/MainWindow.glade.h:3
 msgid "Play the previous track"
 msgstr ""
-
-#~ msgid "Position of the track in the playlist"
-#~ msgstr "Posició de la pista dins la llista de reproducció"
-
-#~ msgid "Number of tracks in the playlist"
-#~ msgstr "Número de pistes a la llista de reproducció"
-
-#~ msgid "Password required"
-#~ msgstr "Es necessita el mot de pas"
-
-#~ msgid "About password storage safety"
-#~ msgstr "Sobre la seguretat per a desar el mot de pas"
-
-#~ msgid ""
-#~ "If you use Gnome, it is safe to store your password since the Gnome keyring "
-#~ "is used."
-#~ msgstr ""
-#~ "Si empres Gnome, pots desar el teu mot de pas de manera segura ja que s'està "
-#~ "fent servir l'anell de claus de Gnome."
-
-#~ msgid ""
-#~ "If you do not use Gnome, beware that, although not stored as clear text, an "
-#~ "attacker <i>could</i> retrieve it."
-#~ msgstr ""
-#~ "SI no fas servir Gnome, tingues en compte que encara que no es desi com a "
-#~ "una cadena de text, un attacant <i>podria</i> aconseguir-lo."

@@ -14,9 +14,8 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Launchpad-Export-Date: 2011-08-01 04:59+0000\n"
-"X-Generator: Launchpad (build 13405)\n"
+"X-Launchpad-Export-Date: 2011-09-05 06:19+0000\n"
+"X-Generator: Launchpad (build 13830)\n"
 
 #: ../src/media/track/__init__.py:52
 msgid "Track number"
@@ -123,8 +122,6 @@ msgstr ""
 #: ../src/gui/about.py:40
 msgid "translator-credits"
 msgstr ""
-"Launchpad Contributions:\n"
-"  abuyop https://launchpad.net/~abuyop"
 
 #: ../src/gui/about.py:44
 msgid "Developer:"
@@ -490,33 +487,3 @@ msgstr "Main trek berikutnya"
 #: ../res/MainWindow.glade.h:3
 msgid "Play the previous track"
 msgstr "Main trek terdahulu"
-
-#~ msgid "Choose a folder"
-#~ msgstr "Pilih folder"
-
-#~ msgid "The name is incorrect"
-#~ msgstr "Nama salah"
-
-#~ msgid ""
-#~ "This name is not allowed.\n"
-#~ "Please use another one."
-#~ msgstr ""
-#~ "Nama ini tidak dibenarkan.\n"
-#~ "Sila gunakan yang lain."
-
-#, python-format
-#~ msgid ""
-#~ "The character %s is not allowed.\n"
-#~ "Please use another name."
-#~ msgstr ""
-#~ "Aksara %s tidak dibenarkan.\n"
-#~ "Sila guna nama yang lain."
-
-#~ msgid "Save playlist"
-#~ msgstr "Simpan senarai main"
-
-#~ msgid "Export playlist"
-#~ msgstr "Eksport senarai main"
-
-#~ msgid "Export Playlist"
-#~ msgstr "Eksport Senarai Main"

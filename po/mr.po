@@ -14,9 +14,8 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Launchpad-Export-Date: 2011-08-01 04:59+0000\n"
-"X-Generator: Launchpad (build 13405)\n"
+"X-Launchpad-Export-Date: 2011-09-05 06:19+0000\n"
+"X-Generator: Launchpad (build 13830)\n"
 
 #: ../src/media/track/__init__.py:52
 msgid "Track number"
@@ -463,30 +462,3 @@ msgstr "पुढील गाणे चालवा"
 #: ../res/MainWindow.glade.h:3
 msgid "Play the previous track"
 msgstr "आधीचे गाणे चालावा"
-
-#~ msgid "Choose a folder"
-#~ msgstr "संचयिका निवडा"
-
-#, python-format
-#~ msgid ""
-#~ "The character %s is not allowed.\n"
-#~ "Please use another name."
-#~ msgstr ""
-#~ "%s अक्षराची परवानगी नाही.\n"
-#~ "कृपया दुसरे नाव वापरा."
-
-#~ msgid ""
-#~ "This name is not allowed.\n"
-#~ "Please use another one."
-#~ msgstr ""
-#~ "हे नावाची परवानगी नाही.\n"
-#~ "कृपया दुसरे नाव वापरा."
-
-#~ msgid "The name is incorrect"
-#~ msgstr "नाव चुकीचे आहे"
-
-#~ msgid "Search in your music directories"
-#~ msgstr "आपल्या संगीत संचायीके मध्ये शोधा"
-
-#~ msgid "Save playlist"
-#~ msgstr "गानेक्रमानिका सुरक्षित करा"

@@ -14,9 +14,8 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Launchpad-Export-Date: 2011-08-01 04:59+0000\n"
-"X-Generator: Launchpad (build 13405)\n"
+"X-Launchpad-Export-Date: 2011-09-05 06:19+0000\n"
+"X-Generator: Launchpad (build 13830)\n"
 
 #: ../src/media/track/__init__.py:52
 msgid "Track number"
@@ -462,26 +461,3 @@ msgstr ""
 #: ../res/MainWindow.glade.h:3
 msgid "Play the previous track"
 msgstr ""
-
-#~ msgid "Choose a folder"
-#~ msgstr "Elekti dosierujon"
-
-#~ msgid ""
-#~ "This name is not allowed.\n"
-#~ "Please use another one."
-#~ msgstr ""
-#~ "Ĉi nono estas ne permesata.\n"
-#~ "Bonvolu uzi alian."
-
-#~ msgid "Number of tracks in the playlist"
-#~ msgstr "Numeroj el kantoj en la ludlisto"
-
-#~ msgid ""
-#~ "Enter your username and password for\n"
-#~ "%(reason)s"
-#~ msgstr ""
-#~ "Tajpu vian kontnomon kaj pasvorton por\n"
-#~ "%(reason)s"
-
-#~ msgid "Password required"
-#~ msgstr "Pasvorto bezonata"
