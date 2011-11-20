@@ -573,11 +573,10 @@ class FileExplorer(modules.Module):
         names = set(itertools.chain(*names))
 
         for name in names:
-            #for case in [name, name.lower()]:
-                music_folder = os.path.join(consts.dirBaseUsr, name)
-                # Check if dir exists and has files
-                if os.path.isdir(music_folder) and os.listdir(music_folder):
-                    paths.append(music_folder)
+            music_folder = os.path.join(consts.dirBaseUsr, name)
+            # Check if dir exists and has files
+            if os.path.isdir(music_folder) and os.listdir(music_folder):
+                paths.append(music_folder)
         return paths
 
 
@@ -616,7 +615,9 @@ class FileExplorer(modules.Module):
         for child in self.tree.iterChildren(None):
             row = self.tree.getRow(child)
             path = row[ROW_FULLPATH]
-            if path and path not in self.static_paths:
+            if path and path not in self.static_paths and os.path.isdir(path):
+                if not path.endswith('/'):
+                    path += '/'
                 music_paths.append(path)
         return music_paths
 
