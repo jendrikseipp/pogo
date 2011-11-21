@@ -24,11 +24,8 @@ import consts
 
 
 class Logger:
-
     def __init__(self, filename):
         """ Constructor """
-        self.handler = open(filename, 'wt')
-
         root_logger = logging.getLogger('')
         root_logger.setLevel(logging.DEBUG)
 
@@ -41,32 +38,27 @@ class Logger:
         # define a Handler which writes "level" messages or higher to sys.stdout
         console = logging.StreamHandler(sys.stdout)
         console.setLevel(level)
-        # set a format which is simpler for console use
+        # define a Handler which writes "level" messages or higher to a file
+        logfile = logging.FileHandler(filename)
+        logfile.setLevel(level)
+        # set a log format
         formatter = logging.Formatter('%(levelname)-8s %(message)s')
-        # tell the handler to use this format
+        # tell the handlers to use this format
         console.setFormatter(formatter)
-        # add the handler to the root logger
+        logfile.setFormatter(formatter)
+        # add the handlers to the root logger
         root_logger.addHandler(console)
+        root_logger.addHandler(logfile)
 
         logging.debug('stdout logging level: %s' % level)
         logging.info('Writing log to file "%s"' % filename)
 
-
-    def __log(self, msgType, msg):
-        """ Private logging function  """
-        self.handler.write('%-6s %s\n' % (msgType, msg))
-        self.handler.flush()
-
-
     def info(self, msg):
         """ Information message """
-        self.__log('INFO', msg)
         logging.info(msg)
-
 
     def error(self, msg):
         """ Error message """
-        self.__log('ERROR', msg)
         logging.error(msg)
 
 

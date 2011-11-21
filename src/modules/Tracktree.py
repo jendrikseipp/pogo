@@ -291,6 +291,7 @@ class Tracktree(modules.Module):
         # or appended (not inserted) into the playlist
         # In that case target is None
         # Also don't interrupt playing songs
+        logging.info('playNow: %s, target: %s, self.tree.hasMark(): %s, self.paused: %s' % (playNow, target, self.tree.hasMark(), self.paused))
         if (playNow or target is None) and (not self.tree.hasMark() or self.paused):
             # If the target is None, the tracks have to be appended to the top
             # level and the first new track is the one after the original tracks
