@@ -267,6 +267,7 @@ class Tracktree(modules.Module):
             return
 
         self.set_track_playing(iter, True)
+        self.paused = False
 
         if sendPlayMsg:
             modules.postMsg(consts.MSG_CMD_PLAY, {'uri': track.getURI(), 'forced': forced})
@@ -299,7 +300,6 @@ class Tracktree(modules.Module):
             if new:
                 # If new is None, the tracks could not be added
                 self.jumpTo(new)
-                self.paused = False
 
 
     def insertDir(self, trackdir, target=None, drop_mode=None, highlight=False):
