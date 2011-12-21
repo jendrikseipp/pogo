@@ -5,8 +5,7 @@ X Export tracks in playlist into a directory (with subdirectories)
 X Save playlist periodically to prevent losing it during a shutdown (LP:669132)
 X Usability: Select new track when old selected is deleted
 X Fix: Playback after pause should show the play icon, not the pause icon
-O Fix: When a track is playing and a directory is appended in nautilus,
-  playback sometimes skips to new tracks
+X Fix: Never interrupt playing song when appending new ones (lp:735619)
 X Cache music folders repeatedly to speedup searches
 X Let user remove music folders that were deleted from the hard disk
 X Do not add music folders that have been deleted
