@@ -19,7 +19,8 @@ Depends: ${python:Depends},
          python-gst0.10 (>=0.10),
          python-dbus,
          gstreamer0.10-plugins-base,
-         gstreamer0.10-plugins-good
+         gstreamer0.10-plugins-good,
+         gstreamer0.10-alsa
 Recommends: gstreamer0.10-plugins-ugly,
             python-notify (>=0.1),
             python-gnome2,
