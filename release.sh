@@ -2,7 +2,7 @@
 
 set -e
 
-VERSION=`cat control-install | grep "Version" | cut -d\  -f2`
+VERSION=`python -c "import sys; sys.path.append('src/tools'); import consts; print consts.appVersion"`
 ARCHIVE="pogo-"$VERSION".tar.gz"
 DEST='pogo-'$VERSION
 
