@@ -1,0 +1,11 @@
+Requirements:
+- lptools
+
+Steps:
+- Check version number in src/tools/consts.py
+- Add new release in debian/changelog
+- ./release.sh
+- ./upload.sh
+- Announce on launchpad?
+- Send mail to pogo-users and python-announce
+- Announce on freshmeat
