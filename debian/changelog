@@ -1,3 +1,9 @@
+pogo (0.5-1) experimental; urgency=low
+
+  * New release
+
+ -- Jendrik Seipp <jendrikseipp@web.de>  Thu, 12 Jan 2012 13:46:05 +0200
+
 pogo (0.4-1) experimental; urgency=low
 
   * Initial debian packaging
