@@ -14,8 +14,8 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2011-12-29 04:56+0000\n"
-"X-Generator: Launchpad (build 14560)\n"
+"X-Launchpad-Export-Date: 2012-01-20 05:08+0000\n"
+"X-Generator: Launchpad (build 14700)\n"
 
 #: ../src/media/track/__init__.py:52
 msgid "Track number"
@@ -129,7 +129,7 @@ msgstr ""
 "  Carlos Albornoz https://launchpad.net/~caralbornozc\n"
 "  Fitoschido https://launchpad.net/~fitoschido\n"
 "  Gerardo Zamudio https://launchpad.net/~gerardo.zamudio\n"
-"  José Lou Chang https://launchpad.net/~obake"
+"  Linux Lover https://launchpad.net/~obake"
 
 #: ../src/gui/about.py:44
 msgid "Developer:"
