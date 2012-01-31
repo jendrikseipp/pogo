@@ -74,6 +74,7 @@ class Search(modules.ThreadedModule):
 
 
     def stop_searches(self):
+        logging.info('Stopping all searches')
         # The kill() method was introduced in python2.6
         self.should_stop = True
 
@@ -83,6 +84,7 @@ class Search(modules.ThreadedModule):
 
         for search in self.searches:
             if search.returncode is None:
+                logging.debug('Killing process %d' % search.pid)
                 search.kill()
         self.searches = []
 
@@ -178,7 +180,6 @@ class Search(modules.ThreadedModule):
         self.paths = []
 
         self.searches = []
-        self.should_stop = False
 
         # Cache the music folders regularly for faster searches
         gobject.timeout_add_seconds(100, self.cache_dirs, True)
@@ -188,9 +189,6 @@ class Search(modules.ThreadedModule):
         self.should_stop = False
 
         regexes = [tools.get_regex(part) for part in query.split()]
-
-        all_dirs = []
-        all_files = []
 
         for dir in self.paths:
             # Check if search has been aborted during filtering
@@ -204,10 +202,11 @@ class Search(modules.ThreadedModule):
                 return
 
             dirs, files = self.filter_results(results, dir, regexes)
-            all_dirs.extend(dirs)
-            all_files.extend(files)
-        modules.postMsg(consts.MSG_EVT_SEARCH_END,
-                            {'results': (all_dirs, all_files), 'query': query})
+            if not self.should_stop:
+                modules.postMsg(consts.MSG_EVT_SEARCH_APPEND,
+                            {'results': (dirs, files), 'query': query})
+
+        modules.postMsg(consts.MSG_EVT_SEARCH_END)
 
 
     def onPathsChanged(self, paths):

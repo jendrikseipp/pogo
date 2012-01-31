@@ -76,6 +76,7 @@ class FileExplorer(modules.Module):
                         consts.MSG_EVT_APP_QUIT:         self.onAppQuit,
                         consts.MSG_EVT_APP_STARTED:      self.onAppStarted,
                         consts.MSG_EVT_SEARCH_START:     self.onSearchStart,
+                        consts.MSG_EVT_SEARCH_APPEND:    self.onSearchAppend,
                         consts.MSG_EVT_SEARCH_END:       self.onSearchEnd,
                         consts.MSG_EVT_SEARCH_RESET:     self.onSearchReset,
                    }
@@ -687,26 +688,21 @@ class FileExplorer(modules.Module):
         self.tree.clear()
         self.displaying_results = True
 
-        text = _('Searching ...')
-        self.tree.appendRow((icons.infoMenuIcon(), text, TYPE_INFO, ''), None)
+        self.searching_text = _('Searching ...')
+        self.searching_text_path = self.tree.appendRow((icons.infoMenuIcon(), self.searching_text, TYPE_INFO, ''), None)
 
 
-    def onSearchEnd(self, results, query):
-        # Remove the "Searching ..." node
-        self.tree.clear()
-        # Set it again, if ever onSearchEnd gets called without a
-        # previous onSearchStart
-        self.displaying_results = True
+    def onSearchAppend(self, results, query):
+        # Remove the "Searching ..." node if it still exists
+        if (self.tree.isValidPath(self.searching_text_path) and
+            self.tree.getItem(self.searching_text_path, ROW_NAME) == self.searching_text):
+            self.tree.removeRow(self.searching_text_path)
+
+        # Make sure we never call this method without calling onSearchStart first
+        if not self.displaying_results:
+            return
 
         dirs, files = results
-
-        if not dirs and not files:
-            if self.music_paths:
-                text = _('No tracks found')
-            else:
-                text = _('No music folders have been added')
-            self.tree.appendRow((icons.infoMenuIcon(), text, TYPE_INFO, ''), None)
-            return
 
         for path, name in dirs:
             new_node = self.tree.appendRow((icons.dirMenuIcon(), name, TYPE_DIR, path), None)
@@ -715,6 +711,16 @@ class FileExplorer(modules.Module):
 
         for file, name in files:
             self.tree.appendRow((icons.mediaFileMenuIcon(), name, TYPE_FILE, file), None)
+
+
+    def onSearchEnd(self):
+        if len(self.tree) == 0:
+            if self.music_paths:
+                text = _('No tracks found')
+            else:
+                text = _('No music folders have been added')
+            self.tree.appendRow((icons.infoMenuIcon(), text, TYPE_INFO, ''), None)
+            return
 
 
     def onSearchReset(self):
