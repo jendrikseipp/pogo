@@ -7,10 +7,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: decibel-audio-player\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-08-01 00:17+0200\n"
+"POT-Creation-Date: 2012-02-06 19:55+0100\n"
 "PO-Revision-Date: 2012-01-30 07:08+0000\n"
 "Last-Translator: Fitoschido <fitoschido@gmail.com>\n"
 "Language-Team: Spanish <es@li.org>\n"
+"Language: es\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -65,16 +66,16 @@ msgstr "Duración como cadena (p. ej. 3:14)"
 msgid "Full path to the file"
 msgstr "Ruta completa al archivo"
 
-#: ../src/media/track/__init__.py:147 ../src/media/track/__init__.py:391
+#: ../src/media/track/__init__.py:150 ../src/media/track/__init__.py:409
 msgid "unknown"
 msgstr "desconocido"
 
-#: ../src/media/track/__init__.py:173
+#: ../src/media/track/__init__.py:192
 #, python-format
 msgid "%(album)s  [Disc %(discnum)u]"
 msgstr "%(album)s  [Disco %(discnum)u]"
 
-#: ../src/media/track/__init__.py:180
+#: ../src/media/track/__init__.py:199
 msgid "CDDA Track"
 msgstr "Pista CDDA"
 
@@ -90,7 +91,7 @@ msgstr "Imposible cargar este módulo"
 msgid "Modules"
 msgstr "Módulos"
 
-#: ../src/gui/preferences.py:139 ../src/modules/DesktopNotification.py:218
+#: ../src/gui/preferences.py:139 ../src/modules/DesktopNotification.py:222
 #: ../src/modules/Covers.py:438
 msgid "Description"
 msgstr "Descripción"
@@ -100,9 +101,9 @@ msgid ""
 "This window shows the list of available modules. You can enable/disable a "
 "module by checking/unchecking the check box in front of it."
 msgstr ""
-"Esta ventana muestra la lista de módulos disponibles. Puede "
-"activar/desactivar un módulo marcando/desmarcando la casilla de verificación "
-"delante de él."
+"Esta ventana muestra la lista de módulos disponibles. Puede activar/"
+"desactivar un módulo marcando/desmarcando la casilla de verificación delante "
+"de él."
 
 #: ../src/gui/preferences.py:142
 msgid "Configuring a Module"
@@ -147,68 +148,68 @@ msgstr "Buscar en sus carpetas de música"
 msgid "Send track information to the Zeitgeist service"
 msgstr "Enviar información de la pista al servicio Zeitgeist"
 
-#: ../src/modules/FileExplorer.py:183
+#: ../src/modules/FileExplorer.py:179
 msgid "loading..."
 msgstr "cargando…"
 
-#: ../src/modules/FileExplorer.py:384
+#: ../src/modules/FileExplorer.py:392
 msgid "Append"
 msgstr "Anexar"
 
-#: ../src/modules/FileExplorer.py:396
+#: ../src/modules/FileExplorer.py:404
 msgid "Open containing folder"
 msgstr "Abrir carpeta contenedora"
 
-#: ../src/modules/FileExplorer.py:420
+#: ../src/modules/FileExplorer.py:428
 msgid "Add music folder"
 msgstr "Añadir carpeta de música"
 
-#: ../src/modules/FileExplorer.py:432
+#: ../src/modules/FileExplorer.py:440
 msgid "Hide folder"
 msgstr "Ocultar carpeta"
 
-#: ../src/modules/FileExplorer.py:446
+#: ../src/modules/FileExplorer.py:454
 msgid "Choose a directory"
 msgstr "Elija un directorio"
 
-#: ../src/modules/FileExplorer.py:452
+#: ../src/modules/FileExplorer.py:460
 msgid "Invalid Folder"
 msgstr "Carpeta no válida"
 
-#: ../src/modules/FileExplorer.py:453
+#: ../src/modules/FileExplorer.py:461
 msgid "You cannot add your root or home folder to the music directories"
 msgstr ""
 "No puede añadir su carpeta de inicio o raíz a los directorios de música"
 
-#: ../src/modules/FileExplorer.py:460
+#: ../src/modules/FileExplorer.py:468
 msgid "This path does not exist"
 msgstr "Esta ruta no existe"
 
-#: ../src/modules/FileExplorer.py:461
+#: ../src/modules/FileExplorer.py:469
 msgid "Please select an existing directory."
 msgstr "Seleccione un directorio existente."
 
-#: ../src/modules/FileExplorer.py:559
+#: ../src/modules/FileExplorer.py:567
 msgid "Albums"
 msgstr "Álbumes"
 
-#: ../src/modules/FileExplorer.py:561
+#: ../src/modules/FileExplorer.py:569
 msgid "Music"
 msgstr "Música"
 
-#: ../src/modules/FileExplorer.py:637
+#: ../src/modules/FileExplorer.py:646
 msgid "Right-click to add music folders"
 msgstr "Pulse con el botón derecho para añadir carpetas con música"
 
-#: ../src/modules/FileExplorer.py:682
+#: ../src/modules/FileExplorer.py:691
 msgid "Searching ..."
 msgstr "Buscando…"
 
-#: ../src/modules/FileExplorer.py:697
+#: ../src/modules/FileExplorer.py:719
 msgid "No tracks found"
 msgstr "No se encontró ninguna pista"
 
-#: ../src/modules/FileExplorer.py:699
+#: ../src/modules/FileExplorer.py:721
 msgid "No music folders have been added"
 msgstr "No se ha añadido ninguna carpeta de música"
 
@@ -225,10 +226,8 @@ msgid "Restart required"
 msgstr "Es necesario reiniciar"
 
 #: ../src/modules/__init__.py:267
-msgid ""
-"You must restart the application for this modification to take effect."
-msgstr ""
-"Debe reiniciar la aplicación para que esta modificación tenga efecto."
+msgid "You must restart the application for this modification to take effect."
+msgstr "Debe reiniciar la aplicación para que esta modificación tenga efecto."
 
 #: ../src/modules/CtrlPanel.py:190 ../src/modules/CtrlPanel.py:246
 msgid "Pause the current track"
@@ -250,12 +249,12 @@ msgstr "Notificación de escritorio"
 msgid "Display a desktop notification on track change"
 msgstr "Mostrar una notificación de escritorio al cambiar la pista"
 
-#: ../src/modules/DesktopNotification.py:79
-#: ../src/modules/DesktopNotification.py:193
+#: ../src/modules/DesktopNotification.py:83
+#: ../src/modules/DesktopNotification.py:197
 msgid "Skip track"
 msgstr "Saltar pista"
 
-#: ../src/modules/DesktopNotification.py:219
+#: ../src/modules/DesktopNotification.py:223
 msgid ""
 "This module displays a small popup window on your desktop when a new track "
 "starts."
@@ -263,18 +262,17 @@ msgstr ""
 "Este módulo muestra una ventanita en su escritorio cuando comienza una pista "
 "nueva."
 
-#: ../src/modules/DesktopNotification.py:220
-msgid ""
-"If the Covers module is enabled, the popup also shows the album cover."
+#: ../src/modules/DesktopNotification.py:224
+msgid "If the Covers module is enabled, the popup also shows the album cover."
 msgstr ""
 "Si el módulo de carátulas está habilitado, la ventana emergente también "
 "muestra la carátula del álbum."
 
-#: ../src/modules/DesktopNotification.py:221
+#: ../src/modules/DesktopNotification.py:225
 msgid "Customizing the Notification"
 msgstr "Personalizando la notificación"
 
-#: ../src/modules/DesktopNotification.py:222
+#: ../src/modules/DesktopNotification.py:226
 msgid ""
 "You can change the title and the body of the notification to any text you "
 "want. Before displaying the popup window, fields of the form {field} are "
@@ -286,11 +284,11 @@ msgstr ""
 "reemplazarán por el valor correspondiente. Campos disponibles:\n"
 "\n"
 
-#: ../src/modules/DesktopNotification.py:225
+#: ../src/modules/DesktopNotification.py:229
 msgid "Markup"
 msgstr "Marcado"
 
-#: ../src/modules/DesktopNotification.py:226
+#: ../src/modules/DesktopNotification.py:230
 msgid ""
 "You can use the Pango markup language to format the text. More information "
 "on that language is available on the following web page:"
@@ -353,25 +351,17 @@ msgstr ""
 "para la pista actual, ésta se usa. Si no hay ninguna, la caratula será "
 "descargada."
 
-#: ../src/modules/Tracktree.py:387
+#: ../src/modules/Tracktree.py:389 ../src/modules/Tracktree.py:464
 msgid "Export playlist to file"
 msgstr "Exportar lista de reprod. a archivo"
 
-#: ../src/modules/Tracktree.py:395
+#: ../src/modules/Tracktree.py:397 ../src/modules/Tracktree.py:469
 msgid "Export playlist to directory"
 msgstr "Exportar lista de reprod. a directorio"
 
-#: ../src/modules/Tracktree.py:452
+#: ../src/modules/Tracktree.py:454
 msgid "Clear Playlist"
 msgstr "Limpiar lista de reproducción"
-
-#: ../src/modules/Tracktree.py:462
-msgid "Export Playlist to file"
-msgstr "Exportar lista de reprod. a archivo"
-
-#: ../src/modules/Tracktree.py:467
-msgid "Export Playlist to directory"
-msgstr "Exportar lista de reprod. a directorio"
 
 #: ../src/modules/Equalizer.py:24
 msgid "Equalizer"
@@ -423,77 +413,83 @@ msgid "Unknown Album Artist"
 msgstr "Artista del álbum desconocido"
 
 #: ../res/Covers.glade.h:1
-msgid "<b>Internet Covers</b>"
-msgstr "<b>Carátulas de Internet</b>"
-
-#: ../res/Covers.glade.h:2
-msgid "<b>User Covers</b>"
-msgstr "<b>Carátulas del usuario</b>"
-
-#: ../res/Covers.glade.h:3
-msgid "Always prefer user covers"
-msgstr "Siempre preferir las carátulas del usuario"
-
-#: ../res/Covers.glade.h:4
-msgid "Don't download covers when there is a user one"
-msgstr "No descargar carátulas cuando hay una del usuario"
-
-#: ../res/Covers.glade.h:5
-msgid "Download covers"
-msgstr "Descargar carátulas"
-
-#: ../res/Covers.glade.h:6
-msgid "Filenames to look for (e.g., folder, cover)"
-msgstr "Nombres de archivos a buscar (ej.: carpeta, carátula)"
-
-#: ../res/Covers.glade.h:7
 msgid "Filenames:"
 msgstr "Nombres de archivos:"
 
-#: ../res/Covers.glade.h:8
+#: ../res/Covers.glade.h:2
+msgid "Filenames to look for (e.g., folder, cover)"
+msgstr "Nombres de archivos a buscar (ej.: carpeta, carátula)"
+
+#: ../res/Covers.glade.h:3
+msgid "<b>User Covers</b>"
+msgstr "<b>Carátulas del usuario</b>"
+
+#: ../res/Covers.glade.h:4
+msgid "Download covers"
+msgstr "Descargar carátulas"
+
+#: ../res/Covers.glade.h:5
 msgid "Try to download covers from the Internet"
 msgstr "Intentar descargar carátulas desde Internet"
 
+#: ../res/Covers.glade.h:6
+msgid "Always prefer user covers"
+msgstr "Siempre preferir las carátulas del usuario"
+
+#: ../res/Covers.glade.h:7
+msgid "Don't download covers when there is a user one"
+msgstr "No descargar carátulas cuando hay una del usuario"
+
+#: ../res/Covers.glade.h:8
+msgid "<b>Internet Covers</b>"
+msgstr "<b>Carátulas de Internet</b>"
+
 #: ../res/DesktopNotification.glade.h:1
+msgid "<b>Title</b>"
+msgstr "<b>Título</b>"
+
+#: ../res/DesktopNotification.glade.h:2
 msgid "<b>Body</b>"
 msgstr "<b>Cuerpo</b>"
 
-#: ../res/DesktopNotification.glade.h:2
-msgid "<b>Miscellaneous</b>"
-msgstr "<b>Varios</b>"
-
 #: ../res/DesktopNotification.glade.h:3
-msgid "<b>Title</b>"
-msgstr "<b>Título</b>"
+msgid "Show a \"skip track\" button"
+msgstr "Mostrar un botón «saltar pista»"
 
 #: ../res/DesktopNotification.glade.h:4
 msgid "Notification timeout:"
 msgstr "Tiempo límite de la notificación:"
 
 #: ../res/DesktopNotification.glade.h:5
-msgid "Show a \"skip track\" button"
-msgstr "Mostrar un botón «saltar pista»"
-
-#: ../res/DesktopNotification.glade.h:6
 msgid "Time during which the notification is displayed"
 msgstr "Tiempo para mostrar notificación"
 
-#: ../res/DesktopNotification.glade.h:7
+#: ../res/DesktopNotification.glade.h:6
 msgid "seconds"
 msgstr "segundos"
+
+#: ../res/DesktopNotification.glade.h:7
+msgid "<b>Miscellaneous</b>"
+msgstr "<b>Varios</b>"
 
 #: ../res/Equalizer.glade.h:1
 msgid "Preset:"
 msgstr "Preajuste:"
 
 #: ../res/MainWindow.glade.h:1
+msgid "Play the previous track"
+msgstr "Reproducir la pista anterior"
+
+#: ../res/MainWindow.glade.h:2
 msgid "Play the first track of the playlist"
 msgstr "Reproducir la primera pista de la lista de reproducción"
 
-#: ../res/MainWindow.glade.h:2
+#: ../res/MainWindow.glade.h:3
 msgid "Play the next track"
 msgstr "Reproducir la pista siguiente"
 
-#: ../res/MainWindow.glade.h:3
-msgid "Play the previous track"
-msgstr "Reproducir la pista anterior"
+#~ msgid "Export Playlist to file"
+#~ msgstr "Exportar lista de reprod. a archivo"
+
+#~ msgid "Export Playlist to directory"
+#~ msgstr "Exportar lista de reprod. a directorio"

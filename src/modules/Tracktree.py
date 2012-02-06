@@ -461,12 +461,12 @@ class Tracktree(modules.Module):
             clear.connect('activate', lambda item: modules.postMsg(consts.MSG_CMD_TRACKLIST_CLR))
 
         # Save to m3u
-        export_m3u = gtk.ImageMenuItem(_('Export Playlist to file'))
+        export_m3u = gtk.ImageMenuItem(_('Export playlist to file'))
         export_m3u.set_image(gtk.image_new_from_stock(gtk.STOCK_SAVE, gtk.ICON_SIZE_MENU))
         popup.append(export_m3u)
 
         # Save to dir
-        export_dir = gtk.ImageMenuItem(_('Export Playlist to directory'))
+        export_dir = gtk.ImageMenuItem(_('Export playlist to directory'))
         export_dir.set_image(gtk.image_new_from_stock(gtk.STOCK_DIRECTORY, gtk.ICON_SIZE_MENU))
         popup.append(export_dir)
 

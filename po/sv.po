@@ -7,11 +7,12 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pogo\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-08-01 00:17+0200\n"
+"POT-Creation-Date: 2012-02-06 19:55+0100\n"
 "PO-Revision-Date: 2010-11-09 15:37+0000\n"
 "Last-Translator: David Bengtsson <Unknown>\n"
-"Language-Team: Launchpad Swedish Translators <lp-l10n-"
-"sv@lists.launchpad.net>\n"
+"Language-Team: Launchpad Swedish Translators <lp-l10n-sv@lists.launchpad."
+"net>\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -67,16 +68,16 @@ msgstr "Speltid som en sträng (t.ex. 3:14)"
 msgid "Full path to the file"
 msgstr "Fullständig sökväg till filen"
 
-#: ../src/media/track/__init__.py:147 ../src/media/track/__init__.py:391
+#: ../src/media/track/__init__.py:150 ../src/media/track/__init__.py:409
 msgid "unknown"
 msgstr "okänd"
 
-#: ../src/media/track/__init__.py:173
+#: ../src/media/track/__init__.py:192
 #, python-format
 msgid "%(album)s  [Disc %(discnum)u]"
 msgstr "%(album)s [Skiva %(discnum)u]"
 
-#: ../src/media/track/__init__.py:180
+#: ../src/media/track/__init__.py:199
 msgid "CDDA Track"
 msgstr "CDDA-spår"
 
@@ -92,7 +93,7 @@ msgstr "Kunde inte läsa in denna modul."
 msgid "Modules"
 msgstr "Moduler"
 
-#: ../src/gui/preferences.py:139 ../src/modules/DesktopNotification.py:218
+#: ../src/gui/preferences.py:139 ../src/modules/DesktopNotification.py:222
 #: ../src/modules/Covers.py:438
 msgid "Description"
 msgstr "Beskrivning"
@@ -102,9 +103,8 @@ msgid ""
 "This window shows the list of available modules. You can enable/disable a "
 "module by checking/unchecking the check box in front of it."
 msgstr ""
-"Detta fönster visar listan över tillgängliga moduler. Du kan "
-"aktivera/inaktivera en modul genom att markera/avmarkera kryssrutan framför "
-"den."
+"Detta fönster visar listan över tillgängliga moduler. Du kan aktivera/"
+"inaktivera en modul genom att markera/avmarkera kryssrutan framför den."
 
 #: ../src/gui/preferences.py:142
 msgid "Configuring a Module"
@@ -145,67 +145,67 @@ msgstr "Sök i dina musikmappar"
 msgid "Send track information to the Zeitgeist service"
 msgstr "Skicka spårinformation till Zeitgeist-tjänsten"
 
-#: ../src/modules/FileExplorer.py:183
+#: ../src/modules/FileExplorer.py:179
 msgid "loading..."
 msgstr "läser in..."
 
-#: ../src/modules/FileExplorer.py:384
+#: ../src/modules/FileExplorer.py:392
 msgid "Append"
 msgstr "Lägg till"
 
-#: ../src/modules/FileExplorer.py:396
+#: ../src/modules/FileExplorer.py:404
 msgid "Open containing folder"
 msgstr "Öppna innehållande mapp"
 
-#: ../src/modules/FileExplorer.py:420
+#: ../src/modules/FileExplorer.py:428
 msgid "Add music folder"
 msgstr "Lägg till musikmapp"
 
-#: ../src/modules/FileExplorer.py:432
+#: ../src/modules/FileExplorer.py:440
 msgid "Hide folder"
 msgstr "Dölj mapp"
 
-#: ../src/modules/FileExplorer.py:446
+#: ../src/modules/FileExplorer.py:454
 msgid "Choose a directory"
 msgstr "Välj en katalog"
 
-#: ../src/modules/FileExplorer.py:452
+#: ../src/modules/FileExplorer.py:460
 msgid "Invalid Folder"
 msgstr ""
 
-#: ../src/modules/FileExplorer.py:453
+#: ../src/modules/FileExplorer.py:461
 msgid "You cannot add your root or home folder to the music directories"
 msgstr ""
 
-#: ../src/modules/FileExplorer.py:460
+#: ../src/modules/FileExplorer.py:468
 msgid "This path does not exist"
 msgstr "Den här sökvägen finns inte"
 
-#: ../src/modules/FileExplorer.py:461
+#: ../src/modules/FileExplorer.py:469
 msgid "Please select an existing directory."
 msgstr "Välj en befintlig katalog."
 
-#: ../src/modules/FileExplorer.py:559
+#: ../src/modules/FileExplorer.py:567
 msgid "Albums"
 msgstr "Album"
 
-#: ../src/modules/FileExplorer.py:561
+#: ../src/modules/FileExplorer.py:569
 msgid "Music"
 msgstr "Musik"
 
-#: ../src/modules/FileExplorer.py:637
+#: ../src/modules/FileExplorer.py:646
 msgid "Right-click to add music folders"
 msgstr ""
 
-#: ../src/modules/FileExplorer.py:682
+#: ../src/modules/FileExplorer.py:691
 msgid "Searching ..."
 msgstr "Söker ..."
 
-#: ../src/modules/FileExplorer.py:697
+#: ../src/modules/FileExplorer.py:719
 msgid "No tracks found"
 msgstr "Inga spår hittades"
 
-#: ../src/modules/FileExplorer.py:699
+#: ../src/modules/FileExplorer.py:721
 msgid "No music folders have been added"
 msgstr ""
 
@@ -222,10 +222,8 @@ msgid "Restart required"
 msgstr "Omstart krävs"
 
 #: ../src/modules/__init__.py:267
-msgid ""
-"You must restart the application for this modification to take effect."
-msgstr ""
-"Du måste starta om programmet för att denna modifiering ska få effekt."
+msgid "You must restart the application for this modification to take effect."
+msgstr "Du måste starta om programmet för att denna modifiering ska få effekt."
 
 #: ../src/modules/CtrlPanel.py:190 ../src/modules/CtrlPanel.py:246
 msgid "Pause the current track"
@@ -247,12 +245,12 @@ msgstr "Skrivbordsnotifiering"
 msgid "Display a desktop notification on track change"
 msgstr "Visa en skrivbordsnotifiering vid spårbyte"
 
-#: ../src/modules/DesktopNotification.py:79
-#: ../src/modules/DesktopNotification.py:193
+#: ../src/modules/DesktopNotification.py:83
+#: ../src/modules/DesktopNotification.py:197
 msgid "Skip track"
 msgstr "Hoppa över spår"
 
-#: ../src/modules/DesktopNotification.py:219
+#: ../src/modules/DesktopNotification.py:223
 msgid ""
 "This module displays a small popup window on your desktop when a new track "
 "starts."
@@ -260,18 +258,17 @@ msgstr ""
 "Denna modul visar en liten popup-notifiering på ditt skrivbord när ett nytt "
 "spår påbörjas."
 
-#: ../src/modules/DesktopNotification.py:220
-msgid ""
-"If the Covers module is enabled, the popup also shows the album cover."
+#: ../src/modules/DesktopNotification.py:224
+msgid "If the Covers module is enabled, the popup also shows the album cover."
 msgstr ""
 "Om modulen för omslagsbilder är aktiverad, visar popup-notifieringen även "
 "omslagsbilden."
 
-#: ../src/modules/DesktopNotification.py:221
+#: ../src/modules/DesktopNotification.py:225
 msgid "Customizing the Notification"
 msgstr "Anpassa notifieringen"
 
-#: ../src/modules/DesktopNotification.py:222
+#: ../src/modules/DesktopNotification.py:226
 msgid ""
 "You can change the title and the body of the notification to any text you "
 "want. Before displaying the popup window, fields of the form {field} are "
@@ -283,11 +280,11 @@ msgstr ""
 "deras motsvarande värden. Tillgängliga fält är:\n"
 "\n"
 
-#: ../src/modules/DesktopNotification.py:225
+#: ../src/modules/DesktopNotification.py:229
 msgid "Markup"
 msgstr "Märkning"
 
-#: ../src/modules/DesktopNotification.py:226
+#: ../src/modules/DesktopNotification.py:230
 msgid ""
 "You can use the Pango markup language to format the text. More information "
 "on that language is available on the following web page:"
@@ -348,25 +345,17 @@ msgstr ""
 "internet. I detta fall används användaromslag för det aktuella spåret om ett "
 "sådant finns. Om det inte finns något så hämtas omslagsbilden."
 
-#: ../src/modules/Tracktree.py:387
+#: ../src/modules/Tracktree.py:389 ../src/modules/Tracktree.py:464
 msgid "Export playlist to file"
 msgstr ""
 
-#: ../src/modules/Tracktree.py:395
+#: ../src/modules/Tracktree.py:397 ../src/modules/Tracktree.py:469
 msgid "Export playlist to directory"
 msgstr ""
 
-#: ../src/modules/Tracktree.py:452
+#: ../src/modules/Tracktree.py:454
 msgid "Clear Playlist"
 msgstr "Rensa spellista"
-
-#: ../src/modules/Tracktree.py:462
-msgid "Export Playlist to file"
-msgstr ""
-
-#: ../src/modules/Tracktree.py:467
-msgid "Export Playlist to directory"
-msgstr ""
 
 #: ../src/modules/Equalizer.py:24
 msgid "Equalizer"
@@ -418,77 +407,77 @@ msgid "Unknown Album Artist"
 msgstr "Okänd albumartist"
 
 #: ../res/Covers.glade.h:1
-msgid "<b>Internet Covers</b>"
-msgstr "<b>Internetomslag</b>"
-
-#: ../res/Covers.glade.h:2
-msgid "<b>User Covers</b>"
-msgstr "<b>Användaromslag</b>"
-
-#: ../res/Covers.glade.h:3
-msgid "Always prefer user covers"
-msgstr "Föredra alltid användaromslag"
-
-#: ../res/Covers.glade.h:4
-msgid "Don't download covers when there is a user one"
-msgstr "Hämta inte omslagsbilder om det finns lokala sådana"
-
-#: ../res/Covers.glade.h:5
-msgid "Download covers"
-msgstr "Hämta omslagsbilder"
-
-#: ../res/Covers.glade.h:6
-msgid "Filenames to look for (e.g., folder, cover)"
-msgstr "Filnamn att leta efter (t.ex. mapp, omslagsbild)"
-
-#: ../res/Covers.glade.h:7
 msgid "Filenames:"
 msgstr "Filnamn:"
 
-#: ../res/Covers.glade.h:8
+#: ../res/Covers.glade.h:2
+msgid "Filenames to look for (e.g., folder, cover)"
+msgstr "Filnamn att leta efter (t.ex. mapp, omslagsbild)"
+
+#: ../res/Covers.glade.h:3
+msgid "<b>User Covers</b>"
+msgstr "<b>Användaromslag</b>"
+
+#: ../res/Covers.glade.h:4
+msgid "Download covers"
+msgstr "Hämta omslagsbilder"
+
+#: ../res/Covers.glade.h:5
 msgid "Try to download covers from the Internet"
 msgstr "Försök att hämta omslagsbilder från internet"
 
+#: ../res/Covers.glade.h:6
+msgid "Always prefer user covers"
+msgstr "Föredra alltid användaromslag"
+
+#: ../res/Covers.glade.h:7
+msgid "Don't download covers when there is a user one"
+msgstr "Hämta inte omslagsbilder om det finns lokala sådana"
+
+#: ../res/Covers.glade.h:8
+msgid "<b>Internet Covers</b>"
+msgstr "<b>Internetomslag</b>"
+
 #: ../res/DesktopNotification.glade.h:1
+msgid "<b>Title</b>"
+msgstr "<b>Titel</b>"
+
+#: ../res/DesktopNotification.glade.h:2
 msgid "<b>Body</b>"
 msgstr "<b>Brödtext</b>"
 
-#: ../res/DesktopNotification.glade.h:2
-msgid "<b>Miscellaneous</b>"
-msgstr "<b>Diverse</b>"
-
 #: ../res/DesktopNotification.glade.h:3
-msgid "<b>Title</b>"
-msgstr "<b>Titel</b>"
+msgid "Show a \"skip track\" button"
+msgstr "Visa en \"hoppa över spår\"-knapp"
 
 #: ../res/DesktopNotification.glade.h:4
 msgid "Notification timeout:"
 msgstr "Tidsgräns för notifiering:"
 
 #: ../res/DesktopNotification.glade.h:5
-msgid "Show a \"skip track\" button"
-msgstr "Visa en \"hoppa över spår\"-knapp"
-
-#: ../res/DesktopNotification.glade.h:6
 msgid "Time during which the notification is displayed"
 msgstr "Tid som notiferingen visas"
 
-#: ../res/DesktopNotification.glade.h:7
+#: ../res/DesktopNotification.glade.h:6
 msgid "seconds"
 msgstr "sekunder"
+
+#: ../res/DesktopNotification.glade.h:7
+msgid "<b>Miscellaneous</b>"
+msgstr "<b>Diverse</b>"
 
 #: ../res/Equalizer.glade.h:1
 msgid "Preset:"
 msgstr "Förinställda:"
 
 #: ../res/MainWindow.glade.h:1
+msgid "Play the previous track"
+msgstr "Spela upp föregående spår"
+
+#: ../res/MainWindow.glade.h:2
 msgid "Play the first track of the playlist"
 msgstr "Spela upp första spåret i spellistan"
 
-#: ../res/MainWindow.glade.h:2
+#: ../res/MainWindow.glade.h:3
 msgid "Play the next track"
 msgstr "Spela upp nästa spår"
-
-#: ../res/MainWindow.glade.h:3
-msgid "Play the previous track"
-msgstr "Spela upp föregående spår"

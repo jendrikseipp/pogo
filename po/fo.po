@@ -6,17 +6,17 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: pogo\n"
-"Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
-"POT-Creation-Date: 2011-08-01 00:17+0200\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2012-02-06 19:55+0100\n"
 "PO-Revision-Date: 2010-12-07 10:53+0000\n"
 "Last-Translator: Gunleif Joensen <Unknown>\n"
 "Language-Team: Føroyabólkurin\n"
+"Language: fo\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Launchpad-Export-Date: 2012-01-31 05:27+0000\n"
 "X-Generator: Launchpad (build 14734)\n"
-"Language: fo\n"
 
 #: ../src/media/track/__init__.py:52
 msgid "Track number"
@@ -66,16 +66,16 @@ msgstr "tíðarlongd sum ein strongur (s.s. 3:14)"
 msgid "Full path to the file"
 msgstr "Full leið til fíluna"
 
-#: ../src/media/track/__init__.py:147 ../src/media/track/__init__.py:391
+#: ../src/media/track/__init__.py:150 ../src/media/track/__init__.py:409
 msgid "unknown"
 msgstr "ókent"
 
-#: ../src/media/track/__init__.py:173
+#: ../src/media/track/__init__.py:192
 #, python-format
 msgid "%(album)s  [Disc %(discnum)u]"
 msgstr "%(album)s [diskur %(discnum)u]"
 
-#: ../src/media/track/__init__.py:180
+#: ../src/media/track/__init__.py:199
 msgid "CDDA Track"
 msgstr "CDDA spor"
 
@@ -91,7 +91,7 @@ msgstr "Ikki før fyri at løða mótulin."
 msgid "Modules"
 msgstr "Mótular"
 
-#: ../src/gui/preferences.py:139 ../src/modules/DesktopNotification.py:218
+#: ../src/gui/preferences.py:139 ../src/modules/DesktopNotification.py:222
 #: ../src/modules/Covers.py:438
 msgid "Description"
 msgstr "Lýsing"
@@ -138,68 +138,68 @@ msgstr "Leita í tínum tónleikamappum"
 msgid "Send track information to the Zeitgeist service"
 msgstr "Send lag-upplýsing til Zeitgeist tænastuna"
 
-#: ../src/modules/FileExplorer.py:183
+#: ../src/modules/FileExplorer.py:179
 msgid "loading..."
 msgstr "løði..."
 
-#: ../src/modules/FileExplorer.py:384
+#: ../src/modules/FileExplorer.py:392
 msgid "Append"
 msgstr "Ískoyta"
 
-#: ../src/modules/FileExplorer.py:396
+#: ../src/modules/FileExplorer.py:404
 msgid "Open containing folder"
 msgstr "Opna innihaldandi mappu"
 
-#: ../src/modules/FileExplorer.py:420
+#: ../src/modules/FileExplorer.py:428
 msgid "Add music folder"
 msgstr "Legg tónleikamappu til"
 
-#: ../src/modules/FileExplorer.py:432
+#: ../src/modules/FileExplorer.py:440
 msgid "Hide folder"
 msgstr "Fjal mappu"
 
-#: ../src/modules/FileExplorer.py:446
+#: ../src/modules/FileExplorer.py:454
 msgid "Choose a directory"
 msgstr "Vel eina fíluskrá"
 
-#: ../src/modules/FileExplorer.py:452
+#: ../src/modules/FileExplorer.py:460
 msgid "Invalid Folder"
 msgstr "Ógildigur faldari"
 
-#: ../src/modules/FileExplorer.py:453
+#: ../src/modules/FileExplorer.py:461
 msgid "You cannot add your root or home folder to the music directories"
 msgstr ""
 "Tú kann ikki leggja, tín rót- ella heimafaldara, afturat tónleikafíluskráunum"
 
-#: ../src/modules/FileExplorer.py:460
+#: ../src/modules/FileExplorer.py:468
 msgid "This path does not exist"
 msgstr "Leiðin finst ei"
 
-#: ../src/modules/FileExplorer.py:461
+#: ../src/modules/FileExplorer.py:469
 msgid "Please select an existing directory."
 msgstr "Vinarliga vel eina mappu ið finst."
 
-#: ../src/modules/FileExplorer.py:559
+#: ../src/modules/FileExplorer.py:567
 msgid "Albums"
 msgstr "Album"
 
-#: ../src/modules/FileExplorer.py:561
+#: ../src/modules/FileExplorer.py:569
 msgid "Music"
 msgstr "Tónleikur"
 
-#: ../src/modules/FileExplorer.py:637
+#: ../src/modules/FileExplorer.py:646
 msgid "Right-click to add music folders"
 msgstr "Høgraklikkja til at leggja tónleikafaldarar til"
 
-#: ../src/modules/FileExplorer.py:682
+#: ../src/modules/FileExplorer.py:691
 msgid "Searching ..."
 msgstr "Leiti..."
 
-#: ../src/modules/FileExplorer.py:697
+#: ../src/modules/FileExplorer.py:719
 msgid "No tracks found"
 msgstr "Eingi løg funnin"
 
-#: ../src/modules/FileExplorer.py:699
+#: ../src/modules/FileExplorer.py:721
 msgid "No music folders have been added"
 msgstr "Eingir tónleikafaldarir eru lagdir til"
 
@@ -216,8 +216,7 @@ msgid "Restart required"
 msgstr "Endurbyrjan tørvað"
 
 #: ../src/modules/__init__.py:267
-msgid ""
-"You must restart the application for this modification to take effect."
+msgid "You must restart the application for this modification to take effect."
 msgstr ""
 "Tú mást endurbyrja nýtsluskipanina, fyri at hendan broytingin skal taka við."
 
@@ -241,12 +240,12 @@ msgstr "Skriviborðsfráboðan"
 msgid "Display a desktop notification on track change"
 msgstr "Sýn eina skriviborðsfráboðan, við lagskifti"
 
-#: ../src/modules/DesktopNotification.py:79
-#: ../src/modules/DesktopNotification.py:193
+#: ../src/modules/DesktopNotification.py:83
+#: ../src/modules/DesktopNotification.py:197
 msgid "Skip track"
 msgstr "Leyp lag um"
 
-#: ../src/modules/DesktopNotification.py:219
+#: ../src/modules/DesktopNotification.py:223
 msgid ""
 "This module displays a small popup window on your desktop when a new track "
 "starts."
@@ -254,16 +253,15 @@ msgstr ""
 "Hesin mótulurin sýnir eitt lítið støkkvindeyga á skriviborðinum,  tá eitt "
 "nýtt lag byrjar."
 
-#: ../src/modules/DesktopNotification.py:220
-msgid ""
-"If the Covers module is enabled, the popup also shows the album cover."
+#: ../src/modules/DesktopNotification.py:224
+msgid "If the Covers module is enabled, the popup also shows the album cover."
 msgstr "Um permumótulurin er gildur, verður perman eisini sýnd."
 
-#: ../src/modules/DesktopNotification.py:221
+#: ../src/modules/DesktopNotification.py:225
 msgid "Customizing the Notification"
 msgstr "Laga fráboðanina til"
 
-#: ../src/modules/DesktopNotification.py:222
+#: ../src/modules/DesktopNotification.py:226
 msgid ""
 "You can change the title and the body of the notification to any text you "
 "want. Before displaying the popup window, fields of the form {field} are "
@@ -271,11 +269,11 @@ msgid ""
 "\n"
 msgstr ""
 
-#: ../src/modules/DesktopNotification.py:225
+#: ../src/modules/DesktopNotification.py:229
 msgid "Markup"
 msgstr ""
 
-#: ../src/modules/DesktopNotification.py:226
+#: ../src/modules/DesktopNotification.py:230
 msgid ""
 "You can use the Pango markup language to format the text. More information "
 "on that language is available on the following web page:"
@@ -324,25 +322,17 @@ msgid ""
 "none, the cover is downloaded."
 msgstr ""
 
-#: ../src/modules/Tracktree.py:387
+#: ../src/modules/Tracktree.py:389 ../src/modules/Tracktree.py:464
 msgid "Export playlist to file"
 msgstr ""
 
-#: ../src/modules/Tracktree.py:395
+#: ../src/modules/Tracktree.py:397 ../src/modules/Tracktree.py:469
 msgid "Export playlist to directory"
 msgstr ""
 
-#: ../src/modules/Tracktree.py:452
+#: ../src/modules/Tracktree.py:454
 msgid "Clear Playlist"
 msgstr "Reinsa avspælingarlistan"
-
-#: ../src/modules/Tracktree.py:462
-msgid "Export Playlist to file"
-msgstr ""
-
-#: ../src/modules/Tracktree.py:467
-msgid "Export Playlist to directory"
-msgstr ""
 
 #: ../src/modules/Equalizer.py:24
 msgid "Equalizer"
@@ -394,77 +384,77 @@ msgid "Unknown Album Artist"
 msgstr "Ókent listarfólk á album"
 
 #: ../res/Covers.glade.h:1
-msgid "<b>Internet Covers</b>"
-msgstr "<b>Alnets permur</b>"
-
-#: ../res/Covers.glade.h:2
-msgid "<b>User Covers</b>"
-msgstr "<b>Brúkarapermur</b>"
-
-#: ../res/Covers.glade.h:3
-msgid "Always prefer user covers"
-msgstr "Ný altíð brúkarapermur"
-
-#: ../res/Covers.glade.h:4
-msgid "Don't download covers when there is a user one"
-msgstr "Ikki taka permur niður, tá brúkarin hevur eina"
-
-#: ../res/Covers.glade.h:5
-msgid "Download covers"
-msgstr "Tak permur niður"
-
-#: ../res/Covers.glade.h:6
-msgid "Filenames to look for (e.g., folder, cover)"
-msgstr "Fílunøvn ið hyggjast skal eftir (s.s. mappur, permur)"
-
-#: ../res/Covers.glade.h:7
 msgid "Filenames:"
 msgstr "Fílunøvn:"
 
-#: ../res/Covers.glade.h:8
+#: ../res/Covers.glade.h:2
+msgid "Filenames to look for (e.g., folder, cover)"
+msgstr "Fílunøvn ið hyggjast skal eftir (s.s. mappur, permur)"
+
+#: ../res/Covers.glade.h:3
+msgid "<b>User Covers</b>"
+msgstr "<b>Brúkarapermur</b>"
+
+#: ../res/Covers.glade.h:4
+msgid "Download covers"
+msgstr "Tak permur niður"
+
+#: ../res/Covers.glade.h:5
 msgid "Try to download covers from the Internet"
 msgstr "Royn at niðurtaka permur úr alnetinum"
 
+#: ../res/Covers.glade.h:6
+msgid "Always prefer user covers"
+msgstr "Ný altíð brúkarapermur"
+
+#: ../res/Covers.glade.h:7
+msgid "Don't download covers when there is a user one"
+msgstr "Ikki taka permur niður, tá brúkarin hevur eina"
+
+#: ../res/Covers.glade.h:8
+msgid "<b>Internet Covers</b>"
+msgstr "<b>Alnets permur</b>"
+
 #: ../res/DesktopNotification.glade.h:1
+msgid "<b>Title</b>"
+msgstr "<b>Heiti</b>"
+
+#: ../res/DesktopNotification.glade.h:2
 msgid "<b>Body</b>"
 msgstr "<b>Kroppur</b>"
 
-#: ../res/DesktopNotification.glade.h:2
-msgid "<b>Miscellaneous</b>"
-msgstr "<b>Ymiskt</b>"
-
 #: ../res/DesktopNotification.glade.h:3
-msgid "<b>Title</b>"
-msgstr "<b>Heiti</b>"
+msgid "Show a \"skip track\" button"
+msgstr "Sýn ein \"leyp lag um\" knapp"
 
 #: ../res/DesktopNotification.glade.h:4
 msgid "Notification timeout:"
 msgstr "Fráboðan rennur út:"
 
 #: ../res/DesktopNotification.glade.h:5
-msgid "Show a \"skip track\" button"
-msgstr "Sýn ein \"leyp lag um\" knapp"
-
-#: ../res/DesktopNotification.glade.h:6
 msgid "Time during which the notification is displayed"
 msgstr "Tíðarskeið, ið fráboðanin er sýnd"
 
-#: ../res/DesktopNotification.glade.h:7
+#: ../res/DesktopNotification.glade.h:6
 msgid "seconds"
 msgstr "sekund"
+
+#: ../res/DesktopNotification.glade.h:7
+msgid "<b>Miscellaneous</b>"
+msgstr "<b>Ymiskt</b>"
 
 #: ../res/Equalizer.glade.h:1
 msgid "Preset:"
 msgstr "Føst innstilling:"
 
 #: ../res/MainWindow.glade.h:1
+msgid "Play the previous track"
+msgstr "Spæl fyrra lagið"
+
+#: ../res/MainWindow.glade.h:2
 msgid "Play the first track of the playlist"
 msgstr "Spæl av tað fyrsta lagið, á avspælingarlistanum"
 
-#: ../res/MainWindow.glade.h:2
+#: ../res/MainWindow.glade.h:3
 msgid "Play the next track"
 msgstr "Spæl næsta lagið"
-
-#: ../res/MainWindow.glade.h:3
-msgid "Play the previous track"
-msgstr "Spæl fyrra lagið"

@@ -7,10 +7,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: decibel-audio-player\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-08-01 00:17+0200\n"
+"POT-Creation-Date: 2012-02-06 19:55+0100\n"
 "PO-Revision-Date: 2011-08-13 09:51+0000\n"
 "Last-Translator: Irmak Bıçakçıgil <Unknown>\n"
 "Language-Team: Turkish <tr@li.org>\n"
+"Language: tr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -65,16 +66,16 @@ msgstr "Süre (3:14 gibi)"
 msgid "Full path to the file"
 msgstr "Dosyanın tam yolu"
 
-#: ../src/media/track/__init__.py:147 ../src/media/track/__init__.py:391
+#: ../src/media/track/__init__.py:150 ../src/media/track/__init__.py:409
 msgid "unknown"
 msgstr "Bilinmiyor"
 
-#: ../src/media/track/__init__.py:173
+#: ../src/media/track/__init__.py:192
 #, python-format
 msgid "%(album)s  [Disc %(discnum)u]"
 msgstr "%(album)s  [Disc %(discnum)u]"
 
-#: ../src/media/track/__init__.py:180
+#: ../src/media/track/__init__.py:199
 msgid "CDDA Track"
 msgstr "CDDA şarkısı"
 
@@ -90,7 +91,7 @@ msgstr "Bu modül yüklenemedi"
 msgid "Modules"
 msgstr "Modüller"
 
-#: ../src/gui/preferences.py:139 ../src/modules/DesktopNotification.py:218
+#: ../src/gui/preferences.py:139 ../src/modules/DesktopNotification.py:222
 #: ../src/modules/Covers.py:438
 msgid "Description"
 msgstr "Tanım"
@@ -145,67 +146,67 @@ msgstr "Müzik klasörlerinde ara"
 msgid "Send track information to the Zeitgeist service"
 msgstr "Şarkı bilgisini Zeitgeist cihazına yolla"
 
-#: ../src/modules/FileExplorer.py:183
+#: ../src/modules/FileExplorer.py:179
 msgid "loading..."
 msgstr "yükleniyor..."
 
-#: ../src/modules/FileExplorer.py:384
+#: ../src/modules/FileExplorer.py:392
 msgid "Append"
 msgstr "Sonuna Ekle"
 
-#: ../src/modules/FileExplorer.py:396
+#: ../src/modules/FileExplorer.py:404
 msgid "Open containing folder"
 msgstr "İçinde bulunduğu dizini aç"
 
-#: ../src/modules/FileExplorer.py:420
+#: ../src/modules/FileExplorer.py:428
 msgid "Add music folder"
 msgstr "Müzik klasörü ekle"
 
-#: ../src/modules/FileExplorer.py:432
+#: ../src/modules/FileExplorer.py:440
 msgid "Hide folder"
 msgstr "Klasörü gizle"
 
-#: ../src/modules/FileExplorer.py:446
+#: ../src/modules/FileExplorer.py:454
 msgid "Choose a directory"
 msgstr "Bir klasör seçin"
 
-#: ../src/modules/FileExplorer.py:452
+#: ../src/modules/FileExplorer.py:460
 msgid "Invalid Folder"
 msgstr "Geçersiz Dizin"
 
-#: ../src/modules/FileExplorer.py:453
+#: ../src/modules/FileExplorer.py:461
 msgid "You cannot add your root or home folder to the music directories"
 msgstr "Kök dizin veya ev dizininizi müzik dizinlerine ekleyemezsiniz."
 
-#: ../src/modules/FileExplorer.py:460
+#: ../src/modules/FileExplorer.py:468
 msgid "This path does not exist"
 msgstr "Hatalı dosya adresi"
 
-#: ../src/modules/FileExplorer.py:461
+#: ../src/modules/FileExplorer.py:469
 msgid "Please select an existing directory."
 msgstr "Lütfen var olan bir dizin seçin"
 
-#: ../src/modules/FileExplorer.py:559
+#: ../src/modules/FileExplorer.py:567
 msgid "Albums"
 msgstr "Albümler"
 
-#: ../src/modules/FileExplorer.py:561
+#: ../src/modules/FileExplorer.py:569
 msgid "Music"
 msgstr "Müzik"
 
-#: ../src/modules/FileExplorer.py:637
+#: ../src/modules/FileExplorer.py:646
 msgid "Right-click to add music folders"
 msgstr "Müzik dizini olarak eklemek için sağ tıklayınız"
 
-#: ../src/modules/FileExplorer.py:682
+#: ../src/modules/FileExplorer.py:691
 msgid "Searching ..."
 msgstr "Aranıyor..."
 
-#: ../src/modules/FileExplorer.py:697
+#: ../src/modules/FileExplorer.py:719
 msgid "No tracks found"
 msgstr "Hiç şarkı bulunmadı"
 
-#: ../src/modules/FileExplorer.py:699
+#: ../src/modules/FileExplorer.py:721
 msgid "No music folders have been added"
 msgstr "Herhangi bir müzik dizini eklenmedi"
 
@@ -223,8 +224,7 @@ msgid "Restart required"
 msgstr "Yeniden başlatma gerekiyor"
 
 #: ../src/modules/__init__.py:267
-msgid ""
-"You must restart the application for this modification to take effect."
+msgid "You must restart the application for this modification to take effect."
 msgstr ""
 "Uygulamadaki değişikliklerin aktif olması için programı yeniden "
 "başlatmalısınız."
@@ -249,30 +249,29 @@ msgstr "Masaüstü Uyarısı"
 msgid "Display a desktop notification on track change"
 msgstr "Şarkı değiştiğinde masaüstünde hatırlatma göster"
 
-#: ../src/modules/DesktopNotification.py:79
-#: ../src/modules/DesktopNotification.py:193
+#: ../src/modules/DesktopNotification.py:83
+#: ../src/modules/DesktopNotification.py:197
 msgid "Skip track"
 msgstr "Şarkıyı atla"
 
-#: ../src/modules/DesktopNotification.py:219
+#: ../src/modules/DesktopNotification.py:223
 msgid ""
 "This module displays a small popup window on your desktop when a new track "
 "starts."
 msgstr ""
 "Bu modül yeni bir şarkı başladığında masaüstünüzde küçük pencere gösterir"
 
-#: ../src/modules/DesktopNotification.py:220
-msgid ""
-"If the Covers module is enabled, the popup also shows the album cover."
+#: ../src/modules/DesktopNotification.py:224
+msgid "If the Covers module is enabled, the popup also shows the album cover."
 msgstr ""
 "Eğer albüm kapakları modülü aktif ise yeni pencere albüm kapağını da "
 "gösterir."
 
-#: ../src/modules/DesktopNotification.py:221
+#: ../src/modules/DesktopNotification.py:225
 msgid "Customizing the Notification"
 msgstr "Hatırlatmayı kişiselleştir"
 
-#: ../src/modules/DesktopNotification.py:222
+#: ../src/modules/DesktopNotification.py:226
 msgid ""
 "You can change the title and the body of the notification to any text you "
 "want. Before displaying the popup window, fields of the form {field} are "
@@ -284,11 +283,11 @@ msgstr ""
 "değiştirilir.\n"
 "\n"
 
-#: ../src/modules/DesktopNotification.py:225
+#: ../src/modules/DesktopNotification.py:229
 msgid "Markup"
 msgstr "Markup"
 
-#: ../src/modules/DesktopNotification.py:226
+#: ../src/modules/DesktopNotification.py:230
 msgid ""
 "You can use the Pango markup language to format the text. More information "
 "on that language is available on the following web page:"
@@ -344,30 +343,22 @@ msgid ""
 "case, if a user cover exists for the current track, it is used. If there is "
 "none, the cover is downloaded."
 msgstr ""
-"Albüm kapakları çalan şarkının etiketlerine göre internetten "
-"indirilebilir.Her zaman internet albüm kapaklarının kullanılmasını "
-"seçebilirsiniz. Bu durumda kullanıcı albüm kapağı varsa kullanılır, eğer "
-"yoksa internetten indirilir."
+"Albüm kapakları çalan şarkının etiketlerine göre internetten indirilebilir."
+"Her zaman internet albüm kapaklarının kullanılmasını seçebilirsiniz. Bu "
+"durumda kullanıcı albüm kapağı varsa kullanılır, eğer yoksa internetten "
+"indirilir."
 
-#: ../src/modules/Tracktree.py:387
+#: ../src/modules/Tracktree.py:389 ../src/modules/Tracktree.py:464
 msgid "Export playlist to file"
 msgstr "Çalma listesini dosyaya aktar"
 
-#: ../src/modules/Tracktree.py:395
+#: ../src/modules/Tracktree.py:397 ../src/modules/Tracktree.py:469
 msgid "Export playlist to directory"
 msgstr "Çalma Listesini konuma aktar"
 
-#: ../src/modules/Tracktree.py:452
+#: ../src/modules/Tracktree.py:454
 msgid "Clear Playlist"
 msgstr "Şarkı listesini temizle"
-
-#: ../src/modules/Tracktree.py:462
-msgid "Export Playlist to file"
-msgstr "Çalma Listesini dosyaya aktar"
-
-#: ../src/modules/Tracktree.py:467
-msgid "Export Playlist to directory"
-msgstr "Çalma Listesini konuma aktar"
 
 #: ../src/modules/Equalizer.py:24
 msgid "Equalizer"
@@ -419,77 +410,83 @@ msgid "Unknown Album Artist"
 msgstr "Bilinmeyen Albüm Sanatçısı"
 
 #: ../res/Covers.glade.h:1
-msgid "<b>Internet Covers</b>"
-msgstr "<b>İnternet Albüm Kapaları</b>"
-
-#: ../res/Covers.glade.h:2
-msgid "<b>User Covers</b>"
-msgstr "<b>Kullanıcı Albüm Kapakları</b>"
-
-#: ../res/Covers.glade.h:3
-msgid "Always prefer user covers"
-msgstr "Hep kullanıcı albüm kapaklarını tercih et"
-
-#: ../res/Covers.glade.h:4
-msgid "Don't download covers when there is a user one"
-msgstr "Kullanıcı albüm kapağı varsa internetten indirme"
-
-#: ../res/Covers.glade.h:5
-msgid "Download covers"
-msgstr "Albüm Kapaklarını İndir."
-
-#: ../res/Covers.glade.h:6
-msgid "Filenames to look for (e.g., folder, cover)"
-msgstr "Aramak için dosya ismi  (Örnek dosya,albüm kapağı)"
-
-#: ../res/Covers.glade.h:7
 msgid "Filenames:"
 msgstr "Dosya isimleri:"
 
-#: ../res/Covers.glade.h:8
+#: ../res/Covers.glade.h:2
+msgid "Filenames to look for (e.g., folder, cover)"
+msgstr "Aramak için dosya ismi  (Örnek dosya,albüm kapağı)"
+
+#: ../res/Covers.glade.h:3
+msgid "<b>User Covers</b>"
+msgstr "<b>Kullanıcı Albüm Kapakları</b>"
+
+#: ../res/Covers.glade.h:4
+msgid "Download covers"
+msgstr "Albüm Kapaklarını İndir."
+
+#: ../res/Covers.glade.h:5
 msgid "Try to download covers from the Internet"
 msgstr "Albüm kapaklarının internetten indirmeyi dene"
 
+#: ../res/Covers.glade.h:6
+msgid "Always prefer user covers"
+msgstr "Hep kullanıcı albüm kapaklarını tercih et"
+
+#: ../res/Covers.glade.h:7
+msgid "Don't download covers when there is a user one"
+msgstr "Kullanıcı albüm kapağı varsa internetten indirme"
+
+#: ../res/Covers.glade.h:8
+msgid "<b>Internet Covers</b>"
+msgstr "<b>İnternet Albüm Kapaları</b>"
+
 #: ../res/DesktopNotification.glade.h:1
+msgid "<b>Title</b>"
+msgstr "<b>Başlık</b>"
+
+#: ../res/DesktopNotification.glade.h:2
 msgid "<b>Body</b>"
 msgstr "<b>Gövde</b>"
 
-#: ../res/DesktopNotification.glade.h:2
-msgid "<b>Miscellaneous</b>"
-msgstr "<b>Çeşitli</b>"
-
 #: ../res/DesktopNotification.glade.h:3
-msgid "<b>Title</b>"
-msgstr "<b>Başlık</b>"
+msgid "Show a \"skip track\" button"
+msgstr "\"Parçayı geç\" butonu göster"
 
 #: ../res/DesktopNotification.glade.h:4
 msgid "Notification timeout:"
 msgstr "Uyarı zaman aşımı:"
 
 #: ../res/DesktopNotification.glade.h:5
-msgid "Show a \"skip track\" button"
-msgstr "\"Parçayı geç\" butonu göster"
-
-#: ../res/DesktopNotification.glade.h:6
 msgid "Time during which the notification is displayed"
 msgstr "Uyarının gösterileceği süre"
 
-#: ../res/DesktopNotification.glade.h:7
+#: ../res/DesktopNotification.glade.h:6
 msgid "seconds"
 msgstr "saniye"
+
+#: ../res/DesktopNotification.glade.h:7
+msgid "<b>Miscellaneous</b>"
+msgstr "<b>Çeşitli</b>"
 
 #: ../res/Equalizer.glade.h:1
 msgid "Preset:"
 msgstr "Öndeğer:"
 
 #: ../res/MainWindow.glade.h:1
+msgid "Play the previous track"
+msgstr "Önceki şarkıyı çal"
+
+#: ../res/MainWindow.glade.h:2
 msgid "Play the first track of the playlist"
 msgstr "Şarkı listesindeki ilk şarkıyı çal"
 
-#: ../res/MainWindow.glade.h:2
+#: ../res/MainWindow.glade.h:3
 msgid "Play the next track"
 msgstr "Sonraki şarkıyı çal"
 
-#: ../res/MainWindow.glade.h:3
-msgid "Play the previous track"
-msgstr "Önceki şarkıyı çal"
+#~ msgid "Export Playlist to file"
+#~ msgstr "Çalma Listesini dosyaya aktar"
+
+#~ msgid "Export Playlist to directory"
+#~ msgstr "Çalma Listesini konuma aktar"

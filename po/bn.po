@@ -6,11 +6,12 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: pogo\n"
-"Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
-"POT-Creation-Date: 2011-08-01 00:17+0200\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2012-02-06 19:55+0100\n"
 "PO-Revision-Date: 2010-11-06 16:31+0000\n"
 "Last-Translator: Aniruddha Adhikary <Unknown>\n"
 "Language-Team: Bengali <bn@li.org>\n"
+"Language: bn\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -65,16 +66,16 @@ msgstr "দৈর্ঘ্য(স্ট্রিং)"
 msgid "Full path to the file"
 msgstr "ফাইলের সম্পূর্ণ প্যাথ"
 
-#: ../src/media/track/__init__.py:147 ../src/media/track/__init__.py:391
+#: ../src/media/track/__init__.py:150 ../src/media/track/__init__.py:409
 msgid "unknown"
 msgstr "অজানা"
 
-#: ../src/media/track/__init__.py:173
+#: ../src/media/track/__init__.py:192
 #, python-format
 msgid "%(album)s  [Disc %(discnum)u]"
 msgstr "%(album)s [ডিস্ক %(discnum)u]"
 
-#: ../src/media/track/__init__.py:180
+#: ../src/media/track/__init__.py:199
 msgid "CDDA Track"
 msgstr "সিডিডিএ ট্র্যাক"
 
@@ -90,7 +91,7 @@ msgstr "মডিউলটি লোড করা সম্ভব হয় নি"
 msgid "Modules"
 msgstr "মডিউলসমূহ"
 
-#: ../src/gui/preferences.py:139 ../src/modules/DesktopNotification.py:218
+#: ../src/gui/preferences.py:139 ../src/modules/DesktopNotification.py:222
 #: ../src/modules/Covers.py:438
 msgid "Description"
 msgstr "বিবরণ"
@@ -100,8 +101,8 @@ msgid ""
 "This window shows the list of available modules. You can enable/disable a "
 "module by checking/unchecking the check box in front of it."
 msgstr ""
-"এই উইন্ডো আপনাকে ব্যবহারোপযোগী মডিউলসমূহের একটি তালিকা দেখাচ্ছে। আপনি সামনের "
-"চেক বক্সে ক্লিক করে চেক/আনচেক করে যেকোন মডিউল কার্যকর/অকার্যকর করতে পারেন।"
+"এই উইন্ডো আপনাকে ব্যবহারোপযোগী মডিউলসমূহের একটি তালিকা দেখাচ্ছে। আপনি সামনের চেক "
+"বক্সে ক্লিক করে চেক/আনচেক করে যেকোন মডিউল কার্যকর/অকার্যকর করতে পারেন।"
 
 #: ../src/gui/preferences.py:142
 msgid "Configuring a Module"
@@ -115,9 +116,8 @@ msgid ""
 "that configuring a module is only possible when it is enabled."
 msgstr ""
 "যখন একটি মডিউল কনফিগার করা যেতে পারে, লাইনের ডানে একটি নির্দিষ্ট আইকন দেখা "
-"যাবে। মডিউল কনফিগার করতে এটি সিলেক্ট করে ডায়ালগ বক্সের নিচে \"পছন্দসমূহ\" "
-"বাটনে ক্লিক করুন। বিঃদ্রঃ শুধুমাত্র মডিউল কার্যকর করা থাকলেই সেটি কনফিগার "
-"করা সম্ভব।"
+"যাবে। মডিউল কনফিগার করতে এটি সিলেক্ট করে ডায়ালগ বক্সের নিচে \"পছন্দসমূহ\" বাটনে "
+"ক্লিক করুন। বিঃদ্রঃ শুধুমাত্র মডিউল কার্যকর করা থাকলেই সেটি কনফিগার করা সম্ভব।"
 
 #: ../src/gui/about.py:40
 msgid "translator-credits"
@@ -141,67 +141,67 @@ msgstr ""
 msgid "Send track information to the Zeitgeist service"
 msgstr "ট্র্যাক তথ্য Zeitgeist সার্ভিসে পাঠাও"
 
-#: ../src/modules/FileExplorer.py:183
+#: ../src/modules/FileExplorer.py:179
 msgid "loading..."
 msgstr "লোড করা হচ্ছে..."
 
-#: ../src/modules/FileExplorer.py:384
+#: ../src/modules/FileExplorer.py:392
 msgid "Append"
 msgstr "সংযুক্ত করুন"
 
-#: ../src/modules/FileExplorer.py:396
+#: ../src/modules/FileExplorer.py:404
 msgid "Open containing folder"
 msgstr ""
 
-#: ../src/modules/FileExplorer.py:420
+#: ../src/modules/FileExplorer.py:428
 msgid "Add music folder"
 msgstr ""
 
-#: ../src/modules/FileExplorer.py:432
+#: ../src/modules/FileExplorer.py:440
 msgid "Hide folder"
 msgstr ""
 
-#: ../src/modules/FileExplorer.py:446
+#: ../src/modules/FileExplorer.py:454
 msgid "Choose a directory"
 msgstr ""
 
-#: ../src/modules/FileExplorer.py:452
+#: ../src/modules/FileExplorer.py:460
 msgid "Invalid Folder"
 msgstr ""
 
-#: ../src/modules/FileExplorer.py:453
+#: ../src/modules/FileExplorer.py:461
 msgid "You cannot add your root or home folder to the music directories"
 msgstr ""
 
-#: ../src/modules/FileExplorer.py:460
+#: ../src/modules/FileExplorer.py:468
 msgid "This path does not exist"
 msgstr "প্যাথটির অস্তিত্ব নেই"
 
-#: ../src/modules/FileExplorer.py:461
+#: ../src/modules/FileExplorer.py:469
 msgid "Please select an existing directory."
 msgstr "অনুগ্রহ করে একটি বাস্তব ডাইরেক্টরী সিলেক্ট করুন।"
 
-#: ../src/modules/FileExplorer.py:559
+#: ../src/modules/FileExplorer.py:567
 msgid "Albums"
 msgstr "এ্যালবামসমূহ"
 
-#: ../src/modules/FileExplorer.py:561
+#: ../src/modules/FileExplorer.py:569
 msgid "Music"
 msgstr "সংগীত"
 
-#: ../src/modules/FileExplorer.py:637
+#: ../src/modules/FileExplorer.py:646
 msgid "Right-click to add music folders"
 msgstr ""
 
-#: ../src/modules/FileExplorer.py:682
+#: ../src/modules/FileExplorer.py:691
 msgid "Searching ..."
 msgstr ""
 
-#: ../src/modules/FileExplorer.py:697
+#: ../src/modules/FileExplorer.py:719
 msgid "No tracks found"
 msgstr ""
 
-#: ../src/modules/FileExplorer.py:699
+#: ../src/modules/FileExplorer.py:721
 msgid "No music folders have been added"
 msgstr ""
 
@@ -211,18 +211,15 @@ msgstr "নিম্নের Python মডিউলটি নেইঃ"
 
 #: ../src/modules/__init__.py:79
 msgid "You must install them if you want to enable this module."
-msgstr ""
-"আপনাকে অবশ্যই এগুলো ইন্সটল করতে হবে যদি আপনি মডিউলটি কার্যকর করতে চান।"
+msgstr "আপনাকে অবশ্যই এগুলো ইন্সটল করতে হবে যদি আপনি মডিউলটি কার্যকর করতে চান।"
 
 #: ../src/modules/__init__.py:266
 msgid "Restart required"
 msgstr "বন্ধ করে পুনরায় চালু করা প্রয়োজন"
 
 #: ../src/modules/__init__.py:267
-msgid ""
-"You must restart the application for this modification to take effect."
-msgstr ""
-"এই পরিবর্তনটি কার্যকর করার জন্য আপনাকে অ্যাপ্লিকেশনটি পুনরায় চালু করতে হবে।"
+msgid "You must restart the application for this modification to take effect."
+msgstr "এই পরিবর্তনটি কার্যকর করার জন্য আপনাকে অ্যাপ্লিকেশনটি পুনরায় চালু করতে হবে।"
 
 #: ../src/modules/CtrlPanel.py:190 ../src/modules/CtrlPanel.py:246
 msgid "Pause the current track"
@@ -244,30 +241,29 @@ msgstr "ডেস্কটপ নোটিফিকেশন"
 msgid "Display a desktop notification on track change"
 msgstr "ট্র্যাক পরিবর্তনে একটি ডেস্কটপ নোটিফিকেশন দেখাও"
 
-#: ../src/modules/DesktopNotification.py:79
-#: ../src/modules/DesktopNotification.py:193
+#: ../src/modules/DesktopNotification.py:83
+#: ../src/modules/DesktopNotification.py:197
 msgid "Skip track"
 msgstr "ট্র্যাক বাদ দাও"
 
-#: ../src/modules/DesktopNotification.py:219
+#: ../src/modules/DesktopNotification.py:223
 msgid ""
 "This module displays a small popup window on your desktop when a new track "
 "starts."
 msgstr ""
-"যখন একটি নতুন ট্র্যাক শুরু হয়, তখন এই মডিউলটি আপনার ডেস্কটপে একটি ছোট পপ-আপ "
-"উইন্ডো দেখায়।"
+"যখন একটি নতুন ট্র্যাক শুরু হয়, তখন এই মডিউলটি আপনার ডেস্কটপে একটি ছোট পপ-আপ উইন্ডো "
+"দেখায়।"
 
-#: ../src/modules/DesktopNotification.py:220
-msgid ""
-"If the Covers module is enabled, the popup also shows the album cover."
+#: ../src/modules/DesktopNotification.py:224
+msgid "If the Covers module is enabled, the popup also shows the album cover."
 msgstr ""
 "যদি \"কভারসমূহ\" মডিউলটি কার্যকর করা থাকে, পপ-আপটি এ্যালবাম কভারটিও দেখায়।"
 
-#: ../src/modules/DesktopNotification.py:221
+#: ../src/modules/DesktopNotification.py:225
 msgid "Customizing the Notification"
 msgstr "নোটিফিকেশনটি কাস্টমাইজ করা"
 
-#: ../src/modules/DesktopNotification.py:222
+#: ../src/modules/DesktopNotification.py:226
 msgid ""
 "You can change the title and the body of the notification to any text you "
 "want. Before displaying the popup window, fields of the form {field} are "
@@ -275,21 +271,21 @@ msgid ""
 "\n"
 msgstr ""
 "আপনি চাইলে নোটিফিকেশনের শিরোনাম এবং বডি টেক্সট পরিবর্তন করতে পারবেন। পপ-আপ "
-"উইন্ডো দেখানোর পূর্বে {field} ফর্মের ফিল্ডগুলো তাদের মান দ্বারা প্রতিস্থাপিত "
-"হয়। ফিল্ডগুলো হলঃ\n"
+"উইন্ডো দেখানোর পূর্বে {field} ফর্মের ফিল্ডগুলো তাদের মান দ্বারা প্রতিস্থাপিত হয়। "
+"ফিল্ডগুলো হলঃ\n"
 "\n"
 
-#: ../src/modules/DesktopNotification.py:225
+#: ../src/modules/DesktopNotification.py:229
 msgid "Markup"
 msgstr "মার্কআপ"
 
-#: ../src/modules/DesktopNotification.py:226
+#: ../src/modules/DesktopNotification.py:230
 msgid ""
 "You can use the Pango markup language to format the text. More information "
 "on that language is available on the following web page:"
 msgstr ""
-"আপনি লেখা পরিবর্তন করতে Pango মার্কআপ ল্যাঙ্গুয়েজ ব্যবহার করতে পারবেন। "
-"নিম্নের ওয়েবসাইটটিতে ল্যাঙ্গুয়েজটি সম্পর্কে বিস্তারিত তথ্য আছেঃ"
+"আপনি লেখা পরিবর্তন করতে Pango মার্কআপ ল্যাঙ্গুয়েজ ব্যবহার করতে পারবেন। নিম্নের "
+"ওয়েবসাইটটিতে ল্যাঙ্গুয়েজটি সম্পর্কে বিস্তারিত তথ্য আছেঃ"
 
 #: ../src/modules/StatusbarTitlebar.py:48
 msgid "[paused]"
@@ -324,9 +320,9 @@ msgid ""
 "track. When specifying filenames, you do not need to provide file "
 "extensions, supported file formats (%s) are automatically used."
 msgstr ""
-"একটি ব্যবহারকারীর কভার হল একটি ছবি যা বর্তমান ট্র্যাকের ডিরেক্টরিতে রাখা "
-"আছে। যখন ফাইলসময়হের নাম উল্লেখ করা হয়, আপনার ফাইল এক্সটেনশন দেবার প্রয়োজন "
-"নেই, সাপোর্টকৃত ফাইল ফরম্যাটসমূহ (%s) স্বয়ংক্রিয়ভাবে ব্যবহৃত হয়।"
+"একটি ব্যবহারকারীর কভার হল একটি ছবি যা বর্তমান ট্র্যাকের ডিরেক্টরিতে রাখা আছে। যখন "
+"ফাইলসময়হের নাম উল্লেখ করা হয়, আপনার ফাইল এক্সটেনশন দেবার প্রয়োজন নেই, সাপোর্টকৃত "
+"ফাইল ফরম্যাটসমূহ (%s) স্বয়ংক্রিয়ভাবে ব্যবহৃত হয়।"
 
 #: ../src/modules/Covers.py:446
 msgid "Internet Covers"
@@ -339,30 +335,22 @@ msgid ""
 "case, if a user cover exists for the current track, it is used. If there is "
 "none, the cover is downloaded."
 msgstr ""
-"বর্তমান ট্রাকের ওপর ভিত্তি করে কভারসমূহ ইন্টারনেট থেকে ডাউনলোড করা যেতে "
-"পারে। আপনি সবসময় ব্যবহারকারীর কভার ইন্টারনেট থেকে প্রাপ্ত কভারের পরিবর্তে "
-"ব্যবহার করতে পারেন। এই ক্ষেত্রে, যদি বর্তমান ট্র্যাকে ব্যবহারকারীর কভার থেকে "
-"থাকে, এটি ব্যবহৃত হয়। অন্যথায় কভার ডাউনলোড করা হয়।"
+"বর্তমান ট্রাকের ওপর ভিত্তি করে কভারসমূহ ইন্টারনেট থেকে ডাউনলোড করা যেতে পারে। "
+"আপনি সবসময় ব্যবহারকারীর কভার ইন্টারনেট থেকে প্রাপ্ত কভারের পরিবর্তে ব্যবহার করতে "
+"পারেন। এই ক্ষেত্রে, যদি বর্তমান ট্র্যাকে ব্যবহারকারীর কভার থেকে থাকে, এটি ব্যবহৃত "
+"হয়। অন্যথায় কভার ডাউনলোড করা হয়।"
 
-#: ../src/modules/Tracktree.py:387
+#: ../src/modules/Tracktree.py:389 ../src/modules/Tracktree.py:464
 msgid "Export playlist to file"
 msgstr ""
 
-#: ../src/modules/Tracktree.py:395
+#: ../src/modules/Tracktree.py:397 ../src/modules/Tracktree.py:469
 msgid "Export playlist to directory"
 msgstr ""
 
-#: ../src/modules/Tracktree.py:452
+#: ../src/modules/Tracktree.py:454
 msgid "Clear Playlist"
 msgstr "প্লেলিস্ট পরিষ্কার কর"
-
-#: ../src/modules/Tracktree.py:462
-msgid "Export Playlist to file"
-msgstr ""
-
-#: ../src/modules/Tracktree.py:467
-msgid "Export Playlist to directory"
-msgstr ""
 
 #: ../src/modules/Equalizer.py:24
 msgid "Equalizer"
@@ -414,77 +402,77 @@ msgid "Unknown Album Artist"
 msgstr "অজানা এ্যালবাম শিল্পী"
 
 #: ../res/Covers.glade.h:1
-msgid "<b>Internet Covers</b>"
-msgstr "<b>ইন্টারনেট থেকে প্রাপ্ত কভারসমূহ</b>"
-
-#: ../res/Covers.glade.h:2
-msgid "<b>User Covers</b>"
-msgstr "<b>ব্যবহারকারীর কভারসমূহ</b>"
-
-#: ../res/Covers.glade.h:3
-msgid "Always prefer user covers"
-msgstr "সবসময় ব্যবহারকারীর কভারসমুহকে প্রাধান্য দেবে"
-
-#: ../res/Covers.glade.h:4
-msgid "Don't download covers when there is a user one"
-msgstr "ব্যবহারকারীর কভার থাকলে কভারসমুহ ডাউনলোড করো না"
-
-#: ../res/Covers.glade.h:5
-msgid "Download covers"
-msgstr "কভারসমুহ ডাউনলোড কর"
-
-#: ../res/Covers.glade.h:6
-msgid "Filenames to look for (e.g., folder, cover)"
-msgstr "খোঁজার জন্য ফাইলের নাম (যেমনঃ folder, cover)"
-
-#: ../res/Covers.glade.h:7
 msgid "Filenames:"
 msgstr "ফাইলসমূহের নামঃ"
 
-#: ../res/Covers.glade.h:8
+#: ../res/Covers.glade.h:2
+msgid "Filenames to look for (e.g., folder, cover)"
+msgstr "খোঁজার জন্য ফাইলের নাম (যেমনঃ folder, cover)"
+
+#: ../res/Covers.glade.h:3
+msgid "<b>User Covers</b>"
+msgstr "<b>ব্যবহারকারীর কভারসমূহ</b>"
+
+#: ../res/Covers.glade.h:4
+msgid "Download covers"
+msgstr "কভারসমুহ ডাউনলোড কর"
+
+#: ../res/Covers.glade.h:5
 msgid "Try to download covers from the Internet"
 msgstr "ইন্টারনেট থেকে কভারসমূহ ডাউনলোড করার চেষ্টা কর"
 
+#: ../res/Covers.glade.h:6
+msgid "Always prefer user covers"
+msgstr "সবসময় ব্যবহারকারীর কভারসমুহকে প্রাধান্য দেবে"
+
+#: ../res/Covers.glade.h:7
+msgid "Don't download covers when there is a user one"
+msgstr "ব্যবহারকারীর কভার থাকলে কভারসমুহ ডাউনলোড করো না"
+
+#: ../res/Covers.glade.h:8
+msgid "<b>Internet Covers</b>"
+msgstr "<b>ইন্টারনেট থেকে প্রাপ্ত কভারসমূহ</b>"
+
 #: ../res/DesktopNotification.glade.h:1
+msgid "<b>Title</b>"
+msgstr "<b>শিরোনাম</b>"
+
+#: ../res/DesktopNotification.glade.h:2
 msgid "<b>Body</b>"
 msgstr "<b>বডি</b>"
 
-#: ../res/DesktopNotification.glade.h:2
-msgid "<b>Miscellaneous</b>"
-msgstr "<b>বিবিধ</b>"
-
 #: ../res/DesktopNotification.glade.h:3
-msgid "<b>Title</b>"
-msgstr "<b>শিরোনাম</b>"
+msgid "Show a \"skip track\" button"
+msgstr "একটি ট্র্যাক বাদ দেয়ার বাটন দেখাও"
 
 #: ../res/DesktopNotification.glade.h:4
 msgid "Notification timeout:"
 msgstr "নোটিফিকেশনের টাইম-আউটঃ"
 
 #: ../res/DesktopNotification.glade.h:5
-msgid "Show a \"skip track\" button"
-msgstr "একটি ট্র্যাক বাদ দেয়ার বাটন দেখাও"
-
-#: ../res/DesktopNotification.glade.h:6
 msgid "Time during which the notification is displayed"
 msgstr "যতক্ষণ ধরে নোটিফিকেশনটি দেখানো হবে"
 
-#: ../res/DesktopNotification.glade.h:7
+#: ../res/DesktopNotification.glade.h:6
 msgid "seconds"
 msgstr "সেকেন্ড"
+
+#: ../res/DesktopNotification.glade.h:7
+msgid "<b>Miscellaneous</b>"
+msgstr "<b>বিবিধ</b>"
 
 #: ../res/Equalizer.glade.h:1
 msgid "Preset:"
 msgstr "প্রিসেটঃ"
 
 #: ../res/MainWindow.glade.h:1
+msgid "Play the previous track"
+msgstr "পূর্ববর্তী ট্র্যাকটি প্লে কর"
+
+#: ../res/MainWindow.glade.h:2
 msgid "Play the first track of the playlist"
 msgstr "প্লেলিস্টের প্রথম ট্র্যাকটি প্লে কর"
 
-#: ../res/MainWindow.glade.h:2
+#: ../res/MainWindow.glade.h:3
 msgid "Play the next track"
 msgstr "পরবর্তী ট্র্যাকটি প্লে কর"
-
-#: ../res/MainWindow.glade.h:3
-msgid "Play the previous track"
-msgstr "পূর্ববর্তী ট্র্যাকটি প্লে কর"
