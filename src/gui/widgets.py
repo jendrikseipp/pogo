@@ -100,6 +100,9 @@ class TrackTreeView(ExtTreeView):
         """ Remove the given row """
         self.store.remove(iter)
 
+    def select_synchronously(self, iter):
+        self.get_selection().select_iter(iter)
+
     def getSelectedRows(self):
         sel_paths = self.selection.get_selected_rows()[1]
         return [self.store.get_iter(path) for path in sel_paths]
@@ -147,6 +150,12 @@ class TrackTreeView(ExtTreeView):
 
     def scroll(self, iter):
         self.scroll_to_cell(self.store.get_path(iter))
+
+    def scroll_to_first_selection(self):
+        iter = self.getFirstSelectedRow()
+        if not iter:
+            return
+        self.scroll(iter)
 
     def expand(self, iter):
         self.expand_to_path(self.store.get_path(iter))

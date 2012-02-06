@@ -408,6 +408,11 @@ class Track:
         title = self.getTitle().lower()
         return 'unknown' in title or _('unknown') in title
 
+    def get_search_text(self):
+        return '|||'.join([self.getFilePath(), self.tags.get(TAG_TIT, ''),
+                           self.tags.get(TAG_ART, ''), self.getExtendedAlbum(),
+                           str(self.getLength()), str(self.tags.get(TAG_NUM, ''))]).lower()
+
     def __repr__(self):
         return '<Track %s>' % self.get_window_title()
 

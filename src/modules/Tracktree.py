@@ -70,10 +70,11 @@ class Tracktree(modules.Module):
             consts.MSG_CMD_TRACKLIST_SET:     self.set,
             consts.MSG_CMD_TRACKLIST_CLR:     lambda: self.set(None, None),
             consts.MSG_EVT_TRACK_ENDED_OK:    lambda: self.onTrackEnded(False),
-            #consts.MSG_CMD_TRACKLIST_REPEAT:  self.setRepeat,
             consts.MSG_EVT_TRACK_ENDED_ERROR: lambda: self.onTrackEnded(True),
-            #consts.MSG_CMD_TRACKLIST_SHUFFLE: self.shuffleTracklist,
-            consts.MSG_CMD_FILE_EXPLORER_DRAG_BEGIN: self.onDragBegin}
+            consts.MSG_CMD_FILE_EXPLORER_DRAG_BEGIN: self.onDragBegin,
+            consts.MSG_EVT_SEARCH_START:      self.onSearchStart,
+            consts.MSG_EVT_SEARCH_RESET:      self.onSearchReset,
+            }
 
         modules.Module.__init__(self, handlers)
 
@@ -617,6 +618,32 @@ class Tracktree(modules.Module):
         """ Switch between paused and unpaused """
         if self.tree.hasMark():
             self.tree.setItem(self.tree.getMark(), ROW_ICO, icon)
+
+
+    def highlight(self, query, root=None):
+        """Select all rows (and their parents) that contain all parts of *query*."""
+        for iter in self.tree.iter_children(root):
+            track = self.tree.getTrack(iter)
+            if track:
+                if all(part in track.get_search_text() for part in query):
+                    self.tree.select(iter)
+                    # Highlight all parents as well
+                    for parent in self.tree.get_all_parents(iter):
+                        self.tree.select_synchronously(parent)
+            else:
+                dirname = self.tree.getLabel(iter).replace('<b>', '').replace('</b>', '')
+                if all(part in dirname.lower() for part in query):
+                    self.tree.select_synchronously(iter)
+                self.highlight(query, iter)
+
+
+    def onSearchStart(self, query):
+        query = [part.strip().lower() for part in query.split()]
+        gobject.idle_add(self.highlight, query)
+        gobject.idle_add(self.tree.scroll_to_first_selection)
+
+    def onSearchReset(self):
+        self.tree.selection.unselect_all()
 
 
     def onPaused(self):

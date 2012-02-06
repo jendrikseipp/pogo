@@ -2,7 +2,7 @@
 
 0.x:
 X Show search results immediately after they're found for each music directory
-O Search tracks with locate and add all results before searching with find
+X Search in playlist as well and highlight results
 O Use new logo by Kevin Macphail
 O Stop after current album / track (Playlist context menu entry)
 O Remember last played track (LP:684383)
@@ -10,11 +10,9 @@ O Shuffle
 O Repeat
 O Playlist loading (Only add tracks in playlist not added anyways)
 O Add Zeitgeist module (check rhythmbox and banshee first)
-O Sound Indicator (https://github.com/sunng87/Exaile-Soundmenu-Indicator,
-  http://theravingrick.blogspot.com/2011/02/easily-support-sound-menu-in-python.html)
-O Playlist filtering
-O Check if using nautilus uri:///path/to/file works and selects a file
-  Only works in GTK 3.1 probably
+O Sound Indicator for the Ubuntu Sound Menu
+  (https://github.com/sunng87/Exaile-Soundmenu-Indicator,
+   http://theravingrick.blogspot.com/2011/02/easily-support-sound-menu-in-python.html)
 O Convert GUI from libglade to gtkbuilder (apply fix from decibel)
 
 
@@ -30,3 +28,7 @@ O Lyrics?
 - Ellipsize names (Looks odd)
 - Play audio CDs (Rip and play is nicer anyways)
 - Use multiprocessing for searching (Too error prone)
+- Search tracks with locate and add all results before searching with find
+  (Search is already fast enough)
+- Check if using nautilus uri:///path/to/file works and selects a file
+  Only works in GTK 3.1 probably (does not work in GTK 3.3)
