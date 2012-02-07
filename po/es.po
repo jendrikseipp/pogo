@@ -11,12 +11,11 @@ msgstr ""
 "PO-Revision-Date: 2012-01-30 07:08+0000\n"
 "Last-Translator: Fitoschido <fitoschido@gmail.com>\n"
 "Language-Team: Spanish <es@li.org>\n"
-"Language: es\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2012-01-31 05:27+0000\n"
-"X-Generator: Launchpad (build 14734)\n"
+"X-Launchpad-Export-Date: 2012-02-07 05:03+0000\n"
+"X-Generator: Launchpad (build 14747)\n"
 
 #: ../src/media/track/__init__.py:52
 msgid "Track number"
@@ -101,9 +100,9 @@ msgid ""
 "This window shows the list of available modules. You can enable/disable a "
 "module by checking/unchecking the check box in front of it."
 msgstr ""
-"Esta ventana muestra la lista de módulos disponibles. Puede activar/"
-"desactivar un módulo marcando/desmarcando la casilla de verificación delante "
-"de él."
+"Esta ventana muestra la lista de módulos disponibles. Puede "
+"activar/desactivar un módulo marcando/desmarcando la casilla de verificación "
+"delante de él."
 
 #: ../src/gui/preferences.py:142
 msgid "Configuring a Module"
@@ -128,7 +127,6 @@ msgstr ""
 "Launchpad Contributions:\n"
 "  A. Belén López Garello https://launchpad.net/~belen.lg\n"
 "  Carlos Albornoz https://launchpad.net/~caralbornozc\n"
-"  Fitoschido https://launchpad.net/~fitoschido\n"
 "  Gerardo Zamudio https://launchpad.net/~gerardo.zamudio\n"
 "  Linux Lover https://launchpad.net/~obake"
 
@@ -226,8 +224,10 @@ msgid "Restart required"
 msgstr "Es necesario reiniciar"
 
 #: ../src/modules/__init__.py:267
-msgid "You must restart the application for this modification to take effect."
-msgstr "Debe reiniciar la aplicación para que esta modificación tenga efecto."
+msgid ""
+"You must restart the application for this modification to take effect."
+msgstr ""
+"Debe reiniciar la aplicación para que esta modificación tenga efecto."
 
 #: ../src/modules/CtrlPanel.py:190 ../src/modules/CtrlPanel.py:246
 msgid "Pause the current track"
@@ -263,7 +263,8 @@ msgstr ""
 "nueva."
 
 #: ../src/modules/DesktopNotification.py:224
-msgid "If the Covers module is enabled, the popup also shows the album cover."
+msgid ""
+"If the Covers module is enabled, the popup also shows the album cover."
 msgstr ""
 "Si el módulo de carátulas está habilitado, la ventana emergente también "
 "muestra la carátula del álbum."
@@ -487,9 +488,3 @@ msgstr "Reproducir la primera pista de la lista de reproducción"
 #: ../res/MainWindow.glade.h:3
 msgid "Play the next track"
 msgstr "Reproducir la pista siguiente"
-
-#~ msgid "Export Playlist to file"
-#~ msgstr "Exportar lista de reprod. a archivo"
-
-#~ msgid "Export Playlist to directory"
-#~ msgstr "Exportar lista de reprod. a directorio"
