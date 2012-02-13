@@ -3,13 +3,11 @@
 0.x:
 X Show search results immediately after they're found for each music directory
 X Search in playlist as well and highlight results
+X Add Zeitgeist module that logs played albums
 O Use new logo by Kevin Macphail
 O Stop after current album / track (Playlist context menu entry)
-O Remember last played track (LP:684383)
-O Shuffle
-O Repeat
-O Playlist loading (Only add tracks in playlist not added anyways)
-O Add Zeitgeist module (check rhythmbox and banshee first)
+O Remember last played track at restart (LP:684383)
+O Playlist loading (Only add tracks in playlist not added as normal files at the same time)
 O Sound Indicator for the Ubuntu Sound Menu
   (https://github.com/sunng87/Exaile-Soundmenu-Indicator,
    http://theravingrick.blogspot.com/2011/02/easily-support-sound-menu-in-python.html)
@@ -17,10 +15,11 @@ O Convert GUI from libglade to gtkbuilder (apply fix from decibel)
 
 
 === Features that will MAYBE be implemented ===
-O Enqueue?
-O Party View (Fullscreen)?
-O Scrobbling Support (using decibel code)?
-O Lyrics?
+O Enqueue
+O Party View (Fullscreen)
+O Scrobbling Support (using decibel code)
+O Shuffle
+O Repeat
 
 
 === Features that will NOT be implemented ===
@@ -32,3 +31,5 @@ O Lyrics?
   (Search is already fast enough)
 - Check if using nautilus uri:///path/to/file works and selects a file
   Only works in GTK 3.1 probably (does not work in GTK 3.3)
+- Crossfading (too tedious in gstreamer)
+- Lyrics (KISS)
