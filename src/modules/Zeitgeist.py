@@ -17,13 +17,15 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301 USA
 
-import modules, traceback
+from gettext import gettext as _
+import time
+import traceback
 
-from tools     import consts
-from gettext   import gettext as _
+import modules
+from tools import consts
 from tools.log import logger
 
-MOD_INFO = ('Zeitgeist', 'Zeitgeist', _('Send track information to the Zeitgeist service'), ['zeitgeist'], False, False)
+MOD_INFO = ('Zeitgeist', 'Zeitgeist', _('Send track information to the Zeitgeist service'), ['zeitgeist'], True, False)
 
 
 class Zeitgeist(modules.ThreadedModule):
@@ -51,8 +53,12 @@ class Zeitgeist(modules.ThreadedModule):
 
         try:
             from zeitgeist.client import ZeitgeistClient
+            from zeitgeist.datamodel import Event
 
             self.client = ZeitgeistClient()
+            if self.client.get_version() >= [0, 3, 2, 999]:
+                self.client.register_data_source("Pogo", "Pogo", "Play your music",
+                            [Event.new_for_values(actor="application://pogo.desktop")])
         except:
             logger.info('[%s] Could not create Zeitgeist client\n\n%s' % (MOD_INFO[modules.MODINFO_NAME], traceback.format_exc()))
 
@@ -64,45 +70,64 @@ class Zeitgeist(modules.ThreadedModule):
 
     def onNewTrack(self, track):
         """ Send track information to Zeitgeist """
+        if self.client is None:
+            return
+
+        from zeitgeist.datamodel import Interpretation
+
+        if hasattr(Interpretation, 'ACCESS_EVENT'):
+            event_type = Interpretation.ACCESS_EVENT
+        else:
+            event_type = Interpretation.OPEN_EVENT
+
+        self.send_to_zeitgeist(track, event_type)
+
+
+    def send_to_zeitgeist(self, track, event_type):
+        """
+        Other players (e.g. Rhythmbox) log the playing of individual files, but
+        we want to log albums.
+
+        Maybe it would be better to log individual files, but then we would have
+        to distinguish between Manifestation.USER_ACTIVITY and
+        Manifestation.SCHEDULED_ACTIVITY.
+
+        Another possible addition would be logging Interpretation.LEAVE_EVENT.
+        """
         import mimetypes, os.path
 
         from zeitgeist.datamodel import Event, Subject, Interpretation, Manifestation
 
         mime, encoding = mimetypes.guess_type(track.getFilePath(), strict=False)
-        
+
         title = track.getTitle()
         album = track.getAlbum()
         artist = track.getArtist()
-        
+        uri = track.getURI()
+        origin = os.path.dirname(uri)
+
         # Handle "unknown" tags
         if 'unknown' in title.lower():
             title = track.get_basename()
         if 'unknown' in album.lower():
             album = ''
         if 'unknown' in artist.lower():
-            album = ''
-            
-        parts = [artist, album]
-        text = ' - '.join([part for part in parts if part])
+            artist = ''
 
         subject = Subject.new_for_values(
-            uri            = os.path.dirname(track.getURI()),
-            #text           = track.getTitle() + ' - ' + track.getArtist() + ' - ' + track.getExtendedAlbum(),
-            text           = text,
+            uri            = origin,
+            text           = ' - '.join([part for part in [artist, album] if part]),
             mimetype       = mime,
             manifestation  = unicode(Manifestation.FILE_DATA_OBJECT),
             interpretation = unicode(Interpretation.AUDIO),
+            origin         = origin,
         )
-
-        if hasattr(Interpretation, 'ACCESS_EVENT'):
-            eventType = Interpretation.ACCESS_EVENT
-        else:
-            eventType = Interpretation.OPEN_EVENT
 
         event = Event.new_for_values(
             actor          = "application://pogo.desktop",
             subjects       = [subject,],
-            interpretation = eventType,
+            interpretation = unicode(event_type),
+            timestamp      = int(time.time()*1000),
         )
 
         self.client.insert_event(event)
