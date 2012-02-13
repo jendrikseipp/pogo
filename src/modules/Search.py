@@ -18,6 +18,7 @@
 
 import os
 import subprocess
+import sys
 import logging
 from gettext import gettext as _
 
@@ -181,8 +182,11 @@ class Search(modules.ThreadedModule):
 
         self.searches = []
 
-        # Cache the music folders regularly for faster searches
-        gobject.timeout_add_seconds(100, self.cache_dirs, True)
+        self.allow_caching = not '--multiple-instances' in sys.argv
+
+        if self.allow_caching:
+            # Cache the music folders regularly for faster searches
+            gobject.timeout_add_seconds(100, self.cache_dirs, True)
 
 
     def onSearch(self, query):
@@ -211,8 +215,9 @@ class Search(modules.ThreadedModule):
 
     def onPathsChanged(self, paths):
         self.paths = paths
-        # Cache the new paths once
-        gobject.timeout_add_seconds(5, self.cache_dirs, False)
+        if self.allow_caching:
+            # Cache the new paths once
+            gobject.timeout_add_seconds(5, self.cache_dirs, False)
 
 
     #------- GTK handlers ----------------
