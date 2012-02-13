@@ -100,10 +100,6 @@ class Tracktree(modules.Module):
 
     def restoreTreeDump(self, dump, parent=None):
         """ Recursively restore the dump under the given parent (None for the root of the tree) """
-        if not type(dump) == list:
-            # This dump is from version 0.1 where we saved the TrackDir
-            return
-
         for item in dump:
             (name, track) = item[0]
 
@@ -117,16 +113,6 @@ class Tracktree(modules.Module):
                         # We must expand the row before adding the real children,
                         # but this works only if there is already at least one child
                         self.restoreTreeDump(item[1], newNode)
-
-
-    def getTracks(self, rows):
-        ## Unused
-        tracks = []
-        for row in rows:
-            track = self.tree.getTrack(row)
-            if track:
-                tracks.append(track)
-        return tracks
 
 
     def getTrackDir(self, root=None):
