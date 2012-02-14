@@ -173,11 +173,11 @@ class FileExplorer(modules.Module):
             If 'path' is None, use the current selection
         """
         if path is None:
-            tracks = media.getTracks([row[ROW_FULLPATH] for row in self.tree.getSelectedRows()])
+            track_paths = [row[ROW_FULLPATH] for row in self.tree.getSelectedRows()]
         else:
-            tracks = media.getTracks([self.tree.getRow(path)[ROW_FULLPATH]])
+            track_paths = [self.tree.getRow(path)[ROW_FULLPATH]]
 
-        modules.postMsg(consts.MSG_CMD_TRACKLIST_ADD, {'tracks': tracks, 'playNow': True})
+        modules.postMsg(consts.MSG_EVT_LOAD_TRACKS, {'paths': track_paths})
 
 
     # --== Tree management ==--
