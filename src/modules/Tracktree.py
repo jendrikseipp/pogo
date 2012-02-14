@@ -115,6 +115,14 @@ class Tracktree(modules.Module):
                         self.restoreTreeDump(item[1], newNode)
 
 
+    def select_last_played_track(self):
+        last_path = prefs.get(__name__, 'last-played-track', None)
+        if last_path:
+            parent_path = (last_path[0],)
+            gobject.idle_add(self.tree.scroll_to_cell, parent_path)
+            self.tree.get_selection().select_path(parent_path)
+
+
     def getTrackDir(self, root=None):
         flat = False if root else True
         name = self.tree.getLabel(root) if root else 'playtree'
@@ -485,6 +493,13 @@ class Tracktree(modules.Module):
 
 
     def save_track_tree(self):
+        # Save playing track
+        if self.tree.hasMark():
+            last_path = self.tree.mark.get_path()
+        else:
+            last_path = None
+        prefs.set(__name__, 'last-played-track', last_path)
+
         dump = self.getTreeDump()
         logging.info('Saving playlist')
         pickleSave(self.savedPlaylist, dump)
@@ -550,6 +565,7 @@ class Tracktree(modules.Module):
                 self.restoreTreeDump(dump)
                 log.logger.info('[%s] Restored playlist' % MOD_INFO[modules.MODINFO_NAME])
                 self.tree.collapse_all()
+                self.select_last_played_track()
                 self.onListModified()
 
         # Automatically save the content at regular intervals

@@ -319,7 +319,7 @@ class TrackTreeView(ExtTreeView):
 
     def getMark(self):
         """ Return the iter of the marked row """
-        if self.mark is None or not self.mark.valid():
+        if not self.hasMark():
             return None
         return self.store.get_iter(self.mark.get_path())
 

@@ -156,6 +156,17 @@ class FileExplorer(modules.Module):
         self.music_paths = self.get_music_paths_from_tree()
 
 
+    def restore_tree(self):
+        self.tree.handler_block_by_func(self.onRowExpanded)
+        self.restoreTreeDump(self.treeState['tree-state'])
+        self.tree.handler_unblock_by_func(self.onRowExpanded)
+        idle_add(self.scrolled.get_vscrollbar().set_value, self.treeState['vscrollbar-pos'])
+        idle_add(self.scrolled.get_hscrollbar().set_value, self.treeState['hscrollbar-pos'])
+        idle_add(self.tree.selectPaths, self.treeState['selected-paths'])
+        idle_add(self.refresh)
+        self.set_info_text()
+
+
     def play(self, path=None):
         """
             Replace/extend the tracklist
@@ -521,17 +532,6 @@ class FileExplorer(modules.Module):
 
     def _is_separator(self, model, iter):
         return model[iter][ROW_NAME] is None
-
-
-    def restore_tree(self):
-        self.tree.handler_block_by_func(self.onRowExpanded)
-        self.restoreTreeDump(self.treeState['tree-state'])
-        self.tree.handler_unblock_by_func(self.onRowExpanded)
-        idle_add(self.scrolled.get_vscrollbar().set_value, self.treeState['vscrollbar-pos'])
-        idle_add(self.scrolled.get_hscrollbar().set_value, self.treeState['hscrollbar-pos'])
-        idle_add(self.tree.selectPaths, self.treeState['selected-paths'])
-        idle_add(self.refresh)
-        self.set_info_text()
 
 
     def _get_xdg_music_dir(self):
