@@ -8,15 +8,15 @@ msgstr ""
 "Project-Id-Version: pogo\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2012-02-06 19:55+0100\n"
-"PO-Revision-Date: 2010-11-09 15:37+0000\n"
-"Last-Translator: David Bengtsson <Unknown>\n"
+"PO-Revision-Date: 2012-02-18 23:12+0000\n"
+"Last-Translator: Lars Jarlvik <Unknown>\n"
 "Language-Team: Launchpad Swedish Translators <lp-l10n-"
 "sv@lists.launchpad.net>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2012-02-07 05:03+0000\n"
-"X-Generator: Launchpad (build 14747)\n"
+"X-Launchpad-Export-Date: 2012-02-19 06:16+0000\n"
+"X-Generator: Launchpad (build 14814)\n"
 "X-Poedit-Language: Swedish\n"
 
 #: ../src/media/track/__init__.py:52
@@ -127,7 +127,8 @@ msgstr ""
 msgid "translator-credits"
 msgstr ""
 "Launchpad Contributions:\n"
-"  David Bengtsson https://launchpad.net/~jstfaking"
+"  David Bengtsson https://launchpad.net/~jstfaking\n"
+"  Lars Jarlvik https://launchpad.net/~lars-jarlvik"
 
 #: ../src/gui/about.py:44
 msgid "Developer:"
@@ -171,7 +172,7 @@ msgstr "Välj en katalog"
 
 #: ../src/modules/FileExplorer.py:460
 msgid "Invalid Folder"
-msgstr ""
+msgstr "Ogiltig mapp"
 
 #: ../src/modules/FileExplorer.py:461
 msgid "You cannot add your root or home folder to the music directories"
@@ -195,7 +196,7 @@ msgstr "Musik"
 
 #: ../src/modules/FileExplorer.py:646
 msgid "Right-click to add music folders"
-msgstr ""
+msgstr "Högerklicka för att lägga till musik-mappar"
 
 #: ../src/modules/FileExplorer.py:691
 msgid "Searching ..."
