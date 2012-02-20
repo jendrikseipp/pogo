@@ -8,15 +8,15 @@ msgstr ""
 "Project-Id-Version: pogo\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2012-02-06 19:55+0100\n"
-"PO-Revision-Date: 2012-02-18 23:12+0000\n"
-"Last-Translator: Lars Jarlvik <Unknown>\n"
+"PO-Revision-Date: 2012-02-19 07:30+0000\n"
+"Last-Translator: Rikard Edgren <Unknown>\n"
 "Language-Team: Launchpad Swedish Translators <lp-l10n-"
 "sv@lists.launchpad.net>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2012-02-19 06:16+0000\n"
-"X-Generator: Launchpad (build 14814)\n"
+"X-Launchpad-Export-Date: 2012-02-20 05:52+0000\n"
+"X-Generator: Launchpad (build 14833)\n"
 "X-Poedit-Language: Swedish\n"
 
 #: ../src/media/track/__init__.py:52
@@ -128,7 +128,8 @@ msgid "translator-credits"
 msgstr ""
 "Launchpad Contributions:\n"
 "  David Bengtsson https://launchpad.net/~jstfaking\n"
-"  Lars Jarlvik https://launchpad.net/~lars-jarlvik"
+"  Lars Jarlvik https://launchpad.net/~lars-jarlvik\n"
+"  Rikard Edgren https://launchpad.net/~rikard-edgren"
 
 #: ../src/gui/about.py:44
 msgid "Developer:"
@@ -177,6 +178,7 @@ msgstr "Ogiltig mapp"
 #: ../src/modules/FileExplorer.py:461
 msgid "You cannot add your root or home folder to the music directories"
 msgstr ""
+"Du kan inte lägga till din rot- eller hemkatalog till musikkatalogerna"
 
 #: ../src/modules/FileExplorer.py:468
 msgid "This path does not exist"
@@ -208,7 +210,7 @@ msgstr "Inga spår hittades"
 
 #: ../src/modules/FileExplorer.py:721
 msgid "No music folders have been added"
-msgstr ""
+msgstr "Inga musik-kataloger har lagts till"
 
 #: ../src/modules/__init__.py:75
 msgid "The following Python modules are not available:"
@@ -351,11 +353,11 @@ msgstr ""
 
 #: ../src/modules/Tracktree.py:389 ../src/modules/Tracktree.py:464
 msgid "Export playlist to file"
-msgstr ""
+msgstr "Exportera spellista till fil"
 
 #: ../src/modules/Tracktree.py:397 ../src/modules/Tracktree.py:469
 msgid "Export playlist to directory"
-msgstr ""
+msgstr "Exportera spellista till katalog"
 
 #: ../src/modules/Tracktree.py:454
 msgid "Clear Playlist"
