@@ -127,7 +127,7 @@ class Zeitgeist(modules.ThreadedModule):
             actor          = "application://pogo.desktop",
             subjects       = [subject,],
             interpretation = unicode(event_type),
-            timestamp      = int(time.time()*1000),
+            timestamp      = int(time.time() * 1000),
         )
 
         self.client.insert_event(event)

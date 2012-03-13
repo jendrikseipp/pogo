@@ -230,28 +230,3 @@ def getTracks(filenames, sortByFilename=True):
             tracks.tracks.append(track)
 
     return tracks
-
-
-
-if __name__ == '__main__':
-    base_dir = os.path.abspath(os.path.join(os.path.abspath(__file__), '../../'))
-    sys.path.insert(0, base_dir)
-
-    dirs = ['/home/jendrik/tmp/Horses'] * 50
-
-    dir = '/home/jendrik/tmp/Horses'
-    tracks = scanPaths(tools.listDir(dir))
-    for key, value in sorted(tracks.iteritems()):
-        print key
-        print value
-        print
-
-    tracks = getTracks(['/home/jendrik/tmp/Horses'])
-    print tracks
-
-    sys.exit()
-
-    import timeit
-    t1 = timeit.Timer("getTracks(dirs)",
-                    'from __main__ import getTracks, dirs')
-    print t1.timeit(1000)

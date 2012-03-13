@@ -46,7 +46,6 @@ class Search(modules.ThreadedModule):
     def __init__(self):
         """ Constructor """
         handlers = {
-                        #consts.MSG_EVT_MOD_LOADED:         self.onModLoaded,
                         consts.MSG_EVT_APP_STARTED:         self.onAppStarted,
                         consts.MSG_EVT_SEARCH_START:        self.onSearch,
                         consts.MSG_EVT_MUSIC_PATHS_CHANGED: self.onPathsChanged,
