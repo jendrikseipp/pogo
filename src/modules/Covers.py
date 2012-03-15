@@ -44,8 +44,6 @@ USER_AGENT = 'Mozilla/5.0 (X11; U; Linux i686; en-US; rv:1.9.0.1) Gecko/20080728
 # Constants for thumbnails
 THUMBNAIL_WIDTH   = 100  # Width allocated to thumbnails in the model
 THUMBNAIL_HEIGHT  = 100  # Height allocated to thumbnails in the model
-THUMBNAIL_OFFSETX =  11  # X-offset to render the thumbnail in the model
-THUMBNAIL_OFFSETY =   3  # Y-offset to render the thumbnail in the model
 
 # Constants for full size covers
 FULL_SIZE_COVER_WIDTH  = 300
@@ -58,10 +56,6 @@ ACCEPTED_FILE_FORMATS = {'.jpg': None, '.jpeg': None, '.png': None, '.gif': None
 PREFS_DFT_DOWNLOAD_COVERS      = True
 PREFS_DFT_PREFER_USER_COVERS   = True
 PREFS_DFT_USER_COVER_FILENAMES = ['folder', 'cover', 'art', 'front', '*']
-
-# Images for thumbnails
-THUMBNAIL_GLOSS = os.path.join(consts.dirPix, 'cover-gloss.png')
-THUMBNAIL_MODEL = os.path.join(consts.dirPix, 'cover-model.png')
 
 
 class Covers(modules.ThreadedModule):
@@ -87,13 +81,6 @@ class Covers(modules.ThreadedModule):
             # Open the image
             cover = Image.open(inFile)
 
-            # Resize in the best way we can
-            #if cover.size[0] < FULL_SIZE_COVER_WIDTH: newWidth = cover.size[0]
-            #else:                                     newWidth = FULL_SIZE_COVER_WIDTH
-
-            #if cover.size[1] < FULL_SIZE_COVER_HEIGHT: newHeight = cover.size[1]
-            #else:                                      newHeight = FULL_SIZE_COVER_HEIGHT
-
             width = cover.size[0]
             height = cover.size[1]
             max_width = FULL_SIZE_COVER_WIDTH
@@ -116,21 +103,6 @@ class Covers(modules.ThreadedModule):
             # Open the image
             cover = Image.open(inFile).convert('RGBA')
 
-            # Resize in the best way we can
-            #if cover.size[0] < THUMBNAIL_WIDTH:
-            #    newWidth = cover.size[0]
-            #    #offsetX  = (THUMBNAIL_WIDTH - cover.size[0]) / 2
-            #else:
-            #    newWidth = THUMBNAIL_WIDTH
-                #offsetX  = 0
-
-            #if cover.size[1] < THUMBNAIL_HEIGHT:
-            #    newHeight = cover.size[1]
-                #offsetY   = (THUMBNAIL_HEIGHT - cover.size[1]) / 2
-            #else:
-            #    newHeight = THUMBNAIL_HEIGHT
-                #offsetY   = 0
-
             width = cover.size[0]
             height = cover.size[1]
             max_width = THUMBNAIL_WIDTH
@@ -138,16 +110,6 @@ class Covers(modules.ThreadedModule):
             newWidth, newHeight = tools.resize(width, height, max_width, max_height)
 
             cover = cover.resize((newWidth, newHeight), Image.ANTIALIAS)
-
-            # Paste the resized cover into our model
-            #model = Image.open(THUMBNAIL_MODEL).convert('RGBA')
-            #model.paste(cover, (THUMBNAIL_OFFSETX + offsetX, THUMBNAIL_OFFSETY + offsetY), cover)
-            #cover = model
-
-            # Don't apply the gloss effect if asked to
-            #if not prefs.getCmdLine()[0].no_glossy_cover:
-            #    gloss = Image.open(THUMBNAIL_GLOSS).convert('RGBA')
-            #    cover.paste(gloss, (0, 0), gloss)
 
             # We're done
             cover.save(outFile, format)
