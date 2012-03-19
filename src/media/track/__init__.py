@@ -403,11 +403,6 @@ class Track:
             return self.getBasename()
         return ' - '.join([part for part in [artist, title] if part])
 
-    def _unknown_in_tags(self):
-        """ Unused """
-        title = self.getTitle().lower()
-        return 'unknown' in title or _('unknown') in title
-
     def get_search_text(self):
         return '|||'.join([self.getFilePath(), self.tags.get(TAG_TIT, ''),
                            self.tags.get(TAG_ART, ''), self.getExtendedAlbum(),

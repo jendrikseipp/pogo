@@ -42,7 +42,6 @@ MOD_INFO = ('Tracktree', 'Tracktree', '', [], True, False)
 ) = range(3)
 
 
-PREFS_DEFAULT_REPEAT_STATUS = False
 SAVE_INTERVAL = 600
 
 # Internal d'n'd (reordering)

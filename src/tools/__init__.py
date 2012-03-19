@@ -56,76 +56,6 @@ def listDir(directory, listHiddenFiles=False):
     return [(filename, os.path.join(directory, filename)) for filename in list if listHiddenFiles or filename[0] != '.']
 
 
-__downloadCache = {}
-
-
-def cleanupDownloadCache():
-    """ Remove temporary downloaded files """
-    for (cachedTime, file) in __downloadCache.itervalues():
-        try:    os.remove(file)
-        except: pass
-
-
-def downloadFile(url, cacheTimeout=3600):
-    """
-        If the file has been in the cache for less than 'cacheTimeout' seconds, return the cached file
-        Otherwise download the file and cache it
-
-        Return a tuple (errorMsg, data) where data is None if an error occurred, errorMsg containing the error message in this case
-    """
-    import socket, tempfile, time, urllib2
-
-    if url in __downloadCache: cachedTime, file = __downloadCache[url]
-    else:                      cachedTime, file = -cacheTimeout, None
-
-    now = int(time.time())
-
-    # If the timeout is not exceeded, get the data from the cache
-    if (now - cachedTime) <= cacheTimeout:
-        try:
-            input = open(file, 'rb')
-            data  = input.read()
-            input.close()
-
-            return ('', data)
-        except:
-            # If something went wrong with the cache, proceed to download
-            pass
-
-    # Make sure to not be blocked by the request
-    socket.setdefaulttimeout(consts.socketTimeout)
-
-    try:
-        # Retrieve the data
-        request = urllib2.Request(url)
-        stream  = urllib2.urlopen(request)
-        data    = stream.read()
-
-        # Do we need to create a new temporary file?
-        if file is None:
-            handle, file = tempfile.mkstemp()
-            os.close(handle)
-
-        # On first file added to the cache, we register our clean up function
-        if len(__downloadCache) == 0:
-            import atexit
-            atexit.register(cleanupDownloadCache)
-
-        __downloadCache[url] = (now, file)
-
-        output = open(file, 'wb')
-        output.write(data)
-        output.close()
-
-        return ('', data)
-    except urllib2.HTTPError, err:
-        return ('The request failed with error code %u' % err.code, None)
-    except:
-        return ('The request failed', None)
-
-    return ('Unknown error', None)
-
-
 def makedirs(dir):
     """
     mkdir variant that does not complain when the dir already exists
@@ -180,11 +110,6 @@ def pickleSave(file, data):
     output.close()
 
 
-def touch(filePath):
-    """ Equivalent to the Linux 'touch' command """
-    os.system('touch "%s"' % filePath)
-
-
 def percentEncode(string):
     """
         Percent-encode all the bytes in the given string
@@ -194,12 +119,6 @@ def percentEncode(string):
     bytes = tuple([ord(c) for c in string])
 
     return mask % bytes
-
-
-def getCursorPosition():
-    """ Return a tuple (x, y) """
-    cursorNfo = gtk.gdk.display_get_default().get_pointer()
-    return (cursorNfo[1], cursorNfo[2])
 
 
 def htmlEscape(string):
