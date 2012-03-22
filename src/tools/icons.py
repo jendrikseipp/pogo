@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 #
 # Copyright (c) 2007  François Ingelrest (Francois.Ingelrest@gmail.com)
+# Copyright (c) 2012  Jendrik Seipp (jendrikseipp@web.de)
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -22,9 +23,7 @@ from tools import consts
 
 
 __lbl               = None
-__dirBtnIcon        = None
 __dirMenuIcon       = None
-__starMenuIcon      = None
 __prefsBtnIcon      = None
 __nullMenuIcon      = None
 __playMenuIcon      = None
@@ -32,7 +31,6 @@ __pauseMenuIcon     = None
 __cdromMenuIcon     = None
 __errorMenuIcon     = None
 __infoMenuIcon      = None
-__starDirMenuIcon   = None
 __mediaDirMenuIcon  = None
 __mediaFileMenuIcon = None
 
@@ -55,16 +53,6 @@ def dirMenuIcon():
         __dirMenuIcon = __render(gtk.STOCK_DIRECTORY, gtk.ICON_SIZE_MENU)
 
     return __dirMenuIcon
-
-
-def dirBtnIcon():
-    """ Directories """
-    global __dirBtnIcon
-
-    if __dirBtnIcon is None:
-        __dirBtnIcon = __render(gtk.STOCK_DIRECTORY, gtk.ICON_SIZE_BUTTON)
-
-    return __dirBtnIcon
 
 
 def prefsBtnIcon():
@@ -107,16 +95,6 @@ def cdromMenuIcon():
     return __cdromMenuIcon
 
 
-def starMenuIcon():
-    """ Star """
-    global __starMenuIcon
-
-    if __starMenuIcon is None:
-        __starMenuIcon = gtk.gdk.pixbuf_new_from_file(consts.fileImgStar16)
-
-    return __starMenuIcon
-
-
 def errorMenuIcon():
     """ Error """
     global __errorMenuIcon
@@ -157,17 +135,6 @@ def mediaDirMenuIcon():
         cdromMenuIcon().composite(__mediaDirMenuIcon, 5, 5, 11, 11, 5, 5, 0.6875, 0.6875, gtk.gdk.INTERP_HYPER, 255)
 
     return __mediaDirMenuIcon
-
-
-def starDirMenuIcon():
-    """ Starred directory """
-    global __starDirMenuIcon
-
-    if __starDirMenuIcon is None:
-        __starDirMenuIcon = dirMenuIcon().copy()  # We need a copy to modify it
-        starMenuIcon().composite(__starDirMenuIcon, 5, 5, 11, 11, 5, 5, 0.6875, 0.6875, gtk.gdk.INTERP_HYPER, 255)
-
-    return __starDirMenuIcon
 
 
 def mediaFileMenuIcon():
