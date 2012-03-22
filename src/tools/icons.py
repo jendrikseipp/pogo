@@ -19,8 +19,6 @@
 
 import gtk
 
-from tools import consts
-
 
 __lbl               = None
 __dirMenuIcon       = None
