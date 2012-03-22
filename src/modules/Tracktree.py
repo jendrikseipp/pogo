@@ -485,12 +485,6 @@ class Tracktree(modules.Module):
                 self.jumpTo(self.tree.get_first_iter())
 
 
-    def restore_expanded_rows(self):
-        for path in self.tree.expanded_rows:
-            self.tree.expand(path)
-        self.tree.expanded_rows = None
-
-
     def save_track_tree(self):
         # Save playing track
         if self.tree.hasMark():
@@ -514,12 +508,8 @@ class Tracktree(modules.Module):
         wTree                  = tools.prefs.getWidgetsTree()
         self.playtime          = 0
         self.bufferedTrack     = None
-        self.previousTracklist = None
         # Retrieve widgets
         self.window     = wTree.get_widget('win-main')
-        self.btnClear   = wTree.get_widget('btn-tracklistClear')
-        self.btnRepeat  = wTree.get_widget('btn-tracklistRepeat')
-        self.btnShuffle = wTree.get_widget('btn-tracklistShuffle')
 
         columns = (('',   [(gtk.CellRendererPixbuf(), gtk.gdk.Pixbuf), (gtk.CellRendererText(), TYPE_STRING)], True),
                    (None, [(None, TYPE_PYOBJECT)], False),
@@ -735,8 +725,6 @@ class Tracktree(modules.Module):
             path, drop_mode = dropInfo
             iter = self.tree.store.get_iter(path)
             self.insert(tracks, iter, drop_mode, playNow=False, highlight=True)
-
-        #self.restore_expanded_rows()
 
         # We want to allow dropping tracks only when we are sure that no dir is
         # selected. This is needed for dnd from nautilus.

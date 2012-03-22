@@ -24,11 +24,6 @@ def isSupported(file):
     return file.lower()[-4:] == '.m3u'
 
 
-def getSupportedFormats():
-    """ Return a list of supported playlist formats """
-    return ['*.m3u']
-
-
 def save(files, playlist):
     """ Create a playlist with the given files """
     output = open(playlist, 'w')

@@ -38,15 +38,6 @@ from gui import fileChooser, errorMsgBox
 
 
 MOD_INFO = ('File Explorer', 'File Explorer', 'Browse your file system', [], True, False)
-MOD_L10N = MOD_INFO[modules.MODINFO_L10N]
-
-# Default preferences
-# List of media folders that are used as roots for the file explorer
-##PREFS_DEFAULT_MEDIA_FOLDERS     = {'Home': consts.dirBaseUsr, 'Root': '/'}
-# True if files should be added to the playlist by their filename
-PREFS_DEFAULT_ADD_BY_FILENAME   = False
-# True if hidden files should be shown
-PREFS_DEFAULT_SHOW_HIDDEN_FILES = False
 
 
 # The format of a row in the treeview
@@ -655,7 +646,6 @@ class FileExplorer(modules.Module):
         self.cfgWin          = None
         self.scrolled        = gtk.ScrolledWindow()
         self.treeState       = prefs.get(__name__, 'saved-states', None)
-        self.addByFilename   = PREFS_DEFAULT_ADD_BY_FILENAME
 
         self.scrolled.set_shadow_type(gtk.SHADOW_IN)
         self.scrolled.set_policy(gtk.POLICY_AUTOMATIC, gtk.POLICY_AUTOMATIC)

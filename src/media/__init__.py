@@ -48,11 +48,6 @@ def isSupported(file):
     except: return False
 
 
-def getSupportedFormats():
-    """ Return a list of all formats from which tags can be extracted """
-    return ['*' + ext for ext in mFormats]
-
-
 
 _track_cache = {}
 # It seems a lock is not really necessary here. It does slow down execution
@@ -85,52 +80,10 @@ def getTrackFromFile(file):
     return track
 
 
-def getTracksFromFiles(files):
-    """ Same as getTrackFromFile(), but works on a list of files instead of a single one """
-    return [getTrackFromFile(file) for file in files]
-
-
-def getTracksFlat(filenames, sortByFilename=False):
-    """ Same as getTracksFromFiles(), but works for any kind of filenames (files, playlists, directories) """
-    allTracks = []
-
-    # Directories
-    for directory in [filename for filename in filenames if os.path.isdir(filename)]:
-        mediaFiles, playlists = [], []
-        for root, subdirs, files in os.walk(directory):
-            for file in files:
-                if isSupported(file):            mediaFiles.append(os.path.join(root, file))
-                elif playlist.isSupported(file): playlists.append(os.path.join(root, file))
-
-        if sortByFilename: allTracks.extend(sorted(getTracksFromFiles(mediaFiles), lambda t1, t2: cmp(t1.getFilePath(), t2.getFilePath())))
-        else:              allTracks.extend(sorted(getTracksFromFiles(mediaFiles)))
-
-        for pl in playlists:
-            allTracks.extend(getTracksFromFiles(playlist.load(pl)))
-
-    # Files
-    tracks = getTracksFromFiles([filename for filename in filenames if os.path.isfile(filename) and isSupported(filename)])
-
-    if sortByFilename: allTracks.extend(sorted(tracks, lambda t1, t2: cmp(t1.getFilePath(), t2.getFilePath())))
-    else:              allTracks.extend(sorted(tracks))
-
-    # Playlists
-    for pl in [filename for filename in filenames if os.path.isfile(filename) and playlist.isSupported(filename)]:
-        allTracks.extend(getTracksFromFiles(playlist.load(pl)))
-
-    return allTracks
-
-
 
 class TrackDir(object):
     def __init__(self, name='', dir=None, flat=False):
-        self.dir = dir
-        if name:
-            self.dirname = name
-        elif dir:
-            self.dirname = tools.dirname(dir)
-        else:
-            self.dirname = 'noname'
+        self.dirname = name or (tools.dirname(dir) if dir else '') or 'noname'
 
         # If flat is True, add files without directories
         self.flat = flat

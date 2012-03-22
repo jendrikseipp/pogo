@@ -24,8 +24,6 @@ from gettext import gettext as _
 
 MOD_INFO = ('Control Panel', 'Control Panel', '', [], True, False)
 
-PREFS_DEFAULT_VOLUME = 0.65
-
 PLAY_PAUSE_ICON_SIZE = gtk.ICON_SIZE_LARGE_TOOLBAR
 
 
@@ -48,21 +46,21 @@ class CtrlPanel(modules.Module):
                    }
 
         modules.Module.__init__(self, handlers)
-        
-        
+
+
     def set_time(self, seconds):
         elapsed = sec2str(seconds)
         #remaining = sec2str(self.currTrackLength - seconds)
         total = sec2str(self.currTrackLength)
         self.sclSeek.set_tooltip_text('%s / %s' % (elapsed, total))
-        
-    
+
+
     def set_tooltips(self, uimanager):
         '''
         Little work-around:
         Tooltips are not shown for menuitems that have been created with uimanager.
         We have to do it manually.
-        
+
         Icons will not show up in recent GNOME versions, this is not a bug.
         '''
         groups = uimanager.get_action_groups()
@@ -74,7 +72,7 @@ class CtrlPanel(modules.Module):
                 if tooltip:
                     for widget in widgets:
                         widget.set_tooltip_markup(tooltip)
-        
+
 
    # --== Message handler ==--
 
@@ -92,12 +90,8 @@ class CtrlPanel(modules.Module):
         self.sclSeek      = wTree.get_widget('scl-position')
         self.btnVolume    = wTree.get_widget('btn-volume')
 
-        # Restore the volume
-        ##volume = prefs.get(__name__, 'volume', PREFS_DEFAULT_VOLUME)
-        #volume = PREFS_DEFAULT_VOLUME
-        ##self.btnVolume.set_value(volume)
+        # Hide volume button
         self.btnVolume.hide()
-        ##modules.postMsg(consts.MSG_CMD_SET_VOLUME, {'value': volume})
 
         # GTK handlers
         self.btnNext.connect('clicked', lambda widget: modules.postMsg(consts.MSG_CMD_NEXT))
@@ -105,18 +99,18 @@ class CtrlPanel(modules.Module):
         self.btnPlay.connect('clicked', lambda widget: modules.postMsg(consts.MSG_CMD_TOGGLE_PAUSE))
         self.sclSeek.connect('change-value', self.onSeekChangingValue)
         self.sclSeek.connect('value-changed', self.onSeekValueChanged)
-        
+
         # Left mouse click jumps to current position
         self.sclSeek.connect('button-press-event', self.onSeekButtonPressed)
         self.sclSeek.connect('button-release-event', self.onSeekButtonReleased)
-        
+
         self.btnVolume.connect('value-changed', self.onVolumeValueChanged)
-        
+
         # Add pref button
-        
+
         self.uimanager = gtk.UIManager()
         self.main_window = wTree.get_widget('win-main')
-        
+
         menu_xml = '''
         <ui>
         <popup name="ButtonMenu">
@@ -149,7 +143,7 @@ class CtrlPanel(modules.Module):
 
         # Create a Menu
         button_menu = self.uimanager.get_widget('/ButtonMenu')
-        
+
         menu_button = gtk.MenuToolButton(None, None)
         hbox = menu_button.get_child()
         button, toggle_button = hbox.get_children()
@@ -164,18 +158,18 @@ class CtrlPanel(modules.Module):
         hbox.add(img)
         toggle_button.add(hbox)
         menu_button.show()
-        
-        
+
+
         toolbar_hbox = wTree.get_widget('hbox4')
         toolbar_hbox.pack_end(menu_button, False)
         # Move it to the right
         toolbar_hbox.reorder_child(menu_button, 0)
         menu_button.set_menu(button_menu)
-        
+
         self.set_tooltips(self.uimanager)
         accelgroup = self.uimanager.get_accel_group()
         self.main_window.add_accel_group(accelgroup)
-        
+
 
 
     def onAppQuit(self):
@@ -214,7 +208,7 @@ class CtrlPanel(modules.Module):
             if seconds >= self.currTrackLength:
                 seconds = self.currTrackLength
             self.set_time(seconds)
-            
+
             # Make sure the handler will not be called
             self.sclSeek.handler_block_by_func(self.onSeekValueChanged)
             self.sclSeek.set_value(seconds)
@@ -261,15 +255,15 @@ class CtrlPanel(modules.Module):
 
 
     def onSeekChangingValue(self, range, scroll, value):
-        """ The user is moving the seek slider """        
+        """ The user is moving the seek slider """
         self.sclBeingDragged = True
 
         if value >= self.currTrackLength: value = self.currTrackLength
         else:                             value = int(value)
 
         self.set_time(value)
-        
-        
+
+
     def onSeekButtonPressed(self, widget, event):
         '''
         Let left-clicks behave as middle-clicks -> Jump to correct position
@@ -281,8 +275,8 @@ class CtrlPanel(modules.Module):
             # Middleclick
             widget.emit('button-press-event', event)
             return True
-            
-            
+
+
     def onSeekButtonReleased(self, widget, event):
         '''
         Let left-clicks behave as middle-clicks -> Jump to correct position
@@ -299,8 +293,8 @@ class CtrlPanel(modules.Module):
     def onVolumeValueChanged(self, button, value):
         """ The user has moved the volume slider """
         modules.postMsg(consts.MSG_CMD_SET_VOLUME, {'value': value})
-        
-        
+
+
     def onAbout(self, item):
         """ Show the about dialog box """
         import gui.about
@@ -311,8 +305,8 @@ class CtrlPanel(modules.Module):
         """ Show help page in the web browser """
         import webbrowser
         webbrowser.open(consts.urlHelp)
-        
-        
+
+
     def onDelete(self, win, event):
         """ Use our own quit sequence, that will itself destroy the window """
         ##window.hide()

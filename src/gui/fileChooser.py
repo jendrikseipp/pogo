@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 #
 # Copyright (c) 2007  François Ingelrest (Francois.Ingelrest@gmail.com)
+# Copyright (c) 2012  Jendrik Seipp (jendrikseipp@web.de)
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -40,36 +41,6 @@ def openFile(parent, title):
     dialog.destroy()
 
     return file
-
-
-def openFiles(parent, title, filterPatterns={}):
-    """
-        Return a list of files, or None if cancelled
-        The format of filter must be {'Name1': ['filter1', 'filter2'], 'Name2': ['filter3'] ... }
-    """
-    global __currDir
-
-    btn    = (gtk.STOCK_CANCEL, gtk.RESPONSE_CANCEL, gtk.STOCK_OPEN, gtk.RESPONSE_OK)
-    dialog = gtk.FileChooserDialog(title, parent, gtk.FILE_CHOOSER_ACTION_OPEN, btn)
-
-    dialog.set_select_multiple(True)
-    dialog.set_current_folder(__currDir)
-
-    # Add filters
-    for name, patterns in filterPatterns.iteritems():
-        filter = gtk.FileFilter()
-        filter.set_name(name)
-        map(filter.add_pattern, patterns)
-        dialog.add_filter(filter)
-
-    files = None
-    if dialog.run() == gtk.RESPONSE_OK:
-        files = dialog.get_filenames()
-
-    __currDir = dialog.get_current_folder()
-    dialog.destroy()
-
-    return files
 
 
 def openDirectory(parent, title):

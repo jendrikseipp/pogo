@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 #
 # Copyright (c) 2007  François Ingelrest (Francois.Ingelrest@gmail.com)
+# Copyright (c) 2012  Jendrik Seipp (jendrikseipp@web.de)
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -33,6 +34,7 @@ def __msgBox(parent, type, buttons, header, text):
 
 
 # Functions used to display various message boxes
-def infoMsgBox(    parent, header, text=None):        __msgBox(parent, gtk.MESSAGE_INFO,     gtk.BUTTONS_OK,     header, text)
-def errorMsgBox(   parent, header, text=None):        __msgBox(parent, gtk.MESSAGE_ERROR,    gtk.BUTTONS_OK,     header, text)
-def questionMsgBox(parent, header, text=None): return __msgBox(parent, gtk.MESSAGE_QUESTION, gtk.BUTTONS_YES_NO, header, text)
+def infoMsgBox(    parent, header, text=None):
+    __msgBox(parent, gtk.MESSAGE_INFO,     gtk.BUTTONS_OK,     header, text)
+def errorMsgBox(   parent, header, text=None):
+    __msgBox(parent, gtk.MESSAGE_ERROR,    gtk.BUTTONS_OK,     header, text)
