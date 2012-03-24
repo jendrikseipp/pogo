@@ -8,13 +8,13 @@ msgstr ""
 "Project-Id-Version: decibel-audio-player\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2012-02-06 19:55+0100\n"
-"PO-Revision-Date: 2011-12-31 23:13+0000\n"
-"Last-Translator: Daniel Winzen <d@winzen4.de>\n"
+"PO-Revision-Date: 2012-03-23 20:48+0000\n"
+"Last-Translator: Mario Blättermann <mario.blaettermann@gmail.com>\n"
 "Language-Team: German <de@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2012-03-21 05:26+0000\n"
+"X-Launchpad-Export-Date: 2012-03-24 05:10+0000\n"
 "X-Generator: Launchpad (build 14981)\n"
 
 #: ../src/media/track/__init__.py:52
@@ -76,7 +76,7 @@ msgstr "%(album)s  [Disc %(discnum)u]"
 
 #: ../src/media/track/__init__.py:199
 msgid "CDDA Track"
-msgstr "CDDA Stück"
+msgstr "CDDA-Titel"
 
 #: ../src/gui/preferences.py:43
 msgid "Preferences"
@@ -115,17 +115,19 @@ msgid ""
 "click on the \"Preferences\" button on the bottom of the dialog box. Note "
 "that configuring a module is only possible when it is enabled."
 msgstr ""
-"Konfigurierbare Module sind durch ein passendes Icon gekennzeichnet. Wenn "
+"Konfigurierbare Module sind durch ein passendes Symbol gekennzeichnet. Wenn "
 "ein konfigurierbares Modul ausgewählt ist, können durch Klicken auf den "
-"\"Einstellungen\"-Knopf modulspezifische Einstellungen vorgenommen werden."
+"»Einstellungen«-Knopf modulspezifische Einstellungen vorgenommen werden."
 
 #: ../src/gui/about.py:40
 msgid "translator-credits"
 msgstr ""
 "Launchpad Contributions:\n"
+"  Daniel Winzen https://launchpad.net/~q-d\n"
 "  David Prochnow https://launchpad.net/~ubuntu-quippu\n"
 "  Jendrik Seipp https://launchpad.net/~jendrikseipp\n"
 "  Jens Maucher https://launchpad.net/~jensmaucher\n"
+"  Mario Blättermann https://launchpad.net/~mario.blaettermann\n"
 "  Samuel Mehrbrodt https://launchpad.net/~sam92\n"
 "  Tim㋡ https://launchpad.net/~tim.h.s"
 
@@ -139,15 +141,15 @@ msgstr "Dank an:"
 
 #: ../src/modules/Search.py:32
 msgid "Search in your music folders"
-msgstr "Suche in Deinen Musik-Ordnern"
+msgstr "In Ihren Musik-Ordnern suchen"
 
 #: ../src/modules/Zeitgeist.py:26
 msgid "Send track information to the Zeitgeist service"
-msgstr "Sende Informationen über gespielte Titel an Zeitgeist"
+msgstr "Informationen über gespielte Titel an Zeitgeist senden"
 
 #: ../src/modules/FileExplorer.py:179
 msgid "loading..."
-msgstr "wird geladen…"
+msgstr "Wird geladen …"
 
 #: ../src/modules/FileExplorer.py:392
 msgid "Append"
@@ -159,15 +161,15 @@ msgstr "Öffnen des Ordners"
 
 #: ../src/modules/FileExplorer.py:428
 msgid "Add music folder"
-msgstr "Füge Musik-Ordner hinzu"
+msgstr "Musik-Ordner hinzufügen"
 
 #: ../src/modules/FileExplorer.py:440
 msgid "Hide folder"
-msgstr "Ordner verstecken"
+msgstr "Ordner verbergen"
 
 #: ../src/modules/FileExplorer.py:454
 msgid "Choose a directory"
-msgstr "Wähle ein Verzeichnis"
+msgstr "Ordner wählen"
 
 #: ../src/modules/FileExplorer.py:460
 msgid "Invalid Folder"
@@ -176,8 +178,8 @@ msgstr "Ungültiger Ordner"
 #: ../src/modules/FileExplorer.py:461
 msgid "You cannot add your root or home folder to the music directories"
 msgstr ""
-"Sie können den Root-Ordner oder Ihr Heimatverzeichnis nicht zu den Musik-"
-"Verzeichnissen hinzufügen."
+"Sie können den Root-Ordner oder Ihren persönlichen Ordner nicht zu den Musik-"
+"Ordnern hinzufügen."
 
 #: ../src/modules/FileExplorer.py:468
 msgid "This path does not exist"
@@ -185,7 +187,7 @@ msgstr "Dieser Pfad existiert nicht"
 
 #: ../src/modules/FileExplorer.py:469
 msgid "Please select an existing directory."
-msgstr "Bitte wählen Sie ein existierendes Verzeichnis!"
+msgstr "Bitte wählen Sie einen existierenden Ordner!"
 
 #: ../src/modules/FileExplorer.py:567
 msgid "Albums"
@@ -197,7 +199,7 @@ msgstr "Musik"
 
 #: ../src/modules/FileExplorer.py:646
 msgid "Right-click to add music folders"
-msgstr "Rechts-Klick zum Hinzufügen von Musik-Verzeichnissen"
+msgstr "Rechts-Klick zum Hinzufügen von Musik-Ordnern"
 
 #: ../src/modules/FileExplorer.py:691
 msgid "Searching ..."
@@ -205,11 +207,11 @@ msgstr "Suche läuft …"
 
 #: ../src/modules/FileExplorer.py:719
 msgid "No tracks found"
-msgstr "Keine Songs gefunden"
+msgstr "Keine Titel gefunden"
 
 #: ../src/modules/FileExplorer.py:721
 msgid "No music folders have been added"
-msgstr "Es wuden keine Musik-Verzeichnisse hinzugefügt"
+msgstr "Es wuden keine Musik-Ordner hinzugefügt"
 
 #: ../src/modules/__init__.py:75
 msgid "The following Python modules are not available:"
@@ -227,19 +229,19 @@ msgstr "Neustart erforderlich"
 msgid ""
 "You must restart the application for this modification to take effect."
 msgstr ""
-"Die Anwendung muss neu gestartet werden um diese Änderung zu übernehmen."
+"Die Anwendung muss neu gestartet werden, um diese Änderung zu übernehmen."
 
 #: ../src/modules/CtrlPanel.py:190 ../src/modules/CtrlPanel.py:246
 msgid "Pause the current track"
-msgstr "Aktuelles Stück unterbrechen"
+msgstr "Aktuellen Titel unterbrechen"
 
 #: ../src/modules/CtrlPanel.py:206
 msgid "Play the first selected track of the playlist"
-msgstr "Spiele das erste ausgewählte Stück in der Playlist"
+msgstr "Den ersten ausgewählten Titel in der Wiedergabeliste abspielen"
 
 #: ../src/modules/CtrlPanel.py:240
 msgid "Continue playing the current track"
-msgstr "Aktuelles Stück weiter abspielen"
+msgstr "Aktuellen Titel weiter abspielen"
 
 #: ../src/modules/DesktopNotification.py:26
 msgid "Desktop Notification"
@@ -247,7 +249,7 @@ msgstr "Desktop-Benachrichtigung"
 
 #: ../src/modules/DesktopNotification.py:26
 msgid "Display a desktop notification on track change"
-msgstr "Desktop-Benachrichtigung beim Liedwechsel"
+msgstr "Desktop-Benachrichtigung beim Titelwechsel"
 
 #: ../src/modules/DesktopNotification.py:83
 #: ../src/modules/DesktopNotification.py:197
@@ -259,14 +261,14 @@ msgid ""
 "This module displays a small popup window on your desktop when a new track "
 "starts."
 msgstr ""
-"Dieses Modul zeigt ein kleines Pop-Up auf dem Desktop an, wenn ein neues "
-"Stück beginnt."
+"Dieses Modul zeigt ein kleines Pop-Up auf der Arbeitsfläche an, wenn ein "
+"neuer Titel beginnt."
 
 #: ../src/modules/DesktopNotification.py:224
 msgid ""
 "If the Covers module is enabled, the popup also shows the album cover."
 msgstr ""
-"Wenn die Cover-Funktion aktiviert ist, zeigt das Popup Fenster auch das "
+"Wenn die Cover-Funktion aktiviert ist, zeigt das Popup-Fenster auch das "
 "Album-Cover."
 
 #: ../src/modules/DesktopNotification.py:225
@@ -317,7 +319,7 @@ msgid ""
 "the current track, or may be downloaded from the Internet."
 msgstr ""
 "Dieses Modul zeigt das Album-Cover des aktuellen Titels an. Es können Cover "
-"aus dem Verzeichnis des aktuellen Titels benutzt oder aus dem Internet "
+"aus dem Ordner des aktuellen Titels benutzt oder aus dem Internet "
 "heruntergeladen werden."
 
 #: ../src/modules/Covers.py:442
@@ -331,9 +333,9 @@ msgid ""
 "track. When specifying filenames, you do not need to provide file "
 "extensions, supported file formats (%s) are automatically used."
 msgstr ""
-"Ein Benutzer-Cover ist ein Bild im Verzeichnis des aktuellen Titels. "
-"Dateinamen müssen ohne Erweiterung angegeben werden, es werden automatisch "
-"unterstützte Dateiformate (%s) benutzt."
+"Ein Benutzer-Cover ist ein Bild im Ordner des aktuellen Titels. Dateinamen "
+"müssen ohne Erweiterung angegeben werden, es werden automatisch unterstützte "
+"Dateiformate (%s) benutzt."
 
 #: ../src/modules/Covers.py:446
 msgid "Internet Covers"
@@ -354,11 +356,11 @@ msgstr ""
 
 #: ../src/modules/Tracktree.py:389 ../src/modules/Tracktree.py:464
 msgid "Export playlist to file"
-msgstr "Exportiere Wiedergabeliste in Datei"
+msgstr "Wiedergabeliste in Datei exportieren"
 
 #: ../src/modules/Tracktree.py:397 ../src/modules/Tracktree.py:469
 msgid "Export playlist to directory"
-msgstr "Exportiere Wiedergabeliste in Ordner"
+msgstr "Wiedergabeliste in Ordner exportieren"
 
 #: ../src/modules/Tracktree.py:454
 msgid "Clear Playlist"
@@ -431,7 +433,7 @@ msgstr "Cover herunterladen"
 
 #: ../res/Covers.glade.h:5
 msgid "Try to download covers from the Internet"
-msgstr "Versuchen Cover aus dem Internet herunterzuladen"
+msgstr "Versuchen, Cover aus dem Internet herunterzuladen"
 
 #: ../res/Covers.glade.h:6
 msgid "Always prefer user covers"
@@ -455,7 +457,7 @@ msgstr "<b>Text</b>"
 
 #: ../res/DesktopNotification.glade.h:3
 msgid "Show a \"skip track\" button"
-msgstr "Zeigen \"Überspringe Titel\" Schaltfläche an"
+msgstr "Knopf »Titel überspringen« anzeigen"
 
 #: ../res/DesktopNotification.glade.h:4
 msgid "Notification timeout:"
@@ -479,12 +481,12 @@ msgstr "Voreinstellung:"
 
 #: ../res/MainWindow.glade.h:1
 msgid "Play the previous track"
-msgstr "Vorheriges Stück spielen"
+msgstr "Vorherigen Titel abspielen"
 
 #: ../res/MainWindow.glade.h:2
 msgid "Play the first track of the playlist"
-msgstr "Am Anfang der Playlist starten"
+msgstr "Am Anfang der Wiedergabeliste starten"
 
 #: ../res/MainWindow.glade.h:3
 msgid "Play the next track"
-msgstr "Nächstes Stück spielen"
+msgstr "Nächsten Titel abspielen"
