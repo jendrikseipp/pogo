@@ -1,11 +1,12 @@
 Requirements:
-- lptools
+sudo apt-get install lptools devscripts
 
 Steps:
 - Check version number in src/tools/consts.py
-- Add new release in debian/changelog
+- Add new release in debian/changelog with "dch -v <version>-1"
 - ./release.sh
 - ./upload.sh
+- Make commit "Version <version>"
 - Announce on launchpad?
 - Send mail to pogo-users and python-announce
 - Announce on freshmeat

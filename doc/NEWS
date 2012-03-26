@@ -1,6 +1,16 @@
  Pogo NEWS
 ==============
 
+ 0.6 "I will be a bridge for you" (2012-03-26)
+=======================================
+* Show search results immediately after they're found for each music directory
+* Search in playlist as well and highlight results
+* Add Zeitgeist module that logs played albums
+* Select last played track at restart (lp:684383)
+* Append tracks to playlist asynchronously (lp:662308)
+* Update translations
+
+
  0.5 "Rolling in the deep" (2012-01-12)
 =======================================
 * Export tracks in playlist into a directory (with subdirectories)

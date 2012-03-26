@@ -1,10 +1,5 @@
 === Roadmap ===
 
-X Show search results immediately after they're found for each music directory
-X Search in playlist as well and highlight results
-X Add Zeitgeist module that logs played albums
-X Select last played track at restart (lp:684383)
-X Append tracks to playlist asynchronously (lp:662308)
 O Use new logo by Kevin Macphail
 O Search for tracks in all directories (not just music directories) with locate.
   Report only hits outside the music directories.
