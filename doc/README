@@ -1,19 +1,16 @@
  Pogo - A simple audio player
 ========================================================================
-Pogo is probably the simplest and fastest audio player for Linux.
-Its elementary-inspired design uses the screen-space very efficiently.
-Pogo is especially well-suited for people who organize their music by
-albums on the harddrive. The main interface components are a directory
-tree and a playlist that groups albums in an innovative way.
+Probably the simplest and fastest audio player for Linux.
 
-Supported file formats include Ogg Vorbis, MP3, FLAC, Musepack,
-Wavpack, and MPEG-4 AAC.
+Pogo plays your music. Nothing else. It is both fast and easy-to-use. The clear
+interface uses the screen real-estate very efficiently. Other features include:
+Fast search on the harddrive and in the playlist, smart album grouping, cover
+display, desktop notifications and no music library.
+Pogo is a fork of Decibel Audio Player and supports most common audio formats.
+It is written in Python and uses GTK+ and gstreamer.
 
-Pogo is written by Jendrik Seipp (jendrikseipp@web.de).
-It is a fork of Decibel Audio Player.
-
-To report bugs, suggest features, ask a question, get the latest version,
-or help out, visit http://launchpad.net/pogo.
+To report bugs, suggest features, ask a question, get the latest version or help
+out, visit http://launchpad.net/pogo or write a mail to jendrikseipp@web.de
 
 
  Run Pogo

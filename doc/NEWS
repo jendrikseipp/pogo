@@ -2,7 +2,7 @@
 ==============
 
  0.6 "I will be a bridge for you" (2012-03-26)
-=======================================
+==============================================
 * Show search results immediately after they're found for each music directory
 * Search in playlist as well and highlight results
 * Add Zeitgeist module that logs played albums
