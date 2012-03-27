@@ -84,11 +84,11 @@ class CtrlPanel(modules.Module):
 
         # Widgets
         wTree             = prefs.getWidgetsTree()
-        self.btnPlay      = wTree.get_widget('btn-play')
-        self.btnNext      = wTree.get_widget('btn-next')
-        self.btnPrev      = wTree.get_widget('btn-previous')
-        self.sclSeek      = wTree.get_widget('scl-position')
-        self.btnVolume    = wTree.get_widget('btn-volume')
+        self.btnPlay      = wTree.get_object('btn-play')
+        self.btnNext      = wTree.get_object('btn-next')
+        self.btnPrev      = wTree.get_object('btn-previous')
+        self.sclSeek      = wTree.get_object('scl-position')
+        self.btnVolume    = wTree.get_object('btn-volume')
 
         # Hide volume button
         self.btnVolume.hide()
@@ -109,7 +109,7 @@ class CtrlPanel(modules.Module):
         # Add pref button
 
         self.uimanager = gtk.UIManager()
-        self.main_window = wTree.get_widget('win-main')
+        self.main_window = wTree.get_object('win-main')
 
         menu_xml = '''
         <ui>
@@ -160,7 +160,7 @@ class CtrlPanel(modules.Module):
         menu_button.show()
 
 
-        toolbar_hbox = wTree.get_widget('hbox4')
+        toolbar_hbox = wTree.get_object('hbox4')
         toolbar_hbox.pack_end(menu_button, False)
         # Move it to the right
         toolbar_hbox.reorder_child(menu_button, 0)

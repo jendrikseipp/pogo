@@ -87,7 +87,7 @@ class Equalizer(modules.Module):
         if self.cfgWindow is None:
             import gui.window
 
-            self.cfgWindow = gui.window.Window('Equalizer.glade', 'vbox1', __name__, MOD_INFO[modules.MODINFO_L10N], 580, 300)
+            self.cfgWindow = gui.window.Window('Equalizer.ui', 'vbox1', __name__, MOD_INFO[modules.MODINFO_L10N], 580, 300)
 
             self.timer      = None
             self.combo      = self.cfgWindow.getWidget('combo-presets')

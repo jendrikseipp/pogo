@@ -200,7 +200,7 @@ class DBusObjectRoot(dbus.service.Object):
     @dbus.service.method(consts.dbusInterface, in_signature='', out_signature='')
     def RaiseWindow(self):
         """ Raises the window """
-        prefs.getWidgetsTree().get_widget('win-main').present()
+        prefs.getWidgetsTree().get_object('win-main').present()
 
 
 class DBusObjectTracklist(dbus.service.Object):

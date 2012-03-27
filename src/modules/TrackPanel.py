@@ -105,7 +105,7 @@ class CoverSpot(object):
         self.thumb_window.evtBox.connect('button-press-event', self.onCoverClicked, False)
 
         wTree = tools.prefs.getWidgetsTree()
-        main_win = wTree.get_widget('win-main')
+        main_win = wTree.get_object('win-main')
 
         main_win.connect('focus-out-event', self.on_focus_out)
         main_win.connect('focus-in-event', self.on_focus_in)
@@ -197,7 +197,7 @@ class CoverWindow(gtk.Window):
 
         # Position the window in the bottom right corner
         wTree = tools.prefs.getWidgetsTree()
-        scrolled = wTree.get_widget('scrolled-tracklist')
+        scrolled = wTree.get_object('scrolled-tracklist')
         tree = scrolled.get_child()
         if tree:
             tree_x, tree_y, tree_width, tree_height = tree.get_allocation()

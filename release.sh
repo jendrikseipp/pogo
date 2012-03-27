@@ -24,7 +24,7 @@ cp -R ./pix/ $DEST/
 
 # Resources
 mkdir $DEST/res/
-cp ./res/*.glade $DEST/res/
+cp ./res/*.ui $DEST/res/
 cp ./res/*.desktop $DEST/res/
 
 # Scripts

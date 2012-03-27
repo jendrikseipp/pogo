@@ -26,7 +26,6 @@ import logging
 from xml.sax.saxutils import escape, unescape
 
 import gtk
-import gtk.glade
 
 import consts
 
@@ -91,8 +90,15 @@ def sec2str(seconds, alwaysShowHours=False):
 
 def loadGladeFile(file, root=None):
     """ Load the given Glade file and return the tree of widgets """
-    if root is None: return gtk.glade.XML(os.path.join(consts.dirRes, file), domain=consts.appNameShort)
-    else:            return gtk.glade.XML(os.path.join(consts.dirRes, file), root, consts.appNameShort)
+    builder = gtk.Builder()
+
+    if root is None:
+        builder.add_from_file(os.path.join(consts.dirRes, file))
+        return builder
+    else:
+        builder.add_from_file(os.path.join(consts.dirRes, file))
+        widget = builder.get_object(root)
+        return widget, builder
 
 
 def pickleLoad(file):

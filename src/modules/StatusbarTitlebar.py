@@ -54,7 +54,7 @@ class StatusbarTitlebar(modules.Module):
 
     def onAppStarted(self):
         """ Real initialization function, called when this module has been loaded """
-        self.window = prefs.getWidgetsTree().get_widget('win-main')
+        self.window = prefs.getWidgetsTree().get_object('win-main')
 
         # Current player status
         self.paused    = False

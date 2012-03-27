@@ -1,13 +1,13 @@
-<?xml version="1.0"?>
-<glade-interface>
-<widget class="GtkWindow" id="win-main">
+<interface>
+<requires lib="gtk+" version="2.16"/>
+<object class="GtkWindow" id="win-main">
 <property name="window_position">center</property>
 <child>
-<widget class="GtkVBox" id="vbox1">
+<object class="GtkVBox" id="vbox1">
 <property name="border_width">12</property>
 <property name="spacing">12</property>
 <child>
-<widget class="GtkScrolledWindow" id="scrolledwindow1">
+<object class="GtkScrolledWindow" id="scrolledwindow1">
 <property name="can_focus">True</property>
 <property name="hscrollbar_policy">automatic</property>
 <property name="vscrollbar_policy">automatic</property>
@@ -15,30 +15,30 @@
 <child>
 <placeholder/>
 </child>
-</widget>
+</object>
 <packing>
 <property name="position">0</property>
 </packing>
 </child>
 <child>
-<widget class="GtkHBox" id="hbox1">
+<object class="GtkHBox" id="hbox1">
 <child>
-<widget class="GtkHButtonBox" id="hbuttonbox2">
+<object class="GtkHButtonBox" id="hbuttonbox2">
 <property name="layout_style">start</property>
 <child>
-<widget class="GtkButton" id="btn-help">
+<object class="GtkButton" id="btn-help">
 <property name="label">gtk-help</property>
 <property name="can_focus">True</property>
 <property name="receives_default">True</property>
 <property name="use_stock">True</property>
-</widget>
+</object>
 <packing>
 <property name="expand">False</property>
 <property name="fill">False</property>
 <property name="position">0</property>
 </packing>
 </child>
-</widget>
+</object>
 <packing>
 <property name="expand">False</property>
 <property name="fill">False</property>
@@ -46,16 +46,16 @@
 </packing>
 </child>
 <child>
-<widget class="GtkHButtonBox" id="hbuttonbox1">
+<object class="GtkHButtonBox" id="hbuttonbox1">
 <property name="spacing">12</property>
 <property name="layout_style">end</property>
 <child>
-<widget class="GtkButton" id="btn-prefs">
+<object class="GtkButton" id="btn-prefs">
 <property name="label">gtk-preferences</property>
 <property name="can_focus">True</property>
 <property name="receives_default">True</property>
 <property name="use_stock">True</property>
-</widget>
+</object>
 <packing>
 <property name="expand">False</property>
 <property name="fill">False</property>
@@ -63,30 +63,30 @@
 </packing>
 </child>
 <child>
-<widget class="GtkButton" id="btn-close">
+<object class="GtkButton" id="btn-close">
 <property name="label">gtk-close</property>
 <property name="can_focus">True</property>
 <property name="receives_default">True</property>
 <property name="use_stock">True</property>
-</widget>
+</object>
 <packing>
 <property name="expand">False</property>
 <property name="fill">False</property>
 <property name="position">1</property>
 </packing>
 </child>
-</widget>
+</object>
 <packing>
 <property name="position">1</property>
 </packing>
 </child>
-</widget>
+</object>
 <packing>
 <property name="expand">False</property>
 <property name="position">1</property>
 </packing>
 </child>
-</widget>
+</object>
 </child>
-</widget>
-</glade-interface>
+</object>
+</interface>

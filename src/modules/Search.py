@@ -158,7 +158,7 @@ class Search(modules.ThreadedModule):
         search_container.pack_start(self.searchbox, False)
         search_container.show_all()
 
-        hbox3 = wTree.get_widget('hbox3')
+        hbox3 = wTree.get_object('hbox3')
         hbox3.pack_start(search_container)
         hbox3.set_property('homogeneous', True)
         hbox3.reorder_child(search_container, 0)
@@ -173,7 +173,7 @@ class Search(modules.ThreadedModule):
         self.searchbox.connect('changed', self.on_searchbox_changed)
 
         # Add search shortcut
-        main_win = wTree.get_widget('win-main')
+        main_win = wTree.get_object('win-main')
         main_win.connect('key-press-event', self.on_key_pressed)
         self.searchbox.grab_focus()
 

@@ -30,9 +30,9 @@ class HelpDlg:
         global mDlg, mTxtBuffer
 
         if mDlg is None:
-            wTree      = tools.loadGladeFile('HelpDlg.glade')
-            mDlg       = wTree.get_widget('dlg-main')
-            mTxtBuffer = wTree.get_widget('txt-help').get_buffer()
+            wTree      = tools.loadGladeFile('HelpDlg.ui')
+            mDlg       = wTree.get_object('dlg-main')
+            mTxtBuffer = wTree.get_object('txt-help').get_buffer()
 
             mDlg.set_title(tools.consts.appName)
             mTxtBuffer.create_tag('title',   weight=pango.WEIGHT_BOLD, scale=pango.SCALE_X_LARGE)

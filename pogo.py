@@ -185,8 +185,6 @@ def main():
     locale.setlocale(locale.LC_ALL, '')
     gettext.textdomain(consts.appNameShort)
     gettext.bindtextdomain(consts.appNameShort, consts.dirLocale)
-    gtk.glade.textdomain(consts.appNameShort)
-    gtk.glade.bindtextdomain(consts.appNameShort, consts.dirLocale)
 
     # Command line
     prefs.setCmdLine((optOptions, optArgs))
@@ -202,9 +200,9 @@ def main():
                         gtk.gdk.pixbuf_new_from_file(consts.fileImgIcon128))
 
     # Create the GUI
-    wTree = loadGladeFile('MainWindow.glade')
-    paned = wTree.get_widget('pan-main')
-    window = wTree.get_widget('win-main')
+    wTree = loadGladeFile('MainWindow.ui')
+    paned = wTree.get_object('pan-main')
+    window = wTree.get_object('win-main')
     prefs.setWidgetsTree(wTree)
 
     # RGBA support

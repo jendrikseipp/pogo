@@ -353,7 +353,7 @@ class Covers(modules.ThreadedModule):
         if self.cfgWin is None:
             from gui.window import Window
 
-            self.cfgWin = Window('Covers.glade', 'vbox1', __name__, MOD_INFO[modules.MODINFO_L10N], 320, 265)
+            self.cfgWin = Window('Covers.ui', 'vbox1', __name__, MOD_INFO[modules.MODINFO_L10N], 320, 265)
             self.cfgWin.getWidget('btn-ok').connect('clicked', self.onBtnOk)
             self.cfgWin.getWidget('img-lastfm').set_from_file(os.path.join(consts.dirPix, 'audioscrobbler.png'))
             self.cfgWin.getWidget('btn-help').connect('clicked', self.onBtnHelp)

@@ -1,437 +1,438 @@
-<?xml version="1.0"?>
-<glade-interface>
-<widget class="GtkWindow" id="win-main">
+<?xml version="1.0" encoding="UTF-8"?>
+<interface>
+<requires lib="gtk+" version="2.16"/>
+<object class="GtkWindow" id="win-main">
 <property name="window_position">center</property>
 <child>
-<widget class="GtkVBox" id="vbox1">
+<object class="GtkVBox" id="vbox1">
 <property name="border_width">12</property>
 <property name="spacing">18</property>
 <child>
-<widget class="GtkVBox" id="vbox2">
+<object class="GtkVBox" id="vbox2">
 <property name="visible">True</property>
 <property name="spacing">18</property>
 <child>
-<widget class="GtkHBox" id="hbox3">
+<object class="GtkHBox" id="hbox3">
 <property name="visible">True</property>
 <child>
-<widget class="GtkHBox" id="hbox2">
+<object class="GtkHBox" id="hbox2">
 <property name="visible">True</property>
 <property name="spacing">12</property>
 <property name="homogeneous">True</property>
 <child>
-<widget class="GtkVBox" id="vbox3">
+<object class="GtkVBox" id="vbox3">
 <property name="visible">True</property>
 <property name="spacing">6</property>
 <child>
-<widget class="GtkVScale" id="vscale0">
+<object class="GtkVScale" id="vscale0">
 <property name="visible">True</property>
 <property name="can_focus">True</property>
-<property name="adjustment">0 -24 22 1 10 10</property>
+<property name="adjustment">adjustment10</property>
 <property name="inverted">True</property>
-</widget>
+</object>
 <packing>
 <property name="position">0</property>
 </packing>
 </child>
 <child>
-<widget class="GtkLabel" id="label1">
+<object class="GtkLabel" id="label1">
 <property name="visible">True</property>
 <property name="label">&lt;b&gt;29 Hz&lt;/b&gt;</property>
 <property name="use_markup">True</property>
-</widget>
+</object>
 <packing>
 <property name="expand">False</property>
 <property name="position">1</property>
 </packing>
 </child>
-</widget>
+</object>
 <packing>
 <property name="position">0</property>
 </packing>
 </child>
 <child>
-<widget class="GtkVBox" id="vbox4">
+<object class="GtkVBox" id="vbox4">
 <property name="visible">True</property>
 <property name="spacing">6</property>
 <child>
-<widget class="GtkVScale" id="vscale1">
+<object class="GtkVScale" id="vscale1">
 <property name="visible">True</property>
 <property name="can_focus">True</property>
-<property name="adjustment">0 -24 22 1 10 10</property>
+<property name="adjustment">adjustment9</property>
 <property name="inverted">True</property>
-</widget>
+</object>
 <packing>
 <property name="position">0</property>
 </packing>
 </child>
 <child>
-<widget class="GtkLabel" id="label2">
+<object class="GtkLabel" id="label2">
 <property name="visible">True</property>
 <property name="label">&lt;b&gt;59 Hz&lt;/b&gt;</property>
 <property name="use_markup">True</property>
-</widget>
+</object>
 <packing>
 <property name="expand">False</property>
 <property name="position">1</property>
 </packing>
 </child>
-</widget>
+</object>
 <packing>
 <property name="position">1</property>
 </packing>
 </child>
 <child>
-<widget class="GtkVBox" id="vbox5">
+<object class="GtkVBox" id="vbox5">
 <property name="visible">True</property>
 <property name="spacing">6</property>
 <child>
-<widget class="GtkVScale" id="vscale2">
+<object class="GtkVScale" id="vscale2">
 <property name="visible">True</property>
 <property name="can_focus">True</property>
-<property name="adjustment">0 -24 22 1 10 10</property>
+<property name="adjustment">adjustment8</property>
 <property name="inverted">True</property>
-</widget>
+</object>
 <packing>
 <property name="position">0</property>
 </packing>
 </child>
 <child>
-<widget class="GtkLabel" id="label3">
+<object class="GtkLabel" id="label3">
 <property name="visible">True</property>
 <property name="label">&lt;b&gt;119 Hz&lt;/b&gt;</property>
 <property name="use_markup">True</property>
-</widget>
+</object>
 <packing>
 <property name="expand">False</property>
 <property name="position">1</property>
 </packing>
 </child>
-</widget>
+</object>
 <packing>
 <property name="position">2</property>
 </packing>
 </child>
 <child>
-<widget class="GtkVBox" id="vbox6">
+<object class="GtkVBox" id="vbox6">
 <property name="visible">True</property>
 <property name="spacing">6</property>
 <child>
-<widget class="GtkVScale" id="vscale3">
+<object class="GtkVScale" id="vscale3">
 <property name="visible">True</property>
 <property name="can_focus">True</property>
-<property name="adjustment">0 -24 22 1 10 10</property>
+<property name="adjustment">adjustment7</property>
 <property name="inverted">True</property>
-</widget>
+</object>
 <packing>
 <property name="position">0</property>
 </packing>
 </child>
 <child>
-<widget class="GtkLabel" id="label4">
+<object class="GtkLabel" id="label4">
 <property name="visible">True</property>
 <property name="label">&lt;b&gt;227 Hz&lt;/b&gt;</property>
 <property name="use_markup">True</property>
-</widget>
+</object>
 <packing>
 <property name="expand">False</property>
 <property name="position">1</property>
 </packing>
 </child>
-</widget>
+</object>
 <packing>
 <property name="position">3</property>
 </packing>
 </child>
 <child>
-<widget class="GtkVBox" id="vbox7">
+<object class="GtkVBox" id="vbox7">
 <property name="visible">True</property>
 <property name="spacing">6</property>
 <child>
-<widget class="GtkVScale" id="vscale4">
+<object class="GtkVScale" id="vscale4">
 <property name="visible">True</property>
 <property name="can_focus">True</property>
-<property name="adjustment">0 -24 22 1 10 10</property>
+<property name="adjustment">adjustment6</property>
 <property name="inverted">True</property>
-</widget>
+</object>
 <packing>
 <property name="position">0</property>
 </packing>
 </child>
 <child>
-<widget class="GtkLabel" id="label5">
+<object class="GtkLabel" id="label5">
 <property name="visible">True</property>
 <property name="label">&lt;b&gt;474 Hz&lt;/b&gt;</property>
 <property name="use_markup">True</property>
-</widget>
+</object>
 <packing>
 <property name="expand">False</property>
 <property name="position">1</property>
 </packing>
 </child>
-</widget>
+</object>
 <packing>
 <property name="position">4</property>
 </packing>
 </child>
 <child>
-<widget class="GtkVBox" id="vbox8">
+<object class="GtkVBox" id="vbox8">
 <property name="visible">True</property>
 <property name="spacing">6</property>
 <child>
-<widget class="GtkVScale" id="vscale5">
+<object class="GtkVScale" id="vscale5">
 <property name="visible">True</property>
 <property name="can_focus">True</property>
-<property name="adjustment">0 -24 22 1 10 10</property>
+<property name="adjustment">adjustment5</property>
 <property name="inverted">True</property>
-</widget>
+</object>
 <packing>
 <property name="position">0</property>
 </packing>
 </child>
 <child>
-<widget class="GtkLabel" id="label6">
+<object class="GtkLabel" id="label6">
 <property name="visible">True</property>
 <property name="label">&lt;b&gt;947 Hz&lt;/b&gt;</property>
 <property name="use_markup">True</property>
-</widget>
+</object>
 <packing>
 <property name="expand">False</property>
 <property name="position">1</property>
 </packing>
 </child>
-</widget>
+</object>
 <packing>
 <property name="position">5</property>
 </packing>
 </child>
 <child>
-<widget class="GtkVBox" id="vbox9">
+<object class="GtkVBox" id="vbox9">
 <property name="visible">True</property>
 <property name="spacing">6</property>
 <child>
-<widget class="GtkVScale" id="vscale6">
+<object class="GtkVScale" id="vscale6">
 <property name="visible">True</property>
 <property name="can_focus">True</property>
-<property name="adjustment">0 -24 22 1 10 10</property>
+<property name="adjustment">adjustment4</property>
 <property name="inverted">True</property>
-</widget>
+</object>
 <packing>
 <property name="position">0</property>
 </packing>
 </child>
 <child>
-<widget class="GtkLabel" id="label7">
+<object class="GtkLabel" id="label7">
 <property name="visible">True</property>
 <property name="label">&lt;b&gt;1.9 kHz&lt;/b&gt;</property>
 <property name="use_markup">True</property>
-</widget>
+</object>
 <packing>
 <property name="expand">False</property>
 <property name="position">1</property>
 </packing>
 </child>
-</widget>
+</object>
 <packing>
 <property name="position">6</property>
 </packing>
 </child>
 <child>
-<widget class="GtkVBox" id="vbox10">
+<object class="GtkVBox" id="vbox10">
 <property name="visible">True</property>
 <property name="spacing">6</property>
 <child>
-<widget class="GtkVScale" id="vscale7">
+<object class="GtkVScale" id="vscale7">
 <property name="visible">True</property>
 <property name="can_focus">True</property>
-<property name="adjustment">0 -24 22 1 10 10</property>
+<property name="adjustment">adjustment3</property>
 <property name="inverted">True</property>
-</widget>
+</object>
 <packing>
 <property name="position">0</property>
 </packing>
 </child>
 <child>
-<widget class="GtkLabel" id="label8">
+<object class="GtkLabel" id="label8">
 <property name="visible">True</property>
 <property name="label">&lt;b&gt;3.8 kHz&lt;/b&gt;</property>
 <property name="use_markup">True</property>
-</widget>
+</object>
 <packing>
 <property name="expand">False</property>
 <property name="position">1</property>
 </packing>
 </child>
-</widget>
+</object>
 <packing>
 <property name="position">7</property>
 </packing>
 </child>
 <child>
-<widget class="GtkVBox" id="vbox11">
+<object class="GtkVBox" id="vbox11">
 <property name="visible">True</property>
 <property name="spacing">6</property>
 <child>
-<widget class="GtkVScale" id="vscale8">
+<object class="GtkVScale" id="vscale8">
 <property name="visible">True</property>
 <property name="can_focus">True</property>
-<property name="adjustment">0 -24 22 1 10 10</property>
+<property name="adjustment">adjustment2</property>
 <property name="inverted">True</property>
-</widget>
+</object>
 <packing>
 <property name="position">0</property>
 </packing>
 </child>
 <child>
-<widget class="GtkLabel" id="label9">
+<object class="GtkLabel" id="label9">
 <property name="visible">True</property>
 <property name="label">&lt;b&gt;7.5 kHz&lt;/b&gt;</property>
 <property name="use_markup">True</property>
-</widget>
+</object>
 <packing>
 <property name="expand">False</property>
 <property name="position">1</property>
 </packing>
 </child>
-</widget>
+</object>
 <packing>
 <property name="position">8</property>
 </packing>
 </child>
 <child>
-<widget class="GtkVBox" id="vbox12">
+<object class="GtkVBox" id="vbox12">
 <property name="visible">True</property>
 <property name="spacing">6</property>
 <child>
-<widget class="GtkVScale" id="vscale9">
+<object class="GtkVScale" id="vscale9">
 <property name="visible">True</property>
 <property name="can_focus">True</property>
-<property name="adjustment">0 -24 22 1 10 10</property>
+<property name="adjustment">adjustment1</property>
 <property name="inverted">True</property>
-</widget>
+</object>
 <packing>
 <property name="position">0</property>
 </packing>
 </child>
 <child>
-<widget class="GtkLabel" id="label10">
+<object class="GtkLabel" id="label10">
 <property name="visible">True</property>
 <property name="label">&lt;b&gt;15 kHz&lt;/b&gt;</property>
 <property name="use_markup">True</property>
-</widget>
+</object>
 <packing>
 <property name="expand">False</property>
 <property name="position">1</property>
 </packing>
 </child>
-</widget>
+</object>
 <packing>
 <property name="position">9</property>
 </packing>
 </child>
-</widget>
+</object>
 <packing>
 <property name="position">0</property>
 </packing>
 </child>
 <child>
-<widget class="GtkVBox" id="vbox14">
+<object class="GtkVBox" id="vbox14">
 <property name="visible">True</property>
 <child>
-<widget class="GtkLabel" id="label14">
+<object class="GtkLabel" id="label14">
 <property name="visible">True</property>
 <property name="label"> </property>
-</widget>
+</object>
 <packing>
 <property name="expand">False</property>
 <property name="position">0</property>
 </packing>
 </child>
 <child>
-<widget class="GtkHBox" id="hbox6">
+<object class="GtkHBox" id="hbox6">
 <property name="visible">True</property>
 <child>
-<widget class="GtkLabel" id="label13">
+<object class="GtkLabel" id="label13">
 <property name="visible">True</property>
 <property name="label">&lt;b&gt;+12 dB&lt;/b&gt;</property>
 <property name="use_markup">True</property>
-</widget>
+</object>
 <packing>
 <property name="expand">False</property>
 <property name="pack_type">end</property>
 <property name="position">0</property>
 </packing>
 </child>
-</widget>
+</object>
 <packing>
 <property name="expand">False</property>
 <property name="position">1</property>
 </packing>
 </child>
 <child>
-<widget class="GtkVBox" id="vbox15">
+<object class="GtkVBox" id="vbox15">
 <property name="visible">True</property>
 <child>
-<widget class="GtkLabel" id="label17">
+<object class="GtkLabel" id="label17">
 <property name="visible">True</property>
 <property name="label"> </property>
-</widget>
+</object>
 <packing>
 <property name="position">0</property>
 </packing>
 </child>
 <child>
-<widget class="GtkHBox" id="hbox5">
+<object class="GtkHBox" id="hbox5">
 <property name="visible">True</property>
 <child>
-<widget class="GtkLabel" id="label18">
+<object class="GtkLabel" id="label18">
 <property name="visible">True</property>
 <property name="label">&lt;b&gt;0 dB&lt;/b&gt;</property>
 <property name="use_markup">True</property>
-</widget>
+</object>
 <packing>
 <property name="expand">False</property>
 <property name="pack_type">end</property>
 <property name="position">0</property>
 </packing>
 </child>
-</widget>
+</object>
 <packing>
 <property name="expand">False</property>
 <property name="position">1</property>
 </packing>
 </child>
 <child>
-<widget class="GtkLabel" id="label16">
+<object class="GtkLabel" id="label16">
 <property name="visible">True</property>
 <property name="label"> </property>
-</widget>
+</object>
 <packing>
 <property name="position">2</property>
 </packing>
 </child>
 <child>
-<widget class="GtkLabel" id="label15">
+<object class="GtkLabel" id="label15">
 <property name="visible">True</property>
 <property name="label"> </property>
-</widget>
+</object>
 <packing>
 <property name="position">3</property>
 </packing>
 </child>
-</widget>
+</object>
 <packing>
 <property name="position">2</property>
 </packing>
 </child>
 <child>
-<widget class="GtkHBox" id="hbox4">
+<object class="GtkHBox" id="hbox4">
 <property name="visible">True</property>
 <child>
-<widget class="GtkLabel" id="label12">
+<object class="GtkLabel" id="label12">
 <property name="visible">True</property>
 <property name="label">&lt;b&gt;-24 dB&lt;/b&gt;</property>
 <property name="use_markup">True</property>
-</widget>
+</object>
 <packing>
 <property name="expand">False</property>
 <property name="fill">False</property>
@@ -439,62 +440,62 @@
 <property name="position">0</property>
 </packing>
 </child>
-</widget>
+</object>
 <packing>
 <property name="expand">False</property>
 <property name="position">3</property>
 </packing>
 </child>
 <child>
-<widget class="GtkLabel" id="label11">
+<object class="GtkLabel" id="label11">
 <property name="visible">True</property>
 <property name="label"> </property>
-</widget>
+</object>
 <packing>
 <property name="expand">False</property>
 <property name="padding">3</property>
 <property name="position">4</property>
 </packing>
 </child>
-</widget>
+</object>
 <packing>
 <property name="expand">False</property>
 <property name="position">1</property>
 </packing>
 </child>
-</widget>
+</object>
 <packing>
 <property name="position">0</property>
 </packing>
 </child>
-</widget>
+</object>
 <packing>
 <property name="position">0</property>
 </packing>
 </child>
 <child>
-<widget class="GtkHSeparator" id="hseparator1"/>
+<object class="GtkHSeparator" id="hseparator1"/>
 <packing>
 <property name="expand">False</property>
 <property name="position">1</property>
 </packing>
 </child>
 <child>
-<widget class="GtkHBox" id="hbox1">
+<object class="GtkHBox" id="hbox1">
 <property name="spacing">6</property>
 <child>
-<widget class="GtkHButtonBox" id="hbuttonbox1">
+<object class="GtkHButtonBox" id="hbuttonbox1">
 <property name="visible">True</property>
 <property name="spacing">12</property>
 <property name="layout_style">start</property>
 <child>
-<widget class="GtkButton" id="btn-save">
+<object class="GtkButton" id="btn-save">
 <property name="label">gtk-save</property>
 <property name="visible">True</property>
 <property name="can_focus">True</property>
 <property name="receives_default">True</property>
 <property name="use_stock">True</property>
-</widget>
+</object>
 <packing>
 <property name="expand">False</property>
 <property name="fill">False</property>
@@ -502,81 +503,151 @@
 </packing>
 </child>
 <child>
-<widget class="GtkButton" id="btn-open">
+<object class="GtkButton" id="btn-open">
 <property name="label">gtk-open</property>
 <property name="visible">True</property>
 <property name="can_focus">True</property>
 <property name="receives_default">True</property>
 <property name="use_stock">True</property>
-</widget>
+</object>
 <packing>
 <property name="expand">False</property>
 <property name="fill">False</property>
 <property name="position">1</property>
 </packing>
 </child>
-</widget>
+</object>
 <packing>
 <property name="position">0</property>
 </packing>
 </child>
 <child>
-<widget class="GtkHBox" id="hbox7">
+<object class="GtkHBox" id="hbox7">
 <property name="visible">True</property>
 <property name="spacing">6</property>
 <child>
-<widget class="GtkLabel" id="label19">
+<object class="GtkLabel" id="label19">
 <property name="visible">True</property>
 <property name="label" translatable="yes">Preset:</property>
-</widget>
+</object>
 <packing>
 <property name="expand">False</property>
 <property name="position">0</property>
 </packing>
 </child>
 <child>
-<widget class="GtkComboBox" id="combo-presets">
+<object class="GtkComboBox" id="combo-presets">
 <property name="visible">True</property>
-</widget>
+</object>
 <packing>
 <property name="position">1</property>
 </packing>
 </child>
-</widget>
+</object>
 <packing>
 <property name="position">1</property>
 </packing>
 </child>
 <child>
-<widget class="GtkHButtonBox" id="hbuttonbox2">
+<object class="GtkHButtonBox" id="hbuttonbox2">
 <property name="visible">True</property>
 <property name="layout_style">end</property>
 <child>
-<widget class="GtkButton" id="btn-close">
+<object class="GtkButton" id="btn-close">
 <property name="label">gtk-close</property>
 <property name="visible">True</property>
 <property name="can_focus">True</property>
 <property name="receives_default">True</property>
 <property name="use_stock">True</property>
-</widget>
+</object>
 <packing>
 <property name="expand">False</property>
 <property name="fill">False</property>
 <property name="position">0</property>
 </packing>
 </child>
-</widget>
+</object>
 <packing>
 <property name="position">2</property>
 </packing>
 </child>
-</widget>
+</object>
 <packing>
 <property name="expand">False</property>
 <property name="position">2</property>
 </packing>
 </child>
-</widget>
+</object>
 </child>
-</widget>
-</glade-interface>
+</object>
+<object class="GtkAdjustment" id="adjustment1">
+<property name="lower">-24</property>
+<property name="upper">22</property>
+<property name="step_increment">1</property>
+<property name="page_increment">10</property>
+<property name="page_size">10</property>
+</object>
+<object class="GtkAdjustment" id="adjustment2">
+<property name="lower">-24</property>
+<property name="upper">22</property>
+<property name="step_increment">1</property>
+<property name="page_increment">10</property>
+<property name="page_size">10</property>
+</object>
+<object class="GtkAdjustment" id="adjustment3">
+<property name="lower">-24</property>
+<property name="upper">22</property>
+<property name="step_increment">1</property>
+<property name="page_increment">10</property>
+<property name="page_size">10</property>
+</object>
+<object class="GtkAdjustment" id="adjustment4">
+<property name="lower">-24</property>
+<property name="upper">22</property>
+<property name="step_increment">1</property>
+<property name="page_increment">10</property>
+<property name="page_size">10</property>
+</object>
+<object class="GtkAdjustment" id="adjustment5">
+<property name="lower">-24</property>
+<property name="upper">22</property>
+<property name="step_increment">1</property>
+<property name="page_increment">10</property>
+<property name="page_size">10</property>
+</object>
+<object class="GtkAdjustment" id="adjustment6">
+<property name="lower">-24</property>
+<property name="upper">22</property>
+<property name="step_increment">1</property>
+<property name="page_increment">10</property>
+<property name="page_size">10</property>
+</object>
+<object class="GtkAdjustment" id="adjustment7">
+<property name="lower">-24</property>
+<property name="upper">22</property>
+<property name="step_increment">1</property>
+<property name="page_increment">10</property>
+<property name="page_size">10</property>
+</object>
+<object class="GtkAdjustment" id="adjustment8">
+<property name="lower">-24</property>
+<property name="upper">22</property>
+<property name="step_increment">1</property>
+<property name="page_increment">10</property>
+<property name="page_size">10</property>
+</object>
+<object class="GtkAdjustment" id="adjustment9">
+<property name="lower">-24</property>
+<property name="upper">22</property>
+<property name="step_increment">1</property>
+<property name="page_increment">10</property>
+<property name="page_size">10</property>
+</object>
+<object class="GtkAdjustment" id="adjustment10">
+<property name="lower">-24</property>
+<property name="upper">22</property>
+<property name="step_increment">1</property>
+<property name="page_increment">10</property>
+<property name="page_size">10</property>
+</object>
+</interface>

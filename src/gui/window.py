@@ -25,19 +25,19 @@ class Window(gtk.Window):
          * Automatically save and restore size
          * Hide the window instead of destroying it
          * Add a isVisible() function
-         * Add a getWidget() function that acts like get_widget() (in gtk.glade)
+         * Add a getWidget() function that acts like get_object()
     """
 
     def __init__(self, resFile, container, modName, title, defaultWidth, defaultHeight):
         """ Constructor """
         gtk.Window.__init__(self)
-        # Load only the top-level container of the given glade file
-        self.wTree   = tools.loadGladeFile(resFile, container)
+        # Load only the top-level container of the given .ui file
+        self.wTree, self.wBuilder = tools.loadGladeFile(resFile, container)
         self.visible = False
         self.modName = modName
         # Configure the window
         self.set_title(title)
-        self.add(self.wTree.get_widget(container))
+        self.wBuilder.get_object(container).reparent(self)
         if tools.prefs.get(modName, 'win-is-maximized', False):
             self.maximize()
         self.resize(tools.prefs.get(modName, 'win-width', defaultWidth), tools.prefs.get(modName, 'win-height', defaultHeight))
@@ -50,7 +50,7 @@ class Window(gtk.Window):
 
     def getWidget(self, name):
         """ Return the widget with the given name """
-        return self.wTree.get_widget(name)
+        return self.wBuilder.get_object(name)
 
 
     def isVisible(self):

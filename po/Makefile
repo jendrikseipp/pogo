@@ -1,10 +1,10 @@
 INSTALL ?= install
 
 PYFILES = $(shell find ../src -type f -name "*.py")
-GLADEFILES = $(wildcard ../res/*.glade)
+UIFILES = $(wildcard ../res/*.ui)
 POFILES = $(wildcard *.po)
 
-GLADEHFILES := $(GLADEFILES:.glade=.glade.h)
+UIHFILES := $(UIFILES:.ui=.ui.h)
 
 help:
 	@echo USAGE:
@@ -18,8 +18,8 @@ help:
 	sed -i '/^char \*s = N_("gtk-.*");$$/d' $@
 
 
-pogo.pot: $(GLADEHFILES) $(PYFILES)
-	xgettext -k_ -kN_ -o pogo.pot $(PYFILES) $(GLADEHFILES) --from-code=utf-8
+pogo.pot: $(UIHFILES) $(PYFILES)
+	xgettext -k_ -kN_ -o pogo.pot $(PYFILES) $(UIHFILES) --from-code=utf-8
 
 %.po: pogo.pot
 	@if test -f $@; then \

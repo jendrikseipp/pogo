@@ -40,7 +40,7 @@ class Preferences:
 
         from gui import extListview, window
 
-        self.window = window.Window('Preferences.glade', 'vbox1', __name__, _('Preferences'), 390, 350)
+        self.window = window.Window('Preferences.ui', 'vbox1', __name__, _('Preferences'), 390, 350)
         # List of modules
         toggleRdr = gtk.CellRendererToggle()
         columns   = (('',   [(toggleRdr, gobject.TYPE_BOOLEAN)],             ROW_ENABLED,    False, True),

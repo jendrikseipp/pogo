@@ -651,7 +651,7 @@ class FileExplorer(modules.Module):
         self.scrolled.set_policy(gtk.POLICY_AUTOMATIC, gtk.POLICY_AUTOMATIC)
         self.scrolled.show()
 
-        left_vbox = prefs.getWidgetsTree().get_widget('vbox3')
+        left_vbox = prefs.getWidgetsTree().get_object('vbox3')
         left_vbox.pack_start(self.scrolled)
 
         self.static_paths = ['/', consts.dirBaseUsr]

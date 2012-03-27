@@ -509,7 +509,7 @@ class Tracktree(modules.Module):
         self.playtime          = 0
         self.bufferedTrack     = None
         # Retrieve widgets
-        self.window     = wTree.get_widget('win-main')
+        self.window     = wTree.get_object('win-main')
 
         columns = (('',   [(gtk.CellRendererPixbuf(), gtk.gdk.Pixbuf), (gtk.CellRendererText(), TYPE_STRING)], True),
                    (None, [(None, TYPE_PYOBJECT)], False),
@@ -520,7 +520,7 @@ class Tracktree(modules.Module):
         #self.tree.setDNDSources([consts.DND_TARGETS[consts.DND_POGO_TRACKS]])
         self.tree.setDNDSources([DND_INTERNAL_TARGET])
 
-        wTree.get_widget('scrolled-tracklist').add(self.tree)
+        wTree.get_object('scrolled-tracklist').add(self.tree)
 
         # GTK handlers
         self.tree.connect('exttreeview-button-pressed', self.onMouseButton)

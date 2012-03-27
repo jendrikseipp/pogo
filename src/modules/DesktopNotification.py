@@ -167,7 +167,7 @@ class DesktopNotification(modules.Module):
             import gui, pynotify
 
             # Create the window
-            self.cfgWin = gui.window.Window('DesktopNotification.glade', 'vbox1', __name__, MOD_INFO[modules.MODINFO_L10N], 355, 345)
+            self.cfgWin = gui.window.Window('DesktopNotification.ui', 'vbox1', __name__, MOD_INFO[modules.MODINFO_L10N], 355, 345)
             self.cfgWin.getWidget('btn-ok').connect('clicked', self.onBtnOk)
             self.cfgWin.getWidget('btn-help').connect('clicked', self.onBtnHelp)
             self.cfgWin.getWidget('btn-cancel').connect('clicked', lambda btn: self.cfgWin.hide())
