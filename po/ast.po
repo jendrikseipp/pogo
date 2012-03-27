@@ -6,11 +6,12 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: pogo\n"
-"Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
-"POT-Creation-Date: 2012-02-06 19:55+0100\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2012-03-28 01:58+0200\n"
 "PO-Revision-Date: 2010-12-04 14:18+0000\n"
 "Last-Translator: Xuacu Saturio <xuacusk8@gmail.com>\n"
 "Language-Team: Asturian <ast@li.org>\n"
+"Language: ast\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -65,7 +66,7 @@ msgstr "Duración como cadena (p.ex., 3:14)"
 msgid "Full path to the file"
 msgstr "Camín completu al ficheru"
 
-#: ../src/media/track/__init__.py:150 ../src/media/track/__init__.py:409
+#: ../src/media/track/__init__.py:150
 msgid "unknown"
 msgstr "desconocíu"
 
@@ -91,7 +92,7 @@ msgid "Modules"
 msgstr "Módulos"
 
 #: ../src/gui/preferences.py:139 ../src/modules/DesktopNotification.py:222
-#: ../src/modules/Covers.py:438
+#: ../src/modules/Covers.py:400
 msgid "Description"
 msgstr "Descripción"
 
@@ -100,8 +101,8 @@ msgid ""
 "This window shows the list of available modules. You can enable/disable a "
 "module by checking/unchecking the check box in front of it."
 msgstr ""
-"Esta ventana amuesa la llista de módulos disponibles. Pues "
-"activar/desactivar un módulu marcando/desmarcando la caxella xunto a él."
+"Esta ventana amuesa la llista de módulos disponibles. Pues activar/"
+"desactivar un módulu marcando/desmarcando la caxella xunto a él."
 
 #: ../src/gui/preferences.py:142
 msgid "Configuring a Module"
@@ -133,76 +134,75 @@ msgstr "Desendolcador:"
 msgid "Thanks to:"
 msgstr "Gracies a:"
 
-#: ../src/modules/Search.py:32
+#: ../src/modules/Search.py:33
 msgid "Search in your music folders"
 msgstr "Guetar nes tos carpetes de música"
 
-#: ../src/modules/Zeitgeist.py:26
+#: ../src/modules/Zeitgeist.py:28
 msgid "Send track information to the Zeitgeist service"
 msgstr "Unviar información de la pista al serviciu Zeitgeist"
 
-#: ../src/modules/FileExplorer.py:179
+#: ../src/modules/FileExplorer.py:181
 msgid "loading..."
 msgstr "cargando…"
 
-#: ../src/modules/FileExplorer.py:392
+#: ../src/modules/FileExplorer.py:394
 msgid "Append"
 msgstr "Añader"
 
-#: ../src/modules/FileExplorer.py:404
+#: ../src/modules/FileExplorer.py:406
 msgid "Open containing folder"
 msgstr "Abrir la carpeta contenedora"
 
-#: ../src/modules/FileExplorer.py:428
+#: ../src/modules/FileExplorer.py:430
 msgid "Add music folder"
 msgstr "Añader carpeta de música"
 
-#: ../src/modules/FileExplorer.py:440
+#: ../src/modules/FileExplorer.py:442
 msgid "Hide folder"
 msgstr "Anubrir carpeta"
 
-#: ../src/modules/FileExplorer.py:454
+#: ../src/modules/FileExplorer.py:456
 msgid "Choose a directory"
 msgstr "Escoyer un direutoriu"
 
-#: ../src/modules/FileExplorer.py:460
+#: ../src/modules/FileExplorer.py:462
 msgid "Invalid Folder"
 msgstr "Carpeta inválida"
 
-#: ../src/modules/FileExplorer.py:461
+#: ../src/modules/FileExplorer.py:463
 msgid "You cannot add your root or home folder to the music directories"
-msgstr ""
-"Nun pues amestar les carpetes root o home a los direutorios de música"
+msgstr "Nun pues amestar les carpetes root o home a los direutorios de música"
 
-#: ../src/modules/FileExplorer.py:468
+#: ../src/modules/FileExplorer.py:470
 msgid "This path does not exist"
 msgstr "Esti camín nun esiste"
 
-#: ../src/modules/FileExplorer.py:469
+#: ../src/modules/FileExplorer.py:471
 msgid "Please select an existing directory."
 msgstr "Tienes d'escoyer un direutoriu esistente"
 
-#: ../src/modules/FileExplorer.py:567
+#: ../src/modules/FileExplorer.py:558
 msgid "Albums"
 msgstr "Álbumes"
 
-#: ../src/modules/FileExplorer.py:569
+#: ../src/modules/FileExplorer.py:560
 msgid "Music"
 msgstr "Música"
 
-#: ../src/modules/FileExplorer.py:646
+#: ../src/modules/FileExplorer.py:637
 msgid "Right-click to add music folders"
 msgstr "Calca col botón drechu p'amestar carpetes de música"
 
-#: ../src/modules/FileExplorer.py:691
+#: ../src/modules/FileExplorer.py:681
 msgid "Searching ..."
 msgstr "Guetando..."
 
-#: ../src/modules/FileExplorer.py:719
+#: ../src/modules/FileExplorer.py:709
 msgid "No tracks found"
 msgstr "Nun s'alcontraron pistes"
 
-#: ../src/modules/FileExplorer.py:721
+#: ../src/modules/FileExplorer.py:711
 msgid "No music folders have been added"
 msgstr "Nun s'amestaron carpetes de música"
 
@@ -219,19 +219,18 @@ msgid "Restart required"
 msgstr "Fai falta reaniciar"
 
 #: ../src/modules/__init__.py:267
-msgid ""
-"You must restart the application for this modification to take effect."
+msgid "You must restart the application for this modification to take effect."
 msgstr "Tienes de reaniciar l'aplicación pa qu'esti cambéu tenga efectu."
 
-#: ../src/modules/CtrlPanel.py:190 ../src/modules/CtrlPanel.py:246
+#: ../src/modules/CtrlPanel.py:184 ../src/modules/CtrlPanel.py:240
 msgid "Pause the current track"
 msgstr "Posar la pista actual"
 
-#: ../src/modules/CtrlPanel.py:206
+#: ../src/modules/CtrlPanel.py:200
 msgid "Play the first selected track of the playlist"
 msgstr "Reproducir la primer pista seleicionada na llista"
 
-#: ../src/modules/CtrlPanel.py:240
+#: ../src/modules/CtrlPanel.py:234
 msgid "Continue playing the current track"
 msgstr "Continuar reproduciendo la pista actual"
 
@@ -256,8 +255,7 @@ msgstr ""
 "Esti módulu amuesa un ventanu nel escritoriu cuando comienza una pista nueva."
 
 #: ../src/modules/DesktopNotification.py:224
-msgid ""
-"If the Covers module is enabled, the popup also shows the album cover."
+msgid "If the Covers module is enabled, the popup also shows the album cover."
 msgstr ""
 "Si ta activáu el módulu de Portaes, el ventanu amuesa tamién la portada del "
 "álbum."
@@ -302,7 +300,7 @@ msgstr "Portaes"
 msgid "Show album covers"
 msgstr "Amosar les portaes de los álbumes"
 
-#: ../src/modules/Covers.py:439
+#: ../src/modules/Covers.py:401
 msgid ""
 "This module displays the cover of the album the current track comes from. "
 "Covers may be loaded from local pictures, located in the same directory as "
@@ -312,11 +310,11 @@ msgstr ""
 "portaes pueden cargase dende imaxes llocales, que tean nel mesmu direutoriu "
 "que la pista actual, o pueden descargase d'Internet."
 
-#: ../src/modules/Covers.py:442
+#: ../src/modules/Covers.py:404
 msgid "User Covers"
 msgstr "Portaes del usuariu"
 
-#: ../src/modules/Covers.py:443
+#: ../src/modules/Covers.py:405
 #, python-format
 msgid ""
 "A user cover is a picture located in the same directory as the current "
@@ -328,11 +326,11 @@ msgstr ""
 "estensión del ficheru; s'usen automáticamente los formatos de ficheru "
 "sofitaos (%s)."
 
-#: ../src/modules/Covers.py:446
+#: ../src/modules/Covers.py:408
 msgid "Internet Covers"
 msgstr "Portaes d'Internet"
 
-#: ../src/modules/Covers.py:447
+#: ../src/modules/Covers.py:409
 msgid ""
 "Covers may be downloaded from the Internet, based on the tags of the current "
 "track. You can ask to always prefer user covers to Internet ones. In this "
@@ -344,15 +342,15 @@ msgstr ""
 "d'Internet. Nesti casu, si hai una portada d'usuariu pa la pista actual, "
 "s'usa esta. Si nun hai denguna, se descargará la portada."
 
-#: ../src/modules/Tracktree.py:389 ../src/modules/Tracktree.py:464
+#: ../src/modules/Tracktree.py:382 ../src/modules/Tracktree.py:457
 msgid "Export playlist to file"
 msgstr ""
 
-#: ../src/modules/Tracktree.py:397 ../src/modules/Tracktree.py:469
+#: ../src/modules/Tracktree.py:390 ../src/modules/Tracktree.py:462
 msgid "Export playlist to directory"
 msgstr ""
 
-#: ../src/modules/Tracktree.py:454
+#: ../src/modules/Tracktree.py:447
 msgid "Clear Playlist"
 msgstr "Llimpiar la llista de reproducción"
 
@@ -385,98 +383,98 @@ msgstr "Nun se pudo cargar el ficheru"
 msgid "The format of the file is incorrect."
 msgstr "El formatu del ficheru ye incorreutu."
 
-#: ../src/tools/consts.py:94
+#: ../src/tools/consts.py:92
 msgid "Unknown Genre"
 msgstr "Xéneru desconocíu"
 
-#: ../src/tools/consts.py:95
+#: ../src/tools/consts.py:93
 msgid "Unknown Title"
 msgstr "Títulu desconocíu"
 
-#: ../src/tools/consts.py:96
+#: ../src/tools/consts.py:94
 msgid "Unknown Album"
 msgstr "Álbum desconocíu"
 
-#: ../src/tools/consts.py:97
+#: ../src/tools/consts.py:95
 msgid "Unknown Artist"
 msgstr "Artista desconocíu"
 
-#: ../src/tools/consts.py:105
+#: ../src/tools/consts.py:103
 msgid "Unknown Album Artist"
 msgstr "Artista del álbum desconocíu"
 
-#: ../res/Covers.glade.h:1
+#: ../res/Covers.ui.h:1
 msgid "Filenames:"
 msgstr "Nomes de ficheru:"
 
-#: ../res/Covers.glade.h:2
+#: ../res/Covers.ui.h:2
 msgid "Filenames to look for (e.g., folder, cover)"
 msgstr "Nomes de ficheru a guetar (p.ex.: carpeta, portada)"
 
-#: ../res/Covers.glade.h:3
+#: ../res/Covers.ui.h:3
 msgid "<b>User Covers</b>"
 msgstr "<b>Portaes d'usuariu</b>"
 
-#: ../res/Covers.glade.h:4
+#: ../res/Covers.ui.h:4
 msgid "Download covers"
 msgstr "Descargar portaes"
 
-#: ../res/Covers.glade.h:5
+#: ../res/Covers.ui.h:5
 msgid "Try to download covers from the Internet"
 msgstr "Intentar descargar les portaes dende Internet"
 
-#: ../res/Covers.glade.h:6
+#: ../res/Covers.ui.h:6
 msgid "Always prefer user covers"
 msgstr "Preferir siempres les portaes d'usuariu"
 
-#: ../res/Covers.glade.h:7
+#: ../res/Covers.ui.h:7
 msgid "Don't download covers when there is a user one"
 msgstr "Nun descargar portaes si hai una d'usuariu"
 
-#: ../res/Covers.glade.h:8
+#: ../res/Covers.ui.h:8
 msgid "<b>Internet Covers</b>"
 msgstr "<b>Portaes d'Internet</b>"
 
-#: ../res/DesktopNotification.glade.h:1
+#: ../res/DesktopNotification.ui.h:1
 msgid "<b>Title</b>"
 msgstr "<b>Títulu</b>"
 
-#: ../res/DesktopNotification.glade.h:2
+#: ../res/DesktopNotification.ui.h:2
 msgid "<b>Body</b>"
 msgstr "<b>Cuerpu</b>"
 
-#: ../res/DesktopNotification.glade.h:3
+#: ../res/DesktopNotification.ui.h:3
 msgid "Show a \"skip track\" button"
 msgstr "Amosar un botón «saltar pista»"
 
-#: ../res/DesktopNotification.glade.h:4
+#: ../res/DesktopNotification.ui.h:4
 msgid "Notification timeout:"
 msgstr "Tiempu llímite del avisu:"
 
-#: ../res/DesktopNotification.glade.h:5
+#: ../res/DesktopNotification.ui.h:5
 msgid "Time during which the notification is displayed"
 msgstr "Tiempu de duración del avisu"
 
-#: ../res/DesktopNotification.glade.h:6
+#: ../res/DesktopNotification.ui.h:6
 msgid "seconds"
 msgstr "segundos"
 
-#: ../res/DesktopNotification.glade.h:7
+#: ../res/DesktopNotification.ui.h:7
 msgid "<b>Miscellaneous</b>"
 msgstr "<b>Entemecíos</b>"
 
-#: ../res/Equalizer.glade.h:1
+#: ../res/Equalizer.ui.h:1
 msgid "Preset:"
 msgstr "Preaxuste:"
 
-#: ../res/MainWindow.glade.h:1
+#: ../res/MainWindow.ui.h:1
 msgid "Play the previous track"
 msgstr "Reproducir la pista anterior"
 
-#: ../res/MainWindow.glade.h:2
+#: ../res/MainWindow.ui.h:2
 msgid "Play the first track of the playlist"
 msgstr "Reproducir la primera pista de la llista de reproducción"
 
-#: ../res/MainWindow.glade.h:3
+#: ../res/MainWindow.ui.h:3
 msgid "Play the next track"
 msgstr "Reproducir la pista siguiente"

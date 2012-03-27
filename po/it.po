@@ -7,10 +7,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: decibel-audio-player\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-02-06 19:55+0100\n"
+"POT-Creation-Date: 2012-03-28 01:58+0200\n"
 "PO-Revision-Date: 2010-12-06 22:39+0000\n"
 "Last-Translator: Claudio Arseni <claudio.arseni@gmail.com>\n"
 "Language-Team: Italian <it@li.org>\n"
+"Language: it\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -65,7 +66,7 @@ msgstr "Durata (es. 3:14)"
 msgid "Full path to the file"
 msgstr "Percorso completo del file"
 
-#: ../src/media/track/__init__.py:150 ../src/media/track/__init__.py:409
+#: ../src/media/track/__init__.py:150
 msgid "unknown"
 msgstr "sconosciuto"
 
@@ -91,7 +92,7 @@ msgid "Modules"
 msgstr "Moduli"
 
 #: ../src/gui/preferences.py:139 ../src/modules/DesktopNotification.py:222
-#: ../src/modules/Covers.py:438
+#: ../src/modules/Covers.py:400
 msgid "Description"
 msgstr "Descrizione"
 
@@ -137,77 +138,77 @@ msgstr "Sviluppatore:"
 msgid "Thanks to:"
 msgstr "Si ringrazia:"
 
-#: ../src/modules/Search.py:32
+#: ../src/modules/Search.py:33
 msgid "Search in your music folders"
 msgstr "Cerca nella cartelle musicali"
 
-#: ../src/modules/Zeitgeist.py:26
+#: ../src/modules/Zeitgeist.py:28
 msgid "Send track information to the Zeitgeist service"
 msgstr "Inviare le informazioni sul brano al servizio Zeitgeist"
 
-#: ../src/modules/FileExplorer.py:179
+#: ../src/modules/FileExplorer.py:181
 msgid "loading..."
 msgstr "Caricamento in corso..."
 
-#: ../src/modules/FileExplorer.py:392
+#: ../src/modules/FileExplorer.py:394
 msgid "Append"
 msgstr "Aggiungere"
 
-#: ../src/modules/FileExplorer.py:404
+#: ../src/modules/FileExplorer.py:406
 msgid "Open containing folder"
 msgstr "Apri cartella selezionata"
 
-#: ../src/modules/FileExplorer.py:428
+#: ../src/modules/FileExplorer.py:430
 msgid "Add music folder"
 msgstr "Aggiungi una cartella musicale"
 
-#: ../src/modules/FileExplorer.py:440
+#: ../src/modules/FileExplorer.py:442
 msgid "Hide folder"
 msgstr "Nascondi cartella"
 
-#: ../src/modules/FileExplorer.py:454
+#: ../src/modules/FileExplorer.py:456
 msgid "Choose a directory"
 msgstr "Scegli una cartella"
 
-#: ../src/modules/FileExplorer.py:460
+#: ../src/modules/FileExplorer.py:462
 msgid "Invalid Folder"
 msgstr "Cartella non valida"
 
-#: ../src/modules/FileExplorer.py:461
+#: ../src/modules/FileExplorer.py:463
 msgid "You cannot add your root or home folder to the music directories"
 msgstr ""
 "Non è possibile aggiungere la propria root o la cartella home nelle "
 "directory musicali"
 
-#: ../src/modules/FileExplorer.py:468
+#: ../src/modules/FileExplorer.py:470
 msgid "This path does not exist"
 msgstr "Questo percorso non esiste"
 
-#: ../src/modules/FileExplorer.py:469
+#: ../src/modules/FileExplorer.py:471
 msgid "Please select an existing directory."
 msgstr "Selezionare una cartella esistente."
 
-#: ../src/modules/FileExplorer.py:567
+#: ../src/modules/FileExplorer.py:558
 msgid "Albums"
 msgstr "Album"
 
-#: ../src/modules/FileExplorer.py:569
+#: ../src/modules/FileExplorer.py:560
 msgid "Music"
 msgstr "Musica"
 
-#: ../src/modules/FileExplorer.py:646
+#: ../src/modules/FileExplorer.py:637
 msgid "Right-click to add music folders"
 msgstr "Fare clic con il testo destro per aggiungere una cartella musicale"
 
-#: ../src/modules/FileExplorer.py:691
+#: ../src/modules/FileExplorer.py:681
 msgid "Searching ..."
 msgstr "Ricerca..."
 
-#: ../src/modules/FileExplorer.py:719
+#: ../src/modules/FileExplorer.py:709
 msgid "No tracks found"
 msgstr "Nessuna traccia trovata"
 
-#: ../src/modules/FileExplorer.py:721
+#: ../src/modules/FileExplorer.py:711
 msgid "No music folders have been added"
 msgstr "Non è stata aggiunta alcuna cartella musicale"
 
@@ -224,20 +225,19 @@ msgid "Restart required"
 msgstr "È richiesto un riavvio"
 
 #: ../src/modules/__init__.py:267
-msgid ""
-"You must restart the application for this modification to take effect."
+msgid "You must restart the application for this modification to take effect."
 msgstr ""
 "E' necessario riavviare l'applicazione per rendere effettive le modifiche"
 
-#: ../src/modules/CtrlPanel.py:190 ../src/modules/CtrlPanel.py:246
+#: ../src/modules/CtrlPanel.py:184 ../src/modules/CtrlPanel.py:240
 msgid "Pause the current track"
 msgstr "Mette in pausa la traccia corrente"
 
-#: ../src/modules/CtrlPanel.py:206
+#: ../src/modules/CtrlPanel.py:200
 msgid "Play the first selected track of the playlist"
 msgstr "Ascolta la prima traccia selezionata nella scaletta"
 
-#: ../src/modules/CtrlPanel.py:240
+#: ../src/modules/CtrlPanel.py:234
 msgid "Continue playing the current track"
 msgstr "Continua l'ascolto della traccia corrente"
 
@@ -263,8 +263,7 @@ msgstr ""
 "nuova traccia"
 
 #: ../src/modules/DesktopNotification.py:224
-msgid ""
-"If the Covers module is enabled, the popup also shows the album cover."
+msgid "If the Covers module is enabled, the popup also shows the album cover."
 msgstr ""
 "Se il modulo delle copertine è attivato, la finestra mostrerà anche la "
 "copertina dell'album."
@@ -311,7 +310,7 @@ msgstr "Copertine"
 msgid "Show album covers"
 msgstr "Mostra le copertine degli album"
 
-#: ../src/modules/Covers.py:439
+#: ../src/modules/Covers.py:401
 msgid ""
 "This module displays the cover of the album the current track comes from. "
 "Covers may be loaded from local pictures, located in the same directory as "
@@ -321,11 +320,11 @@ msgstr ""
 "ascoltando. Le copertine posso essere caricate da immagini locali, presenti "
 "nella stessa cartella della traccia o essere scaricate da Internet."
 
-#: ../src/modules/Covers.py:442
+#: ../src/modules/Covers.py:404
 msgid "User Covers"
 msgstr "Copertine utente"
 
-#: ../src/modules/Covers.py:443
+#: ../src/modules/Covers.py:405
 #, python-format
 msgid ""
 "A user cover is a picture located in the same directory as the current "
@@ -337,11 +336,11 @@ msgstr ""
 "fornire l'estensione in quanto i formati supportati (%s) verranno usati "
 "automaticamente."
 
-#: ../src/modules/Covers.py:446
+#: ../src/modules/Covers.py:408
 msgid "Internet Covers"
 msgstr "Copertine da Internet"
 
-#: ../src/modules/Covers.py:447
+#: ../src/modules/Covers.py:409
 msgid ""
 "Covers may be downloaded from the Internet, based on the tags of the current "
 "track. You can ask to always prefer user covers to Internet ones. In this "
@@ -354,15 +353,15 @@ msgstr ""
 "percorso della traccia utente, essa sarà usata, altrimenti ne verrà "
 "scaricata una da Internet."
 
-#: ../src/modules/Tracktree.py:389 ../src/modules/Tracktree.py:464
+#: ../src/modules/Tracktree.py:382 ../src/modules/Tracktree.py:457
 msgid "Export playlist to file"
 msgstr ""
 
-#: ../src/modules/Tracktree.py:397 ../src/modules/Tracktree.py:469
+#: ../src/modules/Tracktree.py:390 ../src/modules/Tracktree.py:462
 msgid "Export playlist to directory"
 msgstr ""
 
-#: ../src/modules/Tracktree.py:454
+#: ../src/modules/Tracktree.py:447
 msgid "Clear Playlist"
 msgstr "Cancella la scaletta"
 
@@ -395,98 +394,98 @@ msgstr "Impossibile caricare il file"
 msgid "The format of the file is incorrect."
 msgstr "Il formato del file è incorretto."
 
-#: ../src/tools/consts.py:94
+#: ../src/tools/consts.py:92
 msgid "Unknown Genre"
 msgstr "Genere sconosciuto"
 
-#: ../src/tools/consts.py:95
+#: ../src/tools/consts.py:93
 msgid "Unknown Title"
 msgstr "Titolo sconosciuto"
 
-#: ../src/tools/consts.py:96
+#: ../src/tools/consts.py:94
 msgid "Unknown Album"
 msgstr "Album sconosciuto"
 
-#: ../src/tools/consts.py:97
+#: ../src/tools/consts.py:95
 msgid "Unknown Artist"
 msgstr "Artista sconosciuto"
 
-#: ../src/tools/consts.py:105
+#: ../src/tools/consts.py:103
 msgid "Unknown Album Artist"
 msgstr "Artista dell'album sconosciuto"
 
-#: ../res/Covers.glade.h:1
+#: ../res/Covers.ui.h:1
 msgid "Filenames:"
 msgstr "Nome dei file:"
 
-#: ../res/Covers.glade.h:2
+#: ../res/Covers.ui.h:2
 msgid "Filenames to look for (e.g., folder, cover)"
 msgstr "Nome file da cercare (es: cartella, copertina)"
 
-#: ../res/Covers.glade.h:3
+#: ../res/Covers.ui.h:3
 msgid "<b>User Covers</b>"
 msgstr "<b>Copertine utente</b>"
 
-#: ../res/Covers.glade.h:4
+#: ../res/Covers.ui.h:4
 msgid "Download covers"
 msgstr "Scarica copertine"
 
-#: ../res/Covers.glade.h:5
+#: ../res/Covers.ui.h:5
 msgid "Try to download covers from the Internet"
 msgstr "Provare a scaricare una copertina da Internet"
 
-#: ../res/Covers.glade.h:6
+#: ../res/Covers.ui.h:6
 msgid "Always prefer user covers"
 msgstr "Preferire le copertine utente"
 
-#: ../res/Covers.glade.h:7
+#: ../res/Covers.ui.h:7
 msgid "Don't download covers when there is a user one"
 msgstr "Non scaricare la copertina quando ne esiste una utente"
 
-#: ../res/Covers.glade.h:8
+#: ../res/Covers.ui.h:8
 msgid "<b>Internet Covers</b>"
 msgstr "<b> Copertine da Internet </b>"
 
-#: ../res/DesktopNotification.glade.h:1
+#: ../res/DesktopNotification.ui.h:1
 msgid "<b>Title</b>"
 msgstr "<b>Titolo</b>"
 
-#: ../res/DesktopNotification.glade.h:2
+#: ../res/DesktopNotification.ui.h:2
 msgid "<b>Body</b>"
 msgstr "<b>Corpo</b>"
 
-#: ../res/DesktopNotification.glade.h:3
+#: ../res/DesktopNotification.ui.h:3
 msgid "Show a \"skip track\" button"
 msgstr "Mostra pulsante \"salta traccia\""
 
-#: ../res/DesktopNotification.glade.h:4
+#: ../res/DesktopNotification.ui.h:4
 msgid "Notification timeout:"
 msgstr "Timeout notifiche:"
 
-#: ../res/DesktopNotification.glade.h:5
+#: ../res/DesktopNotification.ui.h:5
 msgid "Time during which the notification is displayed"
 msgstr "Durata della visualizzazione delle notifiche"
 
-#: ../res/DesktopNotification.glade.h:6
+#: ../res/DesktopNotification.ui.h:6
 msgid "seconds"
 msgstr "secondi"
 
-#: ../res/DesktopNotification.glade.h:7
+#: ../res/DesktopNotification.ui.h:7
 msgid "<b>Miscellaneous</b>"
 msgstr "<b>Varie</b>"
 
-#: ../res/Equalizer.glade.h:1
+#: ../res/Equalizer.ui.h:1
 msgid "Preset:"
 msgstr "Preselezione:"
 
-#: ../res/MainWindow.glade.h:1
+#: ../res/MainWindow.ui.h:1
 msgid "Play the previous track"
 msgstr "Riproduce la traccia precedente"
 
-#: ../res/MainWindow.glade.h:2
+#: ../res/MainWindow.ui.h:2
 msgid "Play the first track of the playlist"
 msgstr "Ascolta la prima traccia della playlist"
 
-#: ../res/MainWindow.glade.h:3
+#: ../res/MainWindow.ui.h:3
 msgid "Play the next track"
 msgstr "Riproduce la traccia successiva"

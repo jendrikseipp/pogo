@@ -7,10 +7,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: decibel-audio-player\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-02-06 19:55+0100\n"
+"POT-Creation-Date: 2012-03-28 01:58+0200\n"
 "PO-Revision-Date: 2011-09-28 10:54+0000\n"
 "Last-Translator: Raphaël HUCK <raphael.huck@free.fr>\n"
 "Language-Team: French <fr@li.org>\n"
+"Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -65,7 +66,7 @@ msgstr "Durée en chaîne de caractères (par exemple 3:14)"
 msgid "Full path to the file"
 msgstr "Chemin d'accès au fichier"
 
-#: ../src/media/track/__init__.py:150 ../src/media/track/__init__.py:409
+#: ../src/media/track/__init__.py:150
 msgid "unknown"
 msgstr "inconnu(e)"
 
@@ -91,7 +92,7 @@ msgid "Modules"
 msgstr "Modules"
 
 #: ../src/gui/preferences.py:139 ../src/modules/DesktopNotification.py:222
-#: ../src/modules/Covers.py:438
+#: ../src/modules/Covers.py:400
 msgid "Description"
 msgstr "Description"
 
@@ -100,8 +101,8 @@ msgid ""
 "This window shows the list of available modules. You can enable/disable a "
 "module by checking/unchecking the check box in front of it."
 msgstr ""
-"Cette fenêtre affiche la liste des modules disponibles. Vous pouvez "
-"activer/désactiver un module en cliquant sur sa case à cocher."
+"Cette fenêtre affiche la liste des modules disponibles. Vous pouvez activer/"
+"désactiver un module en cliquant sur sa case à cocher."
 
 #: ../src/gui/preferences.py:142
 msgid "Configuring a Module"
@@ -139,77 +140,77 @@ msgstr "Développeur :"
 msgid "Thanks to:"
 msgstr "Merci à :"
 
-#: ../src/modules/Search.py:32
+#: ../src/modules/Search.py:33
 msgid "Search in your music folders"
 msgstr "Recherche dans vos dossiers de musiques"
 
-#: ../src/modules/Zeitgeist.py:26
+#: ../src/modules/Zeitgeist.py:28
 msgid "Send track information to the Zeitgeist service"
 msgstr "Envoyer les informations de la piste vers le service Zeitgeist"
 
-#: ../src/modules/FileExplorer.py:179
+#: ../src/modules/FileExplorer.py:181
 msgid "loading..."
 msgstr "chargement..."
 
-#: ../src/modules/FileExplorer.py:392
+#: ../src/modules/FileExplorer.py:394
 msgid "Append"
 msgstr "Ajouter"
 
-#: ../src/modules/FileExplorer.py:404
+#: ../src/modules/FileExplorer.py:406
 msgid "Open containing folder"
 msgstr "Ouvrir le dossier contenant"
 
-#: ../src/modules/FileExplorer.py:428
+#: ../src/modules/FileExplorer.py:430
 msgid "Add music folder"
 msgstr "Ajouter un dossier de musiques"
 
-#: ../src/modules/FileExplorer.py:440
+#: ../src/modules/FileExplorer.py:442
 msgid "Hide folder"
 msgstr "Cacher le dossier"
 
-#: ../src/modules/FileExplorer.py:454
+#: ../src/modules/FileExplorer.py:456
 msgid "Choose a directory"
 msgstr "Choisissez un dossier"
 
-#: ../src/modules/FileExplorer.py:460
+#: ../src/modules/FileExplorer.py:462
 msgid "Invalid Folder"
 msgstr "Dossier invalide"
 
-#: ../src/modules/FileExplorer.py:461
+#: ../src/modules/FileExplorer.py:463
 msgid "You cannot add your root or home folder to the music directories"
 msgstr ""
 "Vous ne pouvez pas ajouter votre dossier racine ou utilisateur aux dossiers "
 "musicaux"
 
-#: ../src/modules/FileExplorer.py:468
+#: ../src/modules/FileExplorer.py:470
 msgid "This path does not exist"
 msgstr "Ce chemin d'accès n'existe pas"
 
-#: ../src/modules/FileExplorer.py:469
+#: ../src/modules/FileExplorer.py:471
 msgid "Please select an existing directory."
 msgstr "Veuillez choisir un dossier existant."
 
-#: ../src/modules/FileExplorer.py:567
+#: ../src/modules/FileExplorer.py:558
 msgid "Albums"
 msgstr "Albums"
 
-#: ../src/modules/FileExplorer.py:569
+#: ../src/modules/FileExplorer.py:560
 msgid "Music"
 msgstr "Musique"
 
-#: ../src/modules/FileExplorer.py:646
+#: ../src/modules/FileExplorer.py:637
 msgid "Right-click to add music folders"
 msgstr "Cliquez droit pour ajouter les dossiers de musique"
 
-#: ../src/modules/FileExplorer.py:691
+#: ../src/modules/FileExplorer.py:681
 msgid "Searching ..."
 msgstr "Recherche..."
 
-#: ../src/modules/FileExplorer.py:719
+#: ../src/modules/FileExplorer.py:709
 msgid "No tracks found"
 msgstr "Aucune piste n'a été trouvée"
 
-#: ../src/modules/FileExplorer.py:721
+#: ../src/modules/FileExplorer.py:711
 msgid "No music folders have been added"
 msgstr "Aucun dossier musique n'a été ajouté"
 
@@ -226,20 +227,19 @@ msgid "Restart required"
 msgstr "Redémarrage nécessaire"
 
 #: ../src/modules/__init__.py:267
-msgid ""
-"You must restart the application for this modification to take effect."
+msgid "You must restart the application for this modification to take effect."
 msgstr ""
 "Vous devez redémarrer l'application pour que cette modification prenne effet."
 
-#: ../src/modules/CtrlPanel.py:190 ../src/modules/CtrlPanel.py:246
+#: ../src/modules/CtrlPanel.py:184 ../src/modules/CtrlPanel.py:240
 msgid "Pause the current track"
 msgstr "Mettre en pause"
 
-#: ../src/modules/CtrlPanel.py:206
+#: ../src/modules/CtrlPanel.py:200
 msgid "Play the first selected track of the playlist"
 msgstr "Lire la première piste sélectionnée de la liste de lecture"
 
-#: ../src/modules/CtrlPanel.py:240
+#: ../src/modules/CtrlPanel.py:234
 msgid "Continue playing the current track"
 msgstr "Continuer la lecture de la piste courante"
 
@@ -265,8 +265,7 @@ msgstr ""
 "commence."
 
 #: ../src/modules/DesktopNotification.py:224
-msgid ""
-"If the Covers module is enabled, the popup also shows the album cover."
+msgid "If the Covers module is enabled, the popup also shows the album cover."
 msgstr ""
 "Si le module Jaquettes est activé, le popup affiche aussi la jaquette de "
 "l'album."
@@ -313,7 +312,7 @@ msgstr "Jaquettes"
 msgid "Show album covers"
 msgstr "Afficher les jaquettes des albums"
 
-#: ../src/modules/Covers.py:439
+#: ../src/modules/Covers.py:401
 msgid ""
 "This module displays the cover of the album the current track comes from. "
 "Covers may be loaded from local pictures, located in the same directory as "
@@ -323,11 +322,11 @@ msgstr ""
 "Les jaquettes peuvent provenir d'images situées dans le même dossier que le "
 "morceau courant, ou peuvent être téléchargées depuis Internet."
 
-#: ../src/modules/Covers.py:442
+#: ../src/modules/Covers.py:404
 msgid "User Covers"
 msgstr "Jaquettes utilisateur"
 
-#: ../src/modules/Covers.py:443
+#: ../src/modules/Covers.py:405
 #, python-format
 msgid ""
 "A user cover is a picture located in the same directory as the current "
@@ -338,11 +337,11 @@ msgstr ""
 "morceau actuel. Vous n'avez pas besoin de fournir l'extension des noms de "
 "fichiers, les formats supportés (%s) sont automatiquement utilisés."
 
-#: ../src/modules/Covers.py:446
+#: ../src/modules/Covers.py:408
 msgid "Internet Covers"
 msgstr "Jaquettes téléchargées"
 
-#: ../src/modules/Covers.py:447
+#: ../src/modules/Covers.py:409
 msgid ""
 "Covers may be downloaded from the Internet, based on the tags of the current "
 "track. You can ask to always prefer user covers to Internet ones. In this "
@@ -355,15 +354,15 @@ msgstr ""
 "le morceau actuel, elle est utilisée. S'il n'y en a pas, la pochette est "
 "téléchargée."
 
-#: ../src/modules/Tracktree.py:389 ../src/modules/Tracktree.py:464
+#: ../src/modules/Tracktree.py:382 ../src/modules/Tracktree.py:457
 msgid "Export playlist to file"
 msgstr "Exporter la liste de lecture vers un fichier"
 
-#: ../src/modules/Tracktree.py:397 ../src/modules/Tracktree.py:469
+#: ../src/modules/Tracktree.py:390 ../src/modules/Tracktree.py:462
 msgid "Export playlist to directory"
 msgstr "Exporter la liste de lecture vers un répertoire"
 
-#: ../src/modules/Tracktree.py:454
+#: ../src/modules/Tracktree.py:447
 msgid "Clear Playlist"
 msgstr "Effacer la liste de lecture"
 
@@ -396,99 +395,98 @@ msgstr "Impossible de charger le fichier"
 msgid "The format of the file is incorrect."
 msgstr "Le format du fichier est incorrect."
 
-#: ../src/tools/consts.py:94
+#: ../src/tools/consts.py:92
 msgid "Unknown Genre"
 msgstr "Genre inconnu"
 
-#: ../src/tools/consts.py:95
+#: ../src/tools/consts.py:93
 msgid "Unknown Title"
 msgstr "Titre inconnu"
 
-#: ../src/tools/consts.py:96
+#: ../src/tools/consts.py:94
 msgid "Unknown Album"
 msgstr "Album inconnu"
 
-#: ../src/tools/consts.py:97
+#: ../src/tools/consts.py:95
 msgid "Unknown Artist"
 msgstr "Artiste inconnu"
 
-#: ../src/tools/consts.py:105
+#: ../src/tools/consts.py:103
 msgid "Unknown Album Artist"
 msgstr "Artiste de l'album inconnu"
 
-#: ../res/Covers.glade.h:1
+#: ../res/Covers.ui.h:1
 msgid "Filenames:"
 msgstr "Fichiers :"
 
-#: ../res/Covers.glade.h:2
+#: ../res/Covers.ui.h:2
 msgid "Filenames to look for (e.g., folder, cover)"
 msgstr "Noms de fichiers à rechercher (par exemple dossier, jaquettes...)"
 
-#: ../res/Covers.glade.h:3
+#: ../res/Covers.ui.h:3
 msgid "<b>User Covers</b>"
 msgstr "<b>Jaquettes utilisateur</b>"
 
-#: ../res/Covers.glade.h:4
+#: ../res/Covers.ui.h:4
 msgid "Download covers"
 msgstr "Télécharger les jaquettes"
 
-#: ../res/Covers.glade.h:5
+#: ../res/Covers.ui.h:5
 msgid "Try to download covers from the Internet"
 msgstr "Essayer de télécharger les jaquettes depuis Internet"
 
-#: ../res/Covers.glade.h:6
+#: ../res/Covers.ui.h:6
 msgid "Always prefer user covers"
 msgstr "Toujours préférer les jaquettes utilisateurs"
 
-#: ../res/Covers.glade.h:7
+#: ../res/Covers.ui.h:7
 msgid "Don't download covers when there is a user one"
-msgstr ""
-"Ne pas télécharger de jaquette lorsqu'une jaquette utilisateur existe"
+msgstr "Ne pas télécharger de jaquette lorsqu'une jaquette utilisateur existe"
 
-#: ../res/Covers.glade.h:8
+#: ../res/Covers.ui.h:8
 msgid "<b>Internet Covers</b>"
 msgstr "<b>Jaquettes téléchargées</b>"
 
-#: ../res/DesktopNotification.glade.h:1
+#: ../res/DesktopNotification.ui.h:1
 msgid "<b>Title</b>"
 msgstr "<b>Titre</b>"
 
-#: ../res/DesktopNotification.glade.h:2
+#: ../res/DesktopNotification.ui.h:2
 msgid "<b>Body</b>"
 msgstr "<b>Contenu</b>"
 
-#: ../res/DesktopNotification.glade.h:3
+#: ../res/DesktopNotification.ui.h:3
 msgid "Show a \"skip track\" button"
 msgstr "Afficher un bouton pour sauter le morceau"
 
-#: ../res/DesktopNotification.glade.h:4
+#: ../res/DesktopNotification.ui.h:4
 msgid "Notification timeout:"
 msgstr "Durée de la notification :"
 
-#: ../res/DesktopNotification.glade.h:5
+#: ../res/DesktopNotification.ui.h:5
 msgid "Time during which the notification is displayed"
 msgstr "Durée d'affichage de la notification"
 
-#: ../res/DesktopNotification.glade.h:6
+#: ../res/DesktopNotification.ui.h:6
 msgid "seconds"
 msgstr "secondes"
 
-#: ../res/DesktopNotification.glade.h:7
+#: ../res/DesktopNotification.ui.h:7
 msgid "<b>Miscellaneous</b>"
 msgstr "<b>Divers</b>"
 
-#: ../res/Equalizer.glade.h:1
+#: ../res/Equalizer.ui.h:1
 msgid "Preset:"
 msgstr "Prédéfini :"
 
-#: ../res/MainWindow.glade.h:1
+#: ../res/MainWindow.ui.h:1
 msgid "Play the previous track"
 msgstr "Lire le morceau précédent"
 
-#: ../res/MainWindow.glade.h:2
+#: ../res/MainWindow.ui.h:2
 msgid "Play the first track of the playlist"
 msgstr "Lire le premier morceau de la liste de lecture"
 
-#: ../res/MainWindow.glade.h:3
+#: ../res/MainWindow.ui.h:3
 msgid "Play the next track"
 msgstr "Lire le morceau suivant"

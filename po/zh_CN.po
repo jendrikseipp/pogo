@@ -7,10 +7,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: decibel-audio-player\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-02-06 19:55+0100\n"
+"POT-Creation-Date: 2012-03-28 01:58+0200\n"
 "PO-Revision-Date: 2011-04-12 03:48+0000\n"
 "Last-Translator: yuane <myewmyew@gmail.com>\n"
 "Language-Team: Simplified Chinese <zh_CN@li.org>\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -65,7 +66,7 @@ msgstr "字符串形式的持续时间（如：3:14）"
 msgid "Full path to the file"
 msgstr "文件路径"
 
-#: ../src/media/track/__init__.py:150 ../src/media/track/__init__.py:409
+#: ../src/media/track/__init__.py:150
 msgid "unknown"
 msgstr "未知"
 
@@ -91,7 +92,7 @@ msgid "Modules"
 msgstr "模块"
 
 #: ../src/gui/preferences.py:139 ../src/modules/DesktopNotification.py:222
-#: ../src/modules/Covers.py:438
+#: ../src/modules/Covers.py:400
 msgid "Description"
 msgstr "描述"
 
@@ -99,7 +100,9 @@ msgstr "描述"
 msgid ""
 "This window shows the list of available modules. You can enable/disable a "
 "module by checking/unchecking the check box in front of it."
-msgstr "此窗口显示了可用的模块清单。您可以通过选择/取消选择各项前面的复选框来启用/禁用那个模块。"
+msgstr ""
+"此窗口显示了可用的模块清单。您可以通过选择/取消选择各项前面的复选框来启用/禁"
+"用那个模块。"
 
 #: ../src/gui/preferences.py:142
 msgid "Configuring a Module"
@@ -112,7 +115,8 @@ msgid ""
 "click on the \"Preferences\" button on the bottom of the dialog box. Note "
 "that configuring a module is only possible when it is enabled."
 msgstr ""
-"当一个模块可以被配置，在其所在行的右端会显示一个图标。要配置一个模块，先选中它然后单击对话窗口下端的“首选项”按钮。注意，一个模块只有在被激活时才可以被配"
+"当一个模块可以被配置，在其所在行的右端会显示一个图标。要配置一个模块，先选中"
+"它然后单击对话窗口下端的“首选项”按钮。注意，一个模块只有在被激活时才可以被配"
 "置。"
 
 #: ../src/gui/about.py:40
@@ -133,75 +137,75 @@ msgstr "开发者："
 msgid "Thanks to:"
 msgstr "鸣谢："
 
-#: ../src/modules/Search.py:32
+#: ../src/modules/Search.py:33
 msgid "Search in your music folders"
 msgstr "在您的音乐文件夹中寻找"
 
-#: ../src/modules/Zeitgeist.py:26
+#: ../src/modules/Zeitgeist.py:28
 msgid "Send track information to the Zeitgeist service"
 msgstr "发送曲目信息到 Zeitgeist 服务"
 
-#: ../src/modules/FileExplorer.py:179
+#: ../src/modules/FileExplorer.py:181
 msgid "loading..."
 msgstr "正在加载..."
 
-#: ../src/modules/FileExplorer.py:392
+#: ../src/modules/FileExplorer.py:394
 msgid "Append"
 msgstr "追加"
 
-#: ../src/modules/FileExplorer.py:404
+#: ../src/modules/FileExplorer.py:406
 msgid "Open containing folder"
 msgstr "打开包含文件夹"
 
-#: ../src/modules/FileExplorer.py:428
+#: ../src/modules/FileExplorer.py:430
 msgid "Add music folder"
 msgstr "添加音频文件夹"
 
-#: ../src/modules/FileExplorer.py:440
+#: ../src/modules/FileExplorer.py:442
 msgid "Hide folder"
 msgstr "隐藏文件夹"
 
-#: ../src/modules/FileExplorer.py:454
+#: ../src/modules/FileExplorer.py:456
 msgid "Choose a directory"
 msgstr "选择一个文件夹"
 
-#: ../src/modules/FileExplorer.py:460
+#: ../src/modules/FileExplorer.py:462
 msgid "Invalid Folder"
 msgstr ""
 
-#: ../src/modules/FileExplorer.py:461
+#: ../src/modules/FileExplorer.py:463
 msgid "You cannot add your root or home folder to the music directories"
 msgstr "您不能将根目录或者主目录添加到音乐目录中"
 
-#: ../src/modules/FileExplorer.py:468
+#: ../src/modules/FileExplorer.py:470
 msgid "This path does not exist"
 msgstr "此路径不存在"
 
-#: ../src/modules/FileExplorer.py:469
+#: ../src/modules/FileExplorer.py:471
 msgid "Please select an existing directory."
 msgstr "请选择一个已有的文件夹"
 
-#: ../src/modules/FileExplorer.py:567
+#: ../src/modules/FileExplorer.py:558
 msgid "Albums"
 msgstr "专辑"
 
-#: ../src/modules/FileExplorer.py:569
+#: ../src/modules/FileExplorer.py:560
 msgid "Music"
 msgstr "音乐"
 
-#: ../src/modules/FileExplorer.py:646
+#: ../src/modules/FileExplorer.py:637
 msgid "Right-click to add music folders"
 msgstr "单击右键添加音乐文件夹"
 
-#: ../src/modules/FileExplorer.py:691
+#: ../src/modules/FileExplorer.py:681
 msgid "Searching ..."
 msgstr "搜索..."
 
-#: ../src/modules/FileExplorer.py:719
+#: ../src/modules/FileExplorer.py:709
 msgid "No tracks found"
 msgstr "没有发现音轨"
 
-#: ../src/modules/FileExplorer.py:721
+#: ../src/modules/FileExplorer.py:711
 msgid "No music folders have been added"
 msgstr "还没有添加任何音乐文件夹"
 
@@ -218,19 +222,18 @@ msgid "Restart required"
 msgstr "需要重启"
 
 #: ../src/modules/__init__.py:267
-msgid ""
-"You must restart the application for this modification to take effect."
+msgid "You must restart the application for this modification to take effect."
 msgstr "您必须重启程序以使此更改起作用。"
 
-#: ../src/modules/CtrlPanel.py:190 ../src/modules/CtrlPanel.py:246
+#: ../src/modules/CtrlPanel.py:184 ../src/modules/CtrlPanel.py:240
 msgid "Pause the current track"
 msgstr "暂停当前音轨"
 
-#: ../src/modules/CtrlPanel.py:206
+#: ../src/modules/CtrlPanel.py:200
 msgid "Play the first selected track of the playlist"
 msgstr "播放列表中第一首选中的音轨"
 
-#: ../src/modules/CtrlPanel.py:240
+#: ../src/modules/CtrlPanel.py:234
 msgid "Continue playing the current track"
 msgstr "继续播放当前音轨"
 
@@ -254,8 +257,7 @@ msgid ""
 msgstr "当新的曲目开始播放时，该模块会在桌面上显示一个小的弹出窗口。"
 
 #: ../src/modules/DesktopNotification.py:224
-msgid ""
-"If the Covers module is enabled, the popup also shows the album cover."
+msgid "If the Covers module is enabled, the popup also shows the album cover."
 msgstr "如果启用封面模块，弹出提示也会显示专辑封面。"
 
 #: ../src/modules/DesktopNotification.py:225
@@ -269,7 +271,8 @@ msgid ""
 "replaced by their corresponding value. Available fields are:\n"
 "\n"
 msgstr ""
-"你可将提示信息的标题和内容修改为任何想要的文字。在显示弹出窗口前，{field}形式的字段将全被替换为对应的值。可用的字段有：\n"
+"你可将提示信息的标题和内容修改为任何想要的文字。在显示弹出窗口前，{field}形式"
+"的字段将全被替换为对应的值。可用的字段有：\n"
 "\n"
 
 #: ../src/modules/DesktopNotification.py:229
@@ -280,7 +283,9 @@ msgstr "标记"
 msgid ""
 "You can use the Pango markup language to format the text. More information "
 "on that language is available on the following web page:"
-msgstr "你可以使用 Pango 标记语言来格式化文本。更多关于该语言的信息可以从以下网页获取："
+msgstr ""
+"你可以使用 Pango 标记语言来格式化文本。更多关于该语言的信息可以从以下网页获"
+"取："
 
 #: ../src/modules/StatusbarTitlebar.py:48
 msgid "[paused]"
@@ -294,47 +299,52 @@ msgstr "封面"
 msgid "Show album covers"
 msgstr "显示专辑封面"
 
-#: ../src/modules/Covers.py:439
+#: ../src/modules/Covers.py:401
 msgid ""
 "This module displays the cover of the album the current track comes from. "
 "Covers may be loaded from local pictures, located in the same directory as "
 "the current track, or may be downloaded from the Internet."
-msgstr "此模块显示当前音轨的专辑封面。封面图片可以从当前音轨的同文件夹下的本地图片载入，也可从互联网下载。"
+msgstr ""
+"此模块显示当前音轨的专辑封面。封面图片可以从当前音轨的同文件夹下的本地图片载"
+"入，也可从互联网下载。"
 
-#: ../src/modules/Covers.py:442
+#: ../src/modules/Covers.py:404
 msgid "User Covers"
 msgstr "用户封面"
 
-#: ../src/modules/Covers.py:443
+#: ../src/modules/Covers.py:405
 #, python-format
 msgid ""
 "A user cover is a picture located in the same directory as the current "
 "track. When specifying filenames, you do not need to provide file "
 "extensions, supported file formats (%s) are automatically used."
-msgstr "用户封面是当前音轨的同文件夹下的图片。指定文件名时无需提供文件扩展名，程序会自动使用支持的文件格式 (%s) 。"
+msgstr ""
+"用户封面是当前音轨的同文件夹下的图片。指定文件名时无需提供文件扩展名，程序会"
+"自动使用支持的文件格式 (%s) 。"
 
-#: ../src/modules/Covers.py:446
+#: ../src/modules/Covers.py:408
 msgid "Internet Covers"
 msgstr "互联网封面"
 
-#: ../src/modules/Covers.py:447
+#: ../src/modules/Covers.py:409
 msgid ""
 "Covers may be downloaded from the Internet, based on the tags of the current "
 "track. You can ask to always prefer user covers to Internet ones. In this "
 "case, if a user cover exists for the current track, it is used. If there is "
 "none, the cover is downloaded."
 msgstr ""
-"封面可以根据当前音轨的标签从互联网下载。您可以选择总是优先使用用户封面，此时，如果当前音轨存在用户封面，就会使用用户封面，否则就从互联网下载。"
+"封面可以根据当前音轨的标签从互联网下载。您可以选择总是优先使用用户封面，此"
+"时，如果当前音轨存在用户封面，就会使用用户封面，否则就从互联网下载。"
 
-#: ../src/modules/Tracktree.py:389 ../src/modules/Tracktree.py:464
+#: ../src/modules/Tracktree.py:382 ../src/modules/Tracktree.py:457
 msgid "Export playlist to file"
 msgstr ""
 
-#: ../src/modules/Tracktree.py:397 ../src/modules/Tracktree.py:469
+#: ../src/modules/Tracktree.py:390 ../src/modules/Tracktree.py:462
 msgid "Export playlist to directory"
 msgstr ""
 
-#: ../src/modules/Tracktree.py:454
+#: ../src/modules/Tracktree.py:447
 msgid "Clear Playlist"
 msgstr "清空播放列表"
 
@@ -367,98 +377,98 @@ msgstr "无法载入文件"
 msgid "The format of the file is incorrect."
 msgstr "文件格式不正确"
 
-#: ../src/tools/consts.py:94
+#: ../src/tools/consts.py:92
 msgid "Unknown Genre"
 msgstr "未知类型"
 
-#: ../src/tools/consts.py:95
+#: ../src/tools/consts.py:93
 msgid "Unknown Title"
 msgstr "未知标题"
 
-#: ../src/tools/consts.py:96
+#: ../src/tools/consts.py:94
 msgid "Unknown Album"
 msgstr "未知专辑"
 
-#: ../src/tools/consts.py:97
+#: ../src/tools/consts.py:95
 msgid "Unknown Artist"
 msgstr "未知艺术家"
 
-#: ../src/tools/consts.py:105
+#: ../src/tools/consts.py:103
 msgid "Unknown Album Artist"
 msgstr "未知专辑艺术家"
 
-#: ../res/Covers.glade.h:1
+#: ../res/Covers.ui.h:1
 msgid "Filenames:"
 msgstr "文件名："
 
-#: ../res/Covers.glade.h:2
+#: ../res/Covers.ui.h:2
 msgid "Filenames to look for (e.g., folder, cover)"
 msgstr "要查找的文件名 (例如：folder, cover)"
 
-#: ../res/Covers.glade.h:3
+#: ../res/Covers.ui.h:3
 msgid "<b>User Covers</b>"
 msgstr "<b>用户封面</b>"
 
-#: ../res/Covers.glade.h:4
+#: ../res/Covers.ui.h:4
 msgid "Download covers"
 msgstr "下载封面"
 
-#: ../res/Covers.glade.h:5
+#: ../res/Covers.ui.h:5
 msgid "Try to download covers from the Internet"
 msgstr "尝试从互联网下载封面"
 
-#: ../res/Covers.glade.h:6
+#: ../res/Covers.ui.h:6
 msgid "Always prefer user covers"
 msgstr "总是优先使用用户封面"
 
-#: ../res/Covers.glade.h:7
+#: ../res/Covers.ui.h:7
 msgid "Don't download covers when there is a user one"
 msgstr "当存在用户封面时不要从互联网下载封面"
 
-#: ../res/Covers.glade.h:8
+#: ../res/Covers.ui.h:8
 msgid "<b>Internet Covers</b>"
 msgstr "<b>互联网封面</b>"
 
-#: ../res/DesktopNotification.glade.h:1
+#: ../res/DesktopNotification.ui.h:1
 msgid "<b>Title</b>"
 msgstr "<b>标题</b>"
 
-#: ../res/DesktopNotification.glade.h:2
+#: ../res/DesktopNotification.ui.h:2
 msgid "<b>Body</b>"
 msgstr ""
 
-#: ../res/DesktopNotification.glade.h:3
+#: ../res/DesktopNotification.ui.h:3
 msgid "Show a \"skip track\" button"
 msgstr "显示“跳过音轨”按钮"
 
-#: ../res/DesktopNotification.glade.h:4
+#: ../res/DesktopNotification.ui.h:4
 msgid "Notification timeout:"
 msgstr "提示超时："
 
-#: ../res/DesktopNotification.glade.h:5
+#: ../res/DesktopNotification.ui.h:5
 msgid "Time during which the notification is displayed"
 msgstr "提示显示时间"
 
-#: ../res/DesktopNotification.glade.h:6
+#: ../res/DesktopNotification.ui.h:6
 msgid "seconds"
 msgstr "秒"
 
-#: ../res/DesktopNotification.glade.h:7
+#: ../res/DesktopNotification.ui.h:7
 msgid "<b>Miscellaneous</b>"
 msgstr "<b>杂项</b>"
 
-#: ../res/Equalizer.glade.h:1
+#: ../res/Equalizer.ui.h:1
 msgid "Preset:"
 msgstr "预设："
 
-#: ../res/MainWindow.glade.h:1
+#: ../res/MainWindow.ui.h:1
 msgid "Play the previous track"
 msgstr "播放上一音轨"
 
-#: ../res/MainWindow.glade.h:2
+#: ../res/MainWindow.ui.h:2
 msgid "Play the first track of the playlist"
 msgstr "播放列表中的第一音轨"
 
-#: ../res/MainWindow.glade.h:3
+#: ../res/MainWindow.ui.h:3
 msgid "Play the next track"
 msgstr "播放下一音轨"
