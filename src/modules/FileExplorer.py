@@ -671,6 +671,13 @@ class FileExplorer(modules.Module):
             self.saveTreeState()
 
 
+    def _remove_searching_node(self):
+        # Remove the "Searching ..." node if it still exists
+        if (self.tree.isValidPath(self.searching_text_path) and
+            self.tree.getItem(self.searching_text_path, ROW_NAME) == self.searching_text):
+            self.tree.removeRow(self.searching_text_path)
+
+
     def onSearchStart(self, query):
         if not self.displaying_results:
             self.saveTreeState()
@@ -683,10 +690,7 @@ class FileExplorer(modules.Module):
 
 
     def onSearchAppend(self, results, query):
-        # Remove the "Searching ..." node if it still exists
-        if (self.tree.isValidPath(self.searching_text_path) and
-            self.tree.getItem(self.searching_text_path, ROW_NAME) == self.searching_text):
-            self.tree.removeRow(self.searching_text_path)
+        self._remove_searching_node()
 
         # Make sure we never call this method without calling onSearchStart first
         if not self.displaying_results:
@@ -704,6 +708,7 @@ class FileExplorer(modules.Module):
 
 
     def onSearchEnd(self):
+        self._remove_searching_node()
         if len(self.tree) == 0:
             if self.music_paths:
                 text = _('No tracks found')

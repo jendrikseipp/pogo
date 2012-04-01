@@ -1,6 +1,7 @@
 === Roadmap ===
 
-X Convert GUI from libglade to gtkbuilder
+X Convert GUI from libglade to gtkbuilder.
+X Search in home folder if we haven't found anything in the music directories.
 X Do not search in subdirectories if we already search in parent directory.
 O Use new logo by Kevin Macphail
 O Search for tracks in all directories (not just music directories) with locate.

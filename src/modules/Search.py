@@ -221,7 +221,7 @@ class Search(modules.ThreadedModule):
 
             # Only search in home folder if we haven't found anything yet.
             if dir == consts.dirBaseUsr and self.found_something:
-                return
+                break
 
             results = self.search_dir(dir, query)
 
