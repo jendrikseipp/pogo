@@ -55,9 +55,13 @@ class Search(modules.ThreadedModule):
 
 
     def search_dir(self, dir, query):
-        cmd = ['find', dir]
-        for part in query.split():
-            cmd.extend(['-iwholename', '*%s*' % part])
+        if dir == consts.dirBaseUsr:
+            cmd = ['locate', '--existing', '--ignore-case',
+                   '*%s*' % query.replace(' ', '*')]
+        else:
+            cmd = ['find', dir]
+            for part in query.split():
+                cmd.extend(['-iwholename', '*%s*' % part])
         search = subprocess.Popen(cmd, stdout=subprocess.PIPE)
         if query == CACHE_QUERY:
             logging.info('Caching "%s"' % dir)
@@ -206,12 +210,17 @@ class Search(modules.ThreadedModule):
 
     def onSearch(self, query):
         self.should_stop = False
+        self.found_something = False
 
         regexes = [tools.get_regex(part) for part in query.split()]
 
-        for dir in self.get_search_paths():
+        for dir in self.get_search_paths() + [consts.dirBaseUsr]:
             # Check if search has been aborted during filtering
             if self.should_stop:
+                return
+
+            # Only search in home folder if we haven't found anything yet.
+            if dir == consts.dirBaseUsr and self.found_something:
                 return
 
             results = self.search_dir(dir, query)
@@ -221,9 +230,10 @@ class Search(modules.ThreadedModule):
                 return
 
             dirs, files = self.filter_results(results, dir, regexes)
-            if not self.should_stop:
+            if not self.should_stop and (dirs or files):
+                self.found_something = True
                 modules.postMsg(consts.MSG_EVT_SEARCH_APPEND,
-                            {'results': (dirs, files), 'query': query})
+                                {'results': (dirs, files), 'query': query})
 
         modules.postMsg(consts.MSG_EVT_SEARCH_END)
 

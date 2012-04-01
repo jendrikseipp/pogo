@@ -1,6 +1,7 @@
 === Roadmap ===
 
 X Convert GUI from libglade to gtkbuilder
+X Do not search in subdirectories if we already search in parent directory.
 O Use new logo by Kevin Macphail
 O Search for tracks in all directories (not just music directories) with locate.
   Report only hits outside the music directories.
@@ -9,7 +10,7 @@ O Playlist loading (Only add tracks in playlist not added as normal files at the
 O Sound Indicator for the Ubuntu Sound Menu
   (https://github.com/sunng87/Exaile-Soundmenu-Indicator,
    http://theravingrick.blogspot.com/2011/02/easily-support-sound-menu-in-python.html)
-O Port from gtk2 to gtk3
+O Port from gtk2 to gtk3 (Make sure pygobject doesn't make us slower)
 O Port from python2 to python3
 
 
