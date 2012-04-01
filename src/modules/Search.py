@@ -144,6 +144,22 @@ class Search(modules.ThreadedModule):
         return keep_caching
 
 
+    def get_search_paths(self):
+        """Do not search in subdirectories if we already search in parent dir.
+
+        If path1 is a prefix of path2, return only path1. Always search in the
+        user's home directory.
+        """
+        paths = set(self.paths)
+        search_paths = []
+        for path1 in paths:
+            if not any(path1.startswith(path2) and not path1 == path2
+                       for path2 in paths):
+                search_paths.append(path1)
+        logging.info('Searching at %s' % search_paths)
+        return search_paths
+
+
     # --== Message handlers ==--
 
 
@@ -193,7 +209,7 @@ class Search(modules.ThreadedModule):
 
         regexes = [tools.get_regex(part) for part in query.split()]
 
-        for dir in self.paths:
+        for dir in self.get_search_paths():
             # Check if search has been aborted during filtering
             if self.should_stop:
                 return
