@@ -106,6 +106,8 @@ class Search(modules.ThreadedModule):
                 name = tools.dirname(path)
             else:
                 name = path.replace(search_path, '')
+                # Only show filename and at most one parent dir for each file.
+                name = '/'.join(name.split('/')[-2:])
             name = name.strip('/')
 
             for regex in regexes:
