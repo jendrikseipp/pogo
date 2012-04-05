@@ -73,48 +73,35 @@ class Covers(modules.ThreadedModule):
         modules.ThreadedModule.__init__(self, handlers)
 
 
-    def generateFullSizeCover(self, inFile, outFile, format):
-        """ Resize inFile if needed, and write it to outFile (outFile and inFile may be equal) """
+    def _generateCover(self, inFile, outFile, format, max_width, max_height):
         import Image
 
         try:
             # Open the image
             cover = Image.open(inFile)
-
             width = cover.size[0]
             height = cover.size[1]
-            max_width = FULL_SIZE_COVER_WIDTH
-            max_height = FULL_SIZE_COVER_HEIGHT
             newWidth, newHeight = tools.resize(width, height, max_width, max_height)
 
             cover = cover.resize((newWidth, newHeight), Image.ANTIALIAS)
-
-            # We're done
             cover.save(outFile, format)
         except:
-            logger.error('[%s] An error occurred while generating a showable full size cover\n\n%s' % (MOD_NAME, traceback.format_exc()))
+            logger.error('[%s] An error occurred while generating a cover\n\n%s' %
+                         (MOD_NAME, traceback.format_exc()))
+
+
+    def generateFullSizeCover(self, inFile, outFile, format):
+        """ Resize inFile if needed, and write it to outFile (outFile and inFile may be equal) """
+        self._generateCover(inFile, outFile, format, FULL_SIZE_COVER_WIDTH,
+                            FULL_SIZE_COVER_HEIGHT)
 
 
     def generateThumbnail(self, inFile, outFile, format):
-        """ Generate a thumbnail from inFile (e.g., resize it) and write it to outFile (outFile and inFile may be equal) """
-        import Image
-
-        try:
-            # Open the image
-            cover = Image.open(inFile).convert('RGBA')
-
-            width = cover.size[0]
-            height = cover.size[1]
-            max_width = THUMBNAIL_WIDTH
-            max_height = THUMBNAIL_HEIGHT
-            newWidth, newHeight = tools.resize(width, height, max_width, max_height)
-
-            cover = cover.resize((newWidth, newHeight), Image.ANTIALIAS)
-
-            # We're done
-            cover.save(outFile, format)
-        except:
-            logger.error('[%s] An error occurred while generating a thumbnail\n\n%s' % (MOD_NAME, traceback.format_exc()))
+        """
+        Generate a thumbnail from inFile (e.g., resize it) and write it to
+        outFile (outFile and inFile may be equal).
+        """
+        self._generateCover(inFile, outFile, format, THUMBNAIL_WIDTH, THUMBNAIL_HEIGHT)
 
 
     def getUserCover(self, trackPath):
