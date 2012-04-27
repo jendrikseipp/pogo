@@ -1,6 +1,15 @@
  Pogo NEWS
 ==============
 
+ 0.7 "It has a melody both happy and sad" (2012-04-27)
+======================================================
+* Search in home folder if we haven't found anything in the music directories.
+* Do not search in subdirectories if we already search in parent directory.
+* Only show filename and at most one parent dir for each file in search results.
+* Convert GUI from libglade to gtkbuilder.
+* Update translations.
+
+
  0.6 "I will be a bridge for you" (2012-03-26)
 ==============================================
 * Show search results immediately after they're found for each music directory
