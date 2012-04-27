@@ -108,7 +108,7 @@ class Zeitgeist(modules.ThreadedModule):
 
         # Handle "unknown" tags
         if 'unknown' in title.lower():
-            title = track.get_basename()
+            title = track.getBasename()
         if 'unknown' in album.lower():
             album = ''
         if 'unknown' in artist.lower():
