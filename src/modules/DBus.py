@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 #
 # Copyright (c) 2007  François Ingelrest (Francois.Ingelrest@gmail.com)
+# Copyright (c) 2012  Jendrik Seipp (jendrikseipp@web.de)
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -334,10 +335,10 @@ class DBusObjectPlayer(dbus.service.Object):
 
     @dbus.service.method(consts.dbusInterface, in_signature='', out_signature='')
     def Play(self):
-        """ If playing : rewind to the beginning of current track, else : start playing """
+        """Start playing if not already playing."""
         if len(self.module.tracklist) != 0:
-            if self.module.currTrack is None: gobject.idle_add(modules.postMsg, consts.MSG_CMD_TOGGLE_PAUSE)
-            else:                             gobject.idle_add(modules.postMsg, consts.MSG_CMD_SEEK, {'seconds': 0})
+            if self.module.paused or self.module.currTrack is None:
+                gobject.idle_add(modules.postMsg, consts.MSG_CMD_TOGGLE_PAUSE)
 
 
     @dbus.service.method(consts.dbusInterface, in_signature='b', out_signature='')
