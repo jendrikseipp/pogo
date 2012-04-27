@@ -18,9 +18,13 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301 USA
 
+from gettext import gettext as _
 import optparse
 import os
 import sys
+import traceback
+
+import dbus
 
 prefix = '/usr'
 installed_src_dir = os.path.join(prefix, 'share/pogo/src')
@@ -49,10 +53,15 @@ optparser.add_option('--multiple-instances', action='store_true',
 optOptions, optArgs = optparser.parse_args()
 
 
+COMMANDS = {'play': _('Start playing the current track'),
+            'pause': _('Pause or continue playing the current track'),
+            'next': _('Jump to the next track'),
+            'prev': _('Jump to the previous track'),
+            'stop': _('Stop playing')
+            }
+
 # Check whether Pogo is already running?
 if not optOptions.multiple_instances:
-    import dbus
-
     shouldStop = False
     dbusSession = None
 
@@ -64,9 +73,21 @@ if not optOptions.multiple_instances:
         if consts.dbusService in activeServices:
             shouldStop = True
 
+            window = dbus.Interface(dbusSession.get_object(consts.dbusService, '/'),
+                                    consts.dbusInterface)
+            player = dbus.Interface(dbusSession.get_object(consts.dbusService, '/Player'),
+                                    consts.dbusInterface)
+            playlist = dbus.Interface(dbusSession.get_object(consts.dbusService,
+                                      '/TrackList'), consts.dbusInterface)
+
             # Raise the window of the already running instance
-            dbus.Interface(dbusSession.get_object(consts.dbusService, '/'),
-                           consts.dbusInterface).RaiseWindow()
+            window.RaiseWindow()
+
+            for command in COMMANDS.keys():
+                if command in optArgs:
+                    optArgs.remove(command)
+                    print command.capitalize()
+                    getattr(player, command.capitalize())()
 
             # Fill the current instance with the given tracks, if any
             if len(optArgs) != 0:
@@ -74,10 +95,9 @@ if not optOptions.multiple_instances:
                 paths = map(os.path.abspath, optArgs)
                 print 'Appending to the playlist:'
                 print '\n'.join(paths)
-                dbus.Interface(dbusSession.get_object(consts.dbusService,
-                '/TrackList'), consts.dbusInterface).AddTracks(paths, True)
+                playlist.AddTracks(paths, True)
     except:
-        pass
+        print traceback.format_exc()
 
     if dbusSession is not None:
         dbusSession.close()
