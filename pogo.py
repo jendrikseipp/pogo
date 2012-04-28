@@ -43,8 +43,11 @@ else:
 from tools import consts
 
 
+COMMANDS = ['play', 'pause', 'next', 'prev', 'stop']
+
 # Command line
-optparser = optparse.OptionParser(usage='Usage: %prog [options] [FILE(s)]')
+optparser = optparse.OptionParser(usage='Usage: %prog [options] [FILE(s) | ' +
+                                        ' | '.join(COMMANDS)  + ']')
 optparser.add_option('--playbin', action='store_true', default=False,
               help='use the playbin GStreamer component instead of playbin2')
 optparser.add_option('--multiple-instances', action='store_true',
@@ -52,13 +55,6 @@ optparser.add_option('--multiple-instances', action='store_true',
 
 optOptions, optArgs = optparser.parse_args()
 
-
-COMMANDS = {'play': _('Start playing the current track'),
-            'pause': _('Pause or continue playing the current track'),
-            'next': _('Jump to the next track'),
-            'prev': _('Jump to the previous track'),
-            'stop': _('Stop playing')
-            }
 
 # Check whether Pogo is already running?
 if not optOptions.multiple_instances:
@@ -83,7 +79,7 @@ if not optOptions.multiple_instances:
             # Raise the window of the already running instance
             window.RaiseWindow()
 
-            for command in COMMANDS.keys():
+            for command in COMMANDS:
                 if command in optArgs:
                     optArgs.remove(command)
                     print command.capitalize()
