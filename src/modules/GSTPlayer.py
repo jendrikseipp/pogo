@@ -59,7 +59,7 @@ class GSTPlayer(modules.Module):
             position  = self.player.getPosition()
             remaining = self.player.getDuration() - position
 
-            modules.postMsg(consts.MSG_EVT_TRACK_POSITION, {'seconds': int(position / 1000000000)})
+            modules.postMsg(consts.MSG_EVT_TRACK_POSITION, {'seconds': int(position // 1000000000)})
 
             if remaining < 5000000000 and self.nextURI is None and not prefs.getCmdLine()[0].playbin:
                 modules.postMsg(consts.MSG_EVT_NEED_BUFFER)

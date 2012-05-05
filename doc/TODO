@@ -1,6 +1,6 @@
 === Roadmap ===
 
-X Control pogo from the commandline. The commands play, pause, next, prev and stop are supported.
+X Control pogo from the commandline. The commands play, pause, next, prev and stop are supported. (lp:986164)
 O Use new logo by Kevin Macphail
 O Stop after current album / track (Playlist context menu entry)
 O Playlist loading (Only add tracks in playlist not added as normal files at the same time)

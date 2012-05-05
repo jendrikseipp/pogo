@@ -191,6 +191,15 @@ class FileExplorer(modules.Module):
             self.tree.setItem(row, ROW_NAME, name[:index-2])
 
 
+    def _filename(self, row):
+        """
+            Compare two filenames:
+              - First the lower case version (we want 'bar' to be before 'Foo')
+              - Then, if an equality occurs, the normal version (we want 'Foo' and 'foo' to be different folders)
+        """
+        return row[ROW_NAME].lower(), row[ROW_NAME]
+
+
     def __cmpRowsOnFilename(self, r1, r2):
         """
             Compare two filenames:
@@ -227,9 +236,9 @@ class FileExplorer(modules.Module):
                 ##    playlists.append((icons.mediaFileMenuIcon(), tools.htmlEscape(unicode(file, errors='replace')), TYPE_FILE, path))
 
         # Individually sort each type of file by name
-        playlists.sort(cmp=self.__cmpRowsOnFilename)
-        mediaFiles.sort(cmp=self.__cmpRowsOnFilename)
-        directories.sort(cmp=self.__cmpRowsOnFilename)
+        playlists.sort(key=self._filename)
+        mediaFiles.sort(key=self._filename)
+        directories.sort(key=self._filename)
 
         return (directories, playlists, mediaFiles)
 

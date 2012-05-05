@@ -148,8 +148,8 @@ class Track:
         bitrate = self.__get(TAG_BTR, consts.UNKNOWN_BITRATE)
 
         if bitrate == -1:            return _('unknown')
-        elif self.getEncMode() == 1: return '~ %u kbps' % (bitrate / 1000)
-        else:                        return '%u kbps'   % (bitrate / 1000)
+        elif self.getEncMode() == 1: return '~ %u kbps' % (bitrate // 1000)
+        else:                        return '%u kbps'   % (bitrate // 1000)
 
     def getSampleRate(self):
         """ Transform the sample rate into a string"""
