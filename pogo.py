@@ -76,9 +76,6 @@ if not optOptions.multiple_instances:
             playlist = dbus.Interface(dbusSession.get_object(consts.dbusService,
                                       '/TrackList'), consts.dbusInterface)
 
-            # Raise the window of the already running instance
-            window.RaiseWindow()
-
             for command in COMMANDS:
                 if command in optArgs:
                     optArgs.remove(command)
@@ -86,12 +83,14 @@ if not optOptions.multiple_instances:
                     getattr(player, command.capitalize())()
 
             # Fill the current instance with the given tracks, if any
-            if len(optArgs) != 0:
+            if optArgs:
                 # make the paths absolute
                 paths = map(os.path.abspath, optArgs)
                 print 'Appending to the playlist:'
                 print '\n'.join(paths)
                 playlist.AddTracks(paths, True)
+                # Raise the window of the already running instance
+                window.RaiseWindow()
     except:
         print traceback.format_exc()
 
