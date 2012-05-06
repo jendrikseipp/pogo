@@ -3,10 +3,10 @@
 import timeit
 
 data = 'ajsdbajdb&ajsdbaks&asjkdbas&asdks<asdf>dasd<asdnsa>aksdn&aksnd>aasd<aksdn>'
-NB_ITERS = 5000
+NB_ITERS = 500
 
 # ---
-    
+
 def escape():
     # must do ampersand first
     global data
@@ -17,7 +17,7 @@ def escape():
 
 
 # ---
-    
+
 def htmlEscape():
     output = ''
     global data
