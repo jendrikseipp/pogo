@@ -12,6 +12,8 @@ O Port from gtk2 to gtk3 (Make sure pygobject doesn't make us slower, wait for p
                           to stabilize and spread to distros more)
   O Use new unity API for SoundMenu
 O Port from python2 to python3
+  O Use hsaudiotag3k if mutagen is still not python3 compatible. This should also give a 3x speedup.
+    We should probably write our own faster version of auto.File()
 
 
 === Features that will MAYBE be implemented ===
