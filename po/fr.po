@@ -7,10 +7,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: decibel-audio-player\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-03-28 01:58+0200\n"
+"POT-Creation-Date: 2012-05-29 23:17+0200\n"
 "PO-Revision-Date: 2011-09-28 10:54+0000\n"
 "Last-Translator: Raphaël HUCK <raphael.huck@free.fr>\n"
 "Language-Team: French <fr@li.org>\n"
+"Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -91,7 +92,7 @@ msgid "Modules"
 msgstr "Modules"
 
 #: ../src/gui/preferences.py:139 ../src/modules/DesktopNotification.py:222
-#: ../src/modules/Covers.py:400
+#: ../src/modules/Covers.py:387
 msgid "Description"
 msgstr "Description"
 
@@ -100,8 +101,8 @@ msgid ""
 "This window shows the list of available modules. You can enable/disable a "
 "module by checking/unchecking the check box in front of it."
 msgstr ""
-"Cette fenêtre affiche la liste des modules disponibles. Vous pouvez "
-"activer/désactiver un module en cliquant sur sa case à cocher."
+"Cette fenêtre affiche la liste des modules disponibles. Vous pouvez activer/"
+"désactiver un module en cliquant sur sa case à cocher."
 
 #: ../src/gui/preferences.py:142
 msgid "Configuring a Module"
@@ -151,65 +152,65 @@ msgstr "Envoyer les informations de la piste vers le service Zeitgeist"
 msgid "loading..."
 msgstr "chargement..."
 
-#: ../src/modules/FileExplorer.py:394
+#: ../src/modules/FileExplorer.py:403
 msgid "Append"
 msgstr "Ajouter"
 
-#: ../src/modules/FileExplorer.py:406
+#: ../src/modules/FileExplorer.py:415
 msgid "Open containing folder"
 msgstr "Ouvrir le dossier contenant"
 
-#: ../src/modules/FileExplorer.py:430
+#: ../src/modules/FileExplorer.py:439
 msgid "Add music folder"
 msgstr "Ajouter un dossier de musiques"
 
-#: ../src/modules/FileExplorer.py:442
+#: ../src/modules/FileExplorer.py:451
 msgid "Hide folder"
 msgstr "Cacher le dossier"
 
-#: ../src/modules/FileExplorer.py:456
+#: ../src/modules/FileExplorer.py:465
 msgid "Choose a directory"
 msgstr "Choisissez un dossier"
 
-#: ../src/modules/FileExplorer.py:462
+#: ../src/modules/FileExplorer.py:471
 msgid "Invalid Folder"
 msgstr "Dossier invalide"
 
-#: ../src/modules/FileExplorer.py:463
+#: ../src/modules/FileExplorer.py:472
 msgid "You cannot add your root or home folder to the music directories"
 msgstr ""
 "Vous ne pouvez pas ajouter votre dossier racine ou utilisateur aux dossiers "
 "musicaux"
 
-#: ../src/modules/FileExplorer.py:470
+#: ../src/modules/FileExplorer.py:479
 msgid "This path does not exist"
 msgstr "Ce chemin d'accès n'existe pas"
 
-#: ../src/modules/FileExplorer.py:471
+#: ../src/modules/FileExplorer.py:480
 msgid "Please select an existing directory."
 msgstr "Veuillez choisir un dossier existant."
 
-#: ../src/modules/FileExplorer.py:558
+#: ../src/modules/FileExplorer.py:567
 msgid "Albums"
 msgstr "Albums"
 
-#: ../src/modules/FileExplorer.py:560
+#: ../src/modules/FileExplorer.py:569
 msgid "Music"
 msgstr "Musique"
 
-#: ../src/modules/FileExplorer.py:637
+#: ../src/modules/FileExplorer.py:646
 msgid "Right-click to add music folders"
 msgstr "Cliquez droit pour ajouter les dossiers de musique"
 
-#: ../src/modules/FileExplorer.py:681
+#: ../src/modules/FileExplorer.py:697
 msgid "Searching ..."
 msgstr "Recherche..."
 
-#: ../src/modules/FileExplorer.py:709
+#: ../src/modules/FileExplorer.py:723
 msgid "No tracks found"
 msgstr "Aucune piste n'a été trouvée"
 
-#: ../src/modules/FileExplorer.py:711
+#: ../src/modules/FileExplorer.py:725
 msgid "No music folders have been added"
 msgstr "Aucun dossier musique n'a été ajouté"
 
@@ -226,8 +227,7 @@ msgid "Restart required"
 msgstr "Redémarrage nécessaire"
 
 #: ../src/modules/__init__.py:267
-msgid ""
-"You must restart the application for this modification to take effect."
+msgid "You must restart the application for this modification to take effect."
 msgstr ""
 "Vous devez redémarrer l'application pour que cette modification prenne effet."
 
@@ -265,8 +265,7 @@ msgstr ""
 "commence."
 
 #: ../src/modules/DesktopNotification.py:224
-msgid ""
-"If the Covers module is enabled, the popup also shows the album cover."
+msgid "If the Covers module is enabled, the popup also shows the album cover."
 msgstr ""
 "Si le module Jaquettes est activé, le popup affiche aussi la jaquette de "
 "l'album."
@@ -313,7 +312,7 @@ msgstr "Jaquettes"
 msgid "Show album covers"
 msgstr "Afficher les jaquettes des albums"
 
-#: ../src/modules/Covers.py:401
+#: ../src/modules/Covers.py:388
 msgid ""
 "This module displays the cover of the album the current track comes from. "
 "Covers may be loaded from local pictures, located in the same directory as "
@@ -323,11 +322,11 @@ msgstr ""
 "Les jaquettes peuvent provenir d'images situées dans le même dossier que le "
 "morceau courant, ou peuvent être téléchargées depuis Internet."
 
-#: ../src/modules/Covers.py:404
+#: ../src/modules/Covers.py:391
 msgid "User Covers"
 msgstr "Jaquettes utilisateur"
 
-#: ../src/modules/Covers.py:405
+#: ../src/modules/Covers.py:392
 #, python-format
 msgid ""
 "A user cover is a picture located in the same directory as the current "
@@ -338,11 +337,11 @@ msgstr ""
 "morceau actuel. Vous n'avez pas besoin de fournir l'extension des noms de "
 "fichiers, les formats supportés (%s) sont automatiquement utilisés."
 
-#: ../src/modules/Covers.py:408
+#: ../src/modules/Covers.py:395
 msgid "Internet Covers"
 msgstr "Jaquettes téléchargées"
 
-#: ../src/modules/Covers.py:409
+#: ../src/modules/Covers.py:396
 msgid ""
 "Covers may be downloaded from the Internet, based on the tags of the current "
 "track. You can ask to always prefer user covers to Internet ones. In this "
@@ -442,8 +441,7 @@ msgstr "Toujours préférer les jaquettes utilisateurs"
 
 #: ../res/Covers.ui.h:7
 msgid "Don't download covers when there is a user one"
-msgstr ""
-"Ne pas télécharger de jaquette lorsqu'une jaquette utilisateur existe"
+msgstr "Ne pas télécharger de jaquette lorsqu'une jaquette utilisateur existe"
 
 #: ../res/Covers.ui.h:8
 msgid "<b>Internet Covers</b>"

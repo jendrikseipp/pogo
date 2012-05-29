@@ -7,10 +7,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: decibel-audio-player\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-03-28 01:58+0200\n"
+"POT-Creation-Date: 2012-05-29 23:17+0200\n"
 "PO-Revision-Date: 2011-01-18 22:17+0000\n"
 "Last-Translator: Ask Hjorth Larsen <asklarsen@gmail.com>\n"
 "Language-Team: Danish <da@li.org>\n"
+"Language: da\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -91,7 +92,7 @@ msgid "Modules"
 msgstr "Moduler"
 
 #: ../src/gui/preferences.py:139 ../src/modules/DesktopNotification.py:222
-#: ../src/modules/Covers.py:400
+#: ../src/modules/Covers.py:387
 msgid "Description"
 msgstr "Beskrivelse"
 
@@ -148,63 +149,63 @@ msgstr "Send sporinformation til Zeitgeist-tjenesten"
 msgid "loading..."
 msgstr "indlæser..."
 
-#: ../src/modules/FileExplorer.py:394
+#: ../src/modules/FileExplorer.py:403
 msgid "Append"
 msgstr "Tilføj"
 
-#: ../src/modules/FileExplorer.py:406
+#: ../src/modules/FileExplorer.py:415
 msgid "Open containing folder"
 msgstr "Åbn indeholdende mappe"
 
-#: ../src/modules/FileExplorer.py:430
+#: ../src/modules/FileExplorer.py:439
 msgid "Add music folder"
 msgstr "Tilføj musikmappe"
 
-#: ../src/modules/FileExplorer.py:442
+#: ../src/modules/FileExplorer.py:451
 msgid "Hide folder"
 msgstr "Skjul mappe"
 
-#: ../src/modules/FileExplorer.py:456
+#: ../src/modules/FileExplorer.py:465
 msgid "Choose a directory"
 msgstr "Vælg en mappe"
 
-#: ../src/modules/FileExplorer.py:462
+#: ../src/modules/FileExplorer.py:471
 msgid "Invalid Folder"
 msgstr "Ugyldig mappe"
 
-#: ../src/modules/FileExplorer.py:463
+#: ../src/modules/FileExplorer.py:472
 msgid "You cannot add your root or home folder to the music directories"
 msgstr "Du kan ikke tilføje din rod eller hjemmemappe til musikmapperne"
 
-#: ../src/modules/FileExplorer.py:470
+#: ../src/modules/FileExplorer.py:479
 msgid "This path does not exist"
 msgstr "Denne sti eksisterer ikke"
 
-#: ../src/modules/FileExplorer.py:471
+#: ../src/modules/FileExplorer.py:480
 msgid "Please select an existing directory."
 msgstr "Vælg en eksisterende mappe."
 
-#: ../src/modules/FileExplorer.py:558
+#: ../src/modules/FileExplorer.py:567
 msgid "Albums"
 msgstr "Albummer"
 
-#: ../src/modules/FileExplorer.py:560
+#: ../src/modules/FileExplorer.py:569
 msgid "Music"
 msgstr "Musik"
 
-#: ../src/modules/FileExplorer.py:637
+#: ../src/modules/FileExplorer.py:646
 msgid "Right-click to add music folders"
 msgstr "Højreklik for at tilføje musikmapper"
 
-#: ../src/modules/FileExplorer.py:681
+#: ../src/modules/FileExplorer.py:697
 msgid "Searching ..."
 msgstr "Søger..."
 
-#: ../src/modules/FileExplorer.py:709
+#: ../src/modules/FileExplorer.py:723
 msgid "No tracks found"
 msgstr "Ingen numre fundet"
 
-#: ../src/modules/FileExplorer.py:711
+#: ../src/modules/FileExplorer.py:725
 msgid "No music folders have been added"
 msgstr "Der er ikke blevet tilføjet nogen musikmapper"
 
@@ -221,8 +222,7 @@ msgid "Restart required"
 msgstr "Genstart påkrævet"
 
 #: ../src/modules/__init__.py:267
-msgid ""
-"You must restart the application for this modification to take effect."
+msgid "You must restart the application for this modification to take effect."
 msgstr ""
 "Du er nødt til at genstarte programmet, for at dine ændringer kan træde "
 "igennem."
@@ -261,8 +261,7 @@ msgstr ""
 "starter."
 
 #: ../src/modules/DesktopNotification.py:224
-msgid ""
-"If the Covers module is enabled, the popup also shows the album cover."
+msgid "If the Covers module is enabled, the popup also shows the album cover."
 msgstr "Hvis omslagsmodulet er slået til, vises også albummets omslag."
 
 #: ../src/modules/DesktopNotification.py:225
@@ -305,7 +304,7 @@ msgstr "Omslag"
 msgid "Show album covers"
 msgstr "Vis albumomslag"
 
-#: ../src/modules/Covers.py:401
+#: ../src/modules/Covers.py:388
 msgid ""
 "This module displays the cover of the album the current track comes from. "
 "Covers may be loaded from local pictures, located in the same directory as "
@@ -315,11 +314,11 @@ msgstr ""
 "fra. Omslag kan indlæses fra lokale billeder, som ligger i samme mappe som "
 "det nuværende nummer, eller de kan hentes fra nettet."
 
-#: ../src/modules/Covers.py:404
+#: ../src/modules/Covers.py:391
 msgid "User Covers"
 msgstr "Brugeromslag"
 
-#: ../src/modules/Covers.py:405
+#: ../src/modules/Covers.py:392
 #, python-format
 msgid ""
 "A user cover is a picture located in the same directory as the current "
@@ -330,11 +329,11 @@ msgstr ""
 "nummer. Når du angiver filnavne, behøver du ikke angive filendelser. "
 "Understøttede filformater (%s) bruges automatisk."
 
-#: ../src/modules/Covers.py:408
+#: ../src/modules/Covers.py:395
 msgid "Internet Covers"
 msgstr "Internetomslag"
 
-#: ../src/modules/Covers.py:409
+#: ../src/modules/Covers.py:396
 msgid ""
 "Covers may be downloaded from the Internet, based on the tags of the current "
 "track. You can ask to always prefer user covers to Internet ones. In this "

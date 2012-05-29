@@ -7,10 +7,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: decibel-audio-player\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-03-28 01:58+0200\n"
+"POT-Creation-Date: 2012-05-29 23:17+0200\n"
 "PO-Revision-Date: 2011-01-12 18:12+0000\n"
 "Last-Translator: Adam Czabara <kolofaza@o2.pl>\n"
 "Language-Team: Polish <pl@li.org>\n"
+"Language: pl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -91,7 +92,7 @@ msgid "Modules"
 msgstr "Moduły"
 
 #: ../src/gui/preferences.py:139 ../src/modules/DesktopNotification.py:222
-#: ../src/modules/Covers.py:400
+#: ../src/modules/Covers.py:387
 msgid "Description"
 msgstr "Opis"
 
@@ -144,63 +145,63 @@ msgstr ""
 msgid "loading..."
 msgstr "wczytywanie..."
 
-#: ../src/modules/FileExplorer.py:394
+#: ../src/modules/FileExplorer.py:403
 msgid "Append"
 msgstr "Dołącz"
 
-#: ../src/modules/FileExplorer.py:406
+#: ../src/modules/FileExplorer.py:415
 msgid "Open containing folder"
 msgstr ""
 
-#: ../src/modules/FileExplorer.py:430
+#: ../src/modules/FileExplorer.py:439
 msgid "Add music folder"
 msgstr ""
 
-#: ../src/modules/FileExplorer.py:442
+#: ../src/modules/FileExplorer.py:451
 msgid "Hide folder"
 msgstr ""
 
-#: ../src/modules/FileExplorer.py:456
+#: ../src/modules/FileExplorer.py:465
 msgid "Choose a directory"
 msgstr ""
 
-#: ../src/modules/FileExplorer.py:462
+#: ../src/modules/FileExplorer.py:471
 msgid "Invalid Folder"
 msgstr ""
 
-#: ../src/modules/FileExplorer.py:463
+#: ../src/modules/FileExplorer.py:472
 msgid "You cannot add your root or home folder to the music directories"
 msgstr ""
 
-#: ../src/modules/FileExplorer.py:470
+#: ../src/modules/FileExplorer.py:479
 msgid "This path does not exist"
 msgstr "Ta ścieżka dostępu nie istnieje"
 
-#: ../src/modules/FileExplorer.py:471
+#: ../src/modules/FileExplorer.py:480
 msgid "Please select an existing directory."
 msgstr "Wybierz istniejący katalog."
 
-#: ../src/modules/FileExplorer.py:558
+#: ../src/modules/FileExplorer.py:567
 msgid "Albums"
 msgstr "Albumy"
 
-#: ../src/modules/FileExplorer.py:560
+#: ../src/modules/FileExplorer.py:569
 msgid "Music"
 msgstr "Muzyka"
 
-#: ../src/modules/FileExplorer.py:637
+#: ../src/modules/FileExplorer.py:646
 msgid "Right-click to add music folders"
 msgstr ""
 
-#: ../src/modules/FileExplorer.py:681
+#: ../src/modules/FileExplorer.py:697
 msgid "Searching ..."
 msgstr ""
 
-#: ../src/modules/FileExplorer.py:709
+#: ../src/modules/FileExplorer.py:723
 msgid "No tracks found"
 msgstr ""
 
-#: ../src/modules/FileExplorer.py:711
+#: ../src/modules/FileExplorer.py:725
 msgid "No music folders have been added"
 msgstr ""
 
@@ -217,8 +218,7 @@ msgid "Restart required"
 msgstr "Wymagany restart"
 
 #: ../src/modules/__init__.py:267
-msgid ""
-"You must restart the application for this modification to take effect."
+msgid "You must restart the application for this modification to take effect."
 msgstr ""
 
 #: ../src/modules/CtrlPanel.py:184 ../src/modules/CtrlPanel.py:240
@@ -255,8 +255,7 @@ msgstr ""
 "odtwarzanie kolejnego utworu."
 
 #: ../src/modules/DesktopNotification.py:224
-msgid ""
-"If the Covers module is enabled, the popup also shows the album cover."
+msgid "If the Covers module is enabled, the popup also shows the album cover."
 msgstr ""
 
 #: ../src/modules/DesktopNotification.py:225
@@ -299,7 +298,7 @@ msgstr "Okładki"
 msgid "Show album covers"
 msgstr "Pokaż okładki albumów"
 
-#: ../src/modules/Covers.py:401
+#: ../src/modules/Covers.py:388
 msgid ""
 "This module displays the cover of the album the current track comes from. "
 "Covers may be loaded from local pictures, located in the same directory as "
@@ -310,11 +309,11 @@ msgstr ""
 "znajdujących się w tym samym katalogu, w którym znajduje się odtwarzany "
 "utwór, lub pobierane z Internetu."
 
-#: ../src/modules/Covers.py:404
+#: ../src/modules/Covers.py:391
 msgid "User Covers"
 msgstr "Okładki użytkownika"
 
-#: ../src/modules/Covers.py:405
+#: ../src/modules/Covers.py:392
 #, python-format
 msgid ""
 "A user cover is a picture located in the same directory as the current "
@@ -325,11 +324,11 @@ msgstr ""
 "w którym znajduje się odtwarzany utwór. Przy wprowadzaniu nazw plików nie "
 "musisz dodawać rozszerzeń - obsługiwane są wszystkie formaty (%s)."
 
-#: ../src/modules/Covers.py:408
+#: ../src/modules/Covers.py:395
 msgid "Internet Covers"
 msgstr "Okładki z internetu"
 
-#: ../src/modules/Covers.py:409
+#: ../src/modules/Covers.py:396
 msgid ""
 "Covers may be downloaded from the Internet, based on the tags of the current "
 "track. You can ask to always prefer user covers to Internet ones. In this "
