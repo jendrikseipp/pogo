@@ -11,12 +11,11 @@ msgstr ""
 "PO-Revision-Date: 2011-09-06 17:14+0000\n"
 "Last-Translator: Valter Nazianzeno <Unknown>\n"
 "Language-Team: Brazilian Portuguese <pt_BR@li.org>\n"
-"Language: pt_BR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2012-05-13 04:49+0000\n"
-"X-Generator: Launchpad (build 15225)\n"
+"X-Launchpad-Export-Date: 2012-05-30 05:37+0000\n"
+"X-Generator: Launchpad (build 15316)\n"
 
 #: ../src/media/track/__init__.py:52
 msgid "Track number"
@@ -101,8 +100,9 @@ msgid ""
 "This window shows the list of available modules. You can enable/disable a "
 "module by checking/unchecking the check box in front of it."
 msgstr ""
-"Essa janela mostra a lista de módulos disponíveis. Você pode habilitar/"
-"desabilitar o módulo marcando/desmarcando o caixa de verificação na frente."
+"Essa janela mostra a lista de módulos disponíveis. Você pode "
+"habilitar/desabilitar o módulo marcando/desmarcando o caixa de verificação "
+"na frente."
 
 #: ../src/gui/preferences.py:142
 msgid "Configuring a Module"
@@ -224,7 +224,8 @@ msgid "Restart required"
 msgstr "Reinicialização necessária"
 
 #: ../src/modules/__init__.py:267
-msgid "You must restart the application for this modification to take effect."
+msgid ""
+"You must restart the application for this modification to take effect."
 msgstr ""
 "Você deve reiniciar o aplicativo para que esta modificação tenha efeito."
 
@@ -262,7 +263,8 @@ msgstr ""
 "quando uma nova faixa é iniciada."
 
 #: ../src/modules/DesktopNotification.py:224
-msgid "If the Covers module is enabled, the popup also shows the album cover."
+msgid ""
+"If the Covers module is enabled, the popup also shows the album cover."
 msgstr ""
 "Se o módulo Covers está habilitado, o pop-up também mostra a capa do álbum."
 
@@ -435,7 +437,8 @@ msgstr "Todos preferem utilizar arte de capa"
 
 #: ../res/Covers.ui.h:7
 msgid "Don't download covers when there is a user one"
-msgstr "Não realizar o download das artes de capa quando há somente um usuário"
+msgstr ""
+"Não realizar o download das artes de capa quando há somente um usuário"
 
 #: ../res/Covers.ui.h:8
 msgid "<b>Internet Covers</b>"
