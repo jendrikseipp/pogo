@@ -85,9 +85,12 @@ class Covers(modules.ThreadedModule):
 
             cover = cover.resize((newWidth, newHeight), Image.ANTIALIAS)
             cover.save(outFile, format)
-        except:
-            logger.error('[%s] An error occurred while generating a cover\n\n%s' %
-                         (MOD_NAME, traceback.format_exc()))
+        except Exception:
+            # This message will probably be displayed for the thumbnail and the big cover.
+            logger.error('[%s] An error occurred while generating the cover for "%s"\n\n%s' %
+                         (MOD_NAME, inFile, traceback.format_exc()))
+            # Remove corrupted file.
+            tools.remove(outFile)
 
 
     def generateFullSizeCover(self, inFile, outFile, format):
