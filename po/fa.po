@@ -7,10 +7,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: decibel-audio-player\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-05-29 23:17+0200\n"
+"POT-Creation-Date: 2012-07-20 17:10+0200\n"
 "PO-Revision-Date: 2010-10-07 11:27+0000\n"
 "Last-Translator: Jendrik Seipp <jendrikseipp@web.de>\n"
 "Language-Team: Persian <fa@li.org>\n"
+"Language: fa\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -91,7 +92,7 @@ msgid "Modules"
 msgstr ""
 
 #: ../src/gui/preferences.py:139 ../src/modules/DesktopNotification.py:222
-#: ../src/modules/Covers.py:387
+#: ../src/modules/Covers.py:390
 msgid "Description"
 msgstr "شرح"
 
@@ -212,8 +213,7 @@ msgid "Restart required"
 msgstr ""
 
 #: ../src/modules/__init__.py:267
-msgid ""
-"You must restart the application for this modification to take effect."
+msgid "You must restart the application for this modification to take effect."
 msgstr ""
 
 #: ../src/modules/CtrlPanel.py:184 ../src/modules/CtrlPanel.py:240
@@ -248,8 +248,7 @@ msgid ""
 msgstr ""
 
 #: ../src/modules/DesktopNotification.py:224
-msgid ""
-"If the Covers module is enabled, the popup also shows the album cover."
+msgid "If the Covers module is enabled, the popup also shows the album cover."
 msgstr ""
 
 #: ../src/modules/DesktopNotification.py:225
@@ -286,18 +285,18 @@ msgstr ""
 msgid "Show album covers"
 msgstr ""
 
-#: ../src/modules/Covers.py:388
+#: ../src/modules/Covers.py:391
 msgid ""
 "This module displays the cover of the album the current track comes from. "
 "Covers may be loaded from local pictures, located in the same directory as "
 "the current track, or may be downloaded from the Internet."
 msgstr ""
 
-#: ../src/modules/Covers.py:391
+#: ../src/modules/Covers.py:394
 msgid "User Covers"
 msgstr ""
 
-#: ../src/modules/Covers.py:392
+#: ../src/modules/Covers.py:395
 #, python-format
 msgid ""
 "A user cover is a picture located in the same directory as the current "
@@ -305,11 +304,11 @@ msgid ""
 "extensions, supported file formats (%s) are automatically used."
 msgstr ""
 
-#: ../src/modules/Covers.py:395
+#: ../src/modules/Covers.py:398
 msgid "Internet Covers"
 msgstr ""
 
-#: ../src/modules/Covers.py:396
+#: ../src/modules/Covers.py:399
 msgid ""
 "Covers may be downloaded from the Internet, based on the tags of the current "
 "track. You can ask to always prefer user covers to Internet ones. In this "

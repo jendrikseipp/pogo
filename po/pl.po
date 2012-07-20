@@ -7,10 +7,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: decibel-audio-player\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-05-29 23:17+0200\n"
+"POT-Creation-Date: 2012-07-20 17:10+0200\n"
 "PO-Revision-Date: 2011-01-12 18:12+0000\n"
 "Last-Translator: Adam Czabara <kolofaza@o2.pl>\n"
 "Language-Team: Polish <pl@li.org>\n"
+"Language: pl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -91,7 +92,7 @@ msgid "Modules"
 msgstr "Moduły"
 
 #: ../src/gui/preferences.py:139 ../src/modules/DesktopNotification.py:222
-#: ../src/modules/Covers.py:387
+#: ../src/modules/Covers.py:390
 msgid "Description"
 msgstr "Opis"
 
@@ -218,8 +219,7 @@ msgid "Restart required"
 msgstr "Wymagany restart"
 
 #: ../src/modules/__init__.py:267
-msgid ""
-"You must restart the application for this modification to take effect."
+msgid "You must restart the application for this modification to take effect."
 msgstr ""
 
 #: ../src/modules/CtrlPanel.py:184 ../src/modules/CtrlPanel.py:240
@@ -256,8 +256,7 @@ msgstr ""
 "odtwarzanie kolejnego utworu."
 
 #: ../src/modules/DesktopNotification.py:224
-msgid ""
-"If the Covers module is enabled, the popup also shows the album cover."
+msgid "If the Covers module is enabled, the popup also shows the album cover."
 msgstr ""
 
 #: ../src/modules/DesktopNotification.py:225
@@ -300,7 +299,7 @@ msgstr "Okładki"
 msgid "Show album covers"
 msgstr "Pokaż okładki albumów"
 
-#: ../src/modules/Covers.py:388
+#: ../src/modules/Covers.py:391
 msgid ""
 "This module displays the cover of the album the current track comes from. "
 "Covers may be loaded from local pictures, located in the same directory as "
@@ -311,11 +310,11 @@ msgstr ""
 "znajdujących się w tym samym katalogu, w którym znajduje się odtwarzany "
 "utwór, lub pobierane z Internetu."
 
-#: ../src/modules/Covers.py:391
+#: ../src/modules/Covers.py:394
 msgid "User Covers"
 msgstr "Okładki użytkownika"
 
-#: ../src/modules/Covers.py:392
+#: ../src/modules/Covers.py:395
 #, python-format
 msgid ""
 "A user cover is a picture located in the same directory as the current "
@@ -326,11 +325,11 @@ msgstr ""
 "w którym znajduje się odtwarzany utwór. Przy wprowadzaniu nazw plików nie "
 "musisz dodawać rozszerzeń - obsługiwane są wszystkie formaty (%s)."
 
-#: ../src/modules/Covers.py:395
+#: ../src/modules/Covers.py:398
 msgid "Internet Covers"
 msgstr "Okładki z internetu"
 
-#: ../src/modules/Covers.py:396
+#: ../src/modules/Covers.py:399
 msgid ""
 "Covers may be downloaded from the Internet, based on the tags of the current "
 "track. You can ask to always prefer user covers to Internet ones. In this "

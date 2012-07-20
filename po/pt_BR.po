@@ -7,10 +7,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: decibel-audio-player\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-05-29 23:17+0200\n"
+"POT-Creation-Date: 2012-07-20 17:10+0200\n"
 "PO-Revision-Date: 2011-09-06 17:14+0000\n"
 "Last-Translator: Valter Nazianzeno <Unknown>\n"
 "Language-Team: Brazilian Portuguese <pt_BR@li.org>\n"
+"Language: pt_BR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -91,7 +92,7 @@ msgid "Modules"
 msgstr "Módulos"
 
 #: ../src/gui/preferences.py:139 ../src/modules/DesktopNotification.py:222
-#: ../src/modules/Covers.py:387
+#: ../src/modules/Covers.py:390
 msgid "Description"
 msgstr "Descrição"
 
@@ -100,9 +101,8 @@ msgid ""
 "This window shows the list of available modules. You can enable/disable a "
 "module by checking/unchecking the check box in front of it."
 msgstr ""
-"Essa janela mostra a lista de módulos disponíveis. Você pode "
-"habilitar/desabilitar o módulo marcando/desmarcando o caixa de verificação "
-"na frente."
+"Essa janela mostra a lista de módulos disponíveis. Você pode habilitar/"
+"desabilitar o módulo marcando/desmarcando o caixa de verificação na frente."
 
 #: ../src/gui/preferences.py:142
 msgid "Configuring a Module"
@@ -224,8 +224,7 @@ msgid "Restart required"
 msgstr "Reinicialização necessária"
 
 #: ../src/modules/__init__.py:267
-msgid ""
-"You must restart the application for this modification to take effect."
+msgid "You must restart the application for this modification to take effect."
 msgstr ""
 "Você deve reiniciar o aplicativo para que esta modificação tenha efeito."
 
@@ -263,8 +262,7 @@ msgstr ""
 "quando uma nova faixa é iniciada."
 
 #: ../src/modules/DesktopNotification.py:224
-msgid ""
-"If the Covers module is enabled, the popup also shows the album cover."
+msgid "If the Covers module is enabled, the popup also shows the album cover."
 msgstr ""
 "Se o módulo Covers está habilitado, o pop-up também mostra a capa do álbum."
 
@@ -308,7 +306,7 @@ msgstr "Covers"
 msgid "Show album covers"
 msgstr "Mostra artes de capa"
 
-#: ../src/modules/Covers.py:388
+#: ../src/modules/Covers.py:391
 msgid ""
 "This module displays the cover of the album the current track comes from. "
 "Covers may be loaded from local pictures, located in the same directory as "
@@ -318,11 +316,11 @@ msgstr ""
 "tocada. As capas mostradas devem estar armazenadas localmente, no mesmo "
 "diretório da faixa, podendo ainda serem baixada da internet."
 
-#: ../src/modules/Covers.py:391
+#: ../src/modules/Covers.py:394
 msgid "User Covers"
 msgstr "Imagens e informações do artista"
 
-#: ../src/modules/Covers.py:392
+#: ../src/modules/Covers.py:395
 #, python-format
 msgid ""
 "A user cover is a picture located in the same directory as the current "
@@ -334,11 +332,11 @@ msgstr ""
 "informar também a extensão, visto que os formatos (%s) são automaticamente "
 "utilizados."
 
-#: ../src/modules/Covers.py:395
+#: ../src/modules/Covers.py:398
 msgid "Internet Covers"
 msgstr "Artes de capa da internet"
 
-#: ../src/modules/Covers.py:396
+#: ../src/modules/Covers.py:399
 msgid ""
 "Covers may be downloaded from the Internet, based on the tags of the current "
 "track. You can ask to always prefer user covers to Internet ones. In this "
@@ -437,8 +435,7 @@ msgstr "Todos preferem utilizar arte de capa"
 
 #: ../res/Covers.ui.h:7
 msgid "Don't download covers when there is a user one"
-msgstr ""
-"Não realizar o download das artes de capa quando há somente um usuário"
+msgstr "Não realizar o download das artes de capa quando há somente um usuário"
 
 #: ../res/Covers.ui.h:8
 msgid "<b>Internet Covers</b>"

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-05-29 23:17+0200\n"
+"POT-Creation-Date: 2012-07-20 17:10+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -91,7 +91,7 @@ msgid "Modules"
 msgstr ""
 
 #: ../src/gui/preferences.py:139 ../src/modules/DesktopNotification.py:222
-#: ../src/modules/Covers.py:387
+#: ../src/modules/Covers.py:390
 msgid "Description"
 msgstr ""
 
@@ -282,18 +282,18 @@ msgstr ""
 msgid "Show album covers"
 msgstr ""
 
-#: ../src/modules/Covers.py:388
+#: ../src/modules/Covers.py:391
 msgid ""
 "This module displays the cover of the album the current track comes from. "
 "Covers may be loaded from local pictures, located in the same directory as "
 "the current track, or may be downloaded from the Internet."
 msgstr ""
 
-#: ../src/modules/Covers.py:391
+#: ../src/modules/Covers.py:394
 msgid "User Covers"
 msgstr ""
 
-#: ../src/modules/Covers.py:392
+#: ../src/modules/Covers.py:395
 #, python-format
 msgid ""
 "A user cover is a picture located in the same directory as the current "
@@ -301,11 +301,11 @@ msgid ""
 "extensions, supported file formats (%s) are automatically used."
 msgstr ""
 
-#: ../src/modules/Covers.py:395
+#: ../src/modules/Covers.py:398
 msgid "Internet Covers"
 msgstr ""
 
-#: ../src/modules/Covers.py:396
+#: ../src/modules/Covers.py:399
 msgid ""
 "Covers may be downloaded from the Internet, based on the tags of the current "
 "track. You can ask to always prefer user covers to Internet ones. In this "

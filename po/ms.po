@@ -6,11 +6,12 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: pogo\n"
-"Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
-"POT-Creation-Date: 2012-05-29 23:17+0200\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2012-07-20 17:10+0200\n"
 "PO-Revision-Date: 2011-03-14 09:49+0000\n"
 "Last-Translator: abuyop <Unknown>\n"
 "Language-Team: Malay <ms@li.org>\n"
+"Language: ms\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -91,7 +92,7 @@ msgid "Modules"
 msgstr "Modul"
 
 #: ../src/gui/preferences.py:139 ../src/modules/DesktopNotification.py:222
-#: ../src/modules/Covers.py:387
+#: ../src/modules/Covers.py:390
 msgid "Description"
 msgstr "Keterangan"
 
@@ -100,8 +101,8 @@ msgid ""
 "This window shows the list of available modules. You can enable/disable a "
 "module by checking/unchecking the check box in front of it."
 msgstr ""
-"Tetingkap ini memaparkan senarai modul yang ada. Anda boleh "
-"benarkan/lumpuhkan modul dengan menanda/nyahtanda kekotak tanda dihadapannya."
+"Tetingkap ini memaparkan senarai modul yang ada. Anda boleh benarkan/"
+"lumpuhkan modul dengan menanda/nyahtanda kekotak tanda dihadapannya."
 
 #: ../src/gui/preferences.py:142
 msgid "Configuring a Module"
@@ -218,8 +219,7 @@ msgid "Restart required"
 msgstr "Mula semula aplikasi diperlukan"
 
 #: ../src/modules/__init__.py:267
-msgid ""
-"You must restart the application for this modification to take effect."
+msgid "You must restart the application for this modification to take effect."
 msgstr ""
 "Anda mesti memulakan semula aplikasi supaya pengubahsuaian ini berkesan."
 
@@ -257,8 +257,7 @@ msgstr ""
 "baru bermula."
 
 #: ../src/modules/DesktopNotification.py:224
-msgid ""
-"If the Covers module is enabled, the popup also shows the album cover."
+msgid "If the Covers module is enabled, the popup also shows the album cover."
 msgstr ""
 "Jika modul Kulit Album dibenarkan, tetingkap timbul juga akan memaparkannya."
 
@@ -302,7 +301,7 @@ msgstr "Kulit Album"
 msgid "Show album covers"
 msgstr "Papar kulit album"
 
-#: ../src/modules/Covers.py:388
+#: ../src/modules/Covers.py:391
 msgid ""
 "This module displays the cover of the album the current track comes from. "
 "Covers may be loaded from local pictures, located in the same directory as "
@@ -312,11 +311,11 @@ msgstr ""
 "dimuatkan dari gambar setempat, yang diletakkan didalam direktori yang sama "
 "dengan trek semasa, atau mungkin dimuat turun dari Internet."
 
-#: ../src/modules/Covers.py:391
+#: ../src/modules/Covers.py:394
 msgid "User Covers"
 msgstr "Kulit Album Pengguna"
 
-#: ../src/modules/Covers.py:392
+#: ../src/modules/Covers.py:395
 #, python-format
 msgid ""
 "A user cover is a picture located in the same directory as the current "
@@ -328,11 +327,11 @@ msgstr ""
 "sediakan sambungan fail, format fail yang disokong (%s) akan digunakan "
 "secara automatik."
 
-#: ../src/modules/Covers.py:395
+#: ../src/modules/Covers.py:398
 msgid "Internet Covers"
 msgstr "Kulit Album Internet"
 
-#: ../src/modules/Covers.py:396
+#: ../src/modules/Covers.py:399
 msgid ""
 "Covers may be downloaded from the Internet, based on the tags of the current "
 "track. You can ask to always prefer user covers to Internet ones. In this "
@@ -431,8 +430,7 @@ msgstr "Sentiasa utamakan kulit album pengguna"
 
 #: ../res/Covers.ui.h:7
 msgid "Don't download covers when there is a user one"
-msgstr ""
-"Jangan muat turun kulit album jika terdapat kulit album dari pengguna"
+msgstr "Jangan muat turun kulit album jika terdapat kulit album dari pengguna"
 
 #: ../res/Covers.ui.h:8
 msgid "<b>Internet Covers</b>"
