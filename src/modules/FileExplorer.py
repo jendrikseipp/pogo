@@ -184,7 +184,11 @@ class FileExplorer(modules.Module):
 
     def stopLoading(self, row):
         """ Tell the user that the contents of row has been loaded"""
-        name  = self.tree.getItem(row, ROW_NAME)
+        try:
+            name  = self.tree.getItem(row, ROW_NAME)
+        except ValueError:
+            # If a search is made quickly after launching, the row may have gone.
+            return
         index = name.find('<span')
 
         if index != -1:
