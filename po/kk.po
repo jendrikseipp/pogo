@@ -7,10 +7,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: decibel-audio-player\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-07-20 17:10+0200\n"
+"POT-Creation-Date: 2012-07-24 11:16+0200\n"
 "PO-Revision-Date: 2010-10-07 11:29+0000\n"
 "Last-Translator: Jendrik Seipp <jendrikseipp@web.de>\n"
 "Language-Team: Kazakh <kk@li.org>\n"
+"Language: kk\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -139,63 +140,63 @@ msgstr ""
 msgid "loading..."
 msgstr ""
 
-#: ../src/modules/FileExplorer.py:403
+#: ../src/modules/FileExplorer.py:407
 msgid "Append"
 msgstr ""
 
-#: ../src/modules/FileExplorer.py:415
+#: ../src/modules/FileExplorer.py:419
 msgid "Open containing folder"
 msgstr ""
 
-#: ../src/modules/FileExplorer.py:439
+#: ../src/modules/FileExplorer.py:443
 msgid "Add music folder"
 msgstr ""
 
-#: ../src/modules/FileExplorer.py:451
+#: ../src/modules/FileExplorer.py:455
 msgid "Hide folder"
 msgstr ""
 
-#: ../src/modules/FileExplorer.py:465
+#: ../src/modules/FileExplorer.py:469
 msgid "Choose a directory"
 msgstr ""
 
-#: ../src/modules/FileExplorer.py:471
+#: ../src/modules/FileExplorer.py:475
 msgid "Invalid Folder"
 msgstr ""
 
-#: ../src/modules/FileExplorer.py:472
+#: ../src/modules/FileExplorer.py:476
 msgid "You cannot add your root or home folder to the music directories"
 msgstr ""
 
-#: ../src/modules/FileExplorer.py:479
+#: ../src/modules/FileExplorer.py:483
 msgid "This path does not exist"
 msgstr "Жол қате"
 
-#: ../src/modules/FileExplorer.py:480
+#: ../src/modules/FileExplorer.py:484
 msgid "Please select an existing directory."
 msgstr "Бар болып тұрған буманы таңдаңыз."
 
-#: ../src/modules/FileExplorer.py:567
+#: ../src/modules/FileExplorer.py:571
 msgid "Albums"
 msgstr ""
 
-#: ../src/modules/FileExplorer.py:569
+#: ../src/modules/FileExplorer.py:573
 msgid "Music"
 msgstr ""
 
-#: ../src/modules/FileExplorer.py:646
+#: ../src/modules/FileExplorer.py:650
 msgid "Right-click to add music folders"
 msgstr ""
 
-#: ../src/modules/FileExplorer.py:697
+#: ../src/modules/FileExplorer.py:701
 msgid "Searching ..."
 msgstr ""
 
-#: ../src/modules/FileExplorer.py:723
+#: ../src/modules/FileExplorer.py:727
 msgid "No tracks found"
 msgstr ""
 
-#: ../src/modules/FileExplorer.py:725
+#: ../src/modules/FileExplorer.py:729
 msgid "No music folders have been added"
 msgstr ""
 
@@ -212,8 +213,7 @@ msgid "Restart required"
 msgstr ""
 
 #: ../src/modules/__init__.py:267
-msgid ""
-"You must restart the application for this modification to take effect."
+msgid "You must restart the application for this modification to take effect."
 msgstr ""
 
 #: ../src/modules/CtrlPanel.py:184 ../src/modules/CtrlPanel.py:240
@@ -248,8 +248,7 @@ msgid ""
 msgstr ""
 
 #: ../src/modules/DesktopNotification.py:224
-msgid ""
-"If the Covers module is enabled, the popup also shows the album cover."
+msgid "If the Covers module is enabled, the popup also shows the album cover."
 msgstr ""
 
 #: ../src/modules/DesktopNotification.py:225

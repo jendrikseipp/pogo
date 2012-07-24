@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-07-20 17:10+0200\n"
+"POT-Creation-Date: 2012-07-24 11:16+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -137,63 +137,63 @@ msgstr ""
 msgid "loading..."
 msgstr ""
 
-#: ../src/modules/FileExplorer.py:403
+#: ../src/modules/FileExplorer.py:407
 msgid "Append"
 msgstr ""
 
-#: ../src/modules/FileExplorer.py:415
+#: ../src/modules/FileExplorer.py:419
 msgid "Open containing folder"
 msgstr ""
 
-#: ../src/modules/FileExplorer.py:439
+#: ../src/modules/FileExplorer.py:443
 msgid "Add music folder"
 msgstr ""
 
-#: ../src/modules/FileExplorer.py:451
+#: ../src/modules/FileExplorer.py:455
 msgid "Hide folder"
 msgstr ""
 
-#: ../src/modules/FileExplorer.py:465
+#: ../src/modules/FileExplorer.py:469
 msgid "Choose a directory"
 msgstr ""
 
-#: ../src/modules/FileExplorer.py:471
+#: ../src/modules/FileExplorer.py:475
 msgid "Invalid Folder"
 msgstr ""
 
-#: ../src/modules/FileExplorer.py:472
+#: ../src/modules/FileExplorer.py:476
 msgid "You cannot add your root or home folder to the music directories"
 msgstr ""
 
-#: ../src/modules/FileExplorer.py:479
+#: ../src/modules/FileExplorer.py:483
 msgid "This path does not exist"
 msgstr ""
 
-#: ../src/modules/FileExplorer.py:480
+#: ../src/modules/FileExplorer.py:484
 msgid "Please select an existing directory."
 msgstr ""
 
-#: ../src/modules/FileExplorer.py:567
+#: ../src/modules/FileExplorer.py:571
 msgid "Albums"
 msgstr ""
 
-#: ../src/modules/FileExplorer.py:569
+#: ../src/modules/FileExplorer.py:573
 msgid "Music"
 msgstr ""
 
-#: ../src/modules/FileExplorer.py:646
+#: ../src/modules/FileExplorer.py:650
 msgid "Right-click to add music folders"
 msgstr ""
 
-#: ../src/modules/FileExplorer.py:697
+#: ../src/modules/FileExplorer.py:701
 msgid "Searching ..."
 msgstr ""
 
-#: ../src/modules/FileExplorer.py:723
+#: ../src/modules/FileExplorer.py:727
 msgid "No tracks found"
 msgstr ""
 
-#: ../src/modules/FileExplorer.py:725
+#: ../src/modules/FileExplorer.py:729
 msgid "No music folders have been added"
 msgstr ""
 

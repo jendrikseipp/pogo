@@ -7,10 +7,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: decibel-audio-player\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-07-20 17:10+0200\n"
+"POT-Creation-Date: 2012-07-24 11:16+0200\n"
 "PO-Revision-Date: 2011-08-13 09:51+0000\n"
 "Last-Translator: Irmak Bıçakçıgil <Unknown>\n"
 "Language-Team: Turkish <tr@li.org>\n"
+"Language: tr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -149,63 +150,63 @@ msgstr "Şarkı bilgisini Zeitgeist cihazına yolla"
 msgid "loading..."
 msgstr "yükleniyor..."
 
-#: ../src/modules/FileExplorer.py:403
+#: ../src/modules/FileExplorer.py:407
 msgid "Append"
 msgstr "Sonuna Ekle"
 
-#: ../src/modules/FileExplorer.py:415
+#: ../src/modules/FileExplorer.py:419
 msgid "Open containing folder"
 msgstr "İçinde bulunduğu dizini aç"
 
-#: ../src/modules/FileExplorer.py:439
+#: ../src/modules/FileExplorer.py:443
 msgid "Add music folder"
 msgstr "Müzik klasörü ekle"
 
-#: ../src/modules/FileExplorer.py:451
+#: ../src/modules/FileExplorer.py:455
 msgid "Hide folder"
 msgstr "Klasörü gizle"
 
-#: ../src/modules/FileExplorer.py:465
+#: ../src/modules/FileExplorer.py:469
 msgid "Choose a directory"
 msgstr "Bir klasör seçin"
 
-#: ../src/modules/FileExplorer.py:471
+#: ../src/modules/FileExplorer.py:475
 msgid "Invalid Folder"
 msgstr "Geçersiz Dizin"
 
-#: ../src/modules/FileExplorer.py:472
+#: ../src/modules/FileExplorer.py:476
 msgid "You cannot add your root or home folder to the music directories"
 msgstr "Kök dizin veya ev dizininizi müzik dizinlerine ekleyemezsiniz."
 
-#: ../src/modules/FileExplorer.py:479
+#: ../src/modules/FileExplorer.py:483
 msgid "This path does not exist"
 msgstr "Hatalı dosya adresi"
 
-#: ../src/modules/FileExplorer.py:480
+#: ../src/modules/FileExplorer.py:484
 msgid "Please select an existing directory."
 msgstr "Lütfen var olan bir dizin seçin"
 
-#: ../src/modules/FileExplorer.py:567
+#: ../src/modules/FileExplorer.py:571
 msgid "Albums"
 msgstr "Albümler"
 
-#: ../src/modules/FileExplorer.py:569
+#: ../src/modules/FileExplorer.py:573
 msgid "Music"
 msgstr "Müzik"
 
-#: ../src/modules/FileExplorer.py:646
+#: ../src/modules/FileExplorer.py:650
 msgid "Right-click to add music folders"
 msgstr "Müzik dizini olarak eklemek için sağ tıklayınız"
 
-#: ../src/modules/FileExplorer.py:697
+#: ../src/modules/FileExplorer.py:701
 msgid "Searching ..."
 msgstr "Aranıyor..."
 
-#: ../src/modules/FileExplorer.py:723
+#: ../src/modules/FileExplorer.py:727
 msgid "No tracks found"
 msgstr "Hiç şarkı bulunmadı"
 
-#: ../src/modules/FileExplorer.py:725
+#: ../src/modules/FileExplorer.py:729
 msgid "No music folders have been added"
 msgstr "Herhangi bir müzik dizini eklenmedi"
 
@@ -223,8 +224,7 @@ msgid "Restart required"
 msgstr "Yeniden başlatma gerekiyor"
 
 #: ../src/modules/__init__.py:267
-msgid ""
-"You must restart the application for this modification to take effect."
+msgid "You must restart the application for this modification to take effect."
 msgstr ""
 "Uygulamadaki değişikliklerin aktif olması için programı yeniden "
 "başlatmalısınız."
@@ -262,8 +262,7 @@ msgstr ""
 "Bu modül yeni bir şarkı başladığında masaüstünüzde küçük pencere gösterir"
 
 #: ../src/modules/DesktopNotification.py:224
-msgid ""
-"If the Covers module is enabled, the popup also shows the album cover."
+msgid "If the Covers module is enabled, the popup also shows the album cover."
 msgstr ""
 "Eğer albüm kapakları modülü aktif ise yeni pencere albüm kapağını da "
 "gösterir."
@@ -344,10 +343,10 @@ msgid ""
 "case, if a user cover exists for the current track, it is used. If there is "
 "none, the cover is downloaded."
 msgstr ""
-"Albüm kapakları çalan şarkının etiketlerine göre internetten "
-"indirilebilir.Her zaman internet albüm kapaklarının kullanılmasını "
-"seçebilirsiniz. Bu durumda kullanıcı albüm kapağı varsa kullanılır, eğer "
-"yoksa internetten indirilir."
+"Albüm kapakları çalan şarkının etiketlerine göre internetten indirilebilir."
+"Her zaman internet albüm kapaklarının kullanılmasını seçebilirsiniz. Bu "
+"durumda kullanıcı albüm kapağı varsa kullanılır, eğer yoksa internetten "
+"indirilir."
 
 #: ../src/modules/Tracktree.py:382 ../src/modules/Tracktree.py:457
 msgid "Export playlist to file"

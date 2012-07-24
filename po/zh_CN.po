@@ -7,10 +7,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: decibel-audio-player\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-07-20 17:10+0200\n"
+"POT-Creation-Date: 2012-07-24 11:16+0200\n"
 "PO-Revision-Date: 2011-04-12 03:48+0000\n"
 "Last-Translator: yuane <myewmyew@gmail.com>\n"
 "Language-Team: Simplified Chinese <zh_CN@li.org>\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -99,7 +100,9 @@ msgstr "描述"
 msgid ""
 "This window shows the list of available modules. You can enable/disable a "
 "module by checking/unchecking the check box in front of it."
-msgstr "此窗口显示了可用的模块清单。您可以通过选择/取消选择各项前面的复选框来启用/禁用那个模块。"
+msgstr ""
+"此窗口显示了可用的模块清单。您可以通过选择/取消选择各项前面的复选框来启用/禁"
+"用那个模块。"
 
 #: ../src/gui/preferences.py:142
 msgid "Configuring a Module"
@@ -112,7 +115,8 @@ msgid ""
 "click on the \"Preferences\" button on the bottom of the dialog box. Note "
 "that configuring a module is only possible when it is enabled."
 msgstr ""
-"当一个模块可以被配置，在其所在行的右端会显示一个图标。要配置一个模块，先选中它然后单击对话窗口下端的“首选项”按钮。注意，一个模块只有在被激活时才可以被配"
+"当一个模块可以被配置，在其所在行的右端会显示一个图标。要配置一个模块，先选中"
+"它然后单击对话窗口下端的“首选项”按钮。注意，一个模块只有在被激活时才可以被配"
 "置。"
 
 #: ../src/gui/about.py:40
@@ -146,63 +150,63 @@ msgstr "发送曲目信息到 Zeitgeist 服务"
 msgid "loading..."
 msgstr "正在加载..."
 
-#: ../src/modules/FileExplorer.py:403
+#: ../src/modules/FileExplorer.py:407
 msgid "Append"
 msgstr "追加"
 
-#: ../src/modules/FileExplorer.py:415
+#: ../src/modules/FileExplorer.py:419
 msgid "Open containing folder"
 msgstr "打开包含文件夹"
 
-#: ../src/modules/FileExplorer.py:439
+#: ../src/modules/FileExplorer.py:443
 msgid "Add music folder"
 msgstr "添加音频文件夹"
 
-#: ../src/modules/FileExplorer.py:451
+#: ../src/modules/FileExplorer.py:455
 msgid "Hide folder"
 msgstr "隐藏文件夹"
 
-#: ../src/modules/FileExplorer.py:465
+#: ../src/modules/FileExplorer.py:469
 msgid "Choose a directory"
 msgstr "选择一个文件夹"
 
-#: ../src/modules/FileExplorer.py:471
+#: ../src/modules/FileExplorer.py:475
 msgid "Invalid Folder"
 msgstr ""
 
-#: ../src/modules/FileExplorer.py:472
+#: ../src/modules/FileExplorer.py:476
 msgid "You cannot add your root or home folder to the music directories"
 msgstr "您不能将根目录或者主目录添加到音乐目录中"
 
-#: ../src/modules/FileExplorer.py:479
+#: ../src/modules/FileExplorer.py:483
 msgid "This path does not exist"
 msgstr "此路径不存在"
 
-#: ../src/modules/FileExplorer.py:480
+#: ../src/modules/FileExplorer.py:484
 msgid "Please select an existing directory."
 msgstr "请选择一个已有的文件夹"
 
-#: ../src/modules/FileExplorer.py:567
+#: ../src/modules/FileExplorer.py:571
 msgid "Albums"
 msgstr "专辑"
 
-#: ../src/modules/FileExplorer.py:569
+#: ../src/modules/FileExplorer.py:573
 msgid "Music"
 msgstr "音乐"
 
-#: ../src/modules/FileExplorer.py:646
+#: ../src/modules/FileExplorer.py:650
 msgid "Right-click to add music folders"
 msgstr "单击右键添加音乐文件夹"
 
-#: ../src/modules/FileExplorer.py:697
+#: ../src/modules/FileExplorer.py:701
 msgid "Searching ..."
 msgstr "搜索..."
 
-#: ../src/modules/FileExplorer.py:723
+#: ../src/modules/FileExplorer.py:727
 msgid "No tracks found"
 msgstr "没有发现音轨"
 
-#: ../src/modules/FileExplorer.py:725
+#: ../src/modules/FileExplorer.py:729
 msgid "No music folders have been added"
 msgstr "还没有添加任何音乐文件夹"
 
@@ -219,8 +223,7 @@ msgid "Restart required"
 msgstr "需要重启"
 
 #: ../src/modules/__init__.py:267
-msgid ""
-"You must restart the application for this modification to take effect."
+msgid "You must restart the application for this modification to take effect."
 msgstr "您必须重启程序以使此更改起作用。"
 
 #: ../src/modules/CtrlPanel.py:184 ../src/modules/CtrlPanel.py:240
@@ -255,8 +258,7 @@ msgid ""
 msgstr "当新的曲目开始播放时，该模块会在桌面上显示一个小的弹出窗口。"
 
 #: ../src/modules/DesktopNotification.py:224
-msgid ""
-"If the Covers module is enabled, the popup also shows the album cover."
+msgid "If the Covers module is enabled, the popup also shows the album cover."
 msgstr "如果启用封面模块，弹出提示也会显示专辑封面。"
 
 #: ../src/modules/DesktopNotification.py:225
@@ -270,7 +272,8 @@ msgid ""
 "replaced by their corresponding value. Available fields are:\n"
 "\n"
 msgstr ""
-"你可将提示信息的标题和内容修改为任何想要的文字。在显示弹出窗口前，{field}形式的字段将全被替换为对应的值。可用的字段有：\n"
+"你可将提示信息的标题和内容修改为任何想要的文字。在显示弹出窗口前，{field}形式"
+"的字段将全被替换为对应的值。可用的字段有：\n"
 "\n"
 
 #: ../src/modules/DesktopNotification.py:229
@@ -281,7 +284,9 @@ msgstr "标记"
 msgid ""
 "You can use the Pango markup language to format the text. More information "
 "on that language is available on the following web page:"
-msgstr "你可以使用 Pango 标记语言来格式化文本。更多关于该语言的信息可以从以下网页获取："
+msgstr ""
+"你可以使用 Pango 标记语言来格式化文本。更多关于该语言的信息可以从以下网页获"
+"取："
 
 #: ../src/modules/StatusbarTitlebar.py:48
 msgid "[paused]"
@@ -300,7 +305,9 @@ msgid ""
 "This module displays the cover of the album the current track comes from. "
 "Covers may be loaded from local pictures, located in the same directory as "
 "the current track, or may be downloaded from the Internet."
-msgstr "此模块显示当前音轨的专辑封面。封面图片可以从当前音轨的同文件夹下的本地图片载入，也可从互联网下载。"
+msgstr ""
+"此模块显示当前音轨的专辑封面。封面图片可以从当前音轨的同文件夹下的本地图片载"
+"入，也可从互联网下载。"
 
 #: ../src/modules/Covers.py:394
 msgid "User Covers"
@@ -312,7 +319,9 @@ msgid ""
 "A user cover is a picture located in the same directory as the current "
 "track. When specifying filenames, you do not need to provide file "
 "extensions, supported file formats (%s) are automatically used."
-msgstr "用户封面是当前音轨的同文件夹下的图片。指定文件名时无需提供文件扩展名，程序会自动使用支持的文件格式 (%s) 。"
+msgstr ""
+"用户封面是当前音轨的同文件夹下的图片。指定文件名时无需提供文件扩展名，程序会"
+"自动使用支持的文件格式 (%s) 。"
 
 #: ../src/modules/Covers.py:398
 msgid "Internet Covers"
@@ -325,7 +334,8 @@ msgid ""
 "case, if a user cover exists for the current track, it is used. If there is "
 "none, the cover is downloaded."
 msgstr ""
-"封面可以根据当前音轨的标签从互联网下载。您可以选择总是优先使用用户封面，此时，如果当前音轨存在用户封面，就会使用用户封面，否则就从互联网下载。"
+"封面可以根据当前音轨的标签从互联网下载。您可以选择总是优先使用用户封面，此"
+"时，如果当前音轨存在用户封面，就会使用用户封面，否则就从互联网下载。"
 
 #: ../src/modules/Tracktree.py:382 ../src/modules/Tracktree.py:457
 msgid "Export playlist to file"

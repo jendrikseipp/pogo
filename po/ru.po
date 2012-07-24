@@ -7,10 +7,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: decibel-audio-player\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-07-20 17:10+0200\n"
+"POT-Creation-Date: 2012-07-24 11:16+0200\n"
 "PO-Revision-Date: 2010-12-03 15:37+0000\n"
 "Last-Translator: Oleg Koptev <koptev.oleg@gmail.com>\n"
 "Language-Team: Russian <ru@li.org>\n"
+"Language: ru\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -102,8 +103,8 @@ msgid ""
 "This window shows the list of available modules. You can enable/disable a "
 "module by checking/unchecking the check box in front of it."
 msgstr ""
-"Это окно отображает список доступных модулей. Модули можно "
-"включить/выключить с помощью галочки перед названием модуля."
+"Это окно отображает список доступных модулей. Модули можно включить/"
+"выключить с помощью галочки перед названием модуля."
 
 #: ../src/gui/preferences.py:142
 msgid "Configuring a Module"
@@ -150,64 +151,64 @@ msgstr "Отправить информацию о дорожке в служб�
 msgid "loading..."
 msgstr "загрузка..."
 
-#: ../src/modules/FileExplorer.py:403
+#: ../src/modules/FileExplorer.py:407
 msgid "Append"
 msgstr "Добавить"
 
-#: ../src/modules/FileExplorer.py:415
+#: ../src/modules/FileExplorer.py:419
 msgid "Open containing folder"
 msgstr "Открыть папку в обозревателе"
 
-#: ../src/modules/FileExplorer.py:439
+#: ../src/modules/FileExplorer.py:443
 msgid "Add music folder"
 msgstr "Добавить папку с музыкой"
 
-#: ../src/modules/FileExplorer.py:451
+#: ../src/modules/FileExplorer.py:455
 msgid "Hide folder"
 msgstr "Скрыть папку"
 
-#: ../src/modules/FileExplorer.py:465
+#: ../src/modules/FileExplorer.py:469
 msgid "Choose a directory"
 msgstr "Выберите папку"
 
-#: ../src/modules/FileExplorer.py:471
+#: ../src/modules/FileExplorer.py:475
 msgid "Invalid Folder"
 msgstr "Неверная Папка"
 
-#: ../src/modules/FileExplorer.py:472
+#: ../src/modules/FileExplorer.py:476
 msgid "You cannot add your root or home folder to the music directories"
 msgstr ""
 "Вы не можете добавить корневую и домашнюю папки в список папок с музыкой"
 
-#: ../src/modules/FileExplorer.py:479
+#: ../src/modules/FileExplorer.py:483
 msgid "This path does not exist"
 msgstr "Указанный путь не существует"
 
-#: ../src/modules/FileExplorer.py:480
+#: ../src/modules/FileExplorer.py:484
 msgid "Please select an existing directory."
 msgstr "Выберите существующую папку."
 
-#: ../src/modules/FileExplorer.py:567
+#: ../src/modules/FileExplorer.py:571
 msgid "Albums"
 msgstr "Альбомы"
 
-#: ../src/modules/FileExplorer.py:569
+#: ../src/modules/FileExplorer.py:573
 msgid "Music"
 msgstr "Музыка"
 
-#: ../src/modules/FileExplorer.py:646
+#: ../src/modules/FileExplorer.py:650
 msgid "Right-click to add music folders"
 msgstr "Правый клик для добавления папок с музыкой"
 
-#: ../src/modules/FileExplorer.py:697
+#: ../src/modules/FileExplorer.py:701
 msgid "Searching ..."
 msgstr "Поиск..."
 
-#: ../src/modules/FileExplorer.py:723
+#: ../src/modules/FileExplorer.py:727
 msgid "No tracks found"
 msgstr "Песни не найдены"
 
-#: ../src/modules/FileExplorer.py:725
+#: ../src/modules/FileExplorer.py:729
 msgid "No music folders have been added"
 msgstr "Папки с музыкой не были добавлены"
 
@@ -224,8 +225,7 @@ msgid "Restart required"
 msgstr "Требуется перезапуск"
 
 #: ../src/modules/__init__.py:267
-msgid ""
-"You must restart the application for this modification to take effect."
+msgid "You must restart the application for this modification to take effect."
 msgstr "Вы должны перезапустить приложение, чтобы изменения вступили в силу."
 
 #: ../src/modules/CtrlPanel.py:184 ../src/modules/CtrlPanel.py:240
@@ -262,8 +262,7 @@ msgstr ""
 "когда начинает играть следующая композиция."
 
 #: ../src/modules/DesktopNotification.py:224
-msgid ""
-"If the Covers module is enabled, the popup also shows the album cover."
+msgid "If the Covers module is enabled, the popup also shows the album cover."
 msgstr ""
 "Если активирован модуль «Обложки», во всплывающем окне будет показана "
 "обложка альбома."

@@ -6,11 +6,12 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: pogo\n"
-"Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
-"POT-Creation-Date: 2012-07-20 17:10+0200\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2012-07-24 11:16+0200\n"
 "PO-Revision-Date: 2011-03-14 09:49+0000\n"
 "Last-Translator: abuyop <Unknown>\n"
 "Language-Team: Malay <ms@li.org>\n"
+"Language: ms\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -100,8 +101,8 @@ msgid ""
 "This window shows the list of available modules. You can enable/disable a "
 "module by checking/unchecking the check box in front of it."
 msgstr ""
-"Tetingkap ini memaparkan senarai modul yang ada. Anda boleh "
-"benarkan/lumpuhkan modul dengan menanda/nyahtanda kekotak tanda dihadapannya."
+"Tetingkap ini memaparkan senarai modul yang ada. Anda boleh benarkan/"
+"lumpuhkan modul dengan menanda/nyahtanda kekotak tanda dihadapannya."
 
 #: ../src/gui/preferences.py:142
 msgid "Configuring a Module"
@@ -145,63 +146,63 @@ msgstr "Hantar maklumat trek kepada perkhidmatan Zeitgest"
 msgid "loading..."
 msgstr "memuatkan..."
 
-#: ../src/modules/FileExplorer.py:403
+#: ../src/modules/FileExplorer.py:407
 msgid "Append"
 msgstr "Tambah"
 
-#: ../src/modules/FileExplorer.py:415
+#: ../src/modules/FileExplorer.py:419
 msgid "Open containing folder"
 msgstr "Buka folder yang mengandungi"
 
-#: ../src/modules/FileExplorer.py:439
+#: ../src/modules/FileExplorer.py:443
 msgid "Add music folder"
 msgstr "Tambah folder muzik"
 
-#: ../src/modules/FileExplorer.py:451
+#: ../src/modules/FileExplorer.py:455
 msgid "Hide folder"
 msgstr "Sembunyi folder"
 
-#: ../src/modules/FileExplorer.py:465
+#: ../src/modules/FileExplorer.py:469
 msgid "Choose a directory"
 msgstr "Pilih direktori"
 
-#: ../src/modules/FileExplorer.py:471
+#: ../src/modules/FileExplorer.py:475
 msgid "Invalid Folder"
 msgstr "Folder Tidak Sah"
 
-#: ../src/modules/FileExplorer.py:472
+#: ../src/modules/FileExplorer.py:476
 msgid "You cannot add your root or home folder to the music directories"
 msgstr "Anda tidak boleh menambah folder rumah atau root ke direktori muzik"
 
-#: ../src/modules/FileExplorer.py:479
+#: ../src/modules/FileExplorer.py:483
 msgid "This path does not exist"
 msgstr "Laluan ini tidak wujud"
 
-#: ../src/modules/FileExplorer.py:480
+#: ../src/modules/FileExplorer.py:484
 msgid "Please select an existing directory."
 msgstr "Sila pilih direktori yang ada."
 
-#: ../src/modules/FileExplorer.py:567
+#: ../src/modules/FileExplorer.py:571
 msgid "Albums"
 msgstr "Album"
 
-#: ../src/modules/FileExplorer.py:569
+#: ../src/modules/FileExplorer.py:573
 msgid "Music"
 msgstr "Muzik"
 
-#: ../src/modules/FileExplorer.py:646
+#: ../src/modules/FileExplorer.py:650
 msgid "Right-click to add music folders"
 msgstr "Klik-kanan untuk menambah folder muzik"
 
-#: ../src/modules/FileExplorer.py:697
+#: ../src/modules/FileExplorer.py:701
 msgid "Searching ..."
 msgstr "Menggelintar ..."
 
-#: ../src/modules/FileExplorer.py:723
+#: ../src/modules/FileExplorer.py:727
 msgid "No tracks found"
 msgstr "Tiada trek ditemui"
 
-#: ../src/modules/FileExplorer.py:725
+#: ../src/modules/FileExplorer.py:729
 msgid "No music folders have been added"
 msgstr "Tiada folder muzik telah ditambah"
 
@@ -218,8 +219,7 @@ msgid "Restart required"
 msgstr "Mula semula aplikasi diperlukan"
 
 #: ../src/modules/__init__.py:267
-msgid ""
-"You must restart the application for this modification to take effect."
+msgid "You must restart the application for this modification to take effect."
 msgstr ""
 "Anda mesti memulakan semula aplikasi supaya pengubahsuaian ini berkesan."
 
@@ -257,8 +257,7 @@ msgstr ""
 "baru bermula."
 
 #: ../src/modules/DesktopNotification.py:224
-msgid ""
-"If the Covers module is enabled, the popup also shows the album cover."
+msgid "If the Covers module is enabled, the popup also shows the album cover."
 msgstr ""
 "Jika modul Kulit Album dibenarkan, tetingkap timbul juga akan memaparkannya."
 
@@ -431,8 +430,7 @@ msgstr "Sentiasa utamakan kulit album pengguna"
 
 #: ../res/Covers.ui.h:7
 msgid "Don't download covers when there is a user one"
-msgstr ""
-"Jangan muat turun kulit album jika terdapat kulit album dari pengguna"
+msgstr "Jangan muat turun kulit album jika terdapat kulit album dari pengguna"
 
 #: ../res/Covers.ui.h:8
 msgid "<b>Internet Covers</b>"
