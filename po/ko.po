@@ -11,12 +11,11 @@ msgstr ""
 "PO-Revision-Date: 2010-10-07 11:29+0000\n"
 "Last-Translator: onlyeriko <onlyeriko@gmail.com>\n"
 "Language-Team: Korean <ko@li.org>\n"
-"Language: ko\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2012-07-21 05:23+0000\n"
-"X-Generator: Launchpad (build 15654)\n"
+"X-Launchpad-Export-Date: 2012-07-25 04:54+0000\n"
+"X-Generator: Launchpad (build 15679)\n"
 
 #: ../src/media/track/__init__.py:52
 msgid "Track number"
@@ -213,7 +212,8 @@ msgid "Restart required"
 msgstr ""
 
 #: ../src/modules/__init__.py:267
-msgid "You must restart the application for this modification to take effect."
+msgid ""
+"You must restart the application for this modification to take effect."
 msgstr ""
 
 #: ../src/modules/CtrlPanel.py:184 ../src/modules/CtrlPanel.py:240
@@ -248,7 +248,8 @@ msgid ""
 msgstr "새 트랙 시작 시 윈도우에 작은 팝업으로 디스플레이"
 
 #: ../src/modules/DesktopNotification.py:224
-msgid "If the Covers module is enabled, the popup also shows the album cover."
+msgid ""
+"If the Covers module is enabled, the popup also shows the album cover."
 msgstr ""
 
 #: ../src/modules/DesktopNotification.py:225
@@ -271,8 +272,7 @@ msgstr "마크업"
 msgid ""
 "You can use the Pango markup language to format the text. More information "
 "on that language is available on the following web page:"
-msgstr ""
-"Pango 마크업 언어 형식의 텍스트로 사용. 웹페이지에서 불러온 언어 정보를 이용"
+msgstr "Pango 마크업 언어 형식의 텍스트로 사용. 웹페이지에서 불러온 언어 정보를 이용"
 
 #: ../src/modules/StatusbarTitlebar.py:48
 msgid "[paused]"
