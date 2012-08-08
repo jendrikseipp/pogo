@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 #
 # Copyright (c) 2007  François Ingelrest (Francois.Ingelrest@gmail.com)
+# Copyright (c) 2012  Jendrik Seipp (jendrikseipp@web.de)
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -58,8 +59,8 @@ class AudioPlayer:
         # No video
         self.player.set_property('video-sink', gst.element_factory_make('fakesink', 'fakesink'))
 
-        # Restore volume
-        self.player.set_property('volume', self.volume)
+        ## Changing the volume sets volume to max in Fedora.
+        ##self.player.set_property('volume', self.volume)
 
         # Change the audio sink to our own bin, so that an equalizer/replay gain element can be added later on if needed
         self.audiobin  = gst.Bin('audiobin')
@@ -170,6 +171,9 @@ class AudioPlayer:
 
     def setVolume(self, level):
         """ Set the volume to the given level (0 <= level <= 1) """
+        ## Changing the volume sets volume to max in Fedora.
+        return
+
         if level < 0:   self.volume = 0
         elif level > 1: self.volume = 1
         else:           self.volume = level
