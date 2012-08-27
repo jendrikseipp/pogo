@@ -17,6 +17,7 @@
 # Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301 USA
 
 import os
+import re
 import subprocess
 import sys
 import logging
@@ -93,7 +94,7 @@ class Search(modules.ThreadedModule):
         self.searches = []
 
 
-    def filter_results(self, results, search_path, regexes):
+    def filter_results(self, results, search_path, regex):
         '''
         Remove subpaths of parent directories
         '''
@@ -110,8 +111,7 @@ class Search(modules.ThreadedModule):
                 name = '/'.join(name.split('/')[-2:])
             name = name.strip('/')
 
-            for regex in regexes:
-                name = regex.sub(same_case_bold, unicode(name))
+            name = regex.sub(same_case_bold, unicode(name))
 
             name = tools.htmlEscape(name)
             name = name.replace('STARTBOLD', '<b>').replace('ENDBOLD', '</b>')
@@ -214,7 +214,9 @@ class Search(modules.ThreadedModule):
         self.should_stop = False
         self.found_something = False
 
-        regexes = [tools.get_regex(part) for part in query.split()]
+        # Transform whitespace-separated query into OR-regex.
+        regex = re.compile('|'.join(tools.get_pattern(word)
+                           for word in query.split()), re.IGNORECASE)
 
         for dir in self.get_search_paths() + [consts.dirBaseUsr]:
             # Check if search has been aborted during filtering
@@ -231,7 +233,7 @@ class Search(modules.ThreadedModule):
             if results is None or self.should_stop:
                 return
 
-            dirs, files = self.filter_results(results, dir, regexes)
+            dirs, files = self.filter_results(results, dir, regex)
             if not self.should_stop and (dirs or files):
                 self.found_something = True
                 modules.postMsg(consts.MSG_EVT_SEARCH_APPEND,

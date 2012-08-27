@@ -182,12 +182,13 @@ def open_path(path):
         webbrowser.open(path)
 
 
-def get_regex(string):
+def get_pattern(string):
+    """Escape the string and enable the wildcards ? and *."""
     quantifiers = ['?', '*']
     pattern = re.escape(unicode(string))
     for quantifier in quantifiers:
         pattern = pattern.replace('\\' + quantifier, '.' + quantifier)
-    return re.compile(pattern, re.IGNORECASE)
+    return pattern
 
 def read_file(filename):
     """Tries to read a given file"""
