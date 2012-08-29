@@ -283,11 +283,10 @@ class Tracktree(modules.Module):
         self.onListModified()
 
         # We only want to start playback if tracks are appended from DBus
-        # or appended (not inserted) into the playlist
-        # In that case target is None
-        # Also don't interrupt playing songs
+        # or appended (not inserted) into the playlist.
+        # In that case target is None. Also don't interrupt playing songs.
         logging.info('playNow: %s, target: %s, self.tree.hasMark(): %s, self.paused: %s' % (playNow, target, self.tree.hasMark(), self.paused))
-        if (playNow or target is None) and (not self.tree.hasMark() or self.paused):
+        if playNow and target is None and (not self.tree.hasMark() or self.paused):
             # If the target is None, the tracks have to be appended to the top
             # level and the first new track is the one after the original tracks
             new = self.tree.store.iter_nth_child(target, children_before)
@@ -550,14 +549,16 @@ class Tracktree(modules.Module):
             self.select_last_played_track()
             self.onListModified()
 
+        commands, args = tools.separate_commands_and_tracks(args)
+
         # Add commandline tracks to the playlist
         if args:
             log.logger.info('[%s] Filling playlist with files given on command line' % MOD_INFO[modules.MODINFO_NAME])
-            # make paths absolute
-            paths = [os.path.abspath(arg) for arg in args]
-            print 'Appending to the playlist:'
-            print '\n'.join(paths)
-            modules.postMsg(consts.MSG_CMD_TRACKLIST_ADD, {'tracks': media.getTracks(paths), 'playNow': True})
+            tracks  = media.getTracks([os.path.abspath(arg) for arg in args])
+            playNow = not 'stop' in commands and not 'pause' in commands
+            modules.postMsg(consts.MSG_CMD_TRACKLIST_ADD, {'tracks': tracks, 'playNow': playNow})
+        elif 'play' in commands:
+            modules.postMsg(consts.MSG_CMD_TOGGLE_PAUSE)
 
         # Automatically save the content at regular intervals
         gobject.timeout_add_seconds(SAVE_INTERVAL, self.save_track_tree)

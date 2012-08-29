@@ -212,3 +212,11 @@ def write_file(filename, content):
     except IOError, e:
         logging.error('Error while writing to "%s": %s' % (filename, e))
 
+def separate_commands_and_tracks(args):
+    commands = []
+    for arg in args:
+        if arg in consts.commands:
+            args.remove(arg)
+            commands.append(arg)
+    return commands, args
+

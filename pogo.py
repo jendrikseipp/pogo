@@ -40,6 +40,7 @@ else:
     sys.exit('Source files could not be found')
 
 
+import tools
 from tools import consts
 
 
@@ -76,19 +77,19 @@ if not optOptions.multiple_instances:
             playlist = dbus.Interface(dbusSession.get_object(consts.dbusService,
                                       '/TrackList'), consts.dbusInterface)
 
-            for command in COMMANDS:
-                if command in optArgs:
-                    optArgs.remove(command)
-                    print command.capitalize()
-                    getattr(player, command.capitalize())()
+            commands, paths = tools.separate_commands_and_tracks(optArgs)
+            for command in commands:
+                print command.capitalize()
+                getattr(player, command.capitalize())()
 
             # Fill the current instance with the given tracks, if any
-            if optArgs:
+            if paths:
                 # make the paths absolute
-                paths = map(os.path.abspath, optArgs)
+                paths = [os.path.abspath(path) for path in paths]
                 print 'Appending to the playlist:'
                 print '\n'.join(paths)
-                playlist.AddTracks(paths, True)
+                playNow = 'pause' not in commands and 'stop' not in commands
+                playlist.AddTracks(paths, playNow)
                 # Raise the window of the already running instance
                 window.RaiseWindow()
     except:
