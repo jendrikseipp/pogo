@@ -213,9 +213,10 @@ def write_file(filename, content):
         logging.error('Error while writing to "%s": %s' % (filename, e))
 
 def separate_commands_and_tracks(args):
+    all_commands = set(consts.commands)
     commands = []
     for arg in args:
-        if arg in consts.commands:
+        if arg in all_commands:
             args.remove(arg)
             commands.append(arg)
     return commands, args

@@ -44,11 +44,9 @@ import tools
 from tools import consts
 
 
-COMMANDS = ['play', 'pause', 'next', 'prev', 'stop']
-
 # Command line
 optparser = optparse.OptionParser(usage='Usage: %prog [options] [FILE(s) | ' +
-                                        ' | '.join(COMMANDS)  + ']')
+                                        ' | '.join(consts.commands)  + ']')
 optparser.add_option('--playbin', action='store_true', default=False,
               help='use the playbin GStreamer component instead of playbin2')
 optparser.add_option('--multiple-instances', action='store_true',

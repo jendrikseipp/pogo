@@ -32,7 +32,7 @@ socketTimeout = 10
 appName      = 'Pogo'
 appVersion   = '0.7'
 appNameShort = 'pogo'
-commands = set(['play', 'pause', 'next', 'prev', 'stop'])
+commands = ['play', 'pause', 'prev', 'next', 'stop']
 
 
 # --- URLs
