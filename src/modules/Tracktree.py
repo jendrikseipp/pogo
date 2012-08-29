@@ -527,35 +527,37 @@ class Tracktree(modules.Module):
         self.tree.connect('tracktreeview-dnd', self.onDND)
         self.tree.connect('key-press-event', self.onKeyboard)
 
-        # Populate the playlist with commandline args or the saved playlist
         (options, args) = prefs.getCmdLine()
 
         self.savedPlaylist = os.path.join(consts.dirCfg, 'saved-playlist')
         self.paused = False
 
-        if len(args) != 0:
+
+        # Populate the playlist with the saved playlist
+        dump = None
+        if os.path.exists(self.savedPlaylist):
+            try:
+                dump = pickleLoad(self.savedPlaylist)
+            except:
+                msg = '[%s] Unable to restore playlist from %s\n\n%s'
+                log.logger.error(msg % (MOD_INFO[modules.MODINFO_NAME],
+                                self.savedPlaylist, traceback.format_exc()))
+
+        if dump:
+            self.restoreTreeDump(dump)
+            log.logger.info('[%s] Restored playlist' % MOD_INFO[modules.MODINFO_NAME])
+            self.tree.collapse_all()
+            self.select_last_played_track()
+            self.onListModified()
+
+        # Add commandline tracks to the playlist
+        if args:
             log.logger.info('[%s] Filling playlist with files given on command line' % MOD_INFO[modules.MODINFO_NAME])
             # make paths absolute
-            paths = map(os.path.abspath, args)
+            paths = [os.path.abspath(arg) for arg in args]
             print 'Appending to the playlist:'
             print '\n'.join(paths)
-            modules.postMsg(consts.MSG_CMD_TRACKLIST_SET, {'tracks': media.getTracks(paths), 'playNow': True})
-        else:
-            dump = None
-            if os.path.exists(self.savedPlaylist):
-                try:
-                    dump = pickleLoad(self.savedPlaylist)
-                except:
-                    msg = '[%s] Unable to restore playlist from %s\n\n%s'
-                    log.logger.error(msg % (MOD_INFO[modules.MODINFO_NAME],
-                                    self.savedPlaylist, traceback.format_exc()))
-
-            if dump:
-                self.restoreTreeDump(dump)
-                log.logger.info('[%s] Restored playlist' % MOD_INFO[modules.MODINFO_NAME])
-                self.tree.collapse_all()
-                self.select_last_played_track()
-                self.onListModified()
+            modules.postMsg(consts.MSG_CMD_TRACKLIST_ADD, {'tracks': media.getTracks(paths), 'playNow': True})
 
         # Automatically save the content at regular intervals
         gobject.timeout_add_seconds(SAVE_INTERVAL, self.save_track_tree)
