@@ -8,22 +8,22 @@ msgstr ""
 "Project-Id-Version: decibel-audio-player\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2012-07-24 11:16+0200\n"
-"PO-Revision-Date: 2010-10-07 11:26+0000\n"
-"Last-Translator: kitzOgen <kitzogen@gmail.com>\n"
+"PO-Revision-Date: 2012-08-29 18:20+0000\n"
+"Last-Translator: Michael Moroni <michael.moroni@mailoo.org>\n"
 "Language-Team: Esperanto <eo@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2012-08-16 04:48+0000\n"
-"X-Generator: Launchpad (build 15810)\n"
+"X-Launchpad-Export-Date: 2012-08-30 05:20+0000\n"
+"X-Generator: Launchpad (build 15864)\n"
 
 #: ../src/media/track/__init__.py:52
 msgid "Track number"
-msgstr ""
+msgstr "Traknumero"
 
 #: ../src/media/track/__init__.py:53
 msgid "Title"
-msgstr ""
+msgstr "Titolo"
 
 #: ../src/media/track/__init__.py:54
 msgid "Artist"
@@ -43,11 +43,11 @@ msgstr "Dato"
 
 #: ../src/media/track/__init__.py:58
 msgid "Disc number"
-msgstr ""
+msgstr "Numero de disko"
 
 #: ../src/media/track/__init__.py:59
 msgid "Bit rate"
-msgstr ""
+msgstr "Bitrapido"
 
 #: ../src/media/track/__init__.py:60
 msgid "Sample rate"
@@ -67,12 +67,12 @@ msgstr ""
 
 #: ../src/media/track/__init__.py:150
 msgid "unknown"
-msgstr ""
+msgstr "nekonata"
 
 #: ../src/media/track/__init__.py:192
 #, python-format
 msgid "%(album)s  [Disc %(discnum)u]"
-msgstr ""
+msgstr "%(album)s  [Disko %(discnum)u]"
 
 #: ../src/media/track/__init__.py:199
 msgid "CDDA Track"
@@ -117,11 +117,12 @@ msgstr ""
 msgid "translator-credits"
 msgstr ""
 "Launchpad Contributions:\n"
+"  Michael Moroni https://launchpad.net/~airon90\n"
 "  kitzOgen https://launchpad.net/~kitzogen"
 
 #: ../src/gui/about.py:44
 msgid "Developer:"
-msgstr ""
+msgstr "Programisto:"
 
 #: ../src/gui/about.py:48
 msgid "Thanks to:"
@@ -137,7 +138,7 @@ msgstr ""
 
 #: ../src/modules/FileExplorer.py:181
 msgid "loading..."
-msgstr ""
+msgstr "ŝarganta..."
 
 #: ../src/modules/FileExplorer.py:407
 msgid "Append"
@@ -157,11 +158,11 @@ msgstr ""
 
 #: ../src/modules/FileExplorer.py:469
 msgid "Choose a directory"
-msgstr ""
+msgstr "Elektu dosierujon"
 
 #: ../src/modules/FileExplorer.py:475
 msgid "Invalid Folder"
-msgstr ""
+msgstr "Nevalida dosierujo"
 
 #: ../src/modules/FileExplorer.py:476
 msgid "You cannot add your root or home folder to the music directories"
@@ -177,11 +178,11 @@ msgstr ""
 
 #: ../src/modules/FileExplorer.py:571
 msgid "Albums"
-msgstr ""
+msgstr "Albumoj"
 
 #: ../src/modules/FileExplorer.py:573
 msgid "Music"
-msgstr ""
+msgstr "Muziko"
 
 #: ../src/modules/FileExplorer.py:650
 msgid "Right-click to add music folders"

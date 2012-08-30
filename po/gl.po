@@ -1,16 +1,16 @@
-# Hebrew translation for decibel-audio-player
-# Copyright (c) 2008 Rosetta Contributors and Canonical Ltd 2008
-# This file is distributed under the same license as the decibel-audio-player package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2008.
+# Galician translation for pogo
+# Copyright (c) 2012 Rosetta Contributors and Canonical Ltd 2012
+# This file is distributed under the same license as the pogo package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2012.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: decibel-audio-player\n"
-"Report-Msgid-Bugs-To: \n"
+"Project-Id-Version: pogo\n"
+"Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2012-07-24 11:16+0200\n"
-"PO-Revision-Date: 2012-08-29 12:35+0000\n"
-"Last-Translator: Yaron <sh.yaron@gmail.com>\n"
-"Language-Team: Hebrew <he@li.org>\n"
+"PO-Revision-Date: 2012-08-29 19:00+0000\n"
+"Last-Translator: Miguel Anxo Bouzada <mbouzada@gmail.com>\n"
+"Language-Team: Galician <gl@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -19,93 +19,93 @@ msgstr ""
 
 #: ../src/media/track/__init__.py:52
 msgid "Track number"
-msgstr "מספר הרצועה"
+msgstr "Número de pista"
 
 #: ../src/media/track/__init__.py:53
 msgid "Title"
-msgstr "כותרת"
+msgstr "Título"
 
 #: ../src/media/track/__init__.py:54
 msgid "Artist"
-msgstr "אמן"
+msgstr "Intérprete"
 
 #: ../src/media/track/__init__.py:55
 msgid "Album"
-msgstr "אלבום"
+msgstr "Álbum"
 
 #: ../src/media/track/__init__.py:56
 msgid "Genre"
-msgstr "סגנון"
+msgstr "Xénero"
 
 #: ../src/media/track/__init__.py:57
 msgid "Date"
-msgstr "תאריך"
+msgstr "Data"
 
 #: ../src/media/track/__init__.py:58
 msgid "Disc number"
-msgstr "מספר התקליטור"
+msgstr "Núm. de disco"
 
 #: ../src/media/track/__init__.py:59
 msgid "Bit rate"
-msgstr "קצב הסיביות"
+msgstr "Taxa de bits"
 
 #: ../src/media/track/__init__.py:60
 msgid "Sample rate"
-msgstr "קצב הדגימה"
+msgstr "Taxa de mostraxe"
 
 #: ../src/media/track/__init__.py:61
 msgid "Duration in seconds (e.g., 194)"
-msgstr "משך בשניות (למשל 194)"
+msgstr "Duración en segundos (p. ex. 194)"
 
 #: ../src/media/track/__init__.py:62
 msgid "Duration as a string (e.g., 3:14)"
-msgstr "משך כמחרוזת (למשל 3:14)"
+msgstr "Duración como cadea (p. ex. 3:14)"
 
 #: ../src/media/track/__init__.py:65
 msgid "Full path to the file"
-msgstr "הנתיב המלא אל הקובץ"
+msgstr "Ruta completa ao ficheiro"
 
 #: ../src/media/track/__init__.py:150
 msgid "unknown"
-msgstr "בלתי ידוע"
+msgstr "descoñecido"
 
 #: ../src/media/track/__init__.py:192
 #, python-format
 msgid "%(album)s  [Disc %(discnum)u]"
-msgstr "%(album)s [תקליטור %(discnum)u]"
+msgstr "%(album)s  [disco %(discnum)u]"
 
 #: ../src/media/track/__init__.py:199
 msgid "CDDA Track"
-msgstr "רצועת CDDA"
+msgstr "Pista CDDA"
 
 #: ../src/gui/preferences.py:43
 msgid "Preferences"
-msgstr "העדפות"
+msgstr "Preferencias"
 
 #: ../src/gui/preferences.py:129
 msgid "Unable to load this module."
-msgstr "לא ניתן לטעון מודול זה."
+msgstr "Non foi posíbel cargar este módulo."
 
 #: ../src/gui/preferences.py:138
 msgid "Modules"
-msgstr "מודולים"
+msgstr "Módulos"
 
 #: ../src/gui/preferences.py:139 ../src/modules/DesktopNotification.py:222
 #: ../src/modules/Covers.py:390
 msgid "Description"
-msgstr "תיאור"
+msgstr "Descrición"
 
 #: ../src/gui/preferences.py:140
 msgid ""
 "This window shows the list of available modules. You can enable/disable a "
 "module by checking/unchecking the check box in front of it."
 msgstr ""
-"חלון זה מציג את רשימת המודולים הזמינים. ניתן להפעיל/לנטרל מודול על ידי "
-"סימון/ביטול הסימון של התיבה שלידו."
+"Esta xanela amosa a lista de módulos dispoñíbeis. Pode activar/desactivar un "
+"módulo marcando/desmarcando a caixiña ao seu carón."
 
 #: ../src/gui/preferences.py:142
 msgid "Configuring a Module"
-msgstr "הגדרת מודול"
+msgstr "Configurando un módulo"
 
 #: ../src/gui/preferences.py:143
 msgid ""
@@ -114,153 +114,157 @@ msgid ""
 "click on the \"Preferences\" button on the bottom of the dialog box. Note "
 "that configuring a module is only possible when it is enabled."
 msgstr ""
-"כאשר מודול ניתן להגדרה, מוצג סמל לימין השורה התואמת. על מנת להגדיר מודול, "
-"פשוט בחרו אותו ולחצו על הלחצן \"העדפות\" בתחתית תיבת הדו-שיח. שימו לב שהגדרת "
-"מודול אפשרית רק כאשר הוא פעיל."
+"Cando un modulo pode ser configurado, amosase unha icona á dereita. Para "
+"configurar un modulo simplemente seleccióneo e logo prema no botón "
+"«Preferencias» na parte inferior da caixa de diálogo. Teña en conta que "
+"configurar un módulo só é posíbel cando está activado"
 
 #: ../src/gui/about.py:40
 msgid "translator-credits"
 msgstr ""
 "Launchpad Contributions:\n"
-"  Yaron https://launchpad.net/~sh-yaron"
+"  Miguel Anxo Bouzada https://launchpad.net/~mbouzada"
 
 #: ../src/gui/about.py:44
 msgid "Developer:"
-msgstr "מפתח:"
+msgstr "Desenvolvedor"
 
 #: ../src/gui/about.py:48
 msgid "Thanks to:"
-msgstr "תודות ל:"
+msgstr "Grazas a:"
 
 #: ../src/modules/Search.py:33
 msgid "Search in your music folders"
-msgstr "חיפוש בתיקיות המוזיקה שלך"
+msgstr "Buscar nos seus cartafoles de música"
 
 #: ../src/modules/Zeitgeist.py:28
 msgid "Send track information to the Zeitgeist service"
-msgstr "שליחת פרטי הרצועה לשירות הצייטגייסט"
+msgstr "Enviar información da pista ao servizo Zeitgeist"
 
 #: ../src/modules/FileExplorer.py:181
 msgid "loading..."
-msgstr "טוען..."
+msgstr "cargando…"
 
 #: ../src/modules/FileExplorer.py:407
 msgid "Append"
-msgstr "הוספה"
+msgstr "Engadir"
 
 #: ../src/modules/FileExplorer.py:419
 msgid "Open containing folder"
-msgstr "פתיחת התיקייה המכילה"
+msgstr "Abrir o cartafol contedor"
 
 #: ../src/modules/FileExplorer.py:443
 msgid "Add music folder"
-msgstr "הוספת תיקיית מוזיקה"
+msgstr "Engadir o cartafol de música"
 
 #: ../src/modules/FileExplorer.py:455
 msgid "Hide folder"
-msgstr "הסתרת תיקייה"
+msgstr "Cartafol agochado"
 
 #: ../src/modules/FileExplorer.py:469
 msgid "Choose a directory"
-msgstr "נא לבחור בתיקייה"
+msgstr "Escolla un directorio"
 
 #: ../src/modules/FileExplorer.py:475
 msgid "Invalid Folder"
-msgstr "תיקייה לא חוקית"
+msgstr "Cartafol incorrecto"
 
 #: ../src/modules/FileExplorer.py:476
 msgid "You cannot add your root or home folder to the music directories"
-msgstr "לא ניתן להוסיף את תיקיית הבית שלך לתיקיות המוזיקה"
+msgstr ""
+"Non pode engadir o seu cartafol de inicio ou raíz aos directorios de música"
 
 #: ../src/modules/FileExplorer.py:483
 msgid "This path does not exist"
-msgstr "נתיב זה אינו קיים"
+msgstr "Esta ruta non existe"
 
 #: ../src/modules/FileExplorer.py:484
 msgid "Please select an existing directory."
-msgstr "נא בחרו בתיקייה קיימת."
+msgstr "Seleccione un directorio existente"
 
 #: ../src/modules/FileExplorer.py:571
 msgid "Albums"
-msgstr "אלבומים"
+msgstr "Álbums"
 
 #: ../src/modules/FileExplorer.py:573
 msgid "Music"
-msgstr "מוזיקה"
+msgstr "Música"
 
 #: ../src/modules/FileExplorer.py:650
 msgid "Right-click to add music folders"
-msgstr "יש ללחוץ עם מקש ימני כדי להוסיף תיקיות מוזיקה"
+msgstr "Prema co botón dereito para engadir cartafoles de música"
 
 #: ../src/modules/FileExplorer.py:701
 msgid "Searching ..."
-msgstr "מתבצע חיפוש ..."
+msgstr "Buscando ..."
 
 #: ../src/modules/FileExplorer.py:727
 msgid "No tracks found"
-msgstr "לא נמצאו רצועות"
+msgstr "Non se atoparon pistas"
 
 #: ../src/modules/FileExplorer.py:729
 msgid "No music folders have been added"
-msgstr "לא נוספו תיקיות מוזיקה"
+msgstr "Non foi engadido ningún cartafol de música"
 
 #: ../src/modules/__init__.py:75
 msgid "The following Python modules are not available:"
-msgstr "המודולים הבאים של Python אינם זמינים:"
+msgstr "Os siguintes módulos de Python non están dispoñíbeis:"
 
 #: ../src/modules/__init__.py:79
 msgid "You must install them if you want to enable this module."
-msgstr "עליכם להתקין אותם אם ברצונכם להפעיל מודול זה."
+msgstr "Debe instalalos se quere activar este módulo."
 
 #: ../src/modules/__init__.py:266
 msgid "Restart required"
-msgstr "נדרשת הפעלה מחדש"
+msgstr "Cómpre reiniciar"
 
 #: ../src/modules/__init__.py:267
 msgid ""
 "You must restart the application for this modification to take effect."
-msgstr "עליך להפעיל מחדש את היישום כדי ששינוי זה ייכנס לתוקף."
+msgstr "Debe reiniciar o aplicativo para que esta modificación teña efecto."
 
 #: ../src/modules/CtrlPanel.py:184 ../src/modules/CtrlPanel.py:240
 msgid "Pause the current track"
-msgstr "השהה את הרצועה הנוכחית"
+msgstr "Deter a pista actual"
 
 #: ../src/modules/CtrlPanel.py:200
 msgid "Play the first selected track of the playlist"
-msgstr "יש לנגן את הרצועה הראשונה שנבחרה ברשימת ההשמעה"
+msgstr "Reproducir a primeira pista seleccionada na lista de reprodución"
 
 #: ../src/modules/CtrlPanel.py:234
 msgid "Continue playing the current track"
-msgstr "המשך לנגן את הרצועה הנוכחית"
+msgstr "Continuar reproducindo a pista actual"
 
 #: ../src/modules/DesktopNotification.py:26
 msgid "Desktop Notification"
-msgstr "התראות שולחן העבודה"
+msgstr "Notificación de escritorio"
 
 #: ../src/modules/DesktopNotification.py:26
 msgid "Display a desktop notification on track change"
-msgstr "הצג התראה בשולחן העבודה עם שינוי רצועת השמע"
+msgstr "Amosar unha notificación de escritorio ao cambiar a pista"
 
 #: ../src/modules/DesktopNotification.py:83
 #: ../src/modules/DesktopNotification.py:197
 msgid "Skip track"
-msgstr "דלג על רצועה"
+msgstr "Saltar a pista"
 
 #: ../src/modules/DesktopNotification.py:223
 msgid ""
 "This module displays a small popup window on your desktop when a new track "
 "starts."
 msgstr ""
-"מודול זה מציג חלונית קטנה על גבי שולחן העבודה כאשר מתנגנת רצועה חדשה."
+"Este módulo amosa unha xanela no seu escritorio cando comeza unha pista nova."
 
 #: ../src/modules/DesktopNotification.py:224
 msgid ""
 "If the Covers module is enabled, the popup also shows the album cover."
-msgstr "אם הופעל מודול העטיפות, החלונית הקופצת גם כן תציג את עטיפת האלבום."
+msgstr ""
+"Se o módulo de portadas está activado, a xanela emerxente tamén amosa a "
+"portada do álbum."
 
 #: ../src/modules/DesktopNotification.py:225
 msgid "Customizing the Notification"
-msgstr "התאמת ההתראה"
+msgstr "Personalizando a notificación"
 
 #: ../src/modules/DesktopNotification.py:226
 msgid ""
@@ -269,33 +273,34 @@ msgid ""
 "replaced by their corresponding value. Available fields are:\n"
 "\n"
 msgstr ""
-"ניתן לשנות את הכותרת ואת גוף ההתראה לכל טקסט בו תחפוץ. לפני הצגת החלונית, "
-"שדות שצורתם {שדה} יוחלפו בערכם התואם. שדות אפשריים הינם:\n"
+"Pode cambiarlle o título e o corpo da notificación a calquera texto que "
+"queira. Antes de amosar a xanela emerxente, os campos do formulario {field} "
+"substituiranse polo valor correspondente. Campos dispoñíbeis:\n"
 "\n"
 
 #: ../src/modules/DesktopNotification.py:229
 msgid "Markup"
-msgstr "סימון"
+msgstr "Marcado"
 
 #: ../src/modules/DesktopNotification.py:230
 msgid ""
 "You can use the Pango markup language to format the text. More information "
 "on that language is available on the following web page:"
 msgstr ""
-"תוכלו להשתמש בשפת הסימון Pango כדי לעצב את הטקסט. מידע נוסף אודות שפה זו "
-"זמין בכתובת:"
+"Pode usar a linguaxe marcada de Pango para formatar o texto. Hai máis "
+"información sobre esta linguaxe dispoñíbel na seguinte páxina web:"
 
 #: ../src/modules/StatusbarTitlebar.py:48
 msgid "[paused]"
-msgstr "[מושהה]"
+msgstr "[pausado]"
 
 #: ../src/modules/Covers.py:28
 msgid "Covers"
-msgstr "עטיפות"
+msgstr "Portadas"
 
 #: ../src/modules/Covers.py:28
 msgid "Show album covers"
-msgstr "הצג עטיפות אלבומים"
+msgstr "Amosar as portadas dos álbums"
 
 #: ../src/modules/Covers.py:391
 msgid ""
@@ -303,13 +308,13 @@ msgid ""
 "Covers may be loaded from local pictures, located in the same directory as "
 "the current track, or may be downloaded from the Internet."
 msgstr ""
-"מודול זה מציג את עטיפת האלבום ממנו מגיעה הרצועה הנוכחית. ניתן לטעון עטיפות "
-"מתמונות מקומיות, הממוקמות באותה התיקייה כמו הרצועה הנוכחית, או ניתנות להורדה "
-"מהאינטרנט."
+"Este módulo amosa a portada do álbum do cal procede a pista actual. As "
+"portadas poden cargarse de imaxes locais, localizadas no mesmo directorio "
+"que a pista actual, ou poden ser descargadas desde Internet."
 
 #: ../src/modules/Covers.py:394
 msgid "User Covers"
-msgstr "עטיפות המשתמש"
+msgstr "Portadas do usuario"
 
 #: ../src/modules/Covers.py:395
 #, python-format
@@ -318,13 +323,14 @@ msgid ""
 "track. When specifying filenames, you do not need to provide file "
 "extensions, supported file formats (%s) are automatically used."
 msgstr ""
-"עטיפת משתמש הינה תמונה הממוקמת באותה התיקייה כמו הרצועה הנוכחית. בעת ציון "
-"שמות הקבצים, לא תצטרך לספק סיומות קבצים, נעשה שימוש בסוגי קבצים נתמכים (%s) "
-"אוטומטית."
+"Unha portada de usuario é unha imaxe localizada no mesmo directorio que a "
+"pista actual. Cando se especifican nomes de ficheiros, vostede non precisa "
+"prover extensións de ficheiros, os formatos de ficheiros compatíbeis (%s) "
+"úsanse automaticamente."
 
 #: ../src/modules/Covers.py:398
 msgid "Internet Covers"
-msgstr "עטיפות מהאינטרנט"
+msgstr "Portadas de Internet"
 
 #: ../src/modules/Covers.py:399
 msgid ""
@@ -333,144 +339,144 @@ msgid ""
 "case, if a user cover exists for the current track, it is used. If there is "
 "none, the cover is downloaded."
 msgstr ""
-"ניתן להוריד עטיפות דרך האינטרנט, בהתבסס על תגיות הרצועה הנוכחית. תוכל תמיד "
-"לבקש להעדיף להשתמש בעטיפות משתמש על גבי עטיפות אינטרנט. במקרה זה, במידה "
-"וקיימת עטיפת משתמש עבור הרצועה הנוכחית, בה יעשה שמוש. במידה ואין, העטיפה "
-"תורד מהאינטרנט."
+"As portadas poden descargarse de Internet, baseándose nas etiquetas da pista "
+"actual. Vostede pode pedir que sempre se prefiran as portadas de usuario ás "
+"de Internet. Neste caso, se unha portada de usuario existe para a pista "
+"actual, úsase esta. Se non hai ningunha, a portada descargarase."
 
 #: ../src/modules/Tracktree.py:382 ../src/modules/Tracktree.py:457
 msgid "Export playlist to file"
-msgstr "יצוא רשימת ההשמעה לקובץ"
+msgstr "Exportar a lista de reprod. a ficheiro"
 
 #: ../src/modules/Tracktree.py:390 ../src/modules/Tracktree.py:462
 msgid "Export playlist to directory"
-msgstr "יצוא רשימת ההשמעה לתיקייה"
+msgstr "Exportar a lista de reprod. a directorio"
 
 #: ../src/modules/Tracktree.py:447
 msgid "Clear Playlist"
-msgstr "פינוי הפריטים מרשימת ההשמעה"
+msgstr "Limpar a lista de reprodución"
 
 #: ../src/modules/Equalizer.py:24
 msgid "Equalizer"
-msgstr "אקולייזר"
+msgstr "Ecualizador"
 
 #: ../src/modules/Equalizer.py:24
 msgid "Tune the level of the frequency bands"
-msgstr "כיוון רמות ערוצי התדירות"
+msgstr "Axustar o nivel das bandas de frecuencia"
 
 #: ../src/modules/Equalizer.py:125 ../src/modules/Equalizer.py:213
 #: ../src/modules/Equalizer.py:226
 msgid "Custom"
-msgstr "בהתאמה אישית"
+msgstr "Personalizado"
 
 #: ../src/modules/Equalizer.py:166
 msgid "Save levels"
-msgstr "שמירת הרמות"
+msgstr "Gardar os niveis"
 
 #: ../src/modules/Equalizer.py:177
 msgid "Load levels"
-msgstr "טעינת רמות"
+msgstr "Cargar os niveis"
 
 #: ../src/modules/Equalizer.py:204
 msgid "Could not load the file"
-msgstr "לא ניתן לטעון את הקובץ"
+msgstr "Non foi posíbel cargar o ficheiro"
 
 #: ../src/modules/Equalizer.py:204
 msgid "The format of the file is incorrect."
-msgstr "מבנה הקובץ שגוי."
+msgstr "O formato do ficheiro é incorrecto."
 
 #: ../src/tools/consts.py:92
 msgid "Unknown Genre"
-msgstr "סגנון לא ידוע"
+msgstr "Xénero descoñecido"
 
 #: ../src/tools/consts.py:93
 msgid "Unknown Title"
-msgstr "כותרת לא ידועה"
+msgstr "Título descoñecido"
 
 #: ../src/tools/consts.py:94
 msgid "Unknown Album"
-msgstr "אלבום לא ידוע"
+msgstr "Álbum descoñecido"
 
 #: ../src/tools/consts.py:95
 msgid "Unknown Artist"
-msgstr "אמן לא ידוע"
+msgstr "Interprete descoñecido"
 
 #: ../src/tools/consts.py:103
 msgid "Unknown Album Artist"
-msgstr "אמן התקליטור אינו ידוע"
+msgstr "Interprete do álbum descoñecido"
 
 #: ../res/Covers.ui.h:1
 msgid "Filenames:"
-msgstr "שמות הקבצים:"
+msgstr "Nomes de ficheiros:"
 
 #: ../res/Covers.ui.h:2
 msgid "Filenames to look for (e.g., folder, cover)"
-msgstr "שמות קבצים לאיתור (לדוגמה: תיקייה, עטיפה)"
+msgstr "Nomes de ficheiros a buscar (ex.: cartafol, portada)"
 
 #: ../res/Covers.ui.h:3
 msgid "<b>User Covers</b>"
-msgstr "<b>עטיפות משתמש</b>"
+msgstr "<b>Portadas do usuario</b>"
 
 #: ../res/Covers.ui.h:4
 msgid "Download covers"
-msgstr "הורד עטיפות"
+msgstr "Descargar portadas"
 
 #: ../res/Covers.ui.h:5
 msgid "Try to download covers from the Internet"
-msgstr "נסה להוריד עטיפות מהאינטרנט"
+msgstr "Intentar descargar as portadas desde Internet"
 
 #: ../res/Covers.ui.h:6
 msgid "Always prefer user covers"
-msgstr "תמיד העדף עטיפות משתמש"
+msgstr "Preferir sempre as portadas do usuario"
 
 #: ../res/Covers.ui.h:7
 msgid "Don't download covers when there is a user one"
-msgstr "אל תוריד עטיפות כאשר ישנן עטיפות משתמש"
+msgstr "Non descargar portadas cando hai unha do usuario"
 
 #: ../res/Covers.ui.h:8
 msgid "<b>Internet Covers</b>"
-msgstr "<b>עטיפות מהאינטרנט</b>"
+msgstr "<b>Portadas de Internet</b>"
 
 #: ../res/DesktopNotification.ui.h:1
 msgid "<b>Title</b>"
-msgstr "<b>כותרת</b>"
+msgstr "<b>Título</b>"
 
 #: ../res/DesktopNotification.ui.h:2
 msgid "<b>Body</b>"
-msgstr "<b>גוף</b>"
+msgstr "<b>Corpo</b>"
 
 #: ../res/DesktopNotification.ui.h:3
 msgid "Show a \"skip track\" button"
-msgstr "הצג לחצן \"דלג על רצועה\""
+msgstr "Amosar un botón «saltar pista»"
 
 #: ../res/DesktopNotification.ui.h:4
 msgid "Notification timeout:"
-msgstr "תפוגת ההתראה:"
+msgstr "Tempo límite da notificación:"
 
 #: ../res/DesktopNotification.ui.h:5
 msgid "Time during which the notification is displayed"
-msgstr "משך הזמן להצגת ההתראה"
+msgstr "Tempo para amosar a notificación"
 
 #: ../res/DesktopNotification.ui.h:6
 msgid "seconds"
-msgstr "שניות"
+msgstr "segundos"
 
 #: ../res/DesktopNotification.ui.h:7
 msgid "<b>Miscellaneous</b>"
-msgstr "<b>שונות</b>"
+msgstr "<b>Varios</b>"
 
 #: ../res/Equalizer.ui.h:1
 msgid "Preset:"
-msgstr "ערכת הגדרות:"
+msgstr "Predefinición:"
 
 #: ../res/MainWindow.ui.h:1
 msgid "Play the previous track"
-msgstr "נגן את הרצועה הקודמת"
+msgstr "Reproducir a pista anterior"
 
 #: ../res/MainWindow.ui.h:2
 msgid "Play the first track of the playlist"
-msgstr "נגן את הרצועה הראשונה ברשימת ההשמעה"
+msgstr "Reproducir a primeira pista da lista de reprodución"
 
 #: ../res/MainWindow.ui.h:3
 msgid "Play the next track"
-msgstr "נגן את הרצועה הבאה"
+msgstr "Reproducir a pista seguinte"

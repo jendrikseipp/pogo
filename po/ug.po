@@ -1,16 +1,16 @@
-# Hebrew translation for decibel-audio-player
-# Copyright (c) 2008 Rosetta Contributors and Canonical Ltd 2008
-# This file is distributed under the same license as the decibel-audio-player package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2008.
+# Uyghur translation for pogo
+# Copyright (c) 2012 Rosetta Contributors and Canonical Ltd 2012
+# This file is distributed under the same license as the pogo package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2012.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: decibel-audio-player\n"
-"Report-Msgid-Bugs-To: \n"
+"Project-Id-Version: pogo\n"
+"Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2012-07-24 11:16+0200\n"
-"PO-Revision-Date: 2012-08-29 12:35+0000\n"
-"Last-Translator: Yaron <sh.yaron@gmail.com>\n"
-"Language-Team: Hebrew <he@li.org>\n"
+"PO-Revision-Date: 2012-08-30 00:34+0000\n"
+"Last-Translator: Gheyret T.Kenji <Unknown>\n"
+"Language-Team: Uyghur <ug@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -19,93 +19,91 @@ msgstr ""
 
 #: ../src/media/track/__init__.py:52
 msgid "Track number"
-msgstr "מספר הרצועה"
+msgstr "ناخشا نومۇرى"
 
 #: ../src/media/track/__init__.py:53
 msgid "Title"
-msgstr "כותרת"
+msgstr "ماۋزۇ"
 
 #: ../src/media/track/__init__.py:54
 msgid "Artist"
-msgstr "אמן"
+msgstr "ئورۇنلىغۇچى"
 
 #: ../src/media/track/__init__.py:55
 msgid "Album"
-msgstr "אלבום"
+msgstr "ئالبوم"
 
 #: ../src/media/track/__init__.py:56
 msgid "Genre"
-msgstr "סגנון"
+msgstr "ئېقىم"
 
 #: ../src/media/track/__init__.py:57
 msgid "Date"
-msgstr "תאריך"
+msgstr "چېسلا"
 
 #: ../src/media/track/__init__.py:58
 msgid "Disc number"
-msgstr "מספר התקליטור"
+msgstr "دىسكا نومۇرى"
 
 #: ../src/media/track/__init__.py:59
 msgid "Bit rate"
-msgstr "קצב הסיביות"
+msgstr "بىت نىسبىتى"
 
 #: ../src/media/track/__init__.py:60
 msgid "Sample rate"
-msgstr "קצב הדגימה"
+msgstr "ئەۋرىشكە نىسبىتى"
 
 #: ../src/media/track/__init__.py:61
 msgid "Duration in seconds (e.g., 194)"
-msgstr "משך בשניות (למשל 194)"
+msgstr ""
 
 #: ../src/media/track/__init__.py:62
 msgid "Duration as a string (e.g., 3:14)"
-msgstr "משך כמחרוזת (למשל 3:14)"
+msgstr ""
 
 #: ../src/media/track/__init__.py:65
 msgid "Full path to the file"
-msgstr "הנתיב המלא אל הקובץ"
+msgstr ""
 
 #: ../src/media/track/__init__.py:150
 msgid "unknown"
-msgstr "בלתי ידוע"
+msgstr "نامەلۇم"
 
 #: ../src/media/track/__init__.py:192
 #, python-format
 msgid "%(album)s  [Disc %(discnum)u]"
-msgstr "%(album)s [תקליטור %(discnum)u]"
+msgstr ""
 
 #: ../src/media/track/__init__.py:199
 msgid "CDDA Track"
-msgstr "רצועת CDDA"
+msgstr ""
 
 #: ../src/gui/preferences.py:43
 msgid "Preferences"
-msgstr "העדפות"
+msgstr "مايىللىقلار"
 
 #: ../src/gui/preferences.py:129
 msgid "Unable to load this module."
-msgstr "לא ניתן לטעון מודול זה."
+msgstr ""
 
 #: ../src/gui/preferences.py:138
 msgid "Modules"
-msgstr "מודולים"
+msgstr "بۆلەكلەر"
 
 #: ../src/gui/preferences.py:139 ../src/modules/DesktopNotification.py:222
 #: ../src/modules/Covers.py:390
 msgid "Description"
-msgstr "תיאור"
+msgstr "چۈشەندۈرۈشى"
 
 #: ../src/gui/preferences.py:140
 msgid ""
 "This window shows the list of available modules. You can enable/disable a "
 "module by checking/unchecking the check box in front of it."
 msgstr ""
-"חלון זה מציג את רשימת המודולים הזמינים. ניתן להפעיל/לנטרל מודול על ידי "
-"סימון/ביטול הסימון של התיבה שלידו."
 
 #: ../src/gui/preferences.py:142
 msgid "Configuring a Module"
-msgstr "הגדרת מודול"
+msgstr ""
 
 #: ../src/gui/preferences.py:143
 msgid ""
@@ -114,153 +112,149 @@ msgid ""
 "click on the \"Preferences\" button on the bottom of the dialog box. Note "
 "that configuring a module is only possible when it is enabled."
 msgstr ""
-"כאשר מודול ניתן להגדרה, מוצג סמל לימין השורה התואמת. על מנת להגדיר מודול, "
-"פשוט בחרו אותו ולחצו על הלחצן \"העדפות\" בתחתית תיבת הדו-שיח. שימו לב שהגדרת "
-"מודול אפשרית רק כאשר הוא פעיל."
 
 #: ../src/gui/about.py:40
 msgid "translator-credits"
 msgstr ""
 "Launchpad Contributions:\n"
-"  Yaron https://launchpad.net/~sh-yaron"
+"  Gheyret T.Kenji https://launchpad.net/~gheyretkenji"
 
 #: ../src/gui/about.py:44
 msgid "Developer:"
-msgstr "מפתח:"
+msgstr "ئىجادىيەتچى:"
 
 #: ../src/gui/about.py:48
 msgid "Thanks to:"
-msgstr "תודות ל:"
+msgstr ""
 
 #: ../src/modules/Search.py:33
 msgid "Search in your music folders"
-msgstr "חיפוש בתיקיות המוזיקה שלך"
+msgstr ""
 
 #: ../src/modules/Zeitgeist.py:28
 msgid "Send track information to the Zeitgeist service"
-msgstr "שליחת פרטי הרצועה לשירות הצייטגייסט"
+msgstr ""
 
 #: ../src/modules/FileExplorer.py:181
 msgid "loading..."
-msgstr "טוען..."
+msgstr "يۈكلەۋاتىدۇ…"
 
 #: ../src/modules/FileExplorer.py:407
 msgid "Append"
-msgstr "הוספה"
+msgstr "قوش"
 
 #: ../src/modules/FileExplorer.py:419
 msgid "Open containing folder"
-msgstr "פתיחת התיקייה המכילה"
+msgstr ""
 
 #: ../src/modules/FileExplorer.py:443
 msgid "Add music folder"
-msgstr "הוספת תיקיית מוזיקה"
+msgstr ""
 
 #: ../src/modules/FileExplorer.py:455
 msgid "Hide folder"
-msgstr "הסתרת תיקייה"
+msgstr ""
 
 #: ../src/modules/FileExplorer.py:469
 msgid "Choose a directory"
-msgstr "נא לבחור בתיקייה"
+msgstr ""
 
 #: ../src/modules/FileExplorer.py:475
 msgid "Invalid Folder"
-msgstr "תיקייה לא חוקית"
+msgstr "ئىناۋەتسىز قىسقۇچ"
 
 #: ../src/modules/FileExplorer.py:476
 msgid "You cannot add your root or home folder to the music directories"
-msgstr "לא ניתן להוסיף את תיקיית הבית שלך לתיקיות המוזיקה"
+msgstr ""
 
 #: ../src/modules/FileExplorer.py:483
 msgid "This path does not exist"
-msgstr "נתיב זה אינו קיים"
+msgstr ""
 
 #: ../src/modules/FileExplorer.py:484
 msgid "Please select an existing directory."
-msgstr "נא בחרו בתיקייה קיימת."
+msgstr ""
 
 #: ../src/modules/FileExplorer.py:571
 msgid "Albums"
-msgstr "אלבומים"
+msgstr "ئالبوملار"
 
 #: ../src/modules/FileExplorer.py:573
 msgid "Music"
-msgstr "מוזיקה"
+msgstr "مۇزىكا"
 
 #: ../src/modules/FileExplorer.py:650
 msgid "Right-click to add music folders"
-msgstr "יש ללחוץ עם מקש ימני כדי להוסיף תיקיות מוזיקה"
+msgstr ""
 
 #: ../src/modules/FileExplorer.py:701
 msgid "Searching ..."
-msgstr "מתבצע חיפוש ..."
+msgstr ""
 
 #: ../src/modules/FileExplorer.py:727
 msgid "No tracks found"
-msgstr "לא נמצאו רצועות"
+msgstr ""
 
 #: ../src/modules/FileExplorer.py:729
 msgid "No music folders have been added"
-msgstr "לא נוספו תיקיות מוזיקה"
+msgstr ""
 
 #: ../src/modules/__init__.py:75
 msgid "The following Python modules are not available:"
-msgstr "המודולים הבאים של Python אינם זמינים:"
+msgstr ""
 
 #: ../src/modules/__init__.py:79
 msgid "You must install them if you want to enable this module."
-msgstr "עליכם להתקין אותם אם ברצונכם להפעיל מודול זה."
+msgstr ""
 
 #: ../src/modules/__init__.py:266
 msgid "Restart required"
-msgstr "נדרשת הפעלה מחדש"
+msgstr "قايتا قوزغىتىش زۆرۈر"
 
 #: ../src/modules/__init__.py:267
 msgid ""
 "You must restart the application for this modification to take effect."
-msgstr "עליך להפעיל מחדש את היישום כדי ששינוי זה ייכנס לתוקף."
+msgstr ""
 
 #: ../src/modules/CtrlPanel.py:184 ../src/modules/CtrlPanel.py:240
 msgid "Pause the current track"
-msgstr "השהה את הרצועה הנוכחית"
+msgstr ""
 
 #: ../src/modules/CtrlPanel.py:200
 msgid "Play the first selected track of the playlist"
-msgstr "יש לנגן את הרצועה הראשונה שנבחרה ברשימת ההשמעה"
+msgstr ""
 
 #: ../src/modules/CtrlPanel.py:234
 msgid "Continue playing the current track"
-msgstr "המשך לנגן את הרצועה הנוכחית"
+msgstr ""
 
 #: ../src/modules/DesktopNotification.py:26
 msgid "Desktop Notification"
-msgstr "התראות שולחן העבודה"
+msgstr ""
 
 #: ../src/modules/DesktopNotification.py:26
 msgid "Display a desktop notification on track change"
-msgstr "הצג התראה בשולחן העבודה עם שינוי רצועת השמע"
+msgstr ""
 
 #: ../src/modules/DesktopNotification.py:83
 #: ../src/modules/DesktopNotification.py:197
 msgid "Skip track"
-msgstr "דלג על רצועה"
+msgstr ""
 
 #: ../src/modules/DesktopNotification.py:223
 msgid ""
 "This module displays a small popup window on your desktop when a new track "
 "starts."
 msgstr ""
-"מודול זה מציג חלונית קטנה על גבי שולחן העבודה כאשר מתנגנת רצועה חדשה."
 
 #: ../src/modules/DesktopNotification.py:224
 msgid ""
 "If the Covers module is enabled, the popup also shows the album cover."
-msgstr "אם הופעל מודול העטיפות, החלונית הקופצת גם כן תציג את עטיפת האלבום."
+msgstr ""
 
 #: ../src/modules/DesktopNotification.py:225
 msgid "Customizing the Notification"
-msgstr "התאמת ההתראה"
+msgstr ""
 
 #: ../src/modules/DesktopNotification.py:226
 msgid ""
@@ -269,33 +263,28 @@ msgid ""
 "replaced by their corresponding value. Available fields are:\n"
 "\n"
 msgstr ""
-"ניתן לשנות את הכותרת ואת גוף ההתראה לכל טקסט בו תחפוץ. לפני הצגת החלונית, "
-"שדות שצורתם {שדה} יוחלפו בערכם התואם. שדות אפשריים הינם:\n"
-"\n"
 
 #: ../src/modules/DesktopNotification.py:229
 msgid "Markup"
-msgstr "סימון"
+msgstr "بەلگە"
 
 #: ../src/modules/DesktopNotification.py:230
 msgid ""
 "You can use the Pango markup language to format the text. More information "
 "on that language is available on the following web page:"
 msgstr ""
-"תוכלו להשתמש בשפת הסימון Pango כדי לעצב את הטקסט. מידע נוסף אודות שפה זו "
-"זמין בכתובת:"
 
 #: ../src/modules/StatusbarTitlebar.py:48
 msgid "[paused]"
-msgstr "[מושהה]"
+msgstr ""
 
 #: ../src/modules/Covers.py:28
 msgid "Covers"
-msgstr "עטיפות"
+msgstr ""
 
 #: ../src/modules/Covers.py:28
 msgid "Show album covers"
-msgstr "הצג עטיפות אלבומים"
+msgstr ""
 
 #: ../src/modules/Covers.py:391
 msgid ""
@@ -303,13 +292,10 @@ msgid ""
 "Covers may be loaded from local pictures, located in the same directory as "
 "the current track, or may be downloaded from the Internet."
 msgstr ""
-"מודול זה מציג את עטיפת האלבום ממנו מגיעה הרצועה הנוכחית. ניתן לטעון עטיפות "
-"מתמונות מקומיות, הממוקמות באותה התיקייה כמו הרצועה הנוכחית, או ניתנות להורדה "
-"מהאינטרנט."
 
 #: ../src/modules/Covers.py:394
 msgid "User Covers"
-msgstr "עטיפות המשתמש"
+msgstr ""
 
 #: ../src/modules/Covers.py:395
 #, python-format
@@ -318,13 +304,10 @@ msgid ""
 "track. When specifying filenames, you do not need to provide file "
 "extensions, supported file formats (%s) are automatically used."
 msgstr ""
-"עטיפת משתמש הינה תמונה הממוקמת באותה התיקייה כמו הרצועה הנוכחית. בעת ציון "
-"שמות הקבצים, לא תצטרך לספק סיומות קבצים, נעשה שימוש בסוגי קבצים נתמכים (%s) "
-"אוטומטית."
 
 #: ../src/modules/Covers.py:398
 msgid "Internet Covers"
-msgstr "עטיפות מהאינטרנט"
+msgstr ""
 
 #: ../src/modules/Covers.py:399
 msgid ""
@@ -333,144 +316,140 @@ msgid ""
 "case, if a user cover exists for the current track, it is used. If there is "
 "none, the cover is downloaded."
 msgstr ""
-"ניתן להוריד עטיפות דרך האינטרנט, בהתבסס על תגיות הרצועה הנוכחית. תוכל תמיד "
-"לבקש להעדיף להשתמש בעטיפות משתמש על גבי עטיפות אינטרנט. במקרה זה, במידה "
-"וקיימת עטיפת משתמש עבור הרצועה הנוכחית, בה יעשה שמוש. במידה ואין, העטיפה "
-"תורד מהאינטרנט."
 
 #: ../src/modules/Tracktree.py:382 ../src/modules/Tracktree.py:457
 msgid "Export playlist to file"
-msgstr "יצוא רשימת ההשמעה לקובץ"
+msgstr ""
 
 #: ../src/modules/Tracktree.py:390 ../src/modules/Tracktree.py:462
 msgid "Export playlist to directory"
-msgstr "יצוא רשימת ההשמעה לתיקייה"
+msgstr ""
 
 #: ../src/modules/Tracktree.py:447
 msgid "Clear Playlist"
-msgstr "פינוי הפריטים מרשימת ההשמעה"
+msgstr "قويۇش تىزىمى تازىلاش"
 
 #: ../src/modules/Equalizer.py:24
 msgid "Equalizer"
-msgstr "אקולייזר"
+msgstr "تەڭشىگۈچ"
 
 #: ../src/modules/Equalizer.py:24
 msgid "Tune the level of the frequency bands"
-msgstr "כיוון רמות ערוצי התדירות"
+msgstr ""
 
 #: ../src/modules/Equalizer.py:125 ../src/modules/Equalizer.py:213
 #: ../src/modules/Equalizer.py:226
 msgid "Custom"
-msgstr "בהתאמה אישית"
+msgstr "ئىختىيارى"
 
 #: ../src/modules/Equalizer.py:166
 msgid "Save levels"
-msgstr "שמירת הרמות"
+msgstr ""
 
 #: ../src/modules/Equalizer.py:177
 msgid "Load levels"
-msgstr "טעינת רמות"
+msgstr ""
 
 #: ../src/modules/Equalizer.py:204
 msgid "Could not load the file"
-msgstr "לא ניתן לטעון את הקובץ"
+msgstr ""
 
 #: ../src/modules/Equalizer.py:204
 msgid "The format of the file is incorrect."
-msgstr "מבנה הקובץ שגוי."
+msgstr ""
 
 #: ../src/tools/consts.py:92
 msgid "Unknown Genre"
-msgstr "סגנון לא ידוע"
+msgstr "نامەلۇم ئېقىم"
 
 #: ../src/tools/consts.py:93
 msgid "Unknown Title"
-msgstr "כותרת לא ידועה"
+msgstr "نامەلۇم ماۋزۇ"
 
 #: ../src/tools/consts.py:94
 msgid "Unknown Album"
-msgstr "אלבום לא ידוע"
+msgstr "نامەلۇم ئالبوم"
 
 #: ../src/tools/consts.py:95
 msgid "Unknown Artist"
-msgstr "אמן לא ידוע"
+msgstr "ناتونۇش ئورۇنلىغۇچى"
 
 #: ../src/tools/consts.py:103
 msgid "Unknown Album Artist"
-msgstr "אמן התקליטור אינו ידוע"
+msgstr ""
 
 #: ../res/Covers.ui.h:1
 msgid "Filenames:"
-msgstr "שמות הקבצים:"
+msgstr ""
 
 #: ../res/Covers.ui.h:2
 msgid "Filenames to look for (e.g., folder, cover)"
-msgstr "שמות קבצים לאיתור (לדוגמה: תיקייה, עטיפה)"
+msgstr ""
 
 #: ../res/Covers.ui.h:3
 msgid "<b>User Covers</b>"
-msgstr "<b>עטיפות משתמש</b>"
+msgstr ""
 
 #: ../res/Covers.ui.h:4
 msgid "Download covers"
-msgstr "הורד עטיפות"
+msgstr ""
 
 #: ../res/Covers.ui.h:5
 msgid "Try to download covers from the Internet"
-msgstr "נסה להוריד עטיפות מהאינטרנט"
+msgstr ""
 
 #: ../res/Covers.ui.h:6
 msgid "Always prefer user covers"
-msgstr "תמיד העדף עטיפות משתמש"
+msgstr ""
 
 #: ../res/Covers.ui.h:7
 msgid "Don't download covers when there is a user one"
-msgstr "אל תוריד עטיפות כאשר ישנן עטיפות משתמש"
+msgstr ""
 
 #: ../res/Covers.ui.h:8
 msgid "<b>Internet Covers</b>"
-msgstr "<b>עטיפות מהאינטרנט</b>"
+msgstr ""
 
 #: ../res/DesktopNotification.ui.h:1
 msgid "<b>Title</b>"
-msgstr "<b>כותרת</b>"
+msgstr "<b>ماۋزۇ</b>"
 
 #: ../res/DesktopNotification.ui.h:2
 msgid "<b>Body</b>"
-msgstr "<b>גוף</b>"
+msgstr ""
 
 #: ../res/DesktopNotification.ui.h:3
 msgid "Show a \"skip track\" button"
-msgstr "הצג לחצן \"דלג על רצועה\""
+msgstr ""
 
 #: ../res/DesktopNotification.ui.h:4
 msgid "Notification timeout:"
-msgstr "תפוגת ההתראה:"
+msgstr ""
 
 #: ../res/DesktopNotification.ui.h:5
 msgid "Time during which the notification is displayed"
-msgstr "משך הזמן להצגת ההתראה"
+msgstr ""
 
 #: ../res/DesktopNotification.ui.h:6
 msgid "seconds"
-msgstr "שניות"
+msgstr "سېكۇنت"
 
 #: ../res/DesktopNotification.ui.h:7
 msgid "<b>Miscellaneous</b>"
-msgstr "<b>שונות</b>"
+msgstr ""
 
 #: ../res/Equalizer.ui.h:1
 msgid "Preset:"
-msgstr "ערכת הגדרות:"
+msgstr "تەڭشە:"
 
 #: ../res/MainWindow.ui.h:1
 msgid "Play the previous track"
-msgstr "נגן את הרצועה הקודמת"
+msgstr ""
 
 #: ../res/MainWindow.ui.h:2
 msgid "Play the first track of the playlist"
-msgstr "נגן את הרצועה הראשונה ברשימת ההשמעה"
+msgstr ""
 
 #: ../res/MainWindow.ui.h:3
 msgid "Play the next track"
-msgstr "נגן את הרצועה הבאה"
+msgstr "كېيىنكىسىنى قويىدۇ"
