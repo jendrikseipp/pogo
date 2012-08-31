@@ -8,14 +8,14 @@ msgstr ""
 "Project-Id-Version: pogo\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2012-07-24 11:16+0200\n"
-"PO-Revision-Date: 2012-08-30 05:19+0000\n"
+"PO-Revision-Date: 2012-08-30 07:48+0000\n"
 "Last-Translator: Pyae Sone <Unknown>\n"
 "Language-Team: Burmese <my@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2012-08-30 05:20+0000\n"
-"X-Generator: Launchpad (build 15864)\n"
+"X-Launchpad-Export-Date: 2012-08-31 05:05+0000\n"
+"X-Generator: Launchpad (build 15887)\n"
 
 #: ../src/media/track/__init__.py:52
 msgid "Track number"
@@ -72,7 +72,7 @@ msgstr "အမျိုးအမည်မသိ"
 #: ../src/media/track/__init__.py:192
 #, python-format
 msgid "%(album)s  [Disc %(discnum)u]"
-msgstr ""
+msgstr "%(album)s  [Disc %(discnum)u]"
 
 #: ../src/media/track/__init__.py:199
 msgid "CDDA Track"
@@ -103,7 +103,7 @@ msgstr ""
 
 #: ../src/gui/preferences.py:142
 msgid "Configuring a Module"
-msgstr ""
+msgstr "Module တစ်ခုကိုပြင်မည်"
 
 #: ../src/gui/preferences.py:143
 msgid ""
@@ -173,7 +173,7 @@ msgstr "ဒီလမ်းကြောင်းမမှန်ကန်ပါ"
 
 #: ../src/modules/FileExplorer.py:484
 msgid "Please select an existing directory."
-msgstr ""
+msgstr "တည်ရှိနေပြီးသာdirectory တစ်ခုကိုရွေးပါ"
 
 #: ../src/modules/FileExplorer.py:571
 msgid "Albums"
@@ -205,7 +205,7 @@ msgstr "အောက်ပါ Python modules များမရရှိပါ -
 
 #: ../src/modules/__init__.py:79
 msgid "You must install them if you want to enable this module."
-msgstr ""
+msgstr "ဒီmodule ကိုဖွင့်စေချင်ပါက သင်၎င်းတို့ကိုသွင်းရမည်"
 
 #: ../src/modules/__init__.py:266
 msgid "Restart required"
@@ -214,7 +214,7 @@ msgstr "စက်ကိုအစကနေပြန်စရန်လိုအပ
 #: ../src/modules/__init__.py:267
 msgid ""
 "You must restart the application for this modification to take effect."
-msgstr ""
+msgstr "ဒီဆော့ဝဲလ်ကိုအစကနေပြန်ဖွင့်မှ ဒီပြောင်းလဲမှူ့တွေကိုတွေ့ရမှာပါ"
 
 #: ../src/modules/CtrlPanel.py:184 ../src/modules/CtrlPanel.py:240
 msgid "Pause the current track"
@@ -230,31 +230,33 @@ msgstr "ယခုဖွင့်ထားသောအပုဒ်ကိုပြ
 
 #: ../src/modules/DesktopNotification.py:26
 msgid "Desktop Notification"
-msgstr ""
+msgstr "desktop ပေါ်သို့အချက်ပေးခြင်း"
 
 #: ../src/modules/DesktopNotification.py:26
 msgid "Display a desktop notification on track change"
-msgstr ""
+msgstr "သီးချင်းအပုဒ်ပြောင်းပါက desktop ပေါ်သို့အချက်ပေးခြင်း"
 
 #: ../src/modules/DesktopNotification.py:83
 #: ../src/modules/DesktopNotification.py:197
 msgid "Skip track"
-msgstr ""
+msgstr "အပုဒ်ကျော်မည်"
 
 #: ../src/modules/DesktopNotification.py:223
 msgid ""
 "This module displays a small popup window on your desktop when a new track "
 "starts."
 msgstr ""
+"သီချင်းအသစ်တစ်ပုဒ်စသောအခါ ဒီmodule သည် popup window အငယ်စားကိုပြပေးပါမည်။"
 
 #: ../src/modules/DesktopNotification.py:224
 msgid ""
 "If the Covers module is enabled, the popup also shows the album cover."
 msgstr ""
+"If the Covers module is enabled, the popup also shows the album cover."
 
 #: ../src/modules/DesktopNotification.py:225
 msgid "Customizing the Notification"
-msgstr ""
+msgstr "အချက်ပေးခြင်းကိုပြင်ဆင်မည်"
 
 #: ../src/modules/DesktopNotification.py:226
 msgid ""
@@ -266,25 +268,27 @@ msgstr ""
 
 #: ../src/modules/DesktopNotification.py:229
 msgid "Markup"
-msgstr ""
+msgstr "Markup"
 
 #: ../src/modules/DesktopNotification.py:230
 msgid ""
 "You can use the Pango markup language to format the text. More information "
 "on that language is available on the following web page:"
 msgstr ""
+"You can use the Pango markup language to format the text. More information "
+"on that language is available on the following web page:"
 
 #: ../src/modules/StatusbarTitlebar.py:48
 msgid "[paused]"
-msgstr ""
+msgstr "[ခဏရပ်]"
 
 #: ../src/modules/Covers.py:28
 msgid "Covers"
-msgstr ""
+msgstr "အဖုံးများ"
 
 #: ../src/modules/Covers.py:28
 msgid "Show album covers"
-msgstr ""
+msgstr "အယ်ဘမ်အဖုံးများကိုပြမည်"
 
 #: ../src/modules/Covers.py:391
 msgid ""
@@ -292,10 +296,13 @@ msgid ""
 "Covers may be loaded from local pictures, located in the same directory as "
 "the current track, or may be downloaded from the Internet."
 msgstr ""
+"This module displays the cover of the album the current track comes from. "
+"Covers may be loaded from local pictures, located in the same directory as "
+"the current track, or may be downloaded from the Internet."
 
 #: ../src/modules/Covers.py:394
 msgid "User Covers"
-msgstr ""
+msgstr "အသုံးပြုသူ၏အဖုံးများ"
 
 #: ../src/modules/Covers.py:395
 #, python-format
@@ -307,7 +314,7 @@ msgstr ""
 
 #: ../src/modules/Covers.py:398
 msgid "Internet Covers"
-msgstr ""
+msgstr "အင်တာနက်မှ အဖုံးများ"
 
 #: ../src/modules/Covers.py:399
 msgid ""
@@ -319,19 +326,19 @@ msgstr ""
 
 #: ../src/modules/Tracktree.py:382 ../src/modules/Tracktree.py:457
 msgid "Export playlist to file"
-msgstr ""
+msgstr "ဖွင့်မည့်သီချင်းစာရင်းကိုဖိုင်အဖြစ်ထုတ်မည်"
 
 #: ../src/modules/Tracktree.py:390 ../src/modules/Tracktree.py:462
 msgid "Export playlist to directory"
-msgstr ""
+msgstr "Export playlist to directory"
 
 #: ../src/modules/Tracktree.py:447
 msgid "Clear Playlist"
-msgstr ""
+msgstr "ဖွင့်မည်စာရင်းအားလုံးကိုရှင်းမည်"
 
 #: ../src/modules/Equalizer.py:24
 msgid "Equalizer"
-msgstr ""
+msgstr "Equalizer"
 
 #: ../src/modules/Equalizer.py:24
 msgid "Tune the level of the frequency bands"
@@ -340,7 +347,7 @@ msgstr ""
 #: ../src/modules/Equalizer.py:125 ../src/modules/Equalizer.py:213
 #: ../src/modules/Equalizer.py:226
 msgid "Custom"
-msgstr ""
+msgstr "စိတ်ကြိုက်"
 
 #: ../src/modules/Equalizer.py:166
 msgid "Save levels"
@@ -352,55 +359,55 @@ msgstr ""
 
 #: ../src/modules/Equalizer.py:204
 msgid "Could not load the file"
-msgstr ""
+msgstr "ဖိုင်ကိုမဖွင့်နိုင်ပါ"
 
 #: ../src/modules/Equalizer.py:204
 msgid "The format of the file is incorrect."
-msgstr ""
+msgstr "ဖိုင်ပုံစံသည်မမှန်ကန်ပါ"
 
 #: ../src/tools/consts.py:92
 msgid "Unknown Genre"
-msgstr ""
+msgstr "အမျိုးအစားမသိ"
 
 #: ../src/tools/consts.py:93
 msgid "Unknown Title"
-msgstr ""
+msgstr "အမည်မဲ့ခေါင်းစဉ်"
 
 #: ../src/tools/consts.py:94
 msgid "Unknown Album"
-msgstr ""
+msgstr "အမည်မဲ့ အယ်ဘ်ဘမ်"
 
 #: ../src/tools/consts.py:95
 msgid "Unknown Artist"
-msgstr ""
+msgstr "အမည်မသိ အနုပညာရှင်"
 
 #: ../src/tools/consts.py:103
 msgid "Unknown Album Artist"
-msgstr ""
+msgstr "အမည်မသိ အယ်(လ်)ဘမ်အနုပညာရှင်"
 
 #: ../res/Covers.ui.h:1
 msgid "Filenames:"
-msgstr ""
+msgstr "ဖိုင်အမည်များ-"
 
 #: ../res/Covers.ui.h:2
 msgid "Filenames to look for (e.g., folder, cover)"
-msgstr ""
+msgstr "ရှာရန်အတွက်ဖိုင်အမည်များ (e.g., folder, cover)"
 
 #: ../res/Covers.ui.h:3
 msgid "<b>User Covers</b>"
-msgstr ""
+msgstr "<b>အသုံးပြုသူကာဗာများ</b>"
 
 #: ../res/Covers.ui.h:4
 msgid "Download covers"
-msgstr ""
+msgstr "အဖုံးများကိုဒေါင်းလုတ်ဆွဲမည်"
 
 #: ../res/Covers.ui.h:5
 msgid "Try to download covers from the Internet"
-msgstr ""
+msgstr "အင်တာနက်ပေါ်မှ ကာဗာများကိုဒေါင်းလုတ်ချဖို့ကြိုးစားမည်"
 
 #: ../res/Covers.ui.h:6
 msgid "Always prefer user covers"
-msgstr ""
+msgstr "အသုံးပြုသူ၏ကာဗာအဖုံးများကိုအမြဲဦးစားပေးပါ"
 
 #: ../res/Covers.ui.h:7
 msgid "Don't download covers when there is a user one"
@@ -408,11 +415,11 @@ msgstr ""
 
 #: ../res/Covers.ui.h:8
 msgid "<b>Internet Covers</b>"
-msgstr ""
+msgstr "<b>အင်တာနက်မှကာဗာအဖုံးများ</b>"
 
 #: ../res/DesktopNotification.ui.h:1
 msgid "<b>Title</b>"
-msgstr ""
+msgstr "<b>ခေါင်းစဉ်</b>"
 
 #: ../res/DesktopNotification.ui.h:2
 msgid "<b>Body</b>"
@@ -420,19 +427,19 @@ msgstr ""
 
 #: ../res/DesktopNotification.ui.h:3
 msgid "Show a \"skip track\" button"
-msgstr ""
+msgstr "\"အပုဒ်ကျော်ရန်\" ခလုတ်ကိုပြမည်"
 
 #: ../res/DesktopNotification.ui.h:4
 msgid "Notification timeout:"
-msgstr ""
+msgstr "အချက်ပေးခြင်းအချိန်ပြည့်ပါပြီ -"
 
 #: ../res/DesktopNotification.ui.h:5
 msgid "Time during which the notification is displayed"
-msgstr ""
+msgstr "အချက်ပေးချက်ပြမည့်အချိန်အရေအတွက်"
 
 #: ../res/DesktopNotification.ui.h:6
 msgid "seconds"
-msgstr ""
+msgstr "စက္ကန့်"
 
 #: ../res/DesktopNotification.ui.h:7
 msgid "<b>Miscellaneous</b>"
@@ -444,12 +451,12 @@ msgstr ""
 
 #: ../res/MainWindow.ui.h:1
 msgid "Play the previous track"
-msgstr ""
+msgstr "ယခင်အပုဒ်ကိုဖွင့်မည်"
 
 #: ../res/MainWindow.ui.h:2
 msgid "Play the first track of the playlist"
-msgstr ""
+msgstr "ဖွင့်မည့်စာရင်းထဲမှ ပထမတစ်ပုဒ်ကိုဖွင့်မည်"
 
 #: ../res/MainWindow.ui.h:3
 msgid "Play the next track"
-msgstr ""
+msgstr "နောက်တစ်ပုဒ်ဖွင့်မည်"
