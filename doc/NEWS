@@ -1,6 +1,19 @@
  Pogo NEWS
 ==============
 
+ 0.8 "You thought you'd set the bar" (2012-09-05)
+=================================================
+* Control pogo from the commandline. The commands play, pause, next, prev and stop are supported. (lp:986164)
+* When pogo is started with tracks on the commandline, append the tracks to the old playlist.
+* Start playback automatically at startup by calling "pogo play".
+* Prevent automatic playback when tracks are given on the commandline with "pogo MyFile.mp3 pause".
+* Delete corrupted cover file if a cover cannot be correctly resized.
+* Do not try to update missing rows when a search is made quickly after startup.
+* Do not change volume level (sets volume to max in Fedora).
+* Highlight the parts of the query all at once to fix false highlighting.
+* Update translations.
+
+
  0.7 "It has a melody both happy and sad" (2012-04-27)
 ======================================================
 * Search in home folder if we haven't found anything in the music directories.
