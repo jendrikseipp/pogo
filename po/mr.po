@@ -8,14 +8,14 @@ msgstr ""
 "Project-Id-Version: pogo\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2012-07-24 11:16+0200\n"
-"PO-Revision-Date: 2012-08-30 13:21+0000\n"
+"PO-Revision-Date: 2012-09-05 13:11+0000\n"
 "Last-Translator: प्रसाद पाटील <prasad.kpatil@igate.com>\n"
 "Language-Team: Marathi <mr@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2012-08-31 05:05+0000\n"
-"X-Generator: Launchpad (build 15887)\n"
+"X-Launchpad-Export-Date: 2012-09-06 04:46+0000\n"
+"X-Generator: Launchpad (build 15909)\n"
 
 #: ../src/media/track/__init__.py:52
 msgid "Track number"
@@ -55,19 +55,19 @@ msgstr "प्रतिरूप वारंवारता"
 
 #: ../src/media/track/__init__.py:61
 msgid "Duration in seconds (e.g., 194)"
-msgstr "कालावधी (सेकंद )"
+msgstr "सेकंदामध्ये कालावधी (उदा., १९४)"
 
 #: ../src/media/track/__init__.py:62
 msgid "Duration as a string (e.g., 3:14)"
-msgstr "कालावधी (अक्षरी)"
+msgstr "कालावधी अक्षरामध्ये (उदा., ३:१४)"
 
 #: ../src/media/track/__init__.py:65
 msgid "Full path to the file"
-msgstr ""
+msgstr "फाईलचा पूर्ण मार्ग"
 
 #: ../src/media/track/__init__.py:150
 msgid "unknown"
-msgstr "अज्ञात"
+msgstr "अनोळखी"
 
 #: ../src/media/track/__init__.py:192
 #, python-format
@@ -80,15 +80,15 @@ msgstr ""
 
 #: ../src/gui/preferences.py:43
 msgid "Preferences"
-msgstr "प्राधान्य"
+msgstr ""
 
 #: ../src/gui/preferences.py:129
 msgid "Unable to load this module."
-msgstr "हा विभाग आत्ता दिसू शकत नाही"
+msgstr "हा विभाग लोड होत नाही"
 
 #: ../src/gui/preferences.py:138
 msgid "Modules"
-msgstr "विभाग"
+msgstr ""
 
 #: ../src/gui/preferences.py:139 ../src/modules/DesktopNotification.py:222
 #: ../src/modules/Covers.py:390
@@ -139,7 +139,7 @@ msgstr ""
 
 #: ../src/modules/FileExplorer.py:181
 msgid "loading..."
-msgstr "दाखल करीत आहे..."
+msgstr "लोड होत आहे..."
 
 #: ../src/modules/FileExplorer.py:407
 msgid "Append"
@@ -159,15 +159,17 @@ msgstr "फोल्डर लपवा"
 
 #: ../src/modules/FileExplorer.py:469
 msgid "Choose a directory"
-msgstr "एक मार्गदर्शिका निवडा"
+msgstr "एक संचयिका निवडा"
 
 #: ../src/modules/FileExplorer.py:475
 msgid "Invalid Folder"
-msgstr "रद्द / चुकीचे फोल्डर"
+msgstr "चुकीचा फोल्डर"
 
 #: ../src/modules/FileExplorer.py:476
 msgid "You cannot add your root or home folder to the music directories"
 msgstr ""
+"तुम्ही तुमचा मूळ(root) आणि होम फोल्डर संगीताच्या संचयिकेमध्ये समाविष्ट करू "
+"शकत नाही"
 
 #: ../src/modules/FileExplorer.py:483
 msgid "This path does not exist"
@@ -175,7 +177,7 @@ msgstr "हा मार्ग अस्तित्वात नाही"
 
 #: ../src/modules/FileExplorer.py:484
 msgid "Please select an existing directory."
-msgstr "कृपया असतीत्वत असलेली संचयिका निवडा"
+msgstr "कृपया अस्तित्वात असलेली संचयिका निवडा"
 
 #: ../src/modules/FileExplorer.py:571
 msgid "Albums"
@@ -187,7 +189,7 @@ msgstr "संगीत"
 
 #: ../src/modules/FileExplorer.py:650
 msgid "Right-click to add music folders"
-msgstr "संगीत फोल्डर मिळवण्यासाठी माउसचे उजवे बटण क्लिक करा"
+msgstr "संगीत फोल्डर मिळवण्यासाठी माउसचे उजवे बटण दाबा"
 
 #: ../src/modules/FileExplorer.py:701
 msgid "Searching ..."
@@ -199,32 +201,34 @@ msgstr "गाणे सापडले नाही"
 
 #: ../src/modules/FileExplorer.py:729
 msgid "No music folders have been added"
-msgstr "संगीत फोल्डर मिळवलेले नाहीत."
+msgstr "कोणत्याही संगीत फोल्डरचा समावेश केला गेला नाही"
 
 #: ../src/modules/__init__.py:75
 msgid "The following Python modules are not available:"
-msgstr "खालील पायथोन विभाग अस्तित्वात नाहीत"
+msgstr "खालील पायथोन विभाग उपलब्ध नाही:"
 
 #: ../src/modules/__init__.py:79
 msgid "You must install them if you want to enable this module."
-msgstr "हा विभाग सुरु करण्यासाठी तुम्ही त्यांचं प्रतिष्ठान करा"
+msgstr "हा विभाग सुरु करण्यासाठी तुम्हाला ते प्रतिष्ठापित करणे गरजेचे आहे"
 
 #: ../src/modules/__init__.py:266
 msgid "Restart required"
-msgstr "पुन्हा चालू करणे आवश्यक"
+msgstr "आवश्यक असलेले पुन्हा सुरु करा"
 
 #: ../src/modules/__init__.py:267
 msgid ""
 "You must restart the application for this modification to take effect."
-msgstr "बदल वापरात येण्याकरिता तुम्हाला हा उपक्रम पुन्हा चालू करावाच लागेल."
+msgstr ""
+"केलेला बदल वापरात येण्याकरिता तुम्हाला हा उपक्रम बंद करून पुन्हा चालू करावा "
+"लागेल"
 
 #: ../src/modules/CtrlPanel.py:184 ../src/modules/CtrlPanel.py:240
 msgid "Pause the current track"
-msgstr "चालू गाणे विराम करा"
+msgstr "चालू गाण्याला विराम द्या"
 
 #: ../src/modules/CtrlPanel.py:200
 msgid "Play the first selected track of the playlist"
-msgstr "गानेक्रमानिकेतील पहिले गाणे चालवा"
+msgstr "सूचीमधील निवडलेले पहिले गाणे सुरु करा"
 
 #: ../src/modules/CtrlPanel.py:234
 msgid "Continue playing the current track"
