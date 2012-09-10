@@ -8,102 +8,104 @@ msgstr ""
 "Project-Id-Version: decibel-audio-player\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2012-07-24 11:16+0200\n"
-"PO-Revision-Date: 2010-10-07 11:23+0000\n"
-"Last-Translator: Launchpad Translations Administrators <Unknown>\n"
+"PO-Revision-Date: 2012-09-09 07:00+0000\n"
+"Last-Translator: Alfredo Hernández <Unknown>\n"
 "Language-Team: English (United Kingdom) <en_GB@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2012-08-16 04:49+0000\n"
-"X-Generator: Launchpad (build 15810)\n"
+"X-Launchpad-Export-Date: 2012-09-10 04:54+0000\n"
+"X-Generator: Launchpad (build 15924)\n"
 
 #: ../src/media/track/__init__.py:52
 msgid "Track number"
-msgstr ""
+msgstr "Track number"
 
 #: ../src/media/track/__init__.py:53
 msgid "Title"
-msgstr ""
+msgstr "Title"
 
 #: ../src/media/track/__init__.py:54
 msgid "Artist"
-msgstr ""
+msgstr "Artist"
 
 #: ../src/media/track/__init__.py:55
 msgid "Album"
-msgstr ""
+msgstr "Album"
 
 #: ../src/media/track/__init__.py:56
 msgid "Genre"
-msgstr ""
+msgstr "Genre"
 
 #: ../src/media/track/__init__.py:57
 msgid "Date"
-msgstr ""
+msgstr "Date"
 
 #: ../src/media/track/__init__.py:58
 msgid "Disc number"
-msgstr ""
+msgstr "Disc number"
 
 #: ../src/media/track/__init__.py:59
 msgid "Bit rate"
-msgstr ""
+msgstr "Bit rate"
 
 #: ../src/media/track/__init__.py:60
 msgid "Sample rate"
-msgstr ""
+msgstr "Sample rate"
 
 #: ../src/media/track/__init__.py:61
 msgid "Duration in seconds (e.g., 194)"
-msgstr ""
+msgstr "Duration in seconds (e.g., 194)"
 
 #: ../src/media/track/__init__.py:62
 msgid "Duration as a string (e.g., 3:14)"
-msgstr ""
+msgstr "Duration as a string (e.g., 3:14)"
 
 #: ../src/media/track/__init__.py:65
 msgid "Full path to the file"
-msgstr ""
+msgstr "Full path to the file"
 
 #: ../src/media/track/__init__.py:150
 msgid "unknown"
-msgstr ""
+msgstr "unknown"
 
 #: ../src/media/track/__init__.py:192
 #, python-format
 msgid "%(album)s  [Disc %(discnum)u]"
-msgstr ""
+msgstr "%(album)s  [Disc %(discnum)u]"
 
 #: ../src/media/track/__init__.py:199
 msgid "CDDA Track"
-msgstr ""
+msgstr "CDDA Track"
 
 #: ../src/gui/preferences.py:43
 msgid "Preferences"
-msgstr ""
+msgstr "Preferences"
 
 #: ../src/gui/preferences.py:129
 msgid "Unable to load this module."
-msgstr ""
+msgstr "Unable to load this module."
 
 #: ../src/gui/preferences.py:138
 msgid "Modules"
-msgstr ""
+msgstr "Modules"
 
 #: ../src/gui/preferences.py:139 ../src/modules/DesktopNotification.py:222
 #: ../src/modules/Covers.py:390
 msgid "Description"
-msgstr ""
+msgstr "Description"
 
 #: ../src/gui/preferences.py:140
 msgid ""
 "This window shows the list of available modules. You can enable/disable a "
 "module by checking/unchecking the check box in front of it."
 msgstr ""
+"This window shows the list of available modules. You can enable/disable a "
+"module by ticking/unticking the tickbox in front of it."
 
 #: ../src/gui/preferences.py:142
 msgid "Configuring a Module"
-msgstr ""
+msgstr "Configuring a Module"
 
 #: ../src/gui/preferences.py:143
 msgid ""
@@ -112,147 +114,157 @@ msgid ""
 "click on the \"Preferences\" button on the bottom of the dialog box. Note "
 "that configuring a module is only possible when it is enabled."
 msgstr ""
+"When a module may be configured, a specific icon is displayed on the right "
+"of the corresponding line. To configure a module, simply select it and then "
+"click on the Preferences button on the bottom of the dialog box. Note that "
+"configuring a module is only possible when it is enabled."
 
 #: ../src/gui/about.py:40
 msgid "translator-credits"
 msgstr ""
+"Launchpad Contributions:\n"
+"  Alfredo Hernández https://launchpad.net/~aldomann"
 
 #: ../src/gui/about.py:44
 msgid "Developer:"
-msgstr ""
+msgstr "Developer:"
 
 #: ../src/gui/about.py:48
 msgid "Thanks to:"
-msgstr ""
+msgstr "Thanks to:"
 
 #: ../src/modules/Search.py:33
 msgid "Search in your music folders"
-msgstr ""
+msgstr "Search in your music folders"
 
 #: ../src/modules/Zeitgeist.py:28
 msgid "Send track information to the Zeitgeist service"
-msgstr ""
+msgstr "Send track information to the Zeitgeist service"
 
 #: ../src/modules/FileExplorer.py:181
 msgid "loading..."
-msgstr ""
+msgstr "loading..."
 
 #: ../src/modules/FileExplorer.py:407
 msgid "Append"
-msgstr ""
+msgstr "Append"
 
 #: ../src/modules/FileExplorer.py:419
 msgid "Open containing folder"
-msgstr ""
+msgstr "Open containing folder"
 
 #: ../src/modules/FileExplorer.py:443
 msgid "Add music folder"
-msgstr ""
+msgstr "Add music folder"
 
 #: ../src/modules/FileExplorer.py:455
 msgid "Hide folder"
-msgstr ""
+msgstr "Hide folder"
 
 #: ../src/modules/FileExplorer.py:469
 msgid "Choose a directory"
-msgstr ""
+msgstr "Choose a directory"
 
 #: ../src/modules/FileExplorer.py:475
 msgid "Invalid Folder"
-msgstr ""
+msgstr "Invalid Folder"
 
 #: ../src/modules/FileExplorer.py:476
 msgid "You cannot add your root or home folder to the music directories"
-msgstr ""
+msgstr "You cannot add your root or home folder to the music directories"
 
 #: ../src/modules/FileExplorer.py:483
 msgid "This path does not exist"
-msgstr ""
+msgstr "This path does not exist"
 
 #: ../src/modules/FileExplorer.py:484
 msgid "Please select an existing directory."
-msgstr ""
+msgstr "Please select an existing directory."
 
 #: ../src/modules/FileExplorer.py:571
 msgid "Albums"
-msgstr ""
+msgstr "Albums"
 
 #: ../src/modules/FileExplorer.py:573
 msgid "Music"
-msgstr ""
+msgstr "Music"
 
 #: ../src/modules/FileExplorer.py:650
 msgid "Right-click to add music folders"
-msgstr ""
+msgstr "Right-click to add music folders"
 
 #: ../src/modules/FileExplorer.py:701
 msgid "Searching ..."
-msgstr ""
+msgstr "Searching..."
 
 #: ../src/modules/FileExplorer.py:727
 msgid "No tracks found"
-msgstr ""
+msgstr "No tracks found"
 
 #: ../src/modules/FileExplorer.py:729
 msgid "No music folders have been added"
-msgstr ""
+msgstr "No music folders have been added"
 
 #: ../src/modules/__init__.py:75
 msgid "The following Python modules are not available:"
-msgstr ""
+msgstr "The following Python modules are not available:"
 
 #: ../src/modules/__init__.py:79
 msgid "You must install them if you want to enable this module."
-msgstr ""
+msgstr "You must install them if you want to enable this module."
 
 #: ../src/modules/__init__.py:266
 msgid "Restart required"
-msgstr ""
+msgstr "Restart required"
 
 #: ../src/modules/__init__.py:267
 msgid ""
 "You must restart the application for this modification to take effect."
 msgstr ""
+"You must restart the application for this modification to take effect."
 
 #: ../src/modules/CtrlPanel.py:184 ../src/modules/CtrlPanel.py:240
 msgid "Pause the current track"
-msgstr ""
+msgstr "Pause the current track"
 
 #: ../src/modules/CtrlPanel.py:200
 msgid "Play the first selected track of the playlist"
-msgstr ""
+msgstr "Play the first selected track of the playlist"
 
 #: ../src/modules/CtrlPanel.py:234
 msgid "Continue playing the current track"
-msgstr ""
+msgstr "Continue playing the current track"
 
 #: ../src/modules/DesktopNotification.py:26
 msgid "Desktop Notification"
-msgstr ""
+msgstr "Desktop Notification"
 
 #: ../src/modules/DesktopNotification.py:26
 msgid "Display a desktop notification on track change"
-msgstr ""
+msgstr "Display a desktop notification on track change"
 
 #: ../src/modules/DesktopNotification.py:83
 #: ../src/modules/DesktopNotification.py:197
 msgid "Skip track"
-msgstr ""
+msgstr "Skip track"
 
 #: ../src/modules/DesktopNotification.py:223
 msgid ""
 "This module displays a small popup window on your desktop when a new track "
 "starts."
 msgstr ""
+"This module displays a small pop-up window on your desktop when a new track "
+"starts."
 
 #: ../src/modules/DesktopNotification.py:224
 msgid ""
 "If the Covers module is enabled, the popup also shows the album cover."
 msgstr ""
+"If the Covers module is enabled, the pop-up also shows the album cover."
 
 #: ../src/modules/DesktopNotification.py:225
 msgid "Customizing the Notification"
-msgstr ""
+msgstr "Customising the Notification"
 
 #: ../src/modules/DesktopNotification.py:226
 msgid ""
@@ -261,28 +273,34 @@ msgid ""
 "replaced by their corresponding value. Available fields are:\n"
 "\n"
 msgstr ""
+"You can change the title and the body of the notification to any text you "
+"want. Before displaying the pop-up window, fields of the form {field} are "
+"replaced by their corresponding value. Available fields are:\n"
+"\n"
 
 #: ../src/modules/DesktopNotification.py:229
 msgid "Markup"
-msgstr ""
+msgstr "Markup"
 
 #: ../src/modules/DesktopNotification.py:230
 msgid ""
 "You can use the Pango markup language to format the text. More information "
 "on that language is available on the following web page:"
 msgstr ""
+"You can use the Pango markup language to format the text. More information "
+"on that language is available on the following web page:"
 
 #: ../src/modules/StatusbarTitlebar.py:48
 msgid "[paused]"
-msgstr ""
+msgstr "[paused]"
 
 #: ../src/modules/Covers.py:28
 msgid "Covers"
-msgstr ""
+msgstr "Covers"
 
 #: ../src/modules/Covers.py:28
 msgid "Show album covers"
-msgstr ""
+msgstr "Show album covers"
 
 #: ../src/modules/Covers.py:391
 msgid ""
@@ -290,10 +308,13 @@ msgid ""
 "Covers may be loaded from local pictures, located in the same directory as "
 "the current track, or may be downloaded from the Internet."
 msgstr ""
+"This module displays the cover of the album the current track comes from. "
+"Covers may be loaded from local pictures, located in the same directory as "
+"the current track, or may be downloaded from the Internet."
 
 #: ../src/modules/Covers.py:394
 msgid "User Covers"
-msgstr ""
+msgstr "User Covers"
 
 #: ../src/modules/Covers.py:395
 #, python-format
@@ -302,10 +323,13 @@ msgid ""
 "track. When specifying filenames, you do not need to provide file "
 "extensions, supported file formats (%s) are automatically used."
 msgstr ""
+"A user cover is a picture located in the same directory as the current "
+"track. When specifying filenames, you do not need to provide file "
+"extensions, supported file formats (%s) are automatically used."
 
 #: ../src/modules/Covers.py:398
 msgid "Internet Covers"
-msgstr ""
+msgstr "Internet Covers"
 
 #: ../src/modules/Covers.py:399
 msgid ""
@@ -314,140 +338,144 @@ msgid ""
 "case, if a user cover exists for the current track, it is used. If there is "
 "none, the cover is downloaded."
 msgstr ""
+"Covers may be downloaded from the Internet, based on the tags of the current "
+"track. You can ask to always prefer user covers to Internet ones. In this "
+"case, if a user cover exists for the current track, it is used. If there is "
+"none, the cover is downloaded."
 
 #: ../src/modules/Tracktree.py:382 ../src/modules/Tracktree.py:457
 msgid "Export playlist to file"
-msgstr ""
+msgstr "Export playlist to file"
 
 #: ../src/modules/Tracktree.py:390 ../src/modules/Tracktree.py:462
 msgid "Export playlist to directory"
-msgstr ""
+msgstr "Export playlist to directory"
 
 #: ../src/modules/Tracktree.py:447
 msgid "Clear Playlist"
-msgstr ""
+msgstr "Clear Playlist"
 
 #: ../src/modules/Equalizer.py:24
 msgid "Equalizer"
-msgstr ""
+msgstr "Equaliser"
 
 #: ../src/modules/Equalizer.py:24
 msgid "Tune the level of the frequency bands"
-msgstr ""
+msgstr "Tune the level of the frequency bands"
 
 #: ../src/modules/Equalizer.py:125 ../src/modules/Equalizer.py:213
 #: ../src/modules/Equalizer.py:226
 msgid "Custom"
-msgstr ""
+msgstr "Custom"
 
 #: ../src/modules/Equalizer.py:166
 msgid "Save levels"
-msgstr ""
+msgstr "Save levels"
 
 #: ../src/modules/Equalizer.py:177
 msgid "Load levels"
-msgstr ""
+msgstr "Load levels"
 
 #: ../src/modules/Equalizer.py:204
 msgid "Could not load the file"
-msgstr ""
+msgstr "Could not load the file"
 
 #: ../src/modules/Equalizer.py:204
 msgid "The format of the file is incorrect."
-msgstr ""
+msgstr "The format of the file is incorrect."
 
 #: ../src/tools/consts.py:92
 msgid "Unknown Genre"
-msgstr ""
+msgstr "Unknown Genre"
 
 #: ../src/tools/consts.py:93
 msgid "Unknown Title"
-msgstr ""
+msgstr "Unknown Title"
 
 #: ../src/tools/consts.py:94
 msgid "Unknown Album"
-msgstr ""
+msgstr "Unknown Album"
 
 #: ../src/tools/consts.py:95
 msgid "Unknown Artist"
-msgstr ""
+msgstr "Unknown Artist"
 
 #: ../src/tools/consts.py:103
 msgid "Unknown Album Artist"
-msgstr ""
+msgstr "Unknown Album Artist"
 
 #: ../res/Covers.ui.h:1
 msgid "Filenames:"
-msgstr ""
+msgstr "Filenames:"
 
 #: ../res/Covers.ui.h:2
 msgid "Filenames to look for (e.g., folder, cover)"
-msgstr ""
+msgstr "Filenames to look for (e.g., folder, cover)"
 
 #: ../res/Covers.ui.h:3
 msgid "<b>User Covers</b>"
-msgstr ""
+msgstr "<b>User Covers</b>"
 
 #: ../res/Covers.ui.h:4
 msgid "Download covers"
-msgstr ""
+msgstr "Download covers"
 
 #: ../res/Covers.ui.h:5
 msgid "Try to download covers from the Internet"
-msgstr ""
+msgstr "Try to download covers from the Internet"
 
 #: ../res/Covers.ui.h:6
 msgid "Always prefer user covers"
-msgstr ""
+msgstr "Always prefer user covers"
 
 #: ../res/Covers.ui.h:7
 msgid "Don't download covers when there is a user one"
-msgstr ""
+msgstr "Don't download covers when there is a user one"
 
 #: ../res/Covers.ui.h:8
 msgid "<b>Internet Covers</b>"
-msgstr ""
+msgstr "<b>Internet Covers</b>"
 
 #: ../res/DesktopNotification.ui.h:1
 msgid "<b>Title</b>"
-msgstr ""
+msgstr "<b>Title</b>"
 
 #: ../res/DesktopNotification.ui.h:2
 msgid "<b>Body</b>"
-msgstr ""
+msgstr "<b>Body</b>"
 
 #: ../res/DesktopNotification.ui.h:3
 msgid "Show a \"skip track\" button"
-msgstr ""
+msgstr "Show a Skip Track button"
 
 #: ../res/DesktopNotification.ui.h:4
 msgid "Notification timeout:"
-msgstr ""
+msgstr "Notification timeout:"
 
 #: ../res/DesktopNotification.ui.h:5
 msgid "Time during which the notification is displayed"
-msgstr ""
+msgstr "Time during which the notification is displayed"
 
 #: ../res/DesktopNotification.ui.h:6
 msgid "seconds"
-msgstr ""
+msgstr "seconds"
 
 #: ../res/DesktopNotification.ui.h:7
 msgid "<b>Miscellaneous</b>"
-msgstr ""
+msgstr "<b>Miscellaneous</b>"
 
 #: ../res/Equalizer.ui.h:1
 msgid "Preset:"
-msgstr ""
+msgstr "Preset:"
 
 #: ../res/MainWindow.ui.h:1
 msgid "Play the previous track"
-msgstr ""
+msgstr "Play the previous track"
 
 #: ../res/MainWindow.ui.h:2
 msgid "Play the first track of the playlist"
-msgstr ""
+msgstr "Play the first track of the playlist"
 
 #: ../res/MainWindow.ui.h:3
 msgid "Play the next track"
-msgstr ""
+msgstr "Play the next track"

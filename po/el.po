@@ -8,14 +8,14 @@ msgstr ""
 "Project-Id-Version: decibel-audio-player\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2012-07-24 11:16+0200\n"
-"PO-Revision-Date: 2010-10-07 11:26+0000\n"
-"Last-Translator: Jendrik Seipp <jendrikseipp@web.de>\n"
+"PO-Revision-Date: 2012-09-09 07:30+0000\n"
+"Last-Translator: tzem <athmakrigiannis@gmail.com>\n"
 "Language-Team: Greek <el@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2012-08-16 04:48+0000\n"
-"X-Generator: Launchpad (build 15810)\n"
+"X-Launchpad-Export-Date: 2012-09-10 04:54+0000\n"
+"X-Generator: Launchpad (build 15924)\n"
 
 #: ../src/media/track/__init__.py:52
 msgid "Track number"
@@ -47,11 +47,11 @@ msgstr "Αριθμος Δίσκου"
 
 #: ../src/media/track/__init__.py:59
 msgid "Bit rate"
-msgstr ""
+msgstr "Ρυθμός bit"
 
 #: ../src/media/track/__init__.py:60
 msgid "Sample rate"
-msgstr ""
+msgstr "Ρυθμός δειγματοληψίας"
 
 #: ../src/media/track/__init__.py:61
 msgid "Duration in seconds (e.g., 194)"
@@ -67,7 +67,7 @@ msgstr "Πλήρης διαδρομή προς το αρχείο"
 
 #: ../src/media/track/__init__.py:150
 msgid "unknown"
-msgstr ""
+msgstr "Άγνωστο"
 
 #: ../src/media/track/__init__.py:192
 #, python-format
@@ -76,7 +76,7 @@ msgstr "%(album)s [Δίσκος %(discnum)u]"
 
 #: ../src/media/track/__init__.py:199
 msgid "CDDA Track"
-msgstr ""
+msgstr "Τραγούδι CDDA"
 
 #: ../src/gui/preferences.py:43
 msgid "Preferences"
@@ -100,6 +100,9 @@ msgid ""
 "This window shows the list of available modules. You can enable/disable a "
 "module by checking/unchecking the check box in front of it."
 msgstr ""
+"Αυτό το παράθυρο εμφανίζει τη λίστα των διαθέσιμων μονάδων. Μπορείτε να "
+"ενεργοποιήσετε/απενεργοποιήσετε μια μονάδα με επιλογή/αποεπιλογή του "
+"πλαισίου ελέγχου μπροστά από αυτό."
 
 #: ../src/gui/preferences.py:142
 msgid "Configuring a Module"
@@ -122,7 +125,8 @@ msgstr ""
 msgid "translator-credits"
 msgstr ""
 "Launchpad Contributions:\n"
-"  Jendrik Seipp https://launchpad.net/~jendrikseipp"
+"  Jendrik Seipp https://launchpad.net/~jendrikseipp\n"
+"  tzem https://launchpad.net/~athmakrigiannis"
 
 #: ../src/gui/about.py:44
 msgid "Developer:"
@@ -134,11 +138,11 @@ msgstr "Ευχαριστίες σε:"
 
 #: ../src/modules/Search.py:33
 msgid "Search in your music folders"
-msgstr ""
+msgstr "Αναζήτηση στους φακέλους μουσική σας"
 
 #: ../src/modules/Zeitgeist.py:28
 msgid "Send track information to the Zeitgeist service"
-msgstr ""
+msgstr "Αποστολή πληροφοριών κομματιού στην υπηρεσία Zeitgeist"
 
 #: ../src/modules/FileExplorer.py:181
 msgid "loading..."
@@ -146,31 +150,33 @@ msgstr "φόρτωση..."
 
 #: ../src/modules/FileExplorer.py:407
 msgid "Append"
-msgstr ""
+msgstr "Προσάρτηση"
 
 #: ../src/modules/FileExplorer.py:419
 msgid "Open containing folder"
-msgstr ""
+msgstr "Άνοιγμα φακέλου που το περιέχει"
 
 #: ../src/modules/FileExplorer.py:443
 msgid "Add music folder"
-msgstr ""
+msgstr "Προσθήκη μουσικού φακέλου"
 
 #: ../src/modules/FileExplorer.py:455
 msgid "Hide folder"
-msgstr ""
+msgstr "Απόκρυψη φακέλου"
 
 #: ../src/modules/FileExplorer.py:469
 msgid "Choose a directory"
-msgstr ""
+msgstr "Επιλογή ενός καταλόγου"
 
 #: ../src/modules/FileExplorer.py:475
 msgid "Invalid Folder"
-msgstr ""
+msgstr "Μη έγκυρος φάκελος"
 
 #: ../src/modules/FileExplorer.py:476
 msgid "You cannot add your root or home folder to the music directories"
 msgstr ""
+"Δεν μπορείτε να προσθέσετε το ριζικό κατάλογο ή τον προσωπικό κατάλογο στους "
+"καταλόγους μουσικής"
 
 #: ../src/modules/FileExplorer.py:483
 msgid "This path does not exist"
@@ -182,27 +188,27 @@ msgstr "Παρακαλώ επιλέξτε ένα ήδη υπάρχον φάκε�
 
 #: ../src/modules/FileExplorer.py:571
 msgid "Albums"
-msgstr ""
+msgstr "Άλμπουμ"
 
 #: ../src/modules/FileExplorer.py:573
 msgid "Music"
-msgstr ""
+msgstr "Μουσική"
 
 #: ../src/modules/FileExplorer.py:650
 msgid "Right-click to add music folders"
-msgstr ""
+msgstr "Δεξί κλικ για προσθήκη στους φακέλους μουσικής"
 
 #: ../src/modules/FileExplorer.py:701
 msgid "Searching ..."
-msgstr ""
+msgstr "Αναζήτηση …"
 
 #: ../src/modules/FileExplorer.py:727
 msgid "No tracks found"
-msgstr ""
+msgstr "Δεν βρέθηκαν τραγούδια"
 
 #: ../src/modules/FileExplorer.py:729
 msgid "No music folders have been added"
-msgstr ""
+msgstr "Δεν έχουν προστεθεί φάκελοι μουσικής"
 
 #: ../src/modules/__init__.py:75
 msgid "The following Python modules are not available:"
@@ -215,12 +221,13 @@ msgstr ""
 
 #: ../src/modules/__init__.py:266
 msgid "Restart required"
-msgstr ""
+msgstr "Απαιτείται επανεκκίνηση"
 
 #: ../src/modules/__init__.py:267
 msgid ""
 "You must restart the application for this modification to take effect."
 msgstr ""
+"Πρέπει να επανεκκινήσετε την εφαρμογή για να εφαρμοστεί αυτή η αλλαγή."
 
 #: ../src/modules/CtrlPanel.py:184 ../src/modules/CtrlPanel.py:240
 msgid "Pause the current track"
@@ -228,7 +235,7 @@ msgstr "Παύση"
 
 #: ../src/modules/CtrlPanel.py:200
 msgid "Play the first selected track of the playlist"
-msgstr ""
+msgstr "Παίξε το πρώτο επιλεγμένο κομμάτι της λίστας αναπαραγωγής"
 
 #: ../src/modules/CtrlPanel.py:234
 msgid "Continue playing the current track"
@@ -260,6 +267,8 @@ msgstr ""
 msgid ""
 "If the Covers module is enabled, the popup also shows the album cover."
 msgstr ""
+"Εάν η μονάδα εξώφυλλων είναι ενεργοποιημένη, το αναδυόμενο παράθυρο δείχνει "
+"επίσης το εξώφυλλο του άλμπουμ."
 
 #: ../src/modules/DesktopNotification.py:225
 msgid "Customizing the Notification"
@@ -348,44 +357,44 @@ msgstr ""
 
 #: ../src/modules/Tracktree.py:382 ../src/modules/Tracktree.py:457
 msgid "Export playlist to file"
-msgstr ""
+msgstr "Εξαγωγή λίστας αναπαραγωγής σε αρχείο"
 
 #: ../src/modules/Tracktree.py:390 ../src/modules/Tracktree.py:462
 msgid "Export playlist to directory"
-msgstr ""
+msgstr "Εξαγωγή λίστας αναπαραγωγής σε κατάλογο"
 
 #: ../src/modules/Tracktree.py:447
 msgid "Clear Playlist"
-msgstr ""
+msgstr "Καθαρισμός λίστας αναπαραγωγής"
 
 #: ../src/modules/Equalizer.py:24
 msgid "Equalizer"
-msgstr ""
+msgstr "Ισοσταθμιστής"
 
 #: ../src/modules/Equalizer.py:24
 msgid "Tune the level of the frequency bands"
-msgstr ""
+msgstr "Ρύθμιση του επιπέδου των συχνοτήτων"
 
 #: ../src/modules/Equalizer.py:125 ../src/modules/Equalizer.py:213
 #: ../src/modules/Equalizer.py:226
 msgid "Custom"
-msgstr ""
+msgstr "Προσαρμογή"
 
 #: ../src/modules/Equalizer.py:166
 msgid "Save levels"
-msgstr ""
+msgstr "Αποθήκευση επιπέδων"
 
 #: ../src/modules/Equalizer.py:177
 msgid "Load levels"
-msgstr ""
+msgstr "Φόρτωση επιπέδων"
 
 #: ../src/modules/Equalizer.py:204
 msgid "Could not load the file"
-msgstr ""
+msgstr "Δεν ήταν δυνατή η φόρτωση του αρχείου"
 
 #: ../src/modules/Equalizer.py:204
 msgid "The format of the file is incorrect."
-msgstr ""
+msgstr "Η μορφή του αρχείου δεν είναι σωστή."
 
 #: ../src/tools/consts.py:92
 msgid "Unknown Genre"
@@ -469,7 +478,7 @@ msgstr "<b>Διάφορα</b>"
 
 #: ../res/Equalizer.ui.h:1
 msgid "Preset:"
-msgstr ""
+msgstr "Προεπιλογή:"
 
 #: ../res/MainWindow.ui.h:1
 msgid "Play the previous track"

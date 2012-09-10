@@ -8,14 +8,14 @@ msgstr ""
 "Project-Id-Version: decibel-audio-player\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2012-07-24 11:16+0200\n"
-"PO-Revision-Date: 2012-01-30 07:08+0000\n"
-"Last-Translator: Adolfo Jayme Barrientos <fitoschido@gmail.com>\n"
+"PO-Revision-Date: 2012-09-09 07:28+0000\n"
+"Last-Translator: Paco Molinero <paco@byasl.com>\n"
 "Language-Team: Spanish <es@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2012-08-16 04:49+0000\n"
-"X-Generator: Launchpad (build 15810)\n"
+"X-Launchpad-Export-Date: 2012-09-10 04:54+0000\n"
+"X-Generator: Launchpad (build 15924)\n"
 
 #: ../src/media/track/__init__.py:52
 msgid "Track number"
@@ -106,7 +106,7 @@ msgstr ""
 
 #: ../src/gui/preferences.py:142
 msgid "Configuring a Module"
-msgstr "Configurando un módulo"
+msgstr "Configurar un módulo"
 
 #: ../src/gui/preferences.py:143
 msgid ""
@@ -115,10 +115,10 @@ msgid ""
 "click on the \"Preferences\" button on the bottom of the dialog box. Note "
 "that configuring a module is only possible when it is enabled."
 msgstr ""
-"Cuando un modulo puede ser configurado, un icono se muestra a la derecha en "
-"la linea correspondiente. Para configurar un modulo simplemente selecciónelo "
-"y luego haga clic en el botón \"Preferencias\" en la parte inferior de la "
-"ventana de diálogo. Note que configurar un módulo es sólo posible cuando "
+"Cuando se puede  configurar un módulo, se muestra un icono a la derecha en "
+"la linea correspondiente. Para configurar un módulo simplemente selecciónelo "
+"y luego pulse en el botón «Preferencias» en la parte inferior de la ventana "
+"de diálogo. Tenga en cuenta que solo es posible configurar un módulo cuando "
 "está activado"
 
 #: ../src/gui/about.py:40
@@ -130,7 +130,8 @@ msgstr ""
 "  Carlos Albornoz https://launchpad.net/~caralbornozc\n"
 "  Gerardo Zamudio https://launchpad.net/~gerardo.zamudio\n"
 "  Linux Lover https://launchpad.net/~obake\n"
-"  Monkey https://launchpad.net/~monkey-libre"
+"  Monkey https://launchpad.net/~monkey-libre\n"
+"  Paco Molinero https://launchpad.net/~franciscomol"
 
 #: ../src/gui/about.py:44
 msgid "Developer:"
@@ -254,7 +255,7 @@ msgstr "Mostrar una notificación de escritorio al cambiar la pista"
 #: ../src/modules/DesktopNotification.py:83
 #: ../src/modules/DesktopNotification.py:197
 msgid "Skip track"
-msgstr "Saltar pista"
+msgstr "Omitir la pista"
 
 #: ../src/modules/DesktopNotification.py:223
 msgid ""
@@ -268,7 +269,7 @@ msgstr ""
 msgid ""
 "If the Covers module is enabled, the popup also shows the album cover."
 msgstr ""
-"Si el módulo de carátulas está habilitado, la ventana emergente también "
+"Si el módulo de carátulas está activado, la ventana emergente también "
 "muestra la carátula del álbum."
 
 #: ../src/modules/DesktopNotification.py:225
@@ -296,7 +297,7 @@ msgid ""
 "You can use the Pango markup language to format the text. More information "
 "on that language is available on the following web page:"
 msgstr ""
-"Puede usar el lenguaje de marcado de Pango para formatear el texto. Mas "
+"Puede usar el lenguaje de marcado de Pango para formatear el texto. Más "
 "información sobre este lenguaje está disponible en la página web siguiente:"
 
 #: ../src/modules/StatusbarTitlebar.py:48
@@ -317,7 +318,7 @@ msgid ""
 "Covers may be loaded from local pictures, located in the same directory as "
 "the current track, or may be downloaded from the Internet."
 msgstr ""
-"Éste módulo muestra la portada del álbum del cual procede la pista actual. "
+"Este módulo muestra la portada del álbum del cual procede la pista actual. "
 "Las portadas pueden cargarse de imágenes locales, localizadas en el mismo "
 "directorio que la pista actual, o pueden descargarse desde Internet."
 
@@ -335,7 +336,7 @@ msgstr ""
 "Una portada del usuario es una imagen localizada en el mismo directorio que "
 "la pista actual. Cuando se especifican nombres de archivos, no necesita "
 "proporcionar las extensiones de archivos, los formatos de archivos "
-"soportados (%s) se usan automáticamente."
+"permitidos (%s) se usan automáticamente."
 
 #: ../src/modules/Covers.py:398
 msgid "Internet Covers"
@@ -437,7 +438,7 @@ msgstr "Intentar descargar carátulas desde Internet"
 
 #: ../res/Covers.ui.h:6
 msgid "Always prefer user covers"
-msgstr "Siempre preferir las carátulas del usuario"
+msgstr "Preferir siempre las carátulas del usuario"
 
 #: ../res/Covers.ui.h:7
 msgid "Don't download covers when there is a user one"
@@ -457,7 +458,7 @@ msgstr "<b>Cuerpo</b>"
 
 #: ../res/DesktopNotification.ui.h:3
 msgid "Show a \"skip track\" button"
-msgstr "Mostrar un botón «saltar pista»"
+msgstr "Mostrar un botón «omitir pista»"
 
 #: ../res/DesktopNotification.ui.h:4
 msgid "Notification timeout:"
