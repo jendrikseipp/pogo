@@ -1,21 +1,21 @@
 # Uyghur translation for pogo
 # Copyright (c) 2012 Rosetta Contributors and Canonical Ltd 2012
 # This file is distributed under the same license as the pogo package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2012.
+# Gheyret Kenji <gheyret@gmail.com>, 2012.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: pogo\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2012-07-24 11:16+0200\n"
-"PO-Revision-Date: 2012-08-30 00:34+0000\n"
+"PO-Revision-Date: 2012-09-11 00:13+0000\n"
 "Last-Translator: Gheyret T.Kenji <Unknown>\n"
-"Language-Team: Uyghur <ug@li.org>\n"
+"Language-Team: Uyghur Computer Science Association <UKIJ@yahoogroups.com>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2012-08-31 05:05+0000\n"
-"X-Generator: Launchpad (build 15887)\n"
+"X-Launchpad-Export-Date: 2012-09-11 05:09+0000\n"
+"X-Generator: Launchpad (build 15924)\n"
 
 #: ../src/media/track/__init__.py:52
 msgid "Track number"
@@ -55,15 +55,15 @@ msgstr "ئەۋرىشكە نىسبىتى"
 
 #: ../src/media/track/__init__.py:61
 msgid "Duration in seconds (e.g., 194)"
-msgstr ""
+msgstr "سېكۇنت بىلەن ئىپادىلەنگەن ئۇزۇنلۇقى (مەسىلەن:194)"
 
 #: ../src/media/track/__init__.py:62
 msgid "Duration as a string (e.g., 3:14)"
-msgstr ""
+msgstr "تېكىست شەكىلدىكى ئۇزۇنلۇقى (مەسىلەن:3:14)"
 
 #: ../src/media/track/__init__.py:65
 msgid "Full path to the file"
-msgstr ""
+msgstr "ھۆججەتنىڭ تولۇق يولى"
 
 #: ../src/media/track/__init__.py:150
 msgid "unknown"
@@ -72,11 +72,11 @@ msgstr "نامەلۇم"
 #: ../src/media/track/__init__.py:192
 #, python-format
 msgid "%(album)s  [Disc %(discnum)u]"
-msgstr ""
+msgstr "%(album)s  [دىسكا %(discnum)u]"
 
 #: ../src/media/track/__init__.py:199
 msgid "CDDA Track"
-msgstr ""
+msgstr "CDDA نەغمىسى"
 
 #: ../src/gui/preferences.py:43
 msgid "Preferences"
@@ -84,7 +84,7 @@ msgstr "مايىللىقلار"
 
 #: ../src/gui/preferences.py:129
 msgid "Unable to load this module."
-msgstr ""
+msgstr "مەزكۇر بۆلەكنى ئوقۇغىلى بولمىدى."
 
 #: ../src/gui/preferences.py:138
 msgid "Modules"
@@ -100,10 +100,13 @@ msgid ""
 "This window shows the list of available modules. You can enable/disable a "
 "module by checking/unchecking the check box in front of it."
 msgstr ""
+"مەزكۇر كۆزنەكتە ئىشلەتكىلى بولىدىغان بۆلەكلەرنىڭ تىزىمى كۆرسىتىلىدۇ. ھەر بىر "
+"بۆلەكنىڭ بەشىدىكى تاللاش كۆزنەكچىسىنى تاللاش ئارقىلىق شۇ بۆلەكنى ئىناۋەتلىك "
+"قىلىشقا، تاللاشنى يوق قىلىش ئارقىلىق ئىناۋەتسىز قىلىشقا بولىدۇ."
 
 #: ../src/gui/preferences.py:142
 msgid "Configuring a Module"
-msgstr ""
+msgstr "بۆلەكنى سەپلەش"
 
 #: ../src/gui/preferences.py:143
 msgid ""
@@ -112,6 +115,10 @@ msgid ""
 "click on the \"Preferences\" button on the bottom of the dialog box. Note "
 "that configuring a module is only possible when it is enabled."
 msgstr ""
+"بىرەر بۆلەكنى سەپلىگىلى بولىدىغان ۋاقىتتا، ئۇ تۇرغان قۇرنىڭ ئوڭ تەرىپىدە "
+"ئالاھىدە سىنبەلگە كۆرۈنىدۇ. ئۇنى سەپلەش ئۈچۈن، ئۇنى تاللاپ، ئاندىن "
+"سۆزلەشكۈنىڭ ئۇستى قىسمىدىكى «مايىللىقلار» دېگەن توپچىنى  چېكىڭ. دىققەت: "
+"بۆلەك ئىناۋەتلىك بولغاندىلا ئاندىن ئۇنى سەپلىگىلى بولىدۇ."
 
 #: ../src/gui/about.py:40
 msgid "translator-credits"
@@ -125,15 +132,15 @@ msgstr "ئىجادىيەتچى:"
 
 #: ../src/gui/about.py:48
 msgid "Thanks to:"
-msgstr ""
+msgstr "تەشەككۈرلەر:"
 
 #: ../src/modules/Search.py:33
 msgid "Search in your music folders"
-msgstr ""
+msgstr "قىسقۇچىڭىزدىن ئىزدەش"
 
 #: ../src/modules/Zeitgeist.py:28
 msgid "Send track information to the Zeitgeist service"
-msgstr ""
+msgstr "نەغمە ئۇچۇرىنى Zeitgeist مۇلازىمىتىگە يوللا"
 
 #: ../src/modules/FileExplorer.py:181
 msgid "loading..."
@@ -145,19 +152,19 @@ msgstr "قوش"
 
 #: ../src/modules/FileExplorer.py:419
 msgid "Open containing folder"
-msgstr ""
+msgstr "بار قىسقۇچنى ئاچ"
 
 #: ../src/modules/FileExplorer.py:443
 msgid "Add music folder"
-msgstr ""
+msgstr "مۇزىكا قىسقۇچىنى قوش"
 
 #: ../src/modules/FileExplorer.py:455
 msgid "Hide folder"
-msgstr ""
+msgstr "قىسقۇچنى يوشۇر"
 
 #: ../src/modules/FileExplorer.py:469
 msgid "Choose a directory"
-msgstr ""
+msgstr "مۇندەرىجە تاللا"
 
 #: ../src/modules/FileExplorer.py:475
 msgid "Invalid Folder"
@@ -165,15 +172,15 @@ msgstr "ئىناۋەتسىز قىسقۇچ"
 
 #: ../src/modules/FileExplorer.py:476
 msgid "You cannot add your root or home folder to the music directories"
-msgstr ""
+msgstr "غول ياكى ماكان قىسقۇچنى مۇزىكا مۇندەرىجىسىگە قوشالمايسىز"
 
 #: ../src/modules/FileExplorer.py:483
 msgid "This path does not exist"
-msgstr ""
+msgstr "يول مەۋجۇت ئەمەس"
 
 #: ../src/modules/FileExplorer.py:484
 msgid "Please select an existing directory."
-msgstr ""
+msgstr "مەۋجۇت يولنى تاللاڭ."
 
 #: ../src/modules/FileExplorer.py:571
 msgid "Albums"
@@ -185,27 +192,27 @@ msgstr "مۇزىكا"
 
 #: ../src/modules/FileExplorer.py:650
 msgid "Right-click to add music folders"
-msgstr ""
+msgstr "مۇزىكا قىسقۇچلىرىنى قوشۇش ئۈچۈن ئوڭ چېكىڭ"
 
 #: ../src/modules/FileExplorer.py:701
 msgid "Searching ..."
-msgstr ""
+msgstr "ئىزدەۋاتىدۇ…"
 
 #: ../src/modules/FileExplorer.py:727
 msgid "No tracks found"
-msgstr ""
+msgstr "نەغمە تېپىلمىدى"
 
 #: ../src/modules/FileExplorer.py:729
 msgid "No music folders have been added"
-msgstr ""
+msgstr "مۇزىكا قىسقۇچى قوشۇلمىدى"
 
 #: ../src/modules/__init__.py:75
 msgid "The following Python modules are not available:"
-msgstr ""
+msgstr "تۆۋەندىكى پايسون(Python) بۆلىكى يوق:"
 
 #: ../src/modules/__init__.py:79
 msgid "You must install them if you want to enable this module."
-msgstr ""
+msgstr "مەزكۇر بۆلەكنى ئىناۋەتلىك قىلىش ئۈچۈن ئۇلارنى ئورنىتىشىڭىز كېرەك."
 
 #: ../src/modules/__init__.py:266
 msgid "Restart required"
@@ -214,47 +221,50 @@ msgstr "قايتا قوزغىتىش زۆرۈر"
 #: ../src/modules/__init__.py:267
 msgid ""
 "You must restart the application for this modification to take effect."
-msgstr ""
+msgstr "ئۆزگىرىشنى ئىناۋەتلىك قىلاي دېسىڭىز قايتا قوزغىتىڭ."
 
 #: ../src/modules/CtrlPanel.py:184 ../src/modules/CtrlPanel.py:240
 msgid "Pause the current track"
-msgstr ""
+msgstr "نۆۋەتتىكى نەغمىنى ۋاقىتلىق توختاتسۇن"
 
 #: ../src/modules/CtrlPanel.py:200
 msgid "Play the first selected track of the playlist"
-msgstr ""
+msgstr "قويۇش تىزىمىنىڭ بىرىنچى تاللانغان نەغمىسىنى قويسۇن"
 
 #: ../src/modules/CtrlPanel.py:234
 msgid "Continue playing the current track"
-msgstr ""
+msgstr "نۆۋەتتىكى نەغمىنى قويۇشنى داۋام قىلسۇن"
 
 #: ../src/modules/DesktopNotification.py:26
 msgid "Desktop Notification"
-msgstr ""
+msgstr "ئۈستەلئۈستى ئۇقتۇرۇشى"
 
 #: ../src/modules/DesktopNotification.py:26
 msgid "Display a desktop notification on track change"
-msgstr ""
+msgstr "نەغمە ئۆزگەرگەندە ئۈستەلئۈستى ئۇقتۇرۇشىنى كۆرسەتسۇن"
 
 #: ../src/modules/DesktopNotification.py:83
 #: ../src/modules/DesktopNotification.py:197
 msgid "Skip track"
-msgstr ""
+msgstr "نەغمە ئۆتكۈزۈۋەت"
 
 #: ../src/modules/DesktopNotification.py:223
 msgid ""
 "This module displays a small popup window on your desktop when a new track "
 "starts."
 msgstr ""
+"مەزكۇر بۆلەك، يېڭى نەغمە باشلانغاندا، ئۈستەلئۈستىدە سەكرىمە كۆزنەك كۆرسىتىدۇ."
 
 #: ../src/modules/DesktopNotification.py:224
 msgid ""
 "If the Covers module is enabled, the popup also shows the album cover."
 msgstr ""
+"مۇقاۋىلار بۆلىكى ئىناۋەتلىك قىلىنسا، ئالبوم مۇقاۋىسىمۇ سەكرىمە كۆزنەكتە "
+"كۆرۈنىدۇ."
 
 #: ../src/modules/DesktopNotification.py:225
 msgid "Customizing the Notification"
-msgstr ""
+msgstr "ئۇقتۇرۇشنى ئۆزلەشتۈرۈش"
 
 #: ../src/modules/DesktopNotification.py:226
 msgid ""
@@ -263,6 +273,10 @@ msgid ""
 "replaced by their corresponding value. Available fields are:\n"
 "\n"
 msgstr ""
+"ماۋزۇ ۋە گەۋدە قىسمىدا كۆرسىتىلگەن تېكىستنى خالىغانچە ئۆزگەرتەلەيسىز. "
+"سەكرىمە كۆزنەك كۆرسىتىلىشتىن ئاۋۋال {field} دېگەن سوز بۆلىكى ماس قىممەتلەرگە "
+"ئالمىشىدۇ. ئىشلەتكىلى بولىدىغان سوز بۆلەكلىرى تۆۋەندىكىدەك:\n"
+"\n"
 
 #: ../src/modules/DesktopNotification.py:229
 msgid "Markup"
@@ -273,18 +287,20 @@ msgid ""
 "You can use the Pango markup language to format the text. More information "
 "on that language is available on the following web page:"
 msgstr ""
+"تېكىستلەرنى ھەر خىل شەكىلدە كۆرسىتىش ئۈچۈن Pango تىلىنى ئىشلەتسىڭىز بولىدۇ. "
+"مەزكۇر تىل ھەققىدىكى تەپسىلىي ئۇچۇرلارنى تۆۋەندىكى توربېتىدىن كۆرۈڭ:"
 
 #: ../src/modules/StatusbarTitlebar.py:48
 msgid "[paused]"
-msgstr ""
+msgstr "[ۋاقىتلىق توختىغان]"
 
 #: ../src/modules/Covers.py:28
 msgid "Covers"
-msgstr ""
+msgstr "مۇقاۋىلار"
 
 #: ../src/modules/Covers.py:28
 msgid "Show album covers"
-msgstr ""
+msgstr "ئالبوم مۇقاۋىسىنى كۆرسەت"
 
 #: ../src/modules/Covers.py:391
 msgid ""
@@ -292,10 +308,12 @@ msgid ""
 "Covers may be loaded from local pictures, located in the same directory as "
 "the current track, or may be downloaded from the Internet."
 msgstr ""
+"مەزكۇر بۆلەك نۆۋەتتىكى نەغمىنىڭ مۇقاۋىسىنى كۆرسىتىدۇ. مۇقاۋا نۆۋەتتىكى نەغمە "
+"بىلەن ئوخشاش ئورۇندىكى يەرلىك سۈرەت ياكى ئىنتېرنېتتىن چۈشۈرۈلگەن سۈرەتتۇر."
 
 #: ../src/modules/Covers.py:394
 msgid "User Covers"
-msgstr ""
+msgstr "ئىشلەتكۈچى مۇقاۋىلىرى"
 
 #: ../src/modules/Covers.py:395
 #, python-format
@@ -304,10 +322,14 @@ msgid ""
 "track. When specifying filenames, you do not need to provide file "
 "extensions, supported file formats (%s) are automatically used."
 msgstr ""
+"ئىشلەتكۈچى ئالبوم مۇقاۋىسى — نۆۋەتتىكى نەغمە بىلەن ئوخشاش مۇندەرىجە ئىچىدىكى "
+"بىر پارچە سۈرەتتۇر. ھۆججەتنىڭ ئاتىنى كۆرسىتىپ بەرگەندە كېڭەيتمە ئاتىنى "
+"كۆرسىتىشنىڭ زۆرۈرىيىتى يوق. ئىشلەتكىلى بولىدىغان پىچىملار (%s) ئاپتوماتىك "
+"ئىشلىتىلىدۇ."
 
 #: ../src/modules/Covers.py:398
 msgid "Internet Covers"
-msgstr ""
+msgstr "ئىنتېرنېت مۇقاۋىلىرى"
 
 #: ../src/modules/Covers.py:399
 msgid ""
@@ -316,14 +338,19 @@ msgid ""
 "case, if a user cover exists for the current track, it is used. If there is "
 "none, the cover is downloaded."
 msgstr ""
+"مۇقاۋىلار قويۇلۇۋاتقان نەغمىدىكى ئۇچۇرلارغا(tags) ئاساسەن ئىنتېرنېتتىن "
+"چۈشۈرۈلۈشى مۇمكىن. ئىشلەتكۈچى مۇقاۋىسىنى ئىشلىتەمدۇ ياكى ئىنتېرنېتتىن "
+"چۈشۈرەمدۇ سىزگە ياقىدىغان بىرنى كۆرسىتىپ بېرەلەيسىز. بۇ ۋاقىتتا نۆۋەتتىكى "
+"نەغمىنىڭ ئىشلەتكۈچى مۇقاۋىسى بار بولسا شۇنى ئىشلىتىدۇ، بولمىسا ئىنتېرنېتتىن "
+"چۈشۈرىدۇ."
 
 #: ../src/modules/Tracktree.py:382 ../src/modules/Tracktree.py:457
 msgid "Export playlist to file"
-msgstr ""
+msgstr "قويۇش تىزىمى ھۆججەتكە ئېكسپورت قىل"
 
 #: ../src/modules/Tracktree.py:390 ../src/modules/Tracktree.py:462
 msgid "Export playlist to directory"
-msgstr ""
+msgstr "قويۇش تىزىمىنى مۇندەرىجىگە ئېكسپورت قىل"
 
 #: ../src/modules/Tracktree.py:447
 msgid "Clear Playlist"
@@ -335,7 +362,7 @@ msgstr "تەڭشىگۈچ"
 
 #: ../src/modules/Equalizer.py:24
 msgid "Tune the level of the frequency bands"
-msgstr ""
+msgstr "چاستوتا بەلۋېغىنىڭ دەرىجىسىنى تەڭشە"
 
 #: ../src/modules/Equalizer.py:125 ../src/modules/Equalizer.py:213
 #: ../src/modules/Equalizer.py:226
@@ -344,19 +371,19 @@ msgstr "ئىختىيارى"
 
 #: ../src/modules/Equalizer.py:166
 msgid "Save levels"
-msgstr ""
+msgstr "دەرىجىلەرنى ساقلا"
 
 #: ../src/modules/Equalizer.py:177
 msgid "Load levels"
-msgstr ""
+msgstr "دەرىجىلەرنى ئوقۇ"
 
 #: ../src/modules/Equalizer.py:204
 msgid "Could not load the file"
-msgstr ""
+msgstr "ھۆججەتنى يۈكلىيەلمىدى"
 
 #: ../src/modules/Equalizer.py:204
 msgid "The format of the file is incorrect."
-msgstr ""
+msgstr "ھۆججەتنىڭ پىچىمى توغرا ئەمەس."
 
 #: ../src/tools/consts.py:92
 msgid "Unknown Genre"
@@ -372,43 +399,43 @@ msgstr "نامەلۇم ئالبوم"
 
 #: ../src/tools/consts.py:95
 msgid "Unknown Artist"
-msgstr "ناتونۇش ئورۇنلىغۇچى"
+msgstr "نامەلۇم ئورۇنلىغۇچى"
 
 #: ../src/tools/consts.py:103
 msgid "Unknown Album Artist"
-msgstr ""
+msgstr "ئالبوم ئورۇنلىغۇچى نامەلۇم"
 
 #: ../res/Covers.ui.h:1
 msgid "Filenames:"
-msgstr ""
+msgstr "ھۆججەت ئاتى:"
 
 #: ../res/Covers.ui.h:2
 msgid "Filenames to look for (e.g., folder, cover)"
-msgstr ""
+msgstr "ئىزدەيدىغان ھۆججەت ئاتلىرى(مەسىلەن، قىسقۇچ، مۇقاۋا)"
 
 #: ../res/Covers.ui.h:3
 msgid "<b>User Covers</b>"
-msgstr ""
+msgstr "<b>ئىشلەتكۈچى مۇقاۋىسى</b>"
 
 #: ../res/Covers.ui.h:4
 msgid "Download covers"
-msgstr ""
+msgstr "مۇقاۋىسىنى چۈشۈر"
 
 #: ../res/Covers.ui.h:5
 msgid "Try to download covers from the Internet"
-msgstr ""
+msgstr "مۇقاۋىسىنى ئىنتېرنېتتىن چۈشۈرۈشكە تىرىشسۇن"
 
 #: ../res/Covers.ui.h:6
 msgid "Always prefer user covers"
-msgstr ""
+msgstr "مۇقاۋىسىنى ھەمىشە كۆرسەتسۇن"
 
 #: ../res/Covers.ui.h:7
 msgid "Don't download covers when there is a user one"
-msgstr ""
+msgstr "ئىشلەتكۈچى مۇقاۋىسى بار بولسا، ئىنتېرنېتتىن چۈشۈرمىسۇن"
 
 #: ../res/Covers.ui.h:8
 msgid "<b>Internet Covers</b>"
-msgstr ""
+msgstr "<b>تور مۇقاۋىسى</b>"
 
 #: ../res/DesktopNotification.ui.h:1
 msgid "<b>Title</b>"
@@ -416,19 +443,19 @@ msgstr "<b>ماۋزۇ</b>"
 
 #: ../res/DesktopNotification.ui.h:2
 msgid "<b>Body</b>"
-msgstr ""
+msgstr "<b>گەۋدە</b>"
 
 #: ../res/DesktopNotification.ui.h:3
 msgid "Show a \"skip track\" button"
-msgstr ""
+msgstr "«نەغمە ئۆتكۈزۈۋەت» توپچىسىنى كۆرسەتسۇن"
 
 #: ../res/DesktopNotification.ui.h:4
 msgid "Notification timeout:"
-msgstr ""
+msgstr "ئۇقتۇرۇش مۆھلىتى:"
 
 #: ../res/DesktopNotification.ui.h:5
 msgid "Time during which the notification is displayed"
-msgstr ""
+msgstr "ئۇقتۇرۇشنىڭ كۆرسىتىلىدىغان ۋاقتى."
 
 #: ../res/DesktopNotification.ui.h:6
 msgid "seconds"
@@ -436,7 +463,7 @@ msgstr "سېكۇنت"
 
 #: ../res/DesktopNotification.ui.h:7
 msgid "<b>Miscellaneous</b>"
-msgstr ""
+msgstr "<b>باشقىلار</b>"
 
 #: ../res/Equalizer.ui.h:1
 msgid "Preset:"
@@ -444,11 +471,11 @@ msgstr "تەڭشە:"
 
 #: ../res/MainWindow.ui.h:1
 msgid "Play the previous track"
-msgstr ""
+msgstr "ئالدىنقىسىنى قويىدۇ"
 
 #: ../res/MainWindow.ui.h:2
 msgid "Play the first track of the playlist"
-msgstr ""
+msgstr "قويۇش تىزىمىدىكى بىرىنچىسىنى قويىدۇ"
 
 #: ../res/MainWindow.ui.h:3
 msgid "Play the next track"
