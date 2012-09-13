@@ -211,3 +211,25 @@ def write_file(filename, content):
     except IOError, e:
         logging.error('Error while writing to "%s": %s' % (filename, e))
 
+def get_platform_info():
+    # TODO: Add gstreamer, mutagen, PIL version info
+    import platform
+    import gtk
+    import yaml
+
+    functions = [platform.machine, platform.platform, platform.processor,
+                platform.python_version, platform.release, platform.system,]
+    names_values = [(func.__name__, func()) for func in functions]
+
+    lib_values = [('GTK version', gtk, 'gtk_version'),
+                  ('PyGTK version', gtk, 'pygtk_version')]
+
+    for name, object, value in lib_values:
+        try:
+            names_values.append((name, getattr(object, value)))
+        except AttributeError:
+            logging.info('%s could not be determined' % name)
+
+    vals = ['%s: %s' % (name, val) for name, val in names_values]
+    return 'System info: ' + ', '.join(vals)
+

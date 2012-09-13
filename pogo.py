@@ -55,6 +55,9 @@ optparser.add_option('--multiple-instances', action='store_true',
 
 optOptions, optArgs = optparser.parse_args()
 
+import tools
+print tools.get_platform_info()
+
 
 # Check whether Pogo is already running?
 if not optOptions.multiple_instances:
