@@ -212,6 +212,35 @@ def write_file(filename, content):
     except IOError, e:
         logging.error('Error while writing to "%s": %s' % (filename, e))
 
+def get_platform_info():
+    # TODO: Add gstreamer, mutagen, PIL version info
+    import platform
+    import gtk
+    import gst
+    import yaml
+
+    functions = [platform.machine, platform.platform, platform.processor,
+                platform.python_version, platform.release, platform.system,]
+    names_values = [(func.__name__, func()) for func in functions]
+
+    lib_values = [('GTK', gtk, 'gtk_version', False),
+                  ('PyGTK', gtk, 'pygtk_version', False),
+                  ('GST', gst, 'version', True),
+                  ('Mutagen', mutagen, 'version', True)]
+
+    for name, obj, attr_name, func in lib_values:
+        attr = getattr(obj, attr_name, None)
+        if attr and func:
+            value = attr()
+        elif attr and not func:
+            value = attr
+        else:
+            value = 'unknown'
+        names_values.append((name, value))
+
+    vals = ['%s: %s' % (name, val) for name, val in names_values]
+    return 'System info: ' + ', '.join(vals)
+
 def separate_commands_and_tracks(args):
     all_commands = set(consts.commands)
     commands = []
@@ -220,4 +249,3 @@ def separate_commands_and_tracks(args):
             args.remove(arg)
             commands.append(arg)
     return commands, args
-
