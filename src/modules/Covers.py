@@ -201,7 +201,7 @@ class Covers(modules.ThreadedModule):
             if len(data) < 1024:
                 raise Exception, 'The cover image seems incorrect (%u bytes is too small)' % len(data)
         except:
-            logger.error('[%s] Cover image request failed\n\n%s' % (MOD_NAME, traceback.format_exc()))
+            logger.error('[%s] Cover image request failed' % MOD_NAME)
             return None
 
         # So far, so good: let's cache the image
