@@ -8,14 +8,14 @@ msgstr ""
 "Project-Id-Version: decibel-audio-player\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2012-07-24 11:16+0200\n"
-"PO-Revision-Date: 2011-01-12 18:12+0000\n"
-"Last-Translator: Adam Czabara <kolofaza@o2.pl>\n"
+"PO-Revision-Date: 2012-11-13 13:20+0000\n"
+"Last-Translator: Alicia Kwiatkowska <alicia@paksumanuli.com>\n"
 "Language-Team: Polish <pl@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2012-11-01 05:10+0000\n"
-"X-Generator: Launchpad (build 16218)\n"
+"X-Launchpad-Export-Date: 2012-11-14 04:49+0000\n"
+"X-Generator: Launchpad (build 16251)\n"
 
 #: ../src/media/track/__init__.py:52
 msgid "Track number"
@@ -122,6 +122,7 @@ msgid "translator-credits"
 msgstr ""
 "Launchpad Contributions:\n"
 "  Adam Czabara https://launchpad.net/~adam-czabara\n"
+"  Alicia Kwiatkowska https://launchpad.net/~paksumanuli\n"
 "  Jakub 'Livio' Rusinek https://launchpad.net/~liviopl-pl\n"
 "  la_serpe https://launchpad.net/~tom-mil"
 
@@ -203,7 +204,7 @@ msgstr ""
 
 #: ../src/modules/FileExplorer.py:729
 msgid "No music folders have been added"
-msgstr ""
+msgstr "Nie dodano żadnych folderów z muzyką"
 
 #: ../src/modules/__init__.py:75
 msgid "The following Python modules are not available:"
@@ -344,7 +345,7 @@ msgstr ""
 
 #: ../src/modules/Tracktree.py:382 ../src/modules/Tracktree.py:457
 msgid "Export playlist to file"
-msgstr ""
+msgstr "Eksportuj listę odtwarzania do pliku"
 
 #: ../src/modules/Tracktree.py:390 ../src/modules/Tracktree.py:462
 msgid "Export playlist to directory"
