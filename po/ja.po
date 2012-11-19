@@ -8,14 +8,14 @@ msgstr ""
 "Project-Id-Version: decibel-audio-player\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2012-07-24 11:16+0200\n"
-"PO-Revision-Date: 2010-11-12 19:52+0000\n"
-"Last-Translator: Linux Lover <Unknown>\n"
+"PO-Revision-Date: 2012-11-18 15:25+0000\n"
+"Last-Translator: Shushi Kurose <md81bird@hitaki.net>\n"
 "Language-Team: Japanese <ja@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2012-11-01 05:10+0000\n"
-"X-Generator: Launchpad (build 16218)\n"
+"X-Launchpad-Export-Date: 2012-11-19 04:49+0000\n"
+"X-Generator: Launchpad (build 16278)\n"
 
 #: ../src/media/track/__init__.py:52
 msgid "Track number"
@@ -114,13 +114,17 @@ msgid ""
 "click on the \"Preferences\" button on the bottom of the dialog box. Note "
 "that configuring a module is only possible when it is enabled."
 msgstr ""
+"モジュールが設定されていれば、固有のアイコンが同じ列の右側に表示されます。モジュールを設定するには、モジュールを選択してダイアログボックスの下にある\"設"
+"定\"ボタンをクリックするだけです。設定したモジュールは有効にするまで利用できないことに注意してください。"
 
 #: ../src/gui/about.py:40
 msgid "translator-credits"
 msgstr ""
 "Launchpad Contributions:\n"
 "  Hiroshi Tagawa https://launchpad.net/~kuponuga\n"
+"  Kentaro Kazuhama https://launchpad.net/~kazken3\n"
 "  Linux Lover https://launchpad.net/~obake\n"
+"  Shushi Kurose https://launchpad.net/~kuromabo\n"
 "  Tom Adams https://launchpad.net/~holizz"
 
 #: ../src/gui/about.py:44
@@ -133,7 +137,7 @@ msgstr "Thanks to:"
 
 #: ../src/modules/Search.py:33
 msgid "Search in your music folders"
-msgstr "貴方の音楽フォルダ内で検索する"
+msgstr "音楽フォルダー内を検索する"
 
 #: ../src/modules/Zeitgeist.py:28
 msgid "Send track information to the Zeitgeist service"
@@ -149,15 +153,15 @@ msgstr "追加"
 
 #: ../src/modules/FileExplorer.py:419
 msgid "Open containing folder"
-msgstr ""
+msgstr "保存先のフォルダーを開く"
 
 #: ../src/modules/FileExplorer.py:443
 msgid "Add music folder"
-msgstr "音楽フォルダを追加"
+msgstr "音楽フォルダーを追加"
 
 #: ../src/modules/FileExplorer.py:455
 msgid "Hide folder"
-msgstr "フォルダを隠す"
+msgstr "フォルダーを隠す"
 
 #: ../src/modules/FileExplorer.py:469
 msgid "Choose a directory"
@@ -165,11 +169,11 @@ msgstr "ディレクトリを選択してください"
 
 #: ../src/modules/FileExplorer.py:475
 msgid "Invalid Folder"
-msgstr ""
+msgstr "無効なフォルダー"
 
 #: ../src/modules/FileExplorer.py:476
 msgid "You cannot add your root or home folder to the music directories"
-msgstr ""
+msgstr "ルートやホームフォルダーは音楽ディレクトリに追加できません"
 
 #: ../src/modules/FileExplorer.py:483
 msgid "This path does not exist"
@@ -189,7 +193,7 @@ msgstr "音楽"
 
 #: ../src/modules/FileExplorer.py:650
 msgid "Right-click to add music folders"
-msgstr ""
+msgstr "右クリックで音楽フォルダーを追加"
 
 #: ../src/modules/FileExplorer.py:701
 msgid "Searching ..."
@@ -197,19 +201,19 @@ msgstr "検索中..."
 
 #: ../src/modules/FileExplorer.py:727
 msgid "No tracks found"
-msgstr "トラック見つけませんでした"
+msgstr "トラックが見つかりません"
 
 #: ../src/modules/FileExplorer.py:729
 msgid "No music folders have been added"
-msgstr ""
+msgstr "音楽フォルダーが追加されていません"
 
 #: ../src/modules/__init__.py:75
 msgid "The following Python modules are not available:"
-msgstr ""
+msgstr "次のPythonモジュールが利用できません:"
 
 #: ../src/modules/__init__.py:79
 msgid "You must install them if you want to enable this module."
-msgstr ""
+msgstr "このモジュールを有効にするにはこれらをインストールする必要があります。"
 
 #: ../src/modules/__init__.py:266
 msgid "Restart required"
@@ -238,7 +242,7 @@ msgstr "デスクトップ通知"
 
 #: ../src/modules/DesktopNotification.py:26
 msgid "Display a desktop notification on track change"
-msgstr ""
+msgstr "トラックを変更した時にデスクトップ通知を表示"
 
 #: ../src/modules/DesktopNotification.py:83
 #: ../src/modules/DesktopNotification.py:197
@@ -249,12 +253,12 @@ msgstr "トラックをスキップ"
 msgid ""
 "This module displays a small popup window on your desktop when a new track "
 "starts."
-msgstr ""
+msgstr "このモジュールは、新しいトラックが始まった時にデスクトップに小さいポップアップウィンドウを表示します。"
 
 #: ../src/modules/DesktopNotification.py:224
 msgid ""
 "If the Covers module is enabled, the popup also shows the album cover."
-msgstr ""
+msgstr "カバーモジュールを有効にすれば、ポップアップにアルバムカバーも表示します。"
 
 #: ../src/modules/DesktopNotification.py:225
 msgid "Customizing the Notification"
@@ -267,6 +271,9 @@ msgid ""
 "replaced by their corresponding value. Available fields are:\n"
 "\n"
 msgstr ""
+"通知のタイトルとボディーを好きなテキストに変更することができます。ポップアップウィンドウを表示する前に、フォーム{field}の領域はそれらに対応する値に"
+"置き換えられます。利用可能なフィールドは次のとおりです:\n"
+"\n"
 
 #: ../src/modules/DesktopNotification.py:229
 msgid "Markup"
@@ -276,7 +283,7 @@ msgstr "マークアップ"
 msgid ""
 "You can use the Pango markup language to format the text. More information "
 "on that language is available on the following web page:"
-msgstr ""
+msgstr "テキストのフォーマットにPangoマークアップ言語が利用できます。この言語の追加情報は、次のウェブページにあります:"
 
 #: ../src/modules/StatusbarTitlebar.py:48
 msgid "[paused]"
@@ -288,7 +295,7 @@ msgstr "カバー"
 
 #: ../src/modules/Covers.py:28
 msgid "Show album covers"
-msgstr ""
+msgstr "アルバムカバーを表示"
 
 #: ../src/modules/Covers.py:391
 msgid ""
@@ -296,10 +303,12 @@ msgid ""
 "Covers may be loaded from local pictures, located in the same directory as "
 "the current track, or may be downloaded from the Internet."
 msgstr ""
+"このモジュールは、現在のトラックのアルバムのカバーを表示します。カバーは現在のトラックと同じディレクトリにある画像か、インターネットからダウンロードした画"
+"像からロードします。"
 
 #: ../src/modules/Covers.py:394
 msgid "User Covers"
-msgstr ""
+msgstr "ユーザーカバー"
 
 #: ../src/modules/Covers.py:395
 #, python-format
@@ -308,10 +317,12 @@ msgid ""
 "track. When specifying filenames, you do not need to provide file "
 "extensions, supported file formats (%s) are automatically used."
 msgstr ""
+"ユーザーカバーは現在のトラックと同じディレクトリに置かれています。ファイル名を指定する場合は、ファイル拡張子を指定する必要はなく、サポートしているファイル"
+"形式(%s)が自動的に使用されます。"
 
 #: ../src/modules/Covers.py:398
 msgid "Internet Covers"
-msgstr ""
+msgstr "インターネットカバー"
 
 #: ../src/modules/Covers.py:399
 msgid ""
@@ -320,14 +331,16 @@ msgid ""
 "case, if a user cover exists for the current track, it is used. If there is "
 "none, the cover is downloaded."
 msgstr ""
+"カバーは現在のトラックのタグに基づいて、インターネットからダウンロードされます。インターネットカバーよりユーザーカバーを常に選択することができます。この場"
+"合、ユーザーカバーが現在のトラックに存在するのであればユーザーカバーが使用されます。何もない場合、カバーがダウンロードされます。"
 
 #: ../src/modules/Tracktree.py:382 ../src/modules/Tracktree.py:457
 msgid "Export playlist to file"
-msgstr ""
+msgstr "プレイリストをファイルにエクスポート"
 
 #: ../src/modules/Tracktree.py:390 ../src/modules/Tracktree.py:462
 msgid "Export playlist to directory"
-msgstr ""
+msgstr "プレイリストをディレクトリにエクスポート"
 
 #: ../src/modules/Tracktree.py:447
 msgid "Clear Playlist"
@@ -335,11 +348,11 @@ msgstr "プレイリストを消去"
 
 #: ../src/modules/Equalizer.py:24
 msgid "Equalizer"
-msgstr "イコライザ"
+msgstr "イコライザー"
 
 #: ../src/modules/Equalizer.py:24
 msgid "Tune the level of the frequency bands"
-msgstr ""
+msgstr "周波数帯のレベルを合わせます"
 
 #: ../src/modules/Equalizer.py:125 ../src/modules/Equalizer.py:213
 #: ../src/modules/Equalizer.py:226
@@ -376,7 +389,7 @@ msgstr "アルバム不明"
 
 #: ../src/tools/consts.py:95
 msgid "Unknown Artist"
-msgstr "演奏者不明"
+msgstr "アーティスト不明"
 
 #: ../src/tools/consts.py:103
 msgid "Unknown Album Artist"
@@ -388,11 +401,11 @@ msgstr "ファイル名:"
 
 #: ../res/Covers.ui.h:2
 msgid "Filenames to look for (e.g., folder, cover)"
-msgstr ""
+msgstr "探すファイル名(例: folder,cover)"
 
 #: ../res/Covers.ui.h:3
 msgid "<b>User Covers</b>"
-msgstr "ユーザー・カバー"
+msgstr "<b>ユーザーカバー</b>"
 
 #: ../res/Covers.ui.h:4
 msgid "Download covers"
@@ -404,7 +417,7 @@ msgstr "インターネットからカバーをダウンロードして見てく
 
 #: ../res/Covers.ui.h:6
 msgid "Always prefer user covers"
-msgstr ""
+msgstr "常にユーザーカバーを選ぶ"
 
 #: ../res/Covers.ui.h:7
 msgid "Don't download covers when there is a user one"
@@ -412,7 +425,7 @@ msgstr "ユーザーカバーがある場合はインターネットからダウ
 
 #: ../res/Covers.ui.h:8
 msgid "<b>Internet Covers</b>"
-msgstr "<b>インターネット・カバー</b>"
+msgstr "<b>インターネットカバー</b>"
 
 #: ../res/DesktopNotification.ui.h:1
 msgid "<b>Title</b>"
@@ -420,19 +433,19 @@ msgstr "<b>タイトル</b>"
 
 #: ../res/DesktopNotification.ui.h:2
 msgid "<b>Body</b>"
-msgstr ""
+msgstr "<b>ボディー</b>"
 
 #: ../res/DesktopNotification.ui.h:3
 msgid "Show a \"skip track\" button"
-msgstr ""
+msgstr "\"トラックをスキップ\"ボタンを表示"
 
 #: ../res/DesktopNotification.ui.h:4
 msgid "Notification timeout:"
-msgstr ""
+msgstr "通知のタイムアウト:"
 
 #: ../res/DesktopNotification.ui.h:5
 msgid "Time during which the notification is displayed"
-msgstr ""
+msgstr "通知を表示している時間"
 
 #: ../res/DesktopNotification.ui.h:6
 msgid "seconds"
@@ -440,20 +453,20 @@ msgstr "秒"
 
 #: ../res/DesktopNotification.ui.h:7
 msgid "<b>Miscellaneous</b>"
-msgstr ""
+msgstr "<b>その他</b>"
 
 #: ../res/Equalizer.ui.h:1
 msgid "Preset:"
-msgstr ""
+msgstr "プリセット:"
 
 #: ../res/MainWindow.ui.h:1
 msgid "Play the previous track"
-msgstr ""
+msgstr "前のトラックを再生"
 
 #: ../res/MainWindow.ui.h:2
 msgid "Play the first track of the playlist"
-msgstr ""
+msgstr "プレイリストの最初のトラックを再生"
 
 #: ../res/MainWindow.ui.h:3
 msgid "Play the next track"
-msgstr ""
+msgstr "次のトラックを再生"
