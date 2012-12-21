@@ -3,8 +3,8 @@
 set -e
 
 VERSION=`python -c "import sys; sys.path.append('src/tools'); import consts; print consts.appVersion"`
-ARCHIVE="pogo-"$VERSION".tar.gz"
-DEST='pogo-'$VERSION
+ARCHIVE="pogo-$VERSION.tar.gz"
+DEST="pogo-$VERSION"
 
 if [ -d $DEST ]; then
   rm -rf $DEST
