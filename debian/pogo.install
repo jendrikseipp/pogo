@@ -1,0 +1,2 @@
+debian/pogo-crashdb.conf etc/apport/crashdb.conf.d/
+debian/source_pogo.py usr/share/apport/package-hooks/
