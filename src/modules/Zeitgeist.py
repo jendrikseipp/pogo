@@ -25,7 +25,7 @@ import modules
 from tools import consts
 from tools.log import logger
 
-MOD_INFO = ('Zeitgeist', 'Zeitgeist', _('Send track information to the Zeitgeist service'), ['zeitgeist'], True, False)
+MOD_INFO = ('Zeitgeist', 'Zeitgeist', _('Send track information to the Zeitgeist service'), ['zeitgeist'], False, False)
 
 
 class Zeitgeist(modules.ThreadedModule):
