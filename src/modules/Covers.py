@@ -74,7 +74,7 @@ class Covers(modules.ThreadedModule):
 
 
     def _generateCover(self, inFile, outFile, format, max_width, max_height):
-        import Image
+        from PIL import Image
 
         try:
             # Open the image
