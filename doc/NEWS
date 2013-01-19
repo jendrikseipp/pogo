@@ -1,5 +1,3 @@
-=== Pogo NEWS ===
-
  0.8 "You thought you'd set the bar" (2012-09-05)
 =================================================
 * Control pogo from the commandline. The commands play, pause, next, prev and stop are supported. (lp:986164)
