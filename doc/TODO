@@ -2,6 +2,7 @@
 
 0.8.1
 X Support Pillow in addition to PIL.
+X Disable zeitgeist module to avoid startup errors on Ubuntu 12.10.
 
 O Log system and library information for easier debugging.
 O Use new logo by Kevin Macphail
