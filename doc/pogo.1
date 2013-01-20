@@ -1,14 +1,37 @@
-.TH POGO 1 "September 16, 2010"
+.TH POGO 1 "January 20, 2013"
 .SH NAME
 pogo \- a simple audio player
 .SH SYNOPSIS
-.B pogo
+.B pogo [OPTIONS] [FILES] [COMMAND]
 .SH DESCRIPTION
-\fBPogo\fP is probably the simplest and fastest audio player for Linux. 
-Its elementary-inspired design uses the screen-space very efficiently. 
-Pogo is especially well-suited for people who organize their music by 
-albums on the harddrive. The main interface components are a directory 
+\fBPogo\fP is probably the simplest and fastest audio player for Linux.
+Its elementary-inspired design uses the screen-space very efficiently.
+Pogo is especially well-suited for people who organize their music by
+albums on the harddrive. The main interface components are a directory
 tree and a playlist that groups albums in an innovative way.
+.SH OPTIONS
+.TP
+\fB-h, --help\fR
+Show help message and exit.
+.TP
+\fB--multiple-instances\fR
+Start a new instance even if one is already running.
+.SH COMMANDS
+.TP
+\fBplay\fR
+Start playing the current track.
+.TP
+\fBpause\fR
+Pause or continue playing the current track.
+.TP
+\fBstop\fR
+Stop playback.
+.TP
+\fBnext\fR
+Jump to the next track.
+.TP
+\fBprev\fR
+Jump to the previous track.
 .SH SEE ALSO
 Homepage: http://launchpad.net/pogo
 .SH AUTHOR
