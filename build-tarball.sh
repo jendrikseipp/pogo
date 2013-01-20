@@ -52,4 +52,4 @@ find $DEST -type d -name ".bzr" -exec rm -rf {} \; > /dev/null 2>&1
 find $DEST/src -type f ! -name "*.py" -exec rm -f {} \;
 
 tar czf $ARCHIVE $DEST
-#rm -rf $DEST
+rm -rf $DEST
