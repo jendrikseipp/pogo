@@ -222,9 +222,7 @@ class FileExplorer(modules.Module):
         mediaFiles  = []
         directories = []
 
-        for (file, path) in tools.listDir(directory):
-            file = unicode(file, errors='replace')
-
+        for (file, path) in tools.listDir(unicode(directory)):
             # Make directory names prettier
             junk = ['_']
             pretty_name = file
