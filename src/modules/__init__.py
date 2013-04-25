@@ -353,14 +353,13 @@ mEnabledModules = prefs.get(__name__, 'enabled_modules', [])                   #
 
 
 # Do not load modules in blacklist. They also won't show up in the preferences
-blacklist = []
+blacklist = ['__init__.py', 'Zeitgeist.py']
 
 
 # Find modules, instantiate those that are mandatory or that have been previously enabled by the user
 sys.path.append(mModDir)
-for file in sorted(os.path.splitext(file)[0] for file in os.listdir(mModDir) if file.endswith('.py') and file != '__init__.py'):
-    if file in blacklist:
-        continue
+for file in sorted(os.path.splitext(file)[0] for file in os.listdir(mModDir)
+                   if file.endswith('.py') and file not in blacklist):
     try:
         pModule = __import__(file)
         modInfo = getattr(pModule, 'MOD_INFO')
