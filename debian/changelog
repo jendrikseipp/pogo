@@ -1,3 +1,11 @@
+pogo (0.8.2-1) UNRELEASED; urgency=low
+
+  * New upstream release
+  * Update the clickable buttons after the tracks have been rearranged (lp:1191891).
+  * Disable zeitgeist module since its DBus interface causes problems frequently.
+
+ -- Jendrik Seipp <jendrikseipp@web.de>  Sun, 30 Jun 2013 21:22:19 +0200
+
 pogo (0.8.1-1) UNRELEASED; urgency=low
 
   * New release
