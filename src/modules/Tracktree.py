@@ -525,6 +525,7 @@ class Tracktree(modules.Module):
         self.tree.connect('exttreeview-button-pressed', self.onMouseButton)
         self.tree.connect('tracktreeview-dnd', self.onDND)
         self.tree.connect('key-press-event', self.onKeyboard)
+        self.tree.get_model().connect('row-deleted', self.onRowDeleted)
 
         (options, args) = prefs.getCmdLine()
 
@@ -734,3 +735,15 @@ class Tracktree(modules.Module):
         self.tree.dir_selected = True
 
         context.finish(True, False, time)
+
+    def onRowDeleted(self, model, path):
+        """
+        Internal drag and drop cannot be caught in PyGTK since the
+        "rows-reordered" signal is not emitted and the work-around proposed by
+        katsh doesn't work either
+        (http://stackoverflow.com/questions/2831779/catch-pygtk-treeview-reorder).
+        After a drag and drop operation PyGTK emits the "row-inserted" and
+        afterwards "row-deleted" signals, so we catch the latter and update the
+        buttons.
+        """
+        self.onListModified()
