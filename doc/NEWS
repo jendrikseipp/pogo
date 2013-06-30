@@ -1,3 +1,9 @@
+ 0.8.2 "Please don't go, I love you so" (13-06-30)
+==================================================
+* Update the clickable buttons after the tracks have been rearranged (lp:1191891).
+* Disable zeitgeist module since its DBus interface causes problems frequently.
+
+
  0.8.1 "Like anything could happen" (13-01-20)
 ==============================================
 * Support Pillow in addition to PIL.
