@@ -36,12 +36,10 @@ class CtrlPanel(modules.Module):
                         consts.MSG_EVT_PAUSED:           self.onPaused,
                         consts.MSG_EVT_STOPPED:          self.onStopped,
                         consts.MSG_EVT_UNPAUSED:         self.onUnpaused,
-                        consts.MSG_EVT_APP_QUIT:         self.onAppQuit,
                         consts.MSG_EVT_NEW_TRACK:        self.onNewTrack,
                         consts.MSG_EVT_TRACK_MOVED:      self.onCurrentTrackMoved,
                         consts.MSG_EVT_APP_STARTED:      self.onAppStarted,
                         consts.MSG_EVT_NEW_TRACKLIST:    self.onNewTracklist,
-                        consts.MSG_EVT_VOLUME_CHANGED:   self.onVolumeChanged,
                         consts.MSG_EVT_TRACK_POSITION:   self.onNewTrackPosition,
                    }
 
@@ -88,10 +86,6 @@ class CtrlPanel(modules.Module):
         self.btnNext      = wTree.get_object('btn-next')
         self.btnPrev      = wTree.get_object('btn-previous')
         self.sclSeek      = wTree.get_object('scl-position')
-        self.btnVolume    = wTree.get_object('btn-volume')
-
-        # Hide volume button
-        self.btnVolume.hide()
 
         # GTK handlers
         self.btnNext.connect('clicked', lambda widget: modules.postMsg(consts.MSG_CMD_NEXT))
@@ -103,8 +97,6 @@ class CtrlPanel(modules.Module):
         # Left mouse click jumps to current position
         self.sclSeek.connect('button-press-event', self.onSeekButtonPressed)
         self.sclSeek.connect('button-release-event', self.onSeekButtonReleased)
-
-        self.btnVolume.connect('value-changed', self.onVolumeValueChanged)
 
         # Add pref button
 
@@ -172,11 +164,6 @@ class CtrlPanel(modules.Module):
 
 
 
-    def onAppQuit(self):
-        """ The application is about to terminate """
-        prefs.set(__name__, 'volume', self.btnVolume.get_value())
-
-
     def onNewTrack(self, track):
         """ A new track is being played """
         self.btnPlay.set_sensitive(True)
@@ -213,13 +200,6 @@ class CtrlPanel(modules.Module):
             self.sclSeek.handler_block_by_func(self.onSeekValueChanged)
             self.sclSeek.set_value(seconds)
             self.sclSeek.handler_unblock_by_func(self.onSeekValueChanged)
-
-
-    def onVolumeChanged(self, value):
-        """ The volume has been changed """
-        self.btnVolume.handler_block_by_func(self.onVolumeValueChanged)
-        self.btnVolume.set_value(value)
-        self.btnVolume.handler_unblock_by_func(self.onVolumeValueChanged)
 
 
     def onCurrentTrackMoved(self, hasPrevious, hasNext):
@@ -288,11 +268,6 @@ class CtrlPanel(modules.Module):
             # Middleclick
             widget.emit('button-release-event', event)
             return True
-
-
-    def onVolumeValueChanged(self, button, value):
-        """ The user has moved the volume slider """
-        modules.postMsg(consts.MSG_CMD_SET_VOLUME, {'value': value})
 
 
     def onAbout(self, item):

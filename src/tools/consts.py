@@ -30,7 +30,7 @@ socketTimeout = 10
 
 # --- Strings
 appName      = 'Pogo'
-appVersion   = '0.8.2'
+appVersion   = '0.8.3'
 appNameShort = 'pogo'
 commands = ['play', 'pause', 'prev', 'next', 'stop']
 
@@ -136,7 +136,6 @@ DND_TARGETS = {
     MSG_CMD_STOP,                # Stop playing                               Parameters:
     MSG_CMD_SEEK,                # Jump to a position                         Parameters: 'seconds'
     MSG_CMD_STEP,                # Step back or forth                         Parameters: 'seconds'
-    MSG_CMD_SET_VOLUME,          # Change the volume                          Parameters: 'value'
     MSG_CMD_BUFFER,              # Buffer a file                              Parameters: 'filename'
     MSG_CMD_TOGGLE_PAUSE,        # Toggle play/pause                          Parameters:
     MSG_CMD_ENABLE_EQZ,          # Enable the equalizer                       Parameters:
@@ -178,9 +177,6 @@ DND_TARGETS = {
     MSG_EVT_TRACK_ENDED_OK,      # The current track has ended                        Parameters:
     MSG_EVT_TRACK_ENDED_ERROR,   # The current track has ended because of an error    Parameters:
 
-    # GStreamer player
-    MSG_EVT_VOLUME_CHANGED,      # The volume has changed   Parameters: 'value'
-
     # Tracklist
     MSG_EVT_TRACK_MOVED,         # The position of the current track has changed    Parameters: 'hasPrevious', 'hasNext'
     MSG_EVT_NEW_TRACKLIST,       # A new tracklist has been set                     Parameters: 'tracks', 'playtime'
@@ -209,4 +205,4 @@ DND_TARGETS = {
 
     # End value
     MSG_END_VALUE
-) = range(50)
+) = range(48)

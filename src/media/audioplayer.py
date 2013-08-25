@@ -25,7 +25,6 @@ class AudioPlayer:
     def __init__(self, callbackEnded, usePlaybin2=True):
         """ Constructor """
         self.player        = None
-        self.volume        = 1
         self.rgEnabled     = False
         self.eqzLevels     = None
         self.equalizer     = None
@@ -58,9 +57,6 @@ class AudioPlayer:
 
         # No video
         self.player.set_property('video-sink', gst.element_factory_make('fakesink', 'fakesink'))
-
-        ## Changing the volume sets volume to max in Fedora.
-        ##self.player.set_property('volume', self.volume)
 
         # Change the audio sink to our own bin, so that an equalizer/replay gain element can be added later on if needed
         self.audiobin  = gst.Bin('audiobin')
@@ -167,19 +163,6 @@ class AudioPlayer:
     def setNextURI(self, uri):
         """ Set the next URI """
         self.__getPlayer().set_property('uri', uri.replace('%', '%25').replace('#', '%23'))
-
-
-    def setVolume(self, level):
-        """ Set the volume to the given level (0 <= level <= 1) """
-        ## Changing the volume sets volume to max in Fedora.
-        return
-
-        if level < 0:   self.volume = 0
-        elif level > 1: self.volume = 1
-        else:           self.volume = level
-
-        if self.player is not None:
-            self.player.set_property('volume', self.volume)
 
 
     def isPaused(self):

@@ -43,7 +43,6 @@ class GSTPlayer(modules.Module):
                         consts.MSG_CMD_BUFFER:       self.onBuffer,
                         consts.MSG_CMD_ENABLE_RG:    self.onEnableReplayGain,
                         consts.MSG_CMD_ENABLE_EQZ:   self.onEnableEqualizer,
-                        consts.MSG_CMD_SET_VOLUME:   self.onSetVolume,
                         consts.MSG_EVT_APP_STARTED:  self.onAppStarted,
                         consts.MSG_CMD_SET_CD_SPEED: self.onSetCDSpeed,
                         consts.MSG_CMD_TOGGLE_PAUSE: self.onTogglePause,
@@ -187,12 +186,6 @@ class GSTPlayer(modules.Module):
             elif newPos < self.player.getDuration():
                 self.player.seek(newPos)
                 self.updateTimerHandler()
-
-
-    def onSetVolume(self, value):
-        """ Change the volume """
-        self.player.setVolume(value)
-        modules.postMsg(consts.MSG_EVT_VOLUME_CHANGED, {'value': value})
 
 
     def onEnableReplayGain(self):

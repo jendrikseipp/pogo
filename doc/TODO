@@ -2,6 +2,7 @@
 
 0.8.3
 X Apply fix from decibel: Don't set VBR information for MP3 files (#1202195).
+X Apply fix from decibel: Remove obsolete volume handling code.
 
 O Log system and library information for easier debugging.
 O Use new logo by Kevin Macphail

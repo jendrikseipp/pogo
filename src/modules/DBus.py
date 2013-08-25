@@ -47,7 +47,6 @@ class DBus(modules.Module):
                         consts.MSG_EVT_TRACK_MOVED:      self.onCurrentTrackMoved,
                         consts.MSG_EVT_APP_STARTED:      self.onAppStarted,
                         consts.MSG_EVT_NEW_TRACKLIST:    self.onNewTracklist,
-                        consts.MSG_EVT_VOLUME_CHANGED:   self.onVolumeChanged,
                         consts.MSG_EVT_TRACK_POSITION:   self.onNewTrackPosition,
                         consts.MSG_EVT_REPEAT_CHANGED:   self.onRepeatChanged,
                    }
@@ -96,7 +95,6 @@ class DBus(modules.Module):
         self.currTrack    = None
         self.canGoNext    = False
         self.canGoPrev    = False
-        self.currVolume   = 0
         self.currPosition = 0
 
         try:
@@ -128,11 +126,6 @@ class DBus(modules.Module):
         self.currPosition = 0
         self.busObjectPlayer.CapsChange(self.getMPRISCaps())
         self.busObjectPlayer.StatusChange(self.getMPRISStatus())
-
-
-    def onVolumeChanged(self, value):
-        """ The volume has been changed """
-        self.currVolume = value
 
 
     def onNewTrackPosition(self, seconds):
@@ -365,18 +358,6 @@ class DBusObjectPlayer(dbus.service.Object):
     def GetCaps(self):
         """ Return the media player's current capabilities """
         return self.module.getMPRISCaps()
-
-
-    @dbus.service.method(consts.dbusInterface, in_signature='i', out_signature='')
-    def VolumeSet(self, volume):
-        """ Sets the volume (argument must be in [0;100]) """
-        gobject.idle_add(modules.postMsg, consts.MSG_CMD_SET_VOLUME, {'value': volume / 100.0})
-
-
-    @dbus.service.method(consts.dbusInterface, in_signature='', out_signature='i')
-    def VolumeGet(self):
-        """ Returns the current volume (must be in [0;100]) """
-        return self.module.currVolume * 100
 
 
     @dbus.service.method(consts.dbusInterface, in_signature='i', out_signature='')
