@@ -30,8 +30,8 @@ def getTrack(filename):
     bitrate    = int(mp3File.info.bitrate)
     samplerate = int(mp3File.info.sample_rate)
 
-    if mp3File.info.mode == 1: isVBR = True
-    else:                      isVBR = False
+    # Don't set VBR information for MP3 files (#1202195)
+    isVBR = False
 
     try:    id3 = ID3(filename)
     except: return createFileTrack(filename, bitrate, length, samplerate, isVBR)
