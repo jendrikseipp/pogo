@@ -1,6 +1,7 @@
 === Roadmap ===
 
 0.8.3
+X Display filename in notification if track title is unknown.
 X Apply fix from decibel: Don't set VBR information for MP3 files (#1202195).
 X Apply fix from decibel: Remove obsolete volume handling code.
 

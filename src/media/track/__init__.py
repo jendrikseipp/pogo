@@ -130,7 +130,7 @@ class Track:
 
     def getFilePath(self):    return self.tags[TAG_RES]
     def getNumber(self):      return self.__get(TAG_NUM, consts.UNKNOWN_TRACK_NUMBER)
-    def getTitle(self):       return self.__get(TAG_TIT, consts.UNKNOWN_TITLE)
+    def getTitle(self):       return self.__get(TAG_TIT, self.getBasename())
     def getArtist(self):      return self.__get(TAG_ART, consts.UNKNOWN_ARTIST)
     def getAlbum(self):       return self.__get(TAG_ALB, consts.UNKNOWN_ALBUM)
     def getLength(self):      return self.__get(TAG_LEN, consts.UNKNOWN_LENGTH)
