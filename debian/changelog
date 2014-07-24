@@ -1,3 +1,12 @@
+pogo (0.8.3-1) UNRELEASED; urgency=low
+
+  * New upstream release
+  * Display filename in notification if track title is unknown.
+  * Apply fix from decibel: Don't set VBR information for MP3 files (#1202195).
+  * Apply fix from decibel: Remove obsolete volume handling code.
+
+ -- Jendrik Seipp <jendrikseipp@web.de>  Fri, 25 Jul 2014 00:41:03 +0200
+
 pogo (0.8.2-1) UNRELEASED; urgency=low
 
   * New upstream release
