@@ -417,7 +417,9 @@ class Tracktree(modules.Module):
         if prev_iter:
             self.tree.select(prev_iter)
         else:
-            self.tree.select(self.tree.get_first_iter())
+            first_iter = self.tree.get_first_iter()
+            if first_iter:
+                self.tree.select(first_iter)
 
         self.onListModified()
 

@@ -1,8 +1,8 @@
 === Roadmap ===
 
 X Skip non-existing files during exports.
+X Don't crash when clearing the playlist.
 
-O Do not crash when doing Ctrl+A followed by DEL.
 O Log system and library information for easier debugging.
 O Search whole system by default (after "locate" finishes)
 O Use new logo by Kevin Macphail
