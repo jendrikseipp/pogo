@@ -1,3 +1,12 @@
+pogo (0.8.4-1) UNRELEASED; urgency=low
+
+  * New upstream release
+  * Skip non-existing files during exports.
+  * Don't crash when clearing the playlist.
+  * Log system info and library versions for easier debugging.
+
+ -- Jendrik Seipp <jendrikseipp@web.de>  Thu, 14 May 2015 20:20:31 +0200
+
 pogo (0.8.3-1) UNRELEASED; urgency=low
 
   * New upstream release
