@@ -1,3 +1,10 @@
+ 0.8.4 "Oma gib Handtasche" (15-05-14)
+======================================
+* Skip non-existing files during exports.
+* Don't crash when clearing the playlist.
+* Log system info and library versions for easier debugging.
+
+
  0.8.3 "Radioactive" (14-07-25)
 ===============================
 * Display filename in notification if track title is unknown.
