@@ -111,6 +111,9 @@ class TrackDir(object):
         sub_outdir = outdir if self.flat else os.path.join(outdir, self.dirname)
         for track in self.tracks:
             src = track.getFilePath()
+            if not os.path.exists(src):
+                logging.info('Skipping non-existent file %s.' % src)
+                continue
             dest = os.path.join(sub_outdir, os.path.basename(src))
             logging.info('Copying %s to %s' % (src, dest))
             tools.makedirs(sub_outdir)
