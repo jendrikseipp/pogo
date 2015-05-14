@@ -41,6 +41,8 @@ else:
 
 
 import tools
+tools.print_platform_info()
+
 from tools import consts
 
 

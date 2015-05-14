@@ -24,7 +24,6 @@ import subprocess
 import codecs
 import logging
 from xml.sax.saxutils import escape, unescape
-
 import gtk
 
 import consts
@@ -212,34 +211,40 @@ def write_file(filename, content):
     except IOError, e:
         logging.error('Error while writing to "%s": %s' % (filename, e))
 
-def get_platform_info():
-    # TODO: Add gstreamer, mutagen, PIL version info
+def print_platform_info():
     import platform
     import gtk
     import gst
-    import yaml
+    import mutagen
+    import PIL
 
-    functions = [platform.machine, platform.platform, platform.processor,
-                platform.python_version, platform.release, platform.system,]
+    functions = [
+        platform.machine, platform.platform, platform.processor,
+        platform.python_version, platform.release, platform.system
+    ]
     names_values = [(func.__name__, func()) for func in functions]
 
-    lib_values = [('GTK', gtk, 'gtk_version', False),
-                  ('PyGTK', gtk, 'pygtk_version', False),
-                  ('GST', gst, 'version', True),
-                  ('Mutagen', mutagen, 'version', True)]
+    lib_values = [
+        ('GTK', gtk, 'gtk_version'),
+        ('PyGTK', gtk, 'pygtk_version'),
+        ('GST', gst, 'version'),
+        ('Mutagen', mutagen, 'version'),
+        ('PIL', PIL, 'VERSION'),
+    ]
 
-    for name, obj, attr_name, func in lib_values:
+    for name, obj, attr_name in lib_values:
         attr = getattr(obj, attr_name, None)
-        if attr and func:
-            value = attr()
-        elif attr and not func:
-            value = attr
+        if attr:
+            try:
+                value = attr()
+            except TypeError:
+                value = attr
         else:
             value = 'unknown'
         names_values.append((name, value))
 
-    vals = ['%s: %s' % (name, val) for name, val in names_values]
-    return 'System info: ' + ', '.join(vals)
+    values = ['%s: %s' % (name, val) for name, val in names_values]
+    print 'System info: ' + ', '.join(values)
 
 def separate_commands_and_tracks(args):
     all_commands = set(consts.commands)
