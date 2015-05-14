@@ -1,5 +1,6 @@
 === Roadmap ===
 
+0.8.4
 X Skip non-existing files during exports.
 X Don't crash when clearing the playlist.
 X Log system info and library versions for easier debugging.
