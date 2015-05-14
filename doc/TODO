@@ -1,8 +1,11 @@
 === Roadmap ===
 
+X Skip non-existing files during exports.
+
+O Do not crash when doing Ctrl+A followed by DEL.
 O Log system and library information for easier debugging.
+O Search whole system by default (after "locate" finishes)
 O Use new logo by Kevin Macphail
-O Playlist loading (Only add tracks in playlist not added as normal files at the same time)
 O Port from gtk2 to gtk3 (Make sure pygobject doesn't make us slower, wait for pygobject
                           to stabilize and spread to distros more)
   O Sound Indicator for the Ubuntu Sound Menu (Use new unity API for SoundMenu (https://launchpad.net/hello-unity))
@@ -20,6 +23,7 @@ O Party View (Fullscreen)
 O Scrobbling Support (using decibel code)
 O Shuffle
 O Repeat
+O Playlist loading
 
 
 === Features that will NOT be implemented ===
