@@ -91,8 +91,10 @@ class ExtTreeView(gtk.TreeView):
 
     def __getSafeIter(self, path):
         """ Return None if path is None, an iter on path otherwise """
-        if path is None: return None
-        else:            return self.store.get_iter(path)
+        if path is None:
+            return None
+        else:
+            return self.store.get_iter(path)
 
 
     def scroll(self, path):
@@ -178,8 +180,10 @@ class ExtTreeView(gtk.TreeView):
         """ Return a path to the given child, or None if none """
         child = self.store.iter_nth_child(self.__getSafeIter(parentPath), num)
 
-        if child is None: return None
-        else:             return self.store.get_path(child)
+        if child is None:
+            return None
+        else:
+            return self.store.get_path(child)
 
 
     def iterChildren(self, parentPath):
