@@ -8,14 +8,14 @@ msgstr ""
 "Project-Id-Version: decibel-audio-player\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2012-07-24 11:16+0200\n"
-"PO-Revision-Date: 2010-10-07 11:31+0000\n"
-"Last-Translator: Jon Stødle <jonstodle@gmail.com>\n"
+"PO-Revision-Date: 2015-07-04 12:55+0000\n"
+"Last-Translator: Yngve Spjeld Landro <l10n@landro.net>\n"
 "Language-Team: Norwegian Nynorsk <nn@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2015-05-22 04:50+0000\n"
-"X-Generator: Launchpad (build 17514)\n"
+"X-Launchpad-Export-Date: 2015-07-05 05:40+0000\n"
+"X-Generator: Launchpad (build 17597)\n"
 
 #: ../src/media/track/__init__.py:52
 msgid "Track number"
@@ -80,7 +80,7 @@ msgstr ""
 
 #: ../src/gui/preferences.py:43
 msgid "Preferences"
-msgstr "Instillingar"
+msgstr "Innstillingar"
 
 #: ../src/gui/preferences.py:129
 msgid "Unable to load this module."
@@ -121,7 +121,8 @@ msgstr ""
 msgid "translator-credits"
 msgstr ""
 "Launchpad Contributions:\n"
-"  Jon Stødle https://launchpad.net/~jonstodle"
+"  Jon Stødle https://launchpad.net/~jonstodle\n"
+"  Yngve Spjeld Landro https://launchpad.net/~yslandro"
 
 #: ../src/gui/about.py:44
 msgid "Developer:"
