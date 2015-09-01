@@ -63,16 +63,28 @@ class Search(modules.ThreadedModule):
             cmd = ['find', dir]
             for part in query.split():
                 cmd.extend(['-iwholename', '*%s*' % part])
-        search = subprocess.Popen(cmd, stdout=subprocess.PIPE)
+
         if query == CACHE_QUERY:
             logging.info('Caching "%s"' % dir)
+        else:
+            logging.info('Searching with command: %s' % ' '.join(cmd))
+
+        try:
+            search = subprocess.Popen(cmd, stdout=subprocess.PIPE)
+        except OSError as err:
+            logging.warning('Command failed: %s' % cmd)
+            return None
+
+        if query == CACHE_QUERY:
             return []
-        logging.info('Searching with command: %s' % ' '.join(cmd))
+
         self.searches.append(search)
         output, errors = search.communicate()
+
         if search.returncode < 0:
             # Process was killed
             return None
+
         output = sorted(output.splitlines(), key=str.lower)
         logging.info('Results for %s in %s: %s' % (query, dir, len(output)))
         return output
@@ -221,7 +233,7 @@ class Search(modules.ThreadedModule):
         for dir in self.get_search_paths() + [consts.dirBaseUsr]:
             # Check if search has been aborted during filtering
             if self.should_stop:
-                return
+                break
 
             # Only search in home folder if we haven't found anything yet.
             if dir == consts.dirBaseUsr and self.found_something:
@@ -231,7 +243,7 @@ class Search(modules.ThreadedModule):
 
             # Check if search has been aborted during searching
             if results is None or self.should_stop:
-                return
+                break
 
             dirs, files = self.filter_results(results, dir, regex)
             if not self.should_stop and (dirs or files):
