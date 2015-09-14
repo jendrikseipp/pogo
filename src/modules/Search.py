@@ -72,7 +72,7 @@ class Search(modules.ThreadedModule):
         try:
             search = subprocess.Popen(cmd, stdout=subprocess.PIPE)
         except OSError as err:
-            logging.warning('Command failed: %s' % cmd)
+            logging.warning('Command %s failed: %s' % (cmd, err))
             return None
 
         if query == CACHE_QUERY:

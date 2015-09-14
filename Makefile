@@ -29,9 +29,9 @@ help:
 	@echo "make clean     - removes temporary data"
 	@echo "make install   - installs data"
 	@echo "make uninstall - uninstalls data"
+	@echo "make test      - runs tests"
 	@echo "make help      - prints this help"
 	@echo
-
 
 install:
 	cat pogo.py | $(CONFIGURE_IN) > pogo;
@@ -63,7 +63,6 @@ install:
 		$(INSTALL) -m 644 locale/$$lang/LC_MESSAGES/pogo.mo $(LOCALEDIR)/$$lang/LC_MESSAGES/; \
 	done
 
-
 uninstall:
 	${RM} $(BINDIR)/pogo
 	${RM} $(APPDIR)/pogo.desktop
@@ -80,4 +79,7 @@ clean:
 	${RM} src/*.py[co] res/*~ res/*.bak
 	${RM} pogo
 
-.PHONY: help clean install
+test:
+	pyflakes src
+
+.PHONY: help clean install test
