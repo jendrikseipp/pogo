@@ -112,11 +112,6 @@ class ExtTreeView(gtk.TreeView):
     # --== Retrieving content ==--
 
 
-    def getCount(self):
-        """ Return how many rows are stored in the tree """
-        return len(self.store)
-
-
     def __len__(self):
         """ Return how many rows are stored in the tree """
         return len(self.store)
@@ -133,11 +128,6 @@ class ExtTreeView(gtk.TreeView):
     def getRow(self, path):
         """ Return the given row """
         return tuple(self.store[path])
-
-
-    def getRows(self, paths):
-        """ Return the given rows """
-        return [tuple(self.store[path]) for path in paths]
 
 
     def getSelectedRows(self):
@@ -159,11 +149,6 @@ class ExtTreeView(gtk.TreeView):
     def getSelectedRowsCount(self):
         """ Return how many rows are currently selected """
         return self.selection.count_selected_rows()
-
-
-    def isRowSelected(self, rowPath):
-        """ Return whether the given is selected """
-        return self.selection.path_is_selected(rowPath)
 
 
     def getItem(self, rowPath, colIndex):
@@ -234,11 +219,6 @@ class ExtTreeView(gtk.TreeView):
         self.store.insert_before(self.__getSafeIter(parentPath), self.store.get_iter(siblingPath), row)
 
 
-    def insertRowAfter(self, row, parentPath, siblingPath):
-        """ Insert a row as a child of parent after siblingPath """
-        self.store.insert_after(self.__getSafeIter(parentPath), self.store.get_iter(siblingPath), row)
-
-
     def removeRow(self, rowPath):
         """ Remove the given row """
         self.store.remove(self.store.get_iter(rowPath))
@@ -296,52 +276,9 @@ class ExtTreeView(gtk.TreeView):
     # --== D'n'D management ==--
 
 
-    def setIsDraggableFunc(self, isDraggableFunc):
-        """ The function must return True is the selected rows can be dragged, False otherwise """
-        self.isDraggableFunc = isDraggableFunc
-
-
     def setDNDSources(self, sources):
         """ Define which kind of D'n'D this tree will generate """
         self.dndSources = sources
-
-
-    # --== Saving/restoring the current state of the tree ==--
-
-
-    def saveState(self, nameIndex):
-        """
-            Return a structure representing the current state of the tree
-            The nameIndex parameter is the index of the value that stores rows' name
-        """
-        import collections
-
-        queue         = collections.deque((None,))
-        expandedNodes = []
-
-        while len(queue) != 0:
-            for row in self.iterChildren(queue.pop()):
-                if self.row_expanded(row):
-                    queue.append(row)
-                    expandedNodes.append((row, self.getRow(row)[nameIndex]))
-
-        return (self.get_visible_range(), self.selection.get_selected_rows()[1], expandedNodes)
-
-
-    def restoreState(self, state, nameIndex):
-        """ Try to restore the given state, saved with saveState() """
-        (visibleRange, selectedRows, expandedNodes) = state
-
-        for (row, name) in expandedNodes:
-            if self.isValidPath(row) and self.getRow(row)[nameIndex] == name and not self.row_expanded(row):
-                self.expand_row(row, False)
-
-        if visibleRange is not None:
-            if visibleRange[0][0] == 0: self.scrollToPoint(0, 0)
-            else:                       self.scroll(visibleRange[0])
-
-        for path in selectedRows:
-            self.selection.select_path(path)
 
 
     # --== GTK Handlers ==--
