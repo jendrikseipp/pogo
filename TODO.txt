@@ -1,6 +1,7 @@
 === Roadmap ===
 
-X Add tests. Run with "make test".
+X Don't crash when 'find' or 'locate' are missing.
+X Add pyflakes test. Run with "make test".
 O Search whole system by default (after "locate" finishes)
 O Add application-wide message system for warnings. Should use event system.
 O Show warning if search commands fail.
