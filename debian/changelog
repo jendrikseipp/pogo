@@ -1,3 +1,11 @@
+pogo (0.8.5-1) UNRELEASED; urgency=low
+
+  * New upstream release
+  * Don't crash when 'find' or 'locate' are missing.
+  * Add pyflakes test. Run with "make test".
+
+ -- Jendrik Seipp <jendrikseipp@web.de>  Fri, 18 Sep 2015 19:07:23 +0200
+
 pogo (0.8.4-1) UNRELEASED; urgency=low
 
   * New upstream release
