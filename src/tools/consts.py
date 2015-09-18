@@ -108,13 +108,11 @@ UNKNOWN_ALBUM_ARTIST = _('Unknown Album Artist')
 (
     DND_URI,          # From another application (e.g., from Nautilus)
     DND_POGO_URI,      # Inside Pogo when tags are not known (e.g., from the FileExplorer)
-    DND_POGO_TRACKS    # Inside Pogo when tags are already known (e.g., from the Library)
-) = range(3)
+) = range(2)
 
 DND_TARGETS = {
                 DND_URI:         ('text/uri-list',   0,                   DND_URI),
                 DND_POGO_URI:    ('pogo/uri-list',    gtk.TARGET_SAME_APP, DND_POGO_URI),
-                DND_POGO_TRACKS: ('pogo/tracks-list', gtk.TARGET_SAME_APP, DND_POGO_TRACKS)
               }
 
 
