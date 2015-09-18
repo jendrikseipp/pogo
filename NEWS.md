@@ -1,3 +1,9 @@
+0.8.5 "3. Stock" (15-09-18)
+===========================
+* Don't crash when 'find' or 'locate' are missing.
+* Add pyflakes test. Run with "make test".
+
+
 0.8.4 "Oma gib Handtasche" (15-05-14)
 =====================================
 * Skip non-existing files during exports.
