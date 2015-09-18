@@ -102,7 +102,7 @@ class DBus(modules.Module):
             self.busName    = dbus.service.BusName(consts.dbusService, bus=self.sessionBus)
 
             # Create the three MPRIS objects
-            self.busObjectRoot      = DBusObjectRoot(self.busName, self)
+            DBusObjectRoot(self.busName, self)
             self.busObjectPlayer    = DBusObjectPlayer(self.busName, self)
             self.busObjectTracklist = DBusObjectTracklist(self.busName, self)
         except:

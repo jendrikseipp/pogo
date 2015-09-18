@@ -356,29 +356,30 @@ mEnabledModules = prefs.get(__name__, 'enabled_modules', [])                   #
 blacklist = ['__init__.py', 'Zeitgeist.py']
 
 
-# Find modules, instantiate those that are mandatory or that have been previously enabled by the user
-sys.path.append(mModDir)
-for file in sorted(os.path.splitext(file)[0] for file in os.listdir(mModDir)
-                   if file.endswith('.py') and file not in blacklist):
-    try:
-        pModule = __import__(file)
-        modInfo = getattr(pModule, 'MOD_INFO')
+def load_enable_modules():
+    # Find modules, instantiate those that are mandatory or that have been previously enabled by the user
+    sys.path.append(mModDir)
+    for file in sorted(os.path.splitext(file)[0] for file in os.listdir(mModDir)
+                       if file.endswith('.py') and file not in blacklist):
+        try:
+            pModule = __import__(file)
+            modInfo = getattr(pModule, 'MOD_INFO')
 
-        # Should it be instanciated?
-        instance = None
-        if modInfo[MODINFO_MANDATORY] or modInfo[MODINFO_NAME] in mEnabledModules:
-            if len(__checkDeps(modInfo[MODINFO_DEPS])) == 0:
-                instance = getattr(pModule, file)()
-                instance.start()
-                log.logger.info('Module loaded: %s' % file)
-            else:
-                log.logger.error('Unable to load module %s because of missing dependencies' % file)
+            # Should it be instanciated?
+            instance = None
+            if modInfo[MODINFO_MANDATORY] or modInfo[MODINFO_NAME] in mEnabledModules:
+                if len(__checkDeps(modInfo[MODINFO_DEPS])) == 0:
+                    instance = getattr(pModule, file)()
+                    instance.start()
+                    log.logger.info('Module loaded: %s' % file)
+                else:
+                    log.logger.error('Unable to load module %s because of missing dependencies' % file)
 
-        # Add it to the dictionary
-        mModules[modInfo[MODINFO_NAME]] = [pModule, file, instance, modInfo]
-    except:
-        log.logger.error('Unable to load module %s\n\n%s' % (file, traceback.format_exc()))
+            # Add it to the dictionary
+            mModules[modInfo[MODINFO_NAME]] = [pModule, file, instance, modInfo]
+        except:
+            log.logger.error('Unable to load module %s\n\n%s' % (file, traceback.format_exc()))
 
-# Remove enabled modules that are no longer available
-mEnabledModules[:] = [module for module in mEnabledModules if module in mModules]
-prefs.set(__name__, 'enabled_modules', mEnabledModules)
+    # Remove enabled modules that are no longer available
+    mEnabledModules[:] = [module for module in mEnabledModules if module in mModules]
+    prefs.set(__name__, 'enabled_modules', mEnabledModules)

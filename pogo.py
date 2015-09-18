@@ -140,6 +140,8 @@ def realStartup(window, paned):
     import dbus.mainloop.glib
     import modules
 
+    modules.load_enable_modules()
+
     def onDelete(win, event):
         """ Use our own quit sequence, that will itself destroy the window """
         win.hide()
