@@ -215,8 +215,10 @@ class DBusObjectTracklist(dbus.service.Object):
     @dbus.service.method(consts.dbusInterface, in_signature='', out_signature='i')
     def GetCurrentTrack(self):
         """ Return the position of current URI in the TrackList """
-        if self.module.currTrack is None: return -1
-        else:                             return self.module.currTrack.getPlaylistPos()-1
+        if self.module.currTrack is None:
+            return -1
+        else:
+            raise NotImplementedError
 
 
     @dbus.service.method(consts.dbusInterface, in_signature='', out_signature='i')

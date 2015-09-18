@@ -96,8 +96,6 @@ class Track:
     def setGenre(self, genre):             self.tags[TAG_GEN] = genre
     def setDate(self, date):               self.tags[TAG_DAT] = date
     def setMBTrackId(self, id):            self.tags[TAG_MBT] = id
-    def setPlaylistPos(self, pos):         self.tags[TAG_PLP] = pos
-    def setPlaylistLen(self, len):         self.tags[TAG_PLL] = len
     def setBitrate(self, bitrate):         self.tags[TAG_BTR] = bitrate
     def setSampleRate(self, sampleRate):   self.tags[TAG_SMP] = sampleRate
     def setVariableBitrate(self):          self.tags[TAG_MOD] = 1
@@ -113,8 +111,6 @@ class Track:
     def hasGenre(self):       return TAG_GEN in self.tags
     def hasDate(self):        return TAG_DAT in self.tags
     def hasMBTrackId(self):   return TAG_MBT in self.tags
-    def hasPlaylistPos(self): return TAG_PLP in self.tags
-    def hasPlaylistLen(self): return TAG_PLL in self.tags
     def hasBitrate(self):     return TAG_BTR in self.tags
     def hasSampleRate(self):  return TAG_SMP in self.tags
 
@@ -140,8 +136,6 @@ class Track:
     def getDate(self):        return self.__get(TAG_DAT, consts.UNKNOWN_DATE)
     def getEncMode(self):     return self.__get(TAG_MOD, consts.UNKNOWN_ENC_MODE)
     def getMBTrackId(self):   return self.__get(TAG_MBT, consts.UNKNOWN_MB_TRACKID)
-    def getPlaylistPos(self): return self.__get(TAG_PLP, -1)
-    def getPlaylistLen(self): return self.__get(TAG_PLL, -1)
 
     def getBitrate(self):
         """ Transform the bit rate into a string """
@@ -254,8 +248,6 @@ class Track:
         result = result.replace( '{sample_rate}',  str(self.getSampleRate())  )
         result = result.replace( '{duration_sec}', str(self.getLength())      )
         result = result.replace( '{duration_str}', sec2str(self.getLength())  )
-        result = result.replace( '{playlist_pos}', str(self.getPlaylistPos()) )
-        result = result.replace( '{playlist_len}', str(self.getPlaylistLen()) )
 
         return result
 
@@ -279,8 +271,6 @@ class Track:
         result = result.replace( '{sample_rate}',  self.getSampleRate()                 )
         result = result.replace( '{duration_sec}', str(self.getLength())                )
         result = result.replace( '{duration_str}', sec2str(self.getLength())            )
-        result = result.replace( '{playlist_pos}', str(self.getPlaylistPos())           )
-        result = result.replace( '{playlist_len}', str(self.getPlaylistLen())           )
 
         return result
 
