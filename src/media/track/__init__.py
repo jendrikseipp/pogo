@@ -39,12 +39,10 @@ from tools import consts, sec2str
     TAG_GEN,  # Genre
     TAG_DAT,  # Year
     TAG_MBT,  # MusicBrainz track id
-    TAG_PLP,  # Position in the playlist
-    TAG_PLL,  # Length of the playlist
     TAG_BTR,  # Bit rate
     TAG_MOD,  # Constant or variable bit rate
     TAG_SMP,  # Sample rate
-) = range(17)
+) = range(15)
 
 
 # Special fields that may be used to call format()
@@ -60,8 +58,6 @@ FIELDS = (
             ( 'sample_rate' , _('Sample rate')                           ),
             ( 'duration_sec', _('Duration in seconds (e.g., 194)')       ),
             ( 'duration_str', _('Duration as a string (e.g., 3:14)')     ),
-            ##( 'playlist_pos', _('Position of the track in the playlist') ),
-            ##( 'playlist_len', _('Number of tracks in the playlist')      ),
             ( 'path'        , _('Full path to the file')                 ),
          )
 
