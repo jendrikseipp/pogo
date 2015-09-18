@@ -1,31 +1,31 @@
- 0.8.4 "Oma gib Handtasche" (15-05-14)
-======================================
+0.8.4 "Oma gib Handtasche" (15-05-14)
+=====================================
 * Skip non-existing files during exports.
 * Don't crash when clearing the playlist.
 * Log system info and library versions for easier debugging.
 
 
- 0.8.3 "Radioactive" (14-07-25)
-===============================
+0.8.3 "Radioactive" (14-07-25)
+==============================
 * Display filename in notification if track title is unknown.
 * Apply fix from decibel: Don't set VBR information for MP3 files (#1202195).
 * Apply fix from decibel: Remove obsolete volume handling code.
 
 
- 0.8.2 "Please don't go, I love you so" (13-06-30)
-==================================================
+0.8.2 "Please don't go, I love you so" (13-06-30)
+=================================================
 * Update the clickable buttons after the tracks have been rearranged (lp:1191891).
 * Disable zeitgeist module since its DBus interface causes problems frequently.
 
 
- 0.8.1 "Like anything could happen" (13-01-20)
-==============================================
+0.8.1 "Like anything could happen" (13-01-20)
+=============================================
 * Support Pillow in addition to PIL.
 * Disable zeitgeist module to avoid startup errors on Ubuntu 12.10.
 
 
- 0.8 "You thought you'd set the bar" (2012-09-05)
-=================================================
+0.8 "You thought you'd set the bar" (2012-09-05)
+================================================
 * Control pogo from the commandline. The commands play, pause, next, prev and stop are supported. (lp:986164)
 * When pogo is started with tracks on the commandline, append the tracks to the old playlist.
 * Start playback automatically at startup by calling "pogo play".
