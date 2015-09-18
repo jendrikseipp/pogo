@@ -7,9 +7,26 @@ SRC_DIR = os.path.join(BASE_DIR, "src")
 
 sys.path.insert(0, SRC_DIR)
 
-from modules.DBus import DBus, DBusObjectRoot, DBusObjectTracklist, DBusObjectPlayer
+from modules import Covers, CtrlPanel, DBus, DesktopNotification, Equalizer, \
+    FileExplorer, GnomeMediaKeys, GSTPlayer, Search, StatusbarTitlebar, \
+    TrackLoader, TrackPanel, Tracktree, Zeitgeist
 
-dbus = DBus
+Covers.Covers
+CtrlPanel.CtrlPanel
+DBus.DBus
+DesktopNotification.DesktopNotification
+Equalizer.Equalizer
+FileExplorer.FileExplorer
+GnomeMediaKeys.GnomeMediaKeys
+GSTPlayer.GSTPlayer
+Search.Search
+StatusbarTitlebar.StatusbarTitlebar
+TrackLoader.TrackLoader
+TrackPanel.TrackPanel
+Tracktree.Tracktree
+Zeitgeist.Zeitgeist
+
+from modules.DBus import DBusObjectRoot, DBusObjectTracklist, DBusObjectPlayer
 
 dbor = DBusObjectRoot
 dbor.Identity

@@ -356,7 +356,7 @@ mEnabledModules = prefs.get(__name__, 'enabled_modules', [])                   #
 blacklist = ['__init__.py', 'Zeitgeist.py']
 
 
-def load_enable_modules():
+def load_enabled_modules():
     # Find modules, instantiate those that are mandatory or that have been previously enabled by the user
     sys.path.append(mModDir)
     for file in sorted(os.path.splitext(file)[0] for file in os.listdir(mModDir)
