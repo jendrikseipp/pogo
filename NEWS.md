@@ -37,8 +37,8 @@
 * Update translations.
 
 
- 0.7 "It has a melody both happy and sad" (2012-04-27)
-======================================================
+0.7 "It has a melody both happy and sad" (2012-04-27)
+=====================================================
 * Search in home folder if we haven't found anything in the music directories.
 * Do not search in subdirectories if we already search in parent directory.
 * Only show filename and at most one parent dir for each file in search results.
@@ -46,8 +46,8 @@
 * Update translations.
 
 
- 0.6 "I will be a bridge for you" (2012-03-26)
-==============================================
+0.6 "I will be a bridge for you" (2012-03-26)
+=============================================
 * Show search results immediately after they're found for each music directory
 * Search in playlist as well and highlight results
 * Add Zeitgeist module that logs played albums
@@ -56,8 +56,8 @@
 * Update translations
 
 
- 0.5 "Rolling in the deep" (2012-01-12)
-=======================================
+0.5 "Rolling in the deep" (2012-01-12)
+======================================
 * Export tracks in playlist into a directory (with subdirectories)
 * Save playlist periodically to prevent losing it during a shutdown (LP:669132)
 * Usability: Select new track when old selected is deleted
@@ -73,8 +73,8 @@
 * Log all messages to log file
 
 
- 0.4 "I'm a complicated guy" (2011-03-14)
-=========================================
+0.4 "I'm a complicated guy" (2011-03-14)
+========================================
 * Support for WAV files (LP:684161)
 * Export playlist to .m3u format (right-click playlist)
 * Show "Open containing folder" in context menu also for seaches
@@ -90,8 +90,8 @@
 * Update translations
 
 
- 0.3.1 "You are a radar detector" (2010-12-26)
-==============================================
+0.3.1 "You are a radar detector" (2010-12-26)
+=============================================
 * When a track is added from nautilus etc. start playback if not already playing
 * Show info messages when no music directories have been added
 * Stop old search when user clears search field or enters new search phrase
@@ -100,8 +100,8 @@
 * Translations updated
 
 
- 0.3 "I go hard, I go home" (2010-12-01)
-========================================
+0.3 "I go hard, I go home" (2010-12-01)
+=======================================
 * Search for tracks in the music folders (Directories below separator)
 * Searching supports * and ? wildcards
 * Let users add and hide directories in file browser
@@ -113,8 +113,8 @@
 * Updated Translations
 
 
- 0.2 "I hold the candle while you dance upon the flame" (2010-10-21)
-====================================================================
+0.2 "I hold the candle while you dance upon the flame" (2010-10-21)
+===================================================================
 * Make startup even faster by saving the playlist with its formatting
 * Make track drag'n'drop faster by caching the tracks
 * MPRIS support: Send DBus messages about play events (code from decibel)
@@ -127,8 +127,8 @@
 * Updated Translations
 
 
- 0.1 "Businessmen drink my blood" (2010-10-05)
-==============================================
+0.1 "Businessmen drink my blood" (2010-10-05)
+=============================================
 * Initial release
 * Fork decibel audio player
 * Rebranding
