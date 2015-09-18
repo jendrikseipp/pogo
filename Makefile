@@ -80,6 +80,6 @@ clean:
 	${RM} pogo
 
 test:
-	pyflakes src
+	pyflakes src pogo.py
 
 .PHONY: help clean install test
