@@ -656,14 +656,6 @@ class Tracktree(modules.Module):
         dir_selected = any(map(os.path.isdir, paths))
         self.tree.dir_selected = dir_selected
         if dir_selected:
-            # Save expanded rows
-            #def expanded(treeview, path):
-            #    row = self.tree.store.get_iter(path)
-            #    self.tree.expanded_rows.append(row)
-
-            #self.tree.expanded_rows = []
-            #self.tree.map_expanded_rows(expanded)
-
             self.tree.collapse_all()
 
 

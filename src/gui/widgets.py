@@ -76,7 +76,6 @@ class TrackTreeView(ExtTreeView):
         #self.connect('button-press-event', self.onButtonPressed)
 
         self.mark = None
-        self.expanded_rows = []
         self.dir_selected = True
 
 

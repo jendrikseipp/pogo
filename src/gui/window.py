@@ -32,7 +32,7 @@ class Window(gtk.Window):
         """ Constructor """
         gtk.Window.__init__(self)
         # Load only the top-level container of the given .ui file
-        self.wTree, self.wBuilder = tools.loadGladeFile(resFile, container)
+        _, self.wBuilder = tools.loadGladeFile(resFile, container)
         self.visible = False
         self.modName = modName
         # Configure the window

@@ -189,18 +189,6 @@ def get_pattern(string):
         pattern = pattern.replace('\\' + quantifier, '.' + quantifier)
     return pattern
 
-def read_file(filename):
-    """Tries to read a given file"""
-    try:
-        # codecs.open returns a file object that can write unicode objects
-        # and whose read() method also returns unicode objects
-        # Internally we want to have unicode only
-        with codecs.open(filename, 'rb', encoding='utf-8', errors='replace') as file:
-            data = file.read()
-            return data
-    except Exception, e:
-        logging.error('Error while reading "%s": %s' % (filename, e))
-    return ''
 
 def write_file(filename, content):
     assert os.path.isabs(filename), filename
