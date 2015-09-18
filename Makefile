@@ -51,7 +51,7 @@ install:
 	$(INSTALL) -m 644 src/media/format/*.py $(SRCDIR)/media/format
 	$(INSTALL) -m 644 src/modules/*.py $(SRCDIR)/modules
 	$(INSTALL) -m 644 res/*.ui $(RESDIR)
-	$(INSTALL) -m 644 doc/pogo.1 $(MANDIR)
+	$(INSTALL) -m 644 res/pogo.1 $(MANDIR)
 	$(INSTALL) -m 644 pix/*.png $(PIXDIR)
 	$(INSTALL) -m 644 pix/pogo.png $(ICONDIR)
 	$(INSTALL) -m 644 res/pogo.desktop $(APPDIR)
