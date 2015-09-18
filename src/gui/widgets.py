@@ -117,15 +117,6 @@ class TrackTreeView(ExtTreeView):
         for iter in self.getSelectedRows():
             yield iter
 
-    def removeSelectedRows(self):
-        '''
-        Remove the rows in reverse order.
-        Otherwise we remove the wrong rows,
-        because the paths will have changed
-        '''
-        for iter in reversed(self.getSelectedRows()):
-            self.removeRow(iter)
-
     def setItem(self, iter, colIndex, value):
         """ Change the value of the given item """
         self.store.set_value(iter, colIndex, value)

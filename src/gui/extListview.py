@@ -223,16 +223,6 @@ class ExtListView(gtk.TreeView):
         return self.markedRow is not None
 
 
-    def hasMarkAbove(self, index):
-        """ True if a mark is set and is above the given index """
-        return self.markedRow is not None and self.markedRow > index
-
-
-    def hasMarkUnder(self, index):
-        """ True if a mark is set and is undex the given index """
-        return self.markedRow is not None and self.markedRow < index
-
-
     def clearMark(self):
         """ Remove the mark """
         if self.markedRow is not None:
@@ -333,18 +323,6 @@ class ExtListView(gtk.TreeView):
         self.selection.unselect_all()
 
 
-    def selectAll(self):
-        """ Select all rows """
-        self.selection.select_all()
-
-
-    def selectRows(self, paths):
-        """ Select the given rows """
-        self.unselectAll()
-        for path in paths:
-            self.selection.select_path(path)
-
-
     def getSelectedRowsCount(self):
         """ Return how many rows are currently selected """
         return self.selection.count_selected_rows()
@@ -358,11 +336,6 @@ class ExtListView(gtk.TreeView):
     def getFirstSelectedRow(self):
         """ Return only the first selected row """
         return tuple(self.store[self.selection.get_selected_rows()[1][0]])[:-1]
-
-
-    def getFirstSelectedRowIndex(self):
-        """ Return the index of the first selected row """
-        return self.selection.get_selected_rows()[1][0][0]
 
 
     def iterSelectedRows(self):
@@ -379,18 +352,7 @@ class ExtListView(gtk.TreeView):
         return len(self.store)
 
 
-    def getCount(self):
-        """ Return how many rows are stored in the list """
-        return len(self.store)
-
-
     def __iter__(self):
-        """ Iterate on all rows """
-        for row in self.store:
-            yield tuple(row)[:-1]
-
-
-    def iterAllRows(self):
         """ Iterate on all rows """
         for row in self.store:
             yield tuple(row)[:-1]
@@ -399,11 +361,6 @@ class ExtListView(gtk.TreeView):
     def getRow(self, rowIndex):
         """ Return the given row """
         return tuple(self.store[rowIndex])[:-1]
-
-
-    def getAllRows(self):
-        """ Return all rows """
-        return [tuple(row)[:-1] for row in self.store]
 
 
     def getItem(self, rowIndex, colIndex):
@@ -455,23 +412,6 @@ class ExtListView(gtk.TreeView):
     def removeRow(self, path):
         """ Remove the given row """
         self.removeRows((path, ))
-
-
-    def removeSelectedRows(self):
-        """ Remove the selected row(s) """
-        self.removeRows(self.selection.get_selected_rows()[1])
-
-
-    def cropSelectedRows(self):
-        """ Remove all rows but the selected ones """
-        pathsList = self.selection.get_selected_rows()[1]
-        self.freeze_child_notify()
-        self.selection.select_all()
-        for path in pathsList:
-            self.selection.unselect_path(path)
-        self.removeSelectedRows()
-        self.selection.select_all()
-        self.thaw_child_notify()
 
 
     def insertRows(self, rows, position=None):
