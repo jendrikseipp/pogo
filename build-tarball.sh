@@ -1,6 +1,6 @@
-#!/bin/sh
+#! /bin/bash
 
-set -e
+set -euo pipefail
 
 VERSION=`python -c "import sys; sys.path.append('src/tools'); import consts; print consts.appVersion"`
 ARCHIVE="pogo-$VERSION.tar.gz"
@@ -13,8 +13,8 @@ fi
 mkdir $DEST
 
 # Make clean
-find -type f -name "*.pyc" -exec rm -f {} \;
-find -type f -name "*.pyo" -exec rm -f {} \;
+find -type f -name "*.pyc" -delete
+find -type f -name "*.pyo" -delete
 
 # Sources
 cp -R ./src $DEST/
@@ -44,12 +44,8 @@ mkdir $DEST/po
 cp ./po/*.po $DEST/po/
 cp ./po/Makefile $DEST/po/
 
-# Remove .svn and .bzr directories
-find $DEST -type d -name ".svn" -exec rm -rf {} \; > /dev/null 2>&1
-find $DEST -type d -name ".bzr" -exec rm -rf {} \; > /dev/null 2>&1
-
 # Sources: Make sure to remove non-Python files
-find $DEST/src -type f ! -name "*.py" -exec rm -f {} \;
+find $DEST/src -type f ! -name "*.py" -delete
 
 tar czf $ARCHIVE $DEST
 rm -rf $DEST
