@@ -35,7 +35,7 @@ cp pogo.py $DEST/
 mkdir $DEST/doc
 cp ./doc/COPYING $DEST/
 cp ./doc/NEWS $DEST/
-cp ./doc/README $DEST/
+cp ./README.md $DEST/
 
 cp ./doc/pogo.1 $DEST/doc
 
