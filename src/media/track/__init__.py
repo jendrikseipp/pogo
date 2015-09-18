@@ -313,28 +313,6 @@ class Track:
         """ Set the disctionary of tags """
         self.tags = tags
 
-
-    def serialize(self):
-        """ Serialize this Track object, return the corresponding string """
-        tags = []
-        for tag, value in self.tags.iteritems():
-            tags.append(str(tag))
-            tags.append((str(value)).replace(' ', '\x00'))
-        return ' '.join(tags)
-
-
-    def unserialize(self, serialTrack):
-        """ Unserialize the given track"""
-        tags = serialTrack.split(' ')
-        for i in xrange(0, len(tags), 2):
-            tag = int(tags[i])
-
-            if tag in (TAG_NUM, TAG_LEN, TAG_DNB, TAG_DAT, TAG_PLP, TAG_PLL,
-                       TAG_BTR, TAG_SMP, TAG_MOD):
-                self.tags[tag] = int(tags[i+1])
-            else:
-                self.tags[tag] = tags[i+1].replace('\x00', ' ')
-
     def get_label(self, parent_label=None, playing=False):
         """
         Return a treeview representation
@@ -400,10 +378,3 @@ class Track:
 
     def __repr__(self):
         return '<Track %s>' % self.get_window_title()
-
-
-def unserialize(serialTrack):
-    """ Return the Track object corresponding to the given serialized version """
-    t = Track()
-    t.unserialize(serialTrack)
-    return t
