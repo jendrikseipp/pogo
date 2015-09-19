@@ -1,5 +1,7 @@
 === Roadmap ===
 
+X Fix version number.
+X Update translations.
 O Search whole system by default (after "locate" finishes)
 O Add application-wide message system for warnings. Should use event system.
 O Show warning if search commands fail.
