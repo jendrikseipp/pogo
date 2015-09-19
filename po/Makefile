@@ -41,7 +41,7 @@ update: $(POFILES)
 dist: $(POFILES:%.po=../locale/%/LC_MESSAGES/pogo.mo)
 
 clean:
-	$(RM) $(GLADEHFILES)
+	$(RM) $(UIHFILES)
 	$(RM) $(POFILES:%.po=../locale/%/LC_MESSAGES/pogo.mo)
 	#$(RM) pogo.pot
 
