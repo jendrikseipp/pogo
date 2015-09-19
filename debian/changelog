@@ -1,3 +1,11 @@
+pogo (0.8.6-1) UNRELEASED; urgency=low
+
+  * New upstream release
+  * Fix version number.
+  * Update translations.
+
+ -- Jendrik Seipp <jendrikseipp@web.de>  Sat, 19 Sep 2015 12:07:24 +0200
+
 pogo (0.8.5-1) UNRELEASED; urgency=low
 
   * New upstream release
