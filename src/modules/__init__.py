@@ -184,9 +184,6 @@ class ModuleBase:
     def configure(self, parent):
         pass
 
-    def handleMsg(self, msg, params):
-        pass
-
     def restartRequired(self):
         gobject.idle_add(gui.infoMsgBox, None, _('Restart required'),
             _('You must restart the application for this modification to take effect.'))
