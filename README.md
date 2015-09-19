@@ -40,7 +40,7 @@ Pogo depends on the Python runtime and the following libraries:
   * PyGST (>= 0.10.2):    http://gstreamer.freedesktop.org/
   * Mutagen (>= 1.10):    http://code.google.com/p/mutagen/
   * Python DBus:          http://dbus.freedesktop.org/
-  * Python Imaging (PIL): http://www.pythonware.com/products/pil/
+  * Pillow:               https://github.com/python-pillow/Pillow
 
 Recommended libraries (it is likely that they are already installed):
 

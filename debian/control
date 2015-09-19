@@ -5,9 +5,9 @@ Maintainer: Jendrik Seipp <jendrikseipp@web.de>
 Build-Depends: debhelper (>= 7.0.50~)
 Build-Depends-Indep: python (>=2.5), python-support
 Standards-Version: 3.9.2
-Homepage: http://launchpad.net/pogo
-Vcs-Bzr: lp:pogo
-Vcs-Browser: http://bazaar.launchpad.net/~jendrikseipp/pogo/trunk/files
+Homepage: https://github.com/jendrikseipp/pogo
+Vcs-Git: git://github.com/jendrikseipp/pogo.git
+Vcs-Browser: https://github.com/jendrikseipp/pogo
 
 Package: pogo
 Architecture: all
@@ -17,6 +17,7 @@ Depends: ${python:Depends},
          python-mutagen (>= 1.10),
          python-gst0.10 (>=0.10),
          python-dbus,
+         python-pil,
          gstreamer0.10-plugins-base,
          gstreamer0.10-plugins-good,
          gstreamer0.10-alsa

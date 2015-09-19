@@ -36,7 +36,7 @@ commands = ['play', 'pause', 'prev', 'next', 'stop']
 
 
 # --- URLs
-urlMain = 'http://launchpad.net/pogo'
+urlMain = 'https://github.com/jendrikseipp/pogo'
 urlHelp = 'http://answers.launchpad.net/pogo'
 
 
