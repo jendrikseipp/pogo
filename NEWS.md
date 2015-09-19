@@ -1,3 +1,9 @@
+0.8.6 "Ich bin zu jung" (15-09-19)
+==================================
+* Fix version number.
+* Update translations.
+
+
 0.8.5 "3. Stock" (15-09-18)
 ===========================
 * Don't crash when 'find' or 'locate' are missing.
