@@ -183,18 +183,6 @@ class ExtTreeView(gtk.TreeView):
     # --== Adding/removing content ==--
 
 
-    def replaceContent(self, rows):
-        """ Replace the content of the list with the given rows """
-        parent = self.__getSafeIter(None)
-        self.freeze_child_notify()
-        self.set_model(None)
-        self.store.clear()
-        for row in rows:
-            self.store.append(parent, row)
-        self.set_model(self.store)
-        self.thaw_child_notify()
-
-
     def clear(self):
         """ Remove all rows from the tree """
         self.store.clear()

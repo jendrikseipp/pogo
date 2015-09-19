@@ -58,7 +58,6 @@ class TrackTreeView(ExtTreeView):
         self.dndTargets    = consts.DND_TARGETS.values()
         self.motionEvtId   = None
         self.dndStartPos   = None
-        self.dndReordering = False
 
         self.dndStartPos     = None
         self.isDraggableFunc = lambda: True
@@ -426,7 +425,6 @@ class TrackTreeView(ExtTreeView):
 
     def enableDNDReordering(self):
         """ Enable the use of Drag'n'Drop to reorder the list """
-        self.dndReordering = True
         self.dndTargets.append(DND_INTERNAL_TARGET)
         self.enable_model_drag_dest(self.dndTargets, gtk.gdk.ACTION_DEFAULT)
 
