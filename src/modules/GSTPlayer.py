@@ -16,11 +16,13 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301 USA
 
-import gobject, modules
+from time import time
 
-from time  import time
-from tools import consts, prefs
+from gi.repository import GObject
+
 from media import audioplayer
+import modules
+from tools import consts, prefs
 
 
 MOD_INFO           = ('GStreamer Player', 'GStreamer Player', '', [], True, False)
@@ -33,7 +35,7 @@ class GSTPlayer(modules.Module):
     def __init__(self):
         """ Constructor """
         # The player must be created during the application startup, not when the application is ready (MSG_EVT_APP_STARTED)
-        self.player = audioplayer.AudioPlayer(self.__onTrackEnded, not prefs.getCmdLine()[0].playbin)
+        self.player = audioplayer.AudioPlayer(self.__onTrackEnded)
 
         handlers = {
                         consts.MSG_CMD_STEP:         self.onStep,

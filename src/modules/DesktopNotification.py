@@ -17,14 +17,18 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301 USA
 
-import gobject, gtk, modules, os.path
+from gettext import gettext as _
+import os.path
 
-from tools     import consts, prefs
-from gettext   import gettext as _
+from gi.repository import GObject
+from gi.repository import Gtk
+
+import modules
+from tools import consts, prefs
 from tools.log import logger
 
-MOD_INFO = ('Desktop Notification', _('Desktop Notification'), _('Display a desktop notification on track change'), ['pynotify'], False, True)
 
+MOD_INFO = ('Desktop Notification', _('Desktop Notification'), _('Display a desktop notification on track change'), ['pynotify'], False, True)
 
 # Default preferences
 PREFS_DEFAULT_BODY       = 'by {artist} on {album}'

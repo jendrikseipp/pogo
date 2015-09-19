@@ -17,7 +17,9 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301 USA
 
-import dbus, dbus.service, gobject, media, modules, traceback
+from gi.repository import GObject
+
+import dbus, dbus.service, media, modules, traceback
 
 from tools import consts, log, prefs
 

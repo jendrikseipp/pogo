@@ -16,10 +16,18 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301 USA
 
-import gobject, gtk, gui, gui.preferences, os, sys, threading, traceback
-
-from tools   import consts, log, prefs
 from gettext import gettext as _
+import os
+import sys
+import threading
+import traceback
+
+from gi.repository import GObject
+from gi.repository import Gtk
+
+import gui
+import gui.preferences
+from tools import consts, log, prefs
 
 
 # Information exported by a module
@@ -275,7 +283,7 @@ mEnabledModules = prefs.get(__name__, 'enabled_modules', [])                   #
 
 
 # Do not load modules in blacklist. They also won't show up in the preferences
-blacklist = ['__init__.py', 'Zeitgeist.py']
+blacklist = ['__init__.py', 'DBus.py', 'Covers.py', 'CtrlPanel.py', 'DesktopNotification.py', 'GnomeMediaKeys.py', 'TrackPanel.py', 'Zeitgeist.py']
 
 
 def load_enabled_modules():
@@ -291,9 +299,9 @@ def load_enabled_modules():
             instance = None
             if modInfo[MODINFO_MANDATORY] or modInfo[MODINFO_NAME] in mEnabledModules:
                 if len(__checkDeps(modInfo[MODINFO_DEPS])) == 0:
+                    log.logger.info('Loading module: %s' % file)
                     instance = getattr(pModule, file)()
                     instance.start()
-                    log.logger.info('Module loaded: %s' % file)
                 else:
                     log.logger.error('Unable to load module %s because of missing dependencies' % file)
 

@@ -201,8 +201,8 @@ def write_file(filename, content):
 
 def print_platform_info():
     import platform
-    from gi.repository import Gtk
-    from gi.repository import Gst
+    #from gi.repository import Gtk
+    #from gi.repository import Gst
     import mutagen
     import PIL
 
@@ -213,9 +213,9 @@ def print_platform_info():
     names_values = [(func.__name__, func()) for func in functions]
 
     lib_values = [
-        ('GTK', gtk, 'gtk_version'),
-        ('PyGTK', gtk, 'pygtk_version'),
-        ('GST', gst, 'version'),
+        #('GTK', gtk, 'gtk_version'),
+        #('PyGTK', gtk, 'pygtk_version'),
+        #('GST', gst, 'version'),
         ('Mutagen', mutagen, 'version'),
         ('PIL', PIL, 'VERSION'),
     ]

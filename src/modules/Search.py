@@ -23,8 +23,9 @@ import sys
 import logging
 from gettext import gettext as _
 
-from gi.repository import Gtk
+from gi.repository import Gdk
 from gi.repository import GObject
+from gi.repository import Gtk
 
 import tools
 import modules
@@ -189,7 +190,7 @@ class Search(modules.ThreadedModule):
         self.searchbox.set_tooltip_text(search_text)
 
         search_container = Gtk.HBox()
-        search_container.pack_start(self.searchbox, False)
+        search_container.pack_start(self.searchbox, expand=False, fill=True, padding=0)
         search_container.show_all()
 
         hbox3 = wTree.get_object('hbox3')

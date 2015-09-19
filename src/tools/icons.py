@@ -17,6 +17,7 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301 USA
 
+from gi.repository import GdkPixbuf
 from gi.repository import Gtk
 
 
@@ -118,7 +119,7 @@ def nullMenuIcon():
     global __nullMenuIcon
 
     if __nullMenuIcon is None:
-        __nullMenuIcon = GdkPixbuf.Pixbuf(GdkPixbuf.Colorspace.RGB, True, 8, 16, 16)
+        __nullMenuIcon = GdkPixbuf.Pixbuf.new(GdkPixbuf.Colorspace.RGB, True, 8, 16, 16)
         __nullMenuIcon.fill(0x00000000)
 
     return __nullMenuIcon

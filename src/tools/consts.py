@@ -17,9 +17,13 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301 USA
 
-import gtk, os.path, random, time
-
 from gettext import gettext as _
+import os.path
+import random
+import time
+
+from gi.repository import Gtk
+
 
 # --- Not a constant, but it fits well here
 random.seed(int(time.time()))

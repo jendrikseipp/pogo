@@ -17,10 +17,13 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301 USA
 
-import gtk, os.path, webbrowser
-
-from tools   import consts
 from gettext import gettext as _
+import os.path
+import webbrowser
+
+from gi.repository import Gtk
+
+from tools import consts
 
 
 def show(parent):
@@ -43,7 +46,7 @@ def show(parent):
     dlg.set_authors([
         _('Developer:'),
         'Jendrik Seipp <jendrikseipp@web.de>',
-        
+
         '',
         _('Thanks to:'),
         'François Ingelrest <Francois.Ingelrest@gmail.com>',

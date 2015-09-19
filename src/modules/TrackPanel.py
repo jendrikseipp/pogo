@@ -17,9 +17,15 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301 USA
 
-import gtk, modules, os.path, tools
+import os.path
 
+from gi.repository import GObject
+from gi.repository import Gtk
+
+import modules
+import tools
 from tools import consts, prefs
+
 
 MOD_INFO = ('Track Panel', 'Track Panel', '', [], True, False)
 
@@ -116,13 +122,6 @@ class CoverSpot(object):
         self.cover_window.set_image(cover_path)
         self.thumb_window.set_image(thumb_path)
 
-        # This somehow fixes the compiz problem where the cover was only
-        # shown after the window had been redrawn
-        #self.thumb_window.update_position()
-        #self.thumb_window.show()
-        #self.cover_window.update_position()
-        #self.cover_window.show()
-
         if self.has_focus:
             self.onCoverClicked(None, None, self.show_thumb)
 
@@ -159,7 +158,7 @@ class CoverSpot(object):
 
 class CoverWindow(Gtk.Window):
     def __init__(self):
-        GObject.GObject.__init__(self, Gtk.WindowType.POPUP)
+        Gtk.Window.__init__(self, Gtk.WindowType.POPUP)
         frame = Gtk.Frame()
         self.evtBox = Gtk.EventBox()
         self.image = Gtk.Image()

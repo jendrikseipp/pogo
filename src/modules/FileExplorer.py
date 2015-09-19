@@ -19,22 +19,22 @@
 
 from __future__ import with_statement
 
-import os
-import urllib2
-import itertools
 from gettext import gettext as _
+import itertools
+import os
 from os.path import isdir, isfile
+import urllib2
 
+from gi.repository import GdkPixbuf
+from gi.repository import GObject
 from gi.repository import Gtk
-from gobject import idle_add, TYPE_STRING, TYPE_INT
 
+from gui import fileChooser, errorMsgBox
 import media
+from media import playlist
 import modules
 import tools
 from tools import consts, prefs, icons, samefile
-from media import playlist
-from gui import fileChooser, errorMsgBox
-
 
 
 MOD_INFO = ('File Explorer', 'File Explorer', 'Browse your file system', [], True, False)
@@ -80,9 +80,9 @@ class FileExplorer(modules.Module):
         from gui import extTreeview
 
         columns = (
-            ('',   [(Gtk.CellRendererPixbuf(), GdkPixbuf.Pixbuf), (Gtk.CellRendererText(), TYPE_STRING)], True),
-            (None, [(None, TYPE_INT)],                                                                  False),
-            (None, [(None, TYPE_STRING)],                                                               False))
+            ('',   [(Gtk.CellRendererPixbuf(), GdkPixbuf.Pixbuf), (Gtk.CellRendererText(), GObject.TYPE_STRING)], True),
+            (None, [(None, GObject.TYPE_INT)],                                                                  False),
+            (None, [(None, GObject.TYPE_STRING)],                                                               False))
 
         self.tree = extTreeview.ExtTreeView(columns, True)
 
@@ -151,10 +151,10 @@ class FileExplorer(modules.Module):
         self.tree.handler_block_by_func(self.onRowExpanded)
         self.restoreTreeDump(self.treeState['tree-state'])
         self.tree.handler_unblock_by_func(self.onRowExpanded)
-        idle_add(self.scrolled.get_vscrollbar().set_value, self.treeState['vscrollbar-pos'])
-        idle_add(self.scrolled.get_hscrollbar().set_value, self.treeState['hscrollbar-pos'])
-        idle_add(self.tree.selectPaths, self.treeState['selected-paths'])
-        idle_add(self.refresh)
+        GObject.idle_add(self.scrolled.get_vscrollbar().set_value, self.treeState['vscrollbar-pos'])
+        GObject.idle_add(self.scrolled.get_hscrollbar().set_value, self.treeState['hscrollbar-pos'])
+        GObject.idle_add(self.tree.selectPaths, self.treeState['selected-paths'])
+        GObject.idle_add(self.refresh)
         self.set_info_text()
 
 
@@ -210,10 +210,14 @@ class FileExplorer(modules.Module):
               - First the lower case version (we want 'bar' to be before 'Foo')
               - Then, if an equality occurs, the normal version (we want 'Foo' and 'foo' to be different folders)
         """
-        result = cmp(r1[ROW_NAME].lower(), r2[ROW_NAME].lower())
+        name1 = r1[ROW_NAME]
+        if not isinstance(name1, unicode):
+            name1 = name1.decode('utf-8')
+        name2 = r2[ROW_NAME]
+        if not isinstance(name2, unicode):
+            name2 = name2.decode('utf-8')
 
-        if result == 0: return cmp(r1[ROW_NAME], r2[ROW_NAME])
-        else:           return result
+        return cmp([name1.lower(), name1], [name2.lower(), name2])
 
 
     def getDirContents(self, directory):
@@ -259,7 +263,7 @@ class FileExplorer(modules.Module):
         if fakeChild is not None:
             self.tree.removeRow(fakeChild)
 
-        idle_add(self.updateDirNodes(parent).next)
+        GObject.idle_add(self.updateDirNodes(parent).next)
 
 
     def updateDirNodes(self, parent):
@@ -310,7 +314,7 @@ class FileExplorer(modules.Module):
             # all expanded nodes.
             for child in self.tree.iterChildren(None):
                 if self.tree.row_expanded(child):
-                    idle_add(self.refresh, child)
+                    GObject.idle_add(self.refresh, child)
             return
 
         directory = self.tree.getItem(treePath, ROW_FULLPATH)
@@ -361,12 +365,12 @@ class FileExplorer(modules.Module):
 
         # Update nodes' appearance
         if len(directories) != 0:
-            idle_add(self.updateDirNodes(treePath).next)
+            GObject.idle_add(self.updateDirNodes(treePath).next)
 
         # Recursively refresh expanded rows
         for child in self.tree.iterChildren(treePath):
             if self.tree.row_expanded(child):
-                idle_add(self.refresh, child)
+                GObject.idle_add(self.refresh, child)
 
 
     # --== GTK handlers ==--
@@ -505,7 +509,7 @@ class FileExplorer(modules.Module):
     def onRowExpanded(self, tree, path):
         """ Replace the fake child by the real children """
         self.startLoading(path)
-        idle_add(self.exploreDir, path, tree.getItem(path, ROW_FULLPATH), tree.getChild(path, 0))
+        GObject.idle_add(self.exploreDir, path, tree.getItem(path, ROW_FULLPATH), tree.getChild(path, 0))
 
 
     def onRowCollapsed(self, tree, path):
@@ -745,7 +749,7 @@ class FileExplorer(modules.Module):
         """
         paths = [row[ROW_FULLPATH] for row in tree.getSelectedRows()]
         modules.postMsg(consts.MSG_CMD_FILE_EXPLORER_DRAG_BEGIN, {'paths': paths})
-        #idle_add(media.getTracks, paths)
+        #GObject.idle_add(media.getTracks, paths)
 
         # Preload the tracks to speedup their addition to the playlist
         import threading

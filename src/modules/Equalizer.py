@@ -16,10 +16,15 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301 USA
 
-import gobject, gtk, gui, modules
-
-from tools   import consts, prefs
 from gettext import gettext as _
+
+from gi.repository import GObject
+from gi.repository import Gtk
+
+import gui
+import modules
+from tools import consts, prefs
+
 
 MOD_INFO = ('Equalizer', _('Equalizer'), _('Tune the level of the frequency bands'), [], False, True)
 

@@ -19,9 +19,10 @@
 
 import sys, os
 
-from gi.repository import Gtk
+from gi.repository import Gdk
 from gi.repository import GObject
-from gobject import signal_new, TYPE_INT, TYPE_STRING, TYPE_PYOBJECT, TYPE_NONE, SIGNAL_RUN_LAST
+from gi.repository import Gtk
+
 
 if __name__ == '__main__':
     base_dir = os.path.abspath(os.path.join(os.path.abspath(__file__), '../../'))
@@ -42,7 +43,7 @@ from tools import consts
 DND_REORDERING_ID   = 1024
 DND_INTERNAL_TARGET = ('extListview-internal', Gtk.TargetFlags.SAME_WIDGET, DND_REORDERING_ID)
 
-signal_new('tracktreeview-dnd', Gtk.TreeView, SIGNAL_RUN_LAST, TYPE_NONE, (Gdk.DragContext, TYPE_INT, TYPE_INT, Gtk.SelectionData, TYPE_INT, TYPE_PYOBJECT))
+GObject.signal_new('tracktreeview-dnd', Gtk.TreeView, GObject.SIGNAL_RUN_LAST, GObject.TYPE_NONE, (Gdk.DragContext, GObject.TYPE_INT, GObject.TYPE_INT, Gtk.SelectionData, GObject.TYPE_INT, GObject.TYPE_PYOBJECT))
 
 
 
@@ -495,17 +496,17 @@ class TrackTreeView(ExtTreeView):
 
 
 if __name__ == '__main__':
-    from gobject import TYPE_INT, TYPE_PYOBJECT
+    from gi.repository import GObject
 
     from tools import icons
     from media import getTracks
 
     tracks = getTracks(['/home/jendrik/Musik/Clearlake - Amber'])
 
-    columns = (('',   [(Gtk.CellRendererPixbuf(), GdkPixbuf.Pixbuf), (Gtk.CellRendererText(), TYPE_STRING)], True),
-                   (None, [(None, TYPE_INT)],                                                                 False),
-                   (None, [(None, TYPE_STRING)],                                                               False),
-                   (None, [(None, TYPE_PYOBJECT)], False),
+    columns = (('',   [(Gtk.CellRendererPixbuf(), GdkPixbuf.Pixbuf), (Gtk.CellRendererText(), GObject.TYPE_STRING)], True),
+                   (None, [(None, GObject.TYPE_INT)],                                                                 False),
+                   (None, [(None, GObject.TYPE_STRING)],                                                               False),
+                   (None, [(None, GObject.TYPE_PYOBJECT)], False),
                   )
 
     tree = TrackTreeView(columns, True)

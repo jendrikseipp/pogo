@@ -21,15 +21,15 @@ import os
 import traceback
 import logging
 
-from gi.repository import Gtk
+from gi.repository import Gdk, GdkPixbuf
 from gi.repository import GObject
+from gi.repository import Gtk
 
 import media, modules, tools
 
 from gui             import fileChooser
 from tools           import consts, icons, prefs, pickleLoad, pickleSave, log
 from gettext         import gettext as _
-from gobject         import TYPE_STRING, TYPE_PYOBJECT
 from gui.widgets     import TrackTreeView
 
 MOD_INFO = ('Tracktree', 'Tracktree', '', [], True, False)
@@ -512,8 +512,8 @@ class Tracktree(modules.Module):
         # Retrieve widgets
         self.window     = wTree.get_object('win-main')
 
-        columns = (('',   [(Gtk.CellRendererPixbuf(), GdkPixbuf.Pixbuf), (Gtk.CellRendererText(), TYPE_STRING)], True),
-                   (None, [(None, TYPE_PYOBJECT)], False),
+        columns = (('',   [(Gtk.CellRendererPixbuf(), GdkPixbuf.Pixbuf), (Gtk.CellRendererText(), GObject.TYPE_STRING)], True),
+                   (None, [(None, GObject.TYPE_PYOBJECT)], False),
                   )
 
         self.tree = TrackTreeView(columns, use_markup=True)
