@@ -24,7 +24,7 @@ pogo.pot: $(UIHFILES) $(PYFILES)
 %.po: pogo.pot
 	@if test -f $@; then \
 		echo -n "Updating '$*' language ";\
-		msgmerge -U $@ pogo.pot;\
+		msgmerge --update --backup=none $@ pogo.pot; \
 	else \
 		msginit -l $*.UTF8 -o $@; \
 	fi
