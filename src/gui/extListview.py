@@ -63,11 +63,6 @@ from gtk     import gdk
 from gobject import signal_new, TYPE_INT, TYPE_STRING, TYPE_BOOLEAN, TYPE_PYOBJECT, TYPE_NONE, SIGNAL_RUN_LAST
 
 
-# Internal d'n'd (reordering)
-DND_REORDERING_ID   = 1024
-DND_INTERNAL_TARGET = ('extListview-internal', gtk.TARGET_SAME_WIDGET, DND_REORDERING_ID)
-
-
 # Custom signals
 signal_new('extlistview-dnd', gtk.TreeView, SIGNAL_RUN_LAST, TYPE_NONE, (gdk.DragContext, TYPE_INT, TYPE_INT, gtk.SelectionData, TYPE_INT, TYPE_PYOBJECT))
 signal_new('extlistview-modified', gtk.TreeView, SIGNAL_RUN_LAST, TYPE_NONE, ())
@@ -503,12 +498,6 @@ class ExtListView(gtk.TreeView):
             if pathInfo is not None:
                 self.selection.unselect_all()
                 self.selection.select_path(pathInfo[0][0])
-
-
-    def onMouseMotion(self, tree, event):
-        """ The mouse has been moved """
-        if self.dndContext is None and self.drag_check_threshold(self.dndStartPos[0], self.dndStartPos[1], int(event.x), int(event.y)):
-            self.dndContext = self.drag_begin([DND_INTERNAL_TARGET], gdk.ACTION_COPY, 1, event)
 
 
     def onColumnHeaderClicked(self, column, event):
