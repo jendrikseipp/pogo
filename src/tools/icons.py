@@ -17,7 +17,7 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301 USA
 
-import gtk
+from gi.repository import Gtk
 
 
 __lbl               = None
@@ -38,7 +38,7 @@ def __render(stock, size):
     global __lbl
 
     if __lbl is None:
-        __lbl = gtk.Label()
+        __lbl = Gtk.Label()
 
     return __lbl.render_icon(stock, size)
 
@@ -48,7 +48,7 @@ def dirMenuIcon():
     global __dirMenuIcon
 
     if __dirMenuIcon is None:
-        __dirMenuIcon = __render(gtk.STOCK_DIRECTORY, gtk.ICON_SIZE_MENU)
+        __dirMenuIcon = __render(Gtk.STOCK_DIRECTORY, Gtk.IconSize.MENU)
 
     return __dirMenuIcon
 
@@ -58,7 +58,7 @@ def prefsBtnIcon():
     global __prefsBtnIcon
 
     if __prefsBtnIcon is None:
-        __prefsBtnIcon = __render(gtk.STOCK_PREFERENCES, gtk.ICON_SIZE_BUTTON)
+        __prefsBtnIcon = __render(Gtk.STOCK_PREFERENCES, Gtk.IconSize.BUTTON)
 
     return __prefsBtnIcon
 
@@ -68,7 +68,7 @@ def playMenuIcon():
     global __playMenuIcon
 
     if __playMenuIcon is None:
-        __playMenuIcon = __render(gtk.STOCK_MEDIA_PLAY, gtk.ICON_SIZE_MENU)
+        __playMenuIcon = __render(Gtk.STOCK_MEDIA_PLAY, Gtk.IconSize.MENU)
 
     return __playMenuIcon
 
@@ -78,7 +78,7 @@ def pauseMenuIcon():
     global __pauseMenuIcon
 
     if __pauseMenuIcon is None:
-        __pauseMenuIcon = __render(gtk.STOCK_MEDIA_PAUSE, gtk.ICON_SIZE_MENU)
+        __pauseMenuIcon = __render(Gtk.STOCK_MEDIA_PAUSE, Gtk.IconSize.MENU)
 
     return __pauseMenuIcon
 
@@ -88,7 +88,7 @@ def cdromMenuIcon():
     global __cdromMenuIcon
 
     if __cdromMenuIcon is None:
-        __cdromMenuIcon = __render(gtk.STOCK_CDROM, gtk.ICON_SIZE_MENU)
+        __cdromMenuIcon = __render(Gtk.STOCK_CDROM, Gtk.IconSize.MENU)
 
     return __cdromMenuIcon
 
@@ -98,7 +98,7 @@ def errorMenuIcon():
     global __errorMenuIcon
 
     if __errorMenuIcon is None:
-        __errorMenuIcon = __render(gtk.STOCK_CANCEL, gtk.ICON_SIZE_MENU)
+        __errorMenuIcon = __render(Gtk.STOCK_CANCEL, Gtk.IconSize.MENU)
 
     return __errorMenuIcon
 
@@ -108,7 +108,7 @@ def infoMenuIcon():
     global __infoMenuIcon
 
     if __infoMenuIcon is None:
-        __infoMenuIcon = __render(gtk.STOCK_INFO, gtk.ICON_SIZE_MENU)
+        __infoMenuIcon = __render(Gtk.STOCK_INFO, Gtk.IconSize.MENU)
 
     return __infoMenuIcon
 
@@ -118,7 +118,7 @@ def nullMenuIcon():
     global __nullMenuIcon
 
     if __nullMenuIcon is None:
-        __nullMenuIcon = gtk.gdk.Pixbuf(gtk.gdk.COLORSPACE_RGB, True, 8, 16, 16)
+        __nullMenuIcon = GdkPixbuf.Pixbuf(GdkPixbuf.Colorspace.RGB, True, 8, 16, 16)
         __nullMenuIcon.fill(0x00000000)
 
     return __nullMenuIcon
@@ -130,7 +130,7 @@ def mediaDirMenuIcon():
 
     if __mediaDirMenuIcon is None:
         __mediaDirMenuIcon = dirMenuIcon().copy()  # We need a copy to modify it
-        cdromMenuIcon().composite(__mediaDirMenuIcon, 5, 5, 11, 11, 5, 5, 0.6875, 0.6875, gtk.gdk.INTERP_HYPER, 255)
+        cdromMenuIcon().composite(__mediaDirMenuIcon, 5, 5, 11, 11, 5, 5, 0.6875, 0.6875, GdkPixbuf.InterpType.HYPER, 255)
 
     return __mediaDirMenuIcon
 
@@ -140,7 +140,7 @@ def mediaFileMenuIcon():
     global __mediaFileMenuIcon
 
     if __mediaFileMenuIcon is None:
-        __mediaFileMenuIcon = __render(gtk.STOCK_FILE, gtk.ICON_SIZE_MENU).copy()  # We need a copy to modify it
-        cdromMenuIcon().composite(__mediaFileMenuIcon, 5, 5, 11, 11, 5, 5, 0.6875, 0.6875, gtk.gdk.INTERP_HYPER, 255)
+        __mediaFileMenuIcon = __render(Gtk.STOCK_FILE, Gtk.IconSize.MENU).copy()  # We need a copy to modify it
+        cdromMenuIcon().composite(__mediaFileMenuIcon, 5, 5, 11, 11, 5, 5, 0.6875, 0.6875, GdkPixbuf.InterpType.HYPER, 255)
 
     return __mediaFileMenuIcon

@@ -25,11 +25,11 @@ from gettext import gettext as _
 
 def show(parent):
     """ Show an about dialog box """
-    dlg = gtk.AboutDialog()
+    dlg = Gtk.AboutDialog()
     dlg.set_transient_for(parent)
 
     # Hook to handle clicks on the URL
-    gtk.about_dialog_set_url_hook(lambda dlg, url: webbrowser.open(url))
+    Gtk.about_dialog_set_url_hook(lambda dlg, url: webbrowser.open(url))
 
     # Set credit information
     dlg.set_name(consts.appName)
@@ -51,7 +51,7 @@ def show(parent):
     ])
 
     # Set logo
-    dlg.set_logo(gtk.gdk.pixbuf_new_from_file(consts.fileImgIcon128))
+    dlg.set_logo(GdkPixbuf.Pixbuf.new_from_file(consts.fileImgIcon128))
 
     # Load the licence from the disk if possible
     if os.path.isfile(consts.fileLicense):

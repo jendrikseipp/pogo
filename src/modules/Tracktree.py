@@ -21,8 +21,8 @@ import os
 import traceback
 import logging
 
-import gtk
-import gobject
+from gi.repository import Gtk
+from gi.repository import GObject
 
 import media, modules, tools
 
@@ -46,7 +46,7 @@ SAVE_INTERVAL = 600
 
 # Internal d'n'd (reordering)
 DND_REORDERING_ID = 1024
-DND_INTERNAL_TARGET = ('extListview-internal', gtk.TARGET_SAME_WIDGET, DND_REORDERING_ID)
+DND_INTERNAL_TARGET = ('extListview-internal', Gtk.TargetFlags.SAME_WIDGET, DND_REORDERING_ID)
 
 
 class Tracktree(modules.Module):
@@ -118,7 +118,7 @@ class Tracktree(modules.Module):
         last_path = prefs.get(__name__, 'last-played-track', None)
         if last_path:
             parent_path = (last_path[0],)
-            gobject.idle_add(self.tree.scroll_to_cell, parent_path)
+            GObject.idle_add(self.tree.scroll_to_cell, parent_path)
             self.tree.get_selection().select_path(parent_path)
 
 
@@ -309,18 +309,18 @@ class Tracktree(modules.Module):
             source_row = (icons.mediaDirMenuIcon(), string, None)
 
             new = self.tree.insert(target, source_row, drop_mode)
-            drop_mode = gtk.TREE_VIEW_DROP_INTO_OR_AFTER
+            drop_mode = Gtk.TreeViewDropPosition.INTO_OR_AFTER
             if highlight:
                 self.tree.select(new)
 
         dest = new
         for index, subdir in enumerate(trackdir.subdirs):
-            drop = drop_mode if index == 0 else gtk.TREE_VIEW_DROP_AFTER
+            drop = drop_mode if index == 0 else Gtk.TreeViewDropPosition.AFTER
             dest = self.insertDir(subdir, dest, drop, highlight)
 
         dest = new
         for index, track in enumerate(trackdir.tracks):
-            drop = drop_mode if index == 0 else gtk.TREE_VIEW_DROP_AFTER
+            drop = drop_mode if index == 0 else Gtk.TreeViewDropPosition.AFTER
             highlight &= trackdir.flat
             dest = self.insertTrack(track, dest, drop, highlight)
 
@@ -431,10 +431,10 @@ class Tracktree(modules.Module):
         else:
             iter = tree.store.get_iter(path)
 
-        popup = gtk.Menu()
+        popup = Gtk.Menu()
 
         # Remove
-        remove = gtk.ImageMenuItem(gtk.STOCK_REMOVE)
+        remove = Gtk.ImageMenuItem(Gtk.STOCK_REMOVE)
         popup.append(remove)
 
         if iter is None:
@@ -442,11 +442,11 @@ class Tracktree(modules.Module):
         else:
             remove.connect('activate', lambda item: self.remove())
 
-        #popup.append(gtk.SeparatorMenuItem())
+        #popup.append(Gtk.SeparatorMenuItem())
 
         # Clear
-        clear = gtk.ImageMenuItem(_('Clear Playlist'))
-        clear.set_image(gtk.image_new_from_stock(gtk.STOCK_CLEAR, gtk.ICON_SIZE_MENU))
+        clear = Gtk.ImageMenuItem(_('Clear Playlist'))
+        clear.set_image(Gtk.Image.new_from_stock(Gtk.STOCK_CLEAR, Gtk.IconSize.MENU))
         popup.append(clear)
 
         if len(tree.store) == 0:
@@ -455,13 +455,13 @@ class Tracktree(modules.Module):
             clear.connect('activate', lambda item: modules.postMsg(consts.MSG_CMD_TRACKLIST_CLR))
 
         # Save to m3u
-        export_m3u = gtk.ImageMenuItem(_('Export playlist to file'))
-        export_m3u.set_image(gtk.image_new_from_stock(gtk.STOCK_SAVE, gtk.ICON_SIZE_MENU))
+        export_m3u = Gtk.ImageMenuItem(_('Export playlist to file'))
+        export_m3u.set_image(Gtk.Image.new_from_stock(Gtk.STOCK_SAVE, Gtk.IconSize.MENU))
         popup.append(export_m3u)
 
         # Save to dir
-        export_dir = gtk.ImageMenuItem(_('Export playlist to directory'))
-        export_dir.set_image(gtk.image_new_from_stock(gtk.STOCK_DIRECTORY, gtk.ICON_SIZE_MENU))
+        export_dir = Gtk.ImageMenuItem(_('Export playlist to directory'))
+        export_dir.set_image(Gtk.Image.new_from_stock(Gtk.STOCK_DIRECTORY, Gtk.IconSize.MENU))
         popup.append(export_dir)
 
         if len(tree.store) == 0:
@@ -512,7 +512,7 @@ class Tracktree(modules.Module):
         # Retrieve widgets
         self.window     = wTree.get_object('win-main')
 
-        columns = (('',   [(gtk.CellRendererPixbuf(), gtk.gdk.Pixbuf), (gtk.CellRendererText(), TYPE_STRING)], True),
+        columns = (('',   [(Gtk.CellRendererPixbuf(), GdkPixbuf.Pixbuf), (Gtk.CellRendererText(), TYPE_STRING)], True),
                    (None, [(None, TYPE_PYOBJECT)], False),
                   )
 
@@ -563,7 +563,7 @@ class Tracktree(modules.Module):
             modules.postMsg(consts.MSG_CMD_TOGGLE_PAUSE)
 
         # Automatically save the content at regular intervals
-        gobject.timeout_add_seconds(SAVE_INTERVAL, self.save_track_tree)
+        GObject.timeout_add_seconds(SAVE_INTERVAL, self.save_track_tree)
 
 
     def onAppQuit(self):
@@ -635,8 +635,8 @@ class Tracktree(modules.Module):
 
     def onSearchStart(self, query):
         query = [part.strip().lower() for part in query.split()]
-        gobject.idle_add(self.highlight, query)
-        gobject.idle_add(self.tree.scroll_to_first_selection)
+        GObject.idle_add(self.highlight, query)
+        GObject.idle_add(self.tree.scroll_to_first_selection)
 
     def onSearchReset(self):
         self.tree.selection.unselect_all()
@@ -663,7 +663,7 @@ class Tracktree(modules.Module):
 
     def onMouseButton(self, tree, event, path):
         """ A mouse button has been pressed """
-        if event.button == 1 and event.type == gtk.gdk._2BUTTON_PRESS and path is not None:
+        if event.button == 1 and event.type == Gdk._2BUTTON_PRESS and path is not None:
             self.jumpTo(self.tree.store.get_iter(path))
         elif event.button == 3:
             self.onShowPopupMenu(tree, event.button, event.time, path)
@@ -671,7 +671,7 @@ class Tracktree(modules.Module):
 
     def onKeyboard(self, list, event):
         """ Keyboard shortcuts """
-        keyname = gtk.gdk.keyval_name(event.keyval)
+        keyname = Gdk.keyval_name(event.keyval)
 
         if keyname == 'Delete':   self.remove()
         elif keyname == 'Return': self.jumpTo(self.tree.getFirstSelectedRow())

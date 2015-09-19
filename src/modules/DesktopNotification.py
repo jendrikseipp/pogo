@@ -57,26 +57,26 @@ class DesktopNotification(modules.Module):
         self.currCover = None
 
         if self.timeout is not None:
-            gobject.source_remove(self.timeout)
+            GObject.source_remove(self.timeout)
             self.timeout = None
 
         if self.notif is not None:
             ## Catch errors that occur when pynotify is not installed properly
             try:
                 self.notif.close()
-            except gobject.GError:
+            except GObject.GError:
                 pass
 
 
     def __createNotification(self, title, body, icon):
         """ Create the Notification object """
-        import pynotify
+        from gi.repository import Notify
 
-        if not pynotify.init(consts.appNameShort):
+        if not Notify.init(consts.appNameShort):
             logger.error('[%s] Initialization of pynotify failed' % MOD_INFO[modules.MODINFO_NAME])
 
-        self.notif = pynotify.Notification(title, body, icon)
-        self.notif.set_urgency(pynotify.URGENCY_LOW)
+        self.notif = Notify.Notification(title, body, icon)
+        self.notif.set_urgency(Notify.URGENCY_LOW)
         self.notif.set_timeout(prefs.get(__name__, 'timeout', PREFS_DEFAULT_TIMEOUT) * 1000)
 
         if prefs.get(__name__, 'skip-track', PREFS_DEFAULT_SKIP_TRACK):
@@ -100,7 +100,7 @@ class DesktopNotification(modules.Module):
         else:                      img = self.currCover
 
         if os.path.isfile(img): icon = 'file://' + img
-        else:                   icon = gtk.STOCK_DIALOG_INFO
+        else:                   icon = Gtk.STOCK_DIALOG_INFO
 
         # Create / Update the notification and show it
         if self.notif is None: self.__createNotification(title, body, icon)
@@ -109,7 +109,7 @@ class DesktopNotification(modules.Module):
         ## Catch errors that occur when pynotify is not installed properly
         try:
             self.notif.show()
-        except gobject.GError:
+        except GObject.GError:
             pass
 
         return False
@@ -140,10 +140,10 @@ class DesktopNotification(modules.Module):
         self.currTrack = track
 
         if self.timeout is not None:
-            gobject.source_remove(self.timeout)
+            GObject.source_remove(self.timeout)
 
         # Wait a bit for the cover to be set (if any)
-        self.timeout = gobject.timeout_add(500, self.showNotification)
+        self.timeout = GObject.timeout_add(500, self.showNotification)
 
 
     def onSetCover(self, track, pathThumbnail, pathFullSize):
@@ -173,7 +173,7 @@ class DesktopNotification(modules.Module):
             self.cfgWin.getWidget('btn-cancel').connect('clicked', lambda btn: self.cfgWin.hide())
 
             # Disable the 'Skip track' button if the server doesn't support buttons in notifications
-            if 'actions' not in pynotify.get_server_caps():
+            if 'actions' not in Notify.get_server_caps():
                 self.cfgWin.getWidget('chk-skipTrack').set_sensitive(False)
 
         if not self.cfgWin.isVisible():
@@ -228,5 +228,5 @@ class DesktopNotification(modules.Module):
                              'Available fields are:\n\n') + media.track.getFormatSpecialFields(False))
         helpDlg.addSection(_('Markup'),
                            _('You can use the Pango markup language to format the text. More information on that language is '
-                             'available on the following web page:') + '\n\nhttp://www.pygtk.org/pygtk2reference/pango-markup-language.html')
+                             'available on the following web page:') + '\n\nhttp://www.pyGtk.org/pygtk2reference/pango-markup-language.html')
         helpDlg.show(self.cfgWin)

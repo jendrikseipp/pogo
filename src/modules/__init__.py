@@ -134,7 +134,7 @@ def register(module, msgList):
 
 def showPreferences():
     """ Show the preferences dialog box """
-    gobject.idle_add(gui.preferences.show)
+    GObject.idle_add(gui.preferences.show)
 
 
 def __postMsg(msg, params={}):
@@ -149,7 +149,7 @@ def postMsg(msg, params={}):
     """ Post a message to the queue of modules that registered for this type of message """
     # We need to ensure that posting messages will be done by the GTK main loop
     # Otherwise, the code of threaded modules could be executed in the caller's thread, which could cause problems when calling GTK functions
-    gobject.idle_add(__postMsg, msg, params)
+    GObject.idle_add(__postMsg, msg, params)
 
 
 def __postQuitMsg():
@@ -159,13 +159,13 @@ def __postQuitMsg():
         if modData[MOD_INSTANCE] is not None:
             modData[MOD_INSTANCE].join()
     # Don't exit the application right now, let modules do their job before
-    gobject.idle_add(gtk.main_quit)
+    GObject.idle_add(Gtk.main_quit)
 
 
 def postQuitMsg():
     """ Post a MSG_EVT_APP_QUIT in each module's queue and exit the application """
     # As with postMsg(), we need to ensure that the code will be executed by the GTK main loop
-    gobject.idle_add(__postQuitMsg)
+    GObject.idle_add(__postQuitMsg)
 
 
 
@@ -185,7 +185,7 @@ class ModuleBase:
         pass
 
     def restartRequired(self):
-        gobject.idle_add(gui.infoMsgBox, None, _('Restart required'),
+        GObject.idle_add(gui.infoMsgBox, None, _('Restart required'),
             _('You must restart the application for this modification to take effect.'))
 
 
@@ -198,7 +198,7 @@ class Module(ModuleBase):
         register(self, handlers.keys())
 
     def postMsg(self, msg, params={}):
-        gobject.idle_add(self.__dispatch, msg, params)
+        GObject.idle_add(self.__dispatch, msg, params)
 
     def __dispatch(self, msg, params):
         self.handlers[msg](**params)
@@ -235,7 +235,7 @@ class ThreadedModule(threading.Thread, ModuleBase):
 
     def gtkExecute(self, func):
         """ Execute func in the GTK main loop, and block the execution of the thread until done """
-        gobject.idle_add(self.__gtkExecute, func)
+        GObject.idle_add(self.__gtkExecute, func)
         self.gtkSemaphore.acquire()
         return self.gtkResult
 

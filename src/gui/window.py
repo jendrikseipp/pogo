@@ -19,9 +19,9 @@
 import gtk, tools
 
 
-class Window(gtk.Window):
+class Window(Gtk.Window):
     """
-        Add some functionalities to gtk.Window:
+        Add some functionalities to Gtk.Window:
          * Automatically save and restore size
          * Hide the window instead of destroying it
          * Add a isVisible() function
@@ -30,7 +30,7 @@ class Window(gtk.Window):
 
     def __init__(self, resFile, container, modName, title, defaultWidth, defaultHeight):
         """ Constructor """
-        gtk.Window.__init__(self)
+        GObject.GObject.__init__(self)
         # Load only the top-level container of the given .ui file
         _, self.wBuilder = tools.loadGladeFile(resFile, container)
         self.visible = False
@@ -41,7 +41,7 @@ class Window(gtk.Window):
         if tools.prefs.get(modName, 'win-is-maximized', False):
             self.maximize()
         self.resize(tools.prefs.get(modName, 'win-width', defaultWidth), tools.prefs.get(modName, 'win-height', defaultHeight))
-        self.set_position(gtk.WIN_POS_CENTER)
+        self.set_position(Gtk.WindowPosition.CENTER)
         # Connect GTK handlers
         self.connect('delete-event',       self.onDelete)
         self.connect('size-allocate',      self.onResize)
@@ -68,7 +68,7 @@ class Window(gtk.Window):
     def hide(self):
         """ Hide the window """
         self.visible = False
-        gtk.Window.hide(self)
+        Gtk.Window.hide(self)
 
 
     # --== GTK handlers ==--
@@ -76,14 +76,14 @@ class Window(gtk.Window):
 
     def onResize(self, win, rect):
         """ Save the new size of the dialog """
-        if win.window is not None and not win.window.get_state() & gtk.gdk.WINDOW_STATE_MAXIMIZED:
+        if win.window is not None and not win.window.get_state() & Gdk.WindowState.MAXIMIZED:
             tools.prefs.set(self.modName, 'win-width',  rect.width)
             tools.prefs.set(self.modName, 'win-height', rect.height)
 
 
     def onState(self, win, evt):
         """ Save the new state of the dialog """
-        tools.prefs.set(self.modName, 'win-is-maximized', bool(evt.new_window_state & gtk.gdk.WINDOW_STATE_MAXIMIZED))
+        tools.prefs.set(self.modName, 'win-is-maximized', bool(evt.new_window_state & Gdk.WindowState.MAXIMIZED))
 
 
     def onDelete(self, win, evt):

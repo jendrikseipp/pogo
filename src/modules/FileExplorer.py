@@ -25,7 +25,7 @@ import itertools
 from gettext import gettext as _
 from os.path import isdir, isfile
 
-import gtk
+from gi.repository import Gtk
 from gobject import idle_add, TYPE_STRING, TYPE_INT
 
 import media
@@ -80,7 +80,7 @@ class FileExplorer(modules.Module):
         from gui import extTreeview
 
         columns = (
-            ('',   [(gtk.CellRendererPixbuf(), gtk.gdk.Pixbuf), (gtk.CellRendererText(), TYPE_STRING)], True),
+            ('',   [(Gtk.CellRendererPixbuf(), GdkPixbuf.Pixbuf), (Gtk.CellRendererText(), TYPE_STRING)], True),
             (None, [(None, TYPE_INT)],                                                                  False),
             (None, [(None, TYPE_STRING)],                                                               False))
 
@@ -379,7 +379,7 @@ class FileExplorer(modules.Module):
         elif path is not None:
             if event.button == 2:
                 self.play(path)
-            elif event.button == 1 and event.type == gtk.gdk._2BUTTON_PRESS:
+            elif event.button == 1 and event.type == Gdk._2BUTTON_PRESS:
                 if tree.getItem(path, ROW_PIXBUF) != icons.dirMenuIcon():
                     self.play()
                 elif tree.row_expanded(path):
@@ -398,10 +398,10 @@ class FileExplorer(modules.Module):
             # info node selected, make it clickable
             path = None
 
-        popup = gtk.Menu()
+        popup = Gtk.Menu()
 
         # Play selection
-        play = gtk.ImageMenuItem(gtk.STOCK_MEDIA_PLAY)
+        play = Gtk.ImageMenuItem(Gtk.STOCK_MEDIA_PLAY)
         play.set_label(_('Append'))
         popup.append(play)
 
@@ -413,7 +413,7 @@ class FileExplorer(modules.Module):
         # open containing folder
         show_folder = None
         if path:
-            show_folder = gtk.ImageMenuItem(gtk.STOCK_OPEN)
+            show_folder = Gtk.ImageMenuItem(Gtk.STOCK_OPEN)
             show_folder.set_label(_('Open containing folder'))
             filepath = self.tree.getItem(path, ROW_FULLPATH)
             parent_path = os.path.dirname(filepath)
@@ -427,16 +427,16 @@ class FileExplorer(modules.Module):
             popup.popup(None, None, None, button, time)
             return
 
-        popup.append(gtk.SeparatorMenuItem())
+        popup.append(Gtk.SeparatorMenuItem())
 
         # Refresh the view
-        refresh = gtk.ImageMenuItem(gtk.STOCK_REFRESH)
+        refresh = Gtk.ImageMenuItem(Gtk.STOCK_REFRESH)
         refresh.connect('activate', lambda widget: self.refresh())
         popup.append(refresh)
 
 
         # Add new dir
-        dir = gtk.ImageMenuItem(gtk.STOCK_DIRECTORY)
+        dir = Gtk.ImageMenuItem(Gtk.STOCK_DIRECTORY)
         if path is None:
             dir.set_label(_('Add music folder'))
             dir.connect('activate', self.on_add_dir)
@@ -491,7 +491,7 @@ class FileExplorer(modules.Module):
 
     def onKeyPressed(self, tree, event):
         """ A key has been pressed """
-        keyname = gtk.gdk.keyval_name(event.keyval)
+        keyname = Gdk.keyval_name(event.keyval)
 
         if keyname == 'F5':       self.refresh()
         elif keyname == 'plus':   tree.expandRows()
@@ -655,15 +655,15 @@ class FileExplorer(modules.Module):
         """ The module has been loaded """
         self.tree            = None
         self.cfgWin          = None
-        self.scrolled        = gtk.ScrolledWindow()
+        self.scrolled        = Gtk.ScrolledWindow()
         self.treeState       = prefs.get(__name__, 'saved-states', None)
 
-        self.scrolled.set_shadow_type(gtk.SHADOW_IN)
-        self.scrolled.set_policy(gtk.POLICY_AUTOMATIC, gtk.POLICY_AUTOMATIC)
+        self.scrolled.set_shadow_type(Gtk.ShadowType.IN)
+        self.scrolled.set_policy(Gtk.PolicyType.AUTOMATIC, Gtk.PolicyType.AUTOMATIC)
         self.scrolled.show()
 
         left_vbox = prefs.getWidgetsTree().get_object('vbox3')
-        left_vbox.pack_start(self.scrolled)
+        left_vbox.pack_start(self.scrolled, True, True, 0)
 
         self.static_paths = ['/', consts.dirBaseUsr]
 

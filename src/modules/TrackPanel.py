@@ -157,15 +157,15 @@ class CoverSpot(object):
 
 
 
-class CoverWindow(gtk.Window):
+class CoverWindow(Gtk.Window):
     def __init__(self):
-        gtk.Window.__init__(self, gtk.WINDOW_POPUP)
-        frame = gtk.Frame()
-        self.evtBox = gtk.EventBox()
-        self.image = gtk.Image()
+        GObject.GObject.__init__(self, Gtk.WindowType.POPUP)
+        frame = Gtk.Frame()
+        self.evtBox = Gtk.EventBox()
+        self.image = Gtk.Image()
         self.set_image(None)
         self.evtBox.add(self.image)
-        frame.set_shadow_type(gtk.SHADOW_IN)
+        frame.set_shadow_type(Gtk.ShadowType.IN)
         frame.add(self.evtBox)
         self.add(frame)
 
@@ -204,7 +204,7 @@ class CoverWindow(gtk.Window):
             # Get the window, the tracktree is painted on
             tree_win = tree.get_parent_window()
 
-            # Get absolute position of the gtk.gdk.Window without the window decos
+            # Get absolute position of the Gdk.Window without the window decos
             orig_tree_win_x, orig_tree_win_y = tree_win.get_origin()
 
             # Calculate absolute position of upper left corner
@@ -225,4 +225,4 @@ class CoverWindow(gtk.Window):
 
     def show(self):
         if self.has_cover:
-            gtk.Window.show_all(self)
+            Gtk.Window.show_all(self)

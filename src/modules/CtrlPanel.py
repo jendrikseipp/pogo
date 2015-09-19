@@ -24,7 +24,7 @@ from gettext import gettext as _
 
 MOD_INFO = ('Control Panel', 'Control Panel', '', [], True, False)
 
-PLAY_PAUSE_ICON_SIZE = gtk.ICON_SIZE_LARGE_TOOLBAR
+PLAY_PAUSE_ICON_SIZE = Gtk.IconSize.LARGE_TOOLBAR
 
 
 class CtrlPanel(modules.Module):
@@ -100,7 +100,7 @@ class CtrlPanel(modules.Module):
 
         # Add pref button
 
-        self.uimanager = gtk.UIManager()
+        self.uimanager = Gtk.UIManager()
         self.main_window = wTree.get_object('win-main')
 
         menu_xml = '''
@@ -112,18 +112,18 @@ class CtrlPanel(modules.Module):
         </ui>'''
 
         # Create an ActionGroup
-        actiongroup = gtk.ActionGroup('MainActionGroup')
+        actiongroup = Gtk.ActionGroup('MainActionGroup')
 
         # Create actions
         actiongroup.add_actions([
             ('ButtonMenu', None, None),
-            #('Quit', gtk.STOCK_QUIT, None, None, None,
+            #('Quit', Gtk.STOCK_QUIT, None, None, None,
             #    lambda widget: self.onDelete(self.main_window, None)),
-            ('Options', gtk.STOCK_PREFERENCES, None,
+            ('Options', Gtk.STOCK_PREFERENCES, None,
                 '<Ctrl>p', None, lambda item: modules.showPreferences()),
-            #('Help', gtk.STOCK_HELP, None,
+            #('Help', Gtk.STOCK_HELP, None,
             #    '<Ctrl>h', None, self.on_help_menu_item_activate),
-            ('About', gtk.STOCK_ABOUT, None,
+            ('About', Gtk.STOCK_ABOUT, None,
                 None, None, self.onAbout),
             ])
 
@@ -136,17 +136,17 @@ class CtrlPanel(modules.Module):
         # Create a Menu
         button_menu = self.uimanager.get_widget('/ButtonMenu')
 
-        menu_button = gtk.MenuToolButton(None, None)
+        menu_button = Gtk.MenuToolButton(None, None)
         hbox = menu_button.get_child()
         button, toggle_button = hbox.get_children()
         hbox.remove(button)
 
-        img = gtk.image_new_from_stock(gtk.STOCK_PREFERENCES,
-                                       gtk.ICON_SIZE_SMALL_TOOLBAR)
+        img = Gtk.Image.new_from_stock(Gtk.STOCK_PREFERENCES,
+                                       Gtk.IconSize.SMALL_TOOLBAR)
 
         arrow = toggle_button.get_child()
         toggle_button.remove(arrow)
-        hbox = gtk.HBox()
+        hbox = Gtk.HBox()
         hbox.add(img)
         toggle_button.add(hbox)
         menu_button.show()
@@ -167,7 +167,7 @@ class CtrlPanel(modules.Module):
     def onNewTrack(self, track):
         """ A new track is being played """
         self.btnPlay.set_sensitive(True)
-        self.btnPlay.set_image(gtk.image_new_from_stock(gtk.STOCK_MEDIA_PAUSE, PLAY_PAUSE_ICON_SIZE))
+        self.btnPlay.set_image(Gtk.Image.new_from_stock(Gtk.STOCK_MEDIA_PAUSE, PLAY_PAUSE_ICON_SIZE))
         self.btnPlay.set_tooltip_text(_('Pause the current track'))
 
         self.currTrackLength = track.getLength()
@@ -183,7 +183,7 @@ class CtrlPanel(modules.Module):
         """ The playback has been stopped """
         self.btnNext.set_sensitive(False)
         self.btnPrev.set_sensitive(False)
-        self.btnPlay.set_image(gtk.image_new_from_stock(gtk.STOCK_MEDIA_PLAY, PLAY_PAUSE_ICON_SIZE))
+        self.btnPlay.set_image(Gtk.Image.new_from_stock(Gtk.STOCK_MEDIA_PLAY, PLAY_PAUSE_ICON_SIZE))
         self.btnPlay.set_tooltip_text(_('Play the first selected track of the playlist'))
         self.sclSeek.hide()
 
@@ -210,13 +210,13 @@ class CtrlPanel(modules.Module):
 
     def onPaused(self):
         """ The playback has been paused """
-        self.btnPlay.set_image(gtk.image_new_from_stock(gtk.STOCK_MEDIA_PLAY, PLAY_PAUSE_ICON_SIZE))
+        self.btnPlay.set_image(Gtk.Image.new_from_stock(Gtk.STOCK_MEDIA_PLAY, PLAY_PAUSE_ICON_SIZE))
         self.btnPlay.set_tooltip_text(_('Continue playing the current track'))
 
 
     def onUnpaused(self):
         """ The playback has been unpaused """
-        self.btnPlay.set_image(gtk.image_new_from_stock(gtk.STOCK_MEDIA_PAUSE, PLAY_PAUSE_ICON_SIZE))
+        self.btnPlay.set_image(Gtk.Image.new_from_stock(Gtk.STOCK_MEDIA_PAUSE, PLAY_PAUSE_ICON_SIZE))
         self.btnPlay.set_tooltip_text(_('Pause the current track'))
 
 

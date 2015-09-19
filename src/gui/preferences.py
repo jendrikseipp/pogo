@@ -19,7 +19,7 @@
 
 from gettext import gettext as _
 
-import gtk
+from gi.repository import Gtk
 
 import gui, modules, tools, tools.icons
 
@@ -34,9 +34,9 @@ import gui, modules, tools, tools.icons
 ) = range(6)
 
 
-class PreferencesListView(gtk.TreeView):
+class PreferencesListView(Gtk.TreeView):
     def __init__(self, columns):
-        gtk.TreeView.__init__(self)
+        GObject.GObject.__init__(self)
 
         self.selection = self.get_selection()
 
@@ -51,8 +51,8 @@ class PreferencesListView(gtk.TreeView):
                 nbEntries += len(renderers)
                 dataTypes += [renderer[1] for renderer in renderers]
             else:
-                column = gtk.TreeViewColumn(title)
-                column.set_sizing(gtk.TREE_VIEW_COLUMN_AUTOSIZE)
+                column = Gtk.TreeViewColumn(title)
+                column.set_sizing(Gtk.TreeViewColumnSizing.AUTOSIZE)
                 column.set_expand(expandable)
                 column.set_visible(visible)
                 self.append_column(column)
@@ -61,15 +61,15 @@ class PreferencesListView(gtk.TreeView):
                     nbEntries += 1
                     dataTypes.append(type)
                     column.pack_start(renderer, False)
-                    if isinstance(renderer, gtk.CellRendererToggle):
+                    if isinstance(renderer, Gtk.CellRendererToggle):
                         column.add_attribute(renderer, 'active', nbEntries - 1)
-                    elif isinstance(renderer, gtk.CellRendererPixbuf):
+                    elif isinstance(renderer, Gtk.CellRendererPixbuf):
                         column.add_attribute(renderer, 'pixbuf', nbEntries - 1)
-                    elif isinstance(renderer, gtk.CellRendererText):
+                    elif isinstance(renderer, Gtk.CellRendererText):
                         column.add_attribute(renderer, 'markup', nbEntries - 1)
 
         # Create the ListStore associated with this tree
-        self.store = gtk.ListStore(*dataTypes)
+        self.store = Gtk.ListStore(*dataTypes)
         self.set_model(self.store)
 
         # Show the list
@@ -95,21 +95,21 @@ class PreferencesListView(gtk.TreeView):
 class Preferences:
     """ Allow the user to load/unload/configure modules """
     def __init__(self):
-        import gobject
+        from gi.repository import GObject
 
         from gui import window
 
         self.window = window.Window('Preferences.ui', 'vbox1', __name__, _('Preferences'), 390, 350)
 
         # List of modules
-        toggleRdr = gtk.CellRendererToggle()
+        toggleRdr = Gtk.CellRendererToggle()
         columns   = (
-            ('',   [(toggleRdr, gobject.TYPE_BOOLEAN)],             ROW_ENABLED,    False, True),
-            ('',   [(gtk.CellRendererText(), gobject.TYPE_STRING)], ROW_TEXT,       True,  True),
-            ('',   [(gtk.CellRendererPixbuf(), gtk.gdk.Pixbuf)],    ROW_ICON,       False, True),
-            (None, [(None, gobject.TYPE_BOOLEAN)],                  ROW_UNLOADABLE, False, False),
-            (None, [(None, gobject.TYPE_PYOBJECT)],                 ROW_INSTANCE,   False, False),
-            (None, [(None, gobject.TYPE_PYOBJECT)],                 ROW_MODINFO,    False, False))
+            ('',   [(toggleRdr, GObject.TYPE_BOOLEAN)],             ROW_ENABLED,    False, True),
+            ('',   [(Gtk.CellRendererText(), GObject.TYPE_STRING)], ROW_TEXT,       True,  True),
+            ('',   [(Gtk.CellRendererPixbuf(), GdkPixbuf.Pixbuf)],    ROW_ICON,       False, True),
+            (None, [(None, GObject.TYPE_BOOLEAN)],                  ROW_UNLOADABLE, False, False),
+            (None, [(None, GObject.TYPE_PYOBJECT)],                 ROW_INSTANCE,   False, False),
+            (None, [(None, GObject.TYPE_PYOBJECT)],                 ROW_MODINFO,    False, False))
 
         self.list = PreferencesListView(columns)
         self.list.set_headers_visible(False)

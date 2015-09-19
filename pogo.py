@@ -107,8 +107,8 @@ if not optOptions.multiple_instances:
 import gettext
 import locale
 
-import gobject
-import gtk
+from gi.repository import GObject
+from gi.repository import Gtk
 
 from tools import loadGladeFile, log, prefs
 
@@ -150,7 +150,7 @@ def realStartup(window, paned):
 
     def onResize(win, rect):
         """ Save the new size of the window """
-        maximized = win.window.get_state() & gtk.gdk.WINDOW_STATE_MAXIMIZED
+        maximized = win.window.get_state() & Gdk.WindowState.MAXIMIZED
         if win.window is not None and not maximized:
             prefs.set(__name__, 'win-width',  rect.width)
             prefs.set(__name__, 'win-height', rect.height)
@@ -164,8 +164,8 @@ def realStartup(window, paned):
 
     def onState(win, event):
         """ Save the new state of the window """
-        if event.changed_mask & gtk.gdk.WINDOW_STATE_MAXIMIZED:
-            maximized = bool(event.new_window_state & gtk.gdk.WINDOW_STATE_MAXIMIZED)
+        if event.changed_mask & Gdk.WindowState.MAXIMIZED:
+            maximized = bool(event.new_window_state & Gdk.WindowState.MAXIMIZED)
             prefs.set(__name__, 'win-is-maximized', maximized)
 
     def atExit():
@@ -190,7 +190,7 @@ def realStartup(window, paned):
     paned.connect('size-allocate', onPanedResize)
 
     # Let's go
-    gobject.idle_add(modules.postMsg, consts.MSG_EVT_APP_STARTED)
+    GObject.idle_add(modules.postMsg, consts.MSG_EVT_APP_STARTED)
 
 
 # --== Entry point ==--
@@ -207,14 +207,14 @@ def main():
     prefs.setCmdLine((optOptions, optArgs))
 
     # PyGTK initialization
-    gobject.threads_init()
-    gtk.window_set_default_icon_list(
-                        gtk.gdk.pixbuf_new_from_file(consts.fileImgIcon16),
-                        gtk.gdk.pixbuf_new_from_file(consts.fileImgIcon24),
-                        gtk.gdk.pixbuf_new_from_file(consts.fileImgIcon32),
-                        gtk.gdk.pixbuf_new_from_file(consts.fileImgIcon48),
-                        gtk.gdk.pixbuf_new_from_file(consts.fileImgIcon64),
-                        gtk.gdk.pixbuf_new_from_file(consts.fileImgIcon128))
+    GObject.threads_init()
+    Gtk.window_set_default_icon_list(
+                        GdkPixbuf.Pixbuf.new_from_file(consts.fileImgIcon16),
+                        GdkPixbuf.Pixbuf.new_from_file(consts.fileImgIcon24),
+                        GdkPixbuf.Pixbuf.new_from_file(consts.fileImgIcon32),
+                        GdkPixbuf.Pixbuf.new_from_file(consts.fileImgIcon48),
+                        GdkPixbuf.Pixbuf.new_from_file(consts.fileImgIcon64),
+                        GdkPixbuf.Pixbuf.new_from_file(consts.fileImgIcon128))
 
     # Create the GUI
     wTree = loadGladeFile('MainWindow.ui')
@@ -226,7 +226,7 @@ def main():
     try:
         colormap = window.get_screen().get_rgba_colormap()
         if colormap:
-            gtk.widget_set_default_colormap(colormap)
+            Gtk.widget_set_default_colormap(colormap)
     except:
         log.logger.info('No RGBA support (requires PyGTK 2.10+)')
 
@@ -246,8 +246,8 @@ def main():
     paned.set_position(prefs.get(__name__, 'paned-pos', DEFAULT_PANED_POS))
 
     # Initialization done, let's continue the show
-    gobject.idle_add(realStartup, window, paned)
-    gtk.main()
+    GObject.idle_add(realStartup, window, paned)
+    Gtk.main()
 
 if __name__ == '__main__':
     main()

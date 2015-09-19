@@ -69,13 +69,13 @@ class GSTPlayer(modules.Module):
     def __startUpdateTimer(self):
         """ Start the update timer if needed """
         if self.updateTimer is None:
-            self.updateTimer = gobject.timeout_add(1000, self.updateTimerHandler)
+            self.updateTimer = GObject.timeout_add(1000, self.updateTimerHandler)
 
 
     def __stopUpdateTimer(self):
         """ Start the update timer if needed """
         if self.updateTimer is not None:
-            gobject.source_remove(self.updateTimer)
+            GObject.source_remove(self.updateTimer)
             self.updateTimer = None
 
 
@@ -136,8 +136,8 @@ class GSTPlayer(modules.Module):
             self.__playbackTimerHandler()
         else:
             if self.playbackTimer is not None:
-                gobject.source_remove(self.playbackTimer)
-            self.playbackTimer = gobject.timeout_add(int((MIN_PLAYBACK_DELAY - elapsed) * 1000), self.__playbackTimerHandler)
+                GObject.source_remove(self.playbackTimer)
+            self.playbackTimer = GObject.timeout_add(int((MIN_PLAYBACK_DELAY - elapsed) * 1000), self.__playbackTimerHandler)
 
 
     def onStop(self):
@@ -147,7 +147,7 @@ class GSTPlayer(modules.Module):
         self.nextURI = None
 
         if self.playbackTimer is not None:
-            gobject.source_remove(self.playbackTimer)
+            GObject.source_remove(self.playbackTimer)
 
         modules.postMsg(consts.MSG_EVT_STOPPED)
 
@@ -163,7 +163,7 @@ class GSTPlayer(modules.Module):
         elif self.player.isPlaying():
 
             if self.playbackTimer is not None:
-                gobject.source_remove(self.playbackTimer)
+                GObject.source_remove(self.playbackTimer)
 
             self.player.pause()
             modules.postMsg(consts.MSG_EVT_PAUSED)

@@ -23,8 +23,8 @@ import sys
 import logging
 from gettext import gettext as _
 
-import gtk
-import gobject
+from gi.repository import Gtk
+from gi.repository import GObject
 
 import tools
 import modules
@@ -156,7 +156,7 @@ class Search(modules.ThreadedModule):
     def cache_dirs(self, keep_caching):
         for index, path in enumerate(self.paths):
             # Cache dirs one by one after a small timeout
-            gobject.timeout_add_seconds(3 * index, self.search_dir, path,
+            GObject.timeout_add_seconds(3 * index, self.search_dir, path,
                                         CACHE_QUERY)
         # Keep caching in regular intervals
         return keep_caching
@@ -184,23 +184,23 @@ class Search(modules.ThreadedModule):
     def onAppStarted(self):
         """ The module has been loaded """
         wTree = tools.prefs.getWidgetsTree()
-        self.searchbox = gtk.Entry()
+        self.searchbox = Gtk.Entry()
         self.searchbox.set_size_request(210, -1)
         self.searchbox.set_tooltip_text(search_text)
 
-        search_container = gtk.HBox()
+        search_container = Gtk.HBox()
         search_container.pack_start(self.searchbox, False)
         search_container.show_all()
 
         hbox3 = wTree.get_object('hbox3')
-        hbox3.pack_start(search_container)
+        hbox3.pack_start(search_container, True, True, 0)
         hbox3.set_property('homogeneous', True)
         hbox3.reorder_child(search_container, 0)
 
         if hasattr(self.searchbox, 'set_icon_from_stock'):
-            #self.searchbox.set_icon_from_stock(0, gtk.STOCK_FIND)
+            #self.searchbox.set_icon_from_stock(0, Gtk.STOCK_FIND)
             #self.searchbox.set_icon_sensitive(0, False)
-            self.searchbox.set_icon_from_stock(1, gtk.STOCK_CLEAR)
+            self.searchbox.set_icon_from_stock(1, Gtk.STOCK_CLEAR)
             self.searchbox.connect('icon-press', self.on_searchbox_clear)
 
         self.searchbox.connect('activate', self.on_searchbox_activate)
@@ -219,7 +219,7 @@ class Search(modules.ThreadedModule):
 
         if self.allow_caching:
             # Cache the music folders regularly for faster searches
-            gobject.timeout_add_seconds(100, self.cache_dirs, True)
+            GObject.timeout_add_seconds(100, self.cache_dirs, True)
 
 
     def onSearch(self, query):
@@ -258,7 +258,7 @@ class Search(modules.ThreadedModule):
         self.paths = paths
         if self.allow_caching:
             # Cache the new paths once
-            gobject.timeout_add_seconds(5, self.cache_dirs, False)
+            GObject.timeout_add_seconds(5, self.cache_dirs, False)
 
 
     #------- GTK handlers ----------------
@@ -267,9 +267,9 @@ class Search(modules.ThreadedModule):
         """
         Let search box grab the focus when "Ctrl-F" is hit
         """
-        key_name = gtk.gdk.keyval_name(event.keyval)
+        key_name = Gdk.keyval_name(event.keyval)
         modifiers = event.get_state()
-        ctrl_pressed = modifiers & gtk.gdk.CONTROL_MASK
+        ctrl_pressed = modifiers & Gdk.ModifierType.CONTROL_MASK
         if key_name == 'f' and ctrl_pressed:
             self.searchbox.grab_focus()
             return True

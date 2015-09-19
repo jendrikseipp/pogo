@@ -112,7 +112,7 @@ UNKNOWN_ALBUM_ARTIST = _('Unknown Album Artist')
 
 DND_TARGETS = {
                 DND_URI:         ('text/uri-list',   0,                   DND_URI),
-                DND_POGO_URI:    ('pogo/uri-list',    gtk.TARGET_SAME_APP, DND_POGO_URI),
+                DND_POGO_URI:    ('pogo/uri-list',    Gtk.TargetFlags.SAME_APP, DND_POGO_URI),
               }
 
 

@@ -16,29 +16,29 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301 USA
 
-import gtk
+from gi.repository import Gtk
 
 from gtk     import gdk
 from gobject import signal_new, TYPE_NONE, TYPE_PYOBJECT, SIGNAL_RUN_LAST
 
 
 # Custom signals
-signal_new('exttreeview-row-expanded',   gtk.TreeView, SIGNAL_RUN_LAST, TYPE_NONE, (TYPE_PYOBJECT,))
-signal_new('exttreeview-row-collapsed',  gtk.TreeView, SIGNAL_RUN_LAST, TYPE_NONE, (TYPE_PYOBJECT,))
-signal_new('exttreeview-button-pressed', gtk.TreeView, SIGNAL_RUN_LAST, TYPE_NONE, (gdk.Event, TYPE_PYOBJECT))
+signal_new('exttreeview-row-expanded',   Gtk.TreeView, SIGNAL_RUN_LAST, TYPE_NONE, (TYPE_PYOBJECT,))
+signal_new('exttreeview-row-collapsed',  Gtk.TreeView, SIGNAL_RUN_LAST, TYPE_NONE, (TYPE_PYOBJECT,))
+signal_new('exttreeview-button-pressed', Gtk.TreeView, SIGNAL_RUN_LAST, TYPE_NONE, (Gdk.Event, TYPE_PYOBJECT))
 
 
-class ExtTreeView(gtk.TreeView):
+class ExtTreeView(Gtk.TreeView):
 
     def __init__(self, columns, useMarkup=False):
         """ If useMarkup is True, the markup attribute will be used instead of the text one for CellRendererTexts """
-        gtk.TreeView.__init__(self)
+        GObject.GObject.__init__(self)
 
         self.selection = self.get_selection()
 
         # Default configuration for this tree
         self.set_headers_visible(False)
-        self.selection.set_mode(gtk.SELECTION_MULTIPLE)
+        self.selection.set_mode(Gtk.SelectionMode.MULTIPLE)
 
         # Create the columns
         nbEntries = 0
@@ -49,8 +49,8 @@ class ExtTreeView(gtk.TreeView):
                     nbEntries += 1
                     dataTypes.append(type)
             else:
-                column = gtk.TreeViewColumn(title)
-                column.set_sizing(gtk.TREE_VIEW_COLUMN_AUTOSIZE)
+                column = Gtk.TreeViewColumn(title)
+                column.set_sizing(Gtk.TreeViewColumnSizing.AUTOSIZE)
                 column.set_expand(expandable)
                 self.append_column(column)
 
@@ -59,14 +59,14 @@ class ExtTreeView(gtk.TreeView):
                     dataTypes.append(type)
                     column.pack_start(renderer, False)
 
-                    if isinstance(renderer, gtk.CellRendererText):
+                    if isinstance(renderer, Gtk.CellRendererText):
                         if useMarkup: column.add_attribute(renderer, 'markup', nbEntries-1)
                         else:         column.add_attribute(renderer, 'text',   nbEntries-1)
                     else:
                         column.add_attribute(renderer, 'pixbuf', nbEntries-1)
 
         # Create the TreeStore associated with this tree
-        self.store = gtk.TreeStore(*dataTypes)
+        self.store = Gtk.TreeStore(*dataTypes)
         self.set_model(self.store)
 
         # Drag'n'drop management
@@ -296,9 +296,9 @@ class ExtTreeView(gtk.TreeView):
             else:
                 if event.button == 1 and self.motionEvtId is None:
                     self.dndStartPos = (int(event.x), int(event.y))
-                    self.motionEvtId = gtk.TreeView.connect(self, 'motion-notify-event', self.onMouseMotion)
+                    self.motionEvtId = Gtk.TreeView.connect(self, 'motion-notify-event', self.onMouseMotion)
 
-                stateClear = not (event.state & (gdk.SHIFT_MASK | gdk.CONTROL_MASK))
+                stateClear = not (event.get_state() & (Gdk.ModifierType.SHIFT_MASK | Gdk.ModifierType.CONTROL_MASK))
 
                 if stateClear and not self.selection.path_is_selected(path):
                     self.selection.unselect_all()
@@ -318,9 +318,9 @@ class ExtTreeView(gtk.TreeView):
             self.dndContext  = None
             self.motionEvtId = None
 
-        stateClear = not (event.state & (gdk.SHIFT_MASK | gdk.CONTROL_MASK))
+        stateClear = not (event.get_state() & (Gdk.ModifierType.SHIFT_MASK | Gdk.ModifierType.CONTROL_MASK))
 
-        if stateClear and event.state & gdk.BUTTON1_MASK and self.getSelectedRowsCount() > 1:
+        if stateClear and event.get_state() & Gdk.ModifierType.BUTTON1_MASK and self.getSelectedRowsCount() > 1:
             pathInfo = self.get_path_at_pos(int(event.x), int(event.y))
             if pathInfo is not None:
                 self.selection.unselect_all()
@@ -331,10 +331,10 @@ class ExtTreeView(gtk.TreeView):
         """ The mouse has been moved """
         if self.dndContext is None and self.isDraggableFunc() and self.dndSources is not None:
             if self.drag_check_threshold(self.dndStartPos[0], self.dndStartPos[1], int(event.x), int(event.y)):
-                self.dndContext = self.drag_begin(self.dndSources, gdk.ACTION_COPY, 1, event)
+                self.dndContext = self.drag_begin(self.dndSources, Gdk.DragAction.COPY, 1, event)
 
 
     def onDragBegin(self, tree, context):
         """ A drag'n'drop operation has begun """
-        if self.getSelectedRowsCount() == 1: context.set_icon_stock(gtk.STOCK_DND,          0, 0)
-        else:                                context.set_icon_stock(gtk.STOCK_DND_MULTIPLE, 0, 0)
+        if self.getSelectedRowsCount() == 1: context.set_icon_stock(Gtk.STOCK_DND,          0, 0)
+        else:                                context.set_icon_stock(Gtk.STOCK_DND_MULTIPLE, 0, 0)

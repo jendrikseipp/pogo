@@ -24,7 +24,7 @@ import subprocess
 import codecs
 import logging
 from xml.sax.saxutils import escape, unescape
-import gtk
+from gi.repository import Gtk
 
 import consts
 
@@ -89,7 +89,7 @@ def sec2str(seconds, alwaysShowHours=False):
 
 def loadGladeFile(file, root=None):
     """ Load the given Glade file and return the tree of widgets """
-    builder = gtk.Builder()
+    builder = Gtk.Builder()
 
     if root is None:
         builder.add_from_file(os.path.join(consts.dirRes, file))
@@ -201,8 +201,8 @@ def write_file(filename, content):
 
 def print_platform_info():
     import platform
-    import gtk
-    import gst
+    from gi.repository import Gtk
+    from gi.repository import Gst
     import mutagen
     import PIL
 
