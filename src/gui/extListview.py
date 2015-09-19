@@ -57,7 +57,7 @@
 #   * Added a call to set_cursor() when unselecting all rows upon clicking on the empty area
 #   * Sort indicators are now displayed whenever needed
 
-import gtk, random
+import gtk
 
 from gtk     import gdk
 from gobject import signal_new, TYPE_INT, TYPE_STRING, TYPE_BOOLEAN, TYPE_PYOBJECT, TYPE_NONE, SIGNAL_RUN_LAST
@@ -183,10 +183,7 @@ class ExtListView(gtk.TreeView):
             self.enable_model_drag_dest(dndTargets, gdk.ACTION_DEFAULT)
 
         # TreeView events
-        self.connect('drag-begin',           self.onDragBegin)
-        self.connect('drag-motion',          self.onDragMotion)
         self.connect('button-press-event',   self.onButtonPressed)
-        self.connect('drag-data-received',   self.onDragDataReceived)
         self.connect('button-release-event', self.onButtonReleased)
 
         # Selection events
@@ -197,11 +194,6 @@ class ExtListView(gtk.TreeView):
 
 
     # --== Miscellaneous ==--
-
-
-    def __getIterOnSelectedRows(self):
-        """ Return a list of iterators pointing to the selected rows """
-        return [self.store.get_iter(path) for path in self.selection.get_selected_rows()[1]]
 
 
     def __resizeColumns(self):
@@ -456,74 +448,6 @@ class ExtListView(gtk.TreeView):
         self.thaw_child_notify()
 
 
-    def shuffle(self):
-        """ Shuffle the content of the list """
-        order = range(len(self.store))
-        random.shuffle(order)
-        self.store.reorder(order)
-
-        # Move the mark if needed
-        if self.markedRow is not None:
-            self.__findMark()
-
-        self.__resetSorting()
-        self.emit('extlistview-modified')
-
-
-    # --== D'n'D management ==--
-
-
-    def enableDNDReordering(self):
-        """ Enable the use of Drag'n'Drop to reorder the list """
-        self.dndReordering = True
-        self.dndTargets.append(DND_INTERNAL_TARGET)
-        self.enable_model_drag_dest(self.dndTargets, gdk.ACTION_DEFAULT)
-
-
-    def __isDropAfter(self, pos):
-        """ Helper function, True if pos is gtk.TREE_VIEW_DROP_AFTER or gtk.TREE_VIEW_DROP_INTO_OR_AFTER """
-        return pos == gtk.TREE_VIEW_DROP_AFTER or pos == gtk.TREE_VIEW_DROP_INTO_OR_AFTER
-
-
-    def __moveSelectedRows(self, x, y):
-        """ Internal function used for drag'n'drop """
-        iterList = self.__getIterOnSelectedRows()
-        dropInfo = self.get_dest_row_at_pos(int(x), int(y))
-
-        if dropInfo is None:
-            pos, path = gtk.TREE_VIEW_DROP_INTO_OR_AFTER, len(self.store) - 1
-        else:
-            pos, path = dropInfo[1], dropInfo[0][0]
-            if self.__isDropAfter(pos) and path < len(self.store)-1:
-                pos   = gtk.TREE_VIEW_DROP_INTO_OR_BEFORE
-                path += 1
-
-        self.freeze_child_notify()
-        for srcIter in iterList:
-            srcPath = self.store.get_path(srcIter)[0]
-
-            if self.__isDropAfter(pos):
-                dstIter = self.store.insert_after(self.store.get_iter(path),  self.store[srcIter])
-            else:
-                dstIter = self.store.insert_before(self.store.get_iter(path), self.store[srcIter])
-                if path == srcPath:
-                    path += 1
-
-            self.store.remove(srcIter)
-            dstPath = self.store.get_path(dstIter)[0]
-
-            if srcPath > dstPath:
-                path += 1
-
-            if self.markedRow is not None:
-                if   srcPath == self.markedRow:                              self.markedRow  = dstPath
-                elif srcPath < self.markedRow and dstPath >= self.markedRow: self.markedRow -= 1
-                elif srcPath > self.markedRow and dstPath <= self.markedRow: self.markedRow += 1
-        self.thaw_child_notify()
-        self.__resetSorting()
-        self.emit('extlistview-modified')
-
-
     # --== GTK Handlers ==--
 
 
@@ -585,28 +509,6 @@ class ExtListView(gtk.TreeView):
         """ The mouse has been moved """
         if self.dndContext is None and self.drag_check_threshold(self.dndStartPos[0], self.dndStartPos[1], int(event.x), int(event.y)):
             self.dndContext = self.drag_begin([DND_INTERNAL_TARGET], gdk.ACTION_COPY, 1, event)
-
-
-    def onDragBegin(self, tree, context):
-        """ A drag'n'drop operation has begun """
-        if self.getSelectedRowsCount() == 1: context.set_icon_stock(gtk.STOCK_DND,          0, 0)
-        else:                                context.set_icon_stock(gtk.STOCK_DND_MULTIPLE, 0, 0)
-
-
-    def onDragDataReceived(self, tree, context, x, y, selection, dndId, time):
-        """ Some data has been dropped into the list """
-        if dndId == DND_REORDERING_ID: self.__moveSelectedRows(x, y)
-        else:                          self.emit('extlistview-dnd', context, int(x), int(y), selection, dndId, time)
-
-
-    def onDragMotion(self, tree, context, x, y, time):
-        """ Prevent rows from being dragged *into* other rows (this is a list, not a tree) """
-        drop = self.get_dest_row_at_pos(int(x), int(y))
-
-        if drop is not None and (drop[1] == gtk.TREE_VIEW_DROP_INTO_OR_AFTER or drop[1] == gtk.TREE_VIEW_DROP_INTO_OR_BEFORE):
-            self.enable_model_drag_dest([('invalid-position', 0, -1)], gdk.ACTION_DEFAULT)
-        else:
-            self.enable_model_drag_dest(self.dndTargets, gdk.ACTION_DEFAULT)
 
 
     def onColumnHeaderClicked(self, column, event):
