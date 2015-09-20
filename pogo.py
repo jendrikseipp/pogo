@@ -115,6 +115,7 @@ from gi.repository import Gst
 from gi.repository import Gtk
 
 GObject.threads_init()
+Gdk.threads_init()
 Gst.init(None)
 
 from tools import loadGladeFile, log, prefs

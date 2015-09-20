@@ -22,9 +22,9 @@ from gi.repository import Gtk
 
 
 # Custom signals
-GObject.signal_new('exttreeview-row-expanded',   Gtk.TreeView, GObject.SIGNAL_RUN_LAST, GObject.TYPE_NONE, (GObject.TYPE_PYOBJECT,))
-GObject.signal_new('exttreeview-row-collapsed',  Gtk.TreeView, GObject.SIGNAL_RUN_LAST, GObject.TYPE_NONE, (GObject.TYPE_PYOBJECT,))
-GObject.signal_new('exttreeview-button-pressed', Gtk.TreeView, GObject.SIGNAL_RUN_LAST, GObject.TYPE_NONE, (Gdk.Event, GObject.TYPE_PYOBJECT))
+GObject.signal_new('exttreeview-row-expanded',   Gtk.TreeView, GObject.SIGNAL_RUN_LAST, None, (object,))
+GObject.signal_new('exttreeview-row-collapsed',  Gtk.TreeView, GObject.SIGNAL_RUN_LAST, None, (object,))
+GObject.signal_new('exttreeview-button-pressed', Gtk.TreeView, GObject.SIGNAL_RUN_LAST, None, (object, object))
 
 
 class ExtTreeView(Gtk.TreeView):

@@ -33,14 +33,18 @@ __dirCache = {}
 
 def listDir(directory, listHiddenFiles=False):
     """
-        Return a list of tuples (filename, path) with the given directory content
-        The dircache module sorts the list of files, and either it's not needed or it's not sorted the way we want
+    Return a list of tuples (filename, path) of files in the given
+    directory.
     """
-    if directory in __dirCache: cachedMTime, list = __dirCache[directory]
-    else:                       cachedMTime, list = None, None
+    if directory in __dirCache:
+        cachedMTime, list = __dirCache[directory]
+    else:
+        cachedMTime, list = None, None
 
-    if os.path.exists(directory): mTime = os.stat(directory).st_mtime
-    else:                         mTime = 0
+    if os.path.exists(directory):
+        mTime = os.stat(directory).st_mtime
+    else:
+        mTime = 0
 
     if mTime != cachedMTime:
         # Make sure it's readable
@@ -51,7 +55,9 @@ def listDir(directory, listHiddenFiles=False):
 
         __dirCache[directory] = (mTime, list)
 
-    return [(filename, os.path.join(directory, filename)) for filename in list if listHiddenFiles or filename[0] != '.']
+    return [
+        (filename, os.path.join(directory, filename))
+        for filename in list if listHiddenFiles or filename[0] != '.']
 
 
 def makedirs(dir):

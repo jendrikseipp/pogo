@@ -25,7 +25,7 @@ import os
 from os.path import isdir, isfile
 import urllib2
 
-from gi.repository import GdkPixbuf
+from gi.repository import Gdk, GdkPixbuf
 from gi.repository import GObject
 from gi.repository import Gtk
 
@@ -383,7 +383,7 @@ class FileExplorer(modules.Module):
         elif path is not None:
             if event.button == 2:
                 self.play(path)
-            elif event.button == 1 and event.type == Gdk._2BUTTON_PRESS:
+            elif event.button == 1 and event.type == Gdk.EventType._2BUTTON_PRESS:
                 if tree.getItem(path, ROW_PIXBUF) != icons.dirMenuIcon():
                     self.play()
                 elif tree.row_expanded(path):
