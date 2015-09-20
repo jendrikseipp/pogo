@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 15.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1"
+	 id="svg3962" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:cc="http://creativecommons.org/ns#" xmlns:svg="http://www.w3.org/2000/svg" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" sodipodi:docname="virtualbox.svg" inkscape:version="0.48.3.1 r9886"
+	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="48px" height="48px"
+	 viewBox="0 0 48 48" enable-background="new 0 0 48 48" xml:space="preserve">
+<defs>
+	
+	
+		<inkscape:perspective  id="perspective56" inkscape:vp_x="0 : 24 : 1" inkscape:vp_z="48 : 24 : 1" sodipodi:type="inkscape:persp3d" inkscape:vp_y="0 : 1000 : 0" inkscape:persp3d-origin="24 : 16 : 1">
+		</inkscape:perspective>
+</defs>
+<sodipodi:namedview  id="base" inkscape:zoom="22.125399" bordercolor="#666666" pagecolor="#ffffff" borderopacity="1.0" showgrid="true" inkscape:cy="29.994247" inkscape:cx="-14.248295" inkscape:window-maximized="1" inkscape:current-layer="layer1" inkscape:grid-bbox="true" inkscape:pageshadow="2" inkscape:pageopacity="0.0" inkscape:window-y="24" inkscape:window-x="0" inkscape:window-height="854" inkscape:window-width="1600" inkscape:document-units="px">
+	
+		<inkscape:grid  type="xygrid" visible="true" id="grid3097" enabled="true" spacingx="0.5px" spacingy="0.5px" empspacing="4" snapvisiblegridlinesonly="true">
+		</inkscape:grid>
+</sodipodi:namedview>
+<g>
+	<g id="layer1" inkscape:label="Layer" inkscape:groupmode="layer">
+		<g id="g2036" transform="matrix(1.1,0,0,0.4444449,-2.4000022,25.11107)">
+			<g id="g3712" transform="matrix(1.052632,0,0,1.285713,-1.263158,-13.42854)" opacity="0.4">
+				
+					<radialGradient id="rect2801_1_" cx="-126.8065" cy="-201.076" r="2.499" gradientTransform="matrix(2.3202 0 0 -0.8 332.207 -117.3587)" gradientUnits="userSpaceOnUse">
+					<stop  offset="0" style="stop-color:#181818"/>
+					<stop  offset="1" style="stop-color:#181818;stop-opacity:0"/>
+				</radialGradient>
+				<rect id="rect2801" x="38" y="40" fill="url(#rect2801_1_)" width="5" height="7"/>
+				
+					<radialGradient id="rect3696_1_" cx="-330.4315" cy="1537.5724" r="2.4995" gradientTransform="matrix(-2.3202 0 0 0.8 -756.6514 -1186.5592)" gradientUnits="userSpaceOnUse">
+					<stop  offset="0" style="stop-color:#181818"/>
+					<stop  offset="1" style="stop-color:#181818;stop-opacity:0"/>
+				</radialGradient>
+				<rect id="rect3696" x="5" y="40" fill="url(#rect3696_1_)" width="5" height="7"/>
+				
+					<linearGradient id="rect3700_1_" gradientUnits="userSpaceOnUse" x1="-8.1945" y1="-554.9758" x2="-8.1945" y2="-547.9476" gradientTransform="matrix(1.1579 0 0 -0.5714 33.4887 -270.1023)">
+					<stop  offset="0" style="stop-color:#181818;stop-opacity:0"/>
+					<stop  offset="0.5" style="stop-color:#181818"/>
+					<stop  offset="1" style="stop-color:#181818;stop-opacity:0"/>
+				</linearGradient>
+				<rect id="rect3700" x="10" y="40" fill="url(#rect3700_1_)" width="28" height="7"/>
+			</g>
+		</g>
+		
+			<linearGradient id="rect5505-21_1_" gradientUnits="userSpaceOnUse" x1="-96.2036" y1="546.6855" x2="-79.5156" y2="546.6855" gradientTransform="matrix(1.942847e-008 2.337 2.4723 4.305627e-008 -1327.5468 230.2929)">
+			<stop  offset="0" style="stop-color:#333333"/>
+			<stop  offset="0.2624" style="stop-color:#202020"/>
+			<stop  offset="0.6609" style="stop-color:#000000"/>
+			<stop  offset="1" style="stop-color:#000000"/>
+		</linearGradient>
+		<linearGradient id="rect5505-21_2_" gradientUnits="userSpaceOnUse" x1="-273.5" y1="444.5" x2="-272.5" y2="444.5">
+			<stop  offset="0" style="stop-color:#333333"/>
+			<stop  offset="0.2624" style="stop-color:#202020"/>
+			<stop  offset="0.6609" style="stop-color:#000000"/>
+			<stop  offset="1" style="stop-color:#000000"/>
+		</linearGradient>
+		
+			<path id="rect5505-21" fill="url(#rect5505-21_1_)" stroke="url(#rect5505-21_2_)" stroke-linecap="round" stroke-linejoin="round" d="
+			M6.5,5.467h35c1.104,0,2,0.896,2,2v35c0,1.105-0.896,2-2,2h-35c-1.104,0-2-0.895-2-2v-35C4.5,6.363,5.396,5.467,6.5,5.467z"/>
+		<linearGradient id="rect6741-2_1_" gradientUnits="userSpaceOnUse" x1="-249.5" y1="439.5" x2="-249.5" y2="401.5">
+			<stop  offset="0" style="stop-color:#FFFFFF"/>
+			<stop  offset="0.0632" style="stop-color:#FFFFFF;stop-opacity:0.2353"/>
+			<stop  offset="0.9506" style="stop-color:#FFFFFF;stop-opacity:0.1569"/>
+			<stop  offset="1" style="stop-color:#FFFFFF;stop-opacity:0.3922"/>
+		</linearGradient>
+		
+			<path id="rect6741-2" opacity="0.5" fill="none" stroke="url(#rect6741-2_1_)" stroke-linecap="round" stroke-linejoin="round" enable-background="new    " d="
+			M6.5,6.467h35c0.553,0,1,0.448,1,1v35c0,0.553-0.447,1-1,1h-35c-0.552,0-1-0.447-1-1v-35C5.5,6.915,5.948,6.467,6.5,6.467z"/>
+	</g>
+	<path fill="#FFFFFF" d="M27.228,16.776c-1.771-2.974-6.516-3.479-10.564-1.139c-3.138,1.864-4.975,4.904-4.821,7.591h-0.05V42.98
+		h0.949V25.814c1.935,2.695,6.438,3.066,10.312,0.766C27.102,24.177,29,19.813,27.228,16.776z M21.281,23.403
+		c0,0-0.063,0.063-0.126,0.063c-0.063,0-0.063,0.063-0.126,0.063c-3.669,2.15-7.211,2.848-7.907,1.583
+		c-0.696-1.265,1.645-3.985,5.25-6.073l0.063-0.063c0.063,0,0.063-0.063,0.126-0.063c3.669-2.151,7.212-2.847,7.908-1.582
+		C27.228,18.532,24.888,21.252,21.281,23.403z"/>
+</g>
+</svg>
