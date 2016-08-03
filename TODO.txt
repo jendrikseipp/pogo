@@ -1,17 +1,20 @@
 === Roadmap ===
 
-O Don't skip to next track early (2 seconds before end).
+X Move code to github.
+X Remove unused code.
+x Make debian package's dependency on dh-python explicit.
+x Include elementary-style icon in repo under pix/pogo-e-48.svg (thanks Felix).
+O Test for dead code with vulture.
+O Don't skip to next track early (currently 2 seconds before end).
 O Search whole system by default (after "locate" finishes)
 O Add application-wide message system for warnings. Should use event system.
 O Show warning if search commands fail.
-O Use new logo by Kevin Macphail
 O Port from PyGTK 2 to PyGI GTK 3
-  O Make sure pygobject doesn't make us slower
   O Wait for pygobject to stabilize
     (version 3.12 causes too many segfaults and X errors)
   X GStreamer: https://wiki.ubuntu.com/Novacut/GStreamer1.0
 O Port from python2 to python3 (needs PyGI and mutagen 1.25).
-  Make unicode handling in GTK easier.
+  Makes unicode handling in GTK easier.
 
 
 === Features that will MAYBE be implemented ===
@@ -24,8 +27,8 @@ O Shuffle
 O Repeat
 O Playlist loading
 O Sound Indicator for the Ubuntu Sound Menu
-  (Use new unity API for SoundMenu (https://launchpad.net/hello-unity))
-  (needs gtk3)
+  Use new unity API for SoundMenu (https://launchpad.net/hello-unity)
+  Needs gtk3
 
 
 === Features that will NOT be implemented ===
