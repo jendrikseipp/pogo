@@ -1,3 +1,13 @@
+pogo (0.8.7-1) UNRELEASED; urgency=low
+
+  * New upstream release
+  * Move code to github.
+  * Remove unused code.
+  * Make debian package's dependency on dh-python explicit.
+  * Include elementary-style icon in repo under pix/pogo-e-48.svg (thanks Felix).
+
+ -- Jendrik Seipp <jendrikseipp@web.de>  Wed, 03 Aug 2016 18:05:24 +0200
+
 pogo (0.8.6-1) UNRELEASED; urgency=low
 
   * New upstream release
