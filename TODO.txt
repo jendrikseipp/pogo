@@ -1,9 +1,5 @@
 === Roadmap ===
 
-X Move code to github.
-X Remove unused code.
-x Make debian package's dependency on dh-python explicit.
-x Include elementary-style icon in repo under pix/pogo-e-48.svg (thanks Felix).
 O Test for dead code with vulture.
 O Don't skip to next track early (currently 2 seconds before end).
 O Search whole system by default (after "locate" finishes)

@@ -1,3 +1,11 @@
+0.8.7 "Brighter than Gold" (16-08-03)
+=====================================
+* Move code to github.
+* Remove unused code.
+* Make debian package's dependency on dh-python explicit.
+* Include elementary-style icon in repo under pix/pogo-e-48.svg (thanks Felix).
+
+
 0.8.6 "Ich bin zu jung" (15-09-19)
 ==================================
 * Fix version number.
