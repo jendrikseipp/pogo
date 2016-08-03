@@ -3,8 +3,8 @@ Section: sound
 Priority: optional
 Maintainer: Jendrik Seipp <jendrikseipp@web.de>
 Build-Depends: debhelper (>= 7.0.50~)
-Build-Depends-Indep: python (>=2.5), python-support
-Standards-Version: 3.9.2
+Build-Depends-Indep: python (>=2.7), dh-python
+Standards-Version: 3.9.6
 Homepage: https://github.com/jendrikseipp/pogo
 Vcs-Git: git://github.com/jendrikseipp/pogo.git
 Vcs-Browser: https://github.com/jendrikseipp/pogo
