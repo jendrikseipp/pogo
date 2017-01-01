@@ -72,11 +72,8 @@ class Search(modules.ThreadedModule):
         hbox3.set_property('homogeneous', True)
         hbox3.reorder_child(search_container, 0)
 
-        if hasattr(self.searchbox, 'set_icon_from_stock'):
-            #self.searchbox.set_icon_from_stock(0, Gtk.STOCK_FIND)
-            #self.searchbox.set_icon_sensitive(0, False)
-            self.searchbox.set_icon_from_stock(1, Gtk.STOCK_CLEAR)
-            self.searchbox.connect('icon-press', self.on_searchbox_clear)
+        self.searchbox.set_icon_from_icon_name(Gtk.EntryIconPosition.SECONDARY, 'edit-clear')
+        self.searchbox.connect('icon-press', self.on_searchbox_clear)
 
         self.searchbox.connect('activate', self.on_searchbox_activate)
         self.searchbox.connect('changed', self.on_searchbox_changed)
