@@ -54,7 +54,7 @@ class AudioPlayer:
         self.player.set_property('video-sink', Gst.ElementFactory.make('fakesink', 'fakesink'))
 
         # Change the audio sink to our own bin, so that an equalizer/replay gain element can be added later on if needed
-        self.audiobin  = Gst.Bin('audiobin')
+        self.audiobin  = Gst.Bin.new('audiobin')
         self.audiosink = Gst.ElementFactory.make('autoaudiosink', 'audiosink')
 
         # Callback when the source of the playbin is changed
@@ -169,7 +169,7 @@ class AudioPlayer:
 
     def isPlaying(self):
         """ Return whether the player is paused """
-        return self.__getPlayer().get_state()[1] == Gst.State.PLAYING
+        return self.__getPlayer().get_state(timeout=Gst.CLOCK_TIME_NONE)[1] == Gst.State.PLAYING
 
 
     def setURI(self, uri):

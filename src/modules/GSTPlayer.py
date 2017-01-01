@@ -62,7 +62,7 @@ class GSTPlayer(modules.Module):
 
             modules.postMsg(consts.MSG_EVT_TRACK_POSITION, {'seconds': int(position // 1000000000)})
 
-            if remaining < 5000000000 and self.nextURI is None and not prefs.getCmdLine()[0].playbin:
+            if remaining < 5000000000 and self.nextURI is None:
                 modules.postMsg(consts.MSG_EVT_NEED_BUFFER)
 
         return True
@@ -83,9 +83,8 @@ class GSTPlayer(modules.Module):
 
     def onBuffer(self, uri):
         """ Buffer the next track """
-        if not prefs.getCmdLine()[0].playbin:
-            self.nextURI = uri
-            self.player.setNextURI(uri)
+        self.nextURI = uri
+        self.player.setNextURI(uri)
 
 
     def __onTrackEnded(self, error):

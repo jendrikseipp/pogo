@@ -104,6 +104,7 @@
                             <property name="right_padding">5</property>
                             <child>
                               <object class="GtkHScale" id="scl-position">
+                                <property name="visible">True</property>
                                 <property name="width_request">170</property>
                                 <property name="can_focus">True</property>
                                 <property name="no_show_all">True</property>

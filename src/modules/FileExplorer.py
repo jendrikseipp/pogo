@@ -464,7 +464,7 @@ class FileExplorer(modules.Module):
             popup.append(show_folder)
 
         popup.show_all()
-        popup.popup(None, None, None, button, time)
+        popup.popup(None, None, None, None, button, time)
 
 
     def on_add_dir(self, widget):
