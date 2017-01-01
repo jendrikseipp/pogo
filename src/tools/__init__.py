@@ -24,6 +24,7 @@ import subprocess
 import codecs
 import logging
 from xml.sax.saxutils import escape, unescape
+
 from gi.repository import Gtk
 
 import consts

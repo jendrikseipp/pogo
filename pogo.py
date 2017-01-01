@@ -25,6 +25,10 @@ import traceback
 
 import dbus
 
+import gi
+gi.require_version('Gtk', '3.0')
+from gi.repository import Gtk
+
 prefix = '/usr'
 installed_src_dir = os.path.join(prefix, 'share/pogo/src')
 src_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'src')
@@ -105,16 +109,13 @@ if not optOptions.multiple_instances:
 import gettext
 import locale
 
-import gi
 gi.require_version('Gst', '1.0')
-
 from gi.repository import Gdk
 from gi.repository import GdkPixbuf
 from gi.repository import GObject
 from gi.repository import Gst
-from gi.repository import Gtk
 
-GObject.threads_init()
+# GObject.threads_init() is not needed since PyGObject 3.10.2
 Gdk.threads_init()
 Gst.init(None)
 
