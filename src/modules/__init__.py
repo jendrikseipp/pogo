@@ -242,7 +242,13 @@ class ThreadedModule(threading.Thread, ModuleBase):
         self.gtkSemaphore.release()
 
     def gtkExecute(self, func):
-        """ Execute func in the GTK main loop, and block the execution of the thread until done """
+        """
+        Execute `func` in the GTK main loop, and block the execution of
+        the thread until done. This method must be used to call GTK
+        functions since calling them from other threads leads to
+        segmentation faults.
+
+        """
         GObject.idle_add(self.__gtkExecute, func)
         self.gtkSemaphore.acquire()
         return self.gtkResult
