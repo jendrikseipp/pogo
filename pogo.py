@@ -115,8 +115,6 @@ from gi.repository import GdkPixbuf
 from gi.repository import GObject
 from gi.repository import Gst
 
-# GObject.threads_init() is not needed since PyGObject 3.10.2
-Gdk.threads_init()
 Gst.init(None)
 
 from tools import loadGladeFile, log, prefs
