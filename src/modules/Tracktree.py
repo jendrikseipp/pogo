@@ -663,7 +663,7 @@ class Tracktree(modules.Module):
 
     def onMouseButton(self, tree, event, path):
         """ A mouse button has been pressed """
-        if event.button == 1 and event.type == Gdk._2BUTTON_PRESS and path is not None:
+        if event.button == 1 and event.type == Gdk.EventType._2BUTTON_PRESS and path is not None:
             self.jumpTo(self.tree.store.get_iter(path))
         elif event.button == 3:
             self.onShowPopupMenu(tree, event.button, event.time, path)
