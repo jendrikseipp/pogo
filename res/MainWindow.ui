@@ -107,7 +107,6 @@
                                 <property name="width_request">170</property>
                                 <property name="can_focus">True</property>
                                 <property name="no_show_all">True</property>
-                                <property name="update_policy">discontinuous</property>
                                 <property name="adjustment">adjustment1</property>
                                 <property name="draw_value">False</property>
                               </object>
