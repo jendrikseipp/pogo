@@ -49,7 +49,7 @@ class CtrlPanel(modules.Module):
         modules.Module.__init__(self, handlers)
 
 
-    def set_time(self, seconds):
+    def set_time_tooltip(self, seconds):
         if seconds > self.currTrackLength:
             seconds = self.currTrackLength
 
@@ -83,7 +83,6 @@ class CtrlPanel(modules.Module):
     def onAppStarted(self):
         """ Real initialization function, called when this module has been loaded """
         self.currTrackLength = 0
-        self.sclBeingDragged = False
 
         # Widgets
         wTree             = prefs.getWidgetsTree()
@@ -192,13 +191,12 @@ class CtrlPanel(modules.Module):
 
     def onNewTrackPosition(self, seconds):
         """ The track position has changed """
-        if not self.sclBeingDragged:
-            self.set_time(seconds)
+        self.set_time_tooltip(seconds)
 
-            # Make sure the handler will not be called
-            self.sclSeek.handler_block_by_func(self.onSeekValueChanged)
-            self.sclSeek.set_value(seconds)
-            self.sclSeek.handler_unblock_by_func(self.onSeekValueChanged)
+        # Make sure the handler will not be called
+        self.sclSeek.handler_block_by_func(self.onSeekValueChanged)
+        self.sclSeek.set_value(seconds)
+        self.sclSeek.handler_unblock_by_func(self.onSeekValueChanged)
 
 
     def onCurrentTrackMoved(self, hasPrevious, hasNext):
@@ -228,14 +226,12 @@ class CtrlPanel(modules.Module):
 
     def onSeekChangingValue(self, range, scroll, value):
         """ The user is moving the seek slider """
-        self.sclBeingDragged = True
-        self.set_time(int(value))
+        self.set_time_tooltip(int(value))
 
 
     def onSeekValueChanged(self, range):
         """ The user has moved the seek slider """
         modules.postMsg(consts.MSG_CMD_SEEK, {'seconds': int(range.get_value())})
-        self.sclBeingDragged = False
 
 
     def onAbout(self, item):
