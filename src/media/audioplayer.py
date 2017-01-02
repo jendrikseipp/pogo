@@ -34,14 +34,9 @@ class AudioPlayer:
 
     def __getPlayer(self):
         """ Construct and return the GStreamer player """
-        self.__constructPlayer()
-        self.__getPlayer = self.__getPlayer_post       # I love Python
+        if not self.player:
+            self.__constructPlayer()
 
-        return self.player
-
-
-    def __getPlayer_post(self):
-        """ Return the GStreamer player """
         return self.player
 
 
@@ -164,12 +159,12 @@ class AudioPlayer:
 
     def isPaused(self):
         """ Return whether the player is paused """
-        return self.__getPlayer().get_state(timeout=Gst.CLOCK_TIME_NONE)[1] == Gst.State.PAUSED
+        return self.__getPlayer().get_state(timeout=Gst.CLOCK_TIME_NONE).state == Gst.State.PAUSED
 
 
     def isPlaying(self):
         """ Return whether the player is paused """
-        return self.__getPlayer().get_state(timeout=Gst.CLOCK_TIME_NONE)[1] == Gst.State.PLAYING
+        return self.__getPlayer().get_state(timeout=Gst.CLOCK_TIME_NONE).state == Gst.State.PLAYING
 
 
     def setURI(self, uri):
@@ -199,10 +194,9 @@ class AudioPlayer:
 
     def getPosition(self):
         """ Return the current position """
-        return self.__getPlayer().query_position(Gst.Format.TIME)[0]
+        return self.__getPlayer().query_position(Gst.Format.TIME).cur
 
 
     def getDuration(self):
         """ Return the duration of the current stream """
-        try:    return self.__getPlayer().query_duration(Gst.Format.TIME)[0]
-        except: return 0
+        return self.__getPlayer().query_duration(Gst.Format.TIME).duration

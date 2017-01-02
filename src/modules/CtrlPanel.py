@@ -50,8 +50,10 @@ class CtrlPanel(modules.Module):
 
 
     def set_time(self, seconds):
+        if seconds > self.currTrackLength:
+            seconds = self.currTrackLength
+
         elapsed = sec2str(seconds)
-        #remaining = sec2str(self.currTrackLength - seconds)
         total = sec2str(self.currTrackLength)
         self.sclSeek.set_tooltip_text('%s / %s' % (elapsed, total))
 
@@ -97,11 +99,9 @@ class CtrlPanel(modules.Module):
         self.sclSeek.connect('change-value', self.onSeekChangingValue)
         self.sclSeek.connect('value-changed', self.onSeekValueChanged)
 
-        # Left mouse click jumps to current position
-        self.sclSeek.connect('button-press-event', self.onSeekButtonPressed)
-        self.sclSeek.connect('button-release-event', self.onSeekButtonReleased)
+        self.sclSeek.hide()
 
-        # Add pref button
+        # Add preferences button.
 
         self.uimanager = Gtk.UIManager()
         self.main_window = wTree.get_object('win-main')
@@ -156,7 +156,7 @@ class CtrlPanel(modules.Module):
 
 
         toolbar_hbox = wTree.get_object('hbox4')
-        toolbar_hbox.pack_end(menu_button, False)
+        toolbar_hbox.pack_end(menu_button, False, False, 0)
         # Move it to the right
         toolbar_hbox.reorder_child(menu_button, 0)
         menu_button.set_menu(button_menu)
@@ -164,7 +164,6 @@ class CtrlPanel(modules.Module):
         self.set_tooltips(self.uimanager)
         accelgroup = self.uimanager.get_accel_group()
         self.main_window.add_accel_group(accelgroup)
-
 
 
     def onNewTrack(self, track):
@@ -194,9 +193,6 @@ class CtrlPanel(modules.Module):
     def onNewTrackPosition(self, seconds):
         """ The track position has changed """
         if not self.sclBeingDragged:
-            ## Use "1:40 / 2:34" format
-            if seconds >= self.currTrackLength:
-                seconds = self.currTrackLength
             self.set_time(seconds)
 
             # Make sure the handler will not be called
@@ -230,47 +226,16 @@ class CtrlPanel(modules.Module):
 
     # --== GTK handlers ==--
 
+    def onSeekChangingValue(self, range, scroll, value):
+        """ The user is moving the seek slider """
+        self.sclBeingDragged = True
+        self.set_time(int(value))
+
 
     def onSeekValueChanged(self, range):
         """ The user has moved the seek slider """
         modules.postMsg(consts.MSG_CMD_SEEK, {'seconds': int(range.get_value())})
         self.sclBeingDragged = False
-
-
-    def onSeekChangingValue(self, range, scroll, value):
-        """ The user is moving the seek slider """
-        self.sclBeingDragged = True
-
-        if value >= self.currTrackLength: value = self.currTrackLength
-        else:                             value = int(value)
-
-        self.set_time(value)
-
-
-    def onSeekButtonPressed(self, widget, event):
-        '''
-        Let left-clicks behave as middle-clicks -> Jump to correct position
-        '''
-        # Leftclick
-        if event.button == 1:
-            self.sclBeingDragged = True
-            event.button = 2
-            # Middleclick
-            widget.emit('button-press-event', event)
-            return True
-
-
-    def onSeekButtonReleased(self, widget, event):
-        '''
-        Let left-clicks behave as middle-clicks -> Jump to correct position
-        '''
-        # Leftclick
-        if event.button == 1:
-            self.sclBeingDragged = True
-            event.button = 2
-            # Middleclick
-            widget.emit('button-release-event', event)
-            return True
 
 
     def onAbout(self, item):
