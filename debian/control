@@ -25,8 +25,7 @@ Recommends: gstreamer0.10-plugins-ugly,
             gstreamer0.10-plugins-bad,
             python-notify (>=0.1),
             python-gnome2,
-            python-gnomekeyring,
-            python-zeitgeist
+            python-gnomekeyring
 Description: Probably the simplest and fastest audio player for Linux.
  Pogo plays your music. Nothing else. It is both fast and easy-to-use. The clear
  interface uses the screen real-estate very efficiently. Other features include:

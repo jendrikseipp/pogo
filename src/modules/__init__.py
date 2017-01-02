@@ -289,7 +289,7 @@ mEnabledModules = prefs.get(__name__, 'enabled_modules', [])                   #
 
 
 # Do not load modules in blacklist. They also won't show up in the preferences
-blacklist = ['__init__.py', 'DBus.py', 'Covers.py', 'CtrlPanel.py', 'DesktopNotification.py', 'GnomeMediaKeys.py', 'TrackPanel.py', 'Zeitgeist.py']
+blacklist = ['__init__.py', 'DBus.py', 'Covers.py', 'CtrlPanel.py', 'DesktopNotification.py', 'GnomeMediaKeys.py', 'TrackPanel.py']
 
 
 def load_enabled_modules():
