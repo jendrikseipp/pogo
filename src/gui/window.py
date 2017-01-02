@@ -16,6 +16,7 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301 USA
 
+from gi.repository import GObject
 from gi.repository import Gtk
 
 import tools
@@ -78,14 +79,14 @@ class Window(Gtk.Window):
 
     def onResize(self, win, rect):
         """ Save the new size of the dialog """
-        if win.window is not None and not win.window.get_state() & Gdk.WindowState.MAXIMIZED:
+        if not win.props.is_maximized:
             tools.prefs.set(self.modName, 'win-width',  rect.width)
             tools.prefs.set(self.modName, 'win-height', rect.height)
 
 
     def onState(self, win, evt):
         """ Save the new state of the dialog """
-        tools.prefs.set(self.modName, 'win-is-maximized', bool(evt.new_window_state & Gdk.WindowState.MAXIMIZED))
+        tools.prefs.set(self.modName, 'win-is-maximized', win.props.is_maximized)
 
 
     def onDelete(self, win, evt):

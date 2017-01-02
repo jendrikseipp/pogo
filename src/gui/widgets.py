@@ -156,7 +156,7 @@ class TrackTreeView(ExtTreeView):
         return self.store.get_value(iter, 1)
 
     def get_first_iter(self):
-        return self.store.get_iter_root()
+        return self.store.get_iter_first()
 
     def get_last_iter(self):
         lowest_root = self.get_last_root()

@@ -66,8 +66,10 @@ def __checkDeps(deps):
     """ Given a list of Python modules, return a list of the modules that are unavailable """
     unmetDeps = []
     for module in deps:
-        try:    __import__(module)
-        except: unmetDeps.append(module)
+        try:
+            __import__(module)
+        except ImportError:
+            unmetDeps.append(module)
     return unmetDeps
 
 
@@ -288,8 +290,8 @@ mHandlersLock   = threading.Lock()                                             #
 mEnabledModules = prefs.get(__name__, 'enabled_modules', [])                   # List of modules currently enabled
 
 
-# Do not load modules in blacklist. They also won't show up in the preferences
-blacklist = ['__init__.py', 'DBus.py', 'Covers.py', 'CtrlPanel.py', 'DesktopNotification.py', 'GnomeMediaKeys.py', 'TrackPanel.py']
+# Do not load modules in blacklist. They also won't show up in the preferences.
+blacklist = ['__init__.py']
 
 
 def load_enabled_modules():
@@ -301,7 +303,7 @@ def load_enabled_modules():
             pModule = __import__(file)
             modInfo = getattr(pModule, 'MOD_INFO')
 
-            # Should it be instanciated?
+            # Should it be instantiated?
             instance = None
             if modInfo[MODINFO_MANDATORY] or modInfo[MODINFO_NAME] in mEnabledModules:
                 if len(__checkDeps(modInfo[MODINFO_DEPS])) == 0:

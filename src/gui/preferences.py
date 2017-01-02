@@ -19,6 +19,8 @@
 
 from gettext import gettext as _
 
+from gi.repository import GdkPixbuf
+from gi.repository import GObject
 from gi.repository import Gtk
 
 import gui, modules, tools, tools.icons

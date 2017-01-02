@@ -164,7 +164,7 @@ class AudioPlayer:
 
     def isPaused(self):
         """ Return whether the player is paused """
-        return self.__getPlayer().get_state()[1] == Gst.State.PAUSED
+        return self.__getPlayer().get_state(timeout=Gst.CLOCK_TIME_NONE)[1] == Gst.State.PAUSED
 
 
     def isPlaying(self):
@@ -199,8 +199,7 @@ class AudioPlayer:
 
     def getPosition(self):
         """ Return the current position """
-        try:    return self.__getPlayer().query_position(Gst.Format.TIME)[0]
-        except: return 0
+        return self.__getPlayer().query_position(Gst.Format.TIME)[0]
 
 
     def getDuration(self):

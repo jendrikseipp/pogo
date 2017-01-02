@@ -16,7 +16,11 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301 USA
 
-import pango, tools
+from gi.repository import Pango
+
+import tools
+
+PANGO_SCALE_FACTOR = 1.2
 
 mDlg       = None
 mTxtBuffer = None
@@ -35,8 +39,8 @@ class HelpDlg:
             mTxtBuffer = wTree.get_object('txt-help').get_buffer()
 
             mDlg.set_title(tools.consts.appName)
-            mTxtBuffer.create_tag('title',   weight=Pango.Weight.BOLD, scale=Pango.SCALE_X_LARGE)
-            mTxtBuffer.create_tag('section', weight=Pango.Weight.BOLD, scale=Pango.SCALE_LARGE)
+            mTxtBuffer.create_tag('title',   weight=Pango.Weight.BOLD, scale=PANGO_SCALE_FACTOR ** 2)
+            mTxtBuffer.create_tag('section', weight=Pango.Weight.BOLD, scale=PANGO_SCALE_FACTOR)
 
         self.nbSections = 0
         mTxtBuffer.set_text('')

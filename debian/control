@@ -23,7 +23,7 @@ Depends: ${python:Depends},
          gstreamer0.10-alsa
 Recommends: gstreamer0.10-plugins-ugly,
             gstreamer0.10-plugins-bad,
-            python-notify (>=0.1),
+            python-notify (>=0.1.1),
             python-gnome2,
             python-gnomekeyring
 Description: Probably the simplest and fastest audio player for Linux.

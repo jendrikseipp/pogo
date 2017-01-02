@@ -23,12 +23,25 @@ import os.path
 from gi.repository import GObject
 from gi.repository import Gtk
 
+import gi
+gi.require_version('Notify', '0.7')
+try:
+    from gi.repository import Notify
+except ImportError:
+    Notify = None
+
 import modules
 from tools import consts, prefs
 from tools.log import logger
 
 
-MOD_INFO = ('Desktop Notification', _('Desktop Notification'), _('Display a desktop notification on track change'), ['pynotify'], False, True)
+MOD_INFO = (
+    'Desktop Notification',
+    _('Desktop Notification'),
+    _('Display a desktop notification on track change'),
+    ['gi.repository.Notify'],
+    False,
+    True)
 
 # Default preferences
 PREFS_DEFAULT_BODY       = 'by {artist} on {album}'
@@ -74,13 +87,11 @@ class DesktopNotification(modules.Module):
 
     def __createNotification(self, title, body, icon):
         """ Create the Notification object """
-        from gi.repository import Notify
-
         if not Notify.init(consts.appNameShort):
-            logger.error('[%s] Initialization of pynotify failed' % MOD_INFO[modules.MODINFO_NAME])
+            logger.error('[%s] Initialization of python-notify failed' % MOD_INFO[modules.MODINFO_NAME])
 
-        self.notif = Notify.Notification(title, body, icon)
-        self.notif.set_urgency(Notify.URGENCY_LOW)
+        self.notif = Notify.Notification.new(title, body, icon)
+        self.notif.set_urgency(Notify.Urgency.LOW)
         self.notif.set_timeout(prefs.get(__name__, 'timeout', PREFS_DEFAULT_TIMEOUT) * 1000)
 
         if prefs.get(__name__, 'skip-track', PREFS_DEFAULT_SKIP_TRACK):
@@ -130,6 +141,8 @@ class DesktopNotification(modules.Module):
 
     def onModLoaded(self):
         """ The module has been loaded """
+        assert Notify
+
         self.notif     = None
         self.cfgWin    = None
         self.hasNext   = False

@@ -199,16 +199,17 @@ class CoverWindow(Gtk.Window):
         scrolled = wTree.get_object('scrolled-tracklist')
         tree = scrolled.get_child()
         if tree:
-            tree_x, tree_y, tree_width, tree_height = tree.get_allocation()
+            rectangle = tree.get_allocation()
+            tree_x, tree_y, tree_width, tree_height = rectangle.x, rectangle.y, rectangle.width, rectangle.height
             # Get the window, the tracktree is painted on
             tree_win = tree.get_parent_window()
 
             # Get absolute position of the Gdk.Window without the window decos
-            orig_tree_win_x, orig_tree_win_y = tree_win.get_origin()
+            orig_tree_win = tree_win.get_origin()
 
             # Calculate absolute position of upper left corner
-            x = orig_tree_win_x + tree_x
-            y = orig_tree_win_y + tree_y
+            x = orig_tree_win.x + tree_x
+            y = orig_tree_win.y + tree_y
 
             # get lower right corner
             x, y = x + tree_width, y + tree_height
