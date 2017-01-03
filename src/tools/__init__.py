@@ -109,17 +109,15 @@ def loadGladeFile(file, root=None):
 
 def pickleLoad(file):
     """ Use cPickle to load the data structure stored in the given file """
-    input = open(file, 'r')
-    data  = cPickle.load(input)
-    input.close()
+    with open(file, 'r') as f:
+        data  = cPickle.load(f)
     return data
 
 
 def pickleSave(file, data):
     """ Use cPickle to save the data to the given file """
-    output = open(file, 'w')
-    cPickle.dump(data, output)
-    output.close()
+    with open(file, 'w') as f:
+        cPickle.dump(data, f)
 
 
 def percentEncode(string):

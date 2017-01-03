@@ -20,42 +20,52 @@ import os, threading, tools
 
 
 # Load user preferences from the disk
-try:    __usrPrefs = tools.pickleLoad(tools.consts.filePrefs)
-except: __usrPrefs = {}
+try:
+    __usrPrefs = tools.pickleLoad(tools.consts.filePrefs)
+except:
+    __usrPrefs = {}
 
-__mutex      = threading.Lock() # Prevent concurrent calls to functions
-__appGlobals = {}               # Some global values shared by all the components of the application
+# Prevent concurrent calls to functions
+__mutex = threading.Lock()
+
+# Some global values shared by all the components of the application
+__appGlobals = {}
 
 
 def save():
     """ Save user preferences to the disk """
-    __mutex.acquire()
-    tools.pickleSave(tools.consts.filePrefs, __usrPrefs)
-    os.chmod(tools.consts.filePrefs, 0600)
-    __mutex.release()
+    with __mutex:
+        tools.pickleSave(tools.consts.filePrefs, __usrPrefs)
+        os.chmod(tools.consts.filePrefs, 0600)
 
 
 def set(module, name, value):
     """ Change the value of a preference """
-    __mutex.acquire()
-    __usrPrefs[module + '_' + name] = value;
-    __mutex.release()
+    with __mutex:
+        __usrPrefs[module + '_' + name] = value;
 
 
 def get(module, name, default=None):
     """ Retrieve the value of a preference """
-    __mutex.acquire()
-    try:    value = __usrPrefs[module + '_' + name]
-    except: value = default
-    __mutex.release()
+    with __mutex:
+        try:
+            value = __usrPrefs[module + '_' + name]
+        except:
+            value = default
     return value
 
 
 # Command line used to start the application
-def setCmdLine(cmdLine): __appGlobals['cmdLine'] = cmdLine
-def getCmdLine():        return __appGlobals['cmdLine']
+def setCmdLine(cmdLine):
+    __appGlobals['cmdLine'] = cmdLine
+
+def getCmdLine():
+    return __appGlobals['cmdLine']
 
 
 # Main widgets' tree created by Glade
-def setWidgetsTree(tree): __appGlobals['wTree'] = tree
-def getWidgetsTree():     return __appGlobals['wTree']
+def setWidgetsTree(tree):
+    __appGlobals['wTree'] = tree
+
+def getWidgetsTree():
+    return __appGlobals['wTree']
