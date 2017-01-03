@@ -406,13 +406,12 @@ class FileExplorer(modules.Module):
             # info node selected, make it clickable
             path = None
 
-        popup = Gtk.Menu()
+        # Keep reference after method exits.
+        self.popup_menu = Gtk.Menu()
 
         # Play selection
-        play = Gtk.ImageMenuItem(Gtk.STOCK_MEDIA_PLAY)
-        play.set_label(_('Append'))
-        popup.append(play)
-
+        play = Gtk.MenuItem.new_with_label(_('Append'))
+        self.popup_menu.append(play)
         if path is None:
             play.set_sensitive(False)
         else:
@@ -421,8 +420,7 @@ class FileExplorer(modules.Module):
         # open containing folder
         show_folder = None
         if path:
-            show_folder = Gtk.ImageMenuItem(Gtk.STOCK_OPEN)
-            show_folder.set_label(_('Open containing folder'))
+            show_folder = Gtk.MenuItem.new_with_label(_('Open containing folder'))
             filepath = self.tree.getItem(path, ROW_FULLPATH)
             parent_path = os.path.dirname(filepath)
             show_folder.connect('activate', lambda widget: tools.open_path(parent_path))
@@ -430,25 +428,24 @@ class FileExplorer(modules.Module):
         # Do not show the other options when we are displaying results
         if self.displaying_results:
             if show_folder:
-                popup.append(show_folder)
-            popup.show_all()
-            popup.popup(None, None, None, button, time)
+                self.popup_menu.append(show_folder)
+            self.popup_menu.show_all()
+            self.popup_menu.popup(None, None, None, None, button, time)
             return
 
-        popup.append(Gtk.SeparatorMenuItem())
+        self.popup_menu.append(Gtk.SeparatorMenuItem())
 
         # Refresh the view
-        refresh = Gtk.ImageMenuItem(Gtk.STOCK_REFRESH)
+        refresh = Gtk.MenuItem.new_with_label(_('Refresh'))
         refresh.connect('activate', lambda widget: self.refresh())
-        popup.append(refresh)
-
+        self.popup_menu.append(refresh)
 
         # Add new dir
-        dir = Gtk.ImageMenuItem(Gtk.STOCK_DIRECTORY)
+        dir = Gtk.MenuItem()
         if path is None:
             dir.set_label(_('Add music folder'))
             dir.connect('activate', self.on_add_dir)
-            popup.append(dir)
+            self.popup_menu.append(dir)
         else:
             # Check that the dir is top-level and not $HOME or /
             this_path = self.tree.getItem(path, ROW_FULLPATH)
@@ -460,19 +457,20 @@ class FileExplorer(modules.Module):
             if top_level and not static_selected:
                 dir.set_label(_('Hide folder'))
                 dir.connect('activate', self.on_remove_dir, path)
-                popup.append(dir)
+                self.popup_menu.append(dir)
 
 
         # open containing folder
         if show_folder:
-            popup.append(show_folder)
+            self.popup_menu.append(show_folder)
 
-        popup.show_all()
-        popup.popup(None, None, None, None, button, time)
+        self.popup_menu.show_all()
+        self.popup_menu.popup(None, None, None, None, button, time)
 
 
     def on_add_dir(self, widget):
-        path = fileChooser.openDirectory(None, _('Choose a directory'))
+        parent = prefs.getWidgetsTree().get_object('win-main')
+        path = fileChooser.openDirectory(parent, _('Choose a directory'))
         if path is None:
             return
 

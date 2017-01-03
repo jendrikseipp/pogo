@@ -425,9 +425,8 @@ class Tracktree(modules.Module):
 
 
     def onShowPopupMenu(self, tree, button, time, path):
-        # Remove children added when popup was shown the last time.
-        for child in self.popup_menu.get_children():
-            self.popup_menu.remove(child)
+        # Keep reference after method exits.
+        self.popup_menu = Gtk.Menu()
 
         # Remove
         remove = Gtk.MenuItem.new_with_label(_('Remove'))
@@ -502,8 +501,6 @@ class Tracktree(modules.Module):
         columns = (('',   [(Gtk.CellRendererPixbuf(), GdkPixbuf.Pixbuf), (Gtk.CellRendererText(), GObject.TYPE_STRING)], True),
                    (None, [(None, GObject.TYPE_PYOBJECT)], False),
                   )
-
-        self.popup_menu = Gtk.Menu()
 
         self.tree = TrackTreeView(columns, use_markup=True)
 
