@@ -287,7 +287,7 @@ class Search(modules.ThreadedModule):
             msg = 'Search term has to have at least %d characters' % MIN_CHARS
             logging.info(msg)
             return
-        query = self.searchbox.get_text().decode('utf-8')
+        query = self.searchbox.get_text()
         logging.info('Query: %s' % query)
         modules.postMsg(consts.MSG_EVT_SEARCH_START, {'query': query})
 
