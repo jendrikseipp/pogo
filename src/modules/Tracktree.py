@@ -425,54 +425,41 @@ class Tracktree(modules.Module):
 
 
     def onShowPopupMenu(self, tree, button, time, path):
-        """ The index parameter may be None """
-        if path is None:
-            iter = None
-        else:
-            iter = tree.store.get_iter(path)
-
-        popup = Gtk.Menu()
+        # Remove children added when popup was shown the last time.
+        for child in self.popup_menu.get_children():
+            self.popup_menu.remove(child)
 
         # Remove
-        remove = Gtk.ImageMenuItem(Gtk.STOCK_REMOVE)
-        popup.append(remove)
-
-        if iter is None:
+        remove = Gtk.MenuItem.new_with_label(_('Remove'))
+        self.popup_menu.append(remove)
+        if path is None:
             remove.set_sensitive(False)
         else:
             remove.connect('activate', lambda item: self.remove())
 
-        #popup.append(Gtk.SeparatorMenuItem())
-
         # Clear
-        clear = Gtk.ImageMenuItem(_('Clear Playlist'))
-        clear.set_image(Gtk.Image.new_from_stock(Gtk.STOCK_CLEAR, Gtk.IconSize.MENU))
-        popup.append(clear)
+        clear = Gtk.MenuItem.new_with_label(_('Clear Playlist'))
+        self.popup_menu.append(clear)
+
+        # Save to m3u
+        export_m3u = Gtk.MenuItem.new_with_label(_('Export playlist to file'))
+        self.popup_menu.append(export_m3u)
+
+        # Save to dir
+        export_dir = Gtk.MenuItem.new_with_label(_('Export playlist to directory'))
+        self.popup_menu.append(export_dir)
 
         if len(tree.store) == 0:
             clear.set_sensitive(False)
-        else:
-            clear.connect('activate', lambda item: modules.postMsg(consts.MSG_CMD_TRACKLIST_CLR))
-
-        # Save to m3u
-        export_m3u = Gtk.ImageMenuItem(_('Export playlist to file'))
-        export_m3u.set_image(Gtk.Image.new_from_stock(Gtk.STOCK_SAVE, Gtk.IconSize.MENU))
-        popup.append(export_m3u)
-
-        # Save to dir
-        export_dir = Gtk.ImageMenuItem(_('Export playlist to directory'))
-        export_dir.set_image(Gtk.Image.new_from_stock(Gtk.STOCK_DIRECTORY, Gtk.IconSize.MENU))
-        popup.append(export_dir)
-
-        if len(tree.store) == 0:
             export_m3u.set_sensitive(False)
             export_dir.set_sensitive(False)
         else:
+            clear.connect('activate', lambda item: modules.postMsg(consts.MSG_CMD_TRACKLIST_CLR))
             export_m3u.connect('activate', lambda item: self.export_playlist_to_m3u())
             export_dir.connect('activate', lambda item: self.export_playlist_to_dir())
 
-        popup.show_all()
-        popup.popup(None, None, None, button, time)
+        self.popup_menu.show_all()
+        self.popup_menu.popup(None, None, None, None, button, time)
 
 
     def togglePause(self):
@@ -515,6 +502,8 @@ class Tracktree(modules.Module):
         columns = (('',   [(Gtk.CellRendererPixbuf(), GdkPixbuf.Pixbuf), (Gtk.CellRendererText(), GObject.TYPE_STRING)], True),
                    (None, [(None, GObject.TYPE_PYOBJECT)], False),
                   )
+
+        self.popup_menu = Gtk.Menu()
 
         self.tree = TrackTreeView(columns, use_markup=True)
 
