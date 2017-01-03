@@ -195,7 +195,8 @@ class ModuleBase:
         pass
 
     def restartRequired(self):
-        GObject.idle_add(gui.infoMsgBox, None, _('Restart required'),
+        parent = gui.preferences.get_instance().window
+        GObject.idle_add(gui.infoMsgBox, parent, _('Restart required'),
             _('You must restart the application for this modification to take effect.'))
 
 

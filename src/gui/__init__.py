@@ -25,6 +25,7 @@ import tools
 def __msgBox(parent, type, buttons, header, text):
     """ Show a generic message box """
     dlg = Gtk.MessageDialog(parent, Gtk.DialogFlags.MODAL, type, buttons, header)
+    dlg.set_transient_for(parent)
     dlg.set_title(tools.consts.appName)
 
     if text is None:

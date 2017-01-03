@@ -210,13 +210,17 @@ class Preferences:
 
 # --== Global functions ==--
 
-
 __instance = None
 
-def show():
-    """ Show the preferences dialog box """
+def get_instance():
     global __instance
 
     if __instance is None:
         __instance = Preferences()
-    __instance.show()
+
+    return __instance
+
+
+def show():
+    """ Show the preferences dialog box """
+    get_instance().show()
