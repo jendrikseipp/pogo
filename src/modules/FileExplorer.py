@@ -143,7 +143,7 @@ class FileExplorer(modules.Module):
         """ Create a dictionary representing the current state of the tree """
         self.treeState = {
                     'tree-state':     self.getTreeDump(),
-                    'selected-paths': self.tree.getSelectedPaths(),
+                    'selected-paths': [tuple(path) for path in self.tree.getSelectedPaths()],
                     'vscrollbar-pos': self.scrolled.get_vscrollbar().get_value(),
                     'hscrollbar-pos': self.scrolled.get_hscrollbar().get_value(),
                     }
