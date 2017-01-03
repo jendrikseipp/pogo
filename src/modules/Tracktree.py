@@ -475,7 +475,7 @@ class Tracktree(modules.Module):
     def save_track_tree(self):
         # Save playing track
         if self.tree.hasMark():
-            last_path = self.tree.mark.get_path()
+            last_path = tuple(self.tree.mark.get_path())
         else:
             last_path = None
         prefs.set(__name__, 'last-played-track', last_path)
