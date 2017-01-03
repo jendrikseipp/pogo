@@ -181,7 +181,7 @@ class DesktopNotification(modules.Module):
     def configure(self, parent):
         """ Show the configuration window """
         if self.cfgWin is None:
-            import gui, pynotify
+            import gui
 
             # Create the window
             self.cfgWin = gui.window.Window('DesktopNotification.ui', 'vbox1', __name__, MOD_INFO[modules.MODINFO_L10N], 355, 345)
@@ -226,7 +226,7 @@ class DesktopNotification(modules.Module):
         # Other preferences
         prefs.set(__name__, 'title', self.cfgWin.getWidget('txt-title').get_text())
         (start, end) = self.cfgWin.getWidget('txt-body').get_buffer().get_bounds()
-        prefs.set(__name__, 'body', self.cfgWin.getWidget('txt-body').get_buffer().get_text(start, end))
+        prefs.set(__name__, 'body', self.cfgWin.getWidget('txt-body').get_buffer().get_text(start, end, False))
         self.cfgWin.hide()
 
 
