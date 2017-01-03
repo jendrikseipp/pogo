@@ -32,7 +32,7 @@ def show(parent):
     dlg.set_transient_for(parent)
 
     # Set credit information
-    dlg.set_name(consts.appName)
+    dlg.set_program_name(consts.appName)
     dlg.set_comments('...Simples!')
     dlg.set_version(consts.appVersion)
     dlg.set_website(consts.urlMain)

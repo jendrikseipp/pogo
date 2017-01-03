@@ -22,42 +22,34 @@ import tools
 
 PANGO_SCALE_FACTOR = 1.2
 
-mDlg       = None
-mTxtBuffer = None
-
 
 class HelpDlg:
     """ Show a help dialog box """
 
     def __init__(self, title):
         """ Constructor """
-        global mDlg, mTxtBuffer
+        wTree = tools.loadGladeFile('HelpDlg.ui')
+        self.dialog = wTree.get_object('dlg-main')
+        self.text_buffer = wTree.get_object('txt-help').get_buffer()
 
-        if mDlg is None:
-            wTree      = tools.loadGladeFile('HelpDlg.ui')
-            mDlg       = wTree.get_object('dlg-main')
-            mTxtBuffer = wTree.get_object('txt-help').get_buffer()
-
-            mDlg.set_title(tools.consts.appName)
-            mTxtBuffer.create_tag('title',   weight=Pango.Weight.BOLD, scale=PANGO_SCALE_FACTOR ** 2)
-            mTxtBuffer.create_tag('section', weight=Pango.Weight.BOLD, scale=PANGO_SCALE_FACTOR)
+        self.dialog.set_title(tools.consts.appName)
+        self.text_buffer.create_tag('title', weight=Pango.Weight.BOLD, scale=PANGO_SCALE_FACTOR ** 2)
+        self.text_buffer.create_tag('section', weight=Pango.Weight.BOLD, scale=PANGO_SCALE_FACTOR)
 
         self.nbSections = 0
-        mTxtBuffer.set_text('')
-        mTxtBuffer.insert_with_tags_by_name(mTxtBuffer.get_end_iter(), title + '\n', 'title')
-
+        self.text_buffer.set_text('')
+        self.text_buffer.insert_with_tags_by_name(self.text_buffer.get_end_iter(), title + '\n', 'title')
 
     def addSection(self, title, content):
         """ Create a new section with the given title and content """
         self.nbSections += 1
-        mTxtBuffer.insert(mTxtBuffer.get_end_iter(), '\n\n')
-        mTxtBuffer.insert_with_tags_by_name(mTxtBuffer.get_end_iter(), '%u. %s' % (self.nbSections, title), 'section')
-        mTxtBuffer.insert(mTxtBuffer.get_end_iter(), '\n\n%s' % content)
-
+        self.text_buffer.insert(self.text_buffer.get_end_iter(), '\n\n')
+        self.text_buffer.insert_with_tags_by_name(self.text_buffer.get_end_iter(), '%u. %s' % (self.nbSections, title), 'section')
+        self.text_buffer.insert(self.text_buffer.get_end_iter(), '\n\n%s' % content)
 
     def show(self, parent):
         """ Show the help dialog box """
-        mDlg.set_transient_for(parent)
-        mDlg.show_all()
-        mDlg.run()
-        mDlg.hide()
+        self.dialog.set_transient_for(parent)
+        self.dialog.show_all()
+        self.dialog.run()
+        self.dialog.hide()

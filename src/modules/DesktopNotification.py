@@ -245,5 +245,5 @@ class DesktopNotification(modules.Module):
                              'Available fields are:\n\n') + media.track.getFormatSpecialFields(False))
         helpDlg.addSection(_('Markup'),
                            _('You can use the Pango markup language to format the text. More information on that language is '
-                             'available on the following web page:') + '\n\nhttp://www.pyGtk.org/pygtk2reference/pango-markup-language.html')
+                             'available on the following web page:') + '\n\nhttps://developer.gnome.org/pango/stable/PangoMarkupFormat.html')
         helpDlg.show(self.cfgWin)
