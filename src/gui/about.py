@@ -19,8 +19,8 @@
 
 from gettext import gettext as _
 import os.path
-import webbrowser
 
+from gi.repository import GdkPixbuf
 from gi.repository import Gtk
 
 from tools import consts
@@ -31,9 +31,6 @@ def show(parent):
     dlg = Gtk.AboutDialog()
     dlg.set_transient_for(parent)
 
-    # Hook to handle clicks on the URL
-    Gtk.about_dialog_set_url_hook(lambda dlg, url: webbrowser.open(url))
-
     # Set credit information
     dlg.set_name(consts.appName)
     dlg.set_comments('...Simples!')
@@ -41,7 +38,6 @@ def show(parent):
     dlg.set_website(consts.urlMain)
     dlg.set_website_label(consts.urlMain)
     dlg.set_translator_credits(_('translator-credits'))
-    #dlg.set_artists([])
 
     dlg.set_authors([
         _('Developer:'),
