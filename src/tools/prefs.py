@@ -22,7 +22,7 @@ import os, threading, tools
 # Load user preferences from the disk
 try:
     __usrPrefs = tools.pickleLoad(tools.consts.filePrefs)
-except IOError:
+except (IOError, EOFError):
     __usrPrefs = {}
 
 # Prevent concurrent calls to functions

@@ -183,7 +183,7 @@ class Covers(modules.ThreadedModule):
         if startIdx != -1 and endIdx != -1:
             coverURL    = data[startIdx+len(AS_TAG_START):endIdx]
             coverFormat = os.path.splitext(coverURL)[1].lower()
-            if coverURL.startswith('http://') and coverFormat in ACCEPTED_FILE_FORMATS:
+            if coverURL.startswith(('http://', 'https://')) and coverFormat in ACCEPTED_FILE_FORMATS:
                 malformed = False
 
         if malformed:
