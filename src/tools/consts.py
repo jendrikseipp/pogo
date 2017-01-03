@@ -119,6 +119,8 @@ DND_TARGETS = {
                 DND_POGO_URI:    ('pogo/uri-list',    Gtk.TargetFlags.SAME_APP, DND_POGO_URI),
               }
 
+DND_INTERNAL_TARGET_NAME = 'exttreeview-internal'
+
 
 # --- View modes
 (

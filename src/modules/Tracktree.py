@@ -46,7 +46,7 @@ SAVE_INTERVAL = 600
 
 # Internal d'n'd (reordering)
 DND_REORDERING_ID = 1024
-DND_INTERNAL_TARGET = ('extListview-internal', Gtk.TargetFlags.SAME_WIDGET, DND_REORDERING_ID)
+DND_INTERNAL_TARGET = (consts.DND_INTERNAL_TARGET_NAME, Gtk.TargetFlags.SAME_WIDGET, DND_REORDERING_ID)
 
 
 class Tracktree(modules.Module):
@@ -517,8 +517,11 @@ class Tracktree(modules.Module):
                   )
 
         self.tree = TrackTreeView(columns, use_markup=True)
+
         self.tree.enableDNDReordering()
-        self.tree.setDNDSources([DND_INTERNAL_TARGET])
+        target = Gtk.TargetEntry.new(*DND_INTERNAL_TARGET)
+        targets = Gtk.TargetList.new([target])
+        self.tree.setDNDSources(targets)
 
         wTree.get_object('scrolled-tracklist').add(self.tree)
 
@@ -698,20 +701,20 @@ class Tracktree(modules.Module):
         """ External Drag'n'Drop """
         import urllib
 
-        if dragData.data == '':
+        uris = dragData.get_uris()
+
+        if not uris:
             context.finish(False, False, time)
             return
 
-        # A list of filenames, without 'file://' at the beginning
-        if dndId == consts.DND_POGO_URI:
-            tracks = media.getTracks([urllib.url2pathname(uri) for uri in dragData.data.split()])
-        # A list of filenames starting with 'file://'
-        elif dndId == consts.DND_URI:
-            tracks = media.getTracks([urllib.url2pathname(uri)[7:] for uri in dragData.data.split()])
-        else:
-            assert False
+        def get_path(uri):
+            if uri.startswith('file://'):
+                uri = uri[len('file://'):]
+            return urllib.url2pathname(uri)
 
-        # dropInfo is tuple (path, drop_pos)
+        paths = [get_path(uri) for uri in uris]
+        tracks = media.getTracks(paths)
+
         dropInfo = list.get_dest_row_at_pos(x, y)
 
         # Insert the tracks, but beware of the AFTER/BEFORE mechanism used by GTK

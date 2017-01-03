@@ -87,7 +87,11 @@ class FileExplorer(modules.Module):
         self.tree = extTreeview.ExtTreeView(columns, True)
 
         self.scrolled.add(self.tree)
-        self.tree.setDNDSources([consts.DND_TARGETS[consts.DND_POGO_URI]])
+
+        targets = Gtk.TargetList.new([])
+        targets.add_uri_targets(consts.DND_POGO_URI)
+        self.tree.setDNDSources(targets)
+
         self.tree.connect('drag-data-get', self.onDragDataGet)
         self.tree.connect('key-press-event', self.onKeyPressed)
         self.tree.connect('exttreeview-button-pressed', self.onMouseButton)
@@ -521,8 +525,9 @@ class FileExplorer(modules.Module):
     def onDragDataGet(self, tree, context, selection, info, time):
         """ Provide information about the data being dragged """
         import urllib
-        selection.set('text/uri-list', 8, ' '.join([urllib.pathname2url(file)
-            for file in [row[ROW_FULLPATH] for row in tree.getSelectedRows()]]))
+        selection.set_uris([
+            urllib.pathname2url(file)
+            for file in [row[ROW_FULLPATH] for row in tree.getSelectedRows()]])
 
 
     def add_dir(self, path):
@@ -743,23 +748,16 @@ class FileExplorer(modules.Module):
     # --== GTK Handlers ==--
 
     def onDragBegin(self, tree, context):
-        """
-        A drag'n'drop operation has begun
-        Copy the selected paths to the tracktree to decide on correct drop positions
+        """ A drag'n'drop operation has begun.
+
+        Pass the paths to the track tree to let it decide whether to
+        collapse directories.
+
         """
         paths = [row[ROW_FULLPATH] for row in tree.getSelectedRows()]
         modules.postMsg(consts.MSG_CMD_FILE_EXPLORER_DRAG_BEGIN, {'paths': paths})
-        #GObject.idle_add(media.getTracks, paths)
 
-        # Preload the tracks to speedup their addition to the playlist
+        # Preload the tracks to speedup their addition to the playlist.
         import threading
         crawler = threading.Thread(target=media.preloadTracks, args=(paths,))
         crawler.start()
-
-        #from multiprocessing import Process
-        #p = Process(target=media.getTracks, args=(paths,))
-        #p.start()
-
-        #from multiprocessing import Pool
-        #pool = Pool(processes=4)              # start 4 worker processes
-        #result = pool.map_async(media.getTracks, [[path] for path in paths])

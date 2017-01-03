@@ -41,7 +41,7 @@ from tools import consts
 
 # Internal d'n'd (reordering)
 DND_REORDERING_ID   = 1024
-DND_INTERNAL_TARGET = ('extListview-internal', Gtk.TargetFlags.SAME_WIDGET, DND_REORDERING_ID)
+DND_INTERNAL_TARGET = (consts.DND_INTERNAL_TARGET_NAME, Gtk.TargetFlags.SAME_WIDGET, DND_REORDERING_ID)
 
 GObject.signal_new('tracktreeview-dnd', Gtk.TreeView, GObject.SIGNAL_RUN_LAST, GObject.TYPE_NONE, (Gdk.DragContext, GObject.TYPE_INT, GObject.TYPE_INT, Gtk.SelectionData, GObject.TYPE_INT, GObject.TYPE_PYOBJECT))
 
@@ -54,8 +54,6 @@ class TrackTreeView(ExtTreeView):
         #self.set_level_indentation(30)
 
         # Drag'n'drop management
-        self.dndContext    = None
-        self.dndSources    = None
         self.dndTargets    = consts.DND_TARGETS.values()
         self.motionEvtId   = None
         self.dndStartPos   = None
@@ -63,7 +61,7 @@ class TrackTreeView(ExtTreeView):
         self.dndStartPos     = None
         self.isDraggableFunc = lambda: True
 
-        if len(self.dndTargets) != 0:
+        if self.dndTargets:
             # Move one name around while dragging
             # self.enable_model_drag_source(Gdk.ModifierType.BUTTON1_MASK, \
             #        self.dndTargets+[DND_INTERNAL_TARGET], Gdk.DragAction.MOVE)
@@ -408,14 +406,14 @@ class TrackTreeView(ExtTreeView):
         '''
         children = self.store[dir_iter].iterchildren()
         dir_row = self.store[dir_iter]
-        new_target = self.insert(target, dir_row, drop_mode)
+        new_target = self.insert(target, list(dir_row), drop_mode)
         self.select(new_target)
         for child in children:
             child = child.iter
             track = self.getTrack(child)
             row = self.store[child]
             if track:
-                dest = self.insert(new_target, row, Gtk.TreeViewDropPosition.INTO_OR_AFTER)
+                dest = self.insert(new_target, list(row), Gtk.TreeViewDropPosition.INTO_OR_AFTER)
                 # Handle Mark
                 if self.isAtMark(child):
                     self.setMark(dest)
@@ -461,6 +459,9 @@ class TrackTreeView(ExtTreeView):
         - dir into dir
         - anything into track
         """
+        # Disable default handler.
+        self.stop_emission('drag-motion')
+
         drop = self.get_dest_row_at_pos(int(x), int(y))
 
         pos_ok = True
@@ -469,9 +470,6 @@ class TrackTreeView(ExtTreeView):
             iter = self.store.get_iter(drop[0])
             depth = self.store.iter_depth(iter)
             track = self.getTrack(iter)
-
-            #import tools
-            #self.setLabel(self.get_first_iter(), tools.htmlEscape(str(drop[1])))
 
             drop_into = drop[1] in [Gtk.TreeViewDropPosition.INTO_OR_AFTER, Gtk.TreeViewDropPosition.INTO_OR_BEFORE]
             drop_around = not drop_into
@@ -487,12 +485,16 @@ class TrackTreeView(ExtTreeView):
                 if (track and drop_into):# or (drop_into and depth > 0):
                     pos_ok = False
 
-        if pos_ok:
-            # Everything ok, enable dnd
-            self.enable_model_drag_dest(self.dndTargets, Gdk.DragAction.DEFAULT)
+        target_names = [atom.name() for atom in context.list_targets()]
+        internal_reordering = (consts.DND_INTERNAL_TARGET_NAME in target_names)
+        if internal_reordering:
+            action = Gdk.DragAction.MOVE
         else:
-            # do not let the user drop anything here
-            self.enable_model_drag_dest([('invalid-position', 0, -1)], Gdk.DragAction.DEFAULT)
+            action = Gdk.DragAction.COPY
+        Gdk.drag_status(context, action, time)
+
+        # Return whether the cursor position is in a drop zone.
+        return pos_ok
 
 
 if __name__ == '__main__':

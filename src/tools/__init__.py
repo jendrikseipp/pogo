@@ -58,7 +58,7 @@ def listDir(directory, listHiddenFiles=False):
 
     return [
         (filename, os.path.join(directory, filename))
-        for filename in list if listHiddenFiles or filename[0] != '.']
+        for filename in list if listHiddenFiles or not filename.startswith('.')]
 
 
 def makedirs(dir):

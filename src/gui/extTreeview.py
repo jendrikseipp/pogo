@@ -286,10 +286,12 @@ class ExtTreeView(Gtk.TreeView):
         retVal   = False
         pathInfo = self.get_path_at_pos(int(event.x), int(event.y))
 
-        if pathInfo is None: path = None
-        else:                path = pathInfo[0]
+        if pathInfo is None:
+            path = None
+        else:
+            path = pathInfo[0]
 
-        if event.button == 1 or event.button == 3:
+        if event.button in [1, 3]:
             if path is None:
                 self.selection.unselect_all()
             else:
@@ -335,5 +337,4 @@ class ExtTreeView(Gtk.TreeView):
 
     def onDragBegin(self, tree, context):
         """ A drag'n'drop operation has begun """
-        if self.getSelectedRowsCount() == 1: context.set_icon_stock(Gtk.STOCK_DND,          0, 0)
-        else:                                context.set_icon_stock(Gtk.STOCK_DND_MULTIPLE, 0, 0)
+        Gtk.drag_set_icon_name(context, 'audio-x-generic', 0, 0)
