@@ -30,7 +30,6 @@ from gi.repository import Gtk
 
 from gui import fileChooser, errorMsgBox
 import media
-from media import playlist
 import modules
 import tools
 from tools import consts, prefs, icons, samefile
@@ -223,7 +222,6 @@ class FileExplorer(modules.Module):
 
     def getDirContents(self, directory):
         """ Return a tuple of sorted rows (directories, playlists, mediaFiles) for the given directory """
-        playlists   = []
         mediaFiles  = []
         directories = []
 
@@ -239,15 +237,12 @@ class FileExplorer(modules.Module):
             elif isfile(path):
                 if media.isSupported(file):
                     mediaFiles.append((icons.mediaFileMenuIcon(), tools.htmlEscape(pretty_name), TYPE_FILE, path))
-                ##elif playlist.isSupported(file):
-                ##    playlists.append((icons.mediaFileMenuIcon(), tools.htmlEscape(unicode(file, errors='replace')), TYPE_FILE, path))
 
         # Individually sort each type of file by name
-        playlists.sort(key=self._filename)
         mediaFiles.sort(key=self._filename)
         directories.sort(key=self._filename)
 
-        return (directories, playlists, mediaFiles)
+        return (directories, mediaFiles)
 
 
     def exploreDir(self, parent, directory, fakeChild=None):
@@ -255,10 +250,9 @@ class FileExplorer(modules.Module):
         List the contents of the given directory and append it to the tree as a child of parent
         If fakeChild is not None, remove it when the real contents has been loaded
         """
-        directories, playlists, mediaFiles = self.getDirContents(directory)
+        directories, mediaFiles = self.getDirContents(directory)
 
         self.tree.appendRows(directories, parent)
-        self.tree.appendRows(playlists,   parent)
         self.tree.appendRows(mediaFiles,  parent)
 
         if fakeChild is not None:
@@ -283,8 +277,7 @@ class FileExplorer(modules.Module):
             hasContent = False
             if os.access(directory, os.R_OK | os.X_OK):
                 for (file, path) in tools.listDir(directory):
-                    supported = (media.isSupported(file) or playlist.isSupported(file))
-                    if isdir(path) or (isfile(path) and supported):
+                    if isdir(path) or (isfile(path) and media.isSupported(file)):
                         hasContent = True
                         break
 
@@ -320,9 +313,9 @@ class FileExplorer(modules.Module):
 
         directory = self.tree.getItem(treePath, ROW_FULLPATH)
 
-        directories, playlists, mediaFiles = self.getDirContents(directory)
+        directories, mediaFiles = self.getDirContents(directory)
 
-        disk                   = directories + playlists + mediaFiles
+        disk                   = directories + mediaFiles
         diskIndex              = 0
         childIndex             = 0
         childLeftIntentionally = False
