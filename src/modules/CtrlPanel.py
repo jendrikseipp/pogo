@@ -101,69 +101,15 @@ class CtrlPanel(modules.Module):
         self.sclSeek.hide()
 
         # Add preferences button.
-
-        self.uimanager = Gtk.UIManager()
-        self.main_window = wTree.get_object('win-main')
-
-        menu_xml = '''
-        <ui>
-        <popup name="ButtonMenu">
-            <menuitem action="Options"/>
-            <menuitem action="About"/>
-        </popup>
-        </ui>'''
-
-        # Create an ActionGroup
-        actiongroup = Gtk.ActionGroup('MainActionGroup')
-
-        # Create actions
-        actiongroup.add_actions([
-            ('ButtonMenu', None, None),
-            #('Quit', Gtk.STOCK_QUIT, None, None, None,
-            #    lambda widget: self.onDelete(self.main_window, None)),
-            ('Options', Gtk.STOCK_PREFERENCES, None,
-                '<Ctrl>p', None, lambda item: modules.showPreferences()),
-            #('Help', Gtk.STOCK_HELP, None,
-            #    '<Ctrl>h', None, self.on_help_menu_item_activate),
-            ('About', Gtk.STOCK_ABOUT, None,
-                None, None, None),
-            ])
-
-        # Add the actiongroup to the uimanager
-        self.uimanager.insert_action_group(actiongroup, 0)
-
-        # Add a UI description
-        self.uimanager.add_ui_from_string(menu_xml)
-
-        # Create a Menu
-        button_menu = self.uimanager.get_widget('/ButtonMenu')
-
-        # TODO: Use Gtk.ToolButton instead and add button for about menu in preferences dialog.
-        menu_button = Gtk.MenuToolButton(None, None)
-        hbox = menu_button.get_child()
-        button, toggle_button = hbox.get_children()
-        hbox.remove(button)
-
-        img = Gtk.Image.new_from_stock(Gtk.STOCK_PREFERENCES,
-                                       Gtk.IconSize.SMALL_TOOLBAR)
-
-        arrow = toggle_button.get_child()
-        toggle_button.remove(arrow)
-        hbox = Gtk.HBox()
-        hbox.add(img)
-        toggle_button.add(hbox)
-        menu_button.show()
-
-
+        preferences_img = Gtk.Image.new_from_icon_name(
+            'preferences-system', Gtk.IconSize.SMALL_TOOLBAR)
+        preferences_button = Gtk.ToolButton.new(preferences_img, None)
         toolbar_hbox = wTree.get_object('hbox4')
-        toolbar_hbox.pack_end(menu_button, False, False, 0)
-        # Move it to the right
-        toolbar_hbox.reorder_child(menu_button, 0)
-        menu_button.set_menu(button_menu)
-
-        self.set_tooltips(self.uimanager)
-        accelgroup = self.uimanager.get_accel_group()
-        self.main_window.add_accel_group(accelgroup)
+        toolbar_hbox.pack_end(preferences_button, False, False, 0)
+        # Move button to the right.
+        toolbar_hbox.reorder_child(preferences_button, 0)
+        preferences_button.connect('clicked', lambda item: modules.showPreferences())
+        preferences_button.show_all()
 
 
     def onNewTrack(self, track):
