@@ -38,7 +38,7 @@ from tools import consts, log, prefs
     MODINFO_DEPS,           # A list of special Python dependencies (e.g., pynotify)
     MODINFO_MANDATORY,      # True if the module cannot be disabled
     MODINFO_CONFIGURABLE    # True if the module can be configured
-) = range(6)
+) = list(range(6))
 
 
 # Values associated with a module
@@ -47,7 +47,7 @@ from tools import consts, log, prefs
     MOD_CLASSNAME,    # The classname of the module
     MOD_INSTANCE,     # Instance, None if not currently enabled
     MOD_INFO          # A tuple exported by the module, see above definition
-) = range(4)
+) = list(range(4))
 
 
 class LoadException(Exception):
@@ -87,7 +87,7 @@ def load(name):
         errMsg += '\n     * '.join(unmetDeps)
         errMsg += '\n\n'
         errMsg += _('You must install them if you want to enable this module.')
-        raise LoadException, errMsg
+        raise LoadException(errMsg)
 
     # Instantiate the module
     try:
@@ -103,7 +103,7 @@ def load(name):
         mEnabledModules.append(name)
         prefs.set(__name__, 'enabled_modules', mEnabledModules)
     except:
-        raise LoadException, traceback.format_exc()
+        raise LoadException(traceback.format_exc())
 
 
 def unload(name):
@@ -117,7 +117,7 @@ def unload(name):
     if instance is not None:
         mHandlersLock.acquire()
         instance.postMsg(consts.MSG_EVT_MOD_UNLOADED)
-        for handlers in [handler for handler in mHandlers.itervalues() if instance in handler]:
+        for handlers in [handler for handler in mHandlers.values() if instance in handler]:
             handlers.remove(instance)
         mHandlersLock.release()
 
@@ -129,7 +129,7 @@ def unload(name):
 def getModules():
     """ Return a copy of all known modules """
     mModulesLock.acquire()
-    copy = mModules.items()
+    copy = list(mModules.items())
     mModulesLock.release()
     return copy
 
@@ -165,7 +165,7 @@ def postMsg(msg, params={}):
 def __postQuitMsg():
     """ This is the 'real' postQuitMsg function, which must be executed in the GTK main loop """
     __postMsg(consts.MSG_EVT_APP_QUIT)
-    for modData in mModules.itervalues():
+    for modData in mModules.values():
         if modData[MOD_INSTANCE] is not None:
             modData[MOD_INSTANCE].join()
     # Don't exit the application right now, let modules do their job before
@@ -221,10 +221,10 @@ class ThreadedModule(threading.Thread, ModuleBase):
 
     def __init__(self, handlers):
         """ Constructor """
-        import Queue
+        import queue
 
         # Attributes
-        self.queue        = Queue.Queue(0)            # List of queued messages
+        self.queue        = queue.Queue(0)            # List of queued messages
         self.gtkResult    = None                      # Value returned by the function executed in the GTK loop
         self.gtkSemaphore = threading.Semaphore(0)    # Used to execute some code in the GTK loop
 
@@ -285,7 +285,7 @@ class ThreadedModule(threading.Thread, ModuleBase):
 
 mModDir         = os.path.dirname(__file__)                                    # Where modules are located
 mModules        = {}                                                           # All known modules associated to an 'active' boolean
-mHandlers       = dict([(msg, set()) for msg in xrange(consts.MSG_END_VALUE)]) # For each message, store the set of registered modules
+mHandlers       = dict([(msg, set()) for msg in range(consts.MSG_END_VALUE)]) # For each message, store the set of registered modules
 mModulesLock    = threading.Lock()                                             # Protects the modules list from concurrent access
 mHandlersLock   = threading.Lock()                                             # Protects the handlers list from concurrent access
 mEnabledModules = prefs.get(__name__, 'enabled_modules', [])                   # List of modules currently enabled

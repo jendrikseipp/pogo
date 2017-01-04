@@ -22,7 +22,7 @@ from gi.repository import GObject
 
 from media import audioplayer
 import modules
-from tools import consts, prefs
+from tools import consts
 
 
 MOD_INFO           = ('GStreamer Player', 'GStreamer Player', '', [], True, False)

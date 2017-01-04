@@ -3,7 +3,7 @@ Section: sound
 Priority: optional
 Maintainer: Jendrik Seipp <jendrikseipp@web.de>
 Build-Depends: debhelper (>= 7.0.50~)
-Build-Depends-Indep: python (>=2.7), dh-python
+Build-Depends-Indep: python (>=3.2), dh-python
 Standards-Version: 3.9.6
 Homepage: https://github.com/jendrikseipp/pogo
 Vcs-Git: git://github.com/jendrikseipp/pogo.git
@@ -22,9 +22,9 @@ Depends: ${python:Depends},
          gstreamer1.0-plugins-base,
          gstreamer1.0-plugins-good,
          gstreamer1.0-pulseaudio,
-         python-dbus,
-         python-mutagen,
-         python-pil
+         python3-dbus,
+         python3-mutagen,
+         python3-pil
 Recommends: gstreamer1.0-plugins-bad,
             gstreamer1.0-plugins-ugly
 

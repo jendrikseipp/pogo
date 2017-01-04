@@ -28,7 +28,7 @@ if __name__ == '__main__':
     base_dir = os.path.abspath(os.path.join(os.path.abspath(__file__), '../../'))
     sys.path.insert(0, base_dir)
 
-from extTreeview import ExtTreeView
+from .extTreeview import ExtTreeView
 
 from tools import consts
 
@@ -37,7 +37,7 @@ from tools import consts
     ROW_ICO, # Item icon
     ROW_NAME,     # Item name
     ROW_TRK,   # The track object
-) = range(3)
+) = list(range(3))
 
 # Internal d'n'd (reordering)
 DND_REORDERING_ID   = 1024
@@ -54,7 +54,7 @@ class TrackTreeView(ExtTreeView):
         #self.set_level_indentation(30)
 
         # Drag'n'drop management
-        self.dndTargets    = consts.DND_TARGETS.values()
+        self.dndTargets    = list(consts.DND_TARGETS.values())
         self.motionEvtId   = None
         self.dndStartPos   = None
 
@@ -498,6 +498,7 @@ class TrackTreeView(ExtTreeView):
 
 
 if __name__ == '__main__':
+    from gi.repository import GdkPixbuf
     from gi.repository import GObject
 
     from tools import icons
@@ -523,33 +524,33 @@ if __name__ == '__main__':
     d = tree.appendRow((icons.nullMenuIcon(), 'd', 1, 'something', track), None)
 
     for iter in [a, b, c, d]:
-        next = tree.get_next_iter(iter)
-        print tree.get_nodename(iter), '->', tree.get_nodename(next)
+        next_iter = tree.get_next_iter(iter)
+        print(tree.get_nodename(iter), '->', tree.get_nodename(next_iter))
 
     for iter in [a, b, c, d]:
         uncle = tree.get_next_iter_on_higher_level(iter)
-        print 'Uncle(%s) = %s' % (tree.get_nodename(iter), tree.get_nodename(uncle))
+        print('Uncle(%s) = %s' % (tree.get_nodename(iter), tree.get_nodename(uncle)))
 
     for iter in [a, b, c, d]:
         prev = tree.get_prev_iter(iter)
-        print tree.get_nodename(prev), '<-', tree.get_nodename(iter)
+        print(tree.get_nodename(prev), '<-', tree.get_nodename(iter))
 
     for iter in [a, b, c, d]:
         res = tree.get_last_iter_on_same_level(iter)
-        print 'Last Sibling(%s) = %s' % (tree.get_nodename(iter), tree.get_nodename(res))
+        print('Last Sibling(%s) = %s' % (tree.get_nodename(iter), tree.get_nodename(res)))
 
     for iter in [a, b, c, d]:
         res = tree.get_lowest_descendant(iter)
-        print 'Lowest Descendant(%s) = %s' % (tree.get_nodename(iter), tree.get_nodename(res))
+        print('Lowest Descendant(%s) = %s' % (tree.get_nodename(iter), tree.get_nodename(res)))
 
     res = tree.get_last_iter()
-    print 'Last node: %s' % tree.get_nodename(res)
+    print('Last node: %s' % tree.get_nodename(res))
 
     res = list(tree.iter_children())
-    print 'Children of root:', [tree.getLabel(iter) for iter in res]
+    print('Children of root:', [tree.getLabel(iter) for iter in res])
 
     res = list(tree.iter_children(a))
-    print 'Children of a:', [tree.getLabel(iter) for iter in res]
+    print('Children of a:', [tree.getLabel(iter) for iter in res])
 
     win = Gtk.Window()
     win.set_size_request(400,300)

@@ -67,7 +67,7 @@ class GnomeMediaKeys(modules.Module):
                 self.dbusInterface = dbus.Interface(service, 'org.gnome.SettingsDaemon')
                 self.dbusInterface.GrabMediaPlayerKeys(APP_UID, time())
                 self.dbusInterface.connect_to_signal('MediaPlayerKeyPressed', self.onMediaKey)
-            except Exception, err:
+            except Exception as err:
                 log.logger.error('[%s] Error while initializing: %s' % (MOD_INFO[modules.MODINFO_NAME], err))
                 self.dbusInterface = None
 

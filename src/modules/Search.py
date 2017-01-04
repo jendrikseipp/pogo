@@ -99,8 +99,8 @@ class Search(modules.ThreadedModule):
             logging.info('Searching with command: %s' % ' '.join(cmd))
 
         try:
-            search = subprocess.Popen(cmd, stdout=subprocess.PIPE)
-        except OSError as err:
+            search = subprocess.Popen(cmd, stdout=subprocess.PIPE, universal_newlines=True)
+        except subprocess.CalledProcessError as err:
             logging.warning('Command %s failed: %s' % (cmd, err))
             return None
 
@@ -108,15 +108,15 @@ class Search(modules.ThreadedModule):
             return []
 
         self.searches.append(search)
-        output, errors = search.communicate()
+        output, _ = search.communicate()
 
         if search.returncode < 0:
             # Process was killed
             return None
 
-        output = sorted(output.splitlines(), key=str.lower)
-        logging.info('Results for %s in %s: %s' % (query, dir, len(output)))
-        return output
+        results = sorted(output.splitlines(), key=str.lower)
+        logging.info('Results for %s in %s: %s' % (query, dir, len(results)))
+        return results
 
 
     def stop_searches(self):
@@ -152,7 +152,7 @@ class Search(modules.ThreadedModule):
                 name = '/'.join(name.split('/')[-2:])
             name = name.strip('/')
 
-            name = regex.sub(same_case_bold, unicode(name))
+            name = regex.sub(same_case_bold, name)
 
             name = tools.htmlEscape(name)
             name = name.replace('STARTBOLD', '<b>').replace('ENDBOLD', '</b>')

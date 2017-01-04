@@ -28,9 +28,9 @@ if __name__ == '__main__':
     base_dir = os.path.abspath(os.path.join(os.path.abspath(__file__), '../../'))
     sys.path.insert(0, base_dir)
 
-from format          import monkeysaudio, asf, flac, mp3, mp4, mpc, ogg, wav, wavpack
+from .format          import monkeysaudio, asf, flac, mp3, mp4, mpc, ogg, wav, wavpack
 from tools.log       import logger
-from track.fileTrack import FileTrack
+from .track.fileTrack import FileTrack
 import tools
 
 
@@ -175,7 +175,7 @@ def getTracks(filenames, sortByFilename=True):
         if os.path.isdir(path):
             dirname = tools.dirname(path)
             track_dict = scanPaths(tools.listDir(path), name=dirname)
-            for name, track_list in sorted(track_dict.iteritems()):
+            for name, track_list in sorted(track_dict.items()):
                 trackdir = TrackDir(name=name)
                 trackdir.tracks = track_list
                 tracks.subdirs.append(trackdir)

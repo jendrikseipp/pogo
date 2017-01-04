@@ -34,10 +34,10 @@ installed_src_dir = os.path.join(prefix, 'share/pogo/src')
 src_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'src')
 
 if os.path.exists(src_dir):
-    print 'Running from tarball or repo'
+    print('Running from tarball or repo')
     sys.path.insert(0, src_dir)
 elif os.path.exists(installed_src_dir):
-    print 'Running deb package or "make installation"'
+    print('Running deb package or "make installation"')
     sys.path.insert(0, installed_src_dir)
 else:
     sys.exit('Source files could not be found')
@@ -80,28 +80,28 @@ if not optOptions.multiple_instances:
 
             commands, paths = tools.separate_commands_and_tracks(optArgs)
             for command in commands:
-                print command.capitalize()
+                print(command.capitalize())
                 getattr(player, command.capitalize())()
 
             # Fill the current instance with the given tracks, if any
             if paths:
                 # make the paths absolute
                 paths = [os.path.abspath(path) for path in paths]
-                print 'Appending to the playlist:'
-                print '\n'.join(paths)
+                print('Appending to the playlist:')
+                print('\n'.join(paths))
                 playNow = 'pause' not in commands and 'stop' not in commands
                 playlist.AddTracks(paths, playNow)
                 # Raise the window of the already running instance
                 window.RaiseWindow()
     except:
-        print traceback.format_exc()
+        print(traceback.format_exc())
 
     if dbusSession is not None:
         dbusSession.close()
 
     if shouldStop:
         import sys
-        print 'There is already one Pogo instance running. Exiting.'
+        print('There is already one Pogo instance running. Exiting.')
         sys.exit(1)
 
 
@@ -135,7 +135,7 @@ def realStartup(window, paned):
 
     # Is the application started for the first time?
     first_start = prefs.get(__name__, 'first-time', True)
-    print 'First start:', first_start
+    print('First start:', first_start)
     if first_start:
         prefs.set(__name__, 'first-time', False)
 
