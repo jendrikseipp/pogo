@@ -26,8 +26,12 @@ import traceback
 import dbus
 
 import gi
+gi.require_version('Gst', '1.0')
 gi.require_version('Gtk', '3.0')
+from gi.repository import Gst
 from gi.repository import Gtk
+
+Gst.init(None)
 
 prefix = '/usr'
 installed_src_dir = os.path.join(prefix, 'share/pogo/src')
@@ -109,13 +113,9 @@ if not optOptions.multiple_instances:
 import gettext
 import locale
 
-gi.require_version('Gst', '1.0')
 from gi.repository import Gdk
 from gi.repository import GdkPixbuf
 from gi.repository import GObject
-from gi.repository import Gst
-
-Gst.init(None)
 
 from tools import loadGladeFile, log, prefs
 
