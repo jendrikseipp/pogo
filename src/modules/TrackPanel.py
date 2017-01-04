@@ -19,7 +19,6 @@
 
 import os.path
 
-from gi.repository import GObject
 from gi.repository import Gtk
 
 import modules

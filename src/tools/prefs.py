@@ -36,7 +36,7 @@ def save():
     """ Save user preferences to the disk """
     with __mutex:
         tools.pickleSave(tools.consts.filePrefs, __usrPrefs)
-        os.chmod(tools.consts.filePrefs, 0600)
+        os.chmod(tools.consts.filePrefs, 0o600)
 
 
 def set(module, name, value):

@@ -20,7 +20,7 @@
 import sys
 import logging
 
-import consts
+from . import consts
 
 
 class Logger:

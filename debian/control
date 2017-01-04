@@ -3,7 +3,7 @@ Section: sound
 Priority: optional
 Maintainer: Jendrik Seipp <jendrikseipp@web.de>
 Build-Depends: debhelper (>= 7.0.50~)
-Build-Depends-Indep: python (>=2.7), dh-python
+Build-Depends-Indep: python3, dh-python
 Standards-Version: 3.9.6
 Homepage: https://github.com/jendrikseipp/pogo
 Vcs-Git: git://github.com/jendrikseipp/pogo.git
@@ -11,21 +11,23 @@ Vcs-Browser: https://github.com/jendrikseipp/pogo
 
 Package: pogo
 Architecture: all
-Depends: ${python:Depends},
+Depends: ${python3:Depends},
          ${misc:Depends},
          gir1.2-gdkpixbuf-2.0,
          gir1.2-glib-2.0,
          gir1.2-gstreamer-1.0,
          gir1.2-gtk-3.0,
-         gir1.2-notify-0.7,
          gir1.2-pango-1.0,
          gstreamer1.0-plugins-base,
          gstreamer1.0-plugins-good,
          gstreamer1.0-pulseaudio,
-         python-dbus,
-         python-mutagen,
-         python-pil
-Recommends: gstreamer1.0-plugins-bad,
+         python3-dbus,
+         python3-gi,
+         python3-mutagen,
+         python3-pil
+Recommends: gir1.2-notify-0.7,
+            gnome-settings-daemon,
+            gstreamer1.0-plugins-bad,
             gstreamer1.0-plugins-ugly
 Description: Pogo is a simple and fast audio player for Linux.
  Its clean interface uses the screen real-estate very efficiently.

@@ -42,7 +42,7 @@ from tools import consts, sec2str
     TAG_BTR,  # Bit rate
     TAG_MOD,  # Constant or variable bit rate
     TAG_SMP,  # Sample rate
-) = range(15)
+) = list(range(15))
 
 
 # Special fields that may be used to call format()
@@ -168,7 +168,7 @@ class Track:
     def getURI(self):
         """ Return the complete URI to the resource """
         try:    return self.tags[TAG_SCH] + '://' + self.tags[TAG_RES]
-        except: raise RuntimeError, 'The track is an unknown type of resource'
+        except: raise RuntimeError('The track is an unknown type of resource')
 
 
     def getFilename(self):

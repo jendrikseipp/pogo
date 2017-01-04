@@ -19,7 +19,7 @@
 
 import os
 import re
-import cPickle
+import pickle
 import subprocess
 import codecs
 import logging
@@ -27,7 +27,7 @@ from xml.sax.saxutils import escape, unescape
 
 from gi.repository import Gtk
 
-import consts
+from . import consts
 
 
 __dirCache = {}
@@ -109,15 +109,15 @@ def loadGladeFile(file, root=None):
 
 def pickleLoad(file):
     """ Use cPickle to load the data structure stored in the given file """
-    with open(file, 'r') as f:
-        data  = cPickle.load(f)
+    with open(file, 'rb') as f:
+        data  = pickle.load(f)
     return data
 
 
 def pickleSave(file, data):
     """ Use cPickle to save the data to the given file """
-    with open(file, 'w') as f:
-        cPickle.dump(data, f)
+    with open(file, 'wb') as f:
+        pickle.dump(data, f)
 
 
 def percentEncode(string):
@@ -169,7 +169,6 @@ def resize(w_old, h_old, max_width, max_height):
     w_new, h_new = int(w_new), int(h_new)
     assert w_new <= max_width, '%s <= %s' % (w_new, max_width)
     assert h_new <= max_height, '%s <= %s' % (h_new, max_height)
-    #assert round(ratio, 3) == round(w_new / h_new, 3), '%s == %s / %s == %s ' % (ratio, w_new, h_new, w_new / h_new)
     return (w_new, h_new)
 
 
@@ -189,7 +188,7 @@ def open_path(path):
 def get_pattern(string):
     """Escape the string and enable the wildcards ? and *."""
     quantifiers = ['?', '*']
-    pattern = re.escape(unicode(string))
+    pattern = re.escape(string)
     for quantifier in quantifiers:
         pattern = pattern.replace('\\' + quantifier, '.' + quantifier)
     return pattern
@@ -201,13 +200,14 @@ def write_file(filename, content):
         with codecs.open(filename, 'wb', errors='replace', encoding='utf-8') as file:
             file.write(content)
         logging.info('Wrote file "%s"' % filename)
-    except IOError, e:
+    except IOError as e:
         logging.error('Error while writing to "%s": %s' % (filename, e))
 
 def print_platform_info():
     import platform
-    #from gi.repository import Gtk
-    #from gi.repository import Gst
+    from gi.repository import GObject
+    from gi.repository import Gtk
+    from gi.repository import Gst
     import mutagen
     import PIL
 
@@ -217,27 +217,17 @@ def print_platform_info():
     ]
     names_values = [(func.__name__, func()) for func in functions]
 
-    lib_values = [
-        #('GTK', gtk, 'gtk_version'),
-        #('PyGTK', gtk, 'pygtk_version'),
-        #('GST', gst, 'version'),
-        ('Mutagen', mutagen, 'version'),
-        ('PIL', PIL, 'VERSION'),
-    ]
-
-    for name, obj, attr_name in lib_values:
-        attr = getattr(obj, attr_name, None)
-        if attr:
-            try:
-                value = attr()
-            except TypeError:
-                value = attr
-        else:
-            value = 'unknown'
-        names_values.append((name, value))
+    names_values.extend([
+        ('GTK', (Gtk.get_major_version(), Gtk.get_minor_version(), Gtk.get_micro_version())),
+        ('Glib', GObject.glib_version),
+        ('PyGObject', GObject.pygobject_version),
+        ('GST', Gst.version_string()),
+        ('Mutagen', mutagen.version),
+        ('PIL', PIL.VERSION),
+        ])
 
     values = ['%s: %s' % (name, val) for name, val in names_values]
-    print 'System info: ' + ', '.join(values)
+    print('System info: ' + ', '.join(values))
 
 def separate_commands_and_tracks(args):
     all_commands = set(consts.commands)

@@ -17,13 +17,12 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301 USA
 
-from __future__ import with_statement
-
 from gettext import gettext as _
 import itertools
+import locale
 import os
 from os.path import isdir, isfile
-import urllib2
+import urllib.request, urllib.error, urllib.parse
 
 from gi.repository import Gdk, GdkPixbuf
 from gi.repository import GObject
@@ -46,7 +45,7 @@ MOD_INFO = ('File Explorer', 'File Explorer', 'Browse your file system', [], Tru
     ROW_NAME,      # Item name
     ROW_TYPE,      # The type of the item (e.g., directory, file)
     ROW_FULLPATH   # The full path to the item
-) = range(4)
+) = list(range(4))
 
 
 # The possible types for a node of the tree
@@ -55,7 +54,7 @@ MOD_INFO = ('File Explorer', 'File Explorer', 'Browse your file system', [], Tru
     TYPE_FILE,  # A media file
     TYPE_NONE,   # A fake item, used to display a '+' in front of a directory when needed
     TYPE_INFO,
-) = range(4)
+) = list(range(4))
 
 
 class FileExplorer(modules.Module):
@@ -215,13 +214,11 @@ class FileExplorer(modules.Module):
               - Then, if an equality occurs, the normal version (we want 'Foo' and 'foo' to be different folders)
         """
         name1 = r1[ROW_NAME]
-        if not isinstance(name1, unicode):
-            name1 = name1.decode('utf-8')
         name2 = r2[ROW_NAME]
-        if not isinstance(name2, unicode):
-            name2 = name2.decode('utf-8')
 
-        return cmp([name1.lower(), name1], [name2.lower(), name2])
+        result = locale.strcoll(name1, name2)
+        assert result == locale.strcoll(name1.lower(), name2.lower()) or locale.strcoll(name1, name2)
+        return result
 
 
     def getDirContents(self, directory):
@@ -230,7 +227,7 @@ class FileExplorer(modules.Module):
         mediaFiles  = []
         directories = []
 
-        for (file, path) in tools.listDir(unicode(directory)):
+        for (file, path) in tools.listDir(directory):
             # Make directory names prettier
             junk = ['_']
             pretty_name = file
@@ -267,7 +264,7 @@ class FileExplorer(modules.Module):
         if fakeChild is not None:
             self.tree.removeRow(fakeChild)
 
-        GObject.idle_add(self.updateDirNodes(parent).next)
+        GObject.idle_add(self.updateDirNodes(parent).__next__)
 
 
     def updateDirNodes(self, parent):
@@ -369,7 +366,7 @@ class FileExplorer(modules.Module):
 
         # Update nodes' appearance
         if len(directories) != 0:
-            GObject.idle_add(self.updateDirNodes(treePath).next)
+            GObject.idle_add(self.updateDirNodes(treePath).__next__)
 
         # Recursively refresh expanded rows
         for child in self.tree.iterChildren(treePath):
@@ -522,9 +519,9 @@ class FileExplorer(modules.Module):
 
     def onDragDataGet(self, tree, context, selection, info, time):
         """ Provide information about the data being dragged """
-        import urllib
+        import urllib.request
         selection.set_uris([
-            urllib.pathname2url(file)
+            urllib.request.pathname2url(file)
             for file in [row[ROW_FULLPATH] for row in tree.getSelectedRows()]])
 
 
@@ -533,7 +530,7 @@ class FileExplorer(modules.Module):
         Add a directory with one fake child to the tree
         '''
         name = tools.dirname(path)
-        name = tools.htmlEscape(unicode(name, errors='replace'))
+        name = tools.htmlEscape(name)
         parent = self.tree.appendRow((icons.dirMenuIcon(), name, TYPE_DIR, path), None)
         # add fake child
         self.tree.appendRow((icons.dirMenuIcon(), '', TYPE_NONE, ''), parent)
@@ -557,7 +554,7 @@ class FileExplorer(modules.Module):
             if match:
                 dirname = match.group(1)
                 # Unquote dirname: "My%20folder" -> "My folder"
-                dirname = urllib2.unquote(dirname)
+                dirname = urllib.parse.unquote(dirname)
                 path = os.path.join(consts.dirBaseUsr, dirname)
                 return path
         return None

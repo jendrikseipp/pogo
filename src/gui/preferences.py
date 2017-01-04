@@ -33,7 +33,7 @@ import gui, modules, tools, tools.icons
     ROW_UNLOADABLE, # True if the module can be disabled
     ROW_INSTANCE,   # Instance of the module, if any
     ROW_MODINFO     # Information exported by a module
-) = range(6)
+) = list(range(6))
 
 
 class PreferencesListView(Gtk.TreeView):

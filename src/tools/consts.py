@@ -112,7 +112,7 @@ UNKNOWN_ALBUM_ARTIST = _('Unknown Album Artist')
 (
     DND_URI,          # From another application (e.g., from Nautilus)
     DND_POGO_URI,      # Inside Pogo when tags are not known (e.g., from the FileExplorer)
-) = range(2)
+) = list(range(2))
 
 DND_TARGETS = {
                 DND_URI:         ('text/uri-list',   0,                   DND_URI),
@@ -127,7 +127,7 @@ DND_INTERNAL_TARGET_NAME = 'exttreeview-internal'
     VIEW_MODE_FULL,
     VIEW_MODE_MINI,
     VIEW_MODE_PLAYLIST,
-) = range(3)
+) = list(range(3))
 
 
 # --- Message that can be sent/received by modules
@@ -209,4 +209,4 @@ DND_INTERNAL_TARGET_NAME = 'exttreeview-internal'
 
     # End value
     MSG_END_VALUE
-) = range(48)
+) = list(range(48))

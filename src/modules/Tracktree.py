@@ -39,7 +39,7 @@ MOD_INFO = ('Tracktree', 'Tracktree', '', [], True, False)
     ROW_ICO,    # Item icon
     ROW_NAME,   # Item name
     ROW_TRK,    # The track object
-) = range(3)
+) = list(range(3))
 
 
 SAVE_INTERVAL = 600
@@ -528,7 +528,7 @@ class Tracktree(modules.Module):
         if os.path.exists(self.savedPlaylist):
             try:
                 dump = pickleLoad(self.savedPlaylist)
-            except:
+            except (EOFError, IOError):
                 msg = '[%s] Unable to restore playlist from %s\n\n%s'
                 log.logger.error(msg % (MOD_INFO[modules.MODINFO_NAME],
                                 self.savedPlaylist, traceback.format_exc()))
@@ -685,7 +685,7 @@ class Tracktree(modules.Module):
 
     def onDND(self, list, context, x, y, dragData, dndId, time):
         """ External Drag'n'Drop """
-        import urllib
+        import urllib.request
 
         uris = dragData.get_uris()
 
@@ -696,7 +696,7 @@ class Tracktree(modules.Module):
         def get_path(uri):
             if uri.startswith('file://'):
                 uri = uri[len('file://'):]
-            return urllib.url2pathname(uri)
+            return urllib.request.url2pathname(uri)
 
         paths = [get_path(uri) for uri in uris]
         tracks = media.getTracks(paths)

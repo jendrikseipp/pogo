@@ -34,7 +34,7 @@ MOD_INFO = ('Equalizer', _('Equalizer'), _('Tune the level of the frequency band
     ROW_PRESET_IS_SEPARATOR,
     ROW_PRESET_NAME,
     ROW_PRESET_VALUES,
-) = range(3)
+) = list(range(3))
 
 
 class Equalizer(modules.Module):
@@ -101,7 +101,7 @@ class Equalizer(modules.Module):
             self.targetLvls = []
 
             # Setup the scales
-            for i in xrange(10):
+            for i in range(10):
                 self.scales.append(self.cfgWindow.getWidget('vscale' + str(i)))
                 self.scales[i].set_value(self.lvls[i])
                 self.scales[i].connect('value-changed', self.onScaleValueChanged, i)
@@ -172,7 +172,7 @@ class Equalizer(modules.Module):
 
         if outFile is not None:
             output = open(outFile, 'wt')
-            for i in xrange(10):
+            for i in range(10):
                 output.write(str(self.lvls[i]) + '\n')
             output.close()
 
@@ -191,7 +191,7 @@ class Equalizer(modules.Module):
 
             if len(lines) == 10:
                 isInvalid = False
-                for i in xrange(10):
+                for i in range(10):
                     elts = lines[i].split()
 
                     try:
@@ -246,7 +246,7 @@ class Equalizer(modules.Module):
         self.timer      = GObject.timeout_add(20, self.timerFunc)
         self.targetLvls = targetLvls
 
-        for i in xrange(10):
+        for i in range(10):
             self.scales[i].handler_block_by_func(self.onScaleValueChanged)
 
 
@@ -255,7 +255,7 @@ class Equalizer(modules.Module):
         isFinished = True
 
         # Move the scales a bit
-        for i in xrange(10):
+        for i in range(10):
             currLvl    = self.scales[i].get_value()
             targetLvl  = self.targetLvls[i]
             difference = targetLvl - currLvl
@@ -278,7 +278,7 @@ class Equalizer(modules.Module):
 
             # Make sure labels are up to date (sometimes they aren't when we're done with the animation)
             # Also unblock the handlers
-            for i in xrange(10):
+            for i in range(10):
                 self.scales[i].queue_draw()
                 self.scales[i].handler_unblock_by_func(self.onScaleValueChanged)
 
