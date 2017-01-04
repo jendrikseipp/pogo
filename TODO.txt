@@ -1,16 +1,12 @@
 === Roadmap ===
 
+X Port from GTK 2 to GTK 3.
+X Port from Python 2 to Python 3.
 O Test for dead code with vulture.
 O Don't skip to next track early (currently 2 seconds before end).
 O Search whole system by default (after "locate" finishes)
 O Add application-wide message system for warnings. Should use event system.
 O Show warning if search commands fail.
-O Port from PyGTK 2 to PyGI GTK 3
-  O Wait for pygobject to stabilize
-    (version 3.12 causes too many segfaults and X errors)
-  X GStreamer: https://wiki.ubuntu.com/Novacut/GStreamer1.0
-O Port from python2 to python3 (needs PyGI and mutagen 1.25).
-  Makes unicode handling in GTK easier.
 
 
 === Features that will MAYBE be implemented ===

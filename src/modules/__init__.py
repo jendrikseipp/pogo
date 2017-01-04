@@ -35,7 +35,7 @@ from tools import consts, log, prefs
     MODINFO_NAME,           # Name of the module, must be unique
     MODINFO_L10N,           # Name translated into the current locale
     MODINFO_DESC,           # Description of the module, translated into the current locale
-    MODINFO_DEPS,           # A list of special Python dependencies (e.g., pynotify)
+    MODINFO_DEPS,           # A list of special Python dependencies
     MODINFO_MANDATORY,      # True if the module cannot be disabled
     MODINFO_CONFIGURABLE    # True if the module can be configured
 ) = list(range(6))

@@ -121,12 +121,7 @@ class Search(modules.ThreadedModule):
 
     def stop_searches(self):
         logging.info('Stopping all searches')
-        # The kill() method was introduced in python2.6
         self.should_stop = True
-
-        if not hasattr(subprocess.Popen, 'kill'):
-            self.searches = []
-            return
 
         for search in self.searches:
             if search.returncode is None:
