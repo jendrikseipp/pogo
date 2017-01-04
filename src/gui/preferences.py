@@ -122,6 +122,7 @@ class Preferences:
 
         # GTK handlers
         self.window.getWidget('btn-help').connect('clicked', self.onHelp)
+        self.window.getWidget('btn-about').connect('clicked', self.onAbout)
         self.list.get_selection().connect('changed', self.onSelectionChanged)
         self.window.getWidget('btn-close').connect('clicked', lambda btn: self.window.hide())
         self.list.connect('row_activated', self.onRowActivated)
@@ -197,6 +198,11 @@ class Preferences:
             'To configure a module, simply select it and then click on the "Preferences" button on the bottom of '
             'the dialog box. Note that configuring a module is only possible when it is enabled.'))
         helpDlg.show(self.window)
+
+    def onAbout(self, item):
+        """ Show the about dialog box """
+        import gui.about
+        gui.about.show(self.window)
 
     def onSelectionChanged(self, selection):
         """ Decide whether the new selection may be configured """

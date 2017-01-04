@@ -126,7 +126,7 @@ class CtrlPanel(modules.Module):
             #('Help', Gtk.STOCK_HELP, None,
             #    '<Ctrl>h', None, self.on_help_menu_item_activate),
             ('About', Gtk.STOCK_ABOUT, None,
-                None, None, self.onAbout),
+                None, None, None),
             ])
 
         # Add the actiongroup to the uimanager
@@ -138,6 +138,7 @@ class CtrlPanel(modules.Module):
         # Create a Menu
         button_menu = self.uimanager.get_widget('/ButtonMenu')
 
+        # TODO: Use Gtk.ToolButton instead and add button for about menu in preferences dialog.
         menu_button = Gtk.MenuToolButton(None, None)
         hbox = menu_button.get_child()
         button, toggle_button = hbox.get_children()
@@ -232,12 +233,6 @@ class CtrlPanel(modules.Module):
     def onSeekValueChanged(self, range):
         """ The user has moved the seek slider """
         modules.postMsg(consts.MSG_CMD_SEEK, {'seconds': int(range.get_value())})
-
-
-    def onAbout(self, item):
-        """ Show the about dialog box """
-        import gui.about
-        gui.about.show(self.main_window)
 
 
     def onHelp(self, item):
