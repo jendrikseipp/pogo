@@ -6,8 +6,8 @@ Pogo is a fork of decibel-audio-player.
 
 Copyright Holders:
 
-    Copyright (C) 2007 Ingelrest Francois <athropos@gmail.com>
-    Copyright (C) 2010 Jendrik Seipp <jendrikseipp@web.de>
+    Copyright (C) 2007-2010 Ingelrest Francois <athropos@gmail.com>
+    Copyright (C) 2010-2017 Jendrik Seipp <jendrikseipp@web.de>
 
 License:
 
@@ -38,5 +38,5 @@ and are licensed under the same license as the pogo package, see above.
 
 -------------------------------------------
 
-The Debian packaging is Copyright © 2011, Jendrik Seipp <jendrikseipp@web.de>
+The Debian packaging is Copyright (C) 2011, Jendrik Seipp <jendrikseipp@web.de>
 and is licensed under the GPL, see above.
