@@ -27,7 +27,6 @@ Depends: ${python:Depends},
          python-pil
 Recommends: gstreamer1.0-plugins-bad,
             gstreamer1.0-plugins-ugly
-
 Description: Pogo is a simple and fast audio player for Linux.
  Its clean interface uses the screen real-estate very efficiently.
  Other features include: Fast search on the harddrive and in the
