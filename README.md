@@ -14,7 +14,7 @@ or help out, please visit http://launchpad.net/pogo.
 
 
 Requirements
-============
+------------
 
 See `debian/control` for Ubuntu package names.
 
@@ -33,13 +33,13 @@ Recommended libraries:
 
 
 Run Pogo (without installing)
-=============================
+-----------------------------
 
     ./pogo.py
 
 
 Install and run Pogo
-====================
+--------------------
 
     sudo make install
     pogo

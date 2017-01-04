@@ -30,7 +30,7 @@ Recommends: gir1.2-notify-0.7,
             gstreamer1.0-plugins-bad,
             gstreamer1.0-plugins-ugly
 Description: Pogo is a simple and fast audio player for Linux.
- Its clean interface uses the screen real-estate very efficiently.
+ Its clean interface makes Pogo a perfect fit for small screens.
  Other features include: Fast search on the harddrive and in the
  playlist, smart album grouping, cover display, desktop notifications
  and the lack of a music library. Pogo is a fork of Decibel Audio
