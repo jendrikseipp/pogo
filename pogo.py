@@ -18,6 +18,7 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301 USA
 
+import logging
 import optparse
 import os
 import sys
@@ -48,9 +49,10 @@ else:
 
 
 import tools
-tools.print_platform_info()
-
 from tools import consts
+from tools import log
+
+tools.print_platform_info()
 
 
 # Command line
@@ -117,7 +119,7 @@ from gi.repository import Gdk
 from gi.repository import GdkPixbuf
 from gi.repository import GObject
 
-from tools import loadGladeFile, log, prefs
+from tools import loadGladeFile, prefs
 
 DEFAULT_VIEW_MODE = consts.VIEW_MODE_FULL
 DEFAULT_PANED_POS = 370  # 300
@@ -135,7 +137,7 @@ def realStartup(window, paned):
 
     # Is the application started for the first time?
     first_start = prefs.get(__name__, 'first-time', True)
-    print('First start:', first_start)
+    logging.debug('First start: {}'.format(first_start))
     if first_start:
         prefs.set(__name__, 'first-time', False)
 

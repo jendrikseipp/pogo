@@ -227,7 +227,7 @@ def print_platform_info():
         ])
 
     values = ['%s: %s' % (name, val) for name, val in names_values]
-    print('System info: ' + ', '.join(values))
+    logging.info('System info: ' + ', '.join(values))
 
 def separate_commands_and_tracks(args):
     all_commands = set(consts.commands)
