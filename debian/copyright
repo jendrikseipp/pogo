@@ -7,7 +7,7 @@ Pogo is a fork of decibel-audio-player.
 Copyright Holders:
 
     Copyright (C) 2007-2010 Ingelrest Francois <athropos@gmail.com>
-    Copyright (C) 2010-2016 Jendrik Seipp <jendrikseipp@web.de>
+    Copyright (C) 2010-2017 Jendrik Seipp <jendrikseipp@web.de>
 
 License:
 
@@ -32,13 +32,13 @@ Public License can be found in `/usr/share/common-licenses/GPL-2'.
 
 The files 'po/*.po' are copyright:
 
-    Copyright (C) 2007-2016 Rosetta Contributors and Canonical Ltd 2008
+    Copyright (C) 2007-2017 Rosetta Contributors and Canonical Ltd 2008
 
 and are licensed under the same license as the pogo package, see above.
 
 -------------------------------------------
 
-The Debian packaging is Copyright © 2010-2016, Jendrik Seipp <jendrikseipp@web.de>
+The Debian packaging is Copyright (C) 2010-2017, Jendrik Seipp <jendrikseipp@web.de>
 and is licensed under the GPL, see above.
 
 -------------------------------------------

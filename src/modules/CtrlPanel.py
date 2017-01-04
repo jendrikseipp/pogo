@@ -17,14 +17,17 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301 USA
 
-import gtk, modules
-
-from tools   import consts, prefs, sec2str
 from gettext import gettext as _
+
+from gi.repository import Gtk
+
+import modules
+from tools import consts, prefs, sec2str
+
 
 MOD_INFO = ('Control Panel', 'Control Panel', '', [], True, False)
 
-PLAY_PAUSE_ICON_SIZE = gtk.ICON_SIZE_LARGE_TOOLBAR
+PLAY_PAUSE_ICON_SIZE = Gtk.IconSize.LARGE_TOOLBAR
 
 
 class CtrlPanel(modules.Module):
@@ -46,30 +49,13 @@ class CtrlPanel(modules.Module):
         modules.Module.__init__(self, handlers)
 
 
-    def set_time(self, seconds):
+    def set_time_tooltip(self, seconds):
+        if seconds > self.currTrackLength:
+            seconds = self.currTrackLength
+
         elapsed = sec2str(seconds)
-        #remaining = sec2str(self.currTrackLength - seconds)
         total = sec2str(self.currTrackLength)
         self.sclSeek.set_tooltip_text('%s / %s' % (elapsed, total))
-
-
-    def set_tooltips(self, uimanager):
-        '''
-        Little work-around:
-        Tooltips are not shown for menuitems that have been created with uimanager.
-        We have to do it manually.
-
-        Icons will not show up in recent GNOME versions, this is not a bug.
-        '''
-        groups = uimanager.get_action_groups()
-        for group in groups:
-            actions = group.list_actions()
-            for action in actions:
-                widgets = action.get_proxies()
-                tooltip = action.get_property('tooltip')
-                if tooltip:
-                    for widget in widgets:
-                        widget.set_tooltip_markup(tooltip)
 
 
    # --== Message handler ==--
@@ -78,7 +64,6 @@ class CtrlPanel(modules.Module):
     def onAppStarted(self):
         """ Real initialization function, called when this module has been loaded """
         self.currTrackLength = 0
-        self.sclBeingDragged = False
 
         # Widgets
         wTree             = prefs.getWidgetsTree()
@@ -94,80 +79,24 @@ class CtrlPanel(modules.Module):
         self.sclSeek.connect('change-value', self.onSeekChangingValue)
         self.sclSeek.connect('value-changed', self.onSeekValueChanged)
 
-        # Left mouse click jumps to current position
-        self.sclSeek.connect('button-press-event', self.onSeekButtonPressed)
-        self.sclSeek.connect('button-release-event', self.onSeekButtonReleased)
+        self.sclSeek.hide()
 
-        # Add pref button
-
-        self.uimanager = gtk.UIManager()
-        self.main_window = wTree.get_object('win-main')
-
-        menu_xml = '''
-        <ui>
-        <popup name="ButtonMenu">
-            <menuitem action="Options"/>
-            <menuitem action="About"/>
-        </popup>
-        </ui>'''
-
-        # Create an ActionGroup
-        actiongroup = gtk.ActionGroup('MainActionGroup')
-
-        # Create actions
-        actiongroup.add_actions([
-            ('ButtonMenu', None, None),
-            #('Quit', gtk.STOCK_QUIT, None, None, None,
-            #    lambda widget: self.onDelete(self.main_window, None)),
-            ('Options', gtk.STOCK_PREFERENCES, None,
-                '<Ctrl>p', None, lambda item: modules.showPreferences()),
-            #('Help', gtk.STOCK_HELP, None,
-            #    '<Ctrl>h', None, self.on_help_menu_item_activate),
-            ('About', gtk.STOCK_ABOUT, None,
-                None, None, self.onAbout),
-            ])
-
-        # Add the actiongroup to the uimanager
-        self.uimanager.insert_action_group(actiongroup, 0)
-
-        # Add a UI description
-        self.uimanager.add_ui_from_string(menu_xml)
-
-        # Create a Menu
-        button_menu = self.uimanager.get_widget('/ButtonMenu')
-
-        menu_button = gtk.MenuToolButton(None, None)
-        hbox = menu_button.get_child()
-        button, toggle_button = hbox.get_children()
-        hbox.remove(button)
-
-        img = gtk.image_new_from_stock(gtk.STOCK_PREFERENCES,
-                                       gtk.ICON_SIZE_SMALL_TOOLBAR)
-
-        arrow = toggle_button.get_child()
-        toggle_button.remove(arrow)
-        hbox = gtk.HBox()
-        hbox.add(img)
-        toggle_button.add(hbox)
-        menu_button.show()
-
-
+        # Add preferences button.
+        preferences_img = Gtk.Image.new_from_icon_name(
+            'preferences-system', Gtk.IconSize.SMALL_TOOLBAR)
+        preferences_button = Gtk.ToolButton.new(preferences_img, None)
         toolbar_hbox = wTree.get_object('hbox4')
-        toolbar_hbox.pack_end(menu_button, False)
-        # Move it to the right
-        toolbar_hbox.reorder_child(menu_button, 0)
-        menu_button.set_menu(button_menu)
-
-        self.set_tooltips(self.uimanager)
-        accelgroup = self.uimanager.get_accel_group()
-        self.main_window.add_accel_group(accelgroup)
-
+        toolbar_hbox.pack_end(preferences_button, False, False, 0)
+        # Move button to the right.
+        toolbar_hbox.reorder_child(preferences_button, 0)
+        preferences_button.connect('clicked', lambda item: modules.showPreferences())
+        preferences_button.show_all()
 
 
     def onNewTrack(self, track):
         """ A new track is being played """
         self.btnPlay.set_sensitive(True)
-        self.btnPlay.set_image(gtk.image_new_from_stock(gtk.STOCK_MEDIA_PAUSE, PLAY_PAUSE_ICON_SIZE))
+        self.btnPlay.set_image(Gtk.Image.new_from_stock(Gtk.STOCK_MEDIA_PAUSE, PLAY_PAUSE_ICON_SIZE))
         self.btnPlay.set_tooltip_text(_('Pause the current track'))
 
         self.currTrackLength = track.getLength()
@@ -183,23 +112,19 @@ class CtrlPanel(modules.Module):
         """ The playback has been stopped """
         self.btnNext.set_sensitive(False)
         self.btnPrev.set_sensitive(False)
-        self.btnPlay.set_image(gtk.image_new_from_stock(gtk.STOCK_MEDIA_PLAY, PLAY_PAUSE_ICON_SIZE))
+        self.btnPlay.set_image(Gtk.Image.new_from_stock(Gtk.STOCK_MEDIA_PLAY, PLAY_PAUSE_ICON_SIZE))
         self.btnPlay.set_tooltip_text(_('Play the first selected track of the playlist'))
         self.sclSeek.hide()
 
 
     def onNewTrackPosition(self, seconds):
         """ The track position has changed """
-        if not self.sclBeingDragged:
-            ## Use "1:40 / 2:34" format
-            if seconds >= self.currTrackLength:
-                seconds = self.currTrackLength
-            self.set_time(seconds)
+        self.set_time_tooltip(seconds)
 
-            # Make sure the handler will not be called
-            self.sclSeek.handler_block_by_func(self.onSeekValueChanged)
-            self.sclSeek.set_value(seconds)
-            self.sclSeek.handler_unblock_by_func(self.onSeekValueChanged)
+        # Make sure the handler will not be called
+        self.sclSeek.handler_block_by_func(self.onSeekValueChanged)
+        self.sclSeek.set_value(seconds)
+        self.sclSeek.handler_unblock_by_func(self.onSeekValueChanged)
 
 
     def onCurrentTrackMoved(self, hasPrevious, hasNext):
@@ -210,13 +135,13 @@ class CtrlPanel(modules.Module):
 
     def onPaused(self):
         """ The playback has been paused """
-        self.btnPlay.set_image(gtk.image_new_from_stock(gtk.STOCK_MEDIA_PLAY, PLAY_PAUSE_ICON_SIZE))
+        self.btnPlay.set_image(Gtk.Image.new_from_stock(Gtk.STOCK_MEDIA_PLAY, PLAY_PAUSE_ICON_SIZE))
         self.btnPlay.set_tooltip_text(_('Continue playing the current track'))
 
 
     def onUnpaused(self):
         """ The playback has been unpaused """
-        self.btnPlay.set_image(gtk.image_new_from_stock(gtk.STOCK_MEDIA_PAUSE, PLAY_PAUSE_ICON_SIZE))
+        self.btnPlay.set_image(Gtk.Image.new_from_stock(Gtk.STOCK_MEDIA_PAUSE, PLAY_PAUSE_ICON_SIZE))
         self.btnPlay.set_tooltip_text(_('Pause the current track'))
 
 
@@ -227,53 +152,14 @@ class CtrlPanel(modules.Module):
 
     # --== GTK handlers ==--
 
+    def onSeekChangingValue(self, range, scroll, value):
+        """ The user is moving the seek slider """
+        self.set_time_tooltip(int(value))
+
 
     def onSeekValueChanged(self, range):
         """ The user has moved the seek slider """
         modules.postMsg(consts.MSG_CMD_SEEK, {'seconds': int(range.get_value())})
-        self.sclBeingDragged = False
-
-
-    def onSeekChangingValue(self, range, scroll, value):
-        """ The user is moving the seek slider """
-        self.sclBeingDragged = True
-
-        if value >= self.currTrackLength: value = self.currTrackLength
-        else:                             value = int(value)
-
-        self.set_time(value)
-
-
-    def onSeekButtonPressed(self, widget, event):
-        '''
-        Let left-clicks behave as middle-clicks -> Jump to correct position
-        '''
-        # Leftclick
-        if event.button == 1:
-            self.sclBeingDragged = True
-            event.button = 2
-            # Middleclick
-            widget.emit('button-press-event', event)
-            return True
-
-
-    def onSeekButtonReleased(self, widget, event):
-        '''
-        Let left-clicks behave as middle-clicks -> Jump to correct position
-        '''
-        # Leftclick
-        if event.button == 1:
-            self.sclBeingDragged = True
-            event.button = 2
-            # Middleclick
-            widget.emit('button-release-event', event)
-            return True
-
-
-    def onAbout(self, item):
-        """ Show the about dialog box """
-        import gui.about
-        gui.about.show(self.main_window)
 
 
     def onHelp(self, item):

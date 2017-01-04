@@ -17,9 +17,15 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301 USA
 
-import gtk, modules, os.path, tools
+import os.path
 
+from gi.repository import GObject
+from gi.repository import Gtk
+
+import modules
+import tools
 from tools import consts, prefs
+
 
 MOD_INFO = ('Track Panel', 'Track Panel', '', [], True, False)
 
@@ -116,13 +122,6 @@ class CoverSpot(object):
         self.cover_window.set_image(cover_path)
         self.thumb_window.set_image(thumb_path)
 
-        # This somehow fixes the compiz problem where the cover was only
-        # shown after the window had been redrawn
-        #self.thumb_window.update_position()
-        #self.thumb_window.show()
-        #self.cover_window.update_position()
-        #self.cover_window.show()
-
         if self.has_focus:
             self.onCoverClicked(None, None, self.show_thumb)
 
@@ -157,15 +156,15 @@ class CoverSpot(object):
 
 
 
-class CoverWindow(gtk.Window):
+class CoverWindow(Gtk.Window):
     def __init__(self):
-        gtk.Window.__init__(self, gtk.WINDOW_POPUP)
-        frame = gtk.Frame()
-        self.evtBox = gtk.EventBox()
-        self.image = gtk.Image()
+        Gtk.Window.__init__(self, Gtk.WindowType.POPUP)
+        frame = Gtk.Frame()
+        self.evtBox = Gtk.EventBox()
+        self.image = Gtk.Image()
         self.set_image(None)
         self.evtBox.add(self.image)
-        frame.set_shadow_type(gtk.SHADOW_IN)
+        frame.set_shadow_type(Gtk.ShadowType.IN)
         frame.add(self.evtBox)
         self.add(frame)
 
@@ -200,16 +199,17 @@ class CoverWindow(gtk.Window):
         scrolled = wTree.get_object('scrolled-tracklist')
         tree = scrolled.get_child()
         if tree:
-            tree_x, tree_y, tree_width, tree_height = tree.get_allocation()
+            rectangle = tree.get_allocation()
+            tree_x, tree_y, tree_width, tree_height = rectangle.x, rectangle.y, rectangle.width, rectangle.height
             # Get the window, the tracktree is painted on
             tree_win = tree.get_parent_window()
 
-            # Get absolute position of the gtk.gdk.Window without the window decos
-            orig_tree_win_x, orig_tree_win_y = tree_win.get_origin()
+            # Get absolute position of the Gdk.Window without the window decos
+            orig_tree_win = tree_win.get_origin()
 
             # Calculate absolute position of upper left corner
-            x = orig_tree_win_x + tree_x
-            y = orig_tree_win_y + tree_y
+            x = orig_tree_win.x + tree_x
+            y = orig_tree_win.y + tree_y
 
             # get lower right corner
             x, y = x + tree_width, y + tree_height
@@ -225,4 +225,4 @@ class CoverWindow(gtk.Window):
 
     def show(self):
         if self.has_cover:
-            gtk.Window.show_all(self)
+            Gtk.Window.show_all(self)

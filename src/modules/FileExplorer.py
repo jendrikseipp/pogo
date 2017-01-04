@@ -19,22 +19,22 @@
 
 from __future__ import with_statement
 
-import os
-import urllib2
-import itertools
 from gettext import gettext as _
+import itertools
+import os
 from os.path import isdir, isfile
+import urllib2
 
-import gtk
-from gobject import idle_add, TYPE_STRING, TYPE_INT
+from gi.repository import Gdk, GdkPixbuf
+from gi.repository import GObject
+from gi.repository import Gtk
 
+from gui import fileChooser, errorMsgBox
 import media
+from media import playlist
 import modules
 import tools
 from tools import consts, prefs, icons, samefile
-from media import playlist
-from gui import fileChooser, errorMsgBox
-
 
 
 MOD_INFO = ('File Explorer', 'File Explorer', 'Browse your file system', [], True, False)
@@ -80,14 +80,18 @@ class FileExplorer(modules.Module):
         from gui import extTreeview
 
         columns = (
-            ('',   [(gtk.CellRendererPixbuf(), gtk.gdk.Pixbuf), (gtk.CellRendererText(), TYPE_STRING)], True),
-            (None, [(None, TYPE_INT)],                                                                  False),
-            (None, [(None, TYPE_STRING)],                                                               False))
+            ('',   [(Gtk.CellRendererPixbuf(), GdkPixbuf.Pixbuf), (Gtk.CellRendererText(), GObject.TYPE_STRING)], True),
+            (None, [(None, GObject.TYPE_INT)],                                                                  False),
+            (None, [(None, GObject.TYPE_STRING)],                                                               False))
 
         self.tree = extTreeview.ExtTreeView(columns, True)
 
         self.scrolled.add(self.tree)
-        self.tree.setDNDSources([consts.DND_TARGETS[consts.DND_POGO_URI]])
+
+        targets = Gtk.TargetList.new([])
+        targets.add_uri_targets(consts.DND_POGO_URI)
+        self.tree.setDNDSources(targets)
+
         self.tree.connect('drag-data-get', self.onDragDataGet)
         self.tree.connect('key-press-event', self.onKeyPressed)
         self.tree.connect('exttreeview-button-pressed', self.onMouseButton)
@@ -139,7 +143,7 @@ class FileExplorer(modules.Module):
         """ Create a dictionary representing the current state of the tree """
         self.treeState = {
                     'tree-state':     self.getTreeDump(),
-                    'selected-paths': self.tree.getSelectedPaths(),
+                    'selected-paths': [tuple(path) for path in self.tree.getSelectedPaths()],
                     'vscrollbar-pos': self.scrolled.get_vscrollbar().get_value(),
                     'hscrollbar-pos': self.scrolled.get_hscrollbar().get_value(),
                     }
@@ -151,10 +155,10 @@ class FileExplorer(modules.Module):
         self.tree.handler_block_by_func(self.onRowExpanded)
         self.restoreTreeDump(self.treeState['tree-state'])
         self.tree.handler_unblock_by_func(self.onRowExpanded)
-        idle_add(self.scrolled.get_vscrollbar().set_value, self.treeState['vscrollbar-pos'])
-        idle_add(self.scrolled.get_hscrollbar().set_value, self.treeState['hscrollbar-pos'])
-        idle_add(self.tree.selectPaths, self.treeState['selected-paths'])
-        idle_add(self.refresh)
+        GObject.idle_add(self.scrolled.get_vscrollbar().set_value, self.treeState['vscrollbar-pos'])
+        GObject.idle_add(self.scrolled.get_hscrollbar().set_value, self.treeState['hscrollbar-pos'])
+        GObject.idle_add(self.tree.selectPaths, self.treeState['selected-paths'])
+        GObject.idle_add(self.refresh)
         self.set_info_text()
 
 
@@ -210,10 +214,14 @@ class FileExplorer(modules.Module):
               - First the lower case version (we want 'bar' to be before 'Foo')
               - Then, if an equality occurs, the normal version (we want 'Foo' and 'foo' to be different folders)
         """
-        result = cmp(r1[ROW_NAME].lower(), r2[ROW_NAME].lower())
+        name1 = r1[ROW_NAME]
+        if not isinstance(name1, unicode):
+            name1 = name1.decode('utf-8')
+        name2 = r2[ROW_NAME]
+        if not isinstance(name2, unicode):
+            name2 = name2.decode('utf-8')
 
-        if result == 0: return cmp(r1[ROW_NAME], r2[ROW_NAME])
-        else:           return result
+        return cmp([name1.lower(), name1], [name2.lower(), name2])
 
 
     def getDirContents(self, directory):
@@ -259,7 +267,7 @@ class FileExplorer(modules.Module):
         if fakeChild is not None:
             self.tree.removeRow(fakeChild)
 
-        idle_add(self.updateDirNodes(parent).next)
+        GObject.idle_add(self.updateDirNodes(parent).next)
 
 
     def updateDirNodes(self, parent):
@@ -310,7 +318,7 @@ class FileExplorer(modules.Module):
             # all expanded nodes.
             for child in self.tree.iterChildren(None):
                 if self.tree.row_expanded(child):
-                    idle_add(self.refresh, child)
+                    GObject.idle_add(self.refresh, child)
             return
 
         directory = self.tree.getItem(treePath, ROW_FULLPATH)
@@ -361,12 +369,12 @@ class FileExplorer(modules.Module):
 
         # Update nodes' appearance
         if len(directories) != 0:
-            idle_add(self.updateDirNodes(treePath).next)
+            GObject.idle_add(self.updateDirNodes(treePath).next)
 
         # Recursively refresh expanded rows
         for child in self.tree.iterChildren(treePath):
             if self.tree.row_expanded(child):
-                idle_add(self.refresh, child)
+                GObject.idle_add(self.refresh, child)
 
 
     # --== GTK handlers ==--
@@ -379,7 +387,7 @@ class FileExplorer(modules.Module):
         elif path is not None:
             if event.button == 2:
                 self.play(path)
-            elif event.button == 1 and event.type == gtk.gdk._2BUTTON_PRESS:
+            elif event.button == 1 and event.type == Gdk.EventType._2BUTTON_PRESS:
                 if tree.getItem(path, ROW_PIXBUF) != icons.dirMenuIcon():
                     self.play()
                 elif tree.row_expanded(path):
@@ -398,13 +406,12 @@ class FileExplorer(modules.Module):
             # info node selected, make it clickable
             path = None
 
-        popup = gtk.Menu()
+        # Keep reference after method exits.
+        self.popup_menu = Gtk.Menu()
 
         # Play selection
-        play = gtk.ImageMenuItem(gtk.STOCK_MEDIA_PLAY)
-        play.set_label(_('Append'))
-        popup.append(play)
-
+        play = Gtk.MenuItem.new_with_label(_('Append'))
+        self.popup_menu.append(play)
         if path is None:
             play.set_sensitive(False)
         else:
@@ -413,8 +420,7 @@ class FileExplorer(modules.Module):
         # open containing folder
         show_folder = None
         if path:
-            show_folder = gtk.ImageMenuItem(gtk.STOCK_OPEN)
-            show_folder.set_label(_('Open containing folder'))
+            show_folder = Gtk.MenuItem.new_with_label(_('Open containing folder'))
             filepath = self.tree.getItem(path, ROW_FULLPATH)
             parent_path = os.path.dirname(filepath)
             show_folder.connect('activate', lambda widget: tools.open_path(parent_path))
@@ -422,25 +428,24 @@ class FileExplorer(modules.Module):
         # Do not show the other options when we are displaying results
         if self.displaying_results:
             if show_folder:
-                popup.append(show_folder)
-            popup.show_all()
-            popup.popup(None, None, None, button, time)
+                self.popup_menu.append(show_folder)
+            self.popup_menu.show_all()
+            self.popup_menu.popup(None, None, None, None, button, time)
             return
 
-        popup.append(gtk.SeparatorMenuItem())
+        self.popup_menu.append(Gtk.SeparatorMenuItem())
 
         # Refresh the view
-        refresh = gtk.ImageMenuItem(gtk.STOCK_REFRESH)
+        refresh = Gtk.MenuItem.new_with_label(_('Refresh'))
         refresh.connect('activate', lambda widget: self.refresh())
-        popup.append(refresh)
-
+        self.popup_menu.append(refresh)
 
         # Add new dir
-        dir = gtk.ImageMenuItem(gtk.STOCK_DIRECTORY)
+        dir = Gtk.MenuItem()
         if path is None:
             dir.set_label(_('Add music folder'))
             dir.connect('activate', self.on_add_dir)
-            popup.append(dir)
+            self.popup_menu.append(dir)
         else:
             # Check that the dir is top-level and not $HOME or /
             this_path = self.tree.getItem(path, ROW_FULLPATH)
@@ -452,19 +457,20 @@ class FileExplorer(modules.Module):
             if top_level and not static_selected:
                 dir.set_label(_('Hide folder'))
                 dir.connect('activate', self.on_remove_dir, path)
-                popup.append(dir)
+                self.popup_menu.append(dir)
 
 
         # open containing folder
         if show_folder:
-            popup.append(show_folder)
+            self.popup_menu.append(show_folder)
 
-        popup.show_all()
-        popup.popup(None, None, None, button, time)
+        self.popup_menu.show_all()
+        self.popup_menu.popup(None, None, None, None, button, time)
 
 
     def on_add_dir(self, widget):
-        path = fileChooser.openDirectory(None, _('Choose a directory'))
+        parent = prefs.getWidgetsTree().get_object('win-main')
+        path = fileChooser.openDirectory(parent, _('Choose a directory'))
         if path is None:
             return
 
@@ -491,7 +497,7 @@ class FileExplorer(modules.Module):
 
     def onKeyPressed(self, tree, event):
         """ A key has been pressed """
-        keyname = gtk.gdk.keyval_name(event.keyval)
+        keyname = Gdk.keyval_name(event.keyval)
 
         if keyname == 'F5':       self.refresh()
         elif keyname == 'plus':   tree.expandRows()
@@ -505,7 +511,7 @@ class FileExplorer(modules.Module):
     def onRowExpanded(self, tree, path):
         """ Replace the fake child by the real children """
         self.startLoading(path)
-        idle_add(self.exploreDir, path, tree.getItem(path, ROW_FULLPATH), tree.getChild(path, 0))
+        GObject.idle_add(self.exploreDir, path, tree.getItem(path, ROW_FULLPATH), tree.getChild(path, 0))
 
 
     def onRowCollapsed(self, tree, path):
@@ -517,8 +523,9 @@ class FileExplorer(modules.Module):
     def onDragDataGet(self, tree, context, selection, info, time):
         """ Provide information about the data being dragged """
         import urllib
-        selection.set('text/uri-list', 8, ' '.join([urllib.pathname2url(file)
-            for file in [row[ROW_FULLPATH] for row in tree.getSelectedRows()]]))
+        selection.set_uris([
+            urllib.pathname2url(file)
+            for file in [row[ROW_FULLPATH] for row in tree.getSelectedRows()]])
 
 
     def add_dir(self, path):
@@ -655,15 +662,15 @@ class FileExplorer(modules.Module):
         """ The module has been loaded """
         self.tree            = None
         self.cfgWin          = None
-        self.scrolled        = gtk.ScrolledWindow()
+        self.scrolled        = Gtk.ScrolledWindow()
         self.treeState       = prefs.get(__name__, 'saved-states', None)
 
-        self.scrolled.set_shadow_type(gtk.SHADOW_IN)
-        self.scrolled.set_policy(gtk.POLICY_AUTOMATIC, gtk.POLICY_AUTOMATIC)
+        self.scrolled.set_shadow_type(Gtk.ShadowType.IN)
+        self.scrolled.set_policy(Gtk.PolicyType.AUTOMATIC, Gtk.PolicyType.AUTOMATIC)
         self.scrolled.show()
 
         left_vbox = prefs.getWidgetsTree().get_object('vbox3')
-        left_vbox.pack_start(self.scrolled)
+        left_vbox.pack_start(self.scrolled, True, True, 0)
 
         self.static_paths = ['/', consts.dirBaseUsr]
 
@@ -739,23 +746,16 @@ class FileExplorer(modules.Module):
     # --== GTK Handlers ==--
 
     def onDragBegin(self, tree, context):
-        """
-        A drag'n'drop operation has begun
-        Copy the selected paths to the tracktree to decide on correct drop positions
+        """ A drag'n'drop operation has begun.
+
+        Pass the paths to the track tree to let it decide whether to
+        collapse directories.
+
         """
         paths = [row[ROW_FULLPATH] for row in tree.getSelectedRows()]
         modules.postMsg(consts.MSG_CMD_FILE_EXPLORER_DRAG_BEGIN, {'paths': paths})
-        #idle_add(media.getTracks, paths)
 
-        # Preload the tracks to speedup their addition to the playlist
+        # Preload the tracks to speedup their addition to the playlist.
         import threading
         crawler = threading.Thread(target=media.preloadTracks, args=(paths,))
         crawler.start()
-
-        #from multiprocessing import Process
-        #p = Process(target=media.getTracks, args=(paths,))
-        #p.start()
-
-        #from multiprocessing import Pool
-        #pool = Pool(processes=4)              # start 4 worker processes
-        #result = pool.map_async(media.getTracks, [[path] for path in paths])

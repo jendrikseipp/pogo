@@ -17,9 +17,13 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301 USA
 
-import gtk, os.path, random, time
-
 from gettext import gettext as _
+import os.path
+import random
+import time
+
+from gi.repository import Gtk
+
 
 # --- Not a constant, but it fits well here
 random.seed(int(time.time()))
@@ -112,8 +116,10 @@ UNKNOWN_ALBUM_ARTIST = _('Unknown Album Artist')
 
 DND_TARGETS = {
                 DND_URI:         ('text/uri-list',   0,                   DND_URI),
-                DND_POGO_URI:    ('pogo/uri-list',    gtk.TARGET_SAME_APP, DND_POGO_URI),
+                DND_POGO_URI:    ('pogo/uri-list',    Gtk.TargetFlags.SAME_APP, DND_POGO_URI),
               }
+
+DND_INTERNAL_TARGET_NAME = 'exttreeview-internal'
 
 
 # --- View modes

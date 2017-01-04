@@ -19,9 +19,10 @@
 
 import sys, os
 
-import gtk
-import gobject
-from gobject import signal_new, TYPE_INT, TYPE_STRING, TYPE_PYOBJECT, TYPE_NONE, SIGNAL_RUN_LAST
+from gi.repository import Gdk
+from gi.repository import GObject
+from gi.repository import Gtk
+
 
 if __name__ == '__main__':
     base_dir = os.path.abspath(os.path.join(os.path.abspath(__file__), '../../'))
@@ -40,9 +41,9 @@ from tools import consts
 
 # Internal d'n'd (reordering)
 DND_REORDERING_ID   = 1024
-DND_INTERNAL_TARGET = ('extListview-internal', gtk.TARGET_SAME_WIDGET, DND_REORDERING_ID)
+DND_INTERNAL_TARGET = (consts.DND_INTERNAL_TARGET_NAME, Gtk.TargetFlags.SAME_WIDGET, DND_REORDERING_ID)
 
-signal_new('tracktreeview-dnd', gtk.TreeView, SIGNAL_RUN_LAST, TYPE_NONE, (gtk.gdk.DragContext, TYPE_INT, TYPE_INT, gtk.SelectionData, TYPE_INT, TYPE_PYOBJECT))
+GObject.signal_new('tracktreeview-dnd', Gtk.TreeView, GObject.SIGNAL_RUN_LAST, GObject.TYPE_NONE, (Gdk.DragContext, GObject.TYPE_INT, GObject.TYPE_INT, Gtk.SelectionData, GObject.TYPE_INT, GObject.TYPE_PYOBJECT))
 
 
 
@@ -53,8 +54,6 @@ class TrackTreeView(ExtTreeView):
         #self.set_level_indentation(30)
 
         # Drag'n'drop management
-        self.dndContext    = None
-        self.dndSources    = None
         self.dndTargets    = consts.DND_TARGETS.values()
         self.motionEvtId   = None
         self.dndStartPos   = None
@@ -62,11 +61,11 @@ class TrackTreeView(ExtTreeView):
         self.dndStartPos     = None
         self.isDraggableFunc = lambda: True
 
-        if len(self.dndTargets) != 0:
+        if self.dndTargets:
             # Move one name around while dragging
-            # self.enable_model_drag_source(gtk.gdk.BUTTON1_MASK, \
-            #        self.dndTargets+[DND_INTERNAL_TARGET], gtk.gdk.ACTION_MOVE)
-            self.enable_model_drag_dest(self.dndTargets, gtk.gdk.ACTION_DEFAULT)
+            # self.enable_model_drag_source(Gdk.ModifierType.BUTTON1_MASK, \
+            #        self.dndTargets+[DND_INTERNAL_TARGET], Gdk.DragAction.MOVE)
+            self.enable_model_drag_dest(self.dndTargets, Gdk.DragAction.DEFAULT)
 
         self.connect('drag-begin', self.onDragBegin)
         self.connect('drag-motion', self.onDragMotion)
@@ -80,13 +79,13 @@ class TrackTreeView(ExtTreeView):
 
     def insert(self, target, source_row, drop_mode=None):
         model = self.store
-        if drop_mode == gtk.TREE_VIEW_DROP_INTO_OR_BEFORE:
+        if drop_mode == Gtk.TreeViewDropPosition.INTO_OR_BEFORE:
             new = model.prepend(target, source_row)
-        elif drop_mode == gtk.TREE_VIEW_DROP_INTO_OR_AFTER or drop_mode is None:
+        elif drop_mode == Gtk.TreeViewDropPosition.INTO_OR_AFTER or drop_mode is None:
             new = model.append(target, source_row)
-        elif drop_mode == gtk.TREE_VIEW_DROP_BEFORE:
+        elif drop_mode == Gtk.TreeViewDropPosition.BEFORE:
             new = model.insert_before(None, target, source_row)
-        elif drop_mode == gtk.TREE_VIEW_DROP_AFTER:
+        elif drop_mode == Gtk.TreeViewDropPosition.AFTER:
             new = model.insert_after(None, target, source_row)
         return new
 
@@ -155,7 +154,7 @@ class TrackTreeView(ExtTreeView):
         return self.store.get_value(iter, 1)
 
     def get_first_iter(self):
-        return self.store.get_iter_root()
+        return self.store.get_iter_first()
 
     def get_last_iter(self):
         lowest_root = self.get_last_root()
@@ -315,7 +314,7 @@ class TrackTreeView(ExtTreeView):
 
     def setMark(self, iter):
         """ Put the mark on the given row, it will move with the row itself (e.g., D'n'D) """
-        self.mark = gtk.TreeRowReference(self.store, self.store.get_path(iter))
+        self.mark = Gtk.TreeRowReference(self.store, self.store.get_path(iter))
 
 
     def isAtMark(self, iter):
@@ -335,7 +334,7 @@ class TrackTreeView(ExtTreeView):
         '''
         Select and highlight an iter
         '''
-        gobject.idle_add(self.get_selection().select_iter, iter)
+        GObject.idle_add(self.get_selection().select_iter, iter)
 
 
     def move_selected_rows(self, x, y):
@@ -352,7 +351,7 @@ class TrackTreeView(ExtTreeView):
             dest = model.get_iter(dest)
         else:
             # Dropped on free space -> append
-            dest, drop_mode = self.get_last_root(), gtk.TREE_VIEW_DROP_AFTER
+            dest, drop_mode = self.get_last_root(), Gtk.TreeViewDropPosition.AFTER
 
         self.freeze_child_notify()
 
@@ -372,7 +371,7 @@ class TrackTreeView(ExtTreeView):
         # Move the iters
         for index, iter in enumerate(iters):
             if index > 0:
-                drop_mode = gtk.TREE_VIEW_DROP_AFTER
+                drop_mode = Gtk.TreeViewDropPosition.AFTER
 
             track = self.getTrack(iter)
             if track:
@@ -407,26 +406,26 @@ class TrackTreeView(ExtTreeView):
         '''
         children = self.store[dir_iter].iterchildren()
         dir_row = self.store[dir_iter]
-        new_target = self.insert(target, dir_row, drop_mode)
+        new_target = self.insert(target, list(dir_row), drop_mode)
         self.select(new_target)
         for child in children:
             child = child.iter
             track = self.getTrack(child)
             row = self.store[child]
             if track:
-                dest = self.insert(new_target, row, gtk.TREE_VIEW_DROP_INTO_OR_AFTER)
+                dest = self.insert(new_target, list(row), Gtk.TreeViewDropPosition.INTO_OR_AFTER)
                 # Handle Mark
                 if self.isAtMark(child):
                     self.setMark(dest)
             else:
-                self.move_dir(child, new_target, gtk.TREE_VIEW_DROP_INTO_OR_AFTER)
+                self.move_dir(child, new_target, Gtk.TreeViewDropPosition.INTO_OR_AFTER)
         return new_target
 
 
     def enableDNDReordering(self):
         """ Enable the use of Drag'n'Drop to reorder the list """
         self.dndTargets.append(DND_INTERNAL_TARGET)
-        self.enable_model_drag_dest(self.dndTargets, gtk.gdk.ACTION_DEFAULT)
+        self.enable_model_drag_dest(self.dndTargets, Gdk.DragAction.DEFAULT)
 
 
     def onDragDataReceived(self, tree, context, x, y, selection, dndId, time):
@@ -460,6 +459,9 @@ class TrackTreeView(ExtTreeView):
         - dir into dir
         - anything into track
         """
+        # Disable default handler.
+        self.stop_emission('drag-motion')
+
         drop = self.get_dest_row_at_pos(int(x), int(y))
 
         pos_ok = True
@@ -469,10 +471,7 @@ class TrackTreeView(ExtTreeView):
             depth = self.store.iter_depth(iter)
             track = self.getTrack(iter)
 
-            #import tools
-            #self.setLabel(self.get_first_iter(), tools.htmlEscape(str(drop[1])))
-
-            drop_into = drop[1] in [gtk.TREE_VIEW_DROP_INTO_OR_AFTER, gtk.TREE_VIEW_DROP_INTO_OR_BEFORE]
+            drop_into = drop[1] in [Gtk.TreeViewDropPosition.INTO_OR_AFTER, Gtk.TreeViewDropPosition.INTO_OR_BEFORE]
             drop_around = not drop_into
 
             # At least one dir is being dropped
@@ -486,26 +485,30 @@ class TrackTreeView(ExtTreeView):
                 if (track and drop_into):# or (drop_into and depth > 0):
                     pos_ok = False
 
-        if pos_ok:
-            # Everything ok, enable dnd
-            self.enable_model_drag_dest(self.dndTargets, gtk.gdk.ACTION_DEFAULT)
+        target_names = [atom.name() for atom in context.list_targets()]
+        internal_reordering = (consts.DND_INTERNAL_TARGET_NAME in target_names)
+        if internal_reordering:
+            action = Gdk.DragAction.MOVE
         else:
-            # do not let the user drop anything here
-            self.enable_model_drag_dest([('invalid-position', 0, -1)], gtk.gdk.ACTION_DEFAULT)
+            action = Gdk.DragAction.COPY
+        Gdk.drag_status(context, action, time)
+
+        # Return whether the cursor position is in a drop zone.
+        return pos_ok
 
 
 if __name__ == '__main__':
-    from gobject import TYPE_INT, TYPE_PYOBJECT
+    from gi.repository import GObject
 
     from tools import icons
     from media import getTracks
 
     tracks = getTracks(['/home/jendrik/Musik/Clearlake - Amber'])
 
-    columns = (('',   [(gtk.CellRendererPixbuf(), gtk.gdk.Pixbuf), (gtk.CellRendererText(), TYPE_STRING)], True),
-                   (None, [(None, TYPE_INT)],                                                                 False),
-                   (None, [(None, TYPE_STRING)],                                                               False),
-                   (None, [(None, TYPE_PYOBJECT)], False),
+    columns = (('',   [(Gtk.CellRendererPixbuf(), GdkPixbuf.Pixbuf), (Gtk.CellRendererText(), GObject.TYPE_STRING)], True),
+                   (None, [(None, GObject.TYPE_INT)],                                                                 False),
+                   (None, [(None, GObject.TYPE_STRING)],                                                               False),
+                   (None, [(None, GObject.TYPE_PYOBJECT)], False),
                   )
 
     tree = TrackTreeView(columns, True)
@@ -548,11 +551,11 @@ if __name__ == '__main__':
     res = list(tree.iter_children(a))
     print 'Children of a:', [tree.getLabel(iter) for iter in res]
 
-    win = gtk.Window()
+    win = Gtk.Window()
     win.set_size_request(400,300)
     win.connect('destroy', lambda x: sys.exit())
     win.add(tree)
     tree.expand_all()
 
     win.show_all()
-    gtk.main()
+    Gtk.main()

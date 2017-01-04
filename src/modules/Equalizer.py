@@ -16,10 +16,15 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301 USA
 
-import gobject, gtk, gui, modules
-
-from tools   import consts, prefs
 from gettext import gettext as _
+
+from gi.repository import GObject
+from gi.repository import Gtk
+
+import gui
+import modules
+from tools import consts, prefs
+
 
 MOD_INFO = ('Equalizer', _('Equalizer'), _('Tune the level of the frequency bands'), [], False, True)
 
@@ -92,7 +97,7 @@ class Equalizer(modules.Module):
             self.timer      = None
             self.combo      = self.cfgWindow.getWidget('combo-presets')
             self.scales     = []
-            self.comboStore = gtk.ListStore(gobject.TYPE_BOOLEAN, gobject.TYPE_STRING, gobject.TYPE_PYOBJECT)
+            self.comboStore = Gtk.ListStore(GObject.TYPE_BOOLEAN, GObject.TYPE_STRING, GObject.TYPE_PYOBJECT)
             self.targetLvls = []
 
             # Setup the scales
@@ -102,7 +107,7 @@ class Equalizer(modules.Module):
                 self.scales[i].connect('value-changed', self.onScaleValueChanged, i)
 
             # Setup the combo box
-            txtRenderer = gtk.CellRendererText()
+            txtRenderer = Gtk.CellRendererText()
             self.combo.pack_start(txtRenderer, True)
             self.combo.add_attribute(txtRenderer, 'text', ROW_PRESET_NAME)
             self.combo.set_model(self.comboStore)
@@ -236,9 +241,9 @@ class Equalizer(modules.Module):
     def jumpToTargetLvls(self, targetLvls):
         """ Move the scales until they reach some target levels """
         if self.timer is not None:
-            gobject.source_remove(self.timer)
+            GObject.source_remove(self.timer)
 
-        self.timer      = gobject.timeout_add(20, self.timerFunc)
+        self.timer      = GObject.timeout_add(20, self.timerFunc)
         self.targetLvls = targetLvls
 
         for i in xrange(10):

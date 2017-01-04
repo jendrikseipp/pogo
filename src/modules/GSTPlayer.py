@@ -16,11 +16,13 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301 USA
 
-import gobject, modules
+from time import time
 
-from time  import time
-from tools import consts, prefs
+from gi.repository import GObject
+
 from media import audioplayer
+import modules
+from tools import consts, prefs
 
 
 MOD_INFO           = ('GStreamer Player', 'GStreamer Player', '', [], True, False)
@@ -33,7 +35,7 @@ class GSTPlayer(modules.Module):
     def __init__(self):
         """ Constructor """
         # The player must be created during the application startup, not when the application is ready (MSG_EVT_APP_STARTED)
-        self.player = audioplayer.AudioPlayer(self.__onTrackEnded, not prefs.getCmdLine()[0].playbin)
+        self.player = audioplayer.AudioPlayer(self.__onTrackEnded)
 
         handlers = {
                         consts.MSG_CMD_STEP:         self.onStep,
@@ -60,7 +62,7 @@ class GSTPlayer(modules.Module):
 
             modules.postMsg(consts.MSG_EVT_TRACK_POSITION, {'seconds': int(position // 1000000000)})
 
-            if remaining < 5000000000 and self.nextURI is None and not prefs.getCmdLine()[0].playbin:
+            if remaining < 5000000000 and self.nextURI is None:
                 modules.postMsg(consts.MSG_EVT_NEED_BUFFER)
 
         return True
@@ -69,21 +71,20 @@ class GSTPlayer(modules.Module):
     def __startUpdateTimer(self):
         """ Start the update timer if needed """
         if self.updateTimer is None:
-            self.updateTimer = gobject.timeout_add(1000, self.updateTimerHandler)
+            self.updateTimer = GObject.timeout_add(1000, self.updateTimerHandler)
 
 
     def __stopUpdateTimer(self):
         """ Start the update timer if needed """
         if self.updateTimer is not None:
-            gobject.source_remove(self.updateTimer)
+            GObject.source_remove(self.updateTimer)
             self.updateTimer = None
 
 
     def onBuffer(self, uri):
         """ Buffer the next track """
-        if not prefs.getCmdLine()[0].playbin:
-            self.nextURI = uri
-            self.player.setNextURI(uri)
+        self.nextURI = uri
+        self.player.setNextURI(uri)
 
 
     def __onTrackEnded(self, error):
@@ -136,8 +137,8 @@ class GSTPlayer(modules.Module):
             self.__playbackTimerHandler()
         else:
             if self.playbackTimer is not None:
-                gobject.source_remove(self.playbackTimer)
-            self.playbackTimer = gobject.timeout_add(int((MIN_PLAYBACK_DELAY - elapsed) * 1000), self.__playbackTimerHandler)
+                GObject.source_remove(self.playbackTimer)
+            self.playbackTimer = GObject.timeout_add(int((MIN_PLAYBACK_DELAY - elapsed) * 1000), self.__playbackTimerHandler)
 
 
     def onStop(self):
@@ -147,7 +148,7 @@ class GSTPlayer(modules.Module):
         self.nextURI = None
 
         if self.playbackTimer is not None:
-            gobject.source_remove(self.playbackTimer)
+            GObject.source_remove(self.playbackTimer)
 
         modules.postMsg(consts.MSG_EVT_STOPPED)
 
@@ -163,7 +164,7 @@ class GSTPlayer(modules.Module):
         elif self.player.isPlaying():
 
             if self.playbackTimer is not None:
-                gobject.source_remove(self.playbackTimer)
+                GObject.source_remove(self.playbackTimer)
 
             self.player.pause()
             modules.postMsg(consts.MSG_EVT_PAUSED)

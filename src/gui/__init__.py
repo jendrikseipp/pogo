@@ -17,16 +17,21 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301 USA
 
-import gtk, tools
+from gi.repository import Gtk
+
+import tools
 
 
 def __msgBox(parent, type, buttons, header, text):
     """ Show a generic message box """
-    dlg = gtk.MessageDialog(parent, gtk.DIALOG_MODAL, type, buttons, header)
+    dlg = Gtk.MessageDialog(parent, Gtk.DialogFlags.MODAL, type, buttons, header)
+    dlg.set_transient_for(parent)
     dlg.set_title(tools.consts.appName)
 
-    if text is None: dlg.set_markup(header)
-    else:            dlg.format_secondary_markup(text)
+    if text is None:
+        dlg.set_markup(header)
+    else:
+        dlg.format_secondary_markup(text)
 
     response = dlg.run()
     dlg.destroy()
@@ -34,7 +39,8 @@ def __msgBox(parent, type, buttons, header, text):
 
 
 # Functions used to display various message boxes
-def infoMsgBox(    parent, header, text=None):
-    __msgBox(parent, gtk.MESSAGE_INFO,     gtk.BUTTONS_OK,     header, text)
-def errorMsgBox(   parent, header, text=None):
-    __msgBox(parent, gtk.MESSAGE_ERROR,    gtk.BUTTONS_OK,     header, text)
+def infoMsgBox(parent, header, text=None):
+    __msgBox(parent, Gtk.MessageType.INFO, Gtk.ButtonsType.OK, header, text)
+
+def errorMsgBox(parent, header, text=None):
+    __msgBox(parent, Gtk.MessageType.ERROR, Gtk.ButtonsType.OK, header, text)

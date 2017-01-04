@@ -17,7 +17,9 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301 USA
 
-import gtk, tools
+from gi.repository import Gtk
+
+import tools
 
 
 __currDir = tools.consts.dirBaseUsr
@@ -27,14 +29,14 @@ def _open(parent, title, action):
     """ Return a directory, or None if cancelled """
     global __currDir
 
-    btn = (gtk.STOCK_CANCEL, gtk.RESPONSE_CANCEL, gtk.STOCK_OPEN, gtk.RESPONSE_OK)
-    dialog = gtk.FileChooserDialog(title, parent, action, btn)
+    btn = (Gtk.STOCK_CANCEL, Gtk.ResponseType.CANCEL, Gtk.STOCK_OPEN, Gtk.ResponseType.OK)
+    dialog = Gtk.FileChooserDialog(title, parent, action, btn)
 
     dialog.set_select_multiple(False)
     dialog.set_current_folder(__currDir)
 
     path = None
-    if dialog.run() == gtk.RESPONSE_OK:
+    if dialog.run() == Gtk.ResponseType.OK:
         path = dialog.get_filename()
 
     __currDir = dialog.get_current_folder()
@@ -44,20 +46,20 @@ def _open(parent, title, action):
 
 def openFile(parent, title):
     """ Return the selected file, or None if cancelled """
-    return _open(parent, title, gtk.FILE_CHOOSER_ACTION_OPEN)
+    return _open(parent, title, Gtk.FileChooserAction.OPEN)
 
 
 def openDirectory(parent, title):
     """ Return a directory, or None if cancelled """
-    return _open(parent, title, gtk.FILE_CHOOSER_ACTION_SELECT_FOLDER)
+    return _open(parent, title, Gtk.FileChooserAction.SELECT_FOLDER)
 
 
 def save(parent, title, defaultFile, defaultDir=None):
     """ Return a filename, or None if cancelled """
     global __currDir
 
-    btn    = (gtk.STOCK_CANCEL, gtk.RESPONSE_CANCEL, gtk.STOCK_SAVE, gtk.RESPONSE_OK)
-    dialog = gtk.FileChooserDialog(title, parent, gtk.FILE_CHOOSER_ACTION_SAVE, btn)
+    btn    = (Gtk.STOCK_CANCEL, Gtk.ResponseType.CANCEL, Gtk.STOCK_SAVE, Gtk.ResponseType.OK)
+    dialog = Gtk.FileChooserDialog(title, parent, Gtk.FileChooserAction.SAVE, btn)
 
     dialog.set_current_name(defaultFile)
     dialog.set_do_overwrite_confirmation(True)
@@ -66,7 +68,7 @@ def save(parent, title, defaultFile, defaultDir=None):
     else:                  dialog.set_current_folder(defaultDir)
 
     file = None
-    if dialog.run() == gtk.RESPONSE_OK:
+    if dialog.run() == Gtk.ResponseType.OK:
         file = dialog.get_filename()
 
     __currDir = dialog.get_current_folder()

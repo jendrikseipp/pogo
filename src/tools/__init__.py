@@ -24,7 +24,8 @@ import subprocess
 import codecs
 import logging
 from xml.sax.saxutils import escape, unescape
-import gtk
+
+from gi.repository import Gtk
 
 import consts
 
@@ -33,14 +34,18 @@ __dirCache = {}
 
 def listDir(directory, listHiddenFiles=False):
     """
-        Return a list of tuples (filename, path) with the given directory content
-        The dircache module sorts the list of files, and either it's not needed or it's not sorted the way we want
+    Return a list of tuples (filename, path) of files in the given
+    directory.
     """
-    if directory in __dirCache: cachedMTime, list = __dirCache[directory]
-    else:                       cachedMTime, list = None, None
+    if directory in __dirCache:
+        cachedMTime, list = __dirCache[directory]
+    else:
+        cachedMTime, list = None, None
 
-    if os.path.exists(directory): mTime = os.stat(directory).st_mtime
-    else:                         mTime = 0
+    if os.path.exists(directory):
+        mTime = os.stat(directory).st_mtime
+    else:
+        mTime = 0
 
     if mTime != cachedMTime:
         # Make sure it's readable
@@ -51,7 +56,9 @@ def listDir(directory, listHiddenFiles=False):
 
         __dirCache[directory] = (mTime, list)
 
-    return [(filename, os.path.join(directory, filename)) for filename in list if listHiddenFiles or filename[0] != '.']
+    return [
+        (filename, os.path.join(directory, filename))
+        for filename in list if listHiddenFiles or not filename.startswith('.')]
 
 
 def makedirs(dir):
@@ -89,7 +96,7 @@ def sec2str(seconds, alwaysShowHours=False):
 
 def loadGladeFile(file, root=None):
     """ Load the given Glade file and return the tree of widgets """
-    builder = gtk.Builder()
+    builder = Gtk.Builder()
 
     if root is None:
         builder.add_from_file(os.path.join(consts.dirRes, file))
@@ -102,17 +109,15 @@ def loadGladeFile(file, root=None):
 
 def pickleLoad(file):
     """ Use cPickle to load the data structure stored in the given file """
-    input = open(file, 'r')
-    data  = cPickle.load(input)
-    input.close()
+    with open(file, 'r') as f:
+        data  = cPickle.load(f)
     return data
 
 
 def pickleSave(file, data):
     """ Use cPickle to save the data to the given file """
-    output = open(file, 'w')
-    cPickle.dump(data, output)
-    output.close()
+    with open(file, 'w') as f:
+        cPickle.dump(data, f)
 
 
 def percentEncode(string):
@@ -201,8 +206,8 @@ def write_file(filename, content):
 
 def print_platform_info():
     import platform
-    import gtk
-    import gst
+    #from gi.repository import Gtk
+    #from gi.repository import Gst
     import mutagen
     import PIL
 
@@ -213,9 +218,9 @@ def print_platform_info():
     names_values = [(func.__name__, func()) for func in functions]
 
     lib_values = [
-        ('GTK', gtk, 'gtk_version'),
-        ('PyGTK', gtk, 'pygtk_version'),
-        ('GST', gst, 'version'),
+        #('GTK', gtk, 'gtk_version'),
+        #('PyGTK', gtk, 'pygtk_version'),
+        #('GST', gst, 'version'),
         ('Mutagen', mutagen, 'version'),
         ('PIL', PIL, 'VERSION'),
     ]

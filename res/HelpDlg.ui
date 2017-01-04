@@ -1,61 +1,62 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <interface>
-<requires lib="gtk+" version="2.16"/>
-<object class="GtkDialog" id="dlg-main">
-<property name="width_request">425</property>
-<property name="height_request">350</property>
-<property name="border_width">5</property>
-<property name="window_position">center-on-parent</property>
-<property name="type_hint">dialog</property>
-<child internal-child="vbox">
-<object class="GtkVBox" id="dialog-vbox1">
-<property name="spacing">2</property>
-<child>
-<object class="GtkScrolledWindow" id="scrolledwindow1">
-<property name="can_focus">True</property>
-<property name="hscrollbar_policy">automatic</property>
-<property name="vscrollbar_policy">automatic</property>
-<property name="shadow_type">in</property>
-<child>
-<object class="GtkTextView" id="txt-help">
-<property name="can_focus">True</property>
-<property name="editable">False</property>
-<property name="wrap_mode">word</property>
-<property name="cursor_visible">False</property>
-</object>
-</child>
-</object>
-<packing>
-<property name="position">1</property>
-</packing>
-</child>
-<child internal-child="action_area">
-<object class="GtkHButtonBox" id="dlg-action_area">
-<property name="layout_style">end</property>
-<child>
-<object class="GtkButton" id="btn-ok">
-<property name="label">gtk-ok</property>
-<property name="can_focus">True</property>
-<property name="receives_default">True</property>
-<property name="use_stock">True</property>
-</object>
-<packing>
-<property name="expand">False</property>
-<property name="fill">False</property>
-<property name="position">0</property>
-</packing>
-</child>
-</object>
-<packing>
-<property name="expand">False</property>
-<property name="pack_type">end</property>
-<property name="position">0</property>
-</packing>
-</child>
-</object>
-</child>
-<action-widgets>
-<action-widget response="-5">btn-ok</action-widget>
-</action-widgets>
-</object>
+  <requires lib="gtk+" version="2.16" />
+  <object class="GtkDialog" id="dlg-main">
+    <property name="width_request">425</property>
+    <property name="height_request">350</property>
+    <property name="border_width">5</property>
+    <property name="window_position">center-on-parent</property>
+    <property name="type_hint">dialog</property>
+    <child internal-child="vbox">
+      <object class="GtkVBox" id="dialog-vbox1">
+        <property name="spacing">2</property>
+        <child>
+          <object class="GtkScrolledWindow" id="scrolledwindow1">
+            <property name="can_focus">True</property>
+            <property name="hscrollbar_policy">automatic</property>
+            <property name="vscrollbar_policy">automatic</property>
+            <property name="shadow_type">in</property>
+            <child>
+              <object class="GtkTextView" id="txt-help">
+                <property name="can_focus">True</property>
+                <property name="editable">False</property>
+                <property name="wrap_mode">word</property>
+                <property name="cursor_visible">False</property>
+              </object>
+            </child>
+          </object>
+          <packing>
+            <property name="expand">True</property>
+            <property name="position">1</property>
+          </packing>
+        </child>
+        <child internal-child="action_area">
+          <object class="GtkHButtonBox" id="dlg-action_area">
+            <property name="layout_style">end</property>
+            <child>
+              <object class="GtkButton" id="btn-ok">
+                <property name="label">gtk-ok</property>
+                <property name="can_focus">True</property>
+                <property name="receives_default">True</property>
+                <property name="use_stock">True</property>
+              </object>
+              <packing>
+                <property name="expand">False</property>
+                <property name="fill">False</property>
+                <property name="position">0</property>
+              </packing>
+            </child>
+          </object>
+          <packing>
+            <property name="expand">False</property>
+            <property name="pack_type">end</property>
+            <property name="position">0</property>
+          </packing>
+        </child>
+      </object>
+    </child>
+    <action-widgets>
+      <action-widget response="-5">btn-ok</action-widget>
+    </action-widgets>
+  </object>
 </interface>

@@ -17,7 +17,9 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301 USA
 
-import dbus, dbus.service, gobject, media, modules, traceback
+from gi.repository import GObject
+
+import dbus, dbus.service, media, modules, traceback
 
 from tools import consts, log, prefs
 
@@ -235,7 +237,7 @@ class DBusObjectTracklist(dbus.service.Object):
         decodedURI = urllib.unquote(uri)
 
         if decodedURI.startswith('file://'):
-            gobject.idle_add(modules.postMsg, consts.MSG_CMD_TRACKLIST_ADD, {'tracks': [media.getTrackFromFile(decodedURI[7:])], 'playNow': playNow})
+            GObject.idle_add(modules.postMsg, consts.MSG_CMD_TRACKLIST_ADD, {'tracks': [media.getTrackFromFile(decodedURI[7:])], 'playNow': playNow})
             return 0
 
         return 1
@@ -244,20 +246,20 @@ class DBusObjectTracklist(dbus.service.Object):
     @dbus.service.method(consts.dbusInterface, in_signature='i', out_signature='')
     def DelTrack(self, idx):
         """ Removes an URI from the TrackList """
-        gobject.idle_add(modules.postMsg, consts.MSG_CMD_TRACKLIST_DEL, {'idx': idx})
+        GObject.idle_add(modules.postMsg, consts.MSG_CMD_TRACKLIST_DEL, {'idx': idx})
 
 
     @dbus.service.method(consts.dbusInterface, in_signature='b', out_signature='')
     def SetLoop(self, loop):
         """ Toggle playlist loop """
-        gobject.idle_add(modules.postMsg, consts.MSG_CMD_TRACKLIST_REPEAT, {'repeat': loop})
+        GObject.idle_add(modules.postMsg, consts.MSG_CMD_TRACKLIST_REPEAT, {'repeat': loop})
 
 
     @dbus.service.method(consts.dbusInterface, in_signature='b', out_signature='')
     def SetRandom(self, random):
         """ Toggle playlist shuffle / random """
         if random:
-            gobject.idle_add(modules.postMsg, consts.MSG_CMD_TRACKLIST_SHUFFLE)
+            GObject.idle_add(modules.postMsg, consts.MSG_CMD_TRACKLIST_SHUFFLE)
 
 
     @dbus.service.signal(consts.dbusInterface, signature='i')
@@ -272,7 +274,7 @@ class DBusObjectTracklist(dbus.service.Object):
     @dbus.service.method(consts.dbusInterface, in_signature='', out_signature='')
     def Clear(self):
         """ Clear the tracklist """
-        gobject.idle_add(modules.postMsg, consts.MSG_CMD_TRACKLIST_CLR)
+        GObject.idle_add(modules.postMsg, consts.MSG_CMD_TRACKLIST_CLR)
 
 
     @dbus.service.method(consts.dbusInterface, in_signature='asb', out_signature='')
@@ -281,7 +283,7 @@ class DBusObjectTracklist(dbus.service.Object):
         # uris is a DBus array we want a Python list
         # We add the empty string to convert the uris from DBus.String to unicode
         paths = [uri + '' for uri in uris]
-        gobject.idle_add(modules.postMsg, consts.MSG_CMD_TRACKLIST_ADD,
+        GObject.idle_add(modules.postMsg, consts.MSG_CMD_TRACKLIST_ADD,
                         {'tracks': media.getTracks(paths), 'playNow': playNow})
 
 
@@ -291,7 +293,7 @@ class DBusObjectTracklist(dbus.service.Object):
         # uris is a DBus array we want a Python list
         # We add the empty string to convert the uris from DBus.String to unicode
         paths = [uri + '' for uri in uris]
-        gobject.idle_add(modules.postMsg, consts.MSG_CMD_TRACKLIST_SET,
+        GObject.idle_add(modules.postMsg, consts.MSG_CMD_TRACKLIST_SET,
                         {'tracks': media.getTracks(paths), 'playNow': playNow})
 
 
@@ -307,25 +309,25 @@ class DBusObjectPlayer(dbus.service.Object):
     @dbus.service.method(consts.dbusInterface, in_signature='', out_signature='')
     def Next(self):
         """ Goes to the next element """
-        gobject.idle_add(modules.postMsg, consts.MSG_CMD_NEXT)
+        GObject.idle_add(modules.postMsg, consts.MSG_CMD_NEXT)
 
 
     @dbus.service.method(consts.dbusInterface, in_signature='', out_signature='')
     def Prev(self):
         """ Goes to the previous element """
-        gobject.idle_add(modules.postMsg, consts.MSG_CMD_PREVIOUS)
+        GObject.idle_add(modules.postMsg, consts.MSG_CMD_PREVIOUS)
 
 
     @dbus.service.method(consts.dbusInterface, in_signature='', out_signature='')
     def Pause(self):
         """ If playing : pause. If paused : unpause """
-        gobject.idle_add(modules.postMsg, consts.MSG_CMD_TOGGLE_PAUSE)
+        GObject.idle_add(modules.postMsg, consts.MSG_CMD_TOGGLE_PAUSE)
 
 
     @dbus.service.method(consts.dbusInterface, in_signature='', out_signature='')
     def Stop(self):
         """ Stop playing """
-        gobject.idle_add(modules.postMsg, consts.MSG_CMD_STOP)
+        GObject.idle_add(modules.postMsg, consts.MSG_CMD_STOP)
 
 
     @dbus.service.method(consts.dbusInterface, in_signature='', out_signature='')
@@ -333,7 +335,7 @@ class DBusObjectPlayer(dbus.service.Object):
         """Start playing if not already playing."""
         if len(self.module.tracklist) != 0:
             if self.module.paused or self.module.currTrack is None:
-                gobject.idle_add(modules.postMsg, consts.MSG_CMD_TOGGLE_PAUSE)
+                GObject.idle_add(modules.postMsg, consts.MSG_CMD_TOGGLE_PAUSE)
 
 
     @dbus.service.method(consts.dbusInterface, in_signature='b', out_signature='')
@@ -365,7 +367,7 @@ class DBusObjectPlayer(dbus.service.Object):
     @dbus.service.method(consts.dbusInterface, in_signature='i', out_signature='')
     def PositionSet(self, position):
         """ Sets the playing position (argument must be in [0;<track_length>] in milliseconds) """
-        gobject.idle_add(modules.postMsg, consts.MSG_CMD_SEEK, {'seconds': position / 1000})
+        GObject.idle_add(modules.postMsg, consts.MSG_CMD_SEEK, {'seconds': position / 1000})
 
 
     @dbus.service.method(consts.dbusInterface, in_signature='', out_signature='i')

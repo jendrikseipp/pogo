@@ -25,12 +25,16 @@ import traceback
 
 import dbus
 
+import gi
+gi.require_version('Gtk', '3.0')
+from gi.repository import Gtk
+
 prefix = '/usr'
 installed_src_dir = os.path.join(prefix, 'share/pogo/src')
 src_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'src')
 
 if os.path.exists(src_dir):
-    print 'Running from tarball or bzr branch'
+    print 'Running from tarball or repo'
     sys.path.insert(0, src_dir)
 elif os.path.exists(installed_src_dir):
     print 'Running deb package or "make installation"'
@@ -48,8 +52,6 @@ from tools import consts
 # Command line
 optparser = optparse.OptionParser(usage='Usage: %prog [options] [FILE(s) | ' +
                                         ' | '.join(consts.commands)  + ']')
-optparser.add_option('--playbin', action='store_true', default=False,
-              help='use the playbin GStreamer component instead of playbin2')
 optparser.add_option('--multiple-instances', action='store_true',
     default=False, help='start a new instance even if one is already running')
 
@@ -107,8 +109,13 @@ if not optOptions.multiple_instances:
 import gettext
 import locale
 
-import gobject
-import gtk
+gi.require_version('Gst', '1.0')
+from gi.repository import Gdk
+from gi.repository import GdkPixbuf
+from gi.repository import GObject
+from gi.repository import Gst
+
+Gst.init(None)
 
 from tools import loadGladeFile, log, prefs
 
@@ -150,8 +157,8 @@ def realStartup(window, paned):
 
     def onResize(win, rect):
         """ Save the new size of the window """
-        maximized = win.window.get_state() & gtk.gdk.WINDOW_STATE_MAXIMIZED
-        if win.window is not None and not maximized:
+        maximized = win.get_state() & Gdk.WindowState.MAXIMIZED
+        if not maximized:
             prefs.set(__name__, 'win-width',  rect.width)
             prefs.set(__name__, 'win-height', rect.height)
 
@@ -164,8 +171,8 @@ def realStartup(window, paned):
 
     def onState(win, event):
         """ Save the new state of the window """
-        if event.changed_mask & gtk.gdk.WINDOW_STATE_MAXIMIZED:
-            maximized = bool(event.new_window_state & gtk.gdk.WINDOW_STATE_MAXIMIZED)
+        if event.changed_mask & Gdk.WindowState.MAXIMIZED:
+            maximized = bool(event.new_window_state & Gdk.WindowState.MAXIMIZED)
             prefs.set(__name__, 'win-is-maximized', maximized)
 
     def atExit():
@@ -190,7 +197,7 @@ def realStartup(window, paned):
     paned.connect('size-allocate', onPanedResize)
 
     # Let's go
-    gobject.idle_add(modules.postMsg, consts.MSG_EVT_APP_STARTED)
+    GObject.idle_add(modules.postMsg, consts.MSG_EVT_APP_STARTED)
 
 
 # --== Entry point ==--
@@ -206,29 +213,24 @@ def main():
     # Command line
     prefs.setCmdLine((optOptions, optArgs))
 
-    # PyGTK initialization
-    gobject.threads_init()
-    gtk.window_set_default_icon_list(
-                        gtk.gdk.pixbuf_new_from_file(consts.fileImgIcon16),
-                        gtk.gdk.pixbuf_new_from_file(consts.fileImgIcon24),
-                        gtk.gdk.pixbuf_new_from_file(consts.fileImgIcon32),
-                        gtk.gdk.pixbuf_new_from_file(consts.fileImgIcon48),
-                        gtk.gdk.pixbuf_new_from_file(consts.fileImgIcon64),
-                        gtk.gdk.pixbuf_new_from_file(consts.fileImgIcon128))
-
     # Create the GUI
     wTree = loadGladeFile('MainWindow.ui')
     paned = wTree.get_object('pan-main')
     window = wTree.get_object('win-main')
     prefs.setWidgetsTree(wTree)
 
+    window.set_icon_list([
+        GdkPixbuf.Pixbuf.new_from_file(consts.fileImgIcon16),
+        GdkPixbuf.Pixbuf.new_from_file(consts.fileImgIcon24),
+        GdkPixbuf.Pixbuf.new_from_file(consts.fileImgIcon32),
+        GdkPixbuf.Pixbuf.new_from_file(consts.fileImgIcon48),
+        GdkPixbuf.Pixbuf.new_from_file(consts.fileImgIcon64),
+        GdkPixbuf.Pixbuf.new_from_file(consts.fileImgIcon128)])
+
     # RGBA support
-    try:
-        colormap = window.get_screen().get_rgba_colormap()
-        if colormap:
-            gtk.widget_set_default_colormap(colormap)
-    except:
-        log.logger.info('No RGBA support (requires PyGTK 2.10+)')
+    # TODO: Is this still needed?
+    visual = window.get_screen().get_rgba_visual()
+    window.set_visual(visual)
 
     # Show all widgets and restore the window size BEFORE hiding some of them
     # when restoring the view mode
@@ -246,8 +248,8 @@ def main():
     paned.set_position(prefs.get(__name__, 'paned-pos', DEFAULT_PANED_POS))
 
     # Initialization done, let's continue the show
-    gobject.idle_add(realStartup, window, paned)
-    gtk.main()
+    GObject.idle_add(realStartup, window, paned)
+    Gtk.main()
 
 if __name__ == '__main__':
     main()
