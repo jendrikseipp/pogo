@@ -58,25 +58,6 @@ class CtrlPanel(modules.Module):
         self.sclSeek.set_tooltip_text('%s / %s' % (elapsed, total))
 
 
-    def set_tooltips(self, uimanager):
-        '''
-        Little work-around:
-        Tooltips are not shown for menuitems that have been created with uimanager.
-        We have to do it manually.
-
-        Icons will not show up in recent GNOME versions, this is not a bug.
-        '''
-        groups = uimanager.get_action_groups()
-        for group in groups:
-            actions = group.list_actions()
-            for action in actions:
-                widgets = action.get_proxies()
-                tooltip = action.get_property('tooltip')
-                if tooltip:
-                    for widget in widgets:
-                        widget.set_tooltip_markup(tooltip)
-
-
    # --== Message handler ==--
 
 
