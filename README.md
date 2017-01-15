@@ -45,4 +45,16 @@ Install and run Pogo
     pogo
 
 
+Ubuntu packages
+---------------
 
+  * Stable: https://launchpad.net/~pogo-dev/+archive/ubuntu/stable
+  * Daily builds: https://launchpad.net/~pogo-dev/+archive/ubuntu/daily
+
+
+Participate
+-----------
+
+  * Issues: https://bugs.launchpad.net/pogo
+  * Questions: https://answers.launchpad.net/pogo
+  * Translations: https://translations.launchpad.net/pogo
