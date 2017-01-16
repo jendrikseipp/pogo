@@ -22,7 +22,8 @@ import os, threading, tools
 # Load user preferences from the disk
 try:
     __usrPrefs = tools.pickleLoad(tools.consts.filePrefs)
-except (IOError, EOFError):
+# UnicodeDecodeError happens when loading Pogo 0.8.7 files with newer versions.
+except (IOError, EOFError, UnicodeDecodeError):
     __usrPrefs = {}
 
 # Prevent concurrent calls to functions
