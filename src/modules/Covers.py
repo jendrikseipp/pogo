@@ -122,7 +122,7 @@ class Covers(modules.ThreadedModule):
                 return candidates[name]
 
             if name == '*' and len(candidates) != 0:
-                return next(candidates.values())
+                return next(iter(candidates.values()))
 
         return None
 
