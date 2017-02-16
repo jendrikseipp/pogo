@@ -1,7 +1,5 @@
 === Roadmap ===
 
-X Port from GTK 2 to GTK 3.
-X Port from Python 2 to Python 3.
 O Test for dead code with vulture.
 O Don't skip to next track early (currently 2 seconds before end).
 O Search whole system by default (after "locate" finishes).

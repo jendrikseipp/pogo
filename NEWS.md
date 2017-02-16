@@ -1,3 +1,9 @@
+0.9 "Who's got the keys to my car?" (17-02-16)
+==============================================
+* Port from GTK 2 to GTK 3.
+* Port from Python 2 to Python 3.
+
+
 0.8.7 "Brighter than Gold" (16-08-03)
 =====================================
 * Move code to github.
