@@ -1,3 +1,11 @@
+pogo (0.9-1) UNRELEASED; urgency=low
+
+  * New upstream release
+  * Port from GTK 2 to GTK 3.
+  * Port from Python 2 to Python 3.
+
+ -- Jendrik Seipp <jendrikseipp@web.de>  Thu, 16 Feb 2017 23:19:34 +0100
+
 pogo (0.8.7-1) UNRELEASED; urgency=low
 
   * New upstream release
