@@ -78,6 +78,7 @@ class TrackTreeView(ExtTreeView):
 
 
     def insert(self, target, source_row, drop_mode=None):
+        assert isinstance(source_row, list), source_row
         model = self.store
         if drop_mode == Gtk.TreeViewDropPosition.INTO_OR_BEFORE:
             new = model.prepend(target, source_row)
@@ -375,8 +376,7 @@ class TrackTreeView(ExtTreeView):
 
             track = self.getTrack(iter)
             if track:
-                row = model[iter]
-                dest = self.insert(dest, row, drop_mode)
+                dest = self.insert(dest, list(model[iter]), drop_mode)
                 self.select(dest)
 
                 # adjust track label to __new__ parent
@@ -405,15 +405,13 @@ class TrackTreeView(ExtTreeView):
         Recursive Method that moves a dir to target
         '''
         children = self.store[dir_iter].iterchildren()
-        dir_row = self.store[dir_iter]
-        new_target = self.insert(target, list(dir_row), drop_mode)
+        new_target = self.insert(target, list(self.store[dir_iter]), drop_mode)
         self.select(new_target)
         for child in children:
             child = child.iter
             track = self.getTrack(child)
-            row = self.store[child]
             if track:
-                dest = self.insert(new_target, list(row), Gtk.TreeViewDropPosition.INTO_OR_AFTER)
+                dest = self.insert(new_target, list(self.store[child]), Gtk.TreeViewDropPosition.INTO_OR_AFTER)
                 # Handle Mark
                 if self.isAtMark(child):
                     self.setMark(dest)
