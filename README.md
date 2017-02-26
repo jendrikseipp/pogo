@@ -15,6 +15,7 @@ formats. It is written in Python and uses GTK+ and GStreamer.
 To report bugs, suggest features or ask questions, please visit
 http://launchpad.net/pogo.
 
+![Pogo screenshot](https://www.dropbox.com/s/wm3xtnvorysmytc/pogo-0.1-1.png?raw=1)
 
 Requirements
 ------------
