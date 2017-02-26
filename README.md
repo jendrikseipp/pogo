@@ -59,3 +59,4 @@ Participate
   * Issues: https://github.com/jendrikseipp/pogo/issues
   * Questions: https://answers.launchpad.net/pogo
   * Translations: https://translations.launchpad.net/pogo
+  * Mailing list: https://launchpad.net/~pogo-users
