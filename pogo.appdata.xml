@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop">
+  <id>pogo.desktop</id>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>GPL-2.0+</project_license>
+  <name>Pogo</name>
+  <summary>A fast and minimalist audio player</summary>
+  <description>
+    <p>
+      Pogo is a fast and minimalist audio player for Linux. It groups
+      tracks by album, which uses less space and simplifies rearranging
+      your playlist. Pogo does not organize your tracks in a music
+      library and does not stream or download tracks. Therefore, it is
+      best suited for people who store their tracks by album and want a
+      simple way of playing them. Pogo allows you to quickly search for
+      music on local drives and in the playlist. It also features an
+      equalizer and displays covers and desktop notifications.
+    </p>
+  </description>
+  <url type="homepage">https://github.com/jendrikseipp/pogo</url>
+  <screenshots>
+    <screenshot type="default">
+      <image>https://www.dropbox.com/s/wm3xtnvorysmytc/pogo-0.1-1.png?raw=1</image>
+    </screenshot>
+    <screenshot>
+      <image>https://www.dropbox.com/s/3g0mionsgbsztan/pogo-0.1-2.png?raw=1</image>
+    </screenshot>
+    <screenshot>
+      <image>https://www.dropbox.com/s/m28pigbeqmlh6l9/pogo-0.1-3.png?raw=1</image>
+    </screenshot>
+  </screenshots>
+</component>
