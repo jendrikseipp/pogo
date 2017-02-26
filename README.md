@@ -1,16 +1,19 @@
-Pogo - A simple and fast audio player for Linux
-===============================================
+Pogo - A fast and minimalistic audio player for Linux
+=====================================================
 
-Its clean interface makes Pogo a perfect fit for small screens. Other
-features include: fast search on the harddrive and in the playlist,
-smart album grouping, cover display, desktop notifications and the lack
-of a music library.
+It groups tracks by album, which uses less space and simplifies
+rearranging your playlist. Pogo does not organize your tracks in a music
+library and does not stream or download tracks. Therefore, it is best
+suited for people who store their tracks by album and want a simple way
+of playing them. Pogo allows you to quickly search for music on local
+drives and in the playlist. It also features an equalizer, cover
+display, and desktop notifications.
 
 Pogo is a fork of Decibel Audio Player and supports most common audio
 formats. It is written in Python and uses GTK+ and GStreamer.
 
-To report bugs, suggest features, ask questions, get the latest version
-or help out, please visit http://launchpad.net/pogo.
+To report bugs, suggest features or ask questions, please visit
+http://launchpad.net/pogo.
 
 
 Requirements
@@ -19,7 +22,7 @@ Requirements
 See `debian/control` for Ubuntu package names.
 
   * Python (>= 3.2):        http://www.python.org
-  * GTK (>= 2.12):          http://www.gtk.org
+  * GTK+ (>= 3.0):          http://www.gtk.org
   * GStreamer (>= 1.0):     http://gstreamer.freedesktop.org/
   * Mutagen:                https://github.com/quodlibet/mutagen
   * Python DBus:            http://dbus.freedesktop.org/
