@@ -1,3 +1,9 @@
+0.9.1 "Don't Let Love Go By" (17-02-26)
+=======================================
+* Add AppData file (lp:1321813).
+* Fix two regressions (lp:1666667, lp:1659048).
+
+
 0.9 "Who's got the keys to my car?" (17-02-16)
 ==============================================
 * Port from GTK 2 to GTK 3.

@@ -1,7 +1,5 @@
 === Roadmap ===
 
-X Add AppData file (lp:1321813).
-X Fix two regressions (lp:1666667, lp:1659048).
 O Test for dead code with vulture.
 O Don't skip to next track early (currently 2 seconds before end).
 O Search whole system by default (after "locate" finishes).
