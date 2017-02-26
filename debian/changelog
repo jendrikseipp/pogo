@@ -1,3 +1,11 @@
+pogo (0.9.1-1) UNRELEASED; urgency=low
+
+  * New upstream release
+  * Add AppData file (lp:1321813).
+  * Fix two regressions (lp:1666667, lp:1659048).
+
+ -- Jendrik Seipp <jendrikseipp@web.de>  Sun, 26 Feb 2017 19:47:40 +0100
+
 pogo (0.9-1) UNRELEASED; urgency=low
 
   * New upstream release
