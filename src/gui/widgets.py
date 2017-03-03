@@ -78,7 +78,6 @@ class TrackTreeView(ExtTreeView):
 
 
     def insert(self, target, source_row, drop_mode=None):
-        assert isinstance(source_row, list), source_row
         model = self.store
         if drop_mode == Gtk.TreeViewDropPosition.INTO_OR_BEFORE:
             new = model.prepend(target, source_row)
