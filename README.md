@@ -12,9 +12,6 @@ covers and desktop notifications.
 Pogo is a fork of Decibel Audio Player and supports most common audio
 formats. It is written in Python and uses GTK+ and GStreamer.
 
-To report bugs, suggest features or ask questions, please visit
-http://launchpad.net/pogo.
-
 ![Pogo screenshot](https://www.dropbox.com/s/wm3xtnvorysmytc/pogo-0.1-1.png?raw=1)
 
 Requirements
@@ -59,6 +56,7 @@ Ubuntu packages
 Participate
 -----------
 
-  * Issues: https://bugs.launchpad.net/pogo
+  * Issues: https://github.com/jendrikseipp/pogo/issues
   * Questions: https://answers.launchpad.net/pogo
   * Translations: https://translations.launchpad.net/pogo
+  * Mailing list: https://launchpad.net/~pogo-users
