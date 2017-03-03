@@ -1,6 +1,5 @@
 === Roadmap ===
 
-X Fix adding tracks from left pane to playlist (resolves #1).
 O Test for dead code with vulture.
 O Don't skip to next track early (currently 2 seconds before end).
 O Search whole system by default (after "locate" finishes).

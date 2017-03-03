@@ -1,3 +1,8 @@
+0.9.2 "Avant Gardener" (17-03-03)
+=================================
+* Fix adding tracks from left pane to playlist (resolves #1).
+
+
 0.9.1 "Don't Let Love Go By" (17-02-26)
 =======================================
 * Add AppData file (lp:1321813).
