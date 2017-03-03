@@ -1,3 +1,10 @@
+pogo (0.9.2-1) UNRELEASED; urgency=low
+
+  * New upstream release
+  * Fix adding tracks from left pane to playlist (resolves #1).
+
+ -- Jendrik Seipp <jendrikseipp@web.de>  Fri, 03 Mar 2017 09:40:29 +0100
+
 pogo (0.9.1-1) UNRELEASED; urgency=low
 
   * New upstream release
