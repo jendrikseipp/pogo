@@ -19,11 +19,11 @@ Requirements
 
 See `debian/control` for Ubuntu package names.
 
-  * Python (>= 3.2):        http://www.python.org
-  * GTK+ (>= 3.0):          http://www.gtk.org
-  * GStreamer (>= 1.0):     http://gstreamer.freedesktop.org/
+  * Python (>= 3.2):        https://www.python.org
+  * GTK+ (>= 3.0):          https://www.gtk.org
+  * GStreamer (>= 1.0):     https://gstreamer.freedesktop.org
   * Mutagen:                https://github.com/quodlibet/mutagen
-  * Python DBus:            http://dbus.freedesktop.org/
+  * Python DBus:            https://dbus.freedesktop.org
   * Pillow:                 https://github.com/python-pillow/Pillow
 
 Recommended libraries:

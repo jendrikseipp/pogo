@@ -1,11 +1,11 @@
 === Roadmap ===
 
+X Use GitHub for issue tracking.
 O Test for dead code with vulture.
 O Don't skip to next track early (currently 2 seconds before end).
 O Search whole system by default (after "locate" finishes).
 O Add application-wide message system for warnings. Should use event system.
 O Show warning if search commands fail.
-O Use github for issue tracking.
 
 
 === Features that will MAYBE be implemented ===
