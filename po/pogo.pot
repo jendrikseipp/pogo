@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-07-24 11:16+0200\n"
+"POT-Creation-Date: 2017-07-08 09:55+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,261 +17,112 @@ msgstr ""
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: ../src/media/track/__init__.py:52
+#: ../src/media/track/__init__.py:50
 msgid "Track number"
 msgstr ""
 
-#: ../src/media/track/__init__.py:53
+#: ../src/media/track/__init__.py:51
 msgid "Title"
 msgstr ""
 
-#: ../src/media/track/__init__.py:54
+#: ../src/media/track/__init__.py:52
 msgid "Artist"
 msgstr ""
 
-#: ../src/media/track/__init__.py:55
+#: ../src/media/track/__init__.py:53
 msgid "Album"
 msgstr ""
 
-#: ../src/media/track/__init__.py:56
+#: ../src/media/track/__init__.py:54
 msgid "Genre"
 msgstr ""
 
-#: ../src/media/track/__init__.py:57
+#: ../src/media/track/__init__.py:55
 msgid "Date"
 msgstr ""
 
-#: ../src/media/track/__init__.py:58
+#: ../src/media/track/__init__.py:56
 msgid "Disc number"
 msgstr ""
 
-#: ../src/media/track/__init__.py:59
+#: ../src/media/track/__init__.py:57
 msgid "Bit rate"
 msgstr ""
 
-#: ../src/media/track/__init__.py:60
+#: ../src/media/track/__init__.py:58
 msgid "Sample rate"
 msgstr ""
 
-#: ../src/media/track/__init__.py:61
+#: ../src/media/track/__init__.py:59
 msgid "Duration in seconds (e.g., 194)"
 msgstr ""
 
-#: ../src/media/track/__init__.py:62
+#: ../src/media/track/__init__.py:60
 msgid "Duration as a string (e.g., 3:14)"
 msgstr ""
 
-#: ../src/media/track/__init__.py:65
+#: ../src/media/track/__init__.py:61
 msgid "Full path to the file"
 msgstr ""
 
-#: ../src/media/track/__init__.py:150
+#: ../src/media/track/__init__.py:140
 msgid "unknown"
 msgstr ""
 
-#: ../src/media/track/__init__.py:192
+#: ../src/media/track/__init__.py:182
 #, python-format
 msgid "%(album)s  [Disc %(discnum)u]"
 msgstr ""
 
-#: ../src/media/track/__init__.py:199
+#: ../src/media/track/__init__.py:189
 msgid "CDDA Track"
-msgstr ""
-
-#: ../src/gui/preferences.py:43
-msgid "Preferences"
-msgstr ""
-
-#: ../src/gui/preferences.py:129
-msgid "Unable to load this module."
-msgstr ""
-
-#: ../src/gui/preferences.py:138
-msgid "Modules"
-msgstr ""
-
-#: ../src/gui/preferences.py:139 ../src/modules/DesktopNotification.py:222
-#: ../src/modules/Covers.py:390
-msgid "Description"
-msgstr ""
-
-#: ../src/gui/preferences.py:140
-msgid ""
-"This window shows the list of available modules. You can enable/disable a "
-"module by checking/unchecking the check box in front of it."
-msgstr ""
-
-#: ../src/gui/preferences.py:142
-msgid "Configuring a Module"
-msgstr ""
-
-#: ../src/gui/preferences.py:143
-msgid ""
-"When a module may be configured, a specific icon is displayed on the right "
-"of the corresponding line. To configure a module, simply select it and then "
-"click on the \"Preferences\" button on the bottom of the dialog box. Note "
-"that configuring a module is only possible when it is enabled."
 msgstr ""
 
 #: ../src/gui/about.py:40
 msgid "translator-credits"
 msgstr ""
 
-#: ../src/gui/about.py:44
+#: ../src/gui/about.py:43
 msgid "Developer:"
 msgstr ""
 
-#: ../src/gui/about.py:48
+#: ../src/gui/about.py:47
 msgid "Thanks to:"
 msgstr ""
 
-#: ../src/modules/Search.py:33
-msgid "Search in your music folders"
+#: ../src/gui/preferences.py:104
+msgid "Preferences"
 msgstr ""
 
-#: ../src/modules/Zeitgeist.py:28
-msgid "Send track information to the Zeitgeist service"
+#: ../src/gui/preferences.py:183
+msgid "Unable to load this module."
 msgstr ""
 
-#: ../src/modules/FileExplorer.py:181
-msgid "loading..."
+#: ../src/gui/preferences.py:191
+msgid "Modules"
 msgstr ""
 
-#: ../src/modules/FileExplorer.py:407
-msgid "Append"
+#: ../src/gui/preferences.py:192 ../src/modules/Covers.py:390
+#: ../src/modules/DesktopNotification.py:239
+msgid "Description"
 msgstr ""
 
-#: ../src/modules/FileExplorer.py:419
-msgid "Open containing folder"
-msgstr ""
-
-#: ../src/modules/FileExplorer.py:443
-msgid "Add music folder"
-msgstr ""
-
-#: ../src/modules/FileExplorer.py:455
-msgid "Hide folder"
-msgstr ""
-
-#: ../src/modules/FileExplorer.py:469
-msgid "Choose a directory"
-msgstr ""
-
-#: ../src/modules/FileExplorer.py:475
-msgid "Invalid Folder"
-msgstr ""
-
-#: ../src/modules/FileExplorer.py:476
-msgid "You cannot add your root or home folder to the music directories"
-msgstr ""
-
-#: ../src/modules/FileExplorer.py:483
-msgid "This path does not exist"
-msgstr ""
-
-#: ../src/modules/FileExplorer.py:484
-msgid "Please select an existing directory."
-msgstr ""
-
-#: ../src/modules/FileExplorer.py:571
-msgid "Albums"
-msgstr ""
-
-#: ../src/modules/FileExplorer.py:573
-msgid "Music"
-msgstr ""
-
-#: ../src/modules/FileExplorer.py:650
-msgid "Right-click to add music folders"
-msgstr ""
-
-#: ../src/modules/FileExplorer.py:701
-msgid "Searching ..."
-msgstr ""
-
-#: ../src/modules/FileExplorer.py:727
-msgid "No tracks found"
-msgstr ""
-
-#: ../src/modules/FileExplorer.py:729
-msgid "No music folders have been added"
-msgstr ""
-
-#: ../src/modules/__init__.py:75
-msgid "The following Python modules are not available:"
-msgstr ""
-
-#: ../src/modules/__init__.py:79
-msgid "You must install them if you want to enable this module."
-msgstr ""
-
-#: ../src/modules/__init__.py:266
-msgid "Restart required"
-msgstr ""
-
-#: ../src/modules/__init__.py:267
-msgid "You must restart the application for this modification to take effect."
-msgstr ""
-
-#: ../src/modules/CtrlPanel.py:184 ../src/modules/CtrlPanel.py:240
-msgid "Pause the current track"
-msgstr ""
-
-#: ../src/modules/CtrlPanel.py:200
-msgid "Play the first selected track of the playlist"
-msgstr ""
-
-#: ../src/modules/CtrlPanel.py:234
-msgid "Continue playing the current track"
-msgstr ""
-
-#: ../src/modules/DesktopNotification.py:26
-msgid "Desktop Notification"
-msgstr ""
-
-#: ../src/modules/DesktopNotification.py:26
-msgid "Display a desktop notification on track change"
-msgstr ""
-
-#: ../src/modules/DesktopNotification.py:83
-#: ../src/modules/DesktopNotification.py:197
-msgid "Skip track"
-msgstr ""
-
-#: ../src/modules/DesktopNotification.py:223
+#: ../src/gui/preferences.py:193
 msgid ""
-"This module displays a small popup window on your desktop when a new track "
-"starts."
+"This window shows the list of available modules. You can enable/disable a "
+"module by checking/unchecking the check box in front of it."
 msgstr ""
 
-#: ../src/modules/DesktopNotification.py:224
-msgid "If the Covers module is enabled, the popup also shows the album cover."
+#: ../src/gui/preferences.py:196
+msgid "Configuring a Module"
 msgstr ""
 
-#: ../src/modules/DesktopNotification.py:225
-msgid "Customizing the Notification"
-msgstr ""
-
-#: ../src/modules/DesktopNotification.py:226
+#: ../src/gui/preferences.py:197
 msgid ""
-"You can change the title and the body of the notification to any text you "
-"want. Before displaying the popup window, fields of the form {field} are "
-"replaced by their corresponding value. Available fields are:\n"
-"\n"
-msgstr ""
-
-#: ../src/modules/DesktopNotification.py:229
-msgid "Markup"
-msgstr ""
-
-#: ../src/modules/DesktopNotification.py:230
-msgid ""
-"You can use the Pango markup language to format the text. More information "
-"on that language is available on the following web page:"
-msgstr ""
-
-#: ../src/modules/StatusbarTitlebar.py:48
-msgid "[paused]"
+"When a module may be configured, a specific icon is displayed on the right "
+"of the corresponding line. To configure a module, simply select it and then "
+"click on the \"Preferences\" button on the bottom of the dialog box. Note "
+"that configuring a module is only possible when it is enabled."
 msgstr ""
 
 #: ../src/modules/Covers.py:28
@@ -313,64 +164,218 @@ msgid ""
 "none, the cover is downloaded."
 msgstr ""
 
-#: ../src/modules/Tracktree.py:382 ../src/modules/Tracktree.py:457
-msgid "Export playlist to file"
+#: ../src/modules/__init__.py:85
+msgid "The following Python modules are not available:"
 msgstr ""
 
-#: ../src/modules/Tracktree.py:390 ../src/modules/Tracktree.py:462
-msgid "Export playlist to directory"
+#: ../src/modules/__init__.py:89
+msgid "You must install them if you want to enable this module."
 msgstr ""
 
-#: ../src/modules/Tracktree.py:447
-msgid "Clear Playlist"
+#: ../src/modules/__init__.py:199
+msgid "Restart required"
 msgstr ""
 
-#: ../src/modules/Equalizer.py:24
+#: ../src/modules/__init__.py:200
+msgid "You must restart the application for this modification to take effect."
+msgstr ""
+
+#: ../src/modules/FileExplorer.py:183
+msgid "loading..."
+msgstr ""
+
+#: ../src/modules/FileExplorer.py:403
+msgid "Append"
+msgstr ""
+
+#: ../src/modules/FileExplorer.py:413
+msgid "Open containing folder"
+msgstr ""
+
+#: ../src/modules/FileExplorer.py:429
+msgid "Refresh"
+msgstr ""
+
+#: ../src/modules/FileExplorer.py:436
+msgid "Add music folder"
+msgstr ""
+
+#: ../src/modules/FileExplorer.py:448
+msgid "Hide folder"
+msgstr ""
+
+#: ../src/modules/FileExplorer.py:463
+msgid "Choose a directory"
+msgstr ""
+
+#: ../src/modules/FileExplorer.py:469
+msgid "Invalid Folder"
+msgstr ""
+
+#: ../src/modules/FileExplorer.py:470
+msgid "You cannot add your root or home folder to the music directories"
+msgstr ""
+
+#: ../src/modules/FileExplorer.py:477
+msgid "This path does not exist"
+msgstr ""
+
+#: ../src/modules/FileExplorer.py:478
+msgid "Please select an existing directory."
+msgstr ""
+
+#: ../src/modules/FileExplorer.py:566
+msgid "Albums"
+msgstr ""
+
+#: ../src/modules/FileExplorer.py:568
+msgid "Music"
+msgstr ""
+
+#: ../src/modules/FileExplorer.py:645
+msgid "Right-click to add music folders"
+msgstr ""
+
+#: ../src/modules/FileExplorer.py:696
+msgid "Searching ..."
+msgstr ""
+
+#: ../src/modules/FileExplorer.py:722
+msgid "No tracks found"
+msgstr ""
+
+#: ../src/modules/FileExplorer.py:724
+msgid "No music folders have been added"
+msgstr ""
+
+#: ../src/modules/StatusbarTitlebar.py:48
+msgid "[paused]"
+msgstr ""
+
+#: ../src/modules/CtrlPanel.py:100 ../src/modules/CtrlPanel.py:145
+msgid "Pause the current track"
+msgstr ""
+
+#: ../src/modules/CtrlPanel.py:116
+msgid "Play the first selected track of the playlist"
+msgstr ""
+
+#: ../src/modules/CtrlPanel.py:139
+msgid "Continue playing the current track"
+msgstr ""
+
+#: ../src/modules/Search.py:35
+msgid "Search in your music folders"
+msgstr ""
+
+#: ../src/modules/Equalizer.py:29
 msgid "Equalizer"
 msgstr ""
 
-#: ../src/modules/Equalizer.py:24
+#: ../src/modules/Equalizer.py:29
 msgid "Tune the level of the frequency bands"
 msgstr ""
 
-#: ../src/modules/Equalizer.py:125 ../src/modules/Equalizer.py:213
-#: ../src/modules/Equalizer.py:226
+#: ../src/modules/Equalizer.py:130 ../src/modules/Equalizer.py:218
+#: ../src/modules/Equalizer.py:231
 msgid "Custom"
 msgstr ""
 
-#: ../src/modules/Equalizer.py:166
+#: ../src/modules/Equalizer.py:171
 msgid "Save levels"
 msgstr ""
 
-#: ../src/modules/Equalizer.py:177
+#: ../src/modules/Equalizer.py:182
 msgid "Load levels"
 msgstr ""
 
-#: ../src/modules/Equalizer.py:204
+#: ../src/modules/Equalizer.py:209
 msgid "Could not load the file"
 msgstr ""
 
-#: ../src/modules/Equalizer.py:204
+#: ../src/modules/Equalizer.py:209
 msgid "The format of the file is incorrect."
 msgstr ""
 
-#: ../src/tools/consts.py:92
+#: ../src/modules/Tracktree.py:381 ../src/modules/Tracktree.py:444
+msgid "Export playlist to file"
+msgstr ""
+
+#: ../src/modules/Tracktree.py:389 ../src/modules/Tracktree.py:448
+msgid "Export playlist to directory"
+msgstr ""
+
+#: ../src/modules/Tracktree.py:432
+msgid "Remove"
+msgstr ""
+
+#: ../src/modules/Tracktree.py:440
+msgid "Clear Playlist"
+msgstr ""
+
+#: ../src/modules/DesktopNotification.py:40
+msgid "Desktop Notification"
+msgstr ""
+
+#: ../src/modules/DesktopNotification.py:41
+msgid "Display a desktop notification on track change"
+msgstr ""
+
+#: ../src/modules/DesktopNotification.py:98
+#: ../src/modules/DesktopNotification.py:214
+msgid "Skip track"
+msgstr ""
+
+#: ../src/modules/DesktopNotification.py:240
+msgid ""
+"This module displays a small popup window on your desktop when a new track "
+"starts."
+msgstr ""
+
+#: ../src/modules/DesktopNotification.py:241
+msgid "If the Covers module is enabled, the popup also shows the album cover."
+msgstr ""
+
+#: ../src/modules/DesktopNotification.py:242
+msgid "Customizing the Notification"
+msgstr ""
+
+#: ../src/modules/DesktopNotification.py:243
+#, python-brace-format
+msgid ""
+"You can change the title and the body of the notification to any text you "
+"want. Before displaying the popup window, fields of the form {field} are "
+"replaced by their corresponding value. Available fields are:\n"
+"\n"
+msgstr ""
+
+#: ../src/modules/DesktopNotification.py:246
+msgid "Markup"
+msgstr ""
+
+#: ../src/modules/DesktopNotification.py:247
+msgid ""
+"You can use the Pango markup language to format the text. More information "
+"on that language is available on the following web page:"
+msgstr ""
+
+#: ../src/tools/consts.py:97
 msgid "Unknown Genre"
 msgstr ""
 
-#: ../src/tools/consts.py:93
+#: ../src/tools/consts.py:98
 msgid "Unknown Title"
 msgstr ""
 
-#: ../src/tools/consts.py:94
+#: ../src/tools/consts.py:99
 msgid "Unknown Album"
 msgstr ""
 
-#: ../src/tools/consts.py:95
+#: ../src/tools/consts.py:100
 msgid "Unknown Artist"
 msgstr ""
 
-#: ../src/tools/consts.py:103
+#: ../src/tools/consts.py:108
 msgid "Unknown Album Artist"
 msgstr ""
 
@@ -434,10 +439,6 @@ msgstr ""
 msgid "<b>Miscellaneous</b>"
 msgstr ""
 
-#: ../res/Equalizer.ui.h:1
-msgid "Preset:"
-msgstr ""
-
 #: ../res/MainWindow.ui.h:1
 msgid "Play the previous track"
 msgstr ""
@@ -448,4 +449,8 @@ msgstr ""
 
 #: ../res/MainWindow.ui.h:3
 msgid "Play the next track"
+msgstr ""
+
+#: ../res/Equalizer.ui.h:1
+msgid "Preset:"
 msgstr ""
