@@ -189,8 +189,8 @@ def realStartup(window, paned):
 
     # Register some handlers (Signal SIGKILL cannot be caught)
     atexit.register(atExit)
-    signal.signal(signal.SIGINT,  lambda sig, frame: onDelete(window, None))
-    signal.signal(signal.SIGTERM, lambda sig, frame: onDelete(window, None))
+    signal.signal(signal.SIGINT,  lambda _sig, _frame: onDelete(window, None))
+    signal.signal(signal.SIGTERM, lambda _sig, _frame: onDelete(window, None))
 
     # GTK handlers
     window.connect('delete-event', onDelete)

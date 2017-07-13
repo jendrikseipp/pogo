@@ -84,12 +84,12 @@ class Window(Gtk.Window):
             tools.prefs.set(self.modName, 'win-height', rect.height)
 
 
-    def onState(self, win, evt):
+    def onState(self, win, _evt):
         """ Save the new state of the dialog """
         tools.prefs.set(self.modName, 'win-is-maximized', win.props.is_maximized)
 
 
-    def onDelete(self, win, evt):
+    def onDelete(self, win, _evt):
         """ Hide the window instead of deleting it """
         self.hide()
         return True
