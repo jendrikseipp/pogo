@@ -165,7 +165,7 @@ def scanPaths(dir_info, name='', tracks=None):
     return tracks
 
 
-def getTracks(filenames, sortByFilename=True):
+def getTracks(filenames):
     """ Same as getTracksFromFiles(), but works for any kind of filenames (files, playlists, directories) """
     assert isinstance(filenames, list), 'filenames has to be a list'
 

@@ -111,7 +111,7 @@ class AudioPlayer:
                 self.equalizer.set_property('band9', lvls[9])
 
 
-    def __onAboutToFinish(self, isLast):
+    def __onAboutToFinish(self, _islast):
         """ End of the track """
         self.callbackEnded(False)
 

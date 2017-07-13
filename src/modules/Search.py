@@ -275,7 +275,7 @@ class Search(modules.ThreadedModule):
             return True
 
 
-    def on_searchbox_activate(self, entry):
+    def on_searchbox_activate(self, _entry):
         self.stop_searches()
         query = self.searchbox.get_text().strip()
         if len(query) < MIN_CHARS:
@@ -287,13 +287,13 @@ class Search(modules.ThreadedModule):
         modules.postMsg(consts.MSG_EVT_SEARCH_START, {'query': query})
 
 
-    def on_searchbox_changed(self, entry):
+    def on_searchbox_changed(self, _entry):
         if self.searchbox.get_text().strip() == '':
             self.stop_searches()
             modules.postMsg(consts.MSG_EVT_SEARCH_RESET, {})
 
 
-    def on_searchbox_clear(self, entry, icon_pos, event):
+    def on_searchbox_clear(self, _entry, icon_pos, _event):
         '''
         An icon has been pressed
         '''

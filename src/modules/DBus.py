@@ -377,13 +377,13 @@ class DBusObjectPlayer(dbus.service.Object):
 
 
     @dbus.service.signal(consts.dbusInterface, signature='a{sv}')
-    def TrackChange(self, metadata):
+    def TrackChange(self, _metadata):
         """ Signal is emitted when the media player plays another track """
         pass
 
 
     @dbus.service.signal(consts.dbusInterface, signature='(iiii)')
-    def StatusChange(self, status):
+    def StatusChange(self, _status):
         """ Signal is emitted when the status of the media player change """
         pass
 

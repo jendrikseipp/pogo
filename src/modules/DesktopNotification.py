@@ -130,7 +130,7 @@ class DesktopNotification(modules.Module):
         return False
 
 
-    def onSkipTrack(self, notification, action):
+    def onSkipTrack(self, _notification, _action):
         """ The user wants to skip the current track """
         if self.hasNext: modules.postMsg(consts.MSG_CMD_NEXT)
         else:            modules.postMsg(consts.MSG_CMD_STOP)
