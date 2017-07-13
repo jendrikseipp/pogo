@@ -1,6 +1,11 @@
 import os.path
 import sys
 
+import gi
+
+gi.require_version('Gst', '1.0')
+gi.require_version('Gtk', '3.0')
+
 DIR = os.path.dirname(os.path.abspath(__file__))
 BASE_DIR = os.path.dirname(DIR)
 SRC_DIR = os.path.join(BASE_DIR, "src")

@@ -5,5 +5,5 @@ set -euo pipefail
 cd "$(dirname "$0")"
 cd ..
 
-python dev/whitelist.py
+python3 dev/whitelist.py
 vulture --exclude=external pogo.py src dev/whitelist.py
