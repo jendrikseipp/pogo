@@ -145,7 +145,6 @@ DND_INTERNAL_TARGET_NAME = 'exttreeview-internal'
     MSG_CMD_ENABLE_EQZ,          # Enable the equalizer                       Parameters:
     MSG_CMD_SET_EQZ_LVLS,        # Set the levels of the 10-bands equalizer   Parameters: 'lvls'
     MSG_CMD_ENABLE_RG,           # Enable ReplayGain                          Parameters:
-    MSG_CMD_SET_CD_SPEED,        # Change drive speed when reading a CD       Parameters: 'speed'
 
     # Tracklist
     MSG_CMD_NEXT,                # Play the next track             Parameters:
@@ -209,4 +208,4 @@ DND_INTERNAL_TARGET_NAME = 'exttreeview-internal'
 
     # End value
     MSG_END_VALUE
-) = list(range(48))
+) = list(range(47))

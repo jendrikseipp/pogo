@@ -85,7 +85,7 @@ def pauseMenuIcon():
 
 
 def cdromMenuIcon():
-    """ CD-ROM """
+    """ CD-ROM (used for compositing other icons) """
     global __cdromMenuIcon
 
     if __cdromMenuIcon is None:

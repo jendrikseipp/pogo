@@ -28,7 +28,6 @@ class AudioPlayer:
         self.eqzLevels     = None
         self.equalizer     = None
         self.eqzEnabled    = False
-        self.cdReadSpeed   = 1
         self.callbackEnded = callbackEnded
 
 
@@ -51,9 +50,6 @@ class AudioPlayer:
         # Change the audio sink to our own bin, so that an equalizer/replay gain element can be added later on if needed
         self.audiobin  = Gst.Bin.new('audiobin')
         self.audiosink = Gst.ElementFactory.make('autoaudiosink', 'audiosink')
-
-        # Callback when the source of the playbin is changed
-        self.player.connect('notify::source', self.__onNewPlaybinSource)
 
         self.audiobin.add(self.audiosink)
         self.audiobin.add_pad(Gst.GhostPad.new('sink', self.audiosink.get_static_pad('sink')))
@@ -115,19 +111,6 @@ class AudioPlayer:
                 self.equalizer.set_property('band9', lvls[9])
 
 
-    def __onNewPlaybinSource(self, playbin, params):
-        """ Change the CR-ROM drive speed to 1 when applicable """
-        source = self.__getPlayer().get_by_name('source')
-
-        # Didn't find a way to determine the real class of source
-        # So we use the 'paranoia-mode' property to determine whether it's indeed a CD we're playing
-        try:
-            source.get_property('paranoia-mode')
-            source.set_property('read-speed', self.cdReadSpeed)
-        except:
-            pass
-
-
     def __onAboutToFinish(self, isLast):
         """ End of the track """
         self.callbackEnded(False)
@@ -145,11 +128,6 @@ class AudioPlayer:
             self.callbackEnded(True)
 
         return True
-
-
-    def setCDReadSpeed(self, speed):
-        """ Set the CD-ROM drive read speed """
-        self.cdReadSpeed = speed
 
 
     def setNextURI(self, uri):

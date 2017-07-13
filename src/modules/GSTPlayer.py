@@ -46,7 +46,6 @@ class GSTPlayer(modules.Module):
                         consts.MSG_CMD_ENABLE_RG:    self.onEnableReplayGain,
                         consts.MSG_CMD_ENABLE_EQZ:   self.onEnableEqualizer,
                         consts.MSG_EVT_APP_STARTED:  self.onAppStarted,
-                        consts.MSG_CMD_SET_CD_SPEED: self.onSetCDSpeed,
                         consts.MSG_CMD_TOGGLE_PAUSE: self.onTogglePause,
                         consts.MSG_CMD_SET_EQZ_LVLS: self.onSetEqualizerLevels,
                    }
@@ -202,8 +201,3 @@ class GSTPlayer(modules.Module):
     def onSetEqualizerLevels(self, lvls):
         """ Set the equalizer levels """
         self.player.setEqualizerLvls(lvls)
-
-
-    def onSetCDSpeed(self, speed):
-        """ Set the CD read speed """
-        self.player.setCDReadSpeed(speed)

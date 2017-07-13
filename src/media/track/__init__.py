@@ -28,7 +28,7 @@ from tools import consts, sec2str
 # The order should not be changed for compatibility reasons
 (
     TAG_RES,  # Full path to the resource
-    TAG_SCH,  # URI scheme (e.g., file, cdda)
+    TAG_SCH,  # URI scheme (e.g., file)
     TAG_NUM,  # Track number
     TAG_TIT,  # Title
     TAG_ART,  # Artist
@@ -186,8 +186,7 @@ class Track:
 
     def getType(self):
         """ Return the format of the track """
-        if self.tags[TAG_SCH] == 'cdda': return _('CDDA Track')
-        else:                            return os.path.splitext(self.tags[TAG_RES])[1][1:].lower()
+        return os.path.splitext(self.tags[TAG_RES])[1][1:].lower()
 
 
     def __str__(self):
