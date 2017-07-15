@@ -527,7 +527,7 @@ class Tracktree(modules.Module):
         if os.path.exists(self.savedPlaylist):
             try:
                 dump = pickleLoad(self.savedPlaylist)
-            except (EOFError, IOError):
+            except (EOFError, ImportError, IOError):
                 msg = '[%s] Unable to restore playlist from %s\n\n%s'
                 log.logger.error(msg % (MOD_INFO[modules.MODINFO_NAME],
                                 self.savedPlaylist, traceback.format_exc()))

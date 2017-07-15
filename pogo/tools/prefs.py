@@ -26,7 +26,7 @@ from pogo import tools
 try:
     __usrPrefs = tools.pickleLoad(tools.consts.filePrefs)
 # UnicodeDecodeError happens when loading Pogo 0.8.7 files with newer versions.
-except (IOError, EOFError, UnicodeDecodeError):
+except (EOFError, ImportError, IOError, UnicodeDecodeError):
     __usrPrefs = {}
 
 # Prevent concurrent calls to functions
