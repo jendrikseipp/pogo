@@ -12,9 +12,7 @@ O Show warning if search commands fail.
 === Features that will MAYBE be implemented ===
 
 O Stop after current album / track (Playlist context menu entry)
-O Enqueue
 O Party View (Fullscreen)
-O Sound Indicator for Ubuntu SoundMenu (https://launchpad.net/hello-unity)
 
 
 === Features that will NOT be implemented ===
@@ -23,11 +21,11 @@ O Sound Indicator for Ubuntu SoundMenu (https://launchpad.net/hello-unity)
 - Ellipsize names (Looks odd)
 - Play audio CDs (Rip and play is nicer anyways)
 - Use multiprocessing for searching (Too error prone)
-- Check if using nautilus uri:///path/to/file works and selects a file
-  Only works in GTK 3.1 probably (does not work in GTK 3.3)
 - Crossfading (too tedious in gstreamer)
 - Lyrics (KISS)
 - Scrobbling Support (KISS)
 - Shuffle
 - Repeat
 - Playlist loading
+- Sound Indicator for Ubuntu SoundMenu (unity is discontinued)
+- Enqueue (KISS)
