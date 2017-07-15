@@ -8,11 +8,10 @@ gi.require_version('Gtk', '3.0')
 
 DIR = os.path.dirname(os.path.abspath(__file__))
 BASE_DIR = os.path.dirname(DIR)
-SRC_DIR = os.path.join(BASE_DIR, "src")
 
-sys.path.insert(0, SRC_DIR)
+sys.path.insert(0, BASE_DIR)
 
-from modules import Covers, CtrlPanel, DBus, DesktopNotification, Equalizer, \
+from pogo.modules import Covers, CtrlPanel, DBus, DesktopNotification, Equalizer, \
     FileExplorer, GnomeMediaKeys, GSTPlayer, Search, StatusbarTitlebar, \
     TrackLoader, TrackPanel, Tracktree
 
@@ -30,7 +29,7 @@ TrackLoader.TrackLoader
 TrackPanel.TrackPanel
 Tracktree.Tracktree
 
-from modules.DBus import DBusObjectRoot, DBusObjectTracklist, DBusObjectPlayer
+from pogo.modules.DBus import DBusObjectRoot, DBusObjectTracklist, DBusObjectPlayer
 
 dbor = DBusObjectRoot
 dbor.Identity
