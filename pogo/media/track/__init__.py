@@ -97,20 +97,6 @@ class Track:
     def setVariableBitrate(self):          self.tags[TAG_MOD] = 1
 
 
-    def hasNumber(self):      return TAG_NUM in self.tags
-    def hasTitle(self):       return TAG_TIT in self.tags
-    def hasArtist(self):      return TAG_ART in self.tags
-    def hasAlbum(self):       return TAG_ALB in self.tags
-    def hasLength(self):      return TAG_LEN in self.tags
-    def hasAlbumArtist(self): return TAG_AAR in self.tags
-    def hasDiscNumber(self):  return TAG_DNB in self.tags
-    def hasGenre(self):       return TAG_GEN in self.tags
-    def hasDate(self):        return TAG_DAT in self.tags
-    def hasMBTrackId(self):   return TAG_MBT in self.tags
-    def hasBitrate(self):     return TAG_BTR in self.tags
-    def hasSampleRate(self):  return TAG_SMP in self.tags
-
-
     def __get(self, tag, defaultValue):
         """Return the value of tag if it exists, or return defaultValue
 
