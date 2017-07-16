@@ -175,39 +175,6 @@ class Track:
         return '%s - %s - %s (%u)' % (self.getArtist(), self.getAlbum(), self.getTitle(), self.getNumber())
 
 
-    def __cmp__(self, track):
-        """ Compare two tracks"""
-        # Artist
-        if self.hasAlbumArtist(): selfArtist = self.getAlbumArtist()
-        else:                     selfArtist = self.getArtist()
-
-        if track.hasAlbumArtist(): otherArtist = track.getAlbumArtist()
-        else:                      otherArtist = track.getArtist()
-
-        result = cmp(selfArtist.lower(), otherArtist.lower())
-
-        if result != 0:
-            return result
-
-        # Album
-        result = cmp(self.getAlbum().lower(), track.getAlbum().lower())
-        if result != 0:
-            return result
-
-        # Disc number
-        result = self.getDiscNumber() - track.getDiscNumber()
-        if result != 0:
-            return result
-
-        # Track number
-        result = self.getNumber() - track.getNumber()
-        if result != 0:
-            return result
-
-        # Finally, file names
-        return cmp(self.getFilePath(), track.getFilePath())
-
-
     def format(self, fmtString):
         """ Replace the special fields in the given string by their corresponding value """
         result = fmtString
