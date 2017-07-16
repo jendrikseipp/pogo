@@ -8,7 +8,7 @@ import sys
 prefix = '/usr'
 
 local_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'pogo')
-global_dir = os.path.join(prefix, 'share', 'pogo')
+global_dir = os.path.join(prefix, 'share', 'pogo', 'pogo')
 
 
 def get_app_dir():
