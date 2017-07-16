@@ -1,6 +1,6 @@
 INSTALL ?= install
 
-PYFILES = $(shell find ../src -type f -name "*.py")
+PYFILES = $(shell find ../pogo -type f -name "*.py")
 UIFILES = $(wildcard ../res/*.ui)
 POFILES = $(wildcard *.po)
 

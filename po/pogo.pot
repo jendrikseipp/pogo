@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-07-08 09:55+0200\n"
+"POT-Creation-Date: 2017-07-17 00:16+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,107 +17,103 @@ msgstr ""
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: ../src/media/track/__init__.py:50
+#: ../pogo/media/track/__init__.py:50
 msgid "Track number"
 msgstr ""
 
-#: ../src/media/track/__init__.py:51
+#: ../pogo/media/track/__init__.py:51
 msgid "Title"
 msgstr ""
 
-#: ../src/media/track/__init__.py:52
+#: ../pogo/media/track/__init__.py:52
 msgid "Artist"
 msgstr ""
 
-#: ../src/media/track/__init__.py:53
+#: ../pogo/media/track/__init__.py:53
 msgid "Album"
 msgstr ""
 
-#: ../src/media/track/__init__.py:54
+#: ../pogo/media/track/__init__.py:54
 msgid "Genre"
 msgstr ""
 
-#: ../src/media/track/__init__.py:55
+#: ../pogo/media/track/__init__.py:55
 msgid "Date"
 msgstr ""
 
-#: ../src/media/track/__init__.py:56
+#: ../pogo/media/track/__init__.py:56
 msgid "Disc number"
 msgstr ""
 
-#: ../src/media/track/__init__.py:57
+#: ../pogo/media/track/__init__.py:57
 msgid "Bit rate"
 msgstr ""
 
-#: ../src/media/track/__init__.py:58
+#: ../pogo/media/track/__init__.py:58
 msgid "Sample rate"
 msgstr ""
 
-#: ../src/media/track/__init__.py:59
+#: ../pogo/media/track/__init__.py:59
 msgid "Duration in seconds (e.g., 194)"
 msgstr ""
 
-#: ../src/media/track/__init__.py:60
+#: ../pogo/media/track/__init__.py:60
 msgid "Duration as a string (e.g., 3:14)"
 msgstr ""
 
-#: ../src/media/track/__init__.py:61
+#: ../pogo/media/track/__init__.py:61
 msgid "Full path to the file"
 msgstr ""
 
-#: ../src/media/track/__init__.py:140
+#: ../pogo/media/track/__init__.py:178
 msgid "unknown"
 msgstr ""
 
-#: ../src/media/track/__init__.py:182
+#: ../pogo/media/track/__init__.py:202
 #, python-format
 msgid "%(album)s  [Disc %(discnum)u]"
 msgstr ""
 
-#: ../src/media/track/__init__.py:189
-msgid "CDDA Track"
-msgstr ""
-
-#: ../src/gui/about.py:40
+#: ../pogo/gui/about.py:40
 msgid "translator-credits"
 msgstr ""
 
-#: ../src/gui/about.py:43
+#: ../pogo/gui/about.py:43
 msgid "Developer:"
 msgstr ""
 
-#: ../src/gui/about.py:47
+#: ../pogo/gui/about.py:47
 msgid "Thanks to:"
 msgstr ""
 
-#: ../src/gui/preferences.py:104
+#: ../pogo/gui/preferences.py:108
 msgid "Preferences"
 msgstr ""
 
-#: ../src/gui/preferences.py:183
+#: ../pogo/gui/preferences.py:189
 msgid "Unable to load this module."
 msgstr ""
 
-#: ../src/gui/preferences.py:191
+#: ../pogo/gui/preferences.py:197
 msgid "Modules"
 msgstr ""
 
-#: ../src/gui/preferences.py:192 ../src/modules/Covers.py:390
-#: ../src/modules/DesktopNotification.py:239
+#: ../pogo/gui/preferences.py:198 ../pogo/modules/Covers.py:389
+#: ../pogo/modules/DesktopNotification.py:237
 msgid "Description"
 msgstr ""
 
-#: ../src/gui/preferences.py:193
+#: ../pogo/gui/preferences.py:199
 msgid ""
 "This window shows the list of available modules. You can enable/disable a "
 "module by checking/unchecking the check box in front of it."
 msgstr ""
 
-#: ../src/gui/preferences.py:196
+#: ../pogo/gui/preferences.py:202
 msgid "Configuring a Module"
 msgstr ""
 
-#: ../src/gui/preferences.py:197
+#: ../pogo/gui/preferences.py:203
 msgid ""
 "When a module may be configured, a specific icon is displayed on the right "
 "of the corresponding line. To configure a module, simply select it and then "
@@ -125,26 +121,26 @@ msgid ""
 "that configuring a module is only possible when it is enabled."
 msgstr ""
 
-#: ../src/modules/Covers.py:28
+#: ../pogo/modules/Covers.py:31
 msgid "Covers"
 msgstr ""
 
-#: ../src/modules/Covers.py:28
+#: ../pogo/modules/Covers.py:31
 msgid "Show album covers"
 msgstr ""
 
-#: ../src/modules/Covers.py:391
+#: ../pogo/modules/Covers.py:390
 msgid ""
 "This module displays the cover of the album the current track comes from. "
 "Covers may be loaded from local pictures, located in the same directory as "
 "the current track, or may be downloaded from the Internet."
 msgstr ""
 
-#: ../src/modules/Covers.py:394
+#: ../pogo/modules/Covers.py:393
 msgid "User Covers"
 msgstr ""
 
-#: ../src/modules/Covers.py:395
+#: ../pogo/modules/Covers.py:394
 #, python-format
 msgid ""
 "A user cover is a picture located in the same directory as the current "
@@ -152,11 +148,11 @@ msgid ""
 "extensions, supported file formats (%s) are automatically used."
 msgstr ""
 
-#: ../src/modules/Covers.py:398
+#: ../pogo/modules/Covers.py:397
 msgid "Internet Covers"
 msgstr ""
 
-#: ../src/modules/Covers.py:399
+#: ../pogo/modules/Covers.py:398
 msgid ""
 "Covers may be downloaded from the Internet, based on the tags of the current "
 "track. You can ask to always prefer user covers to Internet ones. In this "
@@ -164,183 +160,183 @@ msgid ""
 "none, the cover is downloaded."
 msgstr ""
 
-#: ../src/modules/__init__.py:85
+#: ../pogo/modules/__init__.py:85
 msgid "The following Python modules are not available:"
 msgstr ""
 
-#: ../src/modules/__init__.py:89
+#: ../pogo/modules/__init__.py:89
 msgid "You must install them if you want to enable this module."
 msgstr ""
 
-#: ../src/modules/__init__.py:199
+#: ../pogo/modules/__init__.py:199
 msgid "Restart required"
 msgstr ""
 
-#: ../src/modules/__init__.py:200
+#: ../pogo/modules/__init__.py:200
 msgid "You must restart the application for this modification to take effect."
 msgstr ""
 
-#: ../src/modules/FileExplorer.py:183
+#: ../pogo/modules/FileExplorer.py:180
 msgid "loading..."
 msgstr ""
 
-#: ../src/modules/FileExplorer.py:403
+#: ../pogo/modules/FileExplorer.py:390
 msgid "Append"
 msgstr ""
 
-#: ../src/modules/FileExplorer.py:413
+#: ../pogo/modules/FileExplorer.py:400
 msgid "Open containing folder"
 msgstr ""
 
-#: ../src/modules/FileExplorer.py:429
+#: ../pogo/modules/FileExplorer.py:416
 msgid "Refresh"
 msgstr ""
 
-#: ../src/modules/FileExplorer.py:436
+#: ../pogo/modules/FileExplorer.py:423
 msgid "Add music folder"
 msgstr ""
 
-#: ../src/modules/FileExplorer.py:448
+#: ../pogo/modules/FileExplorer.py:435
 msgid "Hide folder"
 msgstr ""
 
-#: ../src/modules/FileExplorer.py:463
+#: ../pogo/modules/FileExplorer.py:448
 msgid "Choose a directory"
 msgstr ""
 
-#: ../src/modules/FileExplorer.py:469
+#: ../pogo/modules/FileExplorer.py:454
 msgid "Invalid Folder"
 msgstr ""
 
-#: ../src/modules/FileExplorer.py:470
+#: ../pogo/modules/FileExplorer.py:455
 msgid "You cannot add your root or home folder to the music directories"
 msgstr ""
 
-#: ../src/modules/FileExplorer.py:477
+#: ../pogo/modules/FileExplorer.py:462
 msgid "This path does not exist"
 msgstr ""
 
-#: ../src/modules/FileExplorer.py:478
+#: ../pogo/modules/FileExplorer.py:463
 msgid "Please select an existing directory."
 msgstr ""
 
-#: ../src/modules/FileExplorer.py:566
+#: ../pogo/modules/FileExplorer.py:549
 msgid "Albums"
 msgstr ""
 
-#: ../src/modules/FileExplorer.py:568
+#: ../pogo/modules/FileExplorer.py:551
 msgid "Music"
 msgstr ""
 
-#: ../src/modules/FileExplorer.py:645
+#: ../pogo/modules/FileExplorer.py:624
 msgid "Right-click to add music folders"
 msgstr ""
 
-#: ../src/modules/FileExplorer.py:696
+#: ../pogo/modules/FileExplorer.py:671
 msgid "Searching ..."
 msgstr ""
 
-#: ../src/modules/FileExplorer.py:722
+#: ../pogo/modules/FileExplorer.py:695
 msgid "No tracks found"
 msgstr ""
 
-#: ../src/modules/FileExplorer.py:724
+#: ../pogo/modules/FileExplorer.py:697
 msgid "No music folders have been added"
 msgstr ""
 
-#: ../src/modules/StatusbarTitlebar.py:48
+#: ../pogo/modules/StatusbarTitlebar.py:49
 msgid "[paused]"
 msgstr ""
 
-#: ../src/modules/CtrlPanel.py:100 ../src/modules/CtrlPanel.py:145
+#: ../pogo/modules/CtrlPanel.py:96 ../pogo/modules/CtrlPanel.py:136
 msgid "Pause the current track"
 msgstr ""
 
-#: ../src/modules/CtrlPanel.py:116
+#: ../pogo/modules/CtrlPanel.py:111
 msgid "Play the first selected track of the playlist"
 msgstr ""
 
-#: ../src/modules/CtrlPanel.py:139
+#: ../pogo/modules/CtrlPanel.py:131
 msgid "Continue playing the current track"
 msgstr ""
 
-#: ../src/modules/Search.py:35
+#: ../pogo/modules/Search.py:35
 msgid "Search in your music folders"
 msgstr ""
 
-#: ../src/modules/Equalizer.py:29
+#: ../pogo/modules/Equalizer.py:29
 msgid "Equalizer"
 msgstr ""
 
-#: ../src/modules/Equalizer.py:29
+#: ../pogo/modules/Equalizer.py:29
 msgid "Tune the level of the frequency bands"
 msgstr ""
 
-#: ../src/modules/Equalizer.py:130 ../src/modules/Equalizer.py:218
-#: ../src/modules/Equalizer.py:231
+#: ../pogo/modules/Equalizer.py:118 ../pogo/modules/Equalizer.py:202
+#: ../pogo/modules/Equalizer.py:214
 msgid "Custom"
 msgstr ""
 
-#: ../src/modules/Equalizer.py:171
+#: ../pogo/modules/Equalizer.py:156
 msgid "Save levels"
 msgstr ""
 
-#: ../src/modules/Equalizer.py:182
+#: ../pogo/modules/Equalizer.py:166
 msgid "Load levels"
 msgstr ""
 
-#: ../src/modules/Equalizer.py:209
+#: ../pogo/modules/Equalizer.py:193
 msgid "Could not load the file"
 msgstr ""
 
-#: ../src/modules/Equalizer.py:209
+#: ../pogo/modules/Equalizer.py:193
 msgid "The format of the file is incorrect."
 msgstr ""
 
-#: ../src/modules/Tracktree.py:381 ../src/modules/Tracktree.py:444
+#: ../pogo/modules/Tracktree.py:364 ../pogo/modules/Tracktree.py:424
 msgid "Export playlist to file"
 msgstr ""
 
-#: ../src/modules/Tracktree.py:389 ../src/modules/Tracktree.py:448
+#: ../pogo/modules/Tracktree.py:371 ../pogo/modules/Tracktree.py:428
 msgid "Export playlist to directory"
 msgstr ""
 
-#: ../src/modules/Tracktree.py:432
+#: ../pogo/modules/Tracktree.py:412
 msgid "Remove"
 msgstr ""
 
-#: ../src/modules/Tracktree.py:440
+#: ../pogo/modules/Tracktree.py:420
 msgid "Clear Playlist"
 msgstr ""
 
-#: ../src/modules/DesktopNotification.py:40
+#: ../pogo/modules/DesktopNotification.py:40
 msgid "Desktop Notification"
 msgstr ""
 
-#: ../src/modules/DesktopNotification.py:41
+#: ../pogo/modules/DesktopNotification.py:41
 msgid "Display a desktop notification on track change"
 msgstr ""
 
-#: ../src/modules/DesktopNotification.py:98
-#: ../src/modules/DesktopNotification.py:214
+#: ../pogo/modules/DesktopNotification.py:96
+#: ../pogo/modules/DesktopNotification.py:211
 msgid "Skip track"
 msgstr ""
 
-#: ../src/modules/DesktopNotification.py:240
+#: ../pogo/modules/DesktopNotification.py:238
 msgid ""
 "This module displays a small popup window on your desktop when a new track "
 "starts."
 msgstr ""
 
-#: ../src/modules/DesktopNotification.py:241
+#: ../pogo/modules/DesktopNotification.py:239
 msgid "If the Covers module is enabled, the popup also shows the album cover."
 msgstr ""
 
-#: ../src/modules/DesktopNotification.py:242
+#: ../pogo/modules/DesktopNotification.py:241
 msgid "Customizing the Notification"
 msgstr ""
 
-#: ../src/modules/DesktopNotification.py:243
+#: ../pogo/modules/DesktopNotification.py:242
 #, python-brace-format
 msgid ""
 "You can change the title and the body of the notification to any text you "
@@ -349,33 +345,33 @@ msgid ""
 "\n"
 msgstr ""
 
-#: ../src/modules/DesktopNotification.py:246
+#: ../pogo/modules/DesktopNotification.py:246
 msgid "Markup"
 msgstr ""
 
-#: ../src/modules/DesktopNotification.py:247
+#: ../pogo/modules/DesktopNotification.py:247
 msgid ""
 "You can use the Pango markup language to format the text. More information "
 "on that language is available on the following web page:"
 msgstr ""
 
-#: ../src/tools/consts.py:97
+#: ../pogo/tools/consts.py:96
 msgid "Unknown Genre"
 msgstr ""
 
-#: ../src/tools/consts.py:98
+#: ../pogo/tools/consts.py:97
 msgid "Unknown Title"
 msgstr ""
 
-#: ../src/tools/consts.py:99
+#: ../pogo/tools/consts.py:98
 msgid "Unknown Album"
 msgstr ""
 
-#: ../src/tools/consts.py:100
+#: ../pogo/tools/consts.py:99
 msgid "Unknown Artist"
 msgstr ""
 
-#: ../src/tools/consts.py:108
+#: ../pogo/tools/consts.py:107
 msgid "Unknown Album Artist"
 msgstr ""
 
