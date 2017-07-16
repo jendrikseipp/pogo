@@ -11,7 +11,7 @@ before_install:
 
 script:
 - docker exec app apt-get update
-- docker exec app apt-get install -qq gir1.2-gdkpixbuf-2.0 gir1.2-glib-2.0 gir1.2-gstreamer-1.0 gir1.2-gtk-3.0 gir1.2-pango-1.0 gstreamer1.0-plugins-base gstreamer1.0-plugins-good gstreamer1.0-pulseaudio python3-dbus python3-gi python3-mutagen python3-pil gir1.2-notify-0.7 gnome-settings-daemon gstreamer1.0-plugins-bad gstreamer1.0-plugins-ugly
+- docker exec app apt-get install -qq gir1.2-gdkpixbuf-2.0 gir1.2-glib-2.0 gir1.2-gstreamer-1.0 gir1.2-gtk-3.0 gir1.2-notify-0.7 gir1.2-pango-1.0 git gnome-settings-daemon gstreamer1.0-plugins-bad gstreamer1.0-plugins-base gstreamer1.0-plugins-good gstreamer1.0-plugins-ugly gstreamer1.0-pulseaudio python3-dbus python3-gi python3-mutagen python3-pil python3-pip
 - docker exec app pip3 install -U pip pycodestyle pyflakes vulture
 # see https://github.com/travis-ci/travis-ci/issues/6652
 - docker exec app git clone --depth=50 --branch="${TRAVIS_PULL_REQUEST_BRANCH:-$TRAVIS_BRANCH}" "https://github.com/${TRAVIS_PULL_REQUEST_SLUG:-$TRAVIS_REPO_SLUG}.git" "/home/${TRAVIS_REPO_SLUG}"
