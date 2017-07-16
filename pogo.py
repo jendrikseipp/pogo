@@ -7,19 +7,25 @@ import sys
 # The following line is adapted automatically by "make install".
 prefix = '/usr'
 
-installed_dir = os.path.join(prefix, 'share/pogo/')
-local_dir = os.path.dirname(os.path.abspath(__file__))
+local_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'pogo')
+global_dir = os.path.join(prefix, 'share', 'pogo')
 
-if os.path.exists(os.path.join(local_dir, 'pogo')):
-    print('Running local pogo version.')
-    app_dir = local_dir
-elif os.path.exists(installed_dir):
-    print('Running installed pogo version.')
-    app_dir = installed_dir
-else:
-    sys.exit('Source files could not be found')
 
-sys.path.insert(0, app_dir)
+def get_app_dir():
+    print('Checking local path {}'.format(local_dir))
+    if os.path.isdir(local_dir):
+        return local_dir
+
+    print('Checking global path {}'.format(global_dir))
+    if os.path.isdir(global_dir):
+        return global_dir
+
+    sys.exit('Pogo source files could not be found. Aborting.')
+
+
+app_dir = get_app_dir()
+print('Using pogo version at {}'.format(app_dir))
+sys.path.insert(0, os.path.dirname(app_dir))
 
 from pogo import __main__
 __main__.main()
