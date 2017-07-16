@@ -151,11 +151,6 @@ class Track:
             return self.getAlbum()
 
 
-    def getType(self):
-        """ Return the format of the track """
-        return os.path.splitext(self.tags[TAG_RES])[1][1:].lower()
-
-
     def __str__(self):
         """ String representation """
         return '%s - %s - %s (%u)' % (self.getArtist(), self.getAlbum(), self.getTitle(), self.getNumber())
