@@ -32,56 +32,52 @@ class StatusbarTitlebar(modules.Module):
     def __init__(self):
         """ Constructor """
         handlers = {
-                        consts.MSG_EVT_PAUSED:            self.onPaused,
-                        consts.MSG_EVT_STOPPED:           self.onStopped,
-                        consts.MSG_EVT_UNPAUSED:          self.onUnpaused,
-                        consts.MSG_EVT_NEW_TRACK:         self.onNewTrack,
-                        consts.MSG_EVT_APP_STARTED:       self.onAppStarted,
-                   }
+            consts.MSG_EVT_PAUSED: self.onPaused,
+            consts.MSG_EVT_STOPPED: self.onStopped,
+            consts.MSG_EVT_UNPAUSED: self.onUnpaused,
+            consts.MSG_EVT_NEW_TRACK: self.onNewTrack,
+            consts.MSG_EVT_APP_STARTED: self.onAppStarted,
+        }
 
         modules.Module.__init__(self, handlers)
 
-
     def __updateTitlebar(self):
         """ Update the title bar """
-        if self.currTrack is None: self.window.set_title(consts.appName)
-        elif self.paused:          self.window.set_title('%s %s' % (self.currTrack.get_window_title(), _('[paused]')))
-        else:                      self.window.set_title('%s' % self.currTrack.get_window_title())
-
+        if self.currTrack is None:
+            self.window.set_title(consts.appName)
+        elif self.paused:
+            self.window.set_title('%s %s' % (self.currTrack.get_window_title(), _('[paused]')))
+        else:
+            self.window.set_title('%s' % self.currTrack.get_window_title())
 
     # --== Message handlers ==--
-
 
     def onAppStarted(self):
         """ Real initialization function, called when this module has been loaded """
         self.window = prefs.getWidgetsTree().get_object('win-main')
 
         # Current player status
-        self.paused    = False
+        self.paused = False
         self.currTrack = None
-
 
     def onNewTrack(self, track):
         """ A new track is being played """
-        self.paused    = False
+        self.paused = False
         self.currTrack = track
         self.__updateTitlebar()
-
 
     def onPaused(self):
         """ Playback has been paused """
         self.paused = True
         self.__updateTitlebar()
 
-
     def onUnpaused(self):
         """ Playback has been unpaused """
         self.paused = False
         self.__updateTitlebar()
 
-
     def onStopped(self):
         """ Playback has been stopped """
-        self.paused    = False
+        self.paused = False
         self.currTrack = None
         self.__updateTitlebar()

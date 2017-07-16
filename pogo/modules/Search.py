@@ -42,19 +42,17 @@ MIN_CHARS = 1
 CACHE_QUERY = "Caching files"
 
 
-
 class Search(modules.ThreadedModule):
 
     def __init__(self):
         """ Constructor """
         handlers = {
-                        consts.MSG_EVT_APP_STARTED:         self.onAppStarted,
-                        consts.MSG_EVT_SEARCH_START:        self.onSearch,
-                        consts.MSG_EVT_MUSIC_PATHS_CHANGED: self.onPathsChanged,
-                   }
+            consts.MSG_EVT_APP_STARTED: self.onAppStarted,
+            consts.MSG_EVT_SEARCH_START: self.onSearch,
+            consts.MSG_EVT_MUSIC_PATHS_CHANGED: self.onPathsChanged,
+        }
 
         modules.ThreadedModule.__init__(self, handlers)
-
 
     def gtk_initialize(self):
         """ Called by GTK main loop. """
@@ -82,7 +80,6 @@ class Search(modules.ThreadedModule):
         main_win = wTree.get_object('win-main')
         main_win.connect('key-press-event', self.on_key_pressed)
         self.searchbox.grab_focus()
-
 
     def search_dir(self, dir, query):
         if dir == consts.dirBaseUsr:
@@ -118,7 +115,6 @@ class Search(modules.ThreadedModule):
         logging.info('Results for %s in %s: %s' % (query, dir, len(results)))
         return results
 
-
     def stop_searches(self):
         logging.info('Stopping all searches')
         self.should_stop = True
@@ -128,7 +124,6 @@ class Search(modules.ThreadedModule):
                 logging.debug('Killing process %d' % search.pid)
                 search.kill()
         self.searches = []
-
 
     def filter_results(self, results, search_path, regex):
         '''
@@ -176,7 +171,6 @@ class Search(modules.ThreadedModule):
 
         return (dirs, files)
 
-
     def cache_dirs(self, keep_caching):
         for index, path in enumerate(self.paths):
             # Cache dirs one by one after a small timeout
@@ -184,7 +178,6 @@ class Search(modules.ThreadedModule):
                                         CACHE_QUERY)
         # Keep caching in regular intervals
         return keep_caching
-
 
     def get_search_paths(self):
         """Do not search in subdirectories if we already search in parent dir.
@@ -201,9 +194,7 @@ class Search(modules.ThreadedModule):
         logging.info('Searching at %s' % search_paths)
         return search_paths
 
-
     # --== Message handlers ==--
-
 
     def onAppStarted(self):
         """ The module has been loaded.
@@ -221,14 +212,13 @@ class Search(modules.ThreadedModule):
             # Cache the music folders regularly for faster searches
             GObject.timeout_add_seconds(100, self.cache_dirs, True)
 
-
     def onSearch(self, query):
         self.should_stop = False
         self.found_something = False
 
         # Transform whitespace-separated query into OR-regex.
         regex = re.compile('|'.join(tools.get_pattern(word)
-                           for word in query.split()), re.IGNORECASE)
+                                    for word in query.split()), re.IGNORECASE)
 
         for dir in self.get_search_paths() + [consts.dirBaseUsr]:
             # Check if search has been aborted during filtering
@@ -253,13 +243,11 @@ class Search(modules.ThreadedModule):
 
         modules.postMsg(consts.MSG_EVT_SEARCH_END)
 
-
     def onPathsChanged(self, paths):
         self.paths = paths
         if self.allow_caching:
             # Cache the new paths once
             GObject.timeout_add_seconds(5, self.cache_dirs, False)
-
 
     #------- GTK handlers ----------------
 
@@ -274,7 +262,6 @@ class Search(modules.ThreadedModule):
             self.searchbox.grab_focus()
             return True
 
-
     def on_searchbox_activate(self, _entry):
         self.stop_searches()
         query = self.searchbox.get_text().strip()
@@ -286,12 +273,10 @@ class Search(modules.ThreadedModule):
         logging.info('Query: %s' % query)
         modules.postMsg(consts.MSG_EVT_SEARCH_START, {'query': query})
 
-
     def on_searchbox_changed(self, _entry):
         if self.searchbox.get_text().strip() == '':
             self.stop_searches()
             modules.postMsg(consts.MSG_EVT_SEARCH_RESET, {})
-
 
     def on_searchbox_clear(self, _entry, icon_pos, _event):
         '''

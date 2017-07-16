@@ -58,14 +58,16 @@ def save(parent, title, defaultFile, defaultDir=None):
     """ Return a filename, or None if cancelled """
     global __currDir
 
-    btn    = (Gtk.STOCK_CANCEL, Gtk.ResponseType.CANCEL, Gtk.STOCK_SAVE, Gtk.ResponseType.OK)
+    btn = (Gtk.STOCK_CANCEL, Gtk.ResponseType.CANCEL, Gtk.STOCK_SAVE, Gtk.ResponseType.OK)
     dialog = Gtk.FileChooserDialog(title, parent, Gtk.FileChooserAction.SAVE, btn)
 
     dialog.set_current_name(defaultFile)
     dialog.set_do_overwrite_confirmation(True)
 
-    if defaultDir is None: dialog.set_current_folder(__currDir)
-    else:                  dialog.set_current_folder(defaultDir)
+    if defaultDir is None:
+        dialog.set_current_folder(__currDir)
+    else:
+        dialog.set_current_folder(defaultDir)
 
     file = None
     if dialog.run() == Gtk.ResponseType.OK:

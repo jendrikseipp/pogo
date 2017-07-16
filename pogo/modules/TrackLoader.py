@@ -30,10 +30,9 @@ class TrackLoader(modules.ThreadedModule):
 
     def __init__(self):
         handlers = {
-                        consts.MSG_EVT_LOAD_TRACKS: self.onLoadTracks,
-                   }
+            consts.MSG_EVT_LOAD_TRACKS: self.onLoadTracks,
+        }
         modules.ThreadedModule.__init__(self, handlers)
-
 
     def onLoadTracks(self, paths):
         modules.postMsg(consts.MSG_CMD_TRACKLIST_ADD,

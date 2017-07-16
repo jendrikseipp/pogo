@@ -25,36 +25,54 @@ def getTrack(filename):
 
     asfFile = ASF(filename)
 
-    length     = int(round(asfFile.info.length))
-    bitrate    = int(asfFile.info.bitrate)
+    length = int(round(asfFile.info.length))
+    bitrate = int(asfFile.info.bitrate)
     samplerate = int(asfFile.info.sample_rate)
 
-    try:    trackNumber = str(asfFile['WM/TrackNumber'][0])
-    except: trackNumber = None
+    try:
+        trackNumber = str(asfFile['WM/TrackNumber'][0])
+    except:
+        trackNumber = None
 
-    try:    discNumber = str(asfFile['WM/PartOfSet'][0])
-    except: discNumber = None
+    try:
+        discNumber = str(asfFile['WM/PartOfSet'][0])
+    except:
+        discNumber = None
 
-    try:    date = str(asfFile['WM/Year'][0])
-    except: date = None
+    try:
+        date = str(asfFile['WM/Year'][0])
+    except:
+        date = None
 
-    try:    title = str(asfFile['Title'][0])
-    except: title = None
+    try:
+        title = str(asfFile['Title'][0])
+    except:
+        title = None
 
-    try:    album = str(asfFile['WM/AlbumTitle'][0])
-    except: album = None
+    try:
+        album = str(asfFile['WM/AlbumTitle'][0])
+    except:
+        album = None
 
-    try:    artist = str(asfFile['Author'][0])
-    except: artist = None
+    try:
+        artist = str(asfFile['Author'][0])
+    except:
+        artist = None
 
-    try:    albumArtist = str(asfFile['WM/AlbumArtist'][0])
-    except: albumArtist = None
+    try:
+        albumArtist = str(asfFile['WM/AlbumArtist'][0])
+    except:
+        albumArtist = None
 
-    try:    genre = str(asfFile['WM/Genre'][0])
-    except: genre = None
+    try:
+        genre = str(asfFile['WM/Genre'][0])
+    except:
+        genre = None
 
-    try:    musicbrainzId = str(asfFile['MusicBrainz/Track Id'][0])
-    except: musicbrainzId = None
+    try:
+        musicbrainzId = str(asfFile['MusicBrainz/Track Id'][0])
+    except:
+        musicbrainzId = None
 
     return createFileTrack(filename, bitrate, length, samplerate, False, title, album, artist, albumArtist,
-                musicbrainzId, genre, trackNumber, date, discNumber)
+                           musicbrainzId, genre, trackNumber, date, discNumber)

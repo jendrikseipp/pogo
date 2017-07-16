@@ -32,6 +32,7 @@ from pogo.tools import consts
 
 __dirCache = {}
 
+
 def listDir(directory, listHiddenFiles=False):
     """
     Return a list of tuples (filename, path) of files in the given
@@ -87,11 +88,13 @@ def samefile(path1, path2):
 
 def sec2str(seconds, alwaysShowHours=False):
     """ Return a formatted string based on the given duration in seconds """
-    hours, seconds   = divmod(seconds, 3600)
-    minutes, seconds = divmod(seconds,   60)
+    hours, seconds = divmod(seconds, 3600)
+    minutes, seconds = divmod(seconds, 60)
 
-    if alwaysShowHours or hours != 0: return '%u:%02u:%02u' % (hours, minutes, seconds)
-    else:                             return '%u:%02u' % (minutes, seconds)
+    if alwaysShowHours or hours != 0:
+        return '%u:%02u:%02u' % (hours, minutes, seconds)
+    else:
+        return '%u:%02u' % (minutes, seconds)
 
 
 def loadGladeFile(file, root=None):
@@ -110,7 +113,7 @@ def loadGladeFile(file, root=None):
 def pickleLoad(file):
     """ Use cPickle to load the data structure stored in the given file """
     with open(file, 'rb') as f:
-        data  = pickle.load(f)
+        data = pickle.load(f)
     return data
 
 
@@ -125,7 +128,7 @@ def percentEncode(string):
         Percent-encode all the bytes in the given string
         Couldn't find a Python method to do that
     """
-    mask  = '%%%X' * len(string)
+    mask = '%%%X' * len(string)
     bytes = tuple([ord(c) for c in string])
 
     return mask % bytes
@@ -203,6 +206,7 @@ def write_file(filename, content):
     except IOError as e:
         logging.error('Error while writing to "%s": %s' % (filename, e))
 
+
 def print_platform_info():
     import platform
     from gi.repository import GObject
@@ -224,10 +228,11 @@ def print_platform_info():
         ('GST', Gst.version_string()),
         ('Mutagen', mutagen.version),
         ('PIL', PIL.VERSION),
-        ])
+    ])
 
     values = ['%s: %s' % (name, val) for name, val in names_values]
     logging.info('System info: ' + ', '.join(values))
+
 
 def separate_commands_and_tracks(args):
     all_commands = set(consts.commands)

@@ -36,18 +36,17 @@ class CtrlPanel(modules.Module):
     def __init__(self):
         """ Constructor """
         handlers = {
-                        consts.MSG_EVT_PAUSED:           self.onPaused,
-                        consts.MSG_EVT_STOPPED:          self.onStopped,
-                        consts.MSG_EVT_UNPAUSED:         self.onUnpaused,
-                        consts.MSG_EVT_NEW_TRACK:        self.onNewTrack,
-                        consts.MSG_EVT_TRACK_MOVED:      self.onCurrentTrackMoved,
-                        consts.MSG_EVT_APP_STARTED:      self.onAppStarted,
-                        consts.MSG_EVT_NEW_TRACKLIST:    self.onNewTracklist,
-                        consts.MSG_EVT_TRACK_POSITION:   self.onNewTrackPosition,
-                   }
+            consts.MSG_EVT_PAUSED: self.onPaused,
+            consts.MSG_EVT_STOPPED: self.onStopped,
+            consts.MSG_EVT_UNPAUSED: self.onUnpaused,
+            consts.MSG_EVT_NEW_TRACK: self.onNewTrack,
+            consts.MSG_EVT_TRACK_MOVED: self.onCurrentTrackMoved,
+            consts.MSG_EVT_APP_STARTED: self.onAppStarted,
+            consts.MSG_EVT_NEW_TRACKLIST: self.onNewTracklist,
+            consts.MSG_EVT_TRACK_POSITION: self.onNewTrackPosition,
+        }
 
         modules.Module.__init__(self, handlers)
-
 
     def set_time_tooltip(self, seconds):
         if seconds > self.currTrackLength:
@@ -57,20 +56,18 @@ class CtrlPanel(modules.Module):
         total = sec2str(self.currTrackLength)
         self.sclSeek.set_tooltip_text('%s / %s' % (elapsed, total))
 
-
    # --== Message handler ==--
-
 
     def onAppStarted(self):
         """ Real initialization function, called when this module has been loaded """
         self.currTrackLength = 0
 
         # Widgets
-        wTree             = prefs.getWidgetsTree()
-        self.btnPlay      = wTree.get_object('btn-play')
-        self.btnNext      = wTree.get_object('btn-next')
-        self.btnPrev      = wTree.get_object('btn-previous')
-        self.sclSeek      = wTree.get_object('scl-position')
+        wTree = prefs.getWidgetsTree()
+        self.btnPlay = wTree.get_object('btn-play')
+        self.btnNext = wTree.get_object('btn-next')
+        self.btnPrev = wTree.get_object('btn-previous')
+        self.sclSeek = wTree.get_object('scl-position')
 
         # GTK handlers
         self.btnNext.connect('clicked', lambda widget: modules.postMsg(consts.MSG_CMD_NEXT))
@@ -92,7 +89,6 @@ class CtrlPanel(modules.Module):
         preferences_button.connect('clicked', lambda item: modules.showPreferences())
         preferences_button.show_all()
 
-
     def onNewTrack(self, track):
         """ A new track is being played """
         self.btnPlay.set_sensitive(True)
@@ -107,7 +103,6 @@ class CtrlPanel(modules.Module):
         if self.currTrackLength != 0:
             self.sclSeek.set_range(0, self.currTrackLength)
 
-
     def onStopped(self):
         """ The playback has been stopped """
         self.btnNext.set_sensitive(False)
@@ -115,7 +110,6 @@ class CtrlPanel(modules.Module):
         self.btnPlay.set_image(Gtk.Image.new_from_stock(Gtk.STOCK_MEDIA_PLAY, PLAY_PAUSE_ICON_SIZE))
         self.btnPlay.set_tooltip_text(_('Play the first selected track of the playlist'))
         self.sclSeek.hide()
-
 
     def onNewTrackPosition(self, seconds):
         """ The track position has changed """
@@ -126,29 +120,24 @@ class CtrlPanel(modules.Module):
         self.sclSeek.set_value(seconds)
         self.sclSeek.handler_unblock_by_func(self.onSeekValueChanged)
 
-
     def onCurrentTrackMoved(self, hasPrevious, hasNext):
         """ Update previous and next buttons """
         self.btnNext.set_sensitive(hasNext)
         self.btnPrev.set_sensitive(hasPrevious)
-
 
     def onPaused(self):
         """ The playback has been paused """
         self.btnPlay.set_image(Gtk.Image.new_from_stock(Gtk.STOCK_MEDIA_PLAY, PLAY_PAUSE_ICON_SIZE))
         self.btnPlay.set_tooltip_text(_('Continue playing the current track'))
 
-
     def onUnpaused(self):
         """ The playback has been unpaused """
         self.btnPlay.set_image(Gtk.Image.new_from_stock(Gtk.STOCK_MEDIA_PAUSE, PLAY_PAUSE_ICON_SIZE))
         self.btnPlay.set_tooltip_text(_('Pause the current track'))
 
-
     def onNewTracklist(self, tracks, playtime):
         """ A new tracklist has been set """
         self.btnPlay.set_sensitive(playtime != 0)
-
 
     # --== GTK handlers ==--
 
@@ -156,21 +145,17 @@ class CtrlPanel(modules.Module):
         """ The user is moving the seek slider """
         self.set_time_tooltip(int(value))
 
-
     def onSeekValueChanged(self, range):
         """ The user has moved the seek slider """
         modules.postMsg(consts.MSG_CMD_SEEK, {'seconds': int(range.get_value())})
-
 
     def onHelp(self, item):
         """ Show help page in the web browser """
         import webbrowser
         webbrowser.open(consts.urlHelp)
 
-
     def onDelete(self, win, event):
         """ Use our own quit sequence, that will itself destroy the window """
-        ##window.hide()
         win.hide()
         modules.postQuitMsg()
         return True

@@ -35,23 +35,24 @@ class GnomeMediaKeys(modules.Module):
     def __init__(self):
         """ Constructor """
         handlers = {
-                        consts.MSG_EVT_APP_QUIT:    self.onAppQuit,
-                        consts.MSG_EVT_APP_STARTED: self.onAppStarted,
-                   }
+            consts.MSG_EVT_APP_QUIT: self.onAppQuit,
+            consts.MSG_EVT_APP_STARTED: self.onAppStarted,
+        }
 
         modules.Module.__init__(self, handlers)
 
-
     def onMediaKey(self, appName, action):
         """ A media key has been pressed """
-        if   action == 'Stop':            modules.postMsg(consts.MSG_CMD_STOP)
-        elif action == 'Next':            modules.postMsg(consts.MSG_CMD_NEXT)
-        elif action == 'Previous':        modules.postMsg(consts.MSG_CMD_PREVIOUS)
-        elif action in ['Play', 'Pause']: modules.postMsg(consts.MSG_CMD_TOGGLE_PAUSE)
-
+        if action == 'Stop':
+            modules.postMsg(consts.MSG_CMD_STOP)
+        elif action == 'Next':
+            modules.postMsg(consts.MSG_CMD_NEXT)
+        elif action == 'Previous':
+            modules.postMsg(consts.MSG_CMD_PREVIOUS)
+        elif action in ['Play', 'Pause']:
+            modules.postMsg(consts.MSG_CMD_TOGGLE_PAUSE)
 
     # --== Message handlers ==--
-
 
     def onAppStarted(self):
         """ The application has started """
@@ -71,7 +72,6 @@ class GnomeMediaKeys(modules.Module):
             except Exception as err:
                 log.logger.error('[%s] Error while initializing: %s' % (MOD_INFO[modules.MODINFO_NAME], err))
                 self.dbusInterface = None
-
 
     def onAppQuit(self):
         """ The application is about to terminate """

@@ -82,7 +82,7 @@ def load(name):
     # Check dependencies
     unmetDeps = __checkDeps(module[MOD_INFO][MODINFO_DEPS])
     if len(unmetDeps) != 0:
-        errMsg  = _('The following Python modules are not available:')
+        errMsg = _('The following Python modules are not available:')
         errMsg += '\n     * '
         errMsg += '\n     * '.join(unmetDeps)
         errMsg += '\n\n'
@@ -109,8 +109,8 @@ def load(name):
 def unload(name):
     """ Unload the given module """
     mModulesLock.acquire()
-    module               = mModules[name]
-    instance             = module[MOD_INSTANCE]
+    module = mModules[name]
+    instance = module[MOD_INSTANCE]
     module[MOD_INSTANCE] = None
     mModulesLock.release()
 
@@ -178,7 +178,6 @@ def postQuitMsg():
     GObject.idle_add(__postQuitMsg)
 
 
-
 # --== Base classes for modules ==--
 
 
@@ -197,8 +196,7 @@ class ModuleBase:
     def restartRequired(self):
         parent = preferences.get_instance().window
         GObject.idle_add(gui.infoMsgBox, parent, _('Restart required'),
-            _('You must restart the application for this modification to take effect.'))
-
+                         _('You must restart the application for this modification to take effect.'))
 
 
 class Module(ModuleBase):
@@ -215,7 +213,6 @@ class Module(ModuleBase):
         self.handlers[msg](**params)
 
 
-
 class ThreadedModule(threading.Thread, ModuleBase):
     """ This is the base class for threaded modules """
 
@@ -224,17 +221,19 @@ class ThreadedModule(threading.Thread, ModuleBase):
         import queue
 
         # Attributes
-        self.queue        = queue.Queue(0)            # List of queued messages
-        self.gtkResult    = None                      # Value returned by the function executed in the GTK loop
-        self.gtkSemaphore = threading.Semaphore(0)    # Used to execute some code in the GTK loop
+        self.queue = queue.Queue(0)                 # List of queued messages
+        self.gtkResult = None                       # Value returned by the function executed in the GTK loop
+        self.gtkSemaphore = threading.Semaphore(0)  # Used to execute some code in the GTK loop
 
         # Initialization
         threading.Thread.__init__(self)
 
         # Add QUIT and UNLOADED messages if needed
         # These messages are required to exit the thread's loop
-        if consts.MSG_EVT_APP_QUIT not in handlers:     handlers[consts.MSG_EVT_APP_QUIT]     = lambda: None
-        if consts.MSG_EVT_MOD_UNLOADED not in handlers: handlers[consts.MSG_EVT_MOD_UNLOADED] = lambda: None
+        if consts.MSG_EVT_APP_QUIT not in handlers:
+            handlers[consts.MSG_EVT_APP_QUIT] = lambda: None
+        if consts.MSG_EVT_MOD_UNLOADED not in handlers:
+            handlers[consts.MSG_EVT_MOD_UNLOADED] = lambda: None
 
         self.handlers = handlers
         register(self, handlers.keys())
@@ -283,11 +282,11 @@ class ThreadedModule(threading.Thread, ModuleBase):
 # --== Entry point ==--
 
 
-mModDir         = os.path.dirname(__file__)                                    # Where modules are located
-mModules        = {}                                                           # All known modules associated to an 'active' boolean
-mHandlers       = dict([(msg, set()) for msg in range(consts.MSG_END_VALUE)]) # For each message, store the set of registered modules
-mModulesLock    = threading.Lock()                                             # Protects the modules list from concurrent access
-mHandlersLock   = threading.Lock()                                             # Protects the handlers list from concurrent access
+mModDir = os.path.dirname(__file__)                                      # Where modules are located
+mModules = {}                                                            # All known modules associated to an 'active' boolean
+mHandlers = dict([(msg, set()) for msg in range(consts.MSG_END_VALUE)])  # For each message, store the set of registered modules
+mModulesLock = threading.Lock()                                          # Protects the modules list from concurrent access
+mHandlersLock = threading.Lock()                                         # Protects the handlers list from concurrent access
 mEnabledModules = prefs.get(__name__, 'enabled_modules', [])                   # List of modules currently enabled
 
 

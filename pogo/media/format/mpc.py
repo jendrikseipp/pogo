@@ -25,36 +25,54 @@ def getTrack(filename):
 
     mpcFile = Musepack(filename)
 
-    length     = int(round(mpcFile.info.length))
-    bitrate    = int(mpcFile.info.bitrate * 1000)
+    length = int(round(mpcFile.info.length))
+    bitrate = int(mpcFile.info.bitrate * 1000)
     samplerate = int(mpcFile.info.sample_rate)
 
-    try:    trackNumber = str(mpcFile['Track'])
-    except: trackNumber = None
+    try:
+        trackNumber = str(mpcFile['Track'])
+    except:
+        trackNumber = None
 
-    try:    discNumber = str(mpcFile['Discnumber'])
-    except: discNumber = None
+    try:
+        discNumber = str(mpcFile['Discnumber'])
+    except:
+        discNumber = None
 
-    try:    date = str(mpcFile['Year'])
-    except: date = None
+    try:
+        date = str(mpcFile['Year'])
+    except:
+        date = None
 
-    try:    title = str(mpcFile['Title'])
-    except: title = None
+    try:
+        title = str(mpcFile['Title'])
+    except:
+        title = None
 
-    try:    genre = str(mpcFile['Genre'])
-    except: genre = None
+    try:
+        genre = str(mpcFile['Genre'])
+    except:
+        genre = None
 
-    try:    musicbrainzId = str(mpcFile['MUSICBRAINZ_TRACKID'])
-    except: musicbrainzId = None
+    try:
+        musicbrainzId = str(mpcFile['MUSICBRAINZ_TRACKID'])
+    except:
+        musicbrainzId = None
 
-    try:    album = str(mpcFile['Album'])
-    except: album = None
+    try:
+        album = str(mpcFile['Album'])
+    except:
+        album = None
 
-    try:    artist = str(mpcFile['Artist'])
-    except: artist = None
+    try:
+        artist = str(mpcFile['Artist'])
+    except:
+        artist = None
 
-    try:    albumArtist = str(mpcFile['Album Artist'])
-    except: albumArtist = None
+    try:
+        albumArtist = str(mpcFile['Album Artist'])
+    except:
+        albumArtist = None
 
     return createFileTrack(filename, bitrate, length, samplerate, False, title, album, artist, albumArtist,
-                musicbrainzId, genre, trackNumber, date, discNumber)
+                           musicbrainzId, genre, trackNumber, date, discNumber)

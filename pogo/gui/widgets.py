@@ -17,7 +17,8 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301 USA
 
-import sys, os
+import os
+import sys
 
 from gi.repository import Gdk
 from gi.repository import GObject
@@ -34,31 +35,28 @@ from pogo.tools import consts
 
 # The format of a row in the treeview
 (
-    ROW_ICO, # Item icon
-    ROW_NAME,     # Item name
+    ROW_ICO,   # Item icon
+    ROW_NAME,  # Item name
     ROW_TRK,   # The track object
 ) = list(range(3))
 
 # Internal d'n'd (reordering)
-DND_REORDERING_ID   = 1024
+DND_REORDERING_ID = 1024
 DND_INTERNAL_TARGET = (consts.DND_INTERNAL_TARGET_NAME, Gtk.TargetFlags.SAME_WIDGET, DND_REORDERING_ID)
 
 GObject.signal_new('tracktreeview-dnd', Gtk.TreeView, GObject.SIGNAL_RUN_LAST, GObject.TYPE_NONE, (Gdk.DragContext, GObject.TYPE_INT, GObject.TYPE_INT, Gtk.SelectionData, GObject.TYPE_INT, GObject.TYPE_PYOBJECT))
-
 
 
 class TrackTreeView(ExtTreeView):
     def __init__(self, colums, use_markup=True):
         ExtTreeView.__init__(self, colums, use_markup)
 
-        #self.set_level_indentation(30)
-
         # Drag'n'drop management
-        self.dndTargets    = list(consts.DND_TARGETS.values())
-        self.motionEvtId   = None
-        self.dndStartPos   = None
+        self.dndTargets = list(consts.DND_TARGETS.values())
+        self.motionEvtId = None
+        self.dndStartPos = None
 
-        self.dndStartPos     = None
+        self.dndStartPos = None
         self.isDraggableFunc = lambda: True
 
         if self.dndTargets:
@@ -75,7 +73,6 @@ class TrackTreeView(ExtTreeView):
 
         self.mark = None
         self.dir_selected = True
-
 
     def insert(self, target, source_row, drop_mode=None):
         model = self.store
@@ -166,7 +163,7 @@ class TrackTreeView(ExtTreeView):
         root_nodes = len(self.store)
         if root_nodes == 0:
             return None
-        return self.store.iter_nth_child(None, root_nodes-1)
+        return self.store.iter_nth_child(None, root_nodes - 1)
 
     def get_all_parents(self, iter):
         """Returns a list of parent, grandparent, greatgrandparent, etc."""
@@ -270,7 +267,7 @@ class TrackTreeView(ExtTreeView):
         if not self.store.iter_has_child(iter):
             return None
         children = self.store.iter_n_children(iter)
-        return self.store.iter_nth_child(iter, children-1)
+        return self.store.iter_nth_child(iter, children - 1)
 
     def get_last_iter_on_same_level(self, iter):
         ''''''
@@ -291,19 +288,15 @@ class TrackTreeView(ExtTreeView):
             yield iter
             iter = self.store.iter_next(iter)
 
-
     # --== Mark management ==--
-
 
     def hasMark(self):
         """ True if a mark has been set """
         return self.mark is not None and self.mark.valid()
 
-
     def clearMark(self):
         """ Remove the mark """
         self.mark = None
-
 
     def getMark(self):
         """ Return the iter of the marked row """
@@ -311,11 +304,9 @@ class TrackTreeView(ExtTreeView):
             return None
         return self.store.get_iter(self.mark.get_path())
 
-
     def setMark(self, iter):
         """ Put the mark on the given row, it will move with the row itself (e.g., D'n'D) """
         self.mark = Gtk.TreeRowReference(self.store, self.store.get_path(iter))
-
 
     def isAtMark(self, iter):
         '''
@@ -326,8 +317,6 @@ class TrackTreeView(ExtTreeView):
             return False
         return self.store.get_path(self.getMark()) == self.store.get_path(iter)
 
-
-
     # DRAG AND DROP
 
     def select(self, iter):
@@ -335,7 +324,6 @@ class TrackTreeView(ExtTreeView):
         Select and highlight an iter
         '''
         GObject.idle_add(self.get_selection().select_iter, iter)
-
 
     def move_selected_rows(self, x, y):
         '''
@@ -398,7 +386,6 @@ class TrackTreeView(ExtTreeView):
         # selected. This is needed for dnd from nautilus.
         self.dir_selected = True
 
-
     def move_dir(self, dir_iter, target, drop_mode):
         '''
         Recursive Method that moves a dir to target
@@ -418,12 +405,10 @@ class TrackTreeView(ExtTreeView):
                 self.move_dir(child, new_target, Gtk.TreeViewDropPosition.INTO_OR_AFTER)
         return new_target
 
-
     def enableDNDReordering(self):
         """ Enable the use of Drag'n'Drop to reorder the list """
         self.dndTargets.append(DND_INTERNAL_TARGET)
         self.enable_model_drag_dest(self.dndTargets, Gdk.DragAction.DEFAULT)
-
 
     def onDragDataReceived(self, tree, context, x, y, selection, dndId, time):
         """ Some data has been dropped into the list """
@@ -431,7 +416,6 @@ class TrackTreeView(ExtTreeView):
             self.move_selected_rows(x, y)
         else:
             self.emit('tracktreeview-dnd', context, int(x), int(y), selection, dndId, time)
-
 
     def onDragBegin(self, tree, context):
         dir_selected = False
@@ -443,7 +427,6 @@ class TrackTreeView(ExtTreeView):
         self.dir_selected = dir_selected
         if dir_selected:
             self.collapse_all()
-
 
     def onDragMotion(self, tree, context, x, y, time):
         """
@@ -479,7 +462,7 @@ class TrackTreeView(ExtTreeView):
                     pos_ok = False
             else:
                 # Tracks can also be dropped into dirs (but not into tracks)
-                if (track and drop_into):# or (drop_into and depth > 0):
+                if track and drop_into:
                     pos_ok = False
 
         target_names = [atom.name() for atom in context.list_targets()]
@@ -503,17 +486,16 @@ if __name__ == '__main__':
 
     tracks = getTracks(['/home/jendrik/Musik/Clearlake - Amber'])
 
-    columns = (('',   [(Gtk.CellRendererPixbuf(), GdkPixbuf.Pixbuf), (Gtk.CellRendererText(), GObject.TYPE_STRING)], True),
-                   (None, [(None, GObject.TYPE_INT)],                                                                 False),
-                   (None, [(None, GObject.TYPE_STRING)],                                                               False),
-                   (None, [(None, GObject.TYPE_PYOBJECT)], False),
-                  )
+    columns = (
+        ('', [(Gtk.CellRendererPixbuf(), GdkPixbuf.Pixbuf), (Gtk.CellRendererText(), GObject.TYPE_STRING)], True),
+        (None, [(None, GObject.TYPE_INT)], False),
+        (None, [(None, GObject.TYPE_STRING)], False),
+        (None, [(None, GObject.TYPE_PYOBJECT)], False),
+    )
 
     tree = TrackTreeView(columns, True)
 
     track = None
-
-
 
     a = tree.appendRow((icons.nullMenuIcon(), 'a', 1, 'something', track), None)
     b = tree.appendRow((icons.nullMenuIcon(), 'b', 1, 'something', track), a)
@@ -550,7 +532,7 @@ if __name__ == '__main__':
     print('Children of a:', [tree.getLabel(iter) for iter in res])
 
     win = Gtk.Window()
-    win.set_size_request(400,300)
+    win.set_size_request(400, 300)
     win.connect('destroy', lambda x: sys.exit())
     win.add(tree)
     tree.expand_all()

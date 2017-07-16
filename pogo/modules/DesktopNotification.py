@@ -44,9 +44,9 @@ MOD_INFO = (
     True)
 
 # Default preferences
-PREFS_DEFAULT_BODY       = 'by {artist} on {album}'
-PREFS_DEFAULT_TITLE      = '{title}  [{duration_str}]'
-PREFS_DEFAULT_TIMEOUT    = 10
+PREFS_DEFAULT_BODY = 'by {artist} on {album}'
+PREFS_DEFAULT_TITLE = '{title}  [{duration_str}]'
+PREFS_DEFAULT_TIMEOUT = 10
 PREFS_DEFAULT_SKIP_TRACK = False
 
 
@@ -55,18 +55,17 @@ class DesktopNotification(modules.Module):
     def __init__(self):
         """ Constructor """
         handlers = {
-                        consts.MSG_EVT_STOPPED:      self.hideNotification,
-                        consts.MSG_EVT_APP_QUIT:     self.hideNotification,
-                        consts.MSG_EVT_NEW_TRACK:    self.onNewTrack,
-                        consts.MSG_CMD_SET_COVER:    self.onSetCover,
-                        consts.MSG_EVT_MOD_LOADED:   self.onModLoaded,
-                        consts.MSG_EVT_TRACK_MOVED:  self.onCurrentTrackMoved,
-                        consts.MSG_EVT_APP_STARTED:  self.onModLoaded,
-                        consts.MSG_EVT_MOD_UNLOADED: self.hideNotification,
-                   }
+            consts.MSG_EVT_STOPPED: self.hideNotification,
+            consts.MSG_EVT_APP_QUIT: self.hideNotification,
+            consts.MSG_EVT_NEW_TRACK: self.onNewTrack,
+            consts.MSG_CMD_SET_COVER: self.onSetCover,
+            consts.MSG_EVT_MOD_LOADED: self.onModLoaded,
+            consts.MSG_EVT_TRACK_MOVED: self.onCurrentTrackMoved,
+            consts.MSG_EVT_APP_STARTED: self.onModLoaded,
+            consts.MSG_EVT_MOD_UNLOADED: self.hideNotification,
+        }
 
         modules.Module.__init__(self, handlers)
-
 
     def hideNotification(self):
         """ Hide the notification """
@@ -78,12 +77,11 @@ class DesktopNotification(modules.Module):
             self.timeout = None
 
         if self.notif is not None:
-            ## Catch errors that occur when pynotify is not installed properly
+            # Catch errors that occur when pynotify is not installed properly.
             try:
                 self.notif.close()
             except GObject.GError:
                 pass
-
 
     def __createNotification(self, title, body, icon):
         """ Create the Notification object """
@@ -97,7 +95,6 @@ class DesktopNotification(modules.Module):
         if prefs.get(__name__, 'skip-track', PREFS_DEFAULT_SKIP_TRACK):
             self.notif.add_action('stop', _('Skip track'), self.onSkipTrack)
 
-
     def showNotification(self):
         """ Show the notification based on the current track """
         self.timeout = None
@@ -107,21 +104,27 @@ class DesktopNotification(modules.Module):
             return False
 
         # Contents
-        body  = self.currTrack.formatHTMLSafe(prefs.get(__name__, 'body',  PREFS_DEFAULT_BODY))
+        body = self.currTrack.formatHTMLSafe(prefs.get(__name__, 'body', PREFS_DEFAULT_BODY))
         title = self.currTrack.format(prefs.get(__name__, 'title', PREFS_DEFAULT_TITLE))
 
         # Icon
-        if self.currCover is None: img = consts.fileImgIcon64
-        else:                      img = self.currCover
+        if self.currCover is None:
+            img = consts.fileImgIcon64
+        else:
+            img = self.currCover
 
-        if os.path.isfile(img): icon = 'file://' + img
-        else:                   icon = Gtk.STOCK_DIALOG_INFO
+        if os.path.isfile(img):
+            icon = 'file://' + img
+        else:
+            icon = Gtk.STOCK_DIALOG_INFO
 
         # Create / Update the notification and show it
-        if self.notif is None: self.__createNotification(title, body, icon)
-        else:                  self.notif.update(title, body, icon)
+        if self.notif is None:
+            self.__createNotification(title, body, icon)
+        else:
+            self.notif.update(title, body, icon)
 
-        ## Catch errors that occur when pynotify is not installed properly
+        # Catch errors that occur when pynotify is not installed properly.
         try:
             self.notif.show()
         except GObject.GError:
@@ -129,27 +132,25 @@ class DesktopNotification(modules.Module):
 
         return False
 
-
     def onSkipTrack(self, _notification, _action):
         """ The user wants to skip the current track """
-        if self.hasNext: modules.postMsg(consts.MSG_CMD_NEXT)
-        else:            modules.postMsg(consts.MSG_CMD_STOP)
-
+        if self.hasNext:
+            modules.postMsg(consts.MSG_CMD_NEXT)
+        else:
+            modules.postMsg(consts.MSG_CMD_STOP)
 
     # --== Message handlers ==--
-
 
     def onModLoaded(self):
         """ The module has been loaded """
         assert Notify
 
-        self.notif     = None
-        self.cfgWin    = None
-        self.hasNext   = False
-        self.timeout   = None
+        self.notif = None
+        self.cfgWin = None
+        self.hasNext = False
+        self.timeout = None
         self.currTrack = None
         self.currCover = None
-
 
     def onNewTrack(self, track):
         """ A new track is being played """
@@ -162,21 +163,17 @@ class DesktopNotification(modules.Module):
         # Wait a bit for the cover to be set (if any)
         self.timeout = GObject.timeout_add(500, self.showNotification)
 
-
     def onSetCover(self, track, pathThumbnail, pathFullSize):
         """ The cover for the given track """
         # We must check first whether currTrack is not None, because '==' calls the cmp() method and this fails on None
         if self.currTrack is not None and track == self.currTrack:
             self.currCover = pathThumbnail
 
-
     def onCurrentTrackMoved(self, hasNext, hasPrevious):
         """ The position of the current track has changed """
         self.hasNext = hasNext
 
-
     # --== Configuration ==--
-
 
     def configure(self, parent):
         """ Show the configuration window """
@@ -202,7 +199,6 @@ class DesktopNotification(modules.Module):
 
         self.cfgWin.show()
 
-
     def onBtnOk(self, btn):
         """ Save new preferences """
         # Skipping tracks
@@ -211,8 +207,10 @@ class DesktopNotification(modules.Module):
         prefs.set(__name__, 'skip-track', newSkipTrack)
 
         if oldSkipTrack != newSkipTrack and self.notif is not None:
-            if newSkipTrack: self.notif.add_action('stop', _('Skip track'), self.onSkipTrack)
-            else:            self.notif.clear_actions()
+            if newSkipTrack:
+                self.notif.add_action('stop', _('Skip track'), self.onSkipTrack)
+            else:
+                self.notif.clear_actions()
 
         # Timeout
         newTimeout = int(self.cfgWin.getWidget('spn-duration').get_value())
@@ -229,7 +227,6 @@ class DesktopNotification(modules.Module):
         prefs.set(__name__, 'body', self.cfgWin.getWidget('txt-body').get_buffer().get_text(start, end, False))
         self.cfgWin.hide()
 
-
     def onBtnHelp(self, btn):
         """ Display a small help message box """
         from pogo import media
@@ -237,7 +234,7 @@ class DesktopNotification(modules.Module):
 
         helpDlg = HelpDlg(MOD_INFO[modules.MODINFO_L10N])
         helpDlg.addSection(_('Description'),
-                           _('This module displays a small popup window on your desktop when a new track starts.') + ' ' + \
+                           _('This module displays a small popup window on your desktop when a new track starts.') + ' ' +
                            _('If the Covers module is enabled, the popup also shows the album cover.'))
         helpDlg.addSection(_('Customizing the Notification'),
                            _('You can change the title and the body of the notification to any text you want. Before displaying '

@@ -44,7 +44,6 @@ urlMain = 'https://github.com/jendrikseipp/pogo'
 urlHelp = 'http://answers.launchpad.net/pogo'
 
 
-
 # --- Directories
 dirBaseUsr = os.path.expanduser('~')
 dirBaseCfg = os.path.join(dirBaseUsr, '.config')
@@ -57,7 +56,7 @@ dirCfg = os.path.join(dirBaseCfg, appNameShort)
 dirLog = os.path.join(dirCfg, 'Logs')
 
 dirLocale = os.path.join(dirBaseSrc, '..', 'locale')
-if not os.path.isdir(dirLocale) :
+if not os.path.isdir(dirLocale):
     dirLocale = os.path.join(dirBaseSrc, '..', '..', 'locale')
 
 # Make sure the config directory exists
@@ -73,37 +72,37 @@ if not os.path.exists(dirLog):
 
 
 # --- Icons
-fileImgIcon16  = os.path.join(dirPix, 'pogo-16.png')
-fileImgIcon24  = os.path.join(dirPix, 'pogo-24.png')
-fileImgIcon32  = os.path.join(dirPix, 'pogo-32.png')
-fileImgIcon48  = os.path.join(dirPix, 'pogo-48.png')
-fileImgIcon64  = os.path.join(dirPix, 'pogo-64.png')
+fileImgIcon16 = os.path.join(dirPix, 'pogo-16.png')
+fileImgIcon24 = os.path.join(dirPix, 'pogo-24.png')
+fileImgIcon32 = os.path.join(dirPix, 'pogo-32.png')
+fileImgIcon48 = os.path.join(dirPix, 'pogo-48.png')
+fileImgIcon64 = os.path.join(dirPix, 'pogo-64.png')
 fileImgIcon128 = os.path.join(dirPix, 'pogo-128.png')
 
 
 # --- Files
-fileLog     = os.path.join(dirLog, 'log')
-filePrefs   = os.path.join(dirCfg, 'prefs')
+fileLog = os.path.join(dirLog, 'log')
+filePrefs = os.path.join(dirCfg, 'prefs')
 fileLicense = os.path.join(dirDoc, 'LICENCE')
 
 
 # --- DBus constants
-dbusService   = 'org.mpris.pogo'
+dbusService = 'org.mpris.pogo'
 dbusInterface = 'org.freedesktop.MediaPlayer'
 
 
 # --- Tracks
-UNKNOWN_DATE         = 0
-UNKNOWN_GENRE        = _('Unknown Genre')
-UNKNOWN_TITLE        = _('Unknown Title')
-UNKNOWN_ALBUM        = _('Unknown Album')
-UNKNOWN_ARTIST       = _('Unknown Artist')
-UNKNOWN_LENGTH       = 0
-UNKNOWN_BITRATE      = 0
-UNKNOWN_ENC_MODE     = 0
-UNKNOWN_MB_TRACKID   = 0
-UNKNOWN_DISC_NUMBER  = 0
-UNKNOWN_SAMPLE_RATE  = 0
+UNKNOWN_DATE = 0
+UNKNOWN_GENRE = _('Unknown Genre')
+UNKNOWN_TITLE = _('Unknown Title')
+UNKNOWN_ALBUM = _('Unknown Album')
+UNKNOWN_ARTIST = _('Unknown Artist')
+UNKNOWN_LENGTH = 0
+UNKNOWN_BITRATE = 0
+UNKNOWN_ENC_MODE = 0
+UNKNOWN_MB_TRACKID = 0
+UNKNOWN_DISC_NUMBER = 0
+UNKNOWN_SAMPLE_RATE = 0
 UNKNOWN_TRACK_NUMBER = 0
 UNKNOWN_ALBUM_ARTIST = _('Unknown Album Artist')
 
@@ -115,9 +114,9 @@ UNKNOWN_ALBUM_ARTIST = _('Unknown Album Artist')
 ) = list(range(2))
 
 DND_TARGETS = {
-                DND_URI:         ('text/uri-list',   0,                   DND_URI),
-                DND_POGO_URI:    ('pogo/uri-list',    Gtk.TargetFlags.SAME_APP, DND_POGO_URI),
-              }
+    DND_URI: ('text/uri-list', 0, DND_URI),
+    DND_POGO_URI: ('pogo/uri-list', Gtk.TargetFlags.SAME_APP, DND_POGO_URI),
+}
 
 DND_INTERNAL_TARGET_NAME = 'exttreeview-internal'
 
