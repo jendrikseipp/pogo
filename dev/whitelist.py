@@ -11,6 +11,11 @@ BASE_DIR = os.path.dirname(DIR)
 
 sys.path.insert(0, BASE_DIR)
 
+from pogo import modules
+
+modules.ThreadedModule.gtkExecute
+modules.ThreadedModule.threadExecute
+
 from pogo.modules import Covers, CtrlPanel, DBus, DesktopNotification, Equalizer, \
     FileExplorer, GnomeMediaKeys, GSTPlayer, Search, StatusbarTitlebar, \
     TrackLoader, TrackPanel, Tracktree
@@ -58,3 +63,8 @@ dbop.GetStatus
 dbop.GetCaps
 dbop.PositionSet
 dbop.PositionGet
+
+from pogo.media.track import Track
+
+Track.getAlbumArtist
+Track.getMBTrackId
