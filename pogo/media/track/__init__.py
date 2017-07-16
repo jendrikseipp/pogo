@@ -146,17 +146,6 @@ class Track:
         return '%.1f kHz' % (self.__get(TAG_SMP, consts.UNKNOWN_SAMPLE_RATE) / 1000.0)
 
 
-    def getTitleOrFilename(self):
-        """
-            If the track is properly tagged, return the title
-            Otherwise, return the filename
-        """
-        title = self.getTitle()
-
-        if title == consts.UNKNOWN_TITLE: return self.getFilename()
-        else:                             return title
-
-
     def getURI(self):
         """ Return the complete URI to the resource """
         try:    return self.tags[TAG_SCH] + '://' + self.tags[TAG_RES]
@@ -292,9 +281,8 @@ class Track:
 
 
     def getTags(self):
-        """ Return the disctionary of tags """
+        """ Return the dictionary of tags """
         return self.tags
-
 
     def setTags(self, tags):
         """ Set the disctionary of tags """
@@ -353,7 +341,6 @@ class Track:
         title = self.tags.get(TAG_TIT, '')
         artist = self.tags.get(TAG_ART, '')
 
-        # Handle useless tags
         if not title:
             return self.getBasename()
         return ' - '.join([part for part in [artist, title] if part])
