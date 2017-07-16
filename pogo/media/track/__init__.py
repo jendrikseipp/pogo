@@ -146,14 +146,6 @@ class Track:
         return '%.1f kHz' % (self.__get(TAG_SMP, consts.UNKNOWN_SAMPLE_RATE) / 1000.0)
 
 
-    def getSafeNumber(self):    return str(self.__get(TAG_NUM, ''))
-    def getSafeTitle(self):     return self.__get(TAG_TIT, '')
-    def getSafeArtist(self):    return self.__get(TAG_ART, '')
-    def getSafeAlbum(self):     return self.__get(TAG_ALB, '')
-    def getSafeLength(self):    return str(self.__get(TAG_LEN, ''))
-    def getSafeMBTrackId(self): return self.__get(TAG_MBT, '')
-
-
     def getTitleOrFilename(self):
         """
             If the track is properly tagged, return the title
