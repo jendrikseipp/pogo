@@ -231,7 +231,10 @@ class DBusObjectTracklist(dbus.service.Object):
         decodedURI = urllib.parse.unquote(uri)
 
         if decodedURI.startswith('file://'):
-            GObject.idle_add(modules.postMsg, consts.MSG_CMD_TRACKLIST_ADD, {'tracks': [media.getTrackFromFile(decodedURI[7:])], 'playNow': playNow})
+            GObject.idle_add(
+                modules.postMsg,
+                consts.MSG_CMD_TRACKLIST_ADD,
+                {'tracks': [media.getTrackFromFile(decodedURI[7:])], 'playNow': playNow})
             return 0
 
         return 1

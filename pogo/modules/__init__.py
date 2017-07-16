@@ -157,8 +157,9 @@ def __postMsg(msg, params={}):
 
 def postMsg(msg, params={}):
     """ Post a message to the queue of modules that registered for this type of message """
-    # We need to ensure that posting messages will be done by the GTK main loop
-    # Otherwise, the code of threaded modules could be executed in the caller's thread, which could cause problems when calling GTK functions
+    # We need to ensure that posting messages will be done by the GTK main loop.
+    # Otherwise, the code of threaded modules could be executed in the caller's
+    # thread, which could cause problems when calling GTK functions.
     GObject.idle_add(__postMsg, msg, params)
 
 

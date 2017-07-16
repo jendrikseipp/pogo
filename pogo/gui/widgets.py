@@ -44,7 +44,9 @@ from pogo.tools import consts
 DND_REORDERING_ID = 1024
 DND_INTERNAL_TARGET = (consts.DND_INTERNAL_TARGET_NAME, Gtk.TargetFlags.SAME_WIDGET, DND_REORDERING_ID)
 
-GObject.signal_new('tracktreeview-dnd', Gtk.TreeView, GObject.SIGNAL_RUN_LAST, GObject.TYPE_NONE, (Gdk.DragContext, GObject.TYPE_INT, GObject.TYPE_INT, Gtk.SelectionData, GObject.TYPE_INT, GObject.TYPE_PYOBJECT))
+GObject.signal_new(
+    'tracktreeview-dnd', Gtk.TreeView, GObject.SIGNAL_RUN_LAST, GObject.TYPE_NONE,
+    (Gdk.DragContext, GObject.TYPE_INT, GObject.TYPE_INT, Gtk.SelectionData, GObject.TYPE_INT, GObject.TYPE_PYOBJECT))
 
 
 class TrackTreeView(ExtTreeView):

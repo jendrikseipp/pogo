@@ -64,8 +64,10 @@ FIELDS = (
 
 def getFormatSpecialFields(usePango=True):
     """
-        Return a string in plain English (or whatever language being used) giving the special fields that may be used to call Track.format()
-        If usePango is True, the returned string uses Pango formatting for better presentation
+    Return a string in plain English (or whatever language being used)
+    giving the special fields that may be used to call Track.format() If
+    usePango is True, the returned string uses Pango formatting for
+    better presentation.
     """
     if usePango:
         return '\n'.join(['<tt><b>%s</b></tt> %s' % (field.ljust(14), desc) for (field, desc) in FIELDS])

@@ -296,7 +296,9 @@ class Covers(modules.ThreadedModule):
 
             # Make sure the files are still there
             if os.path.exists(pathThumbnail) and os.path.exists(pathFullSize):
-                modules.postMsg(consts.MSG_CMD_SET_COVER, {'track': track, 'pathThumbnail': pathThumbnail, 'pathFullSize': pathFullSize})
+                modules.postMsg(
+                    consts.MSG_CMD_SET_COVER,
+                    {'track': track, 'pathThumbnail': pathThumbnail, 'pathFullSize': pathFullSize})
                 return
 
         # Should we check for a user cover?
@@ -310,7 +312,9 @@ class Covers(modules.ThreadedModule):
 
         # If we still don't have a cover, maybe we can try to download it
         if rawCover is None:
-            modules.postMsg(consts.MSG_CMD_SET_COVER, {'track': track, 'pathThumbnail': None, 'pathFullSize': None})
+            modules.postMsg(
+                consts.MSG_CMD_SET_COVER,
+                {'track': track, 'pathThumbnail': None, 'pathFullSize': None})
 
             if prefs.get(__name__, 'download-covers', PREFS_DFT_DOWNLOAD_COVERS):
                 rawCover = self.getFromInternet(artist, album)
@@ -326,9 +330,13 @@ class Covers(modules.ThreadedModule):
             self.generateFullSizeCover(rawCover, fullSizeCover, 'PNG')
             if os.path.exists(thumbnail) and os.path.exists(fullSizeCover):
                 self.coverMap[(artist, album)] = (thumbnail, fullSizeCover)
-                modules.postMsg(consts.MSG_CMD_SET_COVER, {'track': track, 'pathThumbnail': thumbnail, 'pathFullSize': fullSizeCover})
+                modules.postMsg(
+                    consts.MSG_CMD_SET_COVER,
+                    {'track': track, 'pathThumbnail': thumbnail, 'pathFullSize': fullSizeCover})
             else:
-                modules.postMsg(consts.MSG_CMD_SET_COVER, {'track': track, 'pathThumbnail': None, 'pathFullSize': None})
+                modules.postMsg(
+                    consts.MSG_CMD_SET_COVER,
+                    {'track': track, 'pathThumbnail': None, 'pathFullSize': None})
 
     # --== Configuration ==--
 

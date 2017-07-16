@@ -89,7 +89,10 @@ class AudioPlayer:
         self.rgEnabled = True
 
     def setEqualizerLvls(self, lvls):
-        """ Set the level of the 10-bands of the equalizer (levels must be a list/tuple with 10 values lying between -24 and +12) """
+        """
+        Set the level of the 10-bands of the equalizer (levels must be a
+        list/tuple with 10 values lying between -24 and +12).
+        """
         if len(lvls) == 10:
             self.eqzLevels = lvls
 
@@ -115,8 +118,9 @@ class AudioPlayer:
             self.callbackEnded(False)
         elif msg.type == Gst.MessageType.ERROR:
             self.stop()
-            # It seems that the pipeline may not be able to play again any valid stream when an error occurs
-            # We thus create a new one, even if that's quite a ugly solution
+            # It seems that the pipeline may not be able to play again
+            # any valid stream when an error occurs.
+            # We thus create a new one, even if that's quite a ugly solution.
             self.__constructPlayer()
             self.callbackEnded(True)
 

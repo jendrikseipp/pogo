@@ -270,7 +270,9 @@ class Tracktree(modules.Module):
         # We only want to start playback if tracks are appended from DBus
         # or appended (not inserted) into the playlist.
         # In that case target is None. Also don't interrupt playing songs.
-        logging.info('playNow: %s, target: %s, self.tree.hasMark(): %s, self.paused: %s' % (playNow, target, self.tree.hasMark(), self.paused))
+        logging.info(
+            'playNow: %s, target: %s, self.tree.hasMark(): %s, self.paused: %s' %
+            (playNow, target, self.tree.hasMark(), self.paused))
         if playNow and target is None and (not self.tree.hasMark() or self.paused):
             # If the target is None, the tracks have to be appended to the top
             # level and the first new track is the one after the original tracks
@@ -643,10 +645,14 @@ class Tracktree(modules.Module):
         tracks = self.getTrackDir()
         self.playtime = tracks.get_playtime()
 
-        modules.postMsg(consts.MSG_EVT_NEW_TRACKLIST, {'tracks': tracks, 'playtime': self.playtime})
+        modules.postMsg(
+            consts.MSG_EVT_NEW_TRACKLIST,
+            {'tracks': tracks, 'playtime': self.playtime})
 
         if self.tree.hasMark():
-            modules.postMsg(consts.MSG_EVT_TRACK_MOVED, {'hasPrevious': self.__hasPreviousTrack(), 'hasNext': self.__hasNextTrack()})
+            modules.postMsg(
+                consts.MSG_EVT_TRACK_MOVED,
+                {'hasPrevious': self.__hasPreviousTrack(), 'hasNext': self.__hasNextTrack()})
 
     def onDND(self, list, context, x, y, dragData, dndId, time):
         """ External Drag'n'Drop """

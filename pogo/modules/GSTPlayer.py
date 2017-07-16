@@ -114,7 +114,15 @@ class GSTPlayer(modules.Module):
         self.playbackTimer = None
 
     def onPlay(self, uri, forced):
-        """ Play the given URI """
+        """Play the given URI
+
+        Looks like GStreamer can break if we start/stop the pipeline too
+        quickly (e.g., when clicking "next" very fast). We minimize the
+        load in these extreme cases by ensuring that at least one second
+        has elapsed since the last playback. Note that this delay is
+        avoided when tracks are chained, since the playback of the next
+        track has then already started (uri == self.nextURI).
+        """
         if forced or uri != self.nextURI:
             self.player.stop()
             self.player.setURI(uri)
@@ -122,15 +130,14 @@ class GSTPlayer(modules.Module):
 
         elapsed = time() - self.lastPlayback
 
-        # Looks like GStreamer can be pretty much fucked if we start/stop the pipeline too quickly (e.g., when clicking "next" very fast)
-        # We minimize the load in these extreme cases by ensuring that at least one second has elapsed since the last playback
-        # Note that this delay is avoided when tracks are chained, since the playback of the next track has then already started (uri == self.nextURI)
         if elapsed >= MIN_PLAYBACK_DELAY:
             self.__playbackTimerHandler()
         else:
             if self.playbackTimer is not None:
                 GObject.source_remove(self.playbackTimer)
-            self.playbackTimer = GObject.timeout_add(int((MIN_PLAYBACK_DELAY - elapsed) * 1000), self.__playbackTimerHandler)
+            self.playbackTimer = GObject.timeout_add(
+                int((MIN_PLAYBACK_DELAY - elapsed) * 1000),
+                self.__playbackTimerHandler)
 
     def onStop(self):
         """ Stop playing """

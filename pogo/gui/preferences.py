@@ -154,7 +154,9 @@ class Preferences:
                     icon = icons.prefsBtnIcon()
                 else:
                     icon = None
-                text = '<b>%s</b>\n<small>%s</small>' % (tools.htmlEscape(_(name)), tools.htmlEscape(data[modules.MOD_INFO][modules.MODINFO_DESC]))
+                text = '<b>%s</b>\n<small>%s</small>' % (
+                    tools.htmlEscape(_(name)),
+                    tools.htmlEscape(data[modules.MOD_INFO][modules.MODINFO_DESC]))
                 rows.append((instance is not None, text, icon, not mandatory, instance, data[modules.MOD_INFO]))
 
         rows.sort(key=lambda row: row[ROW_TEXT])
