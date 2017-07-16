@@ -233,14 +233,6 @@ class Track:
         return data
 
 
-    def getTags(self):
-        """ Return the dictionary of tags """
-        return self.tags
-
-    def setTags(self, tags):
-        """ Set the disctionary of tags """
-        self.tags = tags
-
     def get_label(self, parent_label=None, playing=False):
         """
         Return a treeview representation
