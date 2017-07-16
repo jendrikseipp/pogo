@@ -26,22 +26,22 @@ def getTrack(filename):
 
     wavFile = wave.open(filename)
 
-    length     = int(round(wavFile.getnframes() / float(wavFile.getframerate())))
-    bitrate    = -1
+    length = int(round(wavFile.getnframes() / float(wavFile.getframerate())))
+    bitrate = -1
     samplerate = wavFile.getframerate()
 
     wavFile.close()
 
-    date          = None
-    isVBR         = False
-    title         = None
-    album         = None
-    genre         = None
-    artist        = None
-    discNumber    = None
-    albumArtist   = None
-    trackNumber   = None
+    date = None
+    isVBR = False
+    title = None
+    album = None
+    genre = None
+    artist = None
+    discNumber = None
+    albumArtist = None
+    trackNumber = None
     musicbrainzId = None
 
     return createFileTrack(filename, bitrate, length, samplerate, isVBR, title, album, artist, albumArtist,
-                musicbrainzId, genre, trackNumber, date, discNumber)
+                           musicbrainzId, genre, trackNumber, date, discNumber)

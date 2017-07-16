@@ -25,36 +25,54 @@ def getTrack(filename):
 
     oggFile = OggVorbis(filename)
 
-    length     = int(round(oggFile.info.length))
-    bitrate    = int(oggFile.info.bitrate)
+    length = int(round(oggFile.info.length))
+    bitrate = int(oggFile.info.bitrate)
     samplerate = int(oggFile.info.sample_rate)
 
-    try:    title = str(oggFile['title'][0])
-    except: title = None
+    try:
+        title = str(oggFile['title'][0])
+    except:
+        title = None
 
-    try:    album = str(oggFile['album'][0])
-    except: album = None
+    try:
+        album = str(oggFile['album'][0])
+    except:
+        album = None
 
-    try:    artist = str(oggFile['artist'][0])
-    except: artist = None
+    try:
+        artist = str(oggFile['artist'][0])
+    except:
+        artist = None
 
-    try:    albumArtist = str(oggFile['albumartist'][0])
-    except: albumArtist = None
+    try:
+        albumArtist = str(oggFile['albumartist'][0])
+    except:
+        albumArtist = None
 
-    try:    genre = str(oggFile['genre'][0])
-    except: genre = None
+    try:
+        genre = str(oggFile['genre'][0])
+    except:
+        genre = None
 
-    try:    musicbrainzId = str(oggFile['musicbrainz_trackid'][0])
-    except: musicbrainzId = None
+    try:
+        musicbrainzId = str(oggFile['musicbrainz_trackid'][0])
+    except:
+        musicbrainzId = None
 
-    try:    trackNumber = str(oggFile['tracknumber'][0])
-    except: trackNumber = None
+    try:
+        trackNumber = str(oggFile['tracknumber'][0])
+    except:
+        trackNumber = None
 
-    try:    discNumber = str(oggFile['discnumber'][0])
-    except: discNumber = None
+    try:
+        discNumber = str(oggFile['discnumber'][0])
+    except:
+        discNumber = None
 
-    try:    date = str(oggFile['date'][0])
-    except: date = None
+    try:
+        date = str(oggFile['date'][0])
+    except:
+        date = None
 
     return createFileTrack(filename, bitrate, length, samplerate, True, title, album, artist, albumArtist,
-                musicbrainzId, genre, trackNumber, date, discNumber)
+                           musicbrainzId, genre, trackNumber, date, discNumber)

@@ -21,16 +21,16 @@ from gi.repository import GdkPixbuf
 from gi.repository import Gtk
 
 
-__lbl               = None
-__dirMenuIcon       = None
-__prefsBtnIcon      = None
-__nullMenuIcon      = None
-__playMenuIcon      = None
-__pauseMenuIcon     = None
-__cdromMenuIcon     = None
-__errorMenuIcon     = None
-__infoMenuIcon      = None
-__mediaDirMenuIcon  = None
+__lbl = None
+__dirMenuIcon = None
+__prefsBtnIcon = None
+__nullMenuIcon = None
+__playMenuIcon = None
+__pauseMenuIcon = None
+__cdromMenuIcon = None
+__errorMenuIcon = None
+__infoMenuIcon = None
+__mediaDirMenuIcon = None
 __mediaFileMenuIcon = None
 
 

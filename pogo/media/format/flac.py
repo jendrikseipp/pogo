@@ -25,35 +25,53 @@ def getTrack(filename):
 
     flacFile = FLAC(filename)
 
-    length     = int(round(flacFile.info.length))
+    length = int(round(flacFile.info.length))
     samplerate = int(flacFile.info.sample_rate)
 
-    try:    title = str(flacFile['title'][0])
-    except: title = None
+    try:
+        title = str(flacFile['title'][0])
+    except:
+        title = None
 
-    try:    album = str(flacFile['album'][0])
-    except: album = None
+    try:
+        album = str(flacFile['album'][0])
+    except:
+        album = None
 
-    try:    artist = str(flacFile['artist'][0])
-    except: artist = None
+    try:
+        artist = str(flacFile['artist'][0])
+    except:
+        artist = None
 
-    try:    albumArtist = str(flacFile['albumartist'][0])
-    except: albumArtist = None
+    try:
+        albumArtist = str(flacFile['albumartist'][0])
+    except:
+        albumArtist = None
 
-    try:    genre = str(flacFile['genre'][0])
-    except: genre = None
+    try:
+        genre = str(flacFile['genre'][0])
+    except:
+        genre = None
 
-    try:    musicbrainzId = str(flacFile['musicbrainz_trackid'][0])
-    except: musicbrainzId = None
+    try:
+        musicbrainzId = str(flacFile['musicbrainz_trackid'][0])
+    except:
+        musicbrainzId = None
 
-    try:    trackNumber = str(flacFile['tracknumber'][0])
-    except: trackNumber = None
+    try:
+        trackNumber = str(flacFile['tracknumber'][0])
+    except:
+        trackNumber = None
 
-    try:    discNumber = str(flacFile['discnumber'][0])
-    except: discNumber = None
+    try:
+        discNumber = str(flacFile['discnumber'][0])
+    except:
+        discNumber = None
 
-    try:    date = str(flacFile['date'][0])
-    except: date = None
+    try:
+        date = str(flacFile['date'][0])
+    except:
+        date = None
 
     return createFileTrack(filename, -1, length, samplerate, False, title, album, artist, albumArtist,
-                musicbrainzId, genre, trackNumber, date, discNumber)
+                           musicbrainzId, genre, trackNumber, date, discNumber)

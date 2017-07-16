@@ -26,42 +26,62 @@ def getTrack(filename):
 
     mp3File = MP3(filename)
 
-    length     = int(round(mp3File.info.length))
-    bitrate    = int(mp3File.info.bitrate)
+    length = int(round(mp3File.info.length))
+    bitrate = int(mp3File.info.bitrate)
     samplerate = int(mp3File.info.sample_rate)
 
     # Don't set VBR information for MP3 files (#1202195)
     isVBR = False
 
-    try:    id3 = ID3(filename)
-    except: return createFileTrack(filename, bitrate, length, samplerate, isVBR)
+    try:
+        id3 = ID3(filename)
+    except:
+        return createFileTrack(filename, bitrate, length, samplerate, isVBR)
 
-    try:    title = str(id3['TIT2'])
-    except: title = None
+    try:
+        title = str(id3['TIT2'])
+    except:
+        title = None
 
-    try:    album = str(id3['TALB'])
-    except: album = None
+    try:
+        album = str(id3['TALB'])
+    except:
+        album = None
 
-    try:    artist = str(id3['TPE1'])
-    except: artist = None
+    try:
+        artist = str(id3['TPE1'])
+    except:
+        artist = None
 
-    try:    albumArtist = str(id3['TPE2'])
-    except: albumArtist = None
+    try:
+        albumArtist = str(id3['TPE2'])
+    except:
+        albumArtist = None
 
-    try:    musicbrainzId = id3['UFID:http://musicbrainz.org'].data
-    except: musicbrainzId = None
+    try:
+        musicbrainzId = id3['UFID:http://musicbrainz.org'].data
+    except:
+        musicbrainzId = None
 
-    try:    genre = str(id3['TCON'])
-    except: genre = None
+    try:
+        genre = str(id3['TCON'])
+    except:
+        genre = None
 
-    try:    trackNumber = str(id3['TRCK'])
-    except: trackNumber = None
+    try:
+        trackNumber = str(id3['TRCK'])
+    except:
+        trackNumber = None
 
-    try:    date = str(id3['TDRC'][0].year)
-    except: date = None
+    try:
+        date = str(id3['TDRC'][0].year)
+    except:
+        date = None
 
-    try:    discNumber = str(id3['TPOS'])
-    except: discNumber = None
+    try:
+        discNumber = str(id3['TPOS'])
+    except:
+        discNumber = None
 
     return createFileTrack(filename, bitrate, length, samplerate, isVBR, title, album, artist, albumArtist,
-                musicbrainzId, genre, trackNumber, date, discNumber)
+                           musicbrainzId, genre, trackNumber, date, discNumber)

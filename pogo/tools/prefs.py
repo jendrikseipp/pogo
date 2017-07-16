@@ -46,7 +46,7 @@ def save():
 def set(module, name, value):
     """ Change the value of a preference """
     with __mutex:
-        __usrPrefs[module + '_' + name] = value;
+        __usrPrefs[module + '_' + name] = value
 
 
 def get(module, name, default=None):
@@ -63,6 +63,7 @@ def get(module, name, default=None):
 def setCmdLine(cmdLine):
     __appGlobals['cmdLine'] = cmdLine
 
+
 def getCmdLine():
     return __appGlobals['cmdLine']
 
@@ -70,6 +71,7 @@ def getCmdLine():
 # Main widgets' tree created by Glade
 def setWidgetsTree(tree):
     __appGlobals['wTree'] = tree
+
 
 def getWidgetsTree():
     return __appGlobals['wTree']

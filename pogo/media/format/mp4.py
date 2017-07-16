@@ -25,33 +25,49 @@ def getTrack(filename):
 
     mp4File = MP4(filename)
 
-    length     = int(round(mp4File.info.length))
-    bitrate    = int(mp4File.info.bitrate)
+    length = int(round(mp4File.info.length))
+    bitrate = int(mp4File.info.bitrate)
     samplerate = int(mp4File.info.sample_rate)
 
-    try:    trackNumber = str(mp4File['trkn'][0][0])
-    except: trackNumber = None
+    try:
+        trackNumber = str(mp4File['trkn'][0][0])
+    except:
+        trackNumber = None
 
-    try:    discNumber = str(mp4File['disk'][0][0])
-    except: discNumber = None
+    try:
+        discNumber = str(mp4File['disk'][0][0])
+    except:
+        discNumber = None
 
-    try:    date = str(mp4File['\xa9day'][0][0])
-    except: date = None
+    try:
+        date = str(mp4File['\xa9day'][0][0])
+    except:
+        date = None
 
-    try:    title = str(mp4File['\xa9nam'][0])
-    except: title = None
+    try:
+        title = str(mp4File['\xa9nam'][0])
+    except:
+        title = None
 
-    try:    album = str(mp4File['\xa9alb'][0])
-    except: album = None
+    try:
+        album = str(mp4File['\xa9alb'][0])
+    except:
+        album = None
 
-    try:    artist = str(mp4File['\xa9ART'][0])
-    except: artist = None
+    try:
+        artist = str(mp4File['\xa9ART'][0])
+    except:
+        artist = None
 
-    try:    genre = str(mp4File['\xa9gen'][0])
-    except: genre = None
+    try:
+        genre = str(mp4File['\xa9gen'][0])
+    except:
+        genre = None
 
-    try:    albumArtist = str(mp4File['aART'][0])
-    except: albumArtist = None
+    try:
+        albumArtist = str(mp4File['aART'][0])
+    except:
+        albumArtist = None
 
     return createFileTrack(filename, bitrate, length, samplerate, False, title, album, artist, albumArtist,
-                None, genre, trackNumber, date, discNumber)
+                           None, genre, trackNumber, date, discNumber)

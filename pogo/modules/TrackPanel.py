@@ -38,18 +38,16 @@ class TrackPanel(modules.Module):
     def __init__(self):
         """ Constructor """
         handlers = {
-                        consts.MSG_EVT_STOPPED:     self.onStopped,
-                        consts.MSG_CMD_SET_COVER:   self.onSetCover,
-                        consts.MSG_EVT_NEW_TRACK:   self.onNewTrack,
-                        consts.MSG_EVT_APP_STARTED: self.onAppStarted,
-                        consts.MSG_EVT_APP_QUIT:    self.onAppQuit,
-                   }
+            consts.MSG_EVT_STOPPED: self.onStopped,
+            consts.MSG_CMD_SET_COVER: self.onSetCover,
+            consts.MSG_EVT_NEW_TRACK: self.onNewTrack,
+            consts.MSG_EVT_APP_STARTED: self.onAppStarted,
+            consts.MSG_EVT_APP_QUIT: self.onAppQuit,
+        }
 
         modules.Module.__init__(self, handlers)
 
-
     # --== Message handlers ==--
-
 
     def onAppStarted(self):
         """ Real initialization function, called when this module has been loaded """
@@ -63,17 +61,14 @@ class TrackPanel(modules.Module):
         """ The application is about to terminate """
         prefs.set(__name__, 'show_thumb', self.cover_spot.show_thumb)
 
-
     def onNewTrack(self, track):
         """ A new track is being played """
         self.currTrack = track
-
 
     def onStopped(self):
         """ Playback has been stopped """
         self.currTrack = None
         self.cover_spot.set_images(None, None)
-
 
     def onSetCover(self, track, pathThumbnail, pathFullSize):
         """ Set the cover that is currently displayed """
@@ -96,7 +91,6 @@ class TrackPanel(modules.Module):
                 os.symlink(pathThumbnail, linkThumb)
 
 
-
 class CoverSpot(object):
     def __init__(self, show_thumb):
         self.show_thumb = show_thumb
@@ -116,14 +110,12 @@ class CoverSpot(object):
         main_win.connect('focus-in-event', self.on_focus_in)
         main_win.connect('size-allocate', self.on_resize)
 
-
     def set_images(self, cover_path, thumb_path):
         self.cover_window.set_image(cover_path)
         self.thumb_window.set_image(thumb_path)
 
         if self.has_focus:
             self.onCoverClicked(None, None, self.show_thumb)
-
 
     def onCoverClicked(self, widget, event, show_thumb):
         """ Destroy the cover window """
@@ -137,22 +129,18 @@ class CoverSpot(object):
             self.thumb_window.hide()
         self.show_thumb = show_thumb
 
-
     def on_focus_out(self, widget, event):
         self.has_focus = False
         self.cover_window.hide()
         self.thumb_window.hide()
 
-
     def on_focus_in(self, widget, event):
         self.has_focus = True
         self.onCoverClicked(None, None, self.show_thumb)
 
-
     def on_resize(self, win, rectangle):
         self.cover_window.update_position()
         self.thumb_window.update_position()
-
 
 
 class CoverWindow(Gtk.Window):
@@ -169,7 +157,6 @@ class CoverWindow(Gtk.Window):
 
         self.has_cover = False
 
-
     def set_image(self, path):
         """
         Change the current image to imgPath.
@@ -185,13 +172,12 @@ class CoverWindow(Gtk.Window):
             self.update_position()
             self.has_cover = True
 
-
     def update_position(self):
         # Make the window exactly as big as the image, not bigger
         self.resize(2, 2)
 
         # Use default when tree is not yet realized
-        x, y = 0,0
+        x, y = 0, 0
 
         # Position the window in the bottom right corner
         wTree = tools.prefs.getWidgetsTree()
@@ -214,13 +200,12 @@ class CoverWindow(Gtk.Window):
             x, y = x + tree_width, y + tree_height
 
             # leave a little padding space
-            x, y = x-10, y-9
+            x, y = x - 10, y - 9
 
         pixbuf = self.image.get_pixbuf()
-        width  = pixbuf.get_width()
+        width = pixbuf.get_width()
         height = pixbuf.get_height()
         self.move(int(x - width), int(y - height))
-
 
     def show(self):
         if self.has_cover:

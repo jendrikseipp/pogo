@@ -25,32 +25,48 @@ def getTrack(filename):
 
     wvFile = WavPack(filename)
 
-    length     = int(round(wvFile.info.length))
+    length = int(round(wvFile.info.length))
     samplerate = int(wvFile.info.sample_rate)
 
-    try:    title = str(wvFile['Title'][0])
-    except: title = None
+    try:
+        title = str(wvFile['Title'][0])
+    except:
+        title = None
 
-    try:    album = str(wvFile['Album'][0])
-    except: album = None
+    try:
+        album = str(wvFile['Album'][0])
+    except:
+        album = None
 
-    try:    artist = str(wvFile['Artist'][0])
-    except: artist = None
+    try:
+        artist = str(wvFile['Artist'][0])
+    except:
+        artist = None
 
-    try:    albumArtist = str(wvFile['Album Artist'][0])
-    except: albumArtist = None
+    try:
+        albumArtist = str(wvFile['Album Artist'][0])
+    except:
+        albumArtist = None
 
-    try:    genre = str(wvFile['genre'][0])
-    except: genre = None
+    try:
+        genre = str(wvFile['genre'][0])
+    except:
+        genre = None
 
-    try:    trackNumber = str(wvFile['Track'][0])
-    except: trackNumber = None
+    try:
+        trackNumber = str(wvFile['Track'][0])
+    except:
+        trackNumber = None
 
-    try:    discNumber = str(wvFile['Disc'][0])
-    except: discNumber = None
+    try:
+        discNumber = str(wvFile['Disc'][0])
+    except:
+        discNumber = None
 
-    try:    date = str(wvFile['Year'][0])
-    except: date = None
+    try:
+        date = str(wvFile['Year'][0])
+    except:
+        date = None
 
     return createFileTrack(filename, -1, length, samplerate, False, title, album, artist, albumArtist,
-                None, genre, trackNumber, date, discNumber)
+                           None, genre, trackNumber, date, discNumber)

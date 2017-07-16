@@ -42,15 +42,16 @@ mFormats = {'.ac3': monkeysaudio, '.ape': monkeysaudio, '.flac': flac,
 
 def isSupported(file):
     """ Return True if the given file is a supported format """
-    try:    return splitext(file.lower())[1] in mFormats
-    except: return False
+    try:
+        return splitext(file.lower())[1] in mFormats
+    except:
+        return False
 
 
-
-_track_cache = {}
 # It seems a lock is not really necessary here. It does slow down execution
-# a little bit though, so don't use it.
-#_track_cache_lock = threading.Lock()
+# a little bit though, so we currently don't use a lock.
+_track_cache = {}
+
 
 def _getTrackFromFile(file):
     """
@@ -63,20 +64,17 @@ def _getTrackFromFile(file):
         logger.error('Unable to extract information from %s\n\n%s' % (file, traceback.format_exc()))
         return FileTrack(file)
 
+
 def getTrackFromFile(file):
     """
         Return a Track object, based on the tags of the given file
         The 'file' parameter must be a real file (not a playlist or a directory)
     """
-    #_track_cache_lock.acquire()
     if file in _track_cache:
-        #_track_cache_lock.release()
         return _track_cache[file]
     track = _getTrackFromFile(file)
     _track_cache[file] = track
-    #_track_cache_lock.release()
     return track
-
 
 
 class TrackDir(object):
@@ -130,10 +128,10 @@ class TrackDir(object):
         res = ''
         res += '- %s\n' % self.dirname
         for track in self.tracks:
-            res += (' '*indent) + '%s\n' % track
+            res += (' ' * indent) + '%s\n' % track
         if self.subdirs:
             for dir in self.subdirs:
-                res += (' '*indent) + '%s' % dir.__str__(indent=indent+4)
+                res += (' ' * indent) + '%s' % dir.__str__(indent=indent + 4)
         return res
 
 

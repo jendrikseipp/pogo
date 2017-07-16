@@ -42,5 +42,6 @@ def __msgBox(parent, type, buttons, header, text):
 def infoMsgBox(parent, header, text=None):
     __msgBox(parent, Gtk.MessageType.INFO, Gtk.ButtonsType.OK, header, text)
 
+
 def errorMsgBox(parent, header, text=None):
     __msgBox(parent, Gtk.MessageType.ERROR, Gtk.ButtonsType.OK, header, text)

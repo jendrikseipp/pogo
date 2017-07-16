@@ -1,11 +1,13 @@
 #!/usr/bin/env python
 
-import random, timeit
+import random
+import timeit
 
-DIC      = {}
+DIC = {}
 NB_ITERS = 20000
 
 # ---
+
 
 def exception():
     for i in xrange(100):
@@ -16,6 +18,7 @@ def exception():
 
 # ---
 
+
 def test():
     for i in xrange(100):
         if i in DIC:
@@ -25,11 +28,13 @@ def test():
 
 # ---
 
+
 def test2():
     for i in xrange(100):
         a = DIC[i] if i in DIC else None
 
 # ---
+
 
 def get():
     for i in xrange(100):
@@ -37,12 +42,14 @@ def get():
 
 # ---
 
+
 def get2():
     getter = DIC.get
     for i in xrange(100):
         a = getter(i, None)
 
 # ---
+
 
 timers = [timeit.Timer('%s()' % func, 'from __main__ import %s' % func)
           for func in ['exception', 'test', 'test2', 'get', 'get2']]

@@ -25,26 +25,38 @@ def getTrack(filename):
 
     mFile = MonkeysAudio(filename)
 
-    length     = int(round(mFile.info.length))
+    length = int(round(mFile.info.length))
     samplerate = int(mFile.info.sample_rate)
 
-    try:    trackNumber = str(mFile['Track'][0])
-    except: trackNumber = None
+    try:
+        trackNumber = str(mFile['Track'][0])
+    except:
+        trackNumber = None
 
-    try:    date = str(mFile['Year'][0])
-    except: date = None
+    try:
+        date = str(mFile['Year'][0])
+    except:
+        date = None
 
-    try:    title = str(mFile['Title'][0])
-    except: title = None
+    try:
+        title = str(mFile['Title'][0])
+    except:
+        title = None
 
-    try:    album = str(mFile['Album'][0])
-    except: album = None
+    try:
+        album = str(mFile['Album'][0])
+    except:
+        album = None
 
-    try:    artist = str(mFile['Artist'][0])
-    except: artist = None
+    try:
+        artist = str(mFile['Artist'][0])
+    except:
+        artist = None
 
-    try:    genre = str(mFile['Genre'][0])
-    except: genre = None
+    try:
+        genre = str(mFile['Genre'][0])
+    except:
+        genre = None
 
     return createFileTrack(filename, -1, length, samplerate, False, title, album, artist, None,
-                None, genre, trackNumber, date, None)
+                           None, genre, trackNumber, date, None)

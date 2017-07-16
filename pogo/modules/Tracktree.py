@@ -54,28 +54,27 @@ class Tracktree(modules.Module):
     def __init__(self):
         """ Constructor """
         handlers = {
-            consts.MSG_CMD_NEXT:              self.jumpToNext,
-            consts.MSG_EVT_PAUSED:            self.onPaused,
-            consts.MSG_EVT_STOPPED:           self.onStopped,
-            consts.MSG_EVT_UNPAUSED:          self.onUnPaused,
-            consts.MSG_CMD_PREVIOUS:          self.jumpToPrevious,
-            consts.MSG_EVT_NEED_BUFFER:       self.onBufferingNeeded,
-            consts.MSG_EVT_APP_STARTED:       self.onAppStarted,
-            consts.MSG_EVT_APP_QUIT:          self.onAppQuit,
-            consts.MSG_CMD_TOGGLE_PAUSE:      self.togglePause,
-            consts.MSG_CMD_TRACKLIST_DEL:     self.remove,
-            consts.MSG_CMD_TRACKLIST_ADD:     self.insert,
-            consts.MSG_CMD_TRACKLIST_SET:     self.set,
-            consts.MSG_CMD_TRACKLIST_CLR:     lambda: self.set(None, None),
-            consts.MSG_EVT_TRACK_ENDED_OK:    lambda: self.onTrackEnded(False),
+            consts.MSG_CMD_NEXT: self.jumpToNext,
+            consts.MSG_EVT_PAUSED: self.onPaused,
+            consts.MSG_EVT_STOPPED: self.onStopped,
+            consts.MSG_EVT_UNPAUSED: self.onUnPaused,
+            consts.MSG_CMD_PREVIOUS: self.jumpToPrevious,
+            consts.MSG_EVT_NEED_BUFFER: self.onBufferingNeeded,
+            consts.MSG_EVT_APP_STARTED: self.onAppStarted,
+            consts.MSG_EVT_APP_QUIT: self.onAppQuit,
+            consts.MSG_CMD_TOGGLE_PAUSE: self.togglePause,
+            consts.MSG_CMD_TRACKLIST_DEL: self.remove,
+            consts.MSG_CMD_TRACKLIST_ADD: self.insert,
+            consts.MSG_CMD_TRACKLIST_SET: self.set,
+            consts.MSG_CMD_TRACKLIST_CLR: lambda: self.set(None, None),
+            consts.MSG_EVT_TRACK_ENDED_OK: lambda: self.onTrackEnded(False),
             consts.MSG_EVT_TRACK_ENDED_ERROR: lambda: self.onTrackEnded(True),
             consts.MSG_CMD_FILE_EXPLORER_DRAG_BEGIN: self.onDragBegin,
-            consts.MSG_EVT_SEARCH_START:      self.onSearchStart,
-            consts.MSG_EVT_SEARCH_RESET:      self.onSearchReset,
-            }
+            consts.MSG_EVT_SEARCH_START: self.onSearchStart,
+            consts.MSG_EVT_SEARCH_RESET: self.onSearchReset,
+        }
 
         modules.Module.__init__(self, handlers)
-
 
     def getTreeDump(self, path=None):
         """ Recursively dump the given tree starting at path (None for the root of the tree) """
@@ -95,7 +94,6 @@ class Tracktree(modules.Module):
 
         return list
 
-
     def restoreTreeDump(self, dump, parent=None):
         """ Recursively restore the dump under the given parent (None for the root of the tree) """
         for item in dump:
@@ -112,14 +110,12 @@ class Tracktree(modules.Module):
                         # but this works only if there is already at least one child
                         self.restoreTreeDump(item[1], newNode)
 
-
     def select_last_played_track(self):
         last_path = prefs.get(__name__, 'last-played-track', None)
         if last_path:
             parent_path = (last_path[0],)
             GObject.idle_add(self.tree.scroll_to_cell, parent_path)
             self.tree.get_selection().select_path(parent_path)
-
 
     def getTrackDir(self, root=None):
         flat = False if root else True
@@ -137,7 +133,6 @@ class Tracktree(modules.Module):
 
         return trackdir
 
-
     def get_m3u_text(self, root=None):
         text = ''
         for iter in self.tree.iter_children(root):
@@ -148,7 +143,6 @@ class Tracktree(modules.Module):
                 dirname = self.tree.getLabel(iter).replace('<b>', '').replace('</b>', '')
                 text += '# %s\n%s\n' % (dirname, self.get_m3u_text(iter))
         return text
-
 
     def __getNextTrackIter(self):
         """ Return the index of the next track, or -1 if there is none """
@@ -165,11 +159,9 @@ class Tracktree(modules.Module):
                 # Row is not a directory
                 return next
 
-
     def __hasNextTrack(self):
         """ Return whether there is a next track """
         return self.__getNextTrackIter() is not None
-
 
     def __getPreviousTrackIter(self):
         """ Return the index of the previous track, or -1 if there is none """
@@ -186,11 +178,9 @@ class Tracktree(modules.Module):
                 # Row is not a directory
                 return prev
 
-
     def __hasPreviousTrack(self):
         """ Return whether there is a previous track """
         return self.__getPreviousTrackIter() is not None
-
 
     def jumpToNext(self):
         """ Jump to the next track, if any """
@@ -198,13 +188,11 @@ class Tracktree(modules.Module):
         if where:
             self.jumpTo(where)
 
-
     def jumpToPrevious(self):
         """ Jump to the previous track, if any """
         where = self.__getPreviousTrackIter()
         if where:
             self.jumpTo(where)
-
 
     def set_track_playing(self, iter, playing):
         if not iter:
@@ -239,7 +227,6 @@ class Tracktree(modules.Module):
             if not is_dir and not has_error:
                 self.tree.setItem(iter, ROW_ICO, icons.nullMenuIcon())
 
-
     def jumpTo(self, iter, sendPlayMsg=True, forced=True):
         """ Jump to the track located at the given iter """
         if not iter:
@@ -265,9 +252,8 @@ class Tracktree(modules.Module):
         if sendPlayMsg:
             modules.postMsg(consts.MSG_CMD_PLAY, {'uri': track.getURI(), 'forced': forced})
 
-        modules.postMsg(consts.MSG_EVT_NEW_TRACK,   {'track': track})
+        modules.postMsg(consts.MSG_EVT_NEW_TRACK, {'track': track})
         modules.postMsg(consts.MSG_EVT_TRACK_MOVED, {'hasPrevious': self.__hasPreviousTrack(), 'hasNext': self.__hasNextTrack()})
-
 
     def insert(self, tracks, target=None, drop_mode=None, playNow=True, highlight=False):
         if type(tracks) == list:
@@ -284,7 +270,9 @@ class Tracktree(modules.Module):
         # We only want to start playback if tracks are appended from DBus
         # or appended (not inserted) into the playlist.
         # In that case target is None. Also don't interrupt playing songs.
-        logging.info('playNow: %s, target: %s, self.tree.hasMark(): %s, self.paused: %s' % (playNow, target, self.tree.hasMark(), self.paused))
+        logging.info(
+            'playNow: %s, target: %s, self.tree.hasMark(): %s, self.paused: %s' %
+            (playNow, target, self.tree.hasMark(), self.paused))
         if playNow and target is None and (not self.tree.hasMark() or self.paused):
             # If the target is None, the tracks have to be appended to the top
             # level and the first new track is the one after the original tracks
@@ -292,7 +280,6 @@ class Tracktree(modules.Module):
             if new:
                 # If new is None, the tracks could not be added
                 self.jumpTo(new)
-
 
     def insertDir(self, trackdir, target=None, drop_mode=None, highlight=False):
         '''
@@ -330,7 +317,6 @@ class Tracktree(modules.Module):
 
         return new
 
-
     def insertTrack(self, track, target=None, drop_mode=None, highlight=False):
         '''
         Insert a new track into the tracktree under parentPath
@@ -351,7 +337,6 @@ class Tracktree(modules.Module):
         if highlight:
             self.tree.select(new_iter)
         return new_iter
-
 
     def set(self, tracks, playNow):
         """ Replace the tracklist, clear it if tracks is None """
@@ -374,14 +359,12 @@ class Tracktree(modules.Module):
 
         self.onListModified()
 
-
     def export_playlist_to_m3u(self):
         """ Save the current tracklist to a playlist """
         outfile = fileChooser.save(self.window, _('Export playlist to file'), 'playlist.m3u')
 
         if outfile is not None:
             tools.write_file(outfile, self.get_m3u_text())
-
 
     def export_playlist_to_dir(self):
         """ Save the current tracklist to a playlist """
@@ -390,7 +373,6 @@ class Tracktree(modules.Module):
         if outdir is not None:
             trackdir = self.getTrackDir()
             trackdir.export_to_dir(outdir)
-
 
     def remove(self, iter=None):
         """ Remove the given track, or the selection if iter is None """
@@ -421,7 +403,6 @@ class Tracktree(modules.Module):
                 self.tree.select(first_iter)
 
         self.onListModified()
-
 
     def onShowPopupMenu(self, tree, button, time, path):
         # Keep reference after method exits.
@@ -459,7 +440,6 @@ class Tracktree(modules.Module):
         self.popup_menu.show_all()
         self.popup_menu.popup(None, None, None, None, button, time)
 
-
     def togglePause(self):
         """ Start playing if not already playing """
         if len(self.tree) != 0 and not self.tree.hasMark():
@@ -469,7 +449,6 @@ class Tracktree(modules.Module):
                 self.jumpTo(first_sel_iter)
             else:
                 self.jumpTo(self.tree.get_first_iter())
-
 
     def save_track_tree(self):
         # Save playing track
@@ -485,21 +464,19 @@ class Tracktree(modules.Module):
         # tell gobject to keep saving the content in regular intervals
         return True
 
-
     # --== Message handlers ==--
-
 
     def onAppStarted(self):
         """ This is the real initialization function, called when the module has been loaded """
-        wTree                  = tools.prefs.getWidgetsTree()
-        self.playtime          = 0
-        self.bufferedTrack     = None
+        wTree = tools.prefs.getWidgetsTree()
+        self.playtime = 0
+        self.bufferedTrack = None
         # Retrieve widgets
-        self.window     = wTree.get_object('win-main')
+        self.window = wTree.get_object('win-main')
 
-        columns = (('',   [(Gtk.CellRendererPixbuf(), GdkPixbuf.Pixbuf), (Gtk.CellRendererText(), GObject.TYPE_STRING)], True),
+        columns = (('', [(Gtk.CellRendererPixbuf(), GdkPixbuf.Pixbuf), (Gtk.CellRendererText(), GObject.TYPE_STRING)], True),
                    (None, [(None, GObject.TYPE_PYOBJECT)], False),
-                  )
+                   )
 
         self.tree = TrackTreeView(columns, use_markup=True)
 
@@ -521,7 +498,6 @@ class Tracktree(modules.Module):
         self.savedPlaylist = os.path.join(consts.dirCfg, 'saved-playlist')
         self.paused = False
 
-
         # Populate the playlist with the saved playlist
         dump = None
         if os.path.exists(self.savedPlaylist):
@@ -530,7 +506,7 @@ class Tracktree(modules.Module):
             except (EOFError, ImportError, IOError):
                 msg = '[%s] Unable to restore playlist from %s\n\n%s'
                 log.logger.error(msg % (MOD_INFO[modules.MODINFO_NAME],
-                                self.savedPlaylist, traceback.format_exc()))
+                                        self.savedPlaylist, traceback.format_exc()))
 
         if dump:
             self.restoreTreeDump(dump)
@@ -544,8 +520,8 @@ class Tracktree(modules.Module):
         # Add commandline tracks to the playlist
         if args:
             log.logger.info('[%s] Filling playlist with files given on command line' % MOD_INFO[modules.MODINFO_NAME])
-            tracks  = media.getTracks([os.path.abspath(arg) for arg in args])
-            playNow = not 'stop' in commands and not 'pause' in commands
+            tracks = media.getTracks([os.path.abspath(arg) for arg in args])
+            playNow = 'stop' not in commands and 'pause' not in commands
             modules.postMsg(consts.MSG_CMD_TRACKLIST_ADD, {'tracks': tracks, 'playNow': playNow})
         elif 'play' in commands:
             modules.postMsg(consts.MSG_CMD_TOGGLE_PAUSE)
@@ -553,11 +529,9 @@ class Tracktree(modules.Module):
         # Automatically save the content at regular intervals
         GObject.timeout_add_seconds(SAVE_INTERVAL, self.save_track_tree)
 
-
     def onAppQuit(self):
         """ The module is going to be unloaded """
         self.save_track_tree()
-
 
     def onTrackEnded(self, withError):
         """ The current track has ended, jump to the next one if any """
@@ -581,14 +555,12 @@ class Tracktree(modules.Module):
         self.bufferedTrack = None
         modules.postMsg(consts.MSG_CMD_STOP)
 
-
     def onBufferingNeeded(self):
         """ The current track is close to its end, so we try to buffer the next one to avoid gaps """
         where = self.__getNextTrackIter()
         if where:
             self.bufferedTrack = self.tree.getItem(where, ROW_TRK).getURI()
             modules.postMsg(consts.MSG_CMD_BUFFER, {'uri': self.bufferedTrack})
-
 
     def onStopped(self):
         """ Playback has been stopped """
@@ -597,12 +569,10 @@ class Tracktree(modules.Module):
             self.set_track_playing(currTrack, False)
             self.tree.clearMark()
 
-
     def onPausedToggled(self, icon):
         """ Switch between paused and unpaused """
         if self.tree.hasMark():
             self.tree.setItem(self.tree.getMark(), ROW_ICO, icon)
-
 
     def highlight(self, query, root=None):
         """Select all rows (and their parents) that contain all parts of *query*."""
@@ -620,7 +590,6 @@ class Tracktree(modules.Module):
                     self.tree.select_synchronously(iter)
                 self.highlight(query, iter)
 
-
     def onSearchStart(self, query):
         query = [part.strip().lower() for part in query.split()]
         GObject.idle_add(self.highlight, query)
@@ -628,7 +597,6 @@ class Tracktree(modules.Module):
 
     def onSearchReset(self):
         self.tree.selection.unselect_all()
-
 
     def onPaused(self):
         self.paused = True
@@ -638,16 +606,13 @@ class Tracktree(modules.Module):
         self.paused = False
         self.onPausedToggled(icons.playMenuIcon())
 
-
     def onDragBegin(self, paths):
         dir_selected = any(map(os.path.isdir, paths))
         self.tree.dir_selected = dir_selected
         if dir_selected:
             self.tree.collapse_all()
 
-
     # --== GTK handlers ==--
-
 
     def onMouseButton(self, tree, event, path):
         """ A mouse button has been pressed """
@@ -656,18 +621,22 @@ class Tracktree(modules.Module):
         elif event.button == 3:
             self.onShowPopupMenu(tree, event.button, event.time, path)
 
-
     def onKeyboard(self, list, event):
         """ Keyboard shortcuts """
         keyname = Gdk.keyval_name(event.keyval)
 
-        if keyname == 'Delete':   self.remove()
-        elif keyname == 'Return': self.jumpTo(self.tree.getFirstSelectedRow())
-        elif keyname == 'space':  modules.postMsg(consts.MSG_CMD_TOGGLE_PAUSE)
-        elif keyname == 'Escape': modules.postMsg(consts.MSG_CMD_STOP)
-        elif keyname == 'Left':   modules.postMsg(consts.MSG_CMD_STEP, {'seconds': -5})
-        elif keyname == 'Right':  modules.postMsg(consts.MSG_CMD_STEP, {'seconds': 5})
-
+        if keyname == 'Delete':
+            self.remove()
+        elif keyname == 'Return':
+            self.jumpTo(self.tree.getFirstSelectedRow())
+        elif keyname == 'space':
+            modules.postMsg(consts.MSG_CMD_TOGGLE_PAUSE)
+        elif keyname == 'Escape':
+            modules.postMsg(consts.MSG_CMD_STOP)
+        elif keyname == 'Left':
+            modules.postMsg(consts.MSG_CMD_STEP, {'seconds': -5})
+        elif keyname == 'Right':
+            modules.postMsg(consts.MSG_CMD_STEP, {'seconds': 5})
 
     def onListModified(self):
         """ Some rows have been added/removed/moved """
@@ -676,11 +645,14 @@ class Tracktree(modules.Module):
         tracks = self.getTrackDir()
         self.playtime = tracks.get_playtime()
 
-        modules.postMsg(consts.MSG_EVT_NEW_TRACKLIST, {'tracks': tracks, 'playtime': self.playtime})
+        modules.postMsg(
+            consts.MSG_EVT_NEW_TRACKLIST,
+            {'tracks': tracks, 'playtime': self.playtime})
 
         if self.tree.hasMark():
-            modules.postMsg(consts.MSG_EVT_TRACK_MOVED, {'hasPrevious': self.__hasPreviousTrack(), 'hasNext':  self.__hasNextTrack()})
-
+            modules.postMsg(
+                consts.MSG_EVT_TRACK_MOVED,
+                {'hasPrevious': self.__hasPreviousTrack(), 'hasNext': self.__hasNextTrack()})
 
     def onDND(self, list, context, x, y, dragData, dndId, time):
         """ External Drag'n'Drop """

@@ -46,20 +46,17 @@ class Window(Gtk.Window):
         self.resize(tools.prefs.get(modName, 'win-width', defaultWidth), tools.prefs.get(modName, 'win-height', defaultHeight))
         self.set_position(Gtk.WindowPosition.CENTER)
         # Connect GTK handlers
-        self.connect('delete-event',       self.onDelete)
-        self.connect('size-allocate',      self.onResize)
+        self.connect('delete-event', self.onDelete)
+        self.connect('size-allocate', self.onResize)
         self.connect('window-state-event', self.onState)
-
 
     def getWidget(self, name):
         """ Return the widget with the given name """
         return self.wBuilder.get_object(name)
 
-
     def isVisible(self):
         """ Return True if the window is currently visible """
         return self.visible
-
 
     def show(self):
         """ Show the window if not visible, bring it to top otherwise """
@@ -67,27 +64,22 @@ class Window(Gtk.Window):
         self.show_all()
         self.present()
 
-
     def hide(self):
         """ Hide the window """
         self.visible = False
         Gtk.Window.hide(self)
 
-
     # --== GTK handlers ==--
-
 
     def onResize(self, win, rect):
         """ Save the new size of the dialog """
         if not win.props.is_maximized:
-            tools.prefs.set(self.modName, 'win-width',  rect.width)
+            tools.prefs.set(self.modName, 'win-width', rect.width)
             tools.prefs.set(self.modName, 'win-height', rect.height)
-
 
     def onState(self, win, _evt):
         """ Save the new state of the dialog """
         tools.prefs.set(self.modName, 'win-is-maximized', win.props.is_maximized)
-
 
     def onDelete(self, win, _evt):
         """ Hide the window instead of deleting it """

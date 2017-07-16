@@ -41,10 +41,13 @@ tools.print_platform_info()
 
 
 # Command line
-optparser = optparse.OptionParser(usage='Usage: %prog [options] [FILE(s) | ' +
-                                        ' | '.join(consts.commands)  + ']')
-optparser.add_option('--multiple-instances', action='store_true',
-    default=False, help='start a new instance even if one is already running')
+optparser = optparse.OptionParser(
+    usage='Usage: %prog [options] [FILE(s) | ' + ' | '.join(consts.commands) + ']')
+optparser.add_option(
+    '--multiple-instances',
+    action='store_true',
+    default=False,
+    help='start a new instance even if one is already running')
 
 optOptions, optArgs = optparser.parse_args()
 
@@ -56,18 +59,18 @@ if not optOptions.multiple_instances:
 
     try:
         dbusSession = dbus.SessionBus()
-        activeServices = dbusSession.get_object('org.freedesktop.DBus',
-                                        '/org/freedesktop/DBus').ListNames()
+        activeServices = dbusSession.get_object(
+            'org.freedesktop.DBus', '/org/freedesktop/DBus').ListNames()
 
         if consts.dbusService in activeServices:
             shouldStop = True
 
-            window = dbus.Interface(dbusSession.get_object(consts.dbusService, '/'),
-                                    consts.dbusInterface)
-            player = dbus.Interface(dbusSession.get_object(consts.dbusService, '/Player'),
-                                    consts.dbusInterface)
-            playlist = dbus.Interface(dbusSession.get_object(consts.dbusService,
-                                      '/TrackList'), consts.dbusInterface)
+            window = dbus.Interface(
+                dbusSession.get_object(consts.dbusService, '/'), consts.dbusInterface)
+            player = dbus.Interface(
+                dbusSession.get_object(consts.dbusService, '/Player'), consts.dbusInterface)
+            playlist = dbus.Interface(
+                dbusSession.get_object(consts.dbusService, '/TrackList'), consts.dbusInterface)
 
             commands, paths = tools.separate_commands_and_tracks(optArgs)
             for command in commands:
@@ -147,7 +150,7 @@ def realStartup(window, paned):
         """ Save the new size of the window """
         maximized = win.get_state() & Gdk.WindowState.MAXIMIZED
         if not maximized:
-            prefs.set(__name__, 'win-width',  rect.width)
+            prefs.set(__name__, 'win-width', rect.width)
             prefs.set(__name__, 'win-height', rect.height)
 
             view_mode = prefs.get(__name__, 'view-mode', DEFAULT_VIEW_MODE)
@@ -175,7 +178,7 @@ def realStartup(window, paned):
 
     # Register some handlers (Signal SIGKILL cannot be caught)
     atexit.register(atExit)
-    signal.signal(signal.SIGINT,  lambda _sig, _frame: onDelete(window, None))
+    signal.signal(signal.SIGINT, lambda _sig, _frame: onDelete(window, None))
     signal.signal(signal.SIGTERM, lambda _sig, _frame: onDelete(window, None))
 
     # GTK handlers
@@ -231,13 +234,12 @@ def main():
     window.resize(prefs.get(__name__, 'win-width', DEFAULT_WIN_WIDTH), height)
     window.show_all()
 
-    # Restore sizes once more
-    #window.resize(prefs.get(__name__, 'win-width', DEFAULT_WIN_WIDTH), height)
     paned.set_position(prefs.get(__name__, 'paned-pos', DEFAULT_PANED_POS))
 
     # Initialization done, let's continue the show
     GObject.idle_add(realStartup, window, paned)
     Gtk.main()
+
 
 if __name__ == '__main__':
     main()

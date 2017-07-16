@@ -18,6 +18,7 @@
 
 from pogo.media.track import Track
 
+
 class FileTrack(Track):
     """ A Track that has been created from a file """
 

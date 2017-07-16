@@ -1,15 +1,20 @@
 #!/usr/bin/env python
 
-import os, re, timeit
+import os
+import re
+import timeit
 
 from os.path import splitext
 
-LIST     = ['truc.Mp3', 'foo', 'foo.OGG', 'Bidule.tXt', 'bar.vim', 'test.wav', 'hello.mp3', 'yeah.flac', 'dfsfdsa', 'dass.MPC', 'dfdsaaads.fsad']
+LIST = [
+    'truc.Mp3', 'foo', 'foo.OGG', 'Bidule.tXt', 'bar.vim', 'test.wav',
+    'hello.mp3', 'yeah.flac', 'dfsfdsa', 'dass.MPC', 'dfdsaaads.fsad']
 NB_ITERS = 200000
 
 # ---
 
 mFormatsRE = re.compile('^.*\.(mp3|ogg|mpc|flac)$', re.IGNORECASE)
+
 
 def re():
     for word in LIST:
@@ -17,6 +22,7 @@ def re():
             pass
 
 # ---
+
 
 def ew():
     for word in LIST:
@@ -26,6 +32,7 @@ def ew():
 
 # ---
 
+
 def ew_lc():
     for word in [w.lower() for w in LIST]:
         if word.endswith('.mp3') or word.endswith('.ogg') or word.endswith('.mpc') or word.endswith('.flac'):
@@ -33,7 +40,9 @@ def ew_lc():
 
 # ---
 
+
 exts = set(['.mp3', '.ogg', '.mpc', '.flac'])
+
 
 def ss_set():
     for word in LIST:
@@ -43,7 +52,9 @@ def ss_set():
 
 # ---
 
+
 exts2 = {'.mp3': None, '.ogg': None, '.mpc': None, '.flac': None}
+
 
 def ss_dic():
     for word in LIST:
@@ -52,6 +63,7 @@ def ss_dic():
             pass
 
 # ---
+
 
 def ss_dic_split():
     for word in LIST:

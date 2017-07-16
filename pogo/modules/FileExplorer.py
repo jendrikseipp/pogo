@@ -22,7 +22,9 @@ import itertools
 import locale
 import os
 from os.path import isdir, isfile
-import urllib.request, urllib.error, urllib.parse
+import urllib.error
+import urllib.parse
+import urllib.request
 
 from gi.repository import Gdk, GdkPixbuf
 from gi.repository import GObject
@@ -62,25 +64,24 @@ class FileExplorer(modules.Module):
     def __init__(self):
         """ Constructor """
         handlers = {
-                        consts.MSG_EVT_APP_QUIT:         self.onAppQuit,
-                        consts.MSG_EVT_APP_STARTED:      self.onAppStarted,
-                        consts.MSG_EVT_SEARCH_START:     self.onSearchStart,
-                        consts.MSG_EVT_SEARCH_APPEND:    self.onSearchAppend,
-                        consts.MSG_EVT_SEARCH_END:       self.onSearchEnd,
-                        consts.MSG_EVT_SEARCH_RESET:     self.onSearchReset,
-                   }
+            consts.MSG_EVT_APP_QUIT: self.onAppQuit,
+            consts.MSG_EVT_APP_STARTED: self.onAppStarted,
+            consts.MSG_EVT_SEARCH_START: self.onSearchStart,
+            consts.MSG_EVT_SEARCH_APPEND: self.onSearchAppend,
+            consts.MSG_EVT_SEARCH_END: self.onSearchEnd,
+            consts.MSG_EVT_SEARCH_RESET: self.onSearchReset,
+        }
 
         modules.Module.__init__(self, handlers)
-
 
     def createTree(self):
         """ Create the tree used to display the file system """
         from pogo.gui import extTreeview
 
         columns = (
-            ('',   [(Gtk.CellRendererPixbuf(), GdkPixbuf.Pixbuf), (Gtk.CellRendererText(), GObject.TYPE_STRING)], True),
-            (None, [(None, GObject.TYPE_INT)],                                                                  False),
-            (None, [(None, GObject.TYPE_STRING)],                                                               False))
+            ('', [(Gtk.CellRendererPixbuf(), GdkPixbuf.Pixbuf), (Gtk.CellRendererText(), GObject.TYPE_STRING)], True),
+            (None, [(None, GObject.TYPE_INT)], False),
+            (None, [(None, GObject.TYPE_STRING)], False))
 
         self.tree = extTreeview.ExtTreeView(columns, True)
 
@@ -96,7 +97,6 @@ class FileExplorer(modules.Module):
         self.tree.connect('exttreeview-row-collapsed', self.onRowCollapsed)
         self.tree.connect('exttreeview-row-expanded', self.onRowExpanded)
 
-
     def getTreeDump(self, path=None):
         """ Recursively dump the given tree starting at path (None for the root of the tree) """
         list = []
@@ -107,14 +107,16 @@ class FileExplorer(modules.Module):
             if row[ROW_TYPE] == TYPE_INFO:
                 continue
 
-            if self.tree.getNbChildren(child) == 0: grandChildren = None
-            elif self.tree.row_expanded(child):     grandChildren = self.getTreeDump(child)
-            else:                                   grandChildren = []
+            if self.tree.getNbChildren(child) == 0:
+                grandChildren = None
+            elif self.tree.row_expanded(child):
+                grandChildren = self.getTreeDump(child)
+            else:
+                grandChildren = []
 
             list.append([(row[ROW_NAME], row[ROW_TYPE], row[ROW_FULLPATH]), grandChildren])
 
         return list
-
 
     def restoreTreeDump(self, dump, parent=None):
         """ Recursively restore the dump under the given parent (None for the root of the tree) """
@@ -136,18 +138,16 @@ class FileExplorer(modules.Module):
                         self.restoreTreeDump(item[1], newNode)
                         self.tree.removeRow(fakeChild)
 
-
     def saveTreeState(self):
         """ Create a dictionary representing the current state of the tree """
         self.treeState = {
-                    'tree-state':     self.getTreeDump(),
-                    'selected-paths': [tuple(path) for path in self.tree.getSelectedPaths()],
-                    'vscrollbar-pos': self.scrolled.get_vscrollbar().get_value(),
-                    'hscrollbar-pos': self.scrolled.get_hscrollbar().get_value(),
-                    }
+            'tree-state': self.getTreeDump(),
+            'selected-paths': [tuple(path) for path in self.tree.getSelectedPaths()],
+            'vscrollbar-pos': self.scrolled.get_vscrollbar().get_value(),
+            'hscrollbar-pos': self.scrolled.get_hscrollbar().get_value(),
+        }
         prefs.set(__name__, 'saved-states', self.treeState)
         self.music_paths = self.get_music_paths_from_tree()
-
 
     def restore_tree(self):
         self.tree.handler_block_by_func(self.onRowExpanded)
@@ -158,7 +158,6 @@ class FileExplorer(modules.Module):
         GObject.idle_add(self.tree.selectPaths, self.treeState['selected-paths'])
         GObject.idle_add(self.refresh)
         self.set_info_text()
-
 
     def play(self, path=None):
         """
@@ -172,9 +171,7 @@ class FileExplorer(modules.Module):
 
         modules.postMsg(consts.MSG_EVT_LOAD_TRACKS, {'paths': track_paths})
 
-
     # --== Tree management ==--
-
 
     def startLoading(self, row):
         """ Tell the user that the contents of row is being loaded """
@@ -183,19 +180,17 @@ class FileExplorer(modules.Module):
         loading_text %= (name, _('loading...'))
         self.tree.setItem(row, ROW_NAME, loading_text)
 
-
     def stopLoading(self, row):
         """ Tell the user that the contents of row has been loaded"""
         try:
-            name  = self.tree.getItem(row, ROW_NAME)
+            name = self.tree.getItem(row, ROW_NAME)
         except ValueError:
             # If a search is made quickly after launching, the row may have gone.
             return
         index = name.find('<span')
 
         if index != -1:
-            self.tree.setItem(row, ROW_NAME, name[:index-2])
-
+            self.tree.setItem(row, ROW_NAME, name[:index - 2])
 
     def _filename(self, row):
         """
@@ -204,7 +199,6 @@ class FileExplorer(modules.Module):
               - Then, if an equality occurs, the normal version (we want 'Foo' and 'foo' to be different folders)
         """
         return row[ROW_NAME].lower(), row[ROW_NAME]
-
 
     def __cmpRowsOnFilename(self, r1, r2):
         """
@@ -219,10 +213,9 @@ class FileExplorer(modules.Module):
         assert result == locale.strcoll(name1.lower(), name2.lower()) or locale.strcoll(name1, name2)
         return result
 
-
     def getDirContents(self, directory):
         """ Return a tuple of sorted rows (directories, playlists, mediaFiles) for the given directory """
-        mediaFiles  = []
+        mediaFiles = []
         directories = []
 
         for (file, path) in tools.listDir(directory):
@@ -244,7 +237,6 @@ class FileExplorer(modules.Module):
 
         return (directories, mediaFiles)
 
-
     def exploreDir(self, parent, directory, fakeChild=None):
         """
         List the contents of the given directory and append it to the tree as a child of parent
@@ -253,13 +245,12 @@ class FileExplorer(modules.Module):
         directories, mediaFiles = self.getDirContents(directory)
 
         self.tree.appendRows(directories, parent)
-        self.tree.appendRows(mediaFiles,  parent)
+        self.tree.appendRows(mediaFiles, parent)
 
         if fakeChild is not None:
             self.tree.removeRow(fakeChild)
 
         GObject.idle_add(self.updateDirNodes(parent).__next__)
-
 
     def updateDirNodes(self, parent):
         """
@@ -273,7 +264,7 @@ class FileExplorer(modules.Module):
                 break
 
             # Make sure it's readable
-            directory  = self.tree.getItem(child, ROW_FULLPATH)
+            directory = self.tree.getItem(child, ROW_FULLPATH)
             hasContent = False
             if os.access(directory, os.R_OK | os.X_OK):
                 for (file, path) in tools.listDir(directory):
@@ -293,7 +284,6 @@ class FileExplorer(modules.Module):
             self.stopLoading(parent)
 
         yield False
-
 
     def refresh(self, treePath=None):
         """ Refresh the tree, starting from treePath """
@@ -315,9 +305,9 @@ class FileExplorer(modules.Module):
 
         directories, mediaFiles = self.getDirContents(directory)
 
-        disk                   = directories + mediaFiles
-        diskIndex              = 0
-        childIndex             = 0
+        disk = directories + mediaFiles
+        diskIndex = 0
+        childIndex = 0
         childLeftIntentionally = False
 
         while diskIndex < len(disk):
@@ -340,7 +330,7 @@ class FileExplorer(modules.Module):
             else:
                 if cmpResult > 0:
                     self.tree.insertRowBefore(disk[diskIndex], treePath, rowPath)
-                diskIndex  += 1
+                diskIndex += 1
                 childIndex += 1
 
         # If there are tree rows left, all the corresponding files are no longer there
@@ -366,9 +356,7 @@ class FileExplorer(modules.Module):
             if self.tree.row_expanded(child):
                 GObject.idle_add(self.refresh, child)
 
-
     # --== GTK handlers ==--
-
 
     def onMouseButton(self, tree, event, path):
         """ A mouse button has been pressed """
@@ -384,7 +372,6 @@ class FileExplorer(modules.Module):
                     tree.collapse_row(path)
                 else:
                     tree.expand_row(path, False)
-
 
     def onShowPopupMenu(self, tree, button, time, path):
         """ Show a popup menu """
@@ -449,14 +436,12 @@ class FileExplorer(modules.Module):
                 dir.connect('activate', self.on_remove_dir, path)
                 self.popup_menu.append(dir)
 
-
         # open containing folder
         if show_folder:
             self.popup_menu.append(show_folder)
 
         self.popup_menu.show_all()
         self.popup_menu.popup(None, None, None, None, button, time)
-
 
     def on_add_dir(self, widget):
         parent = prefs.getWidgetsTree().get_object('win-main')
@@ -467,7 +452,7 @@ class FileExplorer(modules.Module):
         if os.path.isdir(path):
             if path in self.static_paths:
                 errorMsgBox(None, _('Invalid Folder'),
-                _('You cannot add your root or home folder to the music directories'))
+                            _('You cannot add your root or home folder to the music directories'))
                 return
             self.add_dir(path)
             music_paths = self.get_music_paths_from_tree()
@@ -475,8 +460,7 @@ class FileExplorer(modules.Module):
             self.set_info_text()
         else:
             errorMsgBox(None, _('This path does not exist'),
-                '"%s"\n' % path + _('Please select an existing directory.'))
-
+                        '"%s"\n' % path + _('Please select an existing directory.'))
 
     def on_remove_dir(self, widget, path):
         self.tree.removeRow(path)
@@ -484,31 +468,34 @@ class FileExplorer(modules.Module):
         modules.postMsg(consts.MSG_EVT_MUSIC_PATHS_CHANGED, {'paths': music_paths})
         self.set_info_text()
 
-
     def onKeyPressed(self, tree, event):
         """ A key has been pressed """
         keyname = Gdk.keyval_name(event.keyval)
 
-        if keyname == 'F5':       self.refresh()
-        elif keyname == 'plus':   tree.expandRows()
-        elif keyname == 'Left':   tree.collapseRows()
-        elif keyname == 'Right':  tree.expandRows()
-        elif keyname == 'minus':  tree.collapseRows()
-        elif keyname == 'space':  tree.switchRows()
-        elif keyname == 'Return': self.play()
-
+        if keyname == 'F5':
+            self.refresh()
+        elif keyname == 'plus':
+            tree.expandRows()
+        elif keyname == 'Left':
+            tree.collapseRows()
+        elif keyname == 'Right':
+            tree.expandRows()
+        elif keyname == 'minus':
+            tree.collapseRows()
+        elif keyname == 'space':
+            tree.switchRows()
+        elif keyname == 'Return':
+            self.play()
 
     def onRowExpanded(self, tree, path):
         """ Replace the fake child by the real children """
         self.startLoading(path)
         GObject.idle_add(self.exploreDir, path, tree.getItem(path, ROW_FULLPATH), tree.getChild(path, 0))
 
-
     def onRowCollapsed(self, tree, path):
         """ Replace all children by a fake child """
         tree.removeAllChildren(path)
         tree.appendRow((icons.dirMenuIcon(), '', TYPE_NONE, ''), path)
-
 
     def onDragDataGet(self, tree, context, selection, info, time):
         """ Provide information about the data being dragged """
@@ -516,7 +503,6 @@ class FileExplorer(modules.Module):
         selection.set_uris([
             urllib.request.pathname2url(file)
             for file in [row[ROW_FULLPATH] for row in tree.getSelectedRows()]])
-
 
     def add_dir(self, path):
         '''
@@ -528,10 +514,8 @@ class FileExplorer(modules.Module):
         # add fake child
         self.tree.appendRow((icons.dirMenuIcon(), '', TYPE_NONE, ''), parent)
 
-
     def _is_separator(self, model, iter):
         return model[iter][ROW_NAME] is None
-
 
     def _get_xdg_music_dir(self):
         ''' Read XDG music directory '''
@@ -551,7 +535,6 @@ class FileExplorer(modules.Module):
                 path = os.path.join(consts.dirBaseUsr, dirname)
                 return path
         return None
-
 
     def search_music_paths(self):
         """
@@ -579,11 +562,9 @@ class FileExplorer(modules.Module):
                 paths.append(music_folder)
         return paths
 
-
     def populate_tree(self):
         assert self.tree is None
         self.createTree()
-        #self.tree.set_row_separator_func(lambda model, iter: model[iter][ROW_NAME] is None)
         self.tree.set_row_separator_func(self._is_separator)
 
         # Restore the tree if we have any to restore, else build new one
@@ -609,7 +590,6 @@ class FileExplorer(modules.Module):
 
         self.set_info_text()
 
-
     def get_music_paths_from_tree(self):
         music_paths = []
         for child in self.tree.iterChildren(None):
@@ -620,7 +600,6 @@ class FileExplorer(modules.Module):
                     path += '/'
                 music_paths.append(path)
         return music_paths
-
 
     def set_info_text(self):
         """
@@ -645,15 +624,14 @@ class FileExplorer(modules.Module):
             msg = _('Right-click to add music folders')
             self.tree.appendRow((icons.infoMenuIcon(), msg, TYPE_INFO, ''), None)
 
-   # --== Message handlers ==--
-
+    # --== Message handlers ==--
 
     def onAppStarted(self):
         """ The module has been loaded """
-        self.tree            = None
-        self.cfgWin          = None
-        self.scrolled        = Gtk.ScrolledWindow()
-        self.treeState       = prefs.get(__name__, 'saved-states', None)
+        self.tree = None
+        self.cfgWin = None
+        self.scrolled = Gtk.ScrolledWindow()
+        self.treeState = prefs.get(__name__, 'saved-states', None)
 
         self.scrolled.set_shadow_type(Gtk.ShadowType.IN)
         self.scrolled.set_policy(Gtk.PolicyType.AUTOMATIC, Gtk.PolicyType.AUTOMATIC)
@@ -672,19 +650,16 @@ class FileExplorer(modules.Module):
 
         self.tree.connect('drag-begin', self.onDragBegin)
 
-
     def onAppQuit(self):
         """ The module is going to be unloaded """
         if not self.displaying_results:
             self.saveTreeState()
 
-
     def _remove_searching_node(self):
         # Remove the "Searching ..." node if it still exists
         if (self.tree.isValidPath(self.searching_text_path) and
-            self.tree.getItem(self.searching_text_path, ROW_NAME) == self.searching_text):
+                self.tree.getItem(self.searching_text_path, ROW_NAME) == self.searching_text):
             self.tree.removeRow(self.searching_text_path)
-
 
     def onSearchStart(self, query):
         if not self.displaying_results:
@@ -695,7 +670,6 @@ class FileExplorer(modules.Module):
 
         self.searching_text = _('Searching ...')
         self.searching_text_path = self.tree.appendRow((icons.infoMenuIcon(), self.searching_text, TYPE_INFO, ''), None)
-
 
     def onSearchAppend(self, results, query):
         self._remove_searching_node()
@@ -714,7 +688,6 @@ class FileExplorer(modules.Module):
         for file, name in files:
             self.tree.appendRow((icons.mediaFileMenuIcon(), name, TYPE_FILE, file), None)
 
-
     def onSearchEnd(self):
         self._remove_searching_node()
         if len(self.tree) == 0:
@@ -725,13 +698,11 @@ class FileExplorer(modules.Module):
             self.tree.appendRow((icons.infoMenuIcon(), text, TYPE_INFO, ''), None)
             return
 
-
     def onSearchReset(self):
         if self.displaying_results:
             self.tree.clear()
             self.restore_tree()
             self.displaying_results = False
-
 
     # --== GTK Handlers ==--
 

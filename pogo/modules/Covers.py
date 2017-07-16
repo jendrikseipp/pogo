@@ -31,9 +31,9 @@ from pogo.tools.log import logger
 MOD_INFO = ('Covers', _('Covers'), _('Show album covers'), [], False, True)
 MOD_NAME = MOD_INFO[modules.MODINFO_NAME]
 
-AS_API_KEY   = '4d7befd13245afcc73f9ed7518b6619a'   # Jendrik Seipp's Audioscrobbler API key
-AS_TAG_START = '<image size="large">'               # The text that is right before the URL to the cover
-AS_TAG_END   = '</image>'                           # The text that is right after the URL to the cover
+AS_API_KEY = '4d7befd13245afcc73f9ed7518b6619a'  # Jendrik Seipp's Audioscrobbler API key
+AS_TAG_START = '<image size="large">'            # The text that is right before the URL to the cover
+AS_TAG_END = '</image>'                          # The text that is right after the URL to the cover
 
 # It seems that a non standard 'user-agent' header may cause problem, so let's cheat
 USER_AGENT = 'Mozilla/5.0 (X11; U; Linux i686; en-US; rv:1.9.0.1) Gecko/2008072820 Firefox/3.0.1'
@@ -45,19 +45,19 @@ USER_AGENT = 'Mozilla/5.0 (X11; U; Linux i686; en-US; rv:1.9.0.1) Gecko/20080728
 ) = list(range(2))
 
 # Constants for thumbnails
-THUMBNAIL_WIDTH   = 100  # Width allocated to thumbnails in the model
-THUMBNAIL_HEIGHT  = 100  # Height allocated to thumbnails in the model
+THUMBNAIL_WIDTH = 100  # Width allocated to thumbnails in the model
+THUMBNAIL_HEIGHT = 100  # Height allocated to thumbnails in the model
 
 # Constants for full size covers
-FULL_SIZE_COVER_WIDTH  = 300
+FULL_SIZE_COVER_WIDTH = 300
 FULL_SIZE_COVER_HEIGHT = 300
 
 # File formats we can read
 ACCEPTED_FILE_FORMATS = {'.jpg': None, '.jpeg': None, '.png': None, '.gif': None}
 
 # Default preferences
-PREFS_DFT_DOWNLOAD_COVERS      = True
-PREFS_DFT_PREFER_USER_COVERS   = True
+PREFS_DFT_DOWNLOAD_COVERS = True
+PREFS_DFT_PREFER_USER_COVERS = True
 PREFS_DFT_USER_COVER_FILENAMES = ['folder', 'cover', 'art', 'front', '*']
 
 
@@ -66,15 +66,14 @@ class Covers(modules.ThreadedModule):
     def __init__(self):
         """ Constructor """
         handlers = {
-                        consts.MSG_EVT_APP_QUIT:     self.onModUnloaded,
-                        consts.MSG_EVT_NEW_TRACK:    self.onNewTrack,
-                        consts.MSG_EVT_MOD_LOADED:   self.onModLoaded,
-                        consts.MSG_EVT_APP_STARTED:  self.onModLoaded,
-                        consts.MSG_EVT_MOD_UNLOADED: self.onModUnloaded,
-                   }
+            consts.MSG_EVT_APP_QUIT: self.onModUnloaded,
+            consts.MSG_EVT_NEW_TRACK: self.onNewTrack,
+            consts.MSG_EVT_MOD_LOADED: self.onModLoaded,
+            consts.MSG_EVT_APP_STARTED: self.onModLoaded,
+            consts.MSG_EVT_MOD_UNLOADED: self.onModUnloaded,
+        }
 
         modules.ThreadedModule.__init__(self, handlers)
-
 
     def _generateCover(self, inFile, outFile, format, max_width, max_height):
         from PIL import Image
@@ -95,12 +94,10 @@ class Covers(modules.ThreadedModule):
             # Remove corrupted file.
             tools.remove(outFile)
 
-
     def generateFullSizeCover(self, inFile, outFile, format):
         """ Resize inFile if needed, and write it to outFile (outFile and inFile may be equal) """
         self._generateCover(inFile, outFile, format, FULL_SIZE_COVER_WIDTH,
                             FULL_SIZE_COVER_HEIGHT)
-
 
     def generateThumbnail(self, inFile, outFile, format):
         """
@@ -108,7 +105,6 @@ class Covers(modules.ThreadedModule):
         outFile (outFile and inFile may be equal).
         """
         self._generateCover(inFile, outFile, format, THUMBNAIL_WIDTH, THUMBNAIL_HEIGHT)
-
 
     def getUserCover(self, trackPath):
         """ Return the path to a cover file in trackPath, None if no cover found """
@@ -129,15 +125,14 @@ class Covers(modules.ThreadedModule):
 
         return None
 
-
     def getFromCache(self, artist, album):
         """ Return the path to the cached cover, or None if it's not cached """
-        cachePath    = os.path.join(self.cacheRootPath, str(abs(hash(artist))))
+        cachePath = os.path.join(self.cacheRootPath, str(abs(hash(artist))))
         cacheIdxPath = os.path.join(cachePath, 'INDEX')
 
         try:
             cacheIdx = tools.pickleLoad(cacheIdxPath)
-            cover    = os.path.join(cachePath, cacheIdx[artist + album])
+            cover = os.path.join(cachePath, cacheIdx[artist + album])
             if os.path.exists(cover):
                 return cover
         except:
@@ -145,14 +140,16 @@ class Covers(modules.ThreadedModule):
 
         return None
 
-
     def __getFromInternet(self, artist, album):
         """
             Try to download the cover from the Internet
             If successful, add it to the cache and return the path to it
             Otherwise, return None
         """
-        import socket, urllib.request, urllib.error, urllib.parse
+        import urllib.request
+        import urllib.error
+        import urllib.parse
+        import socket
 
         # Make sure to not be blocked by the request
         socket.setdefaulttimeout(consts.socketTimeout)
@@ -160,9 +157,9 @@ class Covers(modules.ThreadedModule):
         # Request information to Last.fm
         # Beware of UTF-8 characters: we need to percent-encode all characters
         try:
-            url = 'http://ws.audioscrobbler.com/2.0/?method=album.getinfo&api_key=%s&artist=%s&album=%s' % (AS_API_KEY,
-                tools.percentEncode(artist), tools.percentEncode(album))
-            request = urllib.request.Request(url, headers = {'User-Agent': USER_AGENT})
+            url = ('http://ws.audioscrobbler.com/2.0/?method=album.getinfo&api_key=%s&artist=%s&album=%s' %
+                   (AS_API_KEY, tools.percentEncode(artist), tools.percentEncode(album)))
+            request = urllib.request.Request(url, headers={'User-Agent': USER_AGENT})
             stream = urllib.request.urlopen(request)
             data = stream.read().decode('utf-8')
         except urllib.error.HTTPError as err:
@@ -172,8 +169,7 @@ class Covers(modules.ThreadedModule):
                 logger.error('[%s] Information request failed\n\n%s' % (MOD_NAME, traceback.format_exc()))
             return None
         except urllib.error.URLError:
-            logger.info('[%s] Could not fetch cover. No internet connection.' %
-                         MOD_NAME)
+            logger.info('[%s] Could not fetch cover. No internet connection.' % MOD_NAME)
             return None
         except:
             logger.error('[%s] Information request failed\n\n%s' % (MOD_NAME, traceback.format_exc()))
@@ -181,25 +177,25 @@ class Covers(modules.ThreadedModule):
 
         # Extract the URL to the cover image
         malformed = True
-        startIdx  = data.find(AS_TAG_START)
-        endIdx    = data.find(AS_TAG_END, startIdx)
+        startIdx = data.find(AS_TAG_START)
+        endIdx = data.find(AS_TAG_END, startIdx)
         if startIdx != -1 and endIdx != -1:
-            coverURL    = data[startIdx+len(AS_TAG_START):endIdx]
+            coverURL = data[startIdx + len(AS_TAG_START):endIdx]
             coverFormat = os.path.splitext(coverURL)[1].lower()
             if coverURL.startswith(('http://', 'https://')) and coverFormat in ACCEPTED_FILE_FORMATS:
                 malformed = False
 
         if malformed:
-            ## Do not show the data in the log every time no cover is found
+            # Do not show the data in the log every time no cover is found
             if coverURL:
                 logger.error('[%s] Received malformed data\n\n%s' % (MOD_NAME, data))
             return None
 
         # Download the cover image
         try:
-            request = urllib.request.Request(coverURL, headers = {'User-Agent': USER_AGENT})
-            stream  = urllib.request.urlopen(request)
-            data    = stream.read()
+            request = urllib.request.Request(coverURL, headers={'User-Agent': USER_AGENT})
+            stream = urllib.request.urlopen(request)
+            data = stream.read()
 
             if len(data) < 1024:
                 raise Exception('The cover image seems incorrect (%u bytes is too small)' % len(data))
@@ -208,17 +204,19 @@ class Covers(modules.ThreadedModule):
             return None
 
         # So far, so good: let's cache the image
-        cachePath    = os.path.join(self.cacheRootPath, str(abs(hash(artist))))
+        cachePath = os.path.join(self.cacheRootPath, str(abs(hash(artist))))
         cacheIdxPath = os.path.join(cachePath, 'INDEX')
 
         if not os.path.exists(cachePath):
             os.mkdir(cachePath)
 
-        try:    cacheIdx = tools.pickleLoad(cacheIdxPath)
-        except: cacheIdx = {}
+        try:
+            cacheIdx = tools.pickleLoad(cacheIdxPath)
+        except:
+            cacheIdx = {}
 
-        nextInt   = len(cacheIdx) + 1
-        filename  = str(nextInt) + coverFormat
+        nextInt = len(cacheIdx) + 1
+        filename = str(nextInt) + coverFormat
         coverPath = os.path.join(cachePath, filename)
 
         cacheIdx[artist + album] = filename
@@ -233,7 +231,6 @@ class Covers(modules.ThreadedModule):
             logger.error('[%s] Could not save the downloaded cover\n\n%s' % (MOD_NAME, traceback.format_exc()))
 
         return None
-
 
     def getFromInternet(self, artist, album):
         """ Wrapper for __getFromInternet(), manage blacklist """
@@ -250,21 +247,18 @@ class Covers(modules.ThreadedModule):
 
         return cover
 
-
     # --== Message handlers ==--
-
 
     def onModLoaded(self):
         """ The module has been loaded """
-        self.cfgWin         = None                                   # Configuration window
-        self.coverMap       = {}                                     # Store covers previously requested
-        self.currTrack      = None                                   # The current track being played, if any
-        self.cacheRootPath  = os.path.join(consts.dirCfg, MOD_NAME)  # Local cache for Internet covers
-        self.coverBlacklist = {}                                     # When a cover cannot be downloaded, avoid requesting it again
+        self.cfgWin = None  # Configuration window
+        self.coverMap = {}  # Store covers previously requested
+        self.currTrack = None  # The current track being played, if any
+        self.cacheRootPath = os.path.join(consts.dirCfg, MOD_NAME)  # Local cache for Internet covers
+        self.coverBlacklist = {}  # When a cover cannot be downloaded, avoid requesting it again
 
         if not os.path.exists(self.cacheRootPath):
             os.mkdir(self.cacheRootPath)
-
 
     def onModUnloaded(self):
         """ The module has been unloaded """
@@ -282,7 +276,6 @@ class Covers(modules.ThreadedModule):
         # Delete blacklist
         self.coverBlacklist = None
 
-
     def onNewTrack(self, track):
         """ A new track is being played, try to retrieve the corresponding cover """
         # Make sure we have enough information
@@ -290,26 +283,28 @@ class Covers(modules.ThreadedModule):
             modules.postMsg(consts.MSG_CMD_SET_COVER, {'track': track, 'pathThumbnail': None, 'pathFullSize': None})
             return
 
-        album          = track.getAlbum().lower()
-        artist         = track.getArtist().lower()
-        rawCover       = None
+        album = track.getAlbum().lower()
+        artist = track.getArtist().lower()
+        rawCover = None
         self.currTrack = track
 
         # Let's see whether we already have the cover
         if (artist, album) in self.coverMap:
-            covers        = self.coverMap[(artist, album)]
-            pathFullSize  = covers[CVR_FULL]
+            covers = self.coverMap[(artist, album)]
+            pathFullSize = covers[CVR_FULL]
             pathThumbnail = covers[CVR_THUMB]
 
             # Make sure the files are still there
             if os.path.exists(pathThumbnail) and os.path.exists(pathFullSize):
-                modules.postMsg(consts.MSG_CMD_SET_COVER, {'track': track, 'pathThumbnail': pathThumbnail, 'pathFullSize': pathFullSize})
+                modules.postMsg(
+                    consts.MSG_CMD_SET_COVER,
+                    {'track': track, 'pathThumbnail': pathThumbnail, 'pathFullSize': pathFullSize})
                 return
 
         # Should we check for a user cover?
-        if not prefs.get(__name__, 'download-covers', PREFS_DFT_DOWNLOAD_COVERS)        \
-            or prefs.get(__name__, 'prefer-user-covers', PREFS_DFT_PREFER_USER_COVERS):
-                rawCover = self.getUserCover(os.path.dirname(track.getFilePath()))
+        if (not prefs.get(__name__, 'download-covers', PREFS_DFT_DOWNLOAD_COVERS) or
+                prefs.get(__name__, 'prefer-user-covers', PREFS_DFT_PREFER_USER_COVERS)):
+            rawCover = self.getUserCover(os.path.dirname(track.getFilePath()))
 
         # Is it in our cache?
         if rawCover is None:
@@ -317,7 +312,9 @@ class Covers(modules.ThreadedModule):
 
         # If we still don't have a cover, maybe we can try to download it
         if rawCover is None:
-            modules.postMsg(consts.MSG_CMD_SET_COVER, {'track': track, 'pathThumbnail': None, 'pathFullSize': None})
+            modules.postMsg(
+                consts.MSG_CMD_SET_COVER,
+                {'track': track, 'pathThumbnail': None, 'pathFullSize': None})
 
             if prefs.get(__name__, 'download-covers', PREFS_DFT_DOWNLOAD_COVERS):
                 rawCover = self.getFromInternet(artist, album)
@@ -327,19 +324,21 @@ class Covers(modules.ThreadedModule):
         if rawCover is not None:
             import tempfile
 
-            thumbnail     = tempfile.mktemp() + '.png'
+            thumbnail = tempfile.mktemp() + '.png'
             fullSizeCover = tempfile.mktemp() + '.png'
             self.generateThumbnail(rawCover, thumbnail, 'PNG')
             self.generateFullSizeCover(rawCover, fullSizeCover, 'PNG')
             if os.path.exists(thumbnail) and os.path.exists(fullSizeCover):
                 self.coverMap[(artist, album)] = (thumbnail, fullSizeCover)
-                modules.postMsg(consts.MSG_CMD_SET_COVER, {'track': track, 'pathThumbnail': thumbnail, 'pathFullSize': fullSizeCover})
+                modules.postMsg(
+                    consts.MSG_CMD_SET_COVER,
+                    {'track': track, 'pathThumbnail': thumbnail, 'pathFullSize': fullSizeCover})
             else:
-                modules.postMsg(consts.MSG_CMD_SET_COVER, {'track': track, 'pathThumbnail': None, 'pathFullSize': None})
-
+                modules.postMsg(
+                    consts.MSG_CMD_SET_COVER,
+                    {'track': track, 'pathThumbnail': None, 'pathFullSize': None})
 
     # --== Configuration ==--
-
 
     def configure(self, parent):
         """ Show the configuration window """
@@ -354,8 +353,8 @@ class Covers(modules.ThreadedModule):
             self.cfgWin.getWidget('btn-cancel').connect('clicked', lambda btn: self.cfgWin.hide())
 
         if not self.cfgWin.isVisible():
-            downloadCovers     = prefs.get(__name__, 'download-covers',      PREFS_DFT_DOWNLOAD_COVERS)
-            preferUserCovers   = prefs.get(__name__, 'prefer-user-covers',   PREFS_DFT_PREFER_USER_COVERS)
+            downloadCovers = prefs.get(__name__, 'download-covers', PREFS_DFT_DOWNLOAD_COVERS)
+            preferUserCovers = prefs.get(__name__, 'prefer-user-covers', PREFS_DFT_PREFER_USER_COVERS)
             userCoverFilenames = prefs.get(__name__, 'user-cover-filenames', PREFS_DFT_USER_COVER_FILENAMES)
 
             self.cfgWin.getWidget('btn-ok').grab_focus()
@@ -366,24 +365,21 @@ class Covers(modules.ThreadedModule):
 
         self.cfgWin.show()
 
-
     def onBtnOk(self, btn):
         """ Save configuration """
-        downloadCovers     = self.cfgWin.getWidget('chk-downloadCovers').get_active()
-        preferUserCovers   = self.cfgWin.getWidget('chk-preferUserCovers').get_active()
+        downloadCovers = self.cfgWin.getWidget('chk-downloadCovers').get_active()
+        preferUserCovers = self.cfgWin.getWidget('chk-preferUserCovers').get_active()
         userCoverFilenames = [word.strip() for word in self.cfgWin.getWidget('txt-filenames').get_text().split(',')]
 
-        prefs.set(__name__, 'download-covers',      downloadCovers)
-        prefs.set(__name__, 'prefer-user-covers',   preferUserCovers)
+        prefs.set(__name__, 'download-covers', downloadCovers)
+        prefs.set(__name__, 'prefer-user-covers', preferUserCovers)
         prefs.set(__name__, 'user-cover-filenames', userCoverFilenames)
 
         self.cfgWin.hide()
 
-
     def onDownloadCoversToggled(self, downloadCovers):
         """ Toggle the "prefer user covers" checkbox according to the state of the "download covers" one """
         self.cfgWin.getWidget('chk-preferUserCovers').set_sensitive(downloadCovers.get_active())
-
 
     def onBtnHelp(self, btn):
         """ Display a small help message box """
@@ -392,8 +388,8 @@ class Covers(modules.ThreadedModule):
         helpDlg = help.HelpDlg(MOD_INFO[modules.MODINFO_L10N])
         helpDlg.addSection(_('Description'),
                            _('This module displays the cover of the album the current track comes from. Covers '
-                              'may be loaded from local pictures, located in the same directory as the current '
-                              'track, or may be downloaded from the Internet.'))
+                             'may be loaded from local pictures, located in the same directory as the current '
+                             'track, or may be downloaded from the Internet.'))
         helpDlg.addSection(_('User Covers'),
                            _('A user cover is a picture located in the same directory as the current track. '
                              'When specifying filenames, you do not need to provide file extensions, supported '

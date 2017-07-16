@@ -30,12 +30,12 @@ from pogo.tools import icons
 
 
 (
-    ROW_ENABLED,    # True if the module is currently enabled
-    ROW_TEXT,       # Name and description of the module
-    ROW_ICON,       # An icon indicating whether the module is configurable
-    ROW_UNLOADABLE, # True if the module can be disabled
-    ROW_INSTANCE,   # Instance of the module, if any
-    ROW_MODINFO     # Information exported by a module
+    ROW_ENABLED,     # True if the module is currently enabled
+    ROW_TEXT,        # Name and description of the module
+    ROW_ICON,        # An icon indicating whether the module is configurable
+    ROW_UNLOADABLE,  # True if the module can be disabled
+    ROW_INSTANCE,    # Instance of the module, if any
+    ROW_MODINFO      # Information exported by a module
 ) = list(range(6))
 
 
@@ -99,6 +99,7 @@ class PreferencesListView(Gtk.TreeView):
 
 class Preferences:
     """ Allow the user to load/unload/configure modules """
+
     def __init__(self):
         from gi.repository import GObject
 
@@ -108,13 +109,13 @@ class Preferences:
 
         # List of modules
         toggleRdr = Gtk.CellRendererToggle()
-        columns   = (
-            ('',   [(toggleRdr, GObject.TYPE_BOOLEAN)],             ROW_ENABLED,    False, True),
-            ('',   [(Gtk.CellRendererText(), GObject.TYPE_STRING)], ROW_TEXT,       True,  True),
-            ('',   [(Gtk.CellRendererPixbuf(), GdkPixbuf.Pixbuf)],    ROW_ICON,       False, True),
-            (None, [(None, GObject.TYPE_BOOLEAN)],                  ROW_UNLOADABLE, False, False),
-            (None, [(None, GObject.TYPE_PYOBJECT)],                 ROW_INSTANCE,   False, False),
-            (None, [(None, GObject.TYPE_PYOBJECT)],                 ROW_MODINFO,    False, False))
+        columns = (
+            ('', [(toggleRdr, GObject.TYPE_BOOLEAN)], ROW_ENABLED, False, True),
+            ('', [(Gtk.CellRendererText(), GObject.TYPE_STRING)], ROW_TEXT, True, True),
+            ('', [(Gtk.CellRendererPixbuf(), GdkPixbuf.Pixbuf)], ROW_ICON, False, True),
+            (None, [(None, GObject.TYPE_BOOLEAN)], ROW_UNLOADABLE, False, False),
+            (None, [(None, GObject.TYPE_PYOBJECT)], ROW_INSTANCE, False, False),
+            (None, [(None, GObject.TYPE_PYOBJECT)], ROW_MODINFO, False, False))
 
         self.list = PreferencesListView(columns)
         self.list.set_headers_visible(False)
@@ -144,8 +145,8 @@ class Preferences:
         """ Fill the list of modules """
         rows = []
         for (name, data) in modules.getModules():
-            instance     = data[modules.MOD_INSTANCE]
-            mandatory    = data[modules.MOD_INFO][modules.MODINFO_MANDATORY]
+            instance = data[modules.MOD_INSTANCE]
+            mandatory = data[modules.MOD_INFO][modules.MODINFO_MANDATORY]
             configurable = data[modules.MOD_INFO][modules.MODINFO_CONFIGURABLE]
 
             if configurable or not mandatory:
@@ -153,7 +154,9 @@ class Preferences:
                     icon = icons.prefsBtnIcon()
                 else:
                     icon = None
-                text = '<b>%s</b>\n<small>%s</small>' % (tools.htmlEscape(_(name)), tools.htmlEscape(data[modules.MOD_INFO][modules.MODINFO_DESC]))
+                text = '<b>%s</b>\n<small>%s</small>' % (
+                    tools.htmlEscape(_(name)),
+                    tools.htmlEscape(data[modules.MOD_INFO][modules.MODINFO_DESC]))
                 rows.append((instance is not None, text, icon, not mandatory, instance, data[modules.MOD_INFO]))
 
         rows.sort(key=lambda row: row[ROW_TEXT])
@@ -174,7 +177,7 @@ class Preferences:
 
     def onModuleToggled(self, renderer, path):
         """ A module has been enabled/disabled """
-        row  = self.list.getRow(path)
+        row = self.list.getRow(path)
         name = row[ROW_MODINFO][modules.MODINFO_NAME]
 
         if row[ROW_ENABLED]:
@@ -220,6 +223,7 @@ class Preferences:
 # --== Global functions ==--
 
 __instance = None
+
 
 def get_instance():
     global __instance

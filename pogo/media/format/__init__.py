@@ -18,7 +18,7 @@
 
 
 def createFileTrack(file, bitrate, length, samplerate, isVBR, title=None, album=None, artist=None, albumArtist=None,
-                        musicbrainzId=None, genre=None, trackNumber=None, date=None, discNumber=None):
+                    musicbrainzId=None, genre=None, trackNumber=None, date=None, discNumber=None):
     """ Create a new FileTrack object based on the given information """
     from pogo.media.track.fileTrack import FileTrack
 
@@ -50,14 +50,18 @@ def createFileTrack(file, bitrate, length, samplerate, isVBR, title=None, album=
         track.setGenre(genre)
 
     if date is not None:
-        try:    track.setDate(int(date))
-        except: pass
+        try:
+            track.setDate(int(date))
+        except:
+            pass
 
     # The format of the track number may be 'X' or 'X/Y'
     # We discard Y since we don't use this information
     if trackNumber is not None:
-        try:    track.setNumber(int(trackNumber.split('/')[0]))
-        except: pass
+        try:
+            track.setNumber(int(trackNumber.split('/')[0]))
+        except:
+            pass
 
     # The format of the disc number may be 'X' or 'X/Y'
     # We discard the disc number when Y is less than 2

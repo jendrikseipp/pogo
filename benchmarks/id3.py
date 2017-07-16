@@ -13,9 +13,8 @@ def mutagen():
 
     mp3File = MP3(FILE)
 
-    length     = int(round(mp3File.info.length))
-    bitrate    = int(mp3File.info.bitrate)
-    #samplerate = int(mp3File.info.sample_rate)
+    length = int(round(mp3File.info.length))
+    bitrate = int(mp3File.info.bitrate)
 
     id3 = ID3(FILE)
 
@@ -34,8 +33,6 @@ def hsaudiotag():
     tag.title
     tag.track
     myfile.duration
-    #myfile.bitrate
-    #myfile.sample_rate
 
 
 def hsaudiotag_auto():
@@ -46,8 +43,6 @@ def hsaudiotag_auto():
     myfile.title
     myfile.track
     myfile.duration
-    #myfile.bitrate
-    #myfile.sample_rate
 
 
 timers = ['mutagen', 'hsaudiotag', 'hsaudiotag_auto']
