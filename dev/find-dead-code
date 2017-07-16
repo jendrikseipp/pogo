@@ -6,4 +6,4 @@ cd "$(dirname "$0")"
 cd ..
 
 python3 dev/whitelist.py
-vulture --exclude=external pogo.py pogo dev/whitelist.py
+vulture pogo.py pogo dev/whitelist.py

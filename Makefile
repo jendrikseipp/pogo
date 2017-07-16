@@ -80,5 +80,6 @@ clean:
 
 test:
 	pyflakes pogo pogo.py
+	dev/find-dead-code
 
 .PHONY: help clean install test
