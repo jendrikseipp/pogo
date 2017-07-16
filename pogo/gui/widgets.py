@@ -69,8 +69,6 @@ class TrackTreeView(ExtTreeView):
         self.connect('drag-motion', self.onDragMotion)
         self.connect('drag-data-received', self.onDragDataReceived)
 
-        #self.connect('button-press-event', self.onButtonPressed)
-
         self.mark = None
         self.dir_selected = True
 

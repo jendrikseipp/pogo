@@ -519,7 +519,7 @@ class Tracktree(modules.Module):
         if args:
             log.logger.info('[%s] Filling playlist with files given on command line' % MOD_INFO[modules.MODINFO_NAME])
             tracks = media.getTracks([os.path.abspath(arg) for arg in args])
-            playNow = not 'stop' in commands and not 'pause' in commands
+            playNow = 'stop' not in commands and 'pause' not in commands
             modules.postMsg(consts.MSG_CMD_TRACKLIST_ADD, {'tracks': tracks, 'playNow': playNow})
         elif 'play' in commands:
             modules.postMsg(consts.MSG_CMD_TOGGLE_PAUSE)

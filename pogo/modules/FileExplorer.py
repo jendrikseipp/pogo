@@ -565,7 +565,6 @@ class FileExplorer(modules.Module):
     def populate_tree(self):
         assert self.tree is None
         self.createTree()
-        #self.tree.set_row_separator_func(lambda model, iter: model[iter][ROW_NAME] is None)
         self.tree.set_row_separator_func(self._is_separator)
 
         # Restore the tree if we have any to restore, else build new one
@@ -625,7 +624,7 @@ class FileExplorer(modules.Module):
             msg = _('Right-click to add music folders')
             self.tree.appendRow((icons.infoMenuIcon(), msg, TYPE_INFO, ''), None)
 
-   # --== Message handlers ==--
+    # --== Message handlers ==--
 
     def onAppStarted(self):
         """ The module has been loaded """

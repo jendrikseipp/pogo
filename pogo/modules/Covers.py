@@ -157,8 +157,8 @@ class Covers(modules.ThreadedModule):
         # Request information to Last.fm
         # Beware of UTF-8 characters: we need to percent-encode all characters
         try:
-            url = ('http://ws.audioscrobbler.com/2.0/?method=album.getinfo&api_key=%s&artist=%s&album=%s' % 
-                 (AS_API_KEY, tools.percentEncode(artist), tools.percentEncode(album)))
+            url = ('http://ws.audioscrobbler.com/2.0/?method=album.getinfo&api_key=%s&artist=%s&album=%s' %
+                   (AS_API_KEY, tools.percentEncode(artist), tools.percentEncode(album)))
             request = urllib.request.Request(url, headers={'User-Agent': USER_AGENT})
             stream = urllib.request.urlopen(request)
             data = stream.read().decode('utf-8')

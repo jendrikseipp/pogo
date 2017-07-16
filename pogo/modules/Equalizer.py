@@ -56,9 +56,6 @@ class Equalizer(modules.Module):
         self.preset = prefs.get(__name__, 'preset', 'Flat')
         self.cfgWindow = None
 
-        # We do not have the edit menu anymore
-        ##modules.addMenuItem(_('Equalizer'), self.configure, '<Control>E')
-
     # --== Message handlers ==--
 
     def onModLoaded(self):

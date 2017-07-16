@@ -48,10 +48,9 @@ def isSupported(file):
         return False
 
 
-_track_cache = {}
 # It seems a lock is not really necessary here. It does slow down execution
-# a little bit though, so don't use it.
-#_track_cache_lock = threading.Lock()
+# a little bit though, so we currently don't use a lock.
+_track_cache = {}
 
 
 def _getTrackFromFile(file):
@@ -71,13 +70,10 @@ def getTrackFromFile(file):
         Return a Track object, based on the tags of the given file
         The 'file' parameter must be a real file (not a playlist or a directory)
     """
-    #_track_cache_lock.acquire()
     if file in _track_cache:
-        #_track_cache_lock.release()
         return _track_cache[file]
     track = _getTrackFromFile(file)
     _track_cache[file] = track
-    #_track_cache_lock.release()
     return track
 
 

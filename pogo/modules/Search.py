@@ -249,7 +249,7 @@ class Search(modules.ThreadedModule):
             # Cache the new paths once
             GObject.timeout_add_seconds(5, self.cache_dirs, False)
 
-    #------- GTK handlers ----------------
+    # ------- GTK handlers ----------------
 
     def on_key_pressed(self, widget, event):
         """

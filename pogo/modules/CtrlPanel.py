@@ -56,7 +56,7 @@ class CtrlPanel(modules.Module):
         total = sec2str(self.currTrackLength)
         self.sclSeek.set_tooltip_text('%s / %s' % (elapsed, total))
 
-   # --== Message handler ==--
+    # --== Message handler ==--
 
     def onAppStarted(self):
         """ Real initialization function, called when this module has been loaded """
