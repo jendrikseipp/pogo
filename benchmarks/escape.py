@@ -7,6 +7,7 @@ NB_ITERS = 500
 
 # ---
 
+
 def escape():
     # must do ampersand first
     global data
@@ -23,16 +24,21 @@ def htmlEscape():
     global data
 
     for c in data:
-        if c == '&':   output += '&amp;'
-        elif c == '<': output += '&lt;'
-        elif c == '>': output += '&gt;'
-        else:          output += c
+        if c == '&':
+            output += '&amp;'
+        elif c == '<':
+            output += '&lt;'
+        elif c == '>':
+            output += '&gt;'
+        else:
+            output += c
 
     return output
 
 # ---
 
-t1 = timeit.Timer('escape()',   'from __main__ import escape')
+
+t1 = timeit.Timer('escape()', 'from __main__ import escape')
 t2 = timeit.Timer('htmlEscape()', 'from __main__ import htmlEscape')
 t3 = timeit.Timer('e(data)', 'from glib import markup_escape_text as e; from __main__ import data')
 

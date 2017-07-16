@@ -81,7 +81,7 @@ clean:
 test:
 	pyflakes pogo pogo.py
 	# Ignore middle-of-file imports and bare excepts.
-	pycodestyle --ignore E402,E722 --max-line-length=130 pogo pogo.py
+	pycodestyle --ignore E402,E722 --max-line-length=130 benchmarks pogo pogo.py
 	dev/find-dead-code
 
 .PHONY: help clean install test

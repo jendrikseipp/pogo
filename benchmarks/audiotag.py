@@ -13,6 +13,7 @@ class File(object):
     """Automatically determine a file type and decode it accordingly, providing a unified interface
     to all file types.
     """
+
     def __init__(self, infile):
         self.valid = False
         f = auto.File._guess_class(infile)
@@ -45,13 +46,6 @@ def report(audiofile):
     audiofile.title
     audiofile.track
     audiofile.duration
-
-    #audiofile.bitrate
-    #audiofile.sample_rate
-    #audiofile.size
-    #audiofile.audio_offset
-    #audiofile.audio_size
-
 
 
 timers = ['auto_default', 'auto_lazy']
