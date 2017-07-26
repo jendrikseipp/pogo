@@ -493,7 +493,7 @@ class Tracktree(modules.Module):
         self.tree.connect('key-press-event', self.onKeyboard)
         self.tree.get_model().connect('row-deleted', self.onRowDeleted)
 
-        _, args = prefs.getCmdLine()
+        _options, args = prefs.getCmdLine()
 
         self.savedPlaylist = os.path.join(consts.dirCfg, 'saved-playlist')
         self.paused = False
