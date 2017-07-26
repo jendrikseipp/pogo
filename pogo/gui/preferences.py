@@ -51,7 +51,7 @@ class PreferencesListView(Gtk.TreeView):
         # Create the columns
         nbEntries = 0
         dataTypes = []
-        for (title, renderers, sortIndexes, expandable, visible) in columns:
+        for (title, renderers, _, expandable, visible) in columns:
             if title is None:
                 nbEntries += len(renderers)
                 dataTypes += [renderer[1] for renderer in renderers]

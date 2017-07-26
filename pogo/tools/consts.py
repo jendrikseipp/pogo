@@ -124,9 +124,8 @@ DND_INTERNAL_TARGET_NAME = 'exttreeview-internal'
 # --- View modes
 (
     VIEW_MODE_FULL,
-    VIEW_MODE_MINI,
     VIEW_MODE_PLAYLIST,
-) = list(range(3))
+) = list(range(2))
 
 
 # --- Message that can be sent/received by modules
@@ -155,11 +154,6 @@ DND_INTERNAL_TARGET_NAME = 'exttreeview-internal'
     MSG_CMD_TRACKLIST_SHUFFLE,   # Shuffle the tracklist           Parameters:
     MSG_CMD_TRACKLIST_REPEAT,    # Set/Unset the repeat function   Parameters: 'repeat'
 
-    # Explorers
-    MSG_CMD_EXPLORER_ADD,        # Add a new explorer    Parameters: 'modName', 'expName', 'icon', 'widget'
-    MSG_CMD_EXPLORER_REMOVE,     # Remove an explorer    Parameters: 'modName', 'expName'
-    MSG_CMD_EXPLORER_RENAME,     # Rename an explorer    Parameters: 'modName', 'expName', 'newExpName'
-
     # Covers
     MSG_CMD_SET_COVER,           # Cover file for the given track     Parameters: 'track', 'pathThumbnail', 'pathFullSize'
 
@@ -183,7 +177,6 @@ DND_INTERNAL_TARGET_NAME = 'exttreeview-internal'
     MSG_EVT_TRACK_MOVED,         # The position of the current track has changed    Parameters: 'hasPrevious', 'hasNext'
     MSG_EVT_NEW_TRACKLIST,       # A new tracklist has been set                     Parameters: 'tracks', 'playtime'
     MSG_EVT_REPEAT_CHANGED,      # The repeat function has been enabled/disabled    Parameters: 'repeat'
-    MSG_EVT_TRACKLIST_NEW_SEL,   # The tracklist has a new set of selected tracks   Parameters: 'tracks'
 
     # Application
     MSG_EVT_APP_QUIT,            # The application is quitting         Parameters:
@@ -192,9 +185,6 @@ DND_INTERNAL_TARGET_NAME = 'exttreeview-internal'
     # Modules
     MSG_EVT_MOD_LOADED,          # The module has been loaded by request of the user      Parameters:
     MSG_EVT_MOD_UNLOADED,        # The module has been unloaded by request of the user    Parameters:
-
-    # Explorer manager
-    MSG_EVT_EXPLORER_CHANGED,    # A new explorer has been selected    Parameters: 'modName', 'expName'
 
     MSG_CMD_FILE_EXPLORER_DRAG_BEGIN,
     MSG_EVT_SEARCH_START,
@@ -207,4 +197,4 @@ DND_INTERNAL_TARGET_NAME = 'exttreeview-internal'
 
     # End value
     MSG_END_VALUE
-) = list(range(47))
+) = list(range(42))
