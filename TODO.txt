@@ -1,8 +1,5 @@
 === Roadmap ===
 
-X Remove code for playing CDs.
-X Use GitHub for issue tracking.
-X Test for dead code with Vulture.
 O Don't skip to next track early (currently 2 seconds before end).
 O Search whole system by default (after "locate" finishes).
 O Add application-wide message system for warnings. Should use event system.

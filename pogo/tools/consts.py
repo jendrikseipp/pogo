@@ -34,7 +34,7 @@ socketTimeout = 10
 
 # --- Strings
 appName = 'Pogo'
-appVersion = '0.9.2'
+appVersion = '1.0'
 appNameShort = 'pogo'
 commands = ['play', 'pause', 'prev', 'next', 'stop']
 

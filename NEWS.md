@@ -1,3 +1,10 @@
+1.0 "I get a little bit Genghis Khan" (18-07-11)
+================================================
+* Remove code for playing CDs.
+* Use GitHub for issue tracking.
+* Test for dead code with Vulture.
+
+
 0.9.2 "Avant Gardener" (17-03-03)
 =================================
 * Fix adding tracks from left pane to playlist (resolves #1).
