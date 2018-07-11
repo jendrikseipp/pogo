@@ -1,3 +1,12 @@
+pogo (1.0-1) UNRELEASED; urgency=low
+
+  * New upstream release
+  * Remove code for playing CDs.
+  * Use GitHub for issue tracking.
+  * Test for dead code with Vulture.
+
+ -- Jendrik Seipp <jendrikseipp@web.de>  Wed, 11 Jul 2018 14:18:55 +0200
+
 pogo (0.9.2-1) UNRELEASED; urgency=low
 
   * New upstream release
