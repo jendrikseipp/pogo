@@ -13,7 +13,7 @@ NB_ITERS = 200000
 
 # ---
 
-mFormatsRE = re.compile('^.*\.(mp3|ogg|mpc|flac)$', re.IGNORECASE)
+mFormatsRE = re.compile(r'^.*\.(mp3|ogg|mpc|flac)$', re.IGNORECASE)
 
 
 def re():
