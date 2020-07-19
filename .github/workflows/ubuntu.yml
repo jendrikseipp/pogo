@@ -36,6 +36,7 @@ jobs:
 
     - name: Run tests
       run: |
-        make --directory . help test install clean
+        make --directory . help test
+        sudo make --directory . install clean
         pogo --help
-        make --directory . uninstall
+        sudo make --directory . uninstall
