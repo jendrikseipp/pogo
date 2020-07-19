@@ -1,3 +1,6 @@
+# 1.0.1 (2020-07-19)
+* Fix accessing PIL version number.
+
 1.0 "I get a little bit Genghis Khan" (18-07-11)
 ================================================
 * Remove code for playing CDs.

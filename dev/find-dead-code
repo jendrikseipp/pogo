@@ -5,6 +5,6 @@ set -euo pipefail
 cd "$(dirname "$0")"
 cd ..
 
-python3 -m pyflakes dev/whitelist.py
+pyflakes dev/whitelist.py
 python3 dev/whitelist.py
-python3 -m vulture pogo.py pogo dev/whitelist.py
+vulture pogo.py pogo dev/whitelist.py
