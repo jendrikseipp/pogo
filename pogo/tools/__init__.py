@@ -227,7 +227,7 @@ def print_platform_info():
         ('PyGObject', GObject.pygobject_version),
         ('GST', Gst.version_string()),
         ('Mutagen', mutagen.version),
-        ('PIL', PIL.VERSION),
+        ('PIL', PIL.__version__),
     ])
 
     values = ['%s: %s' % (name, val) for name, val in names_values]
