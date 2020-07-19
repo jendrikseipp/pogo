@@ -1,3 +1,10 @@
+pogo (1.0.1-1) UNRELEASED; urgency=low
+
+  * New upstream release
+  * Fix accessing PIL version number.
+
+ -- Jendrik Seipp <jendrikseipp@web.de>  Sun, 19 Jul 2020 20:22:18 +0200
+
 pogo (1.0-1) UNRELEASED; urgency=low
 
   * New upstream release
