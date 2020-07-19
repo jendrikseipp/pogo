@@ -1,0 +1,41 @@
+name: Ubuntu
+
+# see https://github.community/t5/GitHub-Actions/How-to-trigger-an-action-on-push-or-pull-request-but-not-both/m-p/35805
+on:
+  push:
+    branches:
+    - master
+  pull_request:
+    branches:
+    - master
+
+jobs:
+  build:
+
+    runs-on: ${{ matrix.os }}
+
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-18.04, ubuntu-20.04]
+
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Show environment
+      run: |
+        python --version
+        python3 --version
+        python3 -c "import multiprocessing as m; print('CPUs:', m.cpu_count())"
+
+    - name: Install dependencies
+      run: |
+        sudo apt-get -y update
+        sudo apt-get -y install -qq gettext gir1.2-gdkpixbuf-2.0 gir1.2-glib-2.0 gir1.2-gstreamer-1.0 gir1.2-gtk-3.0 gir1.2-notify-0.7 gir1.2-pango-1.0 git gnome-settings-daemon gstreamer1.0-plugins-bad gstreamer1.0-plugins-base gstreamer1.0-plugins-good gstreamer1.0-plugins-ugly gstreamer1.0-pulseaudio python3-dbus python3-gi python3-mutagen python3-pil python3-pip
+        sudo python3 -m pip install -U pip pycodestyle pyflakes vulture
+
+    - name: Run tests
+      run: |
+        make --directory . help test install clean
+        pogo --help
+        make --directory . uninstall
